@@ -1,0 +1,5 @@
+menu "security packages"
+
+# source "$PKGS_DIR/packages/security//Kconfig"
+
+endmenu

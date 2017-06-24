@@ -1,0 +1,5 @@
+menu "language packages"
+
+# source "$PKGS_DIR/packages/language//Kconfig"
+
+endmenu
