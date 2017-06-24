@@ -1,0 +1,11 @@
+{
+    "name": "hello",
+    "description": "A hello package for rt-thread",
+    "keywords": [
+        "hello"
+    ],
+    "readme": "A hello package for rt-thread",
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/BernardXiong/hello/archive/v1.0.0.zip", "filename" : "hello-1.0.0.zip"}
+    ]
+}
