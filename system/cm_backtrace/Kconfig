@@ -22,13 +22,13 @@ if PKG_USING_CMBACKTRACE
         help
           Select the ARM Cortex-M CPU Platform of your device
         config PKG_CMBACKTRACE_PLATFORM_M0_M0PLUS
-            bool "Corex-M0/M0+"
+            bool "Cortex-M0/M0+"
         config PKG_CMBACKTRACE_PLATFORM_M3
-            bool "Corex-M3"
+            bool "Cortex-M3"
         config PKG_CMBACKTRACE_PLATFORM_M4
-            bool "Corex-M4"
+            bool "Cortex-M4"
         config PKG_CMBACKTRACE_PLATFORM_M7
-            bool "Corex-M7"
+            bool "Cortex-M7"
     endchoice
 
     config PKG_CMBACKTRACE_DUMP_STACK
