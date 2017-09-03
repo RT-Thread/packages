@@ -1,0 +1,52 @@
+config PKG_USING_CMBACKTRACE
+    bool "Advance backtrace library for ARM Cortex-M series MCU."
+    default n
+
+if PKG_USING_CMBACKTRACE
+
+    config PKG_CMBACKTRACE_PATH
+        string
+        default "/packages/system/cm_backtrace"
+
+    select PKG_CMBACKTRACE_PATH
+    
+    config PKG_CMBACKTRACE_VER
+        string
+        default "1.0.0"
+
+    select PKG_CMBACKTRACE_VER
+
+    choice
+        prompt "CPU Platform"
+        default PKG_CMBACKTRACE_PLATFORM_M3
+        help
+          Select the ARM Cortex-M CPU Platform of your device
+        config PKG_CMBACKTRACE_PLATFORM_M0_M0PLUS
+            bool "Cortex-M0/M0+"
+        config PKG_CMBACKTRACE_PLATFORM_M3
+            bool "Cortex-M3"
+        config PKG_CMBACKTRACE_PLATFORM_M4
+            bool "Cortex-M4"
+        config PKG_CMBACKTRACE_PLATFORM_M7
+            bool "Cortex-M7"
+    endchoice
+
+    config PKG_CMBACKTRACE_DUMP_STACK
+        bool
+        prompt "Dump the thread or main stack info"
+        default y
+        help
+          Dump the stack information when a fault occurs. It will add a lot of print information.
+    
+    choice
+        prompt "Language of print information"
+        default PKG_CMBACKTRACE_PRINT_ENGLISH
+        help
+          Select the language of print information when a fault occurs
+        config PKG_CMBACKTRACE_PRINT_ENGLISH
+            bool "Engish"
+        config PKG_CMBACKTRACE_PRINT_CHINESE
+            bool "Chinese"
+    endchoice
+
+endif
