@@ -1,5 +1,5 @@
 menu "IoT - internet of things"
 
 # source "$PKGS_DIR/packages/iot//Kconfig"
-
+source "$PKGS_DIR/packages/iot/cJSON/Kconfig"
 endmenu

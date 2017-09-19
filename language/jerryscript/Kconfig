@@ -1,5 +1,6 @@
-config PKG_USING_JERRYSCRIPT
-    bool "Ultra-lightweight JavaScript engine for the Internet of Things."
+
+config PKG_USING_JERRYSCRIPT  
+    bool "a jerryscript package"
     default n
 
 if PKG_USING_JERRYSCRIPT
@@ -12,7 +13,7 @@ if PKG_USING_JERRYSCRIPT
 
     config PKG_JERRYSCRIPT_VER
         string
-        default "v0.0.1"
+        default "v1.0.0"
 
     select PKG_JERRYSCRIPT_VER
 

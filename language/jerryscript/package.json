@@ -1,11 +1,12 @@
+
 {
     "name": "jerryscript",
-    "description": "Ultra-lightweight JavaScript engine for the Internet of Things.",
+    "description": "a jerryscript package",
     "keywords": [
-        "JavaScript", "IoT"
+        "jerryscript"
     ],
     "readme": "Ultra-lightweight JavaScript engine for the Internet of Things.",
     "site" : [
-    {"version" : "v0.0.1", "URL" : "https://github.com/RT-Thread/jerryscript/archive/v0.0.1.zip", "filename" : "jerryscript-0.0.1.zip"}
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread/jerryscript.git", "filename" : "jerryscript-1.0.0.zip"}
     ]
 }
