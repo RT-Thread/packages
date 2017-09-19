@@ -1,0 +1,12 @@
+
+{
+    "name": "cJSON",
+    "description": "A cJSON package",
+    "keywords": [
+        "cJSON"
+    ],
+    "readme": "A cJSON package",
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://raw.githubusercontent.com/SummerGGift/Python-Program/master/cJSON-1.0.0.zip", "filename" : "cJSON-1.0.0.zip"}
+    ]
+}
