@@ -7,7 +7,7 @@ if PKG_USING_PARTITION
 
     config PKG_PARTITION_PATH
         string
-        default "/packages/misc/partition"
+        default "/packages/system/partition"
 
     select PKG_PARTITION_PATH
 
