@@ -1,0 +1,12 @@
+{
+    "name": "partition",
+    "description": "a simple partition for block device in rt-thread.",
+    "author" : "Bernard Xiong",
+    "keywords": [
+        "partition"
+    ],
+    "readme": "a simple partition for block device in rt-thread.",
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/partition/archive/v1.0.0.zip", "filename" : "partition-1.0.0.zip"}
+    ]
+}

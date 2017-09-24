@@ -1,5 +1,6 @@
 menu "system packages"
 
 source "$PKGS_DIR/packages/system/cm_backtrace/Kconfig"
+source "$PKGS_DIR/packages/system/partition/Kconfig"
 
 endmenu
