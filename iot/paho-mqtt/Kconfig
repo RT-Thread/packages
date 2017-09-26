@@ -1,19 +1,19 @@
-config PKG_USING_PAHO-MQTT
+config PKG_USING_PAHO_MQTT
     bool "A mqtt package"
     default n
 
-if PKG_USING_PAHO-MQTT
+if PKG_USING_PAHO_MQTT
 
-    config PKG_PAHO-MQTT_PATH
+    config PKG_PAHO_MQTT_PATH
         string
         default "/packages/iot/paho-mqtt"
 
-    select PKG_PAHO-MQTT_PATH
+    select PKG_PAHO_MQTT_PATH
 
-    config PKG_PAHO-MQTT_VER
+    config PKG_PAHO_MQTT_VER
         string
         default "v1.0.0"
 
-    select PKG_PAHO-MQTT_VER
+    select PKG_PAHO_MQTT_VER
 
 endif
