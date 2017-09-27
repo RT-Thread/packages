@@ -7,6 +7,6 @@
     ],
     "readme": "a webclient package for rt-thread",
     "site" : [
-    {"version" : "v1.0.0", "URL" : "https://webclient-1.0.0.zip", "filename" : "webclient-1.0.0.zip","VER_SHA" : "fill in the git version SHA value"}
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/webclient.git", "filename" : "webclient-1.0.0.zip","VER_SHA" : "fill in the git version SHA value"}
     ]
 }
