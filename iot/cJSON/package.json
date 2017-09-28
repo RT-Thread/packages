@@ -1,12 +1,12 @@
 
 {
     "name": "cJSON",
-    "description": "Ultralightweight JSON parser in ANSI C",
+    "description": "A cJSON package",
     "keywords": [
         "cJSON"
     ],
-    "readme": "Ultralightweight JSON parser in ANSI C",
+    "readme": "A cJSON package",
     "site" : [
-    {"version" : "v1.0.1", "URL" : "https://github.com/RT-Thread-packages/cJSON/archive/v1.0.1.zip", "filename" : "cJSON-1.0.1.zip"}
+    {"version" : "v1.0.0", "URL" : "https://raw.githubusercontent.com/SummerGGift/Python-Program/master/cJSON-1.0.0.zip", "filename" : "cJSON-1.0.0.zip"}
     ]
 }

@@ -9,12 +9,8 @@ if PKG_USING_SQLITE
         string
         default "/packages/system/sqlite"
 
-    select PKG_SQLITE_PATH
-
     config PKG_SQLITE_VER
         string
         default "v3.19.3"
-
-    select PKG_SQLITE_VER
 
 endif

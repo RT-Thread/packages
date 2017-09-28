@@ -9,12 +9,8 @@ if PKG_USING_JERRYSCRIPT
         string
         default "/packages/language/jerryscript"
 
-    select PKG_JERRYSCRIPT_PATH
-
     config PKG_JERRYSCRIPT_VER
         string
         default "v1.0.0"
-
-    select PKG_JERRYSCRIPT_VER
 
 endif
