@@ -9,12 +9,9 @@ if PKG_USING_WEBCLIENT
         string
         default "/packages/iot/webclient"
 
-    select PKG_WEBCLIENT_PATH
-
     config PKG_WEBCLIENT_VER
         string
         default "v1.0.0"
 
-    select PKG_WEBCLIENT_VER
 
 endif

@@ -8,12 +8,9 @@ if PKG_USING_PAHO_MQTT
         string
         default "/packages/iot/paho-mqtt"
 
-    select PKG_PAHO_MQTT_PATH
-
     config PKG_PAHO_MQTT_VER
         string
         default "v1.0.0"
 
-    select PKG_PAHO_MQTT_VER
 
 endif

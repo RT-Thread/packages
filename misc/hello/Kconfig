@@ -8,12 +8,8 @@ if PKG_USING_HELLO
         string
         default "/packages/misc/hello"
 
-    select PKG_HELLO_PATH
-
     config PKG_HELLO_VER
         string
         default "v1.0.0"
-
-    select PKG_HELLO_VER
 
 endif
