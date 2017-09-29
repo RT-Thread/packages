@@ -8,13 +8,11 @@ if PKG_USING_CMBACKTRACE
         string
         default "/packages/system/cm_backtrace"
 
-    select PKG_CMBACKTRACE_PATH
     
     config PKG_CMBACKTRACE_VER
         string
         default "1.0.0"
 
-    select PKG_CMBACKTRACE_VER
 
     choice
         prompt "CPU Platform"
