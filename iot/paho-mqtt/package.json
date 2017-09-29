@@ -1,9 +1,9 @@
 
 {
-    "name": "pahomqtt",
+    "name": "paho-mqtt",
     "description": "A mqtt package for rt-thread",
     "keywords": [
-        "pahomqtt"
+        "paho-mqtt"
     ],
     "readme": "A mqtt package for rt-thread",
     "site" : [
