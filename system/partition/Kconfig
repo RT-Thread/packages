@@ -9,12 +9,9 @@ if PKG_USING_PARTITION
         string
         default "/packages/system/partition"
 
-    select PKG_PARTITION_PATH
-
     config PKG_PARTITION_VER
         string
         default "v1.0.0"
 
-    select PKG_PARTITION_VER
 
 endif

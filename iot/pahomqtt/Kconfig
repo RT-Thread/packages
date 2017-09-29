@@ -8,12 +8,10 @@ if PKG_USING_PAHOMQTT
         string
         default "/packages/iot/pahomqtt"
 
-    select PKG_PAHOMQTT_PATH
 
     config PKG_PAHOMQTT_VER
         string
         default "v1.0.0"
 
-    select PKG_PAHOMQTT_VER
 
 endif
