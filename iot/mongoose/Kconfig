@@ -14,6 +14,7 @@ if PKG_USING_MONGOOSE
         default "6.7"
 
     select RT_USING_LWIP
+    select RT_USING_LIBC
 
     config PKG_MONGOOSE_ENABLE_HTTP_WEBSOCKET
         bool
