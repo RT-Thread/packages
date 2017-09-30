@@ -1,0 +1,12 @@
+{
+    "name": "web_terminal",
+    "description": "Terminal runs in a Web browser",
+    "keywords": [
+        "Embedded", "Web", "Terminal", "finsh", "browser"
+    ],
+    "readme": "Terminal runs in a Web browser",
+    "repository": "https://github.com/armink/web_terminal",
+    "site" : [
+        {"version" : "0.1.2", "URL" : "https://github.com/armink/web_terminal/archive/0.1.2.zip", "filename" : "web_terminal-0.1.2.zip"}
+    ]
+}
