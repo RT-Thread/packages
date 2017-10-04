@@ -1,5 +1,6 @@
 menu "tools packages"
 
 # source "$PKGS_DIR/packages/tools/new_pkg/Kconfig"
+source "$PKGS_DIR/packages/tools/easylogger/Kconfig"
 
 endmenu

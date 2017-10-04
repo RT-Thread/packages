@@ -1,0 +1,12 @@
+{
+    "name": "easylogger",
+    "description": "A ultra-lightweight(ROM<1.6K, RAM<0.3k), high-performance C/C++ log library",
+    "keywords": [
+        "logger", "C", "high-performance", "lightweight", "C/C++"
+    ],
+    "readme": "A ultra-lightweight(ROM<1.6K, RAM<0.3k), high-performance C/C++ log library. More information on https://github.com/armink/EasyLogger",
+    "repository": "https://github.com/armink-rtt-pkgs/EasyLogger",
+    "site" : [
+        {"version" : "2.0.0", "URL" : "https://github.com/armink-rtt-pkgs/EasyLogger/archive/2.0.0.zip", "filename" : "easylogger-2.0.0.zip"}
+    ]
+}
