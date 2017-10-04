@@ -6,7 +6,7 @@ if PKG_USING_CMBACKTRACE
 
     config PKG_CMBACKTRACE_PATH
         string
-        default "/packages/system/cm_backtrace"
+        default "/packages/tools/cm_backtrace"
 
     
     config PKG_CMBACKTRACE_VER
