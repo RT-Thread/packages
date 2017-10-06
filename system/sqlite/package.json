@@ -1,9 +1,9 @@
 
 {
     "name": "sqlite",
-    "description": "a sqlite package for rt-thread",
+    "description": "a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine.",
     "keywords": [
-        "sqlite"
+        "sqlite", "database", "SQL"
     ],
     "readme": "a sqlite package for rt-thread",
     "site" : [
