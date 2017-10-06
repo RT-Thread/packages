@@ -1,7 +1,7 @@
 
 {
     "name": "pahomqtt",
-    "description": "A mqtt package for rt-thread",
+    "description": "Eclipse Paho MQTT C/C++ client for Embedded platforms",
     "keywords": [
         "pahomqtt"
     ],
