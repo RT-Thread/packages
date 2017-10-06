@@ -1,6 +1,6 @@
 
 config PKG_USING_SQLITE
-    bool "a sqlite package"
+    bool "SQLite: a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine."
     default n
 
 if PKG_USING_SQLITE
