@@ -1,6 +1,6 @@
 {
     "name": "cm_backtrace",
-    "description": "Advance backtrace library for ARM Cortex-M series MCU.",
+    "description": "Advanced fault backtrace library for ARM Cortex-M series MCU.",
     "keywords": [
         "ARM", "Cortex-M", "backtrace", "callstack", "hardfault"
     ],

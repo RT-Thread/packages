@@ -1,5 +1,5 @@
 config PKG_USING_CMBACKTRACE
-    bool "Advance backtrace library for ARM Cortex-M series MCU."
+    bool "CmBacktrace: Advanced fault backtrace library for ARM Cortex-M series MCU."
     default n
 
 if PKG_USING_CMBACKTRACE
