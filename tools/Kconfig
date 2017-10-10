@@ -1,7 +1,7 @@
 menu "tools packages"
 
 # source "$PKGS_DIR/packages/tools/new_pkg/Kconfig"
-source "$PKGS_DIR/packages/tools/cm_backtrace/Kconfig"
-source "$PKGS_DIR/packages/tools/easylogger/Kconfig"
+source "$PKGS_DIR/packages/tools/CmBacktrace/Kconfig"
+source "$PKGS_DIR/packages/tools/EasyLogger/Kconfig"
 
 endmenu
