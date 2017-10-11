@@ -1,21 +1,21 @@
 
-config PKG_USING_WEB_TERMINAL
+config PKG_USING_WEBTERMINAL
     bool "WebTerminal: Terminal runs in a Web browser"
     default n
 
-if PKG_USING_WEB_TERMINAL
+if PKG_USING_WEBTERMINAL
 
-    config PKG_WEB_TERMINAL_PATH
+    config PKG_WEBTERMINAL_PATH
         string
-        default "/packages/iot/web_terminal"
+        default "/packages/iot/WebTerminal"
     
-    config PKG_WEB_TERMINAL_VER
+    config PKG_WEBTERMINAL_VER
         string
-        default "0.1.2"
+        default "v0.1.2"
 
     select PKG_USING_MONGOOSE
 
-    config PKG_WEB_TERMINAL_PORT
+    config PKG_WEBTERMINAL_PORT
         string
         prompt "The port number for Web terminal"
         default "8090"

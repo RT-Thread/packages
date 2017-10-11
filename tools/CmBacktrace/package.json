@@ -1,5 +1,6 @@
+
 {
-    "name": "cm_backtrace",
+    "name": "CmBacktrace",
     "description": "Advanced fault backtrace library for ARM Cortex-M series MCU.",
     "keywords": [
         "ARM", "Cortex-M", "backtrace", "callstack", "hardfault"
@@ -11,7 +12,7 @@
     },
     "repository": "https://github.com/armink-rtt-pkgs/CmBacktrace",
     "site" : [
-        {"version" : "1.0.0", "URL" : "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.0.0.zip", "filename" : "CmBacktrace-1.0.0.zip"},
-        {"version" : "0.2.0", "URL" : "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/0.2.0.zip", "filename" : "CmBacktrace-0.2.0.zip"}
+        {"version" : "v1.0.0", "URL" : "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.0.0.zip", "filename" : "CmBacktrace-1.0.0.zip"},
+        {"version" : "v0.2.0", "URL" : "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/0.2.0.zip", "filename" : "CmBacktrace-0.2.0.zip"}
     ]
 }
