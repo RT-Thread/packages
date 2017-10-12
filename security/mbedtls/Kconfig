@@ -1,0 +1,16 @@
+
+config PKG_USING_MBEDTLS
+    bool "mbedtls:An open source, portable, easy to use, readable and flexible SSL library"
+    default n
+
+if PKG_USING_MBEDTLS
+
+    config PKG_MBEDTLS_PATH
+        string
+        default "/packages/security/mbedtls"
+
+    config PKG_MBEDTLS_VER
+        string
+        default "v1.0.0"
+
+endif
