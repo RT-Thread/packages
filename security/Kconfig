@@ -1,5 +1,5 @@
 menu "security packages"
 
-# source "$PKGS_DIR/packages/security//Kconfig"
+source "$PKGS_DIR/packages/security/mbedtls/Kconfig"
 
 endmenu

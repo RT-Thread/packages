@@ -13,8 +13,6 @@ if PKG_USING_WEBTERMINAL
         string
         default "v0.1.2"
 
-    select PKG_USING_MONGOOSE
-
     config PKG_WEBTERMINAL_PORT
         string
         prompt "The port number for Web terminal"
