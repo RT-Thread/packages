@@ -1,0 +1,15 @@
+config PKG_USING_EZXML
+    bool "ezXML is a C library for parsing XML documents."
+    default n
+
+if PKG_USING_EZXML
+
+    config PKG_EZXML_PATH
+        string
+        default "/packages/iot/ezXML"
+
+    config PKG_EZXML_VER
+        string
+        default "v1.0.0"
+
+endif
