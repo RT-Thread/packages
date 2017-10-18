@@ -1,4 +1,3 @@
-
 {
     "name": "ezXML",
     "description": "ezXML is a C library for parsing XML documents.",
@@ -7,6 +6,6 @@
     ],
     "readme": "ezXML is a C library for parsing XML documents.",
     "site" : [
-    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/ezXML/archive/v1.0.0.zip", "filename" : "ezXML-1.0.0.zip","VER_SHA" : "fill in the git version SHA value"}
+    {"version" : "v0.8.6", "URL" : "https://github.com/RT-Thread-packages/ezXML/archive/v0.8.6.zip", "filename" : "ezXML-0.8.6.zip","VER_SHA" : "fill in the git version SHA value"}
     ]
 }
