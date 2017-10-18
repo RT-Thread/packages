@@ -1,9 +1,11 @@
 menu "IoT - internet of things"
 
-# source "$PKGS_DIR/packages/iot//Kconfig"
-source "$PKGS_DIR/packages/iot/cJSON/Kconfig"  
 source "$PKGS_DIR/packages/iot/pahomqtt/Kconfig" 
 source "$PKGS_DIR/packages/iot/webclient/Kconfig" 
 source "$PKGS_DIR/packages/iot/mongoose/Kconfig"
 source "$PKGS_DIR/packages/iot/WebTerminal/Kconfig"
+
+source "$PKGS_DIR/packages/iot/cJSON/Kconfig"  
+source "$PKGS_DIR/packages/iot/ezXML/Kconfig"
+
 endmenu
