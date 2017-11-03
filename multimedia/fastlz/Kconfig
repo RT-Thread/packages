@@ -1,7 +1,11 @@
 
 config PKG_USING_FASTLZ
-    bool "a fastlz package for rt-thread"
+    bool "Fastlz: A portable real-time compression library."
     default n
+    help
+        FastLZ is very fast and thus suitable for real-time compression 
+        and decompression. 
+        Perfect to gain more space with almost zero effort.
 
 if PKG_USING_FASTLZ
 
