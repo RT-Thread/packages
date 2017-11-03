@@ -1,5 +1,5 @@
 menu "multimedia packages"
 
-# source "$PKGS_DIR/packages/multimedia//Kconfig"
+source "$PKGS_DIR/packages/multimedia/fastlz/Kconfig"
 
 endmenu
