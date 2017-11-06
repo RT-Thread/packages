@@ -1,0 +1,11 @@
+{
+    "name": "SystemView",
+    "description": "SystemView. A Segger utility for analysis and trace the RTOS",
+    "keywords": [
+        "SystemView"
+    ],
+    "readme": "A Segger utility for analysis and profiling the behavior of the embedded system. More information on https://www.segger.com/products/development-tools/systemview/",
+    "site" : [
+    {"version" : "v2.52a", "URL" : "https://github.com/ArdaFu/segger_debug/archive/v2.52a.zip", "filename" : "SystemView-v2.52a.zip"}
+    ]
+}
