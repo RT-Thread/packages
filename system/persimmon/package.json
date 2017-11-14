@@ -7,6 +7,6 @@
     ],
     "readme": "a persimmon package for rt-thread",
     "site" : [
-    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/persimmon.git", "filename" : "persimmon-1.0.0.zip","VER_SHA" : "50b62a30407af5705067f68e3b250153a3029641"}
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/persimmon.git", "filename" : "persimmon-1.0.0.zip","VER_SHA" : "afb7c6bfb52501983234714c4dc7e481e13f4053"}
     ]
 }
