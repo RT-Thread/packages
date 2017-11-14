@@ -1,0 +1,12 @@
+
+{
+    "name": "wlan-wiced",
+    "description": "wlan driver from wiced",
+    "keywords": [
+        "bcm43362", "bcm43438"
+    ],
+    "readme": "wlan driver(WWD) from wiced.",
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/wlan-wiced.git", "filename" : "wlan_wiced.zip","VER_SHA" : "cf482ef3e3c16e698f0a34d6f68042194d688da4"}
+    ]
+}

@@ -7,6 +7,7 @@ source "$PKGS_DIR/packages/iot/WebTerminal/Kconfig"
 
 source "$PKGS_DIR/packages/iot/cJSON/Kconfig"  
 source "$PKGS_DIR/packages/iot/ezXML/Kconfig"
-source "$PKGS_DIR/packages/iot/marvellwifi/Kconfig"
+
+source "$PKGS_DIR/packages/iot/WiFi/Kconfig"
 
 endmenu

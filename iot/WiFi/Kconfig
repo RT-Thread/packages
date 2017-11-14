@@ -1,0 +1,8 @@
+if RT_USING_WIFI
+    menu "Wi-Fi"
+
+    source "$PKGS_DIR/packages/iot/WiFi/marvell/Kconfig"
+    source "$PKGS_DIR/packages/iot/WiFi/wiced/Kconfig"
+
+    endmenu
+endif

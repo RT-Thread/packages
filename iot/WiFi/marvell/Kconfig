@@ -8,7 +8,7 @@ if PKG_USING_MARVELLWIFI
 
     config PKG_MARVELLWIFI_PATH
         string
-        default "/packages/iot/marvellwifi"
+        default "/packages/iot/WiFi/marvell"
 
     config PKG_MARVELLWIFI_VER
         string
