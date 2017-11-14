@@ -1,10 +1,12 @@
 
-config PKG_USING_PERSIMMON
-    bool "Persimmon GUI component"
-    select RT_USING_GUIENGINE
-    default n
-    help
+if BOARD_X1000_REALBOARD
+    config PKG_USING_PERSIMMON
+        bool "Persimmon GUI component"
+        select RT_USING_GUIENGINE
+        default n
+        help
             A GUI component running on RT-Thread real time operating system
+endif
 
 if PKG_USING_PERSIMMON
 
