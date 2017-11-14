@@ -1,0 +1,12 @@
+
+{
+    "name": "persimmon",
+    "description": "a persimmon package for rt-thread",
+    "keywords": [
+        "persimmon"
+    ],
+    "readme": "a persimmon package for rt-thread",
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/persimmon.git", "filename" : "persimmon-1.0.0.zip","VER_SHA" : "c2dcde58e2c9be54ede8f8950cde78ca1d9ac373"}
+    ]
+}
