@@ -1,14 +1,18 @@
-config PKG_USING_WICED
-    bool "Wlan Driver from Wireless Internet Connectivity for Embedded Devices"
+menu "Wiced WiFi"
+
+config PKG_USING_WLAN_WICED
+    bool "Wiced WiFi driver for rt-thread"
     default n
 
-if PKG_USING_WICED
+if PKG_USING_WLAN_WICED
 
-    config PKG_WICED_PATH
+    config PKG_WICEDWIFI_PATH
         string
         default "/packages/iot/WiFi/wiced"
 
-    config PKG_WICED_VER
+    config PKG_WICEDWIFI_VER
         string
         default "v1.0.0"
 endif
+
+endmenu
