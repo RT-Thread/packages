@@ -1,0 +1,18 @@
+
+{
+    "name": "micropython",
+    "description": "A lean and efficient Python implementation for microcontrollers and constrained systems.",
+    "keywords": [
+        "micropython", "python", "embedded", "microcontroller"
+    ],
+    "License" : "MIT License (MIT)",
+    "readme": "A lean and efficient Python implementation for microcontrollers and constrained systems.",
+    "author": {
+        "name": "armink",
+        "email": "armink.ztl@gmail.com"
+    },
+    "repository": "https://github.com/armink-rtt-pkgs/micropython",
+    "site" : [
+        {"version" : "v1.9.3", "URL" : "https://github.com/armink-rtt-pkgs/micropython.git", "filename" : "micropython-1.9.3.zip", "VER_SHA" : "3128c01433ebe9bdf91f738370e1f787eaf27460"}
+    ]
+}
