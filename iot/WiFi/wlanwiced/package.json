@@ -1,6 +1,6 @@
 
 {
-    "name": "wlan-wiced",
+    "name": "wlanwiced",
     "description": "wlan driver from wiced",
     "keywords": [
         "bcm43362", "bcm43438"

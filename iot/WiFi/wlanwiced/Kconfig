@@ -1,14 +1,14 @@
 menu "Wiced WiFi"
 
-config PKG_USING_WLAN_WICED
+config PKG_USING_WLANWICED
     bool "Wiced WiFi driver for rt-thread"
     default n
 
-if PKG_USING_WLAN_WICED
+if PKG_USING_WLANWICED
 
     config PKG_WICEDWIFI_PATH
         string
-        default "/packages/iot/WiFi/wiced"
+        default "/packages/iot/WiFi/wlanwiced"
 
     config PKG_WICEDWIFI_VER
         string
