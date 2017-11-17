@@ -1,9 +1,9 @@
 
 {
-    "name": "marvellwifi",
+    "name": "wlanmarvell",
     "description": "a marvellwifi package for rt-thread",
     "keywords": [
-        "marvellwifi"
+        "wlanmarvell"
     ],
     "readme": "a marvellwifi package for rt-thread",
     "site" : [
