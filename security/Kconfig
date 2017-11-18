@@ -1,5 +1,6 @@
 menu "security packages"
 
 source "$PKGS_DIR/packages/security/mbedtls/Kconfig"
+source "$PKGS_DIR/packages/security/libsodium/Kconfig"
 
 endmenu
