@@ -1,0 +1,18 @@
+menu "Wiced WiFi"
+
+config PKG_USING_WLAN_WICED
+    bool "Wiced WiFi driver for rt-thread"
+    default n
+
+if PKG_USING_WLAN_WICED
+
+    config PKG_WLAN_WICED_PATH
+        string
+        default "/packages/iot/WiFi/wlan_wiced"
+
+    config PKG_WLAN_WICED_VER
+        string
+        default "v1.0.0"
+endif
+
+endmenu
