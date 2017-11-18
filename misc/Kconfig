@@ -1,5 +1,6 @@
 menu "miscellaneous packages"
 
+source "$PKGS_DIR/packages/misc/fastlz/Kconfig"
 source "$PKGS_DIR/packages/misc/hello/Kconfig"
 
 endmenu

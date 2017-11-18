@@ -11,7 +11,7 @@ if PKG_USING_FASTLZ
 
     config PKG_FASTLZ_PATH
         string
-        default "/packages/multimedia/fastlz"
+        default "/packages/misc/fastlz"
 
     config PKG_FASTLZ_VER
         string
