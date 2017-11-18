@@ -13,6 +13,6 @@
     },
     "repository": "https://github.com/armink-rtt-pkgs/micropython",
     "site" : [
-        {"version" : "v1.9.3", "URL" : "https://github.com/armink-rtt-pkgs/micropython.git", "filename" : "micropython-1.9.3.zip", "VER_SHA" : "3128c01433ebe9bdf91f738370e1f787eaf27460"}
+        {"version" : "v1.9.3", "URL" : "https://github.com/armink-rtt-pkgs/micropython.git", "filename" : "micropython-1.9.3.zip", "VER_SHA" : "ea358452a2386e488cdaafebee519efc8dd73f29"}
     ]
 }
