@@ -6,6 +6,13 @@ if BOARD_X1000_REALBOARD
         default n
         help
             A GUI component running on RT-Thread real time operating system
+			
+    config RT_USING_PERSIMMON_EXAMPLE
+        bool "Persimmon Examples"
+		depends on PKG_USING_PERSIMMON
+        default n
+        help
+            Basic examples for persimmon
 endif
 
 if PKG_USING_PERSIMMON
