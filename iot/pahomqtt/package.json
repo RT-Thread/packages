@@ -8,7 +8,7 @@
     "readme": "A mqtt package for rt-thread",
     "site" : [
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/paho-mqtt.git", "filename" : "paho-mqtt-1.0.0.zip",
-    "VER_SHA" : "299d75717d4c5ccd7180fd164d32ea73a0cd4bce"
+    "VER_SHA" : "cff7e82e3a7b33e100106d34d1d6c82e7862e6ab"
     }
     ]
 }
