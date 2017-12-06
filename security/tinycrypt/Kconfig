@@ -22,8 +22,8 @@ if PKG_USING_TINYCRYPT
     
     config PKG_TINYCRYPT_VER
     string
-    default "v1.0.0" depend PKG_USING_TINYCRYPT_V100
-    default "latest_version" depend PKG_USING_TINYCRYPT_LATEST_VERSION
+    default "v1.0.0" if PKG_USING_TINYCRYPT_V100
+    default "latest_version" if PKG_USING_TINYCRYPT_LATEST_VERSION
 
     config TINY_CRYPT_MD5
     bool "MD5"
