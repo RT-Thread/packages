@@ -1,0 +1,20 @@
+
+{
+    "name": "tinycrypt",
+    "description": "A tiny and configurable crypt library",
+    "keywords": [
+        "tinycrypt"
+    ],
+    "readme": "A tiny and configurable crypt library",
+    "license" : "BSD"
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/tinycrypt.git", "filename" : "tinycrypt-1.0.0.zip",
+    "VER_SHA" : "8bb0818083df893f00568ec792082736e469bf58"
+    },
+    
+    {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages/tinycrypt.git", "filename" : "tinycrypt-1.0.0.zip",
+    "VER_SHA" : "master"
+    }
+    
+    ]
+}
