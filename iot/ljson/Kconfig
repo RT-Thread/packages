@@ -1,0 +1,16 @@
+
+config PKG_USING_LJSON
+    bool "ljson: JSON parser in ANSI C"
+    default n
+
+if PKG_USING_LJSON
+
+    config PKG_LJSON_PATH
+        string
+        default "/packages/iot/ljson"
+
+    config PKG_LJSON_VER
+        string
+        default "v0.0.1"
+
+endif
