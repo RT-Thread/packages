@@ -5,7 +5,7 @@ config PKG_USING_PAHOMQTT
 if PKG_USING_PAHOMQTT
 	
 	config PKG_USING_PAHOMQTT_EXAMPLE
-	bool "Display an example of MQTT"
+	bool "Enable MQTT example"
 	default n
 	
     config PKG_PAHOMQTT_PATH
