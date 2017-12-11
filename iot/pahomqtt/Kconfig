@@ -3,7 +3,11 @@ config PKG_USING_PAHOMQTT
     default n
 
 if PKG_USING_PAHOMQTT
-
+	
+	config PKG_USING_PAHOMQTT_EXAMPLE
+	bool "Display an example of MQTT"
+	default n
+	
     config PKG_PAHOMQTT_PATH
         string
         default "/packages/iot/pahomqtt"
