@@ -9,9 +9,22 @@ if PKG_USING_MICROPYTHON
         string
         default "/packages/language/micropython"
 
-    config PKG_MICROPYTHON_VER
+    choice
+        prompt "Version"
+        help 
+            Select the this package version
+
+        config PKG_USING_MICROPYTHON_V10903
+            bool "v1.9.3"
+
+        config PKG_USING_MICROPYTHON_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
+    config PKG_MONGOOSE_VER
         string
-        default "v1.9.3"
+        default "v1.9.3" if PKG_USING_MICROPYTHON_V10903
+        default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
 
     config PKG_MICROPYTHON_HEAP_SIZE
         int
