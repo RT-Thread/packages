@@ -9,9 +9,22 @@ if PKG_USING_EASYLOGGER
         string
         default "/packages/tools/EasyLogger"
     
+    choice
+        prompt "Version"
+        help 
+            Select the this package version
+
+        config PKG_USING_EASYLOGGER_V200
+            bool "v2.0.0"
+
+        config PKG_USING_EASYLOGGER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
     config PKG_EASYLOGGER_VER
         string
-        default "v2.0.0"
+        default "v2.0.0" if PKG_USING_EASYLOGGER_V200
+        default "latest" if PKG_USING_EASYLOGGER_LATEST_VERSION
 
 menu "EasyLogger Options"
 
