@@ -12,9 +12,8 @@
     },
     "repository": "https://github.com/armink-rtt-pkgs/CmBacktrace",
     "site" : [
-        {"version" : "v1.1.1", "URL" : "https://github.com/armink-rtt-pkgs/CmBacktrace.git", "filename" : "CmBacktrace-1.1.1.zip", "VER_SHA" : "4e30fd7859b323f777569120feb514f30e40903e"},
-        {"version" : "v1.1.0", "URL" : "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.1.0.zip", "filename" : "CmBacktrace-1.1.0.zip"},
-        {"version" : "v1.0.0", "URL" : "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.0.0.zip", "filename" : "CmBacktrace-1.0.0.zip"},
-        {"version" : "v0.2.0", "URL" : "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/0.2.0.zip", "filename" : "CmBacktrace-0.2.0.zip"}
+        {"version": "v1.1.0", "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.1.0.zip", "filename" : "CmBacktrace-1.1.0.zip"},
+        {"version": "v1.0.0", "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.0.0.zip", "filename" : "CmBacktrace-1.0.0.zip"},
+        {"version": "latest", "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace.git", "filename": "CmBacktrace.zip", "VER_SHA": "master" }
     ]
 }

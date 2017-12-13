@@ -9,11 +9,26 @@ if PKG_USING_CMBACKTRACE
         string
         default "/packages/tools/CmBacktrace"
 
+    choice
+        prompt "Version"
+        help 
+            Select the this package version
+
+        config PKG_USING_CMBACKTRACE_V101
+            bool "v1.1.0"
+
+        config PKG_USING_CMBACKTRACE_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CMBACKTRACE_LATEST_VERSION
+            bool "latest"
+    endchoice
     
     config PKG_CMBACKTRACE_VER
         string
-        default "v1.1.0"
-
+        default "v1.1.0" if PKG_USING_CMBACKTRACE_V101
+        default "v1.0.0" if PKG_USING_CMBACKTRACE_V100
+        default "latest" if PKG_USING_CMBACKTRACE_LATEST_VERSION
 
     choice
         prompt "CPU Platform"

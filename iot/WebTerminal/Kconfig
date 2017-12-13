@@ -9,9 +9,22 @@ if PKG_USING_WEBTERMINAL
         string
         default "/packages/iot/WebTerminal"
     
+    choice
+        prompt "Version"
+        help 
+            Select the this package version
+
+        config PKG_USING_WEBTERMINAL_V00102
+            bool "v0.1.2"
+
+        config PKG_USING_WEBTERMINAL_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
     config PKG_WEBTERMINAL_VER
         string
-        default "v0.1.2"
+        default "v0.1.2" if PKG_USING_WEBTERMINAL_V00102
+        default "latest" if PKG_USING_WEBTERMINAL_LATEST_VERSION
 
     config PKG_WEBTERMINAL_PORT
         string
