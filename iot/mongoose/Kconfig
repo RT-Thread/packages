@@ -44,7 +44,12 @@ if PKG_USING_MONGOOSE
 
     config PKG_MONGOOSE_ENABLE_MQTT
         bool
-        prompt "Enable MQTT client"
+        prompt "Enable MQTT protocol"
+        default n
+
+    config PKG_MONGOOSE_ENABLE_COAP
+        bool
+        prompt "Enable CoAP protocol"
         default n
 
     config PKG_MONGOOSE_ENABLE_DEBUG
