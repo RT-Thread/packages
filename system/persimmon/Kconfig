@@ -3,13 +3,51 @@ if BOARD_X1000_REALBOARD
     config PKG_USING_PERSIMMON
         bool "Persimmon GUI component"
         select RT_USING_GUIENGINE
+        select PKG_USING_FASTLZ
+        select RT_USING_CPLUSPLUS
         default n
         help
             A GUI component running on RT-Thread real time operating system
-			
+            
     config RT_USING_PERSIMMON_EXAMPLE
         bool "Persimmon Examples"
-		depends on PKG_USING_PERSIMMON
+        depends on PKG_USING_PERSIMMON
+        default n
+        help
+            Basic examples for persimmon
+endif
+
+if SOC_LPC54608
+    config PKG_USING_PERSIMMON
+        bool "Persimmon GUI component"
+        select RT_USING_GUIENGINE
+        select PKG_USING_FASTLZ
+        select RT_USING_CPLUSPLUS
+        default n
+        help
+            A GUI component running on RT-Thread real time operating system
+            
+    config RT_USING_PERSIMMON_EXAMPLE
+        bool "Persimmon Examples"
+        depends on PKG_USING_PERSIMMON
+        default n
+        help
+            Basic examples for persimmon
+endif
+
+if SOC_IMXRT1052
+    config PKG_USING_PERSIMMON
+        bool "Persimmon GUI component"
+        select RT_USING_GUIENGINE
+        select PKG_USING_FASTLZ
+        select RT_USING_CPLUSPLUS
+        default n
+        help
+            A GUI component running on RT-Thread real time operating system
+            
+    config RT_USING_PERSIMMON_EXAMPLE
+        bool "Persimmon Examples"
+        depends on PKG_USING_PERSIMMON
         default n
         help
             Basic examples for persimmon
@@ -23,6 +61,6 @@ if PKG_USING_PERSIMMON
 
     config PKG_PERSIMMON_VER
         string
-        default "v1.0.0"
+        default "latest_version"
 
 endif
