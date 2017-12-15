@@ -1,19 +1,11 @@
-
-if BOARD_X1000_REALBOARD
-    config PKG_USING_PERSIMMON
-        bool "Persimmon GUI component"
-        select RT_USING_GUIENGINE
-        default n
-        help
-            A GUI component running on RT-Thread real time operating system
-			
-    config RT_USING_PERSIMMON_EXAMPLE
-        bool "Persimmon Examples"
-		depends on PKG_USING_PERSIMMON
-        default n
-        help
-            Basic examples for persimmon
-endif
+config PKG_USING_PERSIMMON
+    bool "Persimmon UI: An Embedded GUI component with sliding and animated effects"
+    select RT_USING_GUIENGINE
+    select PKG_USING_FASTLZ
+    depends on ARCH_ARM_CORTEX_M4 || ARCH_ARM_CORTEX_M7 || ARCH_ARM_CORTEX_A || ARCH_MIPS_XBURST
+    default n
+    help
+        An Embedded GUI component with sliding and animated effects running on RT-Thread
 
 if PKG_USING_PERSIMMON
 
@@ -21,8 +13,26 @@ if PKG_USING_PERSIMMON
         string
         default "/packages/system/persimmon"
 
+    choice
+        prompt "Persimmon Version"
+        help
+            Select the Persimmon UI version
+
+        config PKG_USING_PERSIMMON_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PERSIMMON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
     config PKG_PERSIMMON_VER
         string
-        default "v1.0.0"
+        default "v1.0.0" if PKG_USING_PERSIMMON_V100
+        default "latest" if PKG_USING_PERSIMMON_LATEST_VERSION
 
+    config RT_USING_PERSIMMON_EXAMPLE
+        bool "Persimmon Examples"
+        default n
+        help
+            Basic examples for persimmon
 endif
