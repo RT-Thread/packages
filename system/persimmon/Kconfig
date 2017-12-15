@@ -21,6 +21,9 @@ if PKG_USING_PERSIMMON
         config PKG_USING_PERSIMMON_V100
             bool "v1.0.0"
 
+        config PKG_USING_PERSIMMON_V110
+            bool "v1.1.0"
+            
         config PKG_USING_PERSIMMON_LATEST_VERSION
             bool "latest"
     endchoice
@@ -28,6 +31,7 @@ if PKG_USING_PERSIMMON
     config PKG_PERSIMMON_VER
         string
         default "v1.0.0" if PKG_USING_PERSIMMON_V100
+        default "v1.1.0" if PKG_USING_PERSIMMON_V110
         default "latest" if PKG_USING_PERSIMMON_LATEST_VERSION
 
     config RT_USING_PERSIMMON_EXAMPLE
