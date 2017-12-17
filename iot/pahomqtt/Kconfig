@@ -8,6 +8,12 @@ if PKG_USING_PAHOMQTT
 	bool "Enable MQTT example"
 	default n
 	
+  config PKG_PAHOMQTT_SUBTOPIC_HANDLERS
+  int "Max pahomqtt subscribe topic handlers"
+  default 1
+  help
+    Max pahomqtt subscribe topic handlers
+
     config PKG_PAHOMQTT_PATH
         string
         default "/packages/iot/pahomqtt"
