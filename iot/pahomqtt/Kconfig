@@ -8,11 +8,11 @@ if PKG_USING_PAHOMQTT
 	bool "Enable MQTT example"
 	default n
 	
-  config PKG_PAHOMQTT_SUBTOPIC_HANDLERS
-  int "Max pahomqtt subscribe topic handlers"
-  default 1
-  help
-    Max pahomqtt subscribe topic handlers
+	config PKG_PAHOMQTT_SUBTOPIC_HANDLERS
+		int "Max pahomqtt subscribe topic handlers"
+		default 1
+		help
+			Max pahomqtt subscribe topic handlers
 
     config PKG_PAHOMQTT_PATH
         string
@@ -23,11 +23,11 @@ if PKG_USING_PAHOMQTT
         help 
             Select the pahomqtt version
 
-        config PKG_USING_PAHOMQTT_V100
-            bool "v1.0.0"
-
         config PKG_USING_PAHOMQTT_LATEST_VERSION
             bool "latest_version"
+
+        config PKG_USING_PAHOMQTT_V100
+            bool "v1.0.0"
     endchoice
     
     if PKG_USING_PAHOMQTT_V100
