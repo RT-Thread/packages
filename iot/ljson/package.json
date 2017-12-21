@@ -8,6 +8,6 @@
     ],
     "readme": "JSON parser in ANSI C",
     "site" : [
-    {"version" : "v0.0.1", "URL" : "https://github.com/qiaoqidui/ljson/archive/v0.0.1.zip", "filename" : "ljson-0.0.1.zip"}
+    {"version" : "v0.0.2", "URL" : "https://github.com/qiaoqidui/ljson/archive/v0.0.2.zip", "filename" : "ljson-0.0.2.zip"}
     ]
 }
