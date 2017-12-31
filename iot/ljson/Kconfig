@@ -9,8 +9,21 @@ if PKG_USING_LJSON
         string
         default "/packages/iot/ljson"
 
+	choice
+        prompt "ljson version"
+        help 
+            Select the ljson version
+
+        config PKG_USING_LJSON_V002
+            bool "v0.0.2"
+
+        config PKG_USING_LJSON_LATEST_VERSION
+            bool "latest"
+    endchoice
+	
     config PKG_LJSON_VER
         string
-        default "v0.0.2"
-
+        default "v0.0.2" if PKG_USING_LJSON_V002
+		default "latest" if PKG_USING_LJSON_LATEST_VERSION
+		
 endif
