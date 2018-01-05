@@ -7,6 +7,7 @@
     ],
     "readme": "GAgent of Gizwits in RT-Thread",
     "site": [
+    	{ "version": "v1.0.0", "URL": "https://github.com/RT-Thread-packages/GAgent/archive/v1.0.0.zip", "filename": "GAgent-1.0.0.zip" },
         { "version": "latest", "URL": "https://github.com/RT-Thread-packages/GAgent.git", "filename": "GAgent.zip", "VER_SHA": "master" }
     ]
 }
