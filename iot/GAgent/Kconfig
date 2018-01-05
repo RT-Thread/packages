@@ -34,7 +34,7 @@ if PKG_USING_GAGENT_CLOUD
 
     endchoice
 
-    config PKG_CJSON_VER
+    config PKG_GAGENT_VER
     string
     default "v1.0.0" if PKG_USING_GAGENT_V100
     default "latest" if PKG_USING_GAGENT_LATEST_VERSION
