@@ -1,0 +1,12 @@
+
+{
+    "name": "GAgent",
+    "description": "GAgent of Gizwits in RT-Thread",
+    "keywords": [
+        "GAgent"
+    ],
+    "readme": "GAgent of Gizwits in RT-Thread",
+    "site" : [
+    {"version" : "latest", "URL" : "https://github.com/qiaoqidui/ljson.git", "filename" : "ljson.zip", "VER_SHA": "master"}
+    ]
+}
