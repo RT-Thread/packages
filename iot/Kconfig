@@ -10,6 +10,8 @@ source "$PKGS_DIR/packages/iot/ljson/Kconfig"
 source "$PKGS_DIR/packages/iot/ezXML/Kconfig"
 source "$PKGS_DIR/packages/iot/nanopb/Kconfig"
 
+source "$PKGS_DIR/packages/iot/GAgent/Kconfig"
+
 source "$PKGS_DIR/packages/iot/WiFi/Kconfig"
 
 endmenu
