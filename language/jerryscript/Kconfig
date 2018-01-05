@@ -9,10 +9,21 @@ if PKG_USING_JERRYSCRIPT
         string
         default "/packages/language/jerryscript"
 
+    choice
+        prompt "version"
+        help 
+            Select the version of jerryscript
+
+        config PKG_USING_JERRYSCRIPT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_JERRYSCRIPT_LATEST_VERSION
+            bool "latest"
+    endchoice
 
     config PKG_JERRYSCRIPT_VER
         string
-        default "v1.0.0"
-
+        default "v1.0.0" if PKG_USING_JERRYSCRIPT_V100
+        default "latest" if PKG_USING_JERRYSCRIPT_LATEST_VERSION
 
 endif
