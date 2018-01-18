@@ -14,4 +14,6 @@ source "$PKGS_DIR/packages/iot/GAgent/Kconfig"
 
 source "$PKGS_DIR/packages/iot/WiFi/Kconfig"
 
+source "$PKGS_DIR/packages/iot/coap/Kconfig"
+
 endmenu
