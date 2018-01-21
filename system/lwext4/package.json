@@ -1,0 +1,15 @@
+
+{
+    "name": "lwext4",
+    "description": "an excellent choice of ext2/3/4 filesystem for microcontrollers",
+    "keywords": [
+        "lwext4"
+    ],
+    "readme": "A lwext4 package for rt-thread",
+    "site" : [
+    {"version" : "latest_version", "URL" : "https://github.com/parai/lwext4.git", "filename" : "lwext4.zip",
+    "VER_SHA" : "master"
+    }
+    
+    ]
+}
