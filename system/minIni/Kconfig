@@ -1,0 +1,36 @@
+
+config PKG_USING_MININI
+    bool "a minIni package for rt-thread"
+    default n
+
+if PKG_USING_MININI
+
+    config PKG_MININI_PATH
+        string
+        default "/packages/system/minIni"
+
+    choice
+        prompt "minIni version"
+        help
+            Select the minIni version
+
+        config PKG_USING_MININI_V120
+            bool "v1.2.0"
+
+        config PKG_USING_MININI_LATEST_VERSION
+            bool "latest_version"
+    endchoice
+    
+    if PKG_USING_MININI_V120
+        config PKG_MININI_VER
+        string
+        default "v1.2.0"
+    endif
+   
+    if PKG_USING_MININI_LATEST_VERSION
+       config PKG_MININI_VER
+       string
+       default "latest_version"    
+    endif
+
+endif
