@@ -8,12 +8,33 @@ if PKG_USING_LWEXT4
         string
         default "/packages/system/lwext4"
 
-	config RT_USING_DFS_LWEXT4
-		bool
-		default y
-	
-	config PKG_LWEXT4_VER
-        string
-        default "latest_version"
+    config RT_USING_DFS_LWEXT4
+        bool
+        default y
+
+    choice
+        prompt "lwext4 version"
+        help
+            Select the lwext4 version
+
+        config PKG_USING_LWEXT4_LATEST_VERSION
+            bool "latest_version"
+
+        config PKG_USING_LWEXT4_V100
+            bool "v1.0.0"
+    endchoice
+
+    if PKG_USING_LWEXT4_V100
+       config PKG_LWEXT4_VER
+       string
+       default "v1.0.0"
+    endif
+
+    if PKG_USING_LWEXT4_LATEST_VERSION
+       config PKG_LWEXT4_VER
+       string
+       default "latest_version"
+    endif
 
 endif
+
