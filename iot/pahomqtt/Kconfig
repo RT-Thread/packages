@@ -8,7 +8,7 @@ if PKG_USING_PAHOMQTT
 	bool "Enable MQTT example"
 	default n
 	
-	config PKG_PAHOMQTT_SUBTOPIC_HANDLERS
+	config PKG_PAHOMQTT_SUBSCRIBE_HANDLERS
 		int "Max pahomqtt subscribe topic handlers"
 		default 1
 		help
