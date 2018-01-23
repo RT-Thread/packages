@@ -1,6 +1,6 @@
 
 config PKG_USING_MININI
-    bool "a minIni package for rt-thread"
+    bool "minIni£ºa portable and configurable library for reading and writing ".INI" files."
     default n
 
 if PKG_USING_MININI
@@ -21,16 +21,7 @@ if PKG_USING_MININI
             bool "latest_version"
     endchoice
     
-    if PKG_USING_MININI_V120
-        config PKG_MININI_VER
-        string
-        default "v1.2.0"
-    endif
-   
-    if PKG_USING_MININI_LATEST_VERSION
-       config PKG_MININI_VER
-       string
-       default "latest_version"    
-    endif
+    default "v1.2.0" if PKG_USING_MININI_V120
+    default xxx
 
 endif

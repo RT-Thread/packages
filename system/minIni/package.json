@@ -1,7 +1,7 @@
 
 {
     "name": "minIni",
-    "description": "a minIni package for rt-thread",
+    "description": "minIni: a portable and configurable library for reading and writing ".INI" files.",
     "keywords": [
         "minIni"
     ],
