@@ -1,6 +1,7 @@
 config PKG_USING_GAGENT_CLOUD
     bool "GAgent: GAgent of Gizwits in RT-Thread"
     select RT_USING_LWIP
+    select RT_LWIP_NETIF_LOOPBACK
     select PKG_USING_WEBCLIENT
     select PKG_USING_PAHOMQTT
     select PKG_USING_TINYCRYPT
@@ -26,11 +27,11 @@ if PKG_USING_GAGENT_CLOUD
         help 
             Select the GAgent version
 
-        config PKG_USING_GAGENT_V100
-            bool "v1.0.0"
-
         config PKG_USING_GAGENT_LATEST_VERSION
             bool "latest" 
+
+        config PKG_USING_GAGENT_V100
+            bool "v1.0.0"
 
     endchoice
 
