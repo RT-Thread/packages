@@ -1,0 +1,16 @@
+{
+    "name": "MultiButton",
+    "description": "MultiButton: Event-driven button lib for embedded",
+    "keywords": [
+        "MultiButton"
+    ],
+    "author": {
+        "name": "0x1abin"
+    },
+    "readme": "MultiButton: Event-driven button lib for embedded",
+    "site": [
+        {"version": "v1.0.0", "URL": "https://github.com/liu2guang/MultiButton/archive/v1.0.0.zip", "filename": "MultiButton-1.0.0.zip"},
+        {"version": "v1.0.1", "URL": "https://github.com/liu2guang/MultiButton/archive/v1.0.1.zip", "filename": "MultiButton-1.0.1.zip"}, 
+        {"version": "latest", "URL": "https://github.com/liu2guang/MultiButton.git", "filename": "MultiButton.zip", "VER_SHA": "master"}
+    ]
+}
