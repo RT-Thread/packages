@@ -8,6 +8,8 @@
     "readme": "a webclient package for rt-thread",
     "site" : [
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/webclient.git", 
-     "filename" : "webclient-1.0.0.zip","VER_SHA" : "8aa9957102a16360d50ede83e3ee1a8dc021363c"}
+     "filename" : "webclient-1.0.0.zip","VER_SHA" : "8aa9957102a16360d50ede83e3ee1a8dc021363c"},
+    
+    {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages/webclient.git", "filename" : "webclient.zip","VER_SHA" : "master"}
     ]
 }
