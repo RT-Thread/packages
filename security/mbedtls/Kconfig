@@ -14,10 +14,6 @@ if PKG_USING_MBEDTLS
         string
         default "/packages/security/mbedtls"
 
-    config PKG_MBEDTLS_VER
-        string
-        default "v1.0.0"
-        
     choice
         prompt "mbedtls version"
         help
