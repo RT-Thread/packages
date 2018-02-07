@@ -1,0 +1,11 @@
+{
+    "name": "gui_engine",
+    "description": "a gui engine package for rt-thread",
+    "keywords": [
+        "gui engine"
+    ],
+    "readme": "a gui engine package for rt-thread",
+    "site": [
+        { "version": "latest", "URL": "https://github.com/yangfasheng/gui_engine.git", "filename": "gui_engine-2.0.0.zip", "VER_SHA": "master" }
+    ]
+}

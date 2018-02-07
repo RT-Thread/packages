@@ -1,0 +1,104 @@
+menu "RT-Thread GUI Engine"
+
+config PKG_USING_GUIENGINE
+    bool "Enable GUI Engine"
+    default n
+
+if PKG_USING_GUIENGINE
+
+config GUIENGINE_NAME_MAX
+    int "The maximal size of name in GUI engine"
+    default 16
+
+config GUIENGINE_USING_TTF
+    bool "Support TrueType font"
+    default n
+
+if GUIENGINE_USING_TTF
+    config GUIENGINE_TTF_UTF8
+        bool "Support display UTF-8 format string by TrueType font"
+        default n
+endif
+    
+config GUIENGINE_USING_FONT16
+    bool "Support 16 height font"
+    default y
+
+config GUIENGINE_USING_FONT12
+    bool "Support 12 height font"
+    default y
+
+config GUIENGINE_USING_FONTHZ
+    bool "Support Chinese font"
+    default n
+
+if GUIENGINE_USING_FONTHZ
+config GUIENGINE_USING_HZ_BMP
+    bool "Use bitmap Chinese font"
+    default n
+endif
+
+config GUIENGINE_IMAGE_XPM
+    bool "Support XPM image format"
+    default n
+
+choice
+    prompt "JPEG image format"
+    default GUIENGINE_IMAGE_JPEG_NONE
+
+    config GUIENGINE_IMAGE_JPEG_NONE
+        bool "No"
+
+    config GUIENGINE_IMAGE_JPEG
+        bool "with libjpeg"
+
+    config GUIENGINE_IMAGE_TJPGD
+        bool "with TJpgDec(Tiny JPEG Decompressor)"
+endchoice
+
+choice
+    prompt "PNG image format"
+    default GUIENGINE_IMAGE_LODEPNG
+
+    config GUIENGINE_IMAGE_PNG_NONE
+        bool "No"
+
+    config GUIENGINE_IMAGE_PNG
+        bool "with libpng"
+
+    config GUIENGINE_IMAGE_LODEPNG
+        bool "with LodePNG"
+endchoice
+
+config GUIENGINE_IMAGE_BMP
+    bool "Support BMP image format"
+    default n
+
+config GUIENGINE_IMAGE_CONTAINER
+    bool "Use image container"
+    default y
+    
+config GUIENGINE_USING_DEMO
+    bool "Enable the example of GUI Engine"
+    default n
+    
+config PKG_GUIENGINE_PATH
+        string
+        default "/packages/system/gui_engine"
+
+    choice
+        prompt "GUI Engine Version"
+        help
+            Select the GUI Engine version
+ 
+        config PKG_USING_GUIENGINE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_GUIENGINE_VER
+        string
+        default "latest" if PKG_USING_GUIENGINE_LATEST_VERSION
+		
+endif
+
+endmenu
