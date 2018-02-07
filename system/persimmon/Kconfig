@@ -1,6 +1,6 @@
 config PKG_USING_PERSIMMON
     bool "Persimmon UI: An Embedded GUI component with sliding and animated effects"
-    select RT_USING_GUIENGINE
+    select PKG_USING_GUIENGINE
     select PKG_USING_FASTLZ
     depends on ARCH_ARM_CORTEX_M4 || ARCH_ARM_CORTEX_M7 || ARCH_ARM_CORTEX_A || ARCH_MIPS_XBURST || ARCH_ARM_ARM9
     default n
