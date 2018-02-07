@@ -1,11 +1,12 @@
 {
     "name": "gui_engine",
-    "description": "a gui engine package for rt-thread",
+    "description": "the gui engine package for rt-thread",
     "keywords": [
         "gui engine"
     ],
-    "readme": "a gui engine package for rt-thread",
+    "readme": "the gui engine package for rt-thread",
     "site": [
-        { "version": "latest", "URL": "https://github.com/yangfasheng/gui_engine.git", "filename": "gui_engine-2.0.0.zip", "VER_SHA": "master" }
+        { "version": "v2.0.0", "URL": "https://github.com/RT-Thread-packages/gui_engine.git", "filename": "gui_engine-2.0.0.zip", "VER_SHA": "4a76ea667a7c2be07588654bd2e29d96332c6967" },
+        { "version": "latest", "URL": "https://github.com/RT-Thread-packages/gui_engine.git", "filename": "gui_engine-2.0.0.zip", "VER_SHA": "master" }
     ]
 }

@@ -91,12 +91,16 @@ config PKG_GUIENGINE_PATH
         help
             Select the GUI Engine version
  
+        config PKG_USING_GUIENGINE_V200
+            bool "v2.0.0"
+        
         config PKG_USING_GUIENGINE_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_GUIENGINE_VER
         string
+        default "v2.0.0" if PKG_USING_GUIENGINE_V200
         default "latest" if PKG_USING_GUIENGINE_LATEST_VERSION
 		
 endif
