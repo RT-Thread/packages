@@ -1,0 +1,55 @@
+
+config PKG_USING_NETUTILS
+    bool "netutils: Networking utilities for RT-Thread"
+    default n
+
+if PKG_USING_NETUTILS
+
+    config PKG_NETUTILS_PATH
+        string
+        default "/packages/iot/netutils"
+
+    config PKG_NETUTILS_PING
+        bool "Enable Ping utility"
+        select RT_LWIP_ICMP
+        select RT_LWIP_RAW
+        default n
+
+    config PKG_NETUTILS_TFTP
+        bool "Enable TFTP(Trivial File Transfer Protocol) utility"
+        default n
+
+    config PKG_NETUTILS_IPERF
+        bool "Enable iperf-liked network performance tool"
+        default n
+
+    config PKG_NETUTILS_NETIO
+        bool "Enable NetIO network throughput performance tool"
+        default n
+
+    config PKG_NETUTILS_NTP
+        bool "Enable NTP(Network Time Protocol) client"
+        default n
+
+    config PKG_NETUTILS_TELNET
+        bool "Enable Telnet Server"
+        default n
+
+    choice
+        prompt "Version"
+        help
+            Select the netutils version
+
+        config PKG_USING_NETUTILS_V100
+            bool "v1.0.0"
+
+        config PKG_USING_NETUTILS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_NETUTILS_VER
+    string
+    default "v1.0.0" if PKG_USING_NETUTILS_V100
+    default "latest" if PKG_USING_NETUTILS_LATEST_VERSION
+
+endif
