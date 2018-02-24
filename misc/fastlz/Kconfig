@@ -1,6 +1,6 @@
 
 config PKG_USING_FASTLZ
-    bool "Fastlz: A portable real-time compression library."
+    bool "Fastlz: A portable real-time compression library"
     default n
     help
         FastLZ is very fast and thus suitable for real-time compression 
@@ -12,9 +12,43 @@ if PKG_USING_FASTLZ
     config PKG_FASTLZ_PATH
         string
         default "/packages/misc/fastlz"
+    
+    config FASTLZ_USING_SAMPLE
+        bool "Enable using fastlz sample"
+        default n
+        select RT_USING_DFS
+    
+    config FASTLZ_COMPRESSION_LEVEL
+        help 
+            Set to 1 or 2. Level 1 is the fastest compression and generally useful for short data.
+            Level 2 is slightly slower but it gives better compression ratio.
+        int "The level of compression"
+        default 1
+        range 1 2
+        
+    choice
+        prompt "fastlz version"
+        help
+            Select the fastlz version
 
-    config PKG_FASTLZ_VER
+        config PKG_USING_FASTLZ_LATEST_VERSION
+            bool "latest_version"
+            
+        config PKG_USING_FASTLZ_V100
+            bool "v1.0.0"
+
+    endchoice
+    
+    if PKG_USING_FASTLZ_V100
+        config PKG_FASTLZ_VER
         string
         default "v1.0.0"
+    endif
+   
+    if PKG_USING_FASTLZ_LATEST_VERSION
+       config PKG_FASTLZ_VER
+       string
+       default "latest_version"    
+    endif
 
 endif
