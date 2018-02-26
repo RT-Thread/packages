@@ -8,7 +8,7 @@
     "readme": "a fastlz package for rt-thread",
     "site" : 
     [
-    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/fastlz.git", "filename" : "quicklz-1.0.0.zip","VER_SHA" : "9d79025de61631a5e0a429414da7c35eae8ad0d0"},
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/fastlz.git", "filename" : "quicklz-1.0.0.zip","VER_SHA" : "9c15338cea0aba01b254b5e3a5b631098a9edfa6"},
     {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages/fastlz.git", "filename" : "quicklz.zip","VER_SHA" : "master"}
     ]
 }

@@ -18,13 +18,16 @@ if PKG_USING_FASTLZ
         default n
         select RT_USING_DFS
     
-    config FASTLZ_COMPRESSION_LEVEL
-        help 
-            Set to 1 or 2. Level 1 is the fastest compression and generally useful for short data.
-            Level 2 is slightly slower but it gives better compression ratio.
-        int "The level of compression"
-        default 1
-        range 1 2
+    if FASTLZ_USING_SAMPLE
+    
+        config FASTLZ_SAMPLE_COMPRESSION_LEVEL
+            help 
+                Set to 1 or 2. Level 1 is the fastest compression and generally useful for short data.
+                Level 2 is slightly slower but it gives better compression ratio.
+            int "The level of compression"
+            default 1
+            range 1 2
+    endif
         
     choice
         prompt "fastlz version"
