@@ -7,9 +7,7 @@
     "readme": "A mini subset of the LZO real-time data compression library",
     "site" : 
     [
-        {
-            "version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/miniLZO/archive/v1.0.0.zip", 
-            "filename" : "miniLZO-1.0.0.zip"
-        }
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/miniLZO.git", "filename" : "miniLZO-1.0.0.zip","VER_SHA" : "1fa973a793dd16ea96c6133151591d8df92c87b2"},
+    {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages/miniLZO.git", "filename" : "miniLZO.zip","VER_SHA" : "master"}
     ]
 }
