@@ -8,10 +8,23 @@ if PKG_USING_MONGOOSE
     config PKG_MONGOOSE_PATH
         string
         default "/packages/iot/mongoose"
+
+    choice
+        prompt "Version"
+        help 
+            Select the mongoose version
+
+        config PKG_USING_MONGOOSE_V607
+            bool "v6.7"
+
+        config PKG_USING_MONGOOSE_LATEST_VERSION
+            bool "latest"
+    endchoice
     
     config PKG_MONGOOSE_VER
         string
-        default "v6.7"
+        default "v6.7" if PKG_USING_MONGOOSE_V607
+        default "latest" if PKG_USING_MONGOOSE_LATEST_VERSION
 
     config PKG_MONGOOSE_ENABLE_HTTP_WEBSOCKET
         bool
@@ -31,7 +44,12 @@ if PKG_USING_MONGOOSE
 
     config PKG_MONGOOSE_ENABLE_MQTT
         bool
-        prompt "Enable MQTT client"
+        prompt "Enable MQTT protocol"
+        default n
+
+    config PKG_MONGOOSE_ENABLE_COAP
+        bool
+        prompt "Enable CoAP protocol"
         default n
 
     config PKG_MONGOOSE_ENABLE_DEBUG

@@ -2,15 +2,41 @@
 config PKG_USING_MBEDTLS
     bool "mbedtls:An open source, portable, easy to use, readable and flexible SSL library"
     default n
+    select RT_USING_RTC
 
 if PKG_USING_MBEDTLS
 
+    config PKG_USING_MBEDTLS_EXAMPLE
+        bool "Enable a mbedtls client example"
+        default n
+        
     config PKG_MBEDTLS_PATH
         string
         default "/packages/security/mbedtls"
 
-    config PKG_MBEDTLS_VER
+    choice
+        prompt "mbedtls version"
+        help
+            Select the mbedtls version
+
+        config PKG_USING_MBEDTLS_LATEST_VERSION
+            bool "latest_version"
+            
+        config PKG_USING_MBEDTLS_V100
+            bool "v1.0.0"
+            
+    endchoice
+    
+    if PKG_USING_MBEDTLS_V100
+        config PKG_MBEDTLS_VER
         string
         default "v1.0.0"
-
+    endif
+   
+    if PKG_USING_MBEDTLS_LATEST_VERSION
+       config PKG_MBEDTLS_VER
+       string
+       default "latest_version"    
+    endif
+    
 endif

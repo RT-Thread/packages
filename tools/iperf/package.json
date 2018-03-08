@@ -1,0 +1,19 @@
+{
+    "name": "iperf",
+    "description": "iperf-liked network performance tool",
+    "keywords": [
+        "iperf"
+    ],
+    "readme": "a iperf package for rt-thread",
+    "site": [{
+        "version": "v1.0.0",
+        "URL": "https://github.com/RT-Thread-packages/iperf/archive/v1.0.0.zip",
+        "filename": "iperf-1.0.0.zip"
+    },
+    {
+        "version": "master",
+        "URL": "https://github.com/RT-Thread-packages/iperf.git",
+        "filename": "iperf-master.zip",
+        "VER_SHA": "master"
+    }]
+}

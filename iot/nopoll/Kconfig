@@ -1,0 +1,46 @@
+
+config PKG_USING_NOPOLL
+    bool "nopoll: A OpenSource WebSocket implementation (RFC 6455) in ansi C"
+	select RT_USING_LWIP
+    select PKG_USING_TINYCRYPT
+    select TINY_CRYPT_SHA1
+    default n
+
+	help
+		nopoll package in ansi C for websocket	
+
+if PKG_USING_NOPOLL
+	
+	config PKG_USING_NOPOLL_EXAMPLE
+	bool "Enable nopoll example"
+	default y
+
+    config PKG_NOPOLL_PATH
+        string
+        default "/packages/iot/nopoll"
+
+    choice 
+        prompt "nopoll version"
+        help 
+            Select the nopoll version
+
+        config PKG_USING_NOPOLL_LATEST_VERSION
+            bool "latest_version"
+
+        config PKG_USING_NOPOLL_V100
+            bool "v1.0.0"
+    endchoice
+    
+    if PKG_USING_NOPOLL_V100
+       config PKG_NOPOLL_VER
+       string
+       default "v1.0.0"
+    endif
+   
+    if PKG_USING_NOPOLL_LATEST_VERSION
+       config PKG_NOPOLL_VER
+       string
+       default "latest_version"    
+    endif
+
+endif

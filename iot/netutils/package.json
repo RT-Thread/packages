@@ -1,0 +1,12 @@
+{
+    "name": "netutils",
+    "description": "Networking utilities for RT-Thread",
+    "keywords": [
+        "netutils", "lwip", "net"
+    ],
+    "readme": "Networking utilities for RT-Thread",
+    "site": [
+        { "version": "v1.0.0", "URL": "https://github.com/RT-Thread-packages/netutils.git", "filename": "netutils-1.0.0.zip", "VER_SHA": "267be058286e2ce84d112c71d798ad4452385438" },
+        { "version": "latest", "URL": "https://github.com/RT-Thread-packages/netutils.git", "filename": "netutils.zip", "VER_SHA": "master" }
+    ]
+}

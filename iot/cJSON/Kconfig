@@ -9,8 +9,21 @@ if PKG_USING_CJSON
         string
         default "/packages/iot/cJSON"
 
+    choice
+        prompt "cJSON Version"
+        help 
+            Select the cJSON version
+
+        config PKG_USING_CJSON_V102
+            bool "v1.0.2"
+
+        config PKG_USING_CJSON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
     config PKG_CJSON_VER
-        string
-        default "v1.0.1"
+    string
+    default "v1.0.2" if PKG_USING_CJSON_V102
+    default "latest" if PKG_USING_CJSON_LATEST_VERSION
 
 endif

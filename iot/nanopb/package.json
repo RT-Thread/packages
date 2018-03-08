@@ -1,0 +1,11 @@
+{
+    "name": "nanopb",
+    "description": "Protocol Buffers for Embedded Systems",
+    "keywords": [
+        "nanopb"
+    ],
+    "readme": "Protocol Buffers for Embedded Systems",
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/nanopb/archive/v1.0.0.zip", "filename" : "nanopb-1.0.0.zip"}
+    ]
+}

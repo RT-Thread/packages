@@ -1,0 +1,12 @@
+{
+    "name": "rti",
+    "description": "RT-Thread insight, a probe tool for RT-Thread to help to analyze internal behavior of the system.",
+    "author" : "Bernard Xiong",
+    "keywords": [
+        "rti", "system"
+    ],
+    "readme": "RT-Thread insight, a probe tool for RT-Thread to help to analyze internal behavior of the system.",
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/rti.git", "filename" : "rti-1.0.0.zip","VER_SHA" : "6c7cb095f58f35c082bd8395530b0283c3f84156"}
+    ]
+}
