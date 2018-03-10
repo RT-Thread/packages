@@ -9,7 +9,7 @@ if PKG_USING_QUICKLZ
         string
         default "/packages/misc/quicklz"
     
-    config QlZ_USING_SAMPLE
+    config QLZ_USING_SAMPLE
         bool "Enable using quicklz sample"
         default n
         select RT_USING_DFS
@@ -35,16 +35,16 @@ if PKG_USING_QUICKLZ
 
     endchoice
     
-    if PKG_USING_QUICKLZ_V100
-        config PKG_QUICKLZ_VER
-        string
-        default "v1.0.0"
-    endif
-   
     if PKG_USING_QUICKLZ_LATEST_VERSION
        config PKG_QUICKLZ_VER
        string
        default "latest_version"    
+    endif
+    
+    if PKG_USING_QUICKLZ_V100
+        config PKG_QUICKLZ_VER
+        string
+        default "v1.0.0"
     endif
 
 endif
