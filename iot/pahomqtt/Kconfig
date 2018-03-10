@@ -5,8 +5,13 @@ config PKG_USING_PAHOMQTT
 if PKG_USING_PAHOMQTT
 	
 	config PKG_USING_PAHOMQTT_EXAMPLE
-	bool "Enable MQTT example"
-	default n
+		bool "Enable MQTT example"
+		default n
+        
+	config MQTT_USING_TLS
+		bool " Eable support tls protocol"
+		default n
+		select PKG_USING_MBEDTLS        
 	
 	config PKG_PAHOMQTT_SUBSCRIBE_HANDLERS
 		int "Max pahomqtt subscribe topic handlers"
