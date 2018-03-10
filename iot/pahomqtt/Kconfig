@@ -3,29 +3,29 @@ config PKG_USING_PAHOMQTT
     default n
 
 if PKG_USING_PAHOMQTT
-	
-	config PKG_USING_PAHOMQTT_EXAMPLE
-		bool "Enable MQTT example"
-		default n
-        
-	config MQTT_USING_TLS
-		bool " Eable support tls protocol"
-		default n
-		select PKG_USING_MBEDTLS        
-	
-	config PKG_PAHOMQTT_SUBSCRIBE_HANDLERS
-		int "Max pahomqtt subscribe topic handlers"
-		default 1
-		help
-			Max pahomqtt subscribe topic handlers
+    
+    config PKG_USING_PAHOMQTT_EXAMPLE
+        bool "Enable MQTT example"
+        default n
+
+    config MQTT_USING_TLS
+        bool " Eable support tls protocol"
+        default n
+        select PKG_USING_MBEDTLS
+
+    config PKG_PAHOMQTT_SUBSCRIBE_HANDLERS
+        int "Max pahomqtt subscribe topic handlers"
+        default 1
+        help
+            Max pahomqtt subscribe topic handlers
 
     config PKG_PAHOMQTT_PATH
         string
         default "/packages/iot/pahomqtt"
 
-    choice 
+    choice
         prompt "pahomqtt version"
-        help 
+        help
             Select the pahomqtt version
 
         config PKG_USING_PAHOMQTT_LATEST_VERSION
@@ -34,17 +34,17 @@ if PKG_USING_PAHOMQTT
         config PKG_USING_PAHOMQTT_V100
             bool "v1.0.0"
     endchoice
-    
+
     if PKG_USING_PAHOMQTT_V100
        config PKG_PAHOMQTT_VER
        string
        default "v1.0.0"
     endif
-   
+
     if PKG_USING_PAHOMQTT_LATEST_VERSION
        config PKG_PAHOMQTT_VER
        string
-       default "latest_version"    
+       default "latest_version"
     endif
 
 endif
