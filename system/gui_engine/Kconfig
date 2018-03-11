@@ -52,10 +52,10 @@ config GUIENGINE_USING_FONTHZ
     bool "Support Chinese font"
     default n
 
-config GUIENGINE_USING_HZ_BMP
+config GUIENGINE_USING_HZ_FILE
     depends on GUIENGINE_USING_FONTHZ
-    bool "Use bitmap Chinese font"
-    default n
+    bool "Place Chinese font on file system"
+    default y
 
 config GUIENGINE_IMAGE_XPM
     bool "Support XPM image format"
