@@ -3,10 +3,10 @@ menu "miscellaneous packages"
 source "$PKGS_DIR/packages/misc/fastlz/Kconfig"
 source "$PKGS_DIR/packages/misc/miniLZO/Kconfig"
 source "$PKGS_DIR/packages/misc/quicklz/Kconfig"
+source "$PKGS_DIR/packages/misc/MultiButton/Kconfig"
 
 comment "example package: hello"
 
 source "$PKGS_DIR/packages/misc/hello/Kconfig"
-source "$PKGS_DIR/packages/misc/MultiButton/Kconfig"
 
 endmenu
