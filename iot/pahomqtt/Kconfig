@@ -13,7 +13,7 @@ if PKG_USING_PAHOMQTT
         default n
 
     config MQTT_USING_TLS
-        bool " Enable support tls protocol"
+        bool "Enable support tls protocol"
         default n
         select PKG_USING_MBEDTLS
 
@@ -52,5 +52,4 @@ if PKG_USING_PAHOMQTT
     endif
 
 endif
-
 
