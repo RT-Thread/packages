@@ -5,9 +5,68 @@ config PKG_USING_MICROPYTHON
 
 if PKG_USING_MICROPYTHON
 
-    config PKG_MICROPYTHON_PATH
-        string
-        default "/packages/language/micropython"
+    menu "System Module"
+        config PKG_MICROPYTHON_PATH
+            string
+            default "/packages/language/micropython"
+
+        config MICROPYTHON_USING_USELECT
+            bool "uselect: wait for events on a set of streams"
+            default n
+        
+        config MICROPYTHON_USING_UCTYPES
+            bool "uctypes: create and manipulate C data types in Python"
+            default n
+
+        config MICROPYTHON_USING_UERRNO
+            bool "uerrno: system error codes"
+            default n
+    endmenu
+    
+    menu "Tools Module"
+        config MICROPYTHON_USING_CMATH
+            bool "cmath: mathematical functions for complex numbers"
+            default n
+         
+        config MICROPYTHON_USING_UBINASCII
+            bool "ubinascii: binary/ASCII conversions"
+            default n
+         
+        config MICROPYTHON_USING_UHASHLIB
+            bool "uhashlib: hashing algorithms"
+            default n
+
+        config MICROPYTHON_USING_UHEAPQ
+            bool "uheapq: heap queue algorithm"
+            default n
+        
+        config MICROPYTHON_USING_UJSON
+            bool "ujson: JSON encoding and decoding"
+            default n
+
+        config MICROPYTHON_USING_URE
+            bool "ure: simple regular expressions"
+            default n    
+     
+        config MICROPYTHON_USING_UZLIB
+            bool "uzlib: zlib decompression"
+            default n       
+
+        config MICROPYTHON_USING_URANDOM
+            bool "urandom: random variable generators"
+            default n
+    endmenu
+    
+    menu "Network Module"
+        config MICROPYTHON_USING_USOCKET
+            bool "usocket: socket operations and some related functions"
+            default n
+    endmenu
+    
+    config PKG_MICROPYTHON_HEAP_SIZE
+        int
+        prompt "Heap size for python run environment"
+        default 8192
 
     choice
         prompt "Version"
@@ -25,72 +84,5 @@ if PKG_USING_MICROPYTHON
         string
         default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
         default "v1.9.3" if PKG_USING_MICROPYTHON_V10903
-           
-    menu "System Module"
-   
-    config MICROPYTHON_USING_USELECT
-        bool "uselect: wait for events on a set of streams"
-        default n
-    
-    config MICROPYTHON_USING_UCTYPES
-        bool "uctypes: create and manipulate C data types in Python"
-        default n
-
-    config MICROPYTHON_USING_UERRNO
-        bool "uerrno: system error codes"
-        default n
-    
-    endmenu
-    
-    menu "Tools Module"
-      
-    config MICROPYTHON_USING_CMATH
-        bool "cmath: mathematical functions for complex numbers"
-        default n
-     
-    config MICROPYTHON_USING_UBINASCII
-        bool "ubinascii: binary/ASCII conversions"
-        default n
-     
-    config MICROPYTHON_USING_UHASHLIB
-        bool "uhashlib: hashing algorithms"
-        default n
-
-    config MICROPYTHON_USING_UHEAPQ
-        bool "uheapq: heap queue algorithm"
-        default n
-    
-    config MICROPYTHON_USING_UJSON
-        bool "ujson: JSON encoding and decoding"
-        default n
-
-    config MICROPYTHON_USING_URE
-        bool "ure: simple regular expressions"
-        default n    
- 
-    config MICROPYTHON_USING_UZLIB
-        bool "uzlib: zlib decompression"
-        default n       
-
-    config MICROPYTHON_USING_URANDOM
-        bool "urandom: random variable generators"
-        default n
- 
-    endmenu
-    
-    menu "Network Module"
-    
-    config MICROPYTHON_USING_USOCKET
-        bool "usocket: socket operations and some related functions"
-        default n
-
-    endmenu
-    
-    config PKG_MICROPYTHON_HEAP_SIZE
-        int
-        prompt "Heap size for python run environment"
-        default 8192
 
 endif
-
-
