@@ -25,6 +25,82 @@ if PKG_USING_MICROPYTHON
         string
         default "v1.9.3" if PKG_USING_MICROPYTHON_V10903
         default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
+   
+    menu "MicroPython Module Config"
+    
+    menu "Sys Class Module"
+
+    config MICROPYTHON_USING_IO_FILEIO
+        bool "UIO: Whether to provide io.FileIO class for uio module"
+        default n
+    
+    config MICROPYTHON_USING_USELECT
+        bool "USELECT: wait for events on a set of streams"
+        default n
+    
+    config MICROPYTHON_USING_UCTYPES
+        bool "UCTYPES: create and manipulate C data types in Python"
+        default n
+
+    config MICROPYTHON_USING_UERRNO
+        bool "UERRNO: system error codes"
+        default n
+    
+    endmenu
+    
+    menu "Tools Class Module"
+    
+    config MICROPYTHON_USING_ARRAY_SLICE_ASSIGN
+        bool "ARRAY: support slice assignments for array module"
+        default n
+    
+    config MICROPYTHON_USING_CMATH
+        bool "CMATH: mathematical functions for complex numbers"
+        default n
+     
+    config MICROPYTHON_USING_UBINASCII
+        bool "UBINASCII: binary/ASCII conversions"
+        default n
+     
+    config MICROPYTHON_USING_UHASHLIB
+        bool "UHASHLIB: hashing algorithms"
+        default n
+
+    config MICROPYTHON_USING_UHEAPQ
+        bool "UHEAPQ: heap queue algorithm"
+        default n
+    
+    config MICROPYTHON_USING_UJSON
+        bool "UJSON: JSON encoding and decoding"
+        default n
+
+    config MICROPYTHON_USING_URE
+        bool "URE: simple regular expressions"
+        default n    
+ 
+    config MICROPYTHON_USING_UZLIB
+        bool "UZLIB: zlib decompression"
+        default n       
+
+    config MICROPYTHON_USING_URANDOM
+        bool "URANDOM: Random variable generators"
+        default n
+ 
+    config MICROPYTHON_USING_URANDOM_EXTRA_FUNCS
+        bool "URANDOM: Whether to include: randrange, randint, choice, random, uniform"
+        default n 
+    
+    endmenu
+    
+    menu "Network Class Module"
+    
+    config MICROPYTHON_USING_USOCKET
+        bool "USOCKET: Socket operations and some related functions"
+        default n
+
+    endmenu
+    
+    endmenu
 
     config PKG_MICROPYTHON_HEAP_SIZE
         int
@@ -32,3 +108,5 @@ if PKG_USING_MICROPYTHON
         default 8192
 
 endif
+
+
