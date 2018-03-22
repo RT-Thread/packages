@@ -23,85 +23,69 @@ if PKG_USING_MICROPYTHON
     
     config PKG_MICROPYTHON_VER
         string
-        default "v1.9.3" if PKG_USING_MICROPYTHON_V10903
         default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default "v1.9.3" if PKG_USING_MICROPYTHON_V10903
+           
+    menu "System Module"
    
-    menu "MicroPython Module Config"
-    
-    menu "Sys Class Module"
-
-    config MICROPYTHON_USING_IO_FILEIO
-        bool "UIO: Whether to provide io.FileIO class for uio module"
-        default n
-    
     config MICROPYTHON_USING_USELECT
-        bool "USELECT: wait for events on a set of streams"
+        bool "uselect: wait for events on a set of streams"
         default n
     
     config MICROPYTHON_USING_UCTYPES
-        bool "UCTYPES: create and manipulate C data types in Python"
+        bool "uctypes: create and manipulate C data types in Python"
         default n
 
     config MICROPYTHON_USING_UERRNO
-        bool "UERRNO: system error codes"
+        bool "uerrno: system error codes"
         default n
     
     endmenu
     
-    menu "Tools Class Module"
-    
-    config MICROPYTHON_USING_ARRAY_SLICE_ASSIGN
-        bool "ARRAY: support slice assignments for array module"
-        default n
-    
+    menu "Tools Module"
+      
     config MICROPYTHON_USING_CMATH
-        bool "CMATH: mathematical functions for complex numbers"
+        bool "cmath: mathematical functions for complex numbers"
         default n
      
     config MICROPYTHON_USING_UBINASCII
-        bool "UBINASCII: binary/ASCII conversions"
+        bool "ubinascii: binary/ASCII conversions"
         default n
      
     config MICROPYTHON_USING_UHASHLIB
-        bool "UHASHLIB: hashing algorithms"
+        bool "uhashlib: hashing algorithms"
         default n
 
     config MICROPYTHON_USING_UHEAPQ
-        bool "UHEAPQ: heap queue algorithm"
+        bool "uheapq: heap queue algorithm"
         default n
     
     config MICROPYTHON_USING_UJSON
-        bool "UJSON: JSON encoding and decoding"
+        bool "ujson: JSON encoding and decoding"
         default n
 
     config MICROPYTHON_USING_URE
-        bool "URE: simple regular expressions"
+        bool "ure: simple regular expressions"
         default n    
  
     config MICROPYTHON_USING_UZLIB
-        bool "UZLIB: zlib decompression"
+        bool "uzlib: zlib decompression"
         default n       
 
     config MICROPYTHON_USING_URANDOM
-        bool "URANDOM: Random variable generators"
+        bool "urandom: random variable generators"
         default n
  
-    config MICROPYTHON_USING_URANDOM_EXTRA_FUNCS
-        bool "URANDOM: Whether to include: randrange, randint, choice, random, uniform"
-        default n 
-    
     endmenu
     
-    menu "Network Class Module"
+    menu "Network Module"
     
     config MICROPYTHON_USING_USOCKET
-        bool "USOCKET: Socket operations and some related functions"
+        bool "usocket: socket operations and some related functions"
         default n
 
     endmenu
     
-    endmenu
-
     config PKG_MICROPYTHON_HEAP_SIZE
         int
         prompt "Heap size for python run environment"
