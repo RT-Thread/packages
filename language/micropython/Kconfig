@@ -1,6 +1,7 @@
 
 config PKG_USING_MICROPYTHON
     bool "MicroPython: A lean and efficient Python implementation for microcontrollers and constrained systems."
+    select RT_USING_LIBC
     default n
 
 if PKG_USING_MICROPYTHON
