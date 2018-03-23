@@ -10,6 +10,8 @@ if PKG_USING_MICROPYTHON
         string
         default "/packages/language/micropython"
 
+    select RT_USING_LIBC
+
     menu "System Module"
         config MICROPYTHON_USING_UOS
             bool "uos: basic 'operating system' services"
