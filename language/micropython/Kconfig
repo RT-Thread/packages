@@ -5,15 +5,19 @@ config PKG_USING_MICROPYTHON
 
 if PKG_USING_MICROPYTHON
 
+    config PKG_MICROPYTHON_PATH
+        string
+        default "/packages/language/micropython"
+
     menu "System Module"
-        config PKG_MICROPYTHON_PATH
-            string
-            default "/packages/language/micropython"
+        config MICROPYTHON_USING_UOS
+            bool "uos: basic 'operating system' services"
+            default n
 
         config MICROPYTHON_USING_USELECT
             bool "uselect: wait for events on a set of streams"
             default n
-        
+
         config MICROPYTHON_USING_UCTYPES
             bool "uctypes: create and manipulate C data types in Python"
             default n
@@ -73,11 +77,12 @@ if PKG_USING_MICROPYTHON
         help 
             Select the this package version
 
+        config PKG_USING_MICROPYTHON_LATEST_VERSION
+            bool "latest"
+
         config PKG_USING_MICROPYTHON_V10903
             bool "v1.9.3"
 
-        config PKG_USING_MICROPYTHON_LATEST_VERSION
-            bool "latest"
     endchoice
     
     config PKG_MICROPYTHON_VER
