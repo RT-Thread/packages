@@ -1,0 +1,12 @@
+
+{
+    "name": "CanFestival",
+    "description": "an ANSI-C platform independent CANOpen stack that can be built as master or slave nodes",
+    "keywords": [
+        "CanFestival", "CANOpen"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/gbcwbz/canfestival-rtt/archive/v1.0.0.zip", "filename" : "CanFestival-1.0.0.zip","VER_SHA" : "master"},
+    {"version" : "latest", "URL" : "https://github.com/gbcwbz/canfestival-rtt.git", "filename" : "CanFestival latest version git package","VER_SHA" : "master"}
+    ]
+}

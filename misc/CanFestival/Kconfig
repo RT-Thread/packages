@@ -1,0 +1,60 @@
+
+# Kconfig file for package CanFestival
+config PKG_USING_CANFESTIVAL
+    bool "a CanFestival package for rt-thread"
+    default n
+
+if PKG_USING_CANFESTIVAL
+
+    config PKG_CANFESTIVAL_PATH
+        string
+        default "/packages/misc/CanFestival"
+
+    choice
+        prompt "CanFestival version"
+        help
+            Select the CanFestival version
+
+        config PKG_USING_CANFESTIVAL_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CANFESTIVAL_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
+    if PKG_USING_CANFESTIVAL_V100
+        config PKG_CANFESTIVAL_VER
+        string
+        default "v1.0.0"
+    endif
+   
+    if PKG_USING_CANFESTIVAL_LATEST_VERSION
+       config PKG_CANFESTIVAL_VER
+       string
+       default "latest"    
+    endif
+	
+	menu "CanFestival config"
+		config CANFESTIVAL_CAN_DEVICE_NAME
+			string "CAN device name for CanFestival"
+			default "bxcan1"
+		
+		config CANFESTIVAL_TIMER_DEVICE_NAME
+			string "hwtimer device name for CanFestival"
+			default "timer0"
+			
+		config CANFESTIVAL_RECV_THREAD_PRIO
+			int "The priority level value of can receive thread"
+			default 9
+			
+		config CANFESTIVAL_TIMER_THREAD_PRIO
+			int "The priority level value of timer thread"
+			default 10
+		
+		config CANFESTIVAL_USING_EG_MASTER402
+			bool "Enable Cia402 Master example"
+			default n
+	endmenu
+
+endif
+
