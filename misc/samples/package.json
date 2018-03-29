@@ -1,0 +1,12 @@
+
+{
+    "name": "samples",
+    "description": "a samples package for rt-thread",
+    "keywords": [
+        "samples"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/qiuyiuestc/samples-1.0.0.zip", "filename" : "samples-1.0.0.zip","VER_SHA"},
+    {"version" : "latest_version", "URL" : "https://github.com/qiuyiuestc/samples.git", "filename" : "Null for git package","VER_SHA" : "mater"}
+    ]
+}
