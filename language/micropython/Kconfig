@@ -27,6 +27,10 @@ if PKG_USING_MICROPYTHON
             bool "uos: basic 'operating system' services"
             default n
 
+        config MICROPYTHON_USING_THREAD
+            bool "_thread: multithreading support"
+            default n
+
         config MICROPYTHON_USING_USELECT
             bool "uselect: wait for events on a set of streams"
             default n
