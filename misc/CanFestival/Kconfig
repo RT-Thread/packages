@@ -1,7 +1,7 @@
 
 # Kconfig file for package CanFestival
 config PKG_USING_CANFESTIVAL
-    bool "CanFestival: a Free software CANopen framework"
+    bool "CanFestival: A free software CANopen framework"
     default n
     help
         CanFestival focuses on providing an ANSI-C platform independent
