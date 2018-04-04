@@ -11,6 +11,16 @@ if PKG_USING_MICROPYTHON
         default "/packages/language/micropython"
 
     select RT_USING_LIBC
+    
+    menu "Hardware Module"
+        config MICROPYTHON_USING_MACHINE_I2C
+            bool "machine i2c: enable i2c functions for machine module"
+            default n
+            
+        config MICROPYTHON_USING_MACHINE_SPI
+            bool "machine spi: enable spi functions for machine module"
+            default n        
+    endmenu
 
     menu "System Module"
         config MICROPYTHON_USING_UOS
@@ -68,16 +78,6 @@ if PKG_USING_MICROPYTHON
         config MICROPYTHON_USING_USOCKET
             bool "usocket: socket operations and some related functions"
             default n
-    endmenu
-    
-    menu "Hardware Module"
-        config MICROPYTHON_USING_MACHINE_I2C
-            bool "machine i2c: enable i2c functions for machine module"
-            default n
-            
-        config MICROPYTHON_USING_MACHINE_SPI
-            bool "machine spi: enable spi functions for machine module"
-            default n        
     endmenu
     
     config PKG_MICROPYTHON_HEAP_SIZE
