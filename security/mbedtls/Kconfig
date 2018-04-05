@@ -10,10 +10,23 @@ config PKG_USING_MBEDTLS
 
 if PKG_USING_MBEDTLS
 
+    config MBEDTLS_AES_ROM_TABLES
+        bool "Store the AES tables in ROM"
+        default y
+
+    config MBEDTLS_ECP_WINDOW_SIZE
+        int "Maximum window size used"
+        range 2 6
+        default 2
+
+    config MBEDTLS_SSL_MAX_CONTENT_LEN
+        int "Maxium fragment length in bytes"
+        default 3584
+
     config PKG_USING_MBEDTLS_EXAMPLE
         bool "Enable a mbedtls client example"
         default n
-        
+
     config PKG_MBEDTLS_PATH
         string
         default "/packages/security/mbedtls"
