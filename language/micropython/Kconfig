@@ -19,7 +19,11 @@ if PKG_USING_MICROPYTHON
             
         config MICROPYTHON_USING_MACHINE_SPI
             bool "machine spi: enable spi functions for machine module"
-            default n        
+            default n     
+
+        config MICROPYTHON_USING_MACHINE_UART
+            bool "machine uart: enable uart functions for machine module"
+            default n               
     endmenu
 
     menu "System Module"
