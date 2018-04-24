@@ -1,0 +1,72 @@
+
+# Kconfig file for package onenet
+config PKG_USING_ONENET
+    bool "OneNET : China Mobile OneNet cloud SDK for RT-Thread"
+    default n
+    select PKG_USING_CJSON
+    select PKG_USING_WEBCLIENT
+
+if PKG_USING_ONENET
+
+    config PKG_ONENET_PATH
+        string
+        default "/packages/iot/onenet"
+        
+    config PKG_USING_ONENET_SAMPLE
+        bool "Enable OneNET sample"
+        default n
+    
+    config ONENET_USING_MQTT
+        bool "Enable support MQTT protocol"
+        default y
+        select PKG_USING_PAHOMQTT
+        
+    if ONENET_USING_MQTT
+        config ONENET_MQTT_SUBTOPIC
+            string "mqtt subtopic"
+            default "/test_topic"
+    endif
+
+    config ONENET_INFO_DEVID
+        string "device id"
+        default "29573339"
+        
+    config ONENET_INFO_APIKEY
+        string "api key"
+        default "a2gVVf1hggZfuATkNogulHK1V=s="
+        
+    config ONENET_INFO_PROID
+        string "product id"
+        default "131494"
+        
+    config ONENET_INFO_AUTH
+        string "auth info"
+        default "EF4016D6658466CA3E3606"
+    
+    choice
+        prompt "onenet version"
+        help
+            Select the onenet version
+            
+        config PKG_USING_ONENET_V010
+            bool "v0.1.0"
+            
+        config PKG_USING_ONENET_LATEST_VERSION
+            bool "latest_version"
+            
+    endchoice
+    
+    if PKG_USING_ONENET_V010
+        config PKG_ONENET_VER
+        string
+        default "v0.1.0"
+    endif
+   
+    if PKG_USING_ONENET_LATEST_VERSION
+       config PKG_ONENET_VER
+       string
+       default "latest_version"    
+    endif
+
+endif
+
