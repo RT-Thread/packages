@@ -81,12 +81,17 @@ if PKG_USING_MICROPYTHON
             bool "urandom: random variable generators"
             default n
     endmenu
-    
+
     menu "Network Module"
         config MICROPYTHON_USING_USOCKET
             bool "usocket: socket operations and some related functions"
             select RT_USING_DFS_NET
             default n
+            
+        config MICROPYTHON_USING_USSL
+            bool "ussl: secure sockets layer for https protocol"
+            select PKG_USING_MBEDTLS
+            default n   
     endmenu
     
     config PKG_MICROPYTHON_HEAP_SIZE
