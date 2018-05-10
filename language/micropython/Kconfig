@@ -85,6 +85,7 @@ if PKG_USING_MICROPYTHON
     menu "Network Module"
         config MICROPYTHON_USING_USOCKET
             bool "usocket: socket operations and some related functions"
+            select RT_LWIP_IGMP
             default n
     endmenu
     
