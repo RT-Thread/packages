@@ -44,7 +44,7 @@ if PKG_USING_NETUTILS
 
         config NETUTILS_NTP_HOSTNAME
             string "NTP server name"
-            default "cn.pool.ntp.org"
+            default "cn.ntp.org.cn"
     endif
 
     config PKG_NETUTILS_TELNET
