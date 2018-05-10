@@ -2,6 +2,7 @@
 config PKG_USING_MICROPYTHON
     bool "MicroPython: A lean and efficient Python implementation for microcontrollers and constrained systems."
     select RT_USING_LIBC
+    select RT_USING_RTC
     default n
 
 if PKG_USING_MICROPYTHON
@@ -10,9 +11,30 @@ if PKG_USING_MICROPYTHON
         string
         default "/packages/language/micropython"
 
+    menu "Hardware Module"
+        config MICROPYTHON_USING_MACHINE_I2C
+            bool "machine i2c: enable i2c functions for machine module"
+            select RT_USING_I2C
+            default n
+            
+        config MICROPYTHON_USING_MACHINE_SPI
+            bool "machine spi: enable spi functions for machine module"
+            select RT_USING_SPI
+            default n     
+
+        config MICROPYTHON_USING_MACHINE_UART
+            bool "machine uart: enable uart functions for machine module"
+            select RT_USING_SERIAL
+            default n               
+    endmenu
+
     menu "System Module"
         config MICROPYTHON_USING_UOS
             bool "uos: basic 'operating system' services"
+            default n
+
+        config MICROPYTHON_USING_THREAD
+            bool "_thread: multithreading support"
             default n
 
         config MICROPYTHON_USING_USELECT
@@ -61,21 +83,18 @@ if PKG_USING_MICROPYTHON
             bool "urandom: random variable generators"
             default n
     endmenu
-    
+
     menu "Network Module"
         config MICROPYTHON_USING_USOCKET
             bool "usocket: socket operations and some related functions"
-            default n
-    endmenu
-    
-    menu "Hardware Module"
-        config MICROPYTHON_USING_MACHINE_I2C
-            bool "machine i2c: enable i2c functions for machine module"
+            select RT_USING_DFS_NET
+            select RT_LWIP_IGMP
             default n
             
-        config MICROPYTHON_USING_MACHINE_SPI
-            bool "machine spi: enable spi functions for machine module"
-            default n        
+        config MICROPYTHON_USING_USSL
+            bool "ussl: secure sockets layer for https protocol"
+            select PKG_USING_MBEDTLS
+            default n   
     endmenu
     
     config PKG_MICROPYTHON_HEAP_SIZE
