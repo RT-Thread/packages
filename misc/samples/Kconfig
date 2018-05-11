@@ -14,19 +14,24 @@ if PKG_USING_SAMPLES
         string
         default "latest"
 
+    config RT_SAMPLES_AUTORUN
+        bool "autorun"
+        prompt "run sample in init thread"
+        default y
+		
 menu "basic sample select options"
     config RT_USING_SAMPLE_LED
         bool "[basic] led"
-	
-	config LED_0_PIN
-		int "Pin number of LED_0"
-		default 3	
+    
+    config LED_0_PIN
+        int "Pin number of LED_0"
+        default 3    
 
-	config LED_1_PIN
-		int "Pin number of LED_1"
-		default 4			
+    config LED_1_PIN
+        int "Pin number of LED_1"
+        default 4            
 endmenu
-			
+            
 menu "kernel sample select options"
     config RT_USING_SAMPLE_THREAD
         bool "[kernel] thread"
@@ -72,35 +77,28 @@ menu "kernel sample select options"
 endmenu
 
 menu "filesystem sample options"
-	config RT_USING_SAMPLE_CREATE_FILE
-		bool "[filesystem] create"
-endmenu   	
+    config RT_USING_SAMPLE_CREATE_FILE
+        bool "[filesystem] create"
+endmenu       
 
 menu "network sample options"
-	config RT_USING_SAMPLE_TCP_CLIENT
-		bool "[network] tcp client"
-endmenu   	
+    config RT_USING_SAMPLE_TCP_CLIENT
+        bool "[network] tcp client"
+endmenu       
 
 menu "driver sample options"
-	config RT_USING_SAMPLE_I2C
-		bool "[network] I2C driver"
-		
-	config RT_USING_SAMPLE_SPI
-		bool "[network] SPI driver"	
+    config RT_USING_SAMPLE_I2C
+        bool "[driver] I2C driver"
+        
+    config RT_USING_SAMPLE_SPI
+        bool "[driver] SPI driver"    
 
-	config RT_USING_SAMPLE_GPIO
-		bool "[network] GPIO driver"
+    config RT_USING_SAMPLE_GPIO
+        bool "[driver] GPIO driver"
 
-	config RT_USING_SAMPLE_UART
-		bool "[network] UART driver"		
+    config RT_USING_SAMPLE_UART
+        bool "[driver] UART driver"        
 endmenu  
-
-menu "sample autorun options"
-	config RT_SAMPLES_AUTORUN
-		bool "autorun"
-		prompt "run sample in init thread"
-		default y
-endmenu   	
 
 endif
 
