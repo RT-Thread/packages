@@ -1,0 +1,28 @@
+config PKG_USING_STM32F40X_STD
+    bool "STM32F40X_STD: STM32F40x STD library"
+    default n
+
+if PKG_USING_STM32F40X_STD
+
+    config PKG_STM32F40X_STD_PATH
+        string
+        default "/packages/peripherals/stm32f40x-stdlibraries"
+
+    choice
+        prompt "Version"
+        help 
+            Select this package version
+
+        config PKG_USING_STM32F40X_STD_V10000
+            bool "v1.0.0"
+
+        config PKG_USING_STM32F40X_STD_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_STM32F40X_STD_VER
+        string
+        default "v1.0.0" if PKG_USING_STM32F40X_STD_V10000
+        default "latest" if PKG_USING_STM32F40X_STD_LATEST_VERSION
+
+endif
