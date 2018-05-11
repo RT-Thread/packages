@@ -35,6 +35,7 @@ if PKG_USING_NETUTILS
 
     config PKG_NETUTILS_NTP
         bool "Enable NTP(Network Time Protocol) client"
+        select RT_USING_DFS_NET
         default n
     if PKG_NETUTILS_NTP
         config NETUTILS_NTP_TIMEZONE
