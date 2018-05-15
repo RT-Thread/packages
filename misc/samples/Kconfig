@@ -23,13 +23,11 @@ menu "basic sample select options"
     config RT_USING_SAMPLE_LED
         bool "[basic] led"
     
-    config LED_0_PIN
-        int "Pin number of LED_0"
+    config LED_PIN
+        int "Pin number of LED"
         default 3    
-
-    config LED_1_PIN
-        int "Pin number of LED_1"
-        default 4            
+        depends on RT_USING_SAMPLE_LED
+        
 endmenu
             
 menu "kernel sample select options"
