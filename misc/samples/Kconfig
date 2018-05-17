@@ -75,13 +75,43 @@ menu "kernel sample select options"
 endmenu
 
 menu "filesystem sample options"
-    config RT_USING_SAMPLE_CREATE_FILE
-        bool "[filesystem] create"
+    config RT_USING_SAMPLE_OPENFILE
+        bool "[filesystem] openfile"
+
+    config RT_USING_SAMPLE_READWRITE
+        bool "[filesystem] readwrite"
+
+    config RT_USING_SAMPLE_STAT
+        bool "[filesystem] stat"
+
+    config RT_USING_SAMPLE_RENAME
+        bool "[filesystem] rename"
+
+    config RT_USING_SAMPLE_MKDIR
+        bool "[filesystem] mkdir"
+
+    config RT_USING_SAMPLE_OPENDIR
+        bool "[filesystem] opendir"
+
+    config RT_USING_SAMPLE_READDIR
+        bool "[filesystem] readdir"
+
+    config RT_USING_SAMPLE_TELL_SEEK_DIR
+        bool "[filesystem] tell_seek_dir"
 endmenu       
 
 menu "network sample options"
     config RT_USING_SAMPLE_TCP_CLIENT
         bool "[network] tcp client"
+
+    config RT_USING_SAMPLE_TCP_SERVER
+        bool "[network] tcp server"
+
+    config RT_USING_SAMPLE_UDP_CLIENT
+        bool "[network] udp client"
+
+    config RT_USING_SAMPLE_UDP_SERVER
+        bool "[network] udp server"
 endmenu       
 
 menu "driver sample options"
