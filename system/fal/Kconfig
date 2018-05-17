@@ -1,0 +1,66 @@
+
+# Kconfig file for package fal
+config PKG_USING_FAL
+    bool "fal: Flash Abstraction Layer implement. Manage flash device and partition."
+    default n
+
+if PKG_USING_FAL
+
+    config PKG_FAL_PATH
+        string
+        default "/packages/system/fal"
+
+    config FAL_DEBUG_CONFIG
+        bool "Enable debug log output"
+        default n
+
+    config FAL_DEBUG
+       int
+       default 0
+       default 1    if FAL_DEBUG_CONFIG
+
+    config FAL_PART_HAS_TABLE_CFG
+        bool "FAL partition table config has defined on 'fal_cfg.h'"
+        default y
+        help
+            If defined partition table on 'fal_cfg.h' please enable this option.
+            When this option is disable, it will auto find the partition table on
+            a specified location in flash partition.
+
+    if !FAL_PART_HAS_TABLE_CFG
+
+        config FAL_PART_TABLE_FLASH_DEV_NAME
+            string "The patition device which saving partition table"
+            default "bl"
+             help
+                It will auto find the partition table on this partition.
+
+        config FAL_PART_TABLE_END_OFFSET
+            int "The patition table end offset address"
+            default "0"
+            help
+                The auto find the partition table process is from the end of partition offset address.
+                When this option is 0, the partition table is saving on the end of partition.
+
+    endif
+
+    choice
+        prompt "version"
+        help
+            Select the version
+
+        config PKG_USING_FAL_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_FAL_V010
+            bool "v0.1.0"
+
+    endchoice
+
+    config PKG_FAL_VER
+       string
+       default "latest"    if PKG_USING_FAL_LATEST_VERSION
+       default "v0.1.0"    if PKG_USING_FAL_V010
+
+endif
+

@@ -1,0 +1,12 @@
+
+{
+    "name": "fal",
+    "description": "fal: Flash Abstraction Layer implement. Manage flash device and partition.",
+    "keywords": [
+        "flash", "partition", "OTA", "partition table"
+    ],
+    "site" : [
+        {"version" : "v0.1.0", "URL" : "https://github.com/RT-Thread-packages/fal.git", "filename" : "fal-0.1.0.zip","VER_SHA" : "4941c0882d55612b6f0386bff2c2f648f3c5d28f"},
+        {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/fal.git", "filename" : "fal.zip","VER_SHA" : "master"}
+    ]
+}
