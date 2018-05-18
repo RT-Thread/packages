@@ -30,17 +30,16 @@ if PKG_USING_FAL
     if !FAL_PART_HAS_TABLE_CFG
 
         config FAL_PART_TABLE_FLASH_DEV_NAME
-            string "The patition device which saving partition table"
-            default "bl"
+            string "The flash device which saving partition table"
+            default "onchip"
              help
-                It will auto find the partition table on this partition.
+                It will auto find the partition table on this flash device.
 
         config FAL_PART_TABLE_END_OFFSET
-            int "The patition table end offset address"
-            default "0"
+            int "The patition table end address relative to flash device offset."
+            default 65536
             help
-                The auto find the partition table process is from the end of partition offset address.
-                When this option is 0, the partition table is saving on the end of partition.
+                The auto find the partition table process is forward from this offset address on flash.
 
     endif
 
