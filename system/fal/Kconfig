@@ -2,6 +2,7 @@
 # Kconfig file for package fal
 config PKG_USING_FAL
     bool "fal: Flash Abstraction Layer implement. Manage flash device and partition."
+    select RT_USING_LIBC
     default n
 
 if PKG_USING_FAL
@@ -12,12 +13,12 @@ if PKG_USING_FAL
 
     config FAL_DEBUG_CONFIG
         bool "Enable debug log output"
-        default n
+        default y
 
     config FAL_DEBUG
        int
-       default 0
        default 1    if FAL_DEBUG_CONFIG
+       default 0
 
     config FAL_PART_HAS_TABLE_CFG
         bool "FAL partition table config has defined on 'fal_cfg.h'"
