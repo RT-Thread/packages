@@ -5,6 +5,7 @@ source "$PKGS_DIR/packages/misc/miniLZO/Kconfig"
 source "$PKGS_DIR/packages/misc/quicklz/Kconfig"
 source "$PKGS_DIR/packages/misc/MultiButton/Kconfig"
 source "$PKGS_DIR/packages/misc/CanFestival/Kconfig"
+source "$PKGS_DIR/packages/misc/zlib/Kconfig"
 
 comment "sample package"
 source "$PKGS_DIR/packages/misc/samples/Kconfig"
