@@ -8,10 +8,65 @@ if PKG_USING_EASYFLASH
     config PKG_EASYFLASH_PATH
         string
         default "/packages/tools/EasyFlash"
-    
+
+    config PKG_EASYFLASH_ENV
+        bool
+        prompt "ENV: Environment variables"
+        default y
+
+    if PKG_EASYFLASH_ENV
+
+        choice
+            prompt "ENV mode"
+
+            config PKG_EASYFLASH_ENV_USING_NORMAL
+                bool "Normal mode"
+
+            config PKG_EASYFLASH_ENV_USING_WL_MODE
+                bool "Wear leveling mode"
+
+            config PKG_EASYFLASH_ENV_USING_PFS_MODE
+                bool "Power fail safeguard mode"
+
+            config PKG_EASYFLASH_ENV_USING_WL_PFS_MODE
+                bool "Wear leveling and power fail safeguard mode"
+
+        endchoice
+
+        config PKG_EASYFLASH_ENV_SETTING_SIZE
+            int
+            prompt "ENV setting size. MUST be word alignment"
+            default 2048
+
+    endif
+
+    config PKG_EASYFLASH_LOG
+        bool
+        prompt "LOG: Save logs on flash"
+        default n
+
+    config PKG_EASYFLASH_IAP
+        bool
+        prompt "IAP: In Application Programming"
+        default n
+
+    config PKG_EASYFLASH_ERASE_GRAN
+        int
+        prompt "Erase minimum granularity"
+        default 4096
+
+    config PKG_EASYFLASH_START_ADDR
+        int
+        prompt "Start addr on flash or partition"
+        default 0
+
+    config PKG_EASYFLASH_DEBUG
+        bool "Enable debug log output"
+        default y
+
     choice
         prompt "Version"
-        help 
+        help
             Select the this package version
 
         config PKG_USING_EASYFLASH_V300
