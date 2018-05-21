@@ -25,8 +25,8 @@ if PKG_USING_FAL
         default y
         help
             If defined partition table on 'fal_cfg.h' please enable this option.
-            When this option is disable, it will auto find the partition table on
-            a specified location in flash partition.
+            When this option is disable, it will auto find and load the partition table
+            on a specified location in flash partition.
 
     if !FAL_PART_HAS_TABLE_CFG
 
@@ -40,7 +40,8 @@ if PKG_USING_FAL
             int "The patition table end address relative to flash device offset."
             default 65536
             help
-                The auto find the partition table process is forward from this offset address on flash.
+                The auto find and load the partition table process is forward from this
+                offset address on flash.
 
     endif
 
