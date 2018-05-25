@@ -23,6 +23,10 @@ if PKG_USING_PAHOMQTT
         help
             Max pahomqtt subscribe topic handlers
 
+    config MQTT_DEBUG
+        bool "Enable debug log output"
+        default y
+
     config PKG_PAHOMQTT_PATH
         string
         default "/packages/iot/pahomqtt"
