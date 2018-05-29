@@ -2,7 +2,7 @@ menu "peripheral libraries and drivers"
 
 # source "$PKGS_DIR/packages/peripherals//Kconfig"
 
-source "$PKGS_DIR/packages/peripherals/ST_STM32F4_HAL/Kconfig"
+source "$PKGS_DIR/packages/peripherals/STM32F4_HAL/Kconfig"
 source "$PKGS_DIR/packages/peripherals/STM32F4_Drivers/Kconfig"
 
 endmenu
