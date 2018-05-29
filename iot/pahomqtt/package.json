@@ -11,7 +11,7 @@
     "VER_SHA" : "cff7e82e3a7b33e100106d34d1d6c82e7862e6ab"
     },
     
-    {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages/paho-mqtt.git", "filename" : "paho-mqtt-1.0.0.zip",
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/paho-mqtt.git", "filename" : "paho-mqtt.zip",
     "VER_SHA" : "master"
     }
     

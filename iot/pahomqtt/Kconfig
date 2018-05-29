@@ -3,7 +3,22 @@ config PKG_USING_PAHOMQTT
     default n
 
 if PKG_USING_PAHOMQTT
-    
+
+    choice
+        prompt "MQTT mode"
+        help
+            Select the MQTT Implementation
+
+        config PAHOMQTT_PIPE_MODE
+            bool "Pipe mode: high performance and depends on DFS"
+            select RT_USING_POSIX
+            select RT_USING_DFS_NET
+
+        config PAHOMQTT_UDP_MODE
+            bool "UDP mode: small footprint, need net supported loopback"
+            select RT_LWIP_NETIF_LOOPBACK
+    endchoice
+
     config PKG_USING_PAHOMQTT_EXAMPLE
         bool "Enable MQTT example"
         default n
@@ -32,12 +47,12 @@ if PKG_USING_PAHOMQTT
         default "/packages/iot/pahomqtt"
 
     choice
-        prompt "pahomqtt version"
+        prompt "version"
         help
             Select the pahomqtt version
 
-        config PKG_USING_PAHOMQTT_LATEST_VERSION
-            bool "latest_version"
+        config PKG_USING_PAHOMQTT_LATEST
+            bool "latest"
 
         config PKG_USING_PAHOMQTT_V100
             bool "v1.0.0"
@@ -49,10 +64,10 @@ if PKG_USING_PAHOMQTT
        default "v1.0.0"
     endif
 
-    if PKG_USING_PAHOMQTT_LATEST_VERSION
+    if PKG_USING_PAHOMQTT_LATEST
        config PKG_PAHOMQTT_VER
        string
-       default "latest_version"
+       default "latest"
     endif
 
 endif
