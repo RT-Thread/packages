@@ -10,7 +10,7 @@ if PKG_USING_LITTLEVGL2RTT
         default "/packages/system/LittlevGL2RTT"
 
     choice
-        prompt "LittlevGL2RTT version"
+        prompt "version"
         help
             Select the LittlevGL2RTT version
 

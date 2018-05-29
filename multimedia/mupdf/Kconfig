@@ -11,7 +11,7 @@ if PKG_USING_MUPDF
         default "/packages/multimedia/mupdf"
 
     choice
-        prompt "mupdf version"
+        prompt "version"
         help
             Select the mupdf version
 

@@ -10,7 +10,7 @@ if PKG_USING_MININI
         default "/packages/system/minIni"
 
     choice
-        prompt "minIni version"
+        prompt "version"
         help
             Select the minIni version
 
@@ -18,10 +18,10 @@ if PKG_USING_MININI
             bool "v1.2.0"
 
         config PKG_USING_MININI_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
     endchoice
     
     default "v1.2.0" if PKG_USING_MININI_V120
-    default "latest_version" if PKG_USING_MININI_LATEST_VERSION
+    default "latest" if PKG_USING_MININI_LATEST_VERSION
 
 endif

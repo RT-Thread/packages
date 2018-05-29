@@ -8,34 +8,34 @@ if PKG_USING_WEBCLIENT
     config PKG_WEBCLIENT_PATH
         string
         default "/packages/iot/webclient"
-    
+
     config WEBCLIENT_USING_TLS
         bool "Eable support tls protocol"
         default n
         select PKG_USING_MBEDTLS
-    
-    choice 
-        prompt "webclient version"
-        help 
+
+    choice
+        prompt "version"
+        help
             Select the webclient version
 
         config PKG_USING_WEBCLIENT_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
 
         config PKG_USING_WEBCLIENT_V100
             bool "v1.0.0"
     endchoice
-    
+
     if PKG_USING_WEBCLIENT_V100
        config PKG_WEBCLIENT_VER
        string
        default "v1.0.0"
     endif
-   
+
     if PKG_USING_WEBCLIENT_LATEST_VERSION
        config PKG_WEBCLIENT_VER
        string
-       default "latest_version"    
+       default "latest"
     endif
 
 endif

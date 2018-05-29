@@ -14,7 +14,7 @@ if PKG_USING_PERSIMMON
         default "/packages/system/persimmon"
 
     choice
-        prompt "Persimmon Version"
+        prompt "Version"
         help
             Select the Persimmon UI version
 

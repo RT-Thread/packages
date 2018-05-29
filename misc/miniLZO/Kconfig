@@ -20,12 +20,12 @@ if PKG_USING_MINILZO
         select RT_USING_DFS
         
     choice
-        prompt "miniLZO version"
+        prompt "version"
         help
             Select the miniLZO version
 
         config PKG_USING_MINILZO_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
             
         config PKG_USING_MINILZO_V100
             bool "v1.0.0"
@@ -41,7 +41,7 @@ if PKG_USING_MINILZO
     if PKG_USING_MINILZO_LATEST_VERSION
        config PKG_MINILZO_VER
        string
-       default "latest_version"    
+       default "latest"    
     endif        
 
 endif

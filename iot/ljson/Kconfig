@@ -10,7 +10,7 @@ if PKG_USING_LJSON
         default "/packages/iot/ljson"
 
 	choice
-        prompt "ljson version"
+        prompt "version"
         help 
             Select the ljson version
 
