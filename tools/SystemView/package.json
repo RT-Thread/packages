@@ -6,6 +6,7 @@
     ],
     "readme": "A Segger utility for analysis and profiling the behavior of the embedded system. More information on https://www.segger.com/products/development-tools/systemview/",
     "site" : [
-    {"version" : "v2.52a", "URL" : "https://github.com/ArdaFu/segger_debug/archive/v2.52a.zip", "filename" : "SystemView-v2.52a.zip"}
+	{"version" : "latest", "URL" : "https://github.com/ArdaFu/segger_debug/archive/master.zip", "filename" : "SystemView-latest.zip"},
+	{"version" : "v2.52a", "URL" : "https://github.com/ArdaFu/segger_debug/archive/v2.52a.zip", "filename" : "SystemView-v2.52a.zip"}
     ]
 }
