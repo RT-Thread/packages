@@ -88,8 +88,8 @@ if PKG_USING_EASYFLASH
         help
             Select the this package version
 
-        config PKG_USING_EASYFLASH_V300
-            bool "v3.0.0"
+        config PKG_USING_EASYFLASH_V310
+            bool "v3.1.0"
 
         config PKG_USING_EASYFLASH_LATEST_VERSION
             bool "latest"
@@ -97,7 +97,7 @@ if PKG_USING_EASYFLASH
 
     config PKG_EASYFLASH_VER
         string
-        default "v3.0.0" if PKG_USING_EASYFLASH_V300
+        default "v3.1.0" if PKG_USING_EASYFLASH_V310
         default "latest" if PKG_USING_EASYFLASH_LATEST_VERSION
 
 endif
