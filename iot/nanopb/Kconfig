@@ -1,4 +1,4 @@
-config PKG_USING_NANOPB
+menuconfig PKG_USING_NANOPB
     bool "nanopb: Protocol Buffers for Embedded Systems"
     default n
 

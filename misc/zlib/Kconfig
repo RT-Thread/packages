@@ -1,5 +1,5 @@
 
-config PKG_USING_ZLIB
+menuconfig PKG_USING_ZLIB
     bool "Zlib: general purpose data compression library."
     default n
 

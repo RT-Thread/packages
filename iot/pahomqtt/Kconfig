@@ -1,4 +1,4 @@
-config PKG_USING_PAHOMQTT
+menuconfig PKG_USING_PAHOMQTT
     bool "Paho MQTT: Eclipse Paho MQTT C/C++ client for Embedded platforms"
     default n
 

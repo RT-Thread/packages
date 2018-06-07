@@ -1,4 +1,4 @@
-config PKG_USING_MINILZO
+menuconfig PKG_USING_MINILZO
     bool "miniLZO: A mini subset of the LZO real-time data compression library"
     default n
     help

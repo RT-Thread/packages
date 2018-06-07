@@ -1,5 +1,5 @@
 
-config PKG_USING_NETUTILS
+menuconfig PKG_USING_NETUTILS
     bool "netutils: Networking utilities for RT-Thread"
     default n
 

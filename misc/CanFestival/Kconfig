@@ -1,6 +1,6 @@
 
 # Kconfig file for package CanFestival
-config PKG_USING_CANFESTIVAL
+menuconfig PKG_USING_CANFESTIVAL
     bool "CanFestival: A free software CANopen framework"
     default n
     help

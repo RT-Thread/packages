@@ -1,7 +1,7 @@
 
 menu "Wiced WiFi"
 
-config PKG_USING_WLAN_WICED
+menuconfig PKG_USING_WLAN_WICED
     bool "Wiced WiFi driver for rt-thread"
 	select RT_USING_LWIP
 	select RT_USING_WIFI

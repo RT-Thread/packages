@@ -1,5 +1,5 @@
 
-config PKG_USING_EASYLOGGER
+menuconfig PKG_USING_EASYLOGGER
     bool "EasyLogger: A ultra-lightweight, high-performance C/C++ log library"
     default n
 

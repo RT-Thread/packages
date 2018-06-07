@@ -1,5 +1,5 @@
 
-config PKG_USING_WEBTERMINAL
+menuconfig PKG_USING_WEBTERMINAL
     bool "WebTerminal: Terminal runs in a Web browser"
     default n
 

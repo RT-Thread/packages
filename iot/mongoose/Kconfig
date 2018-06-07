@@ -1,5 +1,5 @@
 
-config PKG_USING_MONGOOSE
+menuconfig PKG_USING_MONGOOSE
     bool "mongoose: Embedded Web Server / Embedded Networking Library"
     default n
 
