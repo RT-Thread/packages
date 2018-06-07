@@ -44,7 +44,7 @@ if PKG_USING_ONENET
         default "EF4016D6658466CA3E3606"
     
     choice
-        prompt "onenet version"
+        prompt "version"
         help
             Select the onenet version
 

@@ -17,7 +17,7 @@ if PKG_USING_WLANMARVELL
             Select the marvell wifi version
 
         config PKG_USING_WLANMARVELL_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
             
         config PKG_USING_WLANMARVELL_V100
             bool "v1.0.0"
@@ -26,7 +26,7 @@ if PKG_USING_WLANMARVELL
     config PKG_WLANMARVELL_VER
         string
         default "v1.0.0" if PKG_USING_WLANMARVELL_V100
-        default "latest_version" if PKG_USING_WLANMARVELL_LATEST_VERSION
+        default "latest" if PKG_USING_WLANMARVELL_LATEST_VERSION
 
     config MARVELLWIFI_USING_STA
         bool "Using station mode"

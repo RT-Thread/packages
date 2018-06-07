@@ -5,31 +5,6 @@ config PKG_USING_CMBACKTRACE
 
 if PKG_USING_CMBACKTRACE
 
-    config PKG_CMBACKTRACE_PATH
-        string
-        default "/packages/tools/CmBacktrace"
-
-    choice
-        prompt "Version"
-        help
-            Select the this package version
-
-        config PKG_USING_CMBACKTRACE_V102
-            bool "v1.2.0"
-
-        config PKG_USING_CMBACKTRACE_V101
-            bool "v1.1.0"
-
-        config PKG_USING_CMBACKTRACE_LATEST_VERSION
-            bool "latest"
-    endchoice
-
-    config PKG_CMBACKTRACE_VER
-        string
-        default "v1.2.0" if PKG_USING_CMBACKTRACE_V102
-        default "v1.1.0" if PKG_USING_CMBACKTRACE_V101
-        default "latest" if PKG_USING_CMBACKTRACE_LATEST_VERSION
-
     choice
         prompt "CPU Platform"
         default PKG_CMBACKTRACE_PLATFORM_NOT_SELECTED
@@ -64,5 +39,30 @@ if PKG_USING_CMBACKTRACE
         config PKG_CMBACKTRACE_PRINT_CHINESE
             bool "Chinese"
     endchoice
+
+    config PKG_CMBACKTRACE_PATH
+        string
+        default "/packages/tools/CmBacktrace"
+
+    choice
+        prompt "Version"
+        help
+            Select the this package version
+
+        config PKG_USING_CMBACKTRACE_V102
+            bool "v1.2.0"
+
+        config PKG_USING_CMBACKTRACE_V101
+            bool "v1.1.0"
+
+        config PKG_USING_CMBACKTRACE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CMBACKTRACE_VER
+        string
+        default "v1.2.0" if PKG_USING_CMBACKTRACE_V102
+        default "v1.1.0" if PKG_USING_CMBACKTRACE_V101
+        default "latest" if PKG_USING_CMBACKTRACE_LATEST_VERSION
 
 endif

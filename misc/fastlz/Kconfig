@@ -30,12 +30,12 @@ if PKG_USING_FASTLZ
     endif
         
     choice
-        prompt "fastlz version"
+        prompt "version"
         help
             Select the fastlz version
 
         config PKG_USING_FASTLZ_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
             
         config PKG_USING_FASTLZ_V100
             bool "v1.0.0"
@@ -51,7 +51,7 @@ if PKG_USING_FASTLZ
     if PKG_USING_FASTLZ_LATEST_VERSION
        config PKG_FASTLZ_VER
        string
-       default "latest_version"    
+       default "latest"    
     endif
 
 endif

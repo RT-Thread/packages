@@ -8,6 +8,6 @@
     "readme": "a openmv package for rt-thread",
     "site" : [
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages-by-SummerGift/openmv.git", "filename" : "openmv-1.0.0.zip","VER_SHA" : "master"},
-    {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages-by-SummerGift/openmv.git", "filename" : "Null for git package","VER_SHA" : "master"}
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages-by-SummerGift/openmv.git", "filename" : "Null for git package","VER_SHA" : "master"}
     ]
 }

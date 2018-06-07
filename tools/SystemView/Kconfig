@@ -10,11 +10,6 @@ if PKG_USING_SYSTEMVIEW
         string
         default "/packages/tools/systemview"
     
-    config PKG_SYSTEMVIEW_VER
-        string
-        default "v2.52a"
-
-
 	config PKG_SYSVIEW_APP_NAME
 		string "App name"
 		default "RT-Thread Trace"
@@ -188,6 +183,22 @@ menu "SystemView Id configuration"
 			Number of bits to shift the Id to save bandwidth. (i.e. 2 when Ids are 4 byte aligned)
 endmenu
 
+    choice
+        prompt "Version"
+        help
+            Select the this package version
 
+        config PKG_USING_SYSTEMVIEW_LATEST_VERSION
+            bool "latest"
+            
+        config PKG_USING_SYSTEMVIEW_252A
+            bool "v2.52a"
+
+    endchoice
+
+    config PKG_SYSTEMVIEW_VER
+        string
+        default "v2.52a" if PKG_USING_SYSTEMVIEW_252A
+        default "latest" if PKG_USING_SYSTEMVIEW_LATEST_VERSION
 
 endif

@@ -11,7 +11,7 @@ config PKG_GUIENGINE_PATH
     default "/packages/system/gui_engine"
 
 choice
-    prompt "GUI Engine Version"
+    prompt "Version"
     help
         Select the GUI Engine version
 

@@ -10,7 +10,7 @@ if PKG_USING_CJSON
         default "/packages/iot/cJSON"
 
     choice
-        prompt "cJSON Version"
+        prompt "Version"
         help 
             Select the cJSON version
 

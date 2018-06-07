@@ -11,7 +11,7 @@
     "VER_SHA" : "d411fe1a8de6938cc605c3d0c5bddd8ffae9fc33"
     },
     
-    {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages/nopoll.git", "filename" : "nopoll.zip",
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/nopoll.git", "filename" : "nopoll.zip",
     "VER_SHA" : "master"
     }
     

@@ -9,6 +9,6 @@
     "site" : 
     [
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/fastlz.git", "filename" : "fastlz-1.0.0.zip","VER_SHA" : "4df55b9310625fcba86b8fa0fd949c1f3970fa29"},
-    {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages/fastlz.git", "filename" : "fastlz.zip","VER_SHA" : "master"}
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/fastlz.git", "filename" : "fastlz.zip","VER_SHA" : "master"}
     ]
 }

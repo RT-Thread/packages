@@ -10,34 +10,6 @@ config PKG_USING_CANFESTIVAL
 
 if PKG_USING_CANFESTIVAL
 
-    config PKG_CANFESTIVAL_PATH
-        string
-        default "/packages/misc/CanFestival"
-
-    choice
-        prompt "CanFestival version"
-        help
-            Select the CanFestival version
-
-        config PKG_USING_CANFESTIVAL_V100
-            bool "v1.0.0"
-
-        config PKG_USING_CANFESTIVAL_LATEST_VERSION
-            bool "latest"
-    endchoice
-    
-    if PKG_USING_CANFESTIVAL_V100
-        config PKG_CANFESTIVAL_VER
-        string
-        default "v1.0.0"
-    endif
-   
-    if PKG_USING_CANFESTIVAL_LATEST_VERSION
-       config PKG_CANFESTIVAL_VER
-       string
-       default "latest"    
-    endif
-    
     menu "CanFestival config"
         config CANFESTIVAL_CAN_DEVICE_NAME
             string "CAN device name for CanFestival"
@@ -59,6 +31,35 @@ if PKG_USING_CANFESTIVAL
             bool "Enable Cia402 Master example"
             default n
     endmenu
+
+
+    config PKG_CANFESTIVAL_PATH
+        string
+        default "/packages/misc/CanFestival"
+
+    choice
+        prompt "version"
+        help
+            Select the CanFestival version
+
+        config PKG_USING_CANFESTIVAL_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CANFESTIVAL_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
+    if PKG_USING_CANFESTIVAL_V100
+        config PKG_CANFESTIVAL_VER
+        string
+        default "v1.0.0"
+    endif
+   
+    if PKG_USING_CANFESTIVAL_LATEST_VERSION
+       config PKG_CANFESTIVAL_VER
+       string
+       default "latest"    
+    endif
 
 endif
 

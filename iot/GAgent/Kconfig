@@ -23,7 +23,7 @@ if PKG_USING_GAGENT_CLOUD
         default "/packages/iot/GAgent"
 
     choice
-        prompt "GAgent Version"
+        prompt "Version"
         help 
             Select the GAgent version
 

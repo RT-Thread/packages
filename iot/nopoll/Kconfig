@@ -20,12 +20,12 @@ if PKG_USING_NOPOLL
         default "/packages/iot/nopoll"
 
     choice 
-        prompt "nopoll version"
+        prompt "version"
         help 
             Select the nopoll version
 
         config PKG_USING_NOPOLL_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
 
         config PKG_USING_NOPOLL_V100
             bool "v1.0.0"
@@ -40,7 +40,7 @@ if PKG_USING_NOPOLL
     if PKG_USING_NOPOLL_LATEST_VERSION
        config PKG_NOPOLL_VER
        string
-       default "latest_version"    
+       default "latest"    
     endif
 
 endif

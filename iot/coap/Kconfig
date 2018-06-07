@@ -22,7 +22,7 @@ if PKG_USING_COAP
         default "/packages/iot/coap"
         
     choice 
-        prompt "CoAP version"
+        prompt "version"
         help 
             Select the CoAP version
         
@@ -30,7 +30,7 @@ if PKG_USING_COAP
             bool "v1.0.0"			
 
         config PKG_USING_COAP_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
 
     endchoice
     
@@ -43,7 +43,7 @@ if PKG_USING_COAP
     if PKG_USING_COAP_LATEST_VERSION
        config PKG_COAP_VER
        string
-       default "latest_version"    
+       default "latest"    
     endif
 
 endif

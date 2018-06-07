@@ -10,7 +10,7 @@ if PKG_USING_OPENMV
         default "/packages/multimedia/openmv"
 
     choice
-        prompt "openmv version"
+        prompt "version"
         help
             Select the openmv version
 
@@ -18,7 +18,7 @@ if PKG_USING_OPENMV
             bool "v1.0.0"
 
         config PKG_USING_OPENMV_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
     endchoice
     
     if PKG_USING_OPENMV_V100
@@ -30,7 +30,7 @@ if PKG_USING_OPENMV
     if PKG_USING_OPENMV_LATEST_VERSION
        config PKG_OPENMV_VER
        string
-       default "latest_version"    
+       default "latest"    
     endif
 
 endif

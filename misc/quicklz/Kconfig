@@ -23,12 +23,12 @@ if PKG_USING_QUICKLZ
         range 1 3
         
     choice
-        prompt "QuickLZ version"
+        prompt "version"
         help
             Select the QuickLZ version
 
         config PKG_USING_QUICKLZ_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
             
         config PKG_USING_QUICKLZ_V100
             bool "v1.0.0"
@@ -38,7 +38,7 @@ if PKG_USING_QUICKLZ
     if PKG_USING_QUICKLZ_LATEST_VERSION
        config PKG_QUICKLZ_VER
        string
-       default "latest_version"    
+       default "latest"    
     endif
     
     if PKG_USING_QUICKLZ_V100

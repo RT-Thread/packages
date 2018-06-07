@@ -11,7 +11,7 @@
     "VER_SHA" : "f0c363074db79c3f56bdf79bc9beff5e8a930b18"
     },
 
-    {"version" : "latest_version", "URL" : "https://github.com/parai/lwext4.git", "filename" : "lwext4.zip",
+    {"version" : "latest", "URL" : "https://github.com/parai/lwext4.git", "filename" : "lwext4.zip",
     "VER_SHA" : "master"
     }
     

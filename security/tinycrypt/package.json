@@ -16,7 +16,7 @@
     "VER_SHA" : "8bb0818083df893f00568ec792082736e469bf58"
     },
     
-    {"version" : "latest_version", "URL" : "https://github.com/RT-Thread-packages/tinycrypt.git", "filename" : "tinycrypt.zip",
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/tinycrypt.git", "filename" : "tinycrypt.zip",
     "VER_SHA" : "master"
     }
     

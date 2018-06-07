@@ -6,7 +6,7 @@ if PKG_USING_STM32F4_HAL
 
     config PKG_STM32F4_HAL_PATH
         string
-        default "/packages/peripherals/ST_STM32F4_HAL"
+        default "/packages/peripherals/STM32F4_HAL"
 
     choice
         prompt "Version"

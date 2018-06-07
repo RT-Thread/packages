@@ -32,12 +32,12 @@ if PKG_USING_MBEDTLS
         default "/packages/security/mbedtls"
 
     choice
-        prompt "mbedtls version"
+        prompt "version"
         help
             Select the mbedtls version
 
         config PKG_USING_MBEDTLS_LATEST_VERSION
-            bool "latest_version"
+            bool "latest"
             
         config PKG_USING_MBEDTLS_V100
             bool "v1.0.0"
@@ -53,7 +53,7 @@ if PKG_USING_MBEDTLS
     if PKG_USING_MBEDTLS_LATEST_VERSION
        config PKG_MBEDTLS_VER
        string
-       default "latest_version"    
+       default "latest"    
     endif
     
 endif
