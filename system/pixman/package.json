@@ -1,0 +1,16 @@
+
+{
+    "name": "Pixman",
+    "description": "pixman is a library that provides low-level pixel manipulation",
+    "keywords": [
+        "Pixman", "Pixman"
+    ],
+    "readme": "pixman is a library that provides low-level pixel manipulation",
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/pixman.git", "filename" : "pixman-1.0.0.zip",
+    "VER_SHA" : "ebcc8e72fb339d68ac88eacd8bbbe9aef89be371"},
+    
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/pixman.git", "filename" : "pixman.zip", 
+    "VER_SHA" : "master"}
+    ]
+}
