@@ -2,17 +2,17 @@ config PKG_USING_CAIRO
     bool "Cairo - Multi-platform 2D graphics library"
 	select PKG_USING_PIXMAN
     default n
-
+        
 if PKG_USING_CAIRO
 
-    config PKG_USING_CAIRO_PATH
+    config PKG_CAIRO_PATH
         string
         default "/packages/system/cairo"
 
-    choice
+    choice 
         prompt "version"
-        help
-            Select the cairo version
+        help 
+            Select the persimmon version
 
         config PKG_USING_CAIRO_V100
             bool "v1.0.0"
@@ -20,8 +20,8 @@ if PKG_USING_CAIRO
         config PKG_USING_CAIRO_LATEST_VERSION
             bool "latest"
     endchoice
-
-    config PKG_USING_CAIRO_VER
+    
+    config PKG_CAIRO_VER
         string
         default "v1.0.0" if PKG_USING_CAIRO_V100
         default "latest" if PKG_USING_CAIRO_LATEST_VERSION
