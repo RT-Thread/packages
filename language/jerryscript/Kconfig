@@ -1,5 +1,5 @@
 
-config PKG_USING_JERRYSCRIPT  
+menuconfig PKG_USING_JERRYSCRIPT  
     bool "JerryScript: Ultra-lightweight JavaScript engine for the Internet of Things."
     default n
 

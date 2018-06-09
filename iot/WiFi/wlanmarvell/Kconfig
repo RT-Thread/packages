@@ -1,6 +1,6 @@
 menu "Marvell WiFi"
 
-config PKG_USING_WLANMARVELL
+menuconfig PKG_USING_WLANMARVELL
     bool "Marvell WiFi driver for rt-thread"
     select RT_USING_WIFI
     default n

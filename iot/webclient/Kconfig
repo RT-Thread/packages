@@ -1,5 +1,5 @@
 
-config PKG_USING_WEBCLIENT
+menuconfig PKG_USING_WEBCLIENT
     bool "WebClient: A webclient package for rt-thread"
     default n
 

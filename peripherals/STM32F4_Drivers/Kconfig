@@ -1,4 +1,4 @@
-config PKG_USING_STM32F4_DRIVERS
+menuconfig PKG_USING_STM32F4_DRIVERS
     bool "STM32F4_Drivers: RT-Thread Drivers for STM32F4 Series"
     default n
 
@@ -10,6 +10,7 @@ if PKG_USING_STM32F4_DRIVERS
 
     choice
         prompt "Version"
+        default PKG_USING_STM32F4_DRIVERS_LATEST_VERSION
         help 
             Select this package version
 

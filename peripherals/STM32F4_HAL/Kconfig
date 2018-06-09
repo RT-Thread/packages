@@ -1,4 +1,4 @@
-config PKG_USING_STM32F4_HAL
+menuconfig PKG_USING_STM32F4_HAL
     bool "STM32F4_HAL: STM32F4 HAL library"
     default n
 

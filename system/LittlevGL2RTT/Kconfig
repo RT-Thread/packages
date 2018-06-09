@@ -1,5 +1,5 @@
 # Kconfig file for package LittlevGL2RTT
-config PKG_USING_LITTLEVGL2RTT
+menuconfig PKG_USING_LITTLEVGL2RTT
     bool "LittlevGL2RTT: The LittlevGl gui lib adapter RT-Thread"
     default n
 

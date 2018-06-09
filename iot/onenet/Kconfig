@@ -1,6 +1,6 @@
 
 # Kconfig file for package onenet
-config PKG_USING_ONENET
+menuconfig PKG_USING_ONENET
     bool "OneNET: China Mobile OneNet cloud SDK for RT-Thread"
     default n
     select PKG_USING_CJSON

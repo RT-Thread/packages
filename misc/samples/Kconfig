@@ -1,6 +1,6 @@
 
 # Kconfig file for package samples
-config PKG_USING_SAMPLES
+menuconfig PKG_USING_SAMPLES
     bool "samples: RT-Thread kernel and components samples"
     default n
 

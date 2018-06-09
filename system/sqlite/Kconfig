@@ -1,5 +1,5 @@
 
-config PKG_USING_SQLITE
+menuconfig PKG_USING_SQLITE
     bool "SQLite: a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine."
     default n
 

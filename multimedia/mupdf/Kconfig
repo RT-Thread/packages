@@ -1,6 +1,6 @@
 
 # Kconfig file for package mupdf
-config PKG_USING_MUPDF
+menuconfig PKG_USING_MUPDF
     bool "mupdf: a lightweight PDF, XPS, and E-book viewer"
     default n
 

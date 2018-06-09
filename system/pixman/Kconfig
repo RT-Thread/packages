@@ -1,4 +1,4 @@
-config PKG_USING_PIXMAN
+menuconfig PKG_USING_PIXMAN
     bool "pixman is a library that provides low-level pixel manipulation"
     default n
         
