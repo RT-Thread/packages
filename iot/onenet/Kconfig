@@ -45,6 +45,7 @@ if PKG_USING_ONENET
     
     choice
         prompt "version"
+        default PKG_USING_ONENET_LATEST_VERSION
         help
             Select the onenet version
 

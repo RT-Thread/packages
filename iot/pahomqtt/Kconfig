@@ -48,6 +48,7 @@ if PKG_USING_PAHOMQTT
 
     choice
         prompt "version"
+        default PKG_USING_PAHOMQTT_LATEST
         help
             Select the pahomqtt version
 

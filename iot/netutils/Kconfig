@@ -54,6 +54,7 @@ if PKG_USING_NETUTILS
 
     choice
         prompt "Version"
+        default PKG_USING_NETUTILS_LATEST_VERSION
         help
             Select the netutils version
 

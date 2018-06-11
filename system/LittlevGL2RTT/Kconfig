@@ -11,6 +11,7 @@ if PKG_USING_LITTLEVGL2RTT
 
     choice
         prompt "version"
+        default PKG_USING_LITTLEVGL2RTT_LATEST_VERSION
         help
             Select the LittlevGL2RTT version
 

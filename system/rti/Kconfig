@@ -14,6 +14,7 @@ if PKG_USING_RTI
 
     choice
         prompt "Version"
+		default PKG_USING_RTI_LATEST_VERSION
         help
             Select the rti version
 

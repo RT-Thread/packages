@@ -24,6 +24,7 @@ if PKG_USING_QUICKLZ
         
     choice
         prompt "version"
+        default PKG_USING_QUICKLZ_LATEST_VERSION
         help
             Select the QuickLZ version
 

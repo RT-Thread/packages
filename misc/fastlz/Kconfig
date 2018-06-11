@@ -31,6 +31,7 @@ if PKG_USING_FASTLZ
         
     choice
         prompt "version"
+        default PKG_USING_FASTLZ_LATEST_VERSION
         help
             Select the fastlz version
 

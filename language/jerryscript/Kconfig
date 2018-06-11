@@ -11,6 +11,7 @@ if PKG_USING_JERRYSCRIPT
 
     choice
         prompt "version"
+        default PKG_USING_JERRYSCRIPT_LATEST_VERSION
         help 
             Select the version of jerryscript
 

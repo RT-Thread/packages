@@ -39,6 +39,7 @@ if PKG_USING_CANFESTIVAL
 
     choice
         prompt "version"
+        default PKG_USING_CANFESTIVAL_LATEST_VERSION
         help
             Select the CanFestival version
 

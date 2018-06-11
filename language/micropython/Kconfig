@@ -104,6 +104,7 @@ if PKG_USING_MICROPYTHON
 
     choice
         prompt "Version"
+        default PKG_USING_MICROPYTHON_LATEST_VERSION
         help 
             Select the this package version
 

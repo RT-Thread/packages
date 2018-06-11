@@ -24,6 +24,7 @@ if PKG_USING_GAGENT_CLOUD
 
     choice
         prompt "Version"
+        default PKG_USING_GAGENT_LATEST_VERSION
         help 
             Select the GAgent version
 

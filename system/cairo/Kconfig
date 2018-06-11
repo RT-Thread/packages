@@ -11,6 +11,7 @@ if PKG_USING_CAIRO
 
     choice 
         prompt "version"
+        default PKG_USING_CAIRO_LATEST_VERSION
         help 
             Select the persimmon version
 

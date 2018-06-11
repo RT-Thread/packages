@@ -21,6 +21,7 @@ if PKG_USING_MINILZO
         
     choice
         prompt "version"
+        default PKG_USING_MINILZO_LATEST_VERSION
         help
             Select the miniLZO version
 

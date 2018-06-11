@@ -10,6 +10,7 @@ config PKG_GUIENGINE_PATH
 
 choice
     prompt "Version"
+    default PKG_USING_GUIENGINE_LATEST_VERSION
     help
         Select the GUI Engine version
 

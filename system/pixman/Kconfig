@@ -10,6 +10,7 @@ if PKG_USING_PIXMAN
 
     choice 
         prompt "version"
+        default PKG_USING_PIXMAN_LATEST_VERSION
         help 
             Select the persimmon version
 

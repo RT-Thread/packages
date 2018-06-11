@@ -23,6 +23,7 @@ if PKG_USING_COAP
         
     choice 
         prompt "version"
+        default PKG_USING_COAP_LATEST_VERSION
         help 
             Select the CoAP version
         
