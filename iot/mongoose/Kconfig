@@ -48,6 +48,7 @@ if PKG_USING_MONGOOSE
 
     choice
         prompt "Version"
+        default PKG_USING_MONGOOSE_LATEST_VERSION
         help
             Select the mongoose version
 

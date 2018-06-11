@@ -11,6 +11,7 @@ if PKG_USING_CJSON
 
     choice
         prompt "Version"
+        default PKG_USING_CJSON_LATEST_VERSION
         help 
             Select the cJSON version
 

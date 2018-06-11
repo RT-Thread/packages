@@ -12,6 +12,7 @@ if PKG_USING_MUPDF
 
     choice
         prompt "version"
+        default PKG_USING_MUPDF_LATEST_VERSION
         help
             Select the mupdf version
 

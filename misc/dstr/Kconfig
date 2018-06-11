@@ -10,6 +10,7 @@ if PKG_USING_DSTR
 
     choice
         prompt "Version"
+        default PKG_USING_DSTR_LATEST_VERSION
         help
             Select this package version
 

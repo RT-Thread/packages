@@ -13,6 +13,7 @@ if PKG_USING_WLANMARVELL
     
     choice
         prompt "marvell wifi version"
+        default PKG_USING_WLANMARVELL_LATEST_VERSION
         help 
             Select the marvell wifi version
 

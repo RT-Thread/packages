@@ -33,6 +33,7 @@ if PKG_USING_MBEDTLS
 
     choice
         prompt "version"
+        default PKG_USING_MBEDTLS_LATEST_VERSION
         help
             Select the mbedtls version
 

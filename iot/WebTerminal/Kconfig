@@ -16,6 +16,7 @@ if PKG_USING_WEBTERMINAL
 
     choice
         prompt "Version"
+        default PKG_USING_WEBTERMINAL_LATEST_VERSION
         help
             Select the this package version
 

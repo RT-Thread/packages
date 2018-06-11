@@ -11,6 +11,7 @@ if PKG_USING_LJSON
 
 	choice
         prompt "version"
+        default PKG_USING_LJSON_LATEST_VERSION
         help 
             Select the ljson version
 

@@ -15,6 +15,7 @@ if PKG_USING_PERSIMMON
 
     choice
         prompt "Version"
+        default PKG_USING_PERSIMMON_LATEST_VERSION
         help
             Select the Persimmon UI version
 

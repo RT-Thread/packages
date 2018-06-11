@@ -16,6 +16,7 @@ if PKG_USING_WEBCLIENT
 
     choice
         prompt "version"
+        default PKG_USING_WEBCLIENT_LATEST_VERSION
         help
             Select the webclient version
 

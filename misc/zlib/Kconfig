@@ -11,6 +11,7 @@ if PKG_USING_ZLIB
 
     choice
         prompt "version"
+        default PKG_USING_ZLIB_LATEST_VERSION
         help 
             Select the version of jerryscript
 

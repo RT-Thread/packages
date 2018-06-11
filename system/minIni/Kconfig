@@ -11,6 +11,7 @@ if PKG_USING_MININI
 
     choice
         prompt "version"
+        default PKG_USING_MININI_LATEST_VERSION
         help
             Select the minIni version
 

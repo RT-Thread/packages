@@ -109,6 +109,7 @@ endmenu
     
     choice
         prompt "Version"
+        default PKG_USING_EASYLOGGER_LATEST_VERSION
         help 
             Select the this package version
 

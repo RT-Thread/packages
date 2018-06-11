@@ -21,6 +21,7 @@ if PKG_USING_NOPOLL
 
     choice 
         prompt "version"
+        default PKG_USING_NOPOLL_LATEST_VERSION
         help 
             Select the nopoll version
 

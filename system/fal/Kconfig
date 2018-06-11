@@ -47,6 +47,7 @@ if PKG_USING_FAL
 
     choice
         prompt "version"
+        default PKG_USING_FAL_LATEST_VERSION
         help
             Select the version
 
