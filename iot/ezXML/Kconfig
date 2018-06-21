@@ -22,7 +22,7 @@ if PKG_USING_EZXML
 	
     config PKG_EZXML_VER
         string
-	default "v0.8.6" if PKG_USING_EZXML_V068
+        default "v0.8.6" if PKG_USING_EZXML_V068
         default "latest" if PKG_USING_EZXML_LATEST_VERSION
 
 endif
