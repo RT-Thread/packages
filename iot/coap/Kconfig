@@ -1,4 +1,4 @@
-config PKG_USING_COAP
+menuconfig PKG_USING_COAP
     bool "CoAP: A C implementation of the Constrained Application Protocol"
 	select RT_USING_LWIP
 	select RT_USING_LWIP_IPV6

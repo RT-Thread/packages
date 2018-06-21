@@ -1,4 +1,4 @@
-config PKG_USING_LWEXT4
+menuconfig PKG_USING_LWEXT4
     bool "lwext4: an excellent choice of ext2/3/4 filesystem for microcontrollers."
     default n
 

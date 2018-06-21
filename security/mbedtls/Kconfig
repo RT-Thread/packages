@@ -1,5 +1,5 @@
 
-config PKG_USING_MBEDTLS
+menuconfig PKG_USING_MBEDTLS
     bool "mbedtls:An open source, portable, easy to use, readable and flexible SSL library"
     default n
     select RT_USING_RTC

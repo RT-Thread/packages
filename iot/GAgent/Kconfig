@@ -1,4 +1,4 @@
-config PKG_USING_GAGENT_CLOUD
+menuconfig PKG_USING_GAGENT_CLOUD
     bool "GAgent: GAgent of Gizwits in RT-Thread"
     select RT_USING_LWIP
     select RT_LWIP_NETIF_LOOPBACK

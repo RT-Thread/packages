@@ -1,6 +1,4 @@
-menu "RT-Thread GUI Engine"
-
-config PKG_USING_GUIENGINE
+menuconfig PKG_USING_GUIENGINE
     bool "Enable GUI Engine"
     default n
 
@@ -109,4 +107,3 @@ config GUIENGINE_USING_DEMO
 
 endif
 
-endmenu

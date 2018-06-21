@@ -1,5 +1,5 @@
 
-config PKG_USING_EASYLOGGER
+menuconfig PKG_USING_EASYLOGGER
     bool "EasyLogger: A ultra-lightweight, high-performance C/C++ log library"
     default n
 
@@ -94,7 +94,7 @@ menu "EasyLogger Options"
         prompt "Enable flash plugin"
         default n
         select PKG_USING_EASYFLASH
-        select PKG_EASYFLASH_ENABLE_LOG
+        select PKG_EASYFLASH_LOG
 
     config PKG_EASYLOGGER_FLASH_BUF_SIZE
         int

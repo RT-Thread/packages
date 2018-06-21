@@ -1,4 +1,4 @@
-config PKG_USING_EZXML
+menuconfig PKG_USING_EZXML
     bool "ezXML is a C library for parsing XML documents."
     default n
 
