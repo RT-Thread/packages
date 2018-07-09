@@ -1,5 +1,6 @@
 menu "miscellaneous packages"
 
+source "$PKGS_DIR/packages/misc/optparse/Kconfig"
 source "$PKGS_DIR/packages/misc/fastlz/Kconfig"
 source "$PKGS_DIR/packages/misc/miniLZO/Kconfig"
 source "$PKGS_DIR/packages/misc/quicklz/Kconfig"
