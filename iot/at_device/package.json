@@ -1,0 +1,12 @@
+
+{
+    "name": "at_device",
+    "description": "AT DEVICE: RT-Thread AT component porting or samples for different device",
+    "keywords": [
+        "at_device"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/at_device.git", "filename" : "at_device-1.0.0.zip","VER_SHA" : "62bdc169de1a00b11b35cead05164608f321f740"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/at_device.git", "filename" : "at_device.zip","VER_SHA" : "master"}
+    ]
+}

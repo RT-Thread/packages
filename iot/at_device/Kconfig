@@ -1,0 +1,65 @@
+
+# Kconfig file for package at_device
+menuconfig PKG_USING_AT_DEVICE
+    bool "AT DEVICE: RT-Thread AT component porting or samples for different device"
+    default n
+
+if PKG_USING_AT_DEVICE
+
+    config PKG_AT_DEVICE_PATH
+        string
+        default "/packages/iot/at_device"
+
+    choice
+        prompt "AT socket device modules"
+        default AT_DEVICE_NOT_SELECTED
+        
+        config AT_DEVICE_M26
+            bool "Quectel M26"
+        
+        config AT_DEVICE_ESP8266
+            bool "Espressif ESP8266"
+            
+        config AT_DEVICE_NOT_SELECTED
+            bool "Not selected, please select"
+    endchoice
+
+    config AT_DEVICE_SOCKETS_NUM
+        int 
+        default 6 if AT_DEVICE_M26
+        default 5 if AT_DEVICE_ESP8266
+        default 0
+
+    if AT_DEVICE_ESP8266
+        
+        config AT_DEVICE_WIFI_SSID
+            string "esp8266 wifi ssid"
+            default "rtthread"
+            
+        config AT_DEVICE_WIFI_PASSWORD
+            string "esp8266 wifi password"
+            default "12345678"
+        
+    endif
+    
+    choice
+    
+        prompt "Version"
+        help
+            Select the at_device version
+
+        config PKG_USING_AT_DEVICE_LATEST_VERSION
+            bool "latest"
+            
+        config PKG_USING_AT_DEVICE_V100
+            bool "v1.0.0"
+
+    endchoice
+          
+    config PKG_AT_DEVICE_VER
+       string
+       default "v1.0.0"    if PKG_USING_AT_DEVICE_V100
+       default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
+
+endif
+
