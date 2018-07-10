@@ -31,6 +31,10 @@ if PKG_USING_PAHOMQTT
         bool "Enable support tls protocol"
         default n
         select PKG_USING_MBEDTLS
+        
+    config RT_PKG_MQTT_THREAD_STACK_SIZE
+        int "Set MQTT thread stack size"
+        default 4096
 
     config PKG_PAHOMQTT_SUBSCRIBE_HANDLERS
         int "Max pahomqtt subscribe topic handlers"
