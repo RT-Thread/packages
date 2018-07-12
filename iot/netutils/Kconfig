@@ -11,13 +11,28 @@ if PKG_USING_NETUTILS
 
     config PKG_NETUTILS_PING
         bool "Enable Ping utility"
+        depends on RT_USING_LWIP
         select RT_LWIP_ICMP
         select RT_LWIP_RAW
         default n
-
+    
+    config PKG_NETUTILS_TCPDUMP
+        bool "Enable tcpdump tool"
+        help
+            Select the tcpdump tool
+        
+    if PKG_NETUTILS_TCPDUMP            
+        config TCPDUMP_PRINT
+            bool "Enable tcpdump print"    
+        help
+            Select the tcpdump print
+    endif
+    
+         
     config PKG_NETUTILS_TFTP
         bool "Enable TFTP(Trivial File Transfer Protocol) server"
         default n
+        depends on RT_USING_LWIP
     if PKG_NETUTILS_TFTP
         config NETUTILS_TFTP_PORT
             int "TFTP server port"
@@ -32,6 +47,7 @@ if PKG_USING_NETUTILS
     config PKG_NETUTILS_NETIO
         bool "Enable NetIO network throughput performance tool"
         default n
+        depends on RT_USING_LWIP
 
     config PKG_NETUTILS_NTP
         bool "Enable NTP(Network Time Protocol) client"
@@ -63,7 +79,7 @@ if PKG_USING_NETUTILS
         config PKG_USING_NETUTILS_V100
             bool "v1.0.0"
     endchoice
-
+    
     config PKG_NETUTILS_VER
         string
         default "v1.0.0" if PKG_USING_NETUTILS_V100
