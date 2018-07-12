@@ -48,11 +48,11 @@ if PKG_USING_ONENET
         help
             Select the onenet version
 
-        config PKG_USING_ONENET_LATEST_VERSION
-            bool "latest"
-            
         config PKG_USING_ONENET_V010
             bool "v0.1.0"
+           
+        config PKG_USING_ONENET_LATEST_VERSION
+            bool "latest"
 
     endchoice
           
