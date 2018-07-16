@@ -112,6 +112,9 @@ menu "network sample options"
 
     config RT_USING_SAMPLE_UDP_SERVER
         bool "[network] udp server"
+        
+    config RT_USING_SAMPLE_TCP_CLIENT_SELECT
+        bool "[network] tcp client by select api"
 endmenu       
 
 menu "driver sample options"

@@ -1,0 +1,17 @@
+{
+    "name": "Lua",
+    "description": "Lua: A lightweight, embeddable scripting language.",
+    "keywords": [
+        "Lua", "embedded"
+    ],
+    "License" : "MIT License (MIT)",
+    "readme": "Lua: A lightweight, embeddable scripting language.",
+    "author": {
+        "name" : "liu2guang",
+        "email": "1004383796@qq.com"
+    },
+    "site" : [
+        {"version" : "v1.0.0", "URL" : "https://github.com/liu2guang/Lua2RTT.git", "filename" : "Lua2RTT-v1.0.0.zip", "VER_SHA" : "d0c6d15eb4f1493c38ce41b0d0fd7b726284b349"}, 
+        {"version" : "latest", "URL" : "https://github.com/liu2guang/Lua2RTT.git", "filename" : "Lua2RTT-latest.zip", "VER_SHA" : "master"}
+    ]
+}
