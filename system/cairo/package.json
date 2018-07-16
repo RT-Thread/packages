@@ -1,8 +1,8 @@
 {
-    "name": "Cairo",
+    "name": "cairo",
     "description": "Cairo - Multi-platform 2D graphics library",
     "keywords": [
-        "Cairo"
+        "cairo"
     ],
     "readme": "Cairo - Multi-platform 2D graphics library",
     "site": [

@@ -1,8 +1,8 @@
 {
-    "name": "Pixman",
+    "name": "pixman",
     "description": "pixman is a library that provides low-level pixel manipulation",
     "keywords": [
-        "Pixman"
+        "pixman"
     ],
     "readme": "pixman is a library that provides low-level pixel manipulation",
     "site": [
