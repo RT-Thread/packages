@@ -27,6 +27,14 @@ if PKG_USING_ONENET
         help
             Enable automatic registration device functions, don't need to register on the web page
     
+    if ONENET_USING_MQTT	
+        if PKG_USING_ONENET_V010
+            config ONENET_MQTT_SUBTOPIC		
+                string "mqtt subtopic"		
+                default "/test_topic"
+        endif
+    endif
+    
     if ONENET_USING_AUTO_REGISTER
         config ONENET_REGISTRATION_CODE
             string "registration code"
