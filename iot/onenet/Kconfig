@@ -20,13 +20,7 @@ if PKG_USING_ONENET
         bool "Enable support MQTT protocol"
         default y
         select PKG_USING_PAHOMQTT
-        
-    if ONENET_USING_MQTT
-        config ONENET_MQTT_SUBTOPIC
-            string "mqtt subtopic"
-            default "/test_topic"
-    endif
-     
+   
     config ONENET_USING_AUTO_REGISTER
         bool "Enable OneNET automatic register device"
         default n
