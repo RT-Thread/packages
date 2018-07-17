@@ -20,40 +20,62 @@ if PKG_USING_ONENET
         bool "Enable support MQTT protocol"
         default y
         select PKG_USING_PAHOMQTT
-        
-    if ONENET_USING_MQTT
-        config ONENET_MQTT_SUBTOPIC
-            string "mqtt subtopic"
-            default "/test_topic"
+   
+    config ONENET_USING_AUTO_REGISTER
+        bool "Enable OneNET automatic register device"
+        default n
+        help
+            Enable automatic registration device functions, don't need to register on the web page
+    
+    if ONENET_USING_AUTO_REGISTER
+        config ONENET_REGISTRATION_CODE
+            string "registration code"
+            default "17eu2xb5k1GtbdY5" 
+            help
+                product registration code
+    
     endif
-
-    config ONENET_INFO_DEVID
-        string "device id"
-        default "29573339"
+    
+    if !ONENET_USING_AUTO_REGISTER
+        config ONENET_INFO_DEVID
+            string "device id"
+            default "29573339"
+            help
+                product device id
+            
+        config ONENET_INFO_AUTH
+            string "auth info"
+            default "EF4016D6658466CA3E3606"
+            help
+                product authentication info
         
-    config ONENET_INFO_APIKEY
-        string "api key"
-        default "a2gVVf1hggZfuATkNogulHK1V=s="
-        
+        config ONENET_INFO_APIKEY
+            string "api key"
+            default "a2gVVf1hggZfuATkNogulHK1V=s="
+            help
+                product api key
+    
+    endif
+     
     config ONENET_INFO_PROID
         string "product id"
         default "131494"
         
-    config ONENET_INFO_AUTH
-        string "auth info"
-        default "EF4016D6658466CA3E3606"
-    
+    config ONENET_MASTER_APIKEY
+        string "master/product apikey"
+        default "U=wJJ=OEpZsZEHmdPrsKwH2hFYw="
+        
     choice
         prompt "version"
         help
             Select the onenet version
-
+        
+        config PKG_USING_ONENET_LATEST_VERSION
+            bool "latest"    
+            
         config PKG_USING_ONENET_V010
             bool "v0.1.0"
-           
-        config PKG_USING_ONENET_LATEST_VERSION
-            bool "latest"
-
+        
     endchoice
           
     config PKG_ONENET_VER
