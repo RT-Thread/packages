@@ -3,10 +3,9 @@ menuconfig PKG_USING_MBEDTLS
     bool "mbedtls:An open source, portable, easy to use, readable and flexible SSL library"
     default n
     select RT_USING_RTC
-    select RT_USING_LIBC
     select RT_USING_LWIP
-    select RT_USING_DFS
-    select RT_USING_DFS_NET
+    select RT_USING_SAL
+    select SAL_USING_POSIX
 
 if PKG_USING_MBEDTLS
 

@@ -11,8 +11,8 @@ if PKG_USING_PAHOMQTT
 
         config PAHOMQTT_PIPE_MODE
             bool "Pipe mode: high performance and depends on DFS"
-            select RT_USING_POSIX
-            select RT_USING_DFS_NET
+            select RT_USING_SAL
+            select SAL_USING_POSIX
 
         config PAHOMQTT_UDP_MODE
             bool "UDP mode: small footprint, need net supported loopback"
