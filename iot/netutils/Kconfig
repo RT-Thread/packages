@@ -56,6 +56,26 @@ if PKG_USING_NETUTILS
         bool "Enable Telnet server"
         default n
 
+    config PKG_NETUTILS_TCPDUMP
+        bool "Enable tcpdump tool"
+        depends on RT_USING_LWIP
+        select PKG_USING_OPTPARSE
+        select RT_USING_DFS
+        help
+            Select the tcpdump tool
+
+    if PKG_NETUTILS_TCPDUMP
+        config PKG_NETUTILS_TCPDUMP_PRINT
+            bool "Enable tcpdump pcap data to print on the console"
+            default n
+            help
+                Enable tcpdump pcap data to print on the console
+
+        config PKG_NETUTILS_TCPDUMP_DBG
+            bool "Enable tcpdump debug log output"
+            default y
+    endif
+
     choice
         prompt "Version"
         help
