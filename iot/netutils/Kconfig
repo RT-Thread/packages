@@ -15,20 +15,26 @@ if PKG_USING_NETUTILS
         select RT_LWIP_ICMP
         select RT_LWIP_RAW
         default n
-    
+
     config PKG_NETUTILS_TCPDUMP
         bool "Enable tcpdump tool"
+        select PKG_USING_OPTPARSE
+        select RT_USING_DFS
         help
             Select the tcpdump tool
-        
+
     if PKG_NETUTILS_TCPDUMP            
-        config TCPDUMP_PRINT
-            bool "Enable tcpdump print"    
+        config PKG_NETUTILS_TCPDUMP_PRINT
+            bool "Enable tcpdump data to print on the console"    
+            default n
         help
-            Select the tcpdump print
+            Enable tcpdump data to print on the console
+
+        config PKG_NETUTILS_TCPDUMP_DBG
+            bool "Enable tcpdump debug log output"
+            default y
     endif
-    
-         
+
     config PKG_NETUTILS_TFTP
         bool "Enable TFTP(Trivial File Transfer Protocol) server"
         default n
@@ -79,7 +85,7 @@ if PKG_USING_NETUTILS
         config PKG_USING_NETUTILS_V100
             bool "v1.0.0"
     endchoice
-    
+
     config PKG_NETUTILS_VER
         string
         default "v1.0.0" if PKG_USING_NETUTILS_V100
