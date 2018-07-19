@@ -55,4 +55,14 @@ if PKG_USING_TINYCRYPT
     bool "SHA256"
     default y
 
+    config TINY_CRYPT_DES
+    bool "DES"
+    default y
+
+    if TINY_CRYPT_DES
+        config TINY_CRYPT_DES_SELF_TEST
+        bool "DES self test"
+        default y
+    endif
+
 endif
