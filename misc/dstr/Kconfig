@@ -19,7 +19,7 @@ if PKG_USING_DSTR
         config PKG_USING_DSTR_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_DSTR_VER
        string
        default "v0.1.0"    if PKG_USING_DSTR_V010
@@ -30,7 +30,7 @@ menu "dstr Options"
         bool
         prompt "dstr test example"
         default n
-endmenu       
-       
+endmenu
+
 endif
 

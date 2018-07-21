@@ -106,10 +106,10 @@ endmenu
     config PKG_EASYLOGGER_PATH
         string
         default "/packages/tools/EasyLogger"
-    
+
     choice
         prompt "Version"
-        help 
+        help
             Select the this package version
 
         config PKG_USING_EASYLOGGER_V200

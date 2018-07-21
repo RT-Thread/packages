@@ -20,17 +20,17 @@ if PKG_USING_OPENMV
         config PKG_USING_OPENMV_LATEST_VERSION
             bool "latest"
     endchoice
-    
+
     if PKG_USING_OPENMV_V100
         config PKG_OPENMV_VER
         string
         default "v1.0.0"
     endif
-   
+
     if PKG_USING_OPENMV_LATEST_VERSION
        config PKG_OPENMV_VER
        string
-       default "latest"    
+       default "latest"
     endif
 
 endif

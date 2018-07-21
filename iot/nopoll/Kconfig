@@ -7,10 +7,10 @@ menuconfig PKG_USING_NOPOLL
     default n
 
 	help
-		nopoll package in ansi C for websocket	
+		nopoll package in ansi C for websocket
 
 if PKG_USING_NOPOLL
-	
+
 	config PKG_USING_NOPOLL_EXAMPLE
 	bool "Enable nopoll example"
 	default y
@@ -19,9 +19,9 @@ if PKG_USING_NOPOLL
         string
         default "/packages/iot/nopoll"
 
-    choice 
+    choice
         prompt "version"
-        help 
+        help
             Select the nopoll version
 
         config PKG_USING_NOPOLL_LATEST_VERSION
@@ -30,17 +30,17 @@ if PKG_USING_NOPOLL
         config PKG_USING_NOPOLL_V100
             bool "v1.0.0"
     endchoice
-    
+
     if PKG_USING_NOPOLL_V100
        config PKG_NOPOLL_VER
        string
        default "v1.0.0"
     endif
-   
+
     if PKG_USING_NOPOLL_LATEST_VERSION
        config PKG_NOPOLL_VER
        string
-       default "latest"    
+       default "latest"
     endif
 
 endif

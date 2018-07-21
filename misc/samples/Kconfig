@@ -18,18 +18,18 @@ if PKG_USING_SAMPLES
         bool "autorun"
         prompt "run sample in init thread"
         default y
-		
+
 menu "basic sample select options"
     config RT_USING_SAMPLE_LED
         bool "[basic] led"
-    
+
     config LED_PIN
         int "Pin number of LED"
-        default 3    
+        default 3
         depends on RT_USING_SAMPLE_LED
-        
+
 endmenu
-            
+
 menu "kernel sample select options"
     config RT_USING_SAMPLE_THREAD
         bool "[kernel] thread"
@@ -98,7 +98,7 @@ menu "filesystem sample options"
 
     config RT_USING_SAMPLE_TELL_SEEK_DIR
         bool "[filesystem] tell_seek_dir"
-endmenu       
+endmenu
 
 menu "network sample options"
     config RT_USING_SAMPLE_TCP_CLIENT
@@ -112,27 +112,27 @@ menu "network sample options"
 
     config RT_USING_SAMPLE_UDP_SERVER
         bool "[network] udp server"
-        
+
     config RT_USING_SAMPLE_TCP_CLIENT_SELECT
         bool "[network] tcp client by select api"
 
     config RT_USING_SAMPLE_HTTP_CLIENT
         bool "[network] http client"
-endmenu       
+endmenu
 
 menu "driver sample options"
     config RT_USING_SAMPLE_I2C
         bool "[driver] I2C driver"
-        
+
     config RT_USING_SAMPLE_SPI
-        bool "[driver] SPI driver"    
+        bool "[driver] SPI driver"
 
     config RT_USING_SAMPLE_GPIO
         bool "[driver] GPIO driver"
 
     config RT_USING_SAMPLE_UART
-        bool "[driver] UART driver"        
-endmenu  
+        bool "[driver] UART driver"
+endmenu
 
 endif
 

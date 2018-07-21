@@ -10,7 +10,7 @@ if PKG_USING_MULTIBUTTON
 
     choice
         prompt "Version"
-        help 
+        help
             Select the this package version
 
         config PKG_USING_MULTIBUTTON_V102

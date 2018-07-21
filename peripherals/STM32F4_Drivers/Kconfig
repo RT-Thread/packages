@@ -11,7 +11,7 @@ if PKG_USING_STM32F4_DRIVERS
     choice
         prompt "Version"
         default PKG_USING_STM32F4_DRIVERS_LATEST_VERSION
-        help 
+        help
             Select this package version
 
         config PKG_USING_STM32F4_DRIVERS_V10000

@@ -15,7 +15,7 @@ choice
 
     config PKG_USING_GUIENGINE_V200
         bool "v2.0.0"
-    
+
     config PKG_USING_GUIENGINE_LATEST_VERSION
         bool "latest"
 endchoice

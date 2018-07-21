@@ -10,10 +10,10 @@
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/paho-mqtt.git", "filename" : "paho-mqtt-1.0.0.zip",
     "VER_SHA" : "cff7e82e3a7b33e100106d34d1d6c82e7862e6ab"
     },
-    
+
     {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/paho-mqtt.git", "filename" : "paho-mqtt.zip",
     "VER_SHA" : "master"
     }
-    
+
     ]
 }
