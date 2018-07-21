@@ -37,12 +37,12 @@ if PKG_USING_EASYFLASH
             int
             prompt "ENV setting size. MUST be word alignment"
             default 2048
-            
+
         config PKG_EASYFLASH_ENV_AUTO_UPDATE
             bool
             prompt "Auto update ENV to latest default when current ENV version number is changed."
             default n
-            
+
         if PKG_EASYFLASH_ENV_AUTO_UPDATE
             config PKG_EASYFLASH_ENV_VER_NUM
                 int
@@ -90,7 +90,7 @@ if PKG_USING_EASYFLASH
 
         config PKG_USING_EASYFLASH_V310
             bool "v3.1.0"
-            
+
         config PKG_USING_EASYFLASH_V300
             bool "v3.0.0"
 

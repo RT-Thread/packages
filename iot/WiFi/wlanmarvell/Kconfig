@@ -10,19 +10,19 @@ if PKG_USING_WLANMARVELL
     config PKG_WLANMARVELL_PATH
         string
         default "/packages/iot/WiFi/wlanmarvell"
-    
+
     choice
         prompt "marvell wifi version"
-        help 
+        help
             Select the marvell wifi version
 
         config PKG_USING_WLANMARVELL_LATEST_VERSION
             bool "latest"
-            
+
         config PKG_USING_WLANMARVELL_V100
             bool "v1.0.0"
     endchoice
-    
+
     config PKG_WLANMARVELL_VER
         string
         default "v1.0.0" if PKG_USING_WLANMARVELL_V100

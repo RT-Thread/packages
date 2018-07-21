@@ -1,5 +1,5 @@
 
-menuconfig PKG_USING_JERRYSCRIPT  
+menuconfig PKG_USING_JERRYSCRIPT
     bool "JerryScript: Ultra-lightweight JavaScript engine for the Internet of Things."
     default n
 
@@ -11,7 +11,7 @@ if PKG_USING_JERRYSCRIPT
 
     choice
         prompt "version"
-        help 
+        help
             Select the version of jerryscript
 
         config PKG_USING_JERRYSCRIPT_V100

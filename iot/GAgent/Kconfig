@@ -24,11 +24,11 @@ if PKG_USING_GAGENT_CLOUD
 
     choice
         prompt "Version"
-        help 
+        help
             Select the GAgent version
 
         config PKG_USING_GAGENT_LATEST_VERSION
-            bool "latest" 
+            bool "latest"
 
         config PKG_USING_GAGENT_V100
             bool "v1.0.0"

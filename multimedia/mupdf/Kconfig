@@ -21,17 +21,17 @@ if PKG_USING_MUPDF
         config PKG_USING_MUPDF_LATEST_VERSION
             bool "latest"
     endchoice
-    
+
     if PKG_USING_MUPDF_V120
         config PKG_MUPDF_VER
         string
         default "v1.2.0"
     endif
-   
+
     if PKG_USING_MUPDF_LATEST_VERSION
        config PKG_MUPDF_VER
        string
-       default "latest"    
+       default "latest"
     endif
 
 endif

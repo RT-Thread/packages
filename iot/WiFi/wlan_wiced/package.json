@@ -10,10 +10,10 @@
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/wlan-wiced.git", "filename" : "wlan_wiced.zip",
 	"VER_SHA" : "e10e3952ce0131eb50589d3a93615410a58c6aed"
 	},
-	
+
     {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/wlan-wiced.git", "filename" : "wlan_wiced.zip",
     "VER_SHA" : "master"
 	}
-	
+
     ]
 }

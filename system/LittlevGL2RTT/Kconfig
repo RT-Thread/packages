@@ -20,14 +20,14 @@ if PKG_USING_LITTLEVGL2RTT
         config PKG_USING_LITTLEVGL2RTT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LITTLEVGL2RTT_VER
        string
        default "v0.0.1" if PKG_USING_LITTLEVGL2RTT_V001
        default "latest" if PKG_USING_LITTLEVGL2RTT_LATEST_VERSION
 
     menu "LittlevGL2RTT Options"
-        choice 
+        choice
             prompt "Memory management mode"
             default LV_MEM_DYNAMIC
 
@@ -36,12 +36,12 @@ if PKG_USING_LITTLEVGL2RTT
             config LV_MEM_DYNAMIC
                 bool "dynamic"
         endchoice
-        config LV_MEM_CUSTOM 
+        config LV_MEM_CUSTOM
             int
             default 0 if LV_MEM_STATIC
             default 1 if LV_MEM_DYNAMIC
 
-        choice 
+        choice
             prompt "Color depth"
             default LV_COLOR_DEPTH_16
 
@@ -54,7 +54,7 @@ if PKG_USING_LITTLEVGL2RTT
             config LV_COLOR_DEPTH_24
                 bool "24bit"
         endchoice
-        config LV_COLOR_DEPTH 
+        config LV_COLOR_DEPTH
             int
             default 1  if LV_COLOR_DEPTH_1
             default 8  if LV_COLOR_DEPTH_8
@@ -67,21 +67,21 @@ if PKG_USING_LITTLEVGL2RTT
             default 32
             depends on LV_MEM_STATIC
 
-        config LV_MEM_AUTO_DEFRAG 
+        config LV_MEM_AUTO_DEFRAG
             int "Automatically defrag on free"
-            default 1 
+            default 1
             range 0 1
             depends on LV_MEM_STATIC
 
-        config LV_HOR_RES 
+        config LV_HOR_RES
             int "horizontal pixels"
-            default 480 
-        config LV_VER_RES 
+            default 480
+        config LV_VER_RES
             int "vertical pixels"
-            default 272 
-        config LV_DPI 
+            default 272
+        config LV_DPI
             int "DPI(dot per inch)"
-            default 50 
+            default 50
     endmenu
 
     config LITTLEVGL2RTT_USING_DEMO

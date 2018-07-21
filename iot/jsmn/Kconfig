@@ -19,7 +19,7 @@ if PKG_USING_JSMN
         config PKG_USING_JSMN_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_JSMN_VER
        string
        default "v0.1.0"    if PKG_USING_JSMN_V010
@@ -30,12 +30,12 @@ menu "jsmn Options"
         bool
         prompt "jsmn example"
         default n
-    
+
     config JSMN_USING_TEST
         bool
         prompt "jsmn test"
-        default n        
-endmenu        
-       
+        default n
+endmenu
+
 endif
 
