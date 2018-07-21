@@ -115,6 +115,9 @@ menu "network sample options"
         
     config RT_USING_SAMPLE_TCP_CLIENT_SELECT
         bool "[network] tcp client by select api"
+
+    config RT_USING_SAMPLE_HTTP_CLIENT
+        bool "[network] http client"
 endmenu       
 
 menu "driver sample options"
