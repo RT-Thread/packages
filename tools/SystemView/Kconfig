@@ -175,7 +175,7 @@ menu "SystemView buffer configuration"
 
 	config PKG_SEGGER_SYSVIEW_POST_MORTEM_MODE
 		bool "Enable post mortem analysis mode"
-		default y
+		default n
 		---help---
 			n: disable, y: Enable post mortem analysis mode"
 
