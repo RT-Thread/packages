@@ -10,7 +10,7 @@ if PKG_USING_ONENET
 
     config PKG_ONENET_PATH
         string
-        default "/packages/iot/onenet"
+        default "/packages/iot/iot_cloud/onenet"
 
     config PKG_USING_ONENET_SAMPLE
         bool "Enable OneNET sample"
