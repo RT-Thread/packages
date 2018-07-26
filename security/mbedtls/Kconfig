@@ -25,6 +25,10 @@ if PKG_USING_MBEDTLS
     config PKG_USING_MBEDTLS_EXAMPLE
         bool "Enable a mbedtls client example"
         default n
+        
+    config PKG_USING_MBEDTLS_DEBUG
+        bool "Enable Debug log output"
+        default n
 
     config PKG_MBEDTLS_PATH
         string
