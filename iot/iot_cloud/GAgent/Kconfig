@@ -20,7 +20,7 @@ if PKG_USING_GAGENT_CLOUD
 
     config PKG_GAGENT_PATH
         string
-        default "/packages/iot/GAgent"
+        default "/packages/iot/iot_cloud/GAgent"
 
     choice
         prompt "Version"
