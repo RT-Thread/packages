@@ -8,26 +8,11 @@ if PKG_USING_WEBCLIENT
     config PKG_WEBCLIENT_PATH
         string
         default "/packages/iot/webclient"
-
-    config  WEBCLIENT_HEADER_BUFSZ 
-        int "Maxium splice header data size "
-        default 4096
-    
-    config  WEBCLIENT_RESPONSE_BUFSZ 
-        int "Maxium response data size"
-        default 4096
         
     config WEBCLIENT_USING_TLS
         bool "Eable support tls protocol"
         default n
         select PKG_USING_MBEDTLS
-    
-    if WEBCLIENT_USING_TLS
-    
-        config  WEBCLIENT_TLS_READ_BUFFER 
-            int "Maxium TLS read data size"
-            default 4096           
-    endif
     
     choice
 
