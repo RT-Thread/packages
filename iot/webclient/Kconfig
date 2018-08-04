@@ -10,9 +10,13 @@ if PKG_USING_WEBCLIENT
         default "/packages/iot/webclient"
         
     config WEBCLIENT_USING_TLS
-        bool "Eable support tls protocol"
+        bool "Enable support tls protocol"
         default n
         select PKG_USING_MBEDTLS
+        
+    config WEBCLIENT_USING_SAMPLES
+        bool "Enable webclient GET/POST samples"
+        default n
     
     choice
 
