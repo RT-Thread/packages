@@ -2,7 +2,7 @@
 menuconfig PKG_USING_LUA
     bool "Lua: A lightweight, embeddable scripting language."
     default n
-    select RT_USING_LIBC if PKG_USING_LUA
+    select RT_USING_LIBC
 
 if PKG_USING_LUA
 
