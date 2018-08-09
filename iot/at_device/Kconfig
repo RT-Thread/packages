@@ -10,6 +10,10 @@ if PKG_USING_AT_DEVICE
         string
         default "/packages/iot/at_device"
 
+    config PKG_AT_INIT_BY_THREAD
+        bool "Enable at device init by thread"
+        default n
+        
     choice
         prompt "AT socket device modules"
         default AT_DEVICE_NOT_SELECTED
