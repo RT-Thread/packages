@@ -1,0 +1,12 @@
+
+{
+    "name": "ap3216c",
+    "description": "a ap3216c package for rt-thread",
+    "keywords": [
+        "ap3216c"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://git.rt-thread.com/iot/STM32L4_IOT.git", "filename" : "ap3216c-1.0.0.zip","VER_SHA" : "7eaafd839a39269a9977d8aa081b66a018cc6b94"},
+    {"version" : "latest", "URL" : "https://git.rt-thread.com/iot/STM32L4_IOT.git", "filename" : "ap3216c.zip","VER_SHA" : "mater"}
+    ]
+}

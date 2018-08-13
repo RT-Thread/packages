@@ -5,5 +5,6 @@ menu "peripheral libraries and drivers"
 source "$PKGS_DIR/packages/peripherals/STM32F4_HAL/Kconfig"
 source "$PKGS_DIR/packages/peripherals/STM32F4_Drivers/Kconfig"
 source "$PKGS_DIR/packages/peripherals/realtek_ameba/Kconfig"
+source "$PKGS_DIR/packages/peripherals/ap3216c/Kconfig"
 
 endmenu
