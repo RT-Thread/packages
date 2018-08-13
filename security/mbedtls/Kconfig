@@ -3,7 +3,6 @@ menuconfig PKG_USING_MBEDTLS
     bool "mbedtls: An portable and flexible SSL/TLS library"
     default n
     select RT_USING_RTC
-    select RT_USING_LWIP
     select RT_USING_SAL
     select SAL_USING_POSIX
 
