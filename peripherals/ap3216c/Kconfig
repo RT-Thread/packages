@@ -1,0 +1,32 @@
+
+# Kconfig file for package ap3216c
+menuconfig PKG_USING_AP3216C
+    bool "a ap3216c package for rt-thread"
+    default n
+
+if PKG_USING_AP3216C
+
+    config PKG_AP3216C_PATH
+        string
+        default "/packages/iot/ap3216c"
+
+    choice
+        prompt "Version"
+        default PKG_USING_AP3216C_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AP3216C_V100
+            bool "v1.0.0"
+
+        config PKG_USING_AP3216C_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_AP3216C_VER
+       string
+       default "v1.0.0"    if PKG_USING_AP3216C_V100
+       default "latest"    if PKG_USING_AP3216C_LATEST_VERSION
+
+endif
+
