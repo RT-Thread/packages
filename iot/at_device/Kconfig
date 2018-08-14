@@ -10,12 +10,16 @@ if PKG_USING_AT_DEVICE
         string
         default "/packages/iot/at_device"
 
+    config PKG_AT_INIT_BY_THREAD
+        bool "Enable at device init by thread"
+        default n
+        
     choice
         prompt "AT socket device modules"
         default AT_DEVICE_NOT_SELECTED
 
         config AT_DEVICE_M26
-            bool "Quectel M26"
+            bool "Quectel M26/MC20"
 
         config AT_DEVICE_ESP8266
             bool "Espressif ESP8266"
