@@ -6,7 +6,7 @@
         "sht20"
     ],
     "site" : [
-    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/sht2x.git", "filename" : "sht2x-1.0.0.zip","VER_SHA" : "872dd537d635f0385bf58f7f7b765847ccb1ff4d"},
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/sht2x.git", "filename" : "sht2x-1.0.0.zip","VER_SHA" : "7a7bf5d57ba8cc15233bc2f14ef77855a6307bc"},
     {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/sht2x.git", "filename" : "sht2x.zip","VER_SHA" : "mater"}
     ]
 }
