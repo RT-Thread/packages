@@ -8,7 +8,7 @@ if PKG_USING_SHT2X
 
     config PKG_SHT2X_PATH
         string
-        default "/packages/iot/sht2x"
+        default "/packages/peripherals/sht2x"
 
     choice
         prompt "Version"
