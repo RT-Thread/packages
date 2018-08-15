@@ -1,7 +1,7 @@
 
 # Kconfig file for package sht2x
 menuconfig PKG_USING_SHT2X
-    bool "a sht2x package for rt-thread"
+    bool "sht2x: digital humidity and temperature sensor sht2x driver library"
     default n
 
 if PKG_USING_SHT2X
@@ -9,6 +9,12 @@ if PKG_USING_SHT2X
     config PKG_SHT2X_PATH
         string
         default "/packages/peripherals/sht2x"
+
+    config SHT20_USING_SOFT_FILTER
+        bool "Enable average filter by software"
+        default n
+        help
+            "It will automatic sample sensor's data by average filter thread."
 
     choice
         prompt "Version"
@@ -22,7 +28,7 @@ if PKG_USING_SHT2X
         config PKG_USING_SHT2X_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SHT2X_VER
        string
        default "v1.0.0"    if PKG_USING_SHT2X_V100
