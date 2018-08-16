@@ -21,6 +21,9 @@ if PKG_USING_AT_DEVICE
         config AT_DEVICE_M26
             bool "Quectel M26/MC20"
 
+        config AT_DEVICE_EC20
+            bool "Quectel EC20"
+
         config AT_DEVICE_ESP8266
             bool "Espressif ESP8266"
 
@@ -31,6 +34,7 @@ if PKG_USING_AT_DEVICE
     config AT_DEVICE_SOCKETS_NUM
         int
         default 6 if AT_DEVICE_M26
+        default 12 if AT_DEVICE_EC20
         default 5 if AT_DEVICE_ESP8266
         default 0
 
