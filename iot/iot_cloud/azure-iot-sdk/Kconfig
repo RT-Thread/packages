@@ -1,7 +1,7 @@
 
 # Kconfig file for package azure
 menuconfig PKG_USING_AZURE
-    bool "Azure: Microsoft azure cloud SDK for RT-Thread"
+    bool "Azure IoT SDK: Microsoft azure cloud SDK for RT-Thread"
     default n
     select PKG_USING_NETUTILS
     select PKG_NETUTILS_NTP
@@ -11,7 +11,7 @@ if PKG_USING_AZURE
 
     config PKG_AZURE_PATH
         string
-        default "/packages/iot/iot_cloud/azure"
+        default "/packages/iot/iot_cloud/azure-iot-sdk"
 
     choice
         prompt "Choose Protocol"
