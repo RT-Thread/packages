@@ -3,5 +3,5 @@ menu "IoT Cloud"
 source "$PKGS_DIR/packages/iot/iot_cloud/onenet/Kconfig"
 source "$PKGS_DIR/packages/iot/iot_cloud/GAgent/Kconfig"
 source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/Kconfig"
-
+source "$PKGS_DIR/packages/iot/iot_cloud/azure-iot-sdk/Kconfig"
 endmenu
