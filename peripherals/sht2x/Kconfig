@@ -15,6 +15,22 @@ if PKG_USING_SHT2X
         default n
         help
             "It will automatic sample sensor's data by average filter thread."
+            
+    if SHT20_USING_SOFT_FILTER  
+    
+        config SHT20_AVERAGE_TIMES
+            int "The number of averaging"
+            default 10  
+            help
+                "When selected filter function, it will be the number you will add and divide amount."
+                
+        config SHT20_SAMPLE_PERIOD
+            int "Peroid of sampling data(unit ms)"
+            default 1000 
+            help
+                "When selected filter function, it will be the period you will sample. The unit of the period is millisecond."
+    endif        
+       
 
     choice
         prompt "Version"
