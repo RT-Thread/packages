@@ -23,7 +23,7 @@ if PKG_USING_PERSIMMON
 
         config PKG_USING_PERSIMMON_V110
             bool "v1.1.0"
-            
+
         config PKG_USING_PERSIMMON_LATEST_VERSION
             bool "latest"
     endchoice

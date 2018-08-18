@@ -14,19 +14,19 @@ if PKG_USING_WLAN_WICED
     config PKG_WLAN_WICED_PATH
         string
         default "/packages/iot/WiFi/wlan_wiced"
-		
+
 	choice
 		prompt "version"
 		help
 			Select the wiced wifi version
-		
+
 		config PKG_USING_WLAN_WICED_LATEST_VERSION
 			bool "latest"
-		
+
 		config PKG_USING_WLAN_WICED_V100
 			bool "v1.0.0"
 	endchoice
-	
+
 	if PKG_USING_WLAN_WICED_V100
 		config PKG_WLAN_WICED_VER
 		string

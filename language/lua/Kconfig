@@ -1,8 +1,8 @@
 # Kconfig file for package lua
-menuconfig PKG_USING_LUA  
+menuconfig PKG_USING_LUA
     bool "Lua: A lightweight, embeddable scripting language."
     default n
-    select RT_USING_LIBC if PKG_USING_LUA
+    select RT_USING_LIBC
 
 if PKG_USING_LUA
 
@@ -13,9 +13,9 @@ if PKG_USING_LUA
     choice
         prompt "Submitted version"
         help
-            Select the Submitted version 
+            Select the Submitted version
 
-        config PKG_USING_LUA_V100 
+        config PKG_USING_LUA_V100
             bool "v1.0.0"
 
         config PKG_USING_LUA_LATEST_VERSION
@@ -28,10 +28,10 @@ if PKG_USING_LUA
         default "latest" if PKG_USING_LUA_LATEST_VERSION
 
     #menu "Lua Options"
-        choice 
+        choice
             prompt "Porting Lua version"
             help
-                Select the Porting Lua version 
+                Select the Porting Lua version
 
             config LUA_USING_PORTING_V514
                 bool "Lua5.1.4"

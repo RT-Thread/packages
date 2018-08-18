@@ -10,10 +10,10 @@
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/nopoll.git", "filename" : "nopoll-1.0.0.zip",
     "VER_SHA" : "d411fe1a8de6938cc605c3d0c5bddd8ffae9fc33"
     },
-    
+
     {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/nopoll.git", "filename" : "nopoll.zip",
     "VER_SHA" : "master"
     }
-    
+
     ]
 }

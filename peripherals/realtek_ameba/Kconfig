@@ -21,7 +21,7 @@ if PKG_USING_REALTEK_AMEBA
         config PKG_USING_REALTEK_AMEBA_V100
             bool "v1.0.0"
     endchoice
-          
+
     config PKG_REALTEK_AMEBA_VER
        string
        default "v1.0.0"    if PKG_USING_REALTEK_AMEBA_V100

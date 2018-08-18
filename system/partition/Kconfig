@@ -12,5 +12,5 @@ if PKG_USING_PARTITION
     config PKG_PARTITION_VER
         string
         default "v1.0.1"
-        
+
 endif

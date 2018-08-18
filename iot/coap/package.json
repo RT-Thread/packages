@@ -10,10 +10,10 @@
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/coap.git", "filename" : "coap-1.0.0.zip",
     "VER_SHA" : "fcd0af97386bbc93549e37b46000604d96c949f0"
     },
-    
+
     {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/coap.git", "filename" : "coap.zip",
     "VER_SHA" : "master"
     }
-    
+
     ]
 }

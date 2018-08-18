@@ -11,7 +11,7 @@ if PKG_USING_ZLIB
 
     choice
         prompt "version"
-        help 
+        help
             Select the version of jerryscript
 
         config PKG_USING_ZLIB_V100

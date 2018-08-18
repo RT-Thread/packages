@@ -1,0 +1,12 @@
+
+{
+    "name": "azure-iot-sdk",
+    "description": "azure-iot-sdk: Microsoft azure cloud SDK for RT-Thread",
+    "keywords": [
+        "azure-iot-sdk"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/azure-iot-sdk.git", "filename" : "Null for git package","VER_SHA" : "b1ee885fc92eacb03a2c665d69201c92f4d3758d"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/azure-iot-sdk.git", "filename" : "Null for git package","VER_SHA" : "master"}
+    ]
+}

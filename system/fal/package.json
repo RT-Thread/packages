@@ -6,7 +6,7 @@
         "flash", "partition", "OTA", "partition table"
     ],
     "site" : [
-        {"version" : "v0.1.0", "URL" : "https://github.com/RT-Thread-packages/fal.git", "filename" : "fal-0.1.0.zip","VER_SHA" : "de43a0fb8f028abea278c8519ba25753d3f3fcc3"},
+        {"version" : "v0.1.0", "URL" : "https://github.com/RT-Thread-packages/fal/archive/0.1.0.zip", "filename" : "fal-0.1.0.zip"},
         {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/fal.git", "filename" : "fal.zip","VER_SHA" : "master"}
     ]
 }

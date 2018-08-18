@@ -1,0 +1,36 @@
+# Kconfig file for package libcsv 
+menuconfig PKG_USING_LIBCSV 
+    bool "libcsv: a small, simple and fast CSV library written in pure ANSI C89 that can read and write CSV data."
+    select RT_USING_LIBC
+    select RT_USING_DFS
+
+if PKG_USING_LIBCSV
+
+    config PKG_LIBCSV_PATH
+        string
+        default "/packages/misc/libcsv"
+
+    choice
+        prompt "libcsv version"
+        help
+            Select the libcsv version 
+
+        config PKG_USING_LIBCSV_V303 
+            bool "v3.0.3"
+
+        config PKG_USING_LIBCSV_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LIBCSV_VER
+        string
+        default "v3.0.3" if PKG_USING_LIBCSV_V303
+        default "latest" if PKG_USING_LIBCSV_LATEST_VERSION
+        
+    config LIBCSV_USING_DEMO
+        bool
+        prompt "libcsv demo example"
+        default n
+        select PKG_USING_OPTPARSE
+
+endif
