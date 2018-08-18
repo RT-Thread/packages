@@ -1,0 +1,12 @@
+
+{
+    "name": "ap3216c",
+    "description": "ap3216c: a digital ambient light and a proximity sensor ap3216c driver library",
+    "keywords": [
+        "ap3216c"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/ap3216c.git", "filename" : "ap3216c-1.0.0.zip","VER_SHA" : "34b5d822c4091b0152ea05c6ec53f9be5e6f819c"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/ap3216c.git", "filename" : "ap3216c.zip","VER_SHA" : "mater"}
+    ]
+}
