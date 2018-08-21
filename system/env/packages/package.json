@@ -1,6 +1,6 @@
 
 {
-    "name": "env_packages",
+    "name": "packages",
     "description": "Env packages index from github",
     "keywords": [
         "env", "packages"
