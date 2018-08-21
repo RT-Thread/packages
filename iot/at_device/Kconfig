@@ -10,7 +10,7 @@ if PKG_USING_AT_DEVICE
         string
         default "/packages/iot/at_device"
 
-    config PKG_AT_INIT_BY_THREAD
+    config AT_DEVICE_INIT_BY_THREAD
         bool "Enable at device init by thread"
         default n
         
@@ -34,8 +34,19 @@ if PKG_USING_AT_DEVICE
         default 5 if AT_DEVICE_ESP8266
         default 0
 
-    if AT_DEVICE_ESP8266
+    if AT_DEVICE_ESP8266 || AT_DEVICE_M26
+        
+        config AT_DEVICE_NAME
+            string "AT client device name"
+            default "uart2"
 
+        config AT_DEVICE_RECV_BUFF_LEN
+            int "The maximum length of client data accepted"
+            default 512
+    endif
+    
+    if AT_DEVICE_ESP8266
+    
         config AT_DEVICE_WIFI_SSID
             string "esp8266 wifi ssid"
             default "rtthread"
