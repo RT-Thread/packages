@@ -1,0 +1,12 @@
+
+{
+    "name": "kernel_samples",
+    "description": "a kernel_samples package for rt-thread",
+    "keywords": [
+        "kernel_samples"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/kernel-sample.git", "filename" : "kernel_samples-1.0.0.zip","VER_SHA" : "master"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/kernel-sample.git", "filename" : "kernel_samples.zip","VER_SHA" : "master"}
+    ]
+}

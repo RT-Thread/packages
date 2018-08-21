@@ -1,0 +1,58 @@
+
+# Kconfig file for package peripheral_samples
+menuconfig PKG_USING_PERIPHERAL_SAMPLES
+    bool "a peripheral_samples package for rt-thread"
+    default n
+
+if PKG_USING_PERIPHERAL_SAMPLES
+
+    config PKG_PERIPHERAL_SAMPLES_PATH
+        string
+        default "/packages/misc/samples/peripheral_samples"
+
+    choice
+        prompt "Version"
+        default PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PERIPHERAL_SAMPLES_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PERIPHERAL_SAMPLES_VER
+       string
+       default "v1.0.0"    if PKG_USING_PERIPHERAL_SAMPLES_V100
+       default "latest"    if PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
+
+    config PERIPHERAL_SAMPLES_USING_BLOCK
+        bool "[peripheral] block device"
+
+    config PERIPHERAL_SAMPLES_USING_CAN
+        bool "[peripheral] can device"
+
+    config PERIPHERAL_SAMPLES_USING_ETHERNET
+        bool "[peripheral] ethernet device"
+
+    config PERIPHERAL_SAMPLES_USING_I2C
+        bool "[peripheral] i2c device"
+
+    config PERIPHERAL_SAMPLES_USING_PIN
+        bool "[peripheral] pin device"
+
+    config PERIPHERAL_SAMPLES_USING_PWM
+        bool "[peripheral] pwm device"
+
+    config PERIPHERAL_SAMPLES_USING_SERIAL
+        bool "[peripheral] serial device"
+
+    config PERIPHERAL_SAMPLES_USING_SPI
+        bool "[peripheral] spi device"
+
+    config PERIPHERAL_SAMPLES_USING_USB
+        bool "[peripheral] usb device"
+endif
+
