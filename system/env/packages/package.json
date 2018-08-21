@@ -1,0 +1,12 @@
+
+{
+    "name": "packages",
+    "description": "Env packages index from github",
+    "keywords": [
+        "env", "packages"
+    ],
+    "readme": "Env packages index",
+    "site" : [
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread/packages.git", "filename" : "NULL","VER_SHA" : "master"}
+    ]
+}
