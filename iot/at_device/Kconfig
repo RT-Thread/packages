@@ -34,6 +34,22 @@ if PKG_USING_AT_DEVICE
         default 5 if AT_DEVICE_ESP8266
         default 0
 
+    if AT_DEVICE_ESP8266 || AT_DEVICE_M26
+        
+        if PKG_USING_AT_DEVICE_LATEST_VERSION
+        
+            config AT_DEVICE_NAME
+                string "AT client device name"
+                default "uart2"
+
+            config AT_DEVICE_RECV_BUFF_LEN
+                int "The maximum length of client data accepted"
+                default 512
+                
+        endif
+        
+    endif
+    
     if AT_DEVICE_ESP8266
 
         config AT_DEVICE_WIFI_SSID
@@ -49,6 +65,7 @@ if PKG_USING_AT_DEVICE
     choice
 
         prompt "Version"
+        default PKG_USING_AT_DEVICE_V100
         help
             Select the at_device version
 
