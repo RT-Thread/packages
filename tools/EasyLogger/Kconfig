@@ -1,30 +1,9 @@
 
-config PKG_USING_EASYLOGGER
+menuconfig PKG_USING_EASYLOGGER
     bool "EasyLogger: A ultra-lightweight, high-performance C/C++ log library"
     default n
 
 if PKG_USING_EASYLOGGER
-
-    config PKG_EASYLOGGER_PATH
-        string
-        default "/packages/tools/EasyLogger"
-    
-    choice
-        prompt "Version"
-        help 
-            Select the this package version
-
-        config PKG_USING_EASYLOGGER_V200
-            bool "v2.0.0"
-
-        config PKG_USING_EASYLOGGER_LATEST_VERSION
-            bool "latest"
-    endchoice
-
-    config PKG_EASYLOGGER_VER
-        string
-        default "v2.0.0" if PKG_USING_EASYLOGGER_V200
-        default "latest" if PKG_USING_EASYLOGGER_LATEST_VERSION
 
 menu "EasyLogger Options"
 
@@ -115,7 +94,7 @@ menu "EasyLogger Options"
         prompt "Enable flash plugin"
         default n
         select PKG_USING_EASYFLASH
-        select PKG_EASYFLASH_ENABLE_LOG
+        select PKG_EASYFLASH_LOG
 
     config PKG_EASYLOGGER_FLASH_BUF_SIZE
         int
@@ -123,5 +102,26 @@ menu "EasyLogger Options"
         default 1024
         depends on PKG_EASYLOGGER_ENABLE_PLUGIN_FLASH
 endmenu
+
+    config PKG_EASYLOGGER_PATH
+        string
+        default "/packages/tools/EasyLogger"
+
+    choice
+        prompt "Version"
+        help
+            Select the this package version
+
+        config PKG_USING_EASYLOGGER_V200
+            bool "v2.0.0"
+
+        config PKG_USING_EASYLOGGER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_EASYLOGGER_VER
+        string
+        default "v2.0.0" if PKG_USING_EASYLOGGER_V200
+        default "latest" if PKG_USING_EASYLOGGER_LATEST_VERSION
 
 endif

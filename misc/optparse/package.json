@@ -1,0 +1,17 @@
+{
+    "name": "optparse",
+    "description": "optparse: a public domain, portable, reentrant, embeddable, getopt-like option parser.",
+    "keywords": [
+        "getopt-like"
+    ],
+    "License" : "UNLICENSE License",
+    "readme": "optparse: a public domain, portable, reentrant, embeddable, getopt-like option parser.",
+    "author": {
+        "name" : "liu2guang",
+        "email": "1004383796@qq.com"
+    },
+    "site" : [
+        {"version" : "v1.0.0", "URL" : "https://github.com/liu2guang/optparse.git", "filename" : "optparse-v1.0.0.zip", "VER_SHA" : "1b55de5596c9010b507a03311f54f144305fd414"},
+        {"version" : "latest", "URL" : "https://github.com/liu2guang/optparse.git", "filename" : "optparse-latest.zip", "VER_SHA" : "master"}
+    ]
+}

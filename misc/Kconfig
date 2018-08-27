@@ -1,14 +1,19 @@
 menu "miscellaneous packages"
 
+source "$PKGS_DIR/packages/misc/libcsv/Kconfig"
+source "$PKGS_DIR/packages/misc/optparse/Kconfig"
 source "$PKGS_DIR/packages/misc/fastlz/Kconfig"
 source "$PKGS_DIR/packages/misc/miniLZO/Kconfig"
 source "$PKGS_DIR/packages/misc/quicklz/Kconfig"
 source "$PKGS_DIR/packages/misc/MultiButton/Kconfig"
-source "$PKGS_DIR/packages/misc/samples/Kconfig"
 source "$PKGS_DIR/packages/misc/CanFestival/Kconfig"
+source "$PKGS_DIR/packages/misc/zlib/Kconfig"
+source "$PKGS_DIR/packages/misc/dstr/Kconfig"
+
+comment "sample package"
+source "$PKGS_DIR/packages/misc/samples/Kconfig"
 
 comment "example package: hello"
-
 source "$PKGS_DIR/packages/misc/hello/Kconfig"
 
 endmenu

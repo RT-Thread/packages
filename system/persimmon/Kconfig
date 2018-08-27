@@ -1,4 +1,4 @@
-config PKG_USING_PERSIMMON
+menuconfig PKG_USING_PERSIMMON
     bool "Persimmon UI: An Embedded GUI component with sliding and animated effects"
     select PKG_USING_GUIENGINE
     select PKG_USING_FASTLZ
@@ -14,7 +14,7 @@ if PKG_USING_PERSIMMON
         default "/packages/system/persimmon"
 
     choice
-        prompt "Persimmon Version"
+        prompt "Version"
         help
             Select the Persimmon UI version
 
@@ -23,7 +23,7 @@ if PKG_USING_PERSIMMON
 
         config PKG_USING_PERSIMMON_V110
             bool "v1.1.0"
-            
+
         config PKG_USING_PERSIMMON_LATEST_VERSION
             bool "latest"
     endchoice

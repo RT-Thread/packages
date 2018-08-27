@@ -1,34 +1,9 @@
 
-config PKG_USING_CMBACKTRACE
+menuconfig PKG_USING_CMBACKTRACE
     bool "CmBacktrace: Advanced fault backtrace library for ARM Cortex-M series MCU."
     default n
 
 if PKG_USING_CMBACKTRACE
-
-    config PKG_CMBACKTRACE_PATH
-        string
-        default "/packages/tools/CmBacktrace"
-
-    choice
-        prompt "Version"
-        help 
-            Select the this package version
-
-        config PKG_USING_CMBACKTRACE_V101
-            bool "v1.1.0"
-
-        config PKG_USING_CMBACKTRACE_V100
-            bool "v1.0.0"
-
-        config PKG_USING_CMBACKTRACE_LATEST_VERSION
-            bool "latest"
-    endchoice
-    
-    config PKG_CMBACKTRACE_VER
-        string
-        default "v1.1.0" if PKG_USING_CMBACKTRACE_V101
-        default "v1.0.0" if PKG_USING_CMBACKTRACE_V100
-        default "latest" if PKG_USING_CMBACKTRACE_LATEST_VERSION
 
     choice
         prompt "CPU Platform"
@@ -53,7 +28,7 @@ if PKG_USING_CMBACKTRACE
         default y
         help
           Dump the stack information when a fault occurs. It will add a lot of print information.
-    
+
     choice
         prompt "Language of print information"
         default PKG_CMBACKTRACE_PRINT_ENGLISH
@@ -64,5 +39,30 @@ if PKG_USING_CMBACKTRACE
         config PKG_CMBACKTRACE_PRINT_CHINESE
             bool "Chinese"
     endchoice
+
+    config PKG_CMBACKTRACE_PATH
+        string
+        default "/packages/tools/CmBacktrace"
+
+    choice
+        prompt "Version"
+        help
+            Select the this package version
+
+        config PKG_USING_CMBACKTRACE_V102
+            bool "v1.2.0"
+
+        config PKG_USING_CMBACKTRACE_V101
+            bool "v1.1.0"
+
+        config PKG_USING_CMBACKTRACE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CMBACKTRACE_VER
+        string
+        default "v1.2.0" if PKG_USING_CMBACKTRACE_V102
+        default "v1.1.0" if PKG_USING_CMBACKTRACE_V101
+        default "latest" if PKG_USING_CMBACKTRACE_LATEST_VERSION
 
 endif

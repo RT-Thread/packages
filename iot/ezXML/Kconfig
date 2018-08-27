@@ -1,4 +1,4 @@
-config PKG_USING_EZXML
+menuconfig PKG_USING_EZXML
     bool "ezXML is a C library for parsing XML documents."
     default n
 
@@ -8,8 +8,21 @@ if PKG_USING_EZXML
         string
         default "/packages/iot/ezXML"
 
+	choice
+        prompt "version"
+        help
+            Select the ezXML version
+
+        config PKG_USING_EZXML_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_EZXML_V068
+            bool "v0.8.6"
+    endchoice
+
     config PKG_EZXML_VER
         string
-        default "v0.8.6"
+        default "v0.8.6" if PKG_USING_EZXML_V068
+        default "latest" if PKG_USING_EZXML_LATEST_VERSION
 
 endif

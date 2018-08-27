@@ -1,4 +1,4 @@
-config PKG_USING_libsodium
+menuconfig PKG_USING_libsodium
     bool "libsodium: A modern and easy-to-use crypto library."
     default n
 

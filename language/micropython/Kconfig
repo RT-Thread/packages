@@ -1,7 +1,8 @@
 
-config PKG_USING_MICROPYTHON
+menuconfig PKG_USING_MICROPYTHON
     bool "MicroPython: A lean and efficient Python implementation for microcontrollers and constrained systems."
     select RT_USING_LIBC
+    select RT_USING_RTC
     default n
 
 if PKG_USING_MICROPYTHON
@@ -10,16 +11,21 @@ if PKG_USING_MICROPYTHON
         string
         default "/packages/language/micropython"
 
-    select RT_USING_LIBC
-    
     menu "Hardware Module"
         config MICROPYTHON_USING_MACHINE_I2C
             bool "machine i2c: enable i2c functions for machine module"
+            select RT_USING_I2C
             default n
-            
+
         config MICROPYTHON_USING_MACHINE_SPI
             bool "machine spi: enable spi functions for machine module"
-            default n        
+            select RT_USING_SPI
+            default n
+
+        config MICROPYTHON_USING_MACHINE_UART
+            bool "machine uart: enable uart functions for machine module"
+            select RT_USING_SERIAL
+            default n
     endmenu
 
     menu "System Module"
@@ -43,16 +49,16 @@ if PKG_USING_MICROPYTHON
             bool "uerrno: system error codes"
             default n
     endmenu
-    
+
     menu "Tools Module"
         config MICROPYTHON_USING_CMATH
             bool "cmath: mathematical functions for complex numbers"
             default n
-         
+
         config MICROPYTHON_USING_UBINASCII
             bool "ubinascii: binary/ASCII conversions"
             default n
-         
+
         config MICROPYTHON_USING_UHASHLIB
             bool "uhashlib: hashing algorithms"
             default n
@@ -60,30 +66,38 @@ if PKG_USING_MICROPYTHON
         config MICROPYTHON_USING_UHEAPQ
             bool "uheapq: heap queue algorithm"
             default n
-        
+
         config MICROPYTHON_USING_UJSON
             bool "ujson: JSON encoding and decoding"
             default n
 
         config MICROPYTHON_USING_URE
             bool "ure: simple regular expressions"
-            default n    
-     
+            default n
+
         config MICROPYTHON_USING_UZLIB
             bool "uzlib: zlib decompression"
-            default n       
+            default n
 
         config MICROPYTHON_USING_URANDOM
             bool "urandom: random variable generators"
             default n
     endmenu
-    
+
     menu "Network Module"
         config MICROPYTHON_USING_USOCKET
             bool "usocket: socket operations and some related functions"
+            select RT_USING_SAL
+            select SAL_USING_POSIX
+            select RT_LWIP_IGMP
+            default n
+
+        config MICROPYTHON_USING_USSL
+            bool "ussl: secure sockets layer for https protocol"
+            select PKG_USING_MBEDTLS
             default n
     endmenu
-    
+
     config PKG_MICROPYTHON_HEAP_SIZE
         int
         prompt "Heap size for python run environment"
@@ -91,7 +105,7 @@ if PKG_USING_MICROPYTHON
 
     choice
         prompt "Version"
-        help 
+        help
             Select the this package version
 
         config PKG_USING_MICROPYTHON_LATEST_VERSION
@@ -101,7 +115,7 @@ if PKG_USING_MICROPYTHON
             bool "v1.9.3"
 
     endchoice
-    
+
     config PKG_MICROPYTHON_VER
         string
         default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION

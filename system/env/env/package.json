@@ -1,0 +1,12 @@
+
+{
+    "name": "env",
+    "description": "Env function scripts from github",
+    "keywords": [
+        "env", "scripts"
+    ],
+    "readme": "Env function script",
+    "site" : [
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread/env.git", "filename" : "NULL","VER_SHA" : "master"}
+    ]
+}

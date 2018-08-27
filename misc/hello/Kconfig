@@ -1,4 +1,4 @@
-config PKG_USING_HELLO
+menuconfig PKG_USING_HELLO
     bool "Hello: A example package"
     default n
 
@@ -10,7 +10,7 @@ if PKG_USING_HELLO
 
     choice
         prompt "Version"
-        help 
+        help
             Select this package version
 
         config PKG_USING_HELLO_V10000

@@ -1,5 +1,5 @@
 
-config PKG_USING_EASYFLASH
+menuconfig PKG_USING_EASYFLASH
     bool "EasyFlash: Lightweight embedded flash memory library."
     default n
 
@@ -8,11 +8,92 @@ if PKG_USING_EASYFLASH
     config PKG_EASYFLASH_PATH
         string
         default "/packages/tools/EasyFlash"
-    
+
+    config PKG_EASYFLASH_ENV
+        bool
+        prompt "ENV: Environment variables"
+        default y
+
+    if PKG_EASYFLASH_ENV
+
+        choice
+            prompt "ENV mode"
+
+            config PKG_EASYFLASH_ENV_USING_NORMAL
+                bool "Normal mode"
+
+            config PKG_EASYFLASH_ENV_USING_WL_MODE
+                bool "Wear leveling mode"
+
+            config PKG_EASYFLASH_ENV_USING_PFS_MODE
+                bool "Power fail safeguard mode"
+
+            config PKG_EASYFLASH_ENV_USING_WL_PFS_MODE
+                bool "Wear leveling and power fail safeguard mode"
+
+        endchoice
+
+        config PKG_EASYFLASH_ENV_SETTING_SIZE
+            int
+            prompt "ENV setting size. MUST be word alignment"
+            default 2048
+
+        config PKG_EASYFLASH_ENV_AUTO_UPDATE
+            bool
+            prompt "Auto update ENV to latest default when current ENV version number is changed."
+            default n
+
+        if PKG_EASYFLASH_ENV_AUTO_UPDATE
+            config PKG_EASYFLASH_ENV_VER_NUM
+                int
+                prompt "Setting current ENV version number"
+                default 0
+        endif
+
+    endif
+
+    config PKG_EASYFLASH_LOG
+        bool
+        prompt "LOG: Save logs on flash"
+        default n
+
+        if PKG_EASYFLASH_LOG
+            config PKG_EASYFLASH_LOG_AREA_SIZE
+            int
+            prompt "Saved log area size. MUST be aligned by erase minimum granularity"
+            default 0
+    endif
+
+    config PKG_EASYFLASH_IAP
+        bool
+        prompt "IAP: In Application Programming"
+        default n
+
+    config PKG_EASYFLASH_ERASE_GRAN
+        int
+        prompt "Erase minimum granularity"
+        default 4096
+
+    config PKG_EASYFLASH_START_ADDR
+        int
+        prompt "Start addr on flash or partition"
+        default 0
+
+    config PKG_EASYFLASH_DEBUG
+        bool "Enable debug log output"
+        default y
+
     choice
         prompt "Version"
-        help 
+        default PKG_USING_EASYFLASH_V321
+        help
             Select the this package version
+
+        config PKG_USING_EASYFLASH_V321
+            bool "v3.2.1"
+
+        config PKG_USING_EASYFLASH_V310
+            bool "v3.1.0"
 
         config PKG_USING_EASYFLASH_V300
             bool "v3.0.0"
@@ -23,6 +104,8 @@ if PKG_USING_EASYFLASH
 
     config PKG_EASYFLASH_VER
         string
+        default "v3.2.1" if PKG_USING_EASYFLASH_V321
+        default "v3.1.0" if PKG_USING_EASYFLASH_V310
         default "v3.0.0" if PKG_USING_EASYFLASH_V300
         default "latest" if PKG_USING_EASYFLASH_LATEST_VERSION
 

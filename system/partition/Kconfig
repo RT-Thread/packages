@@ -1,5 +1,5 @@
 
-config PKG_USING_PARTITION
+menuconfig PKG_USING_PARTITION
     bool "partition: A simple partition for block device in rt-thread."
     default n
 
@@ -12,5 +12,5 @@ if PKG_USING_PARTITION
     config PKG_PARTITION_VER
         string
         default "v1.0.1"
-        
+
 endif

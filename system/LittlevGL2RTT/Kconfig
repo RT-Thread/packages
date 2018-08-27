@@ -1,0 +1,91 @@
+# Kconfig file for package LittlevGL2RTT
+menuconfig PKG_USING_LITTLEVGL2RTT
+    bool "LittlevGL2RTT: The LittlevGl gui lib adapter RT-Thread"
+    default n
+
+if PKG_USING_LITTLEVGL2RTT
+
+    config PKG_LITTLEVGL2RTT_PATH
+        string
+        default "/packages/system/LittlevGL2RTT"
+
+    choice
+        prompt "version"
+        help
+            Select the LittlevGL2RTT version
+
+        config PKG_USING_LITTLEVGL2RTT_V001
+            bool "v0.0.1"
+
+        config PKG_USING_LITTLEVGL2RTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LITTLEVGL2RTT_VER
+       string
+       default "v0.0.1" if PKG_USING_LITTLEVGL2RTT_V001
+       default "latest" if PKG_USING_LITTLEVGL2RTT_LATEST_VERSION
+
+    menu "LittlevGL2RTT Options"
+        choice
+            prompt "Memory management mode"
+            default LV_MEM_DYNAMIC
+
+            config LV_MEM_STATIC
+                bool "static"
+            config LV_MEM_DYNAMIC
+                bool "dynamic"
+        endchoice
+        config LV_MEM_CUSTOM
+            int
+            default 0 if LV_MEM_STATIC
+            default 1 if LV_MEM_DYNAMIC
+
+        choice
+            prompt "Color depth"
+            default LV_COLOR_DEPTH_16
+
+            config LV_COLOR_DEPTH_1
+                bool "1bit"
+            config LV_COLOR_DEPTH_8
+                bool "8bit"
+            config LV_COLOR_DEPTH_16
+                bool "16bit"
+            config LV_COLOR_DEPTH_24
+                bool "24bit"
+        endchoice
+        config LV_COLOR_DEPTH
+            int
+            default 1  if LV_COLOR_DEPTH_1
+            default 8  if LV_COLOR_DEPTH_8
+            default 16 if LV_COLOR_DEPTH_16
+            default 24 if LV_COLOR_DEPTH_24
+
+        config LV_MEM_KB_SIZE
+            int "Memory Size used by 'lv_mem_alloc'(KB)"
+            range 2 65536
+            default 32
+            depends on LV_MEM_STATIC
+
+        config LV_MEM_AUTO_DEFRAG
+            int "Automatically defrag on free"
+            default 1
+            range 0 1
+            depends on LV_MEM_STATIC
+
+        config LV_HOR_RES
+            int "horizontal pixels"
+            default 480
+        config LV_VER_RES
+            int "vertical pixels"
+            default 272
+        config LV_DPI
+            int "DPI(dot per inch)"
+            default 50
+    endmenu
+
+    config LITTLEVGL2RTT_USING_DEMO
+        bool
+        prompt "LittlevGL2RTT demo example"
+        default y
+endif

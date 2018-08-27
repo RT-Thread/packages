@@ -1,6 +1,4 @@
-menu "RT-Thread GUI Engine"
-
-config PKG_USING_GUIENGINE
+menuconfig PKG_USING_GUIENGINE
     bool "Enable GUI Engine"
     default n
 
@@ -11,13 +9,13 @@ config PKG_GUIENGINE_PATH
     default "/packages/system/gui_engine"
 
 choice
-    prompt "GUI Engine Version"
+    prompt "Version"
     help
         Select the GUI Engine version
 
     config PKG_USING_GUIENGINE_V200
         bool "v2.0.0"
-    
+
     config PKG_USING_GUIENGINE_LATEST_VERSION
         bool "latest"
 endchoice
@@ -39,6 +37,10 @@ config GUIENGINE_TTF_UTF8
     depends on GUIENGINE_USING_TTF
     bool "Support display UTF-8 format string by TrueType font"
     default n
+
+config GUIENG_USING_FNT_FILE
+    bool "Support fnt font"
+    default y
 
 config GUIENGINE_USING_FONT16
     bool "Support 16 height font"
@@ -109,4 +111,3 @@ config GUIENGINE_USING_DEMO
 
 endif
 
-endmenu

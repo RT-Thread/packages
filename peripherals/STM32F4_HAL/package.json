@@ -1,0 +1,12 @@
+{
+    "name": "STM32F4_HAL",
+    "description": "STM32F4_HAL: HAL Library for STM32F4 series SoC",
+    "keywords": [
+        "STM32F4_HAL", "Peripheral Library"
+    ],
+    "readme": "HAL Peripheral Library for STM32F4 series SoC",
+    "site" : [
+    {"version": "v1.7.2", "URL": "https://github.com/RT-Thread-packages/STM32F4_HAL/archive/v1.7.2.zip", "filename": "STM32F4_HAL-1.7.2.zip"},
+    {"version": "latest", "URL": "https://github.com/RT-Thread-packages/STM32F4_HAL.git", "filename": "STM32F4_HAL.zip", "VER_SHA": "master"}
+    ]
+}

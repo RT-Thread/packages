@@ -1,5 +1,5 @@
 
-config PKG_USING_NETUTILS
+menuconfig PKG_USING_NETUTILS
     bool "netutils: Networking utilities for RT-Thread"
     default n
 
@@ -11,6 +11,7 @@ if PKG_USING_NETUTILS
 
     config PKG_NETUTILS_PING
         bool "Enable Ping utility"
+        depends on RT_USING_LWIP
         select RT_LWIP_ICMP
         select RT_LWIP_RAW
         default n
@@ -18,6 +19,7 @@ if PKG_USING_NETUTILS
     config PKG_NETUTILS_TFTP
         bool "Enable TFTP(Trivial File Transfer Protocol) server"
         default n
+        depends on RT_USING_LWIP
     if PKG_NETUTILS_TFTP
         config NETUTILS_TFTP_PORT
             int "TFTP server port"
@@ -32,9 +34,12 @@ if PKG_USING_NETUTILS
     config PKG_NETUTILS_NETIO
         bool "Enable NetIO network throughput performance tool"
         default n
+        depends on RT_USING_LWIP
 
     config PKG_NETUTILS_NTP
         bool "Enable NTP(Network Time Protocol) client"
+        select RT_USING_SAL
+        select SAL_USING_POSIX
         default n
     if PKG_NETUTILS_NTP
         config NETUTILS_NTP_TIMEZONE
@@ -44,12 +49,32 @@ if PKG_USING_NETUTILS
 
         config NETUTILS_NTP_HOSTNAME
             string "NTP server name"
-            default "cn.pool.ntp.org"
+            default "cn.ntp.org.cn"
     endif
 
     config PKG_NETUTILS_TELNET
         bool "Enable Telnet server"
         default n
+
+    config PKG_NETUTILS_TCPDUMP
+        bool "Enable tcpdump tool"
+        depends on RT_USING_LWIP
+        select PKG_USING_OPTPARSE
+        select RT_USING_DFS
+        help
+            Select the tcpdump tool
+
+    if PKG_NETUTILS_TCPDUMP
+        config PKG_NETUTILS_TCPDUMP_PRINT
+            bool "Enable tcpdump pcap data to print on the console"
+            default n
+            help
+                Enable tcpdump pcap data to print on the console
+
+        config PKG_NETUTILS_TCPDUMP_DBG
+            bool "Enable tcpdump debug log output"
+            default y
+    endif
 
     choice
         prompt "Version"
