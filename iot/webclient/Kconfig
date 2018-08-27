@@ -2,6 +2,7 @@
 menuconfig PKG_USING_WEBCLIENT
     bool "WebClient: A HTTP/HTTPS Client for RT-Thread"
     default n
+    select RT_USING_LIBC
 
 if PKG_USING_WEBCLIENT
 
