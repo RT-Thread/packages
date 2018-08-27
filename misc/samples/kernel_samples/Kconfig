@@ -31,10 +31,7 @@ if PKG_USING_KERNEL_SAMPLES
     config KERNEL_SAMPLES_USING_THREAD
         bool "[kernel] thread"
 
-    config KERNEL_SAMPLES_USING_INTERRUPT
-        bool "[kernel] interrupt and critical"
-
-    config KERNEL_SAMPLES_USING_SEMPHORE
+    config KERNEL_SAMPLES_USING_SEMAPHORE
         bool "[kernel] semphore"
 
     config KERNEL_SAMPLES_USING_MUTEX
@@ -64,11 +61,10 @@ if PKG_USING_KERNEL_SAMPLES
     config KERNEL_SAMPLES_USING_IDLEHOOK
         bool "[kernel] idle hook"
 
-    config KERNEL_SAMPLES_USING_PRODUCER_CONSUMER
-        bool "[kernel] producer_consumer"
-
     config KERNEL_SAMPLES_USING_SIGNAL
         bool "[kernel] signal"
 
+    config KERNEL_SAMPLES_USING_INTERRUPT
+        bool "[kernel] interrupt and critical"
 endif
 

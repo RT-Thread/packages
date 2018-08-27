@@ -28,11 +28,6 @@ if PKG_USING_FILESYSTEM_SAMPLES
        default "v1.0.0"    if PKG_USING_FILESYSTEM_SAMPLES_V100
        default "latest"    if PKG_USING_FILESYSTEM_SAMPLES_LATEST_VERSION
 
-        config PKG_FILESYSTEM_SAMPLES_VER
-       string
-       default "v1.0.0"    if PKG_USING_FILESYSTEM_SAMPLES_V100
-       default "latest"    if PKG_USING_FILESYSTEM_SAMPLES_LATEST_VERSION
-
     config FILESYSTEM_SAMPLES_USING_OPENFILE
         bool "[filesystem] openfile"
 
