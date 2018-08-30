@@ -23,10 +23,10 @@ if PKG_USING_AT_DEVICE
 
         config AT_DEVICE_M26
             bool "Quectel M26/MC20"
-
+      
         config AT_DEVICE_EC20
             bool "Quectel EC20"
-
+  
         config AT_DEVICE_ESP8266
             bool "Espressif ESP8266"
 
@@ -41,7 +41,7 @@ if PKG_USING_AT_DEVICE
         default 5 if AT_DEVICE_ESP8266
         default 0
 
-    if AT_DEVICE_ESP8266 || AT_DEVICE_M26
+    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20
         
         if PKG_USING_AT_DEVICE_LATEST_VERSION
         
@@ -72,7 +72,7 @@ if PKG_USING_AT_DEVICE
     choice
 
         prompt "Version"
-        default PKG_USING_AT_DEVICE_V110
+        default PKG_USING_AT_DEVICE_LATEST_VERSION
         help
             Select the at_device version
 
