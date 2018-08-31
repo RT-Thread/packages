@@ -83,7 +83,7 @@ if PKG_USING_MBEDTLS
 
     config PKG_USING_MBEDTLS_EXAMPLE
         bool "Enable a mbedtls client example"
-        select PKG_USING_MBEDTLS_DST_ROOT_CA
+        select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
         default n
         
     config PKG_USING_MBEDTLS_DEBUG
