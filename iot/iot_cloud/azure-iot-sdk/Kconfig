@@ -40,7 +40,7 @@ if PKG_USING_AZURE
         help
             Select the package version
 
-        config PKG_USING_AZURE_V128
+        config PKG_USING_AZURE_V10208
             bool "v1.2.8"
 
         config PKG_USING_AZURE_LATEST_VERSION
@@ -49,7 +49,7 @@ if PKG_USING_AZURE
 
     config PKG_AZURE_VER
        string
-       default "v1.2.8"    if PKG_USING_AZURE_V128
+       default "v1.2.8"    if PKG_USING_AZURE_V10208
        default "latest"    if PKG_USING_AZURE_LATEST_VERSION
 
 endif
