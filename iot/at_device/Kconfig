@@ -76,21 +76,25 @@ if PKG_USING_AT_DEVICE
         help
             Select the at_device version
 
-        config PKG_USING_AT_DEVICE_LATEST_VERSION
-            bool "latest"
-
-        config PKG_USING_AT_DEVICE_V100
-            bool "v1.0.0"
+        config PKG_USING_AT_DEVICE_V110
+            bool "v1.2.0"
             
         config PKG_USING_AT_DEVICE_V110
             bool "v1.1.0"
+            
+        config PKG_USING_AT_DEVICE_V100
+            bool "v1.0.0"
+            
+        config PKG_USING_AT_DEVICE_LATEST_VERSION
+            bool "latest"
 
     endchoice
 
     config PKG_AT_DEVICE_VER
        string
-       default "v1.0.0"    if PKG_USING_AT_DEVICE_V100
+       default "v1.2.0"    if PKG_USING_AT_DEVICE_V120
        default "v1.1.0"    if PKG_USING_AT_DEVICE_V110
+       default "v1.0.0"    if PKG_USING_AT_DEVICE_V100 
        default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
 
 endif
