@@ -15,7 +15,7 @@ if PKG_USING_WEBCLIENT
         default n
         select PKG_USING_MBEDTLS
 
-    if PKG_USING_WEBCLIENT_LATEST_VERSION
+    if !PKG_USING_WEBCLIENT_V100
     
         config WEBCLIENT_USING_SAMPLES
             bool "Enable webclient GET/POST samples"
@@ -30,9 +30,12 @@ if PKG_USING_WEBCLIENT
             Select the webclient version
         default PKG_USING_WEBCLIENT_V100
 
+        config PKG_USING_WEBCLIENT_V200
+            bool "v2.0.0"
+
         config PKG_USING_WEBCLIENT_V100
             bool "v1.0.0"
-            
+
         config PKG_USING_WEBCLIENT_LATEST_VERSION
             bool "latest"
 
@@ -40,6 +43,7 @@ if PKG_USING_WEBCLIENT
 
     config PKG_WEBCLIENT_VER
        string
+       default "v2.0.0"    if PKG_USING_WEBCLIENT_V200
        default "v1.0.0"    if PKG_USING_WEBCLIENT_V100
        default "latest"    if PKG_USING_WEBCLIENT_LATEST_VERSION
 
