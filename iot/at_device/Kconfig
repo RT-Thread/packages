@@ -43,7 +43,7 @@ if PKG_USING_AT_DEVICE
 
     if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20
         
-        if PKG_USING_AT_DEVICE_LATEST_VERSION
+        if !PKG_USING_AT_DEVICE_V100 && !PKG_USING_AT_DEVICE_V110
         
             config AT_DEVICE_NAME
                 string "AT client device name"
