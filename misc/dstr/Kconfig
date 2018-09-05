@@ -16,6 +16,9 @@ if PKG_USING_DSTR
         config PKG_USING_DSTR_V010
             bool "v0.1.0"
 
+        config PKG_USING_DSTR_V020
+            bool "v0.2.0"
+
         config PKG_USING_DSTR_LATEST_VERSION
             bool "latest"
     endchoice
@@ -23,6 +26,7 @@ if PKG_USING_DSTR
     config PKG_DSTR_VER
        string
        default "v0.1.0"    if PKG_USING_DSTR_V010
+       default "v0.2.0"    if PKG_USING_DSTR_V020
        default "latest"    if PKG_USING_DSTR_LATEST_VERSION
 
 menu "dstr Options"
