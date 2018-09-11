@@ -1,0 +1,12 @@
+
+{
+    "name": "network_samples",
+    "description": "a network_samples package for rt-thread",
+    "keywords": [
+        "network_samples"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/network-sample.git", "filename" : "network_samples-1.0.0.zip","VER_SHA" : "master"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/network-sample.git", "filename" : "network_samples.zip","VER_SHA" : "master"}
+    ]
+}

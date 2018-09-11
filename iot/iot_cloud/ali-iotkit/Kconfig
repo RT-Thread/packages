@@ -103,16 +103,17 @@ if PKG_USING_ALI_IOTKIT
         help
             Select the ali-iotkit version
 
+        config PKG_USING_ALI_IOTKIT_V20003
+            bool "v2.0.3"
+
         config PKG_USING_ALI_IOTKIT_LATEST_VERSION
             bool "latest"
-            
-        config PKG_USING_ALI_IOTKIT_V100
-            bool "v1.0.0"
+
     endchoice
 
     config PKG_ALI_IOTKIT_VER
        string
-       default "v1.0.0"    if PKG_USING_ALI_IOTKIT_V100
+       default "v2.0.3"    if PKG_USING_ALI_IOTKIT_V20003
        default "latest"    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
     
 endif

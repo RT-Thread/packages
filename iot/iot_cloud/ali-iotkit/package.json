@@ -7,7 +7,7 @@
     ],
     "readme": "ali-iotkit: Aliyun Iot Development Platform",
     "site" : [
-    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/ali-iotkit.git", "filename" : "ali-iotkit-1.0.0.zip","VER_SHA" : "ba1c8597f3ae0fe83426f0520aa444f71705eae0"},
+    {"version" : "v2.0.3", "URL" : "https://github.com/RT-Thread-packages/ali-iotkit/archive/2.0.3.zip", "filename" : "ali-iotkit-2.0.3.zip","VER_SHA" : "ba1c8597f3ae0fe83426f0520aa444f71705eae0"},
     
     {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/ali-iotkit.git", "filename" : "ali-iotkit.zip","VER_SHA" : "master"}
     ]

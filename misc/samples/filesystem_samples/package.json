@@ -1,0 +1,12 @@
+
+{
+    "name": "filesystem_samples",
+    "description": "a filesystem_samples package for rt-thread",
+    "keywords": [
+        "filesystem_samples"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/filesystem-sample.git", "filename" : "filesystem_samples-1.0.0.zip","VER_SHA" : "master"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/filesystem-sample.git", "filename" : "filesystem_samples.zip","VER_SHA" : "master"}
+    ]
+}

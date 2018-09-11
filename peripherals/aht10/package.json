@@ -6,7 +6,7 @@
         "aht10"
     ],
     "site" : [
-    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/aht10.git", "filename" : "aht10-1.0.0.zip","VER_SHA" : "ced3aa1f834fa3dce6baba857f8447d4965e7560"},
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/aht10/archive/1.0.0.zip", "filename" : "aht10-1.0.0.zip","VER_SHA" : "NULL"},
     {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/aht10.git", "filename" : "aht10.zip","VER_SHA" : "mater"}
     ]
 }
