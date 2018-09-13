@@ -29,11 +29,8 @@ def execute_command(cmdstring, cwd=None, shell=True):
     return stdout_str
 
 
-work_root = os.getcwd()
-print(work_root)
-
-
 def determine_url_valid(url_from_srv):
+    """Check the validity of urls."""
 
     headers = {'Connection': 'keep-alive',
                'Accept-Encoding': 'gzip, deflate',
@@ -60,8 +57,9 @@ def determine_url_valid(url_from_srv):
 
 
 def check_json_file(work_root):
-    file_count = 1
+    """Check the json file."""
 
+    file_count = 1
     folder_walk_result = os.walk(work_root)
 
     for path, d, filelist in folder_walk_result:
@@ -77,12 +75,12 @@ def check_json_file(work_root):
 
 
 def json_file_content_check(json_pathname):
+    """Check the content of json file."""
 
     with open(json_pathname, 'r+') as f:
         json_content = f.read()
 
     package_info = json.loads(json_content)
-
     print(package_info['name'])
 
     for i in range(0, len(package_info['site'])):
@@ -98,7 +96,11 @@ def json_file_content_check(json_pathname):
 
 
 def main():
+    """The entry point of the script."""
+    
     try:
+        work_root = os.getcwd()
+        print(work_root)
         if not check_json_file(work_root):
             sys.exit(1)
 
