@@ -80,15 +80,15 @@ if PKG_USING_ONENET
 
         config PKG_USING_ONENET_LATEST_VERSION
             bool "latest"
-
-        config PKG_USING_ONENET_V010
-            bool "v0.1.0"
-
+            
+        config PKG_USING_ONENET_V100
+            bool "v1.0.0"
+           
     endchoice
 
     config PKG_ONENET_VER
        string
-       default "v0.1.0"    if PKG_USING_ONENET_V010
+       default "v1.0.0"    if PKG_USING_ONENET_V100
        default "latest"    if PKG_USING_ONENET_LATEST_VERSION
 
 endif
