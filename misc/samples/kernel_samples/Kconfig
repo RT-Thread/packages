@@ -65,6 +65,16 @@ if PKG_USING_KERNEL_SAMPLES
         bool "[kernel] signal"
 
     config KERNEL_SAMPLES_USING_INTERRUPT
-        bool "[kernel] interrupt and critical"
+        bool "[kernel] interrupt"
+
+    config KERNEL_SAMPLES_USING_PRI_INVERSION
+    bool "[kernel] priority inversion"
+
+    config KERNEL_SAMPLES_USING_TIME_SLICE
+    bool "[kernel] time slice"
+
+    config KERNEL_SAMPLES_USING_SCHEDULER_HOOK
+    bool "[kernel] sheduler hook"
+
 endif
 

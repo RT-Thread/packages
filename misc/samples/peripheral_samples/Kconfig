@@ -3,6 +3,7 @@
 menuconfig PKG_USING_PERIPHERAL_SAMPLES
     bool "a peripheral_samples package for rt-thread"
     default n
+    select RT_USING_DEVICE
 
 if PKG_USING_PERIPHERAL_SAMPLES
 
@@ -30,15 +31,19 @@ if PKG_USING_PERIPHERAL_SAMPLES
 
     config PERIPHERAL_SAMPLES_USING_I2C
         bool "[peripheral] i2c device"
+        select RT_USING_I2C
 
     config PERIPHERAL_SAMPLES_USING_PIN
         bool "[peripheral] pin device"
+        select RT_USING_PIN
 
     config PERIPHERAL_SAMPLES_USING_SERIAL
         bool "[peripheral] serial device"
+        select RT_USING_SERIAL
 
     config PERIPHERAL_SAMPLES_USING_SPI
         bool "[peripheral] spi device"
+        select RT_USING_SPI
 
 endif
 
