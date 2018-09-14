@@ -10,5 +10,6 @@ source "$PKGS_DIR/packages/system/fal/Kconfig"
 source "$PKGS_DIR/packages/system/sqlite/Kconfig"
 source "$PKGS_DIR/packages/system/rti/Kconfig"
 source "$PKGS_DIR/packages/system/LittlevGL2RTT/Kconfig"
+source "$PKGS_DIR/packages/system/CMSIS/Kconfig"
 
 endmenu
