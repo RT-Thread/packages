@@ -1,6 +1,6 @@
 # packages repo
 
-[![Build Status](https://travis-ci.org/RT-Thread/packages.svg)](https://travis-ci.org/SummerGGift/packages)
+[![Build Status](https://travis-ci.org/RT-Thread/packages.svg)](https://travis-ci.org/RT-Thread/packages)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://github.com/RT-Thread/packages/pulls)
 
 The packages repo for rt-thread. In this git repo, there is only the information of packages. Some packages maintained by RT-Thread team, is hosted in https://github.com/RT-Thread-packages.
