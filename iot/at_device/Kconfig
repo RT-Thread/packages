@@ -76,6 +76,9 @@ if PKG_USING_AT_DEVICE
         help
             Select the at_device version
 
+        config PKG_USING_AT_DEVICE_V130
+            bool "v1.3.0"
+            
         config PKG_USING_AT_DEVICE_V120
             bool "v1.2.0"
             
@@ -92,6 +95,7 @@ if PKG_USING_AT_DEVICE
 
     config PKG_AT_DEVICE_VER
        string
+       default "v1.3.0"    if PKG_USING_AT_DEVICE_V130
        default "v1.2.0"    if PKG_USING_AT_DEVICE_V120
        default "v1.1.0"    if PKG_USING_AT_DEVICE_V110
        default "v1.0.0"    if PKG_USING_AT_DEVICE_V100 
