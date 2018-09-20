@@ -1,0 +1,28 @@
+menuconfig PKG_USING_DFS_YAFFS
+    bool "yaffs: Yet Another Flash File System"
+    default n
+
+if PKG_USING_DFS_YAFFS
+
+    config PKG_YAFFS_PATH
+        string
+        default "/packages/system/yaffs2"
+
+    choice
+        prompt "yaffs version"
+        help
+            Select the yaffs version
+
+        config PKG_USING_YAFFS_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_YAFFS_V100
+            bool "v1.0.0"
+    endchoice
+
+    config PKG_YAFFS_VER
+       string
+       default "v1.0.0" if PKG_USING_YAFFS_V100
+       default "latest" if PKG_USING_YAFFS_LATEST_VERSION
+
+endif
