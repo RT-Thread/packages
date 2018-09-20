@@ -26,4 +26,13 @@ if PKG_USING_JERRYSCRIPT
         default "v1.0.0" if PKG_USING_JERRYSCRIPT_V100
         default "latest" if PKG_USING_JERRYSCRIPT_LATEST_VERSION
 
+    config JERRY_ENABLE_LOGGING
+        bool "Jerry enable logging"
+        default n
+        
+    config JMEM_STATS
+        bool "Heap memory usage statistics"
+        select JERRY_ENABLE_LOGGING
+        default n
+
 endif
