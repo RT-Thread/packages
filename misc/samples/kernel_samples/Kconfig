@@ -12,12 +12,12 @@ if PKG_USING_KERNEL_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
+        default PKG_USING_KERNEL_SAMPLES_V010
         help
             Select the package version
 
-        config PKG_USING_KERNEL_SAMPLES_V100
-            bool "v1.0.0"
+        config PKG_USING_KERNEL_SAMPLES_V010
+            bool "v0.1.0"
 
         config PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
             bool "latest"
@@ -25,7 +25,7 @@ if PKG_USING_KERNEL_SAMPLES
 
     config PKG_KERNEL_SAMPLES_VER
        string
-       default "v1.0.0"    if PKG_USING_KERNEL_SAMPLES_V100
+       default "v0.1.0"    if PKG_USING_KERNEL_SAMPLES_V010
        default "latest"    if PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
        
     config KERNEL_SAMPLES_USING_THREAD
@@ -63,8 +63,19 @@ if PKG_USING_KERNEL_SAMPLES
 
     config KERNEL_SAMPLES_USING_SIGNAL
         bool "[kernel] signal"
+        select RT_USING_SIGNAL
 
     config KERNEL_SAMPLES_USING_INTERRUPT
-        bool "[kernel] interrupt and critical"
+        bool "[kernel] interrupt"
+
+    config KERNEL_SAMPLES_USING_PRI_INVERSION
+    bool "[kernel] priority inversion"
+
+    config KERNEL_SAMPLES_USING_TIME_SLICE
+    bool "[kernel] time slice"
+
+    config KERNEL_SAMPLES_USING_SCHEDULER_HOOK
+    bool "[kernel] sheduler hook"
+
 endif
 

@@ -1,0 +1,12 @@
+{
+    "name": "CMSIS",
+    "description": "CMSIS: Cortex Microcontroller Software Interface Standard from ARM",
+    "keywords": [
+        "ARM", "CMSIS"
+    ],
+    "readme": "CMSIS: Cortex Microcontroller Software Interface Standard from ARM",
+    "site": [
+        { "version": "v5.0.0", "URL": "https://github.com/RT-Thread-packages/CMSIS.git", "filename": "CMSIS-5.0.0.zip", "VER_SHA": "master" },
+        { "version": "latest", "URL": "https://github.com/RT-Thread-packages/CMSIS.git", "filename": "CMSIS.zip", "VER_SHA": "master" }
+    ]
+}

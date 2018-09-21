@@ -69,6 +69,7 @@ if PKG_USING_MICROPYTHON
 
         config MICROPYTHON_USING_UJSON
             bool "ujson: JSON encoding and decoding"
+            select MICROPYTHON_USING_UOS
             default n
 
         config MICROPYTHON_USING_URE

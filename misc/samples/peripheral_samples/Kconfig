@@ -3,6 +3,7 @@
 menuconfig PKG_USING_PERIPHERAL_SAMPLES
     bool "a peripheral_samples package for rt-thread"
     default n
+    select RT_USING_DEVICE
 
 if PKG_USING_PERIPHERAL_SAMPLES
 
@@ -12,12 +13,12 @@ if PKG_USING_PERIPHERAL_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
+        default PKG_USING_PERIPHERAL_SAMPLES_V010
         help
             Select the package version
 
-        config PKG_USING_PERIPHERAL_SAMPLES_V100
-            bool "v1.0.0"
+        config PKG_USING_PERIPHERAL_SAMPLES_V010
+            bool "v0.1.0"
 
         config PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
             bool "latest"
@@ -25,20 +26,24 @@ if PKG_USING_PERIPHERAL_SAMPLES
           
     config PKG_PERIPHERAL_SAMPLES_VER
        string
-       default "v1.0.0"    if PKG_USING_PERIPHERAL_SAMPLES_V100
+       default "v0.1.0"    if PKG_USING_PERIPHERAL_SAMPLES_V010
        default "latest"    if PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
 
     config PERIPHERAL_SAMPLES_USING_I2C
         bool "[peripheral] i2c device"
+        select RT_USING_I2C
 
     config PERIPHERAL_SAMPLES_USING_PIN
         bool "[peripheral] pin device"
+        select RT_USING_PIN
 
     config PERIPHERAL_SAMPLES_USING_SERIAL
         bool "[peripheral] serial device"
+        select RT_USING_SERIAL
 
     config PERIPHERAL_SAMPLES_USING_SPI
         bool "[peripheral] spi device"
+        select RT_USING_SPI
 
 endif
 
