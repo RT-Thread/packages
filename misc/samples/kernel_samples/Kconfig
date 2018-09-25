@@ -76,6 +76,9 @@ if PKG_USING_KERNEL_SAMPLES
 
     config KERNEL_SAMPLES_USING_SCHEDULER_HOOK
     bool "[kernel] sheduler hook"
+    
+    config KERNEL_SAMPLES_USING_PRODUCER_CONSUMER
+    bool "[kernel] producer consumer model"
 
 endif
 
