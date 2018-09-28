@@ -14,6 +14,7 @@ source "$PKGS_DIR/packages/iot/coap/Kconfig"
 source "$PKGS_DIR/packages/iot/nopoll/Kconfig"
 source "$PKGS_DIR/packages/iot/netutils/Kconfig"
 source "$PKGS_DIR/packages/iot/at_device/Kconfig"
+source "$PKGS_DIR/packages/iot/wiznet/Kconfig"
 
 source "$PKGS_DIR/packages/iot/iot_cloud/Kconfig"
 
