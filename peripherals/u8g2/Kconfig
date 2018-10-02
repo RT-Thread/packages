@@ -1,16 +1,33 @@
 
 # Kconfig file for package u8g2
 menuconfig PKG_USING_U8G2
-    bool "U8G2: a u8g2 package for rt-thread"
+    bool "U8G2: a monochrome graphic library"
     default n
-    select RT_USING_I2C
-    select RT_USING_I2C_BITOPS
 
 if PKG_USING_U8G2
 
     config PKG_U8G2_PATH
         string
         default "/packages/peripherals/u8g2"
+
+    menu "U8G2 Examples"
+        config U8G2_USING_I2C_YL40
+            bool "YL-40  : an example for PCF8591 (I2C A/D and D/A)"
+            select RT_USING_I2C
+            select RT_USING_I2C_BITOPS
+            help
+                Read from / Write to PCF8591 which can be used to check whether i2c bus is working.
+            default n
+
+        config U8G2_USING_I2C_SSD1306
+            bool "SSD1306: an example for I2C OLED"
+            select RT_USING_I2C
+            select RT_USING_I2C_BITOPS
+            help
+                Print "Hello RT-Thread" on SSD1306 OLED using I2C
+            default n
+
+    endmenu
 
     choice
         prompt "Version"
