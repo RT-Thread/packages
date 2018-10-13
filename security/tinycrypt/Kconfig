@@ -10,11 +10,9 @@ if PKG_USING_TINYCRYPT
 
     choice
         prompt "Version"
+        default PKG_USING_TINYCRYPT_V100
         help
             Select the TinyCrypt version
-
-        config PKG_USING_TINYCRYPT_V110
-            bool "v1.1.0"
 
         config PKG_USING_TINYCRYPT_V100
             bool "v1.0.0"
@@ -25,7 +23,6 @@ if PKG_USING_TINYCRYPT
 
     config PKG_TINYCRYPT_VER
     string
-    default "v1.1.0" if PKG_USING_TINYCRYPT_V110
     default "v1.0.0" if PKG_USING_TINYCRYPT_V100
     default "latest" if PKG_USING_TINYCRYPT_LATEST_VERSION
 
