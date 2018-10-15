@@ -90,9 +90,9 @@ if PKG_USING_AT_DEVICE
 
     config PKG_AT_DEVICE_VER
         string
+        default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
         default "v1.3.0"    if PKG_USING_AT_DEVICE_V130
         default "v1.2.0"    if PKG_USING_AT_DEVICE_V120
-        default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
 
     config PKG_AT_DEVICE_VER_NUM
         int
