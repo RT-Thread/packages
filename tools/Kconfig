@@ -5,5 +5,6 @@ source "$PKGS_DIR/packages/tools/EasyFlash/Kconfig"
 source "$PKGS_DIR/packages/tools/EasyLogger/Kconfig"
 source "$PKGS_DIR/packages/tools/SystemView/Kconfig"
 source "$PKGS_DIR/packages/tools/rdb/Kconfig"
+source "$PKGS_DIR/packages/tools/qrcode/Kconfig"
 
 endmenu
