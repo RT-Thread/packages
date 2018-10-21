@@ -1,9 +1,10 @@
 
 # Kconfig file for package rdb
 menuconfig PKG_USING_RDB
-    bool "rdb:RT-Thread Debug Bridge package for rt-thread"
+    bool "rdb: RT-Thread Debug Bridge for rt-thread"
     default n
     select PKGS_USING_USB_RDBD
+    select PKG_USING_DSTR
     select RT_USING_LIBC
     select RT_USING_POSIX
     select RT_USING_DFS
