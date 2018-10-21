@@ -9,6 +9,7 @@ source "$PKGS_DIR/packages/misc/MultiButton/Kconfig"
 source "$PKGS_DIR/packages/misc/CanFestival/Kconfig"
 source "$PKGS_DIR/packages/misc/zlib/Kconfig"
 source "$PKGS_DIR/packages/misc/dstr/Kconfig"
+source "$PKGS_DIR/packages/misc/TinyFrame/Kconfig"
 
 comment "sample package"
 source "$PKGS_DIR/packages/misc/samples/Kconfig"

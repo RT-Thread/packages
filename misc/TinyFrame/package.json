@@ -1,0 +1,15 @@
+{
+    "name": "TinyFrame",
+    "description": "TinyFrame: Event-driven button lib for embedded",
+    "keywords": [
+        "TinyFrame"
+    ],
+    "author": {
+        "name": "XXXXzzzz000"
+    },
+    "readme": "TinyFrame: Event-driven button lib for embedded",
+    "site": [
+        {"version": "v1.0.0", "URL": "https://github.com/XXXXzzzz000/TinyFrame/archive/v1.0.0.zip", "filename": "TinyFrame-1.0.0.zip"},
+        {"version": "latest", "URL": "https://github.com/XXXXzzzz000/TinyFrame.git", "filename": "TinyFrame.zip", "VER_SHA": "rtthread_port"}
+    ]
+}
