@@ -1,0 +1,35 @@
+
+# Kconfig file for package ulog_easyflash
+menuconfig PKG_USING_ULOG_EASYFLASH
+    bool "ulog_easyflash: the ulog backend implementation for EasyFlash"
+    select RT_USNG_ULOG
+    select PKG_USNG_EASYFLASH
+    select PKG_EASYFLASH_LOG
+    default n
+
+if PKG_USING_ULOG_EASYFLASH
+   
+    config PKG_ULOG_EASYFLASH_PATH
+        string
+        default "/packages/tools/ulog_easyflash"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ULOG_EASYFLASH_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ULOG_EASYFLASH_V00100
+            bool "v0.1.0"
+
+        config PKG_USING_ULOG_EASYFLASH_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_ULOG_EASYFLASH_VER
+       string
+       default "v0.1.0"    if PKG_USING_ULOG_EASYFLASH_V00100
+       default "latest"    if PKG_USING_ULOG_EASYFLASH_LATEST_VERSION
+
+endif
+

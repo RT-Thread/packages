@@ -1,0 +1,12 @@
+
+{
+    "name": "ulog_easyflash",
+    "description": "The ulog backend implementation for EasyFlash.",
+    "keywords": [
+        "ulog", "easyflash", "backend"
+    ],
+    "site" : [
+    {"version" : "v0.1.0", "URL" : "https://github.com/armink-rtt-pkgs/ulog_easyflash.git", "filename" : "ulog_easyflash_be-0.1.0.zip","VER_SHA" : "9369dd51a8c3236d2b82302876915ff83cf3b510"},
+    {"version" : "latest", "URL" : "https://github.com/armink-rtt-pkgs/ulog_easyflash.git", "filename" : "Null for git package","VER_SHA" : "master"}
+    ]
+}
