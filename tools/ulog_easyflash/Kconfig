@@ -3,7 +3,7 @@
 menuconfig PKG_USING_ULOG_EASYFLASH
     bool "ulog_easyflash: the ulog backend implementation for EasyFlash"
     select RT_USNG_ULOG
-    select PKG_USNG_EASYFLASH
+    select PKG_USING_EASYFLASH
     select PKG_EASYFLASH_LOG
     default n
 
