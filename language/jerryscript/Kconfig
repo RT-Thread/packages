@@ -30,13 +30,61 @@ if PKG_USING_JERRYSCRIPT
         int "Jerry memory heap size KB"
         default 512
 
+    config PKG_JERRY_ENABLE_ERROR_MESSAGES
+        bool "Jerry enable error message"
+        default y
+
     config PKG_JERRY_ENABLE_LOGGING
         bool "Jerry enable logging"
         default n
 
     config PKG_JMEM_STATS
-        bool "Heap memory usage statistics"
+        bool "Jerry enable memory usage statistics"
         select PKG_JERRY_ENABLE_LOGGING
         default n
+
+    config CONFIG_DISABLE_ANNEXB_BUILTIN
+        bool "CONFIG_DISABLE_ANNEXB_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_ARRAY_BUILTIN
+        bool "CONFIG_DISABLE_ARRAY_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_BOOLEAN_BUILTIN
+        bool "CONFIG_DISABLE_BOOLEAN_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_DATE_BUILTIN
+        bool "CONFIG_DISABLE_DATE_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_ERROR_BUILTINS
+        bool "CONFIG_DISABLE_ERROR_BUILTINS"
+        default n
+
+    config CONFIG_DISABLE_JSON_BUILTIN
+        bool "CONFIG_DISABLE_JSON_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_MATH_BUILTIN
+        bool "CONFIG_DISABLE_MATH_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_NUMBER_BUILTIN
+        bool "CONFIG_DISABLE_NUMBER_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_REGEXP_BUILTIN
+        bool "CONFIG_DISABLE_REGEXP_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_STRING_BUILTIN
+        bool "CONFIG_DISABLE_STRING_BUILTIN"
+        default n
+
+    config PKG_CONFIG_DISABLE_ES2015
+        bool "Group of ES2015-related features disabled together."
+        default y
 
 endif
