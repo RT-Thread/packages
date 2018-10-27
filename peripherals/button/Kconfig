@@ -1,0 +1,74 @@
+
+# Kconfig file for package button
+menuconfig PKG_USING_BUTTON
+    bool "button drive by C, support single and double click, long press, long press release"
+    default n
+
+if PKG_USING_BUTTON
+
+    config PKG_BUTTON_PATH 
+        string
+        default "/packages/peripherals/button"
+		
+    config SINGLE_AND_DOUBLE_TRIGGER
+        bool "support single and double click"
+        default y
+		
+    config CONTINUOS_TRIGGER
+        bool "support continuos trigger"
+        default n
+		
+    config LONG_FREE_TRIGGER
+        bool "support long press release"
+        default n	
+		
+	config BUTTON_DEBOUNCE_TIME
+		int "This value is the button debounce time"
+		default 2  
+		help
+			"This value = (n-1)*(button processing callback cycle)"
+			
+	config BUTTON_CONTINUOS_CYCLE
+		int "This value is the button press the trigger cycle continuously"
+		default 1  
+		help
+			"This value = (n-1)*(button processing callback cycle)"	
+			
+	config BUTTON_LONG_CYCLE
+		int "This value is the button long press cycle time"
+		default 1  
+		help
+			"This value = (n-1)*(button processing callback cycle)"
+			
+	config BUTTON_DOUBLE_TIME
+		int "This value is the button double click time"
+		default 15  
+		help
+			"This value = (n-1)*(button processing callback cycle)"		
+			
+	config BUTTON_LONG_TIME
+		int "This value is the button long press time"
+		default 50  
+		help
+			"This value = (n-1)*(button processing callback cycle)"		
+			
+    choice
+        prompt "Version"
+        default PKG_USING_BUTTON_V100
+        help
+            Select the package version
+
+        config PKG_USING_BUTTON_V100
+            bool "v1.0.0"
+
+        config PKG_USING_BUTTON_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BUTTON_VER
+       string
+       default "v1.0.0"    if PKG_USING_BUTTON_V100
+       default "latest"    if PKG_USING_BUTTON_LATEST_VERSION
+
+endif
+
