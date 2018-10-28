@@ -9,5 +9,6 @@ source "$PKGS_DIR/packages/peripherals/ap3216c/Kconfig"
 source "$PKGS_DIR/packages/peripherals/stm32_sdio/Kconfig"
 source "$PKGS_DIR/packages/peripherals/icm20608/Kconfig"
 source "$PKGS_DIR/packages/peripherals/u8g2/Kconfig"
+source "$PKGS_DIR/packages/peripherals/button/Kconfig"
 
 endmenu
