@@ -13,11 +13,11 @@ choice
     help
         Select the GUI Engine version
 
-    config PKG_USING_GUIENGINE_V200
-        bool "v2.0.0"
-
     config PKG_USING_GUIENGINE_LATEST_VERSION
         bool "latest"
+
+    config PKG_USING_GUIENGINE_V200
+        bool "v2.0.0"
 endchoice
 
 config PKG_GUIENGINE_VER
