@@ -1,0 +1,36 @@
+
+# Kconfig file for package mpu6xxx
+menuconfig PKG_USING_MPU6XXX
+    bool "mpu6xxx: Universal 6-axis sensor driver library"
+    default n
+
+if PKG_USING_MPU6XXX
+
+    config PKG_MPU6XXX_PATH
+        string
+        default "/packages/peripherals/mpu6xxx"
+
+    config PKG_USING_MPU6XXX_SAMPLE
+		bool "Enable mpu6xxx sample"
+		default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_MPU6XXX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MPU6XXX_V001
+            bool "v0.0.1"
+
+        config PKG_USING_MPU6XXX_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MPU6XXX_VER
+       string
+       default "v0.0.1"    if PKG_USING_MPU6XXX_V001
+       default "latest"    if PKG_USING_MPU6XXX_LATEST_VERSION
+
+endif
+
