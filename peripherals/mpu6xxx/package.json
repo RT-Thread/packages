@@ -1,0 +1,12 @@
+
+{
+    "name": "mpu6xxx",
+    "description": "mpu6xxx: Universal 6-axis sensor driver library",
+    "keywords": [
+        "mpu6xxx", "mpu6050", "mpu6500", "i2c", "spi"
+    ],
+    "site" : [
+    {"version" : "v0.0.1", "URL" : "https://github.com/RT-Thread-packages/mpu-6xxx.git", "filename" : "mpu6xxx-0.0.1.zip","VER_SHA" : "1f60aba90500bd7d0434963591cca7478124dd8b"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/mpu-6xxx.git", "filename" : "Null for git package","VER_SHA" : "master"}
+    ]
+}
