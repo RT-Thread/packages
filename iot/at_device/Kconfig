@@ -101,7 +101,7 @@ if PKG_USING_AT_DEVICE
         default "v1.2.0"    if PKG_USING_AT_DEVICE_V120
 
     config PKG_AT_DEVICE_VER_NUM
-        int
+        hex
         default 0x10400    if PKG_USING_AT_DEVICE_V140 
         default 0x10300    if PKG_USING_AT_DEVICE_V130
         default 0x10200    if PKG_USING_AT_DEVICE_V120
