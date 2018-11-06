@@ -1,0 +1,117 @@
+
+# Kconfig file for package webnet
+menuconfig PKG_USING_WEBNET
+    bool "WebNet: A lightweight, customizable, embeddable Web Server for RT-Thread"
+    default n
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    select RT_USING_DFS
+
+if PKG_USING_WEBNET
+
+    config PKG_WEBNET_PATH
+        string
+        default "/packages/iot/webnet"
+
+    config WEBNET_PORT
+        int "Server listen port"
+        default 80
+        range 0 65535
+        
+    config WEBNET_CONN_MAX
+        int "Maximum number of server connections"
+        default 16
+        range 1 100
+        
+    config WEBNET_ROOT
+        string "Server root directory"
+        default "/webnet"
+    
+    menu "Select supported modules"
+    
+        config WEBNET_USING_LOG
+            bool "LOG: Enable output log support"
+            default n
+        
+        config WEBNET_USING_AUTH
+            bool "AUTH: Enable basic HTTP authentication support"
+            default n
+        
+        config WEBNET_USING_CGI
+            bool "CGI: Enable Common Gateway Interface support"
+            default n
+        
+        config WEBNET_USING_ASP
+            bool "ASP: Enable Active Server Pages support"
+            default n
+        
+        config WEBNET_USING_SSI
+            bool "SSI: Enable Server Side Includes support"
+            default n        
+        
+        config WEBNET_USING_INDEX
+            bool "INDEX: Enable list all the file in the directory support"
+            default n
+            
+        config WEBNET_USING_ALIAS
+            bool "ALIAS: Enable alias support"
+            default n
+        
+        config WEBNET_USING_DAV
+            bool "DAV: Enable Web-based Distributed Authoring and Versioning support"
+            default n
+        
+        config WEBNET_USING_UPLOAD
+            bool "UPLOAD: Enable upload file support"
+            default n
+        
+        config WEBNET_USING_GZIP
+            bool "GZIP: Enable compressed file support by GZIP"
+            default n
+        
+        config WEBNET_CACHE_LEVEL
+            int "CACHE: Configure cache level(0:disable 1:use Last-Modified 2:use Cache-Control)" 
+            default 0
+            range 0 2
+            
+        if WEBNET_CACHE_LEVEL = 2 
+            
+            config WEBNET_CACHE_MAX_AGE
+            int "Cache-Control time in seconds"
+            default 1800
+            
+        endif
+        
+    endmenu
+    
+    config WEBNET_USING_SAMPLES
+        bool "Enable webnet samples"
+        default n
+        select WEBNET_USING_ASP
+        select WEBNET_USING_AUTH
+        select WEBNET_USING_CGI
+        select WEBNET_USING_INDEX
+        select WEBNET_USING_ALIAS
+        select WEBNET_USING_SSI
+        select WEBNET_USING_UPLOAD
+    
+    choice
+        prompt "Version"
+        help
+            Select the webnet version
+        default PKG_USING_WEBNET_LATEST_VERSION
+
+        config PKG_USING_WEBNET_V200
+            bool "v2.0.0"
+
+        config PKG_USING_WEBNET_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_WEBNET_VER
+       string
+       default "v2.0.0"    if PKG_USING_WEBNET_V200
+       default "latest"    if PKG_USING_WEBNET_LATEST_VERSION
+
+endif
+
