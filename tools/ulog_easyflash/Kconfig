@@ -4,7 +4,6 @@ menuconfig PKG_USING_ULOG_EASYFLASH
     bool "ulog_easyflash: The ulog flash plugin by EasyFlash."
     select RT_USNG_ULOG
     select PKG_USING_EASYFLASH
-    select PKG_EASYFLASH_LOG
     default n
 
 if PKG_USING_ULOG_EASYFLASH
