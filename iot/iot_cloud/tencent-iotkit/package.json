@@ -1,0 +1,13 @@
+
+{
+    "name": "tencent-iotkit",
+    "description": "tencent-iotkit: Tencent Cloud SDK for IoT platform",
+    "keywords": [
+        "tencent_iotkit"
+    ],
+    "readme": "tencent-iotkit: Tencent Iot Development Platform",
+    "site" : [	 
+    {"version" : "v2.9", "URL" : "https://github.com/tencentyun/tencent-cloud-iotsdk-package-for-rtt.git", "filename" : "tencent-cloud-iotsuite-package-for-rtt-2.9.zip","VER_SHA" : "61814f2c423d16db5d1bb6899237f51a1ca8bccc"},
+	{"version" : "latest", "URL" : "https://github.com/tencentyun/tencent-cloud-iotsdk-package-for-rtt.git", "filename" : "tencent-cloud-iotsdk-package-for-rtt.zip","VER_SHA" : "master"}
+    ]
+}
