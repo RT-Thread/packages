@@ -10,11 +10,6 @@ if PKG_USING_WEBCLIENT
         string
         default "/packages/iot/webclient"
 
-    config WEBCLIENT_USING_TLS
-        bool "Enable support tls protocol"
-        default n
-        select PKG_USING_MBEDTLS
-
     if !PKG_USING_WEBCLIENT_V100
     
         config WEBCLIENT_USING_SAMPLES
@@ -22,6 +17,37 @@ if PKG_USING_WEBCLIENT
             default n
             
     endif
+            
+    if PKG_USING_WEBCLIENT_LATEST_VERSION
+    
+        choice
+        
+            prompt "Select TLS mode"
+            default WEBCLIENT_NOT_USE_TLS
+            
+            config WEBCLIENT_NOT_USE_TLS
+                bool "Not support"
+            
+            config WEBCLIENT_USING_SAL_TLS
+                bool "SAL TLS support"
+                select SAL_USING_TLS
+            
+            config WEBCLIENT_USING_MBED_TLS
+                bool "MbedTLS support"
+                select PKG_USING_MBEDTLS
+                
+        endchoice
+        
+    endif
+    
+    if PKG_USING_WEBCLIENT_V201 || PKG_USING_WEBCLIENT_V200|| PKG_USING_WEBCLIENT_V100
+    
+        config WEBCLIENT_USING_TLS
+            bool "Enable support tls protocol"
+            default n
+            select PKG_USING_MBEDTLS
+    
+    endif 
 
     choice
 
