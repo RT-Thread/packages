@@ -2,6 +2,8 @@
 # Kconfig file for package CanFestival
 menuconfig PKG_USING_CANFESTIVAL
     bool "CanFestival: A free software CANopen framework"
+    select RT_USING_CAN
+    select RT_USING_HWTIMER
     default n
     help
         CanFestival focuses on providing an ANSI-C platform independent
@@ -10,28 +12,25 @@ menuconfig PKG_USING_CANFESTIVAL
 
 if PKG_USING_CANFESTIVAL
 
-    menu "CanFestival config"
-        config CANFESTIVAL_CAN_DEVICE_NAME
-            string "CAN device name for CanFestival"
-            default "bxcan1"
+    config CANFESTIVAL_CAN_DEVICE_NAME
+        string "CAN device name for CanFestival"
+        default "bxcan1"
 
-        config CANFESTIVAL_TIMER_DEVICE_NAME
-            string "hwtimer device name for CanFestival"
-            default "timer0"
+    config CANFESTIVAL_TIMER_DEVICE_NAME
+        string "hwtimer device name for CanFestival"
+        default "timer0"
 
-        config CANFESTIVAL_RECV_THREAD_PRIO
-            int "The priority level value of can receive thread"
-            default 9
+    config CANFESTIVAL_RECV_THREAD_PRIO
+        int "The priority level value of can receive thread"
+        default 9
 
-        config CANFESTIVAL_TIMER_THREAD_PRIO
-            int "The priority level value of timer thread"
-            default 10
+    config CANFESTIVAL_TIMER_THREAD_PRIO
+        int "The priority level value of timer thread"
+        default 10
 
-        config CANFESTIVAL_USING_EG_MASTER402
-            bool "Enable Cia402 Master example"
-            default n
-    endmenu
-
+    config CANFESTIVAL_USING_EG_MASTER402
+        bool "Enable Cia402 Master example"
+        default n
 
     config PKG_CANFESTIVAL_PATH
         string
