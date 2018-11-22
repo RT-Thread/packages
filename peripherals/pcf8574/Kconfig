@@ -1,0 +1,36 @@
+
+# Kconfig file for package pcf8574
+menuconfig PKG_USING_PCF8574
+    bool "pcf8574: Remote 8-bit I/O expander for I2C-bus"
+    default n
+
+if PKG_USING_PCF8574
+
+    config PKG_PCF8574_PATH
+        string
+        default "/packages/peripherals/pcf8574"
+
+    config PKG_USING_PCF8574_SAMPLE
+		bool "Enable pcf8574 sample"
+		default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_PCF8574_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PCF8574_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PCF8574_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PCF8574_VER
+       string
+       default "v1.0.0"    if PKG_USING_PCF8574_V100
+       default "latest"    if PKG_USING_PCF8574_LATEST_VERSION
+
+endif
+
