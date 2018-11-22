@@ -1,0 +1,12 @@
+
+{
+    "name": "pcf8574",
+    "description": "Remote 8-bit I/O expander for I2C-bus",
+    "keywords": [
+        "pcf8574"
+    ],
+    "site" : [
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/pcf8574/archive/1.0.0.zip", "filename" : "pcf8574-1.0.0.zip","VER_SHA" : "NULL"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/pcf8574.git", "filename" : "Null for git package","VER_SHA" : "master"}
+    ]
+}
