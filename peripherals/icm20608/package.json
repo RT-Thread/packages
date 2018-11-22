@@ -7,6 +7,6 @@
     ],
     "site" : [
     {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/icm20608/archive/1.0.0.zip", "filename" : "icm20608-1.0.0.zip","VER_SHA" : "NULL"},
-    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/icm20608.git", "filename" : "icm20608.zip","VER_SHA" : "mater"}
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/icm20608.git", "filename" : "icm20608.zip","VER_SHA" : "master"}
     ]
 }
