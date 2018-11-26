@@ -80,7 +80,7 @@ if PKG_USING_WIZNET
     
     choice
         prompt "Version"
-        default PKG_USING_WIZNET_LATEST_VERSION
+        default PKG_USING_WIZNET_V010
         help
             Select the wiznet version
 
