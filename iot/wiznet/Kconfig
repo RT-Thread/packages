@@ -84,9 +84,6 @@ if PKG_USING_WIZNET
         help
             Select the wiznet version
 
-        config PKG_USING_WIZNET_V010
-            bool "v0.1.0"
-
         config PKG_USING_WIZNET_V100
             bool "v1.0.0"
 
@@ -96,7 +93,6 @@ if PKG_USING_WIZNET
   
     config PKG_WIZNET_VER
        string
-       default "v0.1.0"    if PKG_USING_WIZNET_V010
        default "v1.0.0"    if PKG_USING_WIZNET_V100
        default "latest"    if PKG_USING_WIZNET_LATEST_VERSION
 
