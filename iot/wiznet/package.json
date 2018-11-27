@@ -6,7 +6,7 @@
         "wiznet"
     ],
     "site" : [
-    {"version" : "v0.1.0", "URL" : "https://github.com/RT-Thread-packages/wiznet.git", "filename" : "wiznet-0.1.0.zip","VER_SHA" : "803f00b460d831b17b2bea100c01f8b821e464c6"},
+    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/wiznet/archive/1.0.0.zip", "filename" : "wiznet-1.0.0.zip"},
     {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/wiznet.git", "filename" : "wiznet.zip","VER_SHA" : "master"}
     ]
 }

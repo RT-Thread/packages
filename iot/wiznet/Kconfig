@@ -7,7 +7,7 @@ menuconfig PKG_USING_WIZNET
     select RT_USING_SPI
     select RT_USING_LIBC
     select RT_USING_SAL
- 
+
 if PKG_USING_WIZNET
 
     config PKG_WIZNET_PATH
@@ -24,22 +24,27 @@ if PKG_USING_WIZNET
             bool "W5500"
 
     endchoice
+    
+    config WIZNET_DEVICE_EXTERN_CONFIG
+         bool
+         default n
 
-    menu "WIZnet device configure"
-    
-        config WIZ_SPI_DEVICE
-           string "SPI device name"
-           default "spi30"
-        
-        config WIZ_RST_PIN
-            int "Reset PIN number"
-            default 10
-            
-        config WIZ_IRQ_PIN
-            int "IRQ PIN number"
-            default 11
-    
-    endmenu
+    if !WIZNET_DEVICE_EXTERN_CONFIG
+        menu "WIZnet device configure"
+
+            config WIZ_SPI_DEVICE
+                string "SPI device name"
+                default "spi30"
+
+            config WIZ_RST_PIN
+                int "Reset PIN number"
+                default 10
+
+            config WIZ_IRQ_PIN
+                int "IRQ PIN number"
+                default 11
+        endmenu
+    endif
 
     config WIZ_USING_DHCP
         bool "Enable alloc IP address through DHCP"
@@ -75,12 +80,12 @@ if PKG_USING_WIZNET
     
     choice
         prompt "Version"
-        default PKG_USING_WIZNET_LATEST_VERSION
+        default PKG_USING_WIZNET_V100
         help
             Select the wiznet version
 
-        config PKG_USING_WIZNET_V010
-            bool "v0.1.0"
+        config PKG_USING_WIZNET_V100
+            bool "v1.0.0"
 
         config PKG_USING_WIZNET_LATEST_VERSION
             bool "latest"
@@ -88,8 +93,7 @@ if PKG_USING_WIZNET
   
     config PKG_WIZNET_VER
        string
-       default "v0.1.0"    if PKG_USING_WIZNET_V010
+       default "v1.0.0"    if PKG_USING_WIZNET_V100
        default "latest"    if PKG_USING_WIZNET_LATEST_VERSION
 
 endif
-
