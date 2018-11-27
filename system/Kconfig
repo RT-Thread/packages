@@ -12,5 +12,6 @@ source "$PKGS_DIR/packages/system/rti/Kconfig"
 source "$PKGS_DIR/packages/system/LittlevGL2RTT/Kconfig"
 source "$PKGS_DIR/packages/system/CMSIS/Kconfig"
 source "$PKGS_DIR/packages/system/yaffs2/Kconfig"
+source "$PKGS_DIR/packages/system/littlefs/Kconfig"
 
 endmenu
