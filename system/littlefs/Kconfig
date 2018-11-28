@@ -1,0 +1,32 @@
+
+# Kconfig file for package littlefs
+menuconfig PKG_USING_LITTLEFS
+    bool "a littlefs package for rt-thread"
+    default n
+
+if PKG_USING_LITTLEFS
+
+    config PKG_LITTLEFS_PATH
+        string
+        default "/packages/system/littlefs"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LITTLEFS_V090
+        help
+            Select the package version
+
+        config PKG_USING_LITTLEFS_V090
+            bool "v0.9.0"
+
+        config PKG_USING_LITTLEFS_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LITTLEFS_VER
+       string
+       default "v0.9.0"    if PKG_USING_LITTLEFS_V090
+       default "latest"    if PKG_USING_LITTLEFS_LATEST_VERSION
+
+endif
+
