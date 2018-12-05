@@ -1,0 +1,11 @@
+{
+    "name": "kendryte-sdk",
+    "description": "The kendryte-sdk package for rt-thread",
+    "keywords": [
+        "kendryte-sdk", "k210", "AI", "RV64"
+    ],
+    "site" : [
+    {"version" : "v0.5.2", "URL" : "https://github.com/RT-Thread-packages/kendryte_sdk.git", "filename" : "kendryte-sdk-0.5.2.zip","VER_SHA" : "5470174f7552d756b640b72e05ccd894780c6592"},
+    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/kendryte_sdk.git", "filename" : "kendryte-sdk.zip","VER_SHA" : "master"}
+    ]
+}
