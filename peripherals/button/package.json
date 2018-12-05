@@ -7,16 +7,22 @@
     ],
     "site" : [
     {
-        "version" : "v1.0.0", 
-        "URL" : "https://github.com/jiejieTop/rtt_btn_drv.git", 
-        "filename" : "button-1.0.0.zip",
-        "VER_SHA" : "0cf219a23f3568b82da1c055e2d415eded3b7230"},
+        "version" : "v1.0.1", 
+        "URL" : "https://github.com/jiejieTop/rtpkg_button.git", 
+        "filename" : "button-1.0.1.zip",
+        "VER_SHA" : "799daaade8ea7be4237aad1dab2b2871e5bd0b8d"},
 
     {
-        "version" : "latest",
-        "URL" : "https://github.com/jiejieTop/rtt_btn_drv.git",
-        "filename" : "Null for git package",
-        "VER_SHA" : "master"}
+            "version" : "v1.0.0", 
+            "URL" : "https://github.com/jiejieTop/rtt_btn_drv.git", 
+            "filename" : "button-1.0.0.zip",
+            "VER_SHA" : "0cf219a23f3568b82da1c055e2d415eded3b7230"},
+
+    {
+            "version" : "latest",
+            "URL" : "https://github.com/jiejieTop/rtt_btn_drv.git",
+            "filename" : "Null for git package",
+            "VER_SHA" : "master"}
     ]
 }
 
