@@ -6,7 +6,7 @@
         "littlefs"
     ],
     "site" : [
-    {"version" : "v0.9.0", "URL" : "https://github.com/geniusgogo/littlefs.git", "filename" : "littlefs-0.9.0.zip","VER_SHA" : "f44567ea3a2a8634b2359ac3b24a72c16fcf7ecd"},
+    {"version" : "v0.9.0", "URL" : "https://github.com/geniusgogo/littlefs.git", "filename" : "littlefs-0.9.0.zip","VER_SHA" : "2b6c05f42b6fe1c8cd112540a84a8b83e6536c14"},
     {"version" : "latest", "URL" : "https://github.com/geniusgogo/littlefs.git", "filename" : "","VER_SHA" : "master"}
     ]
 }

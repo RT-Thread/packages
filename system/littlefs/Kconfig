@@ -22,11 +22,27 @@ if PKG_USING_LITTLEFS
         config PKG_USING_LITTLEFS_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
+    config LFS_READ_SIZE
+        int "disk read size"
+        default 256
+
+    config LFS_WRITE_SIZE
+        int "disk write size"
+        default 256
+
+    config LFS_BLOCK_SIZE
+        int "disk block size"
+        default 4096
+
+    config LFS_LOOKAHEAD
+        int "lfs lookahead size"
+        default 512
+
     config PKG_LITTLEFS_VER
        string
-       default "v0.9.0"    if PKG_USING_LITTLEFS_V090
-       default "latest"    if PKG_USING_LITTLEFS_LATEST_VERSION
+       default "v0.9.0" if PKG_USING_LITTLEFS_V090
+       default "latest" if PKG_USING_LITTLEFS_LATEST_VERSION
 
 endif
 
