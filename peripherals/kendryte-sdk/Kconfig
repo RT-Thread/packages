@@ -1,0 +1,30 @@
+# Kconfig file for package kendryte-sdk
+menuconfig PKG_USING_KENDRYTE_SDK
+    bool "the kendryte-sdk package for rt-thread"
+    default n
+
+if PKG_USING_KENDRYTE_SDK
+
+    config PKG_KENDRYTE_SDK_PATH
+        string
+        default "/packages/peripherals/kendryte-sdk"
+
+    choice
+        prompt "Version"
+        default PKG_USING_KENDRYTE_SDK_V052
+        help
+            Select the package version
+
+        config PKG_USING_KENDRYTE_SDK_V052
+            bool "v0.5.2"
+
+        config PKG_USING_KENDRYTE_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_KENDRYTE_SDK_VER
+       string
+       default "v0.5.2"    if PKG_USING_KENDRYTE_SDK_V052
+       default "latest"    if PKG_USING_KENDRYTE_SDK_LATEST_VERSION
+
+endif
