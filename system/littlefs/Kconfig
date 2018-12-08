@@ -1,7 +1,7 @@
 
 # Kconfig file for package littlefs
 menuconfig PKG_USING_LITTLEFS
-    bool "a littlefs package for rt-thread"
+    bool "Littlefs: A high-integrity embedded file system"
     default n
 
 if PKG_USING_LITTLEFS
