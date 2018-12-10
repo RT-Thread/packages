@@ -13,12 +13,12 @@ if PKG_USING_PERIPHERAL_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_PERIPHERAL_SAMPLES_V010
+        default PKG_USING_PERIPHERAL_SAMPLES_V020
         help
             Select the package version
 
-        config PKG_USING_PERIPHERAL_SAMPLES_V010
-            bool "v0.1.0"
+        config PKG_USING_PERIPHERAL_SAMPLES_V020
+            bool "v0.2.0"
 
         config PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
             bool "latest"
@@ -26,16 +26,43 @@ if PKG_USING_PERIPHERAL_SAMPLES
           
     config PKG_PERIPHERAL_SAMPLES_VER
        string
-       default "v0.1.0"    if PKG_USING_PERIPHERAL_SAMPLES_V010
+       default "v0.2.0"    if PKG_USING_PERIPHERAL_SAMPLES_V020
        default "latest"    if PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
+
+    config PERIPHERAL_SAMPLES_USING_ADC
+        bool "[peripheral] adc device"
+        select RT_USING_ADC
+
+    config PERIPHERAL_SAMPLES_USING_HWTIMER
+        bool "[peripheral] hwtimer device"
+        select RT_USING_HWTIMER
 
     config PERIPHERAL_SAMPLES_USING_I2C
         bool "[peripheral] i2c device"
         select RT_USING_I2C
 
+    config PERIPHERAL_SAMPLES_USING_IWDG
+        bool "[peripheral] watchdog device"
+        select RT_USING_WDT
+
+    config PERIPHERAL_SAMPLES_USING_LED_BLINK
+        bool "[peripheral] led blink"
+        select RT_USING_PIN
+
     config PERIPHERAL_SAMPLES_USING_PIN
         bool "[peripheral] pin device"
         select RT_USING_PIN
+
+    config PERIPHERAL_SAMPLES_USING_PWM
+        bool "[peripheral] pwm device"
+        select RT_USING_PWM
+
+    config PERIPHERAL_SAMPLES_USING_RTC
+        bool "[peripheral] rtc device"
+        select RT_USING_RTC
+
+    config PERIPHERAL_SAMPLES_USING_SD
+        bool "[peripheral] block device sd card"
 
     config PERIPHERAL_SAMPLES_USING_SERIAL
         bool "[peripheral] serial device"
