@@ -27,7 +27,7 @@ if PKG_USING_LITTLEFS
         int "disk read size"
         default 256
 
-    config LFS_WRITE_SIZE
+    config LFS_PROG_SIZE
         int "disk write size"
         default 256
 
