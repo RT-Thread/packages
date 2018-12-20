@@ -21,6 +21,7 @@
   "repository": "https://github.com/RT-Thread-packages/netutils",
   "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
   "homepage": "https://github.com/RT-Thread-packages/netutils#readme",
+  "doc": "https://www.rt-thread.org/document/site/rtthread-application-note/packages/netutils/an0018-rtthread-system-netutils/",
   "site": [
     {
       "version": "v1.0.0",
