@@ -25,6 +25,21 @@ config PKG_GUIENGINE_VER
     default "v2.0.0" if PKG_USING_GUIENGINE_V200
     default "latest" if PKG_USING_GUIENGINE_LATEST_VERSION
 
+choice
+    prompt "RGB888 pixel bits"
+
+    config PKG_USING_RGB888_PIXEL_BITS_32
+        bool 32
+
+    config PKG_USING_RGB888_PIXEL_BITS_24
+        bool 24
+endchoice
+
+config PKG_USING_RGB888_PIXEL_BITS
+    int
+    default 32 if PKG_USING_RGB888_PIXEL_BITS_32
+    default 24 if PKG_USING_RGB888_PIXEL_BITS_24
+
 config GUIENGINE_NAME_MAX
     int "The maximal size of name in GUI engine"
     default 16
