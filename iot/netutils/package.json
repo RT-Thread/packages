@@ -1,12 +1,39 @@
 {
-    "name": "netutils",
-    "description": "Networking utilities for RT-Thread",
-    "keywords": [
-        "netutils", "lwip", "net"
-    ],
-    "readme": "Networking utilities for RT-Thread",
-    "site": [
-        { "version": "v1.0.0", "URL": "https://github.com/RT-Thread-packages/netutils/archive/1.0.0.zip", "filename": "netutils-1.0.0.zip", "VER_SHA": "NULL" },
-        { "version": "latest", "URL": "https://github.com/RT-Thread-packages/netutils.git", "filename": "netutils.zip", "VER_SHA": "master" }
-    ]
+  "name": "netutils",
+  "description": "Networking utilities for RT-Thread",
+  "keywords": [
+    "netutils",
+    "lwip",
+    "net",
+    "ntp",
+    "tftp",
+    "iperf",
+    "telnet",
+    "netio",
+    "tcpdump"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/RT-Thread-packages/netutils",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/netutils#readme",
+  "doc": "https://www.rt-thread.org/document/site/rtthread-application-note/packages/netutils/an0018-rtthread-system-netutils/",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/netutils/archive/1.0.0.zip",
+      "filename": "netutils-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/netutils.git",
+      "filename": "netutils.zip",
+      "VER_SHA": "master"
+    }
+  ]
 }

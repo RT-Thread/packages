@@ -1,0 +1,164 @@
+# Kconfig file for package kendryte-demo
+
+menuconfig PKG_USING_KENDRYTE_DEMO
+    bool "kendryte k210 demo package"
+    default n
+
+if PKG_USING_KENDRYTE_DEMO
+
+    config PKG_KENDRYTE_DEMO_PATH
+        string
+        default "/packages/misc/kendryte-demo"
+
+    choice
+        prompt "Version"
+        default PKG_USING_KENDRYTE_DEMO_V001
+        help
+            Select the package version
+
+        config PKG_USING_KENDRYTE_DEMO_V001
+            bool "v0.0.1"
+
+        config PKG_USING_KENDRYTE_DEMO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_KENDRYTE_DEMO_VER
+       string
+       default "v0.0.1"    if PKG_USING_KENDRYTE_DEMO_V001
+       default "latest"    if PKG_USING_KENDRYTE_DEMO_LATEST_VERSION
+
+    choice
+        prompt "Kendryte demo item"
+        default KENDRYTE_DEMO_NONE
+
+        config KENDRYTE_DEMO_NONE
+        bool "None"
+
+        config KENDRYTE_DEMO_AES_128_TEST
+        bool "aes 128 test"
+
+        config KENDRYTE_DEMO_AES_192_TEST
+        bool "aes 192 test"
+
+        config KENDRYTE_DEMO_AES_256_TEST
+        bool "aes 256 test"
+
+        config KENDRYTE_DEMO_AI_DEMO_SIM
+        bool "ai demo sim"
+
+        config KENDRYTE_DEMO_DVP_OV
+        bool "dvp ov"
+
+        config KENDRYTE_DEMO_FACE_DETECT
+        bool "face detect"
+
+        config KENDRYTE_DEMO_FFT_TEST
+        bool "fft test"
+
+        config KENDRYTE_DEMO_FLASH_W25QXX
+        bool "flash w25qxx"
+
+        config KENDRYTE_DEMO_FLASH_W25QXX_DMA_TEST
+        bool "flash w25qxx dma test"
+
+        config KENDRYTE_DEMO_FLASH_W25QXX_TEST
+        bool "flash w25qxx test"
+
+        config KENDRYTE_DEMO_GPIOHS_LED
+        bool "gpiohs led"
+
+        config KENDRYTE_DEMO_GPIO_LED
+        bool "gpio led"
+
+        config KENDRYTE_DEMO_HELLO_WORLD
+        bool "hello world"
+
+        config KENDRYTE_DEMO_I2C_SLAVE
+        bool "i2c slave"
+
+        config KENDRYTE_DEMO_KPU
+        bool "kpu"
+
+        config KENDRYTE_DEMO_LCD
+        bool "lcd"
+
+        config KENDRYTE_DEMO_MIC_PLAY
+        bool "mic play"
+
+        config KENDRYTE_DEMO_PLAY_PCM
+        bool "play pcm"
+
+        config KENDRYTE_DEMO_PWM
+        bool "pwm"
+
+        config KENDRYTE_DEMO_RTC
+        bool "rtc"
+
+        config KENDRYTE_DEMO_RTC_SD3068
+        bool "rtc sd3068"
+
+        config KENDRYTE_DEMO_SD_CARD
+        bool "sd card"
+
+        config KENDRYTE_DEMO_SERVO
+        bool "servo"
+
+        config KENDRYTE_DEMO_SHA256_TEST
+        bool "sha256 test"
+
+        config KENDRYTE_DEMO_TIMER
+        bool "timer"
+
+        config KENDRYTE_DEMO_UART
+        bool "uart"
+
+        config KENDRYTE_DEMO_UART_DMA
+        bool "uart dma"
+
+        config KENDRYTE_DEMO_UART_DMA_IRQ
+        bool "uart dma irq"
+
+        config KENDRYTE_DEMO_UART_INTERRUPT
+        bool "uart interrupt"
+
+        config KENDRYTE_DEMO_WATCHDOG
+        bool "watchdog"
+
+    endchoice
+
+    config KENDRYTE_DEMO
+        string
+        default "aes_128_test" if KENDRYTE_DEMO_AES_128_TEST
+        default "aes_192_test" if KENDRYTE_DEMO_AES_192_TEST
+        default "aes_256_test" if KENDRYTE_DEMO_AES_256_TEST
+        default "ai_demo_sim" if KENDRYTE_DEMO_AI_DEMO_SIM
+        default "dvp_ov" if KENDRYTE_DEMO_DVP_OV
+        default "face_detect" if KENDRYTE_DEMO_FACE_DETECT
+        default "fft_test" if KENDRYTE_DEMO_FFT_TEST
+        default "flash_w25qxx" if KENDRYTE_DEMO_FLASH_W25QXX
+        default "flash_w25qxx_dma_test" if KENDRYTE_DEMO_FLASH_W25QXX_DMA_TEST
+        default "flash_w25qxx_test" if KENDRYTE_DEMO_FLASH_W25QXX_TEST
+        default "gpiohs_led" if KENDRYTE_DEMO_GPIOHS_LED
+        default "gpio_led" if KENDRYTE_DEMO_GPIO_LED
+        default "hello_world" if KENDRYTE_DEMO_HELLO_WORLD
+        default "i2c_slave" if KENDRYTE_DEMO_I2C_SLAVE
+        default "kpu" if KENDRYTE_DEMO_KPU
+        default "lcd" if KENDRYTE_DEMO_LCD
+        default "mic_play" if KENDRYTE_DEMO_MIC_PLAY
+        default "play_pcm" if KENDRYTE_DEMO_PLAY_PCM
+        default "pwm" if KENDRYTE_DEMO_PWM
+        default "rtc" if KENDRYTE_DEMO_RTC
+        default "rtc_sd3068" if KENDRYTE_DEMO_RTC_SD3068
+        default "sd_card" if KENDRYTE_DEMO_SD_CARD
+        default "servo" if KENDRYTE_DEMO_SERVO
+        default "sha256_test" if KENDRYTE_DEMO_SHA256_TEST
+        default "timer" if KENDRYTE_DEMO_TIMER
+        default "uart" if KENDRYTE_DEMO_UART
+        default "uart_dma" if KENDRYTE_DEMO_UART_DMA
+        default "uart_dma_irq" if KENDRYTE_DEMO_UART_DMA_IRQ
+        default "uart_interrupt" if KENDRYTE_DEMO_UART_INTERRUPT
+        default "watchdog" if KENDRYTE_DEMO_WATCHDOG
+        default "none"
+
+endif
