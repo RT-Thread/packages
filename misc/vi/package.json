@@ -1,0 +1,12 @@
+{
+    "name": "vi",
+    "description": "A screen-oriented text editor",
+    "keywords": [
+        "vi",
+        "editor"
+    ],
+    "readme": "A screen-oriented text editor",
+    "site" : [
+    {"version": "latest", "URL": "https://github.com/RT-Thread-packages/vi.git", "filename": "vi.zip", "VER_SHA": "master"}
+    ]
+}

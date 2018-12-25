@@ -1,0 +1,27 @@
+menuconfig PKG_USING_VI
+    bool "vi: A screen-oriented text editor"
+    select RT_USING_DFS
+    select RT_USING_LIBC
+    select PKG_USING_OPTPARSE
+    default n
+
+if PKG_USING_VI
+
+    config PKG_VI_PATH
+        string
+        default "/packages/misc/vi"
+
+    choice
+        prompt "Version"
+        help
+            Select this package version
+
+        config PKG_USING_VI_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_VI_VER
+        string
+        default "latest" if PKG_USING_VI_LATEST_VERSION
+
+endif
