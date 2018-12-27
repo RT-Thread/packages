@@ -1,12 +1,30 @@
-
 {
-    "name": "icm20608",
-    "description": "icm20608: a 3-axis gyroscope and a 3-axis accelerometer driver library",
-    "keywords": [
-        "icm20608"
-    ],
-    "site" : [
-    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/icm20608/archive/1.0.0.zip", "filename" : "icm20608-1.0.0.zip","VER_SHA" : "NULL"},
-    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/icm20608.git", "filename" : "icm20608.zip","VER_SHA" : "master"}
-    ]
+  "name": "icm20608",
+  "description": "icm20608: a 3-axis gyroscope and a 3-axis accelerometer driver library",
+  "keywords": [
+    "icm20608"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/icm20608",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/icm20608#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/icm20608/archive/1.0.0.zip",
+      "filename": "icm20608-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/icm20608.git",
+      "filename": "icm20608.zip",
+      "VER_SHA": "master"
+    }
+  ]
 }

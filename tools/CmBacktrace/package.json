@@ -1,19 +1,39 @@
-
 {
-    "name": "CmBacktrace",
-    "description": "Advanced fault backtrace library for ARM Cortex-M series MCU.",
-    "keywords": [
-        "ARM", "Cortex-M", "backtrace", "callstack", "hardfault"
-    ],
-    "readme": "CmBacktrace (Cortex Microcontroller Backtrace) is an open source library for automatic analysis, positioning, and error analysis of error codes for ARM Cortex-M series MCUs.",
-    "author": {
-        "name": "armink",
-        "email": "armink.ztl@gmail.com"
+  "name": "CmBacktrace",
+  "description": "Advanced fault backtrace library for ARM Cortex-M series MCU.",
+  "keywords": [
+    "ARM",
+    "Cortex-M",
+    "backtrace",
+    "callstack",
+    "hardfault"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "armink",
+    "email": "armink.ztl@gmail.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/armink-rtt-pkgs/CmBacktrace",
+  "homepage": "https://github.com/armink-rtt-pkgs/CmBacktrace#readme",
+  "doc": "https://www.rt-thread.org/document/site/rtthread-application-note/debug/cmbacktrace/an0013-rtthread-debug-CmBacktrace/",
+  "readme": "CmBacktrace (Cortex Microcontroller Backtrace) is an open source library for automatic analysis, positioning, and error analysis of error codes for ARM Cortex-M series MCUs.",
+  "site": [
+    {
+      "version": "v1.2.2",
+      "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.2.2.zip",
+      "filename": "CmBacktrace-1.2.2.zip"
     },
-    "repository": "https://github.com/armink-rtt-pkgs/CmBacktrace",
-    "site" : [
-        {"version": "v1.2.2", "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.2.2.zip", "filename" : "CmBacktrace-1.2.2.zip"},
-        {"version": "v1.2.0", "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.2.0.zip", "filename" : "CmBacktrace-1.2.0.zip"},
-        {"version": "latest", "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace.git", "filename": "CmBacktrace.zip", "VER_SHA": "master" }
-    ]
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace/archive/1.2.0.zip",
+      "filename": "CmBacktrace-1.2.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/armink-rtt-pkgs/CmBacktrace.git",
+      "filename": "CmBacktrace.zip",
+      "VER_SHA": "master"
+    }
+  ]
 }

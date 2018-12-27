@@ -4,6 +4,14 @@
   "keywords": [
     "ljson"
   ],
+  "category": "iot",
+  "author": {
+    "name": "qiaoqidui",
+    "email": "891062079@qq.com"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/qiaoqidui/ljson",
+  "homepage": "https://github.com/qiaoqidui/ljson#readme",
   "readme": "JSON parser in ANSI C",
   "site": [
     {
@@ -19,3 +27,4 @@
     }
   ]
 }
+

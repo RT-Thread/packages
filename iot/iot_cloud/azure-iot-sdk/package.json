@@ -1,12 +1,31 @@
-
 {
-    "name": "azure-iot-sdk",
-    "description": "azure-iot-sdk: Microsoft azure cloud SDK for RT-Thread",
-    "keywords": [
-        "azure-iot-sdk"
-    ],
-    "site" : [
-    {"version" : "v1.2.8", "URL" : "https://github.com/RT-Thread-packages/azure-iot-sdk/archive/1.2.8.zip", "filename" : "azure-iot-sdk-1.2.8.zip","VER_SHA" : "NULL"},
-    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/azure-iot-sdk.git", "filename" : "Null for git package","VER_SHA" : "master"}
-    ]
+  "name": "azure-iot-sdk",
+  "description": "azure-iot-sdk: Microsoft azure cloud SDK for RT-Thread",
+  "keywords": [
+    "azure-iot-sdk"
+  ],
+  "category": "iot/iot_cloud",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/azure-iot-sdk",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/azure-iot-sdk#readme",
+  "doc": "https://www.rt-thread.org/document/site/submodules/azure-iot-sdk/docs/introduction/",
+  "site": [
+    {
+      "version": "v1.2.8",
+      "URL": "https://github.com/RT-Thread-packages/azure-iot-sdk/archive/1.2.8.zip",
+      "filename": "azure-iot-sdk-1.2.8.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/azure-iot-sdk.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
 }

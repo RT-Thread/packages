@@ -1,13 +1,31 @@
-
 {
-    "name": "wlanmarvell",
-    "description": "wlan driver(Marvell) for rt-thread",
-    "keywords": [
-        "88w8782", "88w8801"
-    ],
-    "readme": "wlan driver(Marvell) for rt-thread.",
-    "site" : [
-    {"version" : "v1.0.0", "URL" : "https://github.com/JianRuiqian/marvellwifi.git", "filename" : "marvellwifi-1.0.0.zip","VER_SHA" : "7420ec4dda47dbed37f3ce30947c1204443d15b7"},
-    {"version" : "latest", "URL" : "https://github.com/JianRuiqian/marvellwifi.git", "filename" : "marvellwifi.zip","VER_SHA" : "master"}
-    ]
+  "name": "wlanmarvell",
+  "description": "wlan driver(Marvell) for rt-thread",
+  "keywords": [
+    "88w8782",
+    "88w8801"
+  ],
+  "category": "iot/WiFi",
+  "author": {
+    "name": "JianRuiqian",
+    "email": "jianb1995@hotmail.com"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/JianRuiqian/marvellwifi",
+  "homepage": "https://github.com/JianRuiqian/marvellwifi#readme",
+  "readme": "wlan driver(Marvell) for rt-thread.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/JianRuiqian/marvellwifi.git",
+      "filename": "marvellwifi-1.0.0.zip",
+      "VER_SHA": "7420ec4dda47dbed37f3ce30947c1204443d15b7"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/JianRuiqian/marvellwifi.git",
+      "filename": "marvellwifi.zip",
+      "VER_SHA": "master"
+    }
+  ]
 }

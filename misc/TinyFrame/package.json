@@ -1,15 +1,29 @@
 {
-    "name": "TinyFrame",
-    "description": "TinyFrame: Event-driven button lib for embedded",
-    "keywords": [
-        "TinyFrame"
-    ],
-    "author": {
-        "name": "XXXXzzzz000"
+  "name": "TinyFrame",
+  "description": "TinyFrame: Event-driven button lib for embedded",
+  "keywords": [
+    "TinyFrame"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "XXXXzzzz000",
+    "email": "unknown"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/XXXXzzzz000/TinyFrame",
+  "homepage": "https://github.com/XXXXzzzz000/TinyFrame#readme",
+  "readme": "TinyFrame: Event-driven button lib for embedded",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/XXXXzzzz000/TinyFrame/archive/v1.0.0.zip",
+      "filename": "TinyFrame-1.0.0.zip"
     },
-    "readme": "TinyFrame: Event-driven button lib for embedded",
-    "site": [
-        {"version": "v1.0.0", "URL": "https://github.com/XXXXzzzz000/TinyFrame/archive/v1.0.0.zip", "filename": "TinyFrame-1.0.0.zip"},
-        {"version": "latest", "URL": "https://github.com/XXXXzzzz000/TinyFrame.git", "filename": "TinyFrame.zip", "VER_SHA": "rtthread_port"}
-    ]
+    {
+      "version": "latest",
+      "URL": "https://github.com/XXXXzzzz000/TinyFrame.git",
+      "filename": "TinyFrame.zip",
+      "VER_SHA": "rtthread_port"
+    }
+  ]
 }
