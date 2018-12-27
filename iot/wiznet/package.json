@@ -1,12 +1,29 @@
-
 {
-    "name": "wiznet",
-    "description": "WIZnet: WIZnet TCP/IP chips SAL framework implement",
-    "keywords": [
-        "wiznet"
-    ],
-    "site" : [
-    {"version" : "v1.0.0", "URL" : "https://github.com/RT-Thread-packages/wiznet/archive/1.0.0.zip", "filename" : "wiznet-1.0.0.zip"},
-    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/wiznet.git", "filename" : "wiznet.zip","VER_SHA" : "master"}
-    ]
+  "name": "wiznet",
+  "description": "WIZnet: WIZnet TCP/IP chips SAL framework implement",
+  "keywords": [
+    "wiznet"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/wiznet",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/wiznet#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/wiznet/archive/1.0.0.zip",
+      "filename": "wiznet-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/wiznet.git",
+      "filename": "wiznet.zip",
+      "VER_SHA": "master"
+    }
+  ]
 }

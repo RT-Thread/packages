@@ -1,12 +1,31 @@
 {
-    "name": "ezXML",
-    "description": "ezXML is a C library for parsing XML documents.",
-    "keywords": [
-        "ezXML"
-    ],
-    "readme": "ezXML is a C library for parsing XML documents.",
-    "site" : [
-    { "version" : "v0.8.6", "URL" : "https://github.com/RT-Thread-packages/ezXML/archive/v0.8.6.zip", "filename" : "ezXML-0.8.6.zip","VER_SHA" : "fill in the git version SHA value"},
-    { "version" : "latest", "URL": "https://github.com/RT-Thread-packages/ezXML.git", "filename": "ezXML.zip", "VER_SHA": "master" }
-	]
+  "name": "ezXML",
+  "description": "ezXML is a C library for parsing XML documents.",
+  "keywords": [
+    "ezXML"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/ezXML",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/ezXML#readme",
+  "readme": "ezXML is a C library for parsing XML documents.",
+  "site": [
+    {
+      "version": "v0.8.6",
+      "URL": "https://github.com/RT-Thread-packages/ezXML/archive/v0.8.6.zip",
+      "filename": "ezXML-0.8.6.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/ezXML.git",
+      "filename": "ezXML.zip",
+      "VER_SHA": "master"
+    }
+  ]
 }

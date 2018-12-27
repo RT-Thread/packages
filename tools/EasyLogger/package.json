@@ -1,18 +1,33 @@
-
 {
-    "name": "EasyLogger",
-    "description": "A ultra-lightweight(ROM<1.6K, RAM<0.3k), high-performance C/C++ log library",
-    "keywords": [
-        "logger", "C", "high-performance", "lightweight", "C/C++"
-    ],
-    "readme": "A ultra-lightweight(ROM<1.6K, RAM<0.3k), high-performance C/C++ log library. More information on https://github.com/armink/EasyLogger",
-    "author": {
-        "name": "armink",
-        "email": "armink.ztl@gmail.com"
+  "name": "EasyLogger",
+  "description": "A ultra-lightweight(ROM<1.6K, RAM<0.3k), high-performance C/C++ log library",
+  "keywords": [
+    "logger",
+    "C",
+    "high-performance",
+    "lightweight",
+    "C/C++"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "armink",
+    "email": "armink.ztl@gmail.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/armink-rtt-pkgs/EasyLogger",
+  "homepage": "https://github.com/armink-rtt-pkgs/EasyLogger#readme",
+  "readme": "A ultra-lightweight(ROM<1.6K, RAM<0.3k), high-performance C/C++ log library. More information on https://github.com/armink/EasyLogger",
+  "site": [
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/armink-rtt-pkgs/EasyLogger/archive/2.0.0.zip",
+      "filename": "EasyLogger-2.0.0.zip"
     },
-    "repository": "https://github.com/armink-rtt-pkgs/EasyLogger",
-    "site" : [
-        {"version": "v2.0.0", "URL": "https://github.com/armink-rtt-pkgs/EasyLogger/archive/2.0.0.zip", "filename": "EasyLogger-2.0.0.zip"},
-        {"version": "latest", "URL": "https://github.com/armink-rtt-pkgs/EasyLogger.git", "filename": "EasyLogger.zip", "VER_SHA": "master" }
-    ]
+    {
+      "version": "latest",
+      "URL": "https://github.com/armink-rtt-pkgs/EasyLogger.git",
+      "filename": "EasyLogger.zip",
+      "VER_SHA": "master"
+    }
+  ]
 }

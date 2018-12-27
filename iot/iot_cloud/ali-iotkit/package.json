@@ -1,14 +1,32 @@
-
 {
-    "name": "ali-iotkit",
-    "description": "ali-iotkit: Ali Cloud SDK for IoT platform",
-    "keywords": [
-        "ali_iotkit"
-    ],
-    "readme": "ali-iotkit: Aliyun Iot Development Platform",
-    "site" : [
-    {"version" : "v2.0.3", "URL" : "https://github.com/RT-Thread-packages/ali-iotkit/archive/2.0.3.zip", "filename" : "ali-iotkit-2.0.3.zip","VER_SHA" : "ba1c8597f3ae0fe83426f0520aa444f71705eae0"},
-    
-    {"version" : "latest", "URL" : "https://github.com/RT-Thread-packages/ali-iotkit.git", "filename" : "ali-iotkit.zip","VER_SHA" : "master"}
-    ]
+  "name": "ali-iotkit",
+  "description": "ali-iotkit: Ali Cloud SDK for IoT platform",
+  "keywords": [
+    "ali_iotkit"
+  ],
+  "category": "iot/iot_cloud",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/ali-iotkit",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/ali-iotkit#readme",
+  "doc": "https://www.rt-thread.org/document/site/submodules/ali-iotkit/docs/introduction/",
+  "readme": "ali-iotkit: Aliyun Iot Development Platform",
+  "site": [
+    {
+      "version": "v2.0.3",
+      "URL": "https://github.com/RT-Thread-packages/ali-iotkit/archive/2.0.3.zip",
+      "filename": "ali-iotkit-2.0.3.zip",
+      "VER_SHA": "ba1c8597f3ae0fe83426f0520aa444f71705eae0"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/ali-iotkit.git",
+      "filename": "ali-iotkit.zip",
+      "VER_SHA": "master"
+    }
+  ]
 }
