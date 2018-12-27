@@ -19,12 +19,31 @@ if PKG_USING_U8G2
                 Read from / Write to PCF8591 which can be used to check whether i2c bus is working.
             default n
 
-        config U8G2_USING_I2C_SSD1306
-            bool "SSD1306: an example for I2C OLED"
+        config U8G2_USING_SW_I2C_SSD1306
+            bool "SSD1306: an example for I2C OLED (software)"
+            help
+                Print "Hello RT-Thread" on SSD1306 OLED using software I2C
+            default n
+
+        config U8G2_USING_HW_I2C_SSD1306
+            bool "SSD1306: an example for I2C OLED (hardware)"
+            select RT_USING_SPI
+            help
+                Print "Hello RT-Thread" on SSD1306 OLED using hardware I2C
+            default n
+
+        config U8G2_USING_SW_SPI_SSD1306
+            bool "SSD1306: an example for SPI OLED (software)"
+            help
+                Print "Hello RT-Thread" on SSD1306 OLED using software SPI
+            default n
+
+        config U8G2_USING_HW_SPI_SSD1306
+            bool "SSD1306: an example for SPI OLED (hardware)"
             select RT_USING_I2C
             select RT_USING_I2C_BITOPS
             help
-                Print "Hello RT-Thread" on SSD1306 OLED using I2C
+                Print "Hello RT-Thread" on SSD1306 OLED using hardware SPI
             default n
 
     endmenu
@@ -48,4 +67,3 @@ if PKG_USING_U8G2
        default "latest"    if PKG_USING_U8G2_LATEST_VERSION
 
 endif
-
