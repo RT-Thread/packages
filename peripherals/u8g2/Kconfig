@@ -62,6 +62,9 @@ if PKG_USING_U8G2
         help
             Select the package version
 
+        config PKG_USING_U8G2_V100
+            bool "v1.0.0"
+
         config PKG_USING_U8G2_V110
             bool "v1.1.0"
 
@@ -71,6 +74,7 @@ if PKG_USING_U8G2
           
     config PKG_U8G2_VER
        string
+       default "v1.0.0"    if PKG_USING_U8G2_V100
        default "v1.1.0"    if PKG_USING_U8G2_V110
        default "latest"    if PKG_USING_U8G2_LATEST_VERSION
 
