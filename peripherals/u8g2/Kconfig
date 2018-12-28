@@ -46,6 +46,14 @@ if PKG_USING_U8G2
                 Print "Hello RT-Thread" on SSD1306 OLED using hardware SPI
             default n
 
+        config U8G2_USING_8080_ST7920
+            bool "ST7920 : an example for 8080 mode LCD"
+            select RT_USING_I2C
+            select RT_USING_I2C_BITOPS
+            help
+                Print "Hello RT-Thread" on ST7920 LCD using 8080 mode
+            default n
+
     endmenu
 
     choice
@@ -57,6 +65,9 @@ if PKG_USING_U8G2
         config PKG_USING_U8G2_V100
             bool "v1.0.0"
 
+        config PKG_USING_U8G2_V110
+            bool "v1.1.0"
+
         config PKG_USING_U8G2_LATEST_VERSION
             bool "latest"
     endchoice
@@ -64,6 +75,8 @@ if PKG_USING_U8G2
     config PKG_U8G2_VER
        string
        default "v1.0.0"    if PKG_USING_U8G2_V100
+       default "v1.1.0"    if PKG_USING_U8G2_V110
        default "latest"    if PKG_USING_U8G2_LATEST_VERSION
 
 endif
+
