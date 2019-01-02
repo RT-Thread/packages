@@ -10,7 +10,7 @@
     "name": "liu2guang",
     "email": "1004383796@qq.com"
   },
-  "License": "MIT",
+  "license": "MIT",
   "repository": "https://github.com/liu2guang/Lua2RTT",
   "homepage": "https://github.com/liu2guang/Lua2RTT#readme",
   "readme": "Lua: A lightweight, embeddable scripting language.",
