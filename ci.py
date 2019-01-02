@@ -83,6 +83,29 @@ def json_file_content_check(json_pathname):
     package_info = json.loads(json_content)
     print(package_info['name'])
 
+    if package_info['category'] == '' :
+        print ('The category of ' + package_info['name'] + ' package is lost.')  
+        return False 
+        
+    if package_info['author']['name'] == '' :
+        print ('The author name of ' + package_info['name'] + ' package is lost.') 
+        return False  
+        
+    if package_info['author']['email'] == '' :
+        print ('The author email of ' + package_info['name'] + ' package is lost.') 
+        return False  
+        
+    if package_info['license'] == '' :
+        print ('The license of ' + package_info['name'] + ' package is lost.') 
+        return False   
+        
+    if package_info['repository'] == '' :
+        print ('The repository of ' + package_info['name'] + ' package is lost.') 
+        return False         
+    else :      
+        if not determine_url_valid(package_info['repository']):
+            return False       
+        
     for i in range(0, len(package_info['site'])):
         package_version = package_info['site'][i]['version']
         package_url = package_info['site'][i]['URL']
