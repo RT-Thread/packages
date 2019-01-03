@@ -12,7 +12,7 @@
     "name": "armink",
     "email": "armink.ztl@gmail.com"
   },
-  "License": "MIT",
+  "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/micropython",
   "homepage": "https://github.com/RT-Thread-packages/micropython#readme",
   "readme": "A lean and efficient Python implementation for microcontrollers and constrained systems.",

@@ -12,7 +12,7 @@
     "name": "liu2guang",
     "email": "1004383796@qq.com"
   },
-  "License": "LGPL-2.1",
+  "license": "LGPL-2.1",
   "repository": "https://github.com/liu2guang/libcsv",
   "homepage": "https://github.com/liu2guang/libcsv#readme",
   "readme": "libcsv: a small, simple and fast CSV library written in pure ANSI C89 that can read and write CSV data.",
