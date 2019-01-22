@@ -20,16 +20,16 @@ if PKG_USING_TENCENT_IOTKIT
             bool "AUTH BY DYNAMIC SIGN"
             help
                 AUTH BY DYNAMIC SIGN
-				
+
         config PKG_USING_TENCENT_IOTKIT_IS_TOKEN
             bool "AUTH BY TOKEN"
             help
-                AUTH BY TOKEN				
+                AUTH BY TOKEN
     endchoice 
-	
+
     config PKG_USING_TENCENT_IOTKIT_PRODUCT_ID
         string "Config Product Id"
-        default iot-1l60dtl0  	
+        default iot-1l60dtl0
 
     config PKG_USING_TENCENT_IOTKIT_PRODUCT_KEY
         string "Config Product Key"
@@ -37,13 +37,12 @@ if PKG_USING_TENCENT_IOTKIT
 
     config PKG_USING_TENCENT_IOTKIT_DEVICE_NAME
         string "Config Device Name"
-        default rt_thread_dev1        
+        default rt_thread_dev1
 
     config PKG_USING_TENCENT_IOTKIT_DEVICE_SECRET
         string "Config Device Secret"
         default 92b0e676cdd608c4fb56386967613764
 
-		
     config PKG_USING_TENCENT_IOTKIT_MQTT
         bool "Enable MQTT"
         default n 
@@ -51,52 +50,54 @@ if PKG_USING_TENCENT_IOTKIT
     if PKG_USING_TENCENT_IOTKIT_MQTT
 		choice
 			prompt "Select MQTT data type"
+            default PKG_USING_TENCENT_IOTKIT_MQTT_ADVANCED
 			help
 				Select MQTT data type
 				
 			config PKG_USING_TENCENT_IOTKIT_MQTT_ADVANCED
 				bool "Enable MQTT Advanced"
-				default y
+
 			config PKG_USING_TENCENT_IOTKIT_MQTT_BASIC
 				bool "Enable MQTT Basic"
-				default n
+
 		endchoice
 
 		config PKG_USING_TENCENT_IOTKIT_MQTT_TLS
 				bool "Enable MQTT SSL"
 				default n
-				select PKG_USING_MBEDTLS	
+				select PKG_USING_MBEDTLS
     endif
 
     config PKG_USING_TENCENT_IOTKIT_COAP
         bool "Enable COAP"
         default n
-		
+
     if PKG_USING_TENCENT_IOTKIT_COAP
 		choice
 			prompt "Select COAP data type"
+            default PKG_USING_TENCENT_IOTKIT_COAP_ADVANCED
 			help
 				Select COAP data type
 				
 			config PKG_USING_TENCENT_IOTKIT_COAP_ADVANCED
 				bool "Enable COAP Advanced"
-				default y
+
 			config PKG_USING_TENCENT_IOTKIT_COAP_BASIC
 				bool "Enable COAP Basic"
-				default n
+
 		endchoice
 
 		config PKG_USING_TENCENT_IOTKIT_COAP_DTLS
 				bool "Enable COAP SSL"
 				default n
-				select PKG_USING_MBEDTLS	
+				select PKG_USING_MBEDTLS
     endif
-	
+
     config PKG_USING_TENCENT_IOTKIT_SCENARIOS
         bool "Enable SCENARIOS"
         default n
 
-    if PKG_USING_TENCENT_IOTKIT_SCENARIOS			   
+    if PKG_USING_TENCENT_IOTKIT_SCENARIOS
         choice  
 			prompt "Select SCENARIOS"
             help
@@ -106,12 +107,12 @@ if PKG_USING_TENCENT_IOTKIT
               
             config PKG_USING_TENCENT_IOTKIT_SMARTBOX
                 bool "Use Scenario SMARTBOX"
-				
+
 			config PKG_USING_TENCENT_IOTKIT_LIGHT
-                bool "Use Scenario LIGHT"	
+                bool "Use Scenario LIGHT"
         endchoice
     endif
-	
+
 	config PKG_USING_TENCENT_IOTKIT_HTTP
         bool "Enable HTTP"
         default n
@@ -124,10 +125,10 @@ if PKG_USING_TENCENT_IOTKIT
 
         config PKG_USING_TENCENT_IOTKIT_LATEST_VERSION
             bool "latest"
-		
+
 		config PKG_USING_TENCENT_IOTKIT_V29
-            bool "v2.9"	
-            
+            bool "v2.9"
+
         config PKG_USING_TENCENT_IOTKIT_V26
             bool "v2.6"
     endchoice
