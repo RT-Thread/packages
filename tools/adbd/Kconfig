@@ -1,7 +1,7 @@
 
 # Kconfig file for package adbd
 menuconfig PKG_USING_ADBD
-    bool "ADBD: Android Debug Bridge device porting"
+    bool "ADBD: Android Debug Bridge daemon implementation in RT-Thread"
     select RT_USING_DFS
     select RT_USING_LIBC
     select RT_USING_POSIX
