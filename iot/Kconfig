@@ -18,5 +18,6 @@ source "$PKGS_DIR/packages/iot/at_device/Kconfig"
 source "$PKGS_DIR/packages/iot/wiznet/Kconfig"
 
 source "$PKGS_DIR/packages/iot/iot_cloud/Kconfig"
+source "$PKGS_DIR/packages/iot/NimBLE/Kconfig"
 
 endmenu
