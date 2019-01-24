@@ -1,0 +1,169 @@
+
+# Kconfig file for package NimBLE
+menuconfig PKG_USING_NIMBLE
+    bool "NimBLE:An open-source Bluetooth 5.0 stack porting on RT-Thread"
+    default n
+
+if PKG_USING_NIMBLE
+
+    config PKG_NIMBLE_PATH
+        string
+        default "/packages/iot/NimBLE"
+
+    config NIMBT_ROLE_PERIPHERAL
+        bool "Peripheral Role support"
+        select NIMBT_ROLE_BROADCASTER
+        default n
+        help
+          Select this for NimBLE Peripheral role support.
+
+    config NIMBT_ROLE_CENTRAL
+        bool "Central Role support"
+        select NIMBLE_ROLE_OBSERVER
+        default n
+        help
+          Select this for NimBLE Central role support.
+
+    menu "Broadcaster"
+        visible if !NIMBT_ROLE_PERIPHERAL
+
+    config NIMBT_ROLE_BROADCASTER
+        bool "Broadcaster Role support"
+        default y if !NIMBLE_ROLE_OBSERVER
+        default n
+        help
+          Select this for NimBLE Broadcaster role support.
+
+    endmenu
+
+    menu "Observer"
+        visible if !NIMBT_ROLE_CENTRAL
+
+    config NIMBT_ROLE_OBSERVER
+        bool "Observer Role support"
+        default n
+        help
+          Select this for NimBLE Observer role support.
+
+    endmenu  
+    
+    
+    menu "Common configuration"
+        
+    endmenu 
+    
+    
+    menu "Host stack configuration"
+    
+        config NIMBLE_HOST
+            bool "Enable Host support"
+            default y
+            help
+                Enable support for Host Stack.
+            
+    endmenu
+    
+    
+    menu "Controller configuretion"
+        
+        config NIMBLE_CTLR
+            bool "Enabel Controller support"
+            default n
+            help
+              Enable support for native controller implementations.
+            
+            if NIMBLE_CTLR
+            
+                choice
+                
+                    prompt "BLE device support"
+                    default NIMBLE_BSP_NRF52
+                    help
+                        Select the device controller layer support.
+                
+                    config NIMBLE_BSP_NRF52
+                        bool "NRF52xxx"
+                
+                endchoice
+            
+            endif 
+        
+    endmenu
+
+
+    choice
+        prompt "Log level"
+        default NIMBLE_DEBUG_LEVEL_I
+        help
+            select the NIMBLE log level
+        
+        config NIMBLE_DEBUG_LEVEL_O
+            bool "OFF"
+
+        config NIMBLE_DEBUG_LEVEL_E
+            bool "ERROR"
+        
+        config NIMBLE_DEBUG_LEVEL_W
+            bool "WARING"
+        
+        config NIMBLE_DEBUG_LEVEL_I
+            bool "INFO"
+            
+        config NIMBLE_DEBUG_LEVEL_D
+            bool "DEBUG"
+    
+    endchoice
+    
+    config NIMBLE_DEBUG_LEVEL
+        # Virtual/hidden option
+        int
+        default -1 if NIMBLE_DEBUG_LEVEL_O
+        default 0 if NIMBLE_DEBUG_LEVEL_E
+        default 1 if NIMBLE_DEBUG_LEVEL_W
+        default 2 if NIMBLE_DEBUG_LEVEL_I
+        default 3 if NIMBLE_DEBUG_LEVEL_D
+        default 2
+
+    choice
+        prompt "Samples"
+        default NIMBLE_SAMPLE_DISABLE
+        help
+            select the NimBLE samples
+        
+        config NIMBLE_SAMPLE_DISABLE
+            bool "Not enable sample"
+        
+        config NIMBLE_SAMPLE_PER_HR
+            bool "peripheral heart-rate"
+            select NIMBT_ROLE_PERIPHERAL
+        
+        config NIMBLE_SAMPLE_PER_LED
+            bool "peripheral led central"
+            select NIMBT_ROLE_PERIPHERAL
+        
+        config NIMBLE_SAMPLE_BEACON
+            bool "beacon"
+            select NIMBT_ROLE_BROADCASTER
+            
+    endchoice
+
+    choice
+        prompt "Version"
+        default PKG_USING_NIMBLE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NIMBLE_V100
+            bool "v1.0.0"
+
+        config PKG_USING_NIMBLE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_NIMBLE_VER
+       string
+       default "v1.0.0"    if PKG_USING_NIMBLE_V100
+       default "latest"    if PKG_USING_NIMBLE_LATEST_VERSION
+
+endif
+
