@@ -20,6 +20,12 @@
       "VER_SHA": "2b6c05f42b6fe1c8cd112540a84a8b83e6536c14"
     },
     {
+      "version": "v1.7.0",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v1.7.0_for_rtthread.zip",
+      "filename": "v1.7.0_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/geniusgogo/littlefs.git",
       "filename": "",

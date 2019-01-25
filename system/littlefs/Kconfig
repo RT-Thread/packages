@@ -12,12 +12,15 @@ if PKG_USING_LITTLEFS
 
     choice
         prompt "Version"
-        default PKG_USING_LITTLEFS_V090
+        default PKG_USING_LITTLEFS_V170
         help
             Select the package version
 
         config PKG_USING_LITTLEFS_V090
             bool "v0.9.0"
+
+        config PKG_USING_LITTLEFS_V170
+            bool "v1.7.0"
 
         config PKG_USING_LITTLEFS_LATEST_VERSION
             bool "latest"
@@ -42,6 +45,7 @@ if PKG_USING_LITTLEFS
     config PKG_LITTLEFS_VER
        string
        default "v0.9.0" if PKG_USING_LITTLEFS_V090
+       default "v1.7.0" if PKG_USING_LITTLEFS_V170
        default "latest" if PKG_USING_LITTLEFS_LATEST_VERSION
 
 endif
