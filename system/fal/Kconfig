@@ -54,6 +54,9 @@ if PKG_USING_FAL
         config PKG_USING_FAL_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_FAL_V00300
+            bool "v0.3.0"
+
         config PKG_USING_FAL_V00200
             bool "v0.2.0"
 
@@ -64,6 +67,7 @@ if PKG_USING_FAL
     config PKG_FAL_VER
        string
        default "latest"    if PKG_USING_FAL_LATEST_VERSION
+       default "v0.3.0"    if PKG_USING_FAL_V00300
        default "v0.2.0"    if PKG_USING_FAL_V00200
        default "v0.1.0"    if PKG_USING_FAL_V00100
 
