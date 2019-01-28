@@ -30,6 +30,8 @@ if PKG_USING_NETUTILS
     config PKG_NETUTILS_IPERF
         bool "Enable iperf-liked network performance tool"
         select RT_USING_LIBC
+        select RT_USING_SAL
+        select SAL_USING_POSIX
         default n
 
     config PKG_NETUTILS_NETIO
