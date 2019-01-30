@@ -1,0 +1,74 @@
+
+menuconfig PKG_USING_RW007
+    bool "rw007: SPI WIFI rw007 driver"
+    select RT_USING_SPI
+    select RT_USING_PIN
+	select RT_USING_LWIP
+    default n
+	help
+		if "PKG_USING_RW007" is opened, "RT_USING_LWIP" will be default selected.
+
+if PKG_USING_RW007
+
+	config PKG_RW007_PATH
+        string
+        default "/packages/iot/WiFi/rw007"
+
+	choice
+		prompt "version"
+		help
+			Select the wiced wifi version
+
+		config PKG_USING_RW007_LATEST_VERSION
+			bool "latest"
+	endchoice
+
+	if PKG_USING_RW007_LATEST_VERSION
+		config PKG_RW007_VER
+		string
+		default "latest"
+	endif
+
+    choice
+        prompt "example driver port"
+        default RW007_USING_STM32_DRIVERS
+        config RW007_NOT_USE_EXAMPLE_DRIVERS
+            bool "not use example driver, porting by myself"
+        config RW007_USING_STM32_DRIVERS
+            bool "rw007 for stm32"
+        # config RW007_USING_IMXRT_DRIVERS
+        #    bool "rw007 for imxrt"
+    endchoice
+
+    if !RW007_NOT_USE_EXAMPLE_DRIVERS
+    if RW007_USING_STM32_DRIVERS || RW007_USING_IMXRT_DRIVERS
+        config RW007_SPI_BUS_NAME
+            string "RW007 BUS NAME"
+            default "spi2"
+
+        config RW007_CS_PIN
+            int "CS pin index"
+            default 102
+
+    endif
+
+    config RW007_BOOT0_PIN
+        int "BOOT0 pin index (same as spi clk pin)"
+        default 175
+
+    config RW007_BOOT1_PIN
+        int "BOOT1 pin index (same as spi cs pin)"
+        default 102
+
+    config RW007_INT_BUSY_PIN
+        int "INT/BUSY pin index"
+        default 62
+
+    config RW007_RST_PIN
+        int "RESET pin index"
+        default 187
+    
+    endif
+
+
+endif
