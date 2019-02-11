@@ -16,27 +16,29 @@ if PKG_USING_EASYFLASH
 
     if PKG_EASYFLASH_ENV
 
-        choice
-            prompt "ENV mode"
+        if PKG_USING_EASYFLASH_V330 || PKG_USING_EASYFLASH_V321 || PKG_USING_EASYFLASH_V310 || PKG_USING_EASYFLASH_V300
+            choice
+                prompt "ENV mode"
+                default PKG_EASYFLASH_ENV_USING_NORMAL
+                config PKG_EASYFLASH_ENV_USING_NORMAL
+                    bool "Normal mode"
 
-            config PKG_EASYFLASH_ENV_USING_NORMAL
-                bool "Normal mode"
+                config PKG_EASYFLASH_ENV_USING_WL_MODE
+                    bool "Wear leveling mode"
 
-            config PKG_EASYFLASH_ENV_USING_WL_MODE
-                bool "Wear leveling mode"
+                config PKG_EASYFLASH_ENV_USING_PFS_MODE
+                    bool "Power fail safeguard mode"
 
-            config PKG_EASYFLASH_ENV_USING_PFS_MODE
-                bool "Power fail safeguard mode"
+                config PKG_EASYFLASH_ENV_USING_WL_PFS_MODE
+                    bool "Wear leveling and power fail safeguard mode"
 
-            config PKG_EASYFLASH_ENV_USING_WL_PFS_MODE
-                bool "Wear leveling and power fail safeguard mode"
+            endchoice
 
-        endchoice
-
-        config PKG_EASYFLASH_ENV_SETTING_SIZE
-            int
-            prompt "ENV setting size. MUST be word alignment"
-            default 2048
+            config PKG_EASYFLASH_ENV_SETTING_SIZE
+                int
+                prompt "ENV setting size. MUST be word alignment"
+                default 2048
+        endif
 
         config PKG_EASYFLASH_ENV_AUTO_UPDATE
             bool
@@ -74,6 +76,30 @@ if PKG_USING_EASYFLASH
         prompt "Erase minimum granularity"
         default 4096
 
+    choice
+        prompt "Write minimum granularity"
+        default PKG_EASYFLASH_WRITE_GRAN_1BIT
+        config PKG_EASYFLASH_WRITE_GRAN_1BIT
+            bool "1bit   such as Nor Flash"
+
+        config PKG_EASYFLASH_WRITE_GRAN_8BITS
+            bool "8bits  such as STM32F2/F4"
+
+        config PKG_EASYFLASH_WRITE_GRAN_32BITS
+            bool "32bits such as STM32F1"
+
+        config PKG_EASYFLASH_WRITE_GRAN_64BITS
+            bool "64bits such as STM32L4"
+
+    endchoice
+
+    config PKG_EASYFLASH_WRITE_GRAN
+        int
+        default 1 if PKG_EASYFLASH_WRITE_GRAN_1BIT
+        default 8 if PKG_EASYFLASH_WRITE_GRAN_8BITS
+        default 32 if PKG_EASYFLASH_WRITE_GRAN_32BITS
+        default 64 if PKG_EASYFLASH_WRITE_GRAN_64BITS
+
     config PKG_EASYFLASH_START_ADDR
         int
         prompt "Start addr on flash or partition"
@@ -85,9 +111,12 @@ if PKG_USING_EASYFLASH
 
     choice
         prompt "Version"
-        default PKG_USING_EASYFLASH_V321
+        default PKG_USING_EASYFLASH_V330
         help
             Select the this package version
+
+        config PKG_USING_EASYFLASH_V330
+            bool "v3.3.0"
 
         config PKG_USING_EASYFLASH_V321
             bool "v3.2.1"
@@ -104,6 +133,7 @@ if PKG_USING_EASYFLASH
 
     config PKG_EASYFLASH_VER
         string
+        default "v3.3.0" if PKG_USING_EASYFLASH_V330
         default "v3.2.1" if PKG_USING_EASYFLASH_V321
         default "v3.1.0" if PKG_USING_EASYFLASH_V310
         default "v3.0.0" if PKG_USING_EASYFLASH_V300
