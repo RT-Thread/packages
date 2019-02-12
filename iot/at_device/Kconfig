@@ -29,7 +29,7 @@ if PKG_USING_AT_DEVICE
 
         config AT_DEVICE_ESP8266
             bool "Espressif ESP8266"
-if PKG_USING_AT_DEVICE_LATEST_VERSION
+if PKG_AT_DEVICE_VER_NUM > 0x10400
         config AT_DEVICE_RW007
             bool "Realthread RW007"
 endif
@@ -118,6 +118,7 @@ endif
 
     config PKG_AT_DEVICE_VER_NUM
         hex
+        default 0x99999    if PKG_USING_AT_DEVICE_LATEST_VERSION
         default 0x10400    if PKG_USING_AT_DEVICE_V140 
         default 0x10300    if PKG_USING_AT_DEVICE_V130
         default 0x10200    if PKG_USING_AT_DEVICE_V120
