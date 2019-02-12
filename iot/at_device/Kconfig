@@ -29,7 +29,10 @@ if PKG_USING_AT_DEVICE
 
         config AT_DEVICE_ESP8266
             bool "Espressif ESP8266"
-
+if PKG_USING_AT_DEVICE_LATEST_VERSION
+        config AT_DEVICE_RW007
+            bool "Realthread RW007"
+endif
         config AT_DEVICE_NOT_SELECTED
             bool "Not selected, please select"
     endchoice
@@ -39,9 +42,10 @@ if PKG_USING_AT_DEVICE
         default 6 if AT_DEVICE_M26
         default 12 if AT_DEVICE_EC20
         default 5 if AT_DEVICE_ESP8266
+        default 5 if AT_DEVICE_RW007
         default 0
 
-    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20
+    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007
 
             config AT_DEVICE_NAME
                 string "AT client device name"
@@ -61,6 +65,18 @@ if PKG_USING_AT_DEVICE
 
         config AT_DEVICE_WIFI_PASSWORD
             string "esp8266 wifi password"
+            default "12345678"
+
+    endif
+
+    if AT_DEVICE_RW007
+
+        config AT_DEVICE_WIFI_SSID
+            string "rw007 wifi ssid"
+            default "rtthread"
+
+        config AT_DEVICE_WIFI_PASSWORD
+            string "rw007 wifi password"
             default "12345678"
 
     endif
