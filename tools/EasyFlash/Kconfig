@@ -16,11 +16,11 @@ if PKG_USING_EASYFLASH
 
     if PKG_EASYFLASH_ENV
 
-        if PKG_USING_EASYFLASH_V330 || PKG_USING_EASYFLASH_V321 || PKG_USING_EASYFLASH_V310 || PKG_USING_EASYFLASH_V300
+        if PKG_EASYFLASH_VER_NUM <= 0x30300
             choice
                 prompt "ENV mode"
                 default PKG_EASYFLASH_ENV_USING_NORMAL
-                config PKG_EASYFLASH_ENV_USING_NORMAL
+                    config PKG_EASYFLASH_ENV_USING_NORMAL
                     bool "Normal mode"
 
                 config PKG_EASYFLASH_ENV_USING_WL_MODE
@@ -76,29 +76,31 @@ if PKG_USING_EASYFLASH
         prompt "Erase minimum granularity"
         default 4096
 
-    choice
-        prompt "Write minimum granularity"
-        default PKG_EASYFLASH_WRITE_GRAN_1BIT
-        config PKG_EASYFLASH_WRITE_GRAN_1BIT
-            bool "1bit   such as Nor Flash"
+    if PKG_EASYFLASH_VER_NUM > 0x30300
+        choice
+            prompt "Write minimum granularity"
+            default PKG_EASYFLASH_WRITE_GRAN_1BIT
+            config PKG_EASYFLASH_WRITE_GRAN_1BIT
+                bool "1bit   such as Nor Flash"
 
-        config PKG_EASYFLASH_WRITE_GRAN_8BITS
-            bool "8bits  such as STM32F2/F4"
+            config PKG_EASYFLASH_WRITE_GRAN_8BITS
+                bool "8bits  such as STM32F2/F4"
 
-        config PKG_EASYFLASH_WRITE_GRAN_32BITS
-            bool "32bits such as STM32F1"
+            config PKG_EASYFLASH_WRITE_GRAN_32BITS
+                bool "32bits such as STM32F1"
 
-        config PKG_EASYFLASH_WRITE_GRAN_64BITS
-            bool "64bits such as STM32L4"
+            config PKG_EASYFLASH_WRITE_GRAN_64BITS
+                bool "64bits such as STM32L4"
 
-    endchoice
+        endchoice
 
-    config PKG_EASYFLASH_WRITE_GRAN
-        int
-        default 1 if PKG_EASYFLASH_WRITE_GRAN_1BIT
-        default 8 if PKG_EASYFLASH_WRITE_GRAN_8BITS
-        default 32 if PKG_EASYFLASH_WRITE_GRAN_32BITS
-        default 64 if PKG_EASYFLASH_WRITE_GRAN_64BITS
+        config PKG_EASYFLASH_WRITE_GRAN
+            int
+            default 1 if PKG_EASYFLASH_WRITE_GRAN_1BIT
+            default 8 if PKG_EASYFLASH_WRITE_GRAN_8BITS
+            default 32 if PKG_EASYFLASH_WRITE_GRAN_32BITS
+            default 64 if PKG_EASYFLASH_WRITE_GRAN_64BITS
+    endif
 
     config PKG_EASYFLASH_START_ADDR
         int
@@ -138,5 +140,13 @@ if PKG_USING_EASYFLASH
         default "v3.1.0" if PKG_USING_EASYFLASH_V310
         default "v3.0.0" if PKG_USING_EASYFLASH_V300
         default "latest" if PKG_USING_EASYFLASH_LATEST_VERSION
+
+    config PKG_EASYFLASH_VER_NUM
+        hex
+        default 0x30300 if PKG_USING_EASYFLASH_V330
+        default 0x30201 if PKG_USING_EASYFLASH_V321
+        default 0x30100 if PKG_USING_EASYFLASH_V310
+        default 0x30000 if PKG_USING_EASYFLASH_V300
+        default 0x99999 if PKG_USING_EASYFLASH_LATEST_VERSION
 
 endif
