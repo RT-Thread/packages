@@ -15,9 +15,9 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/heyuanjie87/adbd.git",
+      "URL": "https://github.com/heyuanjie87/adbd/archive/v1.0.0.zip",
       "filename": "adbd-1.0.0.zip",
-      "VER_SHA": "0b20f43e6b7f611163fe0b627cb8a88aaa661481"
+      "VER_SHA": ""
     },
     {
       "version": "latest",
