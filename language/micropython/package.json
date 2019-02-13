@@ -18,6 +18,12 @@
   "readme": "A lean and efficient Python implementation for microcontrollers and constrained systems.",
   "site": [
     {
+      "version": "v1.10",
+      "URL": "https://github.com/RT-Thread-packages/micropython/archive/1.10.zip",
+      "filename": "micropython-1.10.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "v1.9.3",
       "URL": "https://github.com/RT-Thread-packages/micropython.git",
       "filename": "micropython-1.9.3.zip",
