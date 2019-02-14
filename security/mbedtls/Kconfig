@@ -65,6 +65,10 @@ if PKG_USING_MBEDTLS
         # 10 ENTRUST_ROOT_CA.cer
         config PKG_USING_MBEDTLS_ENTRUST_ROOT_CA
             bool "Using Entrust Root Certification Authority - G2 CA"
+        
+        # 11 AMAZON_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_AMAZON_ROOT_CA
+            bool "Using Amazon Root CA"
 
     endmenu
 
