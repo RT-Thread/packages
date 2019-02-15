@@ -2,6 +2,7 @@ menu "peripheral libraries and drivers"
 
 # source "$PKGS_DIR/packages/peripherals//Kconfig"
 
+source "$PKGS_DIR/packages/peripherals/sensors/Kconfig"
 source "$PKGS_DIR/packages/peripherals/realtek_ameba/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sht2x/Kconfig"
 source "$PKGS_DIR/packages/peripherals/aht10/Kconfig"

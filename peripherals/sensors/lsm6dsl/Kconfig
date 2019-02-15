@@ -1,0 +1,44 @@
+
+# Kconfig file for package lsm6dsl
+menuconfig PKG_USING_LSM6DSL
+    bool "LSM6DSL sensor driver package, support: accelerometer, gyroscope, step."
+    default n
+
+if PKG_USING_LSM6DSL
+
+    config PKG_LSM6DSL_PATH
+        string
+        default "/packages/peripherals/sensors/lsm6dsl"
+
+    config PKG_USING_LSM6DSL_ACCE
+		bool "Enable lsm6dsl acce"
+		default y
+
+    config PKG_USING_LSM6DSL_GYRO
+		bool "Enable lsm6dsl gyro"
+		default y
+
+    config PKG_USING_LSM6DSL_STEP
+		bool "Enable lsm6dsl step"
+		default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_LSM6DSL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LSM6DSL_V001
+            bool "v0.0.1"
+
+        config PKG_USING_LSM6DSL_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LSM6DSL_VER
+       string
+       default "v0.0.1"    if PKG_USING_LSM6DSL_V001
+       default "latest"    if PKG_USING_LSM6DSL_LATEST_VERSION
+
+endif
+
