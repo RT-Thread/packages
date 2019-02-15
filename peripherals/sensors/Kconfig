@@ -1,0 +1,5 @@
+menu "sensors drivers"
+
+source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsl/Kconfig"
+
+endmenu
