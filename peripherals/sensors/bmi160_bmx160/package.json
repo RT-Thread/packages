@@ -1,0 +1,33 @@
+
+{
+  "name": "bmi160_bmx160",
+  "description": "a bmi160/bmx160 sensor driver package for rt-thread",
+  "keywords": [
+      "bmi160_bmx160"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "gztss",
+    "email": "guanwenliang@rt-thread.com"
+  },
+  "license": "other",
+  "repository": "https://github.com/RT-Thread-packages/bmi160_bmx160",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/RT-Thread-packages/bmi160_bmx160.git",
+      "filename": "spl0601-0.0.1.zip",
+      "VER_SHA": "278b5e2c8dfca0ed4dc487783bd86f03e60af9f5"
+    },
+    {
+      "version": "latest",
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/bmi160_bmx160.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

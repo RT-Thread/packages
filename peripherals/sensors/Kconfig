@@ -1,5 +1,7 @@
 menu "sensors drivers"
 
 source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsl/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/bmi160_bmx160/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/spl0601/Kconfig"
 
 endmenu
