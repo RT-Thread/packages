@@ -49,7 +49,7 @@ endif
         default 6 if AT_DEVICE_SIM800C
         default 0
 
-    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007
+    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007 || AT_DEVICE_SIM800C
 
             config AT_DEVICE_NAME
                 string "AT client device name"
