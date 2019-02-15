@@ -29,6 +29,9 @@ if PKG_USING_AT_DEVICE
 
         config AT_DEVICE_ESP8266
             bool "Espressif ESP8266"
+
+        config AT_DEVICE_SIM800C
+            bool "SIMCOM SIM800C"
 if PKG_AT_DEVICE_VER_NUM > 0x10400
         config AT_DEVICE_RW007
             bool "Realthread RW007"
@@ -43,6 +46,7 @@ endif
         default 12 if AT_DEVICE_EC20
         default 5 if AT_DEVICE_ESP8266
         default 5 if AT_DEVICE_RW007
+        default 6 if AT_DEVICE_SIM800C
         default 0
 
     if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007
