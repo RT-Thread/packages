@@ -1,0 +1,32 @@
+
+# Kconfig file for package bme280
+menuconfig PKG_USING_BME280
+    bool "BME280 sensor driver package, support: barometric, humidity."
+    default n
+
+if PKG_USING_BME280
+
+    config PKG_BME280_PATH
+        string
+        default "/packages/peripherals/sensors/bme280"
+
+    choice
+        prompt "Version"
+        default PKG_USING_BME280_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BME280_V001
+            bool "v0.0.1"
+
+        config PKG_USING_BME280_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BME280_VER
+       string
+       default "v0.0.1"    if PKG_USING_BME280_V001
+       default "latest"    if PKG_USING_BME280_LATEST_VERSION
+
+endif
+
