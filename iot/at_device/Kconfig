@@ -32,6 +32,9 @@ if PKG_USING_AT_DEVICE
 if PKG_AT_DEVICE_VER_NUM > 0x10400
         config AT_DEVICE_RW007
             bool "Realthread RW007"
+
+        config AT_DEVICE_SIM800C
+            bool "SIMCom SIM800C"
 endif
         config AT_DEVICE_NOT_SELECTED
             bool "Not selected, please select"
@@ -43,9 +46,10 @@ endif
         default 12 if AT_DEVICE_EC20
         default 5 if AT_DEVICE_ESP8266
         default 5 if AT_DEVICE_RW007
+        default 6 if AT_DEVICE_SIM800C
         default 0
 
-    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007
+    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007 || AT_DEVICE_SIM800C
 
             config AT_DEVICE_NAME
                 string "AT client device name"
@@ -78,6 +82,18 @@ endif
         config AT_DEVICE_WIFI_PASSWORD
             string "rw007 wifi password"
             default "12345678"
+
+    endif
+
+    if AT_DEVICE_SIM800C
+
+        config AT_DEVICE_POWER_PIN
+            int "sim800c power pin"
+            default 29
+
+        config AT_DEVICE_STATUS_PIN
+            int "sim800c status pin"
+            default 28
 
     endif
 
