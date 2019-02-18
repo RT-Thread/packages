@@ -4,7 +4,7 @@ menuconfig PKG_USING_SPL0601
     default n
 
 if PKG_USING_SPL0601
-    config PKG_LSM6DSL_PATH
+    config PKG_SPL0601_PATH
         string
         default "/packages/peripherals/sensors/spl0601"
 

@@ -1,33 +1,31 @@
-
 {
   "name": "spl0601",
   "description": "a spl0601 sensor driver package for rt-thread",
   "keywords": [
-      "spl0601"
-    ],
-    "category": "peripherals",
-    "author": {
-      "name": "gztss",
-      "email": "guanwenliang@rt-thread.com"
+    "spl0601"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "gztss",
+    "email": "guanwenliang@rt-thread.com"
+  },
+  "license": "other",
+  "repository": "https://github.com/RT-Thread-packages/spl0601",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/RT-Thread-packages/spl0601.git",
+      "filename": "spl0601-0.0.1.zip",
+      "VER_SHA": "16b2f4c0da012a0004ea4ea746e823fba83f20fc"
     },
-    "license": "other",
-    "repository": "https://github.com/RT-Thread-packages/spl0601",
-    "icon": "unknown",
-    "homepage": "unknown",
-    "doc": "unknown",
-    "site": [
-      {
-        "version": "v0.0.1",
-        "URL": "https://github.com/RT-Thread-packages/spl0601.git",
-        "filename": "spl0601-0.0.1.zip",
-        "VER_SHA": "16b2f4c0da012a0004ea4ea746e823fba83f20fc"
-      },
-      {
-        "version": "latest",
-        "version": "latest",
-        "URL": "https://github.com/RT-Thread-packages/spl0601.git",
-        "filename": "Null for git package",
-        "VER_SHA": "master"
-      }
-    ]
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/spl0601.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
 }
