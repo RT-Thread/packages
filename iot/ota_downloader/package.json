@@ -1,6 +1,6 @@
 {
   "name": "ota_downloader",
-  "description": "a ota_downloader package for rt-thread",
+  "description": "Various firmware downloaders on rt-thread",
   "keywords": [
     "ota_downloader"
   ],
@@ -17,15 +17,15 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://ota_downloader-1.0.0.zip",
+      "URL": "https://github.com/RT-Thread-packages/ota_downloader.git",
       "filename": "ota_downloader-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "VER_SHA": "master"
     },
     {
       "version": "latest",
-      "URL": "https://xxxxx.git",
+      "URL": "https://github.com/RT-Thread-packages/ota_downloader.git",
       "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "VER_SHA": "master"
     }
   ]
 }
