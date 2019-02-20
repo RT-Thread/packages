@@ -1,0 +1,31 @@
+{
+  "name": "ota_downloader",
+  "description": "a ota_downloader package for rt-thread",
+  "keywords": [
+    "ota_downloader"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "SummerGift",
+    "email": "SummerGift@qq.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/ota_downloader",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://ota_downloader-1.0.0.zip",
+      "filename": "ota_downloader-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://xxxxx.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}

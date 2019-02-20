@@ -1,0 +1,32 @@
+
+# Kconfig file for package ota_downloader
+menuconfig PKG_USING_OTA_DOWNLOADER
+    bool "OTA Downloader : Various firmware downloaders on rt-thread"
+    default n
+
+if PKG_USING_OTA_DOWNLOADER
+
+    config PKG_OTA_DOWNLOADER_PATH
+        string
+        default "/packages/iot/ota_downloader"
+
+    choice
+        prompt "Version"
+        default PKG_USING_OTA_DOWNLOADER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_OTA_DOWNLOADER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_OTA_DOWNLOADER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_OTA_DOWNLOADER_VER
+       string
+       default "v1.0.0"    if PKG_USING_OTA_DOWNLOADER_V100
+       default "latest"    if PKG_USING_OTA_DOWNLOADER_LATEST_VERSION
+
+endif
+
