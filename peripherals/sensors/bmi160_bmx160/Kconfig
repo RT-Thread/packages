@@ -1,0 +1,39 @@
+# Kconfig file for package bmi160/bmx160
+menuconfig PKG_USING_BMI160_BMX160
+    bool "BMI160/BMX160: Digital 6-axis and Digital 9-axis sensor"
+    default n
+
+if PKG_USING_BMI160_BMX160
+    config PKG_BMI160_BMX160_PATH
+        string
+        default "/packages/peripherals/sensors/bmi160_bmx160"
+
+    config BMI160_USING_ACCE
+        bool "Enable BMI160 / BMX160 accelerometer"
+        default n
+
+    config BMI160_USING_GYRO
+        bool "Enable BMI160 / BMX160 gyroscope"
+        default n
+
+    config BMX160_USING_MAG
+        bool "Enable BMX160 magnetometer"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_BMI160_BMX160_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BMI160_BMX160_V001
+            bool "v0.0.1"
+
+        config PKG_USING_BMI160_BMX160_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_BMI160_BMX160_VER
+        string
+        default "latest"    if PKG_USING_BMI160_BMX160_LATEST_VERSION
+endif
