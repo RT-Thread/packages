@@ -6,8 +6,8 @@
   ],
   "category": "iot",
   "author": {
-    "name": "SummerGift",
-    "email": "SummerGift@qq.com"
+    "name" : "RealThread",
+    "email": "package_team@rt-thread.com"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/ota_downloader",
