@@ -15,7 +15,7 @@ if PKG_USING_LSM303AGR
 		default y
 
     config PKG_USING_LSM303AGR_MAG
-		bool "Enable lsm303agr mag
+		bool "Enable lsm303agr mag"
 		default y
 
     choice
