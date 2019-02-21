@@ -1,6 +1,6 @@
 # Kconfig file for package ota_downloader
 menuconfig PKG_USING_OTA_DOWNLOADER
-    bool "OTA Downloader : Various firmware downloaders on rt-thread"
+    bool "The firmware downloader which using on RT-Thread OTA component"
     select PKG_USING_FAL
     default n
 
@@ -10,18 +10,22 @@ if PKG_USING_OTA_DOWNLOADER
         string
         default "/packages/iot/ota_downloader"
 
+    config OTA_DOWNLOADER_DEBUG
+        bool "Enable OTA downloader debug"
+        default n
+
     config PKG_USING_HTTP_OTA
-        bool "Enable HTTP OTA"
+        bool "Enable HTTP/HTTPS OTA"
         select PKG_USING_WEBCLIENT
         default n
         if PKG_USING_HTTP_OTA
         config PKG_HTTP_OTA_URL
-        string "http ota url"
+        string "HTTP OTA URL"
         default "http://xxx/xxx/rtthread.rbl" 
         endif
 
-    config PKG_USING_YMODEA_OTA
-        bool "Enable YMODEA OTA"
+    config PKG_USING_YMODEM_OTA
+        bool "Enable Ymodem OTA"
         select RT_USING_RYM
         default n
 
