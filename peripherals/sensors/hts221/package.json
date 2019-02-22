@@ -2,6 +2,7 @@
   "name": "hts221",
   "description": "HTS221 sensor driver package, support: temperature, humidity.",
   "keywords": [
+    "sensor",
     "hts221"
   ],
   "category": "peripherals/sensors",
