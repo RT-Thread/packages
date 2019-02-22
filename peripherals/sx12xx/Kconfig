@@ -1,0 +1,86 @@
+
+# Kconfig file for package sx12xx
+menuconfig PKG_USING_SX12XX
+    bool "sx12xx:Semtech LoRa RF chip driver library"
+    default n
+    select RT_USING_PIN
+    select RT_USING_SPI
+if PKG_USING_SX12XX
+
+    config PKG_SX12XX_PATH
+        string
+        default "/packages/peripherals/sx12xx"
+    choice
+        prompt "SX12XX device type"
+        default SX12XX_USING_SX1278
+        help
+            Select the sx12xx type
+
+        config SX12XX_USING_SX1278
+            bool "SX1278 LSD4RF-2F717N30"
+
+    endchoice
+    config SX12XX_DEVICE_EXTERN_CONFIG
+         bool
+         default n
+
+    if !SX12XX_DEVICE_EXTERN_CONFIG
+        menu "SX12XX device configure"
+
+            config SX12XX_SPI_DEVICE
+                string "SPI device name"
+                default "spi10"
+
+            config SX12XX_RST_PIN
+                int "Reset PIN number"
+                default 7
+
+            config SX12XX_DO0_PIN
+                int "DO0 PIN number"
+                default 103
+				
+            config SX12XX_DO1_PIN
+                int "DO1 PIN number"
+                default 104	
+				
+            config SX12XX_DO2_PIN
+                int "DO2 PIN number"
+                default 105
+				
+            config SX12XX_DO3_PIN
+                int "DO3 PIN number"
+                default 106	
+				
+            config SX12XX_DO4_PIN
+                int "DO4 PIN number"
+                default 107		
+				
+            config SX12XX_DO5_PIN
+                int "DO5 PIN number"
+                default 108				
+			
+        endmenu
+    endif
+    config PKG_USING_SX12XX_SAMPLE
+		bool "Enable sx12xx sample"
+		default n
+    choice
+        prompt "Version"
+        default PKG_USING_SX12XX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SX12XX_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SX12XX_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SX12XX_VER
+       string
+       default "v1.0.0"    if PKG_USING_SX12XX_V100
+       default "latest"    if PKG_USING_SX12XX_LATEST_VERSION
+
+endif
+
