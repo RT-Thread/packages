@@ -2,6 +2,7 @@
   "name": "lsm303agr",
   "description": "LSM303AGR sensor driver package, support: accelerometer, magnetometer.",
   "keywords": [
+    "sensor",
     "lsm303agr"
   ],
   "category": "peripherals/sensors",

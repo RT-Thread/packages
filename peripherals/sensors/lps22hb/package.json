@@ -2,6 +2,7 @@
   "name": "lps22hb",
   "description": "LPS22HB sensor driver package, support: barometric,temperature.",
   "keywords": [
+    "sensor",
     "lps22hb"
   ],
   "category": "peripherals/sensors",

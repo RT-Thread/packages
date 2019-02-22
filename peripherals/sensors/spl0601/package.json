@@ -2,9 +2,10 @@
   "name": "spl0601",
   "description": "a spl0601 sensor driver package for rt-thread",
   "keywords": [
+    "sensor",
     "spl0601"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "gztss",
     "email": "guanwenliang@rt-thread.com"

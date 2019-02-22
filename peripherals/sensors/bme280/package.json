@@ -2,6 +2,7 @@
   "name": "bme280",
   "description": "BME280 sensor driver package, support: barometric, humidity.",
   "keywords": [
+    "sensor",
     "bme280"
   ],
   "category": "peripherals/sensors",

@@ -2,6 +2,7 @@
   "name": "bma400",
   "description": "BMA400 sensor driver package, support: accelerometer, step.",
   "keywords": [
+    "sensor",
     "bma400"
   ],
   "category": "peripherals/sensors",

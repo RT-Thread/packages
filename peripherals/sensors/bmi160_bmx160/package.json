@@ -2,9 +2,10 @@
   "name": "bmi160_bmx160",
   "description": "a bmi160/bmx160 sensor driver package for rt-thread",
   "keywords": [
-      "bmi160_bmx160"
+    "sensor",
+    "bmi160_bmx160"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "gztss",
     "email": "guanwenliang@rt-thread.com"
