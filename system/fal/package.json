@@ -1,6 +1,7 @@
 {
   "name": "fal",
-  "description": "fal: Flash Abstraction Layer implement. Manage flash device and partition.",
+  "description": "Flash Abstraction Layer implentment. Manage flash device and partition",
+  "description_zh": "Flash 抽象层支持，提供 Flash 设备及其分区的管理与操作",
   "keywords": [
     "flash",
     "partition",

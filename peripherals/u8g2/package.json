@@ -1,6 +1,7 @@
 {
   "name": "u8g2",
-  "description": "a u8g2 package for rt-thread",
+  "description": "U8g2 library for rt-thread",
+  "description_zh": "U8g2 在 rt-thread 移植库文件",
   "keywords": [
     "u8g2"
   ],

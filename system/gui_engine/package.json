@@ -1,6 +1,7 @@
 {
   "name": "gui_engine",
-  "description": "the gui engine package for rt-thread",
+  "description": "GUI Engine in RT-Thread",
+  "description_zh": "GUI 引擎在 RT-Thread 上实现",
   "keywords": [
     "gui engine"
   ],

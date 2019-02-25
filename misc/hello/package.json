@@ -1,6 +1,7 @@
 {
   "name": "hello",
-  "description": "A hello package for rt-thread",
+  "description": "package sample for rt-thread",
+  "description_zh": "rt-thread 软件包示例",
   "keywords": [
     "hello"
   ],

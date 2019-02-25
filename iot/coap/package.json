@@ -1,6 +1,7 @@
 {
   "name": "coap",
-  "description": "libcoap: A C implementation of the Constrained Application Protocol",
+  "description": "CoAP on RT-Thread",
+  "description_zh": "基于 RT-Thread 的 CoAP 协议",  
   "keywords": [
     "coap"
   ],

@@ -1,6 +1,7 @@
 {
   "name": "button",
-  "description": "button drive by C, support single and double click, long press, long press release",
+  "description": "rt-thread packages button drive",
+  "description_zh": "rt-thread 按键驱动软件包",
   "keywords": [
     "button"
   ],

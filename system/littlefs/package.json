@@ -1,6 +1,7 @@
 {
   "name": "littlefs",
-  "description": "a littlefs package for rt-thread",
+  "description": "A little fail-safe filesystem designed for microcontrollers",
+  "description_zh": "针对微控制器的轻型安全失败的文件系统",
   "keywords": [
     "littlefs"
   ],

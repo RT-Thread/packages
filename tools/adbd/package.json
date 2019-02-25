@@ -1,6 +1,7 @@
 {
   "name": "adbd",
-  "description": "ADBD: Android Debug Bridge daemon implementation in RT-Thread",
+  "description": "Android Debug Bridge daemon implementation in RT-Thread",
+  "description_zh": "针对 RT-Thread 的 Android 调试桥守护进程支持",
   "keywords": [
     "adbd", "adb" , "android", "debug", "shell", "tools"
   ],

@@ -1,6 +1,7 @@
 {
   "name": "nopoll",
-  "description": "nopoll: A OpenSource WebSocket implementation (RFC 6455) in ansi C",
+  "description": "ASPLes/nopoll - OpenSource WebSocket toolkit for RT-Thread",
+  "description_zh": "开源的 WebSocket 工具包",
   "keywords": [
     "websocket",
     "nopoll"

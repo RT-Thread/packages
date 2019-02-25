@@ -1,6 +1,7 @@
 {
   "name": "GAgent",
   "description": "GAgent of Gizwits in RT-Thread",
+  "description_zh": "连接机智云的软件包",
   "keywords": [
     "GAgent"
   ],

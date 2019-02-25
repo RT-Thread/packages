@@ -1,6 +1,7 @@
 {
   "name": "ota_downloader",
-  "description": "Various firmware downloaders on rt-thread",
+  "description": "The firmware downloader which using on RT-Thread OTA component.",
+  "description_zh": "RT-Thread OTA 固件的下载器",
   "keywords": [
     "ota_downloader"
   ],

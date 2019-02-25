@@ -1,6 +1,7 @@
 {
   "name": "cJSON",
   "description": "Ultralightweight JSON parser in ANSI C",
+  "description_zh": "超轻量级的 C 语言 json 解析", 
   "keywords": [
     "cJSON"
   ],

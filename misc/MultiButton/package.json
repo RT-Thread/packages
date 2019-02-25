@@ -1,6 +1,7 @@
 {
   "name": "MultiButton",
-  "description": "MultiButton: Event-driven button lib for embedded",
+  "description": "Event-driven button lib for embedded",
+  "description_zh": "应用于嵌入式设备的事件驱动型按键驱动模块",
   "keywords": [
     "MultiButton"
   ],

@@ -1,6 +1,7 @@
 {
   "name": "TinyFrame",
-  "description": "TinyFrame: Event-driven button lib for embedded",
+  "description": "A simple library for building and parsing data frames for serial interfaces (like UART / RS232)",
+  "description_zh": "应用于串口设备（如 UART / RS232)的构建或者解析的库文件",
   "keywords": [
     "TinyFrame"
   ],

@@ -1,6 +1,7 @@
 {
   "name": "EasyFlash",
-  "description": "Lightweight embedded flash memory library. Make flash to be a small KV database.",
+  "description": "Lightweight embedded flash memory library. Make flash to be a small KV database",
+  "description_zh": "轻型嵌入式 Flash 存储器库，让 Flash 成为小型 KV 数据库",
   "keywords": [
     "Flash",
     "C",

@@ -1,6 +1,7 @@
 {
   "name": "quicklz",
-  "description": "QuickLZ : Fast data compression library",
+  "description": "the world's fastest compression library",
+  "description_zh": "世界上速度最快的压缩库",
   "keywords": [
     "quicklz"
   ],

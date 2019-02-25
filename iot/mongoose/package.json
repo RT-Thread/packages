@@ -1,6 +1,7 @@
 {
   "name": "mongoose",
-  "description": "Embedded Web Server / Embedded Networking Library.",
+  "description": "Embedded Web Server Library for RT-Thread package.",
+  "description_zh": "嵌入式 Web 服务器库", 
   "keywords": [
     "Embedded",
     "Web",

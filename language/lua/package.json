@@ -1,6 +1,7 @@
 {
   "name": "Lua",
-  "description": "Lua: A lightweight, embeddable scripting language.",
+  "description": "A lightweight, embeddable scripting language.",
+  "description": "一种轻型的嵌入式脚本语言.",
   "keywords": [
     "Lua",
     "embedded"

@@ -1,6 +1,7 @@
 {
   "name": "EasyLogger",
   "description": "A ultra-lightweight(ROM<1.6K, RAM<0.3k), high-performance C/C++ log library",
+  "description_zh": "一款超轻量级(ROM<1.6K, RAM<0.3k)、高性能的 C/C++ 日志库",
   "keywords": [
     "logger",
     "C",

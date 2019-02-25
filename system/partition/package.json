@@ -1,6 +1,7 @@
 {
   "name": "partition",
-  "description": "a simple partition for block device in rt-thread.",
+  "description": "A simple partition on block device",
+  "description_zh": "一个在块设备上简单的分区.",
   "keywords": [
     "partition"
   ],

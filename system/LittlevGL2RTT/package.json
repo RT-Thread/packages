@@ -1,6 +1,7 @@
 {
   "name": "LittlevGL2RTT",
-  "description": "LittlevGL2RTT: The LittlevGl gui lib adapter RT-Thread",
+  "description": "The littlevgl graphics library for RT-Thread",
+  "description_zh": "Littlevgl 是基于 RT-Thread 的图形库软件包",
   "keywords": [
     "LittlevGL2RTT"
   ],

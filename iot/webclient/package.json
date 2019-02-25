@@ -1,6 +1,7 @@
 {
   "name": "webclient",
-  "description": "WebClient: A HTTP/HTTPS Client for RT-Thread",
+  "description": "http client library by RT-Thread",
+  "description_zh": "RT-Thread 实现的基于 http 协议的 webclient",
   "keywords": [
     "webclient"
   ],
