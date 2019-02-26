@@ -1,7 +1,7 @@
 {
   "name": "SystemView",
   "description": "SEGGER SystemView",
-  "description_zh": "SEGGER SystemView",
+  "description_zh": "SEGGER 的 SystemView 移植",
   "keywords": [
     "SystemView"
   ],

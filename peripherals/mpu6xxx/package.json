@@ -1,7 +1,7 @@
 {
   "name": "mpu6xxx",
-  "description": "a package of mpu6xxx driver library, compatible with mpu6000, mpu6050, mpu6500, mpu9250 and other chips.",
-  "description_zh": "兼容mpu6000, mpu6050, mpu6500, mpu9250 等等型号的驱动库文件.",
+  "description": "a package of mpu6xxx driver library, compatible with mpu6000, mpu6050, mpu6500, mpu9250 and other chips",
+  "description_zh": "兼容 mpu6000, mpu6050, mpu6500, mpu9250 等等型号的驱动库",
   "keywords": [
     "mpu6xxx",
     "mpu6050",

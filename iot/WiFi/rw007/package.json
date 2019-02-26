@@ -1,6 +1,6 @@
 {
   "name": "rw007",
-  "description": "RW007 (SPI Wi-Fi module) driver for RT-Thread.",
+  "description": "RW007 (SPI Wi-Fi module) driver for RT-Thread",
   "description_zh": "RT-Thread 的 RW007 驱动（SPI Wi-Fi 模式）",
   "keywords": [
     "rw007",

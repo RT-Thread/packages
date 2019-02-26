@@ -1,7 +1,7 @@
 {
   "name": "icm20608",
   "description": "a 3-axis gyroscope and a 3-axis accelerometer driver library",
-  "description_zh": "三轴加速度与三轴陀螺仪的传感器驱动库",
+  "description_zh": "三轴加速度与三轴陀螺仪 icm20608 的传感器驱动库",
   "keywords": [
     "icm20608"
   ],

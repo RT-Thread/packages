@@ -1,7 +1,7 @@
 {
   "name": "nanopb",
   "description": "Protocol Buffers for Embedded Systems",
-  "description_zh": "针对嵌入式系统的缓存协议", 
+  "description_zh": "Protocol Buffers 解析器在嵌入式上的实现", 
   "keywords": [
     "nanopb"
   ],

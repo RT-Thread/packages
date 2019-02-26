@@ -1,7 +1,7 @@
 {
   "name": "mupdf",
-  "description": "mupdf package for rt-thread",
-  "description_zh": "mupdf 在 rt-thread 上的移植",
+  "description": "a lightweight PDF, XPS, and E-book viewer",
+  "description_zh": "轻量级PDF，XPS和电子书查看器",
   "keywords": [
     "mupdf"
   ],

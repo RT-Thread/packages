@@ -1,7 +1,7 @@
 {
   "name": "fastlz",
   "description": "lightning-fast compression library",
-  "description_zh": "快速压缩库",
+  "description_zh": "一款极速的压缩库",
   "keywords": [
     "fastlz"
   ],

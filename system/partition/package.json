@@ -1,7 +1,7 @@
 {
   "name": "partition",
-  "description": "A simple partition on block device",
-  "description_zh": "一个在块设备上简单的分区.",
+  "description": "A partition management package bases on block device",
+  "description_zh": "一个基于块设备的分区管理软件包",
   "keywords": [
     "partition"
   ],

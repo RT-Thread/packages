@@ -1,7 +1,7 @@
 {
   "name": "Lua",
-  "description": "A lightweight, embeddable scripting language.",
-  "description": "一种轻型的嵌入式脚本语言.",
+  "description": "The Lua library adapts rt-thread3.0(based on Lua 5.1.4 and 5.3.4)",
+  "description": " Lua 库适配 RT-Thread 3.0(基于 lua 5.1.4和 5.3.4 版本)",
   "keywords": [
     "Lua",
     "embedded"

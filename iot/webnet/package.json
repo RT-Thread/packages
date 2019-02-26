@@ -1,7 +1,7 @@
 {
   "name": "webnet",
-  "description": "A lightweight, customizable embedded Web Server for RT-Thread",
-  "description_zh": "针对 RT-Thread 实现的轻型可定制嵌入式 Web 服务器.",
+  "description": "A lightweight, customizable embedded Web Server by RT-Thread",
+  "description_zh": "RT-Thread 官方开源的、轻量级、可定制嵌入式 Web 服务器",
   "keywords": [
     "webnet"
   ],

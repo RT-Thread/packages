@@ -1,7 +1,7 @@
 {
   "name": "lsm6dsl",
-  "description": "This is the LSM6DSL sensor driver package, support: accelerometer, gyroscope, step.",
-  "description_zh": "LSM6DSL 加速度和陀螺仪 6 轴传感器的驱动包.",
+  "description": "This is the LSM6DSL sensor driver package, support: accelerometer, gyroscope, step",
+  "description_zh": "这是 LSM6DSL 传感器驱动包，支持：加速度计，陀螺仪，计步",
   "keywords": [
     "sensor",
     "lsm6dsl"

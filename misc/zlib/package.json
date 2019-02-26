@@ -1,7 +1,7 @@
 {
   "name": "zlib",
-  "description": "general purpose data compression library.",
-  "description_zh": "通用数据压缩库.",
+  "description": "general purpose data compression library",
+  "description_zh": "通用数据压缩库",
   "keywords": [
     "zlib"
   ],

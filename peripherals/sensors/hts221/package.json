@@ -1,7 +1,7 @@
 {
   "name": "hts221",
-  "description": "HTS221 sensor driver package, support: temperature, humidity.",
-  "description_zh": "HTS221 温湿度传感器的驱动包.",
+  "description": "HTS221 sensor driver package, support: temperature, humidity",
+  "description_zh": "HTS221 传感器驱动包，支持：温度，湿度",
   "keywords": [
     "sensor",
     "hts221"

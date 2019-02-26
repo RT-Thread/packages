@@ -1,7 +1,7 @@
 {
   "name": "lsm303agr",
-  "description": "This is the LSM303AGR sensor driver package, support: accelerometer, magnetometer.",
-  "description_zh": "LSM303AGR 加速度和磁力计传感器的驱动包.",
+  "description": "This is the LSM303AGR sensor driver package, support: accelerometer, magnetometer",
+  "description_zh": "这是 LSM303AGR 传感器驱动包，支持：加速度计，磁力计",
   "keywords": [
     "sensor",
     "lsm303agr"

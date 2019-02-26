@@ -1,6 +1,6 @@
 {
     "name": "tencent-iotkit",
-    "description": "tencent Cloud Tot device C-SDK package based on Rtthread RTOS",
+    "description": "tencent Cloud IoT device C-SDK package bases on RT-Thread",
     "description_zh": "连接腾讯云的软件包",
     "keywords": [
         "tencent_iotkit"

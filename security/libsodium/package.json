@@ -1,7 +1,7 @@
 {
   "name": "libsodium",
-  "description": "A modern and easy-to-use crypto library.",
-  "description_zh": "一个现代的、易用的加密库文件.",
+  "description": "A modern and easy-to-use crypto library",
+  "description_zh": "一个现代的、易用的加密库",
   "keywords": [
     "libsodium",
     "crypto"

@@ -1,6 +1,6 @@
 {
   "name": "lps22hb",
-  "description": "This is the LPS22HB sensor driver package.",
+  "description": "This is the LPS22HB sensor driver package",
   "description_zh": "LPS22HB 气压传感器的驱动包",
   "keywords": [
     "sensor",

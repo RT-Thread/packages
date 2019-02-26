@@ -1,7 +1,7 @@
 {
   "name": "ap3216c",
   "description": "a digital ambient light and a proximity sensor ap3216c driver library",
-  "description": "接近和光强传感器的驱动库",
+  "description": "接近和光强传感器 ap3216c 的驱动库",
   "keywords": [
     "ap3216c"
   ],

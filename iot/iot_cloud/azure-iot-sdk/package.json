@@ -1,7 +1,7 @@
 {
   "name": "azure-iot-sdk",
   "description": "Microsoft azure cloud SDK for RT-Thread",
-  "description_zh": "连接微软云的软件包",
+  "description_zh": "连接微软 azure 云的软件包",
   "keywords": [
     "azure-iot-sdk"
   ],
