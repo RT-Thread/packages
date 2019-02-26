@@ -1,6 +1,7 @@
 {
   "name": "netutils",
   "description": "Networking utilities for RT-Thread",
+  "description_zh": "RT-Thread 网络网络小工具集",
   "keywords": [
     "netutils",
     "lwip",

@@ -1,6 +1,7 @@
 {
   "name": "lwext4",
   "description": "an excellent choice of ext2/3/4 filesystem for microcontrollers",
+  "description_zh": "适合微控制器的 ext2 / 3/4文件系统的实现",
   "keywords": [
     "filesystem",
     "ext",

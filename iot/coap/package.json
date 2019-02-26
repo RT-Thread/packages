@@ -1,6 +1,7 @@
 {
   "name": "coap",
-  "description": "libcoap: A C implementation of the Constrained Application Protocol",
+  "description": "A C implementation of the Constrained Application Protocol",
+  "description_zh": "一种 C 语言实现的 CoAP 协议",  
   "keywords": [
     "coap"
   ],

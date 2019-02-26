@@ -1,6 +1,7 @@
 {
   "name": "micropython",
-  "description": "A lean and efficient Python implementation for microcontrollers and constrained systems.",
+  "description": "MicroPython port package for RT-Thread",
+  "description_zh": "MicroPython 在 RT-Thread 上的移植",
   "keywords": [
     "micropython",
     "python",

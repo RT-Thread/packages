@@ -1,6 +1,7 @@
 {
   "name": "mbedtls",
-  "description": "mbedtls:An open source, portable, easy to use, readable and flexible SSL library",
+  "description": "An open source, portable, easy to use, readable and flexible SSL library",
+  "description_zh": "一个开源的、可移植的、易于使用的、可读的且灵活的 SSL 库",
   "keywords": [
     "mbedtls"
   ],

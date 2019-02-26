@@ -1,6 +1,7 @@
 {
   "name": "at_device",
-  "description": "AT DEVICE: RT-Thread AT component porting or samples for different device",
+  "description": "AT component porting or samples for different devices",
+  "description_zh": "AT 组件在不同设备上的移植或示例", 
   "keywords": [
     "at_device"
   ],

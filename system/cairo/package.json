@@ -1,6 +1,7 @@
 {
   "name": "cairo",
-  "description": "Cairo - Multi-platform 2D graphics library",
+  "description": "Multi-platform 2D graphics library  ",
+  "description_zh": "适用于多平台的 2D 图形软件包",
   "keywords": [
     "cairo"
   ],

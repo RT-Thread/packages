@@ -1,6 +1,7 @@
 {
   "name": "bme280",
-  "description": "BME280 sensor driver package, support: barometric, humidity.",
+  "description": "This is the BME280 sensor driver package, support: barometric, humidity",
+  "description_zh": "这是 BME280 传感器驱动软件包，支持：气压，湿度",
   "keywords": [
     "sensor",
     "bme280"

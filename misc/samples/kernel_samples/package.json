@@ -1,6 +1,7 @@
 {
   "name": "kernel_samples",
   "description": "a kernel_samples package for rt-thread",
+  "description_zh": "RT-Thread 内核示例",
   "keywords": [
     "kernel_samples"
   ],

@@ -1,6 +1,7 @@
 {
   "name": "stm32_sdio",
   "description": "STM32 SDIO controller drivers library",
+  "description_zh": "STM32 平台 SDIO 控制器驱动包",
   "keywords": [
     "stm32_sdio"
   ],

@@ -1,6 +1,7 @@
 {
   "name": "bma400",
-  "description": "BMA400 sensor driver package, support: accelerometer, step.",
+  "description": "This is the BMA400 sensor driver package, support: accelerometer, step",
+  "description_zh": "这是 BMA400 传感器驱动包，支持：加速度计，记步",
   "keywords": [
     "sensor",
     "bma400"

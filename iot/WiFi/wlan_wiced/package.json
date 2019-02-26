@@ -1,6 +1,7 @@
 {
   "name": "wlan_wiced",
-  "description": "wlan driver from wiced",
+  "description": "wlan driver from WICED",
+  "description_zh": "WICED 的 wlan 驱动",
   "keywords": [
     "bcm43362",
     "bcm43438"

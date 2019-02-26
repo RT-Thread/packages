@@ -1,6 +1,7 @@
 {
   "name": "jerryscript",
-  "description": "JerryScript: Ultra-lightweight JavaScript engine for IoT.",
+  "description": "JerryScript port for RT-Thread",
+  "description_zh": "针对 RT-Thread 的 JerryScript 移植",
   "keywords": [
     "javascript",
     "script"

@@ -1,6 +1,7 @@
 {
   "name": "realtek_ameba",
-  "description": "a realtek_ameba package for rt-thread",
+  "description": "realtek_ameba package on RT-Thread",
+  "description_zh": "realtek 的 ameba 软件包在 RT-Thread 上的移植",
   "keywords": [
     "realtek_ameba"
   ],

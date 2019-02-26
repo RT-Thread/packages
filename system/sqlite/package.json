@@ -1,6 +1,7 @@
 {
   "name": "sqlite",
-  "description": "a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine.",
+  "description": "SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine",
+  "description_zh": "SQLite 是一个完备、高度可靠、嵌入型、全功能、公共领域的 SQL 数据库引擎",
   "keywords": [
     "sqlite",
     "database",

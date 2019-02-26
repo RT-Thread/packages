@@ -1,6 +1,7 @@
 {
   "name": "WebTerminal",
   "description": "Terminal runs in a Web browser",
+  "description_zh": "可以在浏览器上运行的终端",
   "keywords": [
     "Embedded",
     "Web",
