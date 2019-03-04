@@ -49,6 +49,6 @@ if PKG_USING_LIBMODBUS
     config PKG_LIBMODBUS_VER_NUM
         hex
         default 0x99999    if PKG_USING_LIBMODBUS_LATEST_VERSION
-        default 0x10100    if PKG_USING_LIBMODBUS_V100
+        default 0x10000    if PKG_USING_LIBMODBUS_V100
 endif
 
