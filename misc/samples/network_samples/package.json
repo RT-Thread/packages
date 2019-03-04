@@ -1,6 +1,7 @@
 {
   "name": "network_samples",
-  "description": "a network_samples package for rt-thread",
+  "description": "RT-Thread network samples",
+  "description_zh": "RT-Thread 网络示例",
   "keywords": [
     "network_samples"
   ],

@@ -1,6 +1,7 @@
 {
   "name": "ulog_easyflash",
-  "description": "The ulog backend implementation for EasyFlash.",
+  "description": "The ulog flash plugin by EasyFlash",
+  "description_zh": "基于 EasyFlash 的 ulog 插件",
   "keywords": [
     "ulog",
     "easyflash",

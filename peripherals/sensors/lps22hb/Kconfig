@@ -1,0 +1,32 @@
+
+# Kconfig file for package lps22hb
+menuconfig PKG_USING_LPS22HB
+    bool "LPS22HB sensor driver package, support: barometric,temperature."
+    default n
+
+if PKG_USING_LPS22HB
+
+    config PKG_LPS22HB_PATH
+        string
+        default "/packages/peripherals/sensors/lps22hb"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LPS22HB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LPS22HB_V001
+            bool "v0.0.1"
+
+        config PKG_USING_LPS22HB_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LPS22HB_VER
+       string
+       default "v0.0.1"    if PKG_USING_LPS22HB_V001
+       default "latest"    if PKG_USING_LPS22HB_LATEST_VERSION
+
+endif
+

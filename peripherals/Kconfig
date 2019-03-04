@@ -13,6 +13,7 @@ source "$PKGS_DIR/packages/peripherals/u8g2/Kconfig"
 source "$PKGS_DIR/packages/peripherals/button/Kconfig"
 source "$PKGS_DIR/packages/peripherals/mpu6xxx/Kconfig"
 source "$PKGS_DIR/packages/peripherals/pcf8574/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sx12xx/Kconfig"
 
 source "$PKGS_DIR/packages/peripherals/kendryte-sdk/Kconfig"
 

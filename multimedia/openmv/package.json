@@ -1,6 +1,7 @@
 {
   "name": "openmv",
   "description": "openmv porting for rt-thread",
+  "description": "openmv 在 RT-Thread 上的移植",
   "keywords": [
     "openmv"
   ],

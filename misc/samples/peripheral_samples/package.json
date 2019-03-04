@@ -1,6 +1,7 @@
 {
   "name": "peripheral_samples",
-  "description": "a peripheral_samples package for rt-thread",
+  "description": "RT-Thread peripheral samples",
+  "description_zh": "RT-Thread 外设示例",
   "keywords": [
     "peripheral_samples"
   ],

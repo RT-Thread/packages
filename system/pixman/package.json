@@ -1,6 +1,7 @@
 {
   "name": "pixman",
-  "description": "pixman is a library that provides low-level pixel manipulation",
+  "description": "A library that provides low-level pixel manipulation",
+  "description_zh": "提供低等级像素控制的库",
   "keywords": [
     "pixman"
   ],

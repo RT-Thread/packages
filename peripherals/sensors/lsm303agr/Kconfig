@@ -1,0 +1,40 @@
+
+# Kconfig file for package lsm303agr
+menuconfig PKG_USING_LSM303AGR
+    bool "LSM303AGR sensor driver package, support: accelerometer, magnetometer."
+    default n
+
+if PKG_USING_LSM303AGR
+
+    config PKG_LSM303AGR_PATH
+        string
+        default "/packages/peripherals/sensors/lsm303agr"
+
+    config PKG_USING_LSM303AGR_ACCE
+		bool "Enable lsm303agr acce"
+		default y
+
+    config PKG_USING_LSM303AGR_MAG
+		bool "Enable lsm303agr mag"
+		default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_LSM303AGR_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LSM303AGR_V001
+            bool "v0.0.1"
+
+        config PKG_USING_LSM303AGR_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LSM303AGR_VER
+       string
+       default "v0.0.1"    if PKG_USING_LSM303AGR_V001
+       default "latest"    if PKG_USING_LSM303AGR_LATEST_VERSION
+
+endif
+

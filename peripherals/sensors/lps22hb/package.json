@@ -1,0 +1,33 @@
+{
+  "name": "lps22hb",
+  "description": "This is the LPS22HB sensor driver package",
+  "description_zh": "LPS22HB 气压传感器的驱动包",
+  "keywords": [
+    "sensor",
+    "lps22hb"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "flybreak",
+    "email": "guozhanxin@rt-thread.com"
+  },
+  "license": "other",
+  "repository": "https://github.com/RT-Thread-packages/lps22hb",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/RT-Thread-packages/lps22hb.git",
+      "filename": "lps22hb-0.0.1.zip",
+      "VER_SHA": "c3f790f1d273b1cbfbb2f82a44a9260a40caf702"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/lps22hb.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

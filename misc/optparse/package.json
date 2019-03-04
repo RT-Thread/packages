@@ -1,6 +1,7 @@
 {
     "name": "optparse",
-    "description": "optparse: a public domain, portable, reentrant, embeddable, getopt-like option parser.",
+    "description": "Getopt command-line parameter parser bases on RT-Thread",
+    "description_zh": "基于 RT-Thread 的 Getopt 命令行解析器",
     "keywords": [
         "getopt-like"
     ],

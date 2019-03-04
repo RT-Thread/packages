@@ -1,0 +1,35 @@
+# Kconfig file for package spl0601
+menuconfig PKG_USING_SPL0601
+    bool "SPL0601: Digital pressure sensor"
+    default n
+
+if PKG_USING_SPL0601
+    config PKG_SPL0601_PATH
+        string
+        default "/packages/peripherals/sensors/spl0601"
+
+    config SPL0601_USING_TEMP
+        bool "Enable SPL0601 temperature"
+        default n
+
+    config SPL0601_USING_BARO
+        bool "Enable SPL0601 pressure"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_SPL0601_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SPL0601_V001
+            bool "v0.0.1"
+
+        config PKG_USING_SPL0601_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SPL0601_VER
+        string
+        default "latest"    if PKG_USING_SPL0601_LATEST_VERSION
+endif

@@ -1,0 +1,33 @@
+{
+  "name": "hts221",
+  "description": "HTS221 sensor driver package, support: temperature, humidity",
+  "description_zh": "HTS221 传感器驱动包，支持：温度，湿度",
+  "keywords": [
+    "sensor",
+    "hts221"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "flybreak",
+    "email": "guozhanxin@rt-thread.com"
+  },
+  "license": "other",
+  "repository": "https://github.com/RT-Thread-packages/hts221",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/RT-Thread-packages/hts221.git",
+      "filename": "hts221-0.0.1.zip",
+      "VER_SHA": "6b0a907d4b8a80ff69857b5545da93f552c442de"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/hts221.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

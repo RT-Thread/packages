@@ -1,6 +1,7 @@
 {
   "name": "fastlz",
-  "description": "a fastlz package for rt-thread",
+  "description": "lightning-fast compression library",
+  "description_zh": "一款极速的压缩库",
   "keywords": [
     "fastlz"
   ],

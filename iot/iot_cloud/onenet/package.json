@@ -1,6 +1,7 @@
 {
   "name": "onenet",
-  "description": "OneNET: China Mobile OneNet cloud SDK for RT-Thread",
+  "description": "China Mobile OneNet cloud SDK for RT-Thread",
+  "description_zh": "连接中国移动 OneNet 云的软件包",
   "keywords": [
     "onenet"
   ],
@@ -14,7 +15,7 @@
   "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
   "homepage": "https://github.com/RT-Thread-packages/onenet#readme",
   "doc": "https://www.rt-thread.org/document/site/submodules/onenet/docs/introduction/",
-  "readme": "GAgent of Gizwits in RT-Thread",
+  "readme": "GAgent of Gizwits on RT-Thread",
   "site": [
     {
       "version": "v1.0.0",

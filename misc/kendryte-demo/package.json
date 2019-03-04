@@ -1,6 +1,7 @@
 {
   "name": "kendryte-demo",
-  "description": "The kendryte demo package",
+  "description": "kendryte k210 demo",
+  "description_zh": "Kendryte k210 demo",
   "keywords": [
     "kendryte-demo"
   ],

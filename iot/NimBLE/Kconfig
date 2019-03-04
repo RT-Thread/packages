@@ -134,17 +134,34 @@ if PKG_USING_NIMBLE
             bool "Not enable sample"
         
         config NIMBLE_SAMPLE_PER_HR
-            bool "peripheral heart-rate"
+            bool "BLE peripheral heartrate sensor"
             select NIMBT_ROLE_PERIPHERAL
-        
-        config NIMBLE_SAMPLE_PER_LED
-            bool "peripheral led central"
+
+        config NIMBLE_SAMPLE_BLECSC
+            bool "BLE peripheral cycling speed and cadence sensor"
             select NIMBT_ROLE_PERIPHERAL
-        
+
+        config NIMBLE_SAMPLE_BLEUART
+            bool "BLE uart sample"
+
+        config NIMBLE_SAMPLE_BTSHELL
+            bool "BLE Shell sample exposing the nimble GAP and GATT"
+
+        config NIMBLE_SAMPLE_PERIPHERAL
+            bool "BLE peripheral role sample"
+
+        config NIMBLE_SAMPLE_CENTRAL
+            bool "BLE central role sample"
+  
         config NIMBLE_SAMPLE_BEACON
-            bool "beacon"
+            bool "BLE beacon sample"
             select NIMBT_ROLE_BROADCASTER
-            
+       
+        config NIMBLE_SAMPLE_EXT_ADVERTISER
+            bool "BLE external advertiser sample"
+
+        config NIMBLE_SAMPLE_BLETEST
+            bool "BLE test sample"
     endchoice
 
     choice
