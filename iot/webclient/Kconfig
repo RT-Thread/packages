@@ -11,7 +11,11 @@ if PKG_USING_WEBCLIENT
         default "/packages/iot/webclient"
 
     if !PKG_USING_WEBCLIENT_V100
-    
+        
+        config WEBCLIENT_DEBUG
+            bool "Enable debug log output"
+            default n
+        
         config WEBCLIENT_USING_SAMPLES
             bool "Enable webclient GET/POST samples"
             default n
