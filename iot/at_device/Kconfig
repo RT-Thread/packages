@@ -35,6 +35,9 @@ if PKG_AT_DEVICE_VER_NUM > 0x10400
 
         config AT_DEVICE_SIM800C
             bool "SIMCom SIM800C"
+
+        config AT_DEVICE_SIM76XX
+            bool "SIMCom SIM76XX"
 endif
         config AT_DEVICE_NOT_SELECTED
             bool "Not selected, please select"
@@ -47,9 +50,10 @@ endif
         default 5 if AT_DEVICE_ESP8266
         default 5 if AT_DEVICE_RW007
         default 6 if AT_DEVICE_SIM800C
+        default 10 if AT_DEVICE_SIM76XX
         default 0
 
-    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007 || AT_DEVICE_SIM800C
+    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007 || AT_DEVICE_SIM800C || AT_DEVICE_SIM76XX
 
             config AT_DEVICE_NAME
                 string "AT client device name"
@@ -94,6 +98,18 @@ endif
         config AT_DEVICE_STATUS_PIN
             int "sim800c status pin"
             default 28
+
+    endif
+
+    if AT_DEVICE_SIM76XX
+
+        config AT_DEVICE_POWER_PIN
+            int "sim76xx power pin"
+            default 35
+
+        config AT_DEVICE_STATUS_PIN
+            int "sim76xx status pin"
+            default 40
 
     endif
 
