@@ -13,12 +13,12 @@ if PKG_USING_PERIPHERAL_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_PERIPHERAL_SAMPLES_V020
+        default PKG_USING_PERIPHERAL_SAMPLES_V030
         help
             Select the package version
 
-        config PKG_USING_PERIPHERAL_SAMPLES_V020
-            bool "v0.2.0"
+        config PKG_USING_PERIPHERAL_SAMPLES_V030
+            bool "v0.3.0"
 
         config PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
             bool "latest"
@@ -26,7 +26,7 @@ if PKG_USING_PERIPHERAL_SAMPLES
           
     config PKG_PERIPHERAL_SAMPLES_VER
        string
-       default "v0.2.0"    if PKG_USING_PERIPHERAL_SAMPLES_V020
+       default "v0.3.0"    if PKG_USING_PERIPHERAL_SAMPLES_V030
        default "latest"    if PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
 
     config PERIPHERAL_SAMPLES_USING_ADC
