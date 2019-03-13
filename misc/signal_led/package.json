@@ -1,0 +1,31 @@
+{
+  "name": "signal_led",
+  "description": "a signal_led package for rt-thread",
+  "keywords": [
+    "signal_led"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "WKJay",
+    "email": "1931048074@qq.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/WKJay/SignalLed",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/WKJay/SignalLed/archive/master.zip",
+      "filename": "signal_led-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/WKJay/SignalLed.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
