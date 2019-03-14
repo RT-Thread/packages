@@ -1,0 +1,31 @@
+{
+  "name": "SignalLed",
+  "description": "a signal led package for rt-thread",
+  "description_zh": "信号灯软件包，支持自定义闪烁方式、周期，支持随时开启、关闭",
+  "keywords": [
+    "SignalLed"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "WKJay",
+    "email": "1931048074@qq.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/WKJay/SignalLed",
+  "homepage": "https://github.com/WKJay/SignalLed#readme",
+
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/WKJay/SignalLed/archive/master.zip",
+      "filename": "signal_led-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/WKJay/SignalLed.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
