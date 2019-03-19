@@ -6,7 +6,6 @@ menuconfig PKG_USING_LIBMODBUS
     select RT_USING_LIBC
     select RT_USING_DFS
     select RT_USING_POSIX
-    select RT_USING_POSIX_TERMIOS 
 
 if PKG_USING_LIBMODBUS
 
@@ -17,6 +16,7 @@ if PKG_USING_LIBMODBUS
     config PKG_USING_LIBMODBUS_RTU
         bool "Enable libmodbus rtu mode"
         default n
+        select RT_USING_POSIX_TERMIOS 
 
     if PKG_USING_LIBMODBUS_RTU
         config HAVE_DECL_TIOCSRS485
@@ -26,6 +26,22 @@ if PKG_USING_LIBMODBUS
         config HAVE_DECL_TIOCM_RTS
             int
             default 1
+
+        config PKG_USING_LIBMODBUS_RTU_EXAMPLE
+            bool "Enable rtu example"
+            default n
+    endif
+
+    config PKG_USING_LIBMODBUS_TCP
+        bool "Enable libmodbus tcp mode"
+        default n
+        select RT_USING_SAL
+        select SAL_USING_POSIX
+
+    if PKG_USING_LIBMODBUS_TCP
+        config PKG_USING_LIBMODBUS_TCP_EXAMPLE
+            bool "Enable tcp example"
+            default n
     endif
 
     choice
@@ -33,9 +49,6 @@ if PKG_USING_LIBMODBUS
         default PKG_USING_LIBMODBUS_LATEST_VERSION
         help
             Select the package version
-
-        config PKG_USING_LIBMODBUS_V100
-            bool "v1.0.0"
 
         config PKG_USING_LIBMODBUS_LATEST_VERSION
             bool "latest"

@@ -14,12 +14,6 @@
   "repository": "https://github.com/loogg/libmodbus",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/loogg/libmodbus.git",
-      "filename": "libmodbus-1.0.0.zip",
-      "VER_SHA": "2431ce19a4cf85d52ec34b116f2736031b34639f"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/loogg/libmodbus.git",
       "filename": "libmodbus.zip",
