@@ -1,0 +1,23 @@
+{
+  "name": "STemWin",
+  "description": "STemWin: a STemWin package for rt-thread",
+  "description_zh": "STemWin在RT-Thread上的移植", 
+  "keywords": [
+    "STemWin"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "malongwei",
+    "email": "2544047213@qq.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/loogg/STemWin",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/loogg/STemWin.git",
+      "filename": "STemWin.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
