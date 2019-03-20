@@ -1,6 +1,6 @@
 {
   "name": "STemWin",
-  "description": "STemWin: a gui engine package for rt-thread",
+  "description": "STemWin: a STemWin package for rt-thread",
   "description_zh": "STemWin在RT-Thread上的移植", 
   "keywords": [
     "STemWin"
