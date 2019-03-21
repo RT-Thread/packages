@@ -1,7 +1,7 @@
 {
   "name": "ms5611",
   "description": "The Digital Air Pressure Sensor MS5611 driver package",
-  "description_zn": "数字气压传感器 MS5611 驱动软件包"
+  "description_zn": "数字气压传感器 MS5611 驱动软件包",
   "keywords": [
     "ms5611"
   ],
