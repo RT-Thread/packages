@@ -40,8 +40,11 @@ if PKG_USING_TINYCRYPT
 
     if TINY_CRYPT_AES
         config TINY_CRYPT_AES_ROM_TABLES
-        bool "AES table in ROM"
-        default y
+            bool "AES table in ROM"
+            default y
+        config TINYCRYPT_USING_AES_SAMPLE
+            bool "Enable aes sample"
+            default n
     endif
 
     config TINY_CRYPT_SHA1
