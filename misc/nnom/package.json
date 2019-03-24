@@ -1,0 +1,37 @@
+{
+  "name": "nnom",
+  "description": "A higher-level Neural Network framework on Microcontroller (NNoM)",
+  "description_zh": "轻量级的神经网络框架, 模型一键转换, 让MCU也神经一把",
+  "keywords": [
+    "NNoM",
+	"ML",
+	"AI",
+	"neural-network",
+	"C",
+	"lightweight"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "Jianjia Ma",
+    "email": "majianjia@live.com"
+  },
+  "license": "LGPL-3.0",
+  "repository": "https://github.com/majianjia/nnom",
+  "icon": "unknown",
+  "homepage": "https://github.com/majianjia/nnom",
+  "doc": "https://github.com/majianjia/nnom/blob/master/README.md",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/majianjia/nnom/archive/v0.1.0-alpha.zip",
+      "filename": "nnom-v0.1.0-alpha.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/majianjia/nnom.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
