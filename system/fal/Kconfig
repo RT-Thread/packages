@@ -45,6 +45,18 @@ if PKG_USING_FAL
 
     endif
 
+    config FAL_USING_SFUD_PORT
+        bool "FAL uses SFUD drivers"
+        default n
+        help
+            The fal_flash_sfud_port.c in the samples\porting directory will be used.
+
+    if FAL_USING_SFUD_PORT
+        config FAL_USING_NOR_FLASH_DEV_NAME
+            string "The name of the device used by FAL"
+            default "norflash0"
+    endif
+
     choice
         prompt "version"
         default PKG_USING_FAL_LATEST_VERSION
