@@ -3,7 +3,17 @@
   "description": "a library package for WinnerMicro devices.",
   "description_zh": "WinnerMicro 芯片软件支持包",  
   "keywords": [
-    "wm_libraries"
+    "wm_libraries",
+    "Winner Micro",
+    "WinnerMicro",
+    "物联网 Wi-Fi 芯片",
+    "联盛德微电子",
+    "W600",
+    "W60X",
+    "WiFi",
+    "Wi-Fi",
+    "wifi",
+    "IEEE802.11b/g/n"
   ],
   "category": "peripherals",
   "author": {
