@@ -17,5 +17,6 @@ source "$PKGS_DIR/packages/peripherals/sx12xx/Kconfig"
 source "$PKGS_DIR/packages/peripherals/SignalLed/Kconfig"
 source "$PKGS_DIR/packages/peripherals/wm_libraries/Kconfig"
 source "$PKGS_DIR/packages/peripherals/kendryte-sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/infrared/Kconfig"
 
 endmenu
