@@ -19,9 +19,9 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://infrared-1.0.0.zip",
-      "filename": "infrared-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "URL": "https://codeload.github.com/balanceTWK/Infrared_frame/zip/1.0.0",
+      "filename": "Infrared_frame-1.0.0.zip",
+      "VER_SHA": "NULL"
     },
     {
       "version": "latest",
