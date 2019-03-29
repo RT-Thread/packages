@@ -18,9 +18,9 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://codeload.github.com/RT-Thread-packages/infrared_framework/zip/1.0.0",
-      "filename": "infrared_framework-1.0.0.zip",
+      "version": "v0.1.0",
+      "URL": "https://codeload.github.com/RT-Thread-packages/infrared_framework/zip/0.1.0",
+      "filename": "infrared_framework-0.1.0.zip",
       "VER_SHA": "NULL"
     },
     {

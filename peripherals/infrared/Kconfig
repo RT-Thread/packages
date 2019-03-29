@@ -56,8 +56,8 @@ if PKG_USING_INFRARED
         help
             Select the package version
 
-        config PKG_USING_INFRARED_V100
-            bool "v1.0.0"
+        config PKG_USING_INFRARED_V010
+            bool "v0.1.0"
 
         config PKG_USING_INFRARED_LATEST_VERSION
             bool "latest"
@@ -65,7 +65,7 @@ if PKG_USING_INFRARED
           
     config PKG_INFRARED_VER
        string
-       default "v1.0.0"    if PKG_USING_INFRARED_V100
+       default "v0.1.0"    if PKG_USING_INFRARED_V010
        default "latest"    if PKG_USING_INFRARED_LATEST_VERSION
 
 endif
