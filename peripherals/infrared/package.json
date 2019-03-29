@@ -8,24 +8,24 @@
   ],
   "category": "peripherals",
   "author": {
-    "name": "BalanceTWK",
-    "email": "balanceTWK@gmail.com"
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/balanceTWK/Infrared_frame.git",
+  "repository": "https://github.com/RT-Thread-packages/infrared_framework.git",
   "icon": "unknown",
   "homepage": "unknown",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://infrared-1.0.0.zip",
-      "filename": "infrared-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "URL": "https://codeload.github.com/RT-Thread-packages/infrared_framework/zip/1.0.0",
+      "filename": "infrared_framework-1.0.0.zip",
+      "VER_SHA": "NULL"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/balanceTWK/Infrared_frame.git",
+      "URL": "https://github.com/RT-Thread-packages/infrared_framework.git",
       "filename": "",
       "VER_SHA": "master"
     }
