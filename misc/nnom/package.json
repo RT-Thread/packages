@@ -19,7 +19,8 @@
   "repository": "https://github.com/majianjia/nnom",
   "icon": "unknown",
   "homepage": "https://github.com/majianjia/nnom",
-  "doc": "https://github.com/majianjia/nnom/blob/master/README.md",
+  "doc": "https://majianjia.github.io/nnom/rt-thread_guide/",
+  "readme": "A higher-level Neural Network framework on Microcontroller"
   "site": [
     {
       "version": "v0.1.0",
