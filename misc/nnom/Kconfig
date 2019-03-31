@@ -11,7 +11,7 @@ if PKG_USING_NNOM
 
     choice
         prompt "Version"
-        default PKG_USING_NNOM_LATEST_VERSION
+        default PKG_USING_NNOM_V010
         help
             Select the package version
 
