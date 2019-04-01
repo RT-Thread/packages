@@ -51,15 +51,15 @@ if PKG_USING_NETUTILS
 
         config NETUTILS_NTP_HOSTNAME
             string "NTP server name1"
-            default "cn.ntp.org.cn"
+            default "ntp.rt-thread.org"
 
         config NETUTILS_NTP_HOSTNAME2
             string "NTP server name2"
-            default "edu.ntp.org.cn"
+            default "cn.ntp.org.cn"
 
         config NETUTILS_NTP_HOSTNAME3
             string "NTP server name3"
-            default "hk.ntp.org.cn"
+            default "edu.ntp.org.cn"
     endif
 
     config PKG_NETUTILS_TELNET
