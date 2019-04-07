@@ -3,7 +3,11 @@
   "description": "U8g2 library for rt-thread",
   "description_zh": "U8g2 在 RT-Thread移植库",
   "keywords": [
-    "u8g2"
+    "u8g2",
+    "OLED",
+    "SPI",
+    "I2C",
+    "8080"
   ],
   "category": "peripherals",
   "author": {
@@ -25,6 +29,12 @@
       "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
       "filename": "u8g2-1.1.0.zip",
       "VER_SHA": "ad76362880e399e49dd6e58d4a093a6edfae2b09"
+    },
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "u8g2-1.2.0.zip",
+      "VER_SHA": "9cb076d58fc73186c0268e73a49e059c68f9d9a6"
     },
     {
       "version": "latest",
