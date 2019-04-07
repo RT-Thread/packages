@@ -14,10 +14,15 @@ if PKG_USING_ROSSERIAL
         config ROSSERIAL_USING_HELLO_WORLD_UART
             bool "Hello World  : hello world example using UART"
             select RT_USING_SERIAL
-            select RT_USING_UART2
             help
                 Hello World example using UART
             default n
+
+        if ROSSERIAL_USING_HELLO_WORLD_UART
+            config ROSSERIAL_UART_NAME
+            string "serial device name"
+            default "uart2"
+        endif
     endmenu
 
     choice
