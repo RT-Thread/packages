@@ -18,9 +18,9 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://da270-1.0.0.zip",
+      "URL": "https://github.com/baozi119/da270.git",
       "filename": "da270-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "VER_SHA": "bcac77283cffaee39be522686633f75f7a03637f"
     },
     {
       "version": "latest",
