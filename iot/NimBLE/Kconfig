@@ -87,13 +87,16 @@ menu "Controller Configuration"
     default PKG_NIMBLE_BSP_NRF52
     help
         Select the device controller layer support.
-            
+
+    config PKG_NIMBLE_BSP_NRF51
+    bool "NRF51xxx"
+
     config PKG_NIMBLE_BSP_NRF52
     bool "NRF52xxx"
     
     config PKG_NIMBLE_BSP_NRF52840
     bool "NRF52840"
-
+    
     endchoice
 
     endif
@@ -131,9 +134,9 @@ menu "Bluetooth Mesh support"
         Set Mesh Advertising thread priority.
 
     config PKG_NIMBLE_MESH_CFG_CLI 
-	bool "Support for Configuration Client Model"
-	help
-	  Enable support for the configuration client model.
+    bool "Support for Configuration Client Model"
+    help
+      Enable support for the configuration client model.
 
     endif
 
@@ -223,41 +226,41 @@ choice
 endchoice
 
 config PKG_NIMBLE_MAX_CONNECTIONS
-	int "Maximum number of concurrent connections"
-	range 1 32
-	default 1
-	help
-	  Maximum number of concurrent Bluetooth connections supported.
+    int "Maximum number of concurrent connections"
+    range 1 32
+    default 1
+    help
+      Maximum number of concurrent Bluetooth connections supported.
 
 config PKG_NIMBLE_WHITELIST
-	bool "Device Whitelist Support"
-	default y
-	help
+    bool "Device Whitelist Support"
+    default y
+    help
         Enables the BLE whitelist for controlling who to connect to
         oraccept a connection from.
 
 config PKG_NIMBLE_MULTI_ADV_INSTANCES
-	int "The number of multi-advertising instances"
-	default 0
+    int "The number of multi-advertising instances"
+    default 0
     depends on PKG_NIMBLE_ROLE_BROADCASTER
-	help
+    help
         This is the number of multi-advertising instances. This is NOT 
         the total number of advertising instances. The total number of
         advertising instances is this number plus 1.
 
 config PKG_NIMBLE_EXT_ADV
-	bool "Extended Advertising Feature Support"
-	default n
+    bool "Extended Advertising Feature Support"
+    default n
     depends on PKG_NIMBLE_ROLE_BROADCASTER
-	help
+    help
         This enables extended advertising feature.
 
 config PKG_NIMBLE_EXT_ADV_MAX_SIZE
-	int "The number of multi-advertising instances"
+    int "The number of multi-advertising instances"
     range 31 1650
-	default 31
+    default 31
     depends on PKG_NIMBLE_EXT_ADV
-	help
+    help
         This allows to configure maximum size of advertising data and scan
         response data used in LE Advertising Extensions. Valid range 31-1650.
 
