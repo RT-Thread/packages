@@ -1,6 +1,7 @@
 {
   "name": "filesystem_samples",
-  "description": "a filesystem_samples package for rt-thread",
+  "description": "RT-Thread filesystem samples",
+  "description_zh": "RT-Thread 文件系统示例",
   "keywords": [
     "filesystem_samples"
   ],

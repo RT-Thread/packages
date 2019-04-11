@@ -1,6 +1,7 @@
 {
     "name": "vi",
-    "description": "A screen-oriented text editor",
+    "description": "The screen-oriented text editor for RT-Thread",
+    "description_zh": "vi 编辑器在 RT-Thread 操作系统上的移植",
     "keywords": [
         "vi",
         "editor"

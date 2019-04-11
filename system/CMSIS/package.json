@@ -1,6 +1,7 @@
 {
   "name": "CMSIS",
-  "description": "CMSIS: Cortex Microcontroller Software Interface Standard from ARM",
+  "description": "CMSIS(Cortex Microcontroller Software Interface Standard) package on RT-Thread",
+  "description_zh": "CMSIS 软件包在 RT-Thread 上的移植",
   "keywords": [
     "ARM",
     "CMSIS"

@@ -1,6 +1,7 @@
 {
   "name": "wlanmarvell",
-  "description": "wlan driver(Marvell) for rt-thread",
+  "description": "Marvell WiFi driver for rt-thread",
+  "description": "RT-Thread 的 Marvell wifi 驱动",
   "keywords": [
     "88w8782",
     "88w8801"

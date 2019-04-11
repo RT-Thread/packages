@@ -12,8 +12,10 @@ source "$PKGS_DIR/packages/misc/dstr/Kconfig"
 source "$PKGS_DIR/packages/misc/TinyFrame/Kconfig"
 source "$PKGS_DIR/packages/misc/kendryte-demo/Kconfig"
 
+
 source "$PKGS_DIR/packages/misc/samples/Kconfig"
 source "$PKGS_DIR/packages/misc/hello/Kconfig"
 source "$PKGS_DIR/packages/misc/vi/Kconfig"
+source "$PKGS_DIR/packages/misc/nnom/Kconfig"
 
 endmenu

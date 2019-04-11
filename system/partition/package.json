@@ -1,6 +1,7 @@
 {
   "name": "partition",
-  "description": "a simple partition for block device in rt-thread.",
+  "description": "A partition management package bases on block device",
+  "description_zh": "一个基于块设备的分区管理软件包",
   "keywords": [
     "partition"
   ],

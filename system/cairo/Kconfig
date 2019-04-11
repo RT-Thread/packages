@@ -1,6 +1,7 @@
 menuconfig PKG_USING_CAIRO
     bool "Cairo - Multi-platform 2D graphics library"
-	select PKG_USING_PIXMAN
+    select PKG_USING_PIXMAN
+    select RT_USING_PTHREADS
     default n
 
 if PKG_USING_CAIRO

@@ -1,6 +1,7 @@
 {
   "name": "rdb",
-  "description": "RT-Thread Debug Bridge package for rt-thread",
+  "description": "RT-Thread Debug Bridge",
+  "description_zh": "RT-Thread 调试桥",
   "keywords": [
     "rdb"
   ],

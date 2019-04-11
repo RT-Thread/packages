@@ -1,7 +1,9 @@
 {
   "name": "lps22hb",
-  "description": "LPS22HB sensor driver package, support: barometric,temperature.",
+  "description": "This is the LPS22HB sensor driver package",
+  "description_zh": "LPS22HB 气压传感器的驱动包",
   "keywords": [
+    "sensor",
     "lps22hb"
   ],
   "category": "peripherals/sensors",

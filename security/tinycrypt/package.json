@@ -1,6 +1,7 @@
 {
   "name": "tinycrypt",
-  "description": "A tiny and configurable crypt library",
+  "description": "A simple and configurable crypt library",
+  "description_zh": "一个简小并且可配置的加解密软件包",
   "keywords": [
     "tinycrypt"
   ],

@@ -1,6 +1,7 @@
 {
   "name": "CmBacktrace",
-  "description": "Advanced fault backtrace library for ARM Cortex-M series MCU.",
+  "description": "Advanced fault backtrace library for ARM Cortex-M series MCU",
+  "description_zh": "ARM Cortex-M 系列 MCU 错误追踪库",
   "keywords": [
     "ARM",
     "Cortex-M",

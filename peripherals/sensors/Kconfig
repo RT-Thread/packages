@@ -1,12 +1,18 @@
-menu "sensors drivers"
+menuconfig PKG_USING_SENSORS_DRIVERS
+    bool "sensors drivers"
+    default n
+    select RT_USING_SENSOR
 
-source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsl/Kconfig"
-source "$PKGS_DIR/packages/peripherals/sensors/lps22hb/Kconfig"
-source "$PKGS_DIR/packages/peripherals/sensors/hts221/Kconfig"
-source "$PKGS_DIR/packages/peripherals/sensors/lsm303agr/Kconfig"
-source "$PKGS_DIR/packages/peripherals/sensors/bme280/Kconfig"
-source "$PKGS_DIR/packages/peripherals/sensors/bma400/Kconfig"
-source "$PKGS_DIR/packages/peripherals/sensors/bmi160_bmx160/Kconfig"
-source "$PKGS_DIR/packages/peripherals/sensors/spl0601/Kconfig"
+    if PKG_USING_SENSORS_DRIVERS
 
-endmenu
+        source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsl/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/lps22hb/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/hts221/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/lsm303agr/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/bme280/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/bma400/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/bmi160_bmx160/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/spl0601/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/ms5611/Kconfig"
+
+    endif

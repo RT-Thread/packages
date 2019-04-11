@@ -1,10 +1,12 @@
 {
   "name": "lsm6dsl",
-  "description": "This is the LSM6DSL sensor driver package, support: accelerometer, gyroscope, step.",
+  "description": "This is the LSM6DSL sensor driver package, support: accelerometer, gyroscope, step",
+  "description_zh": "这是 LSM6DSL 传感器驱动包，支持：加速度计，陀螺仪，计步",
   "keywords": [
+    "sensor",
     "lsm6dsl"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "flybreak",
     "email": "guozhanxin@rt-thread.com"

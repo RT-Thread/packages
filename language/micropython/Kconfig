@@ -49,6 +49,13 @@ if PKG_USING_MICROPYTHON
         config MICROPYTHON_USING_UERRNO
             bool "uerrno: system error codes"
             default n
+
+        if PKG_MICROPYTHON_VER_NUM > 0x11000
+            config MICROPYTHON_USING_FFI
+                bool "ffi: foreign function interface for native program"
+                select RT_USING_MODULE
+                default n
+        endif
     endmenu
 
     menu "Tools Module"
@@ -124,7 +131,13 @@ if PKG_USING_MICROPYTHON
     config PKG_MICROPYTHON_VER
         string
         default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
-        default "v1.10" if PKG_USING_MICROPYTHON_V11000
+        default "v1.10"  if PKG_USING_MICROPYTHON_V11000
         default "v1.9.3" if PKG_USING_MICROPYTHON_V10903
+
+    config PKG_MICROPYTHON_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default 0x11000    if PKG_USING_MICROPYTHON_V11000
+        default 0x10903    if PKG_USING_MICROPYTHON_V10903
 
 endif

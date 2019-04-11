@@ -1,6 +1,7 @@
 {
   "name": "jsmn",
-  "description": "jsmn: is a minimalistic JSON parser in C",
+  "description": "Jsmn is a world fastest JSON parser/tokenizer",
+  "description_zh": "世界上最快 JSON 解析器或标记器",
   "keywords": [
     "jsmn"
   ],

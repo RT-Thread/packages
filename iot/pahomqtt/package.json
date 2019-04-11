@@ -1,6 +1,7 @@
 {
   "name": "pahomqtt",
   "description": "Eclipse Paho MQTT C/C++ client for Embedded platforms",
+  "description_zh": "Eclipse 开源的 MQTT C/C++ 客户端",
   "keywords": [
     "pahomqtt"
   ],

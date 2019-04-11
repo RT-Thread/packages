@@ -1,10 +1,12 @@
 {
   "name": "spl0601",
-  "description": "a spl0601 sensor driver package for rt-thread",
+  "description": "The Digital Air Pressure Sensor SPL06-01 driver package",
+  "description_zh": "数字气压传感器 SPL06-01 驱动软件包",
   "keywords": [
+    "sensor",
     "spl0601"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "gztss",
     "email": "guanwenliang@rt-thread.com"

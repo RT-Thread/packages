@@ -1,0 +1,42 @@
+
+# Kconfig file for package STemWin
+menuconfig PKG_USING_STEMWIN
+    bool "STemWin: a STemWin package for rt-thread"
+    default n
+
+if PKG_USING_STEMWIN
+
+    config PKG_STEMWIN_PATH
+        string
+        default "/packages/multimedia/STemWin"
+
+    config PKG_STEMWIN_MEM_SIZE
+        int "STemWin memory size (KB)"
+        default 60
+
+    config PKG_USING_STEMWIN_EXAMPLE
+        bool "Enable STemWin example"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_STEMWIN_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_STEMWIN_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_STEMWIN_VER
+       string
+       default "v1.0.0"    if PKG_USING_STEMWIN_V100
+       default "latest"    if PKG_USING_STEMWIN_LATEST_VERSION
+
+    config PKG_STEMWIN_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_STEMWIN_LATEST_VERSION
+        default 0x10000    if PKG_USING_STEMWIN_V100
+
+endif
+

@@ -1,6 +1,7 @@
 {
   "name": "persimmon",
-  "description": "a persimmon package for rt-thread",
+  "description": "Persimmon UI for RT-Thread",
+  "description_zh": "RT-Thread 的柿饼 UI",
   "keywords": [
     "persimmon"
   ],

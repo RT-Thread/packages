@@ -1,6 +1,7 @@
 {
   "name": "minIni",
-  "description": "minIni: a portable and configurable library for reading and writing '.INI' files.",
+  "description": "minIni for RT-Thread",
+  "description_zh": "minIni 在 RT-Thread 上移植的软件包",
   "keywords": [
     "minIni",
     "ini"
