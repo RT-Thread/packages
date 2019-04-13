@@ -22,7 +22,7 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://at24cxx-1.0.0.zip",
+      "URL": "https://github.com/XiaojieFan/at24cxx.git",
       "filename": "at24cxx-1.0.0.zip",
       "VER_SHA": "a883f6c6bfeb2105749c872bfd86a30e266c0375"
     },
