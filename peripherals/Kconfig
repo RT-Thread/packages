@@ -19,5 +19,5 @@ source "$PKGS_DIR/packages/peripherals/wm_libraries/Kconfig"
 source "$PKGS_DIR/packages/peripherals/kendryte-sdk/Kconfig"
 source "$PKGS_DIR/packages/peripherals/infrared/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rosserial/Kconfig"
-
+source "$PKGS_DIR/packages/peripherals/at24cxx/Kconfig"
 endmenu
