@@ -14,5 +14,6 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/bmi160_bmx160/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/spl0601/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/ms5611/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/da270/Kconfig"
 
     endif
