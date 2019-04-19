@@ -2,6 +2,7 @@
 # Kconfig file for package u8g2
 menuconfig PKG_USING_U8G2
     bool "U8G2: a monochrome graphic library"
+    select RT_USING_PIN
     default n
 
 if PKG_USING_U8G2
@@ -10,14 +11,40 @@ if PKG_USING_U8G2
         string
         default "/packages/peripherals/u8g2"
 
+    config U8G2_USE_HW_SPI
+        bool "Use hardware spi"
+        select RT_USING_SPI
+        default n
+
+    if U8G2_USE_HW_SPI
+        config U8G2_SPI_BUS_NAME
+        string "spi bus name"
+        default "spi1"
+        config U8G2_SPI_DEVICE_NAME
+        string "spi device name"
+        default "spi10"
+    endif
+
+    config U8G2_USE_HW_I2C
+        bool "Use hardware i2c"
+        select RT_USING_I2C
+        select RT_USING_I2C_BITOPS
+        default n
+
+    if U8G2_USE_HW_I2C
+        config U8G2_I2C_DEVICE_NAME
+        string "i2c device name"
+        default "i2c2"
+    endif
+
     menu "U8G2 Examples"
-        config U8G2_USING_I2C_YL40
-            bool "YL-40  : an example for PCF8591 (I2C A/D and D/A)"
-            select RT_USING_I2C
-            select RT_USING_I2C_BITOPS
-            help
-                Read from / Write to PCF8591 which can be used to check whether i2c bus is working.
-            default n
+        if U8G2_USE_HW_I2C
+            config U8G2_USING_I2C_YL40
+                bool "YL-40  : an example for PCF8591 (I2C A/D and D/A)"
+                help
+                    Read from / Write to PCF8591 which can be used to check whether i2c bus is working.
+                default n
+        endif
 
         config U8G2_USING_SW_I2C_SSD1306
             bool "SSD1306: an example for I2C OLED (software)"
@@ -25,12 +52,13 @@ if PKG_USING_U8G2
                 Print "Hello RT-Thread" on SSD1306 OLED using software I2C
             default n
 
-        config U8G2_USING_HW_I2C_SSD1306
-            bool "SSD1306: an example for I2C OLED (hardware)"
-            select RT_USING_SPI
-            help
-                Print "Hello RT-Thread" on SSD1306 OLED using hardware I2C
-            default n
+        if U8G2_USE_HW_I2C
+            config U8G2_USING_HW_I2C_SSD1306
+                bool "SSD1306: an example for I2C OLED (hardware)"
+                help
+                    Print "Hello RT-Thread" on SSD1306 OLED using hardware I2C
+                default n
+        endif
 
         config U8G2_USING_SW_SPI_SSD1306
             bool "SSD1306: an example for SPI OLED (software)"
@@ -38,18 +66,16 @@ if PKG_USING_U8G2
                 Print "Hello RT-Thread" on SSD1306 OLED using software SPI
             default n
 
-        config U8G2_USING_HW_SPI_SSD1306
-            bool "SSD1306: an example for SPI OLED (hardware)"
-            select RT_USING_I2C
-            select RT_USING_I2C_BITOPS
-            help
-                Print "Hello RT-Thread" on SSD1306 OLED using hardware SPI
-            default n
+        if U8G2_USE_HW_SPI
+            config U8G2_USING_HW_SPI_SSD1306
+                bool "SSD1306: an example for SPI OLED (hardware)"
+                help
+                    Print "Hello RT-Thread" on SSD1306 OLED using hardware SPI
+                default n
+        endif
 
         config U8G2_USING_8080_ST7920
             bool "ST7920 : an example for 8080 mode LCD"
-            select RT_USING_I2C
-            select RT_USING_I2C_BITOPS
             help
                 Print "Hello RT-Thread" on ST7920 LCD using 8080 mode
             default n
@@ -68,6 +94,9 @@ if PKG_USING_U8G2
         config PKG_USING_U8G2_V110
             bool "v1.1.0"
 
+        config PKG_USING_U8G2_V120
+            bool "v1.2.0"
+
         config PKG_USING_U8G2_LATEST_VERSION
             bool "latest"
     endchoice
@@ -76,6 +105,7 @@ if PKG_USING_U8G2
        string
        default "v1.0.0"    if PKG_USING_U8G2_V100
        default "v1.1.0"    if PKG_USING_U8G2_V110
+       default "v1.2.0"    if PKG_USING_U8G2_V120
        default "latest"    if PKG_USING_U8G2_LATEST_VERSION
 
 endif

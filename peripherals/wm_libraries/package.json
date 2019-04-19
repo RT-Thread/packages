@@ -1,0 +1,42 @@
+{
+  "name": "wm_libraries",
+  "description": "a library package for WinnerMicro devices.",
+  "description_zh": "WinnerMicro 芯片软件支持包",  
+  "keywords": [
+    "wm_libraries",
+    "Winner Micro",
+    "WinnerMicro",
+    "物联网 Wi-Fi 芯片",
+    "联盛德微电子",
+    "W600",
+    "W60X",
+    "WiFi",
+    "Wi-Fi",
+    "wifi",
+    "IEEE802.11b/g/n"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Winner Micro",
+    "email": "githubadmin@winnermicro.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/WinnerMicro/rtpkg-wm_libraries",
+  "icon": "unknown",
+  "homepage": "https://github.com/WinnerMicro/rtpkg-wm_libraries#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/WinnerMicro/rtpkg-wm_libraries.git",
+      "filename": "wm_libraries-1.0.0.zip",
+      "VER_SHA": "13f2cc4a4761526cadab9fa31296f1d24fabef8a"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/WinnerMicro/rtpkg-wm_libraries.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

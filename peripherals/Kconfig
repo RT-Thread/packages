@@ -16,6 +16,9 @@ source "$PKGS_DIR/packages/peripherals/pcf8574/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sx12xx/Kconfig"
 source "$PKGS_DIR/packages/peripherals/SignalLed/Kconfig"
 source "$PKGS_DIR/packages/peripherals/LedBlink/Kconfig"
+source "$PKGS_DIR/packages/peripherals/wm_libraries/Kconfig"
 source "$PKGS_DIR/packages/peripherals/kendryte-sdk/Kconfig"
-
+source "$PKGS_DIR/packages/peripherals/infrared/Kconfig"
+source "$PKGS_DIR/packages/peripherals/rosserial/Kconfig"
+source "$PKGS_DIR/packages/peripherals/at24cxx/Kconfig"
 endmenu

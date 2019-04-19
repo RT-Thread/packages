@@ -43,6 +43,9 @@ if PKG_USING_AZURE
         config PKG_USING_AZURE_V10208
             bool "v1.2.8"
 
+        config PKG_USING_AZURE_V10209
+            bool "v1.2.9"
+
         config PKG_USING_AZURE_LATEST_VERSION
             bool "latest"
     endchoice
@@ -50,6 +53,7 @@ if PKG_USING_AZURE
     config PKG_AZURE_VER
        string
        default "v1.2.8"    if PKG_USING_AZURE_V10208
+       default "v1.2.9"    if PKG_USING_AZURE_V10209
        default "latest"    if PKG_USING_AZURE_LATEST_VERSION
 
 endif

@@ -32,6 +32,9 @@ if PKG_USING_STM32_SDIO
         help
             Select the stm32_sdio version
 
+        config PKG_USING_STM32_SDIO_V101
+            bool "v1.0.1"
+
         config PKG_USING_STM32_SDIO_V100
             bool "v1.0.0"
 
@@ -41,6 +44,7 @@ if PKG_USING_STM32_SDIO
 
     config PKG_STM32_SDIO_VER
        string
+       default "v1.0.1"    if PKG_USING_STM32_SDIO_V101
        default "v1.0.0"    if PKG_USING_STM32_SDIO_V100
        default "latest"    if PKG_USING_STM32_SDIO_LATEST_VERSION
 endif
