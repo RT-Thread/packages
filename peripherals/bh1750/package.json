@@ -1,0 +1,23 @@
+{
+  "name": "bh1750",
+  "description": "bh1750: Ambient Light Sensor IC BH1750FVI driver library",
+  "description_zh": "数字光照强度传感器IC BH1750FVI 驱动软件包", 
+  "keywords": [
+    "bh1750"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Sanjay_Wu",
+    "email": "sanjaywu@yeah.net"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/sanjaywu/bh1750",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sanjaywu/bh1750.git",
+      "filename": "bh1750.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
