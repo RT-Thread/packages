@@ -11,20 +11,20 @@
     "email": "aeo1234@qq.com"
   },
   "license": "GPL-2.0",
-  "repository": "https://gitee.com/aeo123/ledblink.git",
+  "repository": "https://github.com/aeo123/LedBlink.git",
   "icon": "unknown",
-  "homepage": "https://gitee.com/aeo123/ledblink/tree/master",
-  "doc": "https://gitee.com/aeo123/ledblink/blob/master/readme.md",
+  "homepage": "https://github.com/aeo123/LedBlink.git",
+  "doc": "https://github.com/aeo123/LedBlink.git",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://gitee.com/aeo123/ledblink.git",
+      "URL": "https://github.com/aeo123/LedBlink.git",
       "filename": "LedBlink-1.0.0.zip",
-      "VER_SHA": "ea6d3e235b95e9a59d8dd6c28e80b6da798cf895"
+      "VER_SHA": "6b2f8eff067ed03944c82e0633c4707a5180a359"
     },
     {
       "version": "latest",
-      "URL": "https://gitee.com/aeo123/ledblink.git",
+      "URL": "https://github.com/aeo123/LedBlink.git",
       "filename": "Null for git package",
       "VER_SHA": "master"
     }
