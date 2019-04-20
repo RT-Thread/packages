@@ -1,7 +1,7 @@
 
 # Kconfig file for package LedBlink
 menuconfig PKG_USING_LEDBLINK
-    bool "Please add description of LedBlink in English."
+    bool "LedBlink: easy led blink support lib"
     default n
 
 if PKG_USING_LEDBLINK
