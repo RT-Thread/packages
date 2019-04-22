@@ -1,0 +1,40 @@
+
+# Kconfig file for package hshcal001
+menuconfig PKG_USING_HSHCAL001
+    bool "hshcal001 sensor driver package, support: temperature, humidity."
+    default n
+
+if PKG_USING_HSHCAL001
+
+    config PKG_HSHCAL001_PATH
+        string
+        default "/packages/peripherals/sensors/hshcal001"
+		
+	config PKG_USING_HSHCAL001_HUMI
+		bool "Enable hshcal001 humi"
+		default y
+
+    config PKG_USING_HSHCAL001_TEMP
+		bool "Enable hshcal001 temp"
+		default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_HSHCAL001_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_HSHCAL001_V001
+            bool "v0.0.1"
+
+        config PKG_USING_HSHCAL001_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_HSHCAL001_VER
+       string
+       default "v0.0.1"    if PKG_USING_HSHCAL001_V001
+       default "latest"    if PKG_USING_HSHCAL001_LATEST_VERSION
+
+endif
+
