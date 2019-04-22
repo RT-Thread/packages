@@ -11,7 +11,7 @@ if PKG_USING_NETUTILS
 
     config PKG_NETUTILS_PING
         bool "Enable Ping utility"
-        depends on RT_USING_LWIP
+        depends on (!RT_USING_NETDEV && RT_USING_LWIP)
         select RT_LWIP_ICMP
         select RT_LWIP_RAW
         default n
