@@ -146,6 +146,13 @@ if PKG_USING_U8G2
                         - Partial screen update
                     default n
             endmenu
+            menu "game examples"
+                config U8G2_USING_FRAME_EXAMPLE_SPACE_TRASH
+                    bool "Space Trash : A space war game"
+                    help
+                        Space Trash : A space war game
+                    default n
+            endmenu
         endif
     endmenu
 
