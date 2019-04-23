@@ -40,46 +40,113 @@ if PKG_USING_U8G2
     menu "U8G2 Examples"
         if U8G2_USE_HW_I2C
             config U8G2_USING_I2C_YL40
-                bool "YL-40  : an example for PCF8591 (I2C A/D and D/A)"
+                bool "YL-40  : basic example for PCF8591 (I2C A/D and D/A)"
                 help
                     Read from / Write to PCF8591 which can be used to check whether i2c bus is working.
                 default n
         endif
 
         config U8G2_USING_SW_I2C_SSD1306
-            bool "SSD1306: an example for I2C OLED (software)"
+            bool "SSD1306: basic example for I2C OLED (software)"
             help
                 Print "Hello RT-Thread" on SSD1306 OLED using software I2C
             default n
 
         if U8G2_USE_HW_I2C
             config U8G2_USING_HW_I2C_SSD1306
-                bool "SSD1306: an example for I2C OLED (hardware)"
+                bool "SSD1306: basic example for I2C OLED (hardware)"
                 help
                     Print "Hello RT-Thread" on SSD1306 OLED using hardware I2C
                 default n
         endif
 
         config U8G2_USING_SW_SPI_SSD1306
-            bool "SSD1306: an example for SPI OLED (software)"
+            bool "SSD1306: basic example for SPI OLED (software)"
             help
                 Print "Hello RT-Thread" on SSD1306 OLED using software SPI
             default n
 
         if U8G2_USE_HW_SPI
             config U8G2_USING_HW_SPI_SSD1306
-                bool "SSD1306: an example for SPI OLED (hardware)"
+                bool "SSD1306: basic example for SPI OLED (hardware)"
                 help
                     Print "Hello RT-Thread" on SSD1306 OLED using hardware SPI
                 default n
         endif
 
         config U8G2_USING_8080_ST7920
-            bool "ST7920 : an example for 8080 mode LCD"
+            bool "ST7920 : basic example for 8080 mode LCD"
             help
                 Print "Hello RT-Thread" on ST7920 LCD using 8080 mode
             default n
 
+        if (!PKG_USING_U8G2_V100) && (!PKG_USING_U8G2_V110) && (!PKG_USING_U8G2_V120)
+            menu "full buffer examples ( fast, large RAM consumption)"
+                config U8G2_USING_FRAME_EXAMPLE_FONT_USAGE
+                    bool "Font Usage : How to overwrite previous text with a new text"
+                    help
+                        Font Usage : Demonstrating the correct way of using fonts
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_FPS
+                    bool "Frames Per Second: Display Performance Test"
+                    help
+                        Frames Per Second: Display Performance Test
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_GRAPHIC_TEST
+                    bool "Graphic Test : dispaly speed benchmark"
+                    help
+                        Graphic Test : Test the performance of your devices
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_HELLO_WORLD
+                    bool "Hello World: Well-known hello world"
+                    help
+                        Hello World: Well-known hello world
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_ICON_MENU
+                    bool "Icon Menu : Homepage menu entry with icons"
+                    help
+                         This is an interactive demo and requires "next", "prev" and "select" button.
+                         Minimum height of the display should be 64.
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_PRINT_UTF8
+                    bool "Print UTF8 : Chinese hello world"
+                    help
+                        Print UTF8 : Chinese hello world
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_SELECTION_LIST
+                    bool "Selection List : A list of selections"
+                    help
+                        Selection List : A list of selections
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_U8G2_LOGO
+                    bool "U8G2 Logo : Print U8G2 Logo"
+                    help
+                        U8G2 Logo : Print U8G2 Logo
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_UPDATE_AREA
+                    bool "Update Area : A scrolling screen"
+                    help
+                        Update Area : Demonstration for the UpdateDisplayArea command
+                    default n
+
+                config U8G2_USING_FRAME_EXAMPLE_WEATHER
+                    bool "Weather : Print weather icons from open-iconic set"
+                    help
+                        Demonstrates:
+                        - Weather icons from open-iconic set.
+                        - Text scrolling.
+                        - Partial screen update
+                    default n
+            endmenu
+        endif
     endmenu
 
     choice
@@ -103,7 +170,7 @@ if PKG_USING_U8G2
         config PKG_USING_U8G2_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_U8G2_VER
        string
        default "v1.0.0"    if PKG_USING_U8G2_V100
