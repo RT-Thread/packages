@@ -1,6 +1,6 @@
 {
   "name": "at_server",
-  "description": "An at server with AT commands in common use.",
+  "description": "AT server with AT commands in common use.",
   "description_zh": "内置常用 AT 指令的 AT 服务端",  
   "keywords": [
     "at_server"

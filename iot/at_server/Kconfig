@@ -1,6 +1,6 @@
 
 menuconfig PKG_USING_AT_SERVER
-    bool "at_server: common AT commands for AT server."
+    bool "at_server: AT server with AT commands in common use."
     default n
 	select RT_USING_AT
 	select AT_USING_SERVER
