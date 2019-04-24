@@ -81,64 +81,64 @@ if PKG_USING_U8G2
             default n
 
         if PKG_U8G2_VER_NUM > 0x20000
-            menu "full buffer examples ( fast, large RAM consumption)"
+            menu "full buffer examples    (fast, large RAM consumption)"
                 config U8G2_USING_FRAME_EXAMPLE_FONT_USAGE
-                    bool "Font Usage : How to overwrite previous text with a new text"
+                    bool "Font Usage        : How to overwrite previous text with a new text"
                     help
                         Font Usage : Demonstrating the correct way of using fonts
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_FPS
-                    bool "Frames Per Second: Display Performance Test"
+                    bool "Frames Per Second : Display Performance Test"
                     help
                         Frames Per Second: Display Performance Test
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_GRAPHIC_TEST
-                    bool "Graphic Test : dispaly speed benchmark"
+                    bool "Graphic Test      : dispaly speed benchmark"
                     help
                         Graphic Test : Test the performance of your devices
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_HELLO_WORLD
-                    bool "Hello World: Well-known hello world"
+                    bool "Hello World       : Well-known hello world"
                     help
                         Hello World: Well-known hello world
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_ICON_MENU
-                    bool "Icon Menu : Homepage menu entry with icons"
+                    bool "Icon Menu         : Homepage menu entry with icons"
                     help
                          This is an interactive demo and requires "next", "prev" and "select" button.
                          Minimum height of the display should be 64.
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_PRINT_UTF8
-                    bool "Print UTF8 : Chinese hello world"
+                    bool "Print UTF8        : Chinese hello world"
                     help
                         Print UTF8 : Chinese hello world
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_SELECTION_LIST
-                    bool "Selection List : A list of selections"
+                    bool "Selection List    : A list of selections"
                     help
                         Selection List : A list of selections
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_U8G2_LOGO
-                    bool "U8G2 Logo : Print U8G2 Logo"
+                    bool "U8G2 Logo         : Print U8G2 Logo"
                     help
                         U8G2 Logo : Print U8G2 Logo
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_UPDATE_AREA
-                    bool "Update Area : A scrolling screen"
+                    bool "Update Area       : A scrolling screen"
                     help
                         Update Area : Demonstration for the UpdateDisplayArea command
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_WEATHER
-                    bool "Weather : Print weather icons from open-iconic set"
+                    bool "Weather           : Print weather icons from open-iconic set"
                     help
                         Demonstrates:
                         - Weather icons from open-iconic set.
@@ -146,6 +146,7 @@ if PKG_USING_U8G2
                         - Partial screen update
                     default n
             endmenu
+
             menu "game examples"
                 config U8G2_USING_FRAME_EXAMPLE_SPACE_TRASH
                     bool "Space Trash : A space war game"
