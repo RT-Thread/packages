@@ -18,9 +18,9 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://at_server-1.0.0.zip",
+      "URL": "https://github.com/shaoguoji/at_server/archive/1.0.0.zip",
       "filename": "at_server-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "VER_SHA": "NULL"
     },
     {
       "version": "latest",
