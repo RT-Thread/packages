@@ -377,7 +377,7 @@ if PKG_USING_U8G2
             endmenu
 
             menu "game examples"
-                config U8G2_USING_FRAME_EXAMPLE_SPACE_TRASH
+                config U8G2_USING_GAME_EXAMPLE_SPACE_TRASH
                     bool "Space Trash : A space war game"
                     help
                         Space Trash : A space war game
