@@ -147,6 +147,45 @@ if PKG_USING_U8G2
                     default n
             endmenu
 
+            menu "u8x8 text only examples (fonts with fixed size)      "
+                config U8G2_USING_U8x8_EXAMPLE_16x16_FONT
+                    bool "16x16 Font   : A space war game"
+                    help
+                        16x16 Font : Demonstration for 16x16 pixel fonts
+                    default n
+
+                config U8G2_USING_U8x8_EXAMPLE_FLIP_MODE
+                    bool "Flip Mode    : Test flip functionality (180 degree roation)"
+                    help
+                        Flip Mode : Test flip functionality (180 degree roation)
+                        Note: Not supported with all displays
+                    default n
+
+                config U8G2_USING_U8x8_EXAMPLE_GRAPHIC_TEST
+                    bool "Graphic Test : Some graphics/text output for U8x8 API"
+                    help
+                        Graphic Test : Some graphics/text output for U8x8 API
+                    default n
+
+                config U8G2_USING_U8x8_EXAMPLE_HELLO_WORLD
+                    bool "Hello World  : Well-known hello world"
+                    help
+                       Hello World : Well-known hello world
+                    default n
+
+                config U8G2_USING_U8x8_EXAMPLE_MESSAGE_BOX
+                    bool "Message Box  : Example for the Message Box for U8x8"
+                    help
+                        Message Box : Example for the Message Box for U8x8
+                    default n
+
+                config U8G2_USING_U8x8_EXAMPLE_TERMINAL
+                    bool "Terminal     : Demo for U8log"
+                    help
+                        Terminal : Demo for U8log
+                    default n
+            endmenu
+
             menu "game examples"
                 config U8G2_USING_FRAME_EXAMPLE_SPACE_TRASH
                     bool "Space Trash : A space war game"
