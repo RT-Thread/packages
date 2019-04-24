@@ -18,7 +18,7 @@ if PKG_USING_AT_SERVER
 	config AT_SERVER_ENABLE_BASE
         bool
         prompt "Enable base AT command"
-        default n
+        default y
 		select AT_SERVER_ENABLE_CMD_AT
 		select AT_SERVER_ENABLE_CMD_ATZ
 		select AT_SERVER_ENABLE_CMD_RST
