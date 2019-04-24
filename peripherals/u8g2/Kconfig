@@ -103,14 +103,15 @@ if PKG_USING_U8G2
                 config U8G2_USING_FRAME_EXAMPLE_HELLO_WORLD
                     bool "Hello World       : Well-known hello world"
                     help
-                        Hello World: Well-known hello world
+                        Hello World : Well-known hello world
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_ICON_MENU
                     bool "Icon Menu         : Homepage menu entry with icons"
                     help
-                         This is an interactive demo and requires "next", "prev" and "select" button.
-                         Minimum height of the display should be 64.
+                        Icon Menu : Homepage menu entry with icons
+                        This is an interactive demo and requires "next", "prev" and "select" button.
+                        Minimum height of the display should be 64.
                     default n
 
                 config U8G2_USING_FRAME_EXAMPLE_PRINT_UTF8
@@ -144,6 +145,195 @@ if PKG_USING_U8G2
                         - Weather icons from open-iconic set.
                         - Text scrolling.
                         - Partial screen update
+                    default n
+            endmenu
+
+            menu "page buffer examples    (slow, small RAM consumption)"
+                config U8G2_USING_PAGE_EXAMPLE_CHINESE
+                    bool "Chinese           : Chinese Hello World"
+                    help
+                        Chinese : Chinese Hello World
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_CLIP_WINDOW
+                    bool "Clip Window       : Assign a clip window and draw some text into it"
+                    help
+                        Clip Window : Assign a clip window and draw some text into it
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_CLOCK
+                    bool "Clock             : A clock with a very huge font"
+                    help
+                        Clock : A clock with a very huge font
+                        Demonstrates a clock-like display with a very huge font.
+                        Also shows usage of u8x8_u8toa().
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_CONTRAST_TEST
+                    bool "Contrast Test     : Set different contrasts"
+                    help
+                        Contrast Test : Set different contrasts
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_DEVANAGARI
+                    bool "Devanagari        : Devanagari hello world"
+                    help
+                        Devanagari : Devanagari hello world
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_DIRECT_ACCESS
+                    bool "Direct Access     : Demonstrate how to interact with the internal buffer directly"
+                    help
+                        Direct Access : Demonstrate how to interact with the internal buffer directly
+                        Warning: This example will not work with all graphics controller.
+                        It will work with SSD13xx, UC1xxx, ST7656 controller
+                        It will definitly not work with ST7920, T6962, RA8835.
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_DRAW_LOG
+                    bool "Draw Log          : Use display terminal to output text"
+                    help
+                        Draw Log : Use display terminal to output text
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_EXT_UTF8
+                    bool "Ext UTF8          : Extra UTF8 hello world"
+                    help
+                        Ext UTF8 : Extra UTF8 hello world
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_FLIP_MODE
+                    bool "Flip Mode         : Demonstration for flip windows"
+                    help
+                        Flip Mode : Demonstration for flip windows
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_FPS
+                    bool "Frame Per Second  : Display Performance Test"
+                    help
+                        Frame Per Second : Display Performance Test
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_GRAPHIC_TEST
+                    bool "Graphic Test      : Draw a variety of shapes with animation"
+                    help
+                        Graphic Test : Draw a variety of shapes with animation
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_HELLO_WORLD
+                    bool "Hello World       : Well-known hello world"
+                    help
+                        Hello World : Well-known hello world
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_ICON_MENU
+                    bool "Icon Menu         : Homepage menu entry with icons"
+                    help
+                        Icon Menu : Homepage menu entry with icons
+                        This is an interactive demo and requires "next", "prev" and "select" button.
+                        Minimum height of the display should be 64.
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_JAPANESE
+                    bool "Japanese          : Japanese hello world"
+                    help
+                        Japanese : Japanese hello world
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_KOREAN
+                    bool "Korean            : Korean hello world"
+                    help
+                        Korean : Korean hello world
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_POWER_SAVE_TEST
+                    bool "Power Save Test   : Turn on and turn off display"
+                    help
+                        Power Save Test : Turn on and turn off display
+                        This test will turn on and off your display for two seconds.
+                        If the text "power off" is visible on your display, then power save mode
+                        does not work with your display.
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_PRINT_HELLO_WORLD
+                    bool "Print Hello World : A larger hello world"
+                    help
+                        Print Hello World : A larger hello world
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_SCROLLING_TEXT
+                    bool "Scrolling Text    : This will scroll text on the display"
+                    help
+                        Scrolling Text : This will scroll text on the display
+                        Enable U8g2 16 bit mode (see FAQ) for larger text!
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_SCROLLING_LIST
+                    bool "Scrolling List    : A list of selections"
+                    help
+                        Scrolling List : A list of selections
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_SERIAL
+                    bool "Serial            : Read from Serial, output to display"
+                    help
+                        Serial : Read from Serial, output to display
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_STATE_BUFFER_LOOP
+                    bool "State Buffer Loop : The for/next picture drawing loop as a state machine"
+                    help
+                        State Buffer Loop : This example implements the for/next picture drawing loop as a state machine.
+
+                        Pro: Display refresh is distributed over several steps (only one page is drawn at a time,
+                        which consumes lesser time than refreshing the complete screen)
+
+                        Contra: (A) Artefacts may be visible. (B) It is more difficult to switch between different screens.
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_TERMINAL
+                    bool "Terminal          : Use display terminal to output text"
+                    help
+                        Terminal : Use display terminal to output text
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_U8G2_LOGO
+                    bool "U8G2 Logo         : Draw U8G2 logo"
+                    help
+                        U8G2 Logo : Draw U8G2 logo
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_UPDATE_PARTLY
+                    bool "Update Partly     : A faster scrolling text"
+                    help
+                        Update Partly : This will scroll text on the display similar to ScrollingText example,
+                        Scrolling will be faster, because only the changing part of the display
+                        gets updated.
+                        Enable U8g2 16 bit mode (see FAQ) for larger text!
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_WEATHER
+                    bool "Weather           : Show weather icons from open-iconic set"
+                    help
+                        Weather : Show weather icons from open-iconic set.
+                        Plus demo for text scrolling.
+                        This example requires display height >= 64.
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_XBM
+                    bool "XBM               : This will display a XBM image (generated by GIMP)"
+                    help
+                        XBM : This will display a XBM image (generated by GIMP).
+                        The .xbm file was pasted directly into the .ino file and moved to 
+                        flash (PROGMEM) area.
+                    default n
+
+                config U8G2_USING_PAGE_EXAMPLE_XOR_TEST
+                    bool "XOR Test          : Shows solid and transparent font modes with XOR draw"
+                    help
+                        XOR Test : Shows solid and transparent font modes with XOR draw.
+                        Conclusion: Only use transparent font modes with XOR draw.
+                        This example also demonstrates scrolling.
                     default n
             endmenu
 
@@ -234,4 +424,3 @@ if PKG_USING_U8G2
         default 0x20000 if PKG_USING_U8G2_V200
         default 0x99999 if PKG_USING_U8G2_LATEST_VERSION
 endif
-
