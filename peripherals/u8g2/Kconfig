@@ -404,6 +404,9 @@ if PKG_USING_U8G2
         config PKG_USING_U8G2_V200
             bool "v2.0.0"
 
+        config PKG_USING_U8G2_V210
+            bool "v2.1.0"
+
         config PKG_USING_U8G2_LATEST_VERSION
             bool "latest"
     endchoice
@@ -414,6 +417,7 @@ if PKG_USING_U8G2
        default "v1.1.0"    if PKG_USING_U8G2_V110
        default "v1.2.0"    if PKG_USING_U8G2_V120
        default "v2.0.0"    if PKG_USING_U8G2_V200
+       default "v2.1.0"    if PKG_USING_U8G2_V210
        default "latest"    if PKG_USING_U8G2_LATEST_VERSION
 
     config PKG_U8G2_VER_NUM
@@ -422,5 +426,6 @@ if PKG_USING_U8G2
         default 0x10100 if PKG_USING_U8G2_V110
         default 0x10200 if PKG_USING_U8G2_V120
         default 0x20000 if PKG_USING_U8G2_V200
+        default 0x20100 if PKG_USING_U8G2_V210
         default 0x99999 if PKG_USING_U8G2_LATEST_VERSION
 endif
