@@ -169,14 +169,17 @@ if PKG_USING_ATSRV_SOCKET
 
     choice
         prompt "Version"
+        default PKG_USING_ATSRV_SOCKET_V100
+        
         help
-            Select the cJSON version
+            Select the atsrv_socket version
 
         config PKG_USING_ATSRV_SOCKET_V100
             bool "v1.0.0"
 
         config PKG_USING_ATSRV_SOCKET_LATEST_VERSION
             bool "latest"
+            
     endchoice
 
     config PKG_ATSRV_SOCKET_VER
