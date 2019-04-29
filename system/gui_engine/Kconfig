@@ -44,6 +44,10 @@ config GUIENGINE_CMD_STRING_MAX
     int "The maximal size of command string in GUI engine"
     default 16
 
+config GUIENGINE_USING_TOUCH
+    bool "Support Touch"
+    default n
+
 config GUIENGINE_USING_TTF
     bool "Support TrueType font"
     default n
