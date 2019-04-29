@@ -1,7 +1,7 @@
 
 # Kconfig file for package ipmsg
 menuconfig PKG_USING_IPMSG
-    bool "ipmsg(LAN instant messaging) in RT-Ttread"
+    bool "A LAN instant messaging implement in RT-Thread"
     default n
     select RT_USING_LWIP
 
