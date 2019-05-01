@@ -12,7 +12,7 @@ menuconfig PKG_USING_DIGITALCTRL
 
 if PKG_USING_DIGITALCTRL
 
-    config DIGITAL_USING_DOUBLE
+    config DIGITALCTRL_USING_DOUBLE
         string "Use double precision floating point calculations"
         default n
 
