@@ -22,4 +22,5 @@ source "$PKGS_DIR/packages/peripherals/infrared/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rosserial/Kconfig"
 source "$PKGS_DIR/packages/peripherals/at24cxx/Kconfig"
 source "$PKGS_DIR/packages/peripherals/bh1750/Kconfig"
+source "$PKGS_DIR/packages/peripherals/MotionDriver2RTT/Kconfig"
 endmenu
