@@ -1,0 +1,23 @@
+{
+  "name": "bh1750",
+  "description": "bh1750 sensor driver package, support: temperature, humidity.",
+  "description_zh":"bh1750 传感器驱动包，支持：环境光照强度.",
+  "keywords": [
+    "bh1750"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Sanjay_Wu",
+    "email": "sanjaywu@yeah.net"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/sanjaywu/BH1750FVI",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sanjaywu/BH1750FVI.git",
+      "filename": "BH1750FVI.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
