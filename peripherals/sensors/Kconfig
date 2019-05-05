@@ -17,5 +17,6 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/da270/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/df220/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/hshcal001/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/bh1750/Kconfig"
 
     endif

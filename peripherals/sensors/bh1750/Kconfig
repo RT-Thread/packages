@@ -1,0 +1,29 @@
+
+# Kconfig file for package BH1750FVI
+menuconfig PKG_USING_BH1750
+    bool "bh1750 sensor driver package, support: ambient light."
+    default n
+
+if PKG_USING_BH1750
+
+    config PKG_BH1750_PATH
+        string
+        default "/packages/peripherals/sensors/bh1750"
+
+    choice
+        prompt "Version"
+        default PKG_USING_BH1750_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BH1750_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_BH1750_VER
+       string
+       default "v1.0.0"    if PKG_USING_BH1750_V100
+       default "latest"    if PKG_USING_BH1750_LATEST_VERSION
+
+endif
+
