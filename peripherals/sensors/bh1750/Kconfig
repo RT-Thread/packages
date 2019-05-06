@@ -1,4 +1,4 @@
-# Kconfig file for package BH1750FVI
+# Kconfig file for package BH1750FVI seneor
 menuconfig PKG_USING_SENSOR_BH1750
     bool "bh1750 sensor driver package, support: ambient light."
     default n
