@@ -1,0 +1,32 @@
+{
+  "name": "touch",
+  "description": "A touch device framework based on RT-Thread.",
+  "description_zh": "一个基于RT-Thread的触摸设备框架。",  
+  "keywords": [
+    "touch"
+  ],
+  "category": "system",
+  "author": {
+    "name": "jhb",
+    "email": "1023506846@qq.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/jhbdream/Touch.git",
+  "icon": "",
+  "homepage": "",
+  "doc": "",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/jhbdream/Touch.git",
+      "filename": "Touch-1.0.0.zip",
+      "VER_SHA": "9e72bbc5836da7ed127a4a88926903835ea39006"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/jhbdream/Touch.git",
+      "filename": "touch.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
