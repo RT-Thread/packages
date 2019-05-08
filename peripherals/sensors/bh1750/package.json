@@ -25,7 +25,7 @@
       "filename": "bh1750-v2.0.0.zip",
       "VER_SHA": "69f4bbfc42db799c2e940b26b60a9df26406a306"
     },
-	{
+    {
       "version": "latest",
       "URL": "https://github.com/sanjaywu/bh1750_sensor.git",
       "filename": "bh1750-latest.zip",

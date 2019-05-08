@@ -19,10 +19,10 @@ if PKG_USING_BH1750
         config PKG_USING_BH1750_V100
             bool "v1.0.0"
 		
-		config PKG_USING_BH1750_V200
+        config PKG_USING_BH1750_V200
             bool "v2.0.0"
 		
-		config PKG_USING_BH1750_LATEST_VERSION
+        config PKG_USING_BH1750_LATEST_VERSION
             bool "latest"
     endchoice
 	
