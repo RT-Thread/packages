@@ -44,6 +44,21 @@ config GUIENGINE_CMD_STRING_MAX
     int "The maximal size of command string in GUI engine"
     default 16
 
+menuconfig GUIENGINE_USING_TOUCH
+    bool "Support touch"
+    default n
+   
+   if GUIENGINE_USING_TOUCH
+
+        config PKG_TOUCH_SAMPLE_HZ
+            int "Set the touch screen sample rate"
+            default 50   
+
+        config PKG_TOUCH_I2C_NAME
+            string "Set the IIC bus device name"
+            default "i2c1"   
+    endif
+    
 config GUIENGINE_USING_TTF
     bool "Support TrueType font"
     default n
