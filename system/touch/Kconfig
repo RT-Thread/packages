@@ -1,43 +1,9 @@
-
-# Kconfig file for package touch
-menuconfig PKG_USING_TOUCH
-    bool "touch: A touch device framework based on RT-Thread"
+menuconfig PKG_USING_TOUCH_DRIVERS
+    bool "touch drivers"
     default n
 
-if PKG_USING_TOUCH
-    config PKG_TOUCH_PATH
-        string
-        default "/packages/system/touch"
+    if PKG_USING_TOUCH_DRIVERS
+        
+        source "$PKGS_DIR/packages/system/touch/ft3x07/Kconfig"
 
-    choice
-        prompt "Version"
-        default PKG_USING_TOUCH_LATEST_VERSION
-        help
-            Select the package version
-
-        config PKG_USING_TOUCH_LATEST_VERSION
-            bool "latest"
-    endchoice    
-    
-    menu "Select Touch IC"
-
-        config FT3X07
-            bool "ft3x07"
-
-    endmenu   
-   
-    config PKG_TOUCH_SAMPLE_HZ
-        int "Set the touch screen sample rate"
-        default 50   
-
-    config PKG_TOUCH_I2C_NAME
-        string "Set the IIC bus device name"
-        default "i2c1"   
-
-    config PKG_TOUCH_VER
-       string
-       default "v1.0.0"    if PKG_USING_TOUCH_V100
-       default "latest"    if PKG_USING_TOUCH_LATEST_VERSION
-
-endif
-
+    endif
