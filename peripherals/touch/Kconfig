@@ -1,0 +1,9 @@
+menuconfig PKG_USING_TOUCH_DRIVERS
+    bool "touch drivers"
+    default n
+
+    if PKG_USING_TOUCH_DRIVERS
+        
+        source "$PKGS_DIR/packages/peripherals/touch/ft3x07/Kconfig"
+
+    endif

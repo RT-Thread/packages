@@ -1,0 +1,26 @@
+{
+  "name": "ft3x07",
+  "description": "FT3X07 touch chip software package.",
+  "description_zh": "FT3X07触摸芯片软件包。",  
+  "keywords": [
+    "ft3x07"
+  ],
+  "category": "system",
+  "author": {
+    "name": "jhb",
+    "email": "1023506846@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/jhbdream/ft3x07",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/jhbdream/ft3x07.git",
+      "filename": "ft3x07.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

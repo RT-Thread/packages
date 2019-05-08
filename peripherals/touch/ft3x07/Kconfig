@@ -1,0 +1,28 @@
+
+# Kconfig file for package ft3x07
+menuconfig PKG_USING_FT3X07
+    bool "FT3X07 touch chip software package."
+    default n
+
+if PKG_USING_FT3X07
+
+    config PKG_FT3X07_PATH
+        string
+        default "/packages/peripherals/touch/ft3x07"
+
+    choice
+        prompt "Version"
+        default PKG_USING_FT3X07_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FT3X07_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_FT3X07_VER
+       string
+       default "latest"    if PKG_USING_FT3X07_LATEST_VERSION
+
+endif
+
