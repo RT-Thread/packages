@@ -7,9 +7,10 @@
     "mpu6050",
     "mpu6500",
     "i2c",
-    "spi"
+    "spi",
+    "sensor"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "RealThread",
     "email": "package_team@rt-thread.com"
