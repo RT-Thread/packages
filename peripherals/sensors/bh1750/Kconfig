@@ -12,7 +12,7 @@ if PKG_USING_BH1750
 
     choice
         prompt "Version"
-        default PKG_USING_BH1750_V200
+        default PKG_USING_BH1750_LATEST_VERSION
         help
             Select the package version
 
@@ -29,8 +29,8 @@ if PKG_USING_BH1750
     config PKG_BH1750_VER
        string
        default "v1.0.0"    if PKG_USING_BH1750_V100
-	   default "v2.0.0"    if PKG_USING_BH1750_V200
-	   default "latest"    if PKG_USING_BH1750_LATEST_VERSION
+       default "v2.0.0"    if PKG_USING_BH1750_V200
+       default "latest"    if PKG_USING_BH1750_LATEST_VERSION
 
 	if PKG_USING_BH1750_V100
 		config BH1750_USING_SOFT_FILTER
