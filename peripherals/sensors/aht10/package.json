@@ -3,9 +3,10 @@
   "description": "digital humidity and temperature sensor aht10 driver library",
   "description_zh": "数字温湿度传感器 aht10 的驱动库",
   "keywords": [
-    "aht10"
+    "aht10",
+    "sensor"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "RealThread",
     "email": "package_team@rt-thread.com"
