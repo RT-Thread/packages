@@ -1,0 +1,26 @@
+{
+  "name": "DigitalCtrl",
+  "description": "Digital closed-loop control algorithm library",
+  "description_zh": "数字闭环控制算法库",
+  "keywords": [
+    "DigitalCtrl",
+    "closed-loop",
+    "control"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "xuzhuoyi",
+    "email": "xzy476386434@vip.qq.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/xuzhuoyi/DigitalCtrl",
+  "homepage": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/xuzhuoyi/DigitalCtrl.git",
+      "filename": "DigitalCtrl latest version git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
