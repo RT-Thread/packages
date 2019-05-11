@@ -13,7 +13,7 @@ menuconfig PKG_USING_DIGITALCTRL
 if PKG_USING_DIGITALCTRL
 
     config DIGITALCTRL_USING_DOUBLE
-        string "Use double precision floating point calculations"
+        bool "Use double precision floating point calculations"
         default n
 
     config PKG_DIGITALCTRL_PATH
@@ -22,6 +22,7 @@ if PKG_USING_DIGITALCTRL
 
     choice
         prompt "version"
+        default PKG_USING_DIGITALCTRL_LATEST_VERSION
         help
             Select the DigitalCtrl version
 
@@ -29,10 +30,8 @@ if PKG_USING_DIGITALCTRL
             bool "latest"
     endchoice
 
-    if PKG_USING_DIGITALCTRL_LATEST_VERSION
-       config PKG_DIGITALCTRL_VER
-       string
-       default "latest"
-    endif
+    config PKG_DIGITALCTRL_VER
+        string
+        default "latest" if PKG_USING_DIGITALCTRL_LATEST_VERSION
 
 endif
