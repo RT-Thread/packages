@@ -16,6 +16,12 @@
   "homepage": "https://github.com/wuhanstudio/rt-ad7746#readme",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wuhanstudio/rt-ad7746.git",
+      "filename": "ad7746-1.0.0.zip",
+      "VER_SHA": "71a2c41cd29a36e66486ae475d3d8d0889318418"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/wuhanstudio/rt-ad7746.git",
       "filename": "",
