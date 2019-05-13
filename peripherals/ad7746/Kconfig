@@ -13,14 +13,18 @@ if PKG_USING_AD7746
         string
         default "/packages/peripherals/ad7746"
 
+    config AD7746_I2C_NAME
+        string "i2c bus name"
+        default "i2c2"
+
     config AD7746_USING_READ_TEMPERATURE
-        bool "AD7746 Temperature: read current temperature from on-chip temperature sensor"
+        bool "AD7746 Temperature Display : print current temperature"
         help
             Print AD7746 Temperature: read current temperature from on-chip temperature sensor
         default n
 
     config AD7746_USING_READ_WRITE
-        bool "AD7746 Read Write : read/write command line tools for ad7746"
+        bool "AD7746 Register Read Write : i2c command line tools for ad7746"
         help
             Print AD7746 Read Write: read/write command line tools for ad7746
         default n
