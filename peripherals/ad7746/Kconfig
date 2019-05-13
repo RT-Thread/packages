@@ -29,6 +29,12 @@ if PKG_USING_AD7746
             Print AD7746 Read Write: read/write command line tools for ad7746
         default n
 
+    config AD7746_USING_READ_CAPACITANCE
+        bool "AD7746 Capacitance Display : print current capacitance"
+        help
+            Print AD7746 capacitance: read current capacitance
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_AD7746_LATEST_VERSION
