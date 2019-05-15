@@ -1,0 +1,190 @@
+
+menuconfig PKG_USING_ATSRV_SOCKET
+    bool "AT Server Socket: AT server with socket commands."
+    default n
+    select RT_USING_AT
+    select AT_USING_SERVER
+
+
+if PKG_USING_ATSRV_SOCKET
+
+    config PKG_ATSRV_SOCKET_PATH
+        string
+        default "/packages/iot/atsrv_socket"
+
+    config AT_SERVER_DEVICE
+        string "Server device name"
+
+    config ATSRV_SOCKET_ENABLE_BASE
+        bool
+        prompt "Enable base AT command"
+        default y
+        select ATSRV_SOCKET_ENABLE_CMD_AT
+        select ATSRV_SOCKET_ENABLE_CMD_ATZ
+        select ATSRV_SOCKET_ENABLE_CMD_RST
+        select ATSRV_SOCKET_ENABLE_CMD_ATE
+        select ATSRV_SOCKET_ENABLE_CMD_ATL
+        select ATSRV_SOCKET_ENABLE_CMD_UART
+
+    config ATSRV_SOCKET_ENABLE_CMD_AT
+        bool
+        prompt "AT: AT test"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_BASE
+        
+    config ATSRV_SOCKET_ENABLE_CMD_ATZ
+        bool
+        prompt "ATZ: recover to factory setting"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_BASE
+        
+    config ATSRV_SOCKET_ENABLE_CMD_RST
+        bool
+        prompt "AT+RST: reboot"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_BASE     
+
+    config ATSRV_SOCKET_ENABLE_CMD_ATE
+        bool
+        prompt "ATE: enable/disable echo"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_BASE
+
+    config ATSRV_SOCKET_ENABLE_CMD_ATL
+        bool
+        prompt "AT&L: list all command"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_BASE     
+
+    config ATSRV_SOCKET_ENABLE_CMD_UART
+        bool
+        prompt "AT+UART: UART configuration"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_BASE     
+
+    config ATSRV_SOCKET_ENABLE_CMD_GMR
+        bool
+        prompt "AT+GMR: show the version of AT"
+        default n
+        depends on ATSRV_SOCKET_ENABLE_BASE
+
+    config ATSRV_SOCKET_ENABLE_CMD_SYSRAM
+        bool
+        prompt "AT+SYSRAM: list free memery"
+        default n
+        depends on ATSRV_SOCKET_ENABLE_BASE     
+
+    config ATSRV_SOCKET_ENABLE_OTA
+        bool
+        prompt "Enable OTA AT command"
+        default n
+
+    config ATSRV_SOCKET_ENABLE_CMD_OTA
+        bool
+        prompt "AT+OTA: update firmware use OTA"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_OTA      
+
+    config ATSRV_SOCKET_ENABLE_WLAN
+        bool
+        prompt "Enable WLAN AT command"
+        default n
+        select RT_USING_SAL
+        select RT_USING_LIBC
+        select RT_USING_WIFI
+
+    config ATSRV_SOCKET_ENABLE_CMD_CWMODE
+        bool
+        prompt "AT+CWMODE: mode select"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_WLAN         
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CWLAP
+        bool
+        prompt "AT+CWLAP: scan and list AP"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_WLAN         
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CWJAP
+        bool
+        prompt "AT+CWJAP: connect to AP"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_WLAN         
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CWQAP
+        bool
+        prompt "AT+CWQAP: disconnect from AP"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_WLAN 
+
+    config ATSRV_SOCKET_ENABLE_TCPIP
+        bool
+        prompt "Enable TCP/IP AT command"
+        default n
+        select RT_USING_SAL
+        select RT_USING_LIBC
+        select RT_USING_WIFI
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CIPSTATUS
+        bool
+        prompt "AT+CIPSTATUS: show network status"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_TCPIP    
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CIPMUX
+        bool
+        prompt "AT+CIPMUX: connect mode setting"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_TCPIP    
+        
+    config ATSRV_SOCKET_ENABLE_CMD_PING
+        bool
+        prompt "AT+PING: PING"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_TCPIP    
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CIPDOMAIN
+        bool
+        prompt "AT+CIPDOMAIN: DNS resolution"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_TCPIP    
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CIPSTART
+        bool
+        prompt "AT+CIPSTART: establish TCP/UDP connection"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_TCPIP    
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CIPCLOSE
+        bool
+        prompt "AT+CIPCLOSE: close connection"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_TCPIP    
+        
+    config ATSRV_SOCKET_ENABLE_CMD_CIPSEND
+        bool
+        prompt "AT+CIPSEND: send data to network"
+        default y
+        depends on ATSRV_SOCKET_ENABLE_TCPIP
+
+    choice
+        prompt "Version"
+        default PKG_USING_ATSRV_SOCKET_V100
+        
+        help
+            Select the atsrv_socket version
+
+        config PKG_USING_ATSRV_SOCKET_V100
+            bool "v1.0.0"
+
+        config PKG_USING_ATSRV_SOCKET_LATEST_VERSION
+            bool "latest"
+            
+    endchoice
+
+    config PKG_ATSRV_SOCKET_VER
+    string
+    default "v1.0.0" if PKG_USING_ATSRV_SOCKET_V100
+    default "latest" if PKG_USING_ATSRV_SOCKET_LATEST_VERSION
+
+endif

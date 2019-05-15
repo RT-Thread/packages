@@ -1,0 +1,36 @@
+{
+  "name": "at24cxx",
+  "description": "eeprom at24cxx driver library.",
+  "description_zh": "eeprom at24cxx 的驱动库。",  
+  "keywords": [
+    "at24c02",
+    "at24c04",
+    "at24c08A",
+    "at24c16A",
+    "i2c"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "XiaojieFan",
+    "email": "dingo1688@126.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/XiaojieFan/at24cxx",
+  "icon": "unknown",
+  "homepage": "https://github.com/XiaojieFan/at24cxx#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/XiaojieFan/at24cxx.git",
+      "filename": "at24cxx-1.0.0.zip",
+      "VER_SHA": "a883f6c6bfeb2105749c872bfd86a30e266c0375"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/XiaojieFan/at24cxx.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

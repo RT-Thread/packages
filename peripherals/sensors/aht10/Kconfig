@@ -8,7 +8,7 @@ if PKG_USING_AHT10
 
     config PKG_AHT10_PATH
         string
-        default "/packages/peripherals/aht10"
+        default "/packages/peripherals/sensors/aht10"
         
     config AHT10_USING_SOFT_FILTER
         bool "Enable average filter by software"
