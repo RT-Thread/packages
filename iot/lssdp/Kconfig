@@ -3,6 +3,8 @@
 menuconfig PKG_USING_LSSDP
     bool "Lssdp: SSDP protocol implemented on rt-thread"
     default n
+    select RT_USING_SAL
+    select SAL_USING_POSIX
 
 if PKG_USING_LSSDP
 
