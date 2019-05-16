@@ -39,6 +39,9 @@ if PKG_USING_AHT10
 
         config PKG_USING_AHT10_V100
             bool "v1.0.0"
+        
+        config PKG_USING_AHT10_V200
+            bool "v2.0.0(with sensor frame)"
 
         config PKG_USING_AHT10_LATEST_VERSION
             bool "latest"
@@ -47,6 +50,7 @@ if PKG_USING_AHT10
     config PKG_AHT10_VER
        string
        default "v1.0.0"    if PKG_USING_AHT10_V100
+       default "v2.0.0"    if PKG_USING_AHT10_V200
        default "latest"    if PKG_USING_AHT10_LATEST_VERSION
 
 endif
