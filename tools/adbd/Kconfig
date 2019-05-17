@@ -126,7 +126,7 @@ if PKG_USING_ADBD
     endif
 
     config ADB_USING_SSDP
-        bool "Using SSDP to broadcast"
+        bool "Enable ADB service discovery"
         select PKG_USING_LSSDP
         default n
 
