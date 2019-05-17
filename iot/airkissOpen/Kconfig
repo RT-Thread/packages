@@ -1,0 +1,37 @@
+
+# Kconfig file for package airkissOpen
+menuconfig PKG_USING_AIRKISS_OPEN
+    bool "airkissOpen: Tencent Airkiss Protocol parse library"
+    default n
+    select RT_USING_LWIP
+    select RT_USING_WIFI
+
+if PKG_USING_AIRKISS_OPEN
+
+    config PKG_AIRKISS_OPEN_PATH
+        string
+        default "/packages/iot/airkissOpen"
+
+    config AIRKISS_OPEN_DEMO_ENABLE
+        bool "Enable airkiss demo"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_AKO_Vlast
+        help
+            Select the package version
+
+        config PKG_USING_AKO_V100
+            bool "v1.0.0"
+
+        config PKG_USING_AKO_Vlast
+            bool "latest"
+    endchoice
+
+    config PKG_AIRKISS_OPEN_VER
+       string
+       default "v1.0.0"    if PKG_USING_AKO_V100
+       default "latest"    if PKG_USING_AKO_Vlast
+
+endif
