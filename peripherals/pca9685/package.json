@@ -13,19 +13,19 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/greedyhao/pca9685",
   "icon": "unknown",
-  "homepage": "unknown",
+  "homepage": "https://github.com/greedyhao/pca9685#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://pca9685-1.0.0.zip",
+      "URL": "https://github.com/greedyhao/pca9685.git",
       "filename": "pca9685-1.0.0.zip",
-      "VER_SHA": ""
+      "VER_SHA": "NULL"
     },
     {
       "version": "latest",
       "URL": "https://github.com/greedyhao/pca9685.git",
-      "filename": "",
+      "filename": "Null for git package",
       "VER_SHA": "master"
     }
   ]
