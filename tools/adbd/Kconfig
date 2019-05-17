@@ -125,6 +125,11 @@ if PKG_USING_ADBD
         endif
     endif
 
+    config ADB_USING_SSDP
+        bool "Using SSDP to broadcast"
+        select PKG_USING_LSSDP
+        default n
+
     config PKG_ADBD_PATH
         string
         default "/packages/tools/adbd"
