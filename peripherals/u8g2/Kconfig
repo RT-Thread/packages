@@ -382,6 +382,11 @@ if PKG_USING_U8G2
                     help
                         Space Trash : A space war game
                     default n
+                config U8G2_USING_GAME_EXAMPLE_TREX
+                    bool "T-Rex       : Classical Google Chrome T-Rex Runner game"
+                    help
+                        T-Rex : Classical Google Chrome T-Rex Runner game
+                    default n
             endmenu
         endif
     endmenu
