@@ -19,6 +19,12 @@ if PKG_USING_I2C_TOOLS
             Use software i2c instead of hardware
         default n
 
+    if I2C_TOOLS_USE_SW_I2C
+        config I2C_TOOLS_SW_ACK_TIMEOUT
+        int "Software I2C ACK timeout in microseconds"
+        default "100"
+    endif
+
     choice
         prompt "Version"
         default PKG_USING_I2C_TOOLS_LATEST_VERSION
