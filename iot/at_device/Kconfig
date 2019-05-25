@@ -116,22 +116,31 @@ endif
     choice
 
         prompt "Version"
-        default PKG_USING_AT_DEVICE_V150 if (AT_SW_VERSION_NUM >= 0x10200)
+        default PKG_USING_AT_DEVICE_V160 if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
+        default PKG_USING_AT_DEVICE_V150 if (AT_SW_VERSION_NUM = 0x10200)
         default PKG_USING_AT_DEVICE_V130 if (AT_SW_VERSION_NUM = 0x10100)
         default PKG_USING_AT_DEVICE_V120 if (AT_SW_VERSION_NUM < 0x10100 && AT_SW_VERSION_NUM >= 0x10000)
         default PKG_USING_AT_DEVICE_LATEST_VERSION
         help
             Select the at_device version
-            
+
+        if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
+
+            config PKG_USING_AT_DEVICE_V160
+                bool "v1.6.0"
+
+        endif
+
         if (RT_VER_NUM < 0x30103 || RT_VER_NUM = 0x40000)
+
             if AT_SW_VERSION_NUM >= 0x10200
                 config PKG_USING_AT_DEVICE_V150
                     bool "v1.5.0"
-            
+
                 config PKG_USING_AT_DEVICE_V140
                     bool "v1.4.0"
-            endif 
-               
+            endif
+
             if AT_SW_VERSION_NUM = 0x10100
                 config PKG_USING_AT_DEVICE_V130
                     bool "v1.3.0"
@@ -142,8 +151,9 @@ endif
                 config PKG_USING_AT_DEVICE_V120
                     bool "v1.2.0"
             endif
+
         endif
- 
+
         config PKG_USING_AT_DEVICE_LATEST_VERSION
             bool "latest"
 
@@ -151,7 +161,9 @@ endif
 
     config PKG_AT_DEVICE_VER
         string
+        
         default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default "v1.6.0"    if PKG_USING_AT_DEVICE_V160
         default "v1.5.0"    if PKG_USING_AT_DEVICE_V150
         default "v1.4.0"    if PKG_USING_AT_DEVICE_V140
         default "v1.3.0"    if PKG_USING_AT_DEVICE_V130
@@ -160,8 +172,9 @@ endif
     config PKG_AT_DEVICE_VER_NUM
         hex
         default 0x99999    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default 0x10600    if PKG_USING_AT_DEVICE_V160
         default 0x10500    if PKG_USING_AT_DEVICE_V150
-        default 0x10400    if PKG_USING_AT_DEVICE_V140 
+        default 0x10400    if PKG_USING_AT_DEVICE_V140
         default 0x10300    if PKG_USING_AT_DEVICE_V130
         default 0x10200    if PKG_USING_AT_DEVICE_V120
 
