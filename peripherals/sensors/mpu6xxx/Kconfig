@@ -19,6 +19,9 @@ if PKG_USING_MPU6XXX
         config PKG_USING_MPU6XXX_V001
             bool "v0.0.1"
 
+        config PKG_USING_MPU6XXX_V100
+            bool "v1.0.0(with sensor frame)"
+
         config PKG_USING_MPU6XXX_LATEST_VERSION
             bool "latest"
     endchoice
@@ -26,6 +29,7 @@ if PKG_USING_MPU6XXX
     config PKG_MPU6XXX_VER
        string
        default "v0.0.1"    if PKG_USING_MPU6XXX_V001
+       default "v1.0.0"    if PKG_USING_MPU6XXX_V100
        default "latest"    if PKG_USING_MPU6XXX_LATEST_VERSION
 
     if PKG_USING_MPU6XXX_V001
@@ -36,7 +40,7 @@ if PKG_USING_MPU6XXX
 
     endif
 
-    if PKG_USING_MPU6XXX_LATEST_VERSION
+    if PKG_USING_MPU6XXX_LATEST_VERSION || PKG_USING_MPU6XXX_V100
 
         config PKG_USING_MPU6XXX_ACCE
             bool "Enable mpu6xxx acce"
