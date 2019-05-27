@@ -1,0 +1,101 @@
+
+# AT device configuretion for V1.X.X
+config PKG_AT_INIT_BY_THREAD
+    bool "Enable at device init by thread"
+    default n
+
+choice
+    prompt "AT socket device modules"
+    default AT_DEVICE_NOT_SELECTED
+
+    config AT_DEVICE_M26
+        bool "Quectel M26/MC20"
+
+    config AT_DEVICE_EC20
+        bool "Quectel EC20"
+
+    config AT_DEVICE_ESP8266
+        bool "Espressif ESP8266"
+if PKG_AT_DEVICE_VER_NUM > 0x10400
+    config AT_DEVICE_RW007
+        bool "Realthread RW007"
+
+    config AT_DEVICE_SIM800C
+        bool "SIMCom SIM800C"
+
+    config AT_DEVICE_SIM76XX
+        bool "SIMCom SIM76XX"
+endif
+    config AT_DEVICE_NOT_SELECTED
+        bool "Not selected, please select"
+endchoice
+
+config AT_DEVICE_SOCKETS_NUM
+    int
+    default 6 if AT_DEVICE_M26
+    default 12 if AT_DEVICE_EC20
+    default 5 if AT_DEVICE_ESP8266
+    default 5 if AT_DEVICE_RW007
+    default 6 if AT_DEVICE_SIM800C
+    default 10 if AT_DEVICE_SIM76XX
+    default 0
+
+if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007 || AT_DEVICE_SIM800C || AT_DEVICE_SIM76XX
+
+        config AT_DEVICE_NAME
+            string "AT client device name"
+            default "uart2"
+
+        config AT_DEVICE_RECV_BUFF_LEN
+            int "The maximum length of client data accepted"
+            default 512
+
+endif
+
+if AT_DEVICE_ESP8266
+
+    config AT_DEVICE_WIFI_SSID
+        string "esp8266 wifi ssid"
+        default "rtthread"
+
+    config AT_DEVICE_WIFI_PASSWORD
+        string "esp8266 wifi password"
+        default "12345678"
+
+endif
+
+if AT_DEVICE_RW007
+
+    config AT_DEVICE_WIFI_SSID
+        string "rw007 wifi ssid"
+        default "rtthread"
+
+    config AT_DEVICE_WIFI_PASSWORD
+        string "rw007 wifi password"
+        default "12345678"
+
+endif
+
+if AT_DEVICE_SIM800C
+
+    config AT_DEVICE_POWER_PIN
+        int "sim800c power pin"
+        default 29
+
+    config AT_DEVICE_STATUS_PIN
+        int "sim800c status pin"
+        default 28
+
+endif
+
+if AT_DEVICE_SIM76XX
+
+    config AT_DEVICE_POWER_PIN
+        int "sim76xx power pin"
+        default 35
+
+    config AT_DEVICE_STATUS_PIN
+        int "sim76xx status pin"
+        default 40
+
+endif
