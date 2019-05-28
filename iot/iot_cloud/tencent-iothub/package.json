@@ -6,8 +6,8 @@
     ],
     "category": "iot/iot_cloud",
     "author": {
-        "name": "RealThread",
-        "email": "package_team@rt-thread.com"
+        "name": "yougaliu",
+        "email": "yougaliu@tencent.com"
     },
     "license": "Apache-2.0",
     "repository": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread",
@@ -18,7 +18,7 @@
             "version": "v3.0.0",
             "URL": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread/archive/v3.0.0.zip",
             "filename": "tencent-iot-package-for-rtthread-v3.0.0.zip",
-            "VER_SHA": "ce31a223b4d8f66fa5421841735ded19d634e842"
+            "VER_SHA": ""
         },
         {
             "version": "latest",
