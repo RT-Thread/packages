@@ -12,12 +12,13 @@
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/librws",
+  "homepage": "https://github.com/RT-Thread-packages/librws#readme",
   "site": [
     {
       "version": "v1.2.4",
       "URL": "https://github.com/RT-Thread-packages/librws/archive/1.2.4.92.zip",
       "filename": "librws-1.2.4.zip",
-      "VER_SHA": "SHA-1: 68b380efbd06dd053d14d5688b7455b17416892b"
+      "VER_SHA": "NULL"
     },
     {
       "version": "latest",
