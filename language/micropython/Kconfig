@@ -94,6 +94,16 @@ if PKG_USING_MICROPYTHON
     endmenu
 
     menu "Network Module"
+        config MICROPYTHON_USING_NETWORK
+            bool "network: network drivers and routing configuration"
+            default n
+
+	    if MICROPYTHON_USING_NETWORK
+                config MICROPYTHON_USING_WLAN
+                bool "network.WLAN: network WLAN framework configuration"
+                default n
+            endif
+
         config MICROPYTHON_USING_USOCKET
             bool "usocket: socket operations and some related functions"
             select RT_USING_SAL
