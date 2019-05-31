@@ -23,6 +23,12 @@
       "VER_SHA": "NULL"
     },
     {
+      "version": "v2.0.0",
+      "URL": "https://github.com/RT-Thread-packages/ap3216c/archive/2.0.0.zip",
+      "filename": "ap3216c-2.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/ap3216c.git",
       "filename": "ap3216c.zip",

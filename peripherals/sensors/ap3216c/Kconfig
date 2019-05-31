@@ -34,6 +34,9 @@ if PKG_USING_AP3216C
 
         config PKG_USING_AP3216C_V100
             bool "v1.0.0"
+        
+        config PKG_USING_AP3216C_V200
+            bool "v2.0.0(with sensor framework)"
 
         config PKG_USING_AP3216C_LATEST_VERSION
             bool "latest"
@@ -42,6 +45,7 @@ if PKG_USING_AP3216C
     config PKG_AP3216C_VER
        string
        default "v1.0.0"    if PKG_USING_AP3216C_V100
+       default "v2.0.0"    if PKG_USING_AP3216C_V200
        default "latest"    if PKG_USING_AP3216C_LATEST_VERSION
 
 endif
