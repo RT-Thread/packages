@@ -3,9 +3,10 @@
   "description": "a digital ambient light and a proximity sensor ap3216c driver library",
   "description": "接近和光强传感器 ap3216c 的驱动库",
   "keywords": [
-    "ap3216c"
+    "ap3216c",
+    "sensor"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "RealThread",
     "email": "package_team@rt-thread.com"
