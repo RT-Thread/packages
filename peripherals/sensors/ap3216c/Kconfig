@@ -8,7 +8,7 @@ if PKG_USING_AP3216C
 
     config PKG_AP3216C_PATH
         string
-        default "/packages/peripherals/ap3216c"
+        default "/packages/peripherals/sensors/ap3216c"
 
     config AP3216C_USING_HW_INT
         bool "Enable hardware interrupt."
