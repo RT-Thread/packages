@@ -26,6 +26,11 @@ if PKG_USING_MICROPYTHON
             bool "machine uart: enable uart functions for machine module"
             select RT_USING_SERIAL
             default n
+
+        config MICROPYTHON_USING_MACHINE_LCD
+            bool "machine LCD: enable LCD functions for machine module"
+            select BSP_USING_LCD
+            default n
     endmenu
 
     menu "System Module"
