@@ -32,14 +32,28 @@ if PKG_USING_MICROPYTHON
             select RT_USING_RTC
             default n
 
-       config MICROPYTHON_USING_MACHINE_PWM
+        config MICROPYTHON_USING_MACHINE_PWM
             bool "machine pwm: enable pwm functions for machine module"
             select RT_USING_PWM
             default n
 
-       config MICROPYTHON_USING_MACHINE_ADC
+        config MICROPYTHON_USING_MACHINE_ADC
             bool "machine adc: enable adc functions for machine module"
             select RT_USING_ADC
+			
+        config MICROPYTHON_USING_NETWORK
+            bool "network: network drivers and routing configuration"
+            default n
+
+        if MICROPYTHON_USING_NETWORK
+            config MICROPYTHON_USING_WLAN
+            bool "network.WLAN: network WLAN framework configuration"
+            default n
+        endif
+
+        config MICROPYTHON_USING_MACHINE_LCD
+            bool "machine LCD: enable LCD functions for machine module"
+            select BSP_USING_LCD
             default n
     endmenu
 

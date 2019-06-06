@@ -140,6 +140,9 @@ if PKG_USING_ADBD
         help
             Select the package version
 
+        config PKG_USING_ADBD_V111
+            bool "v1.1.1"
+
         config PKG_USING_ADBD_V110
             bool "v1.1.0"
 
@@ -149,6 +152,7 @@ if PKG_USING_ADBD
 
     config PKG_ADBD_VER
        string
+       default "v1.1.1"    if PKG_USING_ADBD_V111
        default "v1.1.0"    if PKG_USING_ADBD_V110
        default "latest"    if PKG_USING_ADBD_LATEST_VERSION
 
