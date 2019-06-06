@@ -26,6 +26,20 @@ if PKG_USING_MICROPYTHON
             bool "machine uart: enable uart functions for machine module"
             select RT_USING_SERIAL
             default n
+
+        config MICROPYTHON_USING_MACHINE_RTC
+            bool "machine rtc: enable rtc functions for machine module"
+            select RT_USING_RTC
+            default n
+
+        config MICROPYTHON_USING_MACHINE_PWM
+            bool "machine pwm: enable pwm functions for machine module"
+            select RT_USING_PWM
+            default n
+
+        config MICROPYTHON_USING_MACHINE_ADC
+            bool "machine adc: enable adc functions for machine module"
+            select RT_USING_ADC
 			
         config MICROPYTHON_USING_NETWORK
             bool "network: network drivers and routing configuration"
