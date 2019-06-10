@@ -123,22 +123,10 @@ if PKG_USING_MBEDTLS
             bool "latest"
     endchoice
 
-    if PKG_USING_MBEDTLS_V270
-        config PKG_MBEDTLS_VER
+    config PKG_MBEDTLS_VER
         string
-        default "v2.7.0"
-    endif
-
-    if PKG_USING_MBEDTLS_V260
-        config PKG_MBEDTLS_VER
-        string
-        default "v2.6.0"
-    endif
-
-    if PKG_USING_MBEDTLS_LATEST_VERSION
-       config PKG_MBEDTLS_VER
-       string
-       default "latest"
-    endif
+        default "latest"    if PKG_USING_MBEDTLS_LATEST_VERSION
+        default "v2.7.0"    if PKG_USING_MBEDTLS_V270
+        default "v2.6.0"    if PKG_USING_MBEDTLS_V260
 
 endif
