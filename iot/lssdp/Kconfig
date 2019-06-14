@@ -12,9 +12,13 @@ if PKG_USING_LSSDP
         string
         default "/packages/iot/lssdp"
 
-	config LSSDP_USING_SAMPLES
-		bool "Enable LSSDP add/del samples"
-		default n
+    config LSSDP_USING_SAMPLES
+        bool "Enable LSSDP add/del samples"
+        default n
+
+    config LSSDP_ENABLE_DEBUG_MESSAGES
+        bool "Enable LSSDP debug messages"
+        default n
 
     choice
         prompt "Version"
