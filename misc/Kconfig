@@ -18,5 +18,6 @@ source "$PKGS_DIR/packages/misc/samples/Kconfig"
 source "$PKGS_DIR/packages/misc/hello/Kconfig"
 source "$PKGS_DIR/packages/misc/vi/Kconfig"
 source "$PKGS_DIR/packages/misc/nnom/Kconfig"
+source "$PKGS_DIR/packages/misc/libann/Kconfig"
 
 endmenu
