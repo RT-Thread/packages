@@ -31,19 +31,27 @@ if PKG_USING_STM32_SDIO
         prompt "Version"
         help
             Select the stm32_sdio version
+            
+        if ((RT_VER_NUM >= 0x30103 && RT_VER_NUM < 0x40000) || RT_VER_NUM >= 0x40001)
+            config PKG_USING_STM32_SDIO_V102
+                bool "v1.0.2"
+        endif
+        
+        if (RT_VER_NUM < 0x30103 ||  RT_VER_NUM = 0x40000)
+            config PKG_USING_STM32_SDIO_V101
+                bool "v1.0.1"
 
-        config PKG_USING_STM32_SDIO_V101
-            bool "v1.0.1"
-
-        config PKG_USING_STM32_SDIO_V100
-            bool "v1.0.0"
-
+            config PKG_USING_STM32_SDIO_V100
+                bool "v1.0.0"
+        endif
+        
         config PKG_USING_STM32_SDIO_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_STM32_SDIO_VER
        string
+       default "v1.0.2"    if PKG_USING_STM32_SDIO_V102
        default "v1.0.1"    if PKG_USING_STM32_SDIO_V101
        default "v1.0.0"    if PKG_USING_STM32_SDIO_V100
        default "latest"    if PKG_USING_STM32_SDIO_LATEST_VERSION

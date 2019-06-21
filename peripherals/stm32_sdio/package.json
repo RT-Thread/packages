@@ -16,6 +16,12 @@
   "homepage": "https://github.com/RT-Thread-packages/stm32_sdio#readme",
   "site": [
     {
+      "version": "v1.0.2",
+      "URL": "https://github.com/RT-Thread-packages/stm32_sdio/archive/1.0.2.zip",
+      "filename": "stm32_sdio-1.0.2.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "v1.0.1",
       "URL": "https://github.com/RT-Thread-packages/stm32_sdio/archive/1.0.1.zip",
       "filename": "stm32_sdio-1.0.1.zip",
