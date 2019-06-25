@@ -17,12 +17,16 @@ if PKG_USING_LIBANN
         default n
 
     config LIBANN_USING_IRIS_TRAIN_AND_PREDICT
+        select RT_USING_DFS
+        select RT_USING_LIBC
         bool "Iris train model and predict example"
         help
             Load Iris dataset, train, predict, and save model.
         default n
 
     config LIBANN_USING_IRIS_LOAD_AND_PREDICT
+        select RT_USING_DFS
+        select RT_USING_LIBC
         bool "Iris load model and predict example"
         help
             Load Iris dataset, load model, predict, and save model.
