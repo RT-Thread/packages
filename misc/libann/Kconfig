@@ -10,6 +10,12 @@ if PKG_USING_LIBANN
         string
         default "/packages/misc/libann"
 
+    config LIBANN_USING_IRIS_TRAIN_AND_PREDICT_FLASH
+        bool "Iris load model from flash and predict example"
+        help
+            Load Iris dataset, load model from flash, predict, and save model.
+        default n
+
     config LIBANN_USING_IRIS_TRAIN_AND_PREDICT
         bool "Iris train model and predict example"
         help
