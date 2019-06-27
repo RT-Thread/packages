@@ -1,0 +1,91 @@
+
+# Kconfig file for package freemodbus
+menuconfig PKG_USING_FREEMODBUS
+    bool "FreeModbus: Modbus master and slave stack"
+    default n
+
+if PKG_USING_FREEMODBUS
+
+    config PKG_FREEMODBUS_PATH
+        string
+        default "/packages/iot/freemodbus"
+
+    menuconfig PKG_MODBUS_MASTER
+        bool "Master mode"
+        default n
+        if PKG_MODBUS_MASTER
+            config PKG_MODBUS_MASTER_RTU
+                bool "Enable RTU master mode"
+                default y
+                if PKG_MODBUS_MASTER_RTU
+                    config PKG_MODBUS_MASTER_SAMPLE
+                        bool "Enable master sample"
+                        default n
+                        if PKG_MODBUS_MASTER_SAMPLE
+                            config MB_SAMPLE_TEST_SLAVE_ADDR
+                                int "Test slave device address"
+                                default 1
+                            config MB_MASTER_USING_PORT_NUM
+                                int "uart number used by master sample, e.g. 2 means uart2"
+                                default 2
+                            config MB_MASTER_USING_PORT_BAUDRATE
+                                int "uart baudrate used by master sample"
+                                default 115200
+                        endif
+                endif
+        endif
+
+    menuconfig PKG_MODBUS_SLAVE
+        bool "Slave mode"
+        default n
+        if PKG_MODBUS_SLAVE
+            config PKG_MODBUS_SLAVE_RTU
+                bool "Enable RTU slave mode"
+                default y
+            config PKG_MODBUS_SLAVE_ASCII
+                bool "Enable ASCII slave mode"
+                default n
+            config RT_MODBUS_SLAVE_USE_CONTROL_PIN
+                bool "Use Contorl Pin"
+                default n
+                if RT_MODBUS_SLAVE_USE_CONTROL_PIN
+                    config MODBUS_SLAVE_RT_CONTROL_PIN_INDEX
+                        int "pin index for RS485 TX/RX select"
+                        default 10
+                endif
+            config PKG_MODBUS_SLAVE_SAMPLE
+                bool "Enable slave sample"
+                default n
+                if PKG_MODBUS_SLAVE_SAMPLE
+                    config MB_SAMPLE_SLAVE_ADDR
+                        int "Slave device address"
+                        default 1
+                    config MB_SLAVE_USING_PORT_NUM
+                        int "uart number used by slave sample, e.g. 2 means uart2"
+                        default 2
+                    config MB_SLAVE_USING_PORT_BAUDRATE
+                        int "uart baudrate used by slave sample"
+                        default 115200
+                endif
+        endif
+        
+    choice
+        prompt "Version"
+        default PKG_USING_FREEMODBUS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FREEMODBUS_V160
+            bool "v1.6.0"
+
+        config PKG_USING_FREEMODBUS_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_FREEMODBUS_VER
+       string
+       default "v1.6.0"    if PKG_USING_FREEMODBUS_V160
+       default "latest"    if PKG_USING_FREEMODBUS_LATEST_VERSION
+
+endif
+
