@@ -40,6 +40,17 @@ if PKG_USING_MICROPYTHON
         config MICROPYTHON_USING_MACHINE_ADC
             bool "machine adc: enable adc functions for machine module"
             select RT_USING_ADC
+            default n
+            
+        config MICROPYTHON_USING_MACHINE_WDT
+            bool "machine watchdog: enable watchdog functions for machine module"
+            select RT_USING_WDT
+            default n
+       
+        config MICROPYTHON_USING_MACHINE_TIMER
+            bool "machine timer: enable timer functions for machine module"
+            select RT_USING_HWTIMER
+            default n
 			
         config MICROPYTHON_USING_NETWORK
             bool "network: network drivers and routing configuration"
