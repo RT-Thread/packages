@@ -1,7 +1,7 @@
 {
   "name": "freemodbus",
   "description": "FreeModbus: Modbus master and slave stack.",
-  "description_zh": "FreeModbus: 开源的 Modbus 主次协议栈",
+  "description_zh": "FreeModbus: 开源的 Modbus 主从协议栈",
   "keywords": [
     "freemodbus",
     "modbus"
