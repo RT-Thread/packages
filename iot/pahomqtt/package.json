@@ -18,6 +18,12 @@
   "readme": "A mqtt package for rt-thread",
   "site": [
     {
+      "version": "v1.1.0",
+      "URL": "https://github.com/RT-Thread-packages/paho-mqtt/archive/1.1.0.zip",
+      "filename": "paho-mqtt-1.1.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "v1.0.0",
       "URL": "https://github.com/RT-Thread-packages/paho-mqtt/archive/1.0.0.zip",
       "filename": "paho-mqtt-1.0.0.zip",

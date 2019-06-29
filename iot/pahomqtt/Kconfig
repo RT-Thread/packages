@@ -54,25 +54,23 @@ if PKG_USING_PAHOMQTT
         prompt "version"
         help
             Select the pahomqtt version
+        default PKG_USING_PAHOMQTT_V110
 
-        config PKG_USING_PAHOMQTT_LATEST
-            bool "latest"
+        config PKG_USING_PAHOMQTT_V110
+            bool "v1.1.0"
 
         config PKG_USING_PAHOMQTT_V100
             bool "v1.0.0"
+
+        config PKG_USING_PAHOMQTT_LATEST
+            bool "latest"
     endchoice
 
-    if PKG_USING_PAHOMQTT_V100
-       config PKG_PAHOMQTT_VER
+    config PKG_PAHOMQTT_VER
        string
-       default "v1.0.0"
-    endif
-
-    if PKG_USING_PAHOMQTT_LATEST
-       config PKG_PAHOMQTT_VER
-       string
-       default "latest"
-    endif
+       default "v1.1.0"    if PKG_USING_PAHOMQTT_V110
+       default "v1.0.0"    if PKG_USING_PAHOMQTT_V100
+       default "latest"    if PKG_USING_PAHOMQTT_LATEST
 
 endif
 
