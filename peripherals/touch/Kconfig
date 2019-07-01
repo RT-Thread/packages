@@ -6,5 +6,6 @@ menuconfig PKG_USING_TOUCH_DRIVERS
     if PKG_USING_TOUCH_DRIVERS
 
         source "$PKGS_DIR/packages/peripherals/touch/gt9147/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/touch/ft6206/Kconfig"
 
     endif
