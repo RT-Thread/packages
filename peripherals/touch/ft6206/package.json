@@ -1,6 +1,6 @@
 {
   "name": "ft6206",
-  "description": "Please add description of ft6206 in English.",
+  "description": "This is the driver package of FT6206 touch chip.",
   "description_zh": "这是 FT6206 触摸芯片的驱动包。",  
   "keywords": [
     "ft6206"
@@ -19,9 +19,9 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://ft6206-1.0.0.zip",
+      "URL": "https://github.com/RT-Thread-packages/ft6206",
       "filename": "ft6206-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "VER_SHA": "e6b48248fd98aa41ed5b42efc2a4200da03ff793"
     },
     {
       "version": "latest",
