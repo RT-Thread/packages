@@ -11,7 +11,7 @@ if PKG_USING_I2C_TOOLS
 
     config PKG_I2C_TOOLS_PATH
         string
-        default "/packages/peripherals/I2C_TOOLS"
+        default "/packages/peripherals/i2c_tools"
 
     config I2C_TOOLS_USE_SW_I2C
         bool "Use sofware I2C"
