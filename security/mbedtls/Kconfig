@@ -89,7 +89,17 @@ if PKG_USING_MBEDTLS
         bool "Enable a mbedtls client example"
         select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
         default n
-        
+
+    if PKG_USING_MBEDTLS_V2710
+        config MBEDTLS_MPI_MAX_SIZE
+            int "Maximum number of bytes for usable MPIs"
+            default 1024
+
+        config MBEDTLS_CTR_DRBG_KEYSIZE
+            int "The key size used by the cipher"
+            default 32
+    endif
+
     config PKG_USING_MBEDTLS_DEBUG
         bool "Enable Debug log output"
         default n
@@ -103,24 +113,24 @@ if PKG_USING_MBEDTLS
         help
             Select the mbedtls version
 
+        config PKG_USING_MBEDTLS_V2710
+            bool "v2.7.10"
+
+        config PKG_USING_MBEDTLS_V261
+            bool "v2.6.1"
+
         config PKG_USING_MBEDTLS_V260
             bool "v2.6.0"
 
         config PKG_USING_MBEDTLS_LATEST_VERSION
             bool "latest"
-
     endchoice
 
-    if PKG_USING_MBEDTLS_V260
-        config PKG_MBEDTLS_VER
+    config PKG_MBEDTLS_VER
         string
-        default "v2.6.0"
-    endif
-
-    if PKG_USING_MBEDTLS_LATEST_VERSION
-       config PKG_MBEDTLS_VER
-       string
-       default "latest"
-    endif
+        default "latest"    if PKG_USING_MBEDTLS_LATEST_VERSION
+        default "v2.7.10"   if PKG_USING_MBEDTLS_V2710
+        default "v2.6.1"    if PKG_USING_MBEDTLS_V261
+        default "v2.6.0"    if PKG_USING_MBEDTLS_V260
 
 endif

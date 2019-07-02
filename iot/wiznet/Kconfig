@@ -24,7 +24,7 @@ if PKG_USING_WIZNET
             bool "W5500"
 
     endchoice
-    
+
     config WIZNET_DEVICE_EXTERN_CONFIG
          bool
          default n
@@ -49,11 +49,11 @@ if PKG_USING_WIZNET
     config WIZ_USING_DHCP
         bool "Enable alloc IP address through DHCP"
         default y
-      
+
     if !WIZ_USING_DHCP
-    
+
         menu "WIZnet network configure"
-        
+
             config WIZ_IPADDR
                 string "IPv4: IP address"
                 default 192.168.1.10
@@ -64,12 +64,12 @@ if PKG_USING_WIZNET
 
             config WIZ_MSKADDR
                 string "IPv4: Mask address"
-                default 255.255.255.0    
-        
+                default 255.255.255.0
+
         endmenu
-        
+
     endif
-    
+
     config WIZ_USING_PING
         bool "Enable Ping utility"
         default y
@@ -77,22 +77,30 @@ if PKG_USING_WIZNET
     config WIZ_DEBUG
         bool "Enable debug log output"
         default n
-    
+
     choice
         prompt "Version"
-        default PKG_USING_WIZNET_V100
+        default PKG_USING_WIZNET_V110 if ((RT_VER_NUM < 0x30103) || (RT_VER_NUM = 0x40000))
+        default PKG_USING_WIZNET_LATEST_VERSION
         help
             Select the wiznet version
 
-        config PKG_USING_WIZNET_V100
-            bool "v1.0.0"
+        if ((RT_VER_NUM < 0x30103) || (RT_VER_NUM = 0x40000))
+            config PKG_USING_WIZNET_V110
+                bool "v1.1.0"
+
+            config PKG_USING_WIZNET_V100
+                bool "v1.0.0"
+        endif
 
         config PKG_USING_WIZNET_LATEST_VERSION
             bool "latest"
+
     endchoice
-  
+
     config PKG_WIZNET_VER
        string
+       default "v1.1.0"    if PKG_USING_WIZNET_V110
        default "v1.0.0"    if PKG_USING_WIZNET_V100
        default "latest"    if PKG_USING_WIZNET_LATEST_VERSION
 

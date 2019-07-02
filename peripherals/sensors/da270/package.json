@@ -1,0 +1,32 @@
+{
+  "name": "da270",
+  "description": "This is the driver package of MiraMEMS DA270 accelerometer for RT-Thread.",
+  "description_zh": "本软件包是 MiraMEMS DA270 加速度传感器在 RT-Thread 中的驱动包。",  
+  "keywords": [
+    "da270"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Zhou DingHua",
+    "email": "dhzhou@miramems.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/MiraMEMS-Wonderful/da270-RT-Thread",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/MiraMEMS-Wonderful/da270-RT-Thread/archive/1.0.0.zip",
+      "filename": "da270-RT-Thread-1.0.0.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/MiraMEMS-Wonderful/da270-RT-Thread.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "gt9147",
+  "description": "This is the GT9147 touch driver package",
+  "description_zh": "这是 GT9147 触摸芯片的驱动包",  
+  "keywords": 
+  [
+    "gt9147",
+    "touch"
+  ],
+  "category": "peripherals/touch",
+  "author": 
+  {
+    "name": "tyustli",
+    "email": "1225613647@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/gt9147",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": 
+  [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/gt9147.git",
+      "filename": "gt9147-1.0.0.zip",
+      "VER_SHA": "747336ae78411d156e24ada2ab7b96dbfa46a782"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/gt9147.git",
+      "filename": "gt9147-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

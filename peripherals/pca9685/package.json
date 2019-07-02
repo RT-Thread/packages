@@ -1,0 +1,32 @@
+{
+  "name": "pca9685",
+  "description": "I2C-bus controlled 16-channel PWM controller",
+  "description_zh": "通过I2C总线控制的16路PWM控制器",  
+  "keywords": [
+    "pca9685"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "greedyhao",
+    "email": "hao_kr@163.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/greedyhao/pca9685",
+  "icon": "unknown",
+  "homepage": "https://github.com/greedyhao/pca9685#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/greedyhao/pca9685.git",
+      "filename": "pca9685-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/greedyhao/pca9685.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

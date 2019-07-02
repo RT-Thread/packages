@@ -1,0 +1,52 @@
+
+# Kconfig file for package ap3216c
+menuconfig PKG_USING_AP3216C
+    bool "ap3216c: a digital ambient light and a proximity sensor ap3216c driver library."
+    default n
+
+if PKG_USING_AP3216C
+
+    config PKG_AP3216C_PATH
+        string
+        default "/packages/peripherals/sensors/ap3216c"
+
+    config AP3216C_USING_HW_INT
+        bool "Enable hardware interrupt."
+        default n
+        help
+            "It will enable hardware interrupt for the sensor, include als and ps interrupt."
+            
+    if AP3216C_USING_HW_INT  
+    
+        config AP3216C_INT_PIN
+            int "The number of the sensor hardware interrupt pin."
+            default 47  
+            help
+                "When selected hardware interrupt, it will be the number of pin."
+                
+    endif            
+    
+    choice
+        prompt "Version"
+        default PKG_USING_AP3216C_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AP3216C_V100
+            bool "v1.0.0"
+        
+        config PKG_USING_AP3216C_V200
+            bool "v2.0.0(with sensor framework)"
+
+        config PKG_USING_AP3216C_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_AP3216C_VER
+       string
+       default "v1.0.0"    if PKG_USING_AP3216C_V100
+       default "v2.0.0"    if PKG_USING_AP3216C_V200
+       default "latest"    if PKG_USING_AP3216C_LATEST_VERSION
+
+endif
+

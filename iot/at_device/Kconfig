@@ -1,5 +1,5 @@
 
-# Kconfig file for package at_device
+# AT device configuretion
 menuconfig PKG_USING_AT_DEVICE
     bool "AT DEVICE: RT-Thread AT component porting or samples for different device"
     default n
@@ -13,127 +13,62 @@ if PKG_USING_AT_DEVICE
         string
         default "/packages/iot/at_device"
 
-    config PKG_AT_INIT_BY_THREAD
-        bool "Enable at device init by thread"
-        default n
+    if AT_SW_VERSION_NUM = 0x10300
 
-    choice
-        prompt "AT socket device modules"
-        default AT_DEVICE_NOT_SELECTED
-
-        config AT_DEVICE_M26
-            bool "Quectel M26/MC20"
-
-        config AT_DEVICE_EC20
-            bool "Quectel EC20"
-
-        config AT_DEVICE_ESP8266
-            bool "Espressif ESP8266"
-if PKG_AT_DEVICE_VER_NUM > 0x10400
-        config AT_DEVICE_RW007
-            bool "Realthread RW007"
-
-        config AT_DEVICE_SIM800C
-            bool "SIMCom SIM800C"
-
-        config AT_DEVICE_SIM76XX
-            bool "SIMCom SIM76XX"
-endif
-        config AT_DEVICE_NOT_SELECTED
-            bool "Not selected, please select"
-    endchoice
-
-    config AT_DEVICE_SOCKETS_NUM
-        int
-        default 6 if AT_DEVICE_M26
-        default 12 if AT_DEVICE_EC20
-        default 5 if AT_DEVICE_ESP8266
-        default 5 if AT_DEVICE_RW007
-        default 6 if AT_DEVICE_SIM800C
-        default 10 if AT_DEVICE_SIM76XX
-        default 0
-
-    if AT_DEVICE_ESP8266 || AT_DEVICE_M26 || AT_DEVICE_EC20 || AT_DEVICE_RW007 || AT_DEVICE_SIM800C || AT_DEVICE_SIM76XX
-
-            config AT_DEVICE_NAME
-                string "AT client device name"
-                default "uart2"
-
-            config AT_DEVICE_RECV_BUFF_LEN
-                int "The maximum length of client data accepted"
-                default 512
+        source "$PKGS_DIR/packages/iot/at_device/m26/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/ec20/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/esp8266/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/rw007/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/sim800c/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/sim76xx/Kconfig"
 
     endif
 
-    if AT_DEVICE_ESP8266
+    if AT_SW_VERSION_NUM < 0x10300
 
-        config AT_DEVICE_WIFI_SSID
-            string "esp8266 wifi ssid"
-            default "rtthread"
-
-        config AT_DEVICE_WIFI_PASSWORD
-            string "esp8266 wifi password"
-            default "12345678"
-
-    endif
-
-    if AT_DEVICE_RW007
-
-        config AT_DEVICE_WIFI_SSID
-            string "rw007 wifi ssid"
-            default "rtthread"
-
-        config AT_DEVICE_WIFI_PASSWORD
-            string "rw007 wifi password"
-            default "12345678"
-
-    endif
-
-    if AT_DEVICE_SIM800C
-
-        config AT_DEVICE_POWER_PIN
-            int "sim800c power pin"
-            default 29
-
-        config AT_DEVICE_STATUS_PIN
-            int "sim800c status pin"
-            default 28
-
-    endif
-
-    if AT_DEVICE_SIM76XX
-
-        config AT_DEVICE_POWER_PIN
-            int "sim76xx power pin"
-            default 35
-
-        config AT_DEVICE_STATUS_PIN
-            int "sim76xx status pin"
-            default 40
+        source "$PKGS_DIR/packages/iot/at_device/v1.x.x/Kconfig"
 
     endif
 
     choice
 
         prompt "Version"
+        default PKG_USING_AT_DEVICE_V160 if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
+        default PKG_USING_AT_DEVICE_V150 if (AT_SW_VERSION_NUM = 0x10200)
+        default PKG_USING_AT_DEVICE_V130 if (AT_SW_VERSION_NUM = 0x10100)
+        default PKG_USING_AT_DEVICE_V120 if (AT_SW_VERSION_NUM < 0x10100 && AT_SW_VERSION_NUM >= 0x10000)
         default PKG_USING_AT_DEVICE_LATEST_VERSION
         help
             Select the at_device version
 
-        if AT_SW_VERSION_NUM >= 0x10200
-            config PKG_USING_AT_DEVICE_V140
-                bool "v1.4.0"
-        endif 
-           
-        if AT_SW_VERSION_NUM = 0x10100
-            config PKG_USING_AT_DEVICE_V130
-                bool "v1.3.0"
+        if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
+
+            config PKG_USING_AT_DEVICE_V160
+                bool "v1.6.0"
+
         endif
 
-        # AT command component version from v1.0.0 to v1.1.0 or at version not definition
-        if (AT_SW_VERSION_NUM >= 0x10000 && AT_SW_VERSION_NUM < 0x10100) || (!AT_SW_VERSION_NUM)
-            config PKG_USING_AT_DEVICE_V120
-                bool "v1.2.0"
+        if (RT_VER_NUM < 0x30103 || RT_VER_NUM = 0x40000)
+
+            if AT_SW_VERSION_NUM >= 0x10200
+                config PKG_USING_AT_DEVICE_V150
+                    bool "v1.5.0"
+
+                config PKG_USING_AT_DEVICE_V140
+                    bool "v1.4.0"
+            endif
+
+            if AT_SW_VERSION_NUM = 0x10100
+                config PKG_USING_AT_DEVICE_V130
+                    bool "v1.3.0"
+            endif
+
+            # AT command component version from v1.0.0 to v1.1.0 or at version not definition
+            if (AT_SW_VERSION_NUM < 0x10100 && AT_SW_VERSION_NUM >= 0x10000)
+                config PKG_USING_AT_DEVICE_V120
+                    bool "v1.2.0"
+            endif
+
         endif
 
         config PKG_USING_AT_DEVICE_LATEST_VERSION
@@ -144,6 +79,8 @@ endif
     config PKG_AT_DEVICE_VER
         string
         default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default "v1.6.0"    if PKG_USING_AT_DEVICE_V160
+        default "v1.5.0"    if PKG_USING_AT_DEVICE_V150
         default "v1.4.0"    if PKG_USING_AT_DEVICE_V140
         default "v1.3.0"    if PKG_USING_AT_DEVICE_V130
         default "v1.2.0"    if PKG_USING_AT_DEVICE_V120
@@ -151,7 +88,9 @@ endif
     config PKG_AT_DEVICE_VER_NUM
         hex
         default 0x99999    if PKG_USING_AT_DEVICE_LATEST_VERSION
-        default 0x10400    if PKG_USING_AT_DEVICE_V140 
+        default 0x10600    if PKG_USING_AT_DEVICE_V160
+        default 0x10500    if PKG_USING_AT_DEVICE_V150
+        default 0x10400    if PKG_USING_AT_DEVICE_V140
         default 0x10300    if PKG_USING_AT_DEVICE_V130
         default 0x10200    if PKG_USING_AT_DEVICE_V120
 

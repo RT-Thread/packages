@@ -26,6 +26,46 @@ if PKG_USING_MICROPYTHON
             bool "machine uart: enable uart functions for machine module"
             select RT_USING_SERIAL
             default n
+
+        config MICROPYTHON_USING_MACHINE_RTC
+            bool "machine rtc: enable rtc functions for machine module"
+            select RT_USING_RTC
+            default n
+
+        config MICROPYTHON_USING_MACHINE_PWM
+            bool "machine pwm: enable pwm functions for machine module"
+            select RT_USING_PWM
+            default n
+
+        config MICROPYTHON_USING_MACHINE_ADC
+            bool "machine adc: enable adc functions for machine module"
+            select RT_USING_ADC
+            default n
+            
+        config MICROPYTHON_USING_MACHINE_WDT
+            bool "machine watchdog: enable watchdog functions for machine module"
+            select RT_USING_WDT
+            default n
+       
+        config MICROPYTHON_USING_MACHINE_TIMER
+            bool "machine timer: enable timer functions for machine module"
+            select RT_USING_HWTIMER
+            default n
+			
+        config MICROPYTHON_USING_NETWORK
+            bool "network: network drivers and routing configuration"
+            default n
+
+        if MICROPYTHON_USING_NETWORK
+            config MICROPYTHON_USING_WLAN
+            bool "network.WLAN: network WLAN framework configuration"
+            default n
+        endif
+
+        config MICROPYTHON_USING_MACHINE_LCD
+            bool "machine LCD: enable LCD functions for machine module"
+            select BSP_USING_LCD
+            default n
     endmenu
 
     menu "System Module"
@@ -120,6 +160,9 @@ if PKG_USING_MICROPYTHON
         config PKG_USING_MICROPYTHON_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_MICROPYTHON_V11001
+            bool "v1.10.1"
+
         config PKG_USING_MICROPYTHON_V11000
             bool "v1.10"
 
@@ -131,12 +174,14 @@ if PKG_USING_MICROPYTHON
     config PKG_MICROPYTHON_VER
         string
         default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
-        default "v1.10"  if PKG_USING_MICROPYTHON_V11000
-        default "v1.9.3" if PKG_USING_MICROPYTHON_V10903
+        default "v1.10.1"  if PKG_USING_MICROPYTHON_V11001
+        default "v1.10"    if PKG_USING_MICROPYTHON_V11000
+        default "v1.9.3"   if PKG_USING_MICROPYTHON_V10903
 
     config PKG_MICROPYTHON_VER_NUM
         hex
         default 0x99999    if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default 0x11001    if PKG_USING_MICROPYTHON_V11001
         default 0x11000    if PKG_USING_MICROPYTHON_V11000
         default 0x10903    if PKG_USING_MICROPYTHON_V10903
 

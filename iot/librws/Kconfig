@@ -1,0 +1,41 @@
+# Kconfig file for package librws
+menuconfig PKG_USING_LIBRWS
+    bool "librws: Tiny, cross platform websocket client C library"
+    select RT_USING_LIBC
+    select RT_USING_PTHREADS
+    select RT_USING_POSIX
+    default n
+    help
+        No additional dependecies
+        Single header library interface librws.h with public methods
+        Thread safe
+        Send/receive logic in background thread
+if PKG_USING_LIBRWS
+
+    config PKG_LIBRWS_PATH
+        string
+        default "/packages/iot/librws"
+
+    choice
+        prompt "version" 
+        default PKG_USING_LIBRWS_V124
+        help
+            Select the librws version
+
+        config PKG_USING_LIBRWS_V124
+            bool "v1.2.4"
+
+        config PKG_USING_LIBRWS_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LIBRWS_VER
+       string
+       default "v1.2.4"    if PKG_USING_LIBRWS_V124
+       default "latest"    if PKG_USING_LIBRWS_LATEST_VERSION
+
+    config LIBRWS_USING_EXAMPLE 
+        bool "Using librws msh command example"
+        default y
+endif
+

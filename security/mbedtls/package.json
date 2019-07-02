@@ -18,6 +18,16 @@
   "readme": "An open source, portable, easy to use, readable and flexible SSL library",
   "site": [
     {
+      "version": "v2.7.10",
+      "URL": "https://github.com/RT-Thread-packages/mbedtls/archive/2.7.10.zip",
+      "filename": "mbedtls-2.7.10.zip"
+    },
+    {
+      "version": "v2.6.1",
+      "URL": "https://github.com/RT-Thread-packages/mbedtls/archive/2.6.1.zip",
+      "filename": "mbedtls-2.6.1.zip"
+    },
+    {
       "version": "v2.6.0",
       "URL": "https://github.com/RT-Thread-packages/mbedtls/archive/2.6.0.zip",
       "filename": "mbedtls-2.6.0.zip"

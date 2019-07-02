@@ -1,0 +1,38 @@
+{
+  "name": "aht10",
+  "description": "digital humidity and temperature sensor aht10 driver library",
+  "description_zh": "数字温湿度传感器 aht10 的驱动库",
+  "keywords": [
+    "aht10",
+    "sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/aht10",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/aht10#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/aht10/archive/1.0.0.zip",
+      "filename": "aht10-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/RT-Thread-packages/aht10/archive/2.0.0.zip",
+      "filename": "aht10-2.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/aht10.git",
+      "filename": "aht10.zip",
+      "VER_SHA": "mater"
+    }
+  ]
+}

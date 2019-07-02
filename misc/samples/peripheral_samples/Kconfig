@@ -13,12 +13,12 @@ if PKG_USING_PERIPHERAL_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_PERIPHERAL_SAMPLES_V030
+        default PKG_USING_PERIPHERAL_SAMPLES_V040
         help
             Select the package version
 
-        config PKG_USING_PERIPHERAL_SAMPLES_V030
-            bool "v0.3.0"
+        config PKG_USING_PERIPHERAL_SAMPLES_V040
+            bool "v0.4.0"
 
         config PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
             bool "latest"
@@ -26,7 +26,7 @@ if PKG_USING_PERIPHERAL_SAMPLES
           
     config PKG_PERIPHERAL_SAMPLES_VER
        string
-       default "v0.3.0"    if PKG_USING_PERIPHERAL_SAMPLES_V030
+       default "v0.4.0"    if PKG_USING_PERIPHERAL_SAMPLES_V040
        default "latest"    if PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
 
     config PERIPHERAL_SAMPLES_USING_ADC
@@ -65,12 +65,19 @@ if PKG_USING_PERIPHERAL_SAMPLES
         bool "[peripheral] block device sd card"
 
     config PERIPHERAL_SAMPLES_USING_SERIAL
-        bool "[peripheral] serial device"
+        bool "[peripheral] serial device INT RX"
+        select RT_USING_SERIAL
+
+    config PERIPHERAL_SAMPLES_USING_SERIAL_DMA
+        bool "[peripheral] serial device DMA RX"
         select RT_USING_SERIAL
 
     config PERIPHERAL_SAMPLES_USING_SPI
         bool "[peripheral] spi device"
         select RT_USING_SPI
 
+    config PERIPHERAL_SAMPLES_USING_CAN
+        bool "[peripheral] can device"
+        select RT_USING_CAN
 endif
 

@@ -1,0 +1,36 @@
+
+# Kconfig file for package MotionDriver2RTT
+menuconfig PKG_USING_MOTIONDRIVER2RTT
+    bool "MotionDriver2RTT: A package porting MotionDriver to RTT"
+    default n
+
+if PKG_USING_MOTIONDRIVER2RTT
+
+    config PKG_MOTIONDRIVER2RTT_PATH
+        string
+        default "/packages/peripherals/MotionDriver2RTT"
+	
+	config MotionDriver2RTT_USING_EXAMPLE
+		bool "Enable MotionDriver2RTT sample"
+		default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_MOTIONDRIVER2RTT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MOTIONDRIVER2RTT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MOTIONDRIVER2RTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MOTIONDRIVER2RTT_VER
+       string
+       default "v1.0.0"    if PKG_USING_MOTIONDRIVER2RTT_V100
+       default "latest"    if PKG_USING_MOTIONDRIVER2RTT_LATEST_VERSION
+
+endif
+

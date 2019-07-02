@@ -22,7 +22,7 @@ if PKG_USING_WEBCLIENT
             
     endif
             
-    if PKG_USING_WEBCLIENT_LATEST_VERSION
+    if PKG_USING_WEBCLIENT_V210 || PKG_USING_WEBCLIENT_LATEST_VERSION
     
         choice
         
@@ -58,8 +58,11 @@ if PKG_USING_WEBCLIENT
         prompt "Version"
         help
             Select the webclient version
-        default PKG_USING_WEBCLIENT_V201
+        default PKG_USING_WEBCLIENT_V210
 
+       config PKG_USING_WEBCLIENT_V210
+            bool "v2.1.0"
+        
         config PKG_USING_WEBCLIENT_V201
             bool "v2.0.1"
             
@@ -76,6 +79,7 @@ if PKG_USING_WEBCLIENT
 
     config PKG_WEBCLIENT_VER
        string
+       default "v2.1.0"    if PKG_USING_WEBCLIENT_V210
        default "v2.0.1"    if PKG_USING_WEBCLIENT_V201
        default "v2.0.0"    if PKG_USING_WEBCLIENT_V200
        default "v1.0.0"    if PKG_USING_WEBCLIENT_V100
