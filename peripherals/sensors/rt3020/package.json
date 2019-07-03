@@ -3,6 +3,7 @@
   "description": "This is the driver package of RT3020 accelerometer.",
   "description_zh": "这是 RT3020 加速度传感器的驱动包。",  
   "keywords": [
+    "sensor",
     "rt3020"
   ],
   "category": "peripherals/sensors",
@@ -13,7 +14,7 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/RichtekTechnology/RT3020",
   "icon": "unknown",
-  "homepage": "unknown",
+  "homepage": "https://www.richtek.com/Products/MEMSandSensors/Accelerometer/RT3020?sc_lang=zh-TW",
   "doc": "unknown",
   "site": [
     {
