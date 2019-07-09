@@ -14,6 +14,11 @@ if PKG_USING_INFRARED
         config INFRARED_NEC_DECODER
             bool "enable nec decoder"
             default n
+        if INFRARED_NEC_DECODER
+            config NEC_DEVIATION
+                int "nec admissible deviation"
+                default 100
+        endif 
     endmenu
 
 config PKG_USING_DRV_INFRARED
@@ -64,6 +69,9 @@ config PKG_USING_DRV_INFRARED
         config PKG_USING_INFRARED_V010
             bool "v0.1.0"
 
+        config PKG_USING_INFRARED_V011
+            bool "v0.1.1"
+
         config PKG_USING_INFRARED_LATEST_VERSION
             bool "latest"
     endchoice
@@ -71,6 +79,7 @@ config PKG_USING_DRV_INFRARED
     config PKG_INFRARED_VER
        string
        default "v0.1.0"    if PKG_USING_INFRARED_V010
+       default "v0.1.1"    if PKG_USING_INFRARED_V011
        default "latest"    if PKG_USING_INFRARED_LATEST_VERSION
 
 endif

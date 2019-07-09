@@ -24,6 +24,12 @@
       "VER_SHA": "NULL"
     },
     {
+      "version": "v0.1.1",
+      "URL": "https://codeload.github.com/RT-Thread-packages/infrared_framework/zip/0.1.1",
+      "filename": "infrared_framework-0.1.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/infrared_framework.git",
       "filename": "",
