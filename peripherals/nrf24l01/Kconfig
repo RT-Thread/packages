@@ -48,11 +48,11 @@ if PKG_USING_NRF24L01
             bool "irq prx"
     endchoice
     
-    menuconfig NRF24_USING_INFO_REPORT
+    config NRF24_USING_INFO_REPORT
         bool "Using info report"
         default n
         
-    menuconfig NRF24_USING_SHELL_CMD
+    config NRF24_USING_SHELL_CMD
         bool "Using shell cmd"
         default n
 endif
