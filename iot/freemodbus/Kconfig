@@ -123,6 +123,10 @@ if PKG_USING_FREEMODBUS
             config PKG_MODBUS_SLAVE_ASCII
                 bool "Enable ASCII slave mode"
                 default n
+            config PKG_MODBUS_SLAVE_TCP
+                bool "Enable TCP slave mode"
+                select PKG_USING_TCPSERVER
+                default n
             config RT_MODBUS_SLAVE_USE_CONTROL_PIN
                 bool "Use Contorl Pin"
                 default n
