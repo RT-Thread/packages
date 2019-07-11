@@ -26,5 +26,6 @@ source "$PKGS_DIR/packages/iot/ipmsg/Kconfig"
 source "$PKGS_DIR/packages/iot/lssdp/Kconfig"
 source "$PKGS_DIR/packages/iot/airkissOpen/Kconfig"
 source "$PKGS_DIR/packages/iot/librws/Kconfig"
+source "$PKGS_DIR/packages/iot/tcpserver/Kconfig"
 
 endmenu
