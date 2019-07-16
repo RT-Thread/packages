@@ -14,5 +14,6 @@ source "$PKGS_DIR/packages/system/CMSIS/Kconfig"
 source "$PKGS_DIR/packages/system/yaffs2/Kconfig"
 source "$PKGS_DIR/packages/system/littlefs/Kconfig"
 source "$PKGS_DIR/packages/system/thread_pool/Kconfig"
+source "$PKGS_DIR/packages/system/rt_robot/Kconfig"
 
 endmenu
