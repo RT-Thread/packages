@@ -1,7 +1,7 @@
 
 # Kconfig file for package tsl4531
 menuconfig PKG_USING_TSL4531
-    bool "TSL4531 ：a digital ambient light and a proximity senseor tsl4531 driver library."
+    bool "TSL4531: a digital ambient light and a proximity senseor tsl4531 driver library."
     default n
 
 if PKG_USING_TSL4531
@@ -16,8 +16,8 @@ if PKG_USING_TSL4531
         help
             Select the package version
 
-        config PKG_USING_TSL4531_V100
-            bool "v1.0.0"
+        config PKG_USING_TSL4531_V011
+            bool "v0.1.1"
 
         config PKG_USING_TSL4531_LATEST_VERSION
             bool "latest"
@@ -25,7 +25,7 @@ if PKG_USING_TSL4531
           
     config PKG_TSL4531_VER
        string
-       default "v1.0.0"    if PKG_USING_TSL4531_V100
+       default "v0.1.1"    if PKG_USING_TSL4531_V011
        default "latest"    if PKG_USING_TSL4531_LATEST_VERSION
 
 endif
