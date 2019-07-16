@@ -1,0 +1,32 @@
+{
+  "name": "tsl4531",
+  "description": "this is tsl4531 pkgs.",
+  "description_zh": "请添加软件包 tsl4531 的中文描述。",  
+  "keywords": [
+    "tsl4531"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "ye guodong",
+    "email": "984490128@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/JellyYe/tsl4531pkgs.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://tsl4531-1.0.0.zip",
+      "filename": "tsl4531-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/JellyYe/tsl4531pkgs.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}
