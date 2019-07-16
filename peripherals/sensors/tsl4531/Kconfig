@@ -1,7 +1,7 @@
 
 # Kconfig file for package tsl4531
 menuconfig PKG_USING_TSL4531
-    bool "enable tsl4531 pkgs."
+    bool "TSL4531 sensor driver package ,support lux."
     default n
 
 if PKG_USING_TSL4531
