@@ -1,0 +1,32 @@
+{
+  "name": "tsl4531",
+  "description": "TSL4531 sensor driver package ,support lux.",
+  "description_zh": "tsl4531 是光感传感器,能读取环境亮度 lux。",  
+  "keywords": [
+    "tsl4531 sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "ye guodong",
+    "email": "984490128@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/JellyYe/tsl4531pkgs.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/JellyYe/tsl4531pkgs.git",
+      "filename": "tsl4531-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/JellyYe/tsl4531pkgs.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
