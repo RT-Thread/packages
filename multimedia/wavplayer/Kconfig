@@ -1,0 +1,55 @@
+
+# Kconfig file for package wavplayer
+menuconfig PKG_USING_WAVPLAYER
+    bool "WavPlayer: Minimal music player for wav file play and record"
+    default n
+
+if PKG_USING_WAVPLAYER
+
+    config PKG_WAVPLAYER_PATH
+        select PKG_USING_OPTPARSE
+        string
+        default "/packages/multimedia/wavplayer"
+
+    config PKG_WP_USING_PLAY
+        bool "Enable support for play"
+        default y
+    
+    if PKG_WP_USING_PLAY
+    
+        config PKG_WP_PLAY_DEVICE
+            string "The play device name"
+        default "sound0"
+    endif
+
+    config PKG_WP_USING_RECORD
+        bool "Enable support for record"
+        default n
+
+    if PKG_WP_USING_RECORD
+    
+        config PKG_WP_RECORD_DEVICE
+            string "The record device name"
+        default "sound0"
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_WAVPLAYER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_WAVPLAYER_V010
+            bool "v0.1.0"
+
+        config PKG_USING_WAVPLAYER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_WAVPLAYER_VER
+       string
+       default "v0.1.0"    if PKG_USING_WAVPLAYER_V010
+       default "latest"    if PKG_USING_WAVPLAYER_LATEST_VERSION
+
+endif
+
