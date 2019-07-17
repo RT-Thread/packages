@@ -6,6 +6,8 @@ menuconfig PKG_USING_WAVPLAYER
 
 if PKG_USING_WAVPLAYER
 
+    select PKG_USING_OPTPARSE
+
     config PKG_WAVPLAYER_PATH
         string
         default "/packages/multimedia/wavplayer"
