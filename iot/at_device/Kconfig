@@ -13,7 +13,7 @@ if PKG_USING_AT_DEVICE
         string
         default "/packages/iot/at_device"
 
-    if AT_SW_VERSION_NUM = 0x10300
+    if PKG_AT_DEVICE_VER_NUM >= 0x20000
 
         source "$PKGS_DIR/packages/iot/at_device/m26/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/ec20/Kconfig"
@@ -25,7 +25,7 @@ if PKG_USING_AT_DEVICE
 
     endif
 
-    if AT_SW_VERSION_NUM < 0x10300
+    if PKG_AT_DEVICE_VER_NUM < 0x20000
 
         source "$PKGS_DIR/packages/iot/at_device/v1.x.x/Kconfig"
 
@@ -34,6 +34,8 @@ if PKG_USING_AT_DEVICE
     choice
 
         prompt "Version"
+        default PKG_USING_AT_DEVICE_V200 if (AT_SW_VERSION_NUM = 0x10300)
+        # compare RT_VER_NUM for netdev component
         default PKG_USING_AT_DEVICE_V160 if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
         default PKG_USING_AT_DEVICE_V150 if (AT_SW_VERSION_NUM = 0x10200)
         default PKG_USING_AT_DEVICE_V130 if (AT_SW_VERSION_NUM = 0x10100)
@@ -42,6 +44,13 @@ if PKG_USING_AT_DEVICE
         help
             Select the at_device version
 
+        if (AT_SW_VERSION_NUM = 0x10300)
+            
+            config PKG_USING_AT_DEVICE_V200
+                bool "v2.0.0"
+        
+        endif
+            
         if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
 
             config PKG_USING_AT_DEVICE_V160
@@ -49,27 +58,23 @@ if PKG_USING_AT_DEVICE
 
         endif
 
-        if (RT_VER_NUM < 0x30103 || RT_VER_NUM = 0x40000)
+        if AT_SW_VERSION_NUM = 0x10200
+            config PKG_USING_AT_DEVICE_V150
+                bool "v1.5.0"
 
-            if AT_SW_VERSION_NUM >= 0x10200
-                config PKG_USING_AT_DEVICE_V150
-                    bool "v1.5.0"
+            config PKG_USING_AT_DEVICE_V140
+                bool "v1.4.0"
+        endif
 
-                config PKG_USING_AT_DEVICE_V140
-                    bool "v1.4.0"
-            endif
+        if AT_SW_VERSION_NUM = 0x10100
+            config PKG_USING_AT_DEVICE_V130
+                bool "v1.3.0"
+        endif
 
-            if AT_SW_VERSION_NUM = 0x10100
-                config PKG_USING_AT_DEVICE_V130
-                    bool "v1.3.0"
-            endif
-
-            # AT command component version from v1.0.0 to v1.1.0 or at version not definition
-            if (AT_SW_VERSION_NUM < 0x10100 && AT_SW_VERSION_NUM >= 0x10000)
-                config PKG_USING_AT_DEVICE_V120
-                    bool "v1.2.0"
-            endif
-
+        # AT command component version from v1.0.0 to v1.1.0 or at version not definition
+        if (AT_SW_VERSION_NUM < 0x10100 && AT_SW_VERSION_NUM >= 0x10000)
+            config PKG_USING_AT_DEVICE_V120
+                bool "v1.2.0"
         endif
 
         config PKG_USING_AT_DEVICE_LATEST_VERSION
@@ -80,6 +85,7 @@ if PKG_USING_AT_DEVICE
     config PKG_AT_DEVICE_VER
         string
         default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default "v2.0.0"    if PKG_USING_AT_DEVICE_V200
         default "v1.6.0"    if PKG_USING_AT_DEVICE_V160
         default "v1.5.0"    if PKG_USING_AT_DEVICE_V150
         default "v1.4.0"    if PKG_USING_AT_DEVICE_V140
@@ -89,6 +95,7 @@ if PKG_USING_AT_DEVICE
     config PKG_AT_DEVICE_VER_NUM
         hex
         default 0x99999    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default 0x20000    if PKG_USING_AT_DEVICE_V200
         default 0x10600    if PKG_USING_AT_DEVICE_V160
         default 0x10500    if PKG_USING_AT_DEVICE_V150
         default 0x10400    if PKG_USING_AT_DEVICE_V140
