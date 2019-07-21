@@ -19,6 +19,10 @@ if PKG_USING_ALI_IOTKIT
         string "Config Product Key"
         default a1dSQSGZ77X
 
+    config PKG_USING_ALI_IOTKIT_PRODUCT_SECRET
+        string "Config Product Secret"
+        default NfIdVcfBP7rtH24H
+
     config PKG_USING_ALI_IOTKIT_DEVICE_NAME
         string "Config Device Name"
         default RGB-LED-DEV-1        
@@ -43,18 +47,25 @@ if PKG_USING_ALI_IOTKIT
     source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_bind"
 
     config PKG_USING_ALI_IOTKIT_SAMPLES
-        bool "Enable samples"
+        bool "Samples"
         default n 
 
     if PKG_USING_ALI_IOTKIT_SAMPLES
         config PKG_USING_ALI_IOTKIT_MQTT_SAMPLE
             bool "Enable MQTT sample"
+            depends on MQTT_COMM_ENABLED
             default y
         config PKG_USING_ALI_IOTKIT_COAP_SAMPLE
             bool "Enable COAP sample"
+            depends on COAP_COMM_ENABLED
             default n
         config PKG_USING_ALI_IOTKIT_DEV_MODEL_SAMPLE
             bool "Enable device model sample"
+            depends on DEVICE_MODEL_ENABLED
+            default n
+        config PKG_USING_ALI_IOTKIT_OTA_SAMPLE
+            bool "Enable OTA sample"
+            depends on OTA_ENABLED
             default n
     endif
 
