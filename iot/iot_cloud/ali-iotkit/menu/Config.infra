@@ -75,7 +75,7 @@ config INFRA_LOG_MUTE_WRN
 
 config INFRA_LOG_MUTE_ERR
     bool "MUTE LEVEL of ERROR (2)"
-    default y
+    default n
 
 config INFRA_LOG_MUTE_CRT
     bool "MUTE LEVEL of CRIT  (1)"
