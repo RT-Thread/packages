@@ -53,6 +53,7 @@ if PKG_USING_ALI_IOTKIT
             bool
             select PLATFORM_HAS_OS
             select PLATFORM_HAS_STDINT
+            default y
 
         source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.infra"
         source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_sign"
