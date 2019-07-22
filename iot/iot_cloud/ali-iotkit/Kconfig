@@ -28,27 +28,8 @@ if PKG_USING_ALI_IOTKIT
         string "Config Device Secret"
         default Ghuiyd9nmGowdZzjPqFtxhm3WUHEbIlI
 
-    choice
-        prompt "Version"
-        default PKG_USING_ALI_IOTKIT_LATEST_VERSION
-        help
-            Select the ali-iotkit version
-
-        config PKG_USING_ALI_IOTKIT_V20003
-            bool "v2.0.3"
-
-        config PKG_USING_ALI_IOTKIT_LATEST_VERSION
-            bool "latest"
-
-    endchoice
-
-    config PKG_ALI_IOTKIT_VER
-       string
-       default "v2.0.3"    if PKG_USING_ALI_IOTKIT_V20003
-       default "latest"    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
-
-    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
-        config PKG_ALI_IOTKIT_NO_DISPLAY_ITEM
+    if (PKG_ALI_IOTKIT_VER_NUM > 0x20003)
+        config PKG_ALI_IOTKIT_SELECT_ITEM
             bool
             select PLATFORM_HAS_OS
             select PLATFORM_HAS_STDINT
@@ -93,7 +74,7 @@ if PKG_USING_ALI_IOTKIT
         endif
     endif
 
-    if PKG_USING_ALI_IOTKIT_V20003
+    if (PKG_ALI_IOTKIT_VER_NUM = 0x20003)
         choice
             prompt "Select Aliyun platform"
             help
@@ -164,5 +145,29 @@ if PKG_USING_ALI_IOTKIT
             endchoice
         endif
     endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_ALI_IOTKIT_LATEST_VERSION
+        help
+            Select the ali-iotkit version
+
+        config PKG_USING_ALI_IOTKIT_V20003
+            bool "v2.0.3"
+
+        config PKG_USING_ALI_IOTKIT_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    config PKG_ALI_IOTKIT_VER
+       string
+       default "v2.0.3"    if PKG_USING_ALI_IOTKIT_V20003
+       default "latest"    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
+
+    config PKG_ALI_IOTKIT_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
+        default 0x20003    if PKG_USING_ALI_IOTKIT_V20003
 
 endif
