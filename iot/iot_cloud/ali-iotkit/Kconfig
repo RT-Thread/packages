@@ -1,8 +1,7 @@
 
-menu "Ali-iotkit: Aliyun cloud sdk 'iotkit-embedded' for RT-Thread"
-
-config PKG_USING_ALI_IOTKIT
-    bool "Enable Ali-iotkit"
+# Kconfig file for package ali-iotkit
+menuconfig PKG_USING_ALI_IOTKIT
+    bool "Ali-iotkit: Aliyun cloud sdk 'iotkit-embedded' for RT-Thread"
     select RT_USING_SAL
     select SAL_USING_POSIX
     default n
@@ -167,6 +166,3 @@ if PKG_USING_ALI_IOTKIT
     endif
 
 endif
-
-endmenu
-

@@ -4,10 +4,12 @@ config HAL_KV
 
 config SUPPORT_TLS
     bool "FEATURE_SUPPORT_TLS"
+    select PKG_USING_MBEDTLS
     default y if OTA_ENABLED
 
 config HAL_CRYPTO
     bool
+    select PKG_USING_MBEDTLS
     default n
 
 config HAL_UDP
@@ -16,4 +18,5 @@ config HAL_UDP
 
 config COAP_DTLS_SUPPORT
     bool
+    select PKG_USING_MBEDTLS
     default n
