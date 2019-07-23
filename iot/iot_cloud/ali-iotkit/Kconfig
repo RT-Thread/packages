@@ -1,6 +1,7 @@
 
+# Kconfig file for package ali-iotkit
 menuconfig PKG_USING_ALI_IOTKIT
-    bool "Ali-iotkit:  Ali Cloud SDK for IoT platform"
+    bool "Ali-iotkit: Aliyun cloud sdk 'iotkit-embedded' for RT-Thread"
     select RT_USING_SAL
     select SAL_USING_POSIX
     default n
@@ -11,25 +12,13 @@ if PKG_USING_ALI_IOTKIT
         string
         default "/packages/iot/iot_cloud/ali-iotkit"
 
-    choice
-        prompt "Select Aliyun platform"
-        help
-            Select Aliyun platform
-            
-        config PKG_USING_ALI_IOTKIT_IS_LINKDEVELOP
-            bool "LinkDevelop Platform"
-            help
-                Use LinkDevelop Platform
-            
-        config PKG_USING_ALI_IOTKIT_IS_LINKPLATFORM
-            bool "LinkPlatform Platform"
-            help
-                Use LinkPlatform Platform
-    endchoice    
-
     config PKG_USING_ALI_IOTKIT_PRODUCT_KEY
         string "Config Product Key"
         default a1dSQSGZ77X
+
+    config PKG_USING_ALI_IOTKIT_PRODUCT_SECRET
+        string "Config Product Secret"
+        default NfIdVcfBP7rtH24H
 
     config PKG_USING_ALI_IOTKIT_DEVICE_NAME
         string "Config Device Name"
@@ -39,72 +28,67 @@ if PKG_USING_ALI_IOTKIT
         string "Config Device Secret"
         default Ghuiyd9nmGowdZzjPqFtxhm3WUHEbIlI
 
-    config PKG_USING_ALI_IOTKIT_MQTT
-        bool "Enable MQTT"
-        default n 
+    if (PKG_ALI_IOTKIT_VER_NUM >= 0x30000)
+        config PKG_ALI_IOTKIT_SELECT_ITEM
+            bool
+            select PLATFORM_HAS_OS
+            select PLATFORM_HAS_STDINT
+            default y
 
-    if PKG_USING_ALI_IOTKIT_MQTT
-        config PKG_USING_ALI_IOTKIT_MQTT_SAMPLE
-            bool "Enable MQTT sample"
-            default y
-        config PKG_USING_ALI_IOTKIT_MQTT_DIRECT
-            bool "Enable MQTT direct connect"
-            default y
-        config PKG_USING_ALI_IOTKIT_MQTT_TLS
-            bool "Enable SSL"
-            default n
-            select PKG_USING_MBEDTLS
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.infra"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_sign"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.mqtt"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dynamic_register"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_model"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.wrappers"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.atm"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.ota"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.coap"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_reset"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.http"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.http2"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.wifi_provision"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_bind"
+
+        config PKG_USING_ALI_IOTKIT_SAMPLES
+            bool "Samples"
+            default n 
+
+        if PKG_USING_ALI_IOTKIT_SAMPLES
+            config PKG_USING_ALI_IOTKIT_MQTT_SAMPLE
+                bool "Enable MQTT sample"
+                depends on MQTT_COMM_ENABLED
+                default y
+            config PKG_USING_ALI_IOTKIT_COAP_SAMPLE
+                bool "Enable COAP sample"
+                depends on COAP_COMM_ENABLED
+                default n
+            config PKG_USING_ALI_IOTKIT_DEV_MODEL_SAMPLE
+                bool "Enable device model sample"
+                depends on DEVICE_MODEL_ENABLED
+                default n
+            config PKG_USING_ALI_IOTKIT_OTA_SAMPLE
+                bool "Enable OTA sample"
+                depends on OTA_ENABLED
+                default n
+        endif
     endif
 
-    config PKG_USING_ALI_IOTKIT_COAP
-        bool "Enable COAP"
-        default n
-
-    if PKG_USING_ALI_IOTKIT_COAP
-        config PKG_USING_ALI_IOTKIT_COAP_SAMPLE
-            bool "Enable COAP sample"
-            default y
-        config PKG_USING_ALI_IOTKIT_COAP_DTLS
-            bool "Enable SSL"
-            default n
-            select PKG_USING_MBEDTLS
-    endif
-
-    config PKG_USING_ALI_IOTKIT_OTA
-        bool "Enable OTA"
-        default n
-
-    if PKG_USING_ALI_IOTKIT_OTA
-        choice
-            prompt "Select OTA channel"
-            help
-                Select OTA channel
-                
-            config PKG_USING_ALI_IOTKIT_MQTT_OTA
-                bool "Use MQTT OTA channel"
-                select PKG_USING_MBEDTLS
-                select PKG_USING_ALI_IOTKIT_MQTT
-                select PKG_USING_ALI_IOTKIT_MQTT_TLS
-                help
-                    Obtain OTA information through MQTT
-                
-            config PKG_USING_ALI_IOTKIT_COAP_OTA
-                bool "Use COAP OTA channel"
-                select PKG_USING_MBEDTLS
-                select PKG_USING_ALI_IOTKIT_COAP
-                help
-                    Obtain OTA information through COAP
-        endchoice
+    if (PKG_ALI_IOTKIT_VER_NUM < 0x30000)
+		source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/v20x/Kconfig"
     endif
 
     choice
         prompt "Version"
-        default PKG_USING_ALI_IOTKIT_LATEST_VERSION
+        default PKG_USING_ALI_IOTKIT_V20004
         help
             Select the ali-iotkit version
 
         config PKG_USING_ALI_IOTKIT_V20003
             bool "v2.0.3"
+
+        config PKG_USING_ALI_IOTKIT_V20004
+            bool "v2.0.4"
 
         config PKG_USING_ALI_IOTKIT_LATEST_VERSION
             bool "latest"
@@ -114,6 +98,13 @@ if PKG_USING_ALI_IOTKIT
     config PKG_ALI_IOTKIT_VER
        string
        default "v2.0.3"    if PKG_USING_ALI_IOTKIT_V20003
+       default "v2.0.4"    if PKG_USING_ALI_IOTKIT_V20004
        default "latest"    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
-    
+
+    config PKG_ALI_IOTKIT_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
+        default 0x20004    if PKG_USING_ALI_IOTKIT_V20004
+        default 0x20003    if PKG_USING_ALI_IOTKIT_V20003
+
 endif
