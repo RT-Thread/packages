@@ -28,7 +28,7 @@ if PKG_USING_ALI_IOTKIT
         string "Config Device Secret"
         default Ghuiyd9nmGowdZzjPqFtxhm3WUHEbIlI
 
-    if (PKG_ALI_IOTKIT_VER_NUM > 0x20003)
+    if (PKG_ALI_IOTKIT_VER_NUM >= 0x30000)
         config PKG_ALI_IOTKIT_SELECT_ITEM
             bool
             select PLATFORM_HAS_OS
@@ -74,18 +74,21 @@ if PKG_USING_ALI_IOTKIT
         endif
     endif
 
-    if (PKG_ALI_IOTKIT_VER_NUM = 0x20003)
-		source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/v203/Kconfig"
+    if (PKG_ALI_IOTKIT_VER_NUM < 0x30000)
+		source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/v20x/Kconfig"
     endif
 
     choice
         prompt "Version"
-        default PKG_USING_ALI_IOTKIT_LATEST_VERSION
+        default PKG_USING_ALI_IOTKIT_V20004
         help
             Select the ali-iotkit version
 
         config PKG_USING_ALI_IOTKIT_V20003
             bool "v2.0.3"
+
+        config PKG_USING_ALI_IOTKIT_V20004
+            bool "v2.0.4"
 
         config PKG_USING_ALI_IOTKIT_LATEST_VERSION
             bool "latest"
@@ -95,11 +98,13 @@ if PKG_USING_ALI_IOTKIT
     config PKG_ALI_IOTKIT_VER
        string
        default "v2.0.3"    if PKG_USING_ALI_IOTKIT_V20003
+       default "v2.0.4"    if PKG_USING_ALI_IOTKIT_V20004
        default "latest"    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
 
     config PKG_ALI_IOTKIT_VER_NUM
         hex
         default 0x99999    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
+        default 0x20004    if PKG_USING_ALI_IOTKIT_V20004
         default 0x20003    if PKG_USING_ALI_IOTKIT_V20003
 
 endif
