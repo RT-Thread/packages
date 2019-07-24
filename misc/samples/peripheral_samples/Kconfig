@@ -76,5 +76,8 @@ if PKG_USING_PERIPHERAL_SAMPLES
         bool "[peripheral] spi device"
         select RT_USING_SPI
 
+    config PERIPHERAL_SAMPLES_USING_CAN
+        bool "[peripheral] can device"
+        select RT_USING_CAN
 endif
 

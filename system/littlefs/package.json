@@ -27,9 +27,21 @@
       "VER_SHA": ""
     },
     {
+      "version": "v1.7.2",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v1.7.2_for_rtthread.zip",
+      "filename": "v1.7.2_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "v2.0.1",
       "URL": "https://github.com/geniusgogo/littlefs/archive/v2.0.1_for_rtthread.zip",
       "filename": "v2.0.1_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v2.0.5",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v2.0.5_for_rtthread.zip",
+      "filename": "v2.0.5_for_rtthread.zip",
       "VER_SHA": ""
     },
     {

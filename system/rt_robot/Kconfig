@@ -1,0 +1,32 @@
+
+# Kconfig file for package rt-robot
+
+menuconfig PKG_USING_ROBOTS
+    bool "RT-Robot: RT-Thread robots development platform"
+    default n
+
+if PKG_USING_ROBOTS
+
+    config PKG_ROBOTS_PATH
+        string
+        default "/packages/system/rt_robot"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ROBOTS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ROBOTS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ROBOTS_VER
+       string
+       default "latest"    if PKG_USING_ROBOTS_LATEST_VERSION
+
+    config PKG_ROBOT_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_ROBOTS_LATEST_VERSION
+
+endif

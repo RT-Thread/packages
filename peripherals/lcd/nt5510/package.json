@@ -1,0 +1,36 @@
+{
+  "name": "nt5510",
+  "description": "This is the NT5510 lcd driver package",
+  "description_zh": "这是 NT5510 液晶芯片的驱动包",  
+  "keywords": 
+  [
+    "nt5510",
+    "lcd"
+  ],
+  "category": "peripherals/lcd",
+  "author": 
+  {
+    "name": "tyustli",
+    "email": "1225613647@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/tyustli/nt5510",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": 
+  [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/tyustli/nt5510.git",
+      "filename": "nt5510-1.0.0.zip",
+      "VER_SHA": "3cac13a5bae5323f4d11571f508184adefe55468"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/tyustli/nt5510.git",
+      "filename": "nt5510-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

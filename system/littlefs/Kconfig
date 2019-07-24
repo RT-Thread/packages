@@ -12,7 +12,7 @@ if PKG_USING_LITTLEFS
 
     choice
         prompt "Version"
-        default PKG_USING_LITTLEFS_V201
+        default PKG_USING_LITTLEFS_V205
         help
             Select the package version
 
@@ -22,8 +22,14 @@ if PKG_USING_LITTLEFS
         config PKG_USING_LITTLEFS_V170
             bool "v1.7.0"
 
+        config PKG_USING_LITTLEFS_V172
+            bool "v1.7.2"
+
         config PKG_USING_LITTLEFS_V201
             bool "v2.0.1"
+
+        config PKG_USING_LITTLEFS_V205
+            bool "v2.0.5"
 
         config PKG_USING_LITTLEFS_LATEST_VERSION
             bool "latest"
@@ -41,31 +47,33 @@ if PKG_USING_LITTLEFS
         int "disk block size"
         default 4096
 
-    if PKG_USING_LITTLEFS_V090 || PKG_USING_LITTLEFS_V170
+    if PKG_USING_LITTLEFS_V090 || PKG_USING_LITTLEFS_V170 || PKG_USING_LITTLEFS_V172
         config LFS_LOOKAHEAD
             int "lfs lookahead size"
-            default 512
+            default 128
     endif
 
-    if !(PKG_USING_LITTLEFS_V090 || PKG_USING_LITTLEFS_V170)
+    if !(PKG_USING_LITTLEFS_V090 || PKG_USING_LITTLEFS_V170 || PKG_USING_LITTLEFS_V172)
         config LFS_CACHE_SIZE
             int "lfs r/w cache size"
             default LFS_PROG_SIZE
 
         config LFS_BLOCK_CYCLES
-            int "lfs enables wear leveling.0 is disable."
+            int "lfs enables wear leveling. 0 is disable."
             default 0
 
         config LFS_LOOKAHEAD_MAX
             int "lfs lookahead size"
-            default 512
+            default 128
     endif
 
     config PKG_LITTLEFS_VER
        string
        default "v0.9.0" if PKG_USING_LITTLEFS_V090
        default "v1.7.0" if PKG_USING_LITTLEFS_V170
+       default "v1.7.2" if PKG_USING_LITTLEFS_V172
        default "v2.0.1" if PKG_USING_LITTLEFS_V201
+       default "v2.0.5" if PKG_USING_LITTLEFS_V205
        default "latest" if PKG_USING_LITTLEFS_LATEST_VERSION
 
 endif

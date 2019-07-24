@@ -24,6 +24,12 @@
       "VER_SHA": "ba1c8597f3ae0fe83426f0520aa444f71705eae0"
     },
     {
+      "version": "v2.0.4",
+      "URL": "https://github.com/RT-Thread-packages/ali-iotkit/archive/2.0.4.zip",
+      "filename": "ali-iotkit-2.0.4.zip",
+      "VER_SHA": "5872b33ccb0096a1bc2b63e821b4a8f48d85f932"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/ali-iotkit.git",
       "filename": "ali-iotkit.zip",

@@ -1,0 +1,24 @@
+{
+  "name": "rt-robot",
+  "description": "RT-Thread Robots platform",
+  "description_zh": "RT-Thread 机器人平台",
+  "keywords": [
+    "robot"
+  ],
+  "category": "system",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/rt-robot",
+  "homepage": "https://github.com/RT-Thread-packages/rt-robot#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/rt-robot.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
