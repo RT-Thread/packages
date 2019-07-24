@@ -8,7 +8,7 @@ if PKG_USING_FT6206
 
     config PKG_FT6206_PATH
         string
-        default "/packages/peripherals/ft6206"
+        default "/packages/peripherals/touch/ft6206"
 
     choice
         prompt "Version"
