@@ -3,7 +3,7 @@
   "description": "This is the driver package of FT6206 touch chip.",
   "description_zh": "这是 FT6206 触摸芯片的驱动包。",  
   "keywords": [
-    "ft6206"
+    "ft6206",
     "touch"
   ],
   "category": "peripherals/touch",
@@ -14,7 +14,7 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/ft6206",
   "icon": "unknown",
-  "homepage": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/ft6206",
   "doc": "unknown",
   "site": [
     {
