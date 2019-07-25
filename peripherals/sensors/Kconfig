@@ -22,5 +22,6 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/aht10/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/ap3216c/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/tsl4531/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/ds18b20/Kconfig"
 
     endif
