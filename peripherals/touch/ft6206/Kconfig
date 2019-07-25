@@ -1,0 +1,29 @@
+
+# Kconfig file for package ft6206
+menuconfig PKG_USING_FT6206
+    bool "FT6206 touch driver package."
+    default n
+
+if PKG_USING_FT6206
+
+    config PKG_FT6206_PATH
+        string
+        default "/packages/peripherals/touch/ft6206"
+
+    choice
+        prompt "Version"
+        default PKG_USING_FT6206_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FT6206_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_FT6206_VER
+       string
+       default "v1.0.0"    if PKG_USING_FT6206_V100
+       default "latest"    if PKG_USING_FT6206_LATEST_VERSION
+
+endif
+
