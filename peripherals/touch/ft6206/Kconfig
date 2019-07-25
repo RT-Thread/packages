@@ -16,9 +16,6 @@ if PKG_USING_FT6206
         help
             Select the package version
 
-        config PKG_USING_FT6206_V100
-            bool "v1.0.0"
-
         config PKG_USING_FT6206_LATEST_VERSION
             bool "latest"
     endchoice
