@@ -1,0 +1,31 @@
+
+# Kconfig file for package protobuf-c
+menuconfig PKG_USING_PROTOBUF_C
+    bool "protobuf-c: a C implementation of the Google Protocol Buffers data serialization format on RT-Thread"
+    default n
+
+if PKG_USING_PROTOBUF_C
+
+    config PKG_PROTOBUF_C_PATH
+        string
+        default "/packages/iot/protobuf-c"
+
+    choice
+        prompt "Version"
+        default PKG_USING_PROTOBUF_C_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PROTOBUF_C_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_PROTOBUF_C_VER
+       string
+       default "latest"    if PKG_USING_PROTOBUF_C_LATEST_VERSION
+
+    config PKG_PROTOBUF_C_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_PROTOBUF_C_LATEST_VERSION
+
+endif
