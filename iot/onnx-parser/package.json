@@ -1,0 +1,26 @@
+{
+  "name": "onnx-parser",
+  "description": "Open Neural Network Exchange model parser in C",
+  "description_zh": "开源神经网络模型 onnx 解析库",
+  "keywords": [
+    "protobuf-c",
+    "protobuf",
+    "onnx"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@hust.edu.cn"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/rt-onnx-parser",
+  "homepage": "https://github.com/wuhanstudio/rt-onnx-parser#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/rt-onnx-parser.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
