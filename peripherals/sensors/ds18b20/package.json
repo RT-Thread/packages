@@ -1,5 +1,5 @@
 {
-  "name": "mpu6xxx",
+  "name": "ds18b20",
   "description": "a package of digital temperature sensor ds18b20",
   "description_zh": "数字温度传感器 ds18b20 的软件包",
   "keywords": [
