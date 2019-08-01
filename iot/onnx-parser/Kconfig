@@ -11,6 +11,12 @@ if PKG_USING_ONNX_PARSER
         string
         default "/packages/iot/onnx-parser"
 
+    config ONNX_PARSER_USING_RAM_EXAMPLE
+        bool "onnx-parser example: decode onnx model in RAM"
+        help
+            onnx-parser example: decode in RAM
+        default n
+
     config ONNX_PARSER_USING_EXAMPLE
         bool "onnx-parser example: decode onnx model from file"
         help
