@@ -161,6 +161,9 @@ if PKG_USING_MICROPYTHON
             bool "latest"
 
         config PKG_USING_MICROPYTHON_V11001
+            bool "v1.10.2"
+
+        config PKG_USING_MICROPYTHON_V11001
             bool "v1.10.1"
 
         config PKG_USING_MICROPYTHON_V11000
@@ -174,6 +177,7 @@ if PKG_USING_MICROPYTHON
     config PKG_MICROPYTHON_VER
         string
         default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default "v1.10.2"  if PKG_USING_MICROPYTHON_V11001
         default "v1.10.1"  if PKG_USING_MICROPYTHON_V11001
         default "v1.10"    if PKG_USING_MICROPYTHON_V11000
         default "v1.9.3"   if PKG_USING_MICROPYTHON_V10903
