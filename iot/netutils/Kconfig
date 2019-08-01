@@ -16,15 +16,26 @@ if PKG_USING_NETUTILS
         select RT_LWIP_RAW
         default n
 
-    config PKG_NETUTILS_TFTP
-        bool "Enable TFTP(Trivial File Transfer Protocol) server"
-        default n
-        depends on RT_USING_LWIP
-    if PKG_NETUTILS_TFTP
-        config NETUTILS_TFTP_PORT
-            int "TFTP server port"
-            range 0 65535
-            default 69
+    if PKG_USING_NETUTILS_V110 || PKG_USING_NETUTILS_V100
+        config PKG_NETUTILS_TFTP
+            bool "Enable TFTP(Trivial File Transfer Protocol) server"
+            default n
+            depends on RT_USING_LWIP
+        if PKG_NETUTILS_TFTP
+            config NETUTILS_TFTP_PORT
+                int "TFTP server port"
+                range 0 65535
+                default 69
+        endif
+    endif
+
+    if PKG_USING_NETUTILS_LATEST_VERSION
+        config PKG_NETUTILS_TFTP
+            bool "Enable TFTP(Trivial File Transfer Protocol) server"
+            select RT_USING_LIBC
+            select RT_USING_SAL
+            select SAL_USING_POSIX
+            default n
     endif
 
     config PKG_NETUTILS_IPERF
