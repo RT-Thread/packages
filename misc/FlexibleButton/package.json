@@ -1,0 +1,31 @@
+{
+  "name": "FlexibleButton",
+  "description": "Small and flexible button driver",
+  "description_zh": "小巧灵活的按键驱动程序（事件驱动、无限按键数量、可用中断模式）",
+  "keywords": [
+    "FlexibleButton",
+    "button driver"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "MurphyZhao",
+    "email": "d2014zjt@163.com"
+  },
+  "license": "Apache License 2.0",
+  "repository": "https://github.com/murphyzhao/FlexibleButton",
+  "homepage": "https://github.com/murphyzhao/FlexibleButton#readme",
+  "readme": "FlexibleButton: Small and flexible button driver",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/murphyzhao/FlexibleButton/archive/1.0.0.zip",
+      "filename": "FlexibleButton-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/murphyzhao/FlexibleButton.git",
+      "filename": "FlexibleButton.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
