@@ -49,6 +49,10 @@ if PKG_USING_MPU6XXX
         config PKG_USING_MPU6XXX_GYRO
             bool "Enable mpu6xxx gyro"
             default y
+			
+        config PKG_USING_MPU6XXX_MAG
+            bool "Enable mpu6xxx mag"
+            default y
 
     endif
 endif
