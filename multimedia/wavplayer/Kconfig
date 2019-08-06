@@ -1,13 +1,14 @@
 
 # Kconfig file for package wavplayer
 menuconfig PKG_USING_WAVPLAYER
+    select PKG_USING_OPTPARSE
+    select RT_USING_LIBC
     bool "WavPlayer: Minimal music player for wav file play and record"
     default n
 
 if PKG_USING_WAVPLAYER
 
     config PKG_WAVPLAYER_PATH
-        select PKG_USING_OPTPARSE
         string
         default "/packages/multimedia/wavplayer"
 
