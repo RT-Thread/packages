@@ -1,0 +1,37 @@
+
+# Kconfig file for package onnx-backend
+menuconfig PKG_USING_ONNX_BACKEND
+    select RT_USING_LIBC
+    bool "onnx-backend: Open Neural Network Exchange backend on RT-Thread"
+    default n
+
+if PKG_USING_ONNX_BACKEND
+    config PKG_ONNX_BACKEND_PATH
+        string
+        default "/packages/iot/onnx-backend"
+
+    config ONNX_BACKEND_USING_MNIST_EXAMPLE
+        bool "onnx-backend example: mnist example"
+        help
+            onnx-backend example: mnist example
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_ONNX_BACKEND_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ONNX_BACKEND_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ONNX_BACKEND_VER
+       string
+       default "latest"    if PKG_USING_ONNX_BACKEND_LATEST_VERSION
+
+    config PKG_ONNX_BACKEND_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_ONNX_BACKEND_LATEST_VERSION
+
+endif
