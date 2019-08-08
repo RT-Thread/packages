@@ -163,11 +163,14 @@ if PKG_USING_TENCENT_IOTHUB
         
         config PKG_USING_TENCENT_IOTHUB_V300
             bool "v3.0.0"   
+        config PKG_USING_TENCENT_IOTHUB_V302
+            bool "v3.0.2"       
             
     endchoice
 
     config PKG_TENCENT_IOTHUB_VER
        string
+       default "v3.0.2"    if PKG_USING_TENCENT_IOTHUB_V302
        default "v3.0.0"    if PKG_USING_TENCENT_IOTHUB_V300
        default "latest"    if PKG_USING_TENCENT_IOTHUB_LATEST_VERSION
     
