@@ -11,15 +11,18 @@ if PKG_USING_NNOM
 
     choice
         prompt "Version"
-        default PKG_USING_NNOM_V020
+        default PKG_USING_NNOM_V021
         help
             Select the package version
 
         config PKG_USING_NNOM_V010
             bool "v0.1.0"
 			
-		config PKG_USING_NNOM_V020
+        config PKG_USING_NNOM_V020
             bool "v0.2.0"
+	    
+        config PKG_USING_NNOM_V021
+            bool "v0.2.1"
 
         config PKG_USING_NNOM_LATEST_VERSION
             bool "latest"
@@ -29,6 +32,7 @@ if PKG_USING_NNOM
        string
        default "v0.1.0"    if PKG_USING_NNOM_V010
        default "v0.2.0"    if PKG_USING_NNOM_V020
+       default "v0.2.1"    if PKG_USING_NNOM_V021
        default "latest"    if PKG_USING_NNOM_LATEST_VERSION
 
 endif
