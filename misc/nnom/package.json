@@ -28,10 +28,16 @@
       "filename": "nnom-v0.1.0-beta-1.zip",
       "VER_SHA": "NULL"
     },
-	{
+    {
       "version": "v0.2.0",
       "URL": "https://github.com/majianjia/nnom/archive/v0.2.0.zip",
       "filename": "nnom-v0.2.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v0.2.1",
+      "URL": "https://github.com/majianjia/nnom/archive/v0.2.1.zip",
+      "filename": "nnom-v0.2.1.zip",
       "VER_SHA": "NULL"
     },
     {
