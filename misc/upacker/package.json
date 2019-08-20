@@ -3,9 +3,9 @@
   "description": "building and parsing data frames to be sent over a serial interface",
   "description_zh": "串行通信链路协议",  
   "keywords": [
-    "LedBlink"
+    "upacker"
   ],
-  "category": "peripherals",
+  "category": "misc",
   "author": {
     "name": "zpw",
     "email": "aeo1234@qq.com"
