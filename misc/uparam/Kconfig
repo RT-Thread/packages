@@ -1,7 +1,7 @@
 
 # Kconfig file for package UPARAM
 menuconfig PKG_USING_UPARAM
-    bool "Manage system parameters with FLASH"
+    bool "uparam: Manage system parameters with FLASH"
     select PKG_USING_FAL
     default n
 

@@ -1,7 +1,7 @@
 
 # Kconfig file for package UPACKER
 menuconfig PKG_USING_UPACKER
-    bool "building and parsing data frames to be sent over a serial interface"
+    bool "upacker: building and parsing data frames to be sent over a serial interface"
     default n
 
 

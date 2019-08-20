@@ -1,7 +1,7 @@
 
 # Kconfig file for package LedBlink
 menuconfig PKG_USING_MAX17048
-    bool "bat monitor: MAX17048"
+    bool "MAX17048: bat monitor"
     select PKG_USING_MAX17048
     default n
 
