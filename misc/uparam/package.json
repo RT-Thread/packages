@@ -1,0 +1,26 @@
+{
+  "name": "uparam",
+  "description": "Manage system parameters with FLASH",
+  "description_zh": "系统参数读写管理和持久化",  
+  "keywords": [
+    "uparam"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "zpw",
+    "email": "aeo1234@qq.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/aeo123/uparam.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/aeo123/uparam.git",
+  "doc": "https://github.com/aeo123/uparam.git",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/aeo123/uparam.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

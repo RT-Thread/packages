@@ -13,8 +13,8 @@ source "$PKGS_DIR/packages/misc/dstr/Kconfig"
 source "$PKGS_DIR/packages/misc/TinyFrame/Kconfig"
 source "$PKGS_DIR/packages/misc/kendryte-demo/Kconfig"
 source "$PKGS_DIR/packages/misc/DigitalCtrl/Kconfig"
-
-
+source "$PKGS_DIR/packages/misc/upacker/Kconfig"
+source "$PKGS_DIR/packages/misc/uparam/Kconfig"
 source "$PKGS_DIR/packages/misc/samples/Kconfig"
 source "$PKGS_DIR/packages/misc/hello/Kconfig"
 source "$PKGS_DIR/packages/misc/vi/Kconfig"

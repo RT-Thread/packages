@@ -1,0 +1,26 @@
+{
+  "name": "upacker",
+  "description": "building and parsing data frames to be sent over a serial interface",
+  "description_zh": "串行通信链路协议",  
+  "keywords": [
+    "upacker"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "zpw",
+    "email": "aeo1234@qq.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/aeo123/upacker.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/aeo123/upacker.git",
+  "doc": "https://github.com/aeo123/upacker.git",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/aeo123/upacker.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
