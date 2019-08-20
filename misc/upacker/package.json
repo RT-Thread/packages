@@ -1,5 +1,5 @@
 {
-  "name": "UPACKER",
+  "name": "upacker",
   "description": "building and parsing data frames to be sent over a serial interface",
   "description_zh": "串行通信链路协议",  
   "keywords": [
@@ -10,7 +10,7 @@
     "name": "zpw",
     "email": "aeo1234@qq.com"
   },
-  "license": "GPL-2.0",
+  "license": "MIT",
   "repository": "https://github.com/aeo123/upacker.git",
   "icon": "unknown",
   "homepage": "https://github.com/aeo123/upacker.git",

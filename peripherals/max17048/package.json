@@ -1,9 +1,9 @@
 {
-  "name": "MAX17048",
-  "description": "bat monitor: MAX17048",
-  "description_zh": "电池监测：MAX17048",  
+  "name": "max17048",
+  "description": "MAX17048: Bat monitor",
+  "description_zh": "电池监测芯片",  
   "keywords": [
-    "MAX17048"
+    "max17048"
   ],
   "category": "peripherals",
   "author": {
