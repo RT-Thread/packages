@@ -25,6 +25,4 @@ source "$PKGS_DIR/packages/peripherals/i2c_tools/Kconfig"
 source "$PKGS_DIR/packages/peripherals/nrf24l01/Kconfig"
 source "$PKGS_DIR/packages/peripherals/touch/Kconfig"
 source "$PKGS_DIR/packages/peripherals/lcd/Kconfig"
-
-
 endmenu
