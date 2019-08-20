@@ -1,0 +1,30 @@
+
+# Kconfig file for package LedBlink
+menuconfig PKG_USING_MAX17048
+    bool "bat monitor: MAX17048"
+    select PKG_USING_MAX17048
+    default n
+
+
+if PKG_USING_MAX17048
+
+    config PKG_UPARAM_PATH
+        string
+        default "/packages/peripherals/MAX17048"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MAX17048_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MAX17048_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MAX17048_VER
+       string
+       default "latest"    if PKG_USING_MAX17048_LATEST_VERSION
+
+endif
+
