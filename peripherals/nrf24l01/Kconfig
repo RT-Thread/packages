@@ -1,0 +1,59 @@
+
+# Kconfig file for package nrf24l01
+menuconfig PKG_USING_NRF24L01
+    bool "nRF24L01: Single-chip 2.4GHz wireless transceiver."
+    default n
+
+if PKG_USING_NRF24L01
+
+    config PKG_NRF24L01_PATH
+        string
+        default "/packages/peripherals/nrf24l01"
+
+    choice
+        prompt "Version"
+        default PKG_USING_NRF24L01_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NRF24L01_V100
+            bool "v1.0.0"
+
+        config PKG_USING_NRF24L01_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_NRF24L01_VER
+       string
+       default "v1.0.0"    if PKG_USING_NRF24L01_V100
+       default "latest"    if PKG_USING_NRF24L01_LATEST_VERSION
+
+    menuconfig PKG_USING_NRF24L01_SAMPLE
+        bool "Using sample"
+        default n
+
+    choice
+        prompt "Sample"
+        depends on PKG_USING_NRF24L01_SAMPLE
+        default NRF24L01_SAMPLE_POLL_PTX
+        help
+            Select an sample
+        config NRF24L01_SAMPLE_POLL_PTX
+            bool "poll ptx"
+        config NRF24L01_SAMPLE_POLL_PRX
+            bool "poll prx"
+        config NRF24L01_SAMPLE_IRQ_PTX
+            bool "irq ptx"
+        config NRF24L01_SAMPLE_IRQ_PRX
+            bool "irq prx"
+    endchoice
+    
+    config NRF24_USING_INFO_REPORT
+        bool "Using info report"
+        default n
+        
+    config NRF24_USING_SHELL_CMD
+        bool "Using shell cmd"
+        default n
+endif
+

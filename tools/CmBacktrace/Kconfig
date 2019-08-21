@@ -46,9 +46,12 @@ if PKG_USING_CMBACKTRACE
 
     choice
         prompt "Version"
-        default PKG_USING_CMBACKTRACE_V10202
+        default PKG_USING_CMBACKTRACE_V10300
         help
             Select the this package version
+            
+        config PKG_USING_CMBACKTRACE_V10300
+            bool "v1.3.0"
 
         config PKG_USING_CMBACKTRACE_V10202
             bool "v1.2.2"
@@ -62,6 +65,7 @@ if PKG_USING_CMBACKTRACE
 
     config PKG_CMBACKTRACE_VER
         string
+        default "v1.3.0" if PKG_USING_CMBACKTRACE_V10300
         default "v1.2.2" if PKG_USING_CMBACKTRACE_V10202
         default "v1.2.0" if PKG_USING_CMBACKTRACE_V10200
         default "latest" if PKG_USING_CMBACKTRACE_LATEST_VERSION

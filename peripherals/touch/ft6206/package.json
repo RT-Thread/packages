@@ -1,0 +1,27 @@
+{
+  "name": "ft6206",
+  "description": "This is the driver package of FT6206 touch chip.",
+  "description_zh": "这是 FT6206 触摸芯片的驱动包。",  
+  "keywords": [
+    "ft6206",
+    "touch"
+  ],
+  "category": "peripherals/touch",
+  "author": {
+    "name": "Willian Chan",
+    "email": "chentingwei@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/ft6206",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/ft6206",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/ft6206.git",
+      "filename": "ft6206-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

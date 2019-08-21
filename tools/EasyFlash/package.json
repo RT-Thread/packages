@@ -20,6 +20,11 @@
   "readme": "Lightweight embedded flash memory library. More information on https://github.com/armink/EasyFlash",
   "site": [
     {
+      "version": "v4.0.0",
+      "URL": "https://github.com/armink-rtt-pkgs/EasyFlash/archive/4.0.0.zip",
+      "filename": "EasyFlash-4.0.0.zip"
+    },
+    {
       "version": "v3.3.0",
       "URL": "https://github.com/armink-rtt-pkgs/EasyFlash/archive/3.3.0.zip",
       "filename": "EasyFlash-3.3.0.zip"

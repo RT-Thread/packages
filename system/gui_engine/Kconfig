@@ -134,5 +134,9 @@ config GUIENGINE_USING_DEMO
     bool "Enable the example of GUI Engine"
     default n
 
+config GUIENGINE_NAME_MAX
+    int "The maximal size of name in GUI Engine"
+    default 16
+
 endif
 

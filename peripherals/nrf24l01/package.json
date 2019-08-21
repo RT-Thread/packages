@@ -1,0 +1,32 @@
+{
+  "name": "nrf24l01",
+  "description": "Single-chip 2.4GHz wireless transceiver.",
+  "description_zh": "单芯片 2.4GHz 无线收发器。",  
+  "keywords": [
+    "nrf24l01"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "sogwms",
+    "email": "sogwyms@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/sogwms/nrf24l01",
+  "icon": "unknown",
+  "homepage": "https://github.com/sogwms/nrf24l01#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/sogwms/nrf24l01/archive/v1.0.0.zip",
+      "filename": "nrf24l01-1.0.0.zip",
+      "VER_SHA": "ac67aa7095bae74923f011ff851636772e700a46"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/sogwms/nrf24l01.git",
+      "filename": "nrf24l01.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

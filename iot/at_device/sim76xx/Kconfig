@@ -1,0 +1,37 @@
+
+# SIM76XX AT device configuration
+menuconfig AT_DEVICE_USING_SIM76XX
+    bool "SIMCom SIM76XX"
+    default n
+
+if AT_DEVICE_USING_SIM76XX
+
+    config AT_DEVICE_SIM76XX_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_SIM76XX_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_SIM76XX_SAMPLE
+
+        config SIM76XX_SAMPLE_POWER_PIN
+            int "Power pin"
+            default -1
+
+        config SIM76XX_SAMPLE_STATUS_PIN
+            int "Power status pin"
+            default -1
+
+        config SIM76XX_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart2"
+
+        config SIM76XX_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 512
+
+    endif
+
+endif

@@ -1,0 +1,53 @@
+
+# Kconfig file for package libann
+menuconfig PKG_USING_LIBANN
+    bool "libann: a light-weight ANN library, capable of training, saving and loading models."
+    default n
+
+if PKG_USING_LIBANN
+
+    config PKG_LIBANN_PATH
+        string
+        default "/packages/misc/libann"
+
+    config LIBANN_USING_IRIS_TRAIN_AND_PREDICT_FLASH
+        bool "Iris load model from flash and predict example"
+        help
+            Load Iris dataset, load model from flash, predict, and save model.
+        default n
+
+    config LIBANN_USING_IRIS_TRAIN_AND_PREDICT
+        select RT_USING_DFS
+        select RT_USING_LIBC
+        bool "Iris train model and predict example"
+        help
+            Load Iris dataset, train, predict, and save model.
+        default n
+
+    config LIBANN_USING_IRIS_LOAD_AND_PREDICT
+        select RT_USING_DFS
+        select RT_USING_LIBC
+        bool "Iris load model and predict example"
+        help
+            Load Iris dataset, load model, predict, and save model.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_LIBANN_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LIBANN_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LIBANN_VER
+       string
+       default "latest"    if PKG_USING_LIBANN_LATEST_VERSION
+
+    config PKG_LIBANN_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_LIBANN_LATEST_VERSION
+
+endif

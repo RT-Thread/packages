@@ -11,20 +11,31 @@ if PKG_USING_NETUTILS
 
     config PKG_NETUTILS_PING
         bool "Enable Ping utility"
-        depends on RT_USING_LWIP
+        depends on (!RT_USING_NETDEV && RT_USING_LWIP)
         select RT_LWIP_ICMP
         select RT_LWIP_RAW
         default n
 
-    config PKG_NETUTILS_TFTP
-        bool "Enable TFTP(Trivial File Transfer Protocol) server"
-        default n
-        depends on RT_USING_LWIP
-    if PKG_NETUTILS_TFTP
-        config NETUTILS_TFTP_PORT
-            int "TFTP server port"
-            range 0 65535
-            default 69
+    if PKG_USING_NETUTILS_V110 || PKG_USING_NETUTILS_V100
+        config PKG_NETUTILS_TFTP
+            bool "Enable TFTP(Trivial File Transfer Protocol) server"
+            default n
+            depends on RT_USING_LWIP
+        if PKG_NETUTILS_TFTP
+            config NETUTILS_TFTP_PORT
+                int "TFTP server port"
+                range 0 65535
+                default 69
+        endif
+    endif
+
+    if PKG_USING_NETUTILS_LATEST_VERSION
+        config PKG_NETUTILS_TFTP
+            bool "Enable TFTP(Trivial File Transfer Protocol) server"
+            select RT_USING_LIBC
+            select RT_USING_SAL
+            select SAL_USING_POSIX
+            default n
     endif
 
     config PKG_NETUTILS_IPERF
@@ -50,8 +61,16 @@ if PKG_USING_NETUTILS
             default 8
 
         config NETUTILS_NTP_HOSTNAME
-            string "NTP server name"
+            string "NTP server name1"
             default "cn.ntp.org.cn"
+
+        config NETUTILS_NTP_HOSTNAME2
+            string "NTP server name2"
+            default "ntp.rt-thread.org"
+
+        config NETUTILS_NTP_HOSTNAME3
+            string "NTP server name3"
+            default "edu.ntp.org.cn"
     endif
 
     config PKG_NETUTILS_TELNET
@@ -82,16 +101,21 @@ if PKG_USING_NETUTILS
         prompt "Version"
         help
             Select the netutils version
+        default PKG_USING_NETUTILS_V110
 
-        config PKG_USING_NETUTILS_LATEST_VERSION
-            bool "latest"
+        config PKG_USING_NETUTILS_V110
+            bool "v1.1.0"
 
         config PKG_USING_NETUTILS_V100
             bool "v1.0.0"
+
+        config PKG_USING_NETUTILS_LATEST_VERSION
+            bool "latest"
     endchoice
 
     config PKG_NETUTILS_VER
         string
+        default "v1.1.0" if PKG_USING_NETUTILS_V110
         default "v1.0.0" if PKG_USING_NETUTILS_V100
         default "latest" if PKG_USING_NETUTILS_LATEST_VERSION
 

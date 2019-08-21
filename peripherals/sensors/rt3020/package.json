@@ -1,0 +1,33 @@
+{
+  "name": "rt3020",
+  "description": "This is the driver package of RT3020 accelerometer.",
+  "description_zh": "这是 RT3020 加速度传感器的驱动包。",  
+  "keywords": [
+    "sensor",
+    "rt3020"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Tank Wu",
+    "email": "tank_wu@richtek.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RichtekTechnology/RT3020",
+  "icon": "unknown",
+  "homepage": "https://www.richtek.com/Products/MEMSandSensors/Accelerometer/RT3020?sc_lang=zh-TW",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RichtekTechnology/RT3020.git",
+      "filename": "rt3020-1.0.0.zip",
+      "VER_SHA": "a32ac2e715f35e460f9675629562697134f5d170"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RichtekTechnology/RT3020.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

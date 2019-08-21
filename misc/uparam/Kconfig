@@ -1,0 +1,29 @@
+
+# Kconfig file for package uparam
+menuconfig PKG_USING_UPARAM
+    bool "uparam: Manage system parameters with FLASH"
+    select PKG_USING_FAL
+    default n
+
+if PKG_USING_UPARAM
+
+    config PKG_UPARAM_PATH
+        string
+        default "/packages/misc/uparam"
+
+    choice
+        prompt "Version"
+        default PKG_USING_UPARAM_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UPARAM_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UPARAM_VER
+       string
+       default "latest"    if PKG_USING_UPARAM_LATEST_VERSION
+
+endif
+

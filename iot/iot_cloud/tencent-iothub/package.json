@@ -1,0 +1,36 @@
+{
+    "name": "tencent-iot-sdk",
+    "description": "Tencent Cloud IOT SDK for iot_hub and iot_explorer platform",
+    "keywords": [
+        "tencent-iot-sdk"
+    ],
+    "category": "iot/iot_cloud",
+    "author": {
+        "name": "yougaliu",
+        "email": "yougaliu@tencent.com"
+    },
+    "license": "Apache-2.0",
+    "repository": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread",
+    "homepage": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread#readme",
+    "readme": "tencent-iothub: Tencent IotHub Development Platform",
+    "site": [
+        {
+            "version": "v3.0.0",
+            "URL": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread/archive/v3.0.0.zip",
+            "filename": "tencent-iot-package-for-rtthread-v3.0.0.zip",
+            "VER_SHA": ""
+        },
+        {
+            "version": "v3.0.2",
+            "URL": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread/archive/v3.0.2.zip",
+            "filename": "tencent-iot-package-for-rtthread-v3.0.2.zip",
+            "VER_SHA": ""
+        },
+        {
+            "version": "latest",
+            "URL": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread.git",
+            "filename": "tencent-cloud-iotsdk-package-for-rtthread.zip",
+            "VER_SHA": "master"
+        }
+    ]
+}

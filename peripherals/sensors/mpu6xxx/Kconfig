@@ -1,0 +1,59 @@
+
+# Kconfig file for package mpu6xxx
+menuconfig PKG_USING_MPU6XXX
+    bool "mpu6xxx: Universal 6-axis sensor driver package,support: accelerometer, gyroscope."
+    default n
+
+if PKG_USING_MPU6XXX
+
+    config PKG_MPU6XXX_PATH
+        string
+        default "/packages/peripherals/sensors/mpu6xxx"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MPU6XXX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MPU6XXX_V001
+            bool "v0.0.1"
+
+        config PKG_USING_MPU6XXX_V100
+            bool "v1.0.0(with sensor frame)"
+
+        config PKG_USING_MPU6XXX_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MPU6XXX_VER
+       string
+       default "v0.0.1"    if PKG_USING_MPU6XXX_V001
+       default "v1.0.0"    if PKG_USING_MPU6XXX_V100
+       default "latest"    if PKG_USING_MPU6XXX_LATEST_VERSION
+
+    if PKG_USING_MPU6XXX_V001
+
+        config PKG_USING_MPU6XXX_SAMPLE
+            bool "Enable mpu6xxx sample"
+            default n
+
+    endif
+
+    if PKG_USING_MPU6XXX_LATEST_VERSION || PKG_USING_MPU6XXX_V100
+
+        config PKG_USING_MPU6XXX_ACCE
+            bool "Enable mpu6xxx acce"
+            default y
+
+        config PKG_USING_MPU6XXX_GYRO
+            bool "Enable mpu6xxx gyro"
+            default y
+			
+        config PKG_USING_MPU6XXX_MAG
+            bool "Enable mpu6xxx mag"
+            default y
+
+    endif
+endif
+

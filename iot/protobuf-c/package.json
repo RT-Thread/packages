@@ -1,0 +1,25 @@
+{
+  "name": "protobuf-c",
+  "description": "protobuf-c library for rt-thread",
+  "description_zh": "Google 的 prototol buffer 一种轻便高效的数据存储格式",
+  "keywords": [
+    "protobuf-c",
+    "protobuf"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@hust.edu.cn"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/protobuf-c",
+  "homepage": "https://github.com/wuhanstudio/protobuf-c#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/protobuf-c.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

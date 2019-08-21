@@ -1,0 +1,32 @@
+
+# Kconfig file for package elapack
+menuconfig PKG_USING_ELAPACK
+    select RT_USING_LIBC
+    bool "elapack: linear algebra library for embedded devices, compatible with matlab."
+    default n
+
+if PKG_USING_ELAPACK
+
+    config PKG_ELAPACK_PATH
+        string
+        default "/packages/misc/elapack"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ELAPACK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ELAPACK_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ELAPACK_VER
+       string
+       default "latest"    if PKG_USING_ELAPACK_LATEST_VERSION
+
+    config PKG_ELAPACK_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_ELAPACK_LATEST_VERSION
+
+endif

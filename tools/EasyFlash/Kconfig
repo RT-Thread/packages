@@ -16,7 +16,7 @@ if PKG_USING_EASYFLASH
 
     if PKG_EASYFLASH_ENV
 
-        if PKG_EASYFLASH_VER_NUM <= 0x30300
+        if PKG_EASYFLASH_VER_NUM < 0x40000
             choice
                 prompt "ENV mode"
                 default PKG_EASYFLASH_ENV_USING_NORMAL
@@ -76,7 +76,7 @@ if PKG_USING_EASYFLASH
         prompt "Erase minimum granularity"
         default 4096
 
-    if PKG_EASYFLASH_VER_NUM > 0x30300
+    if PKG_EASYFLASH_VER_NUM >= 0x40000
         choice
             prompt "Write minimum granularity"
             default PKG_EASYFLASH_WRITE_GRAN_1BIT
@@ -113,9 +113,12 @@ if PKG_USING_EASYFLASH
 
     choice
         prompt "Version"
-        default PKG_USING_EASYFLASH_V330
+        default PKG_USING_EASYFLASH_V400
         help
             Select the this package version
+
+        config PKG_USING_EASYFLASH_V400
+            bool "v4.0.0"
 
         config PKG_USING_EASYFLASH_V330
             bool "v3.3.0"
@@ -135,6 +138,7 @@ if PKG_USING_EASYFLASH
 
     config PKG_EASYFLASH_VER
         string
+        default "v4.0.0" if PKG_USING_EASYFLASH_V400
         default "v3.3.0" if PKG_USING_EASYFLASH_V330
         default "v3.2.1" if PKG_USING_EASYFLASH_V321
         default "v3.1.0" if PKG_USING_EASYFLASH_V310
@@ -143,6 +147,7 @@ if PKG_USING_EASYFLASH
 
     config PKG_EASYFLASH_VER_NUM
         hex
+        default 0x40000 if PKG_USING_EASYFLASH_V400
         default 0x30300 if PKG_USING_EASYFLASH_V330
         default 0x30201 if PKG_USING_EASYFLASH_V321
         default 0x30100 if PKG_USING_EASYFLASH_V310

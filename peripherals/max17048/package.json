@@ -1,0 +1,26 @@
+{
+  "name": "max17048",
+  "description": "MAX17048: Bat monitor",
+  "description_zh": "电池监测芯片",  
+  "keywords": [
+    "max17048"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "zpw",
+    "email": "aeo1234@qq.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/aeo123/MAX17048.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/aeo123/MAX17048.git",
+  "doc": "https://github.com/aeo123/MAX17048.git",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/aeo123/MAX17048.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

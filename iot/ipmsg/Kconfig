@@ -1,0 +1,44 @@
+
+# Kconfig file for package ipmsg
+menuconfig PKG_USING_IPMSG
+    bool "ipmsg: A LAN instant messaging implement in RT-Thread"
+    default n
+    select RT_USING_LWIP
+
+if PKG_USING_IPMSG
+
+    config PKG_IPMSG_PATH
+        string
+        default "/packages/iot/ipmsg"
+
+    config IPMSG_MSGRS_ENABLE
+        bool "Enable text msg send/recv"
+        default y
+
+    config IPMSG_FILERECV_ENABLE
+        bool "Enable file recv"
+        default n
+
+    config IPMSG_MSG_BUFSZ
+        int "Set msg send/recv frame size"
+        default 300
+
+    choice
+        prompt "Version"
+        default PKG_USING_IPMSG_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_IPMSG_V100
+            bool "v1.0.0"
+
+        config PKG_USING_IPMSG_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_IPMSG_VER
+       string
+       default "v1.0.0"    if PKG_USING_IPMSG_V100
+       default "latest"    if PKG_USING_IPMSG_LATEST_VERSION
+
+endif

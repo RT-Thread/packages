@@ -1,0 +1,36 @@
+
+# Kconfig file for package ds18b20
+menuconfig PKG_USING_DS18B20
+    bool "DS18B20 sensor driver package,support: temperature."
+    default n
+
+if PKG_USING_DS18B20
+
+    config PKG_DS18B20_PATH
+        string
+        default "/packages/peripherals/sensors/ds18b20"
+
+    choice
+        prompt "Version"
+        default PKG_USING_DS18B20_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DS18B20_V100
+            bool "v1.0.0(with sensor frame)"
+
+        config PKG_USING_DS18B20_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_USING_DS18B20_SAMPLE
+        bool "Enable ds18b20 sample"
+        default y
+
+    config PKG_DS18B20_VER
+       string
+       default "v1.0.0"    if PKG_USING_DS18B20_V100
+       default "latest"    if PKG_USING_DS18B20_LATEST_VERSION
+
+endif
+

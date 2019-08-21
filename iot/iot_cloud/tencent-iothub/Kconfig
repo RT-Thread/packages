@@ -1,0 +1,177 @@
+
+menuconfig PKG_USING_TENCENT_IOTHUB
+    bool "tencent-iothub:  Tencent Cloud SDK for IoT platform"
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    default n
+
+if PKG_USING_TENCENT_IOTHUB
+
+    config PKG_TENCENT_IOTHUB_PATH
+        string
+        default "/packages/iot/iot_cloud/tencent-iothub"
+        
+    choice
+        prompt "Select Tencent IOT platform"
+        help
+            Select Tencent iot platform
+            
+        config PKG_USING_IOT_HUB_PLATFORM
+            bool "Iot_hub platform"
+            help
+                Use Iot-hub platform
+            
+        config PKG_USING_IOT_EXPLORER_PLATFORM
+            bool "Iot_explorer platform"
+            help
+                Use Iot_explorer platform
+    endchoice   
+        
+    config PKG_USING_TENCENT_IOTHUB_PRODUCT_ID
+        string "Config Product Id"
+        default 03UKNYBUZG      
+
+    config PKG_USING_TENCENT_IOTHUB_DEVICE_NAME
+        string "Config Device Name"
+        default general_sdev1        
+
+    config PKG_USING_TENCENT_IOTHUB_DEVICE_SECRET
+        string "Config Device Secret"
+        default "VI04Eh4N8VgM29U/dnu9cQ=="
+        
+    config PKG_USING_TENCENT_IOTHUB_DYNREG
+        bool "Enable dynamic register"
+        default n
+
+    if PKG_USING_TENCENT_IOTHUB_DYNREG  
+        config PKG_USING_TENCENT_IOTHUB_PRODUCT_KEY
+            string "Config Product Key"
+            default ""
+            help
+                dynamic register device needed othterwise null  
+    endif
+    
+    config PKG_USING_TENCENT_IOTHUB_LOG_UPLOAD
+        bool "Enable err log upload"
+        default n
+    
+    config PKG_USING_TENCENT_IOTHUB_TLS
+        bool "Enable TLS/DTLS"
+        default n
+        select PKG_USING_MBEDTLS
+    
+    if PKG_USING_IOT_HUB_PLATFORM   
+        config PKG_USING_TENCENT_IOTHUB_MQTT
+            bool "Enable MQTT"
+            default n
+                    
+        if PKG_USING_TENCENT_IOTHUB_MQTT
+            choice
+                prompt "Enable shadow"
+                help
+                    Enable shadow protocol or not
+                    
+                config PKG_USING_TENCENT_IOTHUB_MQTT_BASIC
+                    bool "ONLY MQTT"
+                    
+                config PKG_USING_TENCENT_IOTHUB_SHADOW
+                    bool "USE SHADOW"
+
+            endchoice   
+        endif
+
+        config PKG_USING_TENCENT_IOTHUB_COAP
+            bool "Enable COAP"
+            default n
+            select PKG_USING_TENCENT_IOTHUB_TLS
+            
+        
+        config PKG_USING_TENCENT_IOTHUB_SCENARIOS
+            bool "Enable SCENARIOS"
+            default n
+
+        if PKG_USING_TENCENT_IOTHUB_SCENARIOS              
+            choice  
+                prompt "Select SCENARIOS"
+                help
+                   Select SCENARIOS
+                config PKG_USING_TENCENT_IOTHUB_DOOR_MQTT
+                    bool "Use Scenario door mqtt"
+                    select PKG_USING_TENCENT_IOTHUB_MQTT
+                  
+                config PKG_USING_TENCENT_IOTHUB_DOOR_COAP
+                    bool "Use Scenario door coap"
+                    select PKG_USING_TENCENT_IOTHUB_COAP                    
+                    
+                config PKG_USING_TENCENT_IOTHUB_AIRCON_SHADOW
+                    bool "Use Scenario aircon shadow"
+                    select PKG_USING_TENCENT_IOTHUB_MQTT
+                    select PKG_USING_TENCENT_IOTHUB_SHADOW
+                                        
+            endchoice
+        endif       
+    endif   
+    
+    if PKG_USING_IOT_EXPLORER_PLATFORM  
+        config PKG_USING_TENCENT_IOTEXPLORER_DATA_TEMPLATE
+            bool "Enable data template"
+            default n
+                    
+        if PKG_USING_TENCENT_IOTEXPLORER_DATA_TEMPLATE
+            choice
+                prompt "Enable event"
+                help
+                    Enable event report or not
+
+                config PKG_USING_EVENT
+                    bool "USE event"    
+                    
+                config PKG_USING_NO_EVENT
+                    bool "ONLY data template"
+                    
+            endchoice   
+        endif
+
+
+        
+        config PKG_USING_TENCENT_IOTHUB_SCENARIOS
+            bool "Enable SCENARIOS"
+            default n
+
+        if PKG_USING_TENCENT_IOTHUB_SCENARIOS              
+            choice  
+                prompt "Select SCENARIOS"
+                help
+                   Select SCENARIOS
+                config PKG_USING_TENCENT_IOTEXPLORER_DATA_TEMPLATE_LIGHT
+                    bool "Use Scenario light data template"
+                    select PKG_USING_TENCENT_IOTEXPLORER_DATA_TEMPLATE
+                  
+            endchoice
+        endif       
+    endif
+    
+
+    choice
+        prompt "Version"
+        default PKG_USING_TENCENT_IOTHUB_LATEST_VERSION
+        help
+            Select the tencent-iotkit-hub version
+
+        config PKG_USING_TENCENT_IOTHUB_LATEST_VERSION
+            bool "latest"
+        
+        config PKG_USING_TENCENT_IOTHUB_V300
+            bool "v3.0.0"   
+        config PKG_USING_TENCENT_IOTHUB_V302
+            bool "v3.0.2"       
+            
+    endchoice
+
+    config PKG_TENCENT_IOTHUB_VER
+       string
+       default "v3.0.2"    if PKG_USING_TENCENT_IOTHUB_V302
+       default "v3.0.0"    if PKG_USING_TENCENT_IOTHUB_V300
+       default "latest"    if PKG_USING_TENCENT_IOTHUB_LATEST_VERSION
+    
+endif

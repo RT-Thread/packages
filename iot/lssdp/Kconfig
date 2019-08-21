@@ -1,0 +1,42 @@
+
+# Kconfig file for package lssdp
+menuconfig PKG_USING_LSSDP
+    bool "Lssdp: SSDP protocol implemented on rt-thread"
+    default n
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+
+if PKG_USING_LSSDP
+
+    config PKG_LSSDP_PATH
+        string
+        default "/packages/iot/lssdp"
+
+    config LSSDP_USING_SAMPLES
+        bool "Enable LSSDP add/del samples"
+        default n
+
+    config LSSDP_ENABLE_DEBUG_MESSAGES
+        bool "Enable LSSDP debug messages"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_LSSDP_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LSSDP_V010
+            bool "v0.1.0"
+
+        config PKG_USING_LSSDP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LSSDP_VER
+       string
+       default "v0.1.0"    if PKG_USING_LSSDP_V010
+       default "latest"    if PKG_USING_LSSDP_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,44 @@
+
+# Kconfig file for package onnx-parser
+menuconfig PKG_USING_ONNX_PARSER
+    select PKG_USING_PROTOBUF_C
+    select RT_USING_LIBC
+    bool "onnx-parser: Open Neural Network Exchange model parser on RT-Thread"
+    default n
+
+if PKG_USING_ONNX_PARSER
+    config PKG_ONNX_PARSER_PATH
+        string
+        default "/packages/iot/onnx-parser"
+
+    config ONNX_PARSER_USING_RAM_EXAMPLE
+        bool "onnx-parser example: decode onnx model in RAM"
+        help
+            onnx-parser example: decode in RAM
+        default n
+
+    config ONNX_PARSER_USING_EXAMPLE
+        bool "onnx-parser example: decode onnx model from file"
+        help
+            onnx-parser example: decode from file
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_ONNX_PARSER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ONNX_PARSER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ONNX_PARSER_VER
+       string
+       default "latest"    if PKG_USING_ONNX_PARSER_LATEST_VERSION
+
+    config PKG_ONNX_PARSER_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_ONNX_PARSER_LATEST_VERSION
+
+endif
