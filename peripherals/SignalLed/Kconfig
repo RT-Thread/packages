@@ -28,5 +28,12 @@ if PKG_USING_SIGNAL_LED
        default "v1.0.0"    if PKG_USING_SIGNAL_LED_V100
        default "latest"    if PKG_USING_SIGNAL_LED_LATEST_VERSION
 
+    menu "signalLed Options"
+        config SIGNAL_LED_USING_SAMPLE
+            bool
+            prompt "signal led example"
+            default n
+    endmenu       
+
 endif
 
