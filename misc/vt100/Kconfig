@@ -12,9 +12,21 @@ if PKG_USING_VT100
         default "/packages/misc/vt100"
 
     config VT100_USING_MONITOR
-        bool "RT-Thread monitor example"
+        bool "Monitor: RT-Thread monitor example"
         help
             RT-Thread monitor.
+        default n
+
+    config VT100_USING_COLOR
+        bool "Color: Draw different colors and boxes"
+        help
+            Color: Draw different colors and boxes
+        default n
+
+    config VT100_USING_SL
+        bool "Animation: a funny rushing train"
+        help
+            Animation: a funny rushing train
         default n
 
     choice
