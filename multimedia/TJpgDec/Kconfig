@@ -8,7 +8,7 @@ if PKG_USING_TJPGD
 
     config PKG_TJPGD_PATH
         string
-        default "/realthread-packages/TJpgDec"
+        default "/packages/multimedia/TJpgDec"
 
 	config TJPGD_INPUT_BUFFER_SIZE
 		int "Size of stream input buffer"
@@ -37,7 +37,7 @@ if PKG_USING_TJPGD
 		
     config PKG_TJPGD_SAMPLE
         bool "Enable tjpgd sample"
-        default n
+        default y
 
     choice
         prompt "Version"
