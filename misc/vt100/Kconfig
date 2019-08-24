@@ -1,0 +1,38 @@
+
+# Kconfig file for package vt100
+menuconfig PKG_USING_VT100
+    bool "vt100: iridescent drawing library on MSH"
+    select RT_USING_LIBC
+    default n
+
+if PKG_USING_VT100
+
+    config PKG_VT100_PATH
+        string
+        default "/packages/misc/vt100"
+
+    config VT100_USING_MONITOR
+        bool "RT-Thread monitor example"
+        help
+            RT-Thread monitor.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_VT100_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_VT100_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_VT100_VER
+       string
+       default "latest"    if PKG_USING_VT100_LATEST_VERSION
+
+    config PKG_VT100_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_VT100_LATEST_VERSION
+
+endif
