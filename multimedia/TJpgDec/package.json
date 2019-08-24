@@ -18,15 +18,15 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://TJpgDec-1.0.0.zip",
-      "filename": "TJpgDec-1.0.0.zip",
+      "URL": "https://github.com/RT-Thread-packages/TJpgDec/archive/v1.0.0.zip",
+      "filename": "v1.0.0.zip",
       "VER_SHA": "fill in the git version SHA value"
     },
     {
       "version": "latest",
-      "URL": "https://xxxxx.git",
+      "URL": "https://github.com/RT-Thread-packages/TJpgDec.git",
       "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "VER_SHA": "master"
     }
   ]
 }
