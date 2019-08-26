@@ -74,6 +74,12 @@ if PKG_USING_MICROPYTHON
             select RT_USING_DFS
             default n
 
+        if MICROPYTHON_USING_UOS
+            config MICROPYTHON_USING_FILE_SYNC_VIA_IDE
+                bool "filesync: sync files through MicroPython IDE"
+                default y
+        endif
+
         config MICROPYTHON_USING_THREAD
             bool "_thread: multithreading support"
             default n
