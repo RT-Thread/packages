@@ -1,0 +1,61 @@
+
+# Kconfig file for package TJpgDec
+menuconfig PKG_USING_TJPGD
+    bool "TJpgDec: Tiny JPEG Decompressor."
+    default n
+
+if PKG_USING_TJPGD
+
+    config PKG_TJPGD_PATH
+        string
+        default "/packages/multimedia/TJpgDec"
+
+	config TJPGD_INPUT_BUFFER_SIZE
+		int "Size of stream input buffer"
+		default 512
+
+	choice
+        prompt "Output format"
+        default TJPGD_USING_FORMAT_RGB888
+        help
+            Select the RGB output format
+
+        config TJPGD_USING_FORMAT_RGB888
+            bool "RGB888"
+
+        config TJPGD_USING_FORMAT_RGB565
+            bool "RGB565"
+    endchoice
+
+    config TJPGD_USING_SCALE
+        bool "Use output descaling"
+        default y
+		
+	config TJPGD_USING_TBLCLIP
+        bool "Use table for saturation"
+        default y
+		
+    config PKG_TJPGD_SAMPLE
+        bool "Enable tjpgd sample"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_TJPGD_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TJPGD_V100
+            bool "v1.0.0"
+
+        config PKG_USING_TJPGD_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_TJPGD_VER
+       string
+       default "v1.0.0"    if PKG_USING_TJPGD_V100
+       default "latest"    if PKG_USING_TJPGD_LATEST_VERSION
+
+endif
+

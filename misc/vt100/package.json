@@ -1,0 +1,25 @@
+{
+  "name": "vt100",
+  "description": "iridescent drawing library on MSH",
+  "description_zh": "串口终端绘图库，可以在 msh 下画图",
+  "keywords": [
+    "vt100",
+    "msh"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@hust.edu.cn"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/vt100",
+  "homepage": "https://github.com/wuhanstudio/vt100#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/vt100.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -4,5 +4,6 @@ source "$PKGS_DIR/packages/multimedia/openmv/Kconfig"
 source "$PKGS_DIR/packages/multimedia/mupdf/Kconfig"
 source "$PKGS_DIR/packages/multimedia/STemWin/Kconfig"
 source "$PKGS_DIR/packages/multimedia/wavplayer/Kconfig"
+source "$PKGS_DIR/packages/multimedia/TJpgDec/Kconfig"
 
 endmenu
