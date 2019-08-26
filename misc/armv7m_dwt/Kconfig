@@ -1,0 +1,31 @@
+# Kconfig file for package armv7m_dwt
+menuconfig PKG_USING_ARMv7M_DWT
+    bool "armv7m_dwt: High precision timing and delay"
+    default n
+
+if PKG_USING_ARMv7M_DWT
+
+    config PKG_ARMv7M_DWT_PATH
+        string
+        default "/packages/misc/armv7m_dwt"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARMv7M_DWT_LATEST_VERSION
+        help
+            Select this package version
+            
+        config PKG_USING_ARMv7M_DWT_LATEST_VERSION
+            bool "latest"
+            
+        config PKG_USING_ARMv7M_DWT_V010
+            bool "v0.1.0"
+
+    endchoice
+
+    config PKG_ARMv7M_DWT_VER
+        string
+        default "latest"        if PKG_USING_ARMv7M_DWT_LATEST_VERSION
+        default "v0.1.0"        if PKG_USING_ARMv7M_DWT_V010
+
+endif
