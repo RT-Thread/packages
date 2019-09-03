@@ -88,10 +88,6 @@ if PKG_USING_EASYFLASH
 
             config PKG_EASYFLASH_WRITE_GRAN_32BITS
                 bool "32bits such as STM32F1"
-
-            config PKG_EASYFLASH_WRITE_GRAN_64BITS
-                bool "64bits such as STM32L4"
-
         endchoice
 
         config PKG_EASYFLASH_WRITE_GRAN
@@ -99,7 +95,6 @@ if PKG_USING_EASYFLASH
             default 1 if PKG_EASYFLASH_WRITE_GRAN_1BIT
             default 8 if PKG_EASYFLASH_WRITE_GRAN_8BITS
             default 32 if PKG_EASYFLASH_WRITE_GRAN_32BITS
-            default 64 if PKG_EASYFLASH_WRITE_GRAN_64BITS
     endif
 
     config PKG_EASYFLASH_START_ADDR
