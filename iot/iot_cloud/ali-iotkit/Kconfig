@@ -80,7 +80,7 @@ if PKG_USING_ALI_IOTKIT
 
     choice
         prompt "Version"
-        default PKG_USING_ALI_IOTKIT_V20004
+        default PKG_USING_ALI_IOTKIT_V30001
         help
             Select the ali-iotkit version
 
@@ -89,6 +89,9 @@ if PKG_USING_ALI_IOTKIT
 
         config PKG_USING_ALI_IOTKIT_V20004
             bool "v2.0.4"
+
+        config PKG_USING_ALI_IOTKIT_V30001
+            bool "v3.0.1"
 
         config PKG_USING_ALI_IOTKIT_LATEST_VERSION
             bool "latest"
@@ -99,11 +102,13 @@ if PKG_USING_ALI_IOTKIT
        string
        default "v2.0.3"    if PKG_USING_ALI_IOTKIT_V20003
        default "v2.0.4"    if PKG_USING_ALI_IOTKIT_V20004
+       default "v3.0.1"    if PKG_USING_ALI_IOTKIT_V30001
        default "latest"    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
 
     config PKG_ALI_IOTKIT_VER_NUM
         hex
         default 0x99999    if PKG_USING_ALI_IOTKIT_LATEST_VERSION
+        default 0x30001    if PKG_USING_ALI_IOTKIT_V30001
         default 0x20004    if PKG_USING_ALI_IOTKIT_V20004
         default 0x20003    if PKG_USING_ALI_IOTKIT_V20003
 
