@@ -19,7 +19,7 @@ if PKG_USING_JIOT-C-SDK
 		default n
         select PKG_USING_MBEDTLS
 		
-	config PKG_USING_JIOT_PRODUCT_KEY
+	config PKG_USING_JIOT_EXAMPLES
 		bool "Using JIoT Examples"
 		default y
 	
