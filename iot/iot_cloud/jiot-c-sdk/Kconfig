@@ -1,7 +1,7 @@
 
 # Kconfig file for package jiot-c-sdk
 menuconfig PKG_USING_JIOT-C-SDK
-    bool "jiot-c-sdk package for rt-thread"
+    bool "jiot-c-sdk: JIGUANG IoT Cloud Client SDK for RT_Thread"
 	select RT_USING_RTC
 	select RT_USING_SAL
 	select SAL_USING_POSIX
@@ -19,7 +19,7 @@ if PKG_USING_JIOT-C-SDK
 		default n
         select PKG_USING_MBEDTLS
 		
-	config RT_USING_JIOT_EXAMPLES
+	config PKG_USING_JIOT_PRODUCT_KEY
 		bool "Using JIoT Examples"
 		default y
 	

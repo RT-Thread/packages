@@ -1,6 +1,7 @@
 {
   "name": "jiot-c-sdk",
-  "description": "JIoT C SDK", 
+  "description": "JIGUANG IoT cloud client sdk for RT-Thread", 
+  "description_zh": "连接极光IoT云的客户端软件包",
   "keywords": [
     "jiot-c-sdk"
   ],
