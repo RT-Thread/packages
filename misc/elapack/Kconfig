@@ -29,6 +29,12 @@ if PKG_USING_ELAPACK
             LU decomposition example
         default n
 
+    config ELAPACK_USING_QR
+        bool "QR decomposition example"
+        help
+            QR decomposition example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ELAPACK_LATEST_VERSION
