@@ -23,6 +23,12 @@ if PKG_USING_ELAPACK
             Eigenvalues and eigenvectors example
         default n
 
+    config ELAPACK_USING_LU
+        bool "LU decomposition example"
+        help
+            LU decomposition example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ELAPACK_LATEST_VERSION
