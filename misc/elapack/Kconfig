@@ -35,6 +35,12 @@ if PKG_USING_ELAPACK
             QR decomposition example
         default n
 
+    config ELAPACK_USING_SVD
+        bool "SVD decomposition example"
+        help
+            SVD decomposition example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ELAPACK_LATEST_VERSION
