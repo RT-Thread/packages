@@ -17,6 +17,12 @@ if PKG_USING_ELAPACK
             Linear equation solver example.
         default n
 
+    config ELAPACK_USING_EIG
+        bool "Eigenvalues and eigenvectors example"
+        help
+            Eigenvalues and eigenvectors example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ELAPACK_LATEST_VERSION
