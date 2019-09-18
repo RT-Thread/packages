@@ -41,6 +41,18 @@ if PKG_USING_ELAPACK
             SVD decomposition example
         default n
 
+    config ELAPACK_USING_MODEL_PREDICTIVE
+        bool "Model predictive control example"
+        help
+            Model predictive control example
+        default n
+
+    config ELAPACK_USING_STATE_SPACE
+        bool "State space example"
+        help
+            State space example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ELAPACK_LATEST_VERSION
