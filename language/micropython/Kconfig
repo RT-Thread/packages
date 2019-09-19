@@ -65,6 +65,7 @@ if PKG_USING_MICROPYTHON
         config MICROPYTHON_USING_MACHINE_LCD
             bool "machine LCD: enable LCD functions for machine module"
             select BSP_USING_LCD
+            select MICROPYTHON_USING_UOS
             default n
     endmenu
 
