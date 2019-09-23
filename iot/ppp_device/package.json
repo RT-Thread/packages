@@ -1,0 +1,26 @@
+{
+  "name": "ppp_device",
+  "description": "Please add description of ppp_device in English.",
+  "description_zh": "请添加软件包 ppp_device 的中文描述。",  
+  "keywords": [
+    "ppp_device"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "xiangxistu",
+    "email": "xiangxistu@foxmail.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/ppp_device",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/ppp_device",
+      "filename": "ppp_device.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
