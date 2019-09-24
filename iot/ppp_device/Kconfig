@@ -37,9 +37,16 @@ if PKG_USING_PPP_DEVICE
     choice
         prompt "Select modem type"
         default PPP_DEVICE_USING_AIR720
-        
+
         config PPP_DEVICE_USING_AIR720
             bool "Luat Air720"
+
+        config PPP_DEVICE_USING_M6312
+            bool "China mobile M6312"
+
+        config PPP_DEVICE_USING_SIM800
+            bool "SIMCOM SIM800"
+
     endchoice
 
     if PPP_DEVICE_USING_AIR720
@@ -86,7 +93,7 @@ if PKG_USING_PPP_DEVICE
         config PKG_USING_PPP_DEVICE_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PPP_DEVICE_VER
        string
        default "latest"    if PKG_USING_PPP_DEVICE_LATEST_VERSION
