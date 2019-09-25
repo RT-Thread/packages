@@ -14,6 +14,12 @@ if PKG_USING_RPLIDAR
         string "uart device name"
         default "uart3"
 
+    config RPLIDAR_USING_STOP_EXAMPLE
+        bool "RPLIDAR stop example: stop lidar scanning"
+        help
+            RPLIDAR stop example: stop lidar scanning
+        default n
+
     config RPLIDAR_USING_HEALTH_EXAMPLE
         bool "RPLIDAR health example: get device health info"
         help
