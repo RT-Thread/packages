@@ -35,6 +35,21 @@ if PKG_USING_PPP_DEVICE
     endif
 
     choice
+        prompt "Select network operator"
+        default PPP_APN_CMCC
+
+        config PPP_APN_CMCC
+            bool "china mobile"
+
+        config PPP_APN_CUCC
+            bool "china unicom"
+
+        config PPP_APN_CTCC
+            bool "china telecom"
+
+        endchoice
+
+    choice
         prompt "Select modem type"
         default PPP_DEVICE_USING_AIR720
 
@@ -51,33 +66,58 @@ if PKG_USING_PPP_DEVICE
 
     if PPP_DEVICE_USING_AIR720
 
-        choice
-            prompt "Select network operator"
-            default PPP_APN_CMCC
-
-            config PPP_APN_CMCC
-                bool "china mobile"
-
-            config PPP_APN_CUCC
-                bool "china unicom"
-
-            config PPP_APN_CTCC
-                bool "china telecom"
-
-        endchoice
-
         config PPP_DEVICE_AIR720_SAMPLE
             bool "Enable air720 ppp device samples"
             default y
 
         if PPP_DEVICE_AIR720_SAMPLE
 
-            config PPP_AIR720_DEVICE_NAME
+            config PPP_DEVICE_NAME
                 string "air720 device name"
                 default "a0"
 
-            config PPP_AIR720_CLIENT_NAME
+            config PPP_CLIENT_NAME
                 string "air720 ppp device uart name"
+                default "uart3"
+
+        endif
+
+    endif
+
+    if PPP_DEVICE_USING_M6312
+
+        config PPP_DEVICE_M6312_SAMPLE
+            bool "Enable m6312 ppp device samples"
+            default y
+
+        if PPP_DEVICE_M6312_SAMPLE
+
+            config PPP_DEVICE_NAME
+                string "m6312 device name"
+                default "m0"
+
+            config PPP_CLIENT_NAME
+                string "m6312 ppp device uart name"
+                default "uart3"
+
+        endif
+
+    endif
+
+    if PPP_DEVICE_USING_SIM800
+
+        config PPP_DEVICE_SIM800_SAMPLE
+            bool "Enable sim800 ppp device samples"
+            default y
+
+        if PPP_DEVICE_SIM800_SAMPLE
+
+            config PPP_DEVICE_NAME
+                string "sim800 device name"
+                default "s0"
+
+            config PPP_CLIENT_NAME
+                string "sim800 ppp device uart name"
                 default "uart3"
 
         endif
