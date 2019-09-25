@@ -5,7 +5,8 @@ menuconfig PKG_USING_PPP_DEVICE
     default n
     select RT_USING_SAL
     select RT_USING_LWIP
-    select RT_USING_PPP
+    select RT_LWIP_PPP
+    select RT_LWIP_PPPOS
 
 if PKG_USING_PPP_DEVICE
 
