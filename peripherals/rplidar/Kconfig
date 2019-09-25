@@ -14,6 +14,12 @@ if PKG_USING_RPLIDAR
         string "uart device name"
         default "uart3"
 
+    config RPLIDAR_USING_HEALTH_EXAMPLE
+        bool "RPLIDAR health example: get device health info"
+        help
+            RPLIDAR health example: get device health info
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_RPLIDAR_LATEST_VERSION
