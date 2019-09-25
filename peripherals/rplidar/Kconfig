@@ -44,6 +44,12 @@ if PKG_USING_RPLIDAR
            RPLIDAR scan example: start lidar scanning
         default n
 
+    config RPLIDAR_USING_SCAN_RECV_EXAMPLE
+        bool "RPLIDAR scan and receive example: start lidar scanning and receiving data"
+        help
+          RPLIDAR scan and receive example: start lidar scanning and receiving data
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_RPLIDAR_LATEST_VERSION
