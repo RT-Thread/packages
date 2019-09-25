@@ -20,6 +20,12 @@ if PKG_USING_RPLIDAR
             RPLIDAR stop example: stop lidar scanning
         default n
 
+    config RPLIDAR_USING_RESET_EXAMPLE
+        bool "RPLIDAR reset example: reset lidar"
+        help
+            RPLIDAR reset example: reset lidar
+        default n
+
     config RPLIDAR_USING_HEALTH_EXAMPLE
         bool "RPLIDAR health example: get device health info"
         help
