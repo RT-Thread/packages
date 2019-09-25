@@ -38,6 +38,12 @@ if PKG_USING_RPLIDAR
             RPLIDAR device info example: get device info
         default n
 
+    config RPLIDAR_USING_SCAN_EXAMPLE
+        bool "RPLIDAR scan example: start lidar scanning"
+        help
+           RPLIDAR scan example: start lidar scanning
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_RPLIDAR_LATEST_VERSION
