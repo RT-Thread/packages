@@ -65,63 +65,15 @@ if PKG_USING_PPP_DEVICE
 
     endchoice
 
-    if PPP_DEVICE_USING_AIR720
+    config PPP_DEVICE_SAMPLE
+        bool "Enable sample to use ppp device"
+        default y
 
-        config PPP_DEVICE_AIR720_SAMPLE
-            bool "Enable air720 ppp device samples"
-            default y
+    if PPP_DEVICE_SAMPLE
 
-        if PPP_DEVICE_AIR720_SAMPLE
-
-            config PPP_DEVICE_NAME
-                string "air720 device name"
-                default "a0"
-
-            config PPP_CLIENT_NAME
-                string "air720 ppp device uart name"
-                default "uart3"
-
-        endif
-
-    endif
-
-    if PPP_DEVICE_USING_M6312
-
-        config PPP_DEVICE_M6312_SAMPLE
-            bool "Enable m6312 ppp device samples"
-            default y
-
-        if PPP_DEVICE_M6312_SAMPLE
-
-            config PPP_DEVICE_NAME
-                string "m6312 device name"
-                default "m0"
-
-            config PPP_CLIENT_NAME
-                string "m6312 ppp device uart name"
-                default "uart3"
-
-        endif
-
-    endif
-
-    if PPP_DEVICE_USING_SIM800
-
-        config PPP_DEVICE_SIM800_SAMPLE
-            bool "Enable sim800 ppp device samples"
-            default y
-
-        if PPP_DEVICE_SIM800_SAMPLE
-
-            config PPP_DEVICE_NAME
-                string "sim800 device name"
-                default "s0"
-
-            config PPP_CLIENT_NAME
-                string "sim800 ppp device uart name"
-                default "uart3"
-
-        endif
+    config PPP_CLIENT_NAME
+        string "ppp device uart name"
+        default "uart3"
 
     endif
 
