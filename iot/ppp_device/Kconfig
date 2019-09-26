@@ -36,6 +36,21 @@ if PKG_USING_PPP_DEVICE
     endif
 
     choice
+        prompt "Select Internet Service Provider"
+        default PPP_APN_CMCC
+
+        config PPP_APN_CMCC
+            bool "china mobile"
+
+        config PPP_APN_CUCC
+            bool "china unicom"
+
+        config PPP_APN_CTCC
+            bool "china telecom"
+
+        endchoice
+
+    choice
         prompt "Select modem type"
         default PPP_DEVICE_USING_AIR720
 
@@ -50,38 +65,15 @@ if PKG_USING_PPP_DEVICE
 
     endchoice
 
-    if PPP_DEVICE_USING_AIR720
+    config PPP_DEVICE_SAMPLE
+        bool "Enable sample to use ppp device"
+        default y
 
-        choice
-            prompt "Select network operator"
-            default PPP_APN_CMCC
+    if PPP_DEVICE_SAMPLE
 
-            config PPP_APN_CMCC
-                bool "china mobile"
-
-            config PPP_APN_CUCC
-                bool "china unicom"
-
-            config PPP_APN_CTCC
-                bool "china telecom"
-
-        endchoice
-
-        config PPP_DEVICE_AIR720_SAMPLE
-            bool "Enable air720 ppp device samples"
-            default y
-
-        if PPP_DEVICE_AIR720_SAMPLE
-
-            config PPP_AIR720_DEVICE_NAME
-                string "air720 device name"
-                default "a0"
-
-            config PPP_AIR720_CLIENT_NAME
-                string "air720 ppp device uart name"
-                default "uart3"
-
-        endif
+    config PPP_CLIENT_NAME
+        string "ppp device uart name"
+        default "uart3"
 
     endif
 
