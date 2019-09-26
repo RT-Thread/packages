@@ -1,0 +1,39 @@
+
+# Kconfig file for package dlt645
+menuconfig PKG_USING_DLT645
+    bool "dlt645: dlt645 master package"
+    default n
+
+if PKG_USING_DLT645
+
+    config PKG_DLT645_PATH
+        string
+        default "/packages/iot/dlt645"
+
+    choice
+        prompt "Version"
+        default PKG_USING_DLT645_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DLT645_V001
+            bool "v0.0.1"
+
+        config PKG_USING_DLT645_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_DLT645_VER
+       string
+       default "v0.0.1"    if PKG_USING_DLT645_V001
+       default "latest"    if PKG_USING_DLT645_LATEST_VERSION
+
+    menu "dlt645 Options"
+        config DLT645_USING_SAMPLE
+            bool
+            prompt "dlt645 example"
+            default n
+    endmenu       
+
+endif
+
