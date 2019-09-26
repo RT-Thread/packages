@@ -36,7 +36,7 @@ if PKG_USING_PPP_DEVICE
     endif
 
     choice
-        prompt "Select network operator"
+        prompt "Select Internet Service Provider"
         default PPP_APN_CMCC
 
         config PPP_APN_CMCC
