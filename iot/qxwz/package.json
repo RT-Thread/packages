@@ -1,7 +1,7 @@
 {
   "name": "qxwz",
-  "description": "qxwz_application: A high precision location library for RT-Thread",
-  "description_zh": "高精度定位应用", 
+  "description": "qxwz_application: high precision location library for RT-Thread.",
+  "description_zh": "qxwz 高精度定位应用",
   "keywords": [
     "qxwz"
   ],
@@ -11,15 +11,15 @@
     "email": "package_team@rt-thread.com"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/RT-Thread-packages/qianxun",
-  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
-  "homepage": "https://github.com/RT-Thread-packages/qianxun#readme",
-  "readme": "qxwz_application: A high precision location library for RT-Thread",
+  "repository": "https://github.com/RT-Thread-packages/qianxun.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
   "site": [
     {
       "version": "v1.2.2",
-      "URL": "https://github.com/RT-Thread-packages/qianxun/archive/1.2.2.zip",
-      "filename": "qxwz-1.2.2.zip",
+      "URL": "https://github.com/RT-Thread-packages/qianxun.git",
+      "filename": "qianxun-master.zip",
       "VER_SHA": "master"
     },
     {
