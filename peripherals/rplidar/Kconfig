@@ -1,6 +1,7 @@
 
 # Kconfig file for package rplidar
 menuconfig PKG_USING_RPLIDAR
+    select RT_USING_LIBC
     bool "RPLIDAR: a low cost LIDAR sensor suitable for indoor robotic SLAM application."
     default n
 
@@ -45,9 +46,9 @@ if PKG_USING_RPLIDAR
         default n
 
     config RPLIDAR_USING_SCAN_RECV_EXAMPLE
-        bool "RPLIDAR scan and receive example: start lidar scanning and receiving data"
+        bool "RPLIDAR scan and receive example: start scanning and then receive data"
         help
-          RPLIDAR scan and receive example: start lidar scanning and receiving data
+          RPLIDAR scan and receive example: start scanning and then receive data
         default n
 
     choice
