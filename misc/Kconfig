@@ -23,5 +23,6 @@ source "$PKGS_DIR/packages/misc/libann/Kconfig"
 source "$PKGS_DIR/packages/misc/elapack/Kconfig"
 source "$PKGS_DIR/packages/misc/armv7m_dwt/Kconfig"
 source "$PKGS_DIR/packages/misc/vt100/Kconfig"
+source "$PKGS_DIR/packages/misc/ulapack/Kconfig"
 
 endmenu
