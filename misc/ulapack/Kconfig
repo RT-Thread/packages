@@ -11,6 +11,12 @@ if PKG_USING_ULAPACK
         string
         default "/packages/misc/ulapack"
 
+    config ULAPACK_USING_PCA
+        bool "Principal components analysis example"
+        help
+            Principal components analysis example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ULAPACK_LATEST_VERSION
