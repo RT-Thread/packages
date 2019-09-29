@@ -17,6 +17,12 @@ if PKG_USING_ULAPACK
             Principal components analysis example
         default n
 
+    config ULAPACK_USING_POLYFIT
+        bool "polynomial regression example"
+        help
+            polynomial regression example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ULAPACK_LATEST_VERSION
