@@ -11,6 +11,12 @@ if PKG_USING_ULAPACK
         string
         default "/packages/misc/ulapack"
 
+    config ULAPACK_USING_LU
+        bool "LU decomposition example"
+        help
+            LU decomposition example
+        default n
+
     config ULAPACK_USING_SVD
         bool "SVD decomposition example"
         help
