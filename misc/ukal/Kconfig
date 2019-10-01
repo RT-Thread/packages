@@ -12,6 +12,14 @@ if PKG_USING_UKAL
         string
         default "/packages/misc/ukal"
 
+    config UKAL_MAX_STATE_VECTOR_SIZE
+        int "Maximum state vcector size"
+        default "5"
+
+    config UKAL_MAX_MEASUREMENT_VECTOR_SIZE
+        int "Maximum state vector size"
+        default "5"
+
     config UKAL_USING_EKAL
         bool "Extended kalman filter example"
         help
