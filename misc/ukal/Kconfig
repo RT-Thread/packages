@@ -10,6 +10,12 @@ if PKG_USING_UKAL
         string
         default "/packages/misc/ukal"
 
+    config UKAL_USING_EKAL
+        bool "Extended kalman filter example"
+        help
+            Extended kalman filter example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_UKAL_LATEST_VERSION
