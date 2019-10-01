@@ -1,6 +1,8 @@
 
 # Kconfig file for package ukal
 menuconfig PKG_USING_UKAL
+    select RT_USING_LIBC
+    select PKG_USING_ULAPACK
     bool "ukal: Kalman filter based on ulapack."
     default n
 
