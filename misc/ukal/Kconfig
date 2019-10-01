@@ -1,0 +1,30 @@
+
+# Kconfig file for package ukal
+menuconfig PKG_USING_UKAL
+    bool "ukal: Kalman filter based on ulapack."
+    default n
+
+if PKG_USING_UKAL
+
+    config PKG_UKAL_PATH
+        string
+        default "/packages/misc/ukal"
+
+    choice
+        prompt "Version"
+        default PKG_USING_UKAL_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_UKAL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_UKAL_VER
+       string
+       default "latest"    if PKG_USING_UKAL_LATEST_VERSION
+
+    config PKG_UKAL_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_UKAL_LATEST_VERSION
+
+endif
