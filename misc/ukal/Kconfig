@@ -26,6 +26,14 @@ if PKG_USING_UKAL
             Extended kalman filter example
         default n
 
+    if ULAPACK_USE_DYNAMIC_ALLOC
+        comment "Dymamic memory allocation selected from ulapack"
+    endif
+
+    if ULAPACK_USE_STATIC_ALLOC
+        comment "Static memory allocation selected from ulapack"
+    endif
+
     choice
         prompt "Version"
         default PKG_USING_UKAL_LATEST_VERSION
