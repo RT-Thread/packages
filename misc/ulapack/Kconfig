@@ -36,6 +36,17 @@ if PKG_USING_ULAPACK
         default n
 
     choice
+        prompt "Memory allocation"
+        default ULAPACK_USE_DYNAMIC_ALLOC
+        help
+            Select memory allocation method
+        config ULAPACK_USE_DYNAMIC_ALLOC
+            bool "Dynamic allocation"
+        config ULAPACK_USE_STATIC_ALLOC
+            bool "Static allocation"
+    endchoice
+
+    choice
         prompt "Version"
         default PKG_USING_ULAPACK_LATEST_VERSION
         help
