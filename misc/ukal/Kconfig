@@ -21,9 +21,9 @@ if PKG_USING_UKAL
         default "5"
 
     config UKAL_USING_EKAL
-        bool "Extended kalman filter example"
+        bool "Extended Kalman filter example"
         help
-            Extended kalman filter example
+            Extended Kalman filter example
         default n
 
     if ULAPACK_USE_DYNAMIC_ALLOC

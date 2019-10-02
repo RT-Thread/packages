@@ -30,9 +30,9 @@ if PKG_USING_ULAPACK
         default n
 
     config ULAPACK_USING_POLYFIT
-        bool "polynomial regression example"
+        bool "Polynomial regression example"
         help
-            polynomial regression example
+            Polynomial regression example
         default n
 
     choice
