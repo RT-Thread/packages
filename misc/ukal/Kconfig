@@ -34,6 +34,16 @@ if PKG_USING_UKAL
         comment "Static memory allocation selected from ulapack"
     endif
 
+    if ULAPACK_USE_STATIC_ALLOC
+        config ULAPACK_MAX_MATRIX_N_ROWS
+            int "Matrix maximum number of rows"
+            default "20"
+
+        config ULAPACK_MAX_MATRIX_N_COLS
+            int "Matrix maximum number of columns"
+            default "20"
+    endif
+
     choice
         prompt "Version"
         default PKG_USING_UKAL_LATEST_VERSION
