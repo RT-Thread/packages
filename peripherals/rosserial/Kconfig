@@ -58,6 +58,12 @@ if PKG_USING_ROSSERIAL
                 help
                     Blink Class : blink class example using UART
                 default n
+
+            config ROSSERIAL_USING_BUTTON_UART
+                bool "Button      : button example using UART"
+                help
+                    Button : button example using UART
+                default n
         endif
 
         if ROSSERIAL_USE_TCP
