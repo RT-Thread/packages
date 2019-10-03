@@ -46,6 +46,18 @@ if PKG_USING_ROSSERIAL
                 help
                     Hello World example using UART
                 default n
+
+            config ROSSERIAL_USING_BLINK_UART
+                bool "Blink       : blink example using UART"
+                help
+                    Blink : blink example using UART
+                default n
+
+            config ROSSERIAL_USING_BLINK_CLASS_UART
+                bool "Blink Class : blink class example using UART"
+                help
+                    Blink Class : blink class example using UART
+                default n
         endif
 
         if ROSSERIAL_USE_TCP
