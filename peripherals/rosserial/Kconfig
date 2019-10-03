@@ -41,7 +41,7 @@ if PKG_USING_ROSSERIAL
 
         if ROSSERIAL_USE_SERIAL
             config ROSSERIAL_USING_HELLO_WORLD_UART
-                bool "Hello World  : hello world example using UART"
+                bool "Hello World : hello world example using UART"
                 select RT_USING_SERIAL
                 help
                     Hello World example using UART
@@ -65,6 +65,8 @@ if PKG_USING_ROSSERIAL
                     Button : button example using UART
                 default n
         endif
+
+        comment "You may only choose one example at a time"
 
         if ROSSERIAL_USE_TCP
             config ROSSERIAL_USING_HELLO_WORLD_TCP
