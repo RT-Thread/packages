@@ -64,6 +64,12 @@ if PKG_USING_ROSSERIAL
                 help
                     Button : button example using UART
                 default n
+
+            config ROSSERIAL_USING_PUB_SUB_UART
+                bool "PubSub      : publish and subscribe example using UART"
+                help
+                    PubSub : publish and subscribe example using UART
+                default n
         endif
 
         comment "You may only choose one example at a time"
