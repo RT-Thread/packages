@@ -76,6 +76,12 @@ if PKG_USING_ROSSERIAL
                 help
                     Logging : logging example using UART
                 default n
+
+            config ROSSERIAL_USING_TF_UART
+                bool "TF         : tf example using UART"
+                help
+                    TF : tf example using UART
+                default n
         endif
 
         comment "You may only choose one example at a time"
