@@ -82,9 +82,19 @@ if PKG_USING_ROSSERIAL
                 help
                     TF : tf example using UART
                 default n
-        endif
 
-        comment "You may only choose one example at a time"
+            config ROSSERIAL_USING_SERVICE_SERVER_UART
+                bool "Service server : service example using UART"
+                help
+                    Service server : service example using UART
+                default n
+
+            config ROSSERIAL_USING_SERVICE_CLIENT_UART
+                bool "Service client : service example using UART"
+                help
+                    Service client : service example using UART
+                default n
+        endif
 
         if ROSSERIAL_USE_TCP
             config ROSSERIAL_USING_HELLO_WORLD_TCP
@@ -94,6 +104,9 @@ if PKG_USING_ROSSERIAL
                     Hello World example using TCP
                 default n
         endif
+
+        comment "You may only choose one example at a time"
+
     endmenu
 
     choice
