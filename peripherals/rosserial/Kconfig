@@ -70,6 +70,12 @@ if PKG_USING_ROSSERIAL
                 help
                     PubSub : publish and subscribe example using UART
                 default n
+
+            config ROSSERIAL_USING_LOGGING_UART
+                bool "Logging     : logging example using UART"
+                help
+                    Logging : logging example using UART
+                default n
         endif
 
         comment "You may only choose one example at a time"
