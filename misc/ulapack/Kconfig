@@ -1,0 +1,66 @@
+
+# Kconfig file for package ulapack
+menuconfig PKG_USING_ULAPACK
+    select RT_USING_LIBC
+    bool "ulapack: linear algebra library for embedded devices."
+    default n
+
+if PKG_USING_ULAPACK
+
+    config PKG_ULAPACK_PATH
+        string
+        default "/packages/misc/ulapack"
+
+    config ULAPACK_USING_LU
+        bool "LU decomposition example"
+        help
+            LU decomposition example
+        default n
+
+    config ULAPACK_USING_SVD
+        bool "SVD decomposition example"
+        help
+            SVD decomposition example
+        default n
+
+    config ULAPACK_USING_PCA
+        bool "Principal components analysis example"
+        help
+            Principal components analysis example
+        default n
+
+    config ULAPACK_USING_POLYFIT
+        bool "Polynomial regression example"
+        help
+            Polynomial regression example
+        default n
+
+    choice
+        prompt "Memory allocation"
+        default ULAPACK_USE_DYNAMIC_ALLOC
+        help
+            Select memory allocation method
+        config ULAPACK_USE_DYNAMIC_ALLOC
+            bool "Dynamic allocation"
+        config ULAPACK_USE_STATIC_ALLOC
+            bool "Static allocation"
+    endchoice
+
+    choice
+        prompt "Version"
+        default PKG_USING_ULAPACK_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_ULAPACK_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ULAPACK_VER
+       string
+       default "latest"    if PKG_USING_ULAPACK_LATEST_VERSION
+
+    config PKG_ULAPACK_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_ULAPACK_LATEST_VERSION
+
+endif
