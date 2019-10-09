@@ -47,53 +47,55 @@ if PKG_USING_ROSSERIAL
                     Hello World example using UART
                 default n
 
-            config ROSSERIAL_USING_BLINK_UART
-                bool "Blink       : blink example using UART"
-                help
-                    Blink : blink example using UART
-                default n
+            if PKG_ROSSERIAL_VER_NUM > 0x20000
+                config ROSSERIAL_USING_BLINK_UART
+                    bool "Blink       : blink example using UART"
+                    help
+                        Blink : blink example using UART
+                    default n
 
-            config ROSSERIAL_USING_BLINK_CLASS_UART
-                bool "Blink Class : blink class example using UART"
-                help
-                    Blink Class : blink class example using UART
-                default n
+                config ROSSERIAL_USING_BLINK_CLASS_UART
+                    bool "Blink Class : blink class example using UART"
+                    help
+                        Blink Class : blink class example using UART
+                    default n
 
-            config ROSSERIAL_USING_BUTTON_UART
-                bool "Button      : button example using UART"
-                help
-                    Button : button example using UART
-                default n
+                config ROSSERIAL_USING_BUTTON_UART
+                    bool "Button      : button example using UART"
+                    help
+                        Button : button example using UART
+                    default n
 
-            config ROSSERIAL_USING_PUB_SUB_UART
-                bool "PubSub      : publish and subscribe example using UART"
-                help
-                    PubSub : publish and subscribe example using UART
-                default n
+                config ROSSERIAL_USING_PUB_SUB_UART
+                    bool "PubSub      : publish and subscribe example using UART"
+                    help
+                        PubSub : publish and subscribe example using UART
+                    default n
 
-            config ROSSERIAL_USING_LOGGING_UART
-                bool "Logging     : logging example using UART"
-                help
-                    Logging : logging example using UART
-                default n
+                config ROSSERIAL_USING_LOGGING_UART
+                    bool "Logging     : logging example using UART"
+                    help
+                        Logging : logging example using UART
+                    default n
 
-            config ROSSERIAL_USING_TF_UART
-                bool "TF         : tf example using UART"
-                help
-                    TF : tf example using UART
-                default n
+                config ROSSERIAL_USING_TF_UART
+                    bool "TF         : tf example using UART"
+                    help
+                        TF : tf example using UART
+                    default n
 
-            config ROSSERIAL_USING_SERVICE_SERVER_UART
-                bool "Service server : service example using UART"
-                help
-                    Service server : service example using UART
-                default n
+                config ROSSERIAL_USING_SERVICE_SERVER_UART
+                    bool "Service server : service example using UART"
+                    help
+                        Service server : service example using UART
+                    default n
 
             config ROSSERIAL_USING_SERVICE_CLIENT_UART
                 bool "Service client : service example using UART"
                 help
                     Service client : service example using UART
                 default n
+            endif
         endif
 
         if ROSSERIAL_USE_TCP
