@@ -111,19 +111,31 @@ if PKG_USING_ROSSERIAL
 
     choice
         prompt "Version"
-        default PKG_USING_ROSSERIAL_LATEST_VERSION
+        default PKG_USING_ROSSERIAL_MLATEST_VERSION
         help
             Select the package version
-        config PKG_USING_ROSSERIAL_V100
-            bool "v1.0.0"
-        config PKG_USING_ROSSERIAL_LATEST_VERSION
-            bool "latest"
+        config PKG_USING_ROSSERIAL_KV100
+            bool "kinetic-v1.0.0"
+        config PKG_USING_ROSSERIAL_MV100
+            bool "melodic-v1.0.0"
+        config PKG_USING_ROSSERIAL_KLATEST_VERSION
+            bool "kinetic-latest"
+        config PKG_USING_ROSSERIAL_MLATEST_VERSION
+            bool "melodic-latest"
     endchoice
 
     config PKG_ROSSERIAL_VER
        string
-       default "v1.0.0"    if PKG_USING_ROSSERIAL_V100
-       default "latest"    if PKG_USING_ROSSERIAL_LATEST_VERSION
+       default "kinetic-v1.0.0"    if PKG_USING_ROSSERIAL_KV100
+       default "melodic-v1.0.0"    if PKG_USING_ROSSERIAL_MV100
+       default "kinetic-latest"    if PKG_USING_ROSSERIAL_KLATEST_VERSION
+       default "melodic-latest"    if PKG_USING_ROSSERIAL_MLATEST_VERSION
+
+    config PKG_ROSSERIAL_VER_NUM
+        hex
+        default 0x10000 if PKG_USING_ROSSERIAL_KV100
+        default 0x19999 if PKG_USING_ROSSERIAL_KLATEST_VERSION
+        default 0x20000 if PKG_USING_ROSSERIAL_MV100
+        default 0x29999 if PKG_USING_ROSSERIAL_MLATEST_VERSION
 
 endif
-
