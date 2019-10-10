@@ -18,6 +18,21 @@ if PKG_USING_PPP_DEVICE
         bool "Enable debug log output"
         default n
 
+    config PPP_DEVICE_DEBUG_TX
+        depends on PPP_DEVICE_DEBUG
+        bool "Enable debug for tx data"
+        default n
+
+    config PPP_DEVICE_DEBUG_RX
+        depends on PPP_DEVICE_DEBUG
+        bool "Enable debug for rx data"
+        default n
+
+    config PPP_DEVICE_DEBUG_DROP
+        depends on PPP_DEVICE_DEBUG
+        bool "Enable debug for drop data"
+        default n
+
     config USING_PPP_AUTHORIZE
         bool "Enable authorize connect feature"
         default n
@@ -30,8 +45,8 @@ if PKG_USING_PPP_DEVICE
 
        config LCP_ECHOINTERVAL
            int "Link status detect timeout"
-           default 1
-           range 1 10
+           default 10
+           range 1 20
 
     endif
 
