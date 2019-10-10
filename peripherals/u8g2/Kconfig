@@ -413,7 +413,7 @@ if PKG_USING_U8G2
             bool "v2.1.0"
 
         config PKG_USING_U8G2_C_LATEST_VERSION
-            bool "c-latest
+            bool "c-latest"
 
         config PKG_USING_U8G2_CPP_LATEST_VERSION
             bool "cpp-latest"
