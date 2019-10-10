@@ -1,0 +1,36 @@
+{
+  "name": "adbd",
+  "description": "Android Debug Bridge daemon implementation on RT-Thread",
+  "description_zh": "在 RT-Thread 上实现的 Android ADB daemon",
+  "keywords": [
+    "adbd", "adb" , "android", "debug", "shell", "tools"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "heyuanjie87",
+    "email": "943313837@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/heyuanjie87/adbd",
+  "homepage": "https://github.com/heyuanjie87/adbd#readme",
+  "site": [
+    {
+      "version": "v1.1.1",
+      "URL": "https://github.com/heyuanjie87/adbd/archive/v1.1.1.zip",
+      "filename": "adbd-1.1.1.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/heyuanjie87/adbd/archive/v1.1.0.zip",
+      "filename": "adbd-1.1.0.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/heyuanjie87/adbd.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

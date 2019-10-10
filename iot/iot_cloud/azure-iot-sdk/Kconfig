@@ -1,0 +1,60 @@
+
+# Kconfig file for package azure
+menuconfig PKG_USING_AZURE
+    bool "Azure IoT SDK: Microsoft azure cloud SDK for RT-Thread"
+    default n
+    select PKG_USING_NETUTILS
+    select PKG_NETUTILS_NTP
+    select PKG_USING_MBEDTLS
+
+if PKG_USING_AZURE
+
+    config PKG_AZURE_PATH
+        string
+        default "/packages/iot/iot_cloud/azure-iot-sdk"
+
+    choice
+        prompt "Choose Protocol"
+        default PKG_USING_AZURE_MQTT_PROTOCOL
+        help
+            Select the Sample Protocol
+
+        config PKG_USING_AZURE_MQTT_PROTOCOL
+            bool "Using MQTT Protocol"
+
+        config PKG_USING_AZURE_HTTP_PROTOCOL
+            bool "Using HTTP Protocol"
+    endchoice     
+
+    config PKG_USING_AZURE_TELEMTRY_EXAMPLE
+        bool "Enable Azure iothub telemetry example"
+        default n
+        
+    config PKG_USING_AZURE_C2D_EXAMPLE
+        bool "Enable Azure iothub cloud to device example"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_AZURE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AZURE_V10208
+            bool "v1.2.8"
+
+        config PKG_USING_AZURE_V10209
+            bool "v1.2.9"
+
+        config PKG_USING_AZURE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AZURE_VER
+       string
+       default "v1.2.8"    if PKG_USING_AZURE_V10208
+       default "v1.2.9"    if PKG_USING_AZURE_V10209
+       default "latest"    if PKG_USING_AZURE_LATEST_VERSION
+
+endif
+

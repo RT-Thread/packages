@@ -1,0 +1,31 @@
+{
+  "name": "network_samples",
+  "description": "RT-Thread network samples",
+  "description_zh": "RT-Thread 网络示例",
+  "keywords": [
+    "network_samples"
+  ],
+  "category": "misc/samples",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/network-sample",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/network-sample#readme",
+  "site": [
+    {
+      "version": "v0.3.0",
+      "URL": "https://github.com/RT-Thread-packages/network-sample/archive/v0.3.0.zip",
+      "filename": "network_samples-v0.3.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/network-sample.git",
+      "filename": "network_samples.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

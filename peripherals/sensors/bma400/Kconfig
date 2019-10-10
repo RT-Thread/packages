@@ -1,0 +1,40 @@
+
+# Kconfig file for package bma400
+menuconfig PKG_USING_BMA400
+    bool "BMA400 sensor driver package, support: accelerometer, step."
+    default n
+
+if PKG_USING_BMA400
+
+    config PKG_BMA400_PATH
+        string
+        default "/packages/peripherals/sensors/bma400"
+
+    config PKG_USING_BMA400_ACCE
+		bool "Enable bma400 acce"
+		default y
+
+    config PKG_USING_BMA400_STEP
+		bool "Enable bma400 step"
+		default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_BMA400_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BMA400_V001
+            bool "v0.0.1"
+
+        config PKG_USING_BMA400_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BMA400_VER
+       string
+       default "v0.0.1"    if PKG_USING_BMA400_V001
+       default "latest"    if PKG_USING_BMA400_LATEST_VERSION
+
+endif
+

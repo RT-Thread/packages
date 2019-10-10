@@ -1,0 +1,47 @@
+menuconfig PKG_USING_MINILZO
+    bool "miniLZO: A mini subset of the LZO real-time data compression library"
+    default n
+    help
+        miniLZO is a mini subset of the LZO real-time data compression library.
+
+if PKG_USING_MINILZO
+
+    config PKG_MINILZO_VER
+        string
+        default "v1.0.0"
+
+    config PKG_MINILZO_PATH
+        string
+        default "/packages/misc/miniLZO"
+
+    config MINILZO_USING_SAMPLE
+        bool "Enable using miniLZO sample"
+        default n
+        select RT_USING_DFS
+
+    choice
+        prompt "version"
+        help
+            Select the miniLZO version
+
+        config PKG_USING_MINILZO_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_MINILZO_V100
+            bool "v1.0.0"
+
+    endchoice
+
+    if PKG_USING_MINILZO_V100
+        config PKG_MINILZO_VER
+        string
+        default "v1.0.0"
+    endif
+
+    if PKG_USING_MINILZO_LATEST_VERSION
+       config PKG_MINILZO_VER
+       string
+       default "latest"
+    endif
+
+endif

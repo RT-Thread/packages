@@ -1,0 +1,76 @@
+menuconfig PKG_USING_PAHOMQTT
+    bool "Paho MQTT: Eclipse Paho MQTT C/C++ client for Embedded platforms"
+    default n
+
+if PKG_USING_PAHOMQTT
+
+    choice
+        prompt "MQTT mode"
+        help
+            Select the MQTT Implementation
+
+        config PAHOMQTT_PIPE_MODE
+            bool "Pipe mode: high performance and depends on DFS"
+            select RT_USING_SAL
+            select SAL_USING_POSIX
+
+        config PAHOMQTT_UDP_MODE
+            bool "UDP mode: small footprint, need net supported loopback"
+            select RT_LWIP_NETIF_LOOPBACK
+    endchoice
+
+    config PKG_USING_PAHOMQTT_EXAMPLE
+        bool "Enable MQTT example"
+        default n
+
+    config PKG_USING_PAHOMQTT_TEST
+        bool "Enable MQTT test"
+        default n
+
+    config MQTT_USING_TLS
+        bool "Enable support tls protocol"
+        default n
+        select PKG_USING_MBEDTLS
+
+    config RT_PKG_MQTT_THREAD_STACK_SIZE
+        int "Set MQTT thread stack size"
+        default 4096
+
+    config PKG_PAHOMQTT_SUBSCRIBE_HANDLERS
+        int "Max pahomqtt subscribe topic handlers"
+        default 1
+        help
+            Max pahomqtt subscribe topic handlers
+
+    config MQTT_DEBUG
+        bool "Enable debug log output"
+        default y
+
+    config PKG_PAHOMQTT_PATH
+        string
+        default "/packages/iot/pahomqtt"
+
+    choice
+        prompt "version"
+        help
+            Select the pahomqtt version
+        default PKG_USING_PAHOMQTT_V110
+
+        config PKG_USING_PAHOMQTT_V110
+            bool "v1.1.0"
+
+        config PKG_USING_PAHOMQTT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PAHOMQTT_LATEST
+            bool "latest"
+    endchoice
+
+    config PKG_PAHOMQTT_VER
+       string
+       default "v1.1.0"    if PKG_USING_PAHOMQTT_V110
+       default "v1.0.0"    if PKG_USING_PAHOMQTT_V100
+       default "latest"    if PKG_USING_PAHOMQTT_LATEST
+
+endif
+

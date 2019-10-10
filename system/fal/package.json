@@ -1,0 +1,43 @@
+{
+  "name": "fal",
+  "description": "Flash Abstraction Layer implentment. Manage flash device and partition",
+  "description_zh": "Flash 抽象层的实现，负责管理 Flash 设备和 Flash 分区",
+  "keywords": [
+    "flash",
+    "partition",
+    "OTA",
+    "partition table"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/fal",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/fal#readme",
+  "site": [
+    {
+      "version": "v0.3.0",
+      "URL": "https://github.com/RT-Thread-packages/fal/archive/0.3.0.zip",
+      "filename": "fal-0.3.0.zip"
+    },
+    {
+      "version": "v0.2.0",
+      "URL": "https://github.com/RT-Thread-packages/fal/archive/0.2.0.zip",
+      "filename": "fal-0.2.0.zip"
+    },
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/RT-Thread-packages/fal/archive/0.1.0.zip",
+      "filename": "fal-0.1.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/fal.git",
+      "filename": "fal.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+
+# Kconfig file for package rdb
+menuconfig PKG_USING_RDB
+    bool "rdb: RT-Thread Debug Bridge for rt-thread"
+    default n
+    select PKGS_USING_USB_RDBD
+    select PKG_USING_DSTR
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    select RT_USING_DFS
+
+if PKG_USING_RDB
+    config PKGS_USING_USB_RDBD
+        bool 
+        select RT_USING_USB_DEVICE
+        default y
+    
+    config PKGS_USING_RDBD_FILE
+        bool "Enable example for rdb push/pull"
+        default y
+    
+    config PKGS_USING_RDBD_SHELL
+        bool "Enable example for rdb shell"
+        default n
+
+    config PKG_RDB_PATH
+        string
+        default "/packages/tools/rdb"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RDB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RDB_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RDB_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RDB_VER
+       string
+       default "v1.0.0"    if PKG_USING_RDB_V100
+       default "latest"    if PKG_USING_RDB_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,38 @@
+{
+  "name": "azure-iot-sdk",
+  "description": "Microsoft azure cloud SDK for RT-Thread",
+  "description_zh": "微软 azure 云软件包，支持 MQTT 协议和 HTTP 协议，使用该软件包可轻松将设备连接至 azure 云平台",
+  "keywords": [
+    "azure-iot-sdk"
+  ],
+  "category": "iot/iot_cloud",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/azure-iot-sdk",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/azure-iot-sdk#readme",
+  "doc": "https://www.rt-thread.org/document/site/submodules/azure-iot-sdk/docs/introduction/",
+  "site": [
+    {
+      "version": "v1.2.9",
+      "URL": "https://github.com/RT-Thread-packages/azure-iot-sdk/archive/1.2.9.zip",
+      "filename": "azure-iot-sdk-1.2.9.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v1.2.8",
+      "URL": "https://github.com/RT-Thread-packages/azure-iot-sdk/archive/1.2.8.zip",
+      "filename": "azure-iot-sdk-1.2.8.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/azure-iot-sdk.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "cJSON",
+  "description": "Ultralightweight JSON parser in ANSI C",
+  "description_zh": "超轻量级的 C 语言 json 解析库", 
+  "keywords": [
+    "cJSON"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/cJSON",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/cJSON#readme",
+  "readme": "Ultralightweight JSON parser in ANSI C",
+  "site": [
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/RT-Thread-packages/cJSON/archive/v1.0.1.zip",
+      "filename": "cJSON-1.0.1.zip"
+    },
+    {
+      "version": "v1.0.2",
+      "URL": "https://github.com/RT-Thread-packages/cJSON/archive/v1.0.2.zip",
+      "filename": "cJSON-1.0.2.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/cJSON.git",
+      "filename": "cJSON.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

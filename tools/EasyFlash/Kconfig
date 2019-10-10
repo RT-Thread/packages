@@ -1,0 +1,152 @@
+
+menuconfig PKG_USING_EASYFLASH
+    bool "EasyFlash: Lightweight embedded flash memory library."
+    default n
+
+if PKG_USING_EASYFLASH
+
+    config PKG_EASYFLASH_PATH
+        string
+        default "/packages/tools/EasyFlash"
+
+    config PKG_EASYFLASH_ENV
+        bool
+        prompt "ENV: Environment variables"
+        default y
+
+    if PKG_EASYFLASH_ENV
+
+        if PKG_EASYFLASH_VER_NUM < 0x40000
+            choice
+                prompt "ENV mode"
+                default PKG_EASYFLASH_ENV_USING_NORMAL
+                    config PKG_EASYFLASH_ENV_USING_NORMAL
+                    bool "Normal mode"
+
+                config PKG_EASYFLASH_ENV_USING_WL_MODE
+                    bool "Wear leveling mode"
+
+                config PKG_EASYFLASH_ENV_USING_PFS_MODE
+                    bool "Power fail safeguard mode"
+
+                config PKG_EASYFLASH_ENV_USING_WL_PFS_MODE
+                    bool "Wear leveling and power fail safeguard mode"
+
+            endchoice
+
+            config PKG_EASYFLASH_ENV_SETTING_SIZE
+                int
+                prompt "ENV setting size. MUST be word alignment"
+                default 2048
+        endif
+
+        config PKG_EASYFLASH_ENV_AUTO_UPDATE
+            bool
+            prompt "Auto update ENV to latest default when current ENV version number is changed."
+            default n
+
+        if PKG_EASYFLASH_ENV_AUTO_UPDATE
+            config PKG_EASYFLASH_ENV_VER_NUM
+                int
+                prompt "Setting current ENV version number"
+                default 0
+        endif
+
+    endif
+
+    config PKG_EASYFLASH_LOG
+        bool
+        prompt "LOG: Save logs on flash"
+        default n
+
+        if PKG_EASYFLASH_LOG
+            config PKG_EASYFLASH_LOG_AREA_SIZE
+            int
+            prompt "Saved log area size. MUST be aligned by erase minimum granularity"
+            default 0
+    endif
+
+    config PKG_EASYFLASH_IAP
+        bool
+        prompt "IAP: In Application Programming"
+        default n
+
+    config PKG_EASYFLASH_ERASE_GRAN
+        int
+        prompt "Erase minimum granularity"
+        default 4096
+
+    if PKG_EASYFLASH_VER_NUM >= 0x40000
+        choice
+            prompt "Write minimum granularity"
+            default PKG_EASYFLASH_WRITE_GRAN_1BIT
+            config PKG_EASYFLASH_WRITE_GRAN_1BIT
+                bool "1bit   such as Nor Flash"
+
+            config PKG_EASYFLASH_WRITE_GRAN_8BITS
+                bool "8bits  such as STM32F2/F4"
+
+            config PKG_EASYFLASH_WRITE_GRAN_32BITS
+                bool "32bits such as STM32F1"
+        endchoice
+
+        config PKG_EASYFLASH_WRITE_GRAN
+            int
+            default 1 if PKG_EASYFLASH_WRITE_GRAN_1BIT
+            default 8 if PKG_EASYFLASH_WRITE_GRAN_8BITS
+            default 32 if PKG_EASYFLASH_WRITE_GRAN_32BITS
+    endif
+
+    config PKG_EASYFLASH_START_ADDR
+        int
+        prompt "Start addr on flash or partition"
+        default 0
+
+    config PKG_EASYFLASH_DEBUG
+        bool "Enable debug log output"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_EASYFLASH_V400
+        help
+            Select the this package version
+
+        config PKG_USING_EASYFLASH_V400
+            bool "v4.0.0"
+
+        config PKG_USING_EASYFLASH_V330
+            bool "v3.3.0"
+
+        config PKG_USING_EASYFLASH_V321
+            bool "v3.2.1"
+
+        config PKG_USING_EASYFLASH_V310
+            bool "v3.1.0"
+
+        config PKG_USING_EASYFLASH_V300
+            bool "v3.0.0"
+
+        config PKG_USING_EASYFLASH_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_EASYFLASH_VER
+        string
+        default "v4.0.0" if PKG_USING_EASYFLASH_V400
+        default "v3.3.0" if PKG_USING_EASYFLASH_V330
+        default "v3.2.1" if PKG_USING_EASYFLASH_V321
+        default "v3.1.0" if PKG_USING_EASYFLASH_V310
+        default "v3.0.0" if PKG_USING_EASYFLASH_V300
+        default "latest" if PKG_USING_EASYFLASH_LATEST_VERSION
+
+    config PKG_EASYFLASH_VER_NUM
+        hex
+        default 0x40000 if PKG_USING_EASYFLASH_V400
+        default 0x30300 if PKG_USING_EASYFLASH_V330
+        default 0x30201 if PKG_USING_EASYFLASH_V321
+        default 0x30100 if PKG_USING_EASYFLASH_V310
+        default 0x30000 if PKG_USING_EASYFLASH_V300
+        default 0x99999 if PKG_USING_EASYFLASH_LATEST_VERSION
+
+endif

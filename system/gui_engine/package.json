@@ -1,0 +1,32 @@
+{
+  "name": "gui_engine",
+  "description": "GUI Engine by RT-Thread",
+  "description_zh": "来自 RT-Thread 官方的 GUI 引擎",
+  "keywords": [
+    "gui engine"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/gui_engine",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/gui_engine#readme",
+  "readme": "the gui engine package for rt-thread",
+  "site": [
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/RT-Thread-packages/gui_engine.git",
+      "filename": "gui_engine-2.0.0.zip",
+      "VER_SHA": "4a76ea667a7c2be07588654bd2e29d96332c6967"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/gui_engine.git",
+      "filename": "gui_engine-2.0.0.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

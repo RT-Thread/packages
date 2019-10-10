@@ -1,0 +1,127 @@
+
+menuconfig PKG_USING_EASYLOGGER
+    bool "EasyLogger: A ultra-lightweight, high-performance C/C++ log library"
+    default n
+
+if PKG_USING_EASYLOGGER
+
+menu "EasyLogger Options"
+
+    config PKG_EASYLOGGER_ENABLE_OUTPUT
+        bool
+        prompt "Enable log output"
+        default y
+
+    choice
+        prompt "Static output log level"
+        default PKG_EASYLOGGER_OUTPUT_LVL_VERBOSE
+        help
+          Select the output log level. The logs which below the select log level will not be output.
+        config PKG_EASYLOGGER_OUTPUT_LVL_ASSERT
+            bool "ASSERT"
+        config PKG_EASYLOGGER_OUTPUT_LVL_ERROR
+            bool "ERROR"
+        config PKG_EASYLOGGER_OUTPUT_LVL_WARN
+            bool "WARN"
+        config PKG_EASYLOGGER_OUTPUT_LVL_INFO
+            bool "INFO"
+        config PKG_EASYLOGGER_OUTPUT_LVL_VERBOSE
+            bool "VERBOSE"
+    endchoice
+
+    config PKG_EASYLOGGER_ENABLE_ASSERT
+        bool
+        prompt "Enable assert check"
+        default y
+
+    config PKG_EASYLOGGER_LINE_BUF_SIZE
+        int
+        prompt "Buffer size for every line's log"
+        default 256
+
+    config PKG_EASYLOGGER_FILTER_TAG_MAX_LEN
+        int
+        prompt "Output filter's tag max length"
+        default 30
+
+    config PKG_EASYLOGGER_FILTER_KW_MAX_LEN
+        int
+        prompt "Output filter's keyword max length"
+        default 16
+
+    choice
+        prompt "Output newline sign"
+        default PKG_EASYLOGGER_NEWLINE_SIGN_CRLF
+        config PKG_EASYLOGGER_NEWLINE_SIGN_CRLF
+            bool "\\r\\n"
+        config PKG_EASYLOGGER_NEWLINE_SIGN_LF
+            bool "\\n"
+        config PKG_EASYLOGGER_NEWLINE_SIGN_CR
+            bool "\\r"
+    endchoice
+
+    config PKG_EASYLOGGER_ENABLE_COLOR
+        bool
+        prompt "Enable color log"
+        default y
+
+    config PKG_EASYLOGGER_ENABLE_ASYNC_OUTPUT
+        bool
+        prompt "Enable asynchronous output mode"
+        default n
+
+    config PKG_EASYLOGGER_ASYNC_OUTPUT_BUF_SIZE
+        int
+        prompt "Buffer size for asynchronous output mode"
+        default 512
+        depends on PKG_EASYLOGGER_ENABLE_ASYNC_OUTPUT
+
+    config PKG_EASYLOGGER_ASYNC_LINE_OUTPUT
+        bool
+        prompt "Output's log which must end with newline sign"
+        default y
+        depends on PKG_EASYLOGGER_ENABLE_ASYNC_OUTPUT
+
+    config PKG_EASYLOGGER_ASYNC_OUTPUT_USING_PTHREAD
+        bool
+        prompt "Using POSIX pthread implementation"
+        default n
+        depends on PKG_EASYLOGGER_ENABLE_ASYNC_OUTPUT
+        select RT_USING_PTHREADS
+
+    config PKG_EASYLOGGER_ENABLE_PLUGIN_FLASH
+        bool
+        prompt "Enable flash plugin"
+        default n
+        select PKG_USING_EASYFLASH
+        select PKG_EASYFLASH_LOG
+
+    config PKG_EASYLOGGER_FLASH_BUF_SIZE
+        int
+        prompt "Flash log plugin's RAM buffer size"
+        default 1024
+        depends on PKG_EASYLOGGER_ENABLE_PLUGIN_FLASH
+endmenu
+
+    config PKG_EASYLOGGER_PATH
+        string
+        default "/packages/tools/EasyLogger"
+
+    choice
+        prompt "Version"
+        help
+            Select the this package version
+
+        config PKG_USING_EASYLOGGER_V200
+            bool "v2.0.0"
+
+        config PKG_USING_EASYLOGGER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_EASYLOGGER_VER
+        string
+        default "v2.0.0" if PKG_USING_EASYLOGGER_V200
+        default "latest" if PKG_USING_EASYLOGGER_LATEST_VERSION
+
+endif

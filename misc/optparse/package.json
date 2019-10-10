@@ -1,0 +1,30 @@
+{
+    "name": "optparse",
+    "description": "Getopt command-line parameter parser bases on RT-Thread",
+    "description_zh": "基于 RT-Thread 的 Getopt 命令行解析器",
+    "keywords": [
+        "getopt-like"
+    ],
+    "category": "misc",
+    "author": {
+        "name": "liu2guang",
+        "email": "1004383796@qq.com"
+    },
+    "license": "Unlicense",
+    "repository": "https://github.com/liu2guang/optparse",
+    "homepage": "https://github.com/liu2guang/optparse#readme",
+    "readme": "optparse: a public domain, portable, reentrant, embeddable, getopt-like option parser.",
+    "site": [
+        {
+            "version": "v1.0.0",
+            "URL": "https://github.com/liu2guang/optparse/archive/v1.0.0.zip",
+            "filename": "optparse-v1.0.0.zip"
+        },
+        {
+            "version": "latest",
+            "URL": "https://github.com/liu2guang/optparse.git",
+            "filename": "optparse-latest.zip",
+            "VER_SHA": "master"
+        }
+    ]
+}

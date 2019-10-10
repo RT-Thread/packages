@@ -1,0 +1,65 @@
+
+menuconfig PKG_USING_MONGOOSE
+    bool "mongoose: Embedded Web Server / Embedded Networking Library"
+    default n
+
+if PKG_USING_MONGOOSE
+
+    config PKG_MONGOOSE_PATH
+        string
+        default "/packages/iot/mongoose"
+
+    config PKG_MONGOOSE_ENABLE_HTTP_WEBSOCKET
+        bool
+        prompt "Enable WebSocket extension to HTTP"
+        default y
+
+    config PKG_MONGOOSE_ENABLE_FILESYSTEM
+        bool
+        prompt "Enable filesystem for file serves, file uploader and other file features"
+        default y
+        select RT_USING_DFS
+
+    config PKG_MONGOOSE_ENABLE_HTTP_STREAMING_MULTIPART
+        bool
+        prompt "Enable multipart events when using http multipart file uploader"
+        default n
+
+    config PKG_MONGOOSE_ENABLE_MQTT
+        bool
+        prompt "Enable MQTT protocol"
+        default n
+
+    config PKG_MONGOOSE_ENABLE_COAP
+        bool
+        prompt "Enable CoAP protocol"
+        default n
+
+    config PKG_MONGOOSE_ENABLE_DEBUG
+        bool
+        prompt "Enable show more debug informaiton"
+        default n
+
+    config PKG_MONGOOSE_ENABLE_HEXDUMP
+        bool
+        prompt "Dump hex formation debug informaiton"
+        default n
+        depends on PKG_MONGOOSE_ENABLE_DEBUG
+
+    choice
+        prompt "Version"
+        help
+            Select the mongoose version
+
+        config PKG_USING_MONGOOSE_V607
+            bool "v6.7"
+
+        config PKG_USING_MONGOOSE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MONGOOSE_VER
+        string
+        default "v6.7" if PKG_USING_MONGOOSE_V607
+        default "latest" if PKG_USING_MONGOOSE_LATEST_VERSION
+endif

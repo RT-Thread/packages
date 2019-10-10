@@ -1,0 +1,34 @@
+
+menuconfig PKG_USING_FLEXIBLE_BUTTON
+    bool "FlexibleButton: Small and flexible button driver"
+    default n
+
+if PKG_USING_FLEXIBLE_BUTTON
+
+    config PKG_FLEXIBLE_BUTTON_PATH
+        string
+        default "/packages/misc/FlexibleButton"
+
+    config PKG_USING_FLEXIBLE_BUTTON_DEMO
+        bool "Enable flexible button demo"
+        default n
+
+    choice
+        prompt "version"
+        help
+            Select the package version
+        default PKG_USING_FLEXIBLE_BUTTON_V100
+
+        config PKG_USING_FLEXIBLE_BUTTON_V100
+            bool "v1.0.0"
+
+        config PKG_USING_FLEXIBLE_BUTTON_LATEST
+            bool "latest"
+    endchoice
+
+    config PKG_FLEXIBLE_BUTTON_VER
+       string
+       default "v1.0.0"    if PKG_USING_FLEXIBLE_BUTTON_V100
+       default "latest"    if PKG_USING_FLEXIBLE_BUTTON_LATEST
+
+endif

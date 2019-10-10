@@ -1,0 +1,46 @@
+
+# Kconfig file for package ulog_easyflash
+menuconfig PKG_USING_ULOG_EASYFLASH
+    bool "ulog_easyflash: The ulog flash plugin by EasyFlash."
+    select RT_USNG_ULOG
+    select PKG_USING_EASYFLASH
+    default n
+
+if PKG_USING_ULOG_EASYFLASH
+
+    config PKG_ULOG_EASYFLASH_PATH
+        string
+        default "/packages/tools/ulog_easyflash"
+
+    config ULOG_EASYFLASH_BACKEND_ENABLE
+        bool
+        prompt "Enable the flash backend for ulog"
+        depends on PKG_EASYFLASH_LOG
+        default y
+
+    config ULOG_EASYFLASH_CFG_SAVE_ENABLE
+        bool
+        prompt "Save the ulog filter configuration to flash"
+        depends on ULOG_USING_FILTER
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_ULOG_EASYFLASH_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ULOG_EASYFLASH_V00100
+            bool "v0.1.0"
+
+        config PKG_USING_ULOG_EASYFLASH_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ULOG_EASYFLASH_VER
+       string
+       default "v0.1.0"    if PKG_USING_ULOG_EASYFLASH_V00100
+       default "latest"    if PKG_USING_ULOG_EASYFLASH_LATEST_VERSION
+
+endif
+

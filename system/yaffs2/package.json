@@ -1,0 +1,33 @@
+{
+  "name": "yaffs2",
+  "description": "yaffs2 port to rtthread",
+  "description": "yaffs2 移植到RT-Thread",
+  "keywords": [
+    "filesystem",
+    "nandflash fs",
+    "yaffs2"
+  ],
+  "category": "system",
+  "author": {
+    "name": "heyuanjie87",
+    "email": "unknown"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/heyuanjie87/yaffs2_rtt_port",
+  "homepage": "https://github.com/heyuanjie87/yaffs2_rtt_port#readme",
+  "readme": "A yaffs2 package for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/heyuanjie87/yaffs2_rtt_port.git",
+      "filename": "yaffs2_1.0.0.zip",
+      "VER_SHA": "a73865dea0a480d43e65c00d168347b6ee3e5729"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/heyuanjie87/yaffs2_rtt_port.git",
+      "filename": "yaffs2.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

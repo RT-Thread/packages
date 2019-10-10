@@ -1,0 +1,28 @@
+{
+  "name": "sqlite",
+  "description": "SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine",
+  "description_zh": "SQLite 是一个完备、高度可靠、嵌入型、全功能、公共领域的 SQL 数据库引擎",
+  "keywords": [
+    "sqlite",
+    "database",
+    "SQL"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/RT-Thread-packages/SQLite",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/SQLite#readme",
+  "readme": "a sqlite package for rt-thread",
+  "site": [
+    {
+      "version": "v3.19.3",
+      "URL": "https://github.com/RT-Thread-packages/SQLite.git",
+      "filename": "sqlite-3.19.3.zip",
+      "VER_SHA": "1674d90269da465401e71a11947ab70b3c7f17b0"
+    }
+  ]
+}

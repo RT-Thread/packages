@@ -1,0 +1,108 @@
+
+# Kconfig file for package wiznet
+menuconfig PKG_USING_WIZNET
+    bool "WIZnet: WIZnet TCP/IP chips SAL framework implement"
+    default n
+    select RT_USING_PIN
+    select RT_USING_SPI
+    select RT_USING_LIBC
+    select RT_USING_SAL
+    select RT_USING_TIMER_SOFT
+
+if PKG_USING_WIZNET
+
+    config PKG_WIZNET_PATH
+        string
+        default "/packages/iot/wiznet"
+
+    choice
+        prompt "WIZnet device type"
+        default WIZ_USING_W5500
+        help
+            Select the wiznet type
+
+        config WIZ_USING_W5500
+            bool "W5500"
+
+    endchoice
+
+    config WIZNET_DEVICE_EXTERN_CONFIG
+         bool
+         default n
+
+    if !WIZNET_DEVICE_EXTERN_CONFIG
+        menu "WIZnet device configure"
+
+            config WIZ_SPI_DEVICE
+                string "SPI device name"
+                default "spi30"
+
+            config WIZ_RST_PIN
+                int "Reset PIN number"
+                default 10
+
+            config WIZ_IRQ_PIN
+                int "IRQ PIN number"
+                default 11
+        endmenu
+    endif
+
+    config WIZ_USING_DHCP
+        bool "Enable alloc IP address through DHCP"
+        default y
+
+    if !WIZ_USING_DHCP
+
+        menu "WIZnet network configure"
+
+            config WIZ_IPADDR
+                string "IPv4: IP address"
+                default 192.168.1.10
+
+            config WIZ_GWADDR
+                string "IPv4: Gateway address"
+                default 192.168.1.1
+
+            config WIZ_MSKADDR
+                string "IPv4: Mask address"
+                default 255.255.255.0
+
+        endmenu
+
+    endif
+
+    config WIZ_USING_PING
+        bool "Enable Ping utility"
+        default y
+
+    config WIZ_DEBUG
+        bool "Enable debug log output"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_WIZNET_V110 if ((RT_VER_NUM < 0x30103) || (RT_VER_NUM = 0x40000))
+        default PKG_USING_WIZNET_LATEST_VERSION
+        help
+            Select the wiznet version
+
+        if ((RT_VER_NUM < 0x30103) || (RT_VER_NUM = 0x40000))
+            config PKG_USING_WIZNET_V110
+                bool "v1.1.0"
+
+            config PKG_USING_WIZNET_V100
+                bool "v1.0.0"
+        endif
+
+        config PKG_USING_WIZNET_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    config PKG_WIZNET_VER
+       string
+       default "v1.1.0"    if PKG_USING_WIZNET_V110
+       default "v1.0.0"    if PKG_USING_WIZNET_V100
+       default "latest"    if PKG_USING_WIZNET_LATEST_VERSION
+
+endif

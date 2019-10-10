@@ -1,0 +1,27 @@
+
+menumenuconfig PKG_USING_MININI
+    bool "minIni: a portable and configurable library for reading and writing '.INI' files."
+    default n
+
+if PKG_USING_MININI
+
+    config PKG_MININI_PATH
+        string
+        default "/packages/system/minIni"
+
+    choice
+        prompt "version"
+        help
+            Select the minIni version
+
+        config PKG_USING_MININI_V120
+            bool "v1.2.0"
+
+        config PKG_USING_MININI_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    default "v1.2.0" if PKG_USING_MININI_V120
+    default "latest" if PKG_USING_MININI_LATEST_VERSION
+
+endif

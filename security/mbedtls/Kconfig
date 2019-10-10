@@ -1,0 +1,136 @@
+
+menuconfig PKG_USING_MBEDTLS
+    bool "mbedtls: An portable and flexible SSL/TLS library"
+    default n
+    select RT_USING_RTC
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+
+if PKG_USING_MBEDTLS
+
+    menu "Select Root Certificate"
+
+        config PKG_USING_MBEDTLS_USE_ALL_CERTS
+            bool "Using all default CA(Use preset CA certificates. Take up more memory)"
+            select PKG_USING_MBEDTLS_THAWTE_ROOT_CA
+            select PKG_USING_MBEDTLS_VERSIGN_PBULIC_ROOT_CA
+            select PKG_USING_MBEDTLS_VERSIGN_UNIVERSAL_ROOT_CA
+            select PKG_USING_MBEDTLS_GEOTRUST_ROOT_CA
+            select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
+            select PKG_USING_MBEDTLS_GODADDY_ROOT_CA
+            select PKG_USING_MBEDTLS_COMODOR_ROOT_CA
+            select PKG_USING_MBEDTLS_DST_ROOT_CA
+            select PKG_USING_MBEDTLS_CLOBALSIGN_ROOT_CA
+            select PKG_USING_MBEDTLS_ENTRUST_ROOT_CA
+
+        config PKG_USING_MBEDTLS_USER_CERTS
+            bool "Using user CA(copy your Root CA file to \"certs\" directory)"
+
+        # 1 THAWTE_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_THAWTE_ROOT_CA
+            bool "Using thawte Primary Root CA"
+
+        # 2 VERSIGN_PUBLIC_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_VERSIGN_PBULIC_ROOT_CA
+            bool "Using VeriSign Class 3 Public Primary Certification Authority - G5 CA"
+            
+        # 3 VERSIGN_UNIVERSAL_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_VERSIGN_UNIVERSAL_ROOT_CA
+            bool "Using VeriSign Universal Root Certification Authority CA"
+
+        # 4 GEOTRUST_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_GEOTRUST_ROOT_CA
+            bool "Using GeoTrust Global CA"
+
+        # 5 DIGICERT_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
+            bool "Using DigiCert Global Root CA"
+
+        # 6 GODADDY_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_GODADDY_ROOT_CA
+            bool "Using Go Daddy Root Certificate Authority - G2 CA"
+
+        # 7 COMODOR_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_COMODOR_ROOT_CA
+            bool "Using COMODO RSA Certification Authority CA"
+
+        # 8 DIGITAL_SIGNATURE_TRUST_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_DST_ROOT_CA
+            bool "Using Digital Signature Trust Root CA"
+
+        # 9 CLOBALSIGN_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_CLOBALSIGN_ROOT_CA
+            bool "Using GlobalSign Root CA"
+
+        # 10 ENTRUST_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_ENTRUST_ROOT_CA
+            bool "Using Entrust Root Certification Authority - G2 CA"
+        
+        # 11 AMAZON_ROOT_CA.cer
+        config PKG_USING_MBEDTLS_AMAZON_ROOT_CA
+            bool "Using Amazon Root CA"
+
+    endmenu
+
+    config MBEDTLS_AES_ROM_TABLES
+        bool "Store the AES tables in ROM"
+        default y
+
+    config MBEDTLS_ECP_WINDOW_SIZE
+        int "Maximum window size used"
+        range 2 6
+        default 2
+
+    config MBEDTLS_SSL_MAX_CONTENT_LEN
+        int "Maxium fragment length in bytes"
+        default 3584
+
+    config PKG_USING_MBEDTLS_EXAMPLE
+        bool "Enable a mbedtls client example"
+        select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
+        default n
+
+    if PKG_USING_MBEDTLS_V2710
+        config MBEDTLS_MPI_MAX_SIZE
+            int "Maximum number of bytes for usable MPIs"
+            default 1024
+
+        config MBEDTLS_CTR_DRBG_KEYSIZE
+            int "The key size used by the cipher"
+            default 32
+    endif
+
+    config PKG_USING_MBEDTLS_DEBUG
+        bool "Enable Debug log output"
+        default n
+
+    config PKG_MBEDTLS_PATH
+        string
+        default "/packages/security/mbedtls"
+
+    choice
+        prompt "version"
+        help
+            Select the mbedtls version
+
+        config PKG_USING_MBEDTLS_V2710
+            bool "v2.7.10"
+
+        config PKG_USING_MBEDTLS_V261
+            bool "v2.6.1"
+
+        config PKG_USING_MBEDTLS_V260
+            bool "v2.6.0"
+
+        config PKG_USING_MBEDTLS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MBEDTLS_VER
+        string
+        default "latest"    if PKG_USING_MBEDTLS_LATEST_VERSION
+        default "v2.7.10"   if PKG_USING_MBEDTLS_V2710
+        default "v2.6.1"    if PKG_USING_MBEDTLS_V261
+        default "v2.6.0"    if PKG_USING_MBEDTLS_V260
+
+endif

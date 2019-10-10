@@ -1,0 +1,28 @@
+
+# Kconfig file for package upacker
+menuconfig PKG_USING_UPACKER
+    bool "upacker: building and parsing data frames to be sent over a serial interface"
+    default n
+
+if PKG_USING_UPACKER
+
+    config PKG_UPACKER_PATH
+        string
+        default "/packages/misc/upacker"
+
+    choice
+        prompt "Version"
+        default PKG_USING_UPACKER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UPACKER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UPACKER_VER
+       string
+       default "latest"    if PKG_USING_UPACKER_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,70 @@
+menuconfig PKG_USING_CMSIS
+    bool "CMSIS: Cortex Microcontroller Software Interface Standard from ARM"
+    default n
+
+if PKG_USING_CMSIS
+
+    config PKG_CMSIS_PATH
+        string
+        default "/packages/system/CMSIS"
+
+    choice
+        prompt "version"
+        help
+            Select the CMSIS version
+
+        config PKG_USING_CMSIS_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_CMSIS_V500
+            bool "v5.0"
+    endchoice
+
+    config PKG_CMSIS_VER
+        string
+        default "v5.0.0" if PKG_USING_CMSIS_V500
+        default "latest" if PKG_USING_CMSIS_LATEST_VERSION
+
+    config PKG_CMSIS_CORE
+        bool "CMSIS core API for Cortex-M"
+        default y
+
+    menuconfig PKG_CMSIS_NN
+        bool "A collection of efficient neural network kernels for Cortex-M"
+        default n
+    
+    if PKG_CMSIS_NN
+        config PKG_CMSIS_NN_ACTIVATION
+        bool "Activation Functions"
+        default y
+
+        config PKG_CMSIS_NN_CONVOLUTION
+        bool "Convolution Functions"
+        default y
+
+        config PKG_CMSIS_NN_FULLY_CONNECTED
+        bool "Fully Connected Functions"
+        default y
+
+        config PKG_CMSIS_NN_SUPPORT
+        bool "NN Support Functions"
+        default y
+
+        config PKG_CMSIS_NN_POOLING
+        bool "Pooling Functions"
+        default y
+
+        config PKG_CMSIS_NN_SOFTMAX
+        bool "Softmax Functions"
+        default y
+    endif
+    
+    config PKG_CMSIS_DSP
+        bool "A suite of common signal processing functions for Cortex-M"
+        default n
+
+    config PKG_CMSIS_RTOS2
+        bool "CMSIS RTOS2 API with RT-Thread porting"
+        default n
+
+endif

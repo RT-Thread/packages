@@ -1,0 +1,55 @@
+
+# Kconfig file for package tcpserver
+menuconfig PKG_USING_TCPSERVER
+    bool "TCP Server:A TCP server that supports multiple clients"
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    default n
+
+if PKG_USING_TCPSERVER
+
+    config TCPSERVER_NAME
+        string "tcpserver name"
+        default "tcpserv"
+    config TCPSERVER_STACK_SIZE
+        int "tcpserver stack size"
+        default 4096
+    config TCPSERVER_PRIO
+        int "tcpserver thread priority"
+        default 12
+    config TCPSERVER_SOCKET_MAX
+        int "Maximum possible socket usage"
+        default 512
+    config TCPSERVER_CLI_NUM
+        int "Number of clients supported"
+        default 5
+    config PKG_TCPSERVER_DEBUG
+        bool "Enable debugging features"
+        default n
+    config PKG_TCPSERVER_SAMPLE
+        bool "Enable sample"
+        default n
+    config PKG_TCPSERVER_PATH
+        string
+        default "/packages/iot/tcpserver"
+
+    choice
+        prompt "Version"
+        default PKG_USING_TCPSERVER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TCPSERVER_V001
+            bool "v0.0.1"
+
+        config PKG_USING_TCPSERVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_TCPSERVER_VER
+       string
+       default "v0.0.1"    if PKG_USING_TCPSERVER_V001
+       default "latest"    if PKG_USING_TCPSERVER_LATEST_VERSION
+
+endif
+

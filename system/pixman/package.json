@@ -1,0 +1,37 @@
+{
+  "name": "pixman",
+  "description": "A library that provides low-level pixel manipulation",
+  "description_zh": "提供低等级像素控制的库",
+  "keywords": [
+    "pixman"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/pixman",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "readme": "pixman is a library that provides low-level pixel manipulation",
+  "site": [
+    {
+      "version": "v0.24.4",
+      "URL": "https://github.com/RT-Thread-packages/pixman.git",
+      "filename": "pixman-0.24.4.zip",
+      "VER_SHA": "ebcc8e72fb339d68ac88eacd8bbbe9aef89be371"
+    },
+    {
+      "version": "v0.34.0",
+      "URL": "https://github.com/RT-Thread-packages/pixman.git",
+      "filename": "pixman-0.34.0.zip",
+      "VER_SHA": "a79b30f63ecca435be2f45ba92a1f1e2ea653c28"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/pixman.git",
+      "filename": "pixman.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

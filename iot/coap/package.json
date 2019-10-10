@@ -1,0 +1,32 @@
+{
+  "name": "coap",
+  "description": "A C implementation of the Constrained Application Protocol",
+  "description_zh": "一种 C 语言实现的 CoAP 协议",  
+  "keywords": [
+    "coap"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "BSD-2-Clause",
+  "repository": "https://github.com/RT-Thread-packages/coap",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/coap#readme",
+  "readme": "A coap package for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/coap.git",
+      "filename": "coap-1.0.0.zip",
+      "VER_SHA": "fcd0af97386bbc93549e37b46000604d96c949f0"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/coap.git",
+      "filename": "coap.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

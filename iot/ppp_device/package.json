@@ -1,0 +1,26 @@
+{
+  "name": "ppp_device",
+  "description": "The lwIP PPP function is implemented for different devices.",
+  "description_zh": "lwIP PPP 功能针对不同设备移植和实现",
+  "keywords": [
+    "ppp_device"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "xiangxistu",
+    "email": "liuxianliang@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/ppp_device.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/ppp_device.git",
+      "filename": "ppp_device.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

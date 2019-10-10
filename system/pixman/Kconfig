@@ -1,0 +1,30 @@
+menuconfig PKG_USING_PIXMAN
+    bool "pixman is a library that provides low-level pixel manipulation"
+    default n
+
+if PKG_USING_PIXMAN
+
+    config PKG_PIXMAN_PATH
+        string
+        default "/packages/system/pixman"
+
+    choice
+        prompt "version"
+        help
+            Select the persimmon version
+
+        config PKG_USING_PIXMAN_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_PIXMAN_V0244
+            bool "v0.24.4"
+        config PKG_USING_PIXMAN_V0340
+            bool "v0.34.0"
+    endchoice
+
+    config PKG_PIXMAN_VER
+        string
+        default "v0.24.4" if PKG_USING_PIXMAN_V0244
+        default "v0.34.0" if PKG_USING_PIXMAN_V0340
+        default "latest" if PKG_USING_PIXMAN_LATEST_VERSION
+endif

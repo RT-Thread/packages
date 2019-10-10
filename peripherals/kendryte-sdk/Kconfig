@@ -1,0 +1,50 @@
+# Kconfig file for package kendryte-sdk
+menuconfig PKG_USING_KENDRYTE_SDK
+    bool "the kendryte-sdk package for rt-thread"
+    default n
+
+if PKG_USING_KENDRYTE_SDK
+
+    config PKG_KENDRYTE_SDK_PATH
+        string
+        default "/packages/peripherals/kendryte-sdk"
+
+    choice
+        prompt "Version"
+        default PKG_USING_KENDRYTE_SDK_V055
+        help
+            Select the package version
+
+        config PKG_USING_KENDRYTE_SDK_V052
+            bool "v0.5.2"
+        
+        config PKG_USING_KENDRYTE_SDK_V053
+            bool "v0.5.3"
+
+        config PKG_USING_KENDRYTE_SDK_V054
+            bool "v0.5.4"
+        
+        config PKG_USING_KENDRYTE_SDK_V055
+            bool "v0.5.5"
+
+        config PKG_USING_KENDRYTE_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_KENDRYTE_SDK_VER
+       string
+       default "v0.5.2"    if PKG_USING_KENDRYTE_SDK_V052
+       default "v0.5.3"    if PKG_USING_KENDRYTE_SDK_V053
+       default "v0.5.4"    if PKG_USING_KENDRYTE_SDK_V054
+       default "v0.5.5"    if PKG_USING_KENDRYTE_SDK_V055
+       default "latest"    if PKG_USING_KENDRYTE_SDK_LATEST_VERSION
+
+    config PKG_KENDRYTE_SDK_VERNUM
+        hex
+        default 0x0052     if PKG_USING_KENDRYTE_SDK_V052
+        default 0x0053     if PKG_USING_KENDRYTE_SDK_V053
+        default 0x0054     if PKG_USING_KENDRYTE_SDK_V054
+        default 0x0055     if PKG_USING_KENDRYTE_SDK_V055
+        default 0x9999     if PKG_USING_KENDRYTE_SDK_LATEST_VERSION
+
+endif

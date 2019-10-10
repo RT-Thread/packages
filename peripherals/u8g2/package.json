@@ -1,0 +1,58 @@
+{
+  "name": "u8g2",
+  "description": "U8g2 library for rt-thread",
+  "description_zh": "U8g2 不同种类单色屏驱动在 RT-Thread 移植库",
+  "keywords": [
+    "u8g2",
+    "OLED",
+    "SPI",
+    "I2C",
+    "8080"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@hust.edu.cn"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/wuhanstudio/rt-u8g2",
+  "homepage": "https://github.com/wuhanstudio/rt-u8g2#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "u8g2-1.0.0.zip",
+      "VER_SHA": "362a24eb31c282c9d6587a89b72fc8a0bbd248e5"
+    },
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "u8g2-1.1.0.zip",
+      "VER_SHA": "ad76362880e399e49dd6e58d4a093a6edfae2b09"
+    },
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "u8g2-1.2.0.zip",
+      "VER_SHA": "9cb076d58fc73186c0268e73a49e059c68f9d9a6"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "u8g2-2.0.0.zip",
+      "VER_SHA": "5ea7a59cbad385be04c64dfceb159c9d1d44ac9a"
+    },
+    {
+      "version": "v2.1.0",
+      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "u8g2-2.1.0.zip",
+      "VER_SHA": "3dfe817ccf7183aceddfef203237183fee205f62"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

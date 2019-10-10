@@ -1,0 +1,29 @@
+
+menuconfig PKG_USING_LJSON
+    bool "ljson: JSON parser in ANSI C"
+    default n
+
+if PKG_USING_LJSON
+
+    config PKG_LJSON_PATH
+        string
+        default "/packages/iot/ljson"
+
+	choice
+        prompt "version"
+        help
+            Select the ljson version
+
+        config PKG_USING_LJSON_V002
+            bool "v0.0.2"
+
+        config PKG_USING_LJSON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LJSON_VER
+        string
+        default "v0.0.2" if PKG_USING_LJSON_V002
+		default "latest" if PKG_USING_LJSON_LATEST_VERSION
+
+endif

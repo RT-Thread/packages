@@ -1,0 +1,27 @@
+{
+  "name": "libsodium",
+  "description": "A modern and easy-to-use crypto library",
+  "description_zh": "一个现代的、易用的加密库",
+  "keywords": [
+    "libsodium",
+    "crypto"
+  ],
+  "category": "security",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/libsodium",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/libsodium#readme",
+  "readme": "A modern and easy-to-use crypto library.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/libsodium.git",
+      "filename": "libsodium-1.0.0.zip",
+      "VER_SHA": "697d89a290c7212594811f7414afc6a4a87e125f"
+    }
+  ]
+}

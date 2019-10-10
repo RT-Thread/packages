@@ -1,0 +1,32 @@
+{
+  "name": "zlib",
+  "description": "general purpose data compression library",
+  "description_zh": "通用数据压缩库",
+  "keywords": [
+    "zlib"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/RT-Thread-packages/zlib",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/zlib#readme",
+  "readme": "zlib is a general purpose data compression library.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/zlib.git",
+      "filename": "zlib-1.0.0.zip",
+      "VER_SHA": "b781f12e8fc5d44f4e2f254494c1a482d0aec446"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/zlib.git",
+      "filename": "zlib.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

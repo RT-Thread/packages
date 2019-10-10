@@ -1,0 +1,32 @@
+{
+  "name": "SystemView",
+  "description": "SEGGER SystemView",
+  "description_zh": "SEGGER 的 SystemView 移植",
+  "keywords": [
+    "SystemView"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/RT-Thread-packages/SEGGER_SystemView",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/SEGGER_SystemView#readme",
+  "doc": "https://www.rt-thread.org/document/site/rtthread-application-note/debug/systemview/an0009-rtthread-debug-systemview/",
+  "readme": "A Segger utility for analysis and profiling the behavior of the embedded system. More information on https://www.segger.com/products/development-tools/systemview/",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/SEGGER_SystemView.git",
+      "filename": "SystemView.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "v2.52a",
+      "URL": "https://github.com/RT-Thread-packages/SEGGER_SystemView/archive/2.5.2a.zip",
+      "filename": "SystemView-v2.52a.zip"
+    }
+  ]
+}

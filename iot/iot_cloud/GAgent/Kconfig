@@ -1,0 +1,45 @@
+menuconfig PKG_USING_GAGENT_CLOUD
+    bool "GAgent: GAgent of Gizwits in RT-Thread"
+    select RT_USING_LWIP
+    select RT_LWIP_NETIF_LOOPBACK
+    select PKG_USING_WEBCLIENT
+    select PKG_USING_PAHOMQTT
+    select PKG_USING_TINYCRYPT
+    select TINY_CRYPT_AES
+    default n
+
+if PKG_USING_GAGENT_CLOUD
+
+    config PKG_GAGENT_CLOUD_EXAMPLE
+    bool "Enable GAgent example"
+    default n
+
+    config PKG_GAGENT_CLOUD_DEBUG
+    bool "Enable GAgent debug"
+    default n
+
+    config PKG_GAGENT_PATH
+        string
+        default "/packages/iot/iot_cloud/GAgent"
+
+    choice
+        prompt "Version"
+        help
+            Select the GAgent version
+
+        config PKG_USING_GAGENT_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_GAGENT_V100
+            bool "v1.0.0"
+
+    endchoice
+
+    config PKG_GAGENT_VER
+    string
+    default "v1.0.0" if PKG_USING_GAGENT_V100
+    default "latest" if PKG_USING_GAGENT_LATEST_VERSION
+
+endif
+
+

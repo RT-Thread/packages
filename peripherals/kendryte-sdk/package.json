@@ -1,0 +1,52 @@
+{
+  "name": "kendryte-sdk",
+  "description": "Kendryte K210 SDK",
+  "description": "勘智 K210 处理器对应的外设驱动包",
+  "keywords": [
+    "kendryte-sdk",
+    "k210",
+    "AI",
+    "RV64"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/RT-Thread-packages/kendryte_sdk",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/kendryte_sdk#readme",
+  "site": [
+    {
+      "version": "v0.5.2",
+      "URL": "https://github.com/RT-Thread-packages/kendryte_sdk.git",
+      "filename": "kendryte-sdk-0.5.2.zip",
+      "VER_SHA": "5470174f7552d756b640b72e05ccd894780c6592"
+    },
+    {
+      "version": "v0.5.3",
+      "URL": "https://github.com/RT-Thread-packages/kendryte_sdk.git",
+      "filename": "kendryte-sdk-0.5.3.zip",
+      "VER_SHA": "v0.5.3"
+    },
+    {
+      "version": "v0.5.4",
+      "URL": "https://github.com/RT-Thread-packages/kendryte_sdk.git",
+      "filename": "kendryte-sdk-0.5.4.zip",
+      "VER_SHA": "v0.5.4"
+    },
+    {
+      "version": "v0.5.5",
+      "URL": "https://github.com/RT-Thread-packages/kendryte_sdk.git",
+      "filename": "kendryte-sdk-0.5.5.zip",
+      "VER_SHA": "v0.5.5"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/kendryte_sdk.git",
+      "filename": "kendryte-sdk.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+menu "RT-Thread online packages"
+
+source "$PKGS_DIR/packages/iot/Kconfig"
+source "$PKGS_DIR/packages/security/Kconfig"
+source "$PKGS_DIR/packages/language/Kconfig"
+source "$PKGS_DIR/packages/multimedia/Kconfig"
+source "$PKGS_DIR/packages/tools/Kconfig"
+source "$PKGS_DIR/packages/system/Kconfig"
+source "$PKGS_DIR/packages/peripherals/Kconfig"
+source "$PKGS_DIR/packages/misc/Kconfig"
+
+endmenu

@@ -1,0 +1,31 @@
+{
+  "name": "filesystem_samples",
+  "description": "RT-Thread filesystem samples",
+  "description_zh": "RT-Thread 文件系统示例",
+  "keywords": [
+    "filesystem_samples"
+  ],
+  "category": "misc/samples",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/filesystem-sample",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/filesystem-sample#readme",
+  "site": [
+    {
+      "version": "v0.2.0",
+      "URL": "https://github.com/RT-Thread-packages/filesystem-sample/archive/v0.2.0.zip",
+      "filename": "filesystem_samples-v0.2.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/filesystem-sample.git",
+      "filename": "filesystem_samples.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+
+menuconfig PKG_USING_SQLITE
+    bool "SQLite: a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine."
+    default n
+    select RT_USING_DFS
+
+if PKG_USING_SQLITE
+
+    config PKG_SQLITE_PATH
+        string
+        default "/packages/system/sqlite"
+
+    config PKG_SQLITE_VER
+        string
+        default "v3.19.3"
+
+endif

@@ -1,0 +1,92 @@
+
+menuconfig PKG_USING_JERRYSCRIPT
+    bool "JerryScript: Ultra-lightweight JavaScript engine for the Internet of Things."
+    select RT_USING_LIBC
+    select RT_USING_DFS
+    default n
+
+if PKG_USING_JERRYSCRIPT
+
+    config PKG_JERRYSCRIPT_PATH
+        string
+        default "/packages/language/jerryscript"
+
+    choice
+        prompt "version"
+        help
+            Select the version of jerryscript
+
+        config PKG_USING_JERRYSCRIPT_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_JERRYSCRIPT_V100
+            bool "v1.0.0"
+    endchoice
+
+    config PKG_JERRYSCRIPT_VER
+        string
+        default "v1.0.0" if PKG_USING_JERRYSCRIPT_V100
+        default "latest" if PKG_USING_JERRYSCRIPT_LATEST_VERSION
+
+    config PKG_JMEM_HEAP_SIZE
+        int "Jerry memory heap size KB"
+        default 512
+
+    config PKG_JERRY_ENABLE_ERROR_MESSAGES
+        bool "Jerry enable error message"
+        default y
+
+    config PKG_JERRY_ENABLE_LOGGING
+        bool "Jerry enable logging"
+        default n
+
+    config PKG_JMEM_STATS
+        bool "Jerry enable memory usage statistics"
+        select PKG_JERRY_ENABLE_LOGGING
+        default n
+
+    config CONFIG_DISABLE_ANNEXB_BUILTIN
+        bool "CONFIG_DISABLE_ANNEXB_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_ARRAY_BUILTIN
+        bool "CONFIG_DISABLE_ARRAY_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_BOOLEAN_BUILTIN
+        bool "CONFIG_DISABLE_BOOLEAN_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_DATE_BUILTIN
+        bool "CONFIG_DISABLE_DATE_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_ERROR_BUILTINS
+        bool "CONFIG_DISABLE_ERROR_BUILTINS"
+        default n
+
+    config CONFIG_DISABLE_JSON_BUILTIN
+        bool "CONFIG_DISABLE_JSON_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_MATH_BUILTIN
+        bool "CONFIG_DISABLE_MATH_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_NUMBER_BUILTIN
+        bool "CONFIG_DISABLE_NUMBER_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_REGEXP_BUILTIN
+        bool "CONFIG_DISABLE_REGEXP_BUILTIN"
+        default n
+
+    config CONFIG_DISABLE_STRING_BUILTIN
+        bool "CONFIG_DISABLE_STRING_BUILTIN"
+        default n
+
+    config PKG_CONFIG_DISABLE_ES2015
+        bool "Group of ES2015-related features disabled together."
+        default y
+
+endif

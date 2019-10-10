@@ -1,0 +1,47 @@
+{
+  "name": "webclient",
+  "description": "http client library by RT-Thread",
+  "description_zh": "RT-Thread 官方开源的 http/https 协议客户端",
+  "keywords": [
+    "webclient"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/webclient",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/webclient#readme",
+  "doc": "https://www.rt-thread.org/document/site/submodules/webclient/docs/introduction/",
+  "readme": "WebClient: A HTTP/HTTPS Client for RT-Thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/webclient/archive/1.0.0.zip",
+      "filename": "webclient-1.0.0.zip"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/RT-Thread-packages/webclient/archive/2.0.0.zip",
+      "filename": "webclient-2.0.0.zip"
+    },
+    {
+      "version": "v2.0.1",
+      "URL": "https://github.com/RT-Thread-packages/webclient/archive/2.0.1.zip",
+      "filename": "webclient-2.0.1.zip"
+    },
+    {
+      "version": "v2.1.0",
+      "URL": "https://github.com/RT-Thread-packages/webclient/archive/2.1.0.zip",
+      "filename": "webclient-2.1.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/webclient.git",
+      "filename": "webclient.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

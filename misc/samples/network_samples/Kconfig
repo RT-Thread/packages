@@ -1,0 +1,50 @@
+
+# Kconfig file for package network_samples
+menuconfig PKG_USING_NETWORK_SAMPLES
+    bool "a network_samples package for rt-thread"
+    default n
+
+if PKG_USING_NETWORK_SAMPLES
+
+    config PKG_NETWORK_SAMPLES_PATH
+        string
+        default "/packages/misc/samples/network_samples"
+
+    choice
+        prompt "Version"
+        default PKG_USING_NETWORK_SAMPLES_V030
+        help
+            Select the package version
+
+        config PKG_USING_NETWORK_SAMPLES_V030
+            bool "v0.3.0"
+
+        config PKG_USING_NETWORK_SAMPLES_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_NETWORK_SAMPLES_VER
+       string
+       default "v0.3.0"    if PKG_USING_NETWORK_SAMPLES_V030
+       default "latest"    if PKG_USING_NETWORK_SAMPLES_LATEST_VERSION
+
+    config NETWORK_SAMPLES_USING_TCP_CLIENT
+        bool "[network] tcp client"
+
+    config NETWORK_SAMPLES_USING_TCP_SERVER
+        bool "[network] tcp server"
+
+    config NETWORK_SAMPLES_USING_UDP_CLIENT
+        bool "[network] udp client"
+
+    config NETWORK_SAMPLES_USING_UDP_SERVER
+        bool "[network] udp server"
+
+    config NETWORK_SAMPLES_USING_TCP_CLIENT_SELECT
+        bool "[network] tcp client by select api"
+
+    config NETWORK_SAMPLES_USING_HTTP_CLIENT
+        bool "[network] http client"
+
+endif
+

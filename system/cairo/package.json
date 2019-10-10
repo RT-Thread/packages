@@ -1,0 +1,38 @@
+{
+  "name": "cairo",
+  "description": "Multi-platform 2D graphics library  ",
+  "description_zh": "适用于多平台的 2D 图形软件包",
+  "keywords": [
+    "cairo"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "LGPL/MPL",
+  "repository": "https://github.com/RT-Thread-packages/cairo",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/cairo#readme",
+  "readme": "Cairo - Multi-platform 2D graphics library",
+  "site": [
+    {
+      "version": "v1.10.2",
+      "URL": "https://github.com/RT-Thread-packages/cairo.git",
+      "filename": "cairo-1.10.2.zip",
+      "VER_SHA": "cca33574ef32c616f2979e80a4cc7c765f30a422"
+    },
+    {
+      "version": "v1.14.12",
+      "URL": "https://github.com/RT-Thread-packages/cairo.git",
+      "filename": "cairo-1.14.12.zip",
+      "VER_SHA": "a177d46c7a4c5ad7eeafd5285addcae66084e3a0"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/cairo.git",
+      "filename": "cairo.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

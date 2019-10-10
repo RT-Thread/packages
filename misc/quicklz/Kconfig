@@ -1,0 +1,50 @@
+
+menuconfig PKG_USING_QUICKLZ
+    bool "QuickLZ : Fast data compression library"
+    default n
+
+if PKG_USING_QUICKLZ
+
+    config PKG_QUICKLZ_PATH
+        string
+        default "/packages/misc/quicklz"
+
+    config QLZ_USING_SAMPLE
+        bool "Enable using quicklz sample"
+        default n
+        select RT_USING_DFS
+
+    config QLZ_COMPRESSION_LEVEL
+        help
+            Set to 1, 2 or 3. Level 1 gives the fastest compression speed
+            while level 3 gives the fastest decompression speed.
+        int "The level of compression"
+        default 3
+        range 1 3
+
+    choice
+        prompt "version"
+        help
+            Select the QuickLZ version
+
+        config PKG_USING_QUICKLZ_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_QUICKLZ_V100
+            bool "v1.0.0"
+
+    endchoice
+
+    if PKG_USING_QUICKLZ_LATEST_VERSION
+       config PKG_QUICKLZ_VER
+       string
+       default "latest"
+    endif
+
+    if PKG_USING_QUICKLZ_V100
+        config PKG_QUICKLZ_VER
+        string
+        default "v1.0.0"
+    endif
+
+endif

@@ -1,0 +1,31 @@
+{
+  "name": "quicklz",
+  "description": "the world's fastest compression library",
+  "description_zh": "世界上速度最快的压缩库",
+  "keywords": [
+    "quicklz"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/RT-Thread-packages/quicklz",
+  "homepage": "https://github.com/RT-Thread-packages/quicklz#readme",
+  "readme": "QuickLZ : Fast data compression library",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/quicklz.git",
+      "filename": "quicklz-1.0.0.zip",
+      "VER_SHA": "8c20952e047f0f5b4bdfb34cf1f38f91406b8d71"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/quicklz.git",
+      "filename": "quicklz.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

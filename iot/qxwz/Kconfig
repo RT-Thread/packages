@@ -1,0 +1,32 @@
+
+# Kconfig file for package qxwz
+menuconfig PKG_USING_QXWZ
+    bool "qxwz_application: high precision location library for RT-Thread."
+    default n
+
+if PKG_USING_QXWZ
+
+    config PKG_QXWZ_PATH
+        string
+        default "/packages/iot/qxwz"
+
+    choice
+        prompt "Version"
+        default PKG_USING_QXWZ_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QXWZ_V122
+            bool "v1.2.2"
+
+        config PKG_USING_QXWZ_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_QXWZ_VER
+       string
+       default "v1.2.2"    if PKG_USING_QXWZ_V122
+       default "latest"    if PKG_USING_QXWZ_LATEST_VERSION
+
+endif
+

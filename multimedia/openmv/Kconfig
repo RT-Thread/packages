@@ -1,0 +1,36 @@
+
+menuconfig PKG_USING_OPENMV
+    bool "Openmv: Open-Source Machine Vision"
+    default n
+
+if PKG_USING_OPENMV
+
+    config PKG_OPENMV_PATH
+        string
+        default "/packages/multimedia/openmv"
+
+    choice
+        prompt "version"
+        help
+            Select the openmv version
+
+        config PKG_USING_OPENMV_V100
+            bool "v1.0.0"
+
+        config PKG_USING_OPENMV_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    if PKG_USING_OPENMV_V100
+        config PKG_OPENMV_VER
+        string
+        default "v1.0.0"
+    endif
+
+    if PKG_USING_OPENMV_LATEST_VERSION
+       config PKG_OPENMV_VER
+       string
+       default "latest"
+    endif
+
+endif

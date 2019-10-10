@@ -1,0 +1,38 @@
+{
+  "name": "persimmon",
+  "description": "Persimmon UI for RT-Thread",
+  "description_zh": "RT-Thread 的柿饼 UI",
+  "keywords": [
+    "persimmon"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/RT-Thread-packages/persimmon",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/persimmon#readme",
+  "readme": "a persimmon package for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/persimmon.git",
+      "filename": "persimmon-1.0.0.zip",
+      "VER_SHA": "ffe39cb9c72db75e5e6433dccf85700b37a89cf7"
+    },
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/RT-Thread-packages/persimmon/archive/v1.1.0.zip",
+      "filename": "persimmon-1.1.0.zip",
+      "VER_SHA": "3f581e01e88ea6e28c0be368f93f6f130e9342f6"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/persimmon.git",
+      "filename": "persimmon-1.0.0.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

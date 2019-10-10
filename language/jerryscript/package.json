@@ -1,0 +1,33 @@
+{
+  "name": "jerryscript",
+  "description": "JerryScript port for RT-Thread",
+  "description_zh": "针对 RT-Thread 的 JerryScript 移植",
+  "keywords": [
+    "javascript",
+    "script"
+  ],
+  "category": "language",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/jerryscript",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/jerryscript#readme",
+  "readme": "Ultra-lightweight JavaScript engine for the Internet of Things.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/jerryscript.git",
+      "filename": "jerryscript-1.0.0.zip",
+      "VER_SHA": "fbc80b5c8c60a57931e9f4814289e6d3c28f9c95"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/jerryscript.git",
+      "filename": "jerryscript-1.0.0.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "miniLZO",
+  "description": "A mini subset of the LZO real-time data compression library",
+  "description_zh": "LZO 是一个实时数据压缩库，而 miniLZO 是 LZO 压缩库的精简版本",
+  "keywords": [
+    "miniLZO"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/RT-Thread-packages/miniLZO",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/miniLZO#readme",
+  "readme": "A mini subset of the LZO real-time data compression library",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/miniLZO.git",
+      "filename": "miniLZO-1.0.0.zip",
+      "VER_SHA": "1fa973a793dd16ea96c6133151591d8df92c87b2"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/miniLZO.git",
+      "filename": "miniLZO.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

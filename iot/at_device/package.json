@@ -1,0 +1,66 @@
+{
+  "name": "at_device",
+  "description": "AT component porting or samples for different devices",
+  "description_zh": "AT 组件在不同设备上的移植或示例", 
+  "keywords": [
+    "at_device"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/at_device",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/at_device#readme",
+  "doc": "https://www.rt-thread.org/document/site/rtthread-application-note/components/at/an0014-rtthread-system-at-client/",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/1.0.0.zip",
+      "filename": "at_device-1.0.0.zip"
+    },
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/1.1.0.zip",
+      "filename": "at_device-1.1.0.zip"
+    },
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/1.2.0.zip",
+      "filename": "at_device-1.2.0.zip"
+    },
+    {
+      "version": "v1.3.0",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/1.3.0.zip",
+      "filename": "at_device-1.3.0.zip"
+    },
+    {
+      "version": "v1.4.0",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/1.4.0.zip",
+      "filename": "at_device-1.4.0.zip"
+    },
+    {
+      "version": "v1.5.0",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/1.5.0.zip",
+      "filename": "at_device-1.5.0.zip"
+    },
+    {
+      "version": "v1.6.0",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/1.6.0.zip",
+      "filename": "at_device-1.6.0.zip"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/2.0.0.zip",
+      "filename": "at_device-2.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/at_device.git",
+      "filename": "at_device.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

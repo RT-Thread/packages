@@ -1,0 +1,39 @@
+
+menuconfig PKG_USING_MULTIBUTTON
+    bool "MultiButton: Event-driven button lib for embedded"
+    default n
+
+if PKG_USING_MULTIBUTTON
+    config PKG_MULTIBUTTON_PATH
+        string
+        default "/packages/misc/MultiButton"
+
+    choice
+        prompt "Version"
+        help
+            Select the this package version
+
+        config PKG_USING_MULTIBUTTON_V102
+            bool "v1.0.2"
+
+        config PKG_USING_MULTIBUTTON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MULTIBUTTON_VER
+        string
+        default "v1.0.2" if PKG_USING_MULTIBUTTON_V102
+        default "latest" if PKG_USING_MULTIBUTTON_LATEST_VERSION
+
+menu "MultiButton Options"
+    config MULTIBUTTON_USING_EXAMPLE_ASYNC
+        bool
+        prompt "MultiButton async example"
+        default n
+    config MULTIBUTTON_USING_EXAMPLE_INQUIRE
+        bool
+        prompt "MultiButton inquire example"
+        default n
+endmenu
+
+endif

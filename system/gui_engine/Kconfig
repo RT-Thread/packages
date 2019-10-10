@@ -1,0 +1,142 @@
+menuconfig PKG_USING_GUIENGINE
+    bool "Enable GUI Engine"
+    default n
+
+if PKG_USING_GUIENGINE
+
+config PKG_GUIENGINE_PATH
+    string
+    default "/packages/system/gui_engine"
+
+choice
+    prompt "Version"
+    help
+        Select the GUI Engine version
+
+    config PKG_USING_GUIENGINE_LATEST_VERSION
+        bool "latest"
+
+    config PKG_USING_GUIENGINE_V200
+        bool "v2.0.0"
+endchoice
+
+config PKG_GUIENGINE_VER
+    string
+    default "v2.0.0" if PKG_USING_GUIENGINE_V200
+    default "latest" if PKG_USING_GUIENGINE_LATEST_VERSION
+
+choice
+    prompt "RGB888 pixel bits"
+
+    config PKG_USING_RGB888_PIXEL_BITS_32
+        bool 32
+
+    config PKG_USING_RGB888_PIXEL_BITS_24
+        bool 24
+endchoice
+
+config PKG_USING_RGB888_PIXEL_BITS
+    int
+    default 32 if PKG_USING_RGB888_PIXEL_BITS_32
+    default 24 if PKG_USING_RGB888_PIXEL_BITS_24
+
+config GUIENGINE_CMD_STRING_MAX
+    int "The maximal size of command string in GUI engine"
+    default 16
+
+config GUIENGINE_USING_TTF
+    bool "Support TrueType font"
+    default n
+
+config GUIENGINE_TTF_UTF8
+    depends on GUIENGINE_USING_TTF
+    bool "Support display UTF-8 format string by TrueType font"
+    default n
+
+config GUIENG_USING_FNT_FILE
+    bool "Support fnt font"
+    default n
+
+config GUIENGINE_USING_FONT16
+    bool "Support 16 height font"
+    default y
+
+config GUIENGINE_USING_FONT12
+    bool "Support 12 height font"
+    default y
+
+config GUIENGINE_USING_FONTHZ
+    bool "Support Chinese font"
+    default n
+
+config GUIENGINE_USING_HZ_FILE
+    depends on GUIENGINE_USING_FONTHZ
+    bool "Place Chinese font on file system"
+    default y
+
+config GUIENGINE_IMAGE_XPM
+    bool "Support XPM image format"
+    default n
+
+config GUIENGINE_USING_JPG
+    bool "Support JPG image format"
+    default n
+
+if GUIENGINE_USING_JPG
+    choice
+        prompt "JPEG image format"
+        default GUIENGINE_IMAGE_TJPGD
+
+        config GUIENGINE_IMAGE_TJPGD
+            bool "with TJpgDec(Tiny JPEG Decompressor)"
+
+        config GUIENGINE_IMAGE_JPEG
+            bool "with Libjpeg"
+    endchoice
+endif
+
+config GUIENGINE_USING_PNG
+    bool "Support PNG image format"
+    default y
+
+if GUIENGINE_USING_PNG
+    choice
+        prompt "PNG image format"
+        default GUIENGINE_IMAGE_LODEPNG
+
+        config GUIENGINE_IMAGE_LODEPNG
+            bool "with LodePNG"
+
+        config GUIENGINE_IMAGE_PNG
+            bool "with LibPNG"
+    endchoice
+endif
+
+config GUIENGINE_USING_HDC
+    bool "Support HDC image format"
+    default n
+    
+config GUIENGINE_USING_FASTLZ
+    depends on GUIENGINE_USING_HDC
+    bool "Select the PKG_USING_FASTLZ for hdc"
+    select PKG_USING_FASTLZ
+    default n
+
+config GUIENGINE_IMAGE_BMP
+    bool "Support BMP image format"
+    default n
+
+config GUIENGINE_IMAGE_CONTAINER
+    bool "Use image container"
+    default y
+
+config GUIENGINE_USING_DEMO
+    bool "Enable the example of GUI Engine"
+    default n
+
+config GUIENGINE_NAME_MAX
+    int "The maximal size of name in GUI Engine"
+    default 16
+
+endif
+

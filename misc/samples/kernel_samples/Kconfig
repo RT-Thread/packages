@@ -1,0 +1,84 @@
+
+# Kconfig file for package kernel_samples
+menuconfig PKG_USING_KERNEL_SAMPLES
+    bool "a kernel_samples package for rt-thread"
+    default n
+
+if PKG_USING_KERNEL_SAMPLES
+
+    config PKG_KERNEL_SAMPLES_PATH
+        string
+        default "/packages/misc/samples/kernel_samples"
+
+    choice
+        prompt "Version"
+        default PKG_USING_KERNEL_SAMPLES_V030
+        help
+            Select the package version
+
+        config PKG_USING_KERNEL_SAMPLES_V030
+            bool "v0.3.0"
+
+        config PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_KERNEL_SAMPLES_VER
+       string
+       default "v0.3.0"    if PKG_USING_KERNEL_SAMPLES_V030
+       default "latest"    if PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
+       
+    config KERNEL_SAMPLES_USING_THREAD
+        bool "[kernel] thread"
+
+    config KERNEL_SAMPLES_USING_SEMAPHORE
+        bool "[kernel] semphore"
+
+    config KERNEL_SAMPLES_USING_MUTEX
+        bool "[kernel] mutex"
+
+    config KERNEL_SAMPLES_USING_MAILBOX
+        bool "[kernel] mailbox"
+
+    config KERNEL_SAMPLES_USING_EVENT
+        bool "[kernel] event"
+
+    config KERNEL_SAMPLES_USING_MESSAGEQUEUE
+        bool "[kernel] message queue"
+
+    config KERNEL_SAMPLES_USING_TIMER
+        bool "[kernel] timer"
+
+    config KERNEL_SAMPLES_USING_HEAP
+        bool "[kernel] heap"
+
+    config KERNEL_SAMPLES_USING_MEMHEAP
+        bool "[kernel] memheap"
+
+    config KERNEL_SAMPLES_USING_MEMPOOL
+        bool "[kernel] mempool"
+
+    config KERNEL_SAMPLES_USING_IDLEHOOK
+        bool "[kernel] idle hook"
+
+    config KERNEL_SAMPLES_USING_SIGNAL
+        bool "[kernel] signal"
+        select RT_USING_SIGNAL
+
+    config KERNEL_SAMPLES_USING_INTERRUPT
+        bool "[kernel] interrupt"
+
+    config KERNEL_SAMPLES_USING_PRI_INVERSION
+    bool "[kernel] priority inversion"
+
+    config KERNEL_SAMPLES_USING_TIME_SLICE
+    bool "[kernel] time slice"
+
+    config KERNEL_SAMPLES_USING_SCHEDULER_HOOK
+    bool "[kernel] sheduler hook"
+    
+    config KERNEL_SAMPLES_USING_PRODUCER_CONSUMER
+    bool "[kernel] producer consumer model"
+
+endif
+

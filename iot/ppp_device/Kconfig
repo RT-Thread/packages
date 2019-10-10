@@ -1,0 +1,103 @@
+
+# Kconfig file for package ppp_device
+menuconfig PKG_USING_PPP_DEVICE
+    bool "PPP DEVICE: lwIP PPP porting for different device"
+    default n
+    select RT_USING_SAL
+    select RT_USING_LWIP
+    select RT_LWIP_PPP
+    select RT_LWIP_PPPOS
+
+if PKG_USING_PPP_DEVICE
+
+    config PKG_PPP_DEVICE_PATH
+        string
+        default "/packages/iot/ppp_device"
+
+    config PPP_DEVICE_DEBUG
+        bool "Enable debug log output"
+        default n
+
+    config USING_PPP_AUTHORIZE
+        bool "Enable authorize connect feature"
+        default n
+
+    config PPP_LCP_LINK_DETECT
+        bool "Enable link status detect feature"
+        default y
+
+    if PPP_LCP_LINK_DETECT
+
+       config LCP_ECHOINTERVAL
+           int "Link status detect timeout"
+           default 1
+           range 1 10
+
+    endif
+
+    choice
+        prompt "Select modem type"
+        default PPP_DEVICE_USING_AIR720
+
+        config PPP_DEVICE_USING_AIR720
+            bool "Luat Air720"
+
+        config PPP_DEVICE_USING_M6312
+            bool "China mobile M6312"
+
+        config PPP_DEVICE_USING_SIM800
+            bool "SIMCOM SIM800"
+
+    endchoice
+
+    if PPP_DEVICE_USING_AIR720
+
+        choice
+            prompt "Select network operator"
+            default PPP_APN_CMCC
+
+            config PPP_APN_CMCC
+                bool "china mobile"
+
+            config PPP_APN_CUCC
+                bool "china unicom"
+
+            config PPP_APN_CTCC
+                bool "china telecom"
+
+        endchoice
+
+        config PPP_DEVICE_AIR720_SAMPLE
+            bool "Enable air720 ppp device samples"
+            default y
+
+        if PPP_DEVICE_AIR720_SAMPLE
+
+            config PPP_AIR720_DEVICE_NAME
+                string "air720 device name"
+                default "a0"
+
+            config PPP_AIR720_CLIENT_NAME
+                string "air720 ppp device uart name"
+                default "uart3"
+
+        endif
+
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_PPP_DEVICE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PPP_DEVICE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_PPP_DEVICE_VER
+       string
+       default "latest"    if PKG_USING_PPP_DEVICE_LATEST_VERSION
+
+endif
+

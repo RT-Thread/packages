@@ -1,0 +1,37 @@
+{
+  "name": "sx12xx",
+  "description": "Semtech  LoRa RF chip driver library",
+  "description_zh": "Semtech LoRa RF 芯片驱动库",
+  "keywords": [
+    "sx12xx",
+    "sx1232",
+    "sx1272",
+    "sx1276",
+    "sx1278",
+    "spi"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "XiaojieFan",
+    "email": "dingo1688@126.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/XiaojieFan/sx12xx",
+  "icon": "unknown",
+  "doc": "unknown",
+  "homepage": "https://github.com/XiaojieFan/sx12xx#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/XiaojieFan/sx12xx.git",
+      "filename": "sx12xx-1.0.0.zip",
+      "VER_SHA": "0f6ceae7acbb034fd5886d49af9f639340084fa8"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/XiaojieFan/sx12xx.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

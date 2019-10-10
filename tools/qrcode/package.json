@@ -1,0 +1,31 @@
+{
+  "name": "qrcode",
+  "description": "A simple library for generating QR codes in C",
+  "description_zh": "一个用于将字符串生成二维码的软件包",
+  "keywords": [
+    "qrcode"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/qrcode",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/qrcode#readme",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/RT-Thread-packages/qrcode.git",
+      "filename": "qrcode-0.1.0.zip",
+      "VER_SHA": "fd7e4d8006d81eaa8451f3d0fb5ec0c21dd4daf1"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/qrcode.git",
+      "filename": "qrcode.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

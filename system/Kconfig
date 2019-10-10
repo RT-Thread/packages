@@ -1,0 +1,19 @@
+menu "system packages"
+
+source "$PKGS_DIR/packages/system/gui_engine/Kconfig"
+source "$PKGS_DIR/packages/system/persimmon/Kconfig"
+source "$PKGS_DIR/packages/system/cairo/Kconfig"
+source "$PKGS_DIR/packages/system/pixman/Kconfig"
+source "$PKGS_DIR/packages/system/lwext4/Kconfig"
+source "$PKGS_DIR/packages/system/partition/Kconfig"
+source "$PKGS_DIR/packages/system/fal/Kconfig"
+source "$PKGS_DIR/packages/system/sqlite/Kconfig"
+source "$PKGS_DIR/packages/system/rti/Kconfig"
+source "$PKGS_DIR/packages/system/LittlevGL2RTT/Kconfig"
+source "$PKGS_DIR/packages/system/CMSIS/Kconfig"
+source "$PKGS_DIR/packages/system/yaffs2/Kconfig"
+source "$PKGS_DIR/packages/system/littlefs/Kconfig"
+source "$PKGS_DIR/packages/system/thread_pool/Kconfig"
+source "$PKGS_DIR/packages/system/rt_robot/Kconfig"
+
+endmenu

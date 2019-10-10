@@ -1,0 +1,31 @@
+{
+  "name": "CanFestival",
+  "description": "A CanFestival port to RT-Thread operating system",
+  "description_zh": "Canfestival (开源的 CANopen 协议栈)在 RT-Thread 系统上的移植",
+  "keywords": [
+    "CanFestival",
+    "CANOpen"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "gbcwbz",
+    "email": "unknown"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/gbcwbz/canfestival-rtt",
+  "homepage": "https://github.com/gbcwbz/canfestival-rtt#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/gbcwbz/canfestival-rtt/archive/v1.0.0.zip",
+      "filename": "CanFestival-1.0.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/gbcwbz/canfestival-rtt.git",
+      "filename": "CanFestival latest version git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

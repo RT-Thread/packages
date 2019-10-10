@@ -1,0 +1,39 @@
+{
+  "name": "infrared",
+  "description": "Infrared framework based on rt-thread's pin,pwm and hwtimer driver.",
+  "description_zh": "基于 rt-thread 的 pin,pwm 和 hwtimer 驱动的红外框架。",  
+  "keywords": [
+    "infrared",
+    "红外"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/infrared_framework.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://codeload.github.com/RT-Thread-packages/infrared_framework/zip/0.1.0",
+      "filename": "infrared_framework-0.1.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v0.1.1",
+      "URL": "https://codeload.github.com/RT-Thread-packages/infrared_framework/zip/0.1.1",
+      "filename": "infrared_framework-0.1.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/infrared_framework.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

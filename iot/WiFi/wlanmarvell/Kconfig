@@ -1,0 +1,46 @@
+menu "Marvell WiFi"
+
+menuconfig PKG_USING_WLANMARVELL
+    bool "Marvell WiFi driver for rt-thread"
+    select RT_USING_WIFI
+    default n
+
+if PKG_USING_WLANMARVELL
+
+    config PKG_WLANMARVELL_PATH
+        string
+        default "/packages/iot/WiFi/wlanmarvell"
+
+    choice
+        prompt "marvell wifi version"
+        help
+            Select the marvell wifi version
+
+        config PKG_USING_WLANMARVELL_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_WLANMARVELL_V100
+            bool "v1.0.0"
+    endchoice
+
+    config PKG_WLANMARVELL_VER
+        string
+        default "v1.0.0" if PKG_USING_WLANMARVELL_V100
+        default "latest" if PKG_USING_WLANMARVELL_LATEST_VERSION
+
+    config MARVELLWIFI_USING_STA
+        bool "Using station mode"
+        default y
+
+    if MARVELLWIFI_USING_STA
+        config MARVELLWIFI_STA_REASSOCIATION
+        bool "station mode support reassociation"
+        default y
+    endif
+
+    config MARVELLWIFI_USING_UAP
+        bool "Using access point mode"
+        default n
+endif
+
+endmenu

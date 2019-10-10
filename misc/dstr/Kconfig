@@ -1,0 +1,40 @@
+menuconfig PKG_USING_DSTR
+    bool "dstr: a dynaminc string package for rt-thread"
+    default n
+
+if PKG_USING_DSTR
+
+    config PKG_DSTR_PATH
+        string
+        default "/packages/misc/dstr"
+
+    choice
+        prompt "Version"
+        help
+            Select this package version
+
+        config PKG_USING_DSTR_V010
+            bool "v0.1.0"
+
+        config PKG_USING_DSTR_V020
+            bool "v0.2.0"
+
+        config PKG_USING_DSTR_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_DSTR_VER
+       string
+       default "v0.1.0"    if PKG_USING_DSTR_V010
+       default "v0.2.0"    if PKG_USING_DSTR_V020
+       default "latest"    if PKG_USING_DSTR_LATEST_VERSION
+
+menu "dstr Options"
+    config DSTR_USING_EXAMPLE
+        bool
+        prompt "dstr test example"
+        default n
+endmenu
+
+endif
+

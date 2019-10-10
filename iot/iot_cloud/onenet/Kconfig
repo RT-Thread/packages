@@ -1,0 +1,95 @@
+
+# Kconfig file for package onenet
+menuconfig PKG_USING_ONENET
+    bool "OneNET: China Mobile OneNet cloud SDK for RT-Thread"
+    default n
+    select PKG_USING_CJSON
+    select PKG_USING_WEBCLIENT
+
+if PKG_USING_ONENET
+
+    config PKG_ONENET_PATH
+        string
+        default "/packages/iot/iot_cloud/onenet"
+
+    config PKG_USING_ONENET_SAMPLE
+        bool "Enable OneNET sample"
+        default n
+
+    config ONENET_USING_MQTT
+        bool "Enable support MQTT protocol"
+        default y
+        select PKG_USING_PAHOMQTT
+
+    config ONENET_USING_AUTO_REGISTER
+        bool "Enable OneNET automatic register device"
+        default n
+        help
+            Enable automatic registration device functions, don't need to register on the web page
+
+    if ONENET_USING_MQTT
+        if PKG_USING_ONENET_V010
+            config ONENET_MQTT_SUBTOPIC
+                string "mqtt subtopic"
+                default "/test_topic"
+        endif
+    endif
+
+    if ONENET_USING_AUTO_REGISTER
+        config ONENET_REGISTRATION_CODE
+            string "registration code"
+            default "17eu2xb5k1GtbdY5"
+            help
+                product registration code
+
+    endif
+
+    if !ONENET_USING_AUTO_REGISTER
+        config ONENET_INFO_DEVID
+            string "device id"
+            default "29573339"
+            help
+                product device id
+
+        config ONENET_INFO_AUTH
+            string "auth info"
+            default "EF4016D6658466CA3E3606"
+            help
+                product authentication info
+
+        config ONENET_INFO_APIKEY
+            string "api key"
+            default "a2gVVf1hggZfuATkNogulHK1V=s="
+            help
+                product api key
+
+    endif
+
+    config ONENET_INFO_PROID
+        string "product id"
+        default "131494"
+
+    config ONENET_MASTER_APIKEY
+        string "master/product apikey"
+        default "U=wJJ=OEpZsZEHmdPrsKwH2hFYw="
+
+    choice
+        prompt "version"
+        help
+            Select the onenet version
+
+        config PKG_USING_ONENET_LATEST_VERSION
+            bool "latest"
+            
+        config PKG_USING_ONENET_V100
+            bool "v1.0.0"
+           
+    endchoice
+
+    config PKG_ONENET_VER
+       string
+       default "v1.0.0"    if PKG_USING_ONENET_V100
+       default "latest"    if PKG_USING_ONENET_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,40 @@
+
+# Kconfig file for package ms5611
+menuconfig PKG_USING_MS5611
+    bool "MS5611: Digital pressure sensor"
+    default n
+
+if PKG_USING_MS5611
+    
+    config PKG_MS5611_PATH
+        string
+        default "/packages/peripherals/sensors/ms5611"
+
+    config MS5611_USING_TEMP
+        bool "Enable MS5611 temperature"
+        default n
+
+    config MS5611_USING_BARO
+        bool "Enable MS5611 pressure"
+        default n
+        
+    choice
+        prompt "Version"
+        default PKG_USING_MS5611_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MS5611_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MS5611_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MS5611_VER
+       string
+       default "v1.0.0"    if PKG_USING_MS5611_V100
+       default "latest"    if PKG_USING_MS5611_LATEST_VERSION
+
+endif
+

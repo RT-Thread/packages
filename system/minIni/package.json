@@ -1,0 +1,32 @@
+{
+  "name": "minIni",
+  "description": "minIni for RT-Thread",
+  "description_zh": "minIni 在 RT-Thread 上移植的软件包",
+  "keywords": [
+    "minIni",
+    "ini"
+  ],
+  "category": "system",
+  "author": {
+    "name": "hichard",
+    "email": "thiadmer.riemersma@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/hichard/minIni",
+  "homepage": "https://github.com/hichard/minIni#readme",
+  "readme": "a minIni package for rt-thread",
+  "site": [
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/hichard/minIni.git",
+      "filename": "minIni-1.2.0.zip",
+      "VER_SHA": "5bb0bd7ca1e6dbabef4eea7df3a1acc6400f7fcc"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/hichard/minIni.git",
+      "filename": "minIni.zip",
+      "VER_SHA": "mater"
+    }
+  ]
+}

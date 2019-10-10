@@ -1,0 +1,35 @@
+{
+  "name": "webnet",
+  "description": "A lightweight, customizable embedded Web Server by RT-Thread",
+  "description_zh": "RT-Thread 官方开源的、轻量级、可定制嵌入式 Web 服务器",
+  "keywords": [
+    "webnet"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/RT-Thread-packages/webnet",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/webnet#readme",
+  "site": [
+    {
+      "version": "v2.0.1",
+      "URL": "https://github.com/RT-Thread-packages/webnet/archive/2.0.1.zip",
+      "filename": "webnet-2.0.1.zip"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/RT-Thread-packages/webnet/archive/2.0.0.zip",
+      "filename": "webnet-2.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/webnet.git",
+      "filename": "webnet.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

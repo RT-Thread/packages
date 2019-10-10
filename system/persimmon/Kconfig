@@ -1,0 +1,42 @@
+menuconfig PKG_USING_PERSIMMON
+    bool "Persimmon UI: An Embedded GUI component with sliding and animated effects"
+    select PKG_USING_GUIENGINE
+    select PKG_USING_FASTLZ
+    depends on ARCH_ARM_CORTEX_M4 || ARCH_ARM_CORTEX_M7 || ARCH_ARM_CORTEX_A || ARCH_MIPS_XBURST || ARCH_ARM_ARM9
+    default n
+    help
+        An Embedded GUI component with sliding and animated effects running on RT-Thread
+
+if PKG_USING_PERSIMMON
+
+    config PKG_PERSIMMON_PATH
+        string
+        default "/packages/system/persimmon"
+
+    choice
+        prompt "Version"
+        help
+            Select the Persimmon UI version
+
+        config PKG_USING_PERSIMMON_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PERSIMMON_V110
+            bool "v1.1.0"
+
+        config PKG_USING_PERSIMMON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_PERSIMMON_VER
+        string
+        default "v1.0.0" if PKG_USING_PERSIMMON_V100
+        default "v1.1.0" if PKG_USING_PERSIMMON_V110
+        default "latest" if PKG_USING_PERSIMMON_LATEST_VERSION
+
+    config RT_USING_PERSIMMON_EXAMPLE
+        bool "Persimmon Examples"
+        default n
+        help
+            Basic examples for persimmon
+endif

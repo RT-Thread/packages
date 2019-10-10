@@ -1,0 +1,30 @@
+{
+  "name": "partition",
+  "description": "A partition management package bases on block device",
+  "description_zh": "一个基于块设备的分区管理软件包",
+  "keywords": [
+    "partition"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/partition",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/partition#readme",
+  "readme": "a simple partition for block device in rt-thread.",
+  "site": [
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/RT-Thread-packages/partition/archive/v1.0.1.zip",
+      "filename": "partition-1.0.1.zip"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/partition/archive/v1.0.0.zip",
+      "filename": "partition-1.0.0.zip"
+    }
+  ]
+}

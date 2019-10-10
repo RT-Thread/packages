@@ -1,0 +1,33 @@
+{
+  "name": "wlan_wiced",
+  "description": "wlan driver from WICED",
+  "description_zh": "WICED 的 wlan 驱动",
+  "keywords": [
+    "bcm43362",
+    "bcm43438"
+  ],
+  "category": "iot/WiFi",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/RT-Thread-packages/wlan-wiced",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/wlan-wiced#readme",
+  "readme": "wlan driver(WWD) from wiced.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/wlan-wiced.git",
+      "filename": "wlan_wiced.zip",
+      "VER_SHA": "e10e3952ce0131eb50589d3a93615410a58c6aed"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/wlan-wiced.git",
+      "filename": "wlan_wiced.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

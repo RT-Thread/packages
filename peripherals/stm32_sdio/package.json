@@ -1,0 +1,43 @@
+{
+  "name": "stm32_sdio",
+  "description": "STM32 SDIO controller drivers library",
+  "description_zh": "STM32 平台 SDIO 控制器驱动包",
+  "keywords": [
+    "stm32_sdio"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/stm32_sdio",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/stm32_sdio#readme",
+  "site": [
+    {
+      "version": "v1.0.2",
+      "URL": "https://github.com/RT-Thread-packages/stm32_sdio/archive/1.0.2.zip",
+      "filename": "stm32_sdio-1.0.2.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/RT-Thread-packages/stm32_sdio/archive/1.0.1.zip",
+      "filename": "stm32_sdio-1.0.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/stm32_sdio/archive/1.0.0.zip",
+      "filename": "stm32_sdio-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/stm32_sdio.git",
+      "filename": "stm32_sdio.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

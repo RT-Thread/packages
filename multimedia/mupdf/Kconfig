@@ -1,0 +1,38 @@
+
+# Kconfig file for package mupdf
+menuconfig PKG_USING_MUPDF
+    bool "mupdf: a lightweight PDF, XPS, and E-book viewer"
+    default n
+
+if PKG_USING_MUPDF
+
+    config PKG_MUPDF_PATH
+        string
+        default "/packages/multimedia/mupdf"
+
+    choice
+        prompt "version"
+        help
+            Select the mupdf version
+
+        config PKG_USING_MUPDF_V120
+            bool "v1.2.0"
+
+        config PKG_USING_MUPDF_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    if PKG_USING_MUPDF_V120
+        config PKG_MUPDF_VER
+        string
+        default "v1.2.0"
+    endif
+
+    if PKG_USING_MUPDF_LATEST_VERSION
+       config PKG_MUPDF_VER
+       string
+       default "latest"
+    endif
+
+endif
+

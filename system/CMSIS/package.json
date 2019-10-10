@@ -1,0 +1,33 @@
+{
+  "name": "CMSIS",
+  "description": "CMSIS(Cortex Microcontroller Software Interface Standard) package on RT-Thread",
+  "description_zh": "CMSIS 软件包在 RT-Thread 上的移植",
+  "keywords": [
+    "ARM",
+    "CMSIS"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/CMSIS",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/CMSIS#readme",
+  "readme": "CMSIS: Cortex Microcontroller Software Interface Standard from ARM",
+  "site": [
+    {
+      "version": "v5.0.0",
+      "URL": "https://github.com/RT-Thread-packages/CMSIS.git",
+      "filename": "CMSIS-5.0.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/CMSIS.git",
+      "filename": "CMSIS.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

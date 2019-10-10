@@ -1,0 +1,285 @@
+
+# Kconfig file for package NimBLE
+menuconfig PKG_USING_NIMBLE
+    bool "NimBLE:An open-source Bluetooth 5.0 stack porting on RT-Thread"
+    default n
+
+if PKG_USING_NIMBLE
+
+config PKG_NIMBLE_PATH
+    string
+    default "/packages/iot/NimBLE"
+
+menu "Bluetooth Role support"
+
+    config PKG_NIMBLE_ROLE_PERIPHERAL
+    bool "Peripheral Role support"
+    select PKG_NIMBLE_ROLE_BROADCASTER
+    default y
+    help
+        Select this for LE Peripheral role support.
+
+    config PKG_NIMBLE_ROLE_CENTRAL
+    bool "Central Role support"
+    select PKG_NIMBLE_ROLE_OBSERVER
+    default y
+    help
+        Select this for LE Central role support.
+
+    config PKG_NIMBLE_ROLE_BROADCASTER
+    bool "Broadcaster Role support"
+    default y
+    help
+        Select this for LE Broadcaster role support.
+
+    config PKG_NIMBLE_ROLE_OBSERVER
+    bool "Observer Role support"
+    help
+        Select this for LE Observer role support.
+endmenu
+
+menu "Host Stack Configuration"
+    config PKG_NIMBLE_HOST
+    bool "Bluetooth Host Stack support"
+    default y
+
+    if PKG_NIMBLE_HOST
+
+    config PKG_NIMBLE_HOST_THREAD_STACK_SIZE
+    int "The thread stack Size of Host Stack"
+    default 1536
+    help
+        Set Host thread stack size.
+
+    config PKG_NIMBLE_HOST_THREAD_PRIORITY
+    int "The thread priority of Host Stack"
+    default 8
+    help
+        Set Host Stack thread priority.
+        
+    endif
+endmenu
+
+menu "Controller Configuration"
+
+    config PKG_NIMBLE_CTLR
+    bool "Bluetooth Controller support"
+    default y
+    help
+        Enable support for nordic controller implementations.
+            
+    if PKG_NIMBLE_CTLR
+
+    config PKG_NIMBLE_CTLR_THREAD_STACK_SIZE
+    int "The thread stack Size of Controller"
+    default 1024
+    help
+        Set Controller thread stack size.
+
+    config PKG_NIMBLE_CTLR_THREAD_PRIORITY
+    int "The thread priority of Controller"
+    default 7
+    help
+        Set Controller thread priority.
+
+    choice    
+    prompt "Bluetooth device support"
+    default PKG_NIMBLE_BSP_NRF52
+    help
+        Select the device controller layer support.
+
+    config PKG_NIMBLE_BSP_NRF51
+    bool "NRF51xxx"
+
+    config PKG_NIMBLE_BSP_NRF52
+    bool "NRF52xxx"
+    
+    config PKG_NIMBLE_BSP_NRF52840
+    bool "NRF52840"
+    
+    endchoice
+
+    endif
+
+endmenu
+
+menu "Bluetooth Mesh support"
+    config PKG_NIMBLE_MESH
+    bool "Bluetooth Mesh support"
+    default n
+    depends on PKG_NIMBLE_ROLE_BROADCASTER && PKG_NIMBLE_ROLE_OBSERVER
+    help
+        This option enables Bluetooth Mesh support. The specific
+        features that are available may depend on other features
+        that have been enabled in the stack, such as GATT support.
+
+    if PKG_NIMBLE_MESH
+    
+    config PKG_NIMBLE_MESH_DEVICE_NAME
+    string "BLE Mesh device/node name"
+    default "nimble-node"
+    help
+        This value defines BLE Mesh device/node name.
+
+    config PKG_NIMBLE_MESH_ADV_THREAD_STACK_SIZE
+    int "The thread stack Size of Mesh advertising"
+    default 1024
+    help
+        Set Mesh advertising thread stack size.
+
+    config PKG_NIMBLE_MESH_ADV_THREAD_PRIORITY
+    int "The thread priority of Mesh Advertising"
+    default 9
+    help
+        Set Mesh Advertising thread priority.
+
+    config PKG_NIMBLE_MESH_CFG_CLI 
+    bool "Support for Configuration Client Model"
+    help
+      Enable support for the configuration client model.
+
+    endif
+
+endmenu
+
+menu "HCI Transport support"
+
+endmenu
+
+menu "Device Driver support"
+
+endmenu
+
+choice
+    prompt "Log level"
+    default NIMBLE_DEBUG_LEVEL_I
+    help
+        select the NIMBLE log level
+    
+    config NIMBLE_DEBUG_LEVEL_O
+        bool "OFF"
+
+    config NIMBLE_DEBUG_LEVEL_E
+        bool "ERROR"
+    
+    config NIMBLE_DEBUG_LEVEL_W
+        bool "WARING"
+    
+    config NIMBLE_DEBUG_LEVEL_I
+        bool "INFO"
+        
+    config NIMBLE_DEBUG_LEVEL_D
+        bool "DEBUG"
+
+endchoice
+    
+config NIMBLE_DEBUG_LEVEL
+    # Virtual/hidden option
+    int
+    default -1 if NIMBLE_DEBUG_LEVEL_O
+    default 0 if NIMBLE_DEBUG_LEVEL_E
+    default 1 if NIMBLE_DEBUG_LEVEL_W
+    default 2 if NIMBLE_DEBUG_LEVEL_I
+    default 3 if NIMBLE_DEBUG_LEVEL_D
+    default 2
+
+choice
+    prompt "Bluetooth Samples"
+    default PKG_NIMBLE_SAMPLE_DISABLE
+    help
+        select the NimBLE samples
+    
+    config PKG_NIMBLE_SAMPLE_DISABLE
+    bool "Not enable sample"
+    
+    config PKG_NIMBLE_SAMPLE_PER_HR
+    bool "BLE peripheral heartrate sensor"
+    select NIMBT_ROLE_PERIPHERAL
+
+    config PKG_NIMBLE_SAMPLE_BLECSC
+    bool "BLE peripheral cycling speed and cadence sensor"
+    select NIMBT_ROLE_PERIPHERAL
+
+    config PKG_NIMBLE_SAMPLE_BLEUART
+    bool "BLE uart sample"
+
+    config PKG_NIMBLE_SAMPLE_BTSHELL
+    bool "BLE Shell sample exposing the nimble GAP and GATT"
+
+    config PKG_NIMBLE_SAMPLE_PERIPHERAL
+    bool "BLE peripheral role sample"
+
+    config PKG_NIMBLE_SAMPLE_CENTRAL
+    bool "BLE central role sample"
+
+    config PKG_NIMBLE_SAMPLE_BEACON
+    bool "BLE beacon sample"
+    select NIMBT_ROLE_BROADCASTER
+   
+    config PKG_NIMBLE_SAMPLE_EXT_ADVERTISER
+    bool "BLE external advertiser sample"
+        
+    config PKG_NIMBLE_SAMPLE_BLEMESH
+    bool "BLE Mesh sample"
+    select PKG_NIMBLE_MESH
+
+endchoice
+
+config PKG_NIMBLE_MAX_CONNECTIONS
+    int "Maximum number of concurrent connections"
+    range 1 32
+    default 1
+    help
+      Maximum number of concurrent Bluetooth connections supported.
+
+config PKG_NIMBLE_WHITELIST
+    bool "Device Whitelist Support"
+    default y
+    help
+        Enables the BLE whitelist for controlling who to connect to
+        oraccept a connection from.
+
+config PKG_NIMBLE_MULTI_ADV_INSTANCES
+    int "The number of multi-advertising instances"
+    default 0
+    depends on PKG_NIMBLE_ROLE_BROADCASTER
+    help
+        This is the number of multi-advertising instances. This is NOT 
+        the total number of advertising instances. The total number of
+        advertising instances is this number plus 1.
+
+config PKG_NIMBLE_EXT_ADV
+    bool "Extended Advertising Feature Support"
+    default n
+    depends on PKG_NIMBLE_ROLE_BROADCASTER
+    help
+        This enables extended advertising feature.
+
+config PKG_NIMBLE_EXT_ADV_MAX_SIZE
+    int "The number of multi-advertising instances"
+    range 31 1650
+    default 31
+    depends on PKG_NIMBLE_EXT_ADV
+    help
+        This allows to configure maximum size of advertising data and scan
+        response data used in LE Advertising Extensions. Valid range 31-1650.
+
+    choice
+        prompt "Version"
+        default PKG_USING_NIMBLE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NIMBLE_V100
+            bool "v1.0.0"
+
+        config PKG_USING_NIMBLE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_NIMBLE_VER
+       string
+       default "v1.0.0"    if PKG_USING_NIMBLE_V100
+       default "latest"    if PKG_USING_NIMBLE_LATEST_VERSION
+
+endif

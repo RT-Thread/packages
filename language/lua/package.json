@@ -1,0 +1,32 @@
+{
+  "name": "Lua",
+  "description": "The Lua library adapts rt-thread3.0(based on Lua 5.1.4 and 5.3.4)",
+  "description": " Lua 库适配 RT-Thread 3.0(基于 lua 5.1.4和 5.3.4 版本)",
+  "keywords": [
+    "Lua",
+    "embedded"
+  ],
+  "category": "language",
+  "author": {
+    "name": "liu2guang",
+    "email": "1004383796@qq.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/liu2guang/Lua2RTT",
+  "homepage": "https://github.com/liu2guang/Lua2RTT#readme",
+  "readme": "Lua: A lightweight, embeddable scripting language.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/liu2guang/Lua2RTT.git",
+      "filename": "Lua2RTT-v1.0.0.zip",
+      "VER_SHA": "d0c6d15eb4f1493c38ce41b0d0fd7b726284b349"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/liu2guang/Lua2RTT.git",
+      "filename": "Lua2RTT-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

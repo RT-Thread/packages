@@ -1,0 +1,48 @@
+menuconfig PKG_USING_COAP
+    bool "CoAP: A C implementation of the Constrained Application Protocol"
+    select RT_USING_LWIP
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    default n
+
+	help
+		libcoap: A C implementation of the Constrained Application Protocol (RFC 7252)
+
+if PKG_USING_COAP
+
+	config PKG_USING_COAP_EXAMPLE
+	bool "Enable CoAP example"
+	default y
+
+    config PKG_COAP_PATH
+        string
+        default "/packages/iot/coap"
+
+    choice
+        prompt "version"
+        help
+            Select the CoAP version
+
+		config PKG_USING_COAP_V100
+            bool "v1.0.0"
+
+        config PKG_USING_COAP_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    if PKG_USING_COAP_V100
+       config PKG_COAP_VER
+       string
+       default "v1.0.0"
+    endif
+
+    if PKG_USING_COAP_LATEST_VERSION
+       config PKG_COAP_VER
+       string
+       default "latest"
+    endif
+
+endif
+
+

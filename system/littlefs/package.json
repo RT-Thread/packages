@@ -1,0 +1,54 @@
+{
+  "name": "littlefs",
+  "description": "A little fail-safe filesystem designed for microcontrollers",
+  "description_zh": "为微控制器设计的一个小型的且掉电安全的文件系统",
+  "keywords": [
+    "littlefs"
+  ],
+  "category": "system",
+  "author": {
+    "name": "geniusgogo",
+    "email": "unknown"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/geniusgogo/littlefs",
+  "homepage": "https://github.com/geniusgogo/littlefs#readme",
+  "site": [
+    {
+      "version": "v0.9.0",
+      "URL": "https://github.com/geniusgogo/littlefs.git",
+      "filename": "littlefs-0.9.0.zip",
+      "VER_SHA": "2b6c05f42b6fe1c8cd112540a84a8b83e6536c14"
+    },
+    {
+      "version": "v1.7.0",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v1.7.0_for_rtthread.zip",
+      "filename": "v1.7.0_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.7.2",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v1.7.2_for_rtthread.zip",
+      "filename": "v1.7.2_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v2.0.1",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v2.0.1_for_rtthread.zip",
+      "filename": "v2.0.1_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v2.0.5",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v2.0.5_for_rtthread.zip",
+      "filename": "v2.0.5_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/geniusgogo/littlefs.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

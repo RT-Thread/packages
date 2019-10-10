@@ -1,0 +1,9 @@
+
+    menu "Wi-Fi"
+
+    source "$PKGS_DIR/packages/iot/WiFi/wlanmarvell/Kconfig"
+    source "$PKGS_DIR/packages/iot/WiFi/wlan_wiced/Kconfig"
+    source "$PKGS_DIR/packages/iot/WiFi/rw007/Kconfig"
+
+    endmenu
+

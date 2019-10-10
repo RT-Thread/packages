@@ -1,0 +1,32 @@
+{
+  "name": "fastlz",
+  "description": "lightning-fast compression library",
+  "description_zh": "一款极速的压缩库",
+  "keywords": [
+    "fastlz"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/RT-Thread-packages/fastlz",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/fastlz#readme",
+  "readme": "a fastlz package for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/fastlz.git",
+      "filename": "fastlz-1.0.0.zip",
+      "VER_SHA": "4df55b9310625fcba86b8fa0fd949c1f3970fa29"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/fastlz.git",
+      "filename": "fastlz.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

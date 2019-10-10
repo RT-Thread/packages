@@ -1,0 +1,33 @@
+{
+  "name": "bme280",
+  "description": "This is the BME280 sensor driver package, support: barometric, humidity",
+  "description_zh": "这是 BME280 传感器驱动软件包，支持：气压，湿度",
+  "keywords": [
+    "sensor",
+    "bme280"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "flybreak",
+    "email": "guozhanxin@rt-thread.com"
+  },
+  "license": "other",
+  "repository": "https://github.com/RT-Thread-packages/bme280",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/RT-Thread-packages/bme280.git",
+      "filename": "bme280-0.0.1.zip",
+      "VER_SHA": "a2aefd918a17f0436037c94b3ecdc07e675dab9b"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/bme280.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

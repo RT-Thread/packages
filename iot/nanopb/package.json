@@ -1,0 +1,25 @@
+{
+  "name": "nanopb",
+  "description": "Protocol Buffers for Embedded Systems",
+  "description_zh": "Protocol Buffers 解析器在嵌入式上的实现", 
+  "keywords": [
+    "nanopb"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Zlib",
+  "repository": "https://github.com/RT-Thread-packages/nanopb",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/nanopb#readme",
+  "readme": "Protocol Buffers for Embedded Systems",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/nanopb/archive/v1.0.0.zip",
+      "filename": "nanopb-1.0.0.zip"
+    }
+  ]
+}

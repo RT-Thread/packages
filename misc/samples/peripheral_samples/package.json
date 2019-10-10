@@ -1,0 +1,31 @@
+{
+  "name": "peripheral_samples",
+  "description": "RT-Thread peripheral samples",
+  "description_zh": "RT-Thread 外设示例",
+  "keywords": [
+    "peripheral_samples"
+  ],
+  "category": "misc/samples",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/peripheral-sample",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/peripheral-sample#readme",
+  "site": [
+    {
+      "version": "v0.4.0",
+      "URL": "https://github.com/RT-Thread-packages/peripheral-sample/archive/v0.4.0.zip",
+      "filename": "peripheral_samples-v0.4.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/peripheral-sample.git",
+      "filename": "peripheral_samples.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "ljson",
+  "description": "JSON parser in ANSI C",
+  "description_zh": "ANSI-C 标准的 JSON 解析器",  
+  "keywords": [
+    "ljson"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "qiaoqidui",
+    "email": "891062079@qq.com"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/qiaoqidui/ljson",
+  "homepage": "https://github.com/qiaoqidui/ljson#readme",
+  "readme": "JSON parser in ANSI C",
+  "site": [
+    {
+      "version": "v0.0.2",
+      "URL": "https://github.com/qiaoqidui/ljson/archive/v0.0.2.zip",
+      "filename": "ljson-0.0.2.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiaoqidui/ljson.git",
+      "filename": "ljson.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
+

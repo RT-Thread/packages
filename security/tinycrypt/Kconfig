@@ -1,0 +1,58 @@
+menuconfig PKG_USING_TINYCRYPT
+    bool "TinyCrypt: A tiny and configurable crypt library"
+    default n
+
+if PKG_USING_TINYCRYPT
+
+    config PKG_TINYCRYPT_PATH
+        string
+        default "/packages/security/tinycrypt"
+
+    choice
+        prompt "Version"
+        default PKG_USING_TINYCRYPT_V100
+        help
+            Select the TinyCrypt version
+
+        config PKG_USING_TINYCRYPT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_TINYCRYPT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_TINYCRYPT_VER
+    string
+    default "v1.0.0" if PKG_USING_TINYCRYPT_V100
+    default "latest" if PKG_USING_TINYCRYPT_LATEST_VERSION
+
+    config TINY_CRYPT_MD5
+    bool "MD5"
+    default y
+
+    config TINY_CRYPT_BASE64
+    bool "base64"
+    default y
+
+    config TINY_CRYPT_AES
+    bool "AES"
+    default y
+
+    if TINY_CRYPT_AES
+        config TINY_CRYPT_AES_ROM_TABLES
+            bool "AES table in ROM"
+            default y
+        config TINYCRYPT_USING_AES_SAMPLE
+            bool "Enable aes sample"
+            default n
+    endif
+
+    config TINY_CRYPT_SHA1
+    bool "SHA1"
+    default y
+
+    config TINY_CRYPT_SHA256
+    bool "SHA256"
+    default y
+
+endif

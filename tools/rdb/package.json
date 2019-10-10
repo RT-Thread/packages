@@ -1,0 +1,31 @@
+{
+  "name": "rdb",
+  "description": "RT-Thread Debug Bridge",
+  "description_zh": "RT-Thread 调试桥",
+  "keywords": [
+    "rdb"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/RT-Thread-packages/rdb",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/rdb#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/rdb.git",
+      "filename": "rdb-1.0.0.zip",
+      "VER_SHA": "9d25837283ee530a1088daad433d41fcd0f24dfa"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/rdb.git",
+      "filename": "rdb-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

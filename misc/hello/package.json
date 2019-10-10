@@ -1,0 +1,31 @@
+{
+  "name": "hello",
+  "description": "package sample for rt-thread",
+  "description_zh": "RT-Thread 软件包示例",
+  "keywords": [
+    "hello"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/hello",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/hello#readme",
+  "readme": "A hello package for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/hello/archive/v1.0.0.zip",
+      "filename": "hello-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/hello.git",
+      "filename": "hello.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

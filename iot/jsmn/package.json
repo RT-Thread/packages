@@ -1,0 +1,32 @@
+{
+  "name": "jsmn",
+  "description": "Jsmn is a world fastest JSON parser/tokenizer",
+  "description_zh": "世界上最快 JSON 解析器或标记器",
+  "keywords": [
+    "jsmn"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/jsmn",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/jsmn#readme",
+  "readme": "jsmn: is a minimalistic JSON parser in C",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/RT-Thread-packages/jsmn.git",
+      "filename": "jsmn-0.1.0.zip",
+      "VER_SHA": "d28108a080d56822b29db404db97c939afdb9326"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/jsmn.git",
+      "filename": "jsmn.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

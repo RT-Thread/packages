@@ -1,0 +1,8 @@
+menu "samples: kernel and components samples"
+
+source "$PKGS_DIR/packages/misc/samples/kernel_samples/Kconfig"
+source "$PKGS_DIR/packages/misc/samples/filesystem_samples/Kconfig"
+source "$PKGS_DIR/packages/misc/samples/network_samples/Kconfig"
+source "$PKGS_DIR/packages/misc/samples/peripheral_samples/Kconfig"
+
+endmenu

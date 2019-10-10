@@ -1,0 +1,31 @@
+{
+  "name": "openmv",
+  "description": "openmv porting for rt-thread",
+  "description": "openmv 在 RT-Thread 上的移植",
+  "keywords": [
+    "openmv"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "SummerGift",
+    "email": "SummerGift@qq.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages-by-SummerGift/openmv",
+  "homepage": "https://github.com/RT-Thread-packages-by-SummerGift/openmv#readme",
+  "readme": "a openmv package for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages-by-SummerGift/openmv.git",
+      "filename": "openmv-1.0.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages-by-SummerGift/openmv.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

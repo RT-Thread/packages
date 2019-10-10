@@ -1,0 +1,215 @@
+
+menuconfig PKG_USING_SYSTEMVIEW
+    bool "SystemView: A Segger utility for analysis and trace the RTOS"
+    default n
+    select RT_USING_HOOK
+
+if PKG_USING_SYSTEMVIEW
+
+    config PKG_SYSTEMVIEW_PATH
+        string
+        default "/packages/tools/SystemView"
+
+	config PKG_SYSVIEW_APP_NAME
+		string "App name"
+		default "RT-Thread Trace"
+		---help---
+			The application name to be displayed in SystemViewer UI
+
+	config PKG_SYSVIEW_DEVICE_NAME
+		string "Device name"
+		default "Cortex-M"
+		---help---
+			The target device name
+
+	config PKG_SYSVIEW_TIMESTAMP_FREQ
+		int "Timestap freq"
+		default 0
+		---help---
+			Frequency of the timestamp. Must match SEGGER_SYSVIEW_Conf.h. 0: using SystemCoreClock
+
+	config PKG_SYSVIEW_CPU_FREQ
+		int "cpu freq"
+		default 0
+		---help---
+			System Frequency. SystemcoreClock is used in most CMSIS compatible projects. 0: using SystemCoreClock
+
+	config PKG_SYSVIEW_RAM_BASE
+		hex "RAM base"
+		default 0x20000000
+		---help---
+			The lowest RAM address used for IDs (pointers)
+
+	config PKG_SYSVIEW_EVENTID_OFFSET
+		int "Event ID offset"
+		default 32
+
+	config PKG_SYSVIEW_USE_CYCCNT_TIMESTAMP
+		bool "Using the Cortex-M cycle counter as SystemView timestamp"
+		default y
+		---help---
+			"Using the Cortex-M cycle counter as SystemView timestamp"
+
+	config PKG_SYSVIEW_SYSDESC0
+		string "System description 0"
+		default "I#15=SysTick"
+		---help---
+			format is "I#%num%=%name%, ..." number is IRQ number, name is IRQ name
+
+	config PKG_SYSVIEW_SYSDESC1
+		string "System description 1"
+		default ""
+		---help---
+			format is "I#%num%=%name%, ..." number is IRQ number, name is IRQ name
+
+	config PKG_SYSVIEW_SYSDESC2
+		string "System description 2"
+		default ""
+		---help---
+			format is "I#%num%=%name%, ..." number is IRQ number, name is IRQ name
+
+menu "Segger RTT configuration"
+    config PKG_SEGGER_RTT_MAX_NUM_UP_BUFFERS
+        int "Max num of up buffer"
+        default 3
+		---help---
+			Max. number of up-buffers (T->H) available on this target
+
+    config PKG_SEGGER_RTT_MAX_NUM_DOWN_BUFFERS
+        int "Max num of dowm buffer"
+        default 3
+		---help---
+			Max. number of down-buffers (H->T) available on this target
+
+    config PKG_SEGGER_RTT_BUFFER_SIZE_UP
+		int "buffer size up"
+		default 1024
+		---help---
+			Size of the buffer for terminal output of target, up to host
+
+    config PKG_SEGGER_RTT_BUFFER_SIZE_DOWN
+		int "buffer size down"
+		default 16
+		---help---
+			Size of the buffer for terminal input to target from host (Usually keyboard input)
+
+	config PKG_SEGGER_RTT_PRINTF_BUFFER_SIZE
+		int "Segger RTT printf buffer size"
+		default 64
+		---help---
+			Size of buffer for RTT printf to bulk-send chars via RTT
+
+    config PKG_SEGGER_RTT_AS_SERIAL_DEVICE
+        bool "Use Segger RTT channel 0 as RT-Thread Serial Device"
+        default y
+
+    if PKG_SEGGER_RTT_AS_SERIAL_DEVICE
+        config PKG_SERIAL_DEVICE_NAME
+            string "Segger-RTT Serial Device Name"
+            default "segger"
+    endif
+
+	choice
+        prompt "Mode for pre-initialized terminal channel"
+        default PKG_SEGGER_RTT_MODE_ENABLE_NO_BLOCK_SKIP
+        ---help---
+			Select the Mode for pre-initialized terminal channel (buffer 0)
+        config PKG_SEGGER_RTT_MODE_ENABLE_NO_BLOCK_SKIP
+            bool "No block skip"
+			---help---
+				Skip. Do not block, output nothing.
+        config PKG_SEGGER_RTT_MODE_ENABLE_NO_BLOCK_TRIM
+            bool "No block trim"
+			---help---
+				Trim: Do not block, output as much as fits.
+        config PKG_SEGGER_RTT_MODE_ENABLE_BLOCK_IF_FIFO_FULL
+            bool "block if fifo full"
+			---help---
+				Block: Wait until there is space in the buffer
+    endchoice
+
+	config PKG_SEGGER_RTT_MAX_INTERRUPT_PRIORITY
+		hex "Max Interrupt priority"
+		default 0x20
+		---help---
+			Target is not allowed to perform other RTT operations while string still has not been stored completely.
+			Otherwise we would probably end up with a mixed string in the buffer.
+			If using  RTT from within interrupts, multiple tasks or multi processors, define the SEGGER_RTT_LOCK() and SEGGER_RTT_UNLOCK() function here.
+			SEGGER_RTT_MAX_INTERRUPT_PRIORITY can be used in the sample lock routines on Cortex-M3/4.
+			Make sure to mask all interrupts which can send RTT data, i.e. generate SystemView events, or cause task switches.
+			When high-priority interrupts must not be masked while sending RTT data, SEGGER_RTT_MAX_INTERRUPT_PRIORITY needs to be adjusted accordingly.
+			(Higher priority = lower priority number)
+
+
+	config PKG_SEGGER_RTT_USE_RTT_ASM
+		bool "Use RTT ASM"
+		default 64
+		---help---
+			n:disable, y:Use assembler version of SEGGER_RTT.c
+
+	config PKG_SEGGER_RTT_MEMCPY_USE_BYTELOOP
+		bool "memcpy use byte-loop"
+		default n
+		---help---
+			n: Use memcpy/SEGGER_RTT_MEMCPY, y: Use a simple byte-loop
+endmenu
+
+menu "SystemView buffer configuration"
+	config PKG_SEGGER_SYSVIEW_RTT_BUFFER_SIZE
+		int "RTT buffer size"
+		default 1024
+		---help---
+			Number of bytes that SystemView uses for the buffer
+
+	config PKG_SEGGER_SYSVIEW_RTT_CHANNEL
+		int "RTT channel"
+		default 1
+		---help---
+			The RTT channel that SystemView will use. 0: Auto selection
+
+	config PKG_SEGGER_SYSVIEW_USE_STATIC_BUFFER
+	    bool "Use static buffer"
+		default y
+		---help---
+			Use a static buffer to generate events instead of a buffer on the stack
+
+	config PKG_SEGGER_SYSVIEW_POST_MORTEM_MODE
+		bool "Enable post mortem analysis mode"
+		default n
+		---help---
+			n: disable, y: Enable post mortem analysis mode"
+
+endmenu
+
+menu "SystemView Id configuration"
+	config PKG_SEGGER_SYSVIEW_ID_BASE
+		hex "ID Base"
+		default 0x10000000
+		---help---
+			Default value for the lowest Id reported by the application. Can be overridden by the application via SEGGER_SYSVIEW_SetRAMBase(). (i.e. 0x20000000 when all Ids are an address in this RAM)
+	config PKG_SEGGER_SYSVIEW_ID_SHIFT
+		int "ID Shift"
+		default 2
+		---help---
+			Number of bits to shift the Id to save bandwidth. (i.e. 2 when Ids are 4 byte aligned)
+endmenu
+
+    choice
+        prompt "Version"
+        help
+            Select the this package version
+
+        config PKG_USING_SYSTEMVIEW_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_SYSTEMVIEW_252A
+            bool "v2.52a"
+
+    endchoice
+
+    config PKG_SYSTEMVIEW_VER
+        string
+        default "v2.52a" if PKG_USING_SYSTEMVIEW_252A
+        default "latest" if PKG_USING_SYSTEMVIEW_LATEST_VERSION
+
+endif

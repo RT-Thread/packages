@@ -1,0 +1,33 @@
+{
+  "name": "rti",
+  "description": "RT-Thread insight, a probe tool for RT-Thread to help to analyze internal behavior of the system",
+  "description_zh": "RT-Thread 展示系统内部运行信息的组件，能够帮助分析系统内部情况",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "keywords": [
+    "rti",
+    "system"
+  ],
+  "category": "system",
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/rti",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/rti#readme",
+  "readme": "RT-Thread insight, a probe tool for RT-Thread to help to analyze internal behavior of the system.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/rti.git",
+      "filename": "rti-1.0.0.zip",
+      "VER_SHA": "8621858c735086879dc445c9baf9ad34763e301d"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/rti.git",
+      "filename": "Null for git package",
+      "VER_SHA": "mater"
+    }
+  ]
+}

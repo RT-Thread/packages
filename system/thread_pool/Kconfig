@@ -1,0 +1,36 @@
+
+# Kconfig file for package thread_pool
+menuconfig PKG_USING_THREAD_POOL
+    bool "thread_pool: A thread pool base on RT-Thread"
+    default n
+
+if PKG_USING_THREAD_POOL
+
+    config PKG_THREAD_POOL_PATH
+        string
+        default "/packages/system/thread_pool"
+
+    config THREAD_POOL_USING_SAMPLES
+        bool "Enable samples"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_THREAD_POOL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_THREAD_POOL_V401
+            bool "v4.0.1"
+
+        config PKG_USING_THREAD_POOL_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_THREAD_POOL_VER
+       string
+       default "v4.0.1"    if PKG_USING_THREAD_POOL_V401
+       default "latest"    if PKG_USING_THREAD_POOL_LATEST_VERSION
+
+endif
+

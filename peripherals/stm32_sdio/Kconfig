@@ -1,0 +1,58 @@
+# Kconfig file for package stm32_sdio
+
+menuconfig PKG_USING_STM32_SDIO
+    bool "stm32_sdio: STM32 SDIO controller drivers library"
+    select RT_USING_SDIO
+    default n
+
+if PKG_USING_STM32_SDIO
+
+    config SDIO_BUFF_SIZE
+        int "SDIO buff size"
+        default 4096
+
+    config SDIO_MAX_FREQ
+        int "SDIO max freq"
+        default 24000000
+
+    config SDIO_ALIGN_LEN
+        int "SDIO allgn"
+        default 32
+
+    config SDIO_USING_1_BIT
+        bool "SDIO use 1 bit"
+        default n
+
+    config PKG_STM32_SDIO_PATH
+        string
+        default "/packages/peripherals/stm32_sdio"
+
+    choice
+        prompt "Version"
+        help
+            Select the stm32_sdio version
+            
+        if ((RT_VER_NUM >= 0x30103 && RT_VER_NUM < 0x40000) || RT_VER_NUM >= 0x40001)
+            config PKG_USING_STM32_SDIO_V102
+                bool "v1.0.2"
+        endif
+        
+        if (RT_VER_NUM < 0x30103 ||  RT_VER_NUM = 0x40000)
+            config PKG_USING_STM32_SDIO_V101
+                bool "v1.0.1"
+
+            config PKG_USING_STM32_SDIO_V100
+                bool "v1.0.0"
+        endif
+        
+        config PKG_USING_STM32_SDIO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_STM32_SDIO_VER
+       string
+       default "v1.0.2"    if PKG_USING_STM32_SDIO_V102
+       default "v1.0.1"    if PKG_USING_STM32_SDIO_V101
+       default "v1.0.0"    if PKG_USING_STM32_SDIO_V100
+       default "latest"    if PKG_USING_STM32_SDIO_LATEST_VERSION
+endif

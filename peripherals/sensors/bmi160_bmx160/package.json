@@ -1,0 +1,33 @@
+{
+  "name": "bmi160_bmx160",
+  "description": "The device driver package for BMX160 and BMI160",
+  "description_zh": "BMI160 6 轴传感器以及 BMX160 9 轴传感器的驱动包",
+  "keywords": [
+    "sensor",
+    "bmi160_bmx160"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "gztss",
+    "email": "guanwenliang@rt-thread.com"
+  },
+  "license": "other",
+  "repository": "https://github.com/RT-Thread-packages/bmi160_bmx160",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/RT-Thread-packages/bmi160_bmx160.git",
+      "filename": "bmi160_bmx160-0.0.1.zip",
+      "VER_SHA": "278b5e2c8dfca0ed4dc487783bd86f03e60af9f5"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/bmi160_bmx160.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

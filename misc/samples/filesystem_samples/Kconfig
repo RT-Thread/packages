@@ -1,0 +1,54 @@
+
+# Kconfig file for package filesystem_samples
+menuconfig PKG_USING_FILESYSTEM_SAMPLES
+    bool "a filesystem_samples package for rt-thread"
+    default n
+    select RT_USING_DFS
+
+if PKG_USING_FILESYSTEM_SAMPLES
+
+    config PKG_FILESYSTEM_SAMPLES_PATH
+        string
+        default "/packages/misc/samples/filesystem_samples"
+
+    choice
+        prompt "Version"
+        default PKG_USING_FILESYSTEM_SAMPLES_V020
+        help
+            Select the package version
+
+        config PKG_USING_FILESYSTEM_SAMPLES_V020
+            bool "v0.2.0"
+
+        config PKG_USING_FILESYSTEM_SAMPLES_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_FILESYSTEM_SAMPLES_VER
+       string
+       default "v0.2.0"    if PKG_USING_FILESYSTEM_SAMPLES_V020
+       default "latest"    if PKG_USING_FILESYSTEM_SAMPLES_LATEST_VERSION
+
+    config FILESYSTEM_SAMPLES_USING_READWRITE
+        bool "[filesystem] readwrite"
+
+    config FILESYSTEM_SAMPLES_USING_STAT
+        bool "[filesystem] stat"
+
+    config FILESYSTEM_SAMPLES_USING_RENAME
+        bool "[filesystem] rename"
+
+    config FILESYSTEM_SAMPLES_USING_MKDIR
+        bool "[filesystem] mkdir"
+
+    config FILESYSTEM_SAMPLES_USING_OPENDIR
+        bool "[filesystem] opendir"
+
+    config FILESYSTEM_SAMPLES_USING_READDIR
+        bool "[filesystem] readdir"
+
+    config FILESYSTEM_SAMPLES_USING_TELL_SEEK_DIR
+        bool "[filesystem] tell_seek_dir"
+
+endif
+

@@ -1,0 +1,15 @@
+menuconfig PKG_USING_libsodium
+    bool "libsodium: A modern and easy-to-use crypto library."
+    default n
+
+if PKG_USING_libsodium
+
+    config PKG_libsodium_PATH
+        string
+        default "/packages/security/libsodium"
+
+    config PKG_libsodium_VER
+        string
+        default "v1.0.0"
+
+endif

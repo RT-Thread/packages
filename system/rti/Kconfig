@@ -1,0 +1,62 @@
+
+# Kconfig file for package rti
+menuconfig PKG_USING_RTI
+    bool "RT-Thread Insight: probe tool for RT-Thread"
+    select RT_USING_HOOK
+    select RT_USING_CPUTIME
+    default n
+
+if PKG_USING_RTI
+
+    config PKG_RTI_PATH
+        string
+        default "/packages/system/rti"
+
+    choice
+        prompt "Version"
+        help
+            Select the rti version
+
+        config PKG_USING_RTI_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RTI_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RTI_VER
+       string
+       default "v1.0.0"    if PKG_USING_RTI_V100
+       default "latest"    if PKG_USING_RTI_LATEST_VERSION
+	config PKG_RTI_APP_NAME
+		string "App name"
+		default "RT-Thread RTI"
+
+	config PKG_RTI_BUFFER_SIZE
+		int "RTI buffer size"
+		default 4096
+
+	config PKG_RTI_RAM_BASE
+		hex "RAM base"
+		default 0x20000000
+		---help---
+			The lowest RAM address used for IDs (pointers)
+
+	config PKG_RTI_ID_SHIFT
+		int "Event ID offset"
+		default 2
+
+	config PKG_RTI_SYS_DESC0
+		string "System description 0"
+		default "I#15=systick"
+		---help---
+			format is "I#%num%=%name%, ..." number is IRQ number, name is IRQ name
+
+	config PKG_RTI_SYS_DESC1
+		string "System description 1"
+		default ""
+		---help---
+			format is "I#%num%=%name%, ..." number is IRQ number, name is IRQ name
+
+endif
+

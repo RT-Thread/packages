@@ -1,0 +1,73 @@
+
+menuconfig PKG_USING_CMBACKTRACE
+    bool "CmBacktrace: Advanced fault backtrace library for ARM Cortex-M series MCU."
+    default n
+
+if PKG_USING_CMBACKTRACE
+
+    choice
+        prompt "CPU Platform"
+        default PKG_CMBACKTRACE_PLATFORM_NOT_SELECTED
+        help
+          Select the ARM Cortex-M CPU Platform of your device
+        config PKG_CMBACKTRACE_PLATFORM_M0_M0PLUS
+            bool "Cortex-M0/M0+"
+        config PKG_CMBACKTRACE_PLATFORM_M3
+            bool "Cortex-M3"
+        config PKG_CMBACKTRACE_PLATFORM_M4
+            bool "Cortex-M4"
+        config PKG_CMBACKTRACE_PLATFORM_M7
+            bool "Cortex-M7"
+        config PKG_CMBACKTRACE_PLATFORM_NOT_SELECTED
+            bool "Not selected, please select"
+    endchoice
+
+    config PKG_CMBACKTRACE_DUMP_STACK
+        bool
+        prompt "Dump the thread or main stack info"
+        default y
+        help
+          Dump the stack information when a fault occurs. It will add a lot of print information.
+
+    choice
+        prompt "Language of print information"
+        default PKG_CMBACKTRACE_PRINT_ENGLISH
+        help
+          Select the language of print information when a fault occurs
+        config PKG_CMBACKTRACE_PRINT_ENGLISH
+            bool "Engish"
+        config PKG_CMBACKTRACE_PRINT_CHINESE
+            bool "Chinese"
+    endchoice
+
+    config PKG_CMBACKTRACE_PATH
+        string
+        default "/packages/tools/CmBacktrace"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CMBACKTRACE_V10300
+        help
+            Select the this package version
+            
+        config PKG_USING_CMBACKTRACE_V10300
+            bool "v1.3.0"
+
+        config PKG_USING_CMBACKTRACE_V10202
+            bool "v1.2.2"
+
+        config PKG_USING_CMBACKTRACE_V10200
+            bool "v1.2.0"
+
+        config PKG_USING_CMBACKTRACE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CMBACKTRACE_VER
+        string
+        default "v1.3.0" if PKG_USING_CMBACKTRACE_V10300
+        default "v1.2.2" if PKG_USING_CMBACKTRACE_V10202
+        default "v1.2.0" if PKG_USING_CMBACKTRACE_V10200
+        default "latest" if PKG_USING_CMBACKTRACE_LATEST_VERSION
+
+endif

@@ -1,0 +1,35 @@
+{
+  "name": "wiznet",
+  "description": "WIZnet TCP/IP chips (such as W5500/W5100..) SAL framework implement",
+  "description_zh": "WIZNet TCP/IP 芯片（例如： W5500/W5100）的 SAL 框架对接实现",
+  "keywords": [
+    "wiznet"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/wiznet",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/wiznet#readme",
+  "site": [
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/RT-Thread-packages/wiznet/archive/1.1.0.zip",
+      "filename": "wiznet-1.1.0.zip"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/wiznet/archive/1.0.0.zip",
+      "filename": "wiznet-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/wiznet.git",
+      "filename": "wiznet.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

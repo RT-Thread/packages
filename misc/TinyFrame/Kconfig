@@ -1,0 +1,57 @@
+# Kconfig file for package TinyFrame
+menuconfig PKG_USING_TINYFRAME
+    bool "TinyFrame: Serial communication protocol."
+    default n
+
+if PKG_USING_TINYFRAME
+
+menu "TinyFrame Options"
+
+    config PKG_TINYFRAME_USE_UART1
+        bool
+        prompt "Enable usart1"
+        default n
+    config PKG_TINYFRAME_USE_UART2
+        bool
+        prompt "Enable usart2"
+        default n
+    config PKG_TINYFRAME_USE_UART3
+        bool
+        prompt "Enable usart3"
+        default n
+    config PKG_TINYFRAME_UART_NAME_MAX_LEN
+        int
+        prompt "Uart name max len"
+        default 10
+    config PKG_TINYFRAME_USE_EXAMPLE
+        bool
+        prompt "example"
+        default n
+
+endmenu
+
+
+
+    config PKG_TINYFRAME_PATH
+        string
+        default "/packages/misc/TinyFrame"
+
+    choice
+        prompt "Version"
+        default PKG_USING_TINYFRAME_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TINYFRAME_V100
+            bool "v1.0.0"
+
+        config PKG_USING_TINYFRAME_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_TINYFRAME_VER
+       string
+       default "v1.0.0"    if PKG_USING_TINYFRAME_V100
+       default "latest"    if PKG_USING_TINYFRAME_LATEST_VERSION
+
+endif

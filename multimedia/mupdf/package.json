@@ -1,0 +1,30 @@
+{
+  "name": "mupdf",
+  "description": "a lightweight PDF, XPS, and E-book viewer",
+  "description_zh": "轻量级PDF，XPS和电子书查看器",
+  "keywords": [
+    "mupdf"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "rtoslab",
+    "email": "unknown"
+  },
+  "license": "AGPL-3.0",
+  "repository": "https://github.com/rtoslab/mupdf-rtt",
+  "homepage": "https://github.com/rtoslab/mupdf-rtt#readme",
+  "site": [
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/rtoslab/mupdf-rtt/archive/v0.1-alpha.zip",
+      "filename": "v0.1-alpha.zip",
+      "VER_SHA": "4da369abd6de7373724e47f4401e77aca6749d82"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/rtoslab/mupdf-rtt.git",
+      "filename": "mupdf-rtt.zip",
+      "VER_SHA": "mater"
+    }
+  ]
+}

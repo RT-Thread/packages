@@ -1,0 +1,31 @@
+{
+  "name": "GAgent",
+  "description": "GAgent of Gizwits on RT-Thread",
+  "description_zh": "连接机智云的软件包",
+  "keywords": [
+    "GAgent"
+  ],
+  "category": "iot/iot_cloud",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/GAgent",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/GAgent#readme",
+  "readme": "GAgent of Gizwits on RT-Thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/GAgent/archive/v1.0.0.zip",
+      "filename": "GAgent-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/GAgent.git",
+      "filename": "GAgent.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

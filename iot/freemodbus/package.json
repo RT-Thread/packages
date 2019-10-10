@@ -1,0 +1,33 @@
+{
+  "name": "freemodbus",
+  "description": "FreeModbus: Modbus master and slave stack.",
+  "description_zh": "FreeModbus: 开源的 Modbus 主从协议栈",
+  "keywords": [
+    "freemodbus",
+    "modbus"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "flybreak",
+    "email": "guozhanxin@rt-thread.com"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/RT-Thread-packages/freemodbus",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/freemodbus",
+  "doc": "https://github.com/RT-Thread-packages/freemodbus",
+  "site": [
+    {
+      "version": "v1.6.0",
+      "URL": "https://github.com/RT-Thread-packages/freemodbus.git",
+      "filename": "freemodbus-1.6.0.zip",
+      "VER_SHA": "a54fe5fac19db439b15c837eebc377fba2b12fa6"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/freemodbus.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+    "name": "vi",
+    "description": "The screen-oriented text editor for RT-Thread",
+    "description_zh": "vi 编辑器在 RT-Thread 操作系统上的移植",
+    "keywords": [
+        "vi",
+        "editor"
+    ],
+    "category": "misc",
+    "author": {
+        "name": "RealThread",
+        "email": "package_team@rt-thread.com"
+    },
+    "license": "GPL-2.0",
+    "repository": "https://github.com/RT-Thread-packages/vi",
+    "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+    "homepage": "https://github.com/RT-Thread-packages/vi#readme",
+    "readme": "A screen-oriented text editor",
+    "site": [
+        {
+            "version": "latest",
+            "URL": "https://github.com/RT-Thread-packages/vi.git",
+            "filename": "vi.zip",
+            "VER_SHA": "master"
+        }
+    ]
+}
