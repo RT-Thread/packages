@@ -1,7 +1,7 @@
 
 # Kconfig file for package ppp_device
 menuconfig PKG_USING_PPP_DEVICE
-    bool "PPP DEVICE: lwIP PPP porting for different device"
+    bool "PPP DEVICE: lwIP PPP porting for GSM modem(like sim800)"
     default n
     select RT_USING_SAL
     select RT_USING_LWIP
