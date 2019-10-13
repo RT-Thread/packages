@@ -5,6 +5,13 @@ menuconfig PKG_USING_COREMARK
 
 if PKG_USING_COREMARK
 
+    config COREMARK_USE_FLOAT
+        select RT_USING_LIBC
+        bool "Show benchmark result in float number"
+        help
+            Show benchmark result in float number.
+        default n
+
     config COREMARK_ITERATIONS
         int "Run the benchmark for a specified number of iterations."
         default "3600"
@@ -28,4 +35,8 @@ if PKG_USING_COREMARK
         string
         default "latest" if PKG_USING_COREMARK_LATEST_VERSION
 
+    config CORE_MARK_HAS_FLOAT
+        int
+        default 1 if COREMARK_USE_FLOAT
+        default 0
 endif
