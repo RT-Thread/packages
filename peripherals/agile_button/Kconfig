@@ -1,0 +1,45 @@
+
+# Kconfig file for package agile_button
+menuconfig PKG_USING_AGILE_BUTTON
+    bool "agile_button: A agile button package."
+    default n
+    select RT_USING_PIN
+
+if PKG_USING_AGILE_BUTTON
+
+    config PKG_AGILE_BUTTON_PATH
+        string
+        default "/packages/peripherals/agile_button"
+
+    config PKG_AGILE_BUTTON_DEBUG
+        bool "Enable debug log output"
+        default y
+
+    config PKG_AGILE_BUTTON_THREAD_STACK_SIZE
+        int "Set agile_button thread stack size"
+        default 256
+
+    config PKG_AGILE_BUTTON_THREAD_PRIORITY
+        int "Set agile_button thread priority"
+        default 28
+
+    config PKG_AGILE_BUTTON_USING_EXAMPLE
+        bool "Enable agile_button example"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_AGILE_BUTTON_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AGILE_BUTTON_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_AGILE_BUTTON_VER
+       string
+       default "latest"    if PKG_USING_AGILE_BUTTON_LATEST_VERSION
+
+endif
+
