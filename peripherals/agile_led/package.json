@@ -15,12 +15,6 @@
   "homepage": "https://github.com/loogg/agile_led#readme",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/loogg/agile_led.git",
-      "filename": "agile_led-1.0.0.zip",
-      "VER_SHA": "16173bbcc27af5c45c9aeba72a77eae250cb2e3b"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_led.git",
       "filename": "agile_led.zip",
