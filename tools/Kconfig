@@ -8,5 +8,6 @@ source "$PKGS_DIR/packages/tools/rdb/Kconfig"
 source "$PKGS_DIR/packages/tools/qrcode/Kconfig"
 source "$PKGS_DIR/packages/tools/ulog_easyflash/Kconfig"
 source "$PKGS_DIR/packages/tools/adbd/Kconfig"
+source "$PKGS_DIR/packages/tools/CoreMark/Kconfig"
 
 endmenu
