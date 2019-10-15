@@ -33,16 +33,12 @@ if PKG_USING_AGILE_LED
         help
             Select the package version
 
-        config PKG_USING_AGILE_LED_V100
-            bool "v1.0.0"
-
         config PKG_USING_AGILE_LED_LATEST_VERSION
             bool "latest"
     endchoice
           
     config PKG_AGILE_LED_VER
        string
-       default "v1.0.0"    if PKG_USING_AGILE_LED_V100
        default "latest"    if PKG_USING_AGILE_LED_LATEST_VERSION
 
 endif
