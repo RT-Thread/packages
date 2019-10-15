@@ -7,7 +7,7 @@ if PKG_USING_DHRYSTONE
 
     config DHRY_ITERS
         int "Run the benchmark for a specified number of iterations."
-        default "40000"
+        default "320000"
     comment "You may ajust this number to make sure the benchmark runs long enough"
 
     config PKG_DHRYSTONE_PATH

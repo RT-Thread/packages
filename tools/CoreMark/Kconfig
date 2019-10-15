@@ -1,6 +1,6 @@
 
 menuconfig PKG_USING_COREMARK
-    bool "COREMARK: a benchmark that measures the performance of MCUs and CPUs."
+    bool "COREMARK : a benchmark that measures the performance of MCUs and CPUs."
     default n
 
 if PKG_USING_COREMARK
