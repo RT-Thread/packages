@@ -1,7 +1,7 @@
 {
   "name": "ppp_device",
   "description": "PPP DEVICE: lwIP PPP porting for Cellular Module( 2G/3G/4G )",
-  "description_zh": "lwIP PPP 功能针对不同设备移植和实现",
+  "description_zh": "lwIP PPP 功能针对蜂窝( 2G/3G/4G )模块移植和实现",
   "keywords": [
     "ppp_device"
   ],
