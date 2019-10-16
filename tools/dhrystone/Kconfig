@@ -1,0 +1,31 @@
+
+menuconfig PKG_USING_DHRYSTONE
+    bool "DHRYSTONE: a benchmark that measures the performance of MCUs and CPUs."
+    default n
+
+if PKG_USING_DHRYSTONE
+
+    config DHRY_ITERS
+        int "Run the benchmark for a specified number of iterations."
+        default "320000"
+    comment "You may ajust this number to make sure the benchmark runs long enough"
+
+    config PKG_DHRYSTONE_PATH
+        string
+        default "/packages/tools/dhrystone"
+
+    choice
+        prompt "Version"
+        default PKG_USING_DHRYSTONE_LATEST_VERSION
+        help
+            Select the this package version
+            
+        config PKG_USING_DHRYSTONE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_DHRYSTONE_VER
+        string
+        default "latest" if PKG_USING_DHRYSTONE_LATEST_VERSION
+
+endif
