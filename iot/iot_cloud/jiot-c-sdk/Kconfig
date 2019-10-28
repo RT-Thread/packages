@@ -33,6 +33,10 @@ if PKG_USING_JIOT-C-SDK
 	config PKG_USING_JIOT_DEVICE_SECRET
 		string "Config Device Secret"
 		default ""
+		
+	config SDK_PLATFORM
+		string
+		default "rt-thread-package"
 
     choice
         prompt "Version"
