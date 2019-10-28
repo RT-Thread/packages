@@ -49,7 +49,13 @@
       "VER_SHA": "3dfe817ccf7183aceddfef203237183fee205f62"
     },
     {
-      "version": "latest",
+      "version": "c-latest",
+      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "",
+      "VER_SHA": "c-master"
+    },
+    {
+      "version": "cpp-latest",
       "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
       "filename": "",
       "VER_SHA": "master"

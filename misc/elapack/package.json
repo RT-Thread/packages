@@ -17,6 +17,12 @@
   "homepage": "https://github.com/wuhanstudio/elapack#readme",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wuhanstudio/elapack.git",
+      "filename": "elapack-1.0.0.zip",
+      "VER_SHA": "0f6c51f2607f74d2940c18db7fa2b286533c6b4a"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/wuhanstudio/elapack.git",
       "filename": "",

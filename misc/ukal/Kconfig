@@ -1,0 +1,64 @@
+
+# Kconfig file for package ukal
+menuconfig PKG_USING_UKAL
+    select RT_USING_LIBC
+    select PKG_USING_ULAPACK
+    bool "ukal: Kalman filter based on ulapack."
+    default n
+
+if PKG_USING_UKAL
+
+    config PKG_UKAL_PATH
+        string
+        default "/packages/misc/ukal"
+
+    config UKAL_MAX_STATE_VECTOR_SIZE
+        int "Maximum state vcector size"
+        default "5"
+
+    config UKAL_MAX_MEASUREMENT_VECTOR_SIZE
+        int "Maximum state vector size"
+        default "5"
+
+    config UKAL_USING_EKAL
+        bool "Extended Kalman filter example"
+        help
+            Extended Kalman filter example
+        default n
+
+    if ULAPACK_USE_DYNAMIC_ALLOC
+        comment "Dymamic memory allocation selected from ulapack"
+    endif
+
+    if ULAPACK_USE_STATIC_ALLOC
+        comment "Static memory allocation selected from ulapack"
+    endif
+
+    if ULAPACK_USE_STATIC_ALLOC
+        config ULAPACK_MAX_MATRIX_N_ROWS
+            int "Matrix maximum number of rows"
+            default "20"
+
+        config ULAPACK_MAX_MATRIX_N_COLS
+            int "Matrix maximum number of columns"
+            default "20"
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_UKAL_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_UKAL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_UKAL_VER
+       string
+       default "latest"    if PKG_USING_UKAL_LATEST_VERSION
+
+    config PKG_UKAL_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_UKAL_LATEST_VERSION
+
+endif

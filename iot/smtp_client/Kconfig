@@ -1,0 +1,51 @@
+
+menuconfig PKG_USING_SMTP_CLIENT
+    bool "smtp_client:smtp client package for rt-thread"
+    default n
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    select RT_USING_DFS
+
+if PKG_USING_SMTP_CLIENT
+
+    config PKG_SMTP_CLIENT_PATH
+        string
+        default "/packages/iot/smtp_client"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SMTP_CLIENT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SMTP_CLIENT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SMTP_CLIENT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config SMTP_CLIENT_USING_TLS
+        bool "use 465/587 port(encrypted port)"
+        default n
+        select PKG_USING_MBEDTLS
+        select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
+
+    config SMTP_CLIENT_ENABLE_DEBUG_LOG
+        bool "enable debug log information"
+        default n
+
+    config PKG_SMTP_CLIENT_VER
+       string
+       default "v1.0.0"    if PKG_USING_SMTP_CLIENT_V100
+       default "latest"    if PKG_USING_SMTP_CLIENT_LATEST_VERSION
+
+    menu "smtp_client Options"
+        config SMTP_CLIENT_USING_SAMPLE
+            bool
+            prompt "smtp client example"
+            default n
+    endmenu       
+
+endif
+

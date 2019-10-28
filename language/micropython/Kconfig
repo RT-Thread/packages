@@ -51,7 +51,7 @@ if PKG_USING_MICROPYTHON
             bool "machine timer: enable timer functions for machine module"
             select RT_USING_HWTIMER
             default n
-			
+
         config MICROPYTHON_USING_NETWORK
             bool "network: network drivers and routing configuration"
             default n
@@ -65,6 +65,7 @@ if PKG_USING_MICROPYTHON
         config MICROPYTHON_USING_MACHINE_LCD
             bool "machine LCD: enable LCD functions for machine module"
             select BSP_USING_LCD
+            select MICROPYTHON_USING_UOS
             default n
     endmenu
 
@@ -166,6 +167,9 @@ if PKG_USING_MICROPYTHON
         config PKG_USING_MICROPYTHON_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_MICROPYTHON_V11003
+            bool "v1.10.3"
+
         config PKG_USING_MICROPYTHON_V11002
             bool "v1.10.2"
 
@@ -183,6 +187,7 @@ if PKG_USING_MICROPYTHON
     config PKG_MICROPYTHON_VER
         string
         default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default "v1.10.3"  if PKG_USING_MICROPYTHON_V11003
         default "v1.10.2"  if PKG_USING_MICROPYTHON_V11002
         default "v1.10.1"  if PKG_USING_MICROPYTHON_V11001
         default "v1.10"    if PKG_USING_MICROPYTHON_V11000
@@ -191,6 +196,7 @@ if PKG_USING_MICROPYTHON
     config PKG_MICROPYTHON_VER_NUM
         hex
         default 0x99999    if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default 0x11003    if PKG_USING_MICROPYTHON_V11003
         default 0x11002    if PKG_USING_MICROPYTHON_V11002
         default 0x11001    if PKG_USING_MICROPYTHON_V11001
         default 0x11000    if PKG_USING_MICROPYTHON_V11000

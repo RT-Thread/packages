@@ -1,0 +1,45 @@
+
+# Kconfig file for package agile_led
+menuconfig PKG_USING_AGILE_LED
+    bool "agile_led: A agile led package."
+    default n
+    select RT_USING_PIN
+
+if PKG_USING_AGILE_LED
+
+    config PKG_AGILE_LED_PATH
+        string
+        default "/packages/peripherals/agile_led"
+
+    config PKG_AGILE_LED_DEBUG
+        bool "Enable debug log output"
+        default y
+
+    config PKG_AGILE_LED_THREAD_STACK_SIZE
+        int "Set agile_led thread stack size"
+        default 256
+
+    config PKG_AGILE_LED_THREAD_PRIORITY
+        int "Set agile_led thread priority"
+        default 28
+
+    config PKG_AGILE_LED_USING_EXAMPLE
+        bool "Enable agile_led example"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_AGILE_LED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AGILE_LED_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_AGILE_LED_VER
+       string
+       default "latest"    if PKG_USING_AGILE_LED_LATEST_VERSION
+
+endif
+
