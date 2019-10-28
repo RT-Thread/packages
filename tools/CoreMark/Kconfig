@@ -1,0 +1,42 @@
+
+menuconfig PKG_USING_COREMARK
+    bool "COREMARK : a benchmark that measures the performance of MCUs and CPUs."
+    default n
+
+if PKG_USING_COREMARK
+
+    config COREMARK_USE_FLOAT
+        select RT_USING_LIBC
+        bool "Show benchmark result in float number"
+        help
+            Show benchmark result in float number.
+        default n
+
+    config COREMARK_ITERATIONS
+        int "Run the benchmark for a specified number of iterations."
+        default "3600"
+    comment "You may ajust this number to make sure the benchmark runs for at least 10s"
+
+    config PKG_COREMARK_PATH
+        string
+        default "/packages/tools/CoreMark"
+
+    choice
+        prompt "Version"
+        default PKG_USING_COREMARK_LATEST_VERSION
+        help
+            Select the this package version
+            
+        config PKG_USING_COREMARK_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_COREMARK_VER
+        string
+        default "latest" if PKG_USING_COREMARK_LATEST_VERSION
+
+    config CORE_MARK_HAS_FLOAT
+        int
+        default 1 if COREMARK_USE_FLOAT
+        default 0
+endif

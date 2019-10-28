@@ -16,8 +16,11 @@ if PKG_USING_SIGNAL_LED
         help
             Select the package version
 
-        config PKG_USING_SIGNAL_LED_V100
-            bool "v1.0.0"
+        config PKG_USING_SIGNAL_LED_V120
+            bool "v1.2.0"
+
+        config PKG_USING_SIGNAL_LED_V110
+            bool "v1.1.0"
 
         config PKG_USING_SIGNAL_LED_LATEST_VERSION
             bool "latest"
@@ -25,7 +28,8 @@ if PKG_USING_SIGNAL_LED
           
     config PKG_SIGNAL_LED_VER
        string
-       default "v1.0.0"    if PKG_USING_SIGNAL_LED_V100
+       default "v1.2.0"    if PKG_USING_SIGNAL_LED_V120
+       default "v1.1.0"    if PKG_USING_SIGNAL_LED_V110
        default "latest"    if PKG_USING_SIGNAL_LED_LATEST_VERSION
 
     menu "signalLed Options"

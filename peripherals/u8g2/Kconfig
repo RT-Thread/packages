@@ -393,7 +393,7 @@ if PKG_USING_U8G2
 
     choice
         prompt "Version"
-        default PKG_USING_U8G2_LATEST_VERSION
+        default PKG_USING_U8G2_CPP_LATEST_VERSION
         help
             Select the package version
 
@@ -412,25 +412,35 @@ if PKG_USING_U8G2
         config PKG_USING_U8G2_V210
             bool "v2.1.0"
 
-        config PKG_USING_U8G2_LATEST_VERSION
-            bool "latest"
+        config PKG_USING_U8G2_C_LATEST_VERSION
+            bool "c-latest"
+
+        config PKG_USING_U8G2_CPP_LATEST_VERSION
+            bool "cpp-latest"
     endchoice
 
     config PKG_U8G2_VER
        string
-       default "v1.0.0"    if PKG_USING_U8G2_V100
-       default "v1.1.0"    if PKG_USING_U8G2_V110
-       default "v1.2.0"    if PKG_USING_U8G2_V120
-       default "v2.0.0"    if PKG_USING_U8G2_V200
-       default "v2.1.0"    if PKG_USING_U8G2_V210
-       default "latest"    if PKG_USING_U8G2_LATEST_VERSION
+       default "v1.0.0"             if PKG_USING_U8G2_V100
+       default "v1.1.0"             if PKG_USING_U8G2_V110
+       default "v1.2.0"             if PKG_USING_U8G2_V120
+       default "v2.0.0"             if PKG_USING_U8G2_V200
+       default "v2.1.0"             if PKG_USING_U8G2_V210
+       default "c-latest"           if PKG_USING_U8G2_C_LATEST_VERSION
+       default "cpp-latest"         if PKG_USING_U8G2_CPP_LATEST_VERSION
+
+    comment "C   version: v1.x.x"
+    comment "C++ version: v2.x.x"
 
     config PKG_U8G2_VER_NUM
         hex
         default 0x10000 if PKG_USING_U8G2_V100
         default 0x10100 if PKG_USING_U8G2_V110
         default 0x10200 if PKG_USING_U8G2_V120
+
         default 0x20000 if PKG_USING_U8G2_V200
         default 0x20100 if PKG_USING_U8G2_V210
-        default 0x99999 if PKG_USING_U8G2_LATEST_VERSION
+
+        default 0x19999 if PKG_USING_U8G2_C_LATEST_VERSION
+        default 0x29999 if PKG_USING_U8G2_CPP_LATEST_VERSION
 endif

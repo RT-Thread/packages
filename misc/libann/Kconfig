@@ -37,17 +37,20 @@ if PKG_USING_LIBANN
         default PKG_USING_LIBANN_LATEST_VERSION
         help
             Select the package version
-
+        config PKG_USING_LIBANN_V100
+            bool "v1.0.0"
         config PKG_USING_LIBANN_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_LIBANN_VER
        string
+       default "v1.0.0"    if PKG_USING_LIBANN_V100
        default "latest"    if PKG_USING_LIBANN_LATEST_VERSION
 
     config PKG_LIBANN_VER_NUM
         hex
+        default 0x10000 if PKG_USING_LIBANN_V100
         default 0x99999 if PKG_USING_LIBANN_LATEST_VERSION
 
 endif

@@ -13,7 +13,7 @@ if PKG_USING_PROTOBUF_C
     config PROTOBUF_C_USING_EXAMPLE
         bool "protobuf-c exampleS"
         help
-            protobuf-c exampleS
+            protobuf-c examples
         default n    
     if PROTOBUF_C_USING_EXAMPLE
         config PROTOBUF_C_USING_ENCODE_DECODE_EXAMPLE
@@ -35,17 +35,20 @@ if PKG_USING_PROTOBUF_C
         default PKG_USING_PROTOBUF_C_LATEST_VERSION
         help
             Select the package version
-
+        config PKG_USING_PROTOBUF_C_V100
+            bool "v1.0.0"
         config PKG_USING_PROTOBUF_C_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_PROTOBUF_C_VER
        string
+       default "v1.0.0"    if PKG_USING_PROTOBUF_C_V100
        default "latest"    if PKG_USING_PROTOBUF_C_LATEST_VERSION
 
     config PKG_PROTOBUF_C_VER_NUM
         hex
+        default 0x10000 if PKG_USING_PROTOBUF_C_V100
         default 0x99999 if PKG_USING_PROTOBUF_C_LATEST_VERSION
 
 endif

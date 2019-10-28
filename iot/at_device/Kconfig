@@ -17,6 +17,7 @@ if PKG_USING_AT_DEVICE
 
         source "$PKGS_DIR/packages/iot/at_device/m26/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/ec20/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/esp32/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/esp8266/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/rw007/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/sim800c/Kconfig"

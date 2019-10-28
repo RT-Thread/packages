@@ -11,22 +11,67 @@ if PKG_USING_ELAPACK
         string
         default "/packages/misc/elapack"
 
+    config ELAPACK_USING_LINSOLVE
+        bool "Linear equation solver example"
+        help
+            Linear equation solver example.
+        default n
+
+    config ELAPACK_USING_EIG
+        bool "Eigenvalues and eigenvectors example"
+        help
+            Eigenvalues and eigenvectors example
+        default n
+
+    config ELAPACK_USING_LU
+        bool "LU decomposition example"
+        help
+            LU decomposition example
+        default n
+
+    config ELAPACK_USING_QR
+        bool "QR decomposition example"
+        help
+            QR decomposition example
+        default n
+
+    config ELAPACK_USING_SVD
+        bool "SVD decomposition example"
+        help
+            SVD decomposition example
+        default n
+
+    config ELAPACK_USING_MODEL_PREDICTIVE
+        bool "Model predictive control example"
+        help
+            Model predictive control example
+        default n
+
+    config ELAPACK_USING_STATE_SPACE
+        bool "State space example"
+        help
+            State space example
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ELAPACK_LATEST_VERSION
         help
             Select the package version
-
+        config PKG_USING_ELAPACK_V100
+            bool "v1.0.0"
         config PKG_USING_ELAPACK_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_ELAPACK_VER
        string
+       default "v1.0.0"    if PKG_USING_ELAPACK_V100
        default "latest"    if PKG_USING_ELAPACK_LATEST_VERSION
 
     config PKG_ELAPACK_VER_NUM
         hex
+        default 0x10000 if PKG_USING_ELAPACK_V100
         default 0x99999 if PKG_USING_ELAPACK_LATEST_VERSION
 
 endif

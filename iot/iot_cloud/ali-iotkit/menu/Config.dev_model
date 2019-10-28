@@ -13,6 +13,7 @@ config DEVICE_MODEL_ENABLED
     select DEVICE_MODEL_CLASSIC
     select INFRA_CLASSIC
     select INFRA_COMPAT
+    select PKG_USING_CJSON
     select INFRA_CJSON
     select LOG_REPORT_TO_CLOUD if MQTT_COMM_ENABLED
     default y
