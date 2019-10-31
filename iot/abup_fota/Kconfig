@@ -11,7 +11,31 @@ if PKG_USING_ABUP_FOTA
         default "/packages/iot/abup_fota"
 
     choice
-        prompt "Algorithm"
+        prompt "Enable HTTP/CoAP FOTA"
+        default ABUP_NETWORKING_MODE
+        help
+            Select the package Networking mode
+
+        config ABUP_NETWORKING_MODE_COAP
+            bool "CoAP"
+
+        config ABUP_NETWORKING_MODE_HTTP
+            bool "HTTP"
+    endchoice
+	
+if ABUP_NETWORKING_MODE_COAP
+	config ABUP_DEFAULT_NETWORK_PROTOCOL
+		int
+		default 1
+endif
+if ABUP_NETWORKING_MODE_HTTP
+	config ABUP_DEFAULT_NETWORK_PROTOCOL
+		int
+		default 2
+endif
+
+    choice
+        prompt "Recover algorithm"
         default ABUP_ALGORITHM
         help
             Select the package algorithm
@@ -43,7 +67,7 @@ if ABUP_ALGORITHM_LUSUN
 endif
 
 	config ABUP_DEBUG_MODE
-		bool "debug"
+		bool "Enable Abup FOTA Downloader debug"
 		default n
 
 	config ABUP_RTTHREAD_FLASH
@@ -116,11 +140,11 @@ endif
 		default "1.0"
 
 	config ADUPS_FOTA_APP_VERSION
-		string "Application version"
+		string
 		default "ADUPS_V4.0"
 
 	config ADUPS_FOTA_RTT_VERSION
-		string "abup package version"
+		string
 		default "RTT_V1.0"
 
     choice
