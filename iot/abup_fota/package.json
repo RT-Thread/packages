@@ -1,0 +1,32 @@
+{
+  "name": "abup_fota",
+  "description": "The firmware downloader bases on abup FOTA component",
+  "description_zh": "基于 RT-Thread OTA 组件的 固件下载器",
+  "keywords": [
+    "abup_fota"
+  ],
+  "category": "iot",
+  "author": {
+    "name" : "RayShen1018",
+    "email": "sr2005@sina.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RayShen1018/Abup",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RayShen1018/Abup.git",
+      "filename": "Abup-master.zipp",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RayShen1018/Abup.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
