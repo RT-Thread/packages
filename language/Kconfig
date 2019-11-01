@@ -1,7 +1,7 @@
 menu "language packages"
 
 # source "$PKGS_DIR/packages/language//Kconfig"
-source "$PKGS_DIR/packages/language/lua/Kconfig"
+source "$PKGS_DIR/packages/language/Lua/Kconfig"
 source "$PKGS_DIR/packages/language/jerryscript/Kconfig"
 source "$PKGS_DIR/packages/language/micropython/Kconfig"
 

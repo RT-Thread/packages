@@ -8,7 +8,7 @@ if PKG_USING_LUA
 
     config PKG_LUA_PATH
         string
-        default "/packages/language/lua"
+        default "/packages/language/Lua"
 
     choice
         prompt "Submitted version"
