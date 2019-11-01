@@ -35,7 +35,7 @@ if PKG_USING_AT_DEVICE
     choice
 
         prompt "Version"
-        default PKG_USING_AT_DEVICE_V200 if (AT_SW_VERSION_NUM = 0x10300)
+        default PKG_USING_AT_DEVICE_V201 if (AT_SW_VERSION_NUM = 0x10300)
         # compare RT_VER_NUM for netdev component
         default PKG_USING_AT_DEVICE_V160 if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
         default PKG_USING_AT_DEVICE_V150 if (AT_SW_VERSION_NUM = 0x10200)
@@ -46,12 +46,15 @@ if PKG_USING_AT_DEVICE
             Select the at_device version
 
         if (AT_SW_VERSION_NUM = 0x10300)
-            
+
+            config PKG_USING_AT_DEVICE_V201
+                bool "v2.0.1"
+
             config PKG_USING_AT_DEVICE_V200
                 bool "v2.0.0"
-        
+
         endif
-            
+
         if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
 
             config PKG_USING_AT_DEVICE_V160
@@ -86,6 +89,7 @@ if PKG_USING_AT_DEVICE
     config PKG_AT_DEVICE_VER
         string
         default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default "v2.0.1"    if PKG_USING_AT_DEVICE_V201
         default "v2.0.0"    if PKG_USING_AT_DEVICE_V200
         default "v1.6.0"    if PKG_USING_AT_DEVICE_V160
         default "v1.5.0"    if PKG_USING_AT_DEVICE_V150
@@ -96,6 +100,7 @@ if PKG_USING_AT_DEVICE
     config PKG_AT_DEVICE_VER_NUM
         hex
         default 0x99999    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default 0x20001    if PKG_USING_AT_DEVICE_V201
         default 0x20000    if PKG_USING_AT_DEVICE_V200
         default 0x10600    if PKG_USING_AT_DEVICE_V160
         default 0x10500    if PKG_USING_AT_DEVICE_V150
