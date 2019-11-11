@@ -10,13 +10,13 @@
   "category": "iot",
   "author": {
     "name": "flybreak",
-    "email": "guozhanxin@rt-thread.com"
+    "email": "guozhanxin66@gmail.com"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/Guozhanxin/tcpserver.git",
   "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "homepage": "https://github.com/Guozhanxin/tcpserver",
+  "doc": "https://github.com/Guozhanxin/tcpserver/blob/master/README.md",
   "site": [
     {
       "version": "v0.0.1",
