@@ -2,13 +2,15 @@
   "name": "partition",
   "description": "A partition management package bases on block device",
   "description_zh": "一个基于块设备的分区管理软件包",
+  "enable": "PKG_USING_PARTITION",
   "keywords": [
     "partition"
   ],
   "category": "system",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/partition",

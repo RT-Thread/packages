@@ -2,13 +2,15 @@
   "name": "stm32_sdio",
   "description": "STM32 SDIO controller drivers library",
   "description_zh": "STM32 平台 SDIO 控制器驱动包",
+  "enable": "PKG_USING_STM32_SDIO",
   "keywords": [
     "stm32_sdio"
   ],
   "category": "peripherals",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/stm32_sdio",

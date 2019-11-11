@@ -2,6 +2,7 @@
   "name": "spl0601",
   "description": "The Digital Air Pressure Sensor SPL06-01 driver package",
   "description_zh": "数字气压传感器 SPL06-01 驱动软件包",
+  "enable": "PKG_USING_SPL0601",
   "keywords": [
     "sensor",
     "spl0601"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "gztss",
-    "email": "guanwenliang@rt-thread.com"
+    "email": "guanwenliang@rt-thread.com",
+    "github": "gztss"
   },
   "license": "other",
   "repository": "https://github.com/RT-Thread-packages/spl0601",

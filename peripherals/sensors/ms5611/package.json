@@ -2,13 +2,15 @@
   "name": "ms5611",
   "description": "The Digital Air Pressure Sensor MS5611 driver package",
   "description_zn": "数字气压传感器 MS5611 驱动软件包",
+  "enable": "PKG_USING_MS5611",
   "keywords": [
     "ms5611"
   ],
   "category": "peripherals/sensors",
   "author": {
     "name": "sogwms",
-    "email": "sogwyms@gmail.com"
+    "email": "sogwyms@gmail.com",
+    "github": "sogwms"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/sogwms/ms5611",

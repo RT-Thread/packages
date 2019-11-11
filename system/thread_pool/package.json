@@ -2,13 +2,15 @@
   "name": "thread_pool",
   "description": "a thread pool base on RT-Thread",
   "description_zh": "基于 RT-Thread 的线程池实现",  
+  "enable": "PKG_USING_THREAD_POOL",
   "keywords": [
     "thread_pool", "thread", "EDM", "EasyDataManager"
   ],
   "category": "system",
   "author": {
     "name": "armink",
-    "email": "armink.ztl@gmail.com"
+    "email": "armink.ztl@gmail.com",
+    "github": "armink"
   },
   "license": "MIT",
   "repository": "https://github.com/armink-rtt-pkgs/thread_pool",

@@ -2,13 +2,15 @@
   "name": "pixman",
   "description": "A library that provides low-level pixel manipulation",
   "description_zh": "提供低等级像素控制的库",
+  "enable": "PKG_USING_PIXMAN",
   "keywords": [
     "pixman"
   ],
   "category": "system",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/pixman",

@@ -2,13 +2,15 @@
   "name": "kernel_samples",
   "description": "a kernel_samples package for rt-thread",
   "description_zh": "RT-Thread 内核示例",
+  "enable": "PKG_USING_KERNEL_SAMPLES",
   "keywords": [
     "kernel_samples"
   ],
   "category": "misc/samples",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/kernel-sample",

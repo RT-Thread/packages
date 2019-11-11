@@ -2,13 +2,15 @@
   "name": "dstr",
   "description": "dynamic string in C",
   "description_zh": "用 C 编写的动态字符串库",
+  "enable": "PKG_USING_DSTR",
   "keywords": [
     "dstr"
   ],
   "category": "misc",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/dstr",

@@ -2,13 +2,15 @@
   "name": "littlefs",
   "description": "A little fail-safe filesystem designed for microcontrollers",
   "description_zh": "为微控制器设计的一个小型的且掉电安全的文件系统",
+  "enable": "PKG_USING_LITTLEFS",
   "keywords": [
     "littlefs"
   ],
   "category": "system",
   "author": {
     "name": "geniusgogo",
-    "email": "xpxyr@sina.com"
+    "email": "xpxyr@sina.com",
+    "github": "geniusgogo"
   },
   "license": "BSD-3-Clause",
   "repository": "https://github.com/geniusgogo/littlefs",

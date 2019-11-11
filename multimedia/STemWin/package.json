@@ -2,13 +2,15 @@
   "name": "STemWin",
   "description": "STemWin: a STemWin package for rt-thread",
   "description_zh": "STemWin在RT-Thread上的移植", 
+  "enable": "PKG_USING_STEMWIN",
   "keywords": [
     "STemWin"
   ],
   "category": "multimedia",
   "author": {
     "name": "malongwei",
-    "email": "2544047213@qq.com"
+    "email": "2544047213@qq.com",
+    "github": "malongwei"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/loogg/STemWin",

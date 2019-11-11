@@ -2,6 +2,7 @@
   "name": "bmi160_bmx160",
   "description": "The device driver package for BMX160 and BMI160",
   "description_zh": "BMI160 6 轴传感器以及 BMX160 9 轴传感器的驱动包",
+  "enable": "PKG_USING_BMI160_BMX160",
   "keywords": [
     "sensor",
     "bmi160_bmx160"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "gztss",
-    "email": "guanwenliang@rt-thread.com"
+    "email": "guanwenliang@rt-thread.com",
+    "github": "gztss"
   },
   "license": "other",
   "repository": "https://github.com/RT-Thread-packages/bmi160_bmx160",

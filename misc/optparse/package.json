@@ -2,13 +2,15 @@
     "name": "optparse",
     "description": "Getopt command-line parameter parser bases on RT-Thread",
     "description_zh": "基于 RT-Thread 的 Getopt 命令行解析器",
+    "enable": "PKG_USING_OPTPARSE",
     "keywords": [
         "getopt-like"
     ],
     "category": "misc",
     "author": {
         "name": "liu2guang",
-        "email": "1004383796@qq.com"
+        "email": "1004383796@qq.com",
+        "github": "liu2guang"
     },
     "license": "Unlicense",
     "repository": "https://github.com/liu2guang/optparse",

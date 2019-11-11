@@ -2,13 +2,15 @@
   "name": "miniLZO",
   "description": "A mini subset of the LZO real-time data compression library",
   "description_zh": "LZO 是一个实时数据压缩库，而 miniLZO 是 LZO 压缩库的精简版本",
+  "enable": "PKG_USING_MINILZO",
   "keywords": [
     "miniLZO"
   ],
   "category": "misc",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "GPL-2.0",
   "repository": "https://github.com/RT-Thread-packages/miniLZO",

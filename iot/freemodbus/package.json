@@ -2,6 +2,7 @@
   "name": "freemodbus",
   "description": "FreeModbus: Modbus master and slave stack.",
   "description_zh": "FreeModbus: 开源的 Modbus 主从协议栈",
+  "enable": "PKG_USING_FREEMODBUS",
   "keywords": [
     "freemodbus",
     "modbus"
@@ -9,7 +10,8 @@
   "category": "iot",
   "author": {
     "name": "flybreak",
-    "email": "guozhanxin66@gmail.com"
+    "email": "guozhanxin66@gmail.com",
+    "github": "flybreak"
   },
   "license": "BSD",
   "repository": "https://github.com/RT-Thread-packages/freemodbus",

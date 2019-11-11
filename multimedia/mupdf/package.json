@@ -2,13 +2,15 @@
   "name": "mupdf",
   "description": "a lightweight PDF, XPS, and E-book viewer",
   "description_zh": "轻量级PDF，XPS和电子书查看器",
+  "enable": "PKG_USING_MUPDF",
   "keywords": [
     "mupdf"
   ],
   "category": "multimedia",
   "author": {
     "name": "rtoslab",
-    "email": "xx@yy.zz"
+    "email": "xx@yy.zz",
+    "github": "rtoslab"
   },
   "license": "AGPL-3.0",
   "repository": "https://github.com/rtoslab/mupdf-rtt",

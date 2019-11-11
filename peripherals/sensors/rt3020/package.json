@@ -2,6 +2,7 @@
   "name": "rt3020",
   "description": "This is the driver package of RT3020 accelerometer.",
   "description_zh": "这是 RT3020 加速度传感器的驱动包。",  
+  "enable": "PKG_USING_RT3020",
   "keywords": [
     "sensor",
     "rt3020"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "Tank Wu",
-    "email": "tank_wu@richtek.com"
+    "email": "tank_wu@richtek.com",
+    "github": "Tank Wu"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RichtekTechnology/RT3020",

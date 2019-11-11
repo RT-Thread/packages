@@ -2,6 +2,7 @@
   "name": "mongoose",
   "description": "Embedded Web Server Library for RT-Thread package",
   "description_zh": "一款嵌入式 Web 服务器库", 
+  "enable": "PKG_USING_MONGOOSE",
   "keywords": [
     "Embedded",
     "Web",
@@ -12,7 +13,8 @@
   "category": "iot",
   "author": {
     "name": "armink",
-    "email": "armink.ztl@gmail.com"
+    "email": "armink.ztl@gmail.com",
+    "github": "armink"
   },
   "license": "GPL-2.0",
   "repository": "https://github.com/armink-rtt-pkgs/mongoose",

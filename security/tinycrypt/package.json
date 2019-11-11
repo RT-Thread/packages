@@ -2,13 +2,15 @@
   "name": "tinycrypt",
   "description": "A simple and configurable crypt library",
   "description_zh": "一个简小并且可配置的加解密软件包",
+  "enable": "PKG_USING_TINYCRYPT",
   "keywords": [
     "tinycrypt"
   ],
   "category": "security",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": " BSD-2-Clause",
   "repository": "https://github.com/RT-Thread-packages/tinycrypt",

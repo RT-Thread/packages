@@ -2,13 +2,15 @@
   "name": "LittlevGL2RTT",
   "description": "The littlevgl graphics library for RT-Thread",
   "description_zh": "Littlevgl 是基于 RT-Thread 的图形库软件包",
+  "enable": "PKG_USING_LITTLEVGL2RTT",
   "keywords": [
     "LittlevGL2RTT"
   ],
   "category": "system",
   "author": {
     "name": "liu2guang",
-    "email": "1004383796@qq.com"
+    "email": "1004383796@qq.com",
+    "github": "liu2guang"
   },
   "license": "MIT",
   "repository": "https://github.com/liu2guang/LittlevGL2RTT",

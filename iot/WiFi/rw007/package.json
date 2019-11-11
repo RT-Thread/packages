@@ -2,6 +2,7 @@
   "name": "rw007",
   "description": "RW007 (SPI Wi-Fi module) driver for RT-Thread",
   "description_zh": "RT-Thread 的 RW007 驱动（SPI Wi-Fi 模式）",
+  "enable": "PKG_USING_RW007",
   "keywords": [
     "rw007",
     "wifi"
@@ -9,7 +10,8 @@
   "category": "iot/WiFi",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/rw007",

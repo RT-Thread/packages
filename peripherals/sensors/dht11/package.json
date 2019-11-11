@@ -2,6 +2,7 @@
   "name": "dht11",
   "description": "dht11: Digital temperature and humidity sensor(Single bus)",
   "description_zh": "DHT11 单总线数字温湿度传感器",
+  "enable": "PKG_USING_DHT11",
   "keywords": [
     "dht11",
     "sensor"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "MurphyZhao",
-    "email": "d2014zjt@163.com"
+    "email": "d2014zjt@163.com",
+    "github": "MurphyZhao"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/murphyzhao/dht11_rtt",

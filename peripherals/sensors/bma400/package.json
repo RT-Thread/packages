@@ -2,6 +2,7 @@
   "name": "bma400",
   "description": "This is the BMA400 sensor driver package, support: accelerometer, step",
   "description_zh": "这是 BMA400 传感器驱动包，支持：加速度计，记步",
+  "enable": "PKG_USING_BMA400",
   "keywords": [
     "sensor",
     "bma400"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "flybreak",
-    "email": "guozhanxin66@gmail.com"
+    "email": "guozhanxin66@gmail.com",
+    "github": "flybreak"
   },
   "license": "other",
   "repository": "https://github.com/RT-Thread-packages/bma400",

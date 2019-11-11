@@ -2,6 +2,7 @@
   "name": "wlanmarvell",
   "description": "Marvell WiFi driver for rt-thread",
   "description": "RT-Thread 的 Marvell wifi 驱动",
+  "enable": "PKG_USING_WLANMARVELL",
   "keywords": [
     "88w8782",
     "88w8801"
@@ -9,7 +10,8 @@
   "category": "iot/WiFi",
   "author": {
     "name": "JianRuiqian",
-    "email": "jianb1995@hotmail.com"
+    "email": "jianb1995@hotmail.com",
+    "github": "JianRuiqian"
   },
   "license": "GPL-2.0",
   "repository": "https://github.com/JianRuiqian/marvellwifi",

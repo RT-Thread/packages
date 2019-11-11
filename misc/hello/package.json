@@ -2,13 +2,15 @@
   "name": "hello",
   "description": "package sample for rt-thread",
   "description_zh": "RT-Thread 软件包示例",
+  "enable": "PKG_USING_HELLO",
   "keywords": [
     "hello"
   ],
   "category": "misc",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/hello",

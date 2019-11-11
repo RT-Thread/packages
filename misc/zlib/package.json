@@ -2,13 +2,15 @@
   "name": "zlib",
   "description": "general purpose data compression library",
   "description_zh": "通用数据压缩库",
+  "enable": "PKG_USING_ZLIB",
   "keywords": [
     "zlib"
   ],
   "category": "misc",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "unknown",
   "repository": "https://github.com/RT-Thread-packages/zlib",

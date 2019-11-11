@@ -2,6 +2,7 @@
   "name": "nnom",
   "description": "A higher-level Neural Network framework on Microcontroller (NNoM)",
   "description_zh": "轻量级的神经网络框架, 模型一键转换, 让MCU也神经一把",
+  "enable": "PKG_USING_NNOM",
   "keywords": [
     "NNoM",
 	"ML",
@@ -13,7 +14,8 @@
   "category": "misc",
   "author": {
     "name": "Jianjia Ma",
-    "email": "majianjia@live.com"
+    "email": "majianjia@live.com",
+    "github": "Jianjia Ma"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/majianjia/nnom",

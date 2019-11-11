@@ -2,13 +2,15 @@
   "name": "adbd",
   "description": "Android Debug Bridge daemon implementation on RT-Thread",
   "description_zh": "在 RT-Thread 上实现的 Android ADB daemon",
+  "enable": "PKG_USING_ADBD",
   "keywords": [
     "adbd", "adb" , "android", "debug", "shell", "tools"
   ],
   "category": "tools",
   "author": {
     "name": "heyuanjie87",
-    "email": "943313837@qq.com"
+    "email": "943313837@qq.com",
+    "github": "heyuanjie87"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/heyuanjie87/adbd",

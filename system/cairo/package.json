@@ -2,13 +2,15 @@
   "name": "cairo",
   "description": "Multi-platform 2D graphics library  ",
   "description_zh": "适用于多平台的 2D 图形软件包",
+  "enable": "PKG_USING_CAIRO",
   "keywords": [
     "cairo"
   ],
   "category": "system",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL/MPL",
   "repository": "https://github.com/RT-Thread-packages/cairo",

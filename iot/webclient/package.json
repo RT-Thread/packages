@@ -2,13 +2,15 @@
   "name": "webclient",
   "description": "http client library by RT-Thread",
   "description_zh": "RT-Thread 官方开源的 http/https 协议客户端",
+  "enable": "PKG_USING_WEBCLIENT",
   "keywords": [
     "webclient"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/webclient",

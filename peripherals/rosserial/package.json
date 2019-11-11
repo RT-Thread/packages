@@ -2,6 +2,7 @@
   "name": "rosserial",
   "description": "rosserial protocol for Robots Operating System (ROS) on rt-thread",
   "description_zh": "机器人操作系统(ROS) 软件包 rosserial 在 RT-Thread 的移植库",
+  "enable": "PKG_USING_ROSSERIAL",
   "keywords": [
     "rosserial",
     "ROS"
@@ -9,7 +10,8 @@
   "category": "peripherals",
   "author": {
     "name": "wuhanstudio",
-    "email": "wuhanstudio@hust.edu.cn"
+    "email": "wuhanstudio@hust.edu.cn",
+    "github": "wuhanstudio"
   },
   "license": "BSD",
   "repository": "https://github.com/wuhanstudio/rt-rosserial",

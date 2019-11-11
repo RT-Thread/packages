@@ -2,13 +2,15 @@
   "name": "coap",
   "description": "A C implementation of the Constrained Application Protocol",
   "description_zh": "一种 C 语言实现的 CoAP 协议",  
+  "enable": "PKG_USING_COAP",
   "keywords": [
     "coap"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "BSD-2-Clause",
   "repository": "https://github.com/RT-Thread-packages/coap",

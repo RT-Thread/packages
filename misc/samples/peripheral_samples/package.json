@@ -2,13 +2,15 @@
   "name": "peripheral_samples",
   "description": "RT-Thread peripheral samples",
   "description_zh": "RT-Thread 外设示例",
+  "enable": "PKG_USING_PERIPHERAL_SAMPLES",
   "keywords": [
     "peripheral_samples"
   ],
   "category": "misc/samples",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/peripheral-sample",

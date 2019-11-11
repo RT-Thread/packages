@@ -2,6 +2,7 @@
   "name": "elapack",
   "description": "Linear algebra library for embedded devices, compatible with matlab.",
   "description_zh": "嵌入式线性代数库，兼容 matlab",
+  "enable": "PKG_USING_ELAPACK",
   "keywords": [
     "Linear Algebra",
     "lapack",
@@ -10,7 +11,8 @@
   "category": "misc",
   "author": {
     "name": "wuhanstudio",
-    "email": "wuhanstudio@hust.edu.cn"
+    "email": "wuhanstudio@hust.edu.cn",
+    "github": "wuhanstudio"
   },
   "license": "MIT",
   "repository": "https://github.com/wuhanstudio/elapack",

@@ -2,13 +2,15 @@
   "name": "quicklz",
   "description": "the world's fastest compression library",
   "description_zh": "世界上速度最快的压缩库",
+  "enable": "PKG_USING_QUICKLZ",
   "keywords": [
     "quicklz"
   ],
   "category": "misc",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "GPL-3.0",
   "repository": "https://github.com/RT-Thread-packages/quicklz",

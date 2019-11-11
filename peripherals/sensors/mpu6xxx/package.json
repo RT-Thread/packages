@@ -2,6 +2,7 @@
   "name": "mpu6xxx",
   "description": "a package of mpu6xxx driver library, compatible with mpu6000, mpu6050, mpu6500, mpu9250 and other chips",
   "description_zh": "兼容 mpu6000, mpu6050, mpu6500, mpu9250 等等型号的驱动库",
+  "enable": "PKG_USING_MPU6XXX",
   "keywords": [
     "mpu6xxx",
     "mpu6050",
@@ -13,7 +14,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/mpu-6xxx",

@@ -2,13 +2,15 @@
   "name": "SystemView",
   "description": "SEGGER SystemView",
   "description_zh": "SEGGER 的 SystemView 移植",
+  "enable": "PKG_USING_SYSTEMVIEW",
   "keywords": [
     "SystemView"
   ],
   "category": "tools",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "unknown",
   "repository": "https://github.com/RT-Thread-packages/SEGGER_SystemView",

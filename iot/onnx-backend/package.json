@@ -2,6 +2,7 @@
   "name": "onnx-backend",
   "description": "Open Neural Network Exchange backend on RT-Thread",
   "description_zh": "开源神经网络模型 onnx 后端，支持几乎所有主流机器学习模型",
+  "enable": "PKG_USING_ONNX-BACKEND",
   "keywords": [
     "protobuf-c",
     "protobuf",
@@ -10,7 +11,8 @@
   "category": "iot",
   "author": {
     "name": "wuhanstudio",
-    "email": "wuhanstudio@qq.com"
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
   },
   "license": "MIT",
   "repository": "https://github.com/wuhanstudio/onnx-backend",

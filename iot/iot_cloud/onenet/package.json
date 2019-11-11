@@ -2,13 +2,15 @@
   "name": "onenet",
   "description": "China Mobile OneNet cloud SDK for RT-Thread",
   "description_zh": "连接中国移动 OneNet 云的软件包",
+  "enable": "PKG_USING_ONENET",
   "keywords": [
     "onenet"
   ],
   "category": "iot/iot_cloud",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/onenet",

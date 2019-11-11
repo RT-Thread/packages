@@ -2,13 +2,15 @@
   "name": "ppp_device",
   "description": "PPP DEVICE: lwIP PPP porting for Cellular Module( 2G/3G/4G )",
   "description_zh": "lwIP PPP 功能针对蜂窝( 2G/3G/4G )模块移植和实现",
+  "enable": "PKG_USING_PPP_DEVICE",
   "keywords": [
     "ppp_device"
   ],
   "category": "iot",
   "author": {
     "name": "xiangxistu",
-    "email": "liuxianliang@rt-thread.com"
+    "email": "liuxianliang@rt-thread.com",
+    "github": "xiangxistu"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/ppp_device.git",

@@ -2,13 +2,15 @@
   "name": "atsrv_socket",
   "description": "AT server with socket commands",
   "description_zh": "socket 相关指令的 AT 服务端",  
+  "enable": "PKG_USING_ATSRV_SOCKET",
   "keywords": [
     "atsrv_socket"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/atsrv_socket",

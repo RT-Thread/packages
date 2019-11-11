@@ -2,6 +2,7 @@
   "name": "ap3216c",
   "description": "a digital ambient light and a proximity sensor ap3216c driver library",
   "description": "接近和光强传感器 ap3216c 的驱动库",
+  "enable": "PKG_USING_AP3216C",
   "keywords": [
     "ap3216c",
     "sensor"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/ap3216c",

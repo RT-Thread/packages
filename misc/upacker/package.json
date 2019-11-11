@@ -2,13 +2,15 @@
   "name": "upacker",
   "description": "building and parsing data frames to be sent over a serial interface",
   "description_zh": "串行通信链路协议",  
+  "enable": "PKG_USING_UPACKER",
   "keywords": [
     "upacker"
   ],
   "category": "misc",
   "author": {
     "name": "zpw",
-    "email": "aeo1234@qq.com"
+    "email": "aeo1234@qq.com",
+    "github": "zpw"
   },
   "license": "MIT",
   "repository": "https://github.com/aeo123/upacker.git",

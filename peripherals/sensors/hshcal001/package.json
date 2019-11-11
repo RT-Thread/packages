@@ -2,6 +2,7 @@
   "name": "hshcal001",
   "description": "hshcal001 sensor driver package, support: temperature, humidity.",
   "description_zh":"hshcal001 传感器驱动包，支持：温度、湿度计算.",
+  "enable": "PKG_USING_HSHCAL001",
   "keywords": [
     "sensor",
     "hshcal001"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "lucalsh",
-    "email": "shenghui.li@cn.alps.com"
+    "email": "shenghui.li@cn.alps.com",
+    "github": "lucalsh"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/lucaslsh/hshcal001.git",

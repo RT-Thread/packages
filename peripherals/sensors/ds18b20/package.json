@@ -2,6 +2,7 @@
   "name": "ds18b20",
   "description": "a package of digital temperature sensor ds18b20",
   "description_zh": "数字温度传感器 ds18b20 的软件包",
+  "enable": "PKG_USING_DS18B20",
   "keywords": [
     "ds18b20",
     "sensor",
@@ -11,7 +12,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "WillianChan",
-    "email": "chentingwei@rt-thread.com"
+    "email": "chentingwei@rt-thread.com",
+    "github": "WillianChan"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/willianchanlovegithub/ds18b20",

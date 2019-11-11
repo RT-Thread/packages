@@ -2,13 +2,15 @@
   "name": "rdb",
   "description": "RT-Thread Debug Bridge",
   "description_zh": "RT-Thread 调试桥",
+  "enable": "PKG_USING_RDB",
   "keywords": [
     "rdb"
   ],
   "category": "tools",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "GPL-2.0",
   "repository": "https://github.com/RT-Thread-packages/rdb",

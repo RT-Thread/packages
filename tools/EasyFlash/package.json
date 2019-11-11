@@ -2,6 +2,7 @@
   "name": "EasyFlash",
   "description": "Lightweight embedded flash memory library. Make flash to be a small KV database",
   "description_zh": "轻量级嵌入式 Flash 存储器库，让 Flash 成为小型 KV 数据库",
+  "enable": "PKG_USING_EASYFLASH",
   "keywords": [
     "Flash",
     "C",
@@ -12,7 +13,8 @@
   "category": "tools",
   "author": {
     "name": "armink",
-    "email": "armink.ztl@gmail.com"
+    "email": "armink.ztl@gmail.com",
+    "github": "armink"
   },
   "license": "MIT",
   "repository": "https://github.com/armink-rtt-pkgs/EasyFlash",

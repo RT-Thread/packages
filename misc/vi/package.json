@@ -2,6 +2,7 @@
     "name": "vi",
     "description": "The screen-oriented text editor for RT-Thread",
     "description_zh": "vi 编辑器在 RT-Thread 操作系统上的移植",
+    "enable": "PKG_USING_VI",
     "keywords": [
         "vi",
         "editor"
@@ -9,7 +10,8 @@
     "category": "misc",
     "author": {
         "name": "RealThread",
-        "email": "package_team@rt-thread.com"
+        "email": "package_team@rt-thread.com",
+        "github": "RT-Thread-packages"
     },
     "license": "GPL-2.0",
     "repository": "https://github.com/RT-Thread-packages/vi",

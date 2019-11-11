@@ -2,6 +2,7 @@
   "name": "lsm6dsl",
   "description": "This is the LSM6DSL sensor driver package, support: accelerometer, gyroscope, step",
   "description_zh": "这是 LSM6DSL 传感器驱动包，支持：加速度计，陀螺仪，计步",
+  "enable": "PKG_USING_LSM6DSL",
   "keywords": [
     "sensor",
     "lsm6dsl"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "flybreak",
-    "email": "guozhanxin66@gmail.com"
+    "email": "guozhanxin66@gmail.com",
+    "github": "flybreak"
   },
   "license": "other",
   "repository": "https://github.com/RT-Thread-packages/lsm6dsl",
