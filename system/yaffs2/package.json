@@ -1,7 +1,7 @@
 {
   "name": "yaffs2",
   "description": "yaffs2 port to rtthread",
-  "description": "yaffs2 移植到RT-Thread",
+  "description_zh": "yaffs2 移植到RT-Thread",
   "keywords": [
     "filesystem",
     "nandflash fs",

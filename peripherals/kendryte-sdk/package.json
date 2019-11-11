@@ -1,7 +1,7 @@
 {
   "name": "kendryte-sdk",
   "description": "Kendryte K210 SDK",
-  "description": "勘智 K210 处理器对应的外设驱动包",
+  "description_zh": "勘智 K210 处理器对应的外设驱动包",
   "keywords": [
     "kendryte-sdk",
     "k210",
