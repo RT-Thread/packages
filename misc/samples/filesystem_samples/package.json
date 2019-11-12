@@ -2,13 +2,15 @@
   "name": "filesystem_samples",
   "description": "RT-Thread filesystem samples",
   "description_zh": "RT-Thread 文件系统示例",
+  "enable": "PKG_USING_FILESYSTEM_SAMPLES",
   "keywords": [
     "filesystem_samples"
   ],
   "category": "misc/samples",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/filesystem-sample",

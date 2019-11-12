@@ -2,6 +2,7 @@
   "name": "sqlite",
   "description": "SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine",
   "description_zh": "SQLite 是一个完备、高度可靠、嵌入型、全功能、公共领域的 SQL 数据库引擎",
+  "enable": "PKG_USING_SQLITE",
   "keywords": [
     "sqlite",
     "database",
@@ -10,7 +11,8 @@
   "category": "system",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "unknown",
   "repository": "https://github.com/RT-Thread-packages/SQLite",

@@ -2,6 +2,7 @@
   "name": "jerryscript",
   "description": "JerryScript port for RT-Thread",
   "description_zh": "针对 RT-Thread 的 JerryScript 移植",
+  "enable": "PKG_USING_JERRYSCRIPT",
   "keywords": [
     "javascript",
     "script"
@@ -9,7 +10,8 @@
   "category": "language",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/jerryscript",

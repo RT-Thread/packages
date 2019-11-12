@@ -2,13 +2,15 @@
   "name": "network_samples",
   "description": "RT-Thread network samples",
   "description_zh": "RT-Thread 网络示例",
+  "enable": "PKG_USING_NETWORK_SAMPLES",
   "keywords": [
     "network_samples"
   ],
   "category": "misc/samples",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/network-sample",

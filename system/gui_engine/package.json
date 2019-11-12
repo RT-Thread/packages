@@ -2,13 +2,15 @@
   "name": "gui_engine",
   "description": "GUI Engine by RT-Thread",
   "description_zh": "来自 RT-Thread 官方的 GUI 引擎",
+  "enable": "PKG_USING_GUIENGINE",
   "keywords": [
     "gui engine"
   ],
   "category": "system",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": " LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/gui_engine",

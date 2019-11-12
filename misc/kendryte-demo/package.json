@@ -2,13 +2,15 @@
   "name": "kendryte-demo",
   "description": "kendryte k210 demo",
   "description_zh": "Kendryte k210 demo",
+  "enable": "PKG_USING_KENDRYTE_DEMO",
   "keywords": [
     "kendryte-demo"
   ],
   "category": "misc",
   "author": {
     "name": "BernardXiong",
-    "email": "bernard.xiong@gmail.com"
+    "email": "bernard.xiong@gmail.com",
+    "github": "BernardXiong"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/BernardXiong/kendryte-demo",

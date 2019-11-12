@@ -2,13 +2,15 @@
   "name": "persimmon",
   "description": "Persimmon UI for RT-Thread",
   "description_zh": "RT-Thread 的柿饼 UI",
+  "enable": "PKG_USING_PERSIMMON",
   "keywords": [
     "persimmon"
   ],
   "category": "system",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "unknown",
   "repository": "https://github.com/RT-Thread-packages/persimmon",

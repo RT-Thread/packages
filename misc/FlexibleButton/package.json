@@ -2,6 +2,7 @@
   "name": "FlexibleButton",
   "description": "Small and flexible button driver",
   "description_zh": "小巧灵活的按键驱动程序（事件驱动、无限按键数量、可用中断模式）",
+  "enable": "PKG_USING_FLEXIBLE_BUTTON",
   "keywords": [
     "FlexibleButton",
     "button driver"
@@ -9,7 +10,8 @@
   "category": "misc",
   "author": {
     "name": "MurphyZhao",
-    "email": "d2014zjt@163.com"
+    "email": "d2014zjt@163.com",
+    "github": "MurphyZhao"
   },
   "license": "Apache License 2.0",
   "repository": "https://github.com/murphyzhao/FlexibleButton",

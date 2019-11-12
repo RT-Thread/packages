@@ -2,8 +2,8 @@
   "name": "nt5510",
   "description": "This is the NT5510 lcd driver package",
   "description_zh": "这是 NT5510 液晶芯片的驱动包",  
-  "keywords": 
-  [
+  "enable": "PKG_USING_NT5510",
+  "keywords": [
     "nt5510",
     "lcd"
   ],
@@ -11,7 +11,8 @@
   "author": 
   {
     "name": "tyustli",
-    "email": "1225613647@qq.com"
+    "email": "1225613647@qq.com",
+    "github": "tyustli"    
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/tyustli/nt5510",

@@ -2,6 +2,7 @@
   "name": "ad7746",
   "description": "AD7746 library for rt-thread",
   "description_zh": "AD7746 高精度电容测量芯片在 RT-Thread 移植库",
+  "enable": "PKG_USING_AD7746",
   "keywords": [
     "i2c",
     "CDC"
@@ -9,7 +10,8 @@
   "category": "peripherals",
   "author": {
     "name": "wuhanstudio",
-    "email": "wuhanstudio@hust.edu.cn"
+    "email": "wuhanstudio@hust.edu.cn",
+    "github": "wuhanstudio"
   },
   "license": "MIT",
   "repository": "https://github.com/wuhanstudio/rt-ad7746",

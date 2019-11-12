@@ -2,6 +2,7 @@
   "name": "CmBacktrace",
   "description": "Advanced fault backtrace library for ARM Cortex-M series MCU",
   "description_zh": "ARM Cortex-M 系列 MCU 错误追踪库",
+  "enable": "PKG_USING_CMBACKTRACE",
   "keywords": [
     "ARM",
     "Cortex-M",
@@ -12,7 +13,8 @@
   "category": "tools",
   "author": {
     "name": "armink",
-    "email": "armink.ztl@gmail.com"
+    "email": "armink.ztl@gmail.com",
+    "github": "armink"
   },
   "license": "MIT",
   "repository": "https://github.com/armink-rtt-pkgs/CmBacktrace",

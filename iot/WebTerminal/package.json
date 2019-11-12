@@ -2,6 +2,7 @@
   "name": "WebTerminal",
   "description": "Terminal runs in a Web browser",
   "description_zh": "可以在浏览器上运行的终端",
+  "enable": "PKG_USING_WEBTERMINAL",
   "keywords": [
     "Embedded",
     "Web",
@@ -12,7 +13,8 @@
   "category": "iot",
   "author": {
     "name": "armink",
-    "email": "armink.ztl@gmail.com"
+    "email": "armink.ztl@gmail.com",
+    "github": "armink"
   },
   "license": "unknown",
   "repository": "https://github.com/armink-rtt-pkgs/WebTerminal",

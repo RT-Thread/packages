@@ -1,14 +1,16 @@
 {
   "name": "pcf8574",
   "description": "Remote 8-bit I/O expander for I2C-bus",
-  "description": "针对 I2C 并行口扩展 8 位 I/O 软件包",
+  "description_zh": "针对 I2C 并行口扩展 8 位 I/O 软件包",
+  "enable": "PKG_USING_PCF8574",
   "keywords": [
     "pcf8574"
   ],
   "category": "peripherals",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/pcf8574",

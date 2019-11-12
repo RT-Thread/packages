@@ -4,8 +4,10 @@
   "description_zh": "RT-Thread 展示系统内部运行信息的组件，能够帮助分析系统内部情况",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
+  "enable": "PKG_USING_RTI",
   "keywords": [
     "rti",
     "system"

@@ -2,13 +2,15 @@
   "name": "ota_downloader",
   "description": "The firmware downloader bases on RT-Thread OTA component",
   "description_zh": "基于 RT-Thread OTA 组件的 固件下载器",
+  "enable": "PKG_USING_OTA_DOWNLOADER",
   "keywords": [
     "ota_downloader"
   ],
   "category": "iot",
   "author": {
     "name" : "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/ota_downloader",

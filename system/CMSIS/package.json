@@ -2,6 +2,7 @@
   "name": "CMSIS",
   "description": "CMSIS(Cortex Microcontroller Software Interface Standard) package on RT-Thread",
   "description_zh": "CMSIS 软件包在 RT-Thread 上的移植",
+  "enable": "PKG_USING_CMSIS",
   "keywords": [
     "ARM",
     "CMSIS"
@@ -9,7 +10,8 @@
   "category": "system",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/CMSIS",

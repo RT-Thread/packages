@@ -2,13 +2,15 @@
   "name": "nanopb",
   "description": "Protocol Buffers for Embedded Systems",
   "description_zh": "Protocol Buffers 解析器在嵌入式上的实现", 
+  "enable": "PKG_USING_NANOPB",
   "keywords": [
     "nanopb"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Zlib",
   "repository": "https://github.com/RT-Thread-packages/nanopb",

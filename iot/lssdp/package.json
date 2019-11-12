@@ -2,13 +2,15 @@
   "name": "lssdp",
   "description": "Lssdp protocol implemented on rt-thread",
   "description_zh": "在 RT-Thread 上实现的 lssdp 协议，可以用于局域网设备自动发现",  
+  "enable": "PKG_USING_LSSDP",
   "keywords": [
     "lssdp"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/lssdp.git",

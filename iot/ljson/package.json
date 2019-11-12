@@ -2,13 +2,15 @@
   "name": "ljson",
   "description": "JSON parser in ANSI C",
   "description_zh": "ANSI-C 标准的 JSON 解析器",  
+  "enable": "PKG_USING_LJSON",
   "keywords": [
     "ljson"
   ],
   "category": "iot",
   "author": {
     "name": "qiaoqidui",
-    "email": "891062079@qq.com"
+    "email": "891062079@qq.com",
+    "github": "qiaoqidui"
   },
   "license": "unknown",
   "repository": "https://github.com/qiaoqidui/ljson",

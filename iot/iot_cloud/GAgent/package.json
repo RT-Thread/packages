@@ -2,13 +2,15 @@
   "name": "GAgent",
   "description": "GAgent of Gizwits on RT-Thread",
   "description_zh": "连接机智云的软件包",
+  "enable": "PKG_USING_GAGENT_CLOUD",
   "keywords": [
     "GAgent"
   ],
   "category": "iot/iot_cloud",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/GAgent",

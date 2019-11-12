@@ -2,8 +2,8 @@
   "name": "gt9147",
   "description": "This is the GT9147 touch driver package",
   "description_zh": "这是 GT9147 触摸芯片的驱动包",  
-  "keywords": 
-  [
+  "enable": "PKG_USING_GT9147",  
+  "keywords": [
     "gt9147",
     "touch"
   ],
@@ -11,7 +11,8 @@
   "author": 
   {
     "name": "tyustli",
-    "email": "1225613647@qq.com"
+    "email": "1225613647@qq.com",
+    "github": "tyustli"    
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/gt9147",

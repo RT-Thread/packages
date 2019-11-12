@@ -2,13 +2,15 @@
   "name": "fastlz",
   "description": "lightning-fast compression library",
   "description_zh": "一款极速的压缩库",
+  "enable": "PKG_USING_FASTLZ",
   "keywords": [
     "fastlz"
   ],
   "category": "misc",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "unknown",
   "repository": "https://github.com/RT-Thread-packages/fastlz",

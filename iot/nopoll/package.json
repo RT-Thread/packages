@@ -2,6 +2,7 @@
   "name": "nopoll",
   "description": "A OpenSource WebSocket implementation (RFC 6455) in ansi C",
   "description_zh": "一款 C 实现的开源 WebSocket 软件包",
+  "enable": "PKG_USING_NOPOLL",
   "keywords": [
     "websocket",
     "nopoll"
@@ -9,7 +10,8 @@
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/nopoll",

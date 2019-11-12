@@ -2,13 +2,15 @@
   "name": "ali-iotkit",
   "description": "Ali Cloud SDK for IoT platform",
   "description_zh": "连接阿里 IoT 云平台的软件包",
+  "enable": "PKG_USING_ALI_IOTKIT",
   "keywords": [
     "ali_iotkit"
   ],
   "category": "iot/iot_cloud",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/ali-iotkit",

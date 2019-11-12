@@ -2,13 +2,15 @@
   "name": "wavplayer",
   "description": " Minimal music player for wav file play and record",
   "description_zh": "简洁的wav格式的音乐播放器，提供播放和录音功能",  
+  "enable": "PKG_USING_WAVPLAYER",
   "keywords": [
     "wavplayer"
   ],
   "category": "multimedia",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/wavplayer",

@@ -1,13 +1,15 @@
 {
     "name": "tencent-iot-sdk",
     "description": "Tencent Cloud IOT SDK for iot_hub and iot_explorer platform",
+  "enable": "PKG_USING_TENCENT_IOTHUB",
     "keywords": [
         "tencent-iot-sdk"
     ],
     "category": "iot/iot_cloud",
     "author": {
         "name": "yougaliu",
-        "email": "yougaliu@tencent.com"
+        "email": "yougaliu@tencent.com",
+        "github": "yougaliu"
     },
     "license": "Apache-2.0",
     "repository": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread",

@@ -2,13 +2,15 @@
   "name": "rt-robot",
   "description": "RT-Thread Robots platform",
   "description_zh": "RT-Thread 机器人平台",
+  "enable": "PKG_USING_ROBOTS",
   "keywords": [
     "robot"
   ],
   "category": "system",
   "author": {
     "name": "wuhanstudio",
-    "email": "wuhanstudio@qq.com"
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/rt-robot",

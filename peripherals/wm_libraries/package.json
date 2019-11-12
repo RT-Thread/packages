@@ -2,6 +2,7 @@
   "name": "wm_libraries",
   "description": "a library package for WinnerMicro devices.",
   "description_zh": "WinnerMicro 芯片软件支持包",  
+  "enable": "PKG_USING_WM_LIBRARIES",
   "keywords": [
     "wm_libraries",
     "Winner Micro",
@@ -18,7 +19,8 @@
   "category": "peripherals",
   "author": {
     "name": "Winner Micro",
-    "email": "githubadmin@winnermicro.com"
+    "email": "githubadmin@winnermicro.com",
+    "github": "Winner Micro"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/WinnerMicro/rtpkg-wm_libraries",

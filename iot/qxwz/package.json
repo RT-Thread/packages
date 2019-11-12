@@ -2,13 +2,15 @@
   "name": "qxwz",
   "description": "qxwz_application: high precision location library for RT-Thread.",
   "description_zh": "qxwz 高精度定位应用",
+  "enable": "PKG_USING_QXWZ",
   "keywords": [
     "qxwz"
   ],
   "category": "iot",
   "author": {
     "name": "daniel.chen",
-    "email": "daniel.chen@wz-inc.com"
+    "email": "daniel.chen@wz-inc.com",
+    "github": "daniel.chen"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/qianxun.git",

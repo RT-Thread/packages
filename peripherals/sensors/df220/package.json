@@ -2,13 +2,15 @@
   "name": "df220",
   "description": "This is the driver package of MiraMEMS df220 force sensor for RT-Thread.",
   "description_zh": "本软件包是 MiraMEMS df220 力传感器在 RT-Thread 中的驱动包。",  
+  "enable": "PKG_USING_DF220",
   "keywords": [
     "df220"
   ],
   "category": "peripherals/sensors",
   "author": {
     "name": "Zhou DingHua",
-    "email": "dhzhou@miramems.com"
+    "email": "dhzhou@miramems.com",
+    "github": "Zhou DingHua"
   },
   "license": "GPL-3.0",
   "repository": "https://github.com/MiraMEMS-Wonderful/df220-RT-Thread.git",

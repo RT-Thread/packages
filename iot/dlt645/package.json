@@ -2,13 +2,15 @@
   "name": "dlt645",
   "description": "dlt645 master package",
   "description_zh": "基于DLT645协议的主机采集软件包",  
+  "enable": "PKG_USING_DLT645",
   "keywords": [
     "dlt645"
   ],
   "category": "iot",
   "author": {
     "name": "WKJay",
-    "email": "1931048074@qq.com"
+    "email": "1931048074@qq.com",
+    "github": "WKJay"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/WKJay/DLT645",

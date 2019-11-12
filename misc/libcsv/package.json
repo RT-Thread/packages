@@ -2,6 +2,7 @@
   "name": "libcsv",
   "description": "libcsv is a small, simple and fast CSV library written in pure ANSI C89 that can read and write CSV data",
   "description_zh": "libcsv是用纯ANSI C89编写的小型、简单、快速的CSV库，支持读写CSV数据",
+  "enable": "PKG_USING_LIBCSV",
   "keywords": [
     "csv",
     "c",
@@ -11,7 +12,8 @@
   "category": "misc",
   "author": {
     "name": "liu2guang",
-    "email": "1004383796@qq.com"
+    "email": "1004383796@qq.com",
+    "github": "liu2guang"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/liu2guang/libcsv",

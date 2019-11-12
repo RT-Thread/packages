@@ -2,13 +2,15 @@
   "name": "LedBlink",
   "description": "easy led blink support;",
   "description_zh": "简单易用led闪烁控制软件包",  
+  "enable": "PKG_USING_LEDBLINK",
   "keywords": [
     "LedBlink"
   ],
   "category": "peripherals",
   "author": {
     "name": "zpw",
-    "email": "aeo1234@qq.com"
+    "email": "aeo1234@qq.com",
+    "github": "zpw"
   },
   "license": "GPL-2.0",
   "repository": "https://github.com/aeo123/LedBlink.git",

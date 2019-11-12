@@ -2,13 +2,15 @@
   "name": "ezXML",
   "description": "An XML parser C library that's simple and easy to use",
   "description_zh": "一个用 C 语言描述的 XML 解析库，并且简单易用",  
+  "enable": "PKG_USING_EZXML",
   "keywords": [
     "ezXML"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/ezXML",

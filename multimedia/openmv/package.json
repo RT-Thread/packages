@@ -1,14 +1,16 @@
 {
   "name": "openmv",
   "description": "openmv porting for rt-thread",
-  "description": "openmv 在 RT-Thread 上的移植",
+  "description_zh": "openmv 在 RT-Thread 上的移植",
+  "enable": "PKG_USING_OPENMV",
   "keywords": [
     "openmv"
   ],
   "category": "multimedia",
   "author": {
     "name": "SummerGift",
-    "email": "SummerGift@qq.com"
+    "email": "SummerGift@qq.com",
+    "github": "SummerGift"
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages-by-SummerGift/openmv",

@@ -1,7 +1,8 @@
 {
   "name": "kendryte-sdk",
   "description": "Kendryte K210 SDK",
-  "description": "勘智 K210 处理器对应的外设驱动包",
+  "description_zh": "勘智 K210 处理器对应的外设驱动包",
+  "enable": "PKG_USING_KENDRYTE_SDK",
   "keywords": [
     "kendryte-sdk",
     "k210",
@@ -11,7 +12,8 @@
   "category": "tools",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "unknown",
   "repository": "https://github.com/RT-Thread-packages/kendryte_sdk",

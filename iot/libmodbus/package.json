@@ -2,13 +2,15 @@
   "name": "libmodbus",
   "description": "a libmodbus package for rt-thread",
   "description_zh": "libmodbus在RT-Thread上的移植", 
+  "enable": "PKG_USING_LIBMODBUS",
   "keywords": [
     "libmodbus"
   ],
   "category": "iot",
   "author": {
     "name": "malongwei",
-    "email": "2544047213@qq.com"
+    "email": "2544047213@qq.com",
+    "github": "malongwei"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/loogg/libmodbus",

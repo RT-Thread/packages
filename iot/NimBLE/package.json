@@ -2,13 +2,15 @@
   "name": "NimBLE",
   "description": "An Apache open-source Bluetooth 5.0 stack porting on RT-Thread",
   "description_zh": "Apache 开源蓝牙 5.0 协议栈在 RT-Thread 的移植",
+  "enable": "PKG_USING_NIMBLE",
   "keywords": [
     "NimBLE"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/nimble",

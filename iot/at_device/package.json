@@ -2,13 +2,15 @@
   "name": "at_device",
   "description": "AT component porting or samples for different devices",
   "description_zh": "AT 组件在不同设备上的移植或示例", 
+  "enable": "PKG_USING_AT_DEVICE",
   "keywords": [
     "at_device"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RT-Thread-packages/at_device",

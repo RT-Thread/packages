@@ -2,6 +2,7 @@
   "name": "MotionDriver2RTT",
   "description": "A package porting MotionDriver to RTT",
   "description_zh": "移植 MotionDriver 到 RTT 的包",  
+  "enable": "PKG_USING_MOTIONDRIVER2RTT",
   "keywords": [
     "MotionDriver2RTT",
     "mpu6050",
@@ -10,7 +11,8 @@
   "category": "peripherals",
   "author": {
     "name": "greedyhao",
-    "email": "hao_kr@163.com"
+    "email": "hao_kr@163.com",
+    "github": "greedyhao"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/greedyhao/MotionDriver2RTT",

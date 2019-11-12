@@ -2,13 +2,15 @@
   "name": "webnet",
   "description": "A lightweight, customizable embedded Web Server by RT-Thread",
   "description_zh": "RT-Thread 官方开源的、轻量级、可定制嵌入式 Web 服务器",
+  "enable": "PKG_USING_WEBNET",
   "keywords": [
     "webnet"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "GPL-2.0",
   "repository": "https://github.com/RT-Thread-packages/webnet",

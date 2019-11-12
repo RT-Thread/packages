@@ -2,13 +2,15 @@
   "name": "TinyFrame",
   "description": "A simple library for building and parsing data frames for serial interfaces (like UART / RS232)",
   "description_zh": "应用于串口设备（如 UART / RS232)的构建或者解析的库",
+  "enable": "PKG_USING_TINYFRAME",
   "keywords": [
     "TinyFrame"
   ],
   "category": "misc",
   "author": {
     "name": "XXXXzzzz000",
-    "email": "xxx@zzz.000"
+    "email": "xxx@zzz.000",
+    "github": "XXXXzzzz000"
   },
   "license": "MIT",
   "repository": "https://github.com/XXXXzzzz000/TinyFrame",

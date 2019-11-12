@@ -2,6 +2,7 @@
   "name": "micropython",
   "description": "MicroPython port package for RT-Thread",
   "description_zh": "MicroPython 在 RT-Thread 上的移植",
+  "enable": "PKG_USING_MICROPYTHON",
   "keywords": [
     "micropython",
     "python",
@@ -11,7 +12,8 @@
   "category": "language",
   "author": {
     "name": "armink",
-    "email": "armink.ztl@gmail.com"
+    "email": "armink.ztl@gmail.com",
+    "github": "armink"
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/micropython",

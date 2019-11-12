@@ -2,6 +2,7 @@
   "name": "tcpserver",
   "description": "A TCP server that supports multiple clients",
   "description_zh": "一个支持多客户端的 TCP 服务器",
+  "enable": "PKG_USING_TCPSERVER",
   "keywords": [
     "tcpserver",
     "server",
@@ -10,7 +11,8 @@
   "category": "iot",
   "author": {
     "name": "flybreak",
-    "email": "guozhanxin66@gmail.com"
+    "email": "guozhanxin66@gmail.com",
+    "github": "flybreak"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/Guozhanxin/tcpserver.git",

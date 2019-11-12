@@ -2,13 +2,15 @@
   "name": "agile_button",
   "description": "A agile button package.",
   "description_zh": "一个灵活的button软件包。",  
+  "enable": "PKG_USING_AGILE_BUTTON",
   "keywords": [
     "agile_button"
   ],
   "category": "peripherals",
   "author": {
     "name": "Longwei Ma",
-    "email": "2544047213@qq.com"
+    "email": "2544047213@qq.com",
+    "github": "Longwei Ma"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/loogg/agile_button",

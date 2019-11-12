@@ -2,6 +2,7 @@
   "name": "lsm303agr",
   "description": "This is the LSM303AGR sensor driver package, support: accelerometer, magnetometer",
   "description_zh": "这是 LSM303AGR 传感器驱动包，支持：加速度计，磁力计",
+  "enable": "PKG_USING_LSM303AGR",
   "keywords": [
     "sensor",
     "lsm303agr"
@@ -9,7 +10,8 @@
   "category": "peripherals/sensors",
   "author": {
     "name": "flybreak",
-    "email": "guozhanxin66@gmail.com"
+    "email": "guozhanxin66@gmail.com",
+    "github": "flybreak"
   },
   "license": "other",
   "repository": "https://github.com/RT-Thread-packages/lsm303agr",

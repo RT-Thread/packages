@@ -2,13 +2,15 @@
   "name": "cJSON",
   "description": "Ultralightweight JSON parser in ANSI C",
   "description_zh": "超轻量级的 C 语言 json 解析库", 
+  "enable": "PKG_USING_CJSON",
   "keywords": [
     "cJSON"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/cJSON",

@@ -2,13 +2,15 @@
   "name": "jiot-c-sdk",
   "description": "JIGUANG IoT cloud client sdk for RT-Thread", 
   "description_zh": "连接极光IoT云的客户端软件包",
+  "enable": "PKG_USING_JIOT-C-SDK",
   "keywords": [
     "jiot-c-sdk"
   ],
   "category": "iot/iot_cloud",
   "author": {
     "name": "ouyangshengduo",
-    "email": "ouysd@jiguang.cn"
+    "email": "ouysd@jiguang.cn",
+    "github": "ouyangshengduo"
   },
   "license": "MIT",
   "repository": "https://github.com/jpush/JIoT-rtthread-package.git",

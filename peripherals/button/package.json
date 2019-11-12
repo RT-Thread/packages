@@ -2,13 +2,15 @@
   "name": "button",
   "description": "button drive by C, support single and double click, long press, long press release",
   "description_zh": "C 实现的按键驱动，支持单击和双击，长按，长按释放",
+  "enable": "PKG_USING_BUTTON",
   "keywords": [
     "button"
   ],
   "category": "peripherals",
   "author": {
     "name": "jiejieTop",
-    "email": "jiejietop@gmail.com"
+    "email": "jiejietop@gmail.com",
+    "github": "jiejieTop"
   },
   "license": "GPL-3.0",
   "repository": "https://github.com/jiejieTop/rtpkg_button",
