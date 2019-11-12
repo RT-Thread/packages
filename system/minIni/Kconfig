@@ -1,5 +1,5 @@
 
-menumenuconfig PKG_USING_MININI
+menuconfig PKG_USING_MININI
     bool "minIni: a portable and configurable library for reading and writing '.INI' files."
     default n
 
