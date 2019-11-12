@@ -2,7 +2,7 @@
   "name": "ali-iotkit",
   "description": "Ali Cloud SDK for IoT platform",
   "description_zh": "连接阿里 IoT 云平台的软件包",
-  "enable": "PKG_USING_ALI-IOTKIT",
+  "enable": "PKG_USING_ALI_IOTKIT",
   "keywords": [
     "ali_iotkit"
   ],

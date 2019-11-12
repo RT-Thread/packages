@@ -2,7 +2,7 @@
   "name": "protobuf-c",
   "description": "protobuf-c library for rt-thread",
   "description_zh": "Google 的 prototol buffer 一种轻便高效的数据存储格式",
-  "enable": "PKG_USING_PROTOBUF-C",
+  "enable": "PKG_USING_PROTOBUF_C",
   "keywords": [
     "protobuf-c",
     "protobuf"

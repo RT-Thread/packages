@@ -2,7 +2,7 @@
   "name": "onnx-backend",
   "description": "Open Neural Network Exchange backend on RT-Thread",
   "description_zh": "开源神经网络模型 onnx 后端，支持几乎所有主流机器学习模型",
-  "enable": "PKG_USING_ONNX-BACKEND",
+  "enable": "PKG_USING_ONNX_BACKEND",
   "keywords": [
     "protobuf-c",
     "protobuf",

@@ -2,7 +2,7 @@
   "name": "GAgent",
   "description": "GAgent of Gizwits on RT-Thread",
   "description_zh": "连接机智云的软件包",
-  "enable": "PKG_USING_GAGENT",
+  "enable": "PKG_USING_GAGENT_CLOUD",
   "keywords": [
     "GAgent"
   ],

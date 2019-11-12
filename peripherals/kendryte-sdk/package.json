@@ -2,7 +2,7 @@
   "name": "kendryte-sdk",
   "description": "Kendryte K210 SDK",
   "description_zh": "勘智 K210 处理器对应的外设驱动包",
-  "enable": "PKG_USING_KENDRYTE-SDK",
+  "enable": "PKG_USING_KENDRYTE_SDK",
   "keywords": [
     "kendryte-sdk",
     "k210",

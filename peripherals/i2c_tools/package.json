@@ -2,7 +2,7 @@
   "name": "i2c-tools",
   "description": "A collection of i2c tools including scan/read/write.",
   "description_zh": "I2C 调试时可以使用的小工具，可以扫描设备，读写寄存器",
-  "enable": "PKG_USING_I2C-TOOLS",
+  "enable": "PKG_USING_I2C_TOOLS",
   "keywords": [
     "i2c"
   ],

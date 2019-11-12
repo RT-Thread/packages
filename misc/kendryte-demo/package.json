@@ -2,7 +2,7 @@
   "name": "kendryte-demo",
   "description": "kendryte k210 demo",
   "description_zh": "Kendryte k210 demo",
-  "enable": "PKG_USING_KENDRYTE-DEMO",
+  "enable": "PKG_USING_KENDRYTE_DEMO",
   "keywords": [
     "kendryte-demo"
   ],

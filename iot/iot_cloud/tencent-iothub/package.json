@@ -1,7 +1,7 @@
 {
     "name": "tencent-iot-sdk",
     "description": "Tencent Cloud IOT SDK for iot_hub and iot_explorer platform",
-    "enable": "PKG_USING_TENCENT-IOT-SDK",
+  "enable": "PKG_USING_TENCENT_IOTHUB",
     "keywords": [
         "tencent-iot-sdk"
     ],
