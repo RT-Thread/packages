@@ -1,0 +1,37 @@
+
+# W60X AT device configuration
+menuconfig AT_DEVICE_USING_W60X
+    bool "WinnerMicro W60X"
+    default n
+
+if AT_DEVICE_USING_W60X
+
+    config AT_DEVICE_W60X_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_W60X_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_W60X_SAMPLE
+
+        config W60X_SAMPLE_WIFI_SSID
+            string "WIFI ssid"
+            default "rtthread"
+
+        config W60X_SAMPLE_WIFI_PASSWORD
+            string "WIFI password"
+            default "12345678"
+
+        config W60X_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart1"
+
+        config W60X_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 512
+
+    endif
+
+endif
