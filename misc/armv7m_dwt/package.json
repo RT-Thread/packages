@@ -2,7 +2,7 @@
   "name": "armv7m_dwt",
   "description": "armv7m_dwt High precision timing and delay",
   "description_zh": "armv7m_dwt 高精度计时与延时",
-  "enable": "PKG_USING_ARMV7M_DWT",
+  "enable": "PKG_USING_ARMv7M_DWT",
   "keywords": [
     "armv7m_dwt"
   ],

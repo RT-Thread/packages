@@ -2,7 +2,7 @@
   "name": "airkissOpen",
   "description": "Tencent Airkiss Protocol parse library",
   "description_zh": "腾讯airkiss协议解析库",
-  "enable": "PKG_USING_AIRKISSOPEN",
+  "enable": "PKG_USING_AIRKISS_OPEN",
   "keywords": [
     "airkiss"
   ],

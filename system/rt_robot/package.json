@@ -2,7 +2,7 @@
   "name": "rt-robot",
   "description": "RT-Thread Robots platform",
   "description_zh": "RT-Thread 机器人平台",
-  "enable": "PKG_USING_RT_ROBOT",
+  "enable": "PKG_USING_ROBOTS",
   "keywords": [
     "robot"
   ],

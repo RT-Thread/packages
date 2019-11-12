@@ -2,7 +2,7 @@
   "name": "SignalLed",
   "description": "a signal led package for rt-thread",
   "description_zh": "信号灯软件包，支持自定义闪烁方式、周期，支持随时开启、关闭",
-  "enable": "PKG_USING_SIGNALLED",
+  "enable": "PKG_USING_SIGNAL_LED",
   "keywords": [
     "SignalLed"
   ],

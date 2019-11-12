@@ -2,7 +2,7 @@
   "name": "yaffs2",
   "description": "yaffs2 port to rtthread",
   "description_zh": "yaffs2 移植到RT-Thread",
-  "enable": "PKG_USING_YAFFS2",
+  "enable": "PKG_USING_DFS_YAFFS",
   "keywords": [
     "filesystem",
     "nandflash fs",
