@@ -86,6 +86,10 @@ def json_file_content_check(json_pathname):
     if package_info['category'] == '' :
         print ('The category of ' + package_info['name'] + ' package is lost.')  
         return False 
+
+    if package_info['enable'] == '' :
+        print ('The enable of ' + package_info['name'] + ' package is lost.')  
+        return False 
         
     if package_info['author']['name'] == '' :
         print ('The author name of ' + package_info['name'] + ' package is lost.') 
