@@ -1,0 +1,170 @@
+# Kconfig file for package abup_fota
+menuconfig PKG_USING_ABUP_FOTA
+    bool "abup_fota: The firmware downloader which using on Abup FOTA component"
+    select PKG_USING_FAL
+    default n
+
+if PKG_USING_ABUP_FOTA
+
+    config PKG_ABUP_FOTA_PATH
+        string
+        default "/packages/iot/abup_fota"
+
+    choice
+        prompt "Enable HTTP/CoAP FOTA"
+        default ABUP_NETWORKING_MODE
+        help
+            Select the package Networking mode
+
+        config ABUP_NETWORKING_MODE_COAP
+            bool "CoAP"
+
+        config ABUP_NETWORKING_MODE_HTTP
+            bool "HTTP"
+    endchoice
+    
+if ABUP_NETWORKING_MODE_COAP
+    config ABUP_DEFAULT_NETWORK_PROTOCOL
+        int
+        default 1
+endif
+
+if ABUP_NETWORKING_MODE_HTTP
+    config ABUP_DEFAULT_NETWORK_PROTOCOL
+        int
+        default 2
+endif
+
+    choice
+        prompt "Recover algorithm"
+        default ABUP_ALGORITHM
+        help
+            Select the package algorithm
+
+        config ABUP_ALGORITHM_WOSUN
+            bool "wosun"
+
+        config ABUP_ALGORITHM_LUSUN
+            bool "lusun"
+    endchoice
+        
+if ABUP_ALGORITHM_WOSUN
+    config ABUP_FOTA_ALGORITHM
+        int
+        default 1
+
+    config ADUPS_FOTA_WOSUN_VERSION
+        string
+        default "IOT4.0_R42641"
+endif
+
+if ABUP_ALGORITHM_LUSUN
+    config ABUP_FOTA_ALGORITHM
+        int
+        default 0
+
+    config ADUPS_FOTA_LUSUN_VERSION
+        string
+        default "IOT5.0_LUSUN11_R50426"
+endif
+
+    config ABUP_DEBUG_MODE
+        bool "Enable Abup FOTA Downloader debug"
+        default n
+
+    config ABUP_RTTHREAD_APP
+        string "Application area name"
+        default "App"
+
+    config ABUP_RTTHREAD_FLASH
+        string "Data area name"
+        default "Abup"
+
+    config ABUP_DEFAULT_SEGMENT_SIZE_INDEX
+        hex
+        default 3
+
+    config ABUP_SECTOR_MAX_NUM
+        hex "Flash minimum unit total"
+        default 0x40
+
+    config ABUP_DEFAULT_SECTOR_SIZE
+        hex "Flash minimum unit size"
+        default 0x00000800
+
+    config ABUP_FLASH_BASE_ADDR
+        hex "Flash start address"
+        default 0x08000000
+
+    config ABUP_BL_SIZE
+        hex "Bootloader size"
+        default 0x00004000
+
+    config ABUP_APP_SIZE
+        hex "Application size"
+        default 0x10000
+
+    config ABUP_UPDATE_ADDR
+        hex "Abup partition address"
+        default 0x08014000
+
+    config ABUP_UPDATE_SIZE
+        hex "Abup partition size"
+        default 0xC000
+
+    config ADUPS_FOTA_SERVICE_OEM
+        string "OEM"
+        default "G070RB"
+
+    config ADUPS_FOTA_SERVICE_MODEL
+        string "Device Name"
+        default "G070RB"
+
+    config ADUPS_FOTA_SERVICE_PRODUCT_ID
+        string "Product ID"
+        default "1562662709"
+
+    config ADUPS_FOTA_SERVICE_PRODUCT_SEC
+        string "Product Secret"
+        default "d42a103a639f4b5d94d97c3bd7bc9ba5"
+
+    config ADUPS_FOTA_SERVICE_DEVICE_TYPE
+        string "Device Type"
+        default "box"
+
+    config ADUPS_FOTA_SERVICE_PLATFORM
+        string "Platform"
+        default "stm32l0"
+
+    config ABUP_FIRMWARE_VERSION
+        string "firmware version"
+        default "1.0"
+
+    config ADUPS_FOTA_APP_VERSION
+        string
+        default "ADUPS_V4.0"
+
+    config ADUPS_FOTA_RTT_VERSION
+        string
+        default "RTT_V1.0"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ABUP_FOTA_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ABUP_FOTA_V100
+            bool "v1.0.0"
+
+        config PKG_USING_ABUP_FOTA_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_ABUP_FOTA_VER
+       string
+       default "v1.0.0"    if PKG_USING_ABUP_FOTA_V100
+       default "latest"    if PKG_USING_ABUP_FOTA_LATEST_VERSION
+
+endif
+

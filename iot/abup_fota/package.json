@@ -1,0 +1,34 @@
+{
+  "name": "abup_fota",
+  "description": "The firmware downloader bases on abup FOTA component",
+  "description_zh": "基于 abup FOTA 组件的 固件下载器",
+  "enable": "PKG_USING_ABUP_FOTA",
+  "keywords": [
+    "abup_fota"
+  ],
+  "category": "iot",
+  "author": {
+    "name" : "RayShen1018",
+    "email": "sr2005@sina.com",
+    "github": "RayShen1018"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RayShen1018/Abup",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RayShen1018/Abup.git",
+      "filename": "Abup-1.0.0.zip",
+      "VER_SHA": "c9082dff76ea43cfe8ddd283cf557544a75d46ef"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RayShen1018/Abup.git",
+      "filename": "Abup-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
