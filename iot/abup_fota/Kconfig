@@ -28,6 +28,7 @@ if ABUP_NETWORKING_MODE_COAP
 		int
 		default 1
 endif
+
 if ABUP_NETWORKING_MODE_HTTP
 	config ABUP_DEFAULT_NETWORK_PROTOCOL
 		int
@@ -56,6 +57,7 @@ if ABUP_ALGORITHM_WOSUN
 		string
 		default "IOT4.0_R42641"
 endif
+
 if ABUP_ALGORITHM_LUSUN
 	config ABUP_FOTA_ALGORITHM
 		int
@@ -70,10 +72,13 @@ endif
 		bool "Enable Abup FOTA Downloader debug"
 		default n
 
+	config ABUP_RTTHREAD_APP
+		string "Application area name"
+		default "App"
+
 	config ABUP_RTTHREAD_FLASH
 		string "Data area name"
 		default "Abup"
-
 
 	config ABUP_DEFAULT_SEGMENT_SIZE_INDEX
 		hex
@@ -99,17 +104,13 @@ endif
 		hex "Application size"
 		default 0x10000
 
-	config ABUP_UPDATE_INFO_ADDR
-		hex "Differential information address"
+	config ABUP_UPDATE_ADDR
+		hex "Abup partition address"
 		default 0x08014000
 
-	config ABUP_UPDATE_DELTA_ADDR
-		hex "Differential address"
-		default 0x08014800
-
-	config ABUP_UPDATE_DELTA_SIZE
-		hex "Differential package size"
-		default 0xB800
+	config ABUP_UPDATE_SIZE
+		hex "Abup partition size"
+		default 0xC000
 
 	config ADUPS_FOTA_SERVICE_OEM
 		string "OEM"
