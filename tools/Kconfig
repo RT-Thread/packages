@@ -10,5 +10,6 @@ source "$PKGS_DIR/packages/tools/ulog_easyflash/Kconfig"
 source "$PKGS_DIR/packages/tools/adbd/Kconfig"
 source "$PKGS_DIR/packages/tools/CoreMark/Kconfig"
 source "$PKGS_DIR/packages/tools/dhrystone/Kconfig"
+source "$PKGS_DIR/packages/tools/nr_micro_shell/Kconfig"
 
 endmenu
