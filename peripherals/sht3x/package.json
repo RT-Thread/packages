@@ -1,0 +1,25 @@
+{
+  "name": "sht3x",
+  "description": "digital humidity and temperature sensor sht3x driver library",
+  "description_zh": "数字湿度和温度传感器 sht3x 驱动软件包",
+  "keywords": [
+    "sht3x"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "donghao2nanjing",
+    "email": "hao.dong.nanjing@outlook.com"
+  },
+  "license": "todo",
+  "repository": "https://github.com/donghao2nanjing/sht3x",
+  "icon": "unknown",
+  "homepage": "https://github.com/donghao2nanjing/sht3x#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/donghao2nanjing/sht3x.git",
+      "filename": "sht3x.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
