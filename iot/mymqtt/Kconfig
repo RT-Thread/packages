@@ -1,7 +1,7 @@
 
 # Kconfig file for package mymqtt
 menuconfig PKG_USING_MYMQTT
-    bool "Eclipse Paho MQTT C/C++ client for Embedded platforms.A new efficient and stable way to realize for rt-thread."
+    bool "MY MQTT：Eclipse Paho MQTT C/C++ client, A new efficient and stable way to realize for rt-thread."
     default n
 
 if PKG_USING_MYMQTT
