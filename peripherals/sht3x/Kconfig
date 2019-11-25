@@ -11,9 +11,12 @@ if PKG_USING_SHT3X
             
     choice
         prompt "Version"
-        default PKG_USING_SHT3X_LATEST_VERSION
+        default PKG_USING_SHT3X_V100 
         help
             Select the package version
+
+        config PKG_USING_SHT3X_V100
+            bool "v1.0.0"
 
         config PKG_USING_SHT3X_LATEST_VERSION
             bool "latest"
@@ -21,6 +24,7 @@ if PKG_USING_SHT3X
 
     config PKG_SHT3X_VER
        string
+       default "v1.0.0"    if PKG_USING_SHT3X_V100
        default "latest"    if PKG_USING_SHT3X_LATEST_VERSION
 endif
 
