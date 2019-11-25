@@ -6,6 +6,12 @@ menuconfig PKG_USING_AS608
 
 if PKG_USING_AS608
 	
+	comment "Notice: PI8 --> 136" 
+	config PKG_AS608_WAK_PIN
+		int "AS608 WAK pin num"
+		range 1 176
+		default 136
+	
 	config PKG_USING_AS608_SAMPLE
 		bool "Enable AS608 SAMPLE"
 		default n
