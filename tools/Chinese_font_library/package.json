@@ -1,0 +1,32 @@
+{
+  "name": "ChineseFontLibrary",
+  "description": "a Chinese_font_library for rt-thread",
+  "description_zh": "rt-thread中文字库软件包",  
+  "enable": "PKG_USING_CHINESE_FONT_LIBRARY", 
+  "keywords": [
+    "Chinese_font_library","fal"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "lxzzzzzxl",
+    "email": "1498384737@qq.com",
+    "github": "lxzzzzzxl"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/lxzzzzzxl/Chinese_font_library",
+  "homepage": "https://github.com/lxzzzzzxl/Chinese_font_library#README",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/lxzzzzzxl/Chinese_font_library.git",
+      "filename": "Chinese_font_library-1.0.0.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/lxzzzzzxl/Chinese_font_library.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

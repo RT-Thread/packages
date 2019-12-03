@@ -1,0 +1,33 @@
+
+# Kconfig file for package Chinese_font_library
+menuconfig PKG_USING_CHINESE_FONT_LIBRARY
+    bool "Chinese_Font_Library: a Chinese font library for rt-thread"
+    default n
+select PKG_USING_FAL
+select FAL_USING_SFUD_PORT
+if PKG_USING_CHINESE_FONT_LIBRARY
+
+    config PKG_CHINESE_FONT_LIBRARY_PATH
+        string
+        default "/packages/tools/Chinese_font_library"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CHINESE_FONT_LIBRARY_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CHINESE_FONT_LIBRARY_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CHINESE_FONT_LIBRARY_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_CHINESE_FONT_LIBRARY_VER
+       string
+       default "v1.0.0"    if PKG_USING_CHINESE_FONT_LIBRARY_V100
+       default "latest"    if PKG_USING_CHINESE_FONT_LIBRARY_LATEST_VERSION
+
+endif
+
