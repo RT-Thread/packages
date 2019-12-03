@@ -1,7 +1,7 @@
 
 # Kconfig file for package Chinese_font_library
 menuconfig PKG_USING_CHINESE_FONT_LIBRARY
-    bool "a Chinese_font_library for rt-thread"
+    bool "Chinese_Font_Library: a Chinese font library for rt-thread"
     default n
 select PKG_USING_FAL
 select FAL_USING_SFUD_PORT
