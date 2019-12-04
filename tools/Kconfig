@@ -12,5 +12,6 @@ source "$PKGS_DIR/packages/tools/CoreMark/Kconfig"
 source "$PKGS_DIR/packages/tools/dhrystone/Kconfig"
 source "$PKGS_DIR/packages/tools/nr_micro_shell/Kconfig"
 source "$PKGS_DIR/packages/tools/Chinese_font_library/Kconfig"
+source "$PKGS_DIR/packages/tools/lunar_calendar/Kconfig"
 
 endmenu
