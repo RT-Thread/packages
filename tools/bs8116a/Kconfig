@@ -10,6 +10,10 @@ if PKG_USING_BS8116A
         string
         default "/packages/tools/bs8116a"
 
+    config PKG_USING_BS8116A_EXAMPLE
+        bool "use BS8116A-3 example."
+        default y
+
     choice
         prompt "Version"
         default PKG_USING_BS8116A_LATEST_VERSION
