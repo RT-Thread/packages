@@ -1,0 +1,36 @@
+
+# Kconfig file for package bs8116a
+menuconfig PKG_USING_BS8116A
+    bool "bs8116a: Touch key of HOLTEK BS8116A-3."
+    default n
+
+if PKG_USING_BS8116A
+
+    config PKG_BS8116A_PATH
+        string
+        default "/packages/tools/bs8116a"
+
+    config PKG_USING_BS8116A_EXAMPLE
+        bool "use BS8116A-3 example."
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_BS8116A_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BS8116A_V010
+            bool "v0.1.0"
+
+        config PKG_USING_BS8116A_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BS8116A_VER
+       string
+       default "v0.1.0"    if PKG_USING_BS8116A_V010
+       default "latest"    if PKG_USING_BS8116A_LATEST_VERSION
+
+endif
+
