@@ -21,6 +21,11 @@
   "homepage": "https://github.com/RT-Thread-packages/fal#readme",
   "site": [
     {
+      "version": "v0.4.0",
+      "URL": "https://github.com/RT-Thread-packages/fal/archive/0.4.0.zip",
+      "filename": "fal-0.4.0.zip"
+    },
+    {
       "version": "v0.3.0",
       "URL": "https://github.com/RT-Thread-packages/fal/archive/0.3.0.zip",
       "filename": "fal-0.3.0.zip"
