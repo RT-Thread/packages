@@ -7,6 +7,10 @@ if PKG_USING_CMBACKTRACE
 
     choice
         prompt "CPU Platform"
+        default PKG_CMBACKTRACE_PLATFORM_M0_M0PLUS if ARCH_ARM_CORTEX_M0
+        default PKG_CMBACKTRACE_PLATFORM_M3 if ARCH_ARM_CORTEX_M3
+        default PKG_CMBACKTRACE_PLATFORM_M4 if ARCH_ARM_CORTEX_M4
+        default PKG_CMBACKTRACE_PLATFORM_M7 if ARCH_ARM_CORTEX_M7
         default PKG_CMBACKTRACE_PLATFORM_NOT_SELECTED
         help
           Select the ARM Cortex-M CPU Platform of your device
@@ -40,6 +44,35 @@ if PKG_USING_CMBACKTRACE
             bool "Chinese"
     endchoice
 
+    if PKG_CMBACKTRACE_VER_NUM > 0x10300
+        config CMB_USING_FAL_FLASH_LOG
+            bool
+            prompt "Save the log to FAL flash partition"
+            default n
+            select PKG_USING_FAL
+            help
+              The log will save to the FAL flash partition when case hardfault and assert.
+
+        config CMB_USING_FAL_BACKUP_LOG_TO_FILE
+            bool
+            prompt "Backup the flash log to file when next reboot"
+            default y
+            depends on CMB_USING_FAL_FLASH_LOG
+            select RT_USING_DFS
+
+        config CMB_FAL_FLASH_LOG_PART
+            string "The flash partition name for saving log"
+            default "cmb_log"
+            depends on CMB_USING_FAL_FLASH_LOG
+            help
+                The patition name is defined in FAL partiton table. Please make sure it has enough space.
+
+        config CMB_LOG_FILE_PATH
+            string "The backup log file's path"
+            default "/log/cmb.log"
+            depends on CMB_USING_FAL_BACKUP_LOG_TO_FILE
+    endif
+
     config PKG_CMBACKTRACE_PATH
         string
         default "/packages/tools/CmBacktrace"
@@ -69,5 +102,12 @@ if PKG_USING_CMBACKTRACE
         default "v1.2.2" if PKG_USING_CMBACKTRACE_V10202
         default "v1.2.0" if PKG_USING_CMBACKTRACE_V10200
         default "latest" if PKG_USING_CMBACKTRACE_LATEST_VERSION
+
+    config PKG_CMBACKTRACE_VER_NUM
+        hex
+        default 0x10300    if PKG_USING_CMBACKTRACE_V10300
+        default 0x10202    if PKG_USING_CMBACKTRACE_V10202
+        default 0x10200    if PKG_USING_CMBACKTRACE_V10200
+        default 0x99999    if PKG_USING_CMBACKTRACE_LATEST_VERSION
 
 endif
