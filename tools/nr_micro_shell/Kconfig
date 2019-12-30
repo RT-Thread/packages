@@ -1,12 +1,10 @@
 
 # Kconfig file for package nr_micro_shell
-# 第一级菜单
 menuconfig PKG_USING_NR_MICRO_SHELL
     bool "nr_micro_shell:Lightweight command line interaction tool."
     default n
 
 if PKG_USING_NR_MICRO_SHELL
-    # 第二级菜单
     config PKG_NR_MICRO_SHELL_PATH
         string
         default "/packages/tools/nr_micro_shell"
