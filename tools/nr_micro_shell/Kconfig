@@ -1,13 +1,13 @@
 
 # Kconfig file for package nr_micro_shell
-menuconfig PKG_USING_NR_MICRO_SHELL
+menuconfig PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS
     bool "nr_micro_shell:Lightweight command line interaction tool."
     default n
 
-if PKG_USING_NR_MICRO_SHELL
-    config PKG_NR_MICRO_SHELL_PATH
+if PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS
+    config PKG_NR_MICRO_SHELL_FROM_NR_PKGS_PATH
         string
-        default "/packages_test/nr_micro_shell"
+        default "/packages/nr_micro_shell"
     
     config RT_NR_SHELL_LINE_SIZE
         int "The command line size."
@@ -73,21 +73,21 @@ if PKG_USING_NR_MICRO_SHELL
 
     choice
         prompt "Version"
-        default PKG_USING_NR_MICRO_SHELL_LATEST_VERSION
+        default PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_NR_MICRO_SHELL_V100
+        config PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS_V100
             bool "v1.0.0"
 
-        config PKG_USING_NR_MICRO_SHELL_LATEST_VERSION
+        config PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS_LATEST_VERSION
             bool "latest"
     endchoice
           
-    config PKG_NR_MICRO_SHELL_VER
+    config PKG_NR_MICRO_SHELL_FROM_NR_PKGS_VER
         string
-        default "v1.0.0"    if PKG_USING_NR_MICRO_SHELL_V100
-        default "latest"    if PKG_USING_NR_MICRO_SHELL_LATEST_VERSION
+        default "v1.0.0"    if PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS_V100
+        default "latest"    if PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS_LATEST_VERSION
 
 endif
 
