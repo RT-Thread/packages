@@ -15,6 +15,7 @@ if PKG_USING_LIBCURL2RTT
 
     choice
         prompt "Version"
+        default PKG_USING_LIBCURL2RTT_V076700
         help
             Select the LIBCURL2RTT version
 

@@ -10,9 +10,11 @@
     "name": "liu2guang",
     "email": "1004383796@qq.com"
   },
+  "license": "Apache-2.0",
   "repository": "https://github.com/liu2guang/libcurl2rtt",
+  "icon": "unknown",
   "homepage": "https://github.com/liu2guang/libcurl2rtt/blob/master/README.md",
-  "readme": "The curl library ported on the RT-Thread platform",
+  "doc": "unknown",
   "site": [
     {
       "version": "v7.67.0",
