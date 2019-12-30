@@ -7,7 +7,7 @@ menuconfig PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS
 if PKG_USING_NR_MICRO_SHELL_FROM_NR_PKGS
     config PKG_NR_MICRO_SHELL_FROM_NR_PKGS_PATH
         string
-        default "/packages/nr_micro_shell"
+        default "/packages/tools/nr_micro_shell"
     
     config RT_NR_SHELL_LINE_SIZE
         int "The command line size."
