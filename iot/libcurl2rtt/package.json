@@ -1,0 +1,32 @@
+{
+  "name": "libcurl2rtt",
+  "description": "The curl library ported on the RT-Thread platform",
+  "description_zh": "基于 RT-Thread 移植的 curl 库", 
+  "enable": "PKG_USING_LIBCURL2RTT",
+  "keywords": [
+    "curl"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "liu2guang",
+    "email": "1004383796@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/liu2guang/libcurl2rtt",
+  "icon": "unknown",
+  "homepage": "https://github.com/liu2guang/libcurl2rtt/blob/master/README.md",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v7.67.0",
+      "URL": "https://github.com/liu2guang/libcurl2rtt/archive/v7.67.0.zip",
+      "filename": "libcurl2rtt_v7.67.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/liu2guang/libcurl2rtt.git",
+      "filename": "libcurl2rtt_latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

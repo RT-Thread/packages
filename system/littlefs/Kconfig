@@ -31,6 +31,9 @@ if PKG_USING_LITTLEFS
         config PKG_USING_LITTLEFS_V205
             bool "v2.0.5"
 
+        config PKG_USING_LITTLEFS_V214
+            bool "v2.1.4"
+
         config PKG_USING_LITTLEFS_LATEST_VERSION
             bool "latest"
     endchoice
@@ -74,6 +77,7 @@ if PKG_USING_LITTLEFS
        default "v1.7.2" if PKG_USING_LITTLEFS_V172
        default "v2.0.1" if PKG_USING_LITTLEFS_V201
        default "v2.0.5" if PKG_USING_LITTLEFS_V205
+       default "v2.1.4" if PKG_USING_LITTLEFS_V214
        default "latest" if PKG_USING_LITTLEFS_LATEST_VERSION
 
 endif
