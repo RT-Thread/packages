@@ -27,7 +27,7 @@ if PKG_USING_LIBCURL2RTT
     endchoice
 
     config PKG_LIBCURL2RTT_VER
-    string
-    default "v7.67.0" if PKG_USING_LIBCURL2RTT_V076700
-    default "latest" if PKG_USING_LIBCURL2RTT_LATEST_VERSION
+    	string
+    	default "v7.67.0" if PKG_USING_LIBCURL2RTT_V076700
+    	default "latest" if PKG_USING_LIBCURL2RTT_LATEST_VERSION
 endif
