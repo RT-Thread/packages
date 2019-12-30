@@ -72,6 +72,9 @@ if PKG_USING_PPP_DEVICE
         config PPP_DEVICE_USING_AIR720
             bool "Luat Air720"
 
+        config PPP_DEVICE_USING_EC20
+            bool "Quectel EC20"
+
         config PPP_DEVICE_USING_M6312
             bool "China mobile M6312"
 
