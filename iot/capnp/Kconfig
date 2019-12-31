@@ -12,6 +12,19 @@ if PKG_USING_CAPNP
         string
         default "/packages/iot/capnp"
 
+    config CAPNP_USING_EXAMPLE
+        bool "capnp examples"
+        help
+            capnp examples
+        default n
+
+    if CAPNP_USING_EXAMPLE
+        config CAPNP_USING_ENCODE_DECODE_EXAMPLE
+            bool "capnp example: encode and decode in memory"
+            help
+                capnp example: encode and decode in memory
+            default n
+
     choice
         prompt "Version"
         default PKG_USING_CAPNP_LATEST_VERSION
