@@ -1,0 +1,127 @@
+
+# Kconfig file for package ucloud_iot_sdk
+menuconfig PKG_USING_UCLOUD_IOT_SDK
+    bool "ucloud_iot_sdk: ucloud iot sdk for uiot-core platform."
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    default n
+
+if PKG_USING_UCLOUD_IOT_SDK
+
+    config PKG_UCLOUD_IOT_SDK_PATH
+        string
+        default "/packages/iot/iot_cloud/ucloud_iot_sdk"
+
+    config PKG_USING_UCLOUD_MQTT
+    bool "Enable Mqtt"
+        default y
+        if PKG_USING_UCLOUD_MQTT
+            choice
+                prompt "Auth Mode"
+                default PKG_USING_UCLOUD_MQTT_STATIC_AUTH
+                help
+                    Select the Auth Mode
+
+                config PKG_USING_UCLOUD_MQTT_STATIC_AUTH
+                    bool "Enable Static Register"
+	
+                config PKG_USING_UCLOUD_MQTT_DYNAMIC_AUTH
+                    bool "Enable Dynamic Register"
+            endchoice
+        endif
+		
+    menu "Ucloud Device Config"
+        menuconfig PKG_USING_UCLOUD_IOT_SDK_CONFIG
+            bool "Device Config"
+            default y
+            config PKG_USING_UCLOUD_IOT_SDK_PRODUCT_SN
+                string "Config Product SN"
+                depends on PKG_USING_UCLOUD_MQTT
+                default "produce_sn"
+
+            config PKG_USING_UCLOUD_IOT_SDK_DEVICE_SN
+                string "Config Device SN"
+                depends on PKG_USING_UCLOUD_MQTT
+                default "device_sn"
+	
+            config PKG_USING_UCLOUD_IOT_SDK_DEVICE_SECRET
+                string "Config Device Secret"
+                depends on PKG_USING_UCLOUD_MQTT
+                default "device_secret"
+                help
+                    static register device needed othterwise null
+			
+            config PKG_USING_UCLOUD_IOT_SDK_PRODUCT_SECRET
+                string "Config Product Secret"
+                depends on PKG_USING_UCLOUD_MQTT && PKG_USING_UCLOUD_MQTT_DYNAMIC_AUTH
+                default "product_secret"
+                help
+                    dynamic register device needed othterwise null
+    endmenu
+	
+    config PKG_USING_UCLOUD_SHADOW
+        bool "Enable Shadow"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
+    config PKG_USING_UCLOUD_DEV_MODEL
+        bool "Enable Dev Model"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
+    config PKG_USING_UCLOUD_OTA
+        bool "Enable Ota"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
+    config PKG_USING_UCLOUD_TLS
+        bool "Enable Tls"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n	
+        select PKG_USING_MBEDTLS
+
+    config PKG_USING_UCLOUD_MQTT_SAMPLE
+        bool "Enable Ucloud Mqtt Sample"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
+    config PKG_USING_UCLOUD_MQTT_DYNAMIC_AUTH_SAMPLE
+        bool "Enable Ucloud Mqtt Dynamic Auth Sample"
+        depends on PKG_USING_UCLOUD_MQTT_DYNAMIC_AUTH
+        default n
+
+    config PKG_USING_UCLOUD_SHADOW_SAMPLE
+        bool "Enable Ucloud Shadow Sample"
+        depends on PKG_USING_UCLOUD_SHADOW
+        default n
+
+    config PKG_USING_UCLOUD_DEV_MODEL_SAMPLE
+        bool "Enable Ucloud Dev Model Sample"
+        depends on PKG_USING_UCLOUD_DEV_MODEL
+        default n
+
+    config PKG_USING_UCLOUD_OTA_SAMPLE
+        bool "Enable Ucloud Ota Sample"
+        depends on PKG_USING_UCLOUD_OTA
+        default n		
+
+    choice
+        prompt "Version"
+        default PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UCLOUD_IOT_SDK_V100
+            bool "v1.0.0"
+
+        config PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UCLOUD_IOT_SDK_VER
+        string
+        default "v1.0.0"    if PKG_USING_UCLOUD_IOT_SDK_V100
+        default "latest"    if PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
+
+endif
+
