@@ -1,0 +1,34 @@
+{
+  "name": "ucloud_iot_sdk",
+  "description": "ucloud iot sdk for uiot-core platform.",
+  "description_zh": "用于快速连接优刻得物联网平台的软件包。",  
+  "enable": "PKG_USING_UCLOUD_IOT_SDK", 
+  "keywords": [
+    "ucloud_iot_sdk"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "ucloud",
+    "email": "ethan.du@ucloud.cn",
+    "github": "ucloud"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ucloud/ucloud-iot-rtthread-package.git",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/ucloud/ucloud-iot-rtthread-package",
+  "doc": "https://github.com/ucloud/ucloud-iot-rtthread-package/tree/master/docs",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/ucloud/ucloud-iot-rtthread-package.git",
+      "filename": "ucloud_iot_sdk-1.0.0.zip",
+      "VER_SHA": "43b03bc27e8176718b44af134b8ac1c296b1164c"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/ucloud/ucloud-iot-rtthread-package.git",
+      "filename": "ucloud_iot_sdk.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
