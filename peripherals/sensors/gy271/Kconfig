@@ -1,0 +1,37 @@
+
+# Kconfig file for package gy271
+menuconfig PKG_USING_GY271
+    bool "gy271: Universal 3-axis sensor driver packages,support: magnetism."
+    default n
+
+if PKG_USING_GY271
+
+    config PKG_GY271_PATH
+        string
+        default "/packages/peripherals/sensors/gy271"
+
+    choice
+        prompt "Version"
+        default PKG_USING_GY271_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_GY271_V100
+            bool "v1.0.0"
+
+        config PKG_USING_GY271_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_GY271_VER
+       string
+       default "v1.0.0"    if PKG_USING_GY271_V100
+       default "latest"    if PKG_USING_GY271_LATEST_VERSION
+
+    config PKG_USING_GY271_SAMPLE
+       bool "Enable gy271 sample"
+       default n
+
+
+endif
+
