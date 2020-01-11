@@ -7,20 +7,20 @@ menuconfig PKG_USING_RC522
 if PKG_USING_RC522
 
     comment "Notice: PH3 --> 115" 
-	config MFRC522_SS_PIN
-		int "AS608 WAK pin num"
-		range 1 176
-		default 115
+    config MFRC522_SS_PIN
+        int "AS608 WAK pin num"
+        range 1 176
+        default 115
 
     comment "Notice: PH8 --> 120" 
-	config MFRC522_RST_PIN
-		int "AS608 WAK pin num"
-		range 1 176
-		default 120
+    config MFRC522_RST_PIN
+        int "AS608 WAK pin num"
+        range 1 176
+        default 120
 
     config PKG_USING_RC522_SAMPLE
-		bool "Enable RC522 SAMPLE"
-		default n
+        bool "Enable RC522 SAMPLE"
+        default n
 
     config PKG_RC522_PATH
         string
