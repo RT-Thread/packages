@@ -15,7 +15,7 @@ if PKG_USING_SYSWATCH
         prompt "The mode of resolve exception thread"
         default SYSWATCH_EXCEPT_RESOLVE_MODE_2
         help
-            Select the package version
+            Select the mode of resolve exception thread
 
         config SYSWATCH_EXCEPT_RESOLVE_MODE_0
             bool "0.system reset"
@@ -25,13 +25,13 @@ if PKG_USING_SYSWATCH
             
         config SYSWATCH_EXCEPT_RESOLVE_MODE_2
             bool "2.resume exception thread"
-            
-        config SYSWATCH_EXCEPT_RESOLVE_MODE
-            int
-            default 0 if SYSWATCH_EXCEPT_RESOLVE_MODE_0
-            default 1 if SYSWATCH_EXCEPT_RESOLVE_MODE_1
-            default 2 if SYSWATCH_EXCEPT_RESOLVE_MODE_2
     endchoice
+            
+    config SYSWATCH_EXCEPT_RESOLVE_MODE
+        int
+        default 0 if SYSWATCH_EXCEPT_RESOLVE_MODE_0
+        default 1 if SYSWATCH_EXCEPT_RESOLVE_MODE_1
+        default 2 if SYSWATCH_EXCEPT_RESOLVE_MODE_2
 
     config SYSWATCH_EXCEPT_TIMEOUT
         int "Timeout of determine thread exception, unit : s"
