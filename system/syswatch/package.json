@@ -1,16 +1,17 @@
 {
   "name": "syswatch",
-  "description": "A component used to ensure the long-term normal running of the system",
-  "description_zh": "一个用于保障系统长期正常运行的组件",
+  "description": "syswatch : A component used to ensure the long-term normal running of the system",
+  "description_zh": "系统看守：一个用于保障系统长期正常运行的组件",
   "enable": "PKG_USING_SYSWATCH",
   "keywords": [
     "syswatch",
     "watchdog",
-    "system"
+    "system",
+    "rt-thread"
   ],
   "category": "system",
   "author": {
-    "name": "qiyongzhong",
+    "name": "qiyongzhong0",
     "email": "917768104@qq.com",
     "github": "qiyongzhong0"
   },

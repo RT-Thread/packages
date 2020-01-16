@@ -2,13 +2,13 @@
 # Kconfig file for package syswatch
 
 menuconfig PKG_USING_SYSWATCH
-    bool "A component used to ensure the long-term normal running of the system"
+    bool "syswatch : A component used to ensure the long-term normal running of the system"
     default n
 
 if PKG_USING_SYSWATCH
 
     config PKG_USING_SYSWATCH_TEST
-        bool "using syswatch test sample"
+        bool "using test sample"
         default n
 
     choice
