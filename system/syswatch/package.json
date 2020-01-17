@@ -1,0 +1,30 @@
+{
+  "name": "syswatch",
+  "description": "syswatch : A component used to ensure the long-term normal running of the system",
+  "description_zh": "系统看守：一个用于保障系统长期正常运行的组件",
+  "enable": "PKG_USING_SYSWATCH",
+  "keywords": [
+    "syswatch",
+    "watchdog",
+    "system",
+    "rt-thread"
+  ],
+  "category": "system",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-syswatch",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-syswatch#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-syswatch.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
