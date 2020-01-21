@@ -30,5 +30,6 @@ source "$PKGS_DIR/packages/peripherals/touch/Kconfig"
 source "$PKGS_DIR/packages/peripherals/max17048/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rplidar/Kconfig"
 source "$PKGS_DIR/packages/peripherals/as608/Kconfig"
+source "$PKGS_DIR/packages/peripherals/rc522/Kconfig"
 
 endmenu

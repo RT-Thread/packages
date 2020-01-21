@@ -1,4 +1,3 @@
-
 # Kconfig file for package ucloud_iot_sdk
 menuconfig PKG_USING_UCLOUD_IOT_SDK
     bool "ucloud_iot_sdk: ucloud iot sdk for uiot-core platform."
@@ -127,4 +126,3 @@ if PKG_USING_UCLOUD_IOT_SDK
         default "latest"    if PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
 
 endif
-
