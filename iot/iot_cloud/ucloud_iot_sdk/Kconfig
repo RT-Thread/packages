@@ -1,9 +1,7 @@
-
 # Kconfig file for package ucloud_iot_sdk
 menuconfig PKG_USING_UCLOUD_IOT_SDK
     bool "ucloud_iot_sdk: ucloud iot sdk for uiot-core platform."
     select RT_USING_SAL
-    select SAL_USING_POSIX
     default n
 
 if PKG_USING_UCLOUD_IOT_SDK
@@ -24,12 +22,12 @@ if PKG_USING_UCLOUD_IOT_SDK
 
                 config PKG_USING_UCLOUD_MQTT_STATIC_AUTH
                     bool "Enable Static Register"
-	
+
                 config PKG_USING_UCLOUD_MQTT_DYNAMIC_AUTH
                     bool "Enable Dynamic Register"
             endchoice
         endif
-		
+
     menu "Ucloud Device Config"
         menuconfig PKG_USING_UCLOUD_IOT_SDK_CONFIG
             bool "Device Config"
@@ -43,14 +41,14 @@ if PKG_USING_UCLOUD_IOT_SDK
                 string "Config Device SN"
                 depends on PKG_USING_UCLOUD_MQTT
                 default "device_sn"
-	
+
             config PKG_USING_UCLOUD_IOT_SDK_DEVICE_SECRET
                 string "Config Device Secret"
-                depends on PKG_USING_UCLOUD_MQTT
+                depends on PKG_USING_UCLOUD_MQTT && PKG_USING_UCLOUD_MQTT_STATIC_AUTH
                 default "device_secret"
                 help
                     static register device needed othterwise null
-			
+
             config PKG_USING_UCLOUD_IOT_SDK_PRODUCT_SECRET
                 string "Config Product Secret"
                 depends on PKG_USING_UCLOUD_MQTT && PKG_USING_UCLOUD_MQTT_DYNAMIC_AUTH
@@ -58,26 +56,11 @@ if PKG_USING_UCLOUD_IOT_SDK
                 help
                     dynamic register device needed othterwise null
     endmenu
-	
-    config PKG_USING_UCLOUD_SHADOW
-        bool "Enable Shadow"
-        depends on PKG_USING_UCLOUD_MQTT
-        default n
-
-    config PKG_USING_UCLOUD_DEV_MODEL
-        bool "Enable Dev Model"
-        depends on PKG_USING_UCLOUD_MQTT
-        default n
-
-    config PKG_USING_UCLOUD_OTA
-        bool "Enable Ota"
-        depends on PKG_USING_UCLOUD_MQTT
-        default n
 
     config PKG_USING_UCLOUD_TLS
         bool "Enable Tls"
         depends on PKG_USING_UCLOUD_MQTT
-        default n	
+        default n
         select PKG_USING_MBEDTLS
 
     config PKG_USING_UCLOUD_MQTT_SAMPLE
@@ -90,9 +73,19 @@ if PKG_USING_UCLOUD_IOT_SDK
         depends on PKG_USING_UCLOUD_MQTT_DYNAMIC_AUTH
         default n
 
+    config PKG_USING_UCLOUD_SHADOW
+        bool "Enable Shadow"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
     config PKG_USING_UCLOUD_SHADOW_SAMPLE
         bool "Enable Ucloud Shadow Sample"
         depends on PKG_USING_UCLOUD_SHADOW
+        default n
+
+    config PKG_USING_UCLOUD_DEV_MODEL
+        bool "Enable Dev Model"
+        depends on PKG_USING_UCLOUD_MQTT
         default n
 
     config PKG_USING_UCLOUD_DEV_MODEL_SAMPLE
@@ -100,10 +93,19 @@ if PKG_USING_UCLOUD_IOT_SDK
         depends on PKG_USING_UCLOUD_DEV_MODEL
         default n
 
+    config PKG_USING_UCLOUD_OTA
+        bool "Enable Ota"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
     config PKG_USING_UCLOUD_OTA_SAMPLE
         bool "Enable Ucloud Ota Sample"
         depends on PKG_USING_UCLOUD_OTA
-        default n		
+        default n
+
+	config PKG_USING_UCLOUD_DEBUG
+        bool "Enable Ucloud Debug"
+        default n
 
     choice
         prompt "Version"
@@ -124,4 +126,3 @@ if PKG_USING_UCLOUD_IOT_SDK
         default "latest"    if PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
 
 endif
-
