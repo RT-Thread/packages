@@ -25,7 +25,7 @@
     },
     {
       "version": "latest",
-      "URL": "https://git.trustedfirmware.org/trusted-firmware-m.git",
+      "URL": "https://github.com/RT-Thread-packages/trusted-firmware-m.git",
       "filename": "trusted-firmware-m.zip",
       "VER_SHA": "master"
     }
