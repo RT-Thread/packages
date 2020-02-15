@@ -19,13 +19,13 @@
   "readme": "Trusted firmware for M class",
   "site": [
     {
-      "version": "v1.0-beta",
+      "version": "nxp-lpc55-v1.0-beta",
       "URL": "https://github.com/RT-Thread-packages/trusted-firmware-m/archive/v1.0-beta.zip",
-      "filename": "trusted-firmware-m-1.0-beta.zip"
+      "filename": "trusted-firmware-m-nxp-lpc55-v1.0-beta.zip"
     },
     {
       "version": "latest",
-      "URL": "https://git.trustedfirmware.org/trusted-firmware-m.git/",
+      "URL": "https://git.trustedfirmware.org/trusted-firmware-m.git",
       "filename": "trusted-firmware-m.zip",
       "VER_SHA": "master"
     }
