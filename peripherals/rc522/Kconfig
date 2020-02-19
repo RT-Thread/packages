@@ -6,6 +6,14 @@ menuconfig PKG_USING_RC522
 
 if PKG_USING_RC522
 
+    config MFRC522_SPI_BUS_NAME
+        string "spi bus name"
+        default "spi1"
+
+    config MFRC522_SPI_DEVICE_NAME
+        string "spi device name"
+        default "spi10"
+
     comment "Notice: PH3 --> 115" 
     config MFRC522_SS_PIN
         int "RC522 CS pin num"
