@@ -1,0 +1,30 @@
+{
+  "name": "dhtxx",
+  "description": "DHTxx one-wire sensor driver package, support DHT11, DHT22 and so on",
+  "description_zh": "DHTxx系列单总线数字温湿度传感器驱动，同时支持dht11|dht21|dht22",
+  "enable": "PKG_USING_DHTXX",
+  "keywords": [
+    "sensor",
+    "temperature", "humidity",
+    "dht", "dht11", "dht21", "dht22",
+    "onewire"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "RudyLo",
+    "email": "luhuadong@163.com",
+    "github": "luhuadong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/luhuadong/rtt-dhtxx",
+  "icon": "unknown",
+  "homepage": "https://github.com/luhuadong/rtt-dhtxx",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/luhuadong/rtt-dhtxx.git",
+      "filename": "rtt-dhtxx-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

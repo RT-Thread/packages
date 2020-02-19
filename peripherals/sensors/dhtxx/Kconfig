@@ -1,0 +1,32 @@
+
+# Kconfig file for package dhtxx
+menuconfig PKG_USING_DHTXX
+    bool "DHTxx one-wire sensor driver package, support DHT11, DHT22 and so on"
+    default n
+
+if PKG_USING_DHTXX
+
+    config PKG_USING_DHTXX_SAMPLE
+        bool "Enable dthxx sample"
+        default y
+
+    config PKG_DHTXX_PATH
+        string
+        default "/packages/peripherals/sensors/dhtxx"
+
+    choice
+        prompt "Version"
+        default PKG_USING_DHTXX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DHTXX_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_DHTXX_VER
+       string
+       default "v1.0.0"    if PKG_USING_DHTXX_V100
+       default "latest"    if PKG_USING_DHTXX_LATEST_VERSION
+
+endif
