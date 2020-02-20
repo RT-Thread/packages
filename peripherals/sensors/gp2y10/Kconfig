@@ -1,0 +1,36 @@
+
+# Kconfig file for package gp2y10
+menuconfig PKG_USING_GP2Y10
+    bool "GP2Y10: dust sensor by Sharp for detect air quality."
+    default n
+
+if PKG_USING_GP2Y10
+
+    config PKG_USING_GP2Y10_SAMPLE
+        bool "Enable gp2y10 sample"
+        default n
+
+    config PKG_GP2Y10_PATH
+        string
+        default "/packages/peripherals/sensors/gp2y10"
+
+    choice
+        prompt "Version"
+        default PKG_USING_GP2Y10_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_GP2Y10_V100
+            bool "v1.0.0"
+
+        config PKG_USING_GP2Y10_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_GP2Y10_VER
+       string
+       default "v1.0.0"    if PKG_USING_GP2Y10_V100
+       default "latest"    if PKG_USING_GP2Y10_LATEST_VERSION
+
+endif
+
