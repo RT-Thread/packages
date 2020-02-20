@@ -24,13 +24,13 @@
     {
       "version": "v0.8.0",
       "URL": "https://github.com/luhuadong/rtt-dhtxx/archive/v0.8.0.zip",
-      "filename": "dhtxx-0.8.0.zip",
+      "filename": "dhtxx-v0.8.0.zip",
       "VER_SHA": "fill in the git version SHA value"
     },
     {
       "version": "latest",
-      "URL": "git@github.com:luhuadong/rtt-dhtxx.git",
-      "filename": "rtt-dhtxx-latest.zip",
+      "URL": "https://github.com/luhuadong/rtt-dhtxx.git",
+      "filename": "dhtxx-latest.zip",
       "VER_SHA": "master"
     }
   ]
