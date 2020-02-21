@@ -5,7 +5,11 @@ menuconfig PKG_USING_AS608
     default n
 
 if PKG_USING_AS608
-	
+
+    config AS60X_UART_NAME
+        string "as60x uart name"
+        default "uart3"
+
 	comment "Notice: PI8 --> 136" 
 	config PKG_AS608_WAK_PIN
 		int "AS608 WAK pin num"
@@ -26,8 +30,8 @@ if PKG_USING_AS608
         help
             Select the package version
 
-        config PKG_USING_AS608_V101
-            bool "v1.0.1"
+        config PKG_USING_AS608_V102
+            bool "v1.0.2"
 
         config PKG_USING_AS608_LATEST_VERSION
             bool "latest"
@@ -35,7 +39,7 @@ if PKG_USING_AS608
 
     config PKG_AS608_VER
        string
-       default "v1.0.1"    if PKG_USING_AS608_V101
+       default "v1.0.2"    if PKG_USING_AS608_V102
        default "latest"    if PKG_USING_AS608_LATEST_VERSION
 
 endif
