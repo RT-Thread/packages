@@ -6,6 +6,11 @@ menuconfig PKG_USING_GP2Y10
 
 if PKG_USING_GP2Y10
 
+    config PKG_USING_GP2Y10_VOLTAGE_RATIO
+        int "Set voltage divider ratio of Aout"
+        range 1 100
+        default 11
+
     config PKG_USING_GP2Y10_SAMPLE
         bool "Enable gp2y10 sample"
         default n
