@@ -5,7 +5,11 @@ menuconfig PKG_USING_AS608
     default n
 
 if PKG_USING_AS608
-	
+
+    config AS60X_UART_NAME
+        string "as60x uart name"
+        default "uart3"
+
 	comment "Notice: PI8 --> 136" 
 	config PKG_AS608_WAK_PIN
 		int "AS608 WAK pin num"
