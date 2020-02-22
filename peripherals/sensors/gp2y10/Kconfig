@@ -25,8 +25,8 @@ if PKG_USING_GP2Y10
         help
             Select the package version
 
-        config PKG_USING_GP2Y10_V100
-            bool "v1.0.0"
+        config PKG_USING_GP2Y10_V080
+            bool "v0.8.0"
 
         config PKG_USING_GP2Y10_LATEST_VERSION
             bool "latest"
@@ -34,7 +34,7 @@ if PKG_USING_GP2Y10
           
     config PKG_GP2Y10_VER
        string
-       default "v1.0.0"    if PKG_USING_GP2Y10_V100
+       default "v0.8.0"    if PKG_USING_GP2Y10_V080
        default "latest"    if PKG_USING_GP2Y10_LATEST_VERSION
 
 endif
