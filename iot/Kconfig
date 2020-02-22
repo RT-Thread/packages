@@ -36,7 +36,6 @@ source "$PKGS_DIR/packages/iot/dlt645/Kconfig"
 source "$PKGS_DIR/packages/iot/qxwz/Kconfig"
 source "$PKGS_DIR/packages/iot/smtp_client/Kconfig"
 source "$PKGS_DIR/packages/iot/abup_fota/Kconfig"
-source "$PKGS_DIR/packages/iot/libcurl2rtt/Kconfig"
-source "$PKGS_DIR/packages/iot/capnp/Kconfig"
+source "$PKGS_DIR/packages/iot/rt_cjson_tools/Kconfig"
 
 endmenu
