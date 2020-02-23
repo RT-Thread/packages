@@ -1,0 +1,46 @@
+
+# Kconfig file for package rt_cjson_tools
+menuconfig PKG_USING_RT_CJSON_TOOLS
+    bool "cJSON Tools: Provide JSON data parsing and perform corresponding actions"
+    default n
+
+if PKG_USING_RT_CJSON_TOOLS
+
+    config PKG_RT_CJSON_TOOLS_PATH
+        string
+        default "/packages/iot/rt_cjson_tools"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RT_CJSON_TOOLS_VER
+       string
+       default "latest"    if PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+
+    config RT_CJSON_TOOLS_ENABLE_EXAMPLE
+        bool "Enable example"
+        default n
+
+    if RT_CJSON_TOOLS_ENABLE_EXAMPLE
+
+        config RT_CJSON_TOOLS_EXAMPLE_STACK_SZIE
+            int "Example thread stack size"
+            range 256 10240
+            default 1024
+
+        config RT_CJSON_TOOLS_EXAMPLE_PRIORITY
+            int "Example thread priority"
+            range 1 31
+            default 15
+
+    endif
+
+endif
+
