@@ -1,0 +1,36 @@
+
+# Kconfig file for package sgp30
+menuconfig PKG_USING_SGP30
+    bool "SGP30: air sensor by Sensirion for detect TVOC and CO2."
+    default n
+
+if PKG_USING_SGP30
+
+    config PKG_USING_SGP30_SAMPLE
+        bool "Enable sgp30 sample"
+        default n
+
+    config PKG_SGP30_PATH
+        string
+        default "/packages/peripherals/sensors/sgp30"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SGP30_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SGP30_V080
+            bool "v0.8.0"
+
+        config PKG_USING_SGP30_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SGP30_VER
+       string
+       default "v0.8.0"    if PKG_USING_SGP30_V080
+       default "latest"    if PKG_USING_SGP30_LATEST_VERSION
+
+endif
+
