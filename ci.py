@@ -87,7 +87,7 @@ def json_file_content_check(json_pathname):
         print ('The category of ' + package_info['name'] + ' package is lost.')  
         return False 
 
-    if package_info['enable'] == '' :
+    if package_info.has_key('enable') is False or package_info['enable'] == '' :
         print ('The enable of ' + package_info['name'] + ' package is lost.')  
         return False 
         
