@@ -21,8 +21,8 @@
   "site": [
     {
       "version": "v0.2.0",
-      "URL": "https://littled-0.2.0.zip",
-      "filename": "littled-0.2.0.zip",
+      "URL": "https://github.com/luhuadong/rtt-littled/archive/v0.2.0.zip",
+      "filename": "littled-v0.2.0.zip",
       "VER_SHA": "fill in the git version SHA value"
     },
     {

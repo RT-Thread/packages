@@ -10,6 +10,23 @@ if PKG_USING_LITTLED
         string
         default "/packages/peripherals/littled"
 
+    config PKG_USING_LITTLED_PERIOD
+        int "default pwm period (ms)"
+        default 1000
+
+    config PKG_USING_LITTLED_PULSE
+        int "default pwm pulse (ms)"
+        default 500
+
+    config PKG_USING_LITTLED_BELL_TIME
+        int "default bell time (ms)"
+        default 50000
+
+    config PKG_USING_LITTLED_BEEP_COUNT
+        int "default beep count"
+        range 1 100
+        default 3
+
     choice
         prompt "Version"
         default PKG_USING_LITTLED_LATEST_VERSION
