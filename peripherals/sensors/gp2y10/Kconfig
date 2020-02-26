@@ -6,18 +6,35 @@ menuconfig PKG_USING_GP2Y10
 
 if PKG_USING_GP2Y10
 
+    config PKG_GP2Y10_PATH
+        string
+        default "/packages/peripherals/sensors/gp2y10"
+
+    config PKG_USING_GP2Y10_ADC_DEV_NAME
+        string "ADC device"
+        default "adc1"
+
+    config PKG_USING_GP2Y10_ADC_DEV_CHANNEL
+        int "ADC device channel"
+        default 0
+
+    config PKG_USING_GP2Y10_CONVERT_BITS
+        int "ADC device convert bit"
+        range 1 16
+        default 12
+
     config PKG_USING_GP2Y10_VOLTAGE_RATIO
         int "Set voltage divider ratio of Aout"
         range 1 100
-        default 11
+        default 1
+
+    config PKG_USING_GP2Y10_SOFT_FILTER
+        bool "Enable soft filter"
+        default n
 
     config PKG_USING_GP2Y10_SAMPLE
         bool "Enable gp2y10 sample"
         default n
-
-    config PKG_GP2Y10_PATH
-        string
-        default "/packages/peripherals/sensors/gp2y10"
 
     choice
         prompt "Version"

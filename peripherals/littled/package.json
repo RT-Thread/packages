@@ -1,0 +1,35 @@
+{
+  "name": "littled",
+  "description": "littled: Littled LED Daemon for LED driver",
+  "description_zh": "littled软件包: Littled LED Daemon 服务线程",  
+  "enable": "PKG_USING_LITTLED", 
+  "keywords": [
+    "littled",
+    "led"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "luhuadong",
+    "email": "luhuadong@163.com",
+    "github": "luhuadong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/luhuadong/rtt-littled",
+  "icon": "unknown",
+  "homepage": "https://github.com/luhuadong/rtt-littled",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.2.0",
+      "URL": "https://github.com/luhuadong/rtt-littled/archive/v0.2.0.zip",
+      "filename": "littled-v0.2.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/luhuadong/rtt-littled.git",
+      "filename": "littled-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
