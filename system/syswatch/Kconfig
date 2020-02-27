@@ -1,0 +1,94 @@
+
+# Kconfig file for package syswatch
+
+menuconfig PKG_USING_SYSWATCH
+    bool "syswatch : A component used to ensure the long-term normal running of the system"
+    select RT_USING_HOOK
+    select RT_USING_WDT
+    default n
+
+if PKG_USING_SYSWATCH
+
+    config PKG_SYSWATCH_PATH
+        string
+        default "/packages/system/syswatch"
+
+    config SYSWATCH_USING_TEST
+        bool "using test sample"
+        default n
+
+    choice
+        prompt "The mode of resolve exception thread"
+        default SYSWATCH_EXCEPT_RESOLVE_MODE_2
+        help
+            Select the mode of resolve exception thread
+
+        config SYSWATCH_EXCEPT_RESOLVE_MODE_0
+            bool "0.system reset"
+            
+        config SYSWATCH_EXCEPT_RESOLVE_MODE_1
+            bool "1.kill exception thread"
+            
+        config SYSWATCH_EXCEPT_RESOLVE_MODE_2
+            bool "2.resume exception thread"
+    endchoice
+            
+    config SYSWATCH_EXCEPT_RESOLVE_MODE
+        int
+        default 0 if SYSWATCH_EXCEPT_RESOLVE_MODE_0
+        default 1 if SYSWATCH_EXCEPT_RESOLVE_MODE_1
+        default 2 if SYSWATCH_EXCEPT_RESOLVE_MODE_2
+
+    config SYSWATCH_EXCEPT_TIMEOUT
+        int "Timeout of determine thread exception, unit : s"
+        default 60
+
+    config SYSWATCH_EXCEPT_CONFIRM_TMO
+        int "Timeout of confirm exception thread, unit : s"
+        default 15   
+
+    config SYSWATCH_EXCEPT_RESUME_DLY
+        int "Delay time of resume exception thread, unit : s"
+        default 15   
+
+    config SYSWATCH_THREAD_PRIO
+        int "The priority of syswatch thread"
+        default 0   
+
+    config SYSWATCH_THREAD_STK_SIZE
+        int "The stack size of syswatch thread"
+        default 512   
+
+    config SYSWATCH_THREAD_NAME
+        string "The name of syswatch thread"
+        default "syswatch"   
+
+    config SYSWATCH_WDT_NAME
+        string "The name of watchdog device"
+        default "wdt"   
+
+    config SYSWATCH_WDT_TIMEOUT
+        int "Timeout of watchdog device"
+        default 5   
+
+    choice
+        prompt "Version"
+        default PKG_USING_SYSWATCH_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SYSWATCH_LATEST_VERSION
+            bool "latest"
+            
+        #config PKG_USING_SYSWATCH_V010
+        #    bool "v0.1.0"
+        
+    endchoice
+
+    config PKG_SYSWATCH_VER
+       string
+       default "latest" if PKG_USING_SYSWATCH_LATEST_VERSION
+       #default "v0.1.0" if PKG_USING_SYSWATCH_V010
+
+endif
+

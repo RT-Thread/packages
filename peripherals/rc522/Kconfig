@@ -1,0 +1,56 @@
+
+# Kconfig file for package rc522
+menuconfig PKG_USING_RC522
+    bool "rc522: rfid module driver"
+    default n
+
+if PKG_USING_RC522
+
+    config MFRC522_SPI_BUS_NAME
+        string "spi bus name"
+        default "spi1"
+
+    config MFRC522_SPI_DEVICE_NAME
+        string "spi device name"
+        default "spi10"
+
+    comment "Notice: PH3 --> 115" 
+    config MFRC522_SS_PIN
+        int "RC522 CS pin num"
+        range 1 176
+        default 115
+
+    comment "Notice: PH8 --> 120" 
+    config MFRC522_RST_PIN
+        int "RC522 RST pin num"
+        range 1 176
+        default 120
+
+    config PKG_USING_RC522_SAMPLE
+        bool "Enable RC522 SAMPLE"
+        default n
+
+    config PKG_RC522_PATH
+        string
+        default "/packages/peripherals/rc522"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RC522_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RC522_V145
+            bool "v1.4.5"
+
+        config PKG_USING_RC522_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RC522_VER
+       string
+       default "v1.4.5"    if PKG_USING_RC522_V145
+       default "latest"    if PKG_USING_RC522_LATEST_VERSION
+
+endif
+

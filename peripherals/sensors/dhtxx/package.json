@@ -1,0 +1,37 @@
+{
+  "name": "dhtxx",
+  "description": "DHTxx one-wire digital temperature and humidity sensor.",
+  "description_zh": "DHTxx系列单总线数字温湿度传感器驱动",  
+  "enable": "PKG_USING_DHTXX", 
+  "keywords": [
+    "dhtxx", "sensor",
+    "temperature", "humidity",
+    "dht", "dht11", "dht21", "dht22",
+    "onewire"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "RudyLo",
+    "email": "luhuadong@163.com",
+    "github": "luhuadong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/luhuadong/rtt-dhtxx",
+  "icon": "unknown",
+  "homepage": "https://github.com/luhuadong/rtt-dhtxx",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.8.0",
+      "URL": "https://github.com/luhuadong/rtt-dhtxx/archive/v0.8.0.zip",
+      "filename": "dhtxx-v0.8.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/luhuadong/rtt-dhtxx.git",
+      "filename": "dhtxx-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

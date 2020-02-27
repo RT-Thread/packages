@@ -4,7 +4,7 @@
   "description_zh": "单芯片 2.4GHz 无线收发器。",  
   "enable": "PKG_USING_NRF24L01",
   "keywords": [
-    "nrf24l01"
+    "nrf24l01","wireless"
   ],
   "category": "peripherals",
   "author": {
@@ -23,6 +23,12 @@
       "URL": "https://github.com/sogwms/nrf24l01/archive/v1.0.0.zip",
       "filename": "nrf24l01-1.0.0.zip",
       "VER_SHA": "ac67aa7095bae74923f011ff851636772e700a46"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/sogwms/nrf24l01/archive/v2.0.0.zip",
+      "filename": "nrf24l01-2.0.0.zip",
+      "VER_SHA": "fc3ad48e0f12fde66554e4912962dea53b66eb74"
     },
     {
       "version": "latest",

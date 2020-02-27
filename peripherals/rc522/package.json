@@ -1,0 +1,36 @@
+{
+  "name": "rc522",
+  "description": "rc522 rfid module driver",
+  "description_zh": "rc522 rfid 模块驱动",  
+  "enable": "PKG_USING_RC522", 
+  "keywords": [
+    "rc522",
+    "mfrc522",
+    "nfc"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "greedyhao",
+    "email": "hao_kr@163.com",
+    "github": "greedyhao"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/greedyhao/rc522_rtt",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "https://github.com/greedyhao/rc522_rtt/tree/master/doc",
+  "site": [
+    {
+      "version": "v1.4.5",
+      "URL": "https://github.com/greedyhao/rc522_rtt/archive/v1.4.5.zip",
+      "filename": "rc522-1.4.5.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/greedyhao/rc522_rtt.git",
+      "filename": "rc522.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

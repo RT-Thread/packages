@@ -88,7 +88,7 @@ if PKG_USING_UCLOUD_IOT_SDK
         bool "Enable Ota"
         depends on PKG_USING_UCLOUD_MQTT
         default n
-		select PKG_USING_FAL
+        select PKG_USING_FAL
 
     config PKG_USING_UCLOUD_OTA_SAMPLE
         bool "Enable Ucloud Ota Sample"
