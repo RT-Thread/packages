@@ -51,19 +51,19 @@ if PKG_USING_UCLOUD_IOT_SDK
 
     config PKG_USING_UCLOUD_HTTP
         bool "Enable Http Link uiot-core Platform"
-		select PKG_USING_UCLOUD_TLS
+        select PKG_USING_UCLOUD_TLS
         default n
 
-	config PKG_USING_UCLOUD_HTTP_PUBLISH_SAMPLE
+    config PKG_USING_UCLOUD_HTTP_PUBLISH_SAMPLE
         bool "Enable Ucloud Http Publish Sample"
         depends on PKG_USING_UCLOUD_HTTP
         default n
-		
-	config PKG_USING_UCLOUD_HTTP_UPLOAD_FILE_SAMPLE
+
+    config PKG_USING_UCLOUD_HTTP_UPLOAD_FILE_SAMPLE
         bool "Enable Ucloud Http Upload File Sample"
         depends on PKG_USING_UCLOUD_HTTP
         default n
-	
+
     config PKG_USING_UCLOUD_SHADOW
         bool "Enable Shadow"
         depends on PKG_USING_UCLOUD_MQTT
@@ -101,7 +101,7 @@ if PKG_USING_UCLOUD_IOT_SDK
         default n
         select PKG_USING_MBEDTLS
 
-	config PKG_USING_UCLOUD_DEBUG
+    config PKG_USING_UCLOUD_DEBUG
         bool "Enable Ucloud Debug"
         default n
 
