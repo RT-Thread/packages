@@ -1,0 +1,31 @@
+
+# Kconfig file for package embARC_bsp
+menuconfig PKG_USING_EMBARC_BSP
+    bool "embARC_bsp(Synopsys ARC Processer Board Support Package Software) package"
+    default n
+
+if PKG_USING_EMBARC_BSP
+
+    config PKG_EMBARC_BSP_PATH
+        string
+        default "/packages/peripherals/embARC_bsp"
+
+    choice
+        prompt "Version"
+        default PKG_USING_EMBARC_BSP_UPSTREAM_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_EMBARC_BSP_UPSTREAM_VERSION
+            bool "upstream"
+        config PKG_USING_EMBARC_BSP_MASTER_VERSION
+            bool "master"
+    endchoice
+
+    config PKG_EMBARC_BSP_VER
+       string
+       default "upstream"    if PKG_USING_EMBARC_BSP_UPSTREAM_VERSION
+       default "master"    if PKG_USING_EMBARC_BSP_MASTER_VERSION
+
+endif
+
