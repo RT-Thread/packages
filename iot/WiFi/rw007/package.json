@@ -21,15 +21,13 @@
   "site": [
 	{
       "version": "v1.0.0",
-      "URL": "https://github.com/RT-Thread-packages/rw007.git",
+      "URL": "https://github.com/RT-Thread-packages/rw007/archive/v1.0.0.zip",
       "filename": "rw007-1.0.0.zip",
-      "VER_SHA": "9c72e5bd857f2e323c4e988a6d1024f7f8edd32a"
     },
 	{
       "version": "v1.1.0",
-      "URL": "https://github.com/RT-Thread-packages/rw007.git",
+      "URL": "https://github.com/RT-Thread-packages/rw007/archive/v1.1.0.zip",
       "filename": "rw007-1.1.0.zip",
-      "VER_SHA": "9e8a40c1180df967162776452cd942317c333c7c"
     },
     {
       "version": "latest",
