@@ -8,19 +8,19 @@
   ],
   "category": "iot",
   "author": {
-    "name": "MapleRian",
+    "name": "maplerian",
     "email": "amqqfkhk@qq.com",
-    "gitee": "MapleRian"
+    "gitee": "maplerian"
   },
   "license": "Apache-2.0",
-  "repository": "https://gitee.com/MapleRian/rt_cjson_tools",
-  "icon": "https://portrait.gitee.com/uploads/avatars/user/2167/6503091_maplerian_1583041205.png!avatar200",
-  "homepage": "https://github.com/MapleRian/rt_cjson_tools#readme",
-  "doc": "https://gitee.com/MapleRian/rt_cjson_tools#readme",
+  "repository": "https://github.com/maplerian/rt_cjson_tools",
+  "icon": "https://portrait.github.com/uploads/avatars/user/2167/6503091_maplerian_1583041205.png!avatar200",
+  "homepage": "https://github.com/maplerian/rt_cjson_tools#readme",
+  "doc": "https://github.com/maplerian/rt_cjson_tools#readme",
   "site": [
     {
       "version": "latest",
-      "URL": "https://gitee.com/MapleRian/rt_cjson_tools.git",
+      "URL": "https://github.com/maplerian/rt_cjson_tools.git",
       "filename": "rt_cjson_tools.zip",
       "VER_SHA": "master"
     }
