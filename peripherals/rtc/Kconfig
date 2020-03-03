@@ -1,0 +1,10 @@
+menuconfig PKG_USING_EXTERN_RTC_DRIVERS
+    bool "extern rtc drivers"
+    default n
+    select RT_USING_EXTERN_RTC
+
+    if PKG_USING_EXTERN_RTC_DRIVERS
+    
+        source "$PKGS_DIR/packages/peripherals/rtc/ds3231/Kconfig"
+
+    endif
