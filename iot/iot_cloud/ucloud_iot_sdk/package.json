@@ -19,11 +19,11 @@
   "doc": "https://github.com/ucloud/ucloud-iot-rtthread-package/tree/master/docs",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/ucloud/ucloud-iot-rtthread-package.git",
-      "filename": "ucloud_iot_sdk-1.0.0.zip",
-      "VER_SHA": "43b03bc27e8176718b44af134b8ac1c296b1164c"
-    },
+      "version": "v1.0.1",
+      "URL": "https://github.com/ucloud/ucloud-iot-rtthread-package/archive/v1.0.1.zip",
+      "filename": "ucloud_iot_sdk-v1.0.1.zip",
+      "VER_SHA": ""
+    },	
     {
       "version": "latest",
       "URL": "https://github.com/ucloud/ucloud-iot-rtthread-package.git",

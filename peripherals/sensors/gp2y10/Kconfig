@@ -1,0 +1,58 @@
+
+# Kconfig file for package gp2y10
+menuconfig PKG_USING_GP2Y10
+    bool "GP2Y10: dust sensor by Sharp for detect air quality."
+    default n
+
+if PKG_USING_GP2Y10
+
+    config PKG_GP2Y10_PATH
+        string
+        default "/packages/peripherals/sensors/gp2y10"
+
+    config PKG_USING_GP2Y10_ADC_DEV_NAME
+        string "ADC device"
+        default "adc1"
+
+    config PKG_USING_GP2Y10_ADC_DEV_CHANNEL
+        int "ADC device channel"
+        default 0
+
+    config PKG_USING_GP2Y10_CONVERT_BITS
+        int "ADC device convert bit"
+        range 1 16
+        default 12
+
+    config PKG_USING_GP2Y10_VOLTAGE_RATIO
+        int "Set voltage divider ratio of Aout"
+        range 1 100
+        default 1
+
+    config PKG_USING_GP2Y10_SOFT_FILTER
+        bool "Enable soft filter"
+        default n
+
+    config PKG_USING_GP2Y10_SAMPLE
+        bool "Enable gp2y10 sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_GP2Y10_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_GP2Y10_V080
+            bool "v0.8.0"
+
+        config PKG_USING_GP2Y10_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_GP2Y10_VER
+       string
+       default "v0.8.0"    if PKG_USING_GP2Y10_V080
+       default "latest"    if PKG_USING_GP2Y10_LATEST_VERSION
+
+endif
+

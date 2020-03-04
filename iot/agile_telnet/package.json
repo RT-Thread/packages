@@ -1,0 +1,26 @@
+{
+  "name": "agile_telnet",
+  "description": "TCP debug for Ethernet.",
+  "description_zh": "以太网TCP调试。",  
+  "enable": "PKG_USING_AGILE_TELNET", 
+  "keywords": [
+    "agile_telnet"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Malongwei",
+    "email": "2544047213@qq.com",
+    "github": "loogg"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/loogg/agile_telnet",
+  "homepage": "https://github.com/loogg/agile_telnet#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/loogg/agile_telnet.git",
+      "filename": "agile_telnet.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
