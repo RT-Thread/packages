@@ -1,7 +1,8 @@
 {
   "name": "plccore",
-  "description": "A PLC(programmable logic controller) runtime kernel, based on RT-Thread",
-  "description_zh": "一个基于RT-Thread的可编程控制器（PLC）运行时内核软件包",  
+  "description": "plccore for RT-Thread",
+  "description_zh": "plccore 在 RT-Thread 上移植的软件包",  
+  "enable": "PKG_USING_PLCCORE",
   "keywords": [
     "plccore"
   ],
