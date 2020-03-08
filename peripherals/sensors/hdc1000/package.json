@@ -1,6 +1,6 @@
 {
   "name": "hdc1000",
-  "description": "Please add description of hdc1000 in English.",
+  "description": "hdc1000 sensor driver base on RT-Thread sensor frame",
   "description_zh": "TI温湿度传感器hdc1000软件包(RT-Thread Sensor架构)",  
   "keywords": [
     "hdc1000"
