@@ -1,0 +1,58 @@
+
+# Kconfig file for package agile_telnet
+menuconfig PKG_USING_AGILE_TELNET
+    bool "agile_telnet: TCP debug for Ethernet"
+    default n
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    select RT_USING_DFS
+
+if PKG_USING_AGILE_TELNET
+
+    config PKG_AGILE_TELNET_PATH
+        string
+        default "/packages/iot/agile_telnet"
+
+    config PKG_AGILE_TELNET_THREAD_STACK_SIZE
+        int "Set agile_telnet thread stack size"
+        default 2048
+    
+    config PKG_AGILE_TELNET_THREAD_PRIORITY
+        int "Set agile_telnet thread priority"
+        default 26
+    
+    config PKG_AGILE_TELNET_PORT
+        int "Set agile_telnet listen port"
+        default 23
+    
+    config PKG_AGILE_TELNET_RX_BUFFER_SIZE
+        int "Set agile_telnet rx buffer size"
+        default 256
+    
+    config PKG_AGILE_TELNET_TX_BUFFER_SIZE
+        int "Set agile_telnet tx buffer size"
+        default 2048
+    
+    config PKG_AGILE_TELNET_CLIENT_DEFAULT_TIMEOUT
+        int "Set agile_telnet client timeout(min)"
+        default 3
+
+    choice
+        prompt "Version"
+        default PKG_USING_AGILE_TELNET_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AGILE_TELNET_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_AGILE_TELNET_VER
+       string
+       default "latest"    if PKG_USING_AGILE_TELNET_LATEST_VERSION
+
+    config PKG_AGILE_TELNET_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_AGILE_TELNET_LATEST_VERSION
+endif
+

@@ -33,5 +33,6 @@ source "$PKGS_DIR/packages/peripherals/rplidar/Kconfig"
 source "$PKGS_DIR/packages/peripherals/as608/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rc522/Kconfig"
 source "$PKGS_DIR/packages/peripherals/embARC_bsp/Kconfig"
+source "$PKGS_DIR/packages/peripherals/rtc/Kconfig"
 
 endmenu
