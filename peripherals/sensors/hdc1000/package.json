@@ -2,6 +2,7 @@
   "name": "hdc1000",
   "description": "hdc1000 sensor driver base on RT-Thread sensor frame",
   "description_zh": "TI温湿度传感器hdc1000软件包(RT-Thread Sensor架构)",  
+  "enable": "PKG_USING_HDC1000",
   "keywords": [
     "hdc1000"
   ],
