@@ -18,7 +18,10 @@ if PKG_USING_RW007
         prompt "version"
         help
             Select the wiced wifi version
-	    default PKG_USING_RW007_V110
+	    default PKG_USING_RW007_V111
+
+        config PKG_USING_RW007_V111
+            bool "v1.1.1"
 
         config PKG_USING_RW007_V110
             bool "v1.1.0"
@@ -32,6 +35,7 @@ if PKG_USING_RW007
 
     config PKG_RW007_VER
         string
+        default "v1.1.1" if PKG_USING_RW007_V111
         default "v1.1.0" if PKG_USING_RW007_V110
         default "v1.0.0" if PKG_USING_RW007_V100
         default "latest" if PKG_USING_RW007_LATEST_VERSION
