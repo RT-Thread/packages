@@ -31,7 +31,7 @@ if PKG_USING_MAX7219
 
     choice
         prompt "Version"
-        default PKG_USING_MAX7219_LATEST_VERSION
+        default v1.0.0
         help
             Select the package version
 
