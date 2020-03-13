@@ -14,9 +14,7 @@
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/redocCheng/max7219",
-  "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "homepage": "https://github.com/redocCheng/max7219",
   "site": [
     {
       "version": "v1.0.0",
@@ -26,7 +24,7 @@
     {
       "version": "latest",
       "URL": "https://github.com/redocCheng/max7219.git",
-      "filename": "max7219.zip",
+      "filename": "max7219-master.zip",
       "VER_SHA": "master"
     }
   ]
