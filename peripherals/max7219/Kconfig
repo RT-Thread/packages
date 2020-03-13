@@ -8,18 +8,18 @@ menuconfig PKG_USING_MAX7219
 
 if PKG_USING_MAX7219
 
-    config PKG_MAX7219_SCAN_NUM
-            int "the num of the digital tubes"
-            default 6
-    
+    config PKG_MAX7219_CHIPS_NUMBER
+            int "the chips of digital tubes"
+            default 1
+
     config PKG_MAX7219_SPI_BUS_NAME
             string "spi bus name"
             default "spi1"
-    
+
     config PKG_MAX7219_SPI_DEVICE_NAME
             string "spi device name"
             default "spi10"
-            
+
     config PKG_MAX7219_PATH
         string
         default "/packages/peripherals/max7219"
@@ -35,7 +35,7 @@ if PKG_USING_MAX7219
 
         config PKG_USING_MAX7219_LATEST_VERSION
             bool "latest"
-    endchoice   
+    endchoice
 
     config PKG_MAX7219_VER
        string
