@@ -27,7 +27,7 @@ if PKG_USING_MAX7219
        
     config PKG_MAX7219_PATH
         string
-        default "/redoccheng_packages/max7219"
+        default "/packages/peripherals/max7219"
 
     choice
         prompt "Version"
