@@ -17,6 +17,7 @@ if PKG_USING_WLAN_WICED
 
     choice
         prompt "version"
+        default PKG_USING_WLAN_WICED_V101
         help
             Select the wiced wifi version
 
