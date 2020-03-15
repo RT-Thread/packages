@@ -1,0 +1,163 @@
+
+# Kconfig file for package kawaii_mqtt
+menuconfig PKG_USING_KAWAII_MQTT
+    bool "kawaii-mqtt: a mqtt client based on the socket API, support QoS2, mbedtls."
+    default n
+
+if PKG_USING_KAWAII_MQTT
+
+    config PKG_KAWAII_MQTT_PATH
+        string
+        default "/packages/iot/kawaii_mqtt"
+    
+    config KAWAII_MQTT_NETWORK_TYPE_TLS
+        bool "enable mbedtls"
+        default n
+
+    if KAWAII_MQTT_NETWORK_TYPE_TLS
+        config KAWAII_MQTT_TLS_HANDSHAKE_TIMEOUT
+            int "mbedtls handshake timeout"
+            default 5000
+    endif
+
+    config KAWAII_MQTT_LOG_IS_SALOF
+        bool "enable salof"
+        default y
+    
+    if KAWAII_MQTT_LOG_IS_SALOF
+        config KAWAII_MQTT_USE_LOG
+            bool "use log"
+            default y
+        
+        if KAWAII_MQTT_USE_LOG
+            config KAWAII_MQTT_USE_SALOF
+                bool "use salof"
+                default y
+            
+            if !KAWAII_MQTT_USE_IDLE_HOOK
+                if KAWAII_MQTT_USE_SALOF
+                    config KAWAII_MQTT_SALOF_BUFF_SIZE
+                        int "salof buff size"
+                        default 512
+
+                    config KAWAII_MQTT_SALOF_FIFO_SIZE
+                        int "salof fifo size"
+                        default 2048
+                    
+                    config KAWAII_MQTT_SALOF_THREAD_STACK_SIZE
+                        int "salof thread size"
+                        default 2048
+
+                    config KAWAII_MQTT_SALOF_THREAD_TICK
+                        int "salof thread tick"
+                        default 50
+                endif 
+            endif
+
+            config KAWAII_MQTT_LOG_COLOR
+                bool "use color"
+                default n
+
+            config KAWAII_MQTT_LOG_TS
+                bool "use timestamp"
+                default n
+
+            config KAWAII_MQTT_LOG_TAR
+                bool "use tar"
+                default n
+            
+            if KAWAII_MQTT_USE_SALOF
+                config KAWAII_MQTT_USE_IDLE_HOOK
+                    bool "use idle thread hook"
+                    default n
+            endif
+        endif
+    endif
+
+    config KAWAII_MQTT_LOG_LEVEL
+        int "select output log level"
+        default 5
+        help
+            1 : KAWAII_MQTT_ASSERT_LEVEL
+            2 : KAWAII_MQTT_ERR_LEVEL
+            3 : KAWAII_MQTT_WARN_LEVEL
+            4 : KAWAII_MQTT_INFO_LEVEL
+            5 : KAWAII_MQTT_DEBUG_LEVEL
+
+    config KAWAII_MQTT_VERSION
+        int "mqtt version, 4 is mqtt 3.1.1, 3 is mqtt 3.1"
+        default 4
+
+    config KAWAII_MQTT_KEEP_ALIVE_INTERVAL
+        int "mqtt keep alive interver, unit: second"
+        default 100
+
+    config KAWAII_MQTT_THREAD_STACK_SIZE
+        int "mqtt thread stack size"
+        default 4096
+
+    config KAWAII_MQTT_THREAD_PRIO
+        int "mqtt thread priority"
+        default 5
+
+    config KAWAII_MQTT_THREAD_TICK
+        int "mqtt thread tick"
+        default 50
+
+    config KAWAII_MQTT_MAX_PACKET_ID
+        hex "mqtt max packet id"
+        default 0xFFFE
+
+    config KAWAII_MQTT_TOPIC_LEN_MAX
+        int "mqtt max topic len"
+        default 64
+
+    config KAWAII_MQTT_ACK_HANDLER_NUM_MAX
+        int "mqtt max handler number"
+        default 64
+
+    config KAWAII_MQTT_DEFAULT_BUF_SIZE
+        int "mqtt default buffer size"
+        default 1024
+
+    config KAWAII_MQTT_DEFAULT_CMD_TIMEOUT
+        int "mqtt default cmd timeout"
+        default 4000
+
+    config KAWAII_MQTT_MAX_CMD_TIMEOUT
+        int "mqtt max cmd timeout"
+        default 20000
+
+    config KAWAII_MQTT_MIN_CMD_TIMEOUT
+        int "mqtt min cmd timeout"
+        default 1000
+
+    config KAWAII_MQTT_RECONNECT_DEFAULT_DURATION
+        int "mqtt default reconnect duratton"
+        default 1000
+
+
+    config PKG_USING_KAWAII_MQTT_TEST
+        bool "enable kawaii mqtt test"
+        default n
+    
+    choice
+        prompt "Version"
+        default PKG_USING_KAWAII_MQTT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_KAWAII_MQTT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_KAWAII_MQTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_KAWAII_MQTT_VER
+       string
+       default "v1.0.0"    if PKG_USING_KAWAII_MQTT_V100
+       default "latest"    if PKG_USING_KAWAII_MQTT_LATEST_VERSION
+
+endif
+

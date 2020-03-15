@@ -19,8 +19,14 @@
   "readme": "a fastlz package for rt-thread",
   "site": [
     {
+      "version": "v1.0.1",
+      "URL": "https://github.com/RT-Thread-packages/fastlz/archive/1.0.1.zip",
+      "filename": "fastlz-1.0.1.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "v1.0.0",
-      "URL": "https://github.com/RT-Thread-packages/fastlz.git",
+      "URL": "https://github.com/RT-Thread-packages/fastlz/archive/1.0.0.zip",
       "filename": "fastlz-1.0.0.zip",
       "VER_SHA": "4df55b9310625fcba86b8fa0fd949c1f3970fa29"
     },
