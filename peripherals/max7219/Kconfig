@@ -1,0 +1,46 @@
+
+# Kconfig file for package max7219
+menuconfig PKG_USING_MAX7219
+    bool "MAX7219: for the digital tube"
+    select RT_USING_PIN
+    select RT_USING_SPI
+    default n
+
+if PKG_USING_MAX7219
+
+    config PKG_MAX7219_CHIPS_NUMBER
+            int "the chips of digital tubes"
+            default 1
+
+    config PKG_MAX7219_SPI_BUS_NAME
+            string "spi bus name"
+            default "spi1"
+
+    config PKG_MAX7219_SPI_DEVICE_NAME
+            string "spi device name"
+            default "spi10"
+
+    config PKG_MAX7219_PATH
+        string
+        default "/packages/peripherals/max7219"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MAX7219_V100
+        help
+            Select the package version
+
+        config PKG_USING_MAX7219_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MAX7219_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MAX7219_VER
+       string
+       default "v1.0.0"    if PKG_USING_MAX7219_V100
+       default "latest"    if PKG_USING_MAX7219_LATEST_VERSION
+
+endif
+
