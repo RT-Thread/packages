@@ -1,6 +1,7 @@
+# Kconfig file for package beep
 
 menuconfig PKG_USING_BEEP
-    bool "beep: Buzzer beep package on rt-thread."
+    bool "beep: Control the buzzer to make beeps at different intervals."
     default n
 
 if PKG_USING_BEEP
