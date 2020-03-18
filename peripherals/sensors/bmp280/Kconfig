@@ -1,0 +1,32 @@
+
+# Kconfig file for package bmp280
+menuconfig PKG_USING_BMP280
+    bool "bmp280:bmp280 iic sensor driver package,support:pressure,temperature"
+    default n
+
+if PKG_USING_BMP280
+
+    config PKG_BMP280_PATH
+        string
+        default "/packages/peripherals/sensors/bmp280"
+
+    choice
+        prompt "Version"
+        default PKG_USING_BMP280_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BMP280_V100
+            bool "v1.0.0"
+
+        config PKG_USING_BMP280_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BMP280_VER
+       string
+       default "v1.0.0"    if PKG_USING_BMP280_V100
+       default "latest"    if PKG_USING_BMP280_LATEST_VERSION
+
+endif
+
