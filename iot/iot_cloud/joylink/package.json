@@ -2,9 +2,9 @@
   "name": "joy-iotkit",
   "description": "JD Cloud SDK for IoT platform",
   "description_zh": "连接京东小京鱼 IOT 云平台的软件包",
-  "enable": "PKG_USING_JOY_IOTKIT",
+  "enable": "PKG_USING_JOYLINK",
   "keywords": [
-    "joy_iotkit"
+    "joylink"
   ],
   "category": "iot/iot_cloud",
   "author": {
@@ -13,22 +13,22 @@
     "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
-  "repository": "'https://github.com/RT-Thread-packages/ali-iotkit",
-  "icon": "unknown",
-  "homepage": "unknown",
+  "repository": "'https://github.com/RT-Thread-packages/joylink",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/joylink#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://joy_iotkiy-1.0.0.zip",
-      "filename": "joy_iotkiy-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "URL": "",
+      "filename": "",
+      "VER_SHA": ""
     },
     {
       "version": "latest",
-      "URL": "https://xxxxx.git",
-      "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "URL": "https://github.com/RT-Thread-packages/joylink.git",
+      "filename": "joylink.zip",
+      "VER_SHA": "master"
     }
   ]
 }
