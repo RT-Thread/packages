@@ -1,7 +1,7 @@
 
 # Kconfig file for package joylink
 menuconfig PKG_USING_JOYLINK
-    bool "Joylink IoT SDK poting for RT-Thread"
+    bool "Joylink Cloud SDK for IoT platform"
     default n
     select PKG_USING_CJSON
     select PKG_USING_EASYFLASH

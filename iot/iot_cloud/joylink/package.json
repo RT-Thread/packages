@@ -1,6 +1,6 @@
 {
   "name": "joylink",
-  "description": "JD Cloud SDK for IoT platform",
+  "description": "Joylink Cloud SDK for IoT platform",
   "description_zh": "连接京东小京鱼 IOT 云平台的软件包",
   "enable": "PKG_USING_JOYLINK",
   "keywords": [
