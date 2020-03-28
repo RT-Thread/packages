@@ -101,7 +101,7 @@ if PKG_USING_JOYLINK
 
     choice
         prompt "Version"
-        default PKG_USING_JOYLINK_LATEST_VERSION
+        default PKG_USING_JOYLINK_V02001900
         help
             Select the package version
 
