@@ -24,7 +24,7 @@ if PKG_USING_BEEP
     endchoice
 
     if PKG_BEEP_PASSIVE_BUZZER
-    
+
         config PKG_BEEP_PWM_DEV_NAME
             string "Setting current PWM device name."
             default "pwm1"
@@ -43,19 +43,24 @@ if PKG_USING_BEEP
             config PKG_BEEP_BLOCK_POWER_STOP
                 bool "Block the MCU power enter to stop mode on beeping."
                 default y
-                
+
             config PKG_BEEP_SUPPORT_PM_RUN_FREQ_CHANGE
                 bool "Beep with the original frequency at MCU run frequency changed."
                 default y
         endif
 
     endif
-    
+
+    if !PKG_USING_BEEP_V100
+        config PKG_BEEP_USING_MSH_CMD
+        bool "Beep the buzzer on console to test."
+        default n
+    endif
+
     if RT_USING_HEAP
         config PKG_BEEP_THREAD_STACK_USING_HEAP
         bool "Use heap with the beep thread stack created."
         default y
-    
     endif
 
     config PKG_BEEP_PATH
