@@ -7,4 +7,5 @@ source "$PKGS_DIR/packages/iot/iot_cloud/azure-iot-sdk/Kconfig"
 source "$PKGS_DIR/packages/iot/iot_cloud/tencent-iothub/Kconfig"
 source "$PKGS_DIR/packages/iot/iot_cloud/jiot-c-sdk/Kconfig"
 source "$PKGS_DIR/packages/iot/iot_cloud/ucloud_iot_sdk/Kconfig"
+source "$PKGS_DIR/packages/iot/iot_cloud/joylink/Kconfig"
 endmenu
