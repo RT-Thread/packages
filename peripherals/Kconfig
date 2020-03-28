@@ -36,5 +36,6 @@ source "$PKGS_DIR/packages/peripherals/embARC_bsp/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rtc/Kconfig"
 source "$PKGS_DIR/packages/peripherals/max7219/Kconfig"
 source "$PKGS_DIR/packages/peripherals/beep/Kconfig"
+source "$PKGS_DIR/packages/peripherals/easyblink/Kconfig"
 
 endmenu
