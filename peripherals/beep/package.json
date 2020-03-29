@@ -1,7 +1,7 @@
 {
   "name": "beep",
-  "description": "Buzzer beep package on rt-thread's pin and pwm driver.",
-  "description_zh": "基于 rt-thread 的 pin 和 pwm 驱动的蜂鸣器鸣叫软件包。",
+  "description": "Control the buzzer to make beeps at different intervals.",
+  "description_zh": "基于 rt-thread 的 pin 和 pwm 驱动的蜂鸣器控制软件包，可以容易地驱动有源蜂鸣器或无源蜂鸣器，产生各种间隔长短的鸣叫声。",
   "enable": "PKG_USING_BEEP",
   "keywords": [
     "beep",
@@ -17,7 +17,7 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/Sunwancn/rtt-pkgs-beep",
   "icon": "unknown",
-  "homepage": "unknown",
+  "homepage": "https://github.com/Sunwancn/rtt-pkgs-beep",
   "doc": "unknown",
   "site": [
     {
