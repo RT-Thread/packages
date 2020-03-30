@@ -1,0 +1,32 @@
+
+# Kconfig file for package shtc1
+menuconfig PKG_USING_SHTC1
+    bool "SHTC1 sensor driver package, support: temperature, humidity."
+    default n
+
+if PKG_USING_SHTC1
+
+    config PKG_SHTC1_PATH
+        string
+        default "/packages/peripherals/sensors/shtc1"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SHTC1_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SHTC1_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SHTC1_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SHTC1_VER
+       string
+       default "v1.0.0"    if PKG_USING_SHTC1_V100
+       default "latest"    if PKG_USING_SHTC1_LATEST_VERSION
+
+endif
+

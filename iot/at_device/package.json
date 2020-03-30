@@ -64,6 +64,11 @@
       "filename": "at_device-2.0.1.zip"
     },
     {
+      "version": "v2.0.2",
+      "URL": "https://github.com/RT-Thread-packages/at_device/archive/2.0.2.zip",
+      "filename": "at_device-2.0.2.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/at_device.git",
       "filename": "at_device.zip",

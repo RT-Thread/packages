@@ -1,0 +1,36 @@
+{
+  "name": "beep",
+  "description": "Control the buzzer to make beeps at different intervals.",
+  "description_zh": "基于 rt-thread 的 pin 和 pwm 驱动的蜂鸣器控制软件包，可以容易地驱动有源蜂鸣器或无源蜂鸣器，产生各种间隔长短的鸣叫声。",
+  "enable": "PKG_USING_BEEP",
+  "keywords": [
+    "beep",
+    "buzzer",
+    "蜂鸣器"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Sunwancn",
+    "email": "bwsheng2000@163.com",
+    "github": "Sunwancn"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Sunwancn/rtt-pkgs-beep",
+  "icon": "unknown",
+  "homepage": "https://github.com/Sunwancn/rtt-pkgs-beep",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Sunwancn/rtt-pkgs-beep/archive/v1.0.0.zip",
+      "filename": "rtt-pkgs-beep-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Sunwancn/rtt-pkgs-beep.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "bmp280",
+  "description": "bmp280 iic drive",
+  "description_zh": "bmp280的iic驱动",  
+  "enable": "PKG_USING_BMP280", 
+  "keywords": [
+    "sensor",
+    "bmp280"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "nfsq246",
+    "email": "ChenHN_246@163.com",
+    "github": "nfsq246"
+  },
+  "license": "other",
+  "repository": "https://github.com/nfsq246/RTT_BMP280",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/nfsq246/RTT_BMP280/archive/master.zip",
+      "filename": "RTT_BMP280-1.0.1.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/nfsq246/RTT_BMP280.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

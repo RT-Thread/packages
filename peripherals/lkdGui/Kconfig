@@ -1,0 +1,36 @@
+
+# Kconfig file for package lkdGui
+menuconfig PKG_USING_LKDGUI
+    bool "lkdGui a monochrome graphic lirary."
+    default n
+
+if PKG_USING_LKDGUI
+
+    config PKG_LKDGUI_PATH
+        string
+        default "/packages/peripherals/lkdGui"
+
+    config PKG_USING_LKDGUI_SAMPLE
+        bool "Enable lkdGui sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_LKDGUI_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LKDGUI_V001
+            bool "v0.0.1"
+
+        config PKG_USING_LKDGUI_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LKDGUI_VER
+       string
+       default "v0.0.1"    if PKG_USING_LKDGUI_V001
+       default "latest"    if PKG_USING_LKDGUI_LATEST_VERSION
+
+endif
+
