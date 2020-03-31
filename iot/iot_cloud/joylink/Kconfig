@@ -113,11 +113,11 @@ if PKG_USING_JOYLINK
 
         choice
             prompt "Version"
-            default PKG_USING_JOYLINK_V02001900
+            default PKG_USING_JOYLINK_V02001901
             help
                 Select the package version
 
-            config PKG_USING_JOYLINK_V02001900
+            config PKG_USING_JOYLINK_V02001901
                 bool "v2.0.19.0"
 
             config PKG_USING_JOYLINK_LATEST_VERSION
@@ -126,7 +126,7 @@ if PKG_USING_JOYLINK
 
         config PKG_JOYLINK_VER
         string
-        default "v2.0.19.0"    if PKG_USING_JOYLINK_V02001900
+        default "v2.0.19.1"    if PKG_USING_JOYLINK_V02001901
         default "latest"       if PKG_USING_JOYLINK_LATEST_VERSION
     endif
 
