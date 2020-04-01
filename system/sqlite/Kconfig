@@ -14,4 +14,15 @@ if PKG_USING_SQLITE
         string
         default "v3.19.3"
 
+    config PKG_SQLITE_DB_NAME
+        string "database name(path)"
+        default "/rt.db"
+
+    config PKG_SQLITE_SQL_MAX_LEN
+        int  "sql statements max length"
+        default 1024
+
+    config PKG_SQLITE_DAO_EXAMPLE
+        bool "Enable example"
+            default y
 endif
