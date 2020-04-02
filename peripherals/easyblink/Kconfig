@@ -33,9 +33,12 @@ if PKG_USING_EASYBLINK
 
     choice
         prompt "Version"
-        default PKG_USING_EASYBLINK_V100
+        default PKG_USING_EASYBLINK_V200
         help
             Select the package version
+
+        config PKG_USING_EASYBLINK_V200
+            bool "v2.0.0"
 
         config PKG_USING_EASYBLINK_V100
             bool "v1.0.0"
@@ -46,6 +49,7 @@ if PKG_USING_EASYBLINK
 
     config PKG_EASYBLINK_VER
         string
+        default "v2.0.0" if PKG_USING_EASYBLINK_V200
         default "v1.0.0" if PKG_USING_EASYBLINK_V100
         default "latest" if PKG_USING_EASYBLINK_LATEST_VERSION
 
