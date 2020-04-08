@@ -1,0 +1,34 @@
+{
+  "name": "nrf5x_sdk",
+  "description": "Software development kit for the nRF52 Series and nRF51 Series SoCs ",
+  "description_zh": "Nordic SDK软件开发包",  
+  "enable": "PKG_USING_NRF5X_SDK", 
+  "keywords": [
+    "nrf5x_sdk"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "supperthomas",
+    "email": "78900636@qq.com",
+    "github": "supperthomas"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/supperthomas/nrf5x_sdk",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v13.0.0",
+      "URL": "https://github.com/supperthomas/nrf5x_sdk/archive/V13.0.0.zip",
+      "filename": "nrf5x_sdk-13.0.0.zip",
+      "VER_SHA": "release"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/supperthomas/nrf5x_sdk.git",
+      "filename": "nrf5x_sdk-13.0.0",
+      "VER_SHA": "master"
+    }
+  ]
+}
