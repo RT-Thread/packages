@@ -80,7 +80,12 @@ def json_file_content_check(json_pathname):
     with open(json_pathname, 'r+') as f:
         json_content = f.read()
 
-    package_info = json.loads(json_content)
+    try:
+        package_info = json.loads(json_content)
+    except ValueError:
+        print('The JSON config file syntax checking failed!')
+        return
+    
     print(package_info['name'])
 
     if package_info['category'] == '' :
