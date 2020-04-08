@@ -1,7 +1,7 @@
 {
   "name": "multi_rtimer",
   "description": "a real-time and low power software timer module.",
-  "description_zh": "һ��ʵʱ���͹���������ʱ��ģ��",  
+  "description_zh": "一个实时、低功耗软件定时器模块",  
   "enable": "PKG_USING_MULTI_RTIMER", 
   "keywords": [
     "multi_rtimer"
@@ -22,6 +22,7 @@
       "version": "v1.0.0",
       "URL": "https://github.com/Forest-Rain/multi-rtimer/archive/v1.0.0.zip",
       "filename": "multi_rtimer-1.0.0.zip",
+      "VER_SHA": "master"
     },
     {
       "version": "latest",
