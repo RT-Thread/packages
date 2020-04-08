@@ -1,0 +1,32 @@
+{
+  "name": "max7219",
+  "description": "a MAX7219 package for the digital tube",
+  "description_zh": "本软件包是在数码管上应用 MAX7219 的驱动包",
+  "enable": "PKG_USING_MAX7219",
+  "keywords": [
+    "max7219"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "redocCheng",
+    "email": "619675912@qq.com",
+    "github": "https://github.com/redocCheng"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/redocCheng/max7219",
+  "homepage": "https://github.com/redocCheng/max7219",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/redocCheng/max7219/archive/1.0.0.zip",
+      "filename": "max7219-1.0.0.zip",
+      "VER_SHA": " "
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/redocCheng/max7219.git",
+      "filename": "max7219-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

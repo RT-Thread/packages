@@ -18,8 +18,14 @@
   "readme": "QuickLZ : Fast data compression library",
   "site": [
     {
+      "version": "v1.0.1",
+      "URL": "https://github.com/RT-Thread-packages/quicklz/archive/1.0.1.zip",
+      "filename": "quicklz-1.0.1.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "v1.0.0",
-      "URL": "https://github.com/RT-Thread-packages/quicklz.git",
+      "URL": "https://github.com/RT-Thread-packages/quicklz/archive/1.0.0.zip",
       "filename": "quicklz-1.0.0.zip",
       "VER_SHA": "8c20952e047f0f5b4bdfb34cf1f38f91406b8d71"
     },

@@ -1,0 +1,88 @@
+# Kconfig file for package beep
+
+menuconfig PKG_USING_BEEP
+    bool "beep: Control the buzzer to make beeps at different intervals."
+    default n
+
+if PKG_USING_BEEP
+
+    choice
+        prompt "Buzzer type"
+        default PKG_BEEP_ACTIVE_BUZZER
+        help
+            Select the the Buzzer type
+
+        config PKG_BEEP_ACTIVE_BUZZER
+            bool "Active buzzer"
+            select RT_USING_PIN
+            select BSP_USING_GPIO
+
+        config PKG_BEEP_PASSIVE_BUZZER
+            bool "Passive buzzer"
+            select RT_USING_PWM
+            select BSP_USING_PWM
+    endchoice
+
+    if PKG_BEEP_PASSIVE_BUZZER
+
+        config PKG_BEEP_PWM_DEV_NAME
+            string "Setting current PWM device name."
+            default "pwm1"
+
+        config PKG_BEEP_PWM_DEV_CHANNEL
+            int "Setting current PWM device channel."
+            range 1 4
+            default 1
+
+        config PKG_BEEP_DEFAULT_FREQ
+            int "Setting the best frequency(Hz) for buzzer."
+            range 100 10000
+            default 2700
+
+        if RT_USING_PM
+            config PKG_BEEP_BLOCK_POWER_STOP
+                bool "Block the MCU power enter to stop mode on beeping."
+                default y
+
+            config PKG_BEEP_SUPPORT_PM_RUN_FREQ_CHANGE
+                bool "Beep with the original frequency at MCU run frequency changed."
+                default y
+        endif
+
+    endif
+
+    if !PKG_USING_BEEP_V100
+        config PKG_BEEP_USING_MSH_CMD
+        bool "Beep the buzzer on console to test."
+        default n
+    endif
+
+    if RT_USING_HEAP
+        config PKG_BEEP_THREAD_STACK_USING_HEAP
+        bool "Use heap with the beep thread stack created."
+        default y
+    endif
+
+    config PKG_BEEP_PATH
+        string
+        default "/packages/peripherals/beep"
+
+    choice
+        prompt "Version"
+        default PKG_USING_BEEP_V100
+        help
+            Select the this package version
+
+        config PKG_USING_BEEP_V100
+            bool "v1.0.0"
+
+        config PKG_USING_BEEP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_BEEP_VER
+        string
+        default "v1.0.0" if PKG_USING_BEEP_V100
+        default "latest" if PKG_USING_BEEP_LATEST_VERSION
+
+endif

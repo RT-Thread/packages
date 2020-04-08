@@ -1,0 +1,56 @@
+# Kconfig file for package easyblink
+
+menuconfig PKG_USING_EASYBLINK
+    bool "easyblink: Blink the LED easily and use a little RAM"
+    select RT_USING_SEMAPHORE
+    default n
+
+if PKG_USING_EASYBLINK
+
+    config PKG_EASYBLINK_MAX_LED_NUMS
+        int "Setting the max LED nums"
+        range 1 100
+        default 1
+
+    config PKG_EASYBLINK_USING_MSH_CMD
+        bool "Blink led on console to test"
+        default n
+
+    config PKG_EASYBLINK_USING_MUTEX
+        bool "Use mutex to make thread safe"
+        select RT_USING_MUTEX
+        default n
+
+    if RT_USING_HEAP
+        config PKG_EASYBLINK_USING_HEAP
+        bool "Use heap with the easyblink thread stack created"
+        default n
+    endif
+
+    config PKG_EASYBLINK_PATH
+        string
+        default "/packages/peripherals/easyblink"
+
+    choice
+        prompt "Version"
+        default PKG_USING_EASYBLINK_V200
+        help
+            Select the package version
+
+        config PKG_USING_EASYBLINK_V200
+            bool "v2.0.0"
+
+        config PKG_USING_EASYBLINK_V100
+            bool "v1.0.0"
+
+        config PKG_USING_EASYBLINK_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_EASYBLINK_VER
+        string
+        default "v2.0.0" if PKG_USING_EASYBLINK_V200
+        default "v1.0.0" if PKG_USING_EASYBLINK_V100
+        default "latest" if PKG_USING_EASYBLINK_LATEST_VERSION
+
+endif

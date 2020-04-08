@@ -31,27 +31,25 @@ if PKG_USING_FASTLZ
 
     choice
         prompt "version"
+        default PKG_USING_FASTLZ_V101
         help
             Select the fastlz version
 
         config PKG_USING_FASTLZ_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_FASTLZ_V101
+            bool "v1.0.1"
+
         config PKG_USING_FASTLZ_V100
             bool "v1.0.0"
 
     endchoice
 
-    if PKG_USING_FASTLZ_V100
-        config PKG_FASTLZ_VER
-        string
-        default "v1.0.0"
-    endif
-
-    if PKG_USING_FASTLZ_LATEST_VERSION
-       config PKG_FASTLZ_VER
+    config PKG_FASTLZ_VER
        string
-       default "latest"
-    endif
+       default "v1.0.1"    if PKG_USING_FASTLZ_V101
+       default "v1.0.0"    if PKG_USING_FASTLZ_V100
+       default "latest"    if PKG_USING_FASTLZ_LATEST_VERSION
 
 endif

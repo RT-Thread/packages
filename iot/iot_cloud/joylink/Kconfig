@@ -1,0 +1,134 @@
+
+# Kconfig file for package joylink
+menuconfig PKG_USING_JOYLINK
+    bool "Joylink Cloud SDK for IoT platform"
+    default n
+    select PKG_USING_CJSON
+    select PKG_USING_EASYFLASH
+    select RT_USING_RTC
+
+if PKG_USING_JOYLINK
+
+    config PKG_JOYLINK_PATH
+        string
+        default "/packages/iot/iot_cloud/joylink"
+
+    choice
+        prompt "your chip model"
+        default WM_W60X_A8xx
+        help
+            the type of chip what you are using
+        config WM_W60X_A8xx
+            bool "WinnerMicro"
+        config JOYLINK_OTHER
+            bool "other chip"
+    endchoice
+
+    if WM_W60X_A8xx
+        config JOYLINK_USING_OTA
+            bool "Enable OTA update feature"
+            default n
+
+        config JOYLINK_USING_NETCONFIG
+            bool "Enable network configure feature"
+            default n
+
+        if JOYLINK_USING_NETCONFIG
+
+            config JOYLINK_USING_THUNDER_SLAVE
+                bool "Enable thunderconfig mode"
+                default n
+
+            config JOYLINK_USING_SOFTAP
+                bool "Enable softap mode"
+                default n
+
+            if JOYLINK_USING_SOFTAP
+                config JOYLINK_SOFTAP_SSID
+                    string "Softap ssid name"
+                    default "ssid_test"
+            endif
+
+        endif
+
+        choice
+            prompt "Output LOG level"
+            default JOYLINK_OUTPUT_LEVEL_DEBUG
+            help
+                select the log level
+
+            config JOYLINK_OUTPUT_LEVEL_DEBUG
+                bool "DEBUG"
+
+            config JOYLINK_OUTPUT_LEVEL_WARN
+                bool "WARN"
+
+            config JOYLINK_OUTPUT_LEVEL_ERROR
+                bool "ERROR"
+
+            config JOYLINK_OUTPUT_LEVEL_INFO
+                bool "INFO"
+
+            config JOYLINK_OUTPUT_LEVEL_NOTICE
+                bool "NOTICE"
+
+            config JOYLINK_OUTPUT_LEVEL_FATAL
+                bool "FATAL"
+        endchoice
+
+        choice
+
+            prompt "Sample product type"
+            default JOYLINK_USING_SAMPLES_HEATER
+            help
+                select the type of product
+
+            config JOYLINK_USING_SAMPLES_BAND
+                bool "Wristband"
+
+            config JOYLINK_USING_SAMPLES_HEATER
+                bool "Heater"
+
+        endchoice
+
+        if JOYLINK_USING_SAMPLES_BAND || JOYLINK_USING_SAMPLES_HEATER
+
+            config JOYLINK_USING_AUTO_INIT
+                bool "Enable automatic initialize"
+                default n
+
+            config JOYLINK_SAMPLE_UUID
+                string "Device uuid"
+                default "012345"
+
+            config JOYLINK_SAMPLE_PUB_KEY
+                string "Device public key"
+                default "0123456789"
+
+            config JOYLINK_SAMPLE_PRIVATE_KEY
+                string "Device private key"
+                default "0123456789"
+
+        endif
+
+        choice
+            prompt "Version"
+            default PKG_USING_JOYLINK_V02001901
+            help
+                Select the package version
+
+            config PKG_USING_JOYLINK_V02001901
+                bool "v2.0.19.0"
+
+            config PKG_USING_JOYLINK_LATEST_VERSION
+                bool "latest"
+        endchoice
+
+        config PKG_JOYLINK_VER
+        string
+        default "v2.0.19.1"    if PKG_USING_JOYLINK_V02001901
+        default "latest"       if PKG_USING_JOYLINK_LATEST_VERSION
+    endif
+
+endif
+

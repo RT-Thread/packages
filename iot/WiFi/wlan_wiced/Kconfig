@@ -3,11 +3,11 @@ menu "Wiced WiFi"
 
 menuconfig PKG_USING_WLAN_WICED
     bool "Wiced WiFi driver for rt-thread"
-	select RT_USING_LWIP
-	select RT_USING_WIFI
+    select RT_USING_LWIP
+    select RT_USING_WIFI
     default n
-	help
-		if "PKG_USING_WLAN_WICED" is opened, "RT_USING_LWIP" will be default selected.
+    help
+        if "PKG_USING_WLAN_WICED" is opened, "RT_USING_LWIP" will be default selected.
 
 if PKG_USING_WLAN_WICED
 
@@ -15,29 +15,39 @@ if PKG_USING_WLAN_WICED
         string
         default "/packages/iot/WiFi/wlan_wiced"
 
-	choice
-		prompt "version"
-		help
-			Select the wiced wifi version
+    choice
+        prompt "version"
+        default PKG_USING_WLAN_WICED_V101
+        help
+            Select the wiced wifi version
 
-		config PKG_USING_WLAN_WICED_LATEST_VERSION
-			bool "latest"
+        config PKG_USING_WLAN_WICED_LATEST_VERSION
+            bool "latest"
+            
+        config PKG_USING_WLAN_WICED_V101
+            bool "v1.0.1"
 
-		config PKG_USING_WLAN_WICED_V100
-			bool "v1.0.0"
-	endchoice
+        config PKG_USING_WLAN_WICED_V100
+            bool "v1.0.0"
+    endchoice
 
-	if PKG_USING_WLAN_WICED_V100
-		config PKG_WLAN_WICED_VER
-		string
-		default "v1.0.0"
-	endif
+    if PKG_USING_WLAN_WICED_V100
+        config PKG_WLAN_WICED_VER
+        string
+        default "v1.0.0"
+    endif
+    
+    if PKG_USING_WLAN_WICED_V101
+        config PKG_WLAN_WICED_VER
+        string
+        default "v1.0.1"
+    endif
 
-	if PKG_USING_WLAN_WICED_LATEST_VERSION
-		config PKG_WLAN_WICED_VER
-		string
-		default "latest"
-	endif
+    if PKG_USING_WLAN_WICED_LATEST_VERSION
+        config PKG_WLAN_WICED_VER
+        string
+        default "latest"
+    endif
 
 endif
 

@@ -29,4 +29,8 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/gp2y10/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/sgp30/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/hdc1000/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/bmp180/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/bmp280/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/shtc1/Kconfig"
+
     endif
