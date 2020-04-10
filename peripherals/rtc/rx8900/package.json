@@ -1,0 +1,37 @@
+{
+  "name": "rx8900",
+  "description": "Extern RTC driver for rx8900",
+  "description_zh": "高精度外置RTC rx8900驱动",  
+  "enable": "PKG_USING_RX8900",  
+  "keywords": [
+    "rx8900",
+    "rtc"
+  ],
+  "category": "peripherals/rtc",
+  "author": 
+  {
+    "name": "panrui",
+    "email": "chpanrui@163.com",
+    "github": "Prry"    
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Prry/rtt-rx8900",
+  "icon": "unknown",
+  "homepage": "https://github.com/Prry/rtt-rx8900",
+  "doc": "unknown",
+  "site": 
+  [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Prry/rtt-rx8900.git",
+      "filename": "rx8900-v1.0.0.zip",
+      "VER_SHA": "9b867aafe9fa203359b1d4f6bfc3f3e7962c0168 "
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Prry/rtt-rx8900.git",
+      "filename": "rx8900-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
