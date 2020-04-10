@@ -9,7 +9,7 @@ if PKG_USING_TENCENT_IOTHUB
 
     config PKG_TENCENT_IOTHUB_PATH
         string
-        default "/packages/iot/iot_cloud/tencent-iothub"
+        default "/packages/iot/iot_cloud/tencent-iot-sdk"
         
     choice
         prompt "Select Tencent IOT platform"

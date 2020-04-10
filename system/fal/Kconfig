@@ -59,9 +59,12 @@ if PKG_USING_FAL
 
     choice
         prompt "version"
-        default PKG_USING_FAL_V00400
+        default PKG_USING_FAL_V00500
         help
             Select the version
+
+        config PKG_USING_FAL_V00500
+            bool "v0.5.0"
 
         config PKG_USING_FAL_V00400
             bool "v0.4.0"
@@ -83,6 +86,7 @@ if PKG_USING_FAL
     config PKG_FAL_VER
        string
        default "latest"    if PKG_USING_FAL_LATEST_VERSION
+       default "v0.5.0"    if PKG_USING_FAL_V00500
        default "v0.4.0"    if PKG_USING_FAL_V00400
        default "v0.3.0"    if PKG_USING_FAL_V00300
        default "v0.2.0"    if PKG_USING_FAL_V00200
@@ -91,6 +95,7 @@ if PKG_USING_FAL
     config PKG_FAL_VER_NUM
         hex
         default 0x99999    if PKG_USING_FAL_LATEST_VERSION
+        default 0x00500    if PKG_USING_FAL_V00500
         default 0x00400    if PKG_USING_FAL_V00400 
         default 0x00300    if PKG_USING_FAL_V00300 
         default 0x00200    if PKG_USING_FAL_V00200

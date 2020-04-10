@@ -12,7 +12,7 @@ if PKG_USING_DHRYSTONE
 
     config PKG_DHRYSTONE_PATH
         string
-        default "/packages/tools/dhrystone"
+        default "/packages/tools/Dhrystone"
 
     choice
         prompt "Version"

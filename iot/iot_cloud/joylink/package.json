@@ -1,0 +1,33 @@
+{
+  "name": "joylink",
+  "description": "Joylink Cloud SDK for IoT platform",
+  "description_zh": "连接京东小京鱼 IOT 云平台的软件包",
+  "enable": "PKG_USING_JOYLINK",
+  "keywords": [
+    "joylink"
+  ],
+  "category": "iot/iot_cloud",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/joylink",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/joylink#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v2.0.19.0",
+      "URL": "https://github.com/RT-Thread-packages/joylink/archive/2.0.19.1.zip",
+      "filename": "joylink-2.0.19.1.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/joylink.git",
+      "filename": "joylink.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
