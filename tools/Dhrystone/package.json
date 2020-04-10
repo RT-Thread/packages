@@ -1,0 +1,27 @@
+{
+  "name": "Dhrystone",
+  "description": "Dhrystone is a benchmark that measures the performance of microcontrollers (MCUs) and central processing units (CPUs) used in embedded systems.",
+  "description_zh": "Dhrystone 单片机性能测试小工具",
+  "enable": "PKG_USING_DHRYSTONE",
+  "keywords": [
+    "dhrystone",
+    "benchmark"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@hust.edu.cn",
+    "github": "wuhanstudio"
+  },
+  "license": "apache",
+  "repository": "https://github.com/wuhanstudio/dhrystone",
+  "homepage": "https://github.com/wuhanstudio/dhrystone#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/dhrystone.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
