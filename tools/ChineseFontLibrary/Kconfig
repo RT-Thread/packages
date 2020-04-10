@@ -9,7 +9,7 @@ if PKG_USING_CHINESE_FONT_LIBRARY
 
     config PKG_CHINESE_FONT_LIBRARY_PATH
         string
-        default "/packages/tools/Chinese_font_library"
+        default "/packages/tools/ChineseFontLibrary"
 
     choice
         prompt "Version"
