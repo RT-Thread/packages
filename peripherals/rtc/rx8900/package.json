@@ -1,11 +1,14 @@
 {
   "name": "rx8900",
   "description": "Extern RTC driver for rx8900",
-  "description_zh": "高精度外置RTC rx8900驱动",  
+  "description_zh": "rx8900 外置RTC驱动，支持实时时钟和闹钟功能",  
   "enable": "PKG_USING_RX8900",  
   "keywords": [
     "rx8900",
-    "rtc"
+    "rx8900ce",
+    "rx8900sa",
+    "rtc",
+    "i2c"
   ],
   "category": "peripherals/rtc",
   "author": 
@@ -23,9 +26,9 @@
   [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/Prry/rtt-rx8900.git",
-      "filename": "rx8900-v1.0.0.zip",
-      "VER_SHA": "9b867aafe9fa203359b1d4f6bfc3f3e7962c0168 "
+      "URL": "https://github.com/Prry/rtt-rx8900/archive/v1.0.0.zip",
+      "filename": "rx8900-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
     },
     {
       "version": "latest",
