@@ -1,12 +1,14 @@
 
-# Only enable package nuclei_sdk when ARCH_NUCLEI is selected
-if ARCH_NUCLEI
+# Only enable package nuclei_sdk when ARCH_RISCV is selected
+# Currently it only works with Nuclei RISC-V Processor IP
+if ARCH_RISCV
 # Kconfig file for package nuclei_sdk
 menuconfig PKG_USING_NUCLEI_SDK
     bool "Nuclei RISC-V Software Development Kit"
     default n
 
 if PKG_USING_NUCLEI_SDK
+    comment "!!!Nuclei SDK only works with Nuclei RISC-V Processor IP!!!"
 
     config PKG_NUCLEI_SDK_PATH
         string
