@@ -118,7 +118,7 @@ if PKG_USING_JOYLINK
                 Select the package version
 
             config PKG_USING_JOYLINK_V02001901
-                bool "v2.0.19.0"
+                bool "v2.0.19.1"
 
             config PKG_USING_JOYLINK_LATEST_VERSION
                 bool "latest"
