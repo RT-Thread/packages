@@ -69,9 +69,12 @@ if PKG_USING_BEEP
 
     choice
         prompt "Version"
-        default PKG_USING_BEEP_LATEST_VERSION
+        default PKG_USING_BEEP_V110
         help
             Select the this package version
+
+        config PKG_USING_BEEP_V110
+            bool "v1.1.0"
 
         config PKG_USING_BEEP_V100
             bool "v1.0.0"
@@ -82,6 +85,7 @@ if PKG_USING_BEEP
 
     config PKG_BEEP_VER
         string
+        default "v1.1.0" if PKG_USING_BEEP_V110
         default "v1.0.0" if PKG_USING_BEEP_V100
         default "latest" if PKG_USING_BEEP_LATEST_VERSION
 
