@@ -1,0 +1,45 @@
+
+# Kconfig file for package bc28_mqtt
+menuconfig PKG_USING_BC28_MQTT
+    bool "BC28 MQTT: connect to Aliyun with Quectel BC28 model"
+    default n
+
+if PKG_USING_BC28_MQTT
+
+    config PKG_BC28_MQTT_PATH
+        string
+        default "/packages/iot/bc28_mqtt"
+
+    config PKG_USING_BC28_MQTT_PRODUCT_KEY
+        string "Product Key"
+        default ""
+
+    config PKG_USING_BC28_MQTT_DEVICE_NAME
+        string "Device Name"
+        default ""
+
+    config PKG_USING_BC28_MQTT_DEVICE_SECRET
+        string "Device Secret"
+        default ""
+
+    config PKG_USING_BC28_MQTT_KEEP_ALIVE
+        int "Keep alive time"
+        range 120 2000
+        default 300
+
+    choice
+        prompt "Version"
+        default PKG_USING_BC28_MQTT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BC28_MQTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BC28_MQTT_VER
+       string
+       default "latest"    if PKG_USING_BC28_MQTT_LATEST_VERSION
+
+endif
+
