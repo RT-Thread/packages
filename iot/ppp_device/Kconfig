@@ -7,7 +7,6 @@ menuconfig PKG_USING_PPP_DEVICE
     select RT_USING_LWIP
     select RT_LWIP_PPP
     select RT_LWIP_PPPOS
-    select CMUX_USING_GSM
 
 if PKG_USING_PPP_DEVICE
 
@@ -34,10 +33,6 @@ if PKG_USING_PPP_DEVICE
         bool "Enable debug for drop data"
         default n
 
-    config USING_PPP_AUTHORIZE
-        bool "Enable authorize connect feature"
-        default n
-
     config PPP_LCP_LINK_DETECT
         bool "Enable link status detect feature"
         default y
@@ -53,15 +48,15 @@ if PKG_USING_PPP_DEVICE
 
     choice
     prompt "APN access point choice"
-    default USING_PUBLIC_APN
+    default PPP_USING_PUBLIC_APN
 
-    config USING_PUBLIC_APN
+    config PPP_USING_PUBLIC_APN
         bool "using common APN provider"
-    config USING_PRIVATE_APN
+    config PPP_USING_PRIVATE_APN
         bool "using private APN provider"
     endchoice
 
-    if USING_PUBLIC_APN
+    if PPP_USING_PUBLIC_APN
     choice
         prompt "Select Internet Service Provider"
         default PPP_APN_CMCC
@@ -77,15 +72,15 @@ if PKG_USING_PPP_DEVICE
     endchoice
     endif
 
-    if USING_PRIVATE_APN
+    if PPP_USING_PRIVATE_APN
     config PPP_PRIVATE_APN
         string "the name of APN access point"
         default "xxx"
 
-    config PRIVATE_APN_ACCOUNT
+    config PPP_PRIVATE_APN_ACCOUNT
         string "the name of apn access account"
 
-    config PRIVATE_APN_PASSWORD
+    config PPP_PRIVATE_APN_PASSWORD
         string "the name of apn access password"
     endif
 
