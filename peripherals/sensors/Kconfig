@@ -33,4 +33,5 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/bmp280/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/shtc1/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/bmi088/Kconfig"
+		source "$PKGS_DIR/packages/peripherals/sensors/hmc5883/Kconfig"
     endif
