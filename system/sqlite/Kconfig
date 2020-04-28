@@ -15,10 +15,16 @@ if PKG_USING_SQLITE
         default "v3.19.3"
 
     config PKG_SQLITE_SQL_MAX_LEN
-        int  "sql statements max length"
+        int "SQL statements max length"
         default 1024
-
+    
+    config PKG_SQLITE_DB_NAME_MAX_LEN
+        int "Database filename(fullpath) length"
+        range 8 256
+        default 64
+ 
     config PKG_SQLITE_DAO_EXAMPLE
         bool "Enable example"
             default y
 endif
+
