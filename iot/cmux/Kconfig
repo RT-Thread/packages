@@ -1,0 +1,64 @@
+
+# Kconfig file for package cmux
+menuconfig PKG_USING_CMUX
+    bool "cmux: connection multiplexing protocol for RT-Thread, support GSM0710 .etc"
+    default n
+
+if PKG_USING_CMUX
+
+    config PKG_CMUX_PATH
+        string
+        default "/packages/iot/cmux"
+
+    config CMUX_DEBUG
+        bool "using cmux debug feature"
+        default n
+
+    config CMUX_USING_GSM
+        bool "using for gsm0710 protocol"
+        default y
+
+    if CMUX_USING_GSM
+        config CMUX_ATUO_INITIZATION
+            bool "auto startup gsm sample"
+            default n
+    endif
+
+    config CMUX_MAX_FRAME_LIST_LEN
+        int "set cmux max frame list length"
+        default 5
+
+    config CMUX_DEPEND_NAME
+        string "the real cmux serial prot"
+        default "uart3"
+
+    config CMUX_PORT_NUMBER
+        int "the number of cmux modem port"
+        default 3
+        range 1 31
+
+    choice
+        prompt "Version"
+        default PKG_USING_CMUX_V100
+        help
+            Select the package version
+
+        config PKG_USING_CMUX_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CMUX_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CMUX_VER
+       string
+       default "v1.0.0"    if PKG_USING_CMUX_V100
+       default "latest"    if PKG_USING_CMUX_LATEST_VERSION
+
+    config PKG_CMUX_VER_NUM
+        hex
+        default 0x10000    if PKG_USING_CMUX_V100
+        default 0x99999    if PKG_USING_CMUX_LATEST_VERSION
+
+endif
+

@@ -20,6 +20,10 @@ if PKG_USING_KAWAII_MQTT
             default 5000
     endif
 
+    config KAWAII_MQTT_USE_SAL
+        bool "use SAL"
+        default n
+
     config KAWAII_MQTT_LOG_IS_SALOF
         bool "enable salof"
         default y
@@ -150,6 +154,9 @@ if PKG_USING_KAWAII_MQTT
         config PKG_USING_KAWAII_MQTT_V100
             bool "v1.0.0"
 
+        config PKG_USING_KAWAII_MQTT_V102
+            bool "v1.0.2"
+
         config PKG_USING_KAWAII_MQTT_LATEST_VERSION
             bool "latest"
     endchoice
@@ -157,6 +164,7 @@ if PKG_USING_KAWAII_MQTT
     config PKG_KAWAII_MQTT_VER
        string
        default "v1.0.0"    if PKG_USING_KAWAII_MQTT_V100
+       default "v1.0.2"    if PKG_USING_KAWAII_MQTT_V102
        default "latest"    if PKG_USING_KAWAII_MQTT_LATEST_VERSION
 
 endif
