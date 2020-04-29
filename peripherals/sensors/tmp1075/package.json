@@ -1,0 +1,40 @@
+{
+  "name": "tmp1075",
+  "description": "Digital temperature sensor driver package for TMP1075",
+  "description_zh": "TMP1075 数字温度传感器驱动软件包",  
+  "enable": "PKG_USING_TMP1075",  
+  "keywords": [
+    "sensor",
+    "temperature",
+    "tmp1075",
+    "lm75",
+    "i2c"
+  ],
+  "category": "peripherals/sensors",
+  "author": 
+  {
+    "name": "panrui",
+    "email": "chpanrui@163.com",
+    "github": "Prry"    
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Prry/rtt-tmp1075",
+  "icon": "unknown",
+  "homepage": "https://github.com/Prry/rtt-tmp1075",
+  "doc": "unknown",
+  "site": 
+  [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Prry/rtt-tmp1075/archive/v1.0.0.zip",
+      "filename": "tmp1075-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Prry/rtt-tmp1075.git",
+      "filename": "tmp1075-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
