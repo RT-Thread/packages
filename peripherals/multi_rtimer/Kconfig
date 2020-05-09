@@ -8,7 +8,7 @@ if PKG_USING_MULTI_RTIMER
 
     config PKG_MULTI_RTIMER_PATH
         string
-        default "/packages/misc/multi_rtimer"
+        default "/packages/peripherals/multi_rtimer"
 
     choice
         prompt "Version"
