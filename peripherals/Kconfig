@@ -43,5 +43,6 @@ source "$PKGS_DIR/packages/peripherals/beep/Kconfig"
 source "$PKGS_DIR/packages/peripherals/easyblink/Kconfig"
 source "$PKGS_DIR/packages/peripherals/pms_series/Kconfig"
 source "$PKGS_DIR/packages/peripherals/nuclei_sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/can_ymodem/Kconfig"
 
 endmenu

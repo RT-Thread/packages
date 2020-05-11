@@ -1,0 +1,39 @@
+
+# Kconfig file for package can_ymodem
+menuconfig PKG_USING_CAN_YMODEM
+    bool "CAN_YMODEM: a device connect can & ymodem"
+    select RT_USING_CAN
+    select RT_USING_RYM
+    default n
+
+if PKG_USING_CAN_YMODEM
+
+    config RT_CAN_YMODEM_PACK_SIZE_TX
+            int "can pack data max size(1-8)"
+            range 1 8
+            default 6
+
+    config PKG_CAN_YMODEM_PATH
+        string
+        default "/packages/peripherals/can_ymodem"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CAN_YMODEM_V100
+        help
+            Select the package version
+
+        config PKG_USING_CAN_YMODEM_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CAN_YMODEM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CAN_YMODEM_VER
+       string
+       default "v1.0.0"    if PKG_USING_CAN_YMODEM_V100
+       default "latest"    if PKG_USING_CAN_YMODEM_LATEST_VERSION
+
+endif
+
