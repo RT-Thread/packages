@@ -9,8 +9,7 @@ menuconfig PKG_USING_CAN_YMODEM
 if PKG_USING_CAN_YMODEM
 
     config RT_CAN_YMODEM_PACK_SIZE_TX
-            int "can pack data max size(1-8)"
-            range 1 8
+            int "can pack data max size"
             default 6
 
     config PKG_CAN_YMODEM_PATH
