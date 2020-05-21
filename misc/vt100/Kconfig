@@ -29,6 +29,12 @@ if PKG_USING_VT100
             Animation: a funny rushing train
         default n
 
+    config VT100_USING_IMGBUF
+        bool "Image: displaying image in the terminal"
+        help
+            Image: displaying image in the terminal
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_VT100_LATEST_VERSION
