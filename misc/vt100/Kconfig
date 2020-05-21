@@ -35,6 +35,13 @@ if PKG_USING_VT100
             Image: displaying image in the terminal
         default n
 
+    config VT100_USING_LSIMSG
+        bool "lsimg: list images and draw it out"
+        select PKG_USING_TJPGD
+        help
+            lsimg: list images and draw it out
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_VT100_LATEST_VERSION
