@@ -32,6 +32,30 @@ if AT_DEVICE_USING_BC28
             int "The maximum length of receive line buffer"
             default 512
 
+        config BC28_SAMPLE_MIN_SOCKET
+            int "The minimum available socket id"
+            default 0
+
+        choice
+            prompt "Select baud rate"
+            default BC28_SAMPLE_BAUD_RATE_9600
+
+            config BC28_SAMPLE_BAUD_RATE_4800
+                bool "4800"
+
+            config BC28_SAMPLE_BAUD_RATE_9600
+                bool "9600"
+
+            config BC28_SAMPLE_BAUD_RATE_115200
+                bool "115200"
+        endchoice
+
+        config BC28_SAMPLE_BAUD_RATE
+            int
+            default 4800      if BC28_SAMPLE_BAUD_RATE_4800
+            default 9600      if BC28_SAMPLE_BAUD_RATE_9600
+            default 115200    if BC28_SAMPLE_BAUD_RATE_115200
+
     endif
 
 endif
