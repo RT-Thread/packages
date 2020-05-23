@@ -36,4 +36,6 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/hmc5883/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/max6675/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/tmp1075/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/sr04/Kconfig"
+        
     endif
