@@ -34,6 +34,38 @@ if PKG_USING_BC28_MQTT
        default 9600      if PKG_USING_BC28_MQTT_BAUD_RATE_9600
        default 115200    if PKG_USING_BC28_MQTT_BAUD_RATE_115200
 
+    choice
+        prompt "Select operating band"
+        default PKG_USING_BC28_MQTT_OP_BAND_8
+
+        config PKG_USING_BC28_MQTT_OP_BAND_1
+            bool "B1 @H-FDD: 2100MHz"
+
+        config PKG_USING_BC28_MQTT_OP_BAND_3
+            bool "B3 @H-FDD: 1800MHz"
+
+        config PKG_USING_BC28_MQTT_OP_BAND_5
+            bool "B5 @H-FDD: 850MHz"
+
+        config PKG_USING_BC28_MQTT_OP_BAND_8
+            bool "B8 @H-FDD: 900MHz"
+
+        config PKG_USING_BC28_MQTT_OP_BAND_20
+            bool "B20 @H-FDD: 800MHz"
+
+        config PKG_USING_BC28_MQTT_OP_BAND_28
+            bool "B28 @H-FDD: 700MHz"
+    endchoice
+
+    config PKG_USING_BC28_MQTT_OP_BAND
+       int
+       default 1     if PKG_USING_BC28_MQTT_OP_BAND_1
+       default 3     if PKG_USING_BC28_MQTT_OP_BAND_3
+       default 5     if PKG_USING_BC28_MQTT_OP_BAND_5
+       default 8     if PKG_USING_BC28_MQTT_OP_BAND_8
+       default 20    if PKG_USING_BC28_MQTT_OP_BAND_20
+       default 28    if PKG_USING_BC28_MQTT_OP_BAND_28
+
     config PKG_USING_BC28_RESET_PIN
         int "Reset pin"
         default 5

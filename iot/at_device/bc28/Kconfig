@@ -6,6 +6,38 @@ menuconfig AT_DEVICE_USING_BC28
 
 if AT_DEVICE_USING_BC28
 
+    choice
+        prompt "Select operating band"
+        default AT_DEVICE_BC28_OP_BAND_8
+
+        config AT_DEVICE_BC28_OP_BAND_1
+            bool "B1 @H-FDD: 2100MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_3
+            bool "B3 @H-FDD: 1800MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_5
+            bool "B5 @H-FDD: 850MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_8
+            bool "B8 @H-FDD: 900MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_20
+            bool "B20 @H-FDD: 800MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_28
+            bool "B28 @H-FDD: 700MHz"
+    endchoice
+
+    config AT_DEVICE_BC28_OP_BAND
+       int
+       default 1     if AT_DEVICE_BC28_OP_BAND_1
+       default 3     if AT_DEVICE_BC28_OP_BAND_3
+       default 5     if AT_DEVICE_BC28_OP_BAND_5
+       default 8     if AT_DEVICE_BC28_OP_BAND_8
+       default 20    if AT_DEVICE_BC28_OP_BAND_20
+       default 28    if AT_DEVICE_BC28_OP_BAND_28
+
     config AT_DEVICE_BC28_INIT_ASYN
         bool "Enable initialize by thread"
         default n
