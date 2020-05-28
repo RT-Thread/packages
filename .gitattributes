@@ -1,0 +1,32 @@
+# .gitattributes for Packages.
+
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+# ============
+* text=auto
+
+# Source files
+# ============
+*.pxd    text diff=python
+*.py     text diff=python
+*.py3    text diff=python
+*.pyw    text diff=python
+*.pyx    text diff=python
+*.pyz    text diff=python
+*.pyi    text diff=python
+*.json   text
+*.yml    text
+
+# Binary files
+# ============
+*.db     binary
+*.p      binary
+*.pkl    binary
+*.pickle binary
+*.pyc    binary
+*.pyd    binary
+*.pyo    binary
+
+# MarkDown
+*.md     text
+
