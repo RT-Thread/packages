@@ -7,15 +7,15 @@
 
 # Source files
 # ============
-*.pxd    text eol=lf diff=python
-*.py     text eol=lf diff=python
-*.py3    text eol=lf diff=python
-*.pyw    text eol=lf diff=python
-*.pyx    text eol=lf diff=python
-*.pyz    text eol=lf diff=python
-*.pyi    text eol=lf diff=python
-*.json   text eol=lf
-*.yml    text eol=lf
+*.pxd    text  diff=python
+*.py     text  diff=python
+*.py3    text  diff=python
+*.pyw    text  diff=python
+*.pyx    text  diff=python
+*.pyz    text  diff=python
+*.pyi    text  diff=python
+*.json   text 
+*.yml    text 
 
 # Binary files
 # ============
@@ -28,8 +28,8 @@
 *.pyo    binary
 
 # MarkDown
-*.md     text eol=lf
+*.md     text eol=crlf
 
 # Kconfig
-Kconf*   text eol=lf
+Kconf*   text
 
