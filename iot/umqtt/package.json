@@ -13,7 +13,7 @@
     "github": "springcity"
   },
   "license": "Apache-2.0",
-  "repository": "1",
+  "repository": "https://github.com/RT-Thread-packages/umqtt.git",
   "icon": "unknown",
   "homepage": "unknown",
   "doc": "unknown",
