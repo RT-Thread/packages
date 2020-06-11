@@ -60,7 +60,7 @@ if PKG_USING_UMQTT
         int "async message ack queue count"
         default 4
     config PKG_UMQTT_CONNECT_KEEPALIVE_DEF_TIME
-        int "connect information, keepalive interval, uint:Sec"
+        hex "connect information, keepalive interval, uint:Sec"
         default 0xffff
 
     if PKG_USING_UMQTT_TEST
