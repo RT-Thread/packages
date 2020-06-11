@@ -3,8 +3,8 @@
 menuconfig PKG_USING_UMQTT
     bool "umqtt: A light weight, powerful, customizable, easy-to-use and embeddable mqtt client for RT-Thread"
     default n
-	select RT_USING_TIMER_SOFT
-	select RT_USING_SAL
+    select RT_USING_TIMER_SOFT
+    select RT_USING_SAL
 
 if PKG_USING_UMQTT
 
