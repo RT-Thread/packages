@@ -11,10 +11,6 @@ if PKG_USING_UMQTT
     config PKG_USING_UMQTT_EXAMPLE
         bool "Enable MQTT example"
         default n
-    
-    config PKG_USING_UMQTT_TEST
-        bool "Enable MQTT test"
-        default n
 
     config PKG_UMQTT_SUBRECV_DEF_LENGTH
         int "subtopic name list numbers"
