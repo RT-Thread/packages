@@ -1,6 +1,6 @@
-
+# Kconfig file for package tencent-iot-sdk
 menuconfig PKG_USING_TENCENT_IOT_EXPLORER
-    bool "Tencent-IoT:  Tencent Cloud IoT Explorer Platform SDK for RT-Thread"
+    bool "tencent-iot-sdk:  Tencent Cloud IoT Explorer Platform SDK for RT-Thread"
     select RT_USING_SAL
     select SAL_USING_POSIX
     default n
