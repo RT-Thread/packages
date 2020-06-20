@@ -20,14 +20,14 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://lora_radio_driver-1.0.0.zip",
-      "filename": "lora_radio_driver-1.0.0.zip",
-      "VER_SHA": "master"
+      "URL": "https://github.com/Forest-Rain/lora-radio-driver/archive/v1.0.0.zip",
+      "filename": "lora-radio-driver-1.0.0.zip",
+      "VER_SHA": "e35ae1045331922cafbc98b11414110d52b203a7"
     },
     {
       "version": "latest",
       "URL": "https://github.com/Forest-Rain/lora-radio-driver.git",
-      "filename": "lora_radio_driver-latest.zip",
+      "filename": "Null for git packag",
       "VER_SHA": "master"
     }
   ]
