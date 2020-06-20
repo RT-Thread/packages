@@ -9,10 +9,11 @@ source "$PKGS_DIR/packages/tools/qrcode/Kconfig"
 source "$PKGS_DIR/packages/tools/ulog_easyflash/Kconfig"
 source "$PKGS_DIR/packages/tools/adbd/Kconfig"
 source "$PKGS_DIR/packages/tools/CoreMark/Kconfig"
-source "$PKGS_DIR/packages/tools/dhrystone/Kconfig"
+source "$PKGS_DIR/packages/tools/Dhrystone/Kconfig"
 source "$PKGS_DIR/packages/tools/nr_micro_shell/Kconfig"
-source "$PKGS_DIR/packages/tools/Chinese_font_library/Kconfig"
+source "$PKGS_DIR/packages/tools/ChineseFontLibrary/Kconfig"
 source "$PKGS_DIR/packages/tools/lunar_calendar/Kconfig"
 source "$PKGS_DIR/packages/tools/bs8116a/Kconfig"
+source "$PKGS_DIR/packages/tools/UrlEncode/Kconfig"
 
 endmenu

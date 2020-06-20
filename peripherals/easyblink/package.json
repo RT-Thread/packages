@@ -33,6 +33,12 @@
       "VER_SHA": "NULL"
     },
     {
+      "version": "v2.0.1",
+      "URL": "https://github.com/Sunwancn/rtt-pkgs-easyblink/archive/v2.0.1.zip",
+      "filename": "rtt-pkgs-easyblink-2.0.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/Sunwancn/rtt-pkgs-easyblink.git",
       "filename": "Null for git package",

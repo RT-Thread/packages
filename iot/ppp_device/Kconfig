@@ -33,10 +33,6 @@ if PKG_USING_PPP_DEVICE
         bool "Enable debug for drop data"
         default n
 
-    config USING_PPP_AUTHORIZE
-        bool "Enable authorize connect feature"
-        default n
-
     config PPP_LCP_LINK_DETECT
         bool "Enable link status detect feature"
         default y
@@ -51,6 +47,17 @@ if PKG_USING_PPP_DEVICE
     endif
 
     choice
+    prompt "APN access point choice"
+    default PPP_USING_PUBLIC_APN
+
+    config PPP_USING_PUBLIC_APN
+        bool "using common APN provider"
+    config PPP_USING_PRIVATE_APN
+        bool "using private APN provider"
+    endchoice
+
+    if PPP_USING_PUBLIC_APN
+    choice
         prompt "Select Internet Service Provider"
         default PPP_APN_CMCC
 
@@ -62,8 +69,20 @@ if PKG_USING_PPP_DEVICE
 
         config PPP_APN_CTCC
             bool "china telecom"
+    endchoice
+    endif
 
-        endchoice
+    if PPP_USING_PRIVATE_APN
+    config PPP_PRIVATE_APN
+        string "the name of APN access point"
+        default "xxx"
+
+    config PPP_PRIVATE_APN_ACCOUNT
+        string "the name of apn access account"
+
+    config PPP_PRIVATE_APN_PASSWORD
+        string "the name of apn access password"
+    endif
 
     choice
         prompt "Select modem type"
@@ -80,7 +99,6 @@ if PKG_USING_PPP_DEVICE
 
         config PPP_DEVICE_USING_SIM800
             bool "SIMCOM SIM800"
-
     endchoice
 
     config PPP_DEVICE_SAMPLE
@@ -97,9 +115,12 @@ if PKG_USING_PPP_DEVICE
 
     choice
         prompt "Version"
-        default PKG_USING_PPP_DEVICE_V100
+        default PKG_USING_PPP_DEVICE_V110
         help
             Select the package version
+
+        config PKG_USING_PPP_DEVICE_V110
+            bool "v1.1.0"
 
         config PKG_USING_PPP_DEVICE_V100
             bool "v1.0.0"
@@ -110,11 +131,13 @@ if PKG_USING_PPP_DEVICE
 
     config PKG_PPP_DEVICE_VER
        string
+       default "v1.1.0"    if PKG_USING_PPP_DEVICE_V110
        default "v1.0.0"    if PKG_USING_PPP_DEVICE_V100
        default "latest"    if PKG_USING_PPP_DEVICE_LATEST_VERSION
 
    config PKG_PPP_DEVICE_VER_NUM
         hex
+        default 0x10100    if PKG_USING_PPP_DEVICE_V110
         default 0x10000    if PKG_USING_PPP_DEVICE_V100
         default 0x99999    if PKG_USING_PPP_DEVICE_LATEST_VERSION
 

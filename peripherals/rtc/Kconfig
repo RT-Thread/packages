@@ -6,5 +6,6 @@ menuconfig PKG_USING_EXTERN_RTC_DRIVERS
     if PKG_USING_EXTERN_RTC_DRIVERS
     
         source "$PKGS_DIR/packages/peripherals/rtc/ds3231/Kconfig"
-
+        source "$PKGS_DIR/packages/peripherals/rtc/rx8900/Kconfig"
+				
     endif

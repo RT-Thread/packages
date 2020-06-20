@@ -1,0 +1,73 @@
+
+# Kconfig file for package FlashDB
+menuconfig PKG_USING_FLASHDB
+    bool "FlashDB: A lightweight database that supports key-value and time series data."
+    select PKG_USING_FAL
+    default n
+
+if PKG_USING_FLASHDB
+
+    config PKG_FLASHDB_PATH
+        string
+        default "/packages/system/FlashDB"
+        
+    config FDB_USING_KVDB
+        bool
+        prompt "using KVDB feature"
+        default y
+
+    if FDB_USING_KVDB
+        config FDB_KV_AUTO_UPDATE
+            bool
+            prompt "Auto update KV to latest default when current KVDB version number is changed."
+            default n
+    endif
+
+    config FDB_USING_TSDB
+        bool
+        prompt "using TSDB (Time series database) feature"
+        default y
+
+    choice
+        prompt "Write minimum granularity"
+        default FDB_WRITE_GRAN_1BIT
+        config FDB_WRITE_GRAN_1BIT
+            bool "1bit   such as Nor Flash"
+
+        config FDB_WRITE_GRAN_8BITS
+            bool "8bits  such as STM32F2/F4"
+
+        config FDB_WRITE_GRAN_32BITS
+            bool "32bits such as STM32F1"
+    endchoice
+
+    config FDB_WRITE_GRAN
+        int
+        default 1 if FDB_WRITE_GRAN_1BIT
+        default 8 if FDB_WRITE_GRAN_8BITS
+        default 32 if FDB_WRITE_GRAN_32BITS
+
+    config FLASHDB_USING_SAMPLES
+        bool "Enable samples"
+        default n
+
+    config FDB_DEBUG_ENABLE
+        bool "Enable debug log output"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_FLASHDB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FLASHDB_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_FLASHDB_VER
+       string
+       default "latest"    if PKG_USING_FLASHDB_LATEST_VERSION
+
+endif
+

@@ -9,7 +9,7 @@ if PKG_USING_ROBOTS
 
     config PKG_ROBOTS_PATH
         string
-        default "/packages/system/rt_robot"
+        default "/packages/system/rt-robot"
 
     choice
         prompt "Version"

@@ -1,0 +1,36 @@
+
+# Kconfig file for package sr04
+menuconfig PKG_USING_SR04
+    bool "HC-SR04 sensor driver package."
+    default n
+
+if PKG_USING_SR04
+
+    config PKG_SR04_PATH
+        string
+        default "/packages/peripherals/sensors/sr04"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SR04_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SR04_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SR04_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_USING_SR04_SAMPLE
+        bool "Enable sr04 sample"
+        default y
+          
+    config PKG_SR04_VER
+       string
+       default "v1.0.0"    if PKG_USING_SR04_V100
+       default "latest"    if PKG_USING_SR04_LATEST_VERSION
+
+endif
+
