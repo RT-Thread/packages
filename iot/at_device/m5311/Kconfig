@@ -7,10 +7,10 @@ menuconfig AT_DEVICE_USING_M5311
 if AT_DEVICE_USING_M5311
     
     config AT_DEVICE_M5311_INIT_ASYN
-        bool "Enable sample"
-        default y
+        bool "Enable initialize by thread"
+        default n
         
-    if AT_DEVICE_M5311_SAMPLE
+    config AT_DEVICE_M5311_SAMPLE
         bool "Enable sample"
         default y
         
