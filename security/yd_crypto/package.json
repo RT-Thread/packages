@@ -1,0 +1,34 @@
+{
+  "name": "yd_crypto",
+  "description": "Some encryption algorithms are organized into a library to provide convenience for low - and medium - end 32 - bit microcontroller encryption and decryption applications.",
+  "description_zh": "一些加密算法整理成库，为中低端32位微控制器加解密应用提供便利。",  
+  "enable": "PKG_USING_YD_CRYPTO", 
+  "keywords": [
+    "yd_crypto"
+  ],
+  "category": "security",
+  "author": {
+    "name": "china-hai",
+    "email": "wangzhihai_138@163.com",
+    "github": "china-hai"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/china-hai/yd_crypto",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.01",
+      "URL": "https://yd_crypto-1.0.01.zip",
+      "filename": "yd_crypto-1.0.01.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://xxxxx.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}
