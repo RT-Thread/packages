@@ -6,4 +6,7 @@ source "$PKGS_DIR/packages/security/libsodium/Kconfig"
 source "$PKGS_DIR/packages/security/tinycrypt/Kconfig"
 
 source "$PKGS_DIR/packages/security/trusted-firmware-m/Kconfig"
+
+source "$PKGS_DIR/packages/security/yd_crypto/Kconfig"
+
 endmenu
