@@ -44,5 +44,4 @@ source "$PKGS_DIR/packages/iot/libcurl2rtt/Kconfig"
 source "$PKGS_DIR/packages/iot/capnp/Kconfig"
 source "$PKGS_DIR/packages/iot/rt_cjson_tools/Kconfig"
 source "$PKGS_DIR/packages/iot/agile_telnet/Kconfig"
-
 endmenu
