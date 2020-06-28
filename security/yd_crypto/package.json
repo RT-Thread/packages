@@ -14,21 +14,12 @@
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/china-hai/yd_crypto",
-  "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.01",
-      "URL": "https://yd_crypto-1.0.01.zip",
-      "filename": "yd_crypto-1.0.01.zip",
-      "VER_SHA": "fill in the git version SHA value"
-    },
-    {
       "version": "latest",
-      "URL": "https://xxxxx.git",
-      "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "URL": "https://github.com/china-hai/yd_crypto.git",
+      "filename": "yd_crypto.zip",
+      "VER_SHA": "master"
     }
   ]
 }
