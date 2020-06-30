@@ -45,5 +45,6 @@ source "$PKGS_DIR/packages/peripherals/pms_series/Kconfig"
 source "$PKGS_DIR/packages/peripherals/nuclei_sdk/Kconfig"
 source "$PKGS_DIR/packages/peripherals/can_ymodem/Kconfig"
 source "$PKGS_DIR/packages/peripherals/lora_radio_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/quick_led/Kconfig"
 
 endmenu
