@@ -25,7 +25,7 @@ if PKG_USING_LORA_RADIO_DRIVER
         default y
 
     if USING_LORA_CHIP
-                             
+
         config USING_LORA_CHIP_SX126X
             bool "LoRa Transceiver [SX126X]"
             default n
@@ -44,7 +44,7 @@ if PKG_USING_LORA_RADIO_DRIVER
 
                              select RT_USING_SPI
                              menu "Select LoRa Radio SPI device"
-                                 
+
                                  config BSP_USING_SPI1
                                     bool "Enable SPI1"
                                     default n
@@ -53,7 +53,7 @@ if PKG_USING_LORA_RADIO_DRIVER
                                       string "spi device name"
                                       default spi1
                                      endif
-                                 
+
                                 config BSP_USING_SPI2
                                     bool "Enable SPI2"
                                     default n
@@ -80,7 +80,7 @@ if PKG_USING_LORA_RADIO_DRIVER
                             config LORA_RADIO_GPIO_SETUP
                                 bool "Enable LoRa Radio GPIO Setup"
                                 default n
-                                
+
                                 if LORA_RADIO_GPIO_SETUP
                                     menuconfig LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
                                         bool "Select LoRa Chip GPIO by Pin Name"
@@ -135,7 +135,119 @@ if PKG_USING_LORA_RADIO_DRIVER
                                              config LORA_RADIO_RFSW2_PIN
                                                 int "RFSW2 pin number"
                                                 range 0 175
-                                                default 37    
+                                                default 37
+                                             config LORA_RADIO_BUSY_PIN
+                                                int "BUSY pin number"
+                                                range 0 175
+                                                default 18
+                                        endif
+                                    endif
+                            endif
+                        menuconfig USING_LORA_MODULE_ASR6500S
+                        bool "ASR6500S(SX1262)"
+                        default n
+
+                        if USING_LORA_MODULE_ASR6500S
+
+                            comment "LoRa Chip SX1262 (SPI module)"
+                            config USING_LORA_RADIO_SX1262
+                                bool
+                                default y
+
+                             select RT_USING_SPI
+                             menu "Select LoRa Radio SPI device"
+
+                                 config BSP_USING_SPI1
+                                    bool "Enable SPI1"
+                                    default n
+                                    if BSP_USING_SPI1
+                                      config LORA_RADIO0_SPI_BUS_NAME
+                                      string "spi device name"
+                                      default spi1
+                                     endif
+
+                                config BSP_USING_SPI2
+                                    bool "Enable SPI2"
+                                    default n
+                                    if BSP_USING_SPI2
+                                      config LORA_RADIO0_SPI_BUS_NAME
+                                      string "spi device name"
+                                      default spi2
+                                    endif
+
+                                config BSP_USING_SPI3
+                                    bool "Enable SPI3"
+                                    default n
+                                    if BSP_USING_SPI3
+                                          config LORA_RADIO0_SPI_BUS_NAME
+                                          string "spi device name"
+                                          default spi3
+                                        endif
+                            endmenu
+
+                            config LORA_RADIO_USE_TCXO
+                                bool "Enable TCXO"
+                                default y
+
+                            config LORA_RADIO_GPIO_SETUP
+                                bool "Enable LoRa Radio GPIO Setup"
+                                default n
+
+                                if LORA_RADIO_GPIO_SETUP
+                                    menuconfig LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                        bool "Select LoRa Chip GPIO by Pin Name"
+                                        default n
+
+                                        if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                            config LORA_RADIO_NSS_PIN_NAME
+                                                string "NSS Pin Name"
+                                                default "A15"
+                                            config LORA_RADIO_RESET_PIN_NAME
+                                                string "RESET Pin Name"
+                                                default "A7"
+                                            config LORA_RADIO_DIO1_PIN_NAME
+                                                string "DIO1 Pin Name"
+                                                default "B1"
+                                            config LORA_RADIO_RFSW1_PIN_NAME
+                                                string "RFSW1 Pin Name"
+                                                default "B0"
+                                            config LORA_RADIO_RFSW2_PIN_NAME
+                                                string "RFSW2 Pin Name"
+                                                default "C5"
+                                            config LORA_RADIO_BUSY_PIN_NAME
+                                                string "BUSY Pin Name"
+                                                default "B2"
+                                        endif
+
+                                    menuconfig LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                        bool "Select LoRa Chip GPIO by Pin Number"
+                                        default y
+
+                                        if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                            config LORA_RADIO_NSS_PIN
+                                                int "NSS pin number"
+                                                range 0 175
+                                                default 15
+                                            config LORA_RADIO_RESET_PIN
+                                                int "RESET pin number"
+                                                range 0 175
+                                                default 7
+                                            config LORA_RADIO_DIO1_PIN
+                                                int "DIO1 pin number"
+                                                range 0 175
+                                                default 17
+                                             config LORA_RADIO_DIO2_PIN
+                                                int "DIO2 pin number"
+                                                range 0 175
+                                                default 36
+                                             config LORA_RADIO_RFSW1_PIN
+                                                int "RFSW1 pin number"
+                                                range 0 175
+                                                default 16
+                                             config LORA_RADIO_RFSW2_PIN
+                                                int "RFSW2 pin number"
+                                                range 0 175
+                                                default 37
                                              config LORA_RADIO_BUSY_PIN
                                                 int "BUSY pin number"
                                                 range 0 175
@@ -241,7 +353,7 @@ if PKG_USING_LORA_RADIO_DRIVER
                                                     config LORA_RADIO_DIO0_PIN
                                                         int "DIO0 pin number"
                                                         range 0 175
-                                                        default 17    
+                                                        default 17
                                                     config LORA_RADIO_DIO1_PIN
                                                         int "DIO1 pin number"
                                                         range 0 175
@@ -257,7 +369,7 @@ if PKG_USING_LORA_RADIO_DRIVER
                                                      config LORA_RADIO_RFSW2_PIN
                                                         int "RFSW2 pin number"
                                                         range 0 175
-                                                        default 37   
+                                                        default 37
                                                 endif
                                         endif
                                 endif
@@ -343,11 +455,11 @@ if PKG_USING_LORA_RADIO_DRIVER
                                                     config LORA_RADIO_DIO0_PIN
                                                         int "DIO0 pin number"
                                                         range 0 127
-                                                        default 9 
+                                                        default 9
                                                     config LORA_RADIO_DIO1_PIN
                                                         int "DIO1 pin number"
                                                         range 0 127
-                                                        default 8  
+                                                        default 8
                                                 endif
                                         endif
                                 endif
@@ -392,9 +504,9 @@ if PKG_USING_LORA_RADIO_DRIVER
                 endchoice
             endif
     endmenu
- 
 
-            
+
+
     choice
         prompt "Version"
         default PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
@@ -407,7 +519,7 @@ if PKG_USING_LORA_RADIO_DRIVER
         config PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LORA_RADIO_DRIVER_VER
        string
        default "v1.0.0"    if PKG_USING_LORA_RADIO_DRIVER_V100
