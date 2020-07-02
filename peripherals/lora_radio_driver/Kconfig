@@ -211,9 +211,6 @@ if PKG_USING_LORA_RADIO_DRIVER
                                             config LORA_RADIO_RFSW1_PIN_NAME
                                                 string "RFSW1 Pin Name"
                                                 default "B0"
-                                            config LORA_RADIO_RFSW2_PIN_NAME
-                                                string "RFSW2 Pin Name"
-                                                default "C5"
                                             config LORA_RADIO_BUSY_PIN_NAME
                                                 string "BUSY Pin Name"
                                                 default "B2"
@@ -236,18 +233,10 @@ if PKG_USING_LORA_RADIO_DRIVER
                                                 int "DIO1 pin number"
                                                 range 0 175
                                                 default 17
-                                             config LORA_RADIO_DIO2_PIN
-                                                int "DIO2 pin number"
-                                                range 0 175
-                                                default 36
                                              config LORA_RADIO_RFSW1_PIN
                                                 int "RFSW1 pin number"
                                                 range 0 175
                                                 default 16
-                                             config LORA_RADIO_RFSW2_PIN
-                                                int "RFSW2 pin number"
-                                                range 0 175
-                                                default 37
                                              config LORA_RADIO_BUSY_PIN
                                                 int "BUSY pin number"
                                                 range 0 175
