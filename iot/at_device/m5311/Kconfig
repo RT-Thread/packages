@@ -24,9 +24,13 @@ if AT_DEVICE_USING_M5311
             string "AT client device name"
             default "uart2"
             
+        config M5311_SAMPLE_CLIENT_USE_STATUSLED
+            bool "Enable module netork status LED"
+            default y
+            
         config M5311_SAMPLE_RECV_BUFF_LEN
             int "The maximum length of receive line buffer"
-            default 1024
+            default 4096
             
     endif
 
