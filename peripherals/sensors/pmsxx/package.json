@@ -1,0 +1,31 @@
+{
+  "name": "pmsxx",
+  "description": "PMSxx: Plantower pms serial PM2.5 sensor driver.",
+  "description_zh": "PMSxx 攀藤pms系列颗粒物浓度传感器",
+  "enable": "PKG_USING_PMSXX", 
+  "keywords": [
+    "pms",
+    "plantower",
+    "dust",
+    "sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "luhuadong",
+    "email": "luhuadong@163.com",
+    "github": "luhuadong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/luhuadong/rtt-pmsxx",
+  "icon": "unknown",
+  "homepage": "https://github.com/luhuadong/rtt-pmsxx",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/luhuadong/rtt-pmsxx.git",
+      "filename": "pmsxx-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

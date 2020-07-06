@@ -1,0 +1,32 @@
+
+# Kconfig file for package pmsxx
+menuconfig PKG_USING_PMSXX
+    bool "PMSxx: Plantower pms serial PM2.5 sensor driver."
+    default n
+
+if PKG_USING_PMSXX
+
+    config PKG_PMSXX_PATH
+        string
+        default "/packages/peripherals/sensors/pmsxx"
+
+    config PKG_USING_PMSXX_SAMPLE
+        bool "Enable pmsxx sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_PMSXX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PMSXX_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PMSXX_VER
+       string
+       default "latest"    if PKG_USING_PMSXX_LATEST_VERSION
+
+endif
+
