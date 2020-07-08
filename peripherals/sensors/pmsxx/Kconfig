@@ -10,6 +10,10 @@ if PKG_USING_PMSXX
         string
         default "/packages/peripherals/sensors/pmsxx"
 
+    config PKG_USING_PMSXX_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
     config PKG_USING_PMSXX_SAMPLE
         bool "Enable pmsxx sample"
         default n
