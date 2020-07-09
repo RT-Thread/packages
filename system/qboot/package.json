@@ -1,0 +1,30 @@
+{
+  "name": "qboot",
+  "description": "qboot : A component used to make bootloader quickly",
+  "description_zh": "qboot ：一个用于快速制作bootloader的组件",
+  "enable": "PKG_USING_QBOOT",
+  "keywords": [
+    "qboot",
+    "bootloader",
+    "firmware",
+    "rt-thread"
+  ],
+  "category": "system",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://gitee.com/qiyongzhong0/rt-thread-qboot",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://gitee.com/qiyongzhong0/rt-thread-qboot#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/qiyongzhong0/rt-thread-qboot.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
