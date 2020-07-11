@@ -10,8 +10,40 @@ if PKG_USING_PMSXX
         string
         default "/packages/peripherals/sensors/pmsxx"
 
+    config PKG_USING_PMSXX_SEND_WAIT_TIME
+        int "The waiting time after send command (ms)"
+        default 2000
+
     config PKG_USING_PMSXX_INIT_ASYN
         bool "Enable initialize by thread"
+        default n
+
+    config PKG_USING_PMSXX_UART_DMA
+        bool "Enable serial device DMA RX"
+        default n
+
+    config PKG_USING_PMSXX_DEBUG
+        bool "Debug command and response"
+        default n
+
+    config PKG_USING_PMSXX_DEBUG_SHOW_CMD
+        bool "Show commands"
+        depends on PKG_USING_PMSXX_DEBUG
+        default n
+
+    config PKG_USING_PMSXX_DEBUG_SHOW_RESP
+        bool "Show response data"
+        depends on PKG_USING_PMSXX_DEBUG
+        default n
+
+    config PKG_USING_PMSXX_DEBUG_DUMP_RESP
+        bool "Dump raw response data"
+        depends on PKG_USING_PMSXX_DEBUG
+        default n
+
+    config PKG_USING_PMSXX_DEBUG_SHOW_RULER
+        bool "Show ruler for raw response data"
+        depends on PKG_USING_PMSXX_DEBUG && PKG_USING_PMSXX_DEBUG_DUMP_RESP
         default n
 
     config PKG_USING_PMSXX_SAMPLE
