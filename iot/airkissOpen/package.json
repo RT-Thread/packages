@@ -1,0 +1,32 @@
+{
+  "name": "airkissOpen",
+  "description": "Tencent Airkiss Protocol parse library",
+  "description_zh": "腾讯airkiss协议解析库",
+  "enable": "PKG_USING_AIRKISS_OPEN",
+  "keywords": [
+    "airkiss"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "heyuanjie87",
+    "email": "943313837@qq.com",
+    "github": "heyuanjie87"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/heyuanjie87/airkissOpen",
+  "homepage": "https://github.com/heyuanjie87/airkissOpen#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/heyuanjie87/airkissOpen/archive/v1.0.0.zip",
+      "filename": "airkissOpen-1.0.0.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/heyuanjie87/airkissOpen.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

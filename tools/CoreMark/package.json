@@ -1,0 +1,27 @@
+{
+  "name": "CoreMark",
+  "description": "EEMBC’s CoreMark® is a benchmark that measures the performance of microcontrollers (MCUs) and central processing units (CPUs) used in embedded systems.",
+  "description_zh": "EEMBC 的单片机性能测试小工具",
+  "enable": "PKG_USING_COREMARK",
+  "keywords": [
+    "coremark",
+    "benchmark"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@hust.edu.cn",
+    "github": "wuhanstudio"
+  },
+  "license": "apache",
+  "repository": "https://github.com/wuhanstudio/coremark",
+  "homepage": "https://github.com/wuhanstudio/coremark#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/coremark.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

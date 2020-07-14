@@ -1,0 +1,43 @@
+
+# Kconfig file for package SignalLed
+menuconfig PKG_USING_SIGNAL_LED
+    bool "SignalLed:a signal led package for rt-thread"
+    default n
+
+if PKG_USING_SIGNAL_LED
+
+    config PKG_SIGNAL_LED_PATH
+        string
+        default "/packages/peripherals/SignalLed"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SIGNAL_LED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SIGNAL_LED_V120
+            bool "v1.2.0"
+
+        config PKG_USING_SIGNAL_LED_V110
+            bool "v1.1.0"
+
+        config PKG_USING_SIGNAL_LED_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SIGNAL_LED_VER
+       string
+       default "v1.2.0"    if PKG_USING_SIGNAL_LED_V120
+       default "v1.1.0"    if PKG_USING_SIGNAL_LED_V110
+       default "latest"    if PKG_USING_SIGNAL_LED_LATEST_VERSION
+
+    menu "signalLed Options"
+        config SIGNAL_LED_USING_SAMPLE
+            bool
+            prompt "signal led example"
+            default n
+    endmenu       
+
+endif
+

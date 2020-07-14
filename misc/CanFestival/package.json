@@ -1,6 +1,8 @@
 {
   "name": "CanFestival",
-  "description": "an ANSI-C platform independent CANOpen stack that can be built as master or slave nodes",
+  "description": "A CanFestival port to RT-Thread operating system",
+  "description_zh": "Canfestival (开源的 CANopen 协议栈)在 RT-Thread 系统上的移植",
+  "enable": "PKG_USING_CANFESTIVAL",
   "keywords": [
     "CanFestival",
     "CANOpen"
@@ -8,7 +10,8 @@
   "category": "misc",
   "author": {
     "name": "gbcwbz",
-    "email": "unknown"
+    "email": "cwbddzxx@gmail.com",
+    "github": "gbcwbz"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/gbcwbz/canfestival-rtt",

@@ -1,0 +1,33 @@
+menuconfig PKG_USING_LIBCURL2RTT
+    bool "libcurl2rtt: The curl library ported on the RT-Thread platform"
+    select RT_USING_SAL
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    select RT_USING_POSIX_TERMIOS
+    select PKG_USING_MBEDTLS
+    default n
+
+if PKG_USING_LIBCURL2RTT
+
+    config PKG_LIBCURL2RTT_PATH
+        string
+        default "/packages/iot/libcurl2rtt"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LIBCURL2RTT_V076700
+        help
+            Select the LIBCURL2RTT version
+
+        config PKG_USING_LIBCURL2RTT_V076700
+            bool "v7.67.0"
+
+        config PKG_USING_LIBCURL2RTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LIBCURL2RTT_VER
+    	string
+    	default "v7.67.0" if PKG_USING_LIBCURL2RTT_V076700
+    	default "latest" if PKG_USING_LIBCURL2RTT_LATEST_VERSION
+endif

@@ -1,13 +1,16 @@
 {
   "name": "MultiButton",
-  "description": "MultiButton: Event-driven button lib for embedded",
+  "description": "A compact and easy to use event-driven button driver module",
+  "description_zh": "一个小巧易用的事件驱动按钮驱动模块",
+  "enable": "PKG_USING_MULTIBUTTON",
   "keywords": [
     "MultiButton"
   ],
   "category": "misc",
   "author": {
     "name": "0x1abin",
-    "email": "0x1abin@gmail.com"
+    "email": "0x1abin@gmail.com",
+    "github": "0x1abin"
   },
   "license": "MIT",
   "repository": "https://github.com/liu2guang/MultiButton",

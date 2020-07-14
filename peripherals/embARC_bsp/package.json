@@ -1,0 +1,31 @@
+{
+  "name": "embARC_bsp",
+  "description": "embARC_bsp(Synopsys ARC Processer Board Support Package Software ) package",
+  "description_zh": "Synopsys ARC 处理器 板级支持包",
+  "enable": "PKG_USING_EMBARC_BSP",
+  "keywords": [
+    "Synopsys ARC",
+    "embARC_bsp"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Watson Zeng",
+    "email": "zhiwei@synopsys.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/foss-for-synopsys-dwc-arc-processors/embarc_bsp",
+  "site": [
+    {
+      "version": "upstream",
+      "URL": "https://github.com/foss-for-synopsys-dwc-arc-processors/embarc_bsp.git",
+      "filename": "embarc_bsp-upstream.zip",
+      "VER_SHA": "upstream"
+    },
+    {
+      "version": "master",
+      "URL": "https://github.com/foss-for-synopsys-dwc-arc-processors/embarc_bsp.git",
+      "filename": "embarc_bsp-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "rt_cjson_tools",
+  "description": "Cjson tools library for RT thread",
+  "description_zh": "用于 RT-Thread 的 cJSON工具库",  
+  "enable": "PKG_USING_RT_CJSON_TOOLS", 
+  "keywords": [
+    "rt_cjson_tools"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "maplerian",
+    "email": "amqqfkhk@qq.com",
+    "gitee": "maplerian"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/maplerian/rt_cjson_tools",
+  "icon": "https://avatars2.githubusercontent.com/u/26502915?s=460&v=4",
+  "homepage": "https://github.com/maplerian/rt_cjson_tools#readme",
+  "doc": "https://github.com/maplerian/rt_cjson_tools#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/maplerian/rt_cjson_tools.git",
+      "filename": "rt_cjson_tools.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

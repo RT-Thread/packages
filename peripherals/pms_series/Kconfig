@@ -1,0 +1,81 @@
+
+# Kconfig file for package pms
+menuconfig PKG_USING_PMS_SERIES
+    bool "pms_series: Digital universal particle concentration sensor driver library"
+    default n
+
+if PKG_USING_PMS_SERIES
+
+    config PKG_PMS_SERIES_PATH
+        string
+        default "/packages/peripherals/pms_series"
+    choice
+        prompt "Model"
+        default PMS_SERIES_USING_PMS5003ST
+        help
+            Select the PMS model
+
+        config PMS_SERIES_USING_PMS1003
+            bool "PMS1003"
+        config PMS_SERIES_USING_PMS3003
+            bool "PMS3003"
+        config PMS_SERIES_USING_PMS5003
+            bool "PMS5003"
+        config PMS_SERIES_USING_PMS5003S
+            bool "PMS5003S"
+        config PMS_SERIES_USING_PMS5003ST
+            bool "PMS5003ST"
+        config PMS_SERIES_USING_PMS7003
+            bool "PMS7003"
+        config PMS_SERIES_USING_PMS7003M
+            bool "PMS7003M"
+        config PMS_SERIES_USING_PMSA003
+            bool "PMSA003"
+    endchoice
+    config PKG_USING_PMS_SERIES_SAMPLE
+        bool "Enable pms series sample"
+        default n
+        if PKG_USING_PMS_SERIES_SAMPLE
+            config PMS_SERIES_SAMPLE_USING_DMA
+                bool "Enable pms series sample dma"
+                default n
+            choice
+                prompt "Enable pms series sample uart"
+                default PMS_SERIES_SAMPLE_USING_UART2
+                help
+                    Select the PMS examples uart
+                    
+                config PMS_SERIES_SAMPLE_USING_UART1
+                    bool "UART1"
+                config PMS_SERIES_SAMPLE_USING_UART2
+                    bool "UART2"
+                config PMS_SERIES_SAMPLE_USING_UART3
+                    bool "UART3"
+                config PMS_SERIES_SAMPLE_USING_UART4
+                    bool "UART4"
+                config PMS_SERIES_SAMPLE_USING_UART5
+                    bool "UART5"
+                config PMS_SERIES_SAMPLE_USING_UART6
+                    bool "UART6"
+            endchoice
+        endif
+    choice
+        prompt "Version"
+        default PKG_USING_PMS_SERIES_V100
+        help
+            Select the package version
+
+        config PKG_USING_PMS_SERIES_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PMS_SERIES_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PMS_SERIES_VER
+       string
+       default "v1.0.0"    if PKG_USING_PMS_SERIES_V100
+       default "latest"    if PKG_USING_PMS_SERIES_LATEST_VERSION
+
+endif
+

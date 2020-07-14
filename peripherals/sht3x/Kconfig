@@ -1,0 +1,30 @@
+# Kconfig file for package sht3x
+menuconfig PKG_USING_SHT3X
+    bool "sht3x: digital humidity and temperature sensor sht3x driver library"
+    default n
+
+if PKG_USING_SHT3X
+
+    config PKG_SHT3X_PATH
+        string
+        default "/packages/peripherals/sht3x"
+            
+    choice
+        prompt "Version"
+        default PKG_USING_SHT3X_V100 
+        help
+            Select the package version
+
+        config PKG_USING_SHT3X_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SHT3X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SHT3X_VER
+       string
+       default "v1.0.0"    if PKG_USING_SHT3X_V100
+       default "latest"    if PKG_USING_SHT3X_LATEST_VERSION
+endif
+

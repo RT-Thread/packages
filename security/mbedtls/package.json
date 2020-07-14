@@ -1,13 +1,16 @@
 {
   "name": "mbedtls",
-  "description": "mbedtls:An open source, portable, easy to use, readable and flexible SSL library",
+  "description": "An open source, portable, easy to use, readable and flexible SSL library",
+  "description_zh": "一个开源的、可移植的、易于使用的、可读的且灵活的 SSL 库",
+  "enable": "PKG_USING_MBEDTLS",
   "keywords": [
     "mbedtls"
   ],
   "category": "security",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/mbedtls",
@@ -16,6 +19,16 @@
   "doc": "https://www.rt-thread.org/document/site/submodules/mbedtls/docs/introduction/",
   "readme": "An open source, portable, easy to use, readable and flexible SSL library",
   "site": [
+    {
+      "version": "v2.7.10",
+      "URL": "https://github.com/RT-Thread-packages/mbedtls/archive/2.7.10.zip",
+      "filename": "mbedtls-2.7.10.zip"
+    },
+    {
+      "version": "v2.6.1",
+      "URL": "https://github.com/RT-Thread-packages/mbedtls/archive/2.6.1.zip",
+      "filename": "mbedtls-2.6.1.zip"
+    },
     {
       "version": "v2.6.0",
       "URL": "https://github.com/RT-Thread-packages/mbedtls/archive/2.6.0.zip",

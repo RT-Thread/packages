@@ -1,0 +1,26 @@
+{
+  "name": "EV",
+  "description": "Framework for efficient development of vehicles (including drones)",
+  "description_zh": "高效开发 vehicles(包括无人机) 的框架",
+  "enable": "PKG_USING_EV",
+  "keywords": [
+    "vehicle", "car", "drone"
+  ],
+  "category": "system",
+  "author": {
+    "name": "sogwms",
+    "email": "sogwyms@gmail.com",
+    "github": "sogwms"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/sogwms/EV",
+  "homepage": "https://github.com/sogwms/EV#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sogwms/EV.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

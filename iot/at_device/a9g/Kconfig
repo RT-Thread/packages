@@ -1,0 +1,37 @@
+
+# A9G AT device configuration
+menuconfig AT_DEVICE_USING_A9G
+    bool "Ai-Think A9G"
+    default n
+
+if AT_DEVICE_USING_A9G
+
+    config AT_DEVICE_A9G_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_A9G_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_A9G_SAMPLE
+
+       config A9G_SAMPLE_POWER_PIN
+            int "Power pin"
+            default -1
+
+        config A9G_SAMPLE_STATUS_PIN
+            int "Power status pin"
+            default -1
+
+        config A9G_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart3"
+
+        config A9G_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 512
+
+    endif
+
+endif

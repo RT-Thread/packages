@@ -40,8 +40,8 @@ config PKG_USING_RGB888_PIXEL_BITS
     default 32 if PKG_USING_RGB888_PIXEL_BITS_32
     default 24 if PKG_USING_RGB888_PIXEL_BITS_24
 
-config GUIENGINE_NAME_MAX
-    int "The maximal size of name in GUI engine"
+config GUIENGINE_CMD_STRING_MAX
+    int "The maximal size of command string in GUI engine"
     default 16
 
 config GUIENGINE_USING_TTF
@@ -55,7 +55,7 @@ config GUIENGINE_TTF_UTF8
 
 config GUIENG_USING_FNT_FILE
     bool "Support fnt font"
-    default y
+    default n
 
 config GUIENGINE_USING_FONT16
     bool "Support 16 height font"
@@ -112,6 +112,16 @@ if GUIENGINE_USING_PNG
     endchoice
 endif
 
+config GUIENGINE_USING_HDC
+    bool "Support HDC image format"
+    default n
+    
+config GUIENGINE_USING_FASTLZ
+    depends on GUIENGINE_USING_HDC
+    bool "Select the PKG_USING_FASTLZ for hdc"
+    select PKG_USING_FASTLZ
+    default n
+
 config GUIENGINE_IMAGE_BMP
     bool "Support BMP image format"
     default n
@@ -123,6 +133,10 @@ config GUIENGINE_IMAGE_CONTAINER
 config GUIENGINE_USING_DEMO
     bool "Enable the example of GUI Engine"
     default n
+
+config GUIENGINE_NAME_MAX
+    int "The maximal size of name in GUI Engine"
+    default 16
 
 endif
 

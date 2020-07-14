@@ -1,0 +1,54 @@
+
+# Kconfig file for package capnp
+menuconfig PKG_USING_CAPNP
+    select RT_USING_DFS
+    select RT_USING_LIBC
+    bool "capnp: Cap'n Proto serialization/RPC system which is faster than protobuf."
+    default n
+
+if PKG_USING_CAPNP
+
+    config PKG_CAPNP_PATH
+        string
+        default "/packages/iot/capnp"
+
+    config CAPNP_USING_EXAMPLE
+        bool "capnp examples"
+        help
+            capnp examples
+        default n
+
+    if CAPNP_USING_EXAMPLE
+        config CAPNP_USING_ENCODE_DECODE_EXAMPLE
+            bool "capnp example: encode and decode in memory"
+            help
+                capnp example: encode and decode in memory
+            default n
+
+        config CAPNP_USING_ENCODE_DECODE_FILE_EXAMPLE
+            select RT_USING_DFS
+            bool "capnp example: encode to file and decode from file"
+            help
+                capnp example: encode to file and decode from file
+            default n
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_CAPNP_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CAPNP_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CAPNP_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_CAPNP_VER
+       string
+       default "v1.0.0"    if PKG_USING_CAPNP_V100
+       default "latest"    if PKG_USING_CAPNP_LATEST_VERSION
+
+endif

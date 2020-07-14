@@ -1,13 +1,16 @@
 {
   "name": "sht2x",
-  "description": "sht2x: digital humidity and temperature sensor sht2x driver library",
+  "description": "digital humidity and temperature sensor sht2x driver library",
+  "description_zh": "数字湿度和温度传感器 sht2x 驱动软件包",
+  "enable": "PKG_USING_SHT2X",
   "keywords": [
     "sht20"
   ],
   "category": "peripherals",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RT-Thread-packages/sht2x",
@@ -24,7 +27,7 @@
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/sht2x.git",
       "filename": "sht2x.zip",
-      "VER_SHA": "mater"
+      "VER_SHA": "master"
     }
   ]
 }

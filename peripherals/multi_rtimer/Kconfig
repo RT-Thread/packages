@@ -1,0 +1,39 @@
+
+# Kconfig file for package multi_rtimer
+menuconfig PKG_USING_MULTI_RTIMER
+    bool "multi_rtimer : a real-time and low power software timer module."
+    default n
+
+if PKG_USING_MULTI_RTIMER
+
+    config PKG_MULTI_RTIMER_PATH
+        string
+        default "/packages/peripherals/multi_rtimer"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MULTI_RTIMER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MULTI_RTIMER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MULTI_RTIMER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MULTI_RTIMER_VER
+       string
+       default "v1.0.0"    if PKG_USING_MULTI_RTIMER_V100
+       default "latest"    if PKG_USING_MULTI_RTIMER_LATEST_VERSION
+
+menu "multi_rtimer options"
+    config MULTI_RTIMER_USING_DEMO_EXAMPLE
+        bool
+        prompt "multi_rtimer demo example"
+        default n
+endmenu
+
+endif
+

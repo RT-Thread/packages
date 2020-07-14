@@ -1,0 +1,145 @@
+
+# Kconfig file for package ppp_device
+menuconfig PKG_USING_PPP_DEVICE
+    bool "PPP DEVICE: lwIP PPP porting for Cellular Module( 2G/3G/4G )"
+    default n
+    select RT_USING_SAL
+    select RT_USING_LWIP
+    select RT_LWIP_PPP
+    select RT_LWIP_PPPOS
+
+if PKG_USING_PPP_DEVICE
+
+    config PKG_PPP_DEVICE_PATH
+        string
+        default "/packages/iot/ppp_device"
+
+    config PPP_DEVICE_DEBUG
+        bool "Enable debug log output"
+        default n
+
+    config PPP_DEVICE_DEBUG_TX
+        depends on PPP_DEVICE_DEBUG
+        bool "Enable debug for tx data"
+        default n
+
+    config PPP_DEVICE_DEBUG_RX
+        depends on PPP_DEVICE_DEBUG
+        bool "Enable debug for rx data"
+        default n
+
+    config PPP_DEVICE_DEBUG_DROP
+        depends on PPP_DEVICE_DEBUG
+        bool "Enable debug for drop data"
+        default n
+
+    config PPP_LCP_LINK_DETECT
+        bool "Enable link status detect feature"
+        default y
+
+    if PPP_LCP_LINK_DETECT
+
+       config LCP_ECHOINTERVAL
+           int "Link status detect timeout"
+           default 10
+           range 1 20
+
+    endif
+
+    choice
+    prompt "APN access point choice"
+    default PPP_USING_PUBLIC_APN
+
+    config PPP_USING_PUBLIC_APN
+        bool "using common APN provider"
+    config PPP_USING_PRIVATE_APN
+        bool "using private APN provider"
+    endchoice
+
+    if PPP_USING_PUBLIC_APN
+    choice
+        prompt "Select Internet Service Provider"
+        default PPP_APN_CMCC
+
+        config PPP_APN_CMCC
+            bool "china mobile"
+
+        config PPP_APN_CUCC
+            bool "china unicom"
+
+        config PPP_APN_CTCC
+            bool "china telecom"
+    endchoice
+    endif
+
+    if PPP_USING_PRIVATE_APN
+    config PPP_PRIVATE_APN
+        string "the name of APN access point"
+        default "xxx"
+
+    config PPP_PRIVATE_APN_ACCOUNT
+        string "the name of apn access account"
+
+    config PPP_PRIVATE_APN_PASSWORD
+        string "the name of apn access password"
+    endif
+
+    choice
+        prompt "Select modem type"
+        default PPP_DEVICE_USING_AIR720
+
+        config PPP_DEVICE_USING_AIR720
+            bool "Luat Air720"
+
+        config PPP_DEVICE_USING_EC20
+            bool "Quectel EC20"
+
+        config PPP_DEVICE_USING_M6312
+            bool "China mobile M6312"
+
+        config PPP_DEVICE_USING_SIM800
+            bool "SIMCOM SIM800"
+    endchoice
+
+    config PPP_DEVICE_SAMPLE
+        bool "Enable sample to use ppp device"
+        default y
+
+    if PPP_DEVICE_SAMPLE
+
+    config PPP_CLIENT_NAME
+        string "ppp device uart name"
+        default "uart3"
+
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_PPP_DEVICE_V110
+        help
+            Select the package version
+
+        config PKG_USING_PPP_DEVICE_V110
+            bool "v1.1.0"
+
+        config PKG_USING_PPP_DEVICE_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PPP_DEVICE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_PPP_DEVICE_VER
+       string
+       default "v1.1.0"    if PKG_USING_PPP_DEVICE_V110
+       default "v1.0.0"    if PKG_USING_PPP_DEVICE_V100
+       default "latest"    if PKG_USING_PPP_DEVICE_LATEST_VERSION
+
+   config PKG_PPP_DEVICE_VER_NUM
+        hex
+        default 0x10100    if PKG_USING_PPP_DEVICE_V110
+        default 0x10000    if PKG_USING_PPP_DEVICE_V100
+        default 0x99999    if PKG_USING_PPP_DEVICE_LATEST_VERSION
+
+endif
+

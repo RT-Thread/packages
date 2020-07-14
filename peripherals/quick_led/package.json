@@ -1,0 +1,29 @@
+{
+  "name": "quick_led",
+  "description": "A quick and easy-to-use led driver package",
+  "description_zh": "一个快捷易用的led驱动包",
+  "enable": "PKG_USING_QLED",
+  "keywords": [
+    "led",
+    "driver",
+    "rt-thread"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://gitee.com/qiyongzhong0/rt-thread-qled",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://gitee.com/qiyongzhong0/rt-thread-qled#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/qiyongzhong0/rt-thread-qled.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

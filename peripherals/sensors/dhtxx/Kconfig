@@ -1,0 +1,36 @@
+
+# Kconfig file for package dhtxx
+menuconfig PKG_USING_DHTXX
+    bool "DHTxx one-wire digital temperature and humidity sensor."
+    default n
+
+if PKG_USING_DHTXX
+
+    config PKG_USING_DHTXX_SAMPLE
+        bool "Enable dthxx sample"
+        default n
+
+    config PKG_DHTXX_PATH
+        string
+        default "/packages/peripherals/sensors/dhtxx"
+
+    choice
+        prompt "Version"
+        default PKG_USING_DHTXX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DHTXX_V080
+            bool "v0.8.0"
+
+        config PKG_USING_DHTXX_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_DHTXX_VER
+       string
+       default "v0.8.0"    if PKG_USING_DHTXX_V080
+       default "latest"    if PKG_USING_DHTXX_LATEST_VERSION
+
+endif
+

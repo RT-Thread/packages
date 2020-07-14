@@ -1,0 +1,30 @@
+{
+  "name": "capnp",
+  "description": "Cap'n Proto serialization/RPC system which is faster than protobuf",
+  "description_zh": "Cap'n 串行化协议，比 protobuf 更高效，更轻量级。",  
+  "enable": "PKG_USING_CAPNP", 
+  "keywords": [
+    "capnp",
+    "serialization",
+    "protobuf"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/capnp",
+  "icon": "unknown",
+  "homepage": "https://github.com/wuhanstudio/capnp",
+  "doc": "https://github.com/wuhanstudio/capnp",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/capnp.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

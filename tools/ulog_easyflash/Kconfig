@@ -26,9 +26,12 @@ if PKG_USING_ULOG_EASYFLASH
 
     choice
         prompt "Version"
-        default PKG_USING_ULOG_EASYFLASH_LATEST_VERSION
+        default PKG_USING_ULOG_EASYFLASH_V00200
         help
             Select the package version
+
+        config PKG_USING_ULOG_EASYFLASH_V00200
+            bool "v0.2.0"
 
         config PKG_USING_ULOG_EASYFLASH_V00100
             bool "v0.1.0"
@@ -39,6 +42,7 @@ if PKG_USING_ULOG_EASYFLASH
 
     config PKG_ULOG_EASYFLASH_VER
        string
+       default "v0.2.0"    if PKG_USING_ULOG_EASYFLASH_V00200
        default "v0.1.0"    if PKG_USING_ULOG_EASYFLASH_V00100
        default "latest"    if PKG_USING_ULOG_EASYFLASH_LATEST_VERSION
 

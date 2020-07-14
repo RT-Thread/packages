@@ -1,0 +1,52 @@
+
+# Kconfig file for package mymqtt
+menuconfig PKG_USING_MYMQTT
+    bool "MY MQTT：Eclipse Paho MQTT C/C++ client, A new efficient and stable way to realize for rt-thread."
+    default n
+
+if PKG_USING_MYMQTT
+
+    config PKG_MYMQTT_PATH
+        string
+        default "/packages/iot/mymqtt"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MYMQTT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MYMQTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+	
+	config PKG_USING_MYMQTT_EXAMPLE
+        bool "Enable MQTT example"
+        default n
+
+    config PKG_USING_MYMQTT_TEST
+        bool "Enable MQTT test"
+        default n
+
+    config MQTT_USING_TLS
+        bool "Enable support tls protocol"
+        default n
+        select PKG_USING_MBEDTLS
+
+    config MQTT_MAX_MESSAGE_HANDLERS
+        int "Max mymqtt subscribe topic handlers"
+        default 1
+        help
+            Max mymqtt subscribe topic handlers
+
+    config MQTT_DEBUG
+        bool "Enable debug log output"
+        default y
+          
+    config PKG_MYMQTT_VER
+       string
+       default "v1.0.0"    if PKG_USING_MYMQTT_V100
+       default "latest"    if PKG_USING_MYMQTT_LATEST_VERSION
+
+endif
+

@@ -53,7 +53,82 @@ if PKG_USING_ADBD
             select PKG_USING_TINYCRYPT
             select TINY_CRYPT_MD5
             default n
+
+        menuconfig ADB_FILELIST_MOD_ENABLE
+            bool "Enable File LIST Mod"
+            select ADB_SERVICE_FILE_ENABLE
+            select PKG_USING_CJSON
+            default n
+
+        if ADB_FILELIST_MOD_ENABLE
+            config ADB_FILELIST_FULL_PATH
+                bool "Using full path"
+                default n
+
+            config ADB_FILELIST_SUP_MD5
+                bool "Enable file MD5"
+                select PKG_USING_TINYCRYPT
+                select TINY_CRYPT_MD5
+                default n
+
+            config ADB_FILELIST_SUP_DEV
+                bool "Enable Device ID"
+                default n
+
+            config ADB_FILELIST_SUP_INO
+                bool "Enable node info"
+                default n
+
+            config ADB_FILELIST_SUP_MODE
+                bool "Enable file type"
+                default y
+
+            config ADB_FILELIST_SUP_NLINK
+                bool "Enable link num"
+                default n
+
+            config ADB_FILELIST_SUP_UID
+                bool "Enable user ID"
+                default n
+
+            config ADB_FILELIST_SUP_GID
+                bool "Enable group ID"
+                default n
+
+            config ADB_FILELIST_SUP_RDEV
+                bool "Enable device type"
+                default n
+
+            config ADB_FILELIST_SUP_SIZE
+                bool "Enable file size"
+                default y
+
+            config ADB_FILELIST_SUP_BLKSIZE
+                bool "Enable block size"
+                default n
+
+            config ADB_FILELIST_SUP_BLOCKS
+                bool "Enable block num"
+                default n
+
+            config ADB_FILELIST_SUP_ATIME
+                bool "Enable access time"
+                default n
+
+            config ADB_FILELIST_SUP_MTIME
+                bool "Enable modify time"
+                default n
+
+            config ADB_FILELIST_SUP_CTIME
+                bool "Enable change time"
+                default n
+        endif
     endif
+
+    config ADB_USING_SSDP
+        bool "Enable ADB service discovery"
+        select PKG_USING_LSSDP
+        default n
 
     config PKG_ADBD_PATH
         string
@@ -65,8 +140,11 @@ if PKG_USING_ADBD
         help
             Select the package version
 
-        config PKG_USING_ADBD_V100
-            bool "v1.0.0"
+        config PKG_USING_ADBD_V111
+            bool "v1.1.1"
+
+        config PKG_USING_ADBD_V110
+            bool "v1.1.0"
 
         config PKG_USING_ADBD_LATEST_VERSION
             bool "latest"
@@ -74,7 +152,8 @@ if PKG_USING_ADBD
 
     config PKG_ADBD_VER
        string
-       default "v1.0.0"    if PKG_USING_ADBD_V100
+       default "v1.1.1"    if PKG_USING_ADBD_V111
+       default "v1.1.0"    if PKG_USING_ADBD_V110
        default "latest"    if PKG_USING_ADBD_LATEST_VERSION
 
 endif

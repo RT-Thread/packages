@@ -1,0 +1,25 @@
+{
+  "name": "mymqtt",
+  "description": "Eclipse Paho MQTT C/C++ client for Embedded platforms.A new efficient and stable way to realize for rt-thread.",
+  "description_zh": "Eclipse 开源的 MQTT C/C++ 客户端的一种高效、稳定的实现。",  
+  "enable": "PKG_USING_MYMQTT", 
+  "keywords": [
+    "mymqtt"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "hichard",
+    "email": "hichard_ren@yeah.net",
+    "github": "hichard"
+  },
+  "license": "EPL-1.0",
+  "repository": "https://github.com/hichard/mymqtt",
+  "site": [
+    {
+	  "version": "latest",
+      "URL": "https://github.com/hichard/mymqtt.git",
+      "filename": "mymqtt.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+
+# Kconfig file for package ROSSERIAL
+menuconfig PKG_USING_ROSSERIAL
+    bool "rosserial: a protocol for Robots Operating System (ROS)"
+    default n
+
+if PKG_USING_ROSSERIAL
+
+    config PKG_ROSSERIAL_PATH
+        string
+        default "/packages/peripherals/rosserial"
+
+    choice
+        prompt "Device type"
+        default ROSSERIAL_USE_SERIAL
+
+        config ROSSERIAL_USE_SERIAL
+            bool "UART"
+        config ROSSERIAL_USE_TCP
+            bool "TCP"
+    endchoice
+
+    if ROSSERIAL_USE_SERIAL
+        config ROSSERIAL_UART_NAME
+        string "serial device name"
+        default "uart2"
+    endif
+
+    if ROSSERIAL_USE_TCP
+        config ROSSERIAL_TCP_RECV_TIMEOUT
+        int "Socket receive timeout in microseconds"
+        default "200000"
+
+        config ROSSERIAL_TCP_SEND_TIMEOUT
+        int "Socket send timeout in microseconds"
+        default "200000"
+
+    endif
+
+    menu "roserial examples"
+
+        if ROSSERIAL_USE_SERIAL
+            config ROSSERIAL_USING_HELLO_WORLD_UART
+                bool "Hello World : hello world example using UART"
+                select RT_USING_SERIAL
+                help
+                    Hello World example using UART
+                default n
+
+            if PKG_ROSSERIAL_VER_NUM > 0x20000
+                config ROSSERIAL_USING_BLINK_UART
+                    bool "Blink       : blink example using UART"
+                    help
+                        Blink : blink example using UART
+                    default n
+
+                config ROSSERIAL_USING_BLINK_CLASS_UART
+                    bool "Blink Class : blink class example using UART"
+                    help
+                        Blink Class : blink class example using UART
+                    default n
+
+                config ROSSERIAL_USING_BUTTON_UART
+                    bool "Button      : button example using UART"
+                    help
+                        Button : button example using UART
+                    default n
+
+                config ROSSERIAL_USING_PUB_SUB_UART
+                    bool "PubSub      : publish and subscribe example using UART"
+                    help
+                        PubSub : publish and subscribe example using UART
+                    default n
+
+                config ROSSERIAL_USING_LOGGING_UART
+                    bool "Logging     : logging example using UART"
+                    help
+                        Logging : logging example using UART
+                    default n
+
+                config ROSSERIAL_USING_TF_UART
+                    bool "TF         : tf example using UART"
+                    help
+                        TF : tf example using UART
+                    default n
+
+                config ROSSERIAL_USING_SERVICE_SERVER_UART
+                    bool "Service server : service example using UART"
+                    help
+                        Service server : service example using UART
+                    default n
+
+            config ROSSERIAL_USING_SERVICE_CLIENT_UART
+                bool "Service client : service example using UART"
+                help
+                    Service client : service example using UART
+                default n
+            endif
+        endif
+
+        if ROSSERIAL_USE_TCP
+            config ROSSERIAL_USING_HELLO_WORLD_TCP
+                bool "Hello World  : hello world example using TCP"
+                select RT_USING_SAL
+                help
+                    Hello World example using TCP
+                default n
+        endif
+
+        comment "You may only choose one example at a time"
+
+    endmenu
+
+    choice
+        prompt "Version"
+        default PKG_USING_ROSSERIAL_MLATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_ROSSERIAL_KV100
+            bool "kinetic-v1.0.0"
+        config PKG_USING_ROSSERIAL_MV100
+            bool "melodic-v1.0.0"
+        config PKG_USING_ROSSERIAL_KLATEST_VERSION
+            bool "kinetic-latest"
+        config PKG_USING_ROSSERIAL_MLATEST_VERSION
+            bool "melodic-latest"
+    endchoice
+
+    config PKG_ROSSERIAL_VER
+       string
+       default "kinetic-v1.0.0"    if PKG_USING_ROSSERIAL_KV100
+       default "melodic-v1.0.0"    if PKG_USING_ROSSERIAL_MV100
+       default "kinetic-latest"    if PKG_USING_ROSSERIAL_KLATEST_VERSION
+       default "melodic-latest"    if PKG_USING_ROSSERIAL_MLATEST_VERSION
+
+    config PKG_ROSSERIAL_VER_NUM
+        hex
+        default 0x10000 if PKG_USING_ROSSERIAL_KV100
+        default 0x19999 if PKG_USING_ROSSERIAL_KLATEST_VERSION
+        default 0x20000 if PKG_USING_ROSSERIAL_MV100
+        default 0x29999 if PKG_USING_ROSSERIAL_MLATEST_VERSION
+
+endif

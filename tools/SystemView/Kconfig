@@ -8,7 +8,7 @@ if PKG_USING_SYSTEMVIEW
 
     config PKG_SYSTEMVIEW_PATH
         string
-        default "/packages/tools/systemview"
+        default "/packages/tools/SystemView"
 
 	config PKG_SYSVIEW_APP_NAME
 		string "App name"

@@ -1,0 +1,67 @@
+
+# Kconfig file for package libmodbus
+menuconfig PKG_USING_LIBMODBUS
+    bool "libmodbus: A Modbus library for RT-Thread"
+    default n
+    select RT_USING_LIBC
+    select RT_USING_DFS
+    select RT_USING_POSIX
+
+if PKG_USING_LIBMODBUS
+
+    config PKG_LIBMODBUS_PATH
+        string
+        default "/packages/iot/libmodbus"
+
+    config PKG_USING_LIBMODBUS_RTU
+        bool "Enable libmodbus rtu mode"
+        default n
+        select RT_USING_POSIX_TERMIOS 
+
+    if PKG_USING_LIBMODBUS_RTU
+        config HAVE_DECL_TIOCSRS485
+            int
+            default 1
+    
+        config HAVE_DECL_TIOCM_RTS
+            int
+            default 1
+
+        config PKG_USING_LIBMODBUS_RTU_EXAMPLE
+            bool "Enable rtu example"
+            default n
+    endif
+
+    config PKG_USING_LIBMODBUS_TCP
+        bool "Enable libmodbus tcp mode"
+        default n
+        select RT_USING_SAL
+        select SAL_USING_POSIX
+
+    if PKG_USING_LIBMODBUS_TCP
+        config PKG_USING_LIBMODBUS_TCP_EXAMPLE
+            bool "Enable tcp example"
+            default n
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_LIBMODBUS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LIBMODBUS_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LIBMODBUS_VER
+       string
+       default "v1.0.0"    if PKG_USING_LIBMODBUS_V100
+       default "latest"    if PKG_USING_LIBMODBUS_LATEST_VERSION
+
+    config PKG_LIBMODBUS_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_LIBMODBUS_LATEST_VERSION
+        default 0x10000    if PKG_USING_LIBMODBUS_V100
+endif
+

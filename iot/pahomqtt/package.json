@@ -1,13 +1,16 @@
 {
   "name": "pahomqtt",
   "description": "Eclipse Paho MQTT C/C++ client for Embedded platforms",
+  "description_zh": "Eclipse 开源的 MQTT C/C++ 客户端",
+  "enable": "PKG_USING_PAHOMQTT",
   "keywords": [
     "pahomqtt"
   ],
   "category": "iot",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "EPL-1.0",
   "repository": "https://github.com/RT-Thread-packages/paho-mqtt",
@@ -16,6 +19,12 @@
   "doc": "https://www.rt-thread.org/document/site/submodules/paho-mqtt/docs/introduction/",
   "readme": "A mqtt package for rt-thread",
   "site": [
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/RT-Thread-packages/paho-mqtt/archive/1.1.0.zip",
+      "filename": "paho-mqtt-1.1.0.zip",
+      "VER_SHA": "NULL"
+    },
     {
       "version": "v1.0.0",
       "URL": "https://github.com/RT-Thread-packages/paho-mqtt/archive/1.0.0.zip",

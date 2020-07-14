@@ -1,0 +1,32 @@
+
+# Kconfig file for package lunar_calendar
+menuconfig PKG_USING_LUNAR_CALENDAR
+    bool "lunar_calendar: A tool to convert a Gregorian calendar date into a lunar calendar."
+    default n
+
+if PKG_USING_LUNAR_CALENDAR
+
+    config PKG_LUNAR_CALENDAR_PATH
+        string
+        default "/packages/tools/lunar_calendar"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LUNAR_CALENDAR_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LUNAR_CALENDAR_V010
+            bool "v0.1.0"
+
+        config PKG_USING_LUNAR_CALENDAR_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LUNAR_CALENDAR_VER
+       string
+       default "v0.1.0"    if PKG_USING_LUNAR_CALENDAR_V010
+       default "latest"    if PKG_USING_LUNAR_CALENDAR_LATEST_VERSION
+
+endif
+

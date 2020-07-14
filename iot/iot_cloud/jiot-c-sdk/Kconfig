@@ -1,0 +1,61 @@
+
+# Kconfig file for package jiot-c-sdk
+menuconfig PKG_USING_JIOT-C-SDK
+    bool "jiot-c-sdk: JIGUANG IoT Cloud Client SDK for RT_Thread"
+	select RT_USING_SAL
+	select SAL_USING_POSIX
+    default n
+
+if PKG_USING_JIOT-C-SDK
+
+    config PKG_JIOT-C-SDK_PATH
+        string
+        default "/packages/iot/iot_cloud/jiot-c-sdk"
+
+
+	config JIOT_SSL
+		bool "Enable TLS/DTLS"
+		default n
+        select PKG_USING_MBEDTLS
+		
+	config PKG_USING_JIOT_EXAMPLES
+		bool "Using JIoT Examples"
+		default y
+	
+	config PKG_USING_JIOT_PRODUCT_KEY
+		string "Config Product Key"
+		default ""
+		
+	config PKG_USING_JIOT_DEVICE_NAME
+		string "Config Device Name"
+		default ""
+		
+	config PKG_USING_JIOT_DEVICE_SECRET
+		string "Config Device Secret"
+		default ""
+		
+	config SDK_PLATFORM
+		string
+		default "rt-thread-package"
+
+    choice
+        prompt "Version"
+        default PKG_USING_JIOT-C-SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_JIOT-C-SDK_V100
+            bool "v1.0.0"
+
+        config PKG_USING_JIOT-C-SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
+	
+    config PKG_JIOT-C-SDK_VER
+       string
+       default "v1.0.0"    if PKG_USING_JIOT-C-SDK_V100
+       default "latest"    if PKG_USING_JIOT-C-SDK_LATEST_VERSION
+
+endif
+

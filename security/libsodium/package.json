@@ -1,6 +1,8 @@
 {
   "name": "libsodium",
-  "description": "libsodium: A modern and easy-to-use crypto library.",
+  "description": "A modern and easy-to-use crypto library",
+  "description_zh": "一个现代的、易用的加密库",
+  "enable": "PKG_USING_libsodium",
   "keywords": [
     "libsodium",
     "crypto"
@@ -8,7 +10,8 @@
   "category": "security",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "MIT",
   "repository": "https://github.com/RT-Thread-packages/libsodium",

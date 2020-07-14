@@ -1,0 +1,27 @@
+{
+  "name": "rplidar",
+  "description": "RPLIDAR: a low cost LIDAR sensor suitable for indoor robotic SLAM application.",
+  "description_zh": "RPLIDAR: 适用于机器人室内建图的低成本激光雷达",
+  "enable": "PKG_USING_RPLIDAR",
+  "keywords": [
+    "rplidar",
+    "slam"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@hust.edu.cn",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/rplidar",
+  "homepage": "https://github.com/wuhanstudio/rplidar#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/rplidar.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

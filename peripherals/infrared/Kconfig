@@ -1,0 +1,86 @@
+
+# Kconfig file for package infrared
+menuconfig PKG_USING_INFRARED
+    bool "infrared : infrared is base on rt-thread pin,hwtimer and pwm."
+    default n
+
+if PKG_USING_INFRARED
+
+    config PKG_INFRARED_PATH
+        string
+        default "/packages/peripherals/infrared"
+
+    menu "Select infrared decoder"
+        config INFRARED_NEC_DECODER
+            bool "enable nec decoder"
+            default n
+        if INFRARED_NEC_DECODER
+            config NEC_DEVIATION
+                int "nec admissible deviation"
+                default 100
+        endif 
+    endmenu
+
+config PKG_USING_DRV_INFRARED
+        bool "Use the infrared driver provided by the software package "
+        default y
+        if PKG_USING_DRV_INFRARED
+        config INFRARED_SEND
+            bool "Enable infrared send"
+            default n
+            if INFRARED_SEND
+                    config INFRARED_SEND_PWM
+                    string "infrared pwm dev name"
+                    default "pwm4"
+
+                config INFRARED_PWM_DEV_CHANNEL
+                    int "infrared pwm channel"
+                    default 3
+
+                config INFRARED_SEND_HWTIMER
+                    string "infrared send hwtimer dev name"
+                    default "timer15"
+
+                config INFRARED_MAX_SEND_SIZE
+                    int "infrared max send size"
+                    default 1000
+            endif
+
+        config INFRARED_RECEIVE
+            bool "Enable infrared receive"
+            default n
+            if INFRARED_RECEIVE
+                config INFRARED_RECEIVE_PIN
+                    int "infrared receive pin number"
+                    default 17
+        
+                config INFRARED_RECEIVE_HWTIMER
+                    string "infrared receive hwtimer dev name"
+                    default "timer16"
+            endif
+        endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_INFRARED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_INFRARED_V010
+            bool "v0.1.0"
+
+        config PKG_USING_INFRARED_V011
+            bool "v0.1.1"
+
+        config PKG_USING_INFRARED_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_INFRARED_VER
+       string
+       default "v0.1.0"    if PKG_USING_INFRARED_V010
+       default "v0.1.1"    if PKG_USING_INFRARED_V011
+       default "latest"    if PKG_USING_INFRARED_LATEST_VERSION
+
+endif
+

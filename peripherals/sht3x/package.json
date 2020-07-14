@@ -1,0 +1,33 @@
+{
+  "name": "sht3x",
+  "description": "digital humidity and temperature sensor sht3x driver library",
+  "description_zh": "数字湿度和温度传感器 sht3x 驱动软件包",
+  "enable":"PKG_USING_SHT3X",
+  "keywords": [
+    "sht3x"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "hao.dong",
+    "email": "hao.dong.nanjing@outlook.com",
+    "github": "donghao2nanjing"
+  },
+  "license": "LGPLv2.1",
+  "repository": "https://github.com/donghao2nanjing/sht3x",
+  "icon": "unknown",
+  "homepage": "https://github.com/donghao2nanjing/sht3x#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/donghao2nanjing/sht3x.git",
+      "filename": "sht3x.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version":"v1.0.0",
+      "URL": "https://github.com/donghao2nanjing/sht3x.git",
+      "filename": "sht3x-1.0.0.zip",
+      "VER_SHA": "1c9bd0f6dc800105a3762076cf53b726d58a40b0"
+    }
+  ]
+}

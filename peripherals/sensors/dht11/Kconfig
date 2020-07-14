@@ -1,0 +1,32 @@
+
+# Kconfig file for package dht11
+menuconfig PKG_USING_DHT11
+    bool "dht11: Digital temperature and humidity sensor(Single bus)"
+    default n
+
+if PKG_USING_DHT11
+
+    config PKG_USING_DHT11_SAMPLE
+        bool "Enable dth11 sample"
+        default y
+
+    config PKG_DHT11_PATH
+        string
+        default "/packages/peripherals/sensors/dht11"
+
+    choice
+        prompt "Version"
+        default PKG_USING_DHT11_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DHT11_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_DHT11_VER
+       string
+       default "v1.0.0"    if PKG_USING_DHT11_V100
+       default "latest"    if PKG_USING_DHT11_LATEST_VERSION
+
+endif

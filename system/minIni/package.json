@@ -1,6 +1,8 @@
 {
   "name": "minIni",
-  "description": "minIni: a portable and configurable library for reading and writing '.INI' files.",
+  "description": "minIni for RT-Thread",
+  "description_zh": "minIni 在 RT-Thread 上移植的软件包",
+  "enable": "PKG_USING_MININI",
   "keywords": [
     "minIni",
     "ini"
@@ -8,7 +10,8 @@
   "category": "system",
   "author": {
     "name": "hichard",
-    "email": "thiadmer.riemersma@gmail.com"
+    "email": "thiadmer.riemersma@gmail.com",
+    "github": "hichard"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/hichard/minIni",
@@ -25,7 +28,7 @@
       "version": "latest",
       "URL": "https://github.com/hichard/minIni.git",
       "filename": "minIni.zip",
-      "VER_SHA": "mater"
+      "VER_SHA": "master"
     }
   ]
 }

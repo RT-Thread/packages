@@ -1,0 +1,33 @@
+{
+  "name": "trusted-firmware-m",
+  "description": "Trusted firmware for M class",
+  "description_zh": "Cortex M系列架构安全固件",
+  "enable": "PKG_USING_TFM",
+  "keywords": [
+    "trusted-firmware-m"
+  ],
+  "category": "security",
+  "author": {
+    "name": "Trusted Firmware-M",
+    "email": "tf-m@lists.trustedfirmware.org",
+    "github": "RT-Thread-packages"
+  },
+  "license": " BSD-3-Clause",
+  "repository": "https://github.com/RT-Thread-packages/trusted-firmware-m",
+  "icon": "https://www.trustedfirmware.org/assets/TrustedFirmware-Logo_icon-23d65367b85d00eae99cdd3377394bf463027aabb9526ce499c547a32b14b933.png",
+  "homepage": "https://ci.trustedfirmware.org/job/tf-m-build-test-nightly/lastSuccessfulBuild/artifact/build-docs/tf-m_documents/install/doc/user_guide/html/index.html#",
+  "readme": "Trusted firmware for M class",
+  "site": [
+    {
+      "version": "nxp-lpc55-v1.0-beta",
+      "URL": "https://github.com/RT-Thread-packages/trusted-firmware-m/archive/v1.0-beta.zip",
+      "filename": "trusted-firmware-m-nxp-lpc55-v1.0-beta.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/trusted-firmware-m.git",
+      "filename": "trusted-firmware-m.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

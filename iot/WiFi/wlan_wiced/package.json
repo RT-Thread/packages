@@ -1,6 +1,8 @@
 {
   "name": "wlan_wiced",
-  "description": "wlan driver from wiced",
+  "description": "wlan driver from WICED",
+  "description_zh": "WICED 的 wlan 驱动",
+  "enable": "PKG_USING_WLAN_WICED",
   "keywords": [
     "bcm43362",
     "bcm43438"
@@ -8,7 +10,8 @@
   "category": "iot/WiFi",
   "author": {
     "name": "RealThread",
-    "email": "package_team@rt-thread.com"
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "GPL-2.0",
   "repository": "https://github.com/RT-Thread-packages/wlan-wiced",
@@ -18,9 +21,15 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/RT-Thread-packages/wlan-wiced.git",
-      "filename": "wlan_wiced.zip",
+      "URL": "https://github.com/RT-Thread-packages/wlan-wiced/archive/1.0.0.zip",
+      "filename": "wlan-wiced-1.0.0.zip",
       "VER_SHA": "e10e3952ce0131eb50589d3a93615410a58c6aed"
+    },
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/RT-Thread-packages/wlan-wiced/archive/1.0.1.zip",
+      "filename": "wlan-wiced-1.0.1.zip",
+      "VER_SHA": "NULL"
     },
     {
       "version": "latest",

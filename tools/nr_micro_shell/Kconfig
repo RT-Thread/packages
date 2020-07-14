@@ -1,0 +1,93 @@
+
+# Kconfig file for package nr_micro_shell
+menuconfig PKG_USING_NR_MICRO_SHELL
+    bool "nr_micro_shell:Lightweight command line interaction tool."
+    default n
+
+if PKG_USING_NR_MICRO_SHELL
+    config PKG_NR_MICRO_SHELL_PATH
+        string
+        default "/packages/tools/nr_micro_shell"
+    
+    config RT_NR_SHELL_LINE_SIZE
+        int "The command line size."
+        default 100
+    
+    config RT_NR_SHELL_USER_NAME
+        string "The user name."
+        default "root@nr_shell:"
+    
+    config RT_NR_SHELL_USER_NAME_MAX_LENGTH
+        int "The maxial size of user name."
+        default 15
+    
+    config RT_NR_SHELL_CMD_NAME_MAX_LENGTH
+        int "The maxial size of command name."
+        default 10
+    
+    config RT_NR_SHELL_CMD_PARAS_MAX_NUM
+        int "The max command arg number."
+        default 10
+
+    config RT_NR_SHELL_CMD_HISTORY_BUF_LENGTH
+        int "The command history buffer size."
+        default 253
+    
+    config RT_NR_SHELL_MAX_CMD_HISTORY_NUM
+        int "The max command history line number."
+        default 3
+    
+    config RT_NR_SHELL_STACKSIZE
+        int "The stacksize of nr_micro_shell thread."
+        default 512
+
+    config RT_NR_SHELL_THREAD_PRIORITY
+        int "The priopity of nr_micro_shell thread."
+        default 10
+
+    choice
+        prompt "End of line"
+        default NR_SHELL_END_CR
+        help
+            Select the end of line
+
+        config NR_SHELL_END_LF
+            bool "LF \\n"
+
+        config NR_SHELL_END_CR
+            bool "CR \\r"
+
+        config NR_SHELL_END_CRLF
+            bool "CRLF \\r\\n"
+    endchoice
+
+    config RT_NR_SHELL_END_OF_LINE
+        int
+        default 0    if NR_SHELL_END_LF
+        default 1    if NR_SHELL_END_CR
+        default 2    if NR_SHELL_END_CRLF
+
+    config RT_NR_SHELL_SHOW_LOG
+        bool "Show logo or not."
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_NR_MICRO_SHELL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NR_MICRO_SHELL_V100
+            bool "v1.0.0"
+
+        config PKG_USING_NR_MICRO_SHELL_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_NR_MICRO_SHELL_VER
+        string
+        default "v1.0.0"    if PKG_USING_NR_MICRO_SHELL_V100
+        default "latest"    if PKG_USING_NR_MICRO_SHELL_LATEST_VERSION
+
+endif
+

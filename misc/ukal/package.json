@@ -1,0 +1,27 @@
+{
+  "name": "ukal",
+  "description": "Kalman filter based on ulapack",
+  "description_zh": "卡尔曼滤波算法",
+  "enable": "PKG_USING_UKAL",
+  "keywords": [
+    "Linear Algebra",
+    "lapack"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@hust.edu.cn",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/ukal",
+  "homepage": "https://github.com/wuhanstudio/ukal#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/ukal.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

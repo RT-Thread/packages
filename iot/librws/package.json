@@ -1,0 +1,32 @@
+{
+  "name": "librws",
+  "description": "Tiny, cross platform websocket client C library.",
+  "description_zh": "小型、跨平台websocket客户端C库。",
+  "enable": "PKG_USING_LIBRWS",
+  "keywords": [
+    "librws"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/librws",
+  "homepage": "https://github.com/RT-Thread-packages/librws#readme",
+  "site": [
+    {
+      "version": "v1.2.4",
+      "URL": "https://github.com/RT-Thread-packages/librws/archive/1.2.4.92.zip",
+      "filename": "librws-1.2.4.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/librws.git",
+      "filename": "librws.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

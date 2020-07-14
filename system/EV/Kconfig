@@ -1,0 +1,28 @@
+
+# Kconfig file for package EV
+
+menuconfig PKG_USING_EV
+    bool "EV: Framework for efficient development of vehicles (including drones)"
+    default n
+
+if PKG_USING_EV
+
+    config PKG_EV_PATH
+        string
+        default "/packages/system/EV"
+
+    choice
+        prompt "Version"
+        default PKG_USING_EV_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_EV_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_EV_VER
+       string
+       default "latest"    if PKG_USING_EV_LATEST_VERSION
+
+endif

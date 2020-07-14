@@ -1,0 +1,34 @@
+{
+  "name": "bs8116a",
+  "description": "Touch key of HOLTEK BS8116A-3.",
+  "description_zh": "合泰的bs8116a-3的触摸按键芯片",  
+  "enable": "PKG_USING_BS8116A", 
+  "keywords": [
+    "bs8116a"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "illusionlee",
+    "email": "1115451437@qq.com",
+    "github": "illusionlee"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/illusionlee/bs8116a.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/illusionlee/bs8116a/blob/master/README.md",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/illusionlee/bs8116a.git",
+      "filename": "v0.1.0.zip",
+      "VER_SHA": "4451d0b68ca1a6a37e956a25fb289c2be0509b11"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/illusionlee/bs8116a.git",
+      "filename": "bs8116a.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

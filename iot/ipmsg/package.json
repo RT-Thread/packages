@@ -1,0 +1,32 @@
+{
+  "name": "ipmsg",
+  "description": "A LAN instant messaging implement in RT-Thread",
+  "description_zh": "在 RT-Thread 上实现的 飞鸽传书",
+  "enable": "PKG_USING_IPMSG",
+  "keywords": [
+    "ipmsg"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "heyuanjie87",
+    "email": "943313837@qq.com",
+    "github": "heyuanjie87"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/heyuanjie87/ipmsg",
+  "homepage": "https://github.com/heyuanjie87/ipmsg#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/heyuanjie87/ipmsg/archive/v1.0.0.zip",
+      "filename": "ipmsg-1.0.0.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/heyuanjie87/ipmsg.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

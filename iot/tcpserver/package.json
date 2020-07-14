@@ -1,0 +1,36 @@
+{
+  "name": "tcpserver",
+  "description": "A TCP server that supports multiple clients",
+  "description_zh": "一个支持多客户端的 TCP 服务器",
+  "enable": "PKG_USING_TCPSERVER",
+  "keywords": [
+    "tcpserver",
+    "server",
+    "TCP"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "flybreak",
+    "email": "guozhanxin66@gmail.com",
+    "github": "Guozhanxin"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Guozhanxin/tcpserver.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/Guozhanxin/tcpserver",
+  "doc": "https://github.com/Guozhanxin/tcpserver/blob/master/README.md",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/Guozhanxin/tcpserver.git",
+      "filename": "tcpserver-0.0.1.zip",
+      "VER_SHA": "e512ba09666d3dcb069912b20feb6cf1a4a5be8c"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Guozhanxin/tcpserver.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

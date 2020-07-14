@@ -1,13 +1,17 @@
 {
   "name": "hts221",
-  "description": "HTS221 sensor driver package, support: temperature, humidity.",
+  "description": "HTS221 sensor driver package, support: temperature, humidity",
+  "description_zh": "HTS221 传感器驱动包，支持：温度，湿度",
+  "enable": "PKG_USING_HTS221",
   "keywords": [
+    "sensor",
     "hts221"
   ],
   "category": "peripherals/sensors",
   "author": {
     "name": "flybreak",
-    "email": "guozhanxin@rt-thread.com"
+    "email": "guozhanxin66@gmail.com",
+    "github": "Guozhanxin"
   },
   "license": "other",
   "repository": "https://github.com/RT-Thread-packages/hts221",

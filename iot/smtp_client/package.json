@@ -1,0 +1,37 @@
+{
+    "name": "smtp_client",
+    "description": "smtp client package for rt-thread",
+    "description_zh": "SMTP邮件发送软件包，简单易用，支持普通25端口及465/587加密端口",
+    "enable": "PKG_USING_SMTP_CLIENT",
+    "keywords": [
+        "smtp",
+        "mail"
+    ],
+    "category": "iot",
+    "author": {
+        "name": "WKJay",
+        "email": "1931048074@qq.com",
+        "github": "WKJay"
+    },
+    "license": "LGPL-2.1",
+    "repository": "https://github.com/WKJay/SMTP_CLIENT",
+    "homepage": "https://github.com/WKJay/SMTP_CLIENT#readme",
+    "site": [
+        {
+            "version": "v1.0.2",
+            "URL": "https://github.com/WKJay/SMTP_CLIENT/archive/v1.0.2.zip",
+            "filename": "smtp_client-1.0.2.zip"
+        },
+        {
+            "version": "v1.0.0",
+            "URL": "https://github.com/WKJay/SMTP_CLIENT/archive/v1.0.0.zip",
+            "filename": "smtp_client-1.0.0.zip"
+        },
+        {
+            "version": "latest",
+            "URL": "https://github.com/WKJay/SMTP_CLIENT.git",
+            "filename": "smtp_client.zip",
+            "VER_SHA": "master"
+        }
+    ]
+}

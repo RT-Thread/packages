@@ -1,0 +1,53 @@
+
+# Kconfig file for package littled
+menuconfig PKG_USING_LITTLED
+    bool "littled: Little LED Daemon for LED driver"
+    default n
+
+if PKG_USING_LITTLED
+
+    config PKG_LITTLED_PATH
+        string
+        default "/packages/peripherals/littled"
+
+    config PKG_USING_LITTLED_PERIOD
+        int "default pwm period (ms)"
+        default 1000
+
+    config PKG_USING_LITTLED_PULSE
+        int "default pwm pulse (ms)"
+        default 500
+
+    config PKG_USING_LITTLED_BELL_TIME
+        int "default bell time (ms)"
+        default 50000
+
+    config PKG_USING_LITTLED_BEEP_COUNT
+        int "default beep count"
+        range 1 100
+        default 3
+
+    config PKG_USING_LITTLED_SAMPLE
+        bool "Enable littled sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_LITTLED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LITTLED_V020
+            bool "v0.2.0"
+
+        config PKG_USING_LITTLED_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LITTLED_VER
+       string
+       default "v0.2.0"    if PKG_USING_LITTLED_V020
+       default "latest"    if PKG_USING_LITTLED_LATEST_VERSION
+
+endif
+

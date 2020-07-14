@@ -1,0 +1,72 @@
+
+# Kconfig file for package rplidar
+menuconfig PKG_USING_RPLIDAR
+    select RT_USING_LIBC
+    bool "RPLIDAR: a low cost LIDAR sensor suitable for indoor robotic SLAM application."
+    default n
+
+if PKG_USING_RPLIDAR
+
+    config PKG_RPLIDAR_PATH
+        string
+        default "/packages/peripherals/rplidar"
+
+    config RPLIDAR_UART_NAME
+        string "uart device name"
+        default "uart3"
+
+    config RPLIDAR_USING_STOP_EXAMPLE
+        bool "RPLIDAR stop example: stop lidar scanning"
+        help
+            RPLIDAR stop example: stop lidar scanning
+        default n
+
+    config RPLIDAR_USING_RESET_EXAMPLE
+        bool "RPLIDAR reset example: reset lidar"
+        help
+            RPLIDAR reset example: reset lidar
+        default n
+
+    config RPLIDAR_USING_HEALTH_EXAMPLE
+        bool "RPLIDAR health example: get device health info"
+        help
+            RPLIDAR health example: get device health info
+        default n
+
+    config RPLIDAR_USING_DEVICE_INFO_EXAMPLE
+        bool "RPLIDAR device info example: get device info"
+        help
+            RPLIDAR device info example: get device info
+        default n
+
+    config RPLIDAR_USING_SCAN_EXAMPLE
+        bool "RPLIDAR scan example: start lidar scanning"
+        help
+           RPLIDAR scan example: start lidar scanning
+        default n
+
+    config RPLIDAR_USING_SCAN_RECV_EXAMPLE
+        bool "RPLIDAR scan and receive example: start scanning and then receive data"
+        help
+          RPLIDAR scan and receive example: start scanning and then receive data
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_RPLIDAR_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RPLIDAR_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RPLIDAR_VER
+       string
+       default "latest"    if PKG_USING_RPLIDAR_LATEST_VERSION
+
+    config PKG_RPLIDAR_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_RPLIDAR_LATEST_VERSION
+
+endif
