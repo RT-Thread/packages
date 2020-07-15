@@ -47,42 +47,20 @@ if PKG_USING_LORAWAN_DRIVER
             bool ABP
     endchoice
 
-
-	
 	choice
 	
-	prompt "select region from"
-	default REGION_FROM_LORAWAN
+	prompt "Select the RF frequency"
+	default REGION_CN470
 	help
-		Select the Region From
-	config RADIO_REGION
-		bool REGION_FROM_RADIO_DRIVER
+		Select the RF frequency
 
-	config LORAWAN_REGION
-		bool REGION_FROM_LORAWAN_DRIVER
-		
-	endchoice
+	config REGION_EU433
+		bool "LORAMAC_REGION_EU433"
 
-	if LORAWAN_REGION
+	config REGION_CN470
+		bool "LORAMAC_REGION_CN470"
 	
-		choice
-		
-		prompt "Select the RF frequency"
-		default REGION_CN470
-		help
-			Select the RF frequency
-
-		config REGION_EU433
-			bool "LORAMAC_REGION_EU433"
-
-		config REGION_CN470
-			bool "LORAMAC_REGION_CN470"
-
-		config REGION_EU868
-			bool "LORAMAC_Region EU868"
-		
-		endchoice
-	endif
+	endchoice
 			
 	choice
 	prompt "Version"
@@ -90,16 +68,12 @@ if PKG_USING_LORAWAN_DRIVER
 	help
 		Select the package version
 
-	config PKG_USING_LORAWAN_DRIVER_V100
-		bool "v1.0.0"
-
 	config PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
 		bool "latest"
     endchoice
           
     config PKG_LORAWAN_DRIVER_VER
        string
-       default "v1.0.0"    if PKG_USING_LORAWAN_DRIVER_V100
        default "latest"    if PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
 
 endif
