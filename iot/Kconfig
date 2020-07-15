@@ -1,6 +1,6 @@
 menu "IoT - internet of things"
 
-source "$PKGS_DIR/packages/iot/rtt_lorawan_driver/Kconfig"
+source "$PKGS_DIR/packages/iot/lorawan_driver/Kconfig"
 source "$PKGS_DIR/packages/iot/pahomqtt/Kconfig"
 source "$PKGS_DIR/packages/iot/umqtt/Kconfig"
 source "$PKGS_DIR/packages/iot/webclient/Kconfig"
