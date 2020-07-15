@@ -9,45 +9,7 @@ if PKG_USING_LORAWAN_DRIVER
     config PKG_LORAWAN_DRIVER_PATH
         string
         default "/packages/iot/lorawan_driver"
-
-	choice
-        prompt "Work Mode"
-        default ClassA
-        help
-            Select the Work Mode
-        config BSP_USING_LoRaWAN_ClassA
-            bool ClassA
-        config BSP_USING_LoRaWAN_ClassC
-            bool ClassC
-    endchoice
-	choice
-        prompt "Join Mode"
-        default ABP
-        help
-            Select the Join Mode
-        config BSP_USING_LoRaWAN_OTAA
-            bool OTAA
-
-        config BSP_USING_LoRaWAN_ABP
-            bool ABP
-    endchoice
-	choice
-	prompt "Select the RF frequency"
-	default REGION_CN470
-	help
-		Select the RF frequency
-
-	config REGION_EU433
-		bool "LORAMAC_REGION_EU433"
-
-	config REGION_CN470
-		bool "LORAMAC_REGION_CN470"
-
-	config REGION_EU868
-		bool "LORAMAC_Region EU868"
-
-	endchoice
-
+	
 	config LORAWAN_DEFAULT_DATARATE
 	int "LORAWAN_DEFAULT_DATARATE"
     range 1 5
@@ -59,20 +21,80 @@ if PKG_USING_LORAWAN_DRIVER
     default 3
 
 	config BSP_USING_LoRaWAN_Example
-    bool "Enable Example"
-    default y
-	
-    choice
-        prompt "Version"
-        default PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
+	bool "Enable Example"
+	default y
+
+	choice
+        prompt "Work Mode"
+        default ClassA
         help
-            Select the package version
+            Select the Work Mode
+        config BSP_USING_LoRaWAN_ClassA
+            bool ClassA
+        config BSP_USING_LoRaWAN_ClassC
+            bool ClassC
+    endchoice
+	
+	choice
+        prompt "Join Mode"
+        default ABP
+        help
+            Select the Join Mode
+        config BSP_USING_LoRaWAN_OTAA
+            bool OTAA
 
-        config PKG_USING_LORAWAN_DRIVER_V100
-            bool "v1.0.0"
+        config BSP_USING_LoRaWAN_ABP
+            bool ABP
+    endchoice
 
-        config PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
-            bool "latest"
+
+	
+	choice
+	
+	prompt "select region from"
+	default REGION_FROM_LORAWAN
+	help
+		Select the Region From
+	config RADIO_REGION
+		bool REGION_FROM_RADIO_DRIVER
+
+	config LORAWAN_REGION
+		bool REGION_FROM_LORAWAN_DRIVER
+		
+	endchoice
+
+	if LORAWAN_REGION
+	
+		choice
+		
+		prompt "Select the RF frequency"
+		default REGION_CN470
+		help
+			Select the RF frequency
+
+		config REGION_EU433
+			bool "LORAMAC_REGION_EU433"
+
+		config REGION_CN470
+			bool "LORAMAC_REGION_CN470"
+
+		config REGION_EU868
+			bool "LORAMAC_Region EU868"
+		
+		endchoice
+	endif
+			
+	choice
+	prompt "Version"
+	default PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
+	help
+		Select the package version
+
+	config PKG_USING_LORAWAN_DRIVER_V100
+		bool "v1.0.0"
+
+	config PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
+		bool "latest"
     endchoice
           
     config PKG_LORAWAN_DRIVER_VER
