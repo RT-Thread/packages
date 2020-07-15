@@ -10,17 +10,17 @@ if PKG_USING_LORAWAN_DRIVER
         string
         default "/packages/iot/lorawan_driver"
 	
-	config LORAWAN_DEFAULT_DATARATE
-	int "LORAWAN_DEFAULT_DATARATE"
+	config LORAWAN_DRIVER_DEFAULT_DATARATE
+	int "LORAWAN_DRIVER_DEFAULT_DATARATE"
     range 1 5
     default 5
 
-	config LORAWAN_APP_PORT
-	int "LORAWAN_APP_PORT"
+	config LORAWAN_DRIVER_APP_PORT
+	int "LORAWAN_DRIVER_APP_PORT"
     range 0 255
     default 3
 
-	config BSP_USING_LoRaWAN_Example
+	config LORAWAN_DRIVER_USING_Example
 	bool "Enable Example"
 	default y
 
@@ -29,9 +29,9 @@ if PKG_USING_LORAWAN_DRIVER
         default ClassA
         help
             Select the Work Mode
-        config BSP_USING_LoRaWAN_ClassA
+        config LORAWAN_DRIVER_ClassA
             bool ClassA
-        config BSP_USING_LoRaWAN_ClassC
+        config LORAWAN_DRIVER_ClassC
             bool ClassC
     endchoice
 	
@@ -40,10 +40,10 @@ if PKG_USING_LORAWAN_DRIVER
         default ABP
         help
             Select the Join Mode
-        config BSP_USING_LoRaWAN_OTAA
+        config LORAWAN_DRIVER_OTAA
             bool OTAA
 
-        config BSP_USING_LoRaWAN_ABP
+        config LORAWAN_DRIVER_ABP
             bool ABP
     endchoice
 
@@ -54,10 +54,10 @@ if PKG_USING_LORAWAN_DRIVER
 	help
 		Select the RF frequency
 
-	config REGION_EU433
+	config LORAWAN_DRIVER_REGION_EU433
 		bool "LORAMAC_REGION_EU433"
 
-	config REGION_CN470
+	config LORAWAN_DRIVER_REGION_CN470
 		bool "LORAMAC_REGION_CN470"
 	
 	endchoice
