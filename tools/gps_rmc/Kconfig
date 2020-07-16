@@ -1,5 +1,5 @@
 
-# Kconfig file for package rt_cjson_tools
+# Kconfig file for package gps_rmc
 menuconfig PKG_USING_GPS_RMC
     bool "GPS RMC: Analysis of GPS RMC information"
     default n
@@ -12,17 +12,17 @@ if PKG_USING_GPS_RMC
 
     choice
         prompt "Version"
-        default PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+        default PKG_USING_GPS_RMC_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+        config PKG_USING_GPS_RMC_LATEST_VERSION
             bool "latest"
     endchoice
           
-    config PKG_RT_CJSON_TOOLS_VER
+    config PKG_GPS_RMC_VER
        string
-       default "latest"    if PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+       default "latest"    if PKG_USING_GPS_RMC_LATEST_VERSION
 
     config GPS_RMC_USING_SAMPLE
         bool "Enable example"
