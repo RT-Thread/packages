@@ -1,0 +1,40 @@
+
+# Kconfig file for package rt_cjson_tools
+menuconfig PKG_USING_GPS_RMC
+    bool "GPS RMC: Analysis of GPS RMC information"
+    default n
+
+if PKG_USING_GPS_RMC
+
+    config PKG_GPS_RMC_PATH
+        string
+        default "/packages/tools/gps_rmc"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RT_CJSON_TOOLS_VER
+       string
+       default "latest"    if PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
+
+    config GPS_RMC_USING_SAMPLE
+        bool "Enable example"
+        default n
+
+    if GPS_RMC_USING_SAMPLE
+
+        config GPS_RMC_SAMPLE_UART_NAME
+            string "Uart Port Name"
+            default "uart6"
+
+    endif
+
+endif
+
