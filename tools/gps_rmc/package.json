@@ -1,0 +1,28 @@
+{
+  "name": "gps_rmc",
+  "description": "Used to parse $XXRMC type data of GPS module",
+  "description_zh": "用于解析GPS模块的 $XXRMC 类型数据",  
+  "enable": "PKG_USING_GPS_RMC", 
+  "keywords": [
+    "gps_rmc"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "maplerian",
+    "email": "amqqfkhk@qq.com",
+    "gitee": "maplerian"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/maplerian/gps_rmc",
+  "icon": "https://avatars2.githubusercontent.com/u/26502915?s=460&v=4",
+  "homepage": "https://github.com/maplerian/gps_rmc#readme",
+  "doc": "https://github.com/maplerian/gps_rmc#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/maplerian/gps_rmc.git",
+      "filename": "gps_rmc.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
