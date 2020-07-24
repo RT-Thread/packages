@@ -4,6 +4,7 @@
 menuconfig PKG_USING_QBOOT
     bool "qboot : A component used to make bootloader quickly"
     select PKG_USING_FAL
+    select PKG_USING_CRCLIB
     default n
 
 if PKG_USING_QBOOT
