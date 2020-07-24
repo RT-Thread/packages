@@ -27,6 +27,7 @@ if PKG_USING_QBOOT
     config QBOOT_USING_AES
         bool "using AES decrypt"
         select PKG_USING_TINYCRYPT
+        select TINY_CRYPT_AES
         default n
         
     if QBOOT_USING_AES
@@ -72,6 +73,7 @@ if PKG_USING_QBOOT
     config QBOOT_USING_OTA_DOWNLOADER
         bool "using OTA_download component"
         select PKG_USING_OTA_DOWNLOADER
+        select PKG_USING_YMODEM_OTA
         default y
 
     config QBOOT_USING_PRODUCT_INFO
