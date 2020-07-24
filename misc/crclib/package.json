@@ -1,0 +1,28 @@
+{
+  "name": "crclib",
+  "description": "A library of functions with 8-bit ,16-bit ,32-bit crc check calculations",
+  "description_zh": "一个包含8位、16位、32位CRC校验计算的函数库",
+  "enable": "PKG_USING_CRCLIB",
+  "keywords": [
+    "crc",
+    "rt-thread"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://gitee.com/qiyongzhong0/crclib",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://gitee.com/qiyongzhong0/crclib#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/qiyongzhong0/crclib.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
