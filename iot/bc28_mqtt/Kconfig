@@ -101,12 +101,16 @@ if PKG_USING_BC28_MQTT
         help
             Select the package version
 
+        config PKG_USING_BC28_MQTT_V001
+            bool "v0.0.1"
+
         config PKG_USING_BC28_MQTT_LATEST_VERSION
             bool "latest"
     endchoice
           
     config PKG_BC28_MQTT_VER
        string
+       default "v0.0.1"    if PKG_USING_BC28_MQTT_V001
        default "latest"    if PKG_USING_BC28_MQTT_LATEST_VERSION
 
 endif
