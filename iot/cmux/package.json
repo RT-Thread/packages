@@ -1,0 +1,33 @@
+{
+  "name": "cmux",
+  "description": "cmux: connection multiplexing protocol for RT-Thread, support GSM0710 .etc",
+  "description_zh": "在 RT_Thread 上实现的串口多路复用协议, 支持 GSM0710",
+  "enable": "PKG_USING_CMUX",
+  "keywords": [
+    "cmux"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "xiangxistu",
+    "email": "liuxianliang@rt-thread.com",
+    "github": "xiangxistu"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/cmux",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+        "version": "v1.0.0",
+        "URL": "https://github.com/RT-Thread-packages/cmux/archive/1.0.0.zip",
+        "filename": "cmux-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/cmux.git",
+      "filename": "cmux.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

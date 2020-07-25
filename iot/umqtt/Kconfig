@@ -1,0 +1,101 @@
+
+# Kconfig file for package umqtt
+menuconfig PKG_USING_UMQTT
+    bool "umqtt: A light weight, powerful, customizable, easy-to-use and embeddable mqtt client for RT-Thread"
+    default n
+    select RT_USING_TIMER_SOFT
+    select RT_USING_SAL
+
+if PKG_USING_UMQTT
+
+    config PKG_USING_UMQTT_EXAMPLE
+        bool "Enable MQTT example"
+        default n
+
+    config PKG_UMQTT_SUBRECV_DEF_LENGTH
+        int "subtopic name list numbers"
+        default 4
+    config PKG_UMQTT_INFO_DEF_SENDSIZE
+        int "send buffer size"
+        default 1024
+    config PKG_UMQTT_INFO_DEF_RECVSIZE
+        int "receive buffer size"
+        default 1024
+    config PKG_UMQTT_USING_DEBUG
+        bool "Enable using umqtt debug"
+        default n
+    config PKG_UMQTT_INFO_DEF_RECONNECT_MAX_NUM
+        int "reconnect max count"
+        default 5
+    config PKG_UMQTT_INFO_DEF_RECONNECT_INTERVAL
+        int  "reconnect time interval, uint:Sec"
+        default 60
+    config PKG_UMQTT_INFO_DEF_KEEPALIVE_MAX_NUM
+        int "keepalive func, max count"
+        default 5
+    config PKG_UMQTT_INFO_DEF_HEARTBEAT_INTERVAL
+        int "heartbeat interval, uint:Sec"
+        default 30
+    config PKG_UMQTT_INFO_DEF_CONNECT_TIMEOUT
+        int "connect timeout, uint:Sec"
+        default 4
+    config PKG_UMQTT_INFO_DEF_RECV_TIMEOUT_MS
+        int "receive timeout, uint:mSec"
+        default 100
+    config PKG_UMQTT_INFO_DEF_SEND_TIMEOUT
+        int "send timeout, uint:Sec"
+        default 4
+    config PKG_UMQTT_INFO_DEF_THREAD_STACK_SIZE
+        int "receive thread stask size, (2048, 32767)"
+        range 2048 32767
+        default 2048
+    config PKG_UMQTT_INFO_DEF_THREAD_PRIORITY
+        int "thread priority"
+        default 8
+    config PKG_UMQTT_MSG_QUEUE_ACK_DEF_SIZE
+        int "async message ack queue count"
+        default 4
+    config PKG_UMQTT_CONNECT_KEEPALIVE_DEF_TIME
+        hex "connect information, keepalive interval, uint:Sec"
+        default 0xffff
+
+    if PKG_USING_UMQTT_TEST
+        config PKG_UMQTT_TEST_SHORT_KEEPALIVE_TIME
+            bool "Enable change connect keepalive time, uint:Sec"
+            default n
+    endif
+
+    config PKG_UMQTT_PATH
+        string
+        default "/packages/iot/umqtt"
+
+    config PKG_UMQTT_PUBLISH_RECON_MAX
+        int "republish qos2 max times, (1, 32767)"
+        range 1 32767
+        default 3
+
+    config PKG_UMQTT_QOS2_QUE_MAX
+        int "qos2 publish buffer size, (1, 32767)"
+        range 1 32767
+        default 1
+
+    choice
+        prompt "Version"
+        default PKG_USING_UMQTT_V100
+        help
+            Select the package version
+
+        config PKG_USING_UMQTT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_UMQTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UMQTT_VER
+       string
+       default "v1.0.0"    if PKG_USING_UMQTT_V100
+       default "latest"    if PKG_USING_UMQTT_LATEST_VERSION
+
+endif
+

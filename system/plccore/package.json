@@ -1,0 +1,27 @@
+{
+  "name": "plccore",
+  "description": "plccore for RT-Thread",
+  "description_zh": "plccore 在 RT-Thread 上移植的软件包",  
+  "enable": "PKG_USING_PLCCORE",
+  "keywords": [
+    "plccore"
+  ],
+  "category": "system",
+  "author": {
+    "name": "hyafz",
+    "email": "401190549@qq.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/hyafz/plccore",
+  "icon": "unknown",
+  "homepage": "https://github.com/hyafz/plccore",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/hyafz/plccore.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

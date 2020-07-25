@@ -1,0 +1,139 @@
+# Kconfig file for package tencent-iot-sdk
+menuconfig PKG_USING_TENCENT_IOT_EXPLORER
+    bool "tencent-iot-sdk:  Tencent Cloud IoT Explorer Platform SDK for RT-Thread"
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    default n
+
+if PKG_USING_TENCENT_IOT_EXPLORER
+
+    config PKG_TENCENT_IOT_EXPLORER_PATH
+        string
+        default "/packages/iot/iot_cloud/tencent-iot-sdk"
+                
+    config PKG_USING_TENCENT_IOT_EXPLORER_PRODUCT_ID
+        string "Config Product Id"
+        default 0WUKPUCOTC      
+
+    config PKG_USING_TENCENT_IOT_EXPLORER_DEVICE_NAME
+        string "Config Device Name"
+        default dev001        
+
+    config PKG_USING_TENCENT_IOT_EXPLORER_DEVICE_SECRET
+        string "Config Device Secret"
+        default "N6B8M91PB4YDTRCpqvOp4w=="
+        
+    config PKG_USING_DYN_REG
+        bool "Enable dynamic register"
+        default n
+
+    if PKG_USING_DYN_REG  
+        config PKG_USING_TENCENT_IOT_EXPLORER_PRODUCT_SECRET
+            string "Config Product Key"
+            default ""
+            help
+                dynamic register device needed othterwise null  
+    endif   
+    
+    config PKG_USING_LOG_UPLOAD
+        bool "Enable err log upload"
+        default n
+    
+    config PKG_USING_MULTITHREAD_ENABLED
+        bool "Enable multi thread function"
+        default n   
+               
+    config PKG_USING_TENCENT_IOT_EXPLORER_TLS
+        bool "Enable TLS/DTLS"
+        default n
+        select PKG_USING_MBEDTLS
+    
+    choice              
+        prompt "Select Product Type"
+        help
+            Select product communication protocol
+            
+        config PKG_USING_DATA_TEMPLATE_PROTOCOL
+            bool "Data template protocol"
+            help
+                Use data template protocol
+            
+        config PKG_USING_SELF_DEFINE_PROTOCOL
+            bool "self-define protocol"
+            help
+                Use self-define protocol
+    endchoice       
+            
+    if PKG_USING_DATA_TEMPLATE_PROTOCOL
+        config PKG_USING_EVENT_POST
+            bool "Enable Event"
+            default n
+            
+        config PKG_USING_ACTION
+            bool "Enable Action"
+            default n   
+            
+        config PKG_USING_SMART_LIGHT_SAMPLE
+            bool "Enable Smart_light Sample"
+            default y
+    endif   
+          
+    if PKG_USING_SELF_DEFINE_PROTOCOL       
+        config PKG_USING_TENCENT_IOT_EXPLORER_MQTT
+            bool "Enable MQTT Sample"
+            default y   
+            
+        config PKG_USING_TENCENT_IOT_EXPLORER_RAW_DATA
+            bool "Enable RAW_DATA SAMPLE"
+            default n
+    endif       
+        
+    config PKG_USING_TENCENT_IOT_EXPLORER_OTA
+        bool "Enable OTA"
+        default n
+            
+    if PKG_USING_TENCENT_IOT_EXPLORER_OTA              
+        choice  
+            prompt "Config OTA download by https or http"
+            help
+               Select download channel
+            config PKG_USING_OTA_HTTP
+                bool "Download by http"
+            config PKG_USING_OTA_HTTPS
+                bool "Download by https"
+                select PKG_USING_TENCENT_IOT_EXPLORER_TLS       
+        endchoice
+    endif   
+    
+    config PKG_USING_TENCENT_IOT_EXPLORER_GATEWAY
+        bool "Enable GateWay"
+        default n
+                            
+    choice
+        prompt "Version"
+        default PKG_USING_TENCENT_IOT_EXPLORER_LATEST_VERSION
+        help
+            Select the tencent-iot-explorer version
+
+        config PKG_USING_TENCENT_IOT_EXPLORER_LATEST_VERSION
+            bool "latest"
+        
+        config PKG_USING_TENCENT_IOT_EXPLORER_V300
+            bool "v3.0.0" 
+            
+        config PKG_USING_TENCENT_IOT_EXPLORER_V302
+            bool "v3.0.2"
+            
+        config PKG_USING_TENCENT_IOT_EXPLORER_V313
+            bool "v3.1.3"			
+            
+    endchoice
+
+    config PKG_TENCENT_IOT_EXPLORER_VER
+       string
+       default "v3.1.3"    if PKG_USING_TENCENT_IOT_EXPLORER_V313
+       default "v3.0.2"    if PKG_USING_TENCENT_IOT_EXPLORER_V302
+       default "v3.0.0"    if PKG_USING_TENCENT_IOT_EXPLORER_V300
+       default "latest"    if PKG_USING_TENCENT_IOT_EXPLORER_LATEST_VERSION
+    
+endif

@@ -1,0 +1,32 @@
+
+# Kconfig file for package nrfx
+menuconfig PKG_USING_NRFX
+    bool "nrfx: Standalone drivers for peripherals present in Nordic Semiconductor's SoCs."
+    default n
+
+if PKG_USING_NRFX
+
+    config PKG_NRFX_PATH
+        string
+        default "/packages/peripherals/nrfx"
+
+    choice
+        prompt "Version"
+        default PKG_USING_NRFX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NRFX_V210
+            bool "v2.1.0"
+
+        config PKG_USING_NRFX_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_NRFX_VER
+       string
+       default "v2.1.0"    if PKG_USING_NRFX_V210
+       default "latest"    if PKG_USING_NRFX_LATEST_VERSION
+
+endif
+

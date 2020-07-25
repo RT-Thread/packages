@@ -1,0 +1,36 @@
+{
+  "name": "bc28_mqtt",
+  "description": "BC28 MQTT: connect to Aliyun with Quectel BC28 model",
+  "description_zh": "BC28 MQTT: 使用移远BC28模块连接阿里云IoT平台",  
+  "enable": "PKG_USING_BC28_MQTT", 
+  "keywords": [
+    "bc28_mqtt",
+    "mqtt",
+    "bc28"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "luhuadong",
+    "email": "luhuadong@163.com",
+    "github": "luhuadong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/luhuadong/rtt-bc28-mqtt",
+  "icon": "unknown",
+  "homepage": "https://github.com/luhuadong/rtt-bc28-mqtt",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/luhuadong/rtt-bc28-mqtt/archive/v0.0.1.zip",
+      "filename": "bc28-mqtt-v0.0.1.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/luhuadong/rtt-bc28-mqtt.git",
+      "filename": "bc28-mqtt-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

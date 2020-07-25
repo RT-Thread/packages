@@ -1,0 +1,77 @@
+
+# Kconfig file for package crclib
+
+menuconfig PKG_USING_CRCLIB
+    bool "crclib : A library of functions with 8-bit ,16-bit ,32-bit crc check calculations."
+    default n
+
+if PKG_USING_CRCLIB
+
+    config PKG_CRCLIB_PATH
+        string
+        default "/packages/misc/crclib"
+
+    config CRCLIB_USING_CRC8
+        bool "using 8 bit crc"
+        default n
+
+    if CRCLIB_USING_CRC8
+        config CRC8_USING_CONST_TABLE
+            bool "using const table"
+            default y
+        config CRC8_POLY
+            hex "crc8 polynome"
+            default 0x8C
+        config CRC8_INIT_VAL
+            hex "crc8 calculate initialize value"
+            default 0xFF
+    endif
+    
+    config CRCLIB_USING_CRC16
+        bool "using 16 bit crc"
+        default n
+
+    if CRCLIB_USING_CRC16
+        config CRC16_USING_CONST_TABLE
+            bool "using const table"
+            default y
+        config CRC16_POLY
+            hex "crc16 polynome"
+            default 0xA001
+        config CRC16_INIT_VAL
+            hex "crc8 calculate initialize value"
+            default 0xFFFF
+    endif
+    
+    config CRCLIB_USING_CRC32
+        bool "using 32 bit crc"
+        default n
+
+    if CRCLIB_USING_CRC32
+        config CRC32_USING_CONST_TABLE
+            bool "using const table"
+            default y
+        config CRC32_POLY
+            hex "crc32 polynome"
+            default 0xEDB88320
+        config CRC32_INIT_VAL
+            hex "crc32 calculate initialize value"
+            default 0xFFFFFFFF
+    endif
+    
+    choice
+        prompt "Version"
+        default PKG_USING_CRCLIB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CRCLIB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CRCLIB_VER
+       string
+       default "latest" if PKG_USING_CRCLIB_LATEST_VERSION
+
+endif
+

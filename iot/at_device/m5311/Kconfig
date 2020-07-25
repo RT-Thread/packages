@@ -1,0 +1,49 @@
+
+# M5311 AT device configuration
+menuconfig AT_DEVICE_USING_M5311
+    bool "ChinaMobile M5311"
+    default n
+
+if AT_DEVICE_USING_M5311
+
+    config AT_DEVICE_M5311_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    if AT_DEVICE_USING_M5311 && AT_USING_SOCKET
+    
+        config M5311_MODULE_SEND_MAX_SIZE
+            int "The maximum length of socket send line buffer"
+            default 1024
+
+        config M5311_MODULE_RECV_MAX_SIZE
+            int "The maximum length of socket receive line buffer"
+            default 2048
+
+    endif
+
+    config AT_DEVICE_M5311_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_M5311_SAMPLE
+
+        config M5311_SAMPLE_POWER_PIN
+            int "Power pin"
+            default -1
+
+        config M5311_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart2"
+
+        config M5311_SAMPLE_CLIENT_USE_STATUSLED
+            bool "Enable module netork status LED"
+            default y
+
+        config M5311_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 2048
+
+    endif
+
+endif

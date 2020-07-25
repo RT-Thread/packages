@@ -1,0 +1,37 @@
+
+# M6315 AT device configuration
+menuconfig AT_DEVICE_USING_M6315
+    bool "ChinaMobile M6315"
+    default n
+
+if AT_DEVICE_USING_M6315
+
+    config AT_DEVICE_M6315_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_M6315_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_M6315_SAMPLE
+
+       config M6315_SAMPLE_POWER_PIN
+            int "Power pin"
+            default -1
+
+        config M6315_SAMPLE_STATUS_PIN
+            int "Power status pin"
+            default -1
+
+        config M6315_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart2"
+
+        config M6315_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 512
+
+    endif
+
+endif

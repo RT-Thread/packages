@@ -19,10 +19,16 @@
   "homepage": "https://github.com/armink-rtt-pkgs/ulog_easyflash#readme",
   "site": [
     {
+      "version": "v0.2.0",
+      "URL": "https://github.com/armink-rtt-pkgs/ulog_easyflash/archive/0.2.0.zip",
+      "filename": "ulog_easyflash-0.2.0.zip",
+      "VER_SHA": "master"
+    },
+    {
       "version": "v0.1.0",
-      "URL": "https://github.com/armink-rtt-pkgs/ulog_easyflash.git",
-      "filename": "ulog_easyflash_be-0.1.0.zip",
-      "VER_SHA": "9369dd51a8c3236d2b82302876915ff83cf3b510"
+      "URL": "https://github.com/armink-rtt-pkgs/ulog_easyflash/archive/0.1.0.zip",
+      "filename": "ulog_easyflash-0.1.0.zip",
+      "VER_SHA": "0f07aad9b5d79b0e38e6c7445a488235e1e1ff99"
     },
     {
       "version": "latest",
