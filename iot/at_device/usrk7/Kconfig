@@ -1,0 +1,38 @@
+
+# USRK7 AT device configuration
+menuconfig AT_DEVICE_USING_USRK7
+    bool "USR IOT USRK7"
+    default n
+    depends on AT_CLIENT_PASS_THROUGH
+    help
+        Since USR-K7 only has pass-through transmission mode， this driver
+        depends on the AT Pass-Through support(AT_CLIENT_PASS_THROUGH).
+        Because of pass-through, we need to switch the mode between command mode
+        and transmission mode, so it currently can not work well with
+        SAL(Socket abstraction layer), it will be fixed later. But for now, if
+        you wanna use this driver, please reference sample program
+        (at_sample_usrk7), and try "usrk7_io" and "usrk7_socket_setup" command.
+
+if AT_DEVICE_USING_USRK7
+
+    config AT_DEVICE_USRK7_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_USRK7_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_USRK7_SAMPLE
+
+        config USRK7_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart1"
+
+        config USRK7_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 512
+
+    endif
+
+endif
