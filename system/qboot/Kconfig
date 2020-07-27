@@ -12,7 +12,17 @@ if PKG_USING_QBOOT
     config PKG_QBOOT_PATH
         string
         default "/packages/system/qboot"
-    
+        
+    config QBOOT_USING_PRODUCT_CODE
+        bool "using product code"
+        default n
+        
+    if QBOOT_USING_PRODUCT_CODE    
+        config QBOOT_PRODUCT_CODE
+            string "product code, maximum 20 characters"
+            default "00010203040506070809"
+    endif
+        
     config QBOOT_APP_PART_NAME
         string "application partition name"
         default "app"
@@ -88,11 +98,11 @@ if PKG_USING_QBOOT
 
         config QBOOT_PRODUCT_VER
             string "product version"
-            default "v1.00 2020.07.08"
+            default "v1.00 2020.07.27"
 
         config QBOOT_PRODUCT_MCU
             string "product MCU chip model"
-            default "stm32f407"
+            default "stm32l4r5zi"
     endif
 
     config QBOOT_USING_STATUS_LED
