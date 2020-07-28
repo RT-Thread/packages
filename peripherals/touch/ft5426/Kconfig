@@ -10,14 +10,15 @@ if PKG_USING_FT5426
         string
         default "/packages/peripherals/touch/ft5426"
 
+    config PKG_USING_FT5426_SAMPLE
+    bool "enable samples"
+    default n
+	
     choice
         prompt "Version"
         default PKG_USING_FT5426_LATEST_VERSION
         help
             Select the package version
-
-        config PKG_USING_FT5426_V001
-            bool "v0.0.1"
 
         config PKG_USING_FT5426_LATEST_VERSION
             bool "latest"
@@ -27,10 +28,6 @@ if PKG_USING_FT5426
        string
        default "v0.0.1"    if PKG_USING_FT5426_V001
        default "latest"    if PKG_USING_FT5426_LATEST_VERSION
-
-    config PKG_USING_FT5426_SAMPLE
-        bool "Enable ft5426 example"
-        default n
 
 endif
 
