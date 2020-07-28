@@ -1,0 +1,35 @@
+{
+  "name": "ft5426",
+  "description": "This is the FT5426 touch driver package.",
+  "description_zh": "这是 FT5426 触摸芯片的驱动包。",  
+  "enable": "PKG_USING_FT5426", 
+  "keywords": [
+    "ft5426"
+	"touch"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "liuduanfei",
+    "email": "939763442@qq.com",
+    "github": "liuduanfei"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/liuduanfei/ft5426",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/liuduanfei/ft5426.git",
+      "filename": "ft5426-0.0.1.zip",
+      "VER_SHA": "5ff3712d1bb41f019e2a2b4d0ed8e9498d757b12"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/liuduanfei/ft5426.git",
+      "filename": "ft5426-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
