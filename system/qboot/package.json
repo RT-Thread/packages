@@ -16,13 +16,13 @@
     "github": "qiyongzhong0"
   },
   "license": " LGPL-2.1",
-  "repository": "https://gitee.com/qiyongzhong0/rt-thread-qboot",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-qboot",
   "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
-  "homepage": "https://gitee.com/qiyongzhong0/rt-thread-qboot#readme",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-qboot#readme",
   "site": [
     {
       "version": "latest",
-      "URL": "https://gitee.com/qiyongzhong0/rt-thread-qboot.git",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot.git",
       "filename": "",
       "VER_SHA": "master"
     }
