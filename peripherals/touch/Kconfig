@@ -1,6 +1,7 @@
 menuconfig PKG_USING_TOUCH_DRIVERS
     bool "touch drivers"
     default n
+
     select RT_USING_TOUCH
 
     if PKG_USING_TOUCH_DRIVERS
