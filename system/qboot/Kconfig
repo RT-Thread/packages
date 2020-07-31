@@ -158,11 +158,15 @@ if PKG_USING_QBOOT
 
         config PKG_USING_QBOOT_LATEST_VERSION
             bool "latest"
+            
+        config PKG_USING_QBOOT_V100
+            bool "v1.00"
     endchoice
 
     config PKG_QBOOT_VER
        string
        default "latest" if PKG_USING_QBOOT_LATEST_VERSION
+       default "v1.00" if PKG_USING_QBOOT_V100
 
 endif
 

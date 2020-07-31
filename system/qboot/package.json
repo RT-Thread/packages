@@ -21,6 +21,12 @@
   "homepage": "https://github.com/qiyongzhong0/rt-thread-qboot#readme",
   "site": [
     {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot/archive/v1.00.zip",
+      "filename": "rt-thread-qboot-1.00.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/qiyongzhong0/rt-thread-qboot.git",
       "filename": "",
