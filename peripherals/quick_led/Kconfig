@@ -49,17 +49,21 @@ if PKG_USING_QLED
     
     choice
         prompt "Version"
-        default PKG_USING_QLED_LATEST_VERSION
+        default PKG_USING_QLED_V100
         help
             Select the package version
 
         config PKG_USING_QLED_LATEST_VERSION
             bool "latest"
+            
+        config PKG_USING_QLED_V100
+            bool "v1.00"
     endchoice
 
     config PKG_QLED_VER
        string
        default "latest" if PKG_USING_QLED_LATEST_VERSION
+       default "v1.00"  if PKG_USING_QLED_V100
 
 endif
 
