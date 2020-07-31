@@ -14,13 +14,19 @@
     "github": "qiyongzhong0"
   },
   "license": " LGPL-2.1",
-  "repository": "https://gitee.com/qiyongzhong0/crclib",
+  "repository": "https://github.com/qiyongzhong0/crclib",
   "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
-  "homepage": "https://gitee.com/qiyongzhong0/crclib#readme",
+  "homepage": "https://github.com/qiyongzhong0/crclib#readme",
   "site": [
     {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/crclib/archive/v1.00.zip",
+      "filename": "crclib-1.00.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
-      "URL": "https://gitee.com/qiyongzhong0/crclib.git",
+      "URL": "https://github.com/qiyongzhong0/crclib.git",
       "filename": "",
       "VER_SHA": "master"
     }
