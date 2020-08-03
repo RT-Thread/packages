@@ -1,0 +1,48 @@
+
+# Kconfig file for package nmealib
+menuconfig PKG_USING_NMEALIB
+    bool "nmealib: A NMEA Library for RT-Thread."
+    default n
+
+if PKG_USING_NMEALIB
+
+    config PKG_NMEALIB_PATH
+        string
+        default "/packages/iot/nmealib"
+
+    config PKG_USING_NMEALIB_EXAMPLES
+    	bool "Enable nmealib uart sample"
+    	default n
+    	if PKG_USING_NMEALIB_EXAMPLES
+    		config NMEALIB_UART_PORT
+    		string  "uart name e.g. uart3"
+    		default "uart3"
+          	config NMEALIB_UART_BAUDRATE
+          	int "uart baudrate used by sample"
+          	default 9600
+        endif
+
+    config NMEALIB_DEBUG
+        bool "Enable nmealib trace and error"
+        default n
+        
+ 	choice
+        prompt "Version"
+        default PKG_USING_NMEALIB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NMEALIB_V100
+            bool "v1.0.0"
+
+        config PKG_USING_NMEALIB_LATEST_VERSION
+            bool "latest"
+    endchoice
+          	
+    config PKG_NMEALIB_VER
+       string
+       default "v1.0.0"    if PKG_USING_NMEALIB_V100
+       default "latest"    if PKG_USING_NMEALIB_LATEST_VERSION
+
+endif
+
