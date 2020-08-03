@@ -1,0 +1,33 @@
+{
+  "name": "hdc1000",
+  "description": "hdc1000 sensor driver base on RT-Thread sensor frame",
+  "description_zh": "TI温湿度传感器hdc1000软件包(RT-Thread Sensor架构)",  
+  "enable": "PKG_USING_HDC1000",
+  "keywords": [
+    "hdc1000"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Forest-Rain",
+    "email": "296894494@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Forest-Rain/hdc1000",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Forest-Rain/hdc1000.git",
+      "filename": "hdc1000-1.0.0.zip",
+      "VER_SHA": "ad60559cdf50638acbedd41ce9cc227dfd60b9ee"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Forest-Rain/hdc1000.git",
+      "filename": "hdc1000-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

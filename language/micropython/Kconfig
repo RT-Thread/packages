@@ -164,8 +164,8 @@ if PKG_USING_MICROPYTHON
         help
             Select the this package version
 
-        config PKG_USING_MICROPYTHON_LATEST_VERSION
-            bool "latest"
+        config PKG_USING_MICROPYTHON_V11004
+            bool "v1.10.4"
 
         config PKG_USING_MICROPYTHON_V11003
             bool "v1.10.3"
@@ -182,20 +182,24 @@ if PKG_USING_MICROPYTHON
         config PKG_USING_MICROPYTHON_V10903
             bool "v1.9.3"
 
+        config PKG_USING_MICROPYTHON_LATEST_VERSION
+            bool "latest"
     endchoice
 
     config PKG_MICROPYTHON_VER
         string
-        default "latest" if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default "v1.10.4"  if PKG_USING_MICROPYTHON_V11004
         default "v1.10.3"  if PKG_USING_MICROPYTHON_V11003
         default "v1.10.2"  if PKG_USING_MICROPYTHON_V11002
         default "v1.10.1"  if PKG_USING_MICROPYTHON_V11001
         default "v1.10"    if PKG_USING_MICROPYTHON_V11000
         default "v1.9.3"   if PKG_USING_MICROPYTHON_V10903
+        default "latest"   if PKG_USING_MICROPYTHON_LATEST_VERSION
 
     config PKG_MICROPYTHON_VER_NUM
         hex
         default 0x99999    if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default 0x11004    if PKG_USING_MICROPYTHON_V11004
         default 0x11003    if PKG_USING_MICROPYTHON_V11003
         default 0x11002    if PKG_USING_MICROPYTHON_V11002
         default 0x11001    if PKG_USING_MICROPYTHON_V11001

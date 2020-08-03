@@ -1,0 +1,28 @@
+
+# Kconfig file for package yd_crypto
+menuconfig PKG_USING_YD_CRYPTO
+    bool "yd_crypto: Encryption algorithms for low&medium-end 32bit microcontroller."
+    default n
+
+if PKG_USING_YD_CRYPTO
+
+    config PKG_YD_CRYPTO_PATH
+        string
+        default "/packages/security/yd_crypto"
+
+    choice
+        prompt "Version"
+        default PKG_USING_YD_CRYPTO_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_YD_CRYPTO_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_YD_CRYPTO_VER
+       string
+       default "latest"    if PKG_USING_YD_CRYPTO_LATEST_VERSION
+
+endif
+

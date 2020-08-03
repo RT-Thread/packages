@@ -1,0 +1,32 @@
+
+# Kconfig file for package ramdisk
+menuconfig PKG_USING_RAMDISK
+    bool "ramdisk: A RAM memory block device."
+    default n
+
+if PKG_USING_RAMDISK
+
+    config PKG_RAMDISK_PATH
+        string
+        default "/packages/system/ramdisk"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RAMDISK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RAMDISK_V010
+            bool "v0.1.0"
+
+        config PKG_USING_RAMDISK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RAMDISK_VER
+       string
+       default "v0.1.0"    if PKG_USING_RAMDISK_V010
+       default "latest"    if PKG_USING_RAMDISK_LATEST_VERSION
+
+endif
+

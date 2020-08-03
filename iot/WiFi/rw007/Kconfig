@@ -3,31 +3,42 @@ menuconfig PKG_USING_RW007
     bool "rw007: SPI WIFI rw007 driver"
     select RT_USING_SPI
     select RT_USING_PIN
-	select RT_USING_LWIP
+    select RT_USING_LWIP
     default n
-	help
-		if "PKG_USING_RW007" is opened, "RT_USING_LWIP" will be default selected.
+    help
+        if "PKG_USING_RW007" is opened, "RT_USING_LWIP" will be default selected.
 
 if PKG_USING_RW007
 
-	config PKG_RW007_PATH
+    config PKG_RW007_PATH
         string
         default "/packages/iot/WiFi/rw007"
 
-	choice
-		prompt "version"
-		help
-			Select the wiced wifi version
+    choice
+        prompt "version"
+        help
+            Select the wiced wifi version
+	    default PKG_USING_RW007_V111
 
-		config PKG_USING_RW007_LATEST_VERSION
-			bool "latest"
-	endchoice
+        config PKG_USING_RW007_V111
+            bool "v1.1.1"
 
-	if PKG_USING_RW007_LATEST_VERSION
-		config PKG_RW007_VER
-		string
-		default "latest"
-	endif
+        config PKG_USING_RW007_V110
+            bool "v1.1.0"
+
+        config PKG_USING_RW007_V100
+            bool "v1.0.0"
+            
+        config PKG_USING_RW007_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RW007_VER
+        string
+        default "v1.1.1" if PKG_USING_RW007_V111
+        default "v1.1.0" if PKG_USING_RW007_V110
+        default "v1.0.0" if PKG_USING_RW007_V100
+        default "latest" if PKG_USING_RW007_LATEST_VERSION
 
     choice
         prompt "example driver port"
@@ -39,6 +50,10 @@ if PKG_USING_RW007
         # config RW007_USING_IMXRT_DRIVERS
         #    bool "rw007 for imxrt"
     endchoice
+
+    config RW007_SPI_MAX_HZ
+        int "SPI Max Hz"
+        default 30000000
 
     if !RW007_NOT_USE_EXAMPLE_DRIVERS
     if RW007_USING_STM32_DRIVERS || RW007_USING_IMXRT_DRIVERS

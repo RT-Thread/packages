@@ -18,6 +18,9 @@ if PKG_USING_NRF24L01
 
         config PKG_USING_NRF24L01_V100
             bool "v1.0.0"
+            
+        config PKG_USING_NRF24L01_V200
+            bool "v2.0.0"
 
         config PKG_USING_NRF24L01_LATEST_VERSION
             bool "latest"
@@ -26,34 +29,64 @@ if PKG_USING_NRF24L01
     config PKG_NRF24L01_VER
        string
        default "v1.0.0"    if PKG_USING_NRF24L01_V100
+       default "v2.0.0"    if PKG_USING_NRF24L01_V200
+       default "latest"    if PKG_USING_NRF24L01_LATEST_VERSION
+    
+    config PKG_NRF24L01_VERSION
+       string
+       default "v1.0.0"    if PKG_USING_NRF24L01_V100
+       default "v2.0.0"    if PKG_USING_NRF24L01_V200
        default "latest"    if PKG_USING_NRF24L01_LATEST_VERSION
 
-    menuconfig PKG_USING_NRF24L01_SAMPLE
-        bool "Using sample"
+    config PKG_USING_NRF24L01_DEMO
+        bool "Use demo"
         default n
 
-    choice
-        prompt "Sample"
-        depends on PKG_USING_NRF24L01_SAMPLE
-        default NRF24L01_SAMPLE_POLL_PTX
-        help
-            Select an sample
-        config NRF24L01_SAMPLE_POLL_PTX
-            bool "poll ptx"
-        config NRF24L01_SAMPLE_POLL_PRX
-            bool "poll prx"
-        config NRF24L01_SAMPLE_IRQ_PTX
-            bool "irq ptx"
-        config NRF24L01_SAMPLE_IRQ_PRX
-            bool "irq prx"
-    endchoice
-    
-    config NRF24_USING_INFO_REPORT
-        bool "Using info report"
-        default n
+    if PKG_USING_NRF24L01_DEMO
+        choice
+            prompt "Role"
+            default PKG_NRF24L01_DEMO_ROLE_PTX
+            help
+                Select the role
+            config PKG_NRF24L01_DEMO_ROLE_PTX
+                bool "PTX"
+            config PKG_NRF24L01_DEMO_ROLE_PRX
+                bool "PRX"
+        endchoice
         
-    config NRF24_USING_SHELL_CMD
-        bool "Using shell cmd"
+        config PKG_NRF24L01_DEMO_SPI_DEV_NAME
+            string "The spi device name for nrf24l01"
+            default "spi10"
+            
+        config PKG_NRF24L01_DEMO_CE_PIN
+            int "The ce pin of nrf24l01"
+            default -1
+            
+        config PKG_NRF24L01_DEMO_IRQ_PIN
+            int "The irq pin of nrf24l01"
+            default -1                
+        
+        config PKG_NRF24L01_DEMO_INTERVAL_SEND
+            depends on PKG_NRF24L01_DEMO_ROLE_PTX
+            int "The interval of sending data (for PTX_ROLE)"
+            default 500
+        
+    endif
+    
+    config PKG_NRF24L01_ENABLING_DEBUG
+        bool "Enable debug"
         default n
+    
+    if PKG_NRF24L01_ENABLING_DEBUG
+        config PKG_NRF24L01_USING_INFO_REPORT
+            bool "Use info report"
+            default y
+                
+        config PKG_NRF24L01_USING_SHELL_CMD
+            bool "Use shell cmd"
+            default y
+        
+    endif
+    
 endif
 

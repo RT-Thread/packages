@@ -1,0 +1,28 @@
+
+# Kconfig file for package plccore
+menuconfig PKG_USING_PLCCORE
+    bool "plccore: A PLC(programmable logic controller) runtime kernel."
+    default n
+
+if PKG_USING_PLCCORE
+
+    config PKG_PLCCORE_PATH
+        string
+        default "/packages/system/plccore"
+
+    choice
+        prompt "Version"
+        default PKG_USING_PLCCORE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PLCCORE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PLCCORE_VER
+       string
+       default "latest"    if PKG_USING_PLCCORE_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,48 @@
+
+# Kconfig file for package sys_load_monitor
+menuconfig PKG_USING_SYS_LOAD_MONITOR
+    bool "sys_load_monitor: system load monitor"
+    default n
+
+if PKG_USING_SYS_LOAD_MONITOR
+
+    config SYS_LOAD_MONITOR_FREQ
+        int "monitor frequency (Hz)"
+        default 1
+
+    config SYS_LOAD_MONITOR_TIME
+        int "monitor recording time (seconds)"
+        default 20
+
+    config SYS_LOAD_MONITOR_MAX_THREAD
+        int "monitor recording threads number"
+        default 5
+
+    config SYS_LOAD_MONITOR_USING_TEST
+        bool "Enable system load test"
+        default y
+
+    config PKG_SYS_LOAD_MONITOR_PATH
+        string
+        default "/packages/system/sys_load_monitor"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SYS_LOAD_MONITOR_V100
+        help
+            Select the package version
+
+        config PKG_USING_SYS_LOAD_MONITOR_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SYS_LOAD_MONITOR_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SYS_LOAD_MONITOR_VER
+       string
+       default "v1.0.0"    if PKG_USING_SYS_LOAD_MONITOR_V100
+       default "latest"    if PKG_USING_SYS_LOAD_MONITOR_LATEST_VERSION
+
+endif
+

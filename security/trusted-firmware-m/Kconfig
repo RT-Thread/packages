@@ -1,0 +1,29 @@
+menuconfig PKG_USING_TFM
+    bool "TFM: Trusted firmware for M class"
+    default n
+
+if PKG_USING_TFM
+
+    config PKG_TFM_PATH
+        string
+        default "/packages/security/trusted-firmware-m"
+
+    choice
+        prompt "Version"
+        default PKG_USING_TFM_NXP_LPC55_V1_BETA
+        help
+            Select the TFM version
+
+        config PKG_USING_TFM_NXP_LPC55_V1_BETA
+            bool "nxp-lpc55-v1.0-beta"
+
+        config PKG_USING_TFM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_TFM_VER
+    string
+    default "nxp-lpc55-v1.0-beta" if PKG_USING_TFM_NXP_LPC55_V1_BETA
+    default "latest" if PKG_USING_TFM_LATEST_VERSION
+
+endif

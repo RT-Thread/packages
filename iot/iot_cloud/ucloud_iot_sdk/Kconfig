@@ -1,0 +1,126 @@
+# Kconfig file for package ucloud_iot_sdk
+menuconfig PKG_USING_UCLOUD_IOT_SDK
+    bool "ucloud_iot_sdk: Ucloud iot sdk for uiot-core platform."
+    select RT_USING_SAL
+    default n
+
+if PKG_USING_UCLOUD_IOT_SDK
+
+    config PKG_UCLOUD_IOT_SDK_PATH
+        string
+        default "/packages/iot/iot_cloud/ucloud_iot_sdk"
+
+    menu "Ucloud Device Config"
+        menuconfig PKG_USING_UCLOUD_IOT_SDK_CONFIG
+            bool "Device Config"
+            default y
+            config PKG_USING_UCLOUD_IOT_SDK_PRODUCT_SN
+                string "Config Product SN"
+                default "produce_sn"
+
+            config PKG_USING_UCLOUD_IOT_SDK_PRODUCT_SECRET
+                string "Config Product Secret"
+                default "product_secret"
+                help
+                    dynamic register device needed
+
+            config PKG_USING_UCLOUD_IOT_SDK_DEVICE_SN
+                string "Config Device SN"
+                default "device_sn"
+
+            config PKG_USING_UCLOUD_IOT_SDK_DEVICE_SECRET
+                string "Config Device Secret"
+                default "device_secret"
+                help
+                    static register device needed
+    endmenu	
+
+    config PKG_USING_UCLOUD_MQTT
+        bool "Enable Mqtt Link uiot-core Platform"
+        default n
+
+    config PKG_USING_UCLOUD_MQTT_SAMPLE
+        bool "Enable Ucloud Mqtt Sample"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
+    config PKG_USING_UCLOUD_MQTT_DYNAMIC_AUTH_SAMPLE
+        bool "Enable Ucloud Mqtt Dynamic Auth Sample"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
+    config PKG_USING_UCLOUD_HTTP
+        bool "Enable Http Link uiot-core Platform"
+        select PKG_USING_UCLOUD_TLS
+        default n
+
+    config PKG_USING_UCLOUD_HTTP_PUBLISH_SAMPLE
+        bool "Enable Ucloud Http Publish Sample"
+        depends on PKG_USING_UCLOUD_HTTP
+        default n
+
+    config PKG_USING_UCLOUD_HTTP_UPLOAD_FILE_SAMPLE
+        bool "Enable Ucloud Http Upload File Sample"
+        depends on PKG_USING_UCLOUD_HTTP
+        default n
+
+    config PKG_USING_UCLOUD_SHADOW
+        bool "Enable Shadow"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
+    config PKG_USING_UCLOUD_SHADOW_SAMPLE
+        bool "Enable Ucloud Shadow Sample"
+        depends on PKG_USING_UCLOUD_SHADOW
+        default n
+
+    config PKG_USING_UCLOUD_DEV_MODEL
+        bool "Enable Dev Model"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+
+    config PKG_USING_UCLOUD_DEV_MODEL_SAMPLE
+        bool "Enable Ucloud Dev Model Sample"
+        depends on PKG_USING_UCLOUD_DEV_MODEL
+        default n
+
+    config PKG_USING_UCLOUD_OTA
+        bool "Enable Ota"
+        depends on PKG_USING_UCLOUD_MQTT
+        default n
+        select PKG_USING_FAL
+
+    config PKG_USING_UCLOUD_OTA_SAMPLE
+        bool "Enable Ucloud Ota Sample"
+        depends on PKG_USING_UCLOUD_OTA
+        default n
+
+    config PKG_USING_UCLOUD_TLS
+        bool "Enable Tls"
+        depends on PKG_USING_UCLOUD_MQTT || PKG_USING_UCLOUD_HTTP
+        default n
+        select PKG_USING_MBEDTLS
+
+    config PKG_USING_UCLOUD_DEBUG
+        bool "Enable Ucloud Debug"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UCLOUD_IOT_SDK_V101
+            bool "v1.0.1"
+
+        config PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UCLOUD_IOT_SDK_VER
+        string
+        default "v1.0.1"    if PKG_USING_UCLOUD_IOT_SDK_V101
+        default "latest"    if PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
+
+endif

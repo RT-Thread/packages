@@ -1,0 +1,32 @@
+
+# Kconfig file for package max6675
+menuconfig PKG_USING_MAX6675
+    bool "max6675: a package of digital temperature sensor max6675."
+    default n
+
+if PKG_USING_MAX6675
+
+    config PKG_MAX6675_PATH
+        string
+        default "/packages/peripherals/sensors/max6675"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MAX6675_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MAX6675_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MAX6675_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MAX6675_VER
+       string
+       default "v1.0.0"    if PKG_USING_MAX6675_V100
+       default "latest"    if PKG_USING_MAX6675_LATEST_VERSION
+
+endif
+

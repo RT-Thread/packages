@@ -1,0 +1,93 @@
+
+# BC28 AT device configuration
+menuconfig AT_DEVICE_USING_BC28
+    bool "Quectel BC28"
+    default n
+
+if AT_DEVICE_USING_BC28
+
+    choice
+        prompt "Select operating band"
+        default AT_DEVICE_BC28_OP_BAND_8
+
+        config AT_DEVICE_BC28_OP_BAND_1
+            bool "B1 @H-FDD: 2100MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_3
+            bool "B3 @H-FDD: 1800MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_5
+            bool "B5 @H-FDD: 850MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_8
+            bool "B8 @H-FDD: 900MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_20
+            bool "B20 @H-FDD: 800MHz"
+
+        config AT_DEVICE_BC28_OP_BAND_28
+            bool "B28 @H-FDD: 700MHz"
+    endchoice
+
+    config AT_DEVICE_BC28_OP_BAND
+       int
+       default 1     if AT_DEVICE_BC28_OP_BAND_1
+       default 3     if AT_DEVICE_BC28_OP_BAND_3
+       default 5     if AT_DEVICE_BC28_OP_BAND_5
+       default 8     if AT_DEVICE_BC28_OP_BAND_8
+       default 20    if AT_DEVICE_BC28_OP_BAND_20
+       default 28    if AT_DEVICE_BC28_OP_BAND_28
+
+    config AT_DEVICE_BC28_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_BC28_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_BC28_SAMPLE
+
+        config BC28_SAMPLE_POWER_PIN
+            int "Power pin (Reset)"
+            default -1
+
+        config BC28_SAMPLE_STATUS_PIN
+            int "Power status pin"
+            default -1
+
+        config BC28_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart3"
+
+        config BC28_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 512
+
+        config BC28_SAMPLE_MIN_SOCKET
+            int "The minimum available socket id"
+            default 0
+
+        choice
+            prompt "Select baud rate"
+            default BC28_SAMPLE_BAUD_RATE_9600
+
+            config BC28_SAMPLE_BAUD_RATE_4800
+                bool "4800"
+
+            config BC28_SAMPLE_BAUD_RATE_9600
+                bool "9600"
+
+            config BC28_SAMPLE_BAUD_RATE_115200
+                bool "115200"
+        endchoice
+
+        config BC28_SAMPLE_BAUD_RATE
+            int
+            default 4800      if BC28_SAMPLE_BAUD_RATE_4800
+            default 9600      if BC28_SAMPLE_BAUD_RATE_9600
+            default 115200    if BC28_SAMPLE_BAUD_RATE_115200
+
+    endif
+
+endif

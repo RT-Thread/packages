@@ -1,0 +1,36 @@
+
+# Kconfig file for package UrlEncode
+menuconfig PKG_USING_URLENCODE
+    bool "UrlEncode: a simple tool to Encode/Decode Url"
+    default n
+
+if PKG_USING_URLENCODE
+
+    config PKG_URLENCODE_PATH
+        string
+        default "/packages/tools/UrlEncode"
+
+    config URLENCODE_USING_SAMPLES
+        bool "use urlencode example."
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_URLENCODE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_URLENCODE_V100
+            bool "v1.0.0"
+
+        config PKG_USING_URLENCODE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_URLENCODE_VER
+       string
+       default "v1.0.0"    if PKG_USING_URLENCODE_V100
+       default "latest"    if PKG_USING_URLENCODE_LATEST_VERSION
+
+endif
+

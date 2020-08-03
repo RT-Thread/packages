@@ -1,0 +1,34 @@
+{
+  "name": "lkdGui",
+  "description": "lkdGui is a graphical interface for monochrome displays.",
+  "description_zh": "lkdGui是一款为单色显示屏制作的图形化界面，用于设计简单漂亮的图形界面。",  
+  "enable": "PKG_USING_LKDGUI", 
+  "keywords": [
+    "lkdGui"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "guoweilkd",
+    "email": "1274132245@qq.com",
+    "github": "https://github.com/guoweilkd"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/guoweilkd/lkdGui",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/guoweilkd/lkdGui.git",
+      "filename": "lkdGui-0.0.1.zip",
+      "VER_SHA": "e5c8a6224bff7a4958b1b478520a060abba808e1"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/guoweilkd/lkdGui.git",
+      "filename": "lkdGui.zip",
+      "VER_SHA": "rtthread_package"
+    }
+  ]
+}

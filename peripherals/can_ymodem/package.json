@@ -1,0 +1,32 @@
+{
+  "name": "can_ymodem",
+  "description": "a device connect can & ymodem",
+  "description_zh": "连接can设备和ymodem的驱动包",
+  "enable": "PKG_USING_CAN_YMODEM",
+  "keywords": [
+    "can_ymodem"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "redocCheng",
+    "email": "619675912@qq.com",
+    "github": "https://github.com/redocCheng"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/redocCheng/rt_can_ymodem",
+  "homepage": "https://github.com/redocCheng/rt_can_ymodem",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/redocCheng/rt_can_ymodem/archive/1.0.0.zip",
+      "filename": "rt_can_ymodem-1.0.0.zip",
+      "VER_SHA": " "
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/redocCheng/rt_can_ymodem.git",
+      "filename": "rt_can_ymodem-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

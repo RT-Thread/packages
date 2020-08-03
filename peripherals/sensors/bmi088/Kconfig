@@ -1,0 +1,30 @@
+# Kconfig file for package bmi088
+menuconfig PKG_USING_BMI088
+    bool "bmi088: a bmi088 package for rt-thread."
+    default n
+
+if PKG_USING_BMI088
+
+    config PKG_BMI088_PATH
+        string
+        default "/packages/peripherals/sensors/bmi088"
+
+    choice
+        prompt "Version"
+        default PKG_USING_BMI088_LATEST_VERSION
+        help
+            Select the package version
+        
+		config PKG_USING_BMI088_V100
+		    bool "v1.0.0"
+			
+        config PKG_USING_BMI088_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
+    config PKG_BMI088_VER
+		string
+		default "latest"    if PKG_USING_BMI088_LATEST_VERSION
+	
+endif
+

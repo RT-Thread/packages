@@ -1,0 +1,36 @@
+
+# Kconfig file for package bmp180
+menuconfig PKG_USING_BMP180
+    bool "BMP180 sensor driver package, support: barometric, temperature."
+    default n
+
+if PKG_USING_BMP180
+
+    config PKG_BMP180_PATH
+        string
+        default "/packages/peripherals/sensors/bmp180"
+        
+	 config PKG_USING_BMP180_SAMPLE
+        bool "Enable bmp180 sample"
+        default n
+        
+    choice
+        prompt "Version"
+        default PKG_USING_BMP180_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BMP180_V100
+            bool "v1.0.0"
+
+        config PKG_USING_BMP180_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BMP180_VER
+       string
+       default "v1.0.0"    if PKG_USING_BMP180_V100
+       default "latest"    if PKG_USING_BMP180_LATEST_VERSION
+
+endif
+
