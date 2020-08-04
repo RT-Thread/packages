@@ -8,7 +8,7 @@
   ],
   "category": "iot",
   "author": {
-    "name": "Malongwei",
+    "name": "loogg",
     "email": "2544047213@qq.com",
     "github": "loogg"
   },
@@ -16,6 +16,11 @@
   "repository": "https://github.com/loogg/agile_telnet",
   "homepage": "https://github.com/loogg/agile_telnet#readme",
   "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://codeload.github.com/loogg/agile_telnet/zip/v1.0.0",
+      "filename": "agile_telnet-1.0.0.zip"
+    },
     {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_telnet.git",
