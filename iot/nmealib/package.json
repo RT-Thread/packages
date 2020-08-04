@@ -1,7 +1,8 @@
 {
   "name": "nmealib",
   "description": "Please add description of nmealib in English.",
-  "description_zh": "请添加软件包 nmealib 的中文描述。",  
+  "description_zh": "Transplantation of nmelib library on RT thread",  
+  "enable": "PKG_USING_NMEALIB",
   "keywords": [
     "nmealib"
   ],
