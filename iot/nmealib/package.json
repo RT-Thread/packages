@@ -1,0 +1,32 @@
+{
+  "name": "nmealib",
+  "description": "A nmelib library porting on RT thread.",
+  "description_zh": "nmealib库在RT-Thread上的移植",  
+  "enable": "PKG_USING_NMEALIB",
+  "keywords": [
+    "nmealib"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "ShineRoyal",
+    "email": "1050799608@qq.com"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/ShineRoyal/nmealib",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/ShineRoyal/nmealib/archive/v1.0.0.zip",
+      "filename": "nmealib-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/ShineRoyal/nmealib.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
