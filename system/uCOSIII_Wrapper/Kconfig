@@ -1,0 +1,42 @@
+
+# Kconfig file for package uCOSIII_Wrapper
+menuconfig PKG_USING_UCOSIII_WRAPPER
+    bool "uCOS-III Wrapper: uCOS-III APIs wrapper"
+    default n
+    help
+        A wrapper which can make codes developed by uCOS-III APIs can directly run on RT-Thread
+
+if PKG_USING_UCOSIII_WRAPPER
+
+    config PKG_UCOSIII_WRAPPER_PATH
+        string
+        default "/packages/system/uCOSIII_Wrapper"
+
+    config PKG_USING_UCOSIII_WRAPPER_AUTOINIT
+        bool "Enable uCOS-III wrapper automatically init"
+        default n
+        help
+            The wrapper supports uCOS-III standard startup procedure. Alternatively,
+            if you want to run uCOS-III apps directly and ignore the startup procedure, 
+            you can choose this option.
+            
+    choice
+        prompt "Version"
+        default PKG_USING_UCOSIII_WRAPPER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UCOSIII_WRAPPER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_UCOSIII_WRAPPER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UCOSIII_WRAPPER_VER
+       string
+       default "v1.0.0"    if PKG_USING_UCOSIII_WRAPPER_V100
+       default "latest"    if PKG_USING_UCOSIII_WRAPPER_LATEST_VERSION
+
+endif
+
