@@ -49,5 +49,6 @@ source "$PKGS_DIR/packages/peripherals/lora_radio_driver/Kconfig"
 source "$PKGS_DIR/packages/peripherals/quick_led/Kconfig"
 source "$PKGS_DIR/packages/peripherals/PAJ7620/Kconfig"
 source "$PKGS_DIR/packages/peripherals/agile_console/Kconfig"
+source "$PKGS_DIR/packages/peripherals/ld3320/Kconfig"
 
 endmenu
