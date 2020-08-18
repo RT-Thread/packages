@@ -4,7 +4,9 @@
   "description_zh": "RT-Thread操作系统的uCOS-III兼容层：让基于uC/OS-III开发的应用层无感地迁移到RT-Thread操作系统",  
   "enable": "PKG_USING_UCOSIII_WRAPPER", 
   "keywords": [
-    "uCOSIII_Wrapper"
+    "uCOSIII_Wrapper",
+    "uCOS-III",
+    "uCOS"
   ],
   "category": "system",
   "author": {
@@ -16,7 +18,7 @@
   "repository": "https://github.com/mysterywolf/RT-Thread-wrapper-of-uCOS-III",
   "icon": "unknown",
   "homepage": "https://github.com/mysterywolf/RT-Thread-wrapper-of-uCOS-III#readme",
-  "doc": "unknown",
+  "doc": "https://github.com/mysterywolf/RT-Thread-wrapper-of-uCOS-III/tree/master/docs",
   "site": [
     {
       "version": "v1.0.0",
