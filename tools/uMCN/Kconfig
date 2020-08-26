@@ -1,7 +1,7 @@
 
 # Kconfig file for package uMCN
 menuconfig PKG_USING_UMCN
-    bool "Please add description of uMCN in English."
+    bool "uMCN is a light-weight and powerful IPC library based on publisher/subscriber model."
     default n
 
 if PKG_USING_UMCN
