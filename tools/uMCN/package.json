@@ -1,7 +1,7 @@
 {
   "name": "uMCN",
-  "description": "uMCN is a light-weight and powerful IPC library based on publisher/subscriber model.",
-  "description_zh": "uMCN是一个基于发布者/订阅者模式的轻量级且功能强大的跨进程通信库",  
+  "description": "uMCN is a light-weight and powerful IPC library based on the publisher/subscriber model.",
+  "description_zh": "uMCN是一个基于发布者/订阅者模式的轻量级且功能强大的跨进程通信库。",  
   "enable": "PKG_USING_UMCN", 
   "keywords": [
     "uMCN"
@@ -15,20 +15,20 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/JcZou/uMCN",
   "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "homepage": "https://github.com/FirmamentPilot",
+  "doc": "https://firmamentpilot.github.io/docs/",
   "site": [
     {
-      "version": "v[1.0.0]",
-      "URL": "https://uMCN-[1.0.0].zip",
-      "filename": "uMCN-[1.0.0].zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "version": "v1.0.0",
+      "URL": "https://github.com/JcZou/uMCN.git",
+      "filename": "uMCN-1.0.0.zip",
+      "VER_SHA": "c5f4b79300856e03afcb6dc4e0f263dd380e79f7"
     },
     {
       "version": "latest",
-      "URL": "https://xxxxx.git",
-      "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "URL": "https://github.com/JcZou/uMCN.git",
+      "filename": "uMCN.zip",
+      "VER_SHA": "master"
     }
   ]
 }
