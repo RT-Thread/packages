@@ -1,0 +1,34 @@
+{
+  "name": "uMCN",
+  "description": "uMCN is a light-weight and powerful IPC library based on publisher/subscriber model.",
+  "description_zh": "uMCN是一个基于发布者/订阅者模式的轻量级且功能强大的跨进程通信库",  
+  "enable": "PKG_USING_UMCN", 
+  "keywords": [
+    "uMCN"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "JCZou",
+    "email": "jiachi.zou@gmail.com",
+    "github": "JCZou"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/JcZou/uMCN",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v[1.0.0]",
+      "URL": "https://uMCN-[1.0.0].zip",
+      "filename": "uMCN-[1.0.0].zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://xxxxx.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}
