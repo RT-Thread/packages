@@ -10,69 +10,63 @@ if PKG_USING_LORA_RADIO_DRIVER
         string
         default "/packages/peripherals/lora_radio_driver"
 
-    config USING_LORA_CHIP
+    config LORA_RADIO_DRIVER_USING_LORA_CHIP
         bool "Select LoRa Chip \\ LoRa Module"
         default y
 
-    if USING_LORA_CHIP
+    if LORA_RADIO_DRIVER_USING_LORA_CHIP
 
-		choice
-			prompt "Select LoRa Radio Object Type"
-			default USING_LORA_RADIO_SINGLE_INSTANCE
+        choice
+            prompt "Select LoRa Radio Object Type"
+            default LORA_RADIO_DRIVER_USING_LORA_RADIO_SINGLE_INSTANCE
 
-			config USING_LORA_RADIO_SINGLE_INSTANCE
-			    bool "LoRa Radio Single-Instance"
+            config LORA_RADIO_DRIVER_USING_LORA_RADIO_SINGLE_INSTANCE
+                bool "LoRa Radio Single-Instance"
 
-			config USING_LORA_RADIO_MULTI_INSTANCE
-			    bool "LoRa Radio Multi-instance"
+            config LORA_RADIO_DRIVER_USING_LORA_RADIO_MULTI_INSTANCE
+                bool "LoRa Radio Multi-instance"
 
-		endchoice
+        endchoice
 
-	    if USING_LORA_RADIO_SINGLE_INSTANCE
+        if LORA_RADIO_DRIVER_USING_LORA_RADIO_SINGLE_INSTANCE
 
-	    	config LORA_RADIO0_DEVICE_NAME
-        		string "Setup LoRa Radio Device Name"
-        		default lora-radio0
-	                                        
-	        config LORA_RADIO0_SPI_BUS_NAME
-	           string "Setup LoRa Radio Spi Name (Define BSP_USING_SPIx in [Target Platform]\\Board\\Kconfig)"
-	            default spi1 if BSP_USING_SPI1
-	            default spi2 if BSP_USING_SPI2
-	            default spi3 if BSP_USING_SPI3
-	            default spi4 if BSP_USING_SPI4
-	            default spi5 if BSP_USING_SPI5
-	            help
-	               Setup LoRa Radio Spi Device Name,Please define BSP_USING_SPIx in the [Target Platform]\\Board\\Kconfig
+            config LORA_RADIO0_DEVICE_NAME
+                string "Setup LoRa Radio Device Name"
+                default lora-radio0
+                                            
+            config LORA_RADIO0_SPI_BUS_NAME
+               string "Setup LoRa Radio Spi Name (Define BSP_USING_SPIx in [Target Platform]\\Board\\Kconfig)"
+                default spi1 if BSP_USING_SPI1
+                default spi2 if BSP_USING_SPI2
+                default spi3 if BSP_USING_SPI3
+                default spi4 if BSP_USING_SPI4
+                default spi5 if BSP_USING_SPI5
+                help
+                   Setup LoRa Radio Spi Device Name,Please define BSP_USING_SPIx in the [Target Platform]\\Board\\Kconfig
 
-		choice
-			prompt "Select LoRa Chip Type"
-			default USING_LORA_CHIP_SX126X
+        choice
+            prompt "Select LoRa Chip Type"
+            default LORA_RADIO_DRIVER_USING_LORA_CHIP_SX126X
 
-			config USING_LORA_CHIP_SX126X
-			    bool "LoRa Transceiver [SX126X]"
+            config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX126X
+                bool "LoRa Transceiver [SX126X]"
 
-			config USING_LORA_CHIP_SX127X
-			    bool "LoRa Transceiver [SX127X]"
+            config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX127X
+                bool "LoRa Transceiver [SX127X]"
+        endchoice
 
-			config USING_LORA_SOC_STM32WL
-			    bool "LoRa SoC [STM32WL]"
-
-			config USING_LORA_SiP_ASR
-			    bool "LoRa SiP [ASR]"
-		endchoice
-
-        if USING_LORA_CHIP_SX126X
+        if LORA_RADIO_DRIVER_USING_LORA_CHIP_SX126X
             menu "Select Supported LoRa Module [SX126X]"
-                menuconfig USING_LORA_MODULE_LSD4RF_2R717N40
+                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2R717N40
                     bool "LSD4RF-2R717N40(SX1268)"
                     default n
 
-                    if USING_LORA_MODULE_LSD4RF_2R717N40
+                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2R717N40
 
                         comment "LoRa Chip SX1268 (SPI module)"
-                        config USING_LORA_RADIO_SX1268
+                        config LORA_RADIO_DRIVER_USING_LORA_RADIO_SX1268
                             bool
-                            default y
+                            default n
 
                         config LORA_RADIO_USE_TCXO
                             bool "Enable TCXO"
@@ -147,24 +141,20 @@ if PKG_USING_LORA_RADIO_DRIVER
                 endmenu
             endif
 
-        if USING_LORA_CHIP_SX127X
+        if LORA_RADIO_DRIVER_USING_LORA_CHIP_SX127X
             menu "Supported LoRa Module [SX127X]"
 
-                menuconfig USING_LORA_MODULE_LSD4RF_2F717N20
+                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2F717N20
                     bool "LSD4RF-2F717N20(SX1278)"
-                    default y
+                    default n
 
-                    if USING_LORA_MODULE_LSD4RF_2F717N20
+                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2F717N20
 
                         comment "LoRa Chip SX1278 (SPI module)"
-                        config USING_LORA_RADIO_SX1278
+                        config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX1278
                             bool
                             default y
 
-                        config LORA_RADIO0_SPI_BUS_NAME
-                            string "spi device name"
-                            default spi1
-                      
                          config LORA_RADIO_GPIO_SETUP
                             bool "Enable LoRa Radio GPIO Setup"
                             default n
@@ -235,14 +225,14 @@ if PKG_USING_LORA_RADIO_DRIVER
                             endif
                     endif
 
-                menuconfig USING_LORA_MODULE_RA_01
+                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_RA_01
                     bool "Ra-01(SX1278)"
                     default n
 
-                    if USING_LORA_MODULE_RA_01
+                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_RA_01
 
                         comment "LoRa Chip SX1278 (SPI module)"
-                        config USING_LORA_RADIO_SX1278
+                        config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX1278
                             bool
                             default y
 
@@ -296,16 +286,18 @@ if PKG_USING_LORA_RADIO_DRIVER
                     endif
                 endmenu
             endif
+        endif
+    
 
-		if USING_LORA_RADIO_MULTI_INSTANCE
-	        comment "Not Support Currently"
-	    endif
+        if LORA_RADIO_DRIVER_USING_LORA_RADIO_MULTI_INSTANCE
+            comment "Not Support Currently"
+        endif
 
-     config USING_LORA_RADIO_DEBUG
+     config LORA_RADIO_DRIVER_USING_LORA_RADIO_DEBUG
          bool "Enable LoRa Radio Debug"
          default n
 
-         if USING_LORA_RADIO_DEBUG
+         if LORA_RADIO_DRIVER_USING_LORA_RADIO_DEBUG
             config LR_DBG_APP_CONFIG
                 bool "Enable LoRa Radio Application Debug"
                 default n
@@ -338,11 +330,11 @@ if PKG_USING_LORA_RADIO_DRIVER
 
     menu "Select LoRa Radio Driver Example"
 
-        config USING_LORA_RADIO_TEST_SHELL
+        config LORA_RADIO_DRIVER_USING_LORA_RADIO_TEST_SHELL
             bool "Enable LoRa Radio Test Shell"
             default n
 
-            if USING_LORA_RADIO_TEST_SHELL
+            if LORA_RADIO_DRIVER_USING_LORA_RADIO_TEST_SHELL
                 choice
                     prompt "Select the RF frequency"
                     default PHY_REGION_CN470
@@ -375,7 +367,6 @@ if PKG_USING_LORA_RADIO_DRIVER
             endif
     endmenu
 
-
    endif
 
     choice
@@ -395,7 +386,6 @@ if PKG_USING_LORA_RADIO_DRIVER
        string
        default "v1.0.0"    if PKG_USING_LORA_RADIO_DRIVER_V100
        default "latest"    if PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
-
 
 endif
 
