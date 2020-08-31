@@ -20,5 +20,9 @@ source "$PKGS_DIR/packages/system/EV/Kconfig"
 source "$PKGS_DIR/packages/system/syswatch/Kconfig"
 source "$PKGS_DIR/packages/system/sys_load_monitor/Kconfig"
 source "$PKGS_DIR/packages/system/plccore/Kconfig"
+source "$PKGS_DIR/packages/system/ramdisk/Kconfig"
+source "$PKGS_DIR/packages/system/minIni/Kconfig"
+source "$PKGS_DIR/packages/system/qboot/Kconfig"
+source "$PKGS_DIR/packages/system/uCOSIII_Wrapper/Kconfig"
 
 endmenu

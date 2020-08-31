@@ -1,0 +1,28 @@
+{
+  "name": "ws2812b",
+  "description": "Ws2812b software driver package for RT-Thread is driven by SPI+DMA.",
+  "description_zh": "用于 RT-Thread 的 ws2812b 软件驱动包，使用 SPI + DMA 方式驱动。",  
+  "enable": "PKG_USING_WS2812B", 
+  "keywords": [
+    "ws2812b"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "maplerian",
+    "email": "amqqfkhk@qq.com",
+    "gitee": "maplerian"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/maplerian/rt_ws2812b",
+  "icon": "https://avatars2.githubusercontent.com/u/26502915?s=460&v=4",
+  "homepage": "https://github.com/maplerian/rt_ws2812b#readme",
+  "doc": "https://github.com/maplerian/rt_ws2812b#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/maplerian/rt_ws2812b.git",
+      "filename": "rt_ws2812b.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

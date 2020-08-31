@@ -36,6 +36,15 @@ if PKG_USING_AGILE_TELNET
     config PKG_AGILE_TELNET_CLIENT_DEFAULT_TIMEOUT
         int "Set agile_telnet client timeout(min)"
         default 3
+    
+    if PKG_AGILE_TELNET_VER_NUM >= 0x20000
+
+        config PKG_AGILE_TELNET_CONSOLE_PLUG
+        bool
+        default y
+        select PKG_USING_AGILE_CONSOLE
+        
+    endif
 
     choice
         prompt "Version"
@@ -43,16 +52,21 @@ if PKG_USING_AGILE_TELNET
         help
             Select the package version
 
+        config PKG_USING_AGILE_TELNET_V100
+            bool "v1.0.0"
+
         config PKG_USING_AGILE_TELNET_LATEST_VERSION
             bool "latest"
     endchoice
           
     config PKG_AGILE_TELNET_VER
        string
+       default "v1.0.0"    if PKG_USING_AGILE_TELNET_V100
        default "latest"    if PKG_USING_AGILE_TELNET_LATEST_VERSION
 
     config PKG_AGILE_TELNET_VER_NUM
         hex
+        default 0x10000    if PKG_USING_AGILE_TELNET_V100
         default 0x99999    if PKG_USING_AGILE_TELNET_LATEST_VERSION
 endif
 

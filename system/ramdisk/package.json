@@ -1,0 +1,34 @@
+{
+  "name": "ramdisk",
+  "description": "A RAM memory block device.",
+  "description_zh": "内存块设备",
+  "enable": "PKG_USING_RAMDISK",
+  "keywords": [
+    "ramdisk"
+  ],
+  "category": "system",
+  "author": {
+    "name": "majianjia",
+    "email": "majianjia@live.com",
+    "github": "majianjia"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/majianjia/ramdisk",
+  "icon": "unknown",
+  "homepage": "https://github.com/majianjia/ramdisk#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/majianjia/ramdisk/archive/v0.1.0.zip",
+      "filename": "ramdisk-0.1.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/majianjia/ramdisk.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

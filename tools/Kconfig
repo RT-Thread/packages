@@ -14,6 +14,8 @@ source "$PKGS_DIR/packages/tools/nr_micro_shell/Kconfig"
 source "$PKGS_DIR/packages/tools/ChineseFontLibrary/Kconfig"
 source "$PKGS_DIR/packages/tools/lunar_calendar/Kconfig"
 source "$PKGS_DIR/packages/tools/bs8116a/Kconfig"
+source "$PKGS_DIR/packages/tools/gps_rmc/Kconfig"
 source "$PKGS_DIR/packages/tools/UrlEncode/Kconfig"
+source "$PKGS_DIR/packages/tools/uMCN/Kconfig"
 
 endmenu
