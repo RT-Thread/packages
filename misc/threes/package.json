@@ -1,0 +1,29 @@
+﻿{
+    "name": "threes",
+    "description": "A game which was very famous in the year of 2014",
+    "description_zh": "一款在2014年非常流行的游戏移被植到了终端",
+    "enable": "PKG_USING_THREES",
+    "keywords": [
+        "threes",
+        "game"
+    ],
+    "category": "misc",
+    "author": {
+        "name": "Meco Man",
+        "email": "jiantingman@foxmail.com",
+        "github": "mysterywolf"
+    },
+    "license": "MIT",
+    "repository": "https://github.com/mysterywolf/threes",
+    "icon": "unknown",
+    "homepage": "https://github.com/mysterywolf/threes#readme",
+    "doc": "unknown",
+    "site": [
+        {
+            "version": "latest",
+            "URL": "https://github.com/mysterywolf/threes.git",
+            "filename": "",
+            "VER_SHA": "master"
+        }
+    ]
+}
