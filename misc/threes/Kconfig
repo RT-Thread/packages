@@ -1,7 +1,7 @@
 
-# Kconfig file for package threes game
+# Kconfig file for package threes
 menuconfig PKG_USING_THREES
-    bool "threes: A game which was very famous in the year of 2014"
+    bool "threes: A game which was very famous in the year of 2014."
     default n
     select RT_USING_DFS
     select RT_USING_LIBC
@@ -13,18 +13,24 @@ if PKG_USING_THREES
     config PKG_THREES_PATH
         string
         default "/packages/misc/threes"
-            
+
     choice
         prompt "Version"
         default PKG_USING_THREES_LATEST_VERSION
         help
             Select the package version
+
+        config PKG_USING_THREES_V100
+            bool "v1.0.0"
+
         config PKG_USING_THREES_LATEST_VERSION
             bool "latest"
     endchoice
           
     config PKG_THREES_VER
        string
+       default "v1.0.0"    if PKG_USING_THREES_V100
        default "latest"    if PKG_USING_THREES_LATEST_VERSION
 
 endif
+
