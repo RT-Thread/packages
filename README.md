@@ -20,3 +20,6 @@ The packages repo for rt-thread. In this git repo, there is only the information
 3. 保证bsp目录中存在Kconfig文件，如果不存在可以参考env工具中的KConfig文件。
 4. 双击打开env根目录下的console控制台，通过cd命令进入到需要配置的bsp根目录。然后使用`menuconfig`命令打开env的配置界面，这时即可在RT-thread online packages菜单中找到可以在线下载的组件包。
 5. 勾选所需要的组件包后保存并退出，使用`pkgs --update`命令更新项目后，即可在bsp目录下的packages文件夹中找到已经下载&安装好的组件包。
+
+# 注意
+1. 提交前请确认Kconfig以及package.json文件的编码格式为UTF-8格式，否则会导致env报错。
