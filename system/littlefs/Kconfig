@@ -63,7 +63,7 @@ if PKG_USING_LITTLEFS
 
         config LFS_BLOCK_CYCLES
             int "lfs enables wear leveling. 0 is disable."
-            default 0
+            default 512
 
         config LFS_LOOKAHEAD_MAX
             int "lfs lookahead size"
