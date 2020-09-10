@@ -60,11 +60,16 @@ if PKG_USING_LITTLEFS
         config LFS_CACHE_SIZE
             int "lfs r/w cache size"
             default LFS_PROG_SIZE
-
+        if (PKG_USING_LITTLEFS_V201 || PKG_USING_LITTLEFS_V205)
         config LFS_BLOCK_CYCLES
-            int "lfs enables wear leveling. 0 is disable."
+            int "lfs enable wear leveling. 0 is disable."
             default 0
-
+        endif
+        if !(PKG_USING_LITTLEFS_V201 || PKG_USING_LITTLEFS_V205)
+        config LFS_BLOCK_CYCLES
+            int "lfs enable wear leveling. -1 is disable."
+            default -1
+        endif
         config LFS_LOOKAHEAD_MAX
             int "lfs lookahead size"
             default 128
