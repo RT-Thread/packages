@@ -27,5 +27,6 @@ source "$PKGS_DIR/packages/misc/ulapack/Kconfig"
 source "$PKGS_DIR/packages/misc/ukal/Kconfig"
 source "$PKGS_DIR/packages/misc/crclib/Kconfig"
 source "$PKGS_DIR/packages/misc/threes/Kconfig"
+source "$PKGS_DIR/packages/misc/2048/Kconfig"
 
 endmenu
