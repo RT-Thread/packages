@@ -154,6 +154,17 @@ if PKG_USING_MICROPYTHON
             default n
     endmenu
 
+    menu "User Extended Module"
+        config MICROPYTHON_USING_USEREXTMODS
+        bool "modules define in your project"
+        default n
+        help
+            You must provide 'qstrdefs.user.extmods.h'
+            and 'moddefs.user.extmods.h'.
+            Macro 'MICROPY_USER_MODULES' in 
+            'moddefs.user.extmods.h' to export your modules.
+    endmenu
+
     config PKG_MICROPYTHON_HEAP_SIZE
         int
         prompt "Heap size for python run environment"
