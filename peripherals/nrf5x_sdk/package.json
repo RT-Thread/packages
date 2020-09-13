@@ -25,9 +25,15 @@
       "VER_SHA": "release"
     },
     {
+      "version": "v16.0.0",
+      "URL": "https://github.com/supperthomas/nrf5x_sdk/archive/V16.0.0.zip",
+      "filename": "nrf5x_sdk-16.0.0.zip",
+      "VER_SHA": "release"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/supperthomas/nrf5x_sdk.git",
-      "filename": "nrf5x_sdk-13.0.0",
+      "filename": "nrf5x_sdk-16.0.0",
       "VER_SHA": "master"
     }
   ]
