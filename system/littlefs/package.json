@@ -77,6 +77,18 @@
       "VER_SHA": ""
     },
     {
+      "version": "v2.2.0",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v2.2.0_for_rtthread.zip",
+      "filename": "v2.2.0_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v2.2.1",
+      "URL": "https://github.com/geniusgogo/littlefs/archive/v2.2.1_for_rtthread.zip",
+      "filename": "v2.2.1_for_rtthread.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/geniusgogo/littlefs.git",
       "filename": "",
