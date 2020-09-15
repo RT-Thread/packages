@@ -57,11 +57,9 @@ if PKG_USING_NRF5X_SDK
         
         config SD_BLE_APP_BEACON
         bool "ble_app_beacon"
-        default n
 
         config SD_BLE_APP_BLINKY
         bool "ble_app_blinky"
-        default n 
         if SD_BLE_APP_BLINKY
             config BLE_LBS_ENABLED
             int 
@@ -70,7 +68,6 @@ if PKG_USING_NRF5X_SDK
 
         config SD_BLE_APP_UART
         bool "ble_app_uart"
-        default n 
         if SD_BLE_APP_UART
             config BLE_NUS_ENABLED
             int 
@@ -82,7 +79,6 @@ if PKG_USING_NRF5X_SDK
 
         config SD_BLE_APP_HRS
         bool "ble_app_hrs"
-        default n 
         if SD_BLE_APP_HRS
             config BLE_HRS_ENABLED
             int 
@@ -93,7 +89,6 @@ if PKG_USING_NRF5X_SDK
         endif
         config SD_BLE_APP_HIDS_MOUSE
         bool "ble_app_hids_mouse"
-        default n 
     endchoice
     config PKG_NRF5X_SDK_PATH
         string
