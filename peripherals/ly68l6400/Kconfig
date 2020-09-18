@@ -1,7 +1,7 @@
 
 # Kconfig file for package ly68l6400
 menuconfig PKG_USING_LY68L6400
-    bool "a drive for ly68l6400"
+    bool "ly68l6400:a device drive and frame for ly68l6400"
     default n
 
 if PKG_USING_LY68L6400
