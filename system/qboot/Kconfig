@@ -163,6 +163,9 @@ if PKG_USING_QBOOT
         config PKG_USING_QBOOT_LATEST_VERSION
             bool "latest"
             
+        config PKG_USING_QBOOT_V104
+            bool "v1.04"
+            
         config PKG_USING_QBOOT_V103
             bool "v1.03"
             
@@ -179,6 +182,7 @@ if PKG_USING_QBOOT
     config PKG_QBOOT_VER
        string
        default "latest" if PKG_USING_QBOOT_LATEST_VERSION
+       default "v1.04" if PKG_USING_QBOOT_V104
        default "v1.03" if PKG_USING_QBOOT_V103
        default "v1.02" if PKG_USING_QBOOT_V102
        default "v1.01" if PKG_USING_QBOOT_V101
