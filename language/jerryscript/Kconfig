@@ -45,6 +45,14 @@ if PKG_USING_JERRYSCRIPT
         select PKG_JERRY_ENABLE_LOGGING
         default n
 
+    config JERRY_ENABLE_SNAPSHOT_SAVE
+        bool "JERRY_ENABLE_SNAPSHOT_SAVE"
+        default n
+        
+    config JERRY_ENABLE_SNAPSHOT_EXEC
+        bool "JERRY_ENABLE_SNAPSHOT_EXEC"
+        default n
+        
     config CONFIG_DISABLE_ANNEXB_BUILTIN
         bool "CONFIG_DISABLE_ANNEXB_BUILTIN"
         default n
