@@ -14,6 +14,7 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/bmi160_bmx160/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/spl0601/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/ms5611/Kconfig"
+		source "$PKGS_DIR/packages/peripherals/sensors/ms5805/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/da270/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/df220/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/hshcal001/Kconfig"
@@ -41,5 +42,4 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/pmsxx/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/rt3020/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/mlx90632/Kconfig"
-		source "$PKGS_DIR/packages/peripherals/sensors/ms5805/Kconfig"
     endif
