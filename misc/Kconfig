@@ -29,5 +29,6 @@ source "$PKGS_DIR/packages/misc/crclib/Kconfig"
 source "$PKGS_DIR/packages/misc/threes/Kconfig"
 source "$PKGS_DIR/packages/misc/2048/Kconfig"
 source "$PKGS_DIR/packages/misc/lwgps/Kconfig"
+source "$PKGS_DIR/packages/misc/TensorflowLiteMicro/Kconfig"
 
 endmenu
