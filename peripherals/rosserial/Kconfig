@@ -2,6 +2,7 @@
 # Kconfig file for package ROSSERIAL
 menuconfig PKG_USING_ROSSERIAL
     bool "rosserial: a protocol for Robots Operating System (ROS)"
+    select RT_USING_CPLUSPLUS
     default n
 
 if PKG_USING_ROSSERIAL
