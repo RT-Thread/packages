@@ -96,6 +96,7 @@ if PKG_USING_BC28_MQTT
     config PKG_USING_BC28_MQTT_SAMPLE
         bool "Enable bc28_mqtt sample"
         default n
+        select PKG_USING_CJSON
 
     choice
         prompt "Version"
