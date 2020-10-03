@@ -3,6 +3,8 @@
 menuconfig PKG_USING_BC28_MQTT
     bool "BC28 MQTT: connect to Aliyun with Quectel BC28 model"
     default n
+    select RT_USING_AT
+    select AT_USING_CLIENT
 
 if PKG_USING_BC28_MQTT
 
