@@ -6,13 +6,47 @@ menuconfig PKG_USING_DHTXX
 
 if PKG_USING_DHTXX
 
+    config PKG_DHTXX_PATH
+        string
+        default "/packages/peripherals/sensors/dhtxx"
+
+    if (PKG_DHTXX_VER_NUM >= 0x00900)
+
+    choice
+        prompt "Select dhtxx sensor type"
+        default PKG_USING_DHTXX_TYPE_DHT11
+
+        config PKG_USING_DHTXX_TYPE_DHT11
+            bool "DHT11"
+
+        config PKG_USING_DHTXX_TYPE_DHT12
+            bool "DHT12"
+
+        config PKG_USING_DHTXX_TYPE_DHT21
+            bool "DHT21/AM2301"
+
+        config PKG_USING_DHTXX_TYPE_DHT22
+            bool "DHT22/AM2302"
+    endchoice
+
+    endif
+
+    config PKG_USING_DHTXX_DEBUG
+        bool "Enable debug log output"
+        default n
+
     config PKG_USING_DHTXX_SAMPLE
         bool "Enable dthxx sample"
         default n
 
-    config PKG_DHTXX_PATH
-        string
-        default "/packages/peripherals/sensors/dhtxx"
+    if (PKG_DHTXX_VER_NUM >= 0x00900)
+
+    config PKG_USING_DHTXX_SAMPLE_PIN
+        int "data pin number"
+        depends on PKG_USING_DHTXX_SAMPLE
+        default 0
+
+    endif
 
     choice
         prompt "Version"
@@ -20,8 +54,11 @@ if PKG_USING_DHTXX
         help
             Select the package version
 
-        config PKG_USING_DHTXX_V080
-            bool "v0.8.0"
+        config PKG_USING_DHTXX_V08X
+            bool "v0.8.1"
+
+        config PKG_USING_DHTXX_V090
+            bool "v0.9.0"
 
         config PKG_USING_DHTXX_LATEST_VERSION
             bool "latest"
@@ -29,8 +66,15 @@ if PKG_USING_DHTXX
           
     config PKG_DHTXX_VER
        string
-       default "v0.8.0"    if PKG_USING_DHTXX_V080
+       default "v0.8.1"    if PKG_USING_DHTXX_V08X
+       default "v0.9.0"    if PKG_USING_DHTXX_V090
        default "latest"    if PKG_USING_DHTXX_LATEST_VERSION
+
+    config PKG_DHTXX_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_DHTXX_LATEST_VERSION
+        default 0x00900    if PKG_USING_DHTXX_V090
+        default 0x00801    if PKG_USING_DHTXX_V08X
 
 endif
 
