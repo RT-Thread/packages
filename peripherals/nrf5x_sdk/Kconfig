@@ -59,12 +59,29 @@ if PKG_USING_NRF5X_SDK
         bool "ble_app_beacon"
 
         config SD_BLE_APP_BLINKY
-        bool "ble_app_blinky"
-        if SD_BLE_APP_BLINKY
-            config BLE_LBS_ENABLED
-            int 
-            default 1
-        endif
+            bool "ble_app_blinky"
+            default n
+            if SD_BLE_APP_BLINKY
+                config BLE_LBS_ENABLED
+                    int 
+                    default 1
+                config BLE_APP_BLINKY_ADV_LED
+                    int "pin number of advertising indicator led"
+                    range 0 47
+                    default 16  
+                config BLE_APP_BLINKY_CON_LED
+                    int "pin number of connected indicator led"
+                    range 0 47
+                    default 14  
+                config BLE_APP_BLINKY_TOG_LED
+                    int "pin number of toggled led"
+                    range 0 47
+                    default 15    
+                config BLE_APP_BLINKY_TRI_BUTTON
+                    int "pin number of trigger button"
+                    range 0 47
+                    default 11       
+            endif
 
         config SD_BLE_APP_UART
         bool "ble_app_uart"
