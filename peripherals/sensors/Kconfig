@@ -10,6 +10,7 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/hts221/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/lsm303agr/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/bme280/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/bme680/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/bma400/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/bmi160_bmx160/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/spl0601/Kconfig"
