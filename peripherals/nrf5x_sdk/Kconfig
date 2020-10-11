@@ -103,6 +103,12 @@ if PKG_USING_NRF5X_SDK
             config NRF_SDH_BLE_GATT_MAX_MTU_SIZE
             int 
             default 247
+            config BLE_DIS_ENABLED
+            int 
+            default 1
+            config BLE_BAS_ENABLED
+            int 
+            default 1
         endif
         config SD_BLE_APP_HIDS_MOUSE
         bool "ble_app_hids_mouse"
