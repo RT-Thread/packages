@@ -23,3 +23,4 @@ The packages repo for rt-thread. In this git repo, there is only the information
 
 # 注意
 1. 提交前请确认Kconfig以及package.json文件的编码格式为UTF-8格式，否则会导致env报错。
+2. 软件包的仓库名称不要以数字开头，否则gitee备份中国大陆镜像源时，备份不过去。
