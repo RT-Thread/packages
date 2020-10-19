@@ -13,7 +13,7 @@ if PKG_USING_2048
 
     config PKG_2048_PATH
         string
-        default "/packages/misc/2048"
+        default "/packages/misc/c2048"
 
     choice
         prompt "Version"

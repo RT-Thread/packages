@@ -14,14 +14,14 @@
     "github": "mysterywolf"
   },
   "license": "MIT",
-  "repository": "https://github.com/mysterywolf/2048",
+  "repository": "https://github.com/mysterywolf/c2048",
   "icon": "unknown",
-  "homepage": "https://github.com/mysterywolf/2048",
-  "doc": "https://github.com/mysterywolf/2048#readme",
+  "homepage": "https://github.com/mysterywolf/c2048",
+  "doc": "https://github.com/mysterywolf/c2048#readme",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/mysterywolf/2048.git",
+      "URL": "https://github.com/mysterywolf/c2048.git",
       "filename": "Null for git package",
       "VER_SHA": "master"
     }
