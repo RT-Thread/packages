@@ -52,5 +52,6 @@ source "$PKGS_DIR/packages/peripherals/agile_console/Kconfig"
 source "$PKGS_DIR/packages/peripherals/ld3320/Kconfig"
 source "$PKGS_DIR/packages/peripherals/wk2124/Kconfig"
 source "$PKGS_DIR/packages/peripherals/ly68l6400/Kconfig"
+source "$PKGS_DIR/packages/peripherals/dm9051/Kconfig"
 
 endmenu
