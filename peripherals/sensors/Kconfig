@@ -43,4 +43,5 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/rt3020/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/mlx90632/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/ms5611/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/max31865/Kconfig"
     endif
