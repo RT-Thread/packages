@@ -60,7 +60,6 @@ if PKG_USING_NRF5X_SDK
 
         config SD_BLE_APP_BLINKY
             bool "ble_app_blinky"
-            default n
             if SD_BLE_APP_BLINKY
                 config BLE_LBS_ENABLED
                     int 
@@ -110,9 +109,11 @@ if PKG_USING_NRF5X_SDK
             int 
             default 1
         endif
+
         config SD_BLE_APP_HIDS_MOUSE
         bool "ble_app_hids_mouse"
     endchoice
+
     config PKG_NRF5X_SDK_PATH
         string
         default "/packages/peripherals/nrf5x_sdk"

@@ -26,14 +26,13 @@ if PKG_USING_TENSORFLOWLITEMICRO
     
     choice
         prompt "Select Offical Example"
+        default PKG_USING_TENSORFLOWLITEMICRO_NO_EXAMPLE
 
         config PKG_USING_TENSORFLOWLITEMICRO_AUDIO_EXAMPLE
             bool "Enable Tensorflow Lite Micro audio example"
-            default n
 
         config PKG_USING_TENSORFLOWLITEMICRO_NO_EXAMPLE
             bool "No Tensorflow Lite Micro Example"
-            default y
     endchoice
 
     config PKG_TENSORFLOWLITEMICRO_VER
