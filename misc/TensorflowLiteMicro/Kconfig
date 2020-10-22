@@ -36,6 +36,18 @@ if PKG_USING_TENSORFLOWLITEMICRO
             default y
     endchoice
 
+    choice
+    prompt "Select Tensorflow Lite Operations Type"
+
+    config PKG_USING_TENSORFLOWLITEMICRO_REFERENCE
+        bool "Using Tensorflow Lite reference operations"
+        default n
+
+    config PKG_USING_TENSORFLOWLITEMICRO_CMSISNN
+        bool "Using Tensorflow Lite CMSIS NN operations"
+        default y
+    endchoice
+
     config PKG_TENSORFLOWLITEMICRO_VER
        string
        default "v1.0.0"    if PKG_USING_TENSORFLOWLITEMICRO_V100
