@@ -1,7 +1,7 @@
 
 # Kconfig file for package TensorflowLiteMicro
 menuconfig PKG_USING_TENSORFLOWLITEMICRO
-    bool "Tensorflow Lite Micro: a lightweight deep learning end-test inference framework for RT-Thread operating system ."
+    bool "Tensorflow Lite Micro: a lightweight deep learning end-test inference framework for RT-Thread operating system."
     select RT_USING_CPLUSPLUS
     default n
 
@@ -37,15 +37,15 @@ if PKG_USING_TENSORFLOWLITEMICRO
     endchoice
 
     choice
-    prompt "Select Tensorflow Lite Operations Type"
+        prompt "Select Tensorflow Lite Operations Type"
 
-    config PKG_USING_TENSORFLOWLITEMICRO_REFERENCE
-        bool "Using Tensorflow Lite reference operations"
-        default n
+        config PKG_USING_TENSORFLOWLITEMICRO_REFERENCE
+            bool "Using Tensorflow Lite reference operations"
+            default n
 
-    config PKG_USING_TENSORFLOWLITEMICRO_CMSISNN
-        bool "Using Tensorflow Lite CMSIS NN operations"
-        default y
+        config PKG_USING_TENSORFLOWLITEMICRO_CMSISNN
+            bool "Using Tensorflow Lite CMSIS NN operations"
+            default y
     endchoice
 
     config PKG_TENSORFLOWLITEMICRO_VER
