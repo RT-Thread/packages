@@ -1,7 +1,7 @@
 
 # Kconfig file for package pdulib
 menuconfig PKG_USING_PDULIB
-    bool " pudlib:A TEXT parsing library for short messages in PDU format."
+    bool "pudlib:A TEXT parsing library for short messages in PDU format."
     default n
 
 if PKG_USING_PDULIB
