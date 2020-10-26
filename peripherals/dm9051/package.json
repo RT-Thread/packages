@@ -2,6 +2,7 @@
   "name": "dm9051",
   "description": "DM9051 SPI ethernet driver",
   "description_zh": "DM9051 SPI 接口以太网芯片驱动库",
+  "enable": "PKG_USING_DM9051",
   "keywords": [
     "dm9051",
     "ethernet",
