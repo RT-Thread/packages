@@ -1,0 +1,28 @@
+{
+  "name": "lorawan_ed_stack",
+  "description": "lorawan_ed_stack: lorawan end-device stack.",
+  "description_zh": "lorawan_ed_stack是LoRaWAN终端设备协议栈的实现.",  
+  "enable": "PKG_USING_LORAWAN_ED_STACK", 
+  "keywords": [
+    "lorawan_ed_stack"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "forest-rain",
+    "email": "693097971@qq.com",
+    "github": "forest-rain"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/forest-rain/lorawan-ed-stack",
+  "icon": "unknown",
+  "homepage": "https://github.com/forest-rain/lorawan-ed-stack#readme",
+  "doc": "https://github.com/forest-rain/lorawan-ed-stack/tree/master/doc",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "git@github.com:forest-rain/lorawan-ed-stack.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
