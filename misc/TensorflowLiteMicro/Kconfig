@@ -44,11 +44,11 @@ if PKG_USING_TENSORFLOWLITEMICRO
 
         config PKG_USING_TENSORFLOWLITEMICRO_REFERENCE
             bool "Using Tensorflow Lite reference operations"
-            default n
+            default y
 
         config PKG_USING_TENSORFLOWLITEMICRO_CMSISNN
             bool "Using Tensorflow Lite CMSIS NN operations"
-            default y
+            default n
     endchoice
 
     config PKG_TENSORFLOWLITEMICRO_VER
