@@ -3,6 +3,8 @@
 menuconfig PKG_USING_BC28_MQTT
     bool "BC28 MQTT: connect to Aliyun with Quectel BC28 model"
     default n
+    select RT_USING_AT
+    select AT_USING_CLIENT
 
 if PKG_USING_BC28_MQTT
 
@@ -91,9 +93,14 @@ if PKG_USING_BC28_MQTT
         range 0 3600
         default 300
 
+    config PKG_USING_BC28_MQTT_DEBUG
+        bool "Enable debug log output"
+        default n
+
     config PKG_USING_BC28_MQTT_SAMPLE
         bool "Enable bc28_mqtt sample"
         default n
+        select PKG_USING_CJSON
 
     choice
         prompt "Version"

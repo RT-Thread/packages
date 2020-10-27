@@ -6,6 +6,10 @@ menuconfig PKG_USING_LWGPS
 
 if PKG_USING_LWGPS
 
+    config LWGPS_USING_SAMPLES
+        bool "enable samples"
+        default n
+
     config PKG_LWGPS_PATH
         string
         default "/packages/misc/lwgps"
@@ -69,6 +73,9 @@ if PKG_USING_LWGPS
         config PKG_USING_LWGPS_V100
             bool "v1.0.0"
 
+        config PKG_USING_LWGPS_V110
+            bool "v1.1.0"
+
         config PKG_USING_LWGPS_LATEST_VERSION
             bool "latest"
     endchoice
@@ -77,6 +84,7 @@ if PKG_USING_LWGPS
     config PKG_LWGPS_VER
        string
        default "v1.0.0"    if PKG_USING_LWGPS_V100
+       default "v1.1.0"    if PKG_USING_LWGPS_V110
        default "latest"    if PKG_USING_LWGPS_LATEST_VERSION
 
 endif

@@ -35,8 +35,8 @@ if PKG_USING_CRCLIB
         
         if CRC8_POLY_CUSTOM
             config CRC8_POLY_CUSTOM_STRING
-                string "crc8 polynome value (hex)"
-                default "0x12"
+                hex "crc8 polynome value (hex)"
+                default 0x12
         endif
         
         config CRC8_POLY
@@ -70,8 +70,8 @@ if PKG_USING_CRCLIB
         
         if CRC16_POLY_CUSTOM
             config CRC16_POLY_CUSTOM_STRING
-                string "crc16 polynome value (hex)"
-                default "0x1234"
+                hex "crc16 polynome value (hex)"
+                default 0x1234
         endif
         
         config CRC16_POLY
@@ -105,8 +105,8 @@ if PKG_USING_CRCLIB
         
         if CRC32_POLY_CUSTOM
             config CRC32_POLY_CUSTOM_STRING
-                string "crc32 polynome value (hex)"
-                default "0x12345678"
+                hex "crc32 polynome value (hex)"
+                default 0x12345678
         endif
         
         config CRC32_POLY

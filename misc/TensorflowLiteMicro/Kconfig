@@ -1,4 +1,3 @@
-
 # Kconfig file for package TensorflowLiteMicro
 menuconfig PKG_USING_TENSORFLOWLITEMICRO
     bool "Tensorflow Lite Micro: a lightweight deep learning end-test inference framework for RT-Thread operating system."
@@ -58,4 +57,3 @@ if PKG_USING_TENSORFLOWLITEMICRO
        default "latest"    if PKG_USING_TENSORFLOWLITEMICRO_LATEST_VERSION
 
 endif
-

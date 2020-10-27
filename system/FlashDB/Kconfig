@@ -57,9 +57,12 @@ if PKG_USING_FLASHDB
 
     choice
         prompt "Version"
-        default PKG_USING_FLASHDB_LATEST_VERSION
+        default PKG_USING_FLASHDB_V10000
         help
             Select the package version
+
+        config PKG_USING_FLASHDB_V10000
+            bool "v1.0.0"
 
         config PKG_USING_FLASHDB_LATEST_VERSION
             bool "latest"
@@ -67,6 +70,7 @@ if PKG_USING_FLASHDB
           
     config PKG_FLASHDB_VER
        string
+       default "v1.0.0"    if PKG_USING_FLASHDB_V10000
        default "latest"    if PKG_USING_FLASHDB_LATEST_VERSION
 
 endif
