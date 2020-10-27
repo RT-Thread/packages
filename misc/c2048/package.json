@@ -1,5 +1,5 @@
 {
-  "name": "2048",
+  "name": "c2048",
   "description": "An indie puzzle video game run on RT-Thread console",
   "description_zh": "2048是一款益智类游戏，原版游戏运行在苹果手机上",  
   "enable": "PKG_USING_2048", 
