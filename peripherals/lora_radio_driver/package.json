@@ -4,6 +4,7 @@
   "description_zh": "lora芯片(SX126x\\SX127x)驱动包",  
   "enable": "PKG_USING_LORA_RADIO_DRIVER", 
   "keywords": [
+    "lora",
     "lora_radio_driver"
   ],
   "category": "peripherals",
@@ -16,7 +17,7 @@
   "repository": "https://github.com/Forest-Rain/lora-radio-driver",
   "icon": "unknown",
   "homepage": "https://github.com/Forest-Rain/lora-radio-driver#readme",
-  "doc": "unknown",
+  "doc": "https://github.com/Forest-Rain/lora-radio-driver/tree/master/doc",
   "site": [
     {
       "version": "v1.0.0",
@@ -29,6 +30,12 @@
       "URL": "https://github.com/Forest-Rain/lora-radio-driver/archive/v1.2.0.zip",
       "filename": "lora-radio-driver-1.2.0.zip",
       "VER_SHA": "d952c0541723aa1fe986d5838850dbafee116f33"
+    },
+    {
+      "version": "v1.2.2",
+      "URL": "https://github.com/Forest-Rain/lora-radio-driver/archive/v1.2.2.zip",
+      "filename": "lora-radio-driver-1.2.2.zip",
+      "VER_SHA": "974c5a8987f9e4fdd8c1fb598f0a35a8e9670859"
     },
     {
       "version": "latest",
