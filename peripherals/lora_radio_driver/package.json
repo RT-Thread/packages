@@ -26,16 +26,10 @@
       "VER_SHA": "e35ae1045331922cafbc98b11414110d52b203a7"
     },
     {
-      "version": "v1.2.0",
-      "URL": "https://github.com/Forest-Rain/lora-radio-driver/archive/v1.2.0.zip",
-      "filename": "lora-radio-driver-1.2.0.zip",
-      "VER_SHA": "d952c0541723aa1fe986d5838850dbafee116f33"
-    },
-    {
-      "version": "v1.2.2",
-      "URL": "https://github.com/Forest-Rain/lora-radio-driver/archive/v1.2.2.zip",
-      "filename": "lora-radio-driver-1.2.2.zip",
-      "VER_SHA": "974c5a8987f9e4fdd8c1fb598f0a35a8e9670859"
+      "version": "v1.2.4",
+      "URL": "https://github.com/Forest-Rain/lora-radio-driver/archive/v1.2.4.zip",
+      "filename": "lora-radio-driver-1.2.4.zip",
+      "VER_SHA": "e6540d1d79b551f0967d3080b8dbdcec939b1235"
     },
     {
       "version": "latest",
