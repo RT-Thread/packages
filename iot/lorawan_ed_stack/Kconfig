@@ -359,6 +359,9 @@ if PKG_USING_LORAWAN_ED_STACK
         config PKG_USING_LORAWAN_ED_STACK_V100
             bool "v1.0.0"
 
+        config PKG_USING_LORAWAN_ED_STACK_V102
+            bool "v1.0.2"
+
         config PKG_USING_LORAWAN_ED_STACK_LATEST_VERSION
             bool "latest"
     endchoice
@@ -366,6 +369,7 @@ if PKG_USING_LORAWAN_ED_STACK
     config PKG_LORAWAN_ED_STACK_VER
        string
        default "v1.0.0"    if PKG_USING_LORAWAN_ED_STACK_V100
+       default "v1.0.2"    if PKG_USING_LORAWAN_ED_STACK_V102
        default "latest"    if PKG_USING_LORAWAN_ED_STACK_LATEST_VERSION
 
 endif
