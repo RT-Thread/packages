@@ -910,8 +910,8 @@ if PKG_USING_LORA_RADIO_DRIVER
 
         config PKG_USING_LORA_RADIO_DRIVER_V100
             bool "v1.0.0"
-        config PKG_USING_LORA_RADIO_DRIVER_V120
-            bool "v1.2.0"
+        config PKG_USING_LORA_RADIO_DRIVER_V124
+            bool "v1.2.4"
         config PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
             bool "latest"
     endchoice
@@ -919,7 +919,7 @@ if PKG_USING_LORA_RADIO_DRIVER
     config PKG_LORA_RADIO_DRIVER_VER
        string
        default "v1.0.0"    if PKG_USING_LORA_RADIO_DRIVER_V100
-       default "v1.2.0"    if PKG_USING_LORA_RADIO_DRIVER_V120
+       default "v1.2.4"    if PKG_USING_LORA_RADIO_DRIVER_V124
        default "latest"    if PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
 
 
