@@ -1,7 +1,6 @@
-
 # Kconfig file for package TensorflowLiteMicro
 menuconfig PKG_USING_TENSORFLOWLITEMICRO
-    bool "Tensorflow Lite Micro: a lightweight deep learning end-test inference framework for RT-Thread operating system ."
+    bool "Tensorflow Lite Micro: a lightweight deep learning end-test inference framework for RT-Thread operating system."
     select RT_USING_CPLUSPLUS
     default n
 
@@ -17,6 +16,9 @@ if PKG_USING_TENSORFLOWLITEMICRO
         help
             Select the package version
 
+        config PKG_USING_TENSORFLOWLITEMICRO_V101
+            bool "v1.0.1"
+
         config PKG_USING_TENSORFLOWLITEMICRO_V100
             bool "v1.0.0"
 
@@ -26,19 +28,32 @@ if PKG_USING_TENSORFLOWLITEMICRO
     
     choice
         prompt "Select Offical Example"
-        default PKG_USING_TENSORFLOWLITEMICRO_NO_EXAMPLE
 
         config PKG_USING_TENSORFLOWLITEMICRO_AUDIO_EXAMPLE
             bool "Enable Tensorflow Lite Micro audio example"
+            default n
 
         config PKG_USING_TENSORFLOWLITEMICRO_NO_EXAMPLE
             bool "No Tensorflow Lite Micro Example"
+            default y
+    endchoice
+
+    choice
+        prompt "Select Tensorflow Lite Operations Type"
+
+        config PKG_USING_TENSORFLOWLITEMICRO_REFERENCE
+            bool "Using Tensorflow Lite reference operations"
+            default y
+
+        config PKG_USING_TENSORFLOWLITEMICRO_CMSISNN
+            bool "Using Tensorflow Lite CMSIS NN operations"
+            default n
     endchoice
 
     config PKG_TENSORFLOWLITEMICRO_VER
        string
+       default "v1.0.1"    if PKG_USING_TENSORFLOWLITEMICRO_V101
        default "v1.0.0"    if PKG_USING_TENSORFLOWLITEMICRO_V100
        default "latest"    if PKG_USING_TENSORFLOWLITEMICRO_LATEST_VERSION
 
 endif
-
