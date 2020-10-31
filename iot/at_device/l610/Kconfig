@@ -1,0 +1,37 @@
+
+# L610 AT device configuration
+menuconfig AT_DEVICE_USING_L610
+    bool "Fibocom L610"
+    default n
+
+if AT_DEVICE_USING_L610
+
+    config AT_DEVICE_L610_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_L610_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_L610_SAMPLE
+
+        config L610_SAMPLE_POWER_PIN
+            int "Power pin"
+            default -1
+
+        config L610_SAMPLE_STATUS_PIN
+            int "Power status pin"
+            default -1
+
+        config L610_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart2"
+
+        config L610_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 512
+
+    endif
+
+endif
