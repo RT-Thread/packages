@@ -146,7 +146,7 @@ if PKG_USING_QBOOT
         bool "appl run in external flash"
         default n
 
-    config QBOOT_THREAD_STK_SIZE
+    config QBOOT_THREAD_STACK_SIZE
         int "The stack size of thread"
         default 4096   
 
