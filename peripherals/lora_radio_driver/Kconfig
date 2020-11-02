@@ -541,11 +541,11 @@ if PKG_USING_LORA_RADIO_DRIVER
         if LORA_RADIO_DRIVER_USING_LORA_CHIP_SX127X
             menu "Supported LoRa Module [SX127X]"
 
-                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2F717N20
-                    bool "LSD4RF-2F717N20 [SX1278]"
+                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2F717N30
+                    bool "LSD4RF-2F717N30 [SX1278]"
                     default n
 
-                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2F717N20
+                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2F717N30
 
                         comment "LoRa Chip SX1278 (SPI module)"
                         config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX1278
@@ -910,8 +910,8 @@ if PKG_USING_LORA_RADIO_DRIVER
 
         config PKG_USING_LORA_RADIO_DRIVER_V100
             bool "v1.0.0"
-        config PKG_USING_LORA_RADIO_DRIVER_V120
-            bool "v1.2.0"
+        config PKG_USING_LORA_RADIO_DRIVER_V124
+            bool "v1.2.4"
         config PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
             bool "latest"
     endchoice
@@ -919,7 +919,7 @@ if PKG_USING_LORA_RADIO_DRIVER
     config PKG_LORA_RADIO_DRIVER_VER
        string
        default "v1.0.0"    if PKG_USING_LORA_RADIO_DRIVER_V100
-       default "v1.2.0"    if PKG_USING_LORA_RADIO_DRIVER_V120
+       default "v1.2.4"    if PKG_USING_LORA_RADIO_DRIVER_V124
        default "latest"    if PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
 
 
