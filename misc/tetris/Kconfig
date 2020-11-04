@@ -1,7 +1,7 @@
 
 # Kconfig file for package tetris
 menuconfig PKG_USING_TETRIS
-    bool "A tetris game playing on FinSH."
+    bool "Tetris: A tetris game playing on FinSH."
     default n
 
 if PKG_USING_TETRIS

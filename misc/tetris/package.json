@@ -15,13 +15,13 @@
   "license": "MIT",
   "repository": "https://github.com/volatile-static/rtt_tetris",
   "icon": "unknown",
-  "homepage": "unknown",
+  "homepage": "https://github.com/volatile-static/rtt_tetris",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
       "URL": "https://github.com/volatile-static/rtt_tetris.git",
-      "filename": "rtt_tetris-master.zip",
+      "filename": "Null for git package",
       "VER_SHA": "master"
     }
   ]
