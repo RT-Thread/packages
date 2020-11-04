@@ -175,6 +175,9 @@ if PKG_USING_MICROPYTHON
         help
             Select the this package version
 
+        config PKG_USING_MICROPYTHON_V11200
+            bool "v1.12.0"
+
         config PKG_USING_MICROPYTHON_V11004
             bool "v1.10.4"
 
@@ -199,6 +202,7 @@ if PKG_USING_MICROPYTHON
 
     config PKG_MICROPYTHON_VER
         string
+        default "v1.12.0"  if PKG_USING_MICROPYTHON_V11200
         default "v1.10.4"  if PKG_USING_MICROPYTHON_V11004
         default "v1.10.3"  if PKG_USING_MICROPYTHON_V11003
         default "v1.10.2"  if PKG_USING_MICROPYTHON_V11002
@@ -210,6 +214,7 @@ if PKG_USING_MICROPYTHON
     config PKG_MICROPYTHON_VER_NUM
         hex
         default 0x99999    if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default 0x11200    if PKG_USING_MICROPYTHON_V11200
         default 0x11004    if PKG_USING_MICROPYTHON_V11004
         default 0x11003    if PKG_USING_MICROPYTHON_V11003
         default 0x11002    if PKG_USING_MICROPYTHON_V11002
