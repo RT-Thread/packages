@@ -20,6 +20,11 @@
   "doc": "unknown",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://codeload.github.com/liuduanfei/ft6236/zip/1.0.0",
+      "filename": "ft6236-1.0.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/liuduanfei/ft6236.git",
       "filename": "ft6236-latest.zip",
