@@ -24,6 +24,7 @@ source "$PKGS_DIR/packages/system/ramdisk/Kconfig"
 source "$PKGS_DIR/packages/system/minIni/Kconfig"
 source "$PKGS_DIR/packages/system/qboot/Kconfig"
 source "$PKGS_DIR/packages/system/uCOSIII_Wrapper/Kconfig"
+source "$PKGS_DIR/packages/system/uC_CRC/Kconfig"
 source "$PKGS_DIR/packages/system/Ppool/Kconfig"
 
 endmenu
