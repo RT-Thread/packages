@@ -112,6 +112,23 @@ if PKG_USING_NRF5X_SDK
 
         config SD_BLE_APP_HIDS_MOUSE
         bool "ble_app_hids_mouse"
+        
+        config SD_BLE_APP_BAS
+            bool "ble_app_bas"
+            if SD_BLE_APP_BAS
+                config BLE_BAS_ENABLED
+                    int 
+                    default 1
+                config BLE_APP_BAS_ADC_CHANNEL_NUM
+                    int "channel number of adc"
+                    range 0 7
+                    default 0  
+                config BLE_APP_BAS_ADC_INPUT_PIN
+                    int "the x of adc AINx"
+                    range 0 7
+                    default 1
+            endif
+        
     endchoice
 
     config PKG_NRF5X_SDK_PATH
