@@ -12,7 +12,7 @@ if PKG_USING_KERNEL_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_KERNEL_SAMPLES_V030
+        default PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
         help
             Select the package version
 
