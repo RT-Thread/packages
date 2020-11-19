@@ -12,7 +12,7 @@ if PKG_USING_UCOSIII_WRAPPER
 
     config PKG_UCOSIII_WRAPPER_PATH
         string
-        default "/packages/system/uCOSIII_Wrapper"
+        default "/packages/system/Micrium/uCOSIII_Wrapper"
 
     config PKG_USING_UCOSIII_WRAPPER_AUTOINIT
         bool "Enable uCOS-III wrapper automatically init"
