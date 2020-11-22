@@ -4,7 +4,6 @@ menuconfig PKG_USING_UC_COMMON
     bool "uC/Common for RT-Thread"
     default n
     select PKG_USING_UCOSIII_WRAPPER
-    select PKG_USING_UCOSIII_WRAPPER_AUTOINIT
 
 if PKG_USING_UC_COMMON
 
