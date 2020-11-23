@@ -16,7 +16,7 @@ if PKG_USING_UCOSIII_WRAPPER
 
     config PKG_USING_UCOSIII_WRAPPER_AUTOINIT
         bool "Enable uCOS-III wrapper automatically init"
-        default n
+        default y
         help
             The wrapper supports uCOS-III standard startup procedure. Alternatively,
             if you want to run uCOS-III apps directly and ignore the startup procedure, 
@@ -24,7 +24,7 @@ if PKG_USING_UCOSIII_WRAPPER
 
      config PKG_USING_UCOSIII_WRAPPER_TINY
         bool "Enable uCOS-III wrapper tiny mode"
-        default n
+        default y
 
     choice
         prompt "Version"
