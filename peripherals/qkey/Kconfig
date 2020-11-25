@@ -15,10 +15,9 @@ if PKG_USING_QKEY
         bool "using test"
         default n
         
-    config QKEY_PIN_PULL_EN
-        int "Key pull up/down enable"
-        range 0 1
-        default 1
+    config QKEY_USING_PULL
+        bool "Key using pull up/down"
+        default y
         
     config QKEY_TOTAL
         int "Key maximum total"
