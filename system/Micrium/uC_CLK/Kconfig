@@ -11,6 +11,14 @@ if PKG_USING_UC_CLK
         string
         default "/packages/system/Micrium/uC_CLK"
 
+    config PKG_USING_UC_CLK_TASK_PRIO
+        int "The priority level value of uC/CLK Task"
+        default 10
+
+    config PKG_USING_UC_CLK_TASK_STK_SIZE
+        int "The stack size of uC/CLK Task (sizeof(CPU_STK))"
+        default 128
+
     choice
         prompt "Version"
         default PKG_USING_UC_CLK_LATEST_VERSION
