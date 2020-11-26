@@ -4,6 +4,7 @@ menuconfig PKG_USING_UC_CLK
     bool "uC/Clk for RT-Thread"
     default n
     select PKG_USING_UCOSIII_WRAPPER
+    select PKG_USING_UCOSIII_WRAPPER_AUTOINIT
 
 if PKG_USING_UC_CLK
 
@@ -17,7 +18,7 @@ if PKG_USING_UC_CLK
 
     config PKG_USING_UC_CLK_TASK_STK_SIZE
         int "The stack size of uC/CLK Task (sizeof(CPU_STK))"
-        default 128
+        default 80
 
     choice
         prompt "Version"
