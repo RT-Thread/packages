@@ -10,6 +10,16 @@ if PKG_USING_AZUREGUIX
         string
         default "/packages/multimedia/AzureGUIX"
 
+	config GUIX_VIRTUAL_DISPLAY_MONO
+        bool "Enable uart device virtual display"
+        default n
+		
+	if GUIX_VIRTUAL_DISPLAY_MONO
+		config GUIX_VIRTUAL_DISPLAY_SERIAL_DEV
+            string "virtual display uart device name"
+            default "uart2"
+	endif
+	
     choice
         prompt "Version"
         default PKG_USING_AZUREGUIX_LATEST_VERSION
