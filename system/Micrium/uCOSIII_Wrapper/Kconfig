@@ -15,7 +15,7 @@ if PKG_USING_UCOSIII_WRAPPER
         default "/packages/system/Micrium/uCOSIII_Wrapper"
 
     config PKG_USING_UCOSIII_WRAPPER_AUTOINIT
-        bool "Enable uCOS-III wrapper automatically init"
+        bool "Enable uCOS-III wrapper automatical initialization"
         default y
         help
             The wrapper supports uCOS-III standard startup procedure. Alternatively,
