@@ -18,7 +18,7 @@ if PKG_USING_UC_CLK
 
     config PKG_USING_UC_CLK_TASK_STK_SIZE
         int "The stack size of uC/CLK Task (sizeof(CPU_STK))"
-        default 128
+        default 80
 
     choice
         prompt "Version"
