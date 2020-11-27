@@ -12,11 +12,11 @@ if PKG_USING_UC_MODBUS
         default "/packages/system/Micrium/uC_Modbus"
 
     config PKG_USING_UC_MODBUS_TASK_PRIO
-        int "The priority level value of uC/Modbus Task"
+        int "The priority level value of uC/Modbus task"
         default 10
 
     config PKG_USING_UC_MODBUS_TASK_STK_SIZE
-        int "The stack size of uC/Modbus Task (sizeof(CPU_STK))"
+        int "The stack size of uC/Modbus task (sizeof(CPU_STK))"
         default 128
 
     choice
