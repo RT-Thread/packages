@@ -1,7 +1,7 @@
 
 # Kconfig file for package uCOSIII_Wrapper
 menuconfig PKG_USING_UCOSIII_WRAPPER
-    bool "uCOS-III Wrapper: uCOS-III APIs wrapper"
+    bool "uCOS-III Wrapper"
     default n
     select RT_USING_TIMER_SOFT
     select RT_USING_IDLE_HOOK
