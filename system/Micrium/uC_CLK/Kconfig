@@ -20,6 +20,10 @@ if PKG_USING_UC_CLK
         int "The stack size of uC/CLK Task (sizeof(CPU_STK))"
         default 80
 
+    config PKG_USING_UC_CLK_AUTOINIT
+        bool "Enable uC/Clk automatical initialization"
+        default y
+
     choice
         prompt "Version"
         default PKG_USING_UC_CLK_LATEST_VERSION
