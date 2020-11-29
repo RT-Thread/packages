@@ -1,12 +1,12 @@
 
 # Kconfig file for package uCOSIII_Wrapper
 menuconfig PKG_USING_UCOSIII_WRAPPER
-    bool "uCOS-III Wrapper: uCOS-III APIs wrapper"
+    bool "uC/OS-III Wrapper"
     default n
     select RT_USING_TIMER_SOFT
     select RT_USING_IDLE_HOOK
     help
-        A wrapper which can make codes developed by uCOS-III APIs can directly run on RT-Thread
+        A wrapper which can make codes developed by uC/OS-III APIs can directly run on RT-Thread
 
 if PKG_USING_UCOSIII_WRAPPER
 
