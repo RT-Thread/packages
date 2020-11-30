@@ -1,6 +1,6 @@
 {
   "name": "tetris",
-  "description": "Tetris port to FinSH.",
+  "description": "Tetris port to RT-Thread console.",
   "description_zh": "俄罗斯方块",  
   "enable": "PKG_USING_TETRIS", 
   "keywords": [

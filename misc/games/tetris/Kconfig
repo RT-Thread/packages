@@ -1,14 +1,15 @@
 
 # Kconfig file for package tetris
 menuconfig PKG_USING_TETRIS
-    bool "Tetris: A tetris game playing on FinSH."
+    bool "Tetris: A tetris game playing on RT-Thread console."
+    select PKG_USING_VT100
     default n
 
 if PKG_USING_TETRIS
 
     config PKG_TETRIS_PATH
         string
-        default "/packages/misc/tetris"
+        default "/packages/misc/games/tetris"
 
     choice
         prompt "Version"
