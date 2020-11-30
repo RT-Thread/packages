@@ -1,7 +1,7 @@
 
 # Kconfig file for package 2048
 menuconfig PKG_USING_2048
-    bool "2048: An indie puzzle video game run on RT-Thread console."
+    bool "2048: An indie puzzle video game run on RT-Thread console"
     select RT_USING_DFS
     select RT_USING_LIBC
     select RT_USING_POSIX

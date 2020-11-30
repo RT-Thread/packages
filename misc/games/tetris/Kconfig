@@ -1,7 +1,7 @@
 
 # Kconfig file for package tetris
 menuconfig PKG_USING_TETRIS
-    bool "Tetris: A tetris game playing on RT-Thread console."
+    bool "Tetris: An indie puzzle video game run on RT-Thread console"
     select PKG_USING_VT100
     default n
 
