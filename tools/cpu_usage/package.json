@@ -1,0 +1,34 @@
+{
+  "name": "cpu_usage",
+  "description": "CPUU: CPU usage statistics tool.",
+  "description_zh": "CPUU: CPU 使用率统计小工具。",  
+  "enable": "PKG_USING_CPU_USAGE", 
+  "keywords": [
+    "cpu_usage", "cpu", "usage"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "enkiller",
+    "email": "462747508@qq.com",
+    "github": "enkiller"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/enkiller/cpu_usage",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/enkiller/cpu_usage/archive/V1.0.0.zip",
+      "filename": "cpu_usage-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/enkiller/cpu_usage.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
