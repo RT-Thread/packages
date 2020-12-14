@@ -52,10 +52,14 @@ if PKG_USING_RS485
 
         config PKG_USING_RS485_LATEST_VERSION
             bool "latest"
+        
+        config PKG_USING_RS485_V100
+            bool "v1.00"
     endchoice
 
     config PKG_RS485_VER
        string
        default "latest" if PKG_USING_RS485_LATEST_VERSION
+       default "v1.00"  if PKG_USING_RS485_V100
 
 endif
