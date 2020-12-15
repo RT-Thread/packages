@@ -1,0 +1,36 @@
+
+# Kconfig file for package lwrb2rtt
+menuconfig PKG_USING_LWRB2RTT
+    bool "lwrb2rtt: Lightweight ring buffer manager."
+    default n
+
+if PKG_USING_LWRB2RTT
+
+    config LWRB2RTT_USING_SAMPLES
+        bool "Enable lwrb2rtt samples"
+        default n
+
+    config PKG_LWRB2RTT_PATH
+        string
+        default "/packages/tools/lwrb2rtt"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LWRB2RTT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LWRB2RTT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LWRB2RTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LWRB2RTT_VER
+       string
+       default "v1.0.0"    if PKG_USING_LWRB2RTT_V100
+       default "latest"    if PKG_USING_LWRB2RTT_LATEST_VERSION
+
+endif
+

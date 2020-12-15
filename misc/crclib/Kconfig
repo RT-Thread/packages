@@ -35,14 +35,14 @@ if PKG_USING_CRCLIB
         
         if CRC8_POLY_CUSTOM
             config CRC8_POLY_CUSTOM_STRING
-                hex "crc8 polynome value (hex)"
-                default 0x12
+                int "crc8 polynome value (int)"
+                default 0
         endif
         
         config CRC8_POLY
-            hex
-            default 0x8C if CRC8_POLY_8C
-            default 0xD9 if CRC8_POLY_D9
+            int
+            default 140 if CRC8_POLY_8C
+            default 217 if CRC8_POLY_D9
             default CRC8_POLY_CUSTOM_STRING if CRC8_POLY_CUSTOM
     endif
     
@@ -70,14 +70,14 @@ if PKG_USING_CRCLIB
         
         if CRC16_POLY_CUSTOM
             config CRC16_POLY_CUSTOM_STRING
-                hex "crc16 polynome value (hex)"
-                default 0x1234
+                int "crc16 polynome value (int)"
+                default 0
         endif
         
         config CRC16_POLY
-            hex
-            default 0xA001 if CRC16_POLY_A001
-            default 0x8408 if CRC16_POLY_8404
+            int
+            default 40961 if CRC16_POLY_A001
+            default 33800 if CRC16_POLY_8404
             default CRC16_POLY_CUSTOM_STRING if CRC16_POLY_CUSTOM
     endif
     
@@ -105,14 +105,14 @@ if PKG_USING_CRCLIB
         
         if CRC32_POLY_CUSTOM
             config CRC32_POLY_CUSTOM_STRING
-                hex "crc32 polynome value (hex)"
-                default 0x12345678
+                int "crc32 polynome value (int)"
+                default 0
         endif
         
         config CRC32_POLY
-            hex
-            default 0xEDB88320 if CRC32_POLY_EDB88320
-            default 0x82F63B78 if CRC32_POLY_82F63B78
+            int
+            default 3988292384 if CRC32_POLY_EDB88320
+            default 2197175160 if CRC32_POLY_82F63B78
             default CRC32_POLY_CUSTOM_STRING if CRC32_POLY_CUSTOM
     endif
     

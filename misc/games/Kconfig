@@ -1,0 +1,8 @@
+menu "games: games run on RT-Thread console"
+
+source "$PKGS_DIR/packages/misc/games/threes/Kconfig"
+source "$PKGS_DIR/packages/misc/games/c2048/Kconfig"
+source "$PKGS_DIR/packages/misc/games/snake/Kconfig"
+source "$PKGS_DIR/packages/misc/games/tetris/Kconfig"
+
+endmenu

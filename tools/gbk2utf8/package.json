@@ -1,0 +1,28 @@
+{
+  "name": "gbk2utf8",
+  "description": "conversion between GBK and UTF8.",
+  "description_zh": "GBK与UTF8编码之间的转换。",  
+  "enable": "PKG_USING_GBK2UTF8", 
+  "keywords": [
+    "gbk2utf8"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "Ghazigq",
+    "email": "ghazi.gq@hotmail.com",
+    "github": "Ghazigq"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://gitee.com/Ghazi_gq/gbk2utf8",
+  "icon": "unknown",
+  "homepage": "https://gitee.com/Ghazi_gq/gbk2utf8#README",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/Ghazi_gq/gbk2utf8.git",
+      "filename": "gbk2utf8.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

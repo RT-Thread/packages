@@ -1,0 +1,40 @@
+
+# Kconfig file for package lzma
+menuconfig PKG_USING_LZMA
+    bool "LZMA: A compression library with high compression ratio"
+    default n
+    help
+       LZMA is a compression library with high compression ratio
+
+if PKG_USING_LZMA
+
+    config PKG_LZMA_PATH
+        string
+        default "/packages/misc/lzma"
+
+    config LZMA_USING_SAMPLE
+        bool "Enable using lzma sample"
+        default n
+        select RT_USING_DFS
+
+    choice
+        prompt "Version"
+        default PKG_USING_LZMA_LATEST_VERSION
+        help
+            Select the lzma version
+
+        config PKG_USING_LZMA_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_LZMA_V100
+            bool "v1.0.0"
+
+    endchoice
+          
+    config PKG_LZMA_VER
+       string
+       default "v1.0.0"    if PKG_USING_LZMA_V100
+       default "latest"    if PKG_USING_LZMA_LATEST_VERSION
+
+endif
+

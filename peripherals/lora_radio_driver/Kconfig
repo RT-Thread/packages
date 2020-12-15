@@ -890,10 +890,10 @@ if PKG_USING_LORA_RADIO_DRIVER
                         Select the RF Modem
 
                     config USE_MODEM_LORA
-                        bool "Modem LoRa"
+                        bool "LoRa"
 
                     config USE_MODEM_FSK
-                        bool "Modem FSK"
+                        bool "FSK"
                 endchoice
 
             endif
@@ -910,8 +910,8 @@ if PKG_USING_LORA_RADIO_DRIVER
 
         config PKG_USING_LORA_RADIO_DRIVER_V100
             bool "v1.0.0"
-        config PKG_USING_LORA_RADIO_DRIVER_V124
-            bool "v1.2.4"
+        config PKG_USING_LORA_RADIO_DRIVER_V130
+            bool "v1.3.0"
         config PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
             bool "latest"
     endchoice
@@ -919,7 +919,7 @@ if PKG_USING_LORA_RADIO_DRIVER
     config PKG_LORA_RADIO_DRIVER_VER
        string
        default "v1.0.0"    if PKG_USING_LORA_RADIO_DRIVER_V100
-       default "v1.2.4"    if PKG_USING_LORA_RADIO_DRIVER_V124
+       default "v1.3.0"    if PKG_USING_LORA_RADIO_DRIVER_V130
        default "latest"    if PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
 
 

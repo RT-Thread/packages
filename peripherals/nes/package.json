@@ -1,0 +1,28 @@
+{
+  "name": "nes",
+  "description": "nes simulator c Library.",
+  "description_zh": "nes模拟器c库。",  
+  "enable": "PKG_USING_NES", 
+  "keywords": [
+    "nes"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Ghazigq",
+    "email": "ghazi.gq@hotmail.com",
+    "github": "Ghazigq"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://gitee.com/Ghazi_gq/nes",
+  "icon": "unknown",
+  "homepage": "https://gitee.com/Ghazi_gq/nes#README",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/Ghazi_gq/nes.git",
+      "filename": "nes.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

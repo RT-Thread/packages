@@ -6,5 +6,7 @@ source "$PKGS_DIR/packages/multimedia/STemWin/Kconfig"
 source "$PKGS_DIR/packages/multimedia/wavplayer/Kconfig"
 source "$PKGS_DIR/packages/multimedia/TJpgDec/Kconfig"
 source "$PKGS_DIR/packages/multimedia/helix/Kconfig"
+source "$PKGS_DIR/packages/multimedia/AzureGUIX/Kconfig"
+source "$PKGS_DIR/packages/multimedia/touchgfx2rtt/Kconfig"
 
 endmenu

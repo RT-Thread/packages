@@ -1,0 +1,29 @@
+{
+  "name": "qkey",
+  "description": "A quick and easy-to-use key driver package",
+  "description_zh": "一个快捷易用的按键驱动包",
+  "enable": "PKG_USING_QKEY",
+  "keywords": [
+    "key",
+    "driver",
+    "rt-thread"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-qkey",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-qkey#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qkey.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

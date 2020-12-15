@@ -17,6 +17,11 @@
   "homepage": "https://github.com/liuduanfei/helix#readme",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://codeload.github.com/liuduanfei/helix/zip/1.0.0",
+      "filename": "helix-1.0.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/liuduanfei/helix.git",
       "filename": "helix-master.zip",

@@ -1,22 +1,22 @@
 
 # Kconfig file for package uCOSIII_Wrapper
 menuconfig PKG_USING_UCOSIII_WRAPPER
-    bool "uCOS-III Wrapper: uCOS-III APIs wrapper"
+    bool "uC/OS-III Wrapper"
     default n
     select RT_USING_TIMER_SOFT
     select RT_USING_IDLE_HOOK
     help
-        A wrapper which can make codes developed by uCOS-III APIs can directly run on RT-Thread
+        A wrapper which can make codes developed by uC/OS-III APIs can directly run on RT-Thread
 
 if PKG_USING_UCOSIII_WRAPPER
 
     config PKG_UCOSIII_WRAPPER_PATH
         string
-        default "/packages/system/uCOSIII_Wrapper"
+        default "/packages/system/Micrium/uCOSIII_Wrapper"
 
     config PKG_USING_UCOSIII_WRAPPER_AUTOINIT
-        bool "Enable uCOS-III wrapper automatically init"
-        default n
+        bool "Enable uCOS-III wrapper automatical initialization"
+        default y
         help
             The wrapper supports uCOS-III standard startup procedure. Alternatively,
             if you want to run uCOS-III apps directly and ignore the startup procedure, 
@@ -24,7 +24,7 @@ if PKG_USING_UCOSIII_WRAPPER
 
      config PKG_USING_UCOSIII_WRAPPER_TINY
         bool "Enable uCOS-III wrapper tiny mode"
-        default n
+        default y
 
     choice
         prompt "Version"

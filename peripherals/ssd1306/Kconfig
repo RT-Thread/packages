@@ -1,0 +1,44 @@
+
+# Kconfig file for package ssd1306
+menuconfig PKG_USING_SSD1306
+    bool "ssd1306: OLEDs based on SSD1306, SH1106, SH1107 and SSD1309 driver"
+    default n
+
+if PKG_USING_SSD1306
+
+    config PKG_SSD1306_PATH
+        string
+        default "/packages/peripherals/ssd1306"
+
+    config PKG_USING_SSD1306_DEBUG
+        bool "Enable debug log output"
+        default n
+
+    config PKG_USING_SSD1306_I2C_ADDRESS
+       hex "I2C address"
+       default 0x3C
+
+    config PKG_USING_SSD1306_I2C_BUS_NAME
+        string "I2C bus name"
+        default "i2c1"
+
+    config PKG_USING_SSD1306_SAMPLE
+        bool "Enable ssd1306 sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_SSD1306_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SSD1306_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SSD1306_VER
+       string
+       default "latest"    if PKG_USING_SSD1306_LATEST_VERSION
+
+endif
+
