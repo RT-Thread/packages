@@ -20,5 +20,6 @@ source "$PKGS_DIR/packages/tools/UrlEncode/Kconfig"
 source "$PKGS_DIR/packages/tools/uMCN/Kconfig"
 source "$PKGS_DIR/packages/tools/lwrb2rtt/Kconfig"
 source "$PKGS_DIR/packages/tools/cpu_usage/Kconfig"
+source "$PKGS_DIR/packages/tools/gbk2utf8/Kconfig"
 
 endmenu
