@@ -1,0 +1,87 @@
+
+# Kconfig file for package pmsxx
+menuconfig PKG_USING_PMSXX
+    bool "PMSxx: Plantower pms serial PM2.5 sensor driver."
+    default n
+
+if PKG_USING_PMSXX
+
+    config PKG_PMSXX_PATH
+        string
+        default "/packages/peripherals/sensors/pmsxx"
+
+    choice
+        prompt "Select pms sensor type"
+        default PKG_USING_PMSXX_BASIC
+        help
+            Basic type for PMSxx model, like PMS1003/PMS3003/PMS5003/PMS7003/PMS9003/PMSA003
+            Enhanced type for PMSxxST model, like PMS5003ST
+
+        config PKG_USING_PMSXX_BASIC
+            bool "Basic"
+
+        config PKG_USING_PMSXX_ENHANCED
+            bool "Enhanced"
+    endchoice
+
+    config PKG_USING_PMSXX_SEND_WAIT_TIME
+        int "The waiting time after send command (ms)"
+        default 2000
+
+    config PKG_USING_PMSXX_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config PKG_USING_PMSXX_UART_DMA
+        bool "Enable serial device DMA RX"
+        default n
+
+    config PKG_USING_PMSXX_DEBUG
+        bool "Debug command and response"
+        default n
+
+    config PKG_USING_PMSXX_DEBUG_SHOW_CMD
+        bool "Show commands"
+        depends on PKG_USING_PMSXX_DEBUG
+        default n
+
+    config PKG_USING_PMSXX_DEBUG_SHOW_RESP
+        bool "Show response data"
+        depends on PKG_USING_PMSXX_DEBUG
+        default n
+
+    config PKG_USING_PMSXX_DEBUG_DUMP_RESP
+        bool "Dump raw response data"
+        depends on PKG_USING_PMSXX_DEBUG
+        default n
+
+    config PKG_USING_PMSXX_DEBUG_SHOW_RULER
+        bool "Show ruler for raw response data"
+        depends on PKG_USING_PMSXX_DEBUG && PKG_USING_PMSXX_DEBUG_DUMP_RESP
+        default n
+
+    config PKG_USING_PMSXX_SAMPLE
+        bool "Enable pmsxx sample"
+        default n
+
+    config PKG_USING_PMSXX_SAMPLE_UART
+        string "Select uart device name"
+        depends on PKG_USING_PMSXX_SAMPLE
+        default "uart3"
+
+    choice
+        prompt "Version"
+        default PKG_USING_PMSXX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PMSXX_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PMSXX_VER
+       string
+       default "latest"    if PKG_USING_PMSXX_LATEST_VERSION
+
+endif
+

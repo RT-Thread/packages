@@ -1,0 +1,34 @@
+{
+  "name": "MemoryPerf",
+  "description": "Memory Performance Testing for ARM CPU.",
+  "description_zh": "ARM CPU 内存性能测试。",  
+  "enable": "PKG_USING_MEMORYPERF", 
+  "keywords": [
+    "MemoryPerf"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "我夏了夏天",
+    "email": "summergift2019@gmail.com",
+    "github": "SummerLife"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/SummerLife/MemoryPerf",
+  "icon": "unknown",
+  "homepage": "https://github.com/SummerLife/MemoryPerf",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/SummerLife/MemoryPerf.git",
+      "filename": "MemoryPerf-1.0.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/SummerLife/MemoryPerf.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

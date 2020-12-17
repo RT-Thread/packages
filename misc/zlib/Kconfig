@@ -8,11 +8,12 @@ if PKG_USING_ZLIB
     config PKG_ZLIB_PATH
         string
         default "/packages/misc/zlib"
-        
+
+if RT_USING_DFS
     config ZLIB_USING_SAMPLE
         bool "Enable using zlib sample"
         default n
-        select RT_USING_DFS
+endif
 
     choice
         prompt "version"

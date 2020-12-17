@@ -1,0 +1,30 @@
+menuconfig PKG_USING_YD_CRYPTO
+    bool "yd_crypto: Encryption and decryption algorithm library for microcontroller."
+    default n
+
+if PKG_USING_YD_CRYPTO
+
+    config PKG_YD_CRYPTO_PATH
+        string
+        default "/packages/security/yd_crypto"
+
+    choice
+        prompt "Version"
+        default PKG_USING_YD_CRYPTO_V1101
+        help
+            Select the package version
+
+        config PKG_USING_YD_CRYPTO_V1101
+            bool "v1.1.01"
+
+        config PKG_USING_YD_CRYPTO_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_YD_CRYPTO_VER
+       string
+       default "v1.1.01"    if PKG_USING_YD_CRYPTO_V1101
+       default "latest"    if PKG_USING_YD_CRYPTO_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,80 @@
+
+# Kconfig file for package lorawan_driver
+menuconfig PKG_USING_LORAWAN_DRIVER
+    bool "LoRaWAN_Driver : Support for LoRaWAN Network(Semtech)"
+    default n
+
+if PKG_USING_LORAWAN_DRIVER
+
+    config PKG_LORAWAN_DRIVER_PATH
+        string
+        default "/packages/iot/lorawan_driver"
+	
+	config LORAWAN_DRIVER_DEFAULT_DATARATE
+	int "LORAWAN_DRIVER_DEFAULT_DATARATE"
+    range 1 5
+    default 5
+
+	config LORAWAN_DRIVER_APP_PORT
+	int "LORAWAN_DRIVER_APP_PORT"
+    range 0 255
+    default 3
+
+	config LORAWAN_DRIVER_USING_Example
+	bool "Enable Example"
+	default y
+
+	choice
+        prompt "Work Mode"
+        default ClassA
+        help
+            Select the Work Mode
+        config LORAWAN_DRIVER_ClassA
+            bool ClassA
+        config LORAWAN_DRIVER_ClassC
+            bool ClassC
+    endchoice
+	
+	choice
+        prompt "Join Mode"
+        default ABP
+        help
+            Select the Join Mode
+        config LORAWAN_DRIVER_OTAA
+            bool OTAA
+
+        config LORAWAN_DRIVER_ABP
+            bool ABP
+    endchoice
+
+	choice
+	
+	prompt "Select the RF frequency"
+	default REGION_CN470
+	help
+		Select the RF frequency
+
+	config LORAWAN_DRIVER_REGION_EU433
+		bool "LORAMAC_REGION_EU433"
+
+	config LORAWAN_DRIVER_REGION_CN470
+		bool "LORAMAC_REGION_CN470"
+	
+	endchoice
+			
+	choice
+	prompt "Version"
+	default PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
+	help
+		Select the package version
+
+	config PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
+		bool "latest"
+    endchoice
+          
+    config PKG_LORAWAN_DRIVER_VER
+       string
+       default "latest"    if PKG_USING_LORAWAN_DRIVER_LATEST_VERSION
+
+endif
+

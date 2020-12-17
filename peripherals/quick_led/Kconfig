@@ -1,0 +1,69 @@
+
+# Kconfig file for package quick_led
+
+menuconfig PKG_USING_QLED
+    bool "quick_led : A quick and easy-to-use led driver package."
+    default n
+
+if PKG_USING_QLED
+
+    config PKG_QLED_PATH
+        string
+        default "/packages/peripherals/quick_led"
+
+    config QLED_TOTAL
+        int "Led maximum total"
+        default 5
+
+    config QLED_TIME_UNIT_MS
+        int "Led blink time unit, unit : ms"
+        default 10   
+
+    config QLED_THREAD_NAME
+        string "Led driver thread name"
+        default "qled"   
+
+    config QLED_THREAD_STACK_SIZE
+        int "Led driver thread stack size"
+        default 512   
+
+    config QLED_THREAD_PRIO
+        int "Led driver thread priority"
+        default 3   
+
+    config QLED_USING_SAMPLE
+        bool "using sample"
+        default n
+        
+    if QLED_USING_SAMPLE
+    
+        config QLED_RUN_PIN
+            int "Sample running led pin"
+            default -1   
+
+        config QLED_SOS_PIN
+            int "Sample sos signal led pin"
+            default -1 
+        
+    endif
+    
+    choice
+        prompt "Version"
+        default PKG_USING_QLED_V100
+        help
+            Select the package version
+
+        config PKG_USING_QLED_LATEST_VERSION
+            bool "latest"
+            
+        config PKG_USING_QLED_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_QLED_VER
+       string
+       default "latest" if PKG_USING_QLED_LATEST_VERSION
+       default "v1.00"  if PKG_USING_QLED_V100
+
+endif
+

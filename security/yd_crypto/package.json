@@ -1,0 +1,30 @@
+{
+  "name": "yd_crypto",
+  "description": "Encryption and decryption algorithm library for microcontroller",
+  "description_zh": "用于微控制器的加解密算法库，平台无关、算法独立、易移植、易使用。",  
+  "enable": "PKG_USING_YD_CRYPTO", 
+  "keywords": [
+    "yd_crypto"
+  ],
+  "category": "security",
+  "author": {
+    "name": "china-hai",
+    "email": "wangzhihai_138@163.com",
+    "github": "china-hai"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/china-hai/yd_crypto",
+  "site": [
+   {
+      "version": "v1.1.01",
+      "URL": "https://github.com/china-hai/yd_crypto/archive/V1.1.01.zip",
+      "filename": "yd_crypto.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/china-hai/yd_crypto.git",
+      "filename": "yd_crypto.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

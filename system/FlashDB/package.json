@@ -1,0 +1,33 @@
+{
+  "name": "FlashDB",
+  "description": "A lightweight database that supports key-value and time series data",
+  "description_zh": "一款支持 KV 数据和时序数据的轻量级数据库",  
+  "enable": "PKG_USING_FLASHDB", 
+  "keywords": [
+    "FlashDB", "database", "tsdb", "kvdb", "key-value", "embedded", "iot"
+  ],
+  "category": "system",
+  "author": {
+    "name": "armink",
+    "email": "armink.ztl@gmail.com",
+    "github": "armink"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/armink/FlashDB",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/armink-rtt-pkgs/FlashDB/archive/1.0.0.zip",
+      "filename": "FlashDB-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/armink-rtt-pkgs/FlashDB.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

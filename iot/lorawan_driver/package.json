@@ -1,0 +1,28 @@
+{
+  "name": "lorawan_driver",
+  "description": "Support for LoRaWAN Network with RT-Thread",
+  "description_zh": "将LoRaWAN协议栈运行在RT-THREAD系统上",
+  "enable": "PKG_USING_LORAWAN_DRIVER",
+  "keywords": [
+    "lorawan_driver"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "zyk6271",
+    "email": "710454786@qq.com",
+    "github": "zyk6271"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/zyk6271/LoRaWAN_Driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/zyk6271/LoRaWAN_Driver#readme",
+  "doc": "https://github.com/zyk6271/LoRaWAN_Driver/tree/master/doc",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/zyk6271/LoRaWAN_Driver.git",
+      "filename": "lorawan_driver.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

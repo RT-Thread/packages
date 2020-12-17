@@ -1,0 +1,33 @@
+
+# Kconfig file for package uC_CRC
+menuconfig PKG_USING_UC_CRC
+    bool "uC/CRC for RT-Thread"
+    default n
+    select PKG_USING_UCOSIII_WRAPPER
+
+if PKG_USING_UC_CRC
+
+    config PKG_UC_CRC_PATH
+        string
+        default "/packages/system/Micrium/uC_CRC"
+
+    choice
+        prompt "Version"
+        default PKG_USING_UC_CRC_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UC_CRC_V100
+            bool "v1.0.0"
+
+        config PKG_USING_UC_CRC_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_UC_CRC_VER
+       string
+       default "v1.0.0"    if PKG_USING_UC_CRC_V100
+       default "latest"    if PKG_USING_UC_CRC_LATEST_VERSION
+
+endif
+

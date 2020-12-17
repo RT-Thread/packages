@@ -1,0 +1,376 @@
+
+# Kconfig file for package lorawan_ed_stack
+menuconfig PKG_USING_LORAWAN_ED_STACK
+    bool "lorawan_ed_stack: LoRaWAN End-Device Stack."
+    default n
+
+if PKG_USING_LORAWAN_ED_STACK
+
+    config PKG_LORAWAN_ED_STACK_PATH
+        string
+        default "/packages/iot/lorawan_ed_stack"
+
+        config LORAWAN_ED_STACK_USING_ON_RTOS_RT_THREAD
+            bool
+            default y
+            select PKG_USING_LORA_RADIO_DRIVER
+            
+        choice
+            prompt "Select LoRaWAN Specification"
+            default LORAWAN_ED_STACK_USING_LORAWAN_SPECIFICATION_V1_0_X
+            config LORAWAN_ED_STACK_USING_LORAWAN_SPECIFICATION_V1_0_X
+                bool "v1.0.X"
+            config LORAWAN_ED_STACK_USING_LORAWAN_SPECIFICATION_V1_1_X
+                bool "v1.1.X,Not Supported Now"
+        endchoice
+
+       choice
+            prompt "LoRaWAN Network Attribute"
+            default LORAWAN_ED_STACK_USING_LORAWAN_PUBLIC_NETWORK
+            help
+                Select LoRaWAN End-Device's LoRaWAN Public Network
+            config LORAWAN_ED_STACK_USING_LORAWAN_PUBLIC_NETWORK
+                bool "Public Network"
+            config LORAWAN_ED_STACK_USING_LORAWAN_PRIVATE_NETWORK
+                bool "Private Network"
+        endchoice
+
+        config LORAWAN_ED_STACK_MAC_PARAMETER_LORAWAN_NETWORK_ATTRIBUTE
+            int
+            default 0 if LORAWAN_ED_STACK_USING_LORAWAN_PRIVATE_NETWORK
+            default 1 if LORAWAN_ED_STACK_USING_LORAWAN_PUBLIC_NETWORK
+
+        choice
+            prompt "LoRaWAN Alliance Certificate Test"
+            default LORAWAN_ED_STACK_CERTIFICATE_TEST_DISABLE
+            config LORAWAN_ED_STACK_CERTIFICATE_TEST_ENABLE
+                bool "Enable"
+            config LORAWAN_ED_STACK_CERTIFICATE_TEST_DISABLE
+                bool "Disable"
+        endchoice
+
+        menu "Select LoRaWAN-ED Mac Parameters"
+           choice
+                prompt "LoRaWAN Device Type"
+                default LORAWAN_ED_STACK_USING_DEVICE_TYPE_CLASS_A
+                help
+                    Select LoRaWAN End-Device's Device Type
+
+                config LORAWAN_ED_STACK_USING_DEVICE_TYPE_CLASS_A
+                    bool "Class A"
+                config LORAWAN_ED_STACK_USING_DEVICE_TYPE_CLASS_B
+                    bool "Class B,Not Supported Now"
+                config LORAWAN_ED_STACK_USING_DEVICE_TYPE_CLASS_C
+                    bool "Class C"
+            endchoice
+
+            config LORAWAN_ED_STACK_MAC_PARAMETER_DEVICE_TYPE
+                int
+                default 0 if LORAWAN_ED_STACK_USING_DEVICE_TYPE_CLASS_A
+                default 1 if LORAWAN_ED_STACK_USING_DEVICE_TYPE_CLASS_B
+                default 2 if LORAWAN_ED_STACK_USING_DEVICE_TYPE_CLASS_C
+
+             choice
+                prompt "LoRaWAN End-Device Activation"
+                default LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_OTAA
+                config LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_OTAA
+                    bool "OTAA(Over-The-Air-Activation)"
+                config LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_ABP
+                    bool "ABP(Activation By Personalization)"
+             endchoice
+
+            config LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE
+                int
+                default 0 if LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_OTAA
+                default 1 if LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_ABP
+
+            choice
+                prompt "LoRaWAN Data Message Type"
+                default LORAWAN_ED_STACK_MAC_PARAMETER_DATA_MESSAGE_TYPE_UNCONFIRM
+                config LORAWAN_ED_STACK_MAC_PARAMETER_DATA_MESSAGE_TYPE_UNCONFIRM
+                    bool "Unconfirm-data message"
+                config LORAWAN_ED_STACK_MAC_PARAMETER_DATA_MESSAGE_TYPE_CONFIRM
+                    bool "Confirm-data message"
+            endchoice
+
+            config LORAWAN_ED_STACK_MAC_PARAMETER_DATA_MESSAGE_TYPE
+                int
+                default 0 if LORAWAN_ED_STACK_MAC_PARAMETER_DATA_MESSAGE_TYPE_UNCONFIRM
+                default 1 if LORAWAN_ED_STACK_MAC_PARAMETER_DATA_MESSAGE_TYPE_CONFIRM
+
+            choice
+                prompt "LoRaWAN Adaptive Data Rate(ADR)"
+                default LORAWAN_ED_STACK_MAC_PARAMETER_ADR_ON
+                config LORAWAN_ED_STACK_MAC_PARAMETER_ADR_ON
+                    bool "Enable"
+                config LORAWAN_ED_STACK_MAC_PARAMETER_ADR_OFF
+                    bool "Disable"
+            endchoice
+
+            config LORAWAN_ED_STACK_MAC_PARAMETER_ADR
+                int
+                default 0 if LORAWAN_ED_STACK_MAC_PARAMETER_ADR_OFF
+                default 1 if LORAWAN_ED_STACK_MAC_PARAMETER_ADR_ON
+
+            choice
+                prompt "LoRaWAN MAC Command.DeviceTime"
+                default LORAWAN_MAC_COMMAND_DEVICE_TIME_DISABLE
+                config LORAWAN_MAC_COMMAND_DEVICE_TIME_ENABLE
+                    bool "Enable"
+                    select PKG_USING_MULTI_RTIMER
+                config LORAWAN_MAC_COMMAND_DEVICE_TIME_DISABLE
+                    bool "Disable"
+            endchoice
+
+            config LORAWAN_ED_STACK_MAC_PARAMETER_APPLICATION_FPORT
+                int "Application Fport"
+                    range 1 223
+                    default 10
+
+            config LORAWAN_ED_STACK_MAC_PARAMETER_SYSTEM_MAX_RX_ERROR
+                int "System Max Rx Error (ppm)"
+                default 10
+
+            if LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_OTAA
+                
+                menu "Redefine OTAA Device Authentication Infomation"
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_DEVEUI_REDEFINE
+                        bool "Redefine LoRaWAN End-Device DevEUI"
+                        default n
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_DEVEUI
+                        string "DevEui"
+                        default "1122334455667788"
+                        depends on LORAWAN_ED_STACK_MAC_PARAMETER_DEVEUI_REDEFINE
+
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_JOINEUI_REDEFINE
+                        bool "Redefine LoRaWAN End-Device JoinEUI"
+                        default n
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_JOINEUI
+                        string "AppEui"
+                        default "1122334455667788"
+                        depends on LORAWAN_ED_STACK_MAC_PARAMETER_JOINEUI_REDEFINE
+
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_APPKEY_REDEFINE
+                        bool "Redefine LoRaWAN End-Device AppKey"
+                        default n
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_APPKEY
+                        string "AppKey"
+                        default "00112233445566778899AABBCCDDEEFF"
+                        depends on LORAWAN_ED_STACK_MAC_PARAMETER_APPKEY_REDEFINE
+                
+                endmenu
+            endif
+
+            if LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_ABP
+               
+                menu "Redefine ABP Device Authentication Infomation"
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_DEVADDR_REDEFINE
+                        bool "Redefine LoRaWAN End-Device DevAddr"
+                        default n
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_DEVADDR
+                        string "DevAddr"
+                        default "01020304"
+                        depends on LORAWAN_ED_STACK_MAC_PARAMETER_DEVADDR_REDEFINE
+
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_APPSKEY_REDEFINE
+                        bool "Redefine LoRaWAN End-Device AppSKey"
+                        default n
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_APPSKEY
+                        string "AppSKey(Application Session Key)"
+                        default "00112233445566778899AABBCCDDEEFF"
+                        depends on LORAWAN_ED_STACK_MAC_PARAMETER_APPSKEY_REDEFINE
+
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_NWKSENCKEY_REDEFINE
+                        bool "Redefine LoRaWAN End-Device NwkSEncKey"
+                        default n
+                    config LORAWAN_ED_STACK_MAC_PARAMETER_NWKSENCKEY
+                        string "NwkSEncKey(Network Session Encryption Key)"
+                        default "00112233445566778899AABBCCDDEEFF"
+                        depends on LORAWAN_ED_STACK_MAC_PARAMETER_NWKSENCKEY_REDEFINE
+                endmenu
+            endif
+
+        endmenu
+
+        menu "Select LoRaWAN-ED Phy Parameters"
+            choice
+                prompt "LoRaWAN Region"
+                default REGION_CN470S
+                help
+                    Select LoRaWAN Regional
+                config REGION_CN470
+                    bool "CN470"
+                config REGION_CN470S
+                    bool "CN470 By User Define"
+                config REGION_EU868
+                    bool "EU868"
+                config REGION_AS923
+                    bool "AS923"
+            endchoice
+
+            choice
+                prompt "LoRaWAN Phy Default Datarate"
+                default LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_5
+                help
+                    Select LoRaWAN Default Datarate(Uplink)
+                config LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_0
+                    bool "DR_0"
+                config LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_1
+                    bool "DR_1"
+                config LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_2
+                    bool "DR_2"
+                config LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_3
+                    bool "DR_3"
+                config LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_4
+                    bool "DR_4"
+                config LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_5
+                    bool "DR_5"
+            endchoice
+
+            config LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DATARATE
+                int
+                default 0 if LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_0
+                default 1 if LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_1
+                default 2 if LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_2
+                default 3 if LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_3
+                default 4 if LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_4
+                default 5 if LORAWAN_ED_STACK_PHY_PARAMETER_DEFAULT_DR_5
+
+            if REGION_CN470
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK0
+                    string "Channel Mask0"
+                    default 00FF
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK1
+                    string "Channel Mask1"
+                    default 0000
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK2
+                    string "Channel Mask2"
+                    default 0000
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK3
+                    string "Channel Mask3"
+                    default 0000
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK4
+                    string "Channel Mask4"
+                    default 0000
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK5
+                    string "Channel Mask5"
+                    default 0000
+            endif
+
+            if REGION_CN470S
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK0
+                    string "Channel Mask0"
+                    default 00FF
+            endif
+
+            if REGION_EU868
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK0
+                    string "Channel Mask0"
+                    default 00FF
+            endif
+
+            if REGION_AS923
+                config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK0
+                    string "Channel Mask0"
+                    default 00FF
+            endif
+
+      endmenu
+
+      menu "Select LoRaWAN-ED Debug"
+         config LORAWAN_ED_STACK_DEBUG
+             bool "Enable LoRaWAN End-Device Debug"
+             default n
+
+             if LORAWAN_ED_STACK_DEBUG
+                config LORAWAN_ED_STACK_DEBUG_APP_CONFIG
+                    bool "Enable LoRaWAN End-Device APP Debug"
+                    default n
+                config LORAWAN_ED_STACK_DEBUG_APP
+                    int
+                    default 1 if LORAWAN_ED_STACK_DEBUG_APP_CONFIG
+
+                config LORAWAN_ED_STACK_DEBUG_APP_DATA_CONFIG
+                    bool "Enable LoRaWAN End-Device APP Data Debug"
+                    default n
+                config LORAWAN_ED_STACK_DEBUG_APP_DATA
+                    int
+                    default 1 if LORAWAN_ED_STACK_DEBUG_APP_DATA_CONFIG
+
+                config LORAWAN_ED_STACK_DEBUG_APS_CONFIG
+                    bool "Enable LoRaWAN End-Device APS Debug"
+                    default n
+                config LORAWAN_ED_STACK_DEBUG_APS
+                    int
+                    default 1 if LORAWAN_ED_STACK_DEBUG_APS_CONFIG
+
+                config LORAWAN_ED_STACK_DEBUG_MAC_CONFIG
+                    bool "Enable LoRaWAN End-Device MAC Debug"
+                    default n
+                config LORAWAN_ED_STACK_DEBUG_MAC
+                    int
+                    default 1 if LORAWAN_ED_STACK_DEBUG_MAC_CONFIG
+
+                config LORAWAN_ED_STACK_DEBUG_MAC_RX_WIN_TIMESTAMP_CONFIG
+                    bool "Enable LoRaWAN End-Device MAC RX Window Timestamp Debug"
+                    default n
+                config LORAWAN_ED_STACK_DEBUG_MAC_RX_WINDOW_TIMESTAMP
+                    int
+                    default 1 if LORAWAN_ED_STACK_DEBUG_MAC_RX_WIN_TIMESTAMP_CONFIG
+                    
+                config LORAWAN_ED_STACK_DEBUG_MAC_COMMAND_CONFIG
+                    bool "Enable LoRaWAN End-Device MAC Command Debug"
+                    default n
+                config LORAWAN_ED_STACK_DEBUG_MAC_COMMAND
+                    int
+                    default 1 if LORAWAN_ED_STACK_DEBUG_MAC_COMMAND_CONFIG
+
+                config LORAWAN_ED_STACK_DEBUG_PHY_REGION_CONFIG
+                    bool "Enable LoRaWAN End-Device PHY Region Debug"
+                    default n
+                config LORAWAN_ED_STACK_DEBUG_PHY_REGION
+                    int
+                    default 1 if LORAWAN_ED_STACK_DEBUG_PHY_REGION_CONFIG
+             endif
+      endmenu
+
+      menu "Select LoRaWAN-ED-Stack Example"
+            config LORAWAN_ED_STACK_APP_SHELL_TEST
+                bool "Enable LoRaWAN Shell for End-Device Class A\\C Test"
+                default n
+                if LORAWAN_ED_STACK_APP_SHELL_TEST
+                    menu "Select End-Device Activation Type Support"
+                        config LORAWAN_ED_STACK_USING_ACTIVATION_TYPE_OTAA
+                            bool "Enable OTAA Support"
+                            default y
+                        config LORAWAN_ED_STACK_USING_ACTIVATION_TYPE_ABP
+                            bool "Enable ABP Support"
+                            default y
+                     endmenu
+                endif
+      endmenu
+          
+    choice
+        prompt "Version"
+        default PKG_USING_LORAWAN_ED_STACK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LORAWAN_ED_STACK_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LORAWAN_ED_STACK_V103
+            bool "v1.0.3"
+
+        config PKG_USING_LORAWAN_ED_STACK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LORAWAN_ED_STACK_VER
+       string
+       default "v1.0.0"    if PKG_USING_LORAWAN_ED_STACK_V100
+       default "v1.0.3"    if PKG_USING_LORAWAN_ED_STACK_V103
+       default "latest"    if PKG_USING_LORAWAN_ED_STACK_LATEST_VERSION
+
+endif
+

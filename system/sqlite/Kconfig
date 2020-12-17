@@ -26,5 +26,15 @@ if PKG_USING_SQLITE
     config PKG_SQLITE_DAO_EXAMPLE
         bool "Enable example"
             default y
+
+    choice
+        prompt "version"
+        help
+            Select the Sqlite version
+
+        config PKG_USING_SQLITE_V3193
+            bool "v3.19.3"
+    endchoice
+
 endif
 

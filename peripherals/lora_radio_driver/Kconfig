@@ -1,0 +1,927 @@
+
+# Kconfig file for package lora_radio_driver
+menuconfig PKG_USING_LORA_RADIO_DRIVER
+    bool "lora_radio_driver: lora chipset(SX126x\\SX127x..) driver."
+    default n
+
+if PKG_USING_LORA_RADIO_DRIVER
+
+    config PKG_LORA_RADIO_DRIVER_PATH
+        string
+        default "/packages/peripherals/lora_radio_driver"
+
+    config LORA_RADIO_DRIVER_USING_LORA_CHIP
+        bool "Select LoRa Chip \\ LoRa Module"
+        default y
+
+    if LORA_RADIO_DRIVER_USING_LORA_CHIP
+
+        choice
+            prompt "Select LoRa Radio Object Type"
+            default LORA_RADIO_DRIVER_USING_LORA_RADIO_SINGLE_INSTANCE
+
+            config LORA_RADIO_DRIVER_USING_LORA_RADIO_SINGLE_INSTANCE
+                bool "LoRa Radio Single-Instance"
+
+            config LORA_RADIO_DRIVER_USING_LORA_RADIO_MULTI_INSTANCE
+                bool "LoRa Radio Multi-instance"
+
+        endchoice
+
+        if LORA_RADIO_DRIVER_USING_LORA_RADIO_SINGLE_INSTANCE
+
+            config LORA_RADIO0_DEVICE_NAME
+                string "Setup LoRa Radio Device Name"
+                default lora-radio0
+                                            
+            config LORA_RADIO0_SPI_BUS_NAME
+               string "Setup LoRa Radio Spi Name (eg:spi2,Define BSP_USING_SPIx in [Target Platform]\\Board\\Kconfig)"
+                default spi2
+                help
+                   Setup LoRa Radio Spi Device Name,eg:spi2,Please define BSP_USING_SPIx in the [Target Platform]\\Board\\Kconfig
+
+        choice
+            prompt "Select LoRa Chip Type"
+            default LORA_RADIO_DRIVER_USING_LORA_CHIP_SX126X
+
+            config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX126X
+                bool "LoRa Transceiver [SX126X]"
+
+            config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX127X
+                bool "LoRa Transceiver [SX127X]"
+        endchoice
+
+        if LORA_RADIO_DRIVER_USING_LORA_CHIP_SX126X
+            menu "Select Supported LoRa Module [SX126X]"
+                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2R717N40
+                    bool "LSD4RF-2R717N40 [SX1268]"
+                    default n
+
+                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2R717N40
+
+                        comment "LoRa Chip SX1268 (SPI module)"
+                        config LORA_RADIO_DRIVER_USING_LORA_RADIO_SX1268
+                            bool
+                            default n
+
+                        config LORA_RADIO_USE_TCXO
+                            bool "Enable TCXO as RF Crystal"
+                            default y
+
+                        config LORA_RADIO_GPIO_SETUP
+                            bool "Enable LoRa Radio GPIO Setup"
+                            default n
+                            
+                            if LORA_RADIO_GPIO_SETUP
+                                menu "Select Supported Target Borad"
+                                    menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+                                        bool "LSD4RF-TEST2002 [STM32L476VG]"
+                                        if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002 && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B
+
+                                            config LORA_RADIO_SPI_SETUP
+                                                bool
+                                                select BSP_USING_SPI
+                                                select BSP_USING_SPI3
+                                                default y
+
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                bool "Select LoRa Chip GPIO by Pin Name"
+                                                default n
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                bool "Select LoRa Chip GPIO by Pin Number"
+                                                default y
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    config LORA_RADIO_NSS_PIN_NAME
+                                                        string "NSS Pin Name"
+                                                        default "PA.15"
+                                                    config LORA_RADIO_RESET_PIN_NAME
+                                                        string "RESET Pin Name"
+                                                        default "PA.7"
+                                                    config LORA_RADIO_DIO1_PIN_NAME
+                                                        string "DIO1 Pin Name"
+                                                        default "PB.1"
+                                                    config LORA_RADIO_RFSW1_PIN_NAME
+                                                        string "RFSW1 Pin Name"
+                                                        default "PB.0"
+                                                    config LORA_RADIO_RFSW2_PIN_NAME
+                                                        string "RFSW2 Pin Name"
+                                                        default "PC.5"
+                                                    config LORA_RADIO_BUSY_PIN_NAME
+                                                        string "BUSY Pin Name"
+                                                        default "PB.2"
+                                                endif
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                    config LORA_RADIO_NSS_PIN
+                                                        int "NSS Pin number"
+                                                        range 0 127
+                                                        default 15
+                                                    config LORA_RADIO_RESET_PIN
+                                                        int "RESET Pin number"
+                                                        range 0 127
+                                                        default 7
+                                                    config LORA_RADIO_DIO1_PIN
+                                                        int "DIO1 Pin number"
+                                                        range 0 127
+                                                        default 17
+                                                     config LORA_RADIO_DIO2_PIN
+                                                        int "DIO2 Pin number"
+                                                        range 0 127
+                                                        default 36
+                                                     config LORA_RADIO_RFSW1_PIN
+                                                        int "RFSW1 Pin number"
+                                                        range 0 127
+                                                        default 16
+                                                     config LORA_RADIO_RFSW2_PIN
+                                                        int "RFSW2 Pin number"
+                                                        range 0 127
+                                                        default 37    
+                                                     config LORA_RADIO_BUSY_PIN
+                                                        int "BUSY Pin number"
+                                                        range 0 127
+                                                        default 18
+                                                endif
+                                        endif
+
+                                        menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A
+                                            bool "APR-Pi [STM32H750XB] and LRS007 RF_A Channel"
+
+                                            if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+
+                                                config LORA_RADIO_SPI_SETUP
+                                                    bool
+                                                    select BSP_USING_SPI
+                                                    select BSP_USING_SPI2
+                                                    default y
+
+                                                config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                    bool "Select LoRa Chip GPIO by Pin Name"
+                                                    default n
+                                                config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    bool "Select LoRa Chip GPIO by Pin Number"
+                                                    default y
+
+                                                    if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                        config LORA_RADIO_NSS_PIN_NAME
+                                                            string "NSS Pin Name"
+                                                            default "PI.0"
+                                                        config LORA_RADIO_RESET_PIN_NAME
+                                                            string "RESET Pin Name"
+                                                            default "PA.15"
+                                                        config LORA_RADIO_DIO1_PIN_NAME
+                                                            string "DIO1 Pin Name"
+                                                            default "PG.7"
+                                                        config LORA_RADIO_DIO2_PIN_NAME
+                                                            string "DIO2 Pin Name"
+                                                            default "PH.10"
+                                                        config LORA_RADIO_RFSW1_PIN_NAME
+                                                            string "RFSW1 Pin Name"
+                                                            default "PH.14"
+                                                        config LORA_RADIO_RFSW2_PIN_NAME
+                                                            string "RFSW2 Pin Name"
+                                                            default "PH.13"
+                                                        config LORA_RADIO_BUSY_PIN_NAME
+                                                            string "BUSY Pin Name"
+                                                            default "PH.15"
+                                                    endif
+
+                                                    if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                        config LORA_RADIO_NSS_PIN
+                                                            int "NSS Pin number"
+                                                            range 0 175
+                                                            default 128
+                                                        config LORA_RADIO_RESET_PIN
+                                                            int "RESET Pin number"
+                                                            range 0 175
+                                                            default 15
+                                                        config LORA_RADIO_DIO1_PIN
+                                                            int "DIO1 Pin number"
+                                                            range 0 175
+                                                            default 103
+                                                         config LORA_RADIO_DIO2_PIN
+                                                            int "DIO2 Pin number"
+                                                            range 0 175
+                                                            default 122
+                                                         config LORA_RADIO_RFSW1_PIN
+                                                            int "RFSW1 Pin number"
+                                                            range 0 175
+                                                            default 126
+                                                         config LORA_RADIO_RFSW2_PIN
+                                                            int "RFSW2 Pin number"
+                                                            range 0 175
+                                                            default 125 
+                                                         config LORA_RADIO_BUSY_PIN
+                                                            int "BUSY Pin number"
+                                                            range 0 175
+                                                            default 127
+                                                    endif
+                                            endif
+
+                                    menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B
+                                            bool "APR-Pi [STM32H750XB] and LRS007 RF_B Channel"
+
+                                            if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+
+                                                config LORA_RADIO_SPI_SETUP
+                                                    bool
+                                                    select BSP_USING_SPI
+                                                    select BSP_USING_SPI4
+                                                    default y
+
+                                                config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                    bool "Select LoRa Chip GPIO by Pin Name"
+                                                    default n
+                                                config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    bool "Select LoRa Chip GPIO by Pin Number"
+                                                    default y
+
+                                                    if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                        config LORA_RADIO_NSS_PIN_NAME
+                                                            string "NSS Pin Name"
+                                                            default "PE.4"
+                                                        config LORA_RADIO_RESET_PIN_NAME
+                                                            string "RESET Pin Name"
+                                                            default "PH.2"
+                                                        config LORA_RADIO_DIO1_PIN_NAME
+                                                            string "DIO1 Pin Name"
+                                                            default "PB.0"
+                                                        config LORA_RADIO_DIO2_PIN_NAME
+                                                            string "DIO2 Pin Name"
+                                                            default "PH.3"
+                                                        config LORA_RADIO_RFSW1_PIN_NAME
+                                                            string "RFSW1 Pin Name"
+                                                            default "PB.1"
+                                                        config LORA_RADIO_RFSW2_PIN_NAME
+                                                            string "RFSW2 Pin Name"
+                                                            default "PB.2"
+                                                        config LORA_RADIO_BUSY_PIN_NAME
+                                                            string "BUSY Pin Name"
+                                                            default "PA.6"
+                                                    endif
+
+                                                    if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                        config LORA_RADIO_NSS_PIN
+                                                            int "NSS Pin number"
+                                                            range 0 175
+                                                            default 68
+                                                        config LORA_RADIO_RESET_PIN
+                                                            int "RESET Pin number"
+                                                            range 0 175
+                                                            default 114
+                                                        config LORA_RADIO_DIO1_PIN
+                                                            int "DIO1 Pin number"
+                                                            range 0 175
+                                                            default 16
+                                                         config LORA_RADIO_DIO2_PIN
+                                                            int "DIO2 Pin number"
+                                                            range 0 175
+                                                            default 115
+                                                         config LORA_RADIO_RFSW1_PIN
+                                                            int "RFSW1 Pin number"
+                                                            range 0 175
+                                                            default 17
+                                                         config LORA_RADIO_RFSW2_PIN
+                                                            int "RFSW2 Pin number"
+                                                            range 0 175
+                                                            default 18
+                                                         config LORA_RADIO_BUSY_PIN
+                                                            int "BUSY Pin number"
+                                                            range 0 175
+                                                            default 6
+                                                    endif
+                                            endif
+                                    endmenu
+                             endif
+                        endif
+                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2R822N30
+                    bool "LSD4RF-2R822N30 [SX1262]"
+                    default n
+
+                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2R822N30
+
+                        comment "LoRa Chip SX1262 (SPI module)"
+                        config LORA_RADIO_DRIVER_USING_LORA_RADIO_SX1262
+                            bool
+                            default n
+
+                        config LORA_RADIO_USE_TCXO
+                            bool "Enable TCXO as RF Crystal"
+                            default y
+
+                        config LORA_RADIO_GPIO_SETUP
+                            bool "Enable LoRa Radio GPIO Setup"
+                            default n
+                            
+                            if LORA_RADIO_GPIO_SETUP
+                                menu "Select Supported Target Borad"
+                                    menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+                                        bool "LSD4RF-TEST2002 [STM32L476VG]"
+                                        if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002 && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B
+
+                                            config LORA_RADIO_SPI_SETUP
+                                                bool
+                                                select BSP_USING_SPI
+                                                select BSP_USING_SPI3
+                                                default y
+
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                bool "Select LoRa Chip GPIO by Pin Name"
+                                                default n
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                bool "Select LoRa Chip GPIO by Pin Number"
+                                                default y
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    config LORA_RADIO_NSS_PIN_NAME
+                                                        string "NSS Pin Name"
+                                                        default "PA.15"
+                                                    config LORA_RADIO_RESET_PIN_NAME
+                                                        string "RESET Pin Name"
+                                                        default "PA.7"
+                                                    config LORA_RADIO_DIO1_PIN_NAME
+                                                        string "DIO1 Pin Name"
+                                                        default "PB.1"
+                                                    config LORA_RADIO_RFSW1_PIN_NAME
+                                                        string "RFSW1 Pin Name"
+                                                        default "PB.0"
+                                                    config LORA_RADIO_RFSW2_PIN_NAME
+                                                        string "RFSW2 Pin Name"
+                                                        default "PC.5"
+                                                    config LORA_RADIO_BUSY_PIN_NAME
+                                                        string "BUSY Pin Name"
+                                                        default "PB.2"
+                                                endif
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                    config LORA_RADIO_NSS_PIN
+                                                        int "NSS Pin number"
+                                                        range 0 127
+                                                        default 15
+                                                    config LORA_RADIO_RESET_PIN
+                                                        int "RESET Pin number"
+                                                        range 0 127
+                                                        default 7
+                                                    config LORA_RADIO_DIO1_PIN
+                                                        int "DIO1 Pin number"
+                                                        range 0 127
+                                                        default 17
+                                                     config LORA_RADIO_DIO2_PIN
+                                                        int "DIO2 Pin number"
+                                                        range 0 127
+                                                        default 36
+                                                     config LORA_RADIO_RFSW1_PIN
+                                                        int "RFSW1 Pin number"
+                                                        range 0 127
+                                                        default 16
+                                                     config LORA_RADIO_RFSW2_PIN
+                                                        int "RFSW2 Pin number"
+                                                        range 0 127
+                                                        default 37    
+                                                     config LORA_RADIO_BUSY_PIN
+                                                        int "BUSY Pin number"
+                                                        range 0 127
+                                                        default 18
+                                                endif
+                                        endif
+
+                                        menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A
+                                            bool "APR-Pi [STM32H750XB] and LRS007 RF_A Channel"
+
+                                            if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+
+                                                config LORA_RADIO_SPI_SETUP
+                                                    bool
+                                                    select BSP_USING_SPI
+                                                    select BSP_USING_SPI2
+                                                    default y
+
+                                                config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                    bool "Select LoRa Chip GPIO by Pin Name"
+                                                    default n
+                                                config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    bool "Select LoRa Chip GPIO by Pin Number"
+                                                    default y
+
+                                                    if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                        config LORA_RADIO_NSS_PIN_NAME
+                                                            string "NSS Pin Name"
+                                                            default "PI.0"
+                                                        config LORA_RADIO_RESET_PIN_NAME
+                                                            string "RESET Pin Name"
+                                                            default "PA.15"
+                                                        config LORA_RADIO_DIO1_PIN_NAME
+                                                            string "DIO1 Pin Name"
+                                                            default "PA.8"
+                                                        config LORA_RADIO_DIO2_PIN_NAME
+                                                            string "DIO2 Pin Name"
+                                                            default "PG.7"
+                                                        config LORA_RADIO_RFSW1_PIN_NAME
+                                                            string "RFSW1 Pin Name"
+                                                            default "PH.15"
+                                                        config LORA_RADIO_RFSW2_PIN_NAME
+                                                            string "RFSW2 Pin Name"
+                                                            default "PH.14"
+                                                        config LORA_RADIO_BUSY_PIN_NAME
+                                                            string "BUSY Pin Name"
+                                                            default "PH.10"
+                                                    endif
+
+                                                    if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                        config LORA_RADIO_NSS_PIN
+                                                            int "NSS Pin number"
+                                                            range 0 175
+                                                            default 128
+                                                        config LORA_RADIO_RESET_PIN
+                                                            int "RESET Pin number"
+                                                            range 0 175
+                                                            default 15
+                                                        config LORA_RADIO_DIO1_PIN
+                                                            int "DIO1 Pin number"
+                                                            range 0 175
+                                                            default 8
+                                                         config LORA_RADIO_DIO2_PIN
+                                                            int "DIO2 Pin number"
+                                                            range 0 175
+                                                            default 103
+                                                         config LORA_RADIO_RFSW1_PIN
+                                                            int "RFSW1 Pin number"
+                                                            range 0 175
+                                                            default 127
+                                                         config LORA_RADIO_RFSW2_PIN
+                                                            int "RFSW2 Pin number"
+                                                            range 0 175
+                                                            default 126 
+                                                         config LORA_RADIO_BUSY_PIN
+                                                            int "BUSY Pin number"
+                                                            range 0 175
+                                                            default 122
+                                                    endif
+                                            endif
+
+                                    menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B
+                                            bool "APR-Pi [STM32H750XB] and LRS007 RF_B Channel"
+
+                                            if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+
+                                                config LORA_RADIO_SPI_SETUP
+                                                    bool
+                                                    select BSP_USING_SPI
+                                                    select BSP_USING_SPI4
+                                                    default y
+
+                                                config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                    bool "Select LoRa Chip GPIO by Pin Name"
+                                                    default n
+                                                config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    bool "Select LoRa Chip GPIO by Pin Number"
+                                                    default y
+
+                                                    if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                        config LORA_RADIO_NSS_PIN_NAME
+                                                            string "NSS Pin Name"
+                                                            default "PE.4"
+                                                        config LORA_RADIO_RESET_PIN_NAME
+                                                            string "RESET Pin Name"
+                                                            default "PH.2"
+                                                        config LORA_RADIO_DIO1_PIN_NAME
+                                                            string "DIO1 Pin Name"
+                                                            default "PB.0"
+                                                        config LORA_RADIO_DIO2_PIN_NAME
+                                                            string "DIO2 Pin Name"
+                                                            default "PH.3"
+                                                        config LORA_RADIO_RFSW1_PIN_NAME
+                                                            string "RFSW1 Pin Name"
+                                                            default "PB.1"
+                                                        config LORA_RADIO_RFSW2_PIN_NAME
+                                                            string "RFSW2 Pin Name"
+                                                            default "PB.2"
+                                                        config LORA_RADIO_BUSY_PIN_NAME
+                                                            string "BUSY Pin Name"
+                                                            default "PA.6"
+                                                    endif
+
+                                                    if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                        config LORA_RADIO_NSS_PIN
+                                                            int "NSS Pin number"
+                                                            range 0 175
+                                                            default 68
+                                                        config LORA_RADIO_RESET_PIN
+                                                            int "RESET Pin number"
+                                                            range 0 175
+                                                            default 114
+                                                        config LORA_RADIO_DIO1_PIN
+                                                            int "DIO1 Pin number"
+                                                            range 0 175
+                                                            default 16
+                                                         config LORA_RADIO_DIO2_PIN
+                                                            int "DIO2 Pin number"
+                                                            range 0 175
+                                                            default 115
+                                                         config LORA_RADIO_RFSW1_PIN
+                                                            int "RFSW1 Pin number"
+                                                            range 0 175
+                                                            default 17
+                                                         config LORA_RADIO_RFSW2_PIN
+                                                            int "RFSW2 Pin number"
+                                                            range 0 175
+                                                            default 18
+                                                         config LORA_RADIO_BUSY_PIN
+                                                            int "BUSY Pin number"
+                                                            range 0 175
+                                                            default 6
+                                                    endif
+                                            endif
+                                    endmenu
+                             endif
+                        endif
+                endmenu
+            endif
+
+        if LORA_RADIO_DRIVER_USING_LORA_CHIP_SX127X
+            menu "Supported LoRa Module [SX127X]"
+
+                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2F717N30
+                    bool "LSD4RF-2F717N30 [SX1278]"
+                    default n
+
+                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_LSD4RF_2F717N30
+
+                        comment "LoRa Chip SX1278 (SPI module)"
+                        config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX1278
+                            bool
+                            default y
+
+                         config LORA_RADIO_GPIO_SETUP
+                            bool "Enable LoRa Radio GPIO Setup"
+                            default n
+
+                            if LORA_RADIO_GPIO_SETUP
+                                menu "Select Supported Target Borad"
+                                    menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+                                        bool "LSD4RF-TEST2002 [STM32L476VG]"
+                                        if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                bool "Select LoRa Chip GPIO by Pin Name"
+                                                default n
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                bool "Select LoRa Chip GPIO by Pin Number"
+                                                default y
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    config LORA_RADIO_NSS_PIN_NAME
+                                                        string "NSS Pin Name"
+                                                        default "PA.15"
+                                                    config LORA_RADIO_RESET_PIN_NAME
+                                                        string "RESET Pin Name"
+                                                        default "PA.7"
+                                                    config LORA_RADIO_DIO0_PIN_NAME
+                                                        string "DIO0 Pin Name"
+                                                        default "PB.1"
+                                                    config LORA_RADIO_DIO1_PIN_NAME
+                                                        string "DIO1 Pin Name"
+                                                        default "PC.4"
+                                                    config LORA_RADIO_DIO2_PIN_NAME
+                                                        string "DIO2 Pin Name"
+                                                        default "PB.2"
+                                                    config LORA_RADIO_RFSW1_PIN_NAME
+                                                        string "RFSW1 Pin Name"
+                                                        default "PB.0"
+                                                    config LORA_RADIO_RFSW2_PIN_NAME
+                                                        string "RFSW2 Pin Name"
+                                                        default "PC.5"
+                                                endif
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                   config LORA_RADIO_NSS_PIN
+                                                        int "NSS Pin number"
+                                                        range 0 127
+                                                        default 15
+                                                    config LORA_RADIO_RESET_PIN
+                                                        int "RESET Pin number"
+                                                        range 0 127
+                                                        default 7
+                                                    config LORA_RADIO_DIO0_PIN
+                                                        int "DIO0 Pin number"
+                                                        range 0 128
+                                                        default 17    
+                                                    config LORA_RADIO_DIO1_PIN
+                                                        int "DIO1 Pin number"
+                                                        range 0 127
+                                                        default 36
+                                                     config LORA_RADIO_DIO2_PIN
+                                                        int "DIO2 Pin number"
+                                                        range 0 127
+                                                        default 18
+                                                     config LORA_RADIO_RFSW1_PIN
+                                                        int "RFSW1 Pin number"
+                                                        range 0 127
+                                                        default 16
+                                                     config LORA_RADIO_RFSW2_PIN
+                                                        int "RFSW2 Pin number"
+                                                        range 0 127
+                                                        default 37   
+                                                endif
+                                        endif
+
+                                    menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A
+                                        bool "APR-Pi [STM32H750XB] and LRS007 RF_A Channel"
+
+                                        if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_B && !LORA_RADIO_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+
+                                            config LORA_RADIO_SPI_SETUP
+                                                bool
+                                                select BSP_USING_SPI
+                                                select BSP_USING_SPI2
+                                                default y
+
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                bool "Select LoRa Chip GPIO by Pin Name"
+                                                default n
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                bool "Select LoRa Chip GPIO by Pin Number"
+                                                default y
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    config LORA_RADIO_NSS_PIN_NAME
+                                                        string "NSS Pin Name"
+                                                        default "PI.0"
+                                                    config LORA_RADIO_RESET_PIN_NAME
+                                                        string "RESET Pin Name"
+                                                        default "PA.15"
+                                                    config LORA_RADIO_DIO0_PIN_NAME
+                                                        string "DIO0 Pin Name"
+                                                        default "PA.8"
+                                                    config LORA_RADIO_DIO1_PIN_NAME
+                                                        string "DIO1 Pin Name"
+                                                        default "PG.7"
+                                                    config LORA_RADIO_DIO2_PIN_NAME
+                                                        string "DIO2 Pin Name"
+                                                        default "PH.10"
+                                                    config LORA_RADIO_RFSW1_PIN_NAME
+                                                        string "RFSW1 Pin Name"
+                                                        default "PH.14"
+                                                    config LORA_RADIO_RFSW2_PIN_NAME
+                                                        string "RFSW2 Pin Name"
+                                                        default "PH.13"
+                                                endif
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                    config LORA_RADIO_NSS_PIN
+                                                        int "NSS Pin number"
+                                                        range 0 175
+                                                        default 128
+                                                    config LORA_RADIO_RESET_PIN
+                                                        int "RESET Pin number"
+                                                        range 0 175
+                                                        default 15
+                                                    config LORA_RADIO_DIO0_PIN
+                                                        int "DIO0 Pin number"
+                                                        range 0 175
+                                                        default 8
+                                                    config LORA_RADIO_DIO1_PIN
+                                                        int "DIO1 Pin number"
+                                                        range 0 175
+                                                        default 103
+                                                     config LORA_RADIO_DIO2_PIN
+                                                        int "DIO2 Pin number"
+                                                        range 0 175
+                                                        default 122
+                                                     config LORA_RADIO_RFSW1_PIN
+                                                        int "RFSW1 Pin number"
+                                                        range 0 175
+                                                        default 126
+                                                     config LORA_RADIO_RFSW2_PIN
+                                                        int "RFSW2 Pin number"
+                                                        range 0 175
+                                                        default 125 
+                                                endif
+                                        endif
+                                endmenu
+                            endif
+                    endif
+
+                menuconfig LORA_RADIO_DRIVER_USING_LORA_MODULE_RA_01
+                    bool "Ra-01 [SX1278]"
+                    default n
+
+                    if LORA_RADIO_DRIVER_USING_LORA_MODULE_RA_01
+
+                        comment "LoRa Chip SX1278 (SPI module)"
+                        config LORA_RADIO_DRIVER_USING_LORA_CHIP_SX1278
+                            bool
+                            default y
+
+                         config LORA_RADIO_GPIO_SETUP
+                            bool "Enable LoRa Radio GPIO Setup"
+                            default n
+
+                            if LORA_RADIO_GPIO_SETUP
+                                menu "Select Supported Target Borad"
+                                    menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_NUCLEO_L476RG_AND_RTT_LORA_SHIELD
+                                        bool "NUCLEO-L476RG [STM32L476RG] add RTT LoRa Shield V1"
+                                        if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_NUCLEO_L476RG_AND_RTT_LORA_SHIELD
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                bool "Select LoRa Chip GPIO by Pin Name"
+                                                default n
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                bool "Select LoRa Chip GPIO by Pin Number"
+                                                default y
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    config LORA_RADIO_NSS_PIN_NAME
+                                                        string "NSS Pin Name"
+                                                        default "PB.6"
+                                                    config LORA_RADIO_RESET_PIN_NAME
+                                                        string "RESET Pin Name"
+                                                        default "PC.7"
+                                                    config LORA_RADIO_DIO0_PIN_NAME
+                                                        string "DIO0 Pin Name"
+                                                        default "PA.9"
+                                                    config LORA_RADIO_DIO1_PIN_NAME
+                                                        string "DIO1 Pin Name"
+                                                        default "PA.8"
+                                                endif
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                   config LORA_RADIO_NSS_PIN
+                                                        int "NSS Pin number"
+                                                        range 0 127
+                                                        default 22
+                                                    config LORA_RADIO_RESET_PIN
+                                                        int "RESET Pin number"
+                                                        range 0 127
+                                                        default 39
+                                                    config LORA_RADIO_DIO0_PIN
+                                                        int "DIO0 Pin number"
+                                                        range 0 127
+                                                        default 9 
+                                                    config LORA_RADIO_DIO1_PIN
+                                                        int "DIO1 Pin number"
+                                                        range 0 127
+                                                        default 8  
+                                                endif
+                                        endif
+
+                                    menuconfig LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A
+                                        bool "APR-Pi [STM32H750XB] and LRS007 RF_A"
+                                        if LORA_RADIO_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A
+
+                                            config LORA_RADIO_SPI_SETUP
+                                                bool
+                                                select BSP_USING_SPI
+                                                select BSP_USING_SPI2
+                                                default y
+
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                bool "Select LoRa Chip GPIO by Pin Name"
+                                                default n
+                                            config LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                bool "Select LoRa Chip GPIO by Pin Number"
+                                                default y
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NAME && !LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER
+                                                    config LORA_RADIO_NSS_PIN_NAME
+                                                        string "NSS Pin Name"
+                                                        default "PI.0"
+                                                    config LORA_RADIO_RESET_PIN_NAME
+                                                        string "RESET Pin Name"
+                                                        default "PA.15"
+                                                    config LORA_RADIO_DIO0_PIN_NAME
+                                                        string "DIO0 Pin Name"
+                                                        default "PA.8"
+                                                    config LORA_RADIO_DIO1_PIN_NAME
+                                                        string "DIO1 Pin Name"
+                                                        default "PG.7"
+                                                endif
+
+                                                if LORA_RADIO_GPIO_SETUP_BY_PIN_NUMBER && !LORA_RADIO_GPIO_SETUP_BY_PIN_NAME
+                                                   config LORA_RADIO_NSS_PIN
+                                                        int "NSS Pin number"
+                                                        range 0 175
+                                                        default 128
+                                                    config LORA_RADIO_RESET_PIN
+                                                        int "RESET Pin number"
+                                                        range 0 175
+                                                        default 15
+                                                    config LORA_RADIO_DIO0_PIN
+                                                        int "DIO0 Pin number"
+                                                        range 0 175
+                                                        default 8
+                                                    config LORA_RADIO_DIO1_PIN
+                                                        int "DIO1 Pin number"
+                                                        range 0 175
+                                                        default 103
+                                                endif
+                                        endif
+                                endmenu
+                            endif
+                    endif
+                endmenu
+            endif
+        endif
+
+        if LORA_RADIO_DRIVER_USING_LORA_RADIO_MULTI_INSTANCE
+            comment "Not Support Currently"
+        endif
+
+     config LORA_RADIO_DRIVER_USING_LORA_RADIO_DEBUG
+         bool "Enable LoRa Radio Debug"
+         default n
+
+         if LORA_RADIO_DRIVER_USING_LORA_RADIO_DEBUG
+            config LR_DBG_APP_CONFIG
+                bool "Enable LoRa Radio Application Debug"
+                default n
+            config LR_DBG_APP
+                int
+                default 1 if LR_DBG_APP_CONFIG
+
+            config LR_DBG_INTERFACE_CONFIG
+                bool "Enable LoRa Radio Interface Debug"
+                default n
+            config LR_DBG_INTERFACE
+                int
+                default 1 if LR_DBG_INTERFACE_CONFIG
+
+            config LR_DBG_CHIP_CONFIG
+                bool "Enable LoRa Radio Chip Debug"
+                default n
+            config LR_DBG_CHIP
+                int
+                default 1 if LR_DBG_CHIP_CONFIG
+
+            config LR_DBG_SPI_CONFIG
+                bool "Enable LoRa Radio Spi Debug"
+                default n
+            config LR_DBG_SPI
+                int
+                default 1 if LR_DBG_SPI_CONFIG
+         endif
+
+
+    menu "Select LoRa Radio Driver Example"
+
+        config LORA_RADIO_DRIVER_USING_LORA_RADIO_TEST_SHELL
+            bool "Enable LoRa Radio Test Shell"
+            default n
+
+            if LORA_RADIO_DRIVER_USING_LORA_RADIO_TEST_SHELL
+                choice
+                    prompt "Select the RF frequency"
+                    default PHY_REGION_CN470
+                    help
+                        Select the RF frequency
+
+                    config PHY_REGION_CN470
+                        bool "PHY Region CN470"
+
+                    config PHY_REGION_EU868
+                        bool "PHY Region EU868"
+
+                    config PHY_REGION_KR920
+                        bool "PHY Region KR920"
+                endchoice
+
+                choice
+                    prompt "Select RF Modem"
+                    default USE_MODEM_LORA
+                    help
+                        Select the RF Modem
+
+                    config USE_MODEM_LORA
+                        bool "LoRa"
+
+                    config USE_MODEM_FSK
+                        bool "FSK"
+                endchoice
+
+            endif
+    endmenu
+
+   endif
+
+
+    choice
+        prompt "Version"
+        default PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LORA_RADIO_DRIVER_V100
+            bool "v1.0.0"
+        config PKG_USING_LORA_RADIO_DRIVER_V130
+            bool "v1.3.0"
+        config PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LORA_RADIO_DRIVER_VER
+       string
+       default "v1.0.0"    if PKG_USING_LORA_RADIO_DRIVER_V100
+       default "v1.3.0"    if PKG_USING_LORA_RADIO_DRIVER_V130
+       default "latest"    if PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
+
+
+endif
+
