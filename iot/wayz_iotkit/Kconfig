@@ -1,0 +1,42 @@
+
+# Kconfig file for package wayz_iotkit
+menuconfig PKG_USING_WAYZ_IOTKIT
+    bool "wayz iot location"
+    default n
+	select PKG_USING_CJSON
+    select PKG_USING_WEBCLIENT
+
+if PKG_USING_WAYZ_IOTKIT
+
+    config PKG_WAYZ_IOTKIT_PATH
+        string
+        default "/packages/iot/wayz_iotkit"
+	
+	config PKG_WAYZ_IOTKIT_WIFI_SSID
+        string "wifi ssid"
+        default "wayz123"
+		
+	config PKG_WAYZ_IOTKIT_WIFI_PASSWORD
+        string "wifi password"
+        default "wayz1234"
+
+    choice
+        prompt "Version"
+        default PKG_USING_WAYZ_IOTKIT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_WAYZ_IOTKIT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_WAYZ_IOTKIT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_WAYZ_IOTKIT_VER
+       string
+       default "v1.0.0"    if PKG_USING_WAYZ_IOTKIT_V100
+       default "latest"    if PKG_USING_WAYZ_IOTKIT_LATEST_VERSION
+
+endif
+
