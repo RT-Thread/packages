@@ -23,10 +23,10 @@
   "doc": "https://doc.nucleisys.com/nuclei_sdk",
   "site": [
     {
-      "version": "0.2.3",
+      "version": "0.3.0",
       "URL": "https://github.com/Nuclei-Software/nuclei-sdk.git",
-      "filename": "nuclei_sdk-0.2.3.zip",
-      "VER_SHA": "0.2.3"
+      "filename": "nuclei_sdk-0.3.0.zip",
+      "VER_SHA": "0.3.0"
     },
     {
       "version": "latest",
