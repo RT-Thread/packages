@@ -57,5 +57,5 @@ source "$PKGS_DIR/packages/peripherals/ssd1306/Kconfig"
 source "$PKGS_DIR/packages/peripherals/qkey/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rs485/Kconfig"
 source "$PKGS_DIR/packages/peripherals/nes/Kconfig"
-
+source "$PKGS_DIR/packages/peripherals/vsensor/Kconfig"
 endmenu
