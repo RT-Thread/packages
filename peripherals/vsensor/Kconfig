@@ -6,7 +6,7 @@ menuconfig PKG_USING_VIRTUAL_SENSOR
 
 if PKG_USING_VIRTUAL_SENSOR
 
-    config PKG_VIRTUAL_DEVICE_PATH
+    config PKG_VIRTUAL_SENSOR_PATH
         string
         default "/packages/peripherals/vsensor"
 
