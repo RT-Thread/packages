@@ -1,0 +1,64 @@
+
+# Kconfig file for package vdevice
+menuconfig PKG_USING_VDEVICE
+    bool "vdevice: A virtual IO peripheral for virtualized environment."
+    default n
+
+if PKG_USING_VDEVICE
+
+    config PKG_VDEVICE_PATH
+        string
+        default "/packages/peripherals/vdevice"
+
+    config VDEVICE_USING_PIN
+        bool "Use virtualized pin "
+        select RT_USING_PIN
+        default n
+    
+        if VDEVICE_USING_PIN
+            config VDEVICE_PIN_NAME
+                string "vdevice pin name"
+                default "vpin"
+        endif
+
+    config VDEVICE_USING_LCD
+        bool "Use virtualized lcd "
+        default n
+
+        if VDEVICE_USING_LCD
+            config VDEVICE_LCD_NAME
+                string "vdevice lcd name"
+                default "vlcd"
+        endif
+
+    config VDEVICE_USING_TOUCH
+        bool "Use virtualized touch "
+        select RT_USING_TOUCH
+        default n
+        
+        if VDEVICE_USING_TOUCH
+            config VDEVICE_TOUCH_NAME
+                string "vdevice touch name"
+                default "vtouch"
+        endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_VDEVICE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_VDEVICE_V100
+            bool "v1.0.0"
+
+        config PKG_USING_VDEVICE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_VDEVICE_VER
+       string
+       default "v1.0.0"    if PKG_USING_VDEVICE_V100
+       default "latest"    if PKG_USING_VDEVICE_LATEST_VERSION
+
+endif
+
