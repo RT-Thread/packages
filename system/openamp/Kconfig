@@ -7,7 +7,7 @@ menuconfig PKG_USING_OPENAMP
 if PKG_USING_OPENAMP
     config PKG_OPENAMP_PATH
         string
-        default "/packages/system/OpenAMP"
+        default "/packages/system/openamp"
 	
     config RT_USING_OPENAMP
 	bool "ENABLE OpenAMP"
