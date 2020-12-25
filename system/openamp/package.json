@@ -21,12 +21,12 @@
     {
       "version": "v1.0.0",
       "URL": "https://github.com/bigmagic123/openamp/archive/1.0.0.zip",
-      "filename": "OpenAMP-1.0.0.zip"
+      "filename": "openamp-1.0.0.zip"
     },
     {
       "version": "latest",
       "URL": "https://github.com/bigmagic123/openamp.git",
-      "filename": "OpenAMP.zip",
+      "filename": "openamp.zip",
       "VER_SHA": "master"
     }
   ]

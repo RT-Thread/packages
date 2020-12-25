@@ -25,6 +25,6 @@ source "$PKGS_DIR/packages/system/minIni/Kconfig"
 source "$PKGS_DIR/packages/system/qboot/Kconfig"
 source "$PKGS_DIR/packages/system/Micrium/Kconfig"
 source "$PKGS_DIR/packages/system/Ppool/Kconfig"
-source "$PKGS_DIR/packages/system/OpenAMP/Kconfig"
+source "$PKGS_DIR/packages/system/openamp/Kconfig"
 
 endmenu
