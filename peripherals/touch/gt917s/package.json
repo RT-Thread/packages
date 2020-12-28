@@ -13,14 +13,14 @@
     "github": "lilisheng411527"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/lilisheng411527/packages/tree/master/peripherals/touch/gt917s",
+  "repository": "https://gitee.com/layson_li/packages/tree/master/gt917s",
   "icon": "unknown",
   "homepage": "unknown",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://gt917s-1.0.0.zip",
+      "URL": "https://gitee.com/layson_li/packages.git",
       "filename": "gt917s-1.0.0.zip",
       "VER_SHA": "fill in the git version SHA value"
     },
