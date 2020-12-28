@@ -11,5 +11,4 @@ menuconfig PKG_USING_TOUCH_DRIVERS
         source "$PKGS_DIR/packages/peripherals/touch/ft5426/Kconfig"
         source "$PKGS_DIR/packages/peripherals/touch/ft6236/Kconfig"
 		
-		
     endif
