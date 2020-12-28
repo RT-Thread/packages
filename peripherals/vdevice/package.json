@@ -13,9 +13,9 @@
     "github": "https://github.com/RT-Thread-packages"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/RT-Thread-packages/vdevice.git",
+  "repository": "https://github.com/RT-Thread-packages/vdevice",
   "icon": "unknown",
-  "homepage": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/vdevice#README.md",
   "doc": "unknown",
   "site": [
     {
