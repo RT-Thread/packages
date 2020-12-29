@@ -1,0 +1,34 @@
+{
+  "name": "gt1151",
+  "description": "gt1151 drivers for RT-Thread",
+  "description_zh": "gt1151 驱动",  
+  "enable": "PKG_USING_GT1151", 
+  "keywords": [
+    "gt1151"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Jackistang",
+    "email": "tangjia.jackis@qq.com",
+    "github": "Jackistang"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Jackistang/GT1151",
+  "icon": "unknown",
+  "homepage": "https://github.com/Jackistang/GT1151/blob/main/README.md",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Jackistang/GT1151/archive/1.0.0.zip",
+      "filename": "GT1151-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Jackistang/GT1151.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}
