@@ -1,0 +1,26 @@
+{
+  "name": "cw2015",
+  "description": "fuel gauging system IC for Lithium-ion(Li+) Battery",
+  "description_zh": "电量计IC CW2015驱动软件包",
+  "enable": "PKG_USING_CW2015",
+  "keywords": [
+    "cw2015"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "qingehao",
+    "email": "qingehao@qq.com",
+    "github": "https://github.com/qingehao"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/qingehao/CW2015",
+  "homepage": "https://github.com/qingehao/CW2015",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/qingehao/CW2015.git",
+      "filename": "CW2015.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
