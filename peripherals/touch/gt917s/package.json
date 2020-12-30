@@ -21,6 +21,12 @@
       "filename": "gt917s-latest.zip",
       "VER_SHA": "master"
     }
+	{
+      "version": "v1.0.0",
+      "URL": "https://github.com/lilisheng411527/gt917s.git",
+      "filename": "gt917s-latest.zip",
+      "VER_SHA": "master"
+    }
   ]
 }
 
