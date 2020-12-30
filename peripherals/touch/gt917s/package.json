@@ -6,29 +6,20 @@
   "keywords": [
     "gt917s"
   ],
-  "category": "peripherals",
+  "category": "peripherals/touch",
   "author": {
-    "name": "lilisheng411527",
+    "name": "layson.li",
     "email": "layson.li@139.com",
-    "github": "lilisheng411527"
+    "github": "layson.li"
   },
-  "license": "Apache-2.0",
-  "repository": "https://gitee.com/layson_li/packages/tree/master/gt917s",
-  "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "license": "LGPL-2.1",
+  "repository": "https://gitee.com/layson_li/gt917s.git",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://gitee.com/layson_li/packages.git",
-      "filename": "gt917s-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
-    },
-    {
       "version": "latest",
-      "URL": "https://xxxxx.git",
-      "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "URL": "https://gitee.com/layson_li/gt917s.git",
+      "filename": "gt917s-latest.zip",
+      "VER_SHA": "master"
     }
   ]
 }
