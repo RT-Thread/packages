@@ -29,4 +29,3 @@ if PKG_USING_GT917S
        default "latest"    if PKG_USING_GT917S_LATEST_VERSION
 
 endif
-
