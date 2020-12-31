@@ -1,7 +1,7 @@
 {
   "name": "gt917s",
-  "description": "Please add description of gt917s in English.",
-  "description_zh": "请添加软件包 gt917s 的中文描述。",  
+  "description": "gt917s drivers for RT-Thread",
+  "description_zh": " gt917s 驱动",  
   "enable": "PKG_USING_GT917S", 
   "keywords": [
     "gt917s"
