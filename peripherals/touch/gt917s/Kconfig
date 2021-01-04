@@ -12,15 +12,12 @@ if PKG_USING_GT917S
 
     choice
         prompt "Version"
-        default PKG_USING_GT917S_LATEST_VERSION
+        default PKG_USING_GT917S_V100
         help
             Select the package version
 
         config PKG_USING_GT917S_V100
             bool "v1.0.0"
-
-        config PKG_USING_GT917S_LATEST_VERSION
-            bool "latest"
     endchoice
           
     config PKG_GT917S_VER
