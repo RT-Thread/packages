@@ -1,0 +1,31 @@
+
+# Kconfig file for package gt917s
+menuconfig PKG_USING_GT917S
+    bool "GT917S touch driver package."
+    default n
+
+if PKG_USING_GT917S
+
+    config PKG_GT917S_PATH
+        string
+        default "/packages/peripherals/touch/gt917s"
+
+    choice
+        prompt "Version"
+        default PKG_USING_GT917S_V100
+        help
+            Select the package version
+
+        config PKG_USING_GT917S_V100
+            bool "v1.0.0"
+
+        config PKG_USING_GT917S_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_GT917S_VER
+       string
+       default "v1.0.0"    if PKG_USING_GT917S_V100
+       default "latest"    if PKG_USING_GT917S_LATEST_VERSION
+
+endif
