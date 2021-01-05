@@ -26,8 +26,8 @@
     },
      {
       "version": "latest",
-      "URL": "https://github.com/lilisheng411527/gt917s/archive/v1.0.0.tar.gz",
-      "filename": "gt917s-latest.zip",
+      "URL": "https://github.com/lilisheng411527/gt917s.git",
+      "filename": "latest",
       "VER_SHA": "latest"
     }
   ]
