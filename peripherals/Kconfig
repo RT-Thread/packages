@@ -59,4 +59,5 @@ source "$PKGS_DIR/packages/peripherals/rs485/Kconfig"
 source "$PKGS_DIR/packages/peripherals/nes/Kconfig"
 source "$PKGS_DIR/packages/peripherals/vsensor/Kconfig"
 source "$PKGS_DIR/packages/peripherals/vdevice/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sgm706/Kconfig"
 endmenu
