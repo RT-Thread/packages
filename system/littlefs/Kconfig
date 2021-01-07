@@ -12,7 +12,7 @@ if PKG_USING_LITTLEFS
 
     choice
         prompt "Version"
-        default PKG_USING_LITTLEFS_V205
+        default PKG_USING_LITTLEFS_LATEST_VERSION
         help
             Select the package version
 
@@ -39,6 +39,9 @@ if PKG_USING_LITTLEFS
 
         config PKG_USING_LITTLEFS_V221
             bool "v2.2.1"
+
+        config PKG_USING_LITTLEFS_V230
+            bool "v2.3.0"
 
         config PKG_USING_LITTLEFS_LATEST_VERSION
             bool "latest"
@@ -76,6 +79,20 @@ if PKG_USING_LITTLEFS
             int "lfs enable wear leveling. -1 is disable."
             default -1
         endif
+
+        config DFS_LFS_READONLY
+            bool "lfs enable readonly system"
+            default 0
+            if DFS_LFS_READONLY
+            config LFS_READONLY
+                bool
+                default y
+            endif
+
+        config LFS_THREADSAFE
+            bool
+            default y
+
         config LFS_LOOKAHEAD_MAX
             int "lfs lookahead size"
             default 128
