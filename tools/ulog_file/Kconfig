@@ -1,0 +1,30 @@
+
+# Kconfig file for package ulog_file
+menuconfig PKG_USING_ULOG_FILE
+    bool "ulog_file: The ulog file backend by filesystem."
+    default n
+    select RT_USING_DFS
+    select RT_USING_ULOG
+
+if PKG_USING_ULOG_FILE
+
+    config PKG_ULOG_FILE_PATH
+        string
+        default "/packages/tools/ulog_file"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ULOG_FILE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ULOG_FILE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_ULOG_FILE_VER
+       string
+       default "latest"    if PKG_USING_ULOG_FILE_LATEST_VERSION
+
+endif
+
