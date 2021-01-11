@@ -36,7 +36,7 @@ if PKG_USING_KDB
 
     config KDB_SCHEDULER_DUMP
         bool "Enable KDB scheduler dump"
-        default n
+        default y
 
     config KDB_THREAD_DUMP
         bool "Enable KDB thread dump"
@@ -174,12 +174,12 @@ if PKG_USING_KDB
             default n
     endif
 
+    config KDB_ENABLE_CUSTOMIZE_OUTPUT
+        bool "Enable KDB customize output"
+        default n
+    
     config KDB_TEST_ENABLE
         bool "Enable KDB test"
-        default n
-
-    config KDB_ENABLE_PORT
-        bool "Enable KDB port function"
         default n
 
     choice
