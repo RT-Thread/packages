@@ -180,7 +180,7 @@ if PKG_USING_KDB
 
     config KDB_ENABLE_PORT
         bool "Enable KDB port function"
-        default n
+        default y
 
     choice
         prompt "Version"
