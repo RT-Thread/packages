@@ -31,5 +31,6 @@ source "$PKGS_DIR/packages/misc/crclib/Kconfig"
 source "$PKGS_DIR/packages/misc/games/Kconfig"
 source "$PKGS_DIR/packages/misc/lwgps/Kconfig"
 source "$PKGS_DIR/packages/misc/TensorflowLiteMicro/Kconfig"
+source "$PKGS_DIR/packages/misc/state_machine/Kconfig"
 
 endmenu
