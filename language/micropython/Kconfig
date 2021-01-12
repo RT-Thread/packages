@@ -170,6 +170,13 @@ if PKG_USING_MICROPYTHON
         prompt "Heap size for python run environment"
         default 8192
 
+    
+    config MICROPYTHON_USING_FLOAT_IMPL_FLOAT
+        bool "Enable micropython to use float instead of double"
+        default y
+        help
+            In some MCU, using float can accelerate computing-speed because of the FPU.
+
     choice
         prompt "Version"
         help
