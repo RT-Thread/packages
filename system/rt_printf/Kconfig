@@ -1,7 +1,7 @@
 
 # Kconfig file for package rt_printf
 menuconfig PKG_USING_RT_PRINTF
-    bool "thread-safe version of rt_kprintf"
+    bool "rt_printf: thread-safe version of rt_kprintf"
     default n
 
 if PKG_USING_RT_PRINTF
