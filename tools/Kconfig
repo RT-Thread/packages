@@ -25,4 +25,5 @@ source "$PKGS_DIR/packages/tools/gbk2utf8/Kconfig"
 source "$PKGS_DIR/packages/tools/vconsole/Kconfig"
 source "$PKGS_DIR/packages/tools/mbedtls_bench/Kconfig"
 source "$PKGS_DIR/packages/tools/kdb/Kconfig"
+source "$PKGS_DIR/packages/tools/wamr/Kconfig"
 endmenu

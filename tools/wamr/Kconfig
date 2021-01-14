@@ -1,0 +1,59 @@
+
+# Kconfig file for package wamr
+menuconfig PKG_USING_WAMR
+    bool "WebAssembly Micro Runtime (WAMR)"
+    select RT_USING_DFS
+    select RT_USING_LIBC
+    default n
+
+if PKG_USING_WAMR
+
+    config PKG_WAMR_PATH
+        string
+        default "/packages/tools/wamr"
+
+    choice
+        prompt "Version"
+        default PKG_USING_WAMR_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_WAMR_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config WAMR_ENABLE_IWASM_PARAMS
+        bool
+        prompt "Enable testing parameters of iwasm"
+        default n
+
+    config WAMR_BUILD_INTERP
+        bool
+        prompt "Enable Interpter Mode"
+        default y
+
+    if WAMR_BUILD_INTERP
+
+        config WAMR_BUILD_FAST_INTERP
+            bool
+            prompt "Enable Fast Interpter"
+            default y
+
+    endif
+
+    config WAMR_BUILD_LIBC_BUILTIN
+        bool
+        prompt "Use built-libc"
+        default y
+
+    config WAMR_BUILD_AOT
+        bool
+        prompt "Enable AOT"
+        default n
+
+    config PKG_WAMR_VER
+       string
+       default "latest"    if PKG_USING_WAMR_LATEST_VERSION
+
+endif
+
