@@ -51,6 +51,32 @@ if PKG_USING_WAMR
         prompt "Enable AOT"
         default n
 
+    config WAMR_ENABLE_RTT_EXPORT
+        bool
+        prompt "Export Native Method of RT-Thread"
+        default n
+
+    if WAMR_ENABLE_RTT_EXPORT
+
+        config WAMR_RTT_EXPORT_VPRINTF
+            bool
+            prompt "Export vprintf"
+            default n
+
+        config WAMR_RTT_EXPORT_DEVICE_OPS
+            bool
+            prompt "Export Device Operate Method"
+            default n
+
+        if WAMR_RTT_EXPORT_DEVICE_OPS
+            config WAMR_RTT_EXPORT_DEVICE_OPS_CPP
+                bool
+                prompt "Enable WASM Cpp Support of Device Operate Method"
+                default n
+        endif
+
+    endif
+
     config PKG_WAMR_VER
        string
        default "latest"    if PKG_USING_WAMR_LATEST_VERSION
