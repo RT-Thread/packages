@@ -1,0 +1,32 @@
+{
+  "name": "ccs811",
+  "description": "CCS811: Digital Gas Sensor for Monitoring Indoor Air Quality.",
+  "description_zh": "CCS811 气体检测传感器，可检测TVOC和CO2浓度",  
+  "enable": "PKG_USING_CCS811", 
+  "keywords": [
+    "ccs811",
+    "TVOC",
+    "CO2",
+    "sensor",
+    "ams"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "luhuadong",
+    "email": "luhuadong@163.com",
+    "github": "luhuadong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/luhuadong/rtt-ccs811",
+  "icon": "unknown",
+  "homepage": "https://github.com/luhuadong/rtt-ccs811",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/luhuadong/rtt-ccs811.git",
+      "filename": "ccs811-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

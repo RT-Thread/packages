@@ -1,0 +1,41 @@
+
+# Kconfig file for package pdulib
+menuconfig PKG_USING_PDULIB
+    bool "pudlib:A TEXT parsing library for short messages in PDU format."
+    default n
+
+if PKG_USING_PDULIB
+
+    config PKG_PDULIB_PATH
+        string
+        default "/packages/iot/pdulib"
+
+        
+    config PKG_USING_PDULIB_EXAMPLES
+    	bool "Enable pdulib sample"
+    	default n
+
+    config PDULIB_DEBUG
+        bool "Enable pdulib debug"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_PDULIB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PDULIB_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PDULIB_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PDULIB_VER
+       string
+       default "v1.0.0"    if PKG_USING_PDULIB_V100
+       default "latest"    if PKG_USING_PDULIB_LATEST_VERSION
+
+endif
+

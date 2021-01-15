@@ -1,0 +1,36 @@
+
+# Kconfig file for package sgm706
+menuconfig PKG_USING_SGM706
+    bool "SGM706 Independent watchdog."
+    default n
+
+if PKG_USING_SGM706
+
+    config PKG_SGM706_PATH
+        string
+        default "/packages/peripherals/sgm706"
+        
+	 config PKG_USING_SGM706_SAMPLE
+        bool "Enable sgm706 sample"
+        default n
+        
+    choice
+        prompt "Version"
+        default PKG_USING_SGM706_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SGM706_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SGM706_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SGM706_VER
+       string
+       default "v1.0.0"    if PKG_USING_SGM706_V100
+       default "latest"    if PKG_USING_SGM706_LATEST_VERSION
+
+endif
+

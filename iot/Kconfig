@@ -1,5 +1,6 @@
 menu "IoT - internet of things"
 
+source "$PKGS_DIR/packages/iot/lorawan_driver/Kconfig"
 source "$PKGS_DIR/packages/iot/pahomqtt/Kconfig"
 source "$PKGS_DIR/packages/iot/umqtt/Kconfig"
 source "$PKGS_DIR/packages/iot/webclient/Kconfig"
@@ -44,4 +45,10 @@ source "$PKGS_DIR/packages/iot/libcurl2rtt/Kconfig"
 source "$PKGS_DIR/packages/iot/capnp/Kconfig"
 source "$PKGS_DIR/packages/iot/rt_cjson_tools/Kconfig"
 source "$PKGS_DIR/packages/iot/agile_telnet/Kconfig"
+source "$PKGS_DIR/packages/iot/nmealib/Kconfig"
+source "$PKGS_DIR/packages/iot/agile_jsmn/Kconfig"
+source "$PKGS_DIR/packages/iot/pdulib/Kconfig"
+source "$PKGS_DIR/packages/iot/btstack/Kconfig"
+source "$PKGS_DIR/packages/iot/lorawan_ed_stack/Kconfig"
+source "$PKGS_DIR/packages/iot/wayz_iotkit/Kconfig"
 endmenu

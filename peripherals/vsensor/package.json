@@ -1,0 +1,35 @@
+{
+  "name": "vsensor",
+  "description": "virtual sensor device",
+  "description_zh": "虚拟传感器设备",
+  "enable": "PKG_USING_VIRTUAL_SENSOR",
+  "keywords": [
+    "sensor",
+    "vsensor"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/vsensor",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/vsensor#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/vsensor/archive/V1.0.0.zip",
+      "filename": "vsensor-1.0.0.zip",
+      "VER_SHA": "b41bc48fb802a18b72a6837cce79de4b239f2620"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/vsensor.git",
+      "filename": "vsensor.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

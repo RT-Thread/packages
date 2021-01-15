@@ -1,0 +1,37 @@
+{
+  "name": "sgm706",
+  "description": "Independent watchdog driver package for sgm706",
+  "description_zh": "SGM706独立看门狗驱动软件包",  
+  "enable": "PKG_USING_SGM706",  
+  "keywords": [
+    "watchdog",
+    "sgm706"
+  ],
+  "category": "peripherals",
+  "author": 
+  {
+    "name": "panrui",
+    "email": "chpanrui@163.com",
+    "github": "Prry"    
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Prry/rtt-sgm706",
+  "icon": "unknown",
+  "homepage": "https://github.com/Prry/rtt-sgm706",
+  "doc": "unknown",
+  "site": 
+  [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Prry/rtt-sgm706/archive/v1.0.0.zip",
+      "filename": "sgm706-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Prry/rtt-sgm706.git",
+      "filename": "sgm706-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

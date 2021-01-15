@@ -1,0 +1,28 @@
+
+# Kconfig file for package rt_printf
+menuconfig PKG_USING_RT_PRINTF
+    bool "rt_printf: thread-safe version of rt_kprintf"
+    default n
+
+if PKG_USING_RT_PRINTF
+
+    config PKG_RT_PRINTF_PATH
+        string
+        default "/packages/system/rt_printf"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RT_PRINTF_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RT_PRINTF_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RT_PRINTF_VER
+       string
+       default "latest"    if PKG_USING_RT_PRINTF_LATEST_VERSION
+
+endif
+

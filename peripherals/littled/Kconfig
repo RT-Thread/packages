@@ -10,6 +10,10 @@ if PKG_USING_LITTLED
         string
         default "/packages/peripherals/littled"
 
+    config PKG_USING_LITTLED_DEBUG
+        bool "Enable debug log output"
+        default n
+
     config PKG_USING_LITTLED_PERIOD
         int "default pwm period (ms)"
         default 1000

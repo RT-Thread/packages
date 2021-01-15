@@ -1,0 +1,196 @@
+
+# Kconfig file for package qboot
+
+menuconfig PKG_USING_QBOOT
+    bool "qboot : A component used to make bootloader quickly"
+    select PKG_USING_FAL
+    select PKG_USING_CRCLIB
+    default n
+
+if PKG_USING_QBOOT
+
+    config PKG_QBOOT_PATH
+        string
+        default "/packages/system/qboot"
+        
+    config QBOOT_USING_PRODUCT_CODE
+        bool "using product code"
+        default n
+        
+    if QBOOT_USING_PRODUCT_CODE    
+        config QBOOT_PRODUCT_CODE
+            string "product code, maximum 20 characters"
+            default "00010203040506070809"
+    endif
+        
+    config QBOOT_APP_PART_NAME
+        string "application partition name"
+        default "app"
+
+    config QBOOT_DOWNLOAD_PART_NAME
+        string "download partition name"
+        default "download"
+
+    config QBOOT_FACTORY_PART_NAME
+        string "factory partition name"
+        default "factory"
+        
+    config QBOOT_USING_AES
+        bool "using AES decrypt"
+        select PKG_USING_TINYCRYPT
+        select TINY_CRYPT_AES
+        default n
+        
+    if QBOOT_USING_AES
+        config QBOOT_AES_IV
+            string "AES initialization vector, 16 characters"
+            default "0123456789ABCDEF"
+        
+        config QBOOT_AES_KEY
+            string "AES round keys, 32 characters"
+            default "0123456789ABCDEF0123456789ABCDEF"
+    endif
+
+    config QBOOT_USING_GZIP
+        bool "using gzip decompress"
+        select PKG_USING_ZLIB
+        default n
+
+    config QBOOT_USING_QUICKLZ
+        bool "using quicklz decompress"
+        select PKG_USING_QUICKLZ
+        default y
+
+    config QBOOT_USING_FASTLZ
+        bool "using fastlz decompress"
+        select PKG_USING_FASTLZ
+        default n
+
+    config QBOOT_USING_SHELL
+        bool "using shell command of qboot"
+        default y
+
+    if QBOOT_USING_SHELL
+        config QBOOT_SHELL_KEY_CHK_TMO
+            int "check timeout the [enter] key pressed, unit : s"
+            default 5
+    endif
+
+    config QBOOT_USING_SYSWATCH
+        bool "using syswatch component"
+        select PKG_USING_SYSWATCH
+        default y 
+
+    config QBOOT_USING_OTA_DOWNLOADER
+        bool "using OTA_download component"
+        select PKG_USING_OTA_DOWNLOADER
+        select PKG_USING_YMODEM_OTA
+        default y
+
+    config QBOOT_USING_PRODUCT_INFO
+        bool "using product infomation print"
+        default y
+
+    if QBOOT_USING_PRODUCT_INFO
+        config QBOOT_PRODUCT_NAME
+            string "product name"
+            default "Qboot test device"
+
+        config QBOOT_PRODUCT_VER
+            string "product version"
+            default "v1.00 2020.07.27"
+
+        config QBOOT_PRODUCT_MCU
+            string "product MCU chip model"
+            default "stm32l4r5zi"
+    endif
+
+    config QBOOT_USING_STATUS_LED
+        bool "using running status led"
+        select PKG_USING_QLED
+        default y
+        
+    if QBOOT_USING_STATUS_LED
+        config QBOOT_STATUS_LED_PIN
+            int "running status led pin"
+            range 0 176
+            default 0
+            
+        config QBOOT_STATUS_LED_LEVEL
+            int "led on level"
+            range 0 1
+            default 1
+    endif
+
+    config QBOOT_USING_FACTORY_KEY
+        bool "using resume factory key"
+        default n
+
+    if QBOOT_USING_FACTORY_KEY
+        config QBOOT_FACTORY_KEY_PIN
+            int "resume factory key pin"
+            range 0 176
+            default 1
+            
+        config QBOOT_FACTORY_KEY_LEVEL
+            int "the level after key is pressed"
+            range 0 1
+            default 0
+
+        config QBOOT_FACTORY_KEY_CHK_TMO
+            int "timeout when the key is pressed continuously, unit : s"
+            default 10
+    endif
+    
+    config QBOOT_APP_RUN_IN_QSPI_FLASH
+        bool "appl run in external flash"
+        default n
+
+    config QBOOT_THREAD_STACK_SIZE
+        int "The stack size of thread"
+        default 4096   
+
+    config QBOOT_THREAD_PRIO
+        int "The priority of thread"
+        default 5  
+
+    choice
+        prompt "Version"
+        default PKG_USING_QBOOT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QBOOT_LATEST_VERSION
+            bool "latest"
+            
+        config PKG_USING_QBOOT_V105
+            bool "v1.05"
+            
+        config PKG_USING_QBOOT_V104
+            bool "v1.04"
+            
+        config PKG_USING_QBOOT_V103
+            bool "v1.03"
+            
+        config PKG_USING_QBOOT_V102
+            bool "v1.02"
+            
+        config PKG_USING_QBOOT_V101
+            bool "v1.01"
+            
+        config PKG_USING_QBOOT_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_QBOOT_VER
+       string
+       default "latest" if PKG_USING_QBOOT_LATEST_VERSION
+       default "v1.05" if PKG_USING_QBOOT_V105
+       default "v1.04" if PKG_USING_QBOOT_V104
+       default "v1.03" if PKG_USING_QBOOT_V103
+       default "v1.02" if PKG_USING_QBOOT_V102
+       default "v1.01" if PKG_USING_QBOOT_V101
+       default "v1.00" if PKG_USING_QBOOT_V100
+
+endif
+

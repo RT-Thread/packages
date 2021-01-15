@@ -1,0 +1,44 @@
+
+# Kconfig file for package ms5805
+menuconfig PKG_USING_MS5805
+    bool "MS5805: Digital pressure sensor"
+    default n
+
+if PKG_USING_MS5805
+    
+    config PKG_MS5805_PATH
+        string
+        default "/packages/peripherals/sensors/ms5805"
+
+    config MS5805_USING_TEMP
+        bool "Enable MS5805 temperature"
+        default n
+
+    config MS5805_USING_BARO
+        bool "Enable MS5805 pressure"
+        default n
+		
+    config PKG_USING_MS5805_SAMPLE
+        bool "Enable ms5805 example"
+        default n
+		
+    choice
+        prompt "Version"
+        default PKG_USING_MS5805_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MS5805_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MS5805_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MS5805_VER
+       string
+       default "v1.0.0"    if PKG_USING_MS5805_V100
+       default "latest"    if PKG_USING_MS5805_LATEST_VERSION
+
+endif
+

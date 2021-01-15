@@ -1,0 +1,91 @@
+
+# Kconfig file for package lwgps
+menuconfig PKG_USING_LWGPS
+    bool "lwgps: Lightweight GPS NMEA parser"
+    default n
+
+if PKG_USING_LWGPS
+
+    config LWGPS_USING_SAMPLES
+        bool "enable samples"
+        default n
+
+    config PKG_LWGPS_PATH
+        string
+        default "/packages/misc/lwgps"
+
+    config GPS_MODULE_BAUD_RATE
+    int "module communication baudrate(4800~115200)"
+    default 9600
+    range 4800 115200
+
+    config LWGPS_CFG_DOUBLE
+    int "Enables double precision for floating point values"
+    default 0
+    range 0 1
+    
+    config LWGPS_CFG_STATUS
+    int "Enables status reporting callback"
+    default 0
+    range 0 1
+
+    config LWGPS_CFG_STATEMENT_GPGGA
+    int "Enables `GGA` statement parsing"
+    default 1
+    range 0 1
+    
+    config LWGPS_CFG_STATEMENT_GPGSA
+    int "Enables `GSA` statement parsing"
+    default 1
+    range 0 1
+    
+    config LWGPS_CFG_STATEMENT_GPRMC
+    int "Enables `RMC` statement parsing"
+    default 1
+    range 0 1
+    
+    config LWGPS_CFG_STATEMENT_GPGSV
+    int "Enables `GSV` statement parsing"
+    default 1
+    range 0 1
+    
+    config LWGPS_CFG_STATEMENT_GPGSV_SAT_DET
+    int "Enables detailed parsing of each satellite"
+    default 0
+    range 0 1
+    
+    config LWGPS_CFG_STATEMENT_PUBX
+    int "Enables parsing and generation of PUBX (uBlox) messages"
+    default 0
+    range 0 1
+    
+    config LWGPS_CFG_STATEMENT_PUBX_TIME
+    int "Enables parsing and generation of PUBX (uBlox) TIME messages"
+    default 0
+    range 0 1
+    
+    choice
+        prompt "Version"
+        default PKG_USING_LWGPS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LWGPS_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LWGPS_V110
+            bool "v1.1.0"
+
+        config PKG_USING_LWGPS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+          
+    config PKG_LWGPS_VER
+       string
+       default "v1.0.0"    if PKG_USING_LWGPS_V100
+       default "v1.1.0"    if PKG_USING_LWGPS_V110
+       default "latest"    if PKG_USING_LWGPS_LATEST_VERSION
+
+endif
+

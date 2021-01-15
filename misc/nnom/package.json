@@ -3,14 +3,7 @@
   "description": "A higher-level Neural Network framework on Microcontroller (NNoM)",
   "description_zh": "轻量级的神经网络框架, 模型一键转换, 让MCU也神经一把",
   "enable": "PKG_USING_NNOM",
-  "keywords": [
-    "NNoM",
-	"ML",
-	"AI",
-	"neural-network",
-	"C",
-	"lightweight"
-  ],
+  "keywords": ["NNoM", "ML", "AI", "neural-network", "C", "lightweight"],
   "category": "misc",
   "author": {
     "name": "Jianjia Ma",
@@ -40,6 +33,30 @@
       "version": "v0.2.1",
       "URL": "https://github.com/majianjia/nnom/archive/v0.2.1.zip",
       "filename": "nnom-v0.2.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v0.3.0",
+      "URL": "https://github.com/majianjia/nnom/archive/v0.3.0.zip",
+      "filename": "nnom-v0.3.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v0.4.0",
+      "URL": "https://github.com/majianjia/nnom/archive/v0.4.0.zip",
+      "filename": "nnom-v0.4.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v0.4.1",
+      "URL": "https://github.com/majianjia/nnom/archive/v0.4.1.zip",
+      "filename": "nnom-v0.4.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v0.4.2",
+      "URL": "https://github.com/majianjia/nnom/archive/v0.4.2.zip",
+      "filename": "nnom-v0.4.2.zip",
       "VER_SHA": "NULL"
     },
     {

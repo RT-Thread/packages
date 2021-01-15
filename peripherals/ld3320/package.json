@@ -1,0 +1,34 @@
+{
+  "name": "ld3320",
+  "description": "LD3320 speech recognition chip",
+  "description_zh": "LD3320语音识别芯片",  
+  "enable": "PKG_USING_LD3320", 
+  "keywords": [
+    "ld3320"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "xqyjlj",
+    "email": "xqyjlj@126.com",
+    "github": "xqyjlj"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/xqyjlj/ld3320",
+  "icon": "unknown",
+  "homepage": "https://github.com/xqyjlj/ld3320",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/xqyjlj/ld3320/archive/v1.0.0.zip",
+      "filename": "ld3320-1.0.0.zip",
+      "VER_SHA": "5d620e48907c07f491f7399adac22962144f772a"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/xqyjlj/ld3320.git",
+      "filename": "ld3320.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
