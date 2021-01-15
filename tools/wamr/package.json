@@ -1,0 +1,27 @@
+{
+  "name": "wamr",
+  "description": "WebAssembly Micro Runtime For RT-Thread",
+  "description_zh": "运行于RT-Thread的WebAssembly Micro Runtime",  
+  "enable": "PKG_USING_WAMR", 
+  "keywords": [
+    "wamr"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "alvkeke",
+    "email": "yaoxin@rt-thread.com",
+    "github": "alvkeke"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/bytecodealliance/wasm-micro-runtime.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/bytecodealliance/wasm-micro-runtime.git",
+      "VER_SHA": "main"
+    }
+  ]
+}
