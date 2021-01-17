@@ -115,6 +115,9 @@ if PKG_USING_RS485
         config PKG_USING_RS485_LATEST_VERSION
             bool "latest"
         
+        config PKG_USING_RS485_V102
+            bool "v1.02"
+            
         config PKG_USING_RS485_V101
             bool "v1.01"
             
@@ -125,6 +128,7 @@ if PKG_USING_RS485
     config PKG_RS485_VER
        string
        default "latest" if PKG_USING_RS485_LATEST_VERSION
+       default "v1.02"  if PKG_USING_RS485_V102
        default "v1.01"  if PKG_USING_RS485_V101
        default "v1.00"  if PKG_USING_RS485_V100
 
