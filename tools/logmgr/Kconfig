@@ -65,6 +65,10 @@ if PKG_USING_LOGMGR
             default y
     endif
 
+    config LOGMGR_USING_SAMPLES
+        bool "Enable samples"
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_LOGMGR_LATEST_VERSION
