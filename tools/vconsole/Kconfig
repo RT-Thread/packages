@@ -1,7 +1,7 @@
 
 # Kconfig file for package vconsole
 menuconfig PKG_USING_VCONSOLE
-    bool "VC: A virtual console package."
+    bool "vconsole: A virtual console package."
     default n
 
 if PKG_USING_VCONSOLE
