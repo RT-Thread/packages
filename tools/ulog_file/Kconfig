@@ -12,6 +12,24 @@ if PKG_USING_ULOG_FILE
         string
         default "/packages/tools/ulog_file"
 
+    config ULOG_FILE_ROOT_PATH
+        string "The root path of the saved file"
+        default "/logs"
+        
+    config ULOG_FILE_NAME_BASE
+        string "The base name of the saved file"
+        default "ulog.log"
+        
+    config ULOG_FILE_MAX_NUM
+        int "The maximum number of the saved file"
+        default 5
+        range 1 100
+        
+     config ULOG_FILE_MAX_SIZE
+        int "The maximum size of a file"
+        default 524288
+        range 1024 104857600
+
     choice
         prompt "Version"
         default PKG_USING_ULOG_FILE_LATEST_VERSION
