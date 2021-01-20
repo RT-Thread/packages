@@ -32,9 +32,12 @@ if PKG_USING_ULOG_FILE
 
     choice
         prompt "Version"
-        default PKG_USING_ULOG_FILE_LATEST_VERSION
+        default PKG_USING_ULOG_FILE_V100
         help
             Select the package version
+
+        config PKG_USING_ULOG_FILE_V100
+            bool "v1.0.0"
 
         config PKG_USING_ULOG_FILE_LATEST_VERSION
             bool "latest"
@@ -42,6 +45,7 @@ if PKG_USING_ULOG_FILE
           
     config PKG_ULOG_FILE_VER
        string
+       default "v1.0.0"    if PKG_USING_ULOG_FILE_V100
        default "latest"    if PKG_USING_ULOG_FILE_LATEST_VERSION
 
 endif
