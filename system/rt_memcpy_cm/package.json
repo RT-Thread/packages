@@ -1,0 +1,28 @@
+{
+  "name": "rt_memcpy_cm",
+  "description": "Cortex-M kernel assembly accelerated version of rt_memcpy function",
+  "description_zh": "rt_memcpy函数的Cortex-M内核汇编加速版",  
+  "enable": "PKG_USING_RT_MEMCPY_CM", 
+  "keywords": [
+    "rt_memcpy_cm"
+  ],
+  "category": "system",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/mysterywolf/rt_memcpy_cm",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/rt_memcpy_cm#readme",
+  "doc": "https://github.com/mysterywolf/rt_memcpy_cm#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://xxxxx.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}
