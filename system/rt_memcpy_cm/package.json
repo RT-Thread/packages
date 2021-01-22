@@ -20,7 +20,7 @@
   "site": [
     {
       "version": "latest",
-      "URL": "https://xxxxx.git",
+      "URL": "https://github.com/mysterywolf/rt_memcpy_cm.git",
       "filename": "Null for git package",
       "VER_SHA": "fill in latest version branch name, such as master"
     }
