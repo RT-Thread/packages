@@ -4,7 +4,11 @@
   "description_zh": "armv7m_dwt 高精度计时与延时",
   "enable": "PKG_USING_ARMv7M_DWT",
   "keywords": [
-    "armv7m_dwt"
+    "armv7m_dwt",
+    "Cortex-M",
+    "Cortex",
+    "ARM",
+    "ARMv7m"
   ],
   "category": "misc",
   "author": {

@@ -4,7 +4,11 @@
   "description_zh": "rt_memcpy函数的Cortex-M内核汇编加速版",  
   "enable": "PKG_USING_RT_MEMCPY_CM", 
   "keywords": [
-    "rt_memcpy_cm"
+    "rt_memcpy_cm",
+    "memcpy",
+    "Cortex-M",
+    "Cortex",
+    "ARM"
   ],
   "category": "system",
   "author": {
