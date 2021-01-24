@@ -6,7 +6,7 @@
   "keywords": [
     "ARM",
     "Cortex-M",
-    "Cortex"
+    "Cortex",
     "backtrace",
     "callstack",
     "hardfault"
