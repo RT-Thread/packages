@@ -24,7 +24,7 @@
   "site": [
     {
       "version": "latest",
-      "URL": "https://xxxxx.git",
+      "URL": "https://github.com/mysterywolf/Qfplib-M3.git",
       "filename": "Null for git package",
       "VER_SHA": "master"
     }
