@@ -28,5 +28,6 @@ source "$PKGS_DIR/packages/system/Ppool/Kconfig"
 source "$PKGS_DIR/packages/system/openamp/Kconfig"
 source "$PKGS_DIR/packages/system/rt_printf/Kconfig"
 source "$PKGS_DIR/packages/system/rt_memcpy_cm/Kconfig"
+source "$PKGS_DIR/packages/system/Qfplib_M0_full/Kconfig"
 
 endmenu
