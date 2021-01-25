@@ -4,7 +4,10 @@
   "description_zh": "Cortex M系列架构安全固件",
   "enable": "PKG_USING_TFM",
   "keywords": [
-    "trusted-firmware-m"
+    "trusted-firmware-m",
+    "Cortex-M",
+    "Cortex",
+    "ARM"
   ],
   "category": "security",
   "author": {
