@@ -36,7 +36,7 @@ The software package and its documents should contain:
 
 Package index: the package description files that are stored under the `env\packages` folder. Take the '`env\packages\packages\iot\pahomqtt` folder as an example, it contains:
 
-![env1](figures\env1.png)
+![env1](figures/env1.png)
 
 - Kconfig: storing the configuration items, such as package versions, feature options, etc.
 - package.json: storing information such as the name of the package, package introduction, download links for each version, etc.
@@ -45,15 +45,15 @@ Package index: the package description files that are stored under the `env\pack
 
 We can make package index files by using Env’s package index generation wizard feature. Type the command`pkgs --wizard`, shown as follows:
 
-![env2](figures\env2.png)
+![env2](figures/env2.png)
 
 The generated contents are shown as follows:
 
-![env3](figures\env3.png)
+![env3](figures/env3.png)
 
 ![Image for post](https://miro.medium.com/max/60/1*DBz9bN4lLuJ_-5P1N3SIWA.png?q=20)
 
-![env4](figures\env4.png)
+![env4](figures/env4.png)
 
 Note that the ‘SConscript’ file is only used when packing the source code by moving it to the package source folder. It doesn’t have to exist in the index folder after the packing process.
 
@@ -122,7 +122,7 @@ The modified package.json is as follows:
 
 The content of **Kconfig** is as follows:
 
-![env5](figures\env5.png)
+![env5](figures/env5.png)
 
 The Kconfig files in the package index are primarily used by the menuconfig command, and some of the options for the package must be defined, here are notes that you need to pay attention to:
 
@@ -158,11 +158,11 @@ Env can download packages from multiple package sources, and the list of package
 
 - Duplicate the official RT-Thread package folder, change the folder name and delete the unnecessary package index files within the folder, then add the necessary ones.
 
-![env6](figures\env6.png)
+![env6](figures/env6.png)
 
 - Update the Kconfig files under the `env\packages` folder and add package source information to the Kconfig file.
 
-![env7](figures\env7.png)
+![env7](figures/env7.png)
 
 ## Delete Software Package Source
 
@@ -176,7 +176,7 @@ The following procedures are required before the release of a new version of the
 1. Check the package to make sure that the package function works properly.
 2. Use the Github Release feature to publish a new version, if you don’t have the permission to notify the administrator to release a new version for you. Refer to the [paho-mqtt package repository](https://github.com/RT-Thread-packages/paho-mqtt/releases) for how to release a new version.
 
-![env8](figures\env8.png)
+![env8](figures/env8.png)
 
 3. Modify the local package index files, add information of the new information in the Kconfig file and package.json.
 
