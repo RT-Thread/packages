@@ -30,7 +30,7 @@ if PKG_USING_TENSORFLOWLITEMICRO
         prompt "Select Offical Example"
 
         config PKG_USING_TENSORFLOWLITEMICRO_AUDIO_EXAMPLE
-            bool "Enable Tensorflow Lite Micro Person Detection example"
+            bool "Enable Tensorflow Lite Micro Audio Example"
             default n
 
         config PKG_USING_TENSORFLOWLITEMICRO_NO_EXAMPLE
