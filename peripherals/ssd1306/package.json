@@ -1,0 +1,29 @@
+{
+  "name": "ssd1306",
+  "description": "ssd1306: Drive OLEDs based on SSD1306, SH1106, SH1107 and SSD1309, supports I2C and SPI.",
+  "description_zh": "基于 SSD1306、SH1106、SH1107 和 SSD1309 的 OLED 驱动，支持 I2C 和 SPI",  
+  "enable": "PKG_USING_SSD1306", 
+  "keywords": [
+    "ssd1306",
+    "oled"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "luhuadong",
+    "email": "luhuadong@163.com",
+    "github": "luhuadong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/luhuadong/rtt-ssd1306",
+  "icon": "unknown",
+  "homepage": "https://github.com/luhuadong/rtt-ssd1306",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/luhuadong/rtt-ssd1306.git",
+      "filename": "ssd1306-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

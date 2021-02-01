@@ -1,0 +1,103 @@
+
+# Kconfig file for package wk2124
+menuconfig PKG_USING_WK2124
+    bool "wk2124: spi wk2124 driver library."
+    default n
+    select RT_USING_PIN
+    select RT_USING_SPI
+
+if PKG_USING_WK2124
+
+    config PKG_WK2124_PATH
+        string
+        default "/packages/peripherals/wk2124"
+
+    config PKG_USING_UART_SWK1
+        bool "Enable UART SWK1"
+        default y
+
+    config PKG_USING_UART_SWK2
+        bool "Enable UART SWK2"
+        default y
+
+    config PKG_USING_UART_SWK3
+        bool "Enable UART SWK3"
+        default y
+
+    config PKG_USING_UART_SWK4
+        bool "Enable UART SWK4"
+        default y
+    
+    config WK2124_DEVICE_EXTERN_CONFIG
+         bool
+         default n
+
+    if !WK2124_DEVICE_EXTERN_CONFIG
+        menu "WK2124 device configure"
+
+            config WK2124_SPI_DEVICE
+                string "SPI device name"
+                default "spi2dev"
+
+            config WK2124_IRQ_PIN
+                int "IRQ pin number"
+                default 17
+            
+            if PKG_USING_WK2124_V100
+                choice
+                    prompt "Select crystal frequency"
+                    default WK2124_Fosc_11059200
+
+                    config WK2124_Fosc_1843200
+                        bool "1.8432MHz"
+                    config WK2124_Fosc_3686400
+                        bool "3.6864MHz"
+                    config WK2124_Fosc_7372800
+                        bool "7.3728MHz"
+                    config WK2124_Fosc_11059200
+                        bool "11.0592MHz"
+                    config WK2124_Fosc_14745600
+                        bool "14.7456MHz"
+                    config WK2124_Fosc_8000000
+                        bool "8MHz"
+                    config WK2124_Fosc_16000000
+                        bool "16MHz"
+                    config WK2124_Fosc_24000000
+                        bool "24MHz"
+                    config WK2124_Fosc_32000000
+                        bool "32MHz"
+                endchoice
+            endif
+            
+            if !PKG_USING_WK2124_V100
+                config WK2124_Fosc
+                    int "Set crystal frequency. Unit Hz"
+                    default 11059200
+            endif
+
+        endmenu
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_WK2124_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_WK2124_V100
+            bool "v1.0.0"
+
+        config PKG_USING_WK2124_V101
+            bool "v1.0.1"
+
+        config PKG_USING_WK2124_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_WK2124_VER
+       string
+       default "v1.0.0"    if PKG_USING_WK2124_V100
+       default "latest"    if PKG_USING_WK2124_LATEST_VERSION
+
+endif
+

@@ -1,7 +1,5 @@
-
-# Kconfig file for package yd_crypto
 menuconfig PKG_USING_YD_CRYPTO
-    bool "yd_crypto: Encryption algorithms for low&medium-end 32bit microcontroller."
+    bool "yd_crypto: Encryption and decryption algorithm library for microcontroller."
     default n
 
 if PKG_USING_YD_CRYPTO
@@ -12,9 +10,12 @@ if PKG_USING_YD_CRYPTO
 
     choice
         prompt "Version"
-        default PKG_USING_YD_CRYPTO_LATEST_VERSION
+        default PKG_USING_YD_CRYPTO_V1101
         help
             Select the package version
+
+        config PKG_USING_YD_CRYPTO_V1101
+            bool "v1.1.01"
 
         config PKG_USING_YD_CRYPTO_LATEST_VERSION
             bool "latest"
@@ -22,6 +23,7 @@ if PKG_USING_YD_CRYPTO
           
     config PKG_YD_CRYPTO_VER
        string
+       default "v1.1.01"    if PKG_USING_YD_CRYPTO_V1101
        default "latest"    if PKG_USING_YD_CRYPTO_LATEST_VERSION
 
 endif

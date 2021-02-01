@@ -1,0 +1,46 @@
+
+# Kconfig file for package uC_CLK
+menuconfig PKG_USING_UC_CLK
+    bool "uC/Clk for RT-Thread"
+    default n
+    select PKG_USING_UCOSIII_WRAPPER
+    select PKG_USING_UCOSIII_WRAPPER_AUTOINIT
+
+if PKG_USING_UC_CLK
+
+    config PKG_UC_CLK_PATH
+        string
+        default "/packages/system/Micrium/uC_CLK"
+
+    config PKG_USING_UC_CLK_TASK_PRIO
+        int "The priority level value of uC/Clk task"
+        default 10
+
+    config PKG_USING_UC_CLK_TASK_STK_SIZE
+        int "The stack size of uC/Clk task (sizeof(CPU_STK))"
+        default 80
+
+    config PKG_USING_UC_CLK_AUTOINIT
+        bool "Enable uC/Clk automatical initialization"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_UC_CLK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UC_CLK_V100
+            bool "v1.0.0"
+
+        config PKG_USING_UC_CLK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UC_CLK_VER
+       string
+       default "v1.0.0"    if PKG_USING_UC_CLK_V100
+       default "latest"    if PKG_USING_UC_CLK_LATEST_VERSION
+
+endif
+

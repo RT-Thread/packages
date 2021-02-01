@@ -1,0 +1,36 @@
+
+# Kconfig file for package vl53l0x
+menuconfig PKG_USING_VL53L0X
+    bool "VL53L0X Time of flight(TOF) sensor."
+    default n
+
+if PKG_USING_VL53L0X
+
+    config PKG_VL53L0X_PATH
+        string
+        default "/packages/peripherals/sensors/vl53l0x"
+        
+	 config PKG_USING_VL53L0X_SAMPLE
+        bool "Enable vl53l0x sample"
+        default n
+        
+    choice
+        prompt "Version"
+        default PKG_USING_VL53L0X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_VL53L0X_V100
+            bool "v1.0.0"
+
+        config PKG_USING_VL53L0X_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_VL53L0X_VER
+       string
+       default "v1.0.0"    if PKG_USING_VL53L0X_V100
+       default "latest"    if PKG_USING_VL53L0X_LATEST_VERSION
+
+endif
+

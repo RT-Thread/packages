@@ -1,0 +1,204 @@
+
+# Kconfig file for package kdb
+menuconfig PKG_USING_KDB
+    bool "kdb : Kernel debug tools."
+    default n
+
+if PKG_USING_KDB
+
+    config PKG_KDB_PATH
+        string
+        default "/packages/tools/kdb"
+    
+    config KDB_MAX_DATA_LEN        
+        int "the maximum of data package length"
+        default 64
+
+    config KDB_TYPE_NUM
+        int "the maximun number of types in KDB"
+        default 32
+
+    config KDB_SYS_AUTO_INIT
+        bool "Enable KDB system automatic initialization"
+        default n
+
+    config KDB_SYS_BUFF_SIZE       
+        int "the maximun system buffer size"
+        default 4096
+
+    config KDB_SYS_NAME_LEN        
+        int "the maximun system name length"
+        default 8
+
+    config KDB_SYS_MEM_CUSTOM
+        bool "Enable KDB system memory custom"
+        default n
+
+    config KDB_SCHEDULER_DUMP
+        bool "Enable KDB scheduler dump"
+        default y
+
+    config KDB_THREAD_DUMP
+        bool "Enable KDB thread dump"
+        default n
+
+    if KDB_THREAD_DUMP
+        config KDB_THREAD_SUSPEND_DUMP
+            bool "Enable KDB thread suspend dump"
+            default n    
+        
+        config KDB_THREAD_RESUME_DUMP
+            bool "Enable KDB thread resume dump"
+            default n    
+
+        config KDB_THREAD_INITED_DUMP
+            bool "Enable KDB thread inited dump"
+            default n
+    endif
+
+    config KDB_HEAP_DUMP
+        bool "Enable KDB heap dump"
+        default n
+
+    if KDB_HEAP_DUMP
+        config KDB_HEAP_MALLOC_DUMP
+            bool "Enable KDB heap malloc dump"
+            default n
+
+        config KDB_HEAP_FREE_DUMP
+            bool "Enable KDB heap free dump"
+            default n
+    endif
+
+    config KDB_MP_DUMP
+        bool "Enable KDB memory pool dump"
+        default n
+
+    if KDB_MP_DUMP
+        config KDB_MP_ALLOC_DUMP
+            bool "Enable KDB memory pool alloc dump"
+            default n
+
+        config KDB_MP_FREE_DUMP
+            bool "Enable KDB memory pool free dump"
+            default n
+    endif
+
+    config KDB_OBJECT_DUMP
+        bool "Enable KDB object dump"
+        default n
+
+    if KDB_OBJECT_DUMP
+        config KDB_THREAD_OBJECT_DUMP
+            bool "Enable KDB thread object dump"
+            default n 
+
+        config KDB_SEMAPHORE_OBJECT_DUMP
+            bool "Enable KDB semaphore object dump"
+            default n
+
+        config KDB_MUTEX_OBJECT_DUMP
+            bool "Enable KDB mutext object dump"
+            default n
+
+        config KDB_EVENT_OBJECT_DUMP
+            bool "Enable KDB event object dump"
+            default n
+
+        config KDB_MAILBOX_OBJECT_DUMP
+            bool "Enable KDB mailbox object dump"
+            default n
+
+        config KDB_MESSAGEQUEUE_OBJECT_DUMP
+            bool "Enable KDB message queue object dump"
+            default n
+
+        config KDB_MEMHEAP_OBJECT_DUMP
+            bool "Enable KDB memheap object dump"
+            default n
+
+        config KDB_MEMPOOL_OBJECT_DUMP
+            bool "Enable KDB mempool object dump"
+            default n
+
+        config KDB_DEVICE_OBJECT_DUMP
+            bool "Enable KDB device object dump"
+            default n
+
+        config KDB_TIMER_OBJECT_DUMP
+            bool "Enable KDB timer object dump"
+            default n
+
+        config KDB_MODULE_OBJECT_DUMP
+            bool "Enable KDB module object dump"
+            default n
+
+        config KDB_UNKNOWN_OBJECT_DUMP
+            bool "Enable KDB unknown object dump"
+            default n
+
+        config KDB_STATIC_OBJECT_DUMP
+            bool "Enable KDB static object dump"
+            default n
+
+        config KDB_DEFAULT_OBJECT_DUMP
+            bool "Enable KDB default object dump"
+            default n
+    endif
+
+    config KDB_TIMER_DUMP
+        bool "Enable KDB timer dump"
+        default n
+
+    if KDB_TIMER_DUMP
+        config KDB_TIMER_ENTER_DUMP
+            bool "Enable KDB timer enter dump"
+            default n
+
+        config KDB_TIMER_EXIT_DUMP
+            bool "Enable KDB timer exit dump"
+            default n
+    endif
+
+    config KDB_INTERRUPT_DUMP
+        bool "Enable KDB interrupt dump"
+        default n
+
+    if KDB_INTERRUPT_DUMP
+        config KDB_INTERRUPT_ENTER_DUMP
+            bool "Enable KDB interrupt enter dump"
+            default n
+
+        config KDB_INTERRUPT_LEAVE_DUMP
+            bool "Enable KDB interrupt leave dump"
+            default n
+    endif
+
+    config KDB_ENABLE_CUSTOMIZE_OUTPUT
+        bool "Enable KDB customize output"
+        default n
+    
+    config KDB_TEST_ENABLE
+        bool "Enable KDB test"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_KDB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_KDB_V100
+            bool "v1.0.0"
+
+        config PKG_USING_KDB_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_KDB_VER
+       string
+       default "v1.0.0"    if PKG_USING_KDB_V100
+       default "latest"    if PKG_USING_KDB_LATEST_VERSION
+
+endif
+

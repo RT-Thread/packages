@@ -11,7 +11,7 @@ if PKG_USING_GP2Y10
         default "/packages/peripherals/sensors/gp2y10"
 
     config PKG_USING_GP2Y10_ADC_DEV_NAME
-        string "ADC device"
+        string "ADC device name"
         default "adc1"
 
     config PKG_USING_GP2Y10_ADC_DEV_CHANNEL
@@ -32,9 +32,24 @@ if PKG_USING_GP2Y10
         bool "Enable soft filter"
         default n
 
+    config PKG_USING_GP2Y10_DEBUG
+        bool "Enable debug log output"
+        default n
+
     config PKG_USING_GP2Y10_SAMPLE
         bool "Enable gp2y10 sample"
         default n
+
+    if PKG_USING_GP2Y10_SAMPLE
+
+        config PKG_USING_GP2Y10_SAMPLE_ILED_PIN
+            int "iled pin number"
+            default 95
+
+        config PKG_USING_GP2Y10_SAMPLE_AOUT_PIN
+            int "aout pin number"
+            default 35
+    endif
 
     choice
         prompt "Version"
@@ -42,8 +57,8 @@ if PKG_USING_GP2Y10
         help
             Select the package version
 
-        config PKG_USING_GP2Y10_V080
-            bool "v0.8.0"
+        config PKG_USING_GP2Y10_V100
+            bool "v1.0.0"
 
         config PKG_USING_GP2Y10_LATEST_VERSION
             bool "latest"
@@ -51,7 +66,7 @@ if PKG_USING_GP2Y10
           
     config PKG_GP2Y10_VER
        string
-       default "v0.8.0"    if PKG_USING_GP2Y10_V080
+       default "v1.0.0"    if PKG_USING_GP2Y10_V100
        default "latest"    if PKG_USING_GP2Y10_LATEST_VERSION
 
 endif

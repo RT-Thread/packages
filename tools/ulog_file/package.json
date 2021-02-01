@@ -1,0 +1,33 @@
+{
+  "name": "ulog_file",
+  "description": "ulog_file: The ulog file backend by filesystem.",
+  "description_zh": "ulog_file: 基于文件系统的 ulog 后端插件。",  
+  "enable": "PKG_USING_ULOG_FILE", 
+  "keywords": [
+    "ulog_file"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "ChenYong",
+    "email": "chenyong@rt-thread.com",
+    "github": "Lawlieta"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/ulog_file.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/ulog_file/archive/1.0.0.zip",
+      "filename": "ulog_file-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/ulog_file.git",
+      "filename": "ulog_file.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

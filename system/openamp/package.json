@@ -1,0 +1,33 @@
+{
+  "name": "openamp",
+  "description": "OpenAMP for rt-thread",
+  "description_zh": "RT-Thread OpenAMP软件包",
+  "enable": "PKG_USING_OPENAMP",
+  "keywords": [
+    "openamp"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/bigmagic123/openamp.git",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/bigmagic123/openamp.git#readme",
+  "readme": "OpenAMP package for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/bigmagic123/openamp/archive/1.0.0.zip",
+      "filename": "openamp-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/bigmagic123/openamp.git",
+      "filename": "openamp.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

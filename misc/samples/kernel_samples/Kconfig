@@ -12,12 +12,15 @@ if PKG_USING_KERNEL_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_KERNEL_SAMPLES_V030
+        default PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
         help
             Select the package version
 
         config PKG_USING_KERNEL_SAMPLES_V030
             bool "v0.3.0"
+
+        config PKG_USING_KERNEL_SAMPLES_V040
+            bool "v0.4.0"
 
         config PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
             bool "latest"
@@ -26,8 +29,22 @@ if PKG_USING_KERNEL_SAMPLES
     config PKG_KERNEL_SAMPLES_VER
        string
        default "v0.3.0"    if PKG_USING_KERNEL_SAMPLES_V030
+       default "v0.4.0"    if PKG_USING_KERNEL_SAMPLES_V040
        default "latest"    if PKG_USING_KERNEL_SAMPLES_LATEST_VERSION
-       
+
+    choice
+        prompt "Comment language"
+        default PKG_USING_KERNEL_SAMPLES_EN
+        help
+            Select the comment language
+
+        config PKG_USING_KERNEL_SAMPLES_EN
+            bool "English"
+
+        config PKG_USING_KERNEL_SAMPLES_ZH
+            bool "Chinese"
+    endchoice
+
     config KERNEL_SAMPLES_USING_THREAD
         bool "[kernel] thread"
 

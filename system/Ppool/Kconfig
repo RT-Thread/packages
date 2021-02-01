@@ -1,0 +1,31 @@
+
+# Kconfig file for package Ppool
+menuconfig PKG_USING_PPOOL
+    bool "Pthread-based thread pool library"
+    default n
+    select RT_USING_PTHREADS
+    select RT_USING_LIBC
+
+
+if PKG_USING_PPOOL
+
+    config PKG_PPOOL_PATH
+        string
+        default "/packages/system/Ppool"
+
+    choice
+        prompt "Version"
+        default PKG_USING_PPOOL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PPOOL_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PPOOL_VER
+       string
+       default "latest"    if PKG_USING_PPOOL_LATEST_VERSION
+
+endif
+

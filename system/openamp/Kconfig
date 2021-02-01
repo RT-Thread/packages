@@ -1,0 +1,38 @@
+
+# Kconfig file for package openamp
+menuconfig PKG_USING_OPENAMP
+    bool "OpenAMP: openamp for RT-Thread"
+    default n
+
+if PKG_USING_OPENAMP
+    config PKG_OPENAMP_PATH
+        string
+        default "/packages/system/openamp"
+	
+    config RT_USING_OPENAMP
+	bool "ENABLE OpenAMP"
+    default y
+
+    config RT_USING_OPENAMP_TEST
+    	bool "ENABLE OpenAMP test"
+    default y
+
+    choice
+        prompt "Version"
+        help
+            Select this package version
+
+        config PKG_USING_OPENAMP_V10000
+            bool "v1.0.0"
+
+        config PKG_USING_OPENAMP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_OPENAMP_VER
+        string
+        default "v1.0.0" if PKG_USING_OPENAMP_V10000
+        default "latest" if PKG_USING_OPENAMP_LATEST_VERSION
+
+endif
+

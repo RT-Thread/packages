@@ -4,7 +4,10 @@
   "description_zh": "RT-Thread 内核示例",
   "enable": "PKG_USING_KERNEL_SAMPLES",
   "keywords": [
-    "kernel_samples"
+    "kernel_samples",
+    "kerbel",
+    "sample",
+    "demo"
   ],
   "category": "misc/samples",
   "author": {
@@ -21,6 +24,12 @@
       "version": "v0.3.0",
       "URL": "https://github.com/RT-Thread-packages/kernel-sample/archive/v0.3.0.zip",
       "filename": "kernel_samples-v0.3.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "v0.4.0",
+      "URL": "https://github.com/RT-Thread-packages/kernel-sample/archive/v0.4.0.zip",
+      "filename": "kernel_samples-v0.4.0.zip",
       "VER_SHA": "master"
     },
     {

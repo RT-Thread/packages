@@ -53,6 +53,8 @@ if PKG_USING_LITTLEVGL2RTT
                 bool "16bit"
             config LV_COLOR_DEPTH_24
                 bool "24bit"
+            config LV_COLOR_DEPTH_32
+                bool "32bit"
         endchoice
         config LV_COLOR_DEPTH
             int
@@ -60,6 +62,7 @@ if PKG_USING_LITTLEVGL2RTT
             default 8  if LV_COLOR_DEPTH_8
             default 16 if LV_COLOR_DEPTH_16
             default 24 if LV_COLOR_DEPTH_24
+            default 32 if LV_COLOR_DEPTH_32
 
         config LV_MEM_KB_SIZE
             int "Memory Size used by 'lv_mem_alloc'(KB)"
@@ -82,6 +85,21 @@ if PKG_USING_LITTLEVGL2RTT
         config LV_DPI
             int "DPI(dot per inch)"
             default 50
+
+        choice
+            prompt "Garbage Collector"
+            default LV_GC_DISABLE
+
+            config LV_GC_DISABLE
+                bool "disable GC"
+            config LV_GC_ENABLE
+                bool "enable GC"
+        endchoice
+        config LV_ENABLE_GC
+            int
+            default 0  if LV_GC_DISABLE
+            default 1  if LV_GC_ENABLE
+
     endmenu
 
     config LITTLEVGL2RTT_USING_DEMO

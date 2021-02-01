@@ -1,0 +1,33 @@
+{
+  "name": "logmgr",
+  "description": "logmgr: A log management system for rt-thread",
+  "description_zh": "logmgr: 日志管理系统功能支持",  
+  "enable": "PKG_USING_LOGMGR", 
+  "keywords": [
+    "logmgr"
+  ],
+  "category": "system",
+  "author": {
+    "name": "ChenYong",
+    "email": "chenyong@rt-thread.com",
+    "github": "ChenYong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/logmgr.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/logmgr/archive/1.0.0.zip",
+      "filename": "logmgr-v1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/logmgr.git",
+      "filename": "logmgr.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
