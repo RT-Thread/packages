@@ -22,23 +22,33 @@ if PKG_USING_LOGMGR
     config LOGMGR_USING_ABORT
         bool "Enable log abort feature"
         default n
-        select PKG_USING_FLASHDB
-        select RT_UGING_DFS
 
     if LOGMGR_USING_ABORT
         
-        config LOGMGR_ABORT_FILE_PATH
-            string "abort file path"
-            default "/abort.log"
+        config LOGMGR_ABORT_STORG
+            bool "Enable abort log storg feature"
+            default n
+            select RT_UGING_DFS
+            select PKG_USING_FLASHDB
+            select FDB_USING_TSDB
+            select FDB_USING_FAL_MODE
+        
+        if LOGMGR_ABORT_STORG
 
-        config LOGMGR_FLASHDB_PART_NAME
-            string "flashdb fal part name"
-            default "logmgr"
+            config LOGMGR_ABORT_FILE_PATH
+                string "abort file path"
+                default "/abort.log"
 
-        config LOGMGR_FLASHDB_MAX_SIZE
-            int "falshdb data max size"
-            default 65536
-            range 16384 131072
+            config LOGMGR_FLASHDB_PART_NAME
+                string "flashdb fal part name"
+                default "logmgr"
+
+            config LOGMGR_FLASHDB_MAX_SIZE
+                int "falshdb data max size"
+                default 65536
+                range 16384 131072
+
+        endif
 
         config LOGMGR_USING_CMBACKTRACE
             bool "cmbacktrace log support"
