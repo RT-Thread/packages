@@ -1,0 +1,47 @@
+{
+  "name": "rs485",
+  "description": "rs485 driver package",
+  "description_zh": "rs485驱动包",
+  "enable": "PKG_USING_RS485",
+  "keywords": [
+    "rs485",
+    "driver",
+    "rt-thread"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-rs485",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-rs485#readme",
+  "site": [
+    {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-rs485/archive/v1.00.zip",
+      "filename": "rt-thread-rs485-1.00.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.01",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-rs485/archive/v1.01.zip",
+      "filename": "rt-thread-rs485-1.01.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.02",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-rs485/archive/v1.02.zip",
+      "filename": "rt-thread-rs485-1.02.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-rs485.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

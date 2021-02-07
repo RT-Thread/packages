@@ -1,0 +1,36 @@
+
+# Kconfig file for package ft6236
+menuconfig PKG_USING_FT6236
+    bool "FT6236 touch driver package."
+    default n
+
+if PKG_USING_FT6236
+
+    config PKG_FT6236_PATH
+        string
+        default "/packages/peripherals/touch/ft6236"
+
+    config PKG_USING_FT6236_SAMPLE
+    bool "enable samples"
+    default n
+	
+    choice
+        prompt "Version"
+        default PKG_USING_FT6236_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FT6236_V100
+            bool "v1.0.0"
+
+        config PKG_USING_FT6236_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_FT6236_VER
+       string
+       default "v1.0.0"    if PKG_USING_FT6236_V100
+       default "latest"    if PKG_USING_FT6236_LATEST_VERSION
+
+endif
+

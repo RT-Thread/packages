@@ -1,0 +1,101 @@
+
+# Kconfig file for package logmgr
+menuconfig PKG_USING_LOGMGR
+    bool "logmgr: A log management system for rt-thread."
+    default n
+
+if PKG_USING_LOGMGR
+
+    config PKG_LOGMGR_PATH
+        string
+        default "/packages/tools/logmgr"
+
+    config LOGMGR_AUTO_INIT
+        bool "Enable automatic initialization"
+        default n
+
+    config LOGMGR_USING_ULOG_FILE
+        bool "Enable log file backend feature"
+        default n
+        select PKG_USING_ULOG_FILE
+
+    config LOGMGR_USING_ABORT
+        bool "Enable log abort feature"
+        default n
+
+    if LOGMGR_USING_ABORT
+        
+        config LOGMGR_ABORT_STORG
+            bool "Enable abort log storg feature"
+            default n
+            select RT_UGING_DFS
+            select PKG_USING_FLASHDB
+            select FDB_USING_TSDB
+            select FDB_USING_FAL_MODE
+        
+        if LOGMGR_ABORT_STORG
+
+            config LOGMGR_ABORT_FILE_PATH
+                string "abort file path"
+                default "/abort.log"
+
+            config LOGMGR_FLASHDB_PART_NAME
+                string "flashdb fal part name"
+                default "logmgr"
+
+            config LOGMGR_FLASHDB_MAX_SIZE
+                int "falshdb data max size"
+                default 65536
+                range 16384 131072
+
+        endif
+
+        config LOGMGR_USING_CMBACKTRACE
+            bool "cmbacktrace log support"
+            default y
+            select PKG_USING_CMBACKTRACE
+
+         config LOGMGR_USING_IPC_LOG
+            bool "system ipc log support"
+            default y
+
+        config LOGMGR_USING_KDB
+            bool "kernel running log support"
+            default y
+            select PKG_USING_KDB
+            select KDB_ENABLE_PORT
+
+        config LOGMGR_USING_SYS_LOAD_MONITOR
+            bool "system load monitor log support"
+            default y
+            select PKG_USING_SYS_LOAD_MONITOR
+
+        config LOGMGR_USING_MEMORY_LOG
+            bool "system memory log support"
+            default y
+    endif
+
+    config LOGMGR_USING_SAMPLES
+        bool "Enable samples"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_LOGMGR_V100
+        help
+            Select the package version
+
+        config PKG_USING_LOGMGR_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LOGMGR_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LOGMGR_VER
+       string
+       default "v1.0.0"    if PKG_USING_LOGMGR_V100
+       default "latest"    if PKG_USING_LOGMGR_LATEST_VERSION
+
+endif
+

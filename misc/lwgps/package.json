@@ -1,0 +1,40 @@
+{
+  "name": "lwgps",
+  "description": "Lightweight GPS NMEA parser",
+  "description_zh": "轻量级GPS NEMA协议解析器",  
+  "enable": "PKG_USING_LWGPS", 
+  "keywords": [
+    "lwgps"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "orange2348",
+    "email": "orange2348@163.com",
+    "github": "orange2348"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/orange2348/lwgps2rtt",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/orange2348/lwgps2rtt/archive/v1.0.0.zip",
+      "filename": "lwgps-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/orange2348/lwgps2rtt/archive/v1.1.0.zip",
+      "filename": "lwgps-1.1.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/orange2348/lwgps2rtt.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

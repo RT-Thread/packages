@@ -1,0 +1,33 @@
+{
+  "name": "pdulib",
+  "description": "pudlib:A TEXT parsing library for short messages in PDU format.",
+  "description_zh": "一个用于PDU格式的短信文本解析库",  
+  "enable": "PKG_USING_PDULIB", 
+  "keywords": [
+    "pdulib"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "ShineRoyal",
+    "email": "1050799608@qq.com",
+    "github": "ShineRoyal"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/ShineRoyal/pdulib",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/ShineRoyal/pdulib/archive/v1.0.0.zip",
+      "filename": "pdulib-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/ShineRoyal/pdulib.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

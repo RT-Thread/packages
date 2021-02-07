@@ -1,0 +1,32 @@
+{
+  "name": "lwrb2rtt",
+  "description": "Lightweight ring buffer manager",
+  "description_zh": "轻量级的 FIFO 环形缓冲区",  
+  "enable": "PKG_USING_LWRB2RTT", 
+  "keywords": [
+    "lwrb2rtt"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "Jackistang",
+    "email": "tangjia.jackis@qq.com",
+    "github": "Jackistang"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Jackistang/lwrb2rtt",
+  "homepage": "https://github.com/Jackistang/lwrb2rtt/blob/develop/README.md",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Jackistang/lwrb2rtt/archive/v1.0.0.zip",
+      "filename": "lwrb2rtt-v1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Jackistang/lwrb2rtt.git",
+      "filename": "lwrb2rtt-latest",
+      "VER_SHA": "develop"
+    }
+  ]
+}

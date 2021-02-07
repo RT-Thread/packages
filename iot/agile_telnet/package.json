@@ -22,6 +22,11 @@
       "filename": "agile_telnet-1.0.0.zip"
     },
     {
+      "version": "v2.0.0",
+      "URL": "https://codeload.github.com/loogg/agile_telnet/zip/v2.0.0",
+      "filename": "agile_telnet-2.0.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_telnet.git",
       "filename": "agile_telnet.zip",

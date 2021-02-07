@@ -1,0 +1,28 @@
+{
+  "name": "wayz_iotkit",
+  "description": "wayz iot location software package",
+  "description_zh": "wayz iot 定位软件包",  
+  "enable": "PKG_USING_WAYZ_IOTKIT", 
+  "keywords": [
+    "wayz_iotkit"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "jianxiong.ye",
+    "email": "jianxiong.ye@wayz.ai",
+    "github": "https://github.com/wayz-iot/"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/wayz-iot/",
+  "icon": "unknown",
+  "homepage": "https://github.com/wayz-iot/wayz_iotkit#readme",
+  "doc": "https://github.com/wayz-iot/wayz_iotkit/tree/master/docs",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wayz-iot/wayz_iotkit.git",
+      "filename": "wayz_iotkit.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

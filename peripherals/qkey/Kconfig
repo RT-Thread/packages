@@ -1,0 +1,56 @@
+
+# Kconfig file for package quick_key
+
+menuconfig PKG_USING_QKEY
+    bool "qkey : A quick and easy-to-use key driver package."
+    default n
+
+if PKG_USING_QKEY
+
+    config PKG_QKEY_PATH
+        string
+        default "/packages/peripherals/qkey"
+
+    config QKEY_USING_TEST
+        bool "using test"
+        default n
+        
+    config QKEY_USING_PULL
+        bool "Key using pull up/down"
+        default y
+        
+    config QKEY_TOTAL
+        int "Key maximum total"
+        default 5
+
+    config QKEY_SCAN_PRIOD_MS
+        int "Key scan time unit, unit : ms"
+        default 10   
+
+    config QKEY_THREAD_NAME
+        string "Key driver thread name"
+        default "qkey"   
+
+    config QKEY_THREAD_STACK_SIZE
+        int "Key driver thread stack size"
+        default 1024   
+
+    config QKEY_THREAD_PRIO
+        int "Key driver thread priority"
+        default 3   
+
+    choice
+        prompt "Version"
+        default PKG_USING_QKEY_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QKEY_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_QKEY_VER
+       string
+       default "latest" if PKG_USING_QKEY_LATEST_VERSION
+
+endif

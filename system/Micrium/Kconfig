@@ -1,0 +1,10 @@
+menu "Micrium: Micrium software products porting for RT-Thread"
+
+source "$PKGS_DIR/packages/system/Micrium/uCOSIII_Wrapper/Kconfig"
+source "$PKGS_DIR/packages/system/Micrium/uCOSII_Wrapper/Kconfig"
+source "$PKGS_DIR/packages/system/Micrium/uC_CRC/Kconfig"
+source "$PKGS_DIR/packages/system/Micrium/uC_CLK/Kconfig"
+source "$PKGS_DIR/packages/system/Micrium/uC_Common/Kconfig"
+source "$PKGS_DIR/packages/system/Micrium/uC_Modbus/Kconfig"
+
+endmenu

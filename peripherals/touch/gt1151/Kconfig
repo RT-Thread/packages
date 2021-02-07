@@ -1,0 +1,63 @@
+
+# Kconfig file for package gt1151
+menuconfig PKG_USING_GT1151
+    bool "GT1151 touch driver package."
+    default n
+
+if PKG_USING_GT1151
+
+    config PKG_GT1151_PATH
+        string
+        default "/packages/peripherals/touch/gt1151"
+
+    choice
+        prompt "Version"
+        default PKG_USING_GT1151_V100
+        help
+            Select the package version
+
+        config PKG_USING_GT1151_V100
+            bool "v1.0.0"
+
+        config PKG_USING_GT1151_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_GT1151_VER
+       string
+       default "v1.0.0"    if PKG_USING_GT1151_V100
+       default "latest"    if PKG_USING_GT1151_LATEST_VERSION
+
+        menu "gt1151 options"
+        config GT1151_BUS_NAME
+            string  "the i2c bus for gt1151"
+            default "i2c1"
+        
+        config GT1151_RST_PIN
+            int "reset pin for gt1151"
+            default 51
+        
+        config GT1151_IRQ_PIN
+            int "interrupt pin for gt1151"
+            default 108
+        
+        config GT1151_TOUCH_WIDTH
+            int "lcd width"
+            default 800
+        
+        config GT1151_TOUCH_HEIGHT
+            int "lcd height"
+            default 480
+        
+        config GT1151_SUPPORT_POINTS
+            int "gt1151 supported touch points"
+            default 10
+    endmenu
+
+    config GT1151_USING_EXAMPLE
+        bool "gt1151 example"
+        default y
+
+
+endif
+

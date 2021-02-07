@@ -1,0 +1,28 @@
+{
+  "name": "ly68l6400",
+  "description": "device drive for ly68l6400",
+  "description_zh": "ly68l6400芯片的驱动",  
+  "enable": "PKG_USING_LY68L6400", 
+  "keywords": [
+    "ly68l6400"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Ghazigq",
+    "email": "ghazi.gq@hotmail.com",
+    "github": "Ghazigq"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/Ghazigq/ly68l6400",
+  "icon": "unknown",
+  "homepage": "https://github.com/Ghazigq/ly68l6400#README",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Ghazigq/ly68l6400.git",
+      "filename": "ly68l6400.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

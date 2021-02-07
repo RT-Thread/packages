@@ -24,9 +24,15 @@
   "site": [
     {
       "version": "0.2.3",
-      "URL": "https://github.com/Nuclei-Software/nuclei-sdk.git",
+      "URL": "https://github.com/Nuclei-Software/nuclei-sdk/archive/0.2.3.zip",
       "filename": "nuclei_sdk-0.2.3.zip",
       "VER_SHA": "0.2.3"
+    },
+    {
+      "version": "0.3.0",
+      "URL": "https://github.com/Nuclei-Software/nuclei-sdk/archive/0.3.0.zip",
+      "filename": "nuclei_sdk-0.3.0.zip",
+      "VER_SHA": "0.3.0"
     },
     {
       "version": "latest",
