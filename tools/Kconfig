@@ -17,5 +17,6 @@ source "$PKGS_DIR/packages/tools/bs8116a/Kconfig"
 source "$PKGS_DIR/packages/tools/gps_rmc/Kconfig"
 source "$PKGS_DIR/packages/tools/UrlEncode/Kconfig"
 source "$PKGS_DIR/packages/tools/uMCN/Kconfig"
+source "$PKGS_DIR/packages/tools/Micro-XRCE-DDS-Client/Kconfig"
 
 endmenu
