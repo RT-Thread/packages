@@ -1,0 +1,37 @@
+
+# Kconfig file for package Micro-XRCE-DDS-Client
+menuconfig PKG_USING_MICRO_XRCE_DDS_CLIENT
+    bool "Micro-XRCE-DDS-Client: The middleware component of micro-ros, which provides ros2 topic pub/sub ability"
+    default n
+
+if PKG_USING_MICRO_XRCE_DDS_CLIENT
+
+	menu "Micro-XRCE-DDS-Client Options"
+	
+	config MICRO_XRCE_DDS_CLIENT_USING_EXAMPLE
+        bool
+        prompt "Enable uros examples"
+        default y
+		
+	endmenu
+
+    config PKG_MICRO_XRCE_DDS_CLIENT_PATH
+        string
+        default "/packages/tools/Micro-XRCE-DDS-Client"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MICRO_XRCE_DDS_CLIENT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MICRO_XRCE_DDS_CLIENT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MICRO_XRCE_DDS_CLIENT_VER
+       string
+       default "latest"    if PKG_USING_MICRO_XRCE_DDS_CLIENT_LATEST_VERSION
+
+endif
+

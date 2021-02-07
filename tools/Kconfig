@@ -27,4 +27,6 @@ source "$PKGS_DIR/packages/tools/vconsole/Kconfig"
 source "$PKGS_DIR/packages/tools/mbedtls_bench/Kconfig"
 source "$PKGS_DIR/packages/tools/kdb/Kconfig"
 source "$PKGS_DIR/packages/tools/wamr/Kconfig"
+source "$PKGS_DIR/packages/tools/Micro-XRCE-DDS-Client/Kconfig"
+
 endmenu
