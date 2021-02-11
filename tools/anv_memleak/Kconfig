@@ -1,6 +1,7 @@
 
 # Kconfig file for package anv_memleak
 menuconfig PKG_USING_ANV_MEMLEAK
+    select RT_USING_LIBC
     bool "anv_memleak: check if there are memleaks"
     default n
 
