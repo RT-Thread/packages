@@ -1,6 +1,8 @@
 
 # Kconfig file for package anv_bench
 menuconfig PKG_USING_ANV_BENCH
+    select RT_USING_LIBC
+    select RT_USING_POSIX
     bool "anv_bench: quick-and-dirty benchmarking system for quick prototyping."
     default n
 
