@@ -1,6 +1,7 @@
 
 # Kconfig file for package anv_trace
 menuconfig PKG_USING_ANV_TRACE
+    select RT_USING_LIBC
     bool "anv_trace: trace the program flow."
     default n
 
