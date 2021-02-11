@@ -60,6 +60,13 @@ if PKG_USING_MCURSES
             mcurses: number editor demo
         default n
 
+    config MCURSES_USING_HEX_EDITOR
+        select RT_USING_LIBC
+        bool "mcurses: hex editor demo"
+        help
+            mcurses: hex editor demo
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MCURSES_LATEST_VERSION
