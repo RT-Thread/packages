@@ -10,6 +10,12 @@ if PKG_USING_MCURSES
         string
         default "/packages/misc/mcurses"
 
+    config MCURSES_USING_SIMPLE
+        bool "mcurses: simple demo"
+        help
+            mcurses: simple demo
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MCURSES_LATEST_VERSION
