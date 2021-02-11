@@ -13,14 +13,14 @@
     "github": "wuhanstudio"
   },
   "license": "MIT",
-  "repository": "http://github.com/wuhanstudio/anv-memleak",
+  "repository": "https://github.com/wuhanstudio/anv_memleak",
   "icon": "unknown",
   "homepage": "unknown",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "http://github.com/wuhanstudio/anv-memleak.git",
+      "URL": "https://github.com/wuhanstudio/anv_memleak.git",
       "filename": "",
       "VER_SHA": "master"
     }
