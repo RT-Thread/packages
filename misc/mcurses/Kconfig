@@ -34,6 +34,12 @@ if PKG_USING_MCURSES
             mcurses: screen animation demo
         default n
 
+    config MCURSES_USING_TEMPERATURE
+        bool "mcurses: temperature monitor demo"
+        help
+            mcurses: temperature monitor demo
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MCURSES_LATEST_VERSION
