@@ -53,6 +53,13 @@ if PKG_USING_MCURSES
             mcurses: towers of hanoi animation demo
         default n
 
+    config MCURSES_USING_NUMBER_EDITOR
+        select RT_USING_LIBC
+        bool "mcurses: number editor demo"
+        help
+            mcurses: number editor demo
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MCURSES_LATEST_VERSION
