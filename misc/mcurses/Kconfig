@@ -40,6 +40,13 @@ if PKG_USING_MCURSES
             mcurses: temperature monitor demo
         default n
 
+    config MCURSES_USING_KEY_TEST
+        select RT_USING_LIBC
+        bool "mcurses: key input demo"
+        help
+            mcurses: key input demo
+        default n
+
     config MCURSES_USING_TOWER
         bool "mcurses: towers of hanoi animation demo"
         help
