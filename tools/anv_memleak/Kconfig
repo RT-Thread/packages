@@ -2,6 +2,7 @@
 # Kconfig file for package anv_memleak
 menuconfig PKG_USING_ANV_MEMLEAK
     select RT_USING_LIBC
+    select RT_USING_POSIX
     bool "anv_memleak: check if there are memleaks"
     default n
 
@@ -12,9 +13,9 @@ if PKG_USING_ANV_MEMLEAK
         default "/packages/tools/anv_memleak"
 
     config ANV_MEMLEAK_USING_EXAMPLE
-        bool "anv-memleak: usage example"
+        bool "anv_memleak: usage example"
         help
-            anv-memleak: usage example.
+            anv_memleak: usage example.
         default n
 
     choice
