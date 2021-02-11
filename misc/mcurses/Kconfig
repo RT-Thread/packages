@@ -16,6 +16,12 @@ if PKG_USING_MCURSES
             mcurses: simple demo
         default n
 
+    config MCURSES_USING_BOX
+        bool "mcurses: box animation demo"
+        help
+            mcurses: box animation demo
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MCURSES_LATEST_VERSION
