@@ -1,5 +1,5 @@
 {
-  "name": "memleak",
+  "name": "anv_memleak",
   "description": "check if there are memleaks",
   "description_zh": "检查是否存在内存泄漏",  
   "enable": "PKG_USING_ANV_MEMLEAK", 
