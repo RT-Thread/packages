@@ -2,6 +2,7 @@
 # Kconfig file for package anv_trace
 menuconfig PKG_USING_ANV_TRACE
     select RT_USING_LIBC
+    select RT_USING_POSIX
     bool "anv_trace: trace the program flow."
     default n
 
@@ -12,9 +13,9 @@ if PKG_USING_ANV_TRACE
         default "/packages/tools/anv_trace"
 
     config ANV_TRACE_USING_EXAMPLE
-        bool "anv-trace: usage example"
+        bool "anv_trace: usage example"
         help
-            anv-trace: usage example.
+            anv_trace: usage example.
         default n
 
     choice
