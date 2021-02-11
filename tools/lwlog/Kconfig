@@ -10,6 +10,11 @@ if PKG_USING_LWLOG
         string
         default "/packages/tools/lwlog"
 
+    config LWLOG_USE_USAGE_DEMO
+        bool "lwlog: usage demo"
+        help
+            lwlog: usage demo
+        default n
     choice
         prompt "Version"
         default PKG_USING_LWLOG_LATEST_VERSION
