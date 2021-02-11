@@ -28,6 +28,12 @@ if PKG_USING_MCURSES
             mcurses: magic matrix rain demo
         default n
 
+    config MCURSES_USING_SCREEN
+        bool "mcurses: screen animation demo"
+        help
+            mcurses: screen animation demo
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MCURSES_LATEST_VERSION
