@@ -40,6 +40,12 @@ if PKG_USING_MCURSES
             mcurses: temperature monitor demo
         default n
 
+    config MCURSES_USING_TOWER
+        bool "mcurses: towers of hanoi animation demo"
+        help
+            mcurses: towers of hanoi animation demo
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MCURSES_LATEST_VERSION
