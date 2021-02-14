@@ -28,6 +28,8 @@ source "$PKGS_DIR/packages/tools/mbedtls_bench/Kconfig"
 source "$PKGS_DIR/packages/tools/kdb/Kconfig"
 source "$PKGS_DIR/packages/tools/wamr/Kconfig"
 source "$PKGS_DIR/packages/tools/Micro-XRCE-DDS-Client/Kconfig"
+source "$PKGS_DIR/packages/tools/lwlog/Kconfig"
+source "$PKGS_DIR/packages/tools/anv_trace/Kconfig"
 source "$PKGS_DIR/packages/tools/anv_memleak/Kconfig"
 
 endmenu
