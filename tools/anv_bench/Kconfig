@@ -1,0 +1,42 @@
+
+# Kconfig file for package anv_bench
+menuconfig PKG_USING_ANV_BENCH
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    bool "anv_bench: quick-and-dirty benchmarking system for quick prototyping."
+    default n
+
+if PKG_USING_ANV_BENCH
+
+    config PKG_ANV_BENCH_PATH
+        string
+        default "/packages/tools/anv_bench"
+
+    config ANV_BENCH_USING_EXAMPLE
+        bool "anv_bench      : single bench example"
+        help
+            anv_bench      : single bench example.
+        default n
+
+    config ANV_BENCH_USING_GROUP_EXAMPLE
+        bool "anv_bench_group: group bench example"
+        help
+            anv_bench_group: group bench example.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_ANV_BENCH_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ANV_BENCH_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_ANV_BENCH_VER
+       string
+       default "latest"    if PKG_USING_ANV_BENCH_LATEST_VERSION
+
+endif
+
