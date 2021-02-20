@@ -1,12 +1,12 @@
 
-# Kconfig file for package rt_printf
+# Kconfig file for package rt_kprintf_threadsafe
 menuconfig PKG_USING_RT_KPRINTF_THREADSAFE
     bool "rt_kprintf_threadsafe: thread-safe version of rt_kprintf"
     default n
 
 if PKG_USING_RT_KPRINTF_THREADSAFE
 
-    config PKG_USING_RT_KPRINTF_THREADSAFEF_PATH
+    config PKG_RT_KPRINTF_THREADSAFE_PATH
         string
         default "/packages/system/rt_kprintf_threadsafe"
 
@@ -20,7 +20,7 @@ if PKG_USING_RT_KPRINTF_THREADSAFE
             bool "latest"
     endchoice
           
-    config PKG_USING_RT_KPRINTF_THREADSAFE_VER
+    config PKG_RT_KPRINTF_THREADSAFE_VER
        string
        default "latest"    if PKG_USING_RT_KPRINTF_THREADSAFE_LATEST_VERSION
 
