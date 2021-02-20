@@ -1,0 +1,28 @@
+{
+  "name": "anv_memleak",
+  "description": "check if there are memleaks",
+  "description_zh": "检查是否存在内存泄漏",  
+  "enable": "PKG_USING_ANV_MEMLEAK", 
+  "keywords": [
+    "memleak"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/anv_memleak",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/anv_memleak.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+
+# Kconfig file for package lwlog
+menuconfig PKG_USING_LWLOG
+    bool "lwlog: single header logging library."
+    default n
+
+if PKG_USING_LWLOG
+
+    config PKG_LWLOG_PATH
+        string
+        default "/packages/tools/lwlog"
+
+    config LWLOG_USE_USAGE_DEMO
+        bool "lwlog: usage demo"
+        help
+            lwlog: usage demo
+        default n
+    choice
+        prompt "Version"
+        default PKG_USING_LWLOG_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LWLOG_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LWLOG_VER
+       string
+       default "latest"    if PKG_USING_LWLOG_LATEST_VERSION
+
+endif
+
