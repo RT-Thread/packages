@@ -1,0 +1,30 @@
+{
+  "name": "Micro-XRCE-DDS-Client",
+  "description": "The middleware component of micro-ros, which provides ros2 topic pub/sub ability.",
+  "description_zh": "micro-ros的中间层组件，提供了ros2消息发布/订阅的能力。",  
+  "enable": "PKG_USING_MICRO_XRCE_DDS_CLIENT", 
+  "keywords": [
+    "Micro-XRCE-DDS-Client",
+	"ROS2",
+	"Micro-ROS"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "JCZou",
+    "email": "jiachi.zou@gmail.com",
+    "github": "JCZou"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/JcZou/Micro-XRCE-DDS-Client",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/JcZou/Micro-XRCE-DDS-Client.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

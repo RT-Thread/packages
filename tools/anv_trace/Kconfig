@@ -1,0 +1,36 @@
+
+# Kconfig file for package anv_trace
+menuconfig PKG_USING_ANV_TRACE
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    bool "anv_trace: trace the program flow."
+    default n
+
+if PKG_USING_ANV_TRACE
+
+    config PKG_ANV_TRACE_PATH
+        string
+        default "/packages/tools/anv_trace"
+
+    config ANV_TRACE_USING_EXAMPLE
+        bool "anv_trace: usage example"
+        help
+            anv_trace: usage example.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_ANV_TRACE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ANV_TRACE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_ANV_TRACE_VER
+       string
+       default "latest"    if PKG_USING_ANV_TRACE_LATEST_VERSION
+
+endif
+

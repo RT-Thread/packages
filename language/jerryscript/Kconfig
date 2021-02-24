@@ -40,6 +40,10 @@ if PKG_USING_JERRYSCRIPT
         bool "Jerry enable logging"
         default n
 
+    config PKG_JERRY_ENABLE_LINE_INFO
+        bool "Jerry enable debug traceback"
+        default n
+
     config PKG_JMEM_STATS
         bool "Jerry enable memory usage statistics"
         select PKG_JERRY_ENABLE_LOGGING

@@ -1,0 +1,36 @@
+{
+  "name": "lis2dh12",
+  "description": "This is the LIS2DH12 sensor driver package, support: accelerometer, tempature.",
+  "description_zh": " LIS2DH12 传感器驱动包，支持：加速度计，温度。",
+  "enable": "PKG_USING_LIS2DH12",
+  "keywords": [
+    "sensor",
+    "lis2dh12"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "StackRyan",
+    "email": "yuanjyjyj@163.com",
+    "github": "StackRyan"
+  },
+  "license": "other",
+  "repository": "https://github.com/StackRyan/lis2dh12.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/StackRyan/lis2dh12.git",
+      "filename": "lis2dh12-0.0.1.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "version": "latest",
+      "URL": "https://github.com/StackRyan/lis2dh12.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

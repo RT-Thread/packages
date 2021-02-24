@@ -1,0 +1,28 @@
+
+# Kconfig file for package cowsay
+menuconfig PKG_USING_COWSAY
+    bool "cowsay: greeting from console"
+    default n
+
+if PKG_USING_COWSAY
+
+    config PKG_COWSAY_PATH
+        string
+        default "/packages/misc/cowsay"
+
+    choice
+        prompt "Version"
+        default PKG_USING_COWSAY_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_COWSAY_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_COWSAY_VER
+       string
+       default "latest"    if PKG_USING_COWSAY_LATEST_VERSION
+
+endif
+

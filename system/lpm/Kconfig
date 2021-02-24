@@ -1,0 +1,37 @@
+
+# Kconfig file for package lpm
+menuconfig PKG_USING_LPM
+    bool "lpm: Logical partition management. Manage storage device and partition."
+    select RT_USING_LIBC
+    default n
+
+if PKG_USING_LPM
+
+    config PKG_LPM_PATH
+        string
+        default "/packages/system/lpm"
+
+    choice
+        prompt "version"
+        default PKG_USING_LPM_V00101
+        help
+            Select the version
+
+        config PKG_USING_LPM_V00101
+            bool "v0.1.1"
+
+        config PKG_USING_LPM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LPM_VER
+       string
+       default "latest"    if PKG_USING_LPM_LATEST_VERSION
+       default "v0.1.1"    if PKG_USING_LPM_V00101
+
+    config PKG_LPM_VER_NUM
+        hex
+        default 0x00101    if PKG_USING_LPM_V00101
+
+endif
+
