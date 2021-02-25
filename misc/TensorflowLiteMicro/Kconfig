@@ -8,7 +8,7 @@ if PKG_USING_TENSORFLOWLITEMICRO
 
     config PKG_TENSORFLOWLITEMICRO_PATH
         string
-        default "/packages/ai/TensorflowLiteMicro"
+        default "/packages/misc/TensorflowLiteMicro"
 
     choice
         prompt "Version"
