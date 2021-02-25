@@ -9,7 +9,7 @@ menuconfig PKG_USING_ONNX_PARSER
 if PKG_USING_ONNX_PARSER
     config PKG_ONNX_PARSER_PATH
         string
-        default "/packages/iot/onnx-parser"
+        default "/packages/ai/onnx-parser"
 
     config ONNX_PARSER_USING_RAM_EXAMPLE
         bool "onnx-parser example: decode onnx model in RAM"

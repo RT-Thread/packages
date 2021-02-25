@@ -9,7 +9,7 @@ menuconfig PKG_USING_ONNX_BACKEND
 if PKG_USING_ONNX_BACKEND
     config PKG_ONNX_BACKEND_PATH
         string
-        default "/packages/iot/onnx-backend"
+        default "/packages/ai/onnx-backend"
 
     config ONNX_BACKEND_USING_MNIST_EXAMPLE
         bool "onnx-backend example: build mnist model and set weights mannually"

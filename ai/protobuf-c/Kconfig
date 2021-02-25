@@ -8,7 +8,7 @@ if PKG_USING_PROTOBUF_C
 
     config PKG_PROTOBUF_C_PATH
         string
-        default "/packages/iot/protobuf-c"
+        default "/packages/ai/protobuf-c"
 
     config PROTOBUF_C_USING_EXAMPLE
         bool "protobuf-c exampleS"

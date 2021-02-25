@@ -4,7 +4,7 @@
   "description_zh": "轻量级的神经网络框架, 模型一键转换, 让MCU也神经一把",
   "enable": "PKG_USING_NNOM",
   "keywords": ["NNoM", "ML", "AI", "neural-network", "C", "lightweight"],
-  "category": "misc",
+  "category": "ai",
   "author": {
     "name": "Jianjia Ma",
     "email": "majianjia@live.com",

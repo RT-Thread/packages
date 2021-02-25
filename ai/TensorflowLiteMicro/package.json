@@ -1,0 +1,39 @@
+{
+  "name": "TensorflowLiteMicro",
+  "description": "a lightweight deep learning inference framework based on Google Tensorflow Lite for RT-Thread operating system.",
+  "description_zh": "用于rt-thread操作系统的轻量级深度学习端侧推理框架Tensorflow Lite软件包。",  
+  "enable": "PKG_USING_TENSORFLOWLITEMICRO", 
+  "keywords": ["TensorflowLiteMicro","ML", "AI", "neural-network", "C++", "lightweight"],
+  "category": "ai",
+  "author": {
+    "name": "QingChuanWS",
+    "email": "bingshan45@163.com",
+    "github": "QingChuanWS"
+  },
+  "license": "LGPLv2.1",
+  "repository": "https://github.com/QingChuanWS/TensorflowLiteMicro",
+  "icon": "unknown",
+  "homepage": "https://github.com/QingChuanWS/TensorflowLiteMicro",
+  "doc": "https://github.com/QingChuanWS/TensorflowLiteMicro/blob/master/README.md",
+  "readme": "a lightweight deep learning inference framework based on Google Tensorflow Lite for RT-Thread operating system.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/QingChuanWS/TensorflowLiteMicro/archive/v1.0.0.zip",
+      "filename": "TensorflowLiteMicro-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/QingChuanWS/TensorflowLiteMicro/archive/v1.0.1.zip",
+      "filename": "TensorflowLiteMicro-v1.0.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/QingChuanWS/TensorflowLiteMicro.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
