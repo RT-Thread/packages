@@ -1,0 +1,48 @@
+
+# Kconfig file for package max30102
+menuconfig PKG_USING_MAX30102
+    bool "MAX30102: heart rate and oxygen saturation measure"
+    default n
+
+if PKG_USING_MAX30102
+
+    config PKG_MAX30102_PATH
+        string
+        default "/packages/peripherals/sensors/max30102"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MAX30102_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MAX30102_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MAX30102_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MAX30102_VER
+       string
+       default "v1.0.0"    if PKG_USING_MAX30102_V100
+       default "latest"    if PKG_USING_MAX30102_LATEST_VERSION
+
+    config MAX30102_STACK_SIZE
+        int "max30102 thread stack size"
+        default 1024
+
+    config MAX30102_PRIORITY
+        int "max30102 thread priority"
+        default 10
+
+    config MAX30102_TICKS
+        int "max30102 thread ticks"
+        default 10
+
+    config MAX30102_USING_EXAMPLE
+        bool "max30102 example"
+        default y
+
+endif
+
