@@ -19,6 +19,11 @@
   "doc": "unknown",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://gitee.com/Ghazi_gq/gbk2utf8/repository/archive/v1.0.0?format=zip",
+      "filename": "gbk2utf8-v1.0.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://gitee.com/Ghazi_gq/gbk2utf8.git",
       "filename": "gbk2utf8.zip",
