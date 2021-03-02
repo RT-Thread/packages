@@ -27,7 +27,7 @@ if PKG_USING_KENDRYTE_SDK
         config PKG_USING_KENDRYTE_SDK_V055
             bool "v0.5.5"
 			
-		config PKG_USING_KENDRYTE_SDK_V056
+        config PKG_USING_KENDRYTE_SDK_V056
             bool "v0.5.6"
 
         config PKG_USING_KENDRYTE_SDK_LATEST_VERSION
