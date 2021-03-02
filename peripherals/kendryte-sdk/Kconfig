@@ -26,6 +26,9 @@ if PKG_USING_KENDRYTE_SDK
         
         config PKG_USING_KENDRYTE_SDK_V055
             bool "v0.5.5"
+			
+		config PKG_USING_KENDRYTE_SDK_V056
+            bool "v0.5.6"
 
         config PKG_USING_KENDRYTE_SDK_LATEST_VERSION
             bool "latest"
@@ -37,6 +40,7 @@ if PKG_USING_KENDRYTE_SDK
        default "v0.5.3"    if PKG_USING_KENDRYTE_SDK_V053
        default "v0.5.4"    if PKG_USING_KENDRYTE_SDK_V054
        default "v0.5.5"    if PKG_USING_KENDRYTE_SDK_V055
+       default "v0.5.6"    if PKG_USING_KENDRYTE_SDK_V056
        default "latest"    if PKG_USING_KENDRYTE_SDK_LATEST_VERSION
 
     config PKG_KENDRYTE_SDK_VERNUM
@@ -45,6 +49,7 @@ if PKG_USING_KENDRYTE_SDK
         default 0x0053     if PKG_USING_KENDRYTE_SDK_V053
         default 0x0054     if PKG_USING_KENDRYTE_SDK_V054
         default 0x0055     if PKG_USING_KENDRYTE_SDK_V055
+        default 0x0056     if PKG_USING_KENDRYTE_SDK_V056
         default 0x9999     if PKG_USING_KENDRYTE_SDK_LATEST_VERSION
 
 endif
