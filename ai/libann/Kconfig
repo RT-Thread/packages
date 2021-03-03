@@ -8,7 +8,7 @@ if PKG_USING_LIBANN
 
     config PKG_LIBANN_PATH
         string
-        default "/packages/misc/libann"
+        default "/packages/ai/libann"
 
     config LIBANN_USING_IRIS_TRAIN_AND_PREDICT_FLASH
         bool "Iris load model from flash and predict example"
