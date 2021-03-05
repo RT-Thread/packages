@@ -8,7 +8,7 @@
     "protobuf",
     "onnx"
   ],
-  "category": "iot",
+  "category": "ai",
   "author": {
     "name": "wuhanstudio",
     "email": "wuhanstudio@qq.com",

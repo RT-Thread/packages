@@ -7,7 +7,7 @@ if PKG_USING_NNOM
 
     config PKG_NNOM_PATH
         string
-        default "/packages/misc/nnom"
+        default "/packages/ai/nnom"
 
     choice
         prompt "Version"
