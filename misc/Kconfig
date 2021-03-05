@@ -34,5 +34,6 @@ source "$PKGS_DIR/packages/misc/TensorflowLiteMicro/Kconfig"
 source "$PKGS_DIR/packages/misc/state_machine/Kconfig"
 source "$PKGS_DIR/packages/misc/mcurses/Kconfig"
 source "$PKGS_DIR/packages/misc/cowsay/Kconfig"
+source "$PKGS_DIR/packages/misc/mavlink/Kconfig"
 
 endmenu
