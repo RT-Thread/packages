@@ -6,7 +6,7 @@
   "keywords": [
     "mavlink","point-to-point","publish-subscribe","dialect","XML","Drone"
   ],
-  "category": "misc",
+  "category": "iot",
   "author": {
     "name": "sogwms",
     "email": "sogwyms@gmail.com",

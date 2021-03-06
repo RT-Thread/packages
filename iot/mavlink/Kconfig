@@ -8,7 +8,7 @@ if PKG_USING_MAVLINK
 
     config PKG_MAVLINK_PATH
         string
-        default "/packages/misc/mavlink"
+        default "/packages/iot/mavlink"
 
     choice
         prompt "Version"
