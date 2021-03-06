@@ -49,4 +49,5 @@ source "$PKGS_DIR/packages/iot/pdulib/Kconfig"
 source "$PKGS_DIR/packages/iot/btstack/Kconfig"
 source "$PKGS_DIR/packages/iot/lorawan_ed_stack/Kconfig"
 source "$PKGS_DIR/packages/iot/wayz_iotkit/Kconfig"
+source "$PKGS_DIR/packages/iot/mavlink/Kconfig"
 endmenu

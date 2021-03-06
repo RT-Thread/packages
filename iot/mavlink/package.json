@@ -1,0 +1,34 @@
+{
+  "name": "mavlink",
+  "description": "A very lightweight messaging protocol for communicating.",
+  "description_zh": "一非常轻量级的消息传输协议",  
+  "enable": "PKG_USING_MAVLINK", 
+  "keywords": [
+    "mavlink","point-to-point","publish-subscribe","dialect","XML","Drone"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "sogwms",
+    "email": "sogwyms@gmail.com",
+    "github": "sogwms"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/sogwms/mavlink",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sogwms/mavlink.git",
+      "filename": "mavlink.zip",
+      "VER_SHA": "main"
+    },
+    {
+      "version": "latest-mirror",
+      "URL": "https://github.com.cnpmjs.org/sogwms/mavlink.git",
+      "filename": "mavlink.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
