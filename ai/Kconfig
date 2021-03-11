@@ -5,5 +5,7 @@ source "$PKGS_DIR/packages/ai/nnom/Kconfig"
 source "$PKGS_DIR/packages/ai/onnx-backend/Kconfig"
 source "$PKGS_DIR/packages/ai/onnx-parser/Kconfig"
 source "$PKGS_DIR/packages/ai/TensorflowLiteMicro/Kconfig"
+source "$PKGS_DIR/packages/ai/elapack/Kconfig"
+source "$PKGS_DIR/packages/ai/ulapack/Kconfig"
 
 endmenu
