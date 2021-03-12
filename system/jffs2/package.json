@@ -1,0 +1,29 @@
+{
+  "name": "jffs2",
+  "description": "Journalling Flash File System Version2.",
+  "description_zh": "闪存日志型文件系统第 2 版",  
+  "enable": "PKG_USING_DFS_JFFS2", 
+  "keywords": [
+    "filesystem",
+    "jffs2"
+  ],
+  "category": "system",
+  "author": {
+    "name": "prife",
+    "email": "author_email",
+    "github": "unknown"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/RT-Thread-packages/jffs2",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/jffs2.git",
+      "filename": "jffs2-latest.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
