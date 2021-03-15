@@ -4,7 +4,8 @@
   "description_zh": "函数性能快速测试软件包",  
   "enable": "PKG_USING_ANV_BENCH", 
   "keywords": [
-    "anv_bench"
+    "anv_bench",
+    "benchmark"
   ],
   "category": "tools",
   "author": {
