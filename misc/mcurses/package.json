@@ -5,7 +5,8 @@
   "enable": "PKG_USING_MCURSES", 
   "keywords": [
     "mcurses",
-    "ncurses"
+    "ncurses",
+    "terminal"
   ],
   "category": "misc",
   "author": {
