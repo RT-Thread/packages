@@ -2,6 +2,11 @@
 # Kconfig file for package ki
 menuconfig PKG_USING_KI
     bool "ki is a small text editor in less than 1K lines of code"
+    select RT_USING_DFS
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    select RT_USING_POSIX_TERMIOS
+    select RT_USING_POSIX_GETLINE
     default n
 
 if PKG_USING_KI
@@ -16,16 +21,12 @@ if PKG_USING_KI
         help
             Select the package version
 
-        config PKG_USING_KI_V100
-            bool "v1.0.0"
-
         config PKG_USING_KI_LATEST_VERSION
             bool "latest"
     endchoice
           
     config PKG_KI_VER
        string
-       default "v1.0.0"    if PKG_USING_KI_V100
        default "latest"    if PKG_USING_KI_LATEST_VERSION
 
 endif
