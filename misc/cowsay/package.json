@@ -4,7 +4,8 @@
   "description_zh": "linux cowsay 软件包",  
   "enable": "PKG_USING_COWSAY", 
   "keywords": [
-    "cowsay"
+    "cowsay",
+    "terminal"
   ],
   "category": "misc",
   "author": {

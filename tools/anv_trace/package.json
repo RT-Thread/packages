@@ -4,7 +4,8 @@
   "description_zh": "帮助跟踪代码执行过程",  
   "enable": "PKG_USING_ANV_TRACE", 
   "keywords": [
-    "anv_trace"
+    "anv_trace",
+    "trace"
   ],
   "category": "tools",
   "author": {

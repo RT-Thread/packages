@@ -5,7 +5,8 @@
   "enable": "PKG_USING_VT100",
   "keywords": [
     "vt100",
-    "msh"
+    "msh",
+    "terminal"
   ],
   "category": "misc",
   "author": {

@@ -4,7 +4,8 @@
   "description_zh": "支持 SAX/DOM 的 C++ JSON 处理库",  
   "enable": "PKG_USING_RAPIDJSON", 
   "keywords": [
-    "rapidjson"
+    "rapidjson",
+    "json"
   ],
   "category": "iot",
   "author": {
