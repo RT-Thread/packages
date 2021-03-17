@@ -19,6 +19,9 @@ if PKG_USING_DM9051
 
         config PKG_USING_DM9051_V100
             bool "v1.0.0"
+
+        config PKG_USING_DM9051_V110
+            bool "v1.1.0"
             
         config PKG_USING_DM9051_LATEST_VERSION
             bool "latest"
@@ -27,6 +30,7 @@ if PKG_USING_DM9051
     config PKG_DM9051_VER
         string
         default "v1.0.0" if PKG_USING_DM9051_V100
+        default "v1.1.0" if PKG_USING_DM9051_V110
         default "latest" if PKG_USING_DM9051_LATEST_VERSION
 
     config DM9051_DEVICE_EXTERN_CONFIG
