@@ -13,9 +13,9 @@
     "github": "namexx"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/mattconte/tlsf",
+  "repository": "https://github.com/RT-Thread-packages/tlsf",
   "icon": "unknown",
-  "homepage": "unknown",
+  "homepage": "https://github.com/mattconte/tlsf",
   "doc": "unknown",
   "site": [
     {
