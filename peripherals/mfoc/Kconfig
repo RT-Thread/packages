@@ -1,0 +1,30 @@
+
+# Kconfig file for package mfoc
+menuconfig PKG_USING_MFOC
+    select RT_USING_DFS
+    select PKG_USING_LIBNFC
+    bool "mfoc: Mifare Classic Offline Cracker."
+    default n
+
+if PKG_USING_MFOC
+
+    config PKG_MFOC_PATH
+        string
+        default "/packages/peripherals/mfoc"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MFOC_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MFOC_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MFOC_VER
+       string
+       default "latest"    if PKG_USING_MFOC_LATEST_VERSION
+
+endif
+
