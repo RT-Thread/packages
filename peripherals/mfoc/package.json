@@ -4,7 +4,10 @@
   "description_zh": "Mifare Classic 离线破解工具。",  
   "enable": "PKG_USING_MFOC", 
   "keywords": [
-    "mfoc"
+    "mfoc",
+    "libnfc",
+    "nfc",
+    "pn532"
   ],
   "category": "peripherals",
   "author": {
