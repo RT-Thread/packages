@@ -22,6 +22,179 @@ if PKG_USING_BTSTACK
     config PKG_BTSTACK_PATH
         string
         default "/packages/iot/btstack"
+        
+menu "Bluetooth Role support"
+
+    config PKG_BTSTACK_ROLE_PERIPHERAL
+    bool "Peripheral Role support"
+    select PKG_BTSTACK_ROLE_BROADCASTER
+    default y
+    help
+        Select this for LE Peripheral role support.
+
+    config PKG_BTSTACK_ROLE_CENTRAL
+    bool "Central Role support"
+    select PKG_BTSTACK_ROLE_OBSERVER
+    default n
+    help
+        Select this for LE Central role support.
+
+    config PKG_BTSTACK_ROLE_BROADCASTER
+    bool "Broadcaster Role support"
+    default y
+    help
+        Select this for LE Broadcaster role support.
+
+    config PKG_BTSTACK_ROLE_OBSERVER
+    bool "Observer Role support"
+    help
+        Select this for LE Observer role support.
+
+endmenu
+
+
+menu "Bluetooth Mesh support"
+    config PKG_BTSTACK_MESH
+    bool "Bluetooth Mesh support"
+    default n
+    depends on PKG_BTSTACK_ROLE_BROADCASTER && PKG_BTSTACK_ROLE_OBSERVER
+    help
+        This option enables Bluetooth Mesh support. The specific
+        features that are available may depend on other features
+        that have been enabled in the stack, such as GATT support.
+endmenu
+
+menu "Bluetooth SMP support"
+    config PKG_BTSTACK_SMP
+    bool "Bluetooth SMP support"
+    default n
+    help
+        This option enables Bluetooth Mesh support. The specific
+        features that are available may depend on other features
+        that have been enabled in the stack, such as GATT support.
+        
+
+        
+endmenu
+
+# example
+choice
+    prompt "Bluetooth Samples"
+    default PKG_BTSTACK_SAMPLE_LE_COUNTER
+    help
+        select the BTSTACK samples
+        
+    config PKG_BTSTACK_SAMPLE_DISABLE
+    bool "Not enable sample"
+         
+    config PKG_BTSTACK_SAMPLE_LE_BLUFI_SERVER
+    bool "[LE_SRV] rtthread blufi server"
+    select BTSTACK_ROLE_PERIPHERAL
+    
+
+    config PKG_BTSTACK_SAMPLE_LE_COUNTER
+    bool "[LE_SRV] BLE peripheral le counter"
+    select BTSTACK_ROLE_PERIPHERAL
+    
+    config PKG_BTSTACK_SAMPLE_LE_DATA_CHANNEL_SERVER
+    bool "[LE_SRV] BLE peripheral le data channel server"
+    select BTSTACK_ROLE_PERIPHERAL
+
+    
+    config PKG_BTSTACK_SAMPLE_LE_STREAMER
+    bool "[LE_SRV] Nordic le streamer server"
+    select BTSTACK_ROLE_PERIPHERAL  
+    
+    config PKG_BTSTACK_SAMPLE_NORDIC_LE_COUNTER
+    bool "[LE_SRV] Nordic le counter server"
+    select BTSTACK_ROLE_PERIPHERAL 
+
+    config PKG_BTSTACK_SAMPLE_ATT_DELAYED_RESPONSE
+    bool "[LE_SRV] gatt dealyed response"
+    select BTSTACK_ROLE_PERIPHERAL  
+    
+    config PKG_BTSTACK_SAMPLE_SM_PAIRING_PERIPHERAL
+    bool "[LE_SMP_SRV] smp peripherals"
+    select BTSTACK_ROLE_PERIPHERAL      
+    
+    config PKG_BTSTACK_SAMPLE_GATT_STREAMER_PERIPHERAL
+    bool "[LE_SRV] gatt streamer peipheral"
+    select BTSTACK_ROLE_PERIPHERAL   
+    
+    config PKG_BTSTACK_SAMPLE_ANCS_CLIENT_DEMO
+    bool "[LE_SRV] ancs_client_demo"
+    select BTSTACK_ROLE_PERIPHERAL 
+    
+    config PKG_BTSTACK_SAMPLE_MESH_DEMO
+    bool "[MESH_NODE] MESH DEMO"
+    select BTSTACK_ROLE_PERIPHERAL  
+    select PKG_BTSTACK_MESH
+    select PKG_BTSTACK_SMP
+ 
+
+    config PKG_BTSTACK_SAMPLE_TMALL_MESH_DEMO
+    bool "[MESH_NODE] MESH DEMO ON TMALL ALIGEN"
+    select BTSTACK_ROLE_PERIPHERAL  
+    select PKG_BTSTACK_MESH
+    select PKG_BTSTACK_SMP 
+    
+endchoice
+
+# btstack config
+
+if PKG_BTSTACK_SMP
+    config ENABLE_ECC_P256
+    bool 
+    default y
+endif
+
+if PKG_BTSTACK_MESH
+    config ENABLE_MESH
+    bool 
+    default y
+
+    config ENABLE_MESH_ADV_BEARER
+    bool 
+    default y
+    
+    config ENABLE_MESH_GATT_BEARER
+    bool 
+    default y   
+    
+    config ENABLE_MESH_PB_ADV
+    bool 
+    default y   
+
+    config ENABLE_MESH_PB_GATT
+    bool 
+    default y   
+    
+    config ENABLE_MESH_PROXY_SERVER
+    bool 
+    default y   
+    
+    config ENABLE_MESH_PROVISIONER
+    bool 
+    default y 
+  
+
+    config MAX_NR_MESH_TRANSPORT_KEYS
+    int 
+    default 16  
+    
+    config MAX_NR_MESH_VIRTUAL_ADDRESSES
+    int 
+    default 16 
+    
+    config MAX_NR_MESH_SUBNETS
+    int 
+    default 2  
+
+    config MAX_NR_MESH_NETWORK_KEYS
+    int 
+    default 3      
+    
+endif
 
     choice
         prompt "Version"
