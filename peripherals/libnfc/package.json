@@ -1,0 +1,30 @@
+{
+  "name": "libnfc",
+  "description": "Platform independent Near Field Communication (NFC) library",
+  "description_zh": "libnc 软件包",  
+  "enable": "PKG_USING_LIBNFC", 
+  "keywords": [
+    "libnfc",
+    "nfc",
+    "pn532"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "LGPL-3.0",
+  "repository": "https://github.com/wuhanstudio/libnfc",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/libnfc.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -25,6 +25,11 @@
       "filename": "dm9051-1.0.0.zip"
     },
     {
+      "version": "v1.1.0",
+      "URL": "https://github.com/aozima/dm9051/archive/v1.1.0.zip",
+      "filename": "dm9051-1.1.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/aozima/dm9051.git",
       "filename": "dm9051.zip",
