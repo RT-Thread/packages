@@ -9,7 +9,7 @@ if PKG_USING_QUEST
 
     config PKG_QUEST_PATH
         string
-        default "/packages/iot/quest"
+        default "/packages/ai/quest"
 
     config QUEST_USING_TUTORIAL_EXAMPLE
         bool "quest: basic tutorial example."
