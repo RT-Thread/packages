@@ -51,4 +51,5 @@ source "$PKGS_DIR/packages/iot/lorawan_ed_stack/Kconfig"
 source "$PKGS_DIR/packages/iot/wayz_iotkit/Kconfig"
 source "$PKGS_DIR/packages/iot/mavlink/Kconfig"
 source "$PKGS_DIR/packages/iot/rapidjson/Kconfig"
+source "$PKGS_DIR/packages/iot/bsal/Kconfig"
 endmenu
