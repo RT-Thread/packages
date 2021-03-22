@@ -20,23 +20,23 @@ if PKG_USING_BSAL
             Select this for LE Peripheral role support.
 
         config PKG_BSAL_ROLE_CENTRAL
-        bool "Central Role support"
-        select PKG_BSAL_ROLE_OBSERVER
-        default n
+            bool "Central Role support"
+            select PKG_BSAL_ROLE_OBSERVER
+            default n
         help
             Select this for LE Central role support.
 
         config PKG_BSAL_ROLE_BROADCASTER
-        bool "Broadcaster Role support"
-        default y
-        help
-            Select this for LE Broadcaster role support.
+            bool "Broadcaster Role support"
+            default y
+            help
+                Select this for LE Broadcaster role support.
 
         config PKG_BSAL_ROLE_OBSERVER
-        bool "Observer Role support"
-        default n
-        help
-            Select this for LE Observer role support.
+            bool "Observer Role support"
+            default n
+            help
+                Select this for LE Observer role support.
     endmenu
 
     choice
@@ -60,16 +60,16 @@ if PKG_USING_BSAL
         menu "Profile support"
 
             config PKG_BSAL_SRV_BAS
-            bool "Battery service support"
-            default n
-            help
-                Select Battery service profile.
+                bool "Battery service support"
+                default n
+                help
+                    Select Battery service profile.
 
             config PKG_BSAL_SRV_BLUFI
-            bool "Blufi Service support"
-            default n
-            help
-                Select Battery service profile.
+                bool "Blufi Service support"
+                default n
+                help
+                    Select Battery service profile.
                 
         endmenu
     endif
@@ -93,10 +93,10 @@ if PKG_USING_BSAL
     endchoice
 
     config PKG_BSAL_STACK_NAME
-       string
-       default "nimble"      if PKG_BSAL_NIMBLE_STACK
-       default "realtek"     if PKG_BSAL_RTK_STACK
-       default "empty_stack" if PKG_BSAL_EMPTY_STACK
+        string
+        default "nimble"      if PKG_BSAL_NIMBLE_STACK
+        default "realtek"     if PKG_BSAL_RTK_STACK
+        default "empty_stack" if PKG_BSAL_EMPTY_STACK
            
     choice
         prompt "Version"
@@ -109,8 +109,8 @@ if PKG_USING_BSAL
     endchoice
           
     config PKG_BSAL_VER
-       string
-       default "latest"    if PKG_USING_BSAL_LATEST_VERSION
+        string
+        default "latest"    if PKG_USING_BSAL_LATEST_VERSION
 
 endif
 

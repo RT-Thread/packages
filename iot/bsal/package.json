@@ -4,7 +4,9 @@
   "description_zh": "蓝牙协议栈抽象层。",  
   "enable": "PKG_USING_BSAL", 
   "keywords": [
-    "bsal"
+    "bsal",
+    "realtek",
+    "nimble"
   ],
   "category": "iot",
   "author": {
