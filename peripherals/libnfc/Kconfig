@@ -1,0 +1,43 @@
+
+# Kconfig file for package libnfc
+menuconfig PKG_USING_LIBNFC
+    select RT_USING_LIBC
+    bool "libnfc: Platform independent Near Field Communication (NFC) library."
+    default n
+
+if PKG_USING_LIBNFC
+
+    config PKG_LIBNFC_PATH
+        string
+        default "/packages/peripherals/libnfc"
+
+    config LIBNFC_UART_NAME
+        string "serial device name"
+        default "uart2"
+
+    config LIBNFC_USING_READ_TAG_EXAMPLE
+        bool "libnfc: reading the tag example."
+        help
+            libnfc: reading the tag example.
+        default n
+
+    config DBG_ENABLE
+        bool "Enable Debug"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_LIBNFC_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LIBNFC_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LIBNFC_VER
+       string
+       default "latest"    if PKG_USING_LIBNFC_LATEST_VERSION
+
+endif
+
