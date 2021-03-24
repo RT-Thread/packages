@@ -5,7 +5,8 @@
   "enable": "PKG_USING_2048", 
   "keywords": [
     "2048",
-    "game"
+    "game",
+    "terminal"
   ],
   "category": "misc",
   "author": {
