@@ -5,7 +5,8 @@
   "enable": "PKG_USING_SNAKE", 
   "keywords": [
     "snake",
-    "game"
+    "game",
+    "terminal"
   ],
   "category": "misc",
   "author": {

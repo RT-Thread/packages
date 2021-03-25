@@ -4,7 +4,9 @@
   "description_zh": "俄罗斯方块",  
   "enable": "PKG_USING_TETRIS", 
   "keywords": [
-    "tetris"
+    "tetris",
+    "game",
+    "terminal"
   ],
   "category": "misc",
   "author": {
@@ -16,7 +18,7 @@
   "repository": "https://github.com/volatile-static/rtt_tetris",
   "icon": "unknown",
   "homepage": "https://github.com/volatile-static/rtt_tetris",
-  "doc": "unknown",
+  "doc": "https://github.com/volatile-static/rtt_tetris#readme",
   "site": [
     {
       "version": "latest",

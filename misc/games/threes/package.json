@@ -5,7 +5,8 @@
   "enable": "PKG_USING_THREES", 
   "keywords": [
     "threes",
-    "game"
+    "game",
+    "terminal"
   ],
   "category": "misc",
   "author": {
