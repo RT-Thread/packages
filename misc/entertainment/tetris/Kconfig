@@ -9,7 +9,7 @@ if PKG_USING_TETRIS
 
     config PKG_TETRIS_PATH
         string
-        default "/packages/misc/games/tetris"
+        default "/packages/misc/entertainment/tetris"
 
     choice
         prompt "Version"
@@ -17,16 +17,12 @@ if PKG_USING_TETRIS
         help
             Select the package version
 
-        config PKG_USING_TETRIS_V100
-            bool "v1.0.0"
-
         config PKG_USING_TETRIS_LATEST_VERSION
             bool "latest"
     endchoice
           
     config PKG_TETRIS_VER
        string
-       default "v1.0.0"    if PKG_USING_TETRIS_V100
        default "latest"    if PKG_USING_TETRIS_LATEST_VERSION
 
 endif

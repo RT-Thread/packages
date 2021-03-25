@@ -13,7 +13,7 @@ if PKG_USING_THREES
 
     config PKG_THREES_PATH
         string
-        default "/packages/misc/games/threes"
+        default "/packages/misc/entertainment/threes"
 
     choice
         prompt "Version"
