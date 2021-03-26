@@ -1,0 +1,32 @@
+
+# Kconfig file for package tmc51xx
+menuconfig PKG_USING_TMC51XX
+    bool "tmc51xx power driver for stepper motors."
+    default n
+
+if PKG_USING_TMC51XX
+
+    config PKG_TMC51XX_PATH
+        string
+        default "/packages/peripherals/tmc51xx"
+
+    choice
+        prompt "Version"
+        default PKG_USING_TMC51XX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TMC51XX_V100
+            bool "v1.0.0"
+
+        config PKG_USING_TMC51XX_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_TMC51XX_VER
+       string
+       default "v1.0.0"    if PKG_USING_TMC51XX_V100
+       default "latest"    if PKG_USING_TMC51XX_LATEST_VERSION
+
+endif
+
