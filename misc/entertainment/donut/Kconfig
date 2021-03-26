@@ -8,7 +8,7 @@ if PKG_USING_DONUT
 
     config PKG_DONUT_PATH
         string
-        default "/packages/misc/games/donut"
+        default "/packages/misc/entertainment/donut"
 
     choice
         prompt "Version"

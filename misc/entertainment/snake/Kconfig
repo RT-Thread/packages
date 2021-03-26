@@ -8,7 +8,7 @@ if PKG_USING_SNAKE
 
     config PKG_SNAKE_PATH
         string
-        default "/packages/misc/games/snake"
+        default "/packages/misc/entertainment/snake"
 
     choice
         prompt "Version"
