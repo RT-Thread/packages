@@ -1,0 +1,31 @@
+{
+  "name": "snake",
+  "description": "snake: a remake of the old nokia game",
+  "description_zh": "贪吃蛇游戏",  
+  "enable": "PKG_USING_SNAKE", 
+  "keywords": [
+    "snake",
+    "game",
+    "entertainment",
+    "terminal"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/mysterywolf/snake",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/snake#readme",
+  "doc": "https://github.com/mysterywolf/snake#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/snake.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

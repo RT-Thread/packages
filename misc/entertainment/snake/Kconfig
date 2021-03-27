@@ -1,0 +1,28 @@
+
+# Kconfig file for package snake
+menuconfig PKG_USING_SNAKE
+    bool "snake: a remake of the old nokia game"
+    default n
+
+if PKG_USING_SNAKE
+
+    config PKG_SNAKE_PATH
+        string
+        default "/packages/misc/entertainment/snake"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SNAKE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SNAKE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SNAKE_VER
+       string
+       default "latest"    if PKG_USING_SNAKE_LATEST_VERSION
+
+endif
+

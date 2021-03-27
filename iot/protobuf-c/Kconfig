@@ -11,7 +11,7 @@ if PKG_USING_PROTOBUF_C
         default "/packages/iot/protobuf-c"
 
     config PROTOBUF_C_USING_EXAMPLE
-        bool "protobuf-c exampleS"
+        bool "protobuf-c examples"
         help
             protobuf-c examples
         default n    

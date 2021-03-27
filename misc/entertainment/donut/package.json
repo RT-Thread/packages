@@ -1,0 +1,30 @@
+{
+  "name": "donut",
+  "description": "a 3D spinning donut",
+  "description_zh": "使用字符渲染的3D旋转甜甜圈",  
+  "enable": "PKG_USING_DONUT", 
+  "keywords": [
+    "donut",
+    "entertainment",
+    "terminal"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "None",
+  "repository": "https://github.com/mysterywolf/donut",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/donut",
+  "doc": "https://github.com/mysterywolf/donut#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/donut.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

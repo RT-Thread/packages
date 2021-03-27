@@ -8,7 +8,7 @@ if PKG_USING_WS2812B
 
     config PKG_WS2812B_PATH
         string
-        default "/packages/peripherals/rt_ws2812b"
+        default "/packages/peripherals/ws2812b"
 
     choice
         prompt "Version"

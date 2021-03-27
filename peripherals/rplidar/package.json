@@ -5,7 +5,8 @@
   "enable": "PKG_USING_RPLIDAR",
   "keywords": [
     "rplidar",
-    "slam"
+    "slam",
+    "ros"
   ],
   "category": "peripherals",
   "author": {

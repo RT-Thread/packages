@@ -1,0 +1,28 @@
+
+# Kconfig file for package donut
+menuconfig PKG_USING_DONUT
+    bool "donut: a 3D spinning donut"
+    default n
+
+if PKG_USING_DONUT
+
+    config PKG_DONUT_PATH
+        string
+        default "/packages/misc/entertainment/donut"
+
+    choice
+        prompt "Version"
+        default PKG_USING_DONUT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DONUT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_DONUT_VER
+       string
+       default "latest"    if PKG_USING_DONUT_LATEST_VERSION
+
+endif
+

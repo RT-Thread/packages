@@ -1,0 +1,59 @@
+
+# Kconfig file for package mavlink
+menuconfig PKG_USING_MAVLINK
+    bool "MAVLink: A very lightweight messaging protocol for communicating."
+    default n
+
+if PKG_USING_MAVLINK
+
+    config PKG_MAVLINK_PATH
+        string
+        default "/packages/iot/mavlink"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MAVLINK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MAVLINK_LATEST_VERSION
+            bool "latest"
+        config PKG_USING_MAVLINK_LATEST_VERSION_MIRROR
+            bool "latest-mirror"
+    endchoice
+
+    choice
+        prompt "Dialect"
+        default PKG_USING_MAVLINK_DIALECT_standard
+        help
+            Select the dialect you want to use
+
+        config PKG_USING_MAVLINK_DIALECT_minimal
+            bool "minimal"
+        config PKG_USING_MAVLINK_DIALECT_common
+            bool "common"
+        config PKG_USING_MAVLINK_DIALECT_standard
+            bool "standard"
+        config PKG_USING_MAVLINK_DIALECT_test
+            bool "test"
+        config PKG_USING_MAVLINK_DIALECT_uAvionix
+            bool "uAvionix"
+        config PKG_USING_MAVLINK_DIALECT_matrixpilot
+            bool "matrixpilot"
+        config PKG_USING_MAVLINK_DIALECT_icarous
+            bool "icarous"  
+        config PKG_USING_MAVLINK_DIALECT_autoquad
+            bool "autoquad"
+        config PKG_USING_MAVLINK_DIALECT_ASLUAV
+            bool "ASLUAV"
+        config PKG_USING_MAVLINK_DIALECT_ardupilotmega
+            bool "ardupilotmega"
+    endchoice
+          
+    config PKG_MAVLINK_VER
+       string
+       default "latest-mirror"    if PKG_USING_MAVLINK_LATEST_VERSION_MIRROR
+       default "latest"           if PKG_USING_MAVLINK_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,31 @@
+{
+  "name": "tetris",
+  "description": "Tetris port to RT-Thread console.",
+  "description_zh": "俄罗斯方块",  
+  "enable": "PKG_USING_TETRIS", 
+  "keywords": [
+    "tetris",
+    "game",
+    "entertainment",
+    "terminal"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "volatile-static",
+    "email": "1043064987@qq.com",
+    "github": "volatile-static"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/volatile-static/rtt_tetris",
+  "icon": "unknown",
+  "homepage": "https://github.com/volatile-static/rtt_tetris",
+  "doc": "https://github.com/volatile-static/rtt_tetris#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/volatile-static/rtt_tetris.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

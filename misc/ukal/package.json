@@ -5,7 +5,9 @@
   "enable": "PKG_USING_UKAL",
   "keywords": [
     "Linear Algebra",
-    "lapack"
+    "lapack",
+    "kalman",
+    "filter"
   ],
   "category": "misc",
   "author": {

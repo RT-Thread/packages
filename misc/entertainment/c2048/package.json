@@ -1,0 +1,31 @@
+{
+  "name": "c2048",
+  "description": "An indie puzzle video game run on RT-Thread console",
+  "description_zh": "2048是一款益智类游戏，原版游戏运行在苹果手机上",  
+  "enable": "PKG_USING_2048", 
+  "keywords": [
+    "2048",
+    "game",
+    "entertainment",
+    "terminal"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/mysterywolf/c2048",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/c2048",
+  "doc": "https://github.com/mysterywolf/c2048#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/c2048.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

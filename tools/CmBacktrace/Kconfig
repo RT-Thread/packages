@@ -11,6 +11,7 @@ if PKG_USING_CMBACKTRACE
         default PKG_CMBACKTRACE_PLATFORM_M3 if ARCH_ARM_CORTEX_M3
         default PKG_CMBACKTRACE_PLATFORM_M4 if ARCH_ARM_CORTEX_M4
         default PKG_CMBACKTRACE_PLATFORM_M7 if ARCH_ARM_CORTEX_M7
+        default PKG_CMBACKTRACE_PLATFORM_M33 if ARCH_ARM_CORTEX_M33
         default PKG_CMBACKTRACE_PLATFORM_NOT_SELECTED
         help
           Select the ARM Cortex-M CPU Platform of your device
@@ -22,6 +23,8 @@ if PKG_USING_CMBACKTRACE
             bool "Cortex-M4"
         config PKG_CMBACKTRACE_PLATFORM_M7
             bool "Cortex-M7"
+        config PKG_CMBACKTRACE_PLATFORM_M33
+            bool "Cortex-M33"
         config PKG_CMBACKTRACE_PLATFORM_NOT_SELECTED
             bool "Not selected, please select"
     endchoice

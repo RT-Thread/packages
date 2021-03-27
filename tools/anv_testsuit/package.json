@@ -1,0 +1,29 @@
+{
+  "name": "anv_testsuit",
+  "description": "minimalist C/C++ unit test framework.",
+  "description_zh": "单元测试框架",  
+  "enable": "PKG_USING_ANV_TESTSUIT", 
+  "keywords": [
+    "anv_testsuit",
+    "test"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/anv_testsuit",
+  "icon": "unknown",
+  "homepage": "https://github.com/wuhanstudio/anv_testsuit",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/anv_testsuit.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "max30102",
+  "description": "[MAX30102]: heart rate and oxygen saturation measure",
+  "description_zh": "[MAX30102]: 心率测量，血氧饱和度测量软件包",  
+  "enable": "PKG_USING_MAX30102", 
+  "keywords": [
+    "max30102",
+    "heart rate"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Jackistang",
+    "email": "tangjia.jackis@qq.com",
+    "github": "Jackistang"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Jackistang/max30102_rtt",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Jackistang/max30102_rtt/archive/1.0.0.zip",
+      "filename": "max30102-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Jackistang/max30102_rtt.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+
+# Kconfig file for package quest
+menuconfig PKG_USING_QUEST
+    select RT_USING_RTC
+    bool "quest: A simulator of quantum computers on MCU. (RTC required)"
+    default n
+
+if PKG_USING_QUEST
+
+    config PKG_QUEST_PATH
+        string
+        default "/packages/ai/quest"
+
+    config QUEST_USING_TUTORIAL_EXAMPLE
+        bool "quest: basic tutorial example."
+        help
+            quest: basic tutorial example.
+        default n
+
+    config QUEST_USING_DAMPING_EXAMPLE
+        bool "quest: damping example."
+        help
+            quest: damping example.
+        default n
+
+    config QUEST_USING_BERNSTEIN_VAZIRANI_CIRCUIT_EXAMPLE
+        bool "quest: bernstein vazirani circuit example."
+        help
+            quest: bernstein vazirani circuit example.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_QUEST_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QUEST_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_QUEST_VER
+       string
+       default "latest"    if PKG_USING_QUEST_LATEST_VERSION
+
+endif
+

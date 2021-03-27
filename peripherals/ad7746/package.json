@@ -5,7 +5,8 @@
   "enable": "PKG_USING_AD7746",
   "keywords": [
     "i2c",
-    "CDC"
+    "CDC",
+    "ad7746"
   ],
   "category": "peripherals",
   "author": {

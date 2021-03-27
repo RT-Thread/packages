@@ -1,7 +1,7 @@
 {
   "name": "wlanmarvell",
   "description": "Marvell WiFi driver for rt-thread",
-  "description": "RT-Thread 的 Marvell wifi 驱动",
+  "description_zh": "RT-Thread 的 Marvell wifi 驱动",
   "enable": "PKG_USING_WLANMARVELL",
   "keywords": [
     "88w8782",

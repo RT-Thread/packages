@@ -1,0 +1,87 @@
+
+# Kconfig file for package rapidjson
+menuconfig PKG_USING_RAPIDJSON
+    bool "rapidjson: A fast JSON parser/generator for C++ with both SAX/DOM style API."
+    select RT_USING_CPLUSPLUS
+    select RT_USING_LIBC
+    default n
+
+if PKG_USING_RAPIDJSON
+
+    config PKG_RAPIDJSON_PATH
+        string
+        default "/packages/iot/rapidjson"
+
+    config RAPIDJSON_USING_SIMPLE_READER
+        bool "simple_reader: simple reader example"
+        help
+            simple_reader: simple reader example
+        default n
+
+    config RAPIDJSON_USING_SIMPLE_WRITER
+        bool "simple_writer: simple writer example"
+        help
+            simple_writer: simple writer example
+        default n
+
+    config RAPIDJSON_USING_TUTORIAL
+        bool "tutorial: tutorial example"
+        help
+            tutorial: tutorial example
+        default n
+
+    config RAPIDJSON_USING_SIMPLE_PULL_READER
+        bool "simple_pull_reader: simple pull reader example"
+        help
+            simple_pull_reader: simple pull reader example
+        default n
+
+    config RAPIDJSON_USING_SIMPLE_DOM
+        bool "simple_dom: simple dom example"
+        help
+            simple_dom: simple dom example
+        default n
+
+    config RAPIDJSON_USING_SERIALIZE
+        bool "serialize: serialize example"
+        help
+            serialize: serialize example
+        default n
+
+    config RAPIDJSON_USING_MESSAGE_READER
+        bool "message_reader: message reader example"
+        help
+            message_reader: message reader example
+        default n
+
+    config RAPIDJSON_USING_LOOK_AHEAD_PARSER
+        bool "look_ahead_parser: look ahead parser example"
+        help
+            look_ahead_parser: look ahead parser example
+        default n
+
+    config RAPIDJSON_USING_ARCHIVER_TEST
+        bool "archiver_test: archiver test example"
+        help
+            archiver_test: archiver test example
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_RAPIDJSON_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RAPIDJSON_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RAPIDJSON_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RAPIDJSON_VER
+       string
+       default "latest"    if PKG_USING_RAPIDJSON_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,29 @@
+{
+  "name": "anv_bench",
+  "description": "quick-and-dirty benchmarking system for quick prototyping",
+  "description_zh": "函数性能快速测试软件包",  
+  "enable": "PKG_USING_ANV_BENCH", 
+  "keywords": [
+    "anv_bench",
+    "benchmark"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/anv_bench",
+  "icon": "unknown",
+  "homepage": "https://github.com/wuhanstudio/anv_bench",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/anv_bench.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
