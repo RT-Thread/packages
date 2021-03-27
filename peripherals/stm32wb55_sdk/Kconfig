@@ -1,0 +1,47 @@
+# Kconfig file for package stm32wb55_sdk
+menuconfig PKG_USING_STM32WB55_SDK
+    bool "stm32wb55_sdk: a stm32wb55_sdk(only ble stack now) package for rt-thread."
+	select RT_USING_RTC
+	select BSP_USING_ON_CHIP_FLASH
+    default n
+	help
+		this sdk fork from STM32Cube_FW_WB. You can add more routine support based on this.
+
+if PKG_USING_STM32WB55_SDK
+
+    config PKG_STM32WB55_SDK_PATH
+        string
+        default "/packages/peripherals/stm32wb55_sdk"
+
+	choice
+		prompt "ble sample"
+		default STM32WB55_BLE_IBEACON
+		
+		config STM32WB55_BLE_IBEACON
+		bool "stm32wb55_ble_iBeacon"
+		
+		config STM32WB55_BLE_HRS
+		bool "stm32wb55_ble_hrs"
+		
+	endchoice
+
+    choice
+        prompt "Version"
+        default PKG_USING_STM32WB55_SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_STM32WB55_SDK_V1100
+            bool "v1.10.0"
+
+        config PKG_USING_STM32WB55_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_STM32WB55_SDK_VER
+       string
+       default "latest"    if PKG_USING_STM32WB55_SDK_LATEST_VERSION
+	   default "v1.10.0"   if PKG_USING_STM32WB55_SDK_V1100
+
+endif
+

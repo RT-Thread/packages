@@ -61,4 +61,5 @@ source "$PKGS_DIR/packages/peripherals/nes/Kconfig"
 source "$PKGS_DIR/packages/peripherals/vsensor/Kconfig"
 source "$PKGS_DIR/packages/peripherals/vdevice/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sgm706/Kconfig"
+source "$PKGS_DIR/packages/peripherals/stm32wb55_sdk/Kconfig"
 endmenu
