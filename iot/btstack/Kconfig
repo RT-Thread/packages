@@ -49,6 +49,12 @@ menu "Bluetooth Role support"
     bool "Observer Role support"
     help
         Select this for LE Observer role support.
+        
+        
+    config PKG_BTSTACK_CLASS
+    bool "BR/EDR Role support"
+    help
+        Select this for BR/EDR role support.
 
 endmenu
 
@@ -69,13 +75,57 @@ menu "Bluetooth SMP support"
     bool "Bluetooth SMP support"
     default n
     help
-        This option enables Bluetooth Mesh support. The specific
-        features that are available may depend on other features
-        that have been enabled in the stack, such as GATT support.
-        
+        This option enables SMP support.        
+endmenu
 
+menu "Bluetooth BR_EDR support"
+    config PKG_BTSTACK_SBC_ENC
+    bool "Bluetooth SBC encode support"
+    default n
+    help
+        This option enables Bluetooth Audio ENCODE support. 
+        
+    config PKG_BTSTACK_SBC_DEC
+    bool "Bluetooth SBC encode decode support"
+    default n
+    help
+        This option enables Bluetooth Audio DECODE support.   
+        
+    config PKG_BTSTACK_CVSD
+    bool "Bluetooth CVSD support"
+    default n
+    help
+        This option enables Bluetooth CVSD support. 
+        
+    config PKG_BTSTACK_AUDIO
+    bool "Bluetooth audio support"
+    default n
+    help
+        This option enables Bluetooth audio support.  
+        
+    config PKG_BTSTACK_SDP_CLIENT
+    bool "Bluetooth SDP CLIENT support"
+    default n
+    help
+        This option enables Bluetooth SDP client support. 
+        
+    config PKG_BTSTACK_HFP_AUDIO
+    bool "Bluetooth CVSD support"
+    default n
+    select PKG_BTSTACK_CVSD
+    select PKG_BTSTACK_SBC_DEC
+    select PKG_BTSTACK_SBC_ENC
+    select PKG_BTSTACK_SDP_CLIENT
+    select PKG_BTSTACK_AUDIO
+    help
+        This option enables Bluetooth HFP support.
+        
+ 
+        
         
 endmenu
+
+
 
 # example
 choice
@@ -108,7 +158,11 @@ choice
     config PKG_BTSTACK_SAMPLE_NORDIC_LE_COUNTER
     bool "[LE_SRV] Nordic le counter server"
     select BTSTACK_ROLE_PERIPHERAL 
-
+    
+    config PKG_BTSTACK_SAMPLE_UBLOX_LE_COUNTER
+    bool "[LE_SRV] Nordic spp ublox server"
+    select BTSTACK_ROLE_PERIPHERAL 
+    
     config PKG_BTSTACK_SAMPLE_ATT_DELAYED_RESPONSE
     bool "[LE_SRV] gatt dealyed response"
     select BTSTACK_ROLE_PERIPHERAL  
@@ -124,6 +178,14 @@ choice
     config PKG_BTSTACK_SAMPLE_ANCS_CLIENT_DEMO
     bool "[LE_SRV] ancs_client_demo"
     select BTSTACK_ROLE_PERIPHERAL 
+ 
+    config PKG_BTSTACK_SAMPLE_HOGP_KEYBOARD_DEMO
+    bool "[LE_SRV_hogp] hogp keyboard demo"
+    select BTSTACK_ROLE_PERIPHERAL 
+    
+    config PKG_BTSTACK_SAMPLE_HOGP_MOUSER_DEMO
+    bool "[LE_SRV_hogp] hogp mouser demo"
+    select BTSTACK_ROLE_PERIPHERAL 
     
     config PKG_BTSTACK_SAMPLE_MESH_DEMO
     bool "[MESH_NODE] MESH DEMO"
@@ -137,6 +199,48 @@ choice
     select BTSTACK_ROLE_PERIPHERAL  
     select PKG_BTSTACK_MESH
     select PKG_BTSTACK_SMP 
+    
+    config PKG_BTSTACK_SAMPLE_SPP_GATT_COUNTER_DEMO
+    bool "[EDR_LE_SLAVE] spp and gatt counter"
+    select BTSTACK_ROLE_PERIPHERAL  
+    select PKG_BTSTACK_CLASS    
+    
+    config PKG_BTSTACK_SAMPLE_SPP_GATT_STREAMER_DEMO
+    bool "[EDR_LE_SLAVE] spp and gatt streamer"
+    select BTSTACK_ROLE_PERIPHERAL  
+    select PKG_BTSTACK_CLASS    
+    
+    config PKG_BTSTACK_SAMPLE_SPP_COUNTER_DEMO
+    bool "[EDR_SPP_SLAVE] spp counter"
+    select PKG_BTSTACK_CLASS 
+
+
+    config PKG_BTSTACK_SAMPLE_SPP_STREAMER_DEMO
+    bool "[EDR_SPP_SLAVE] spp streamer"
+    select PKG_BTSTACK_CLASS 
+    
+    config PKG_BTSTACK_SAMPLE_HFP_HF_DEMO
+    bool "[EDR_HFP_SLAVE] hfp handsfree demo"
+    select PKG_BTSTACK_CLASS 
+    select PKG_BTSTACK_HFP_AUDIO
+    select PKG_BTSTACK_AUDIO
+    
+    config PKG_BTSTACK_SAMPLE_HFP_AG_DEMO
+    bool "[EDR_HFP_MASTER] hfp AG demo"
+    select PKG_BTSTACK_CLASS 
+    select PKG_BTSTACK_HFP_AUDIO
+    select PKG_BTSTACK_AUDIO
+ 
+    config PKG_BTSTACK_SAMPLE_HSP_HS_DEMO
+    bool "[EDR_HSP_SLAVE] hfp headset demo"
+    select PKG_BTSTACK_CLASS 
+    select PKG_BTSTACK_HFP_AUDIO
+    select PKG_BTSTACK_AUDIO
+    
+    config PKG_BTSTACK_SAMPLE_HSP_AG_DEMO
+    bool "[EDR_HSP_MASTER] hfp ag demo"
+    select PKG_BTSTACK_CLASS 
+    select PKG_BTSTACK_HFP_AUDIO
     
 endchoice
 
