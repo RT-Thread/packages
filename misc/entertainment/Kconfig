@@ -1,4 +1,4 @@
-menu "entertainment: terminal entertainments"
+menu "entertainment: terminal games and other interesting software packages"
 
 source "$PKGS_DIR/packages/misc/entertainment/threes/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/c2048/Kconfig"
