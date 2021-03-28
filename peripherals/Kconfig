@@ -64,4 +64,5 @@ source "$PKGS_DIR/packages/peripherals/sgm706/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rda58xx/Kconfig"
 source "$PKGS_DIR/packages/peripherals/libnfc/Kconfig"
 source "$PKGS_DIR/packages/peripherals/mfoc/Kconfig"
+source "$PKGS_DIR/packages/peripherals/tmc51xx/Kconfig"
 endmenu

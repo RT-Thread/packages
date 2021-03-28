@@ -1,0 +1,35 @@
+{
+  "name": "tmc51xx",
+  "description": "TMC5160 power driver for stepper motors.",
+  "description_zh": "TMC5160步进电机驱动。",  
+  "enable": "PKG_USING_RDA58XX", 
+  "keywords": [
+    "tmc5160",
+    "tmc51xx"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "apeng2012",
+    "email": "peng89769975@163.com",
+    "github": "apeng2012"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/apeng2012/tmc51xx",
+  "icon": "unknown",
+  "homepage": "https://github.com/apeng2012/tmc51xx#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/apeng2012/tmc51xx.git",
+      "filename": "tmc51xx-1.0.0.zip",
+      "VER_SHA": "9022c99f7b036c98646d14a392a2c784be95abf5"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/apeng2012/tmc51xx.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}
