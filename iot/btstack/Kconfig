@@ -1,5 +1,5 @@
 
-# Kconfig file for package BTSTACK
+# Kconfig file for package BTSTACK 
 menuconfig PKG_USING_BTSTACK
     select RT_USING_LIBC
     select RT_USING_PTHREADS
