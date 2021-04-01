@@ -15,12 +15,22 @@
   "license": "MIT",
   "repository": "https://github.com/liu2guang/MultiButton",
   "homepage": "https://github.com/liu2guang/MultiButton#readme",
-  "readme": "MultiButton: Event-driven button lib for embedded",
+  "readme": "https://github.com/liu2guang/MultiButton#readme",
   "site": [
     {
       "version": "v1.0.2",
-      "URL": "https://github.com/liu2guang/MultiButton/archive/v1.0.2.zip",
+      "URL": "https://github.com/liu2guang/MultiButton/archive/refs/tags/v1.0.2.zip",
       "filename": "MultiButton-1.0.2.zip"
+    },
+    {
+      "version": "v1.0.3",
+      "URL": "https://github.com/liu2guang/MultiButton/archive/refs/tags/v1.0.3.zip",
+      "filename": "MultiButton-1.0.3.zip"
+    },
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/liu2guang/MultiButton/archive/refs/tags/v1.1.0.zip",
+      "filename": "MultiButton-1.1.0.zip"
     },
     {
       "version": "latest",
