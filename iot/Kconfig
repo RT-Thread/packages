@@ -53,4 +53,5 @@ source "$PKGS_DIR/packages/iot/mavlink/Kconfig"
 source "$PKGS_DIR/packages/iot/rapidjson/Kconfig"
 source "$PKGS_DIR/packages/iot/bsal/Kconfig"
 source "$PKGS_DIR/packages/iot/agile_modbus/Kconfig"
+source "$PKGS_DIR/packages/iot/agile_ftp/Kconfig"
 endmenu
