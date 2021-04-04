@@ -1,0 +1,29 @@
+{
+  "name": "EmbeddedProto",
+  "description": "A C++ Protocol Buffers implementation specifically suitable for ARM Cortex-M MCUs.",
+  "description_zh": "EmbeddedProto: 嵌入式 C++ protobuf 针对 ARM Cortex-M 优化",  
+  "enable": "PKG_USING_EMBEDDEDPROTO", 
+  "keywords": [
+    "EmbeddedProto",
+    "protobuf"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/wuhanstudio/EmbeddedProto",
+  "icon": "unknown",
+  "homepage": "https://embeddedproto.com/",
+  "doc": "https://embeddedproto.com/documentation/",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/EmbeddedProto.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
