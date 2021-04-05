@@ -1,0 +1,32 @@
+{
+  "name": "naxos",
+  "description": "naxos: A C++ Constraint Programming Library.",
+  "description_zh": "C++ Constraint Programming 库",
+  "enable": "PKG_USING_NAXOS",
+  "keywords": [
+    "naxos",
+    "np-hard",
+    "constraint programming",
+    "nqueens",
+    "tsp"
+  ],
+  "category": "ai",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "LGPL-3.0",
+  "repository": "https://github.com/wuhanstudio/naxos",
+  "icon": "unknown",
+  "homepage": "https://github.com/pothitos/naxos",
+  "doc": "https://github.com/pothitos/naxos",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/naxos.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+
+# Kconfig file for package naxos
+menuconfig PKG_USING_NAXOS
+    select RT_USING_CPLUSPLUS
+    select RT_USING_LIBC
+    bool "A C++ Constraint Programming Library"
+    default n
+
+if PKG_USING_NAXOS
+
+    config PKG_NAXOS_PATH
+        string
+        default "/packages/ai/naxos"
+
+    config NAXOS_USING_SEND_MORE_MONEY_EXAMPLE
+        bool "naxos: send more money example."
+        help
+            naxos: send more money example.
+        default n
+
+    config NAXOS_USING_N_QUEENS_EXAMPLE
+        bool "naxos: nqueens example."
+        help
+            naxos: nqueens example.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_NAXOS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NAXOS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_NAXOS_VER
+       string
+       default "latest"    if PKG_USING_NAXOS_LATEST_VERSION
+
+endif
+
