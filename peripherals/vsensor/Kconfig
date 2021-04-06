@@ -149,6 +149,10 @@ if PKG_USING_VIRTUAL_SENSOR
                 default "spo2"
         endif
 
+    config PKG_USING_VIRTUAL_SENSOR_DBG
+        bool "SENS : Enable virtual sensor debug log"
+        default y
+
     config PKG_VIRTUAL_SENSOR_VER
        string
        default "v1.0.0"    if PKG_USING_VIRTUAL_SENSOR_V100
