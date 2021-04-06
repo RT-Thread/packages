@@ -140,6 +140,15 @@ if PKG_USING_VIRTUAL_SENSOR
                 default "force"
         endif
 
+    menuconfig PKG_USING_VIRTUAL_SENSOR_SPO2
+        bool "SENS : Enable virtual sensor Spo2"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_SPO2
+            config V_SENS_SPO2_DEV_NAME
+                string "SENS : the sensor device name for Spo2"
+                default "spo2"
+        endif
+
     config PKG_VIRTUAL_SENSOR_VER
        string
        default "v1.0.0"    if PKG_USING_VIRTUAL_SENSOR_V100
