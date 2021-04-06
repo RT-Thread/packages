@@ -147,6 +147,9 @@ if PKG_USING_NRF5X_SDK
         config PKG_USING_NRF5X_SDK_V1600
             bool "v16.0.0"
             
+        config PKG_USING_NRF5X_SDK_V1610
+            bool "v16.1.0" 
+            
         config PKG_USING_NRF5X_SDK_LATEST_VERSION
             bool "latest"
     endchoice
@@ -155,6 +158,7 @@ if PKG_USING_NRF5X_SDK
        string
        default "v13.0.0"    if PKG_USING_NRF5X_SDK_V1300
        default "v16.0.0"    if PKG_USING_NRF5X_SDK_V1600
+       default "v16.1.0"    if PKG_USING_NRF5X_SDK_V1610
        default "latest"    if PKG_USING_NRF5X_SDK_LATEST_VERSION
 
 endif
