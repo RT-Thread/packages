@@ -1,0 +1,32 @@
+
+# Kconfig file for package devmem
+menuconfig PKG_USING_DEVMEM
+    bool "DEVMEM: read/write memory/register tools"
+    default n
+
+if PKG_USING_DEVMEM
+
+    config PKG_DEVMEM_PATH
+        string
+        default "/packages/tools/devmem"
+
+    choice
+        prompt "Version"
+        default PKG_USING_DEVMEM_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DEVMEM_V100
+            bool "v1.0.0"
+
+        config PKG_USING_DEVMEM_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_DEVMEM_VER
+       string
+       default "v1.0.0"    if PKG_USING_DEVMEM_V100
+       default "latest"    if PKG_USING_DEVMEM_LATEST_VERSION
+
+endif
+
