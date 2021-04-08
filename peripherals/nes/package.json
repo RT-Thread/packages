@@ -19,14 +19,9 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://gitee.com/Ghazi_gq/nes/repository/archive/v1.0.0?format=zip",
-      "filename": "nes-v1.0.0.zip"
-    },
-    {
       "version": "latest",
       "URL": "https://gitee.com/Ghazi_gq/nes.git",
-      "filename": "nes.zip",
+      "filename": "Null for git package",
       "VER_SHA": "master"
     }
   ]
