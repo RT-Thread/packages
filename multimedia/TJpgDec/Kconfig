@@ -45,11 +45,11 @@ if PKG_USING_TJPGD
         help
             Select the package version
 
-        config PKG_USING_TJPGD_V100
-            bool "v1.0.0"
-
         config PKG_USING_TJPGD_V110
             bool "v1.1.0"
+
+        config PKG_USING_TJPGD_V100
+            bool "v1.0.0"
 
         config PKG_USING_TJPGD_LATEST_VERSION
             bool "latest"
