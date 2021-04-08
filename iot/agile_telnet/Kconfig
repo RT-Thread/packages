@@ -57,6 +57,9 @@ if PKG_USING_AGILE_TELNET
 
         config PKG_USING_AGILE_TELNET_V200
             bool "v2.0.0"
+        
+        config PKG_USING_AGILE_TELNET_V201
+            bool "v2.0.1"
 
         config PKG_USING_AGILE_TELNET_LATEST_VERSION
             bool "latest"
@@ -66,12 +69,14 @@ if PKG_USING_AGILE_TELNET
        string
        default "v1.0.0"    if PKG_USING_AGILE_TELNET_V100
        default "v2.0.0"    if PKG_USING_AGILE_TELNET_V200
+       default "v2.0.1"    if PKG_USING_AGILE_TELNET_V201
        default "latest"    if PKG_USING_AGILE_TELNET_LATEST_VERSION
 
     config PKG_AGILE_TELNET_VER_NUM
         hex
         default 0x10000    if PKG_USING_AGILE_TELNET_V100
         default 0x20000    if PKG_USING_AGILE_TELNET_V200
+        default 0x20001    if PKG_USING_AGILE_TELNET_V201
         default 0x99999    if PKG_USING_AGILE_TELNET_LATEST_VERSION
 endif
 

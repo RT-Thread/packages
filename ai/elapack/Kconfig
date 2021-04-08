@@ -9,7 +9,7 @@ if PKG_USING_ELAPACK
 
     config PKG_ELAPACK_PATH
         string
-        default "/packages/misc/elapack"
+        default "/packages/ai/elapack"
 
     config ELAPACK_USING_LINSOLVE
         bool "Linear equation solver example"

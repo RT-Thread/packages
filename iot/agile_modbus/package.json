@@ -22,6 +22,11 @@
       "filename": "agile_modbus-1.0.0.zip"
     },
     {
+      "version": "v1.0.1",
+      "URL": "https://codeload.github.com/loogg/agile_modbus/zip/refs/tags/v1.0.1",
+      "filename": "agile_modbus-1.0.1.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_modbus.git",
       "filename": "agile_modbus.zip",

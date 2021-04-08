@@ -9,7 +9,7 @@ if PKG_USING_ULAPACK
 
     config PKG_ULAPACK_PATH
         string
-        default "/packages/misc/ulapack"
+        default "/packages/ai/ulapack"
 
     config ULAPACK_USING_LU
         bool "LU decomposition example"
