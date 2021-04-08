@@ -4,7 +4,9 @@
   "description_zh": "软件包 btstack 用于BTSTACK在RT-THREAD中的使用",  
   "enable": "PKG_USING_BTSTACK", 
   "keywords": [
-    "btstack"
+    "bluetooth",
+    "mesh",
+    "ble"
   ],
   "category": "iot",
   "author": {
@@ -12,7 +14,7 @@
     "email": "78900636@qq.com",
     "github": "supperthomas"
   },
-  "license": "Apache-2.0",
+  "license": "non-commercial",
   "repository": "https://github.com/supperthomas/RTT_PACKAGE_BTSTACK.git",
   "icon": "unknown",
   "homepage": "unknown",
@@ -20,9 +22,15 @@
   "site": [
     {
       "version": "v0.0.1",
-      "URL": "https://github.com/supperthomas/RTT_PACKAGE_BTSTACK/archive/v0.0.1.zip",
+      "URL": "https://github.com/supperthomas/RTT_PACKAGE_BTSTACK.git",
       "filename": "btstack-0.0.1.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "VER_SHA": "11c67b1b27a4e35c588ce946c558780c20843660"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/supperthomas/RTT_PACKAGE_BTSTACK.git",
+      "filename": "btstack-1.0.0.zip",
+      "VER_SHA": "4c61f272d8532ce89801be503360afd5bc62d7b3"
     },
     {
       "version": "latest",
