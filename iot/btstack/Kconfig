@@ -337,7 +337,7 @@ endchoice
 
     choice
         prompt "Version"
-        default PKG_USING_BTSTACK_LATEST_VERSION
+        default PKG_USING_BTSTACK_V100
         help
             Select the package version
 
