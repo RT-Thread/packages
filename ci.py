@@ -32,6 +32,11 @@ def execute_command(cmdstring, cwd=None, shell=True):
 def determine_url_valid(url_from_srv):
     """Check the validity of urls."""
 
+    # check url is github
+    if not url_from_srv.startswith("https://github.com"):
+        print("not support url: {}".format(url_from_srv))
+        return False
+
     headers = {'Connection': 'keep-alive',
                'Accept-Encoding': 'gzip, deflate',
                'Accept': '*/*',
