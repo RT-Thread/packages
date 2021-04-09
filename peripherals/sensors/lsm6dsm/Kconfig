@@ -1,0 +1,61 @@
+
+# Kconfig file for package LSM6DSM
+menuconfig PKG_USING_LSM6DSM
+    bool "LSM6DSM sensor driver package, support: accelerometer, gyroscope, step, temperature."
+    default n
+
+if PKG_USING_LSM6DSM
+
+    config PKG_LSM6DSM_PATH
+        string
+        default "/packages/peripherals/sensors/lsm6dsm"
+
+    config PKG_LSM6DSM_USING_ACCE
+		bool "Enable LSM6DSM Accelerometer"
+		default y
+
+    config PKG_LSM6DSM_USING_GYRO
+		bool "Enable LSM6DSM gyro"
+		default y
+
+    config PKG_LSM6DSM_USING_STEP
+		bool "Enable LSM6DSM temperature"
+		default y
+
+    config PKG_LSM6DSM_USING_TEMP
+		bool "Enable LSM6DSM step count"
+		default y
+
+    choice
+        prompt "I2C device address type"
+        default PKG_LSM6DSM_I2C_ADDR_TYPE_LOW
+        help
+            Select I2C device address type: if SA0=0 -> I2C_DEVICE_TYPE_LOW if SA0=1 -> I2C_DEVICE_TYPE_HIGH
+
+        config PKG_LSM6DSM_I2C_ADDR_TYPE_HIGH
+            bool "I2C address high. if SA0 pad connect to VCC, select me"
+
+        config PKG_LSM6DSM_I2C_ADDR_TYPE_LOW
+            bool "I2C address low. if SA0 pad connect to GND, select me"
+    endchoice
+
+    choice
+        prompt "Version"
+        default PKG_USING_LSM6DSM_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LSM6DSM_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LSM6DSM_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LSM6DSM_VER
+       string
+       default "v1.0.0"    if PKG_USING_LSM6DSM_V100
+       default "latest"    if PKG_USING_LSM6DSM_LATEST_VERSION
+
+endif
+
