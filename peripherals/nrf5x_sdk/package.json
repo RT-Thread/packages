@@ -4,7 +4,7 @@
   "description_zh": "Nordic SDK软件开发包",  
   "enable": "PKG_USING_NRF5X_SDK", 
   "keywords": [
-    "nrf5x_sdk"
+    "Nordic"
   ],
   "category": "peripherals",
   "author": {
@@ -20,21 +20,21 @@
   "site": [
     {
       "version": "v13.0.0",
-      "URL": "https://github.com/supperthomas/nrf5x_sdk.git",
+      "URL": "https://github.com/supperthomas/nrf5x_sdk/archive/refs/tags/V13.0.0.zip",
       "filename": "nrf5x_sdk-13.0.0.zip",
-      "VER_SHA": "f5d7ad0eb1390f5b78853212f5869a1d924d141a"
+      "VER_SHA": "NULL"
     },
     {
       "version": "v16.0.0",
-      "URL": "https://github.com/supperthomas/nrf5x_sdk.git",
+      "URL": "https://github.com/supperthomas/nrf5x_sdk/archive/refs/tags/V16.0.0.zip",
       "filename": "nrf5x_sdk-16.0.0.zip",
-      "VER_SHA": "6db224187ced164181457185cb0ac402be2efa91"
+      "VER_SHA": "NULL"
     },
     {
       "version": "v16.1.0",
-      "URL": "https://github.com/supperthomas/nrf5x_sdk.git",
+      "URL": "https://github.com/supperthomas/nrf5x_sdk/archive/refs/tags/V16.1.0.zip",
       "filename": "nrf5x_sdk-16.1.0.zip",
-      "VER_SHA": "bdd5f9df690ae4cca39baab6e5ade6a6b6179c0e"
+      "VER_SHA": "NULL"
     },
     {
       "version": "latest",
