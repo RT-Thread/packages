@@ -2,6 +2,7 @@ menuconfig PKG_USING_VI
     bool "vi: A screen-oriented text editor"
     select RT_USING_DFS
     select RT_USING_LIBC
+    select RT_USING_POSIX
     select PKG_USING_OPTPARSE
     default n
 
@@ -75,10 +76,9 @@ if PKG_USING_VI
           Support for ":set".
 
     config VI_ENABLE_WIN_RESIZE
+        select RT_USING_POSIX_TERMIOS
         bool "Handle window resize"
-        default y
-        depends on RT_USING_POSIX
-        depends on RT_USING_POSIX_TERMIOS
+        default n
         help
           Make busybox vi behave nicely with terminals that get resized.
 
@@ -90,14 +90,15 @@ if PKG_USING_VI
           this option makes vi perform a last-ditch effort to find it:
           position cursor to 999,999 and ask terminal to report real
           cursor position using "ESC [ 6 n" escape sequence, then read stdin.
-
           This is not clean but helps a lot on serial lines and such.
+
     config VI_ENABLE_UNDO
         bool "Support undo command 'u'"
         default y
         help
           Support the 'u' command to undo insertion, deletion, and replacement
           of text.
+
     config VI_ENABLE_UNDO_QUEUE
         bool "Enable undo operation queuing"
         default y
@@ -108,6 +109,7 @@ if PKG_USING_VI
           reached, the contents of the queue are committed to the undo stack.
           This increases the size of the undo code and allows some undo
           operations (especially un-typing/backspacing) to be far more useful.
+
     config VI_UNDO_QUEUE_MAX
         int "Maximum undo character queue size"
         default 256
