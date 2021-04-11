@@ -13,19 +13,19 @@
     "github": "Ghazigq"
   },
   "license": "Apache-2.0",
-  "repository": "https://gitee.com/Ghazi_gq/nes",
+  "repository": "https://github.com/Ghazigq/nes",
   "icon": "unknown",
-  "homepage": "https://gitee.com/Ghazi_gq/nes#README",
+  "homepage": "https://github.com/Ghazigq/nes#README",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://gitee.com/Ghazi_gq/nes/repository/archive/v1.0.0?format=zip",
+      "URL": "https://github.com/Ghazigq/nes/archive/v1.0.0.zip",
       "filename": "nes-v1.0.0.zip"
     },
     {
       "version": "latest",
-      "URL": "https://gitee.com/Ghazi_gq/nes.git",
+      "URL": "https://github.com/Ghazigq/nes.git",
       "filename": "nes.zip",
       "VER_SHA": "master"
     }
