@@ -13,19 +13,19 @@
     "github": "Ghazigq"
   },
   "license": "Apache-2.0",
-  "repository": "https://gitee.com/Ghazi_gq/gbk2utf8",
+  "repository": "https://github.com/Ghazigq/gbk2utf8",
   "icon": "unknown",
-  "homepage": "https://gitee.com/Ghazi_gq/gbk2utf8#README",
+  "homepage": "https://github.com/Ghazigq/gbk2utf8#README",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://gitee.com/Ghazi_gq/gbk2utf8/repository/archive/v1.0.0?format=zip",
+      "URL": "https://github.com/Ghazigq/gbk2utf8/archive/v1.0.0.zip",
       "filename": "gbk2utf8-v1.0.0.zip"
     },
     {
       "version": "latest",
-      "URL": "https://gitee.com/Ghazi_gq/gbk2utf8.git",
+      "URL": "https://github.com/Ghazigq/gbk2utf8.git",
       "filename": "gbk2utf8.zip",
       "VER_SHA": "master"
     }
