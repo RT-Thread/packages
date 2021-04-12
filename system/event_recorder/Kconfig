@@ -1,0 +1,40 @@
+
+# Kconfig file for package event_recorder
+menuconfig PKG_USING_EVENT_RECORDER
+    bool "event_recorder: A lightweight event record and replay tools for debug and test."
+    default n
+
+if PKG_USING_EVENT_RECORDER
+
+    config PKG_EVENT_RECORDER_PATH
+        string
+        default "/packages/system/event_recorder"
+
+    choice
+        prompt "Record storage tpye"
+        default EVENT_RECORDER_USING_FLASHDB
+        config EVENT_RECORDER_USING_FLASHDB
+            select PKG_USING_FLASHDB
+            bool "Using FlashDB"
+    endchoice
+
+    choice
+        prompt "Version"
+        default PKG_USING_EVENT_RECORDER_V010
+        help
+            Select the package version
+
+        config PKG_USING_EVENT_RECORDER_V010
+            bool "v0.1.0"
+
+        config PKG_USING_EVENT_RECORDER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_EVENT_RECORDER_VER
+       string
+       default "v0.1.0"    if PKG_USING_EVENT_RECORDER_V010
+       default "latest"    if PKG_USING_EVENT_RECORDER_LATEST_VERSION
+
+endif
+
