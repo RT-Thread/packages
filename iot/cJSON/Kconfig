@@ -20,12 +20,16 @@ if PKG_USING_CJSON
         config PKG_USING_CJSON_V159
             bool "v1.5.9"
 
+        config PKG_USING_CJSON_V102
+            bool "v1.0.2"
+
         config PKG_USING_CJSON_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_CJSON_VER
     string
+    default "v1.0.2" if PKG_USING_CJSON_V102
     default "v1.5.9" if PKG_USING_CJSON_V159
     default "v1.7.14" if PKG_USING_CJSON_V1714
     default "latest" if PKG_USING_CJSON_LATEST_VERSION
