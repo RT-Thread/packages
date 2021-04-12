@@ -24,6 +24,11 @@
       "filename": "cJSON-1.0.1.zip"
     },
     {
+      "version": "v1.5.9",
+      "URL": "https://github.com/RT-Thread-packages/cJSON/archive/v1.5.9.zip",
+      "filename": "cJSON-1.5.9.zip"
+    },
+    {
       "version": "v1.7.14",
       "URL": "https://github.com/RT-Thread-packages/cJSON/archive/v1.7.14.zip",
       "filename": "cJSON-1.7.14.zip"
