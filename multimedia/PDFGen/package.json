@@ -1,0 +1,29 @@
+{
+  "name": "PDFGen",
+  "description": "Simple C PDF Writer/Generation library",
+  "description_zh": "PDF文档生成库",  
+  "enable": "PKG_USING_PDFGEN", 
+  "keywords": [
+    "PDFGen",
+    "pdf"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Unlicense",
+  "repository": "https://github.com/mysterywolf/PDFGen",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/PDFGen#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/PDFGen.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
