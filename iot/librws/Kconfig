@@ -37,5 +37,21 @@ if PKG_USING_LIBRWS
     config LIBRWS_USING_EXAMPLE 
         bool "Using librws msh command example"
         default y
+
+    config LIBRWS_USING_MBED_TLS
+        bool "Select TLS mode"
+        default n
+
+    config RWS_CONNECT_RETRY_DELAY
+        int "Connect retry delay time(ms)"
+        default 200
+
+    config RWS_CONNECT_ATTEMPS
+        int "Connect retry count"
+        default 5
+
+    config RWS_RECEIVE_BUFF_SIZE
+        int "receive data buffer size"
+        default 2048
 endif
 
