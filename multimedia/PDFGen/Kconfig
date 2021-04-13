@@ -2,6 +2,8 @@
 # Kconfig file for package PDFGen
 menuconfig PKG_USING_PDFGEN
     bool "PDFGen: Simple C PDF Writer/Generation library"
+    select RT_USING_LIBC
+    select RT_USING_DFS
     default n
 
 if PKG_USING_PDFGEN
