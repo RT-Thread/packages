@@ -4,6 +4,7 @@ menuconfig PKG_USING_VI
     select RT_USING_LIBC
     select RT_USING_POSIX
     select PKG_USING_OPTPARSE
+    select PKG_USING_MEM_SANDBOX
     default n
 
 if PKG_USING_VI
