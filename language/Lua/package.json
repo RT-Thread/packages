@@ -1,7 +1,7 @@
 {
   "name": "Lua",
-  "description": "The Lua library adapts rt-thread3.0(based on Lua 5.1.4 and 5.3.4)",
-  "description_zh": " Lua 库适配 RT-Thread 3.0(基于 lua 5.1.4和 5.3.4 版本)",
+  "description": "Lua port package for RT-Thread",
+  "description_zh": "Lua脚本解释器",
   "enable": "PKG_USING_LUA",
   "keywords": [
     "Lua",
