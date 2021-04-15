@@ -1,7 +1,7 @@
 {
   "name": "Lua",
   "description": "Lua port package for RT-Thread",
-  "description_zh": "Lua脚本解释器",
+  "description_zh": "Lua 在 RT-Thread 上的移植",
   "enable": "PKG_USING_LUA",
   "keywords": [
     "Lua",
