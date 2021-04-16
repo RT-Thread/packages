@@ -1,7 +1,7 @@
 
 # Kconfig file for package ki
 menuconfig PKG_USING_KI
-    bool "ki is a small text editor in less than 1K lines of code"
+    bool "ki: a small text editor in less than 1K lines of code"
     select RT_USING_DFS
     select RT_USING_LIBC
     select RT_USING_POSIX
