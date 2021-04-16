@@ -13,6 +13,10 @@ if PKG_USING_VI
         string
         default "/packages/misc/vi"
 
+    config VI_SANDBOX_SIZE_KB
+        int "Space size of the vi sandbox (KB)"
+        default 20
+
     config VI_MAX_LEN
         int "Maximum screen width in vi"
         range 256 16384
