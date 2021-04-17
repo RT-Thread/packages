@@ -1,7 +1,7 @@
 {
   "name": "ki",
   "description": "ki is a small text editor in less than 1K lines of code",
-  "description_zh": "ki是一个带有语法高亮的终端编辑器，支持C/C++ Python Javascript Go语言语法高亮",  
+  "description_zh": "ki是一个带有C/C++语法高亮的终端编辑器",  
   "enable": "PKG_USING_KI", 
   "keywords": [
     "ki",
