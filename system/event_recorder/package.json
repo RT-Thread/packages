@@ -1,0 +1,37 @@
+{
+  "name": "event_recorder",
+  "description": "A lightweight event record and replay tools for debug and test.",
+  "description_zh": "一款轻量级的事件记录器，支持事件的记录与回放",  
+  "enable": "PKG_USING_EVENT_RECORDER", 
+  "keywords": [
+    "event_recorder",
+    "debug",
+    "test",
+    "record"
+  ],
+  "category": "system",
+  "author": {
+    "name": "armink",
+    "email": "armink.ztl@gmail.com",
+    "github": "armink"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/event_recorder",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/RT-Thread-packages/event_recorder/archive/refs/tags/0.1.0.zip",
+      "filename": "event_recorder-0.1.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/event_recorder.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

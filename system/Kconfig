@@ -35,5 +35,6 @@ source "$PKGS_DIR/packages/system/Qfplib_M0_tiny/Kconfig"
 source "$PKGS_DIR/packages/system/Qfplib_M3/Kconfig"
 source "$PKGS_DIR/packages/system/lpm/Kconfig"
 source "$PKGS_DIR/packages/system/tlsf/Kconfig"
+source "$PKGS_DIR/packages/system/event_recorder/Kconfig"
 
 endmenu

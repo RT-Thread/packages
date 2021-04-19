@@ -137,7 +137,7 @@ if PKG_USING_NRF5X_SDK
 
     choice
         prompt "Version"
-        default PKG_USING_NRF5X_SDK_LATEST_VERSION
+        default PKG_USING_NRF5X_SDK_V1610
         help
             Select the package version
 

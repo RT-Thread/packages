@@ -1,0 +1,32 @@
+{
+  "name": "lsm6dsm",
+  "description": "STMicroelectronics's LSM6DSM driver,support Accelerometer/gyro/step count/temperature",
+  "description_zh": "STMicroelectronics的LSM6DSM传感器驱动，支持加速度计/陀螺仪/计步/温度",  
+  "enable": "PKG_USING_LSM6DSM", 
+  "keywords": [
+    "lsm6dsm"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "zcj20080882",
+    "email": "zcj20080882@otlook.com",
+    "github": "zcj20080882"
+  },
+  "license": "MIT",
+  "repository": "https://gitee.com/my-rt-packages/lsm6dsm.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://gitee.com/my-rt-packages/lsm6dsm/repository/archive/v1.0.0?format=zip",
+      "filename": "lsm6dsm-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/my-rt-packages/lsm6dsm.git",
+      "filename": "Null for git package"
+    }
+  ]
+}

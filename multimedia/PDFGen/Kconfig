@@ -1,0 +1,30 @@
+
+# Kconfig file for package PDFGen
+menuconfig PKG_USING_PDFGEN
+    bool "PDFGen: Simple C PDF Writer/Generation library"
+    select RT_USING_LIBC
+    select RT_USING_DFS
+    default n
+
+if PKG_USING_PDFGEN
+
+    config PKG_PDFGEN_PATH
+        string
+        default "/packages/multimedia/PDFGen"
+
+    choice
+        prompt "Version"
+        default PKG_USING_PDFGEN_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PDFGEN_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PDFGEN_VER
+       string
+       default "latest"    if PKG_USING_PDFGEN_LATEST_VERSION
+
+endif
+

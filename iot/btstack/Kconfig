@@ -337,13 +337,16 @@ endchoice
 
     choice
         prompt "Version"
-        default PKG_USING_BTSTACK_LATEST_VERSION
+        default PKG_USING_BTSTACK_V100
         help
             Select the package version
 
         config PKG_USING_BTSTACK_V001
             bool "v0.0.1"
-
+            
+        config PKG_USING_BTSTACK_V100
+            bool "v1.0.0"
+            
         config PKG_USING_BTSTACK_LATEST_VERSION
             bool "latest"
     endchoice
@@ -351,6 +354,7 @@ endchoice
     config PKG_BTSTACK_VER
        string
        default "v0.0.1"    if PKG_USING_BTSTACK_V001
+       default "v1.0.0"    if PKG_USING_BTSTACK_V100
        default "latest"    if PKG_USING_BTSTACK_LATEST_VERSION
 
 endif
