@@ -34,5 +34,6 @@ source "$PKGS_DIR/packages/tools/anv_memleak/Kconfig"
 source "$PKGS_DIR/packages/tools/anv_testsuit/Kconfig"
 source "$PKGS_DIR/packages/tools/anv_bench/Kconfig"
 source "$PKGS_DIR/packages/tools/devmem/Kconfig"
+source "$PKGS_DIR/packages/tools/regex/Kconfig"
 
 endmenu
