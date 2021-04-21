@@ -36,5 +36,6 @@ source "$PKGS_DIR/packages/tools/anv_bench/Kconfig"
 source "$PKGS_DIR/packages/tools/devmem/Kconfig"
 source "$PKGS_DIR/packages/tools/regex/Kconfig"
 source "$PKGS_DIR/packages/tools/mem_sandbox/Kconfig"
+source "$PKGS_DIR/packages/tools/solar_terms/Kconfig"
 
 endmenu
