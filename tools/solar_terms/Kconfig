@@ -10,6 +10,10 @@ if PKG_USING_SOLAR_TERMS
         string
         default "/packages/tools/solar_terms"
 
+    config SOLAR_TERMS_USING_EXAMPLE
+        bool "Enable show solar terms samples"
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_SOLAR_TERMS_LATEST_VERSION
