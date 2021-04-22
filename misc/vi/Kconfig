@@ -129,6 +129,13 @@ if PKG_USING_VI
           Unless you want more (or less) frequent "undo points" while typing,
           you should probably leave this unchanged.        
 
+    config VI_ENABLE_VERBOSE_STATUS
+        bool "Enable verbose status reporting"
+        default y
+        help
+          Enable more verbose reporting of the results of yank, change,
+          delete, undo and substitution commands.
+
     choice
         prompt "Version"
         help
