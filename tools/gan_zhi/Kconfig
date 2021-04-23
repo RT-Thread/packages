@@ -1,0 +1,37 @@
+
+# Kconfig file for package gan_zhi
+menuconfig PKG_USING_GAN_ZHI
+    bool "gan_zhi: get tiangan and dizhi informations according to the date and time."
+    default n
+    select PKG_USING_SOLAR_TERMS
+
+if PKG_USING_GAN_ZHI
+
+    config PKG_GAN_ZHI_PATH
+        string
+        default "/packages/tools/gan_zhi"
+
+    config GAN_ZHI_USING_EXAMPLE
+        bool "Enable show gan zhi samples"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_GAN_ZHI_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_GAN_ZHI_V100
+            bool "v1.0.0"
+
+        config PKG_USING_GAN_ZHI_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_GAN_ZHI_VER
+       string
+       default "v1.0.0"    if PKG_USING_GAN_ZHI_V100
+       default "latest"    if PKG_USING_GAN_ZHI_LATEST_VERSION
+
+endif
+
