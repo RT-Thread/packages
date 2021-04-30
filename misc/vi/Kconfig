@@ -41,6 +41,14 @@ if PKG_USING_VI
           Enable a limited set of colon commands for vi. This does not
           provide an "ex" mode.
 
+    config VI_ENABLE_COLON_EXPAND
+        bool "Expand \"%\" and \"#\" in colon commands"
+        default y
+        depends on VI_ENABLE_COLON
+        help
+          Expand the special characters \"%\" (current filename)
+          and \"#\" (alternate filename) in colon commands.
+
     config VI_ENABLE_YANKMARK
         bool "Enable yank/put commands and mark cmds"
         default y
