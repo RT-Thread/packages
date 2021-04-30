@@ -13,20 +13,21 @@
     "github": "zcj20080882"
   },
   "license": "MIT",
-  "repository": "https://gitee.com/my-rt-packages/lsm6dsm.git",
+  "repository": "https://github.com/my-RT-packages/lsm6dsm.git",
   "icon": "unknown",
-  "homepage": "unknown",
+  "homepage": "https://github.com/my-RT-packages/lsm6dsm/tree/V1.0.0#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://gitee.com/my-rt-packages/lsm6dsm/repository/archive/v1.0.0?format=zip",
+      "URL": "https://github.com/my-RT-packages/lsm6dsm/archive/refs/tags/V1.0.0.zip",
       "filename": "lsm6dsm-1.0.0.zip"
     },
     {
       "version": "latest",
-      "URL": "https://gitee.com/my-rt-packages/lsm6dsm.git",
-      "filename": "Null for git package"
+      "URL": "https://github.com/my-RT-packages/lsm6dsm.git",
+      "filename": "lsm6dsm.zip",
+      "VER_SHA": "master"
     }
   ]
 }
