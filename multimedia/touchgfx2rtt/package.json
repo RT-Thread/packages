@@ -13,11 +13,11 @@
     "github": "Aladdin-Wang"
   },
   "license": "LGPL-2.1",
-  "repository": "https://gitee.com/Aladdin-Wang/touchgfx2rtt.git",
+  "repository": "https://github.com/Aladdin-Wang/touchgfx2rtt.git",
   "site": [
     {
       "version": "latest",
-      "URL": "https://gitee.com/Aladdin-Wang/touchgfx2rtt.git",
+      "URL": "https://github.com/Aladdin-Wang/touchgfx2rtt.git",
       "filename": "touchgfx2rtt.zip",
       "VER_SHA": "master"
     }
