@@ -1,0 +1,25 @@
+{
+  "name": "NUemWin",
+  "description": "NUemWin: a NUemWin package for rt-thread",
+  "description_zh": "NUemWin在RT-Thread上的移植", 
+  "enable": "PKG_USING_NUEMWIN",
+  "keywords": [
+    "NUemWin"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "wosayttn",
+    "email": "wosayttn@gmail.com",
+    "github": "wosayttn"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/wosayttn/NUemWin",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wosayttn/NUemWin.git",
+      "filename": "NUemWin.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -9,5 +9,6 @@ source "$PKGS_DIR/packages/multimedia/PDFGen/Kconfig"
 source "$PKGS_DIR/packages/multimedia/helix/Kconfig"
 source "$PKGS_DIR/packages/multimedia/AzureGUIX/Kconfig"
 source "$PKGS_DIR/packages/multimedia/touchgfx2rtt/Kconfig"
+source "$PKGS_DIR/packages/multimedia/NUemWin/Kconfig"
 
 endmenu
