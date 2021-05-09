@@ -63,10 +63,12 @@ if PKG_USING_NETUTILS
             int "NTP auto sync period(second)"
             default 3600
 
-        config NETUTILS_NTP_TIMEZONE
-            int "Timezone for calculate local time"
-            range -12 12
-            default 8
+        if PKG_USING_NETUTILS_V100 || PKG_USING_NETUTILS_V110 || PKG_USING_NETUTILS_V120
+            config NETUTILS_NTP_TIMEZONE
+                int "Timezone for calculate local time"
+                range -12 12
+                default 8
+        endif
 
         config NETUTILS_NTP_HOSTNAME
             string "NTP server name1"
