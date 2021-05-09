@@ -55,6 +55,14 @@ if PKG_USING_NETUTILS
         select RT_USING_SAL
         default n
     if PKG_NETUTILS_NTP
+        config RTC_NTP_FIRST_SYNC_DELAY
+            int "NTP first sync delay time(second) for network connect"
+            default 30
+
+        config RTC_NTP_SYNC_PERIOD
+            int "NTP auto sync period(second)"
+            default 3600
+
         config NETUTILS_NTP_TIMEZONE
             int "Timezone for calculate local time"
             range -12 12
