@@ -14,18 +14,20 @@
   },
   "license": "unknown",
   "repository": "https://github.com/RT-Thread-packages/zlib",
+  "icon": "unknown",
   "homepage": "https://github.com/RT-Thread-packages/zlib#readme",
-  "readme": "https://github.com/RT-Thread-packages/zlib#readme",
+  "doc": "https://github.com/RT-Thread-packages/zlib#readme",
   "site": [
     {
       "version": "v1.2.3",
       "URL": "https://github.com/RT-Thread-packages/zlib/archive/v1.2.3.zip",
       "filename": "zlib-1.2.3.zip",
+      "VER_SHA": ""
     },
     {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/zlib.git",
-      "filename": "zlib.zip",
+      "filename": "Null for git package",
       "VER_SHA": "master"
     }
   ]
