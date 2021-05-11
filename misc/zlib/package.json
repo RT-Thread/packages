@@ -19,10 +19,9 @@
   "readme": "zlib is a general purpose data compression library.",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/RT-Thread-packages/zlib.git",
-      "filename": "zlib-1.0.0.zip",
-      "VER_SHA": "b781f12e8fc5d44f4e2f254494c1a482d0aec446"
+      "version": "v1.2.3",
+      "URL": "https://github.com/RT-Thread-packages/zlib/archive/v1.2.3.zip",
+      "filename": "zlib-1.2.3.zip",
     },
     {
       "version": "latest",
