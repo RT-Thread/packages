@@ -17,15 +17,14 @@ endif
 
     choice
         prompt "version"
-        default PKG_USING_ZLIB_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_ZLIB_V123
-            bool "v1.2.3"
-
         config PKG_USING_ZLIB_LATEST_VERSION
             bool "latest"
+   
+        config PKG_USING_ZLIB_V123
+            bool "v1.2.3"
     endchoice
 
     config PKG_ZLIB_VER
