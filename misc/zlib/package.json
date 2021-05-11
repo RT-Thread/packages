@@ -14,9 +14,8 @@
   },
   "license": "unknown",
   "repository": "https://github.com/RT-Thread-packages/zlib",
-  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
   "homepage": "https://github.com/RT-Thread-packages/zlib#readme",
-  "readme": "zlib is a general purpose data compression library.",
+  "readme": "https://github.com/RT-Thread-packages/zlib#readme",
   "site": [
     {
       "version": "v1.2.3",
