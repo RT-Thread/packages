@@ -1,6 +1,7 @@
 
+# Kconfig file for package zlib
 menuconfig PKG_USING_ZLIB
-    bool "Zlib: general purpose data compression library."
+    bool "zlib: general purpose data compression library"
     default n
 
 if PKG_USING_ZLIB
@@ -9,27 +10,31 @@ if PKG_USING_ZLIB
         string
         default "/packages/misc/zlib"
 
-if RT_USING_DFS
     config ZLIB_USING_SAMPLE
         bool "Enable using zlib sample"
+        depends on RT_USING_DFS
         default n
-endif
 
     choice
-        prompt "version"
+        prompt "Version"
+        default PKG_USING_ZLIB_LATEST_VERSION
         help
-            Select the version of jerryscript
+            Select the package version
 
         config PKG_USING_ZLIB_V100
             bool "v1.0.0"
+
+        config PKG_USING_ZLIB_V123
+            bool "v1.2.3"
 
         config PKG_USING_ZLIB_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_ZLIB_VER
-        string
-        default "v1.0.0" if PKG_USING_ZLIB_V100
-        default "latest" if PKG_USING_ZLIB_LATEST_VERSION
+       string
+       default "v1.0.0"    if PKG_USING_ZLIB_V100
+       default "v1.2.3"    if PKG_USING_ZLIB_V123
+       default "latest"    if PKG_USING_ZLIB_LATEST_VERSION
 
 endif
