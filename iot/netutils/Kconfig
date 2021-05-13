@@ -29,7 +29,7 @@ if PKG_USING_NETUTILS
         endif
     endif
 
-    if PKG_NETUTILS_VER_NUM > 0x10100
+    if PKG_NETUTILS_VER_NUM >= 0x10200
         config PKG_NETUTILS_TFTP
             bool "Enable TFTP(Trivial File Transfer Protocol) server"
             select RT_USING_LIBC
@@ -65,7 +65,7 @@ if PKG_USING_NETUTILS
                 default 3600
         endif
 
-        if PKG_NETUTILS_VER_NUM < 0x10300
+        if PKG_NETUTILS_VER_NUM <= 0x10200
             config NETUTILS_NTP_TIMEZONE
                 int "Timezone for calculate local time"
                 range -12 12
