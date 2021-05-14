@@ -1,6 +1,6 @@
 {
   "name": "minizip",
-  "description": "reading files compressed within a Zip archive",
+  "description": "zip manipulation library",
   "description_zh": "zip压缩解压库",  
   "enable": "PKG_USING_MINIZIP", 
   "keywords": [
