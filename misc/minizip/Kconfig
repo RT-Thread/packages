@@ -1,7 +1,7 @@
 
 # Kconfig file for package minizip
 menuconfig PKG_USING_MINIZIP
-    bool "minizip: reading files compressed within a Zip archive"
+    bool "minizip: zip manipulation library"
     select PKG_USING_ZLIB
     select RT_USING_DFS
     select RT_USING_LIBC
