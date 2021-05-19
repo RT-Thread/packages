@@ -54,15 +54,22 @@ if PKG_USING_NETUTILS
         bool "Enable NTP(Network Time Protocol) client"
         select RT_USING_SAL
         default n
+
     if PKG_NETUTILS_NTP
         if PKG_NETUTILS_VER_NUM > 0x10200
-            config RTC_NTP_FIRST_SYNC_DELAY
+            config NTP_USING_AUTO_SYNC
+                bool "Enable NTP to synchronize RTC automatically"
+                default y
+
+            config NTP_AUTO_SYNC_FIRST_DELAY
                 int "NTP first sync delay time(second) for network connect"
                 default 30
+                depends on NTP_USING_AUTO_SYNC
 
-            config RTC_NTP_SYNC_PERIOD
+            config NTP_AUTO_SYNC_PERIOD
                 int "NTP auto sync period(second)"
                 default 3600
+                depends on NTP_USING_AUTO_SYNC
         endif
 
         if PKG_NETUTILS_VER_NUM <= 0x10200
