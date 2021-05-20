@@ -61,15 +61,20 @@ if PKG_USING_NETUTILS
                 bool "Enable NTP to synchronize RTC automatically"
                 default y
 
-            config NTP_AUTO_SYNC_FIRST_DELAY
-                int "NTP first sync delay time(second) for network connect"
-                default 30
-                depends on NTP_USING_AUTO_SYNC
+            if NTP_USING_AUTO_SYNC
+                config NTP_AUTO_SYNC_THREAD_STACK_SIZE
+                    int "NTP synchronization thread stack size"
+                    default 1500
 
-            config NTP_AUTO_SYNC_PERIOD
-                int "NTP auto sync period(second)"
-                default 3600
-                depends on NTP_USING_AUTO_SYNC
+                config NTP_AUTO_SYNC_FIRST_DELAY
+                    int "NTP first sync delay time(second) for network connect"
+                    default 30
+
+                config NTP_AUTO_SYNC_PERIOD
+                    int "NTP auto sync period(second)"
+                    default 3600
+            endif
+
         endif
 
         if PKG_NETUTILS_VER_NUM <= 0x10200
@@ -122,6 +127,9 @@ if PKG_USING_NETUTILS
             Select the netutils version
         default PKG_USING_NETUTILS_V130
 
+        config PKG_USING_NETUTILS_LATEST_VERSION
+            bool "latest"
+
         config PKG_USING_NETUTILS_V130
             bool "v1.3.0"
 
@@ -134,8 +142,6 @@ if PKG_USING_NETUTILS
         config PKG_USING_NETUTILS_V100
             bool "v1.0.0"
 
-        config PKG_USING_NETUTILS_LATEST_VERSION
-            bool "latest"
     endchoice
 
     config PKG_NETUTILS_VER
