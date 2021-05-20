@@ -133,14 +133,16 @@ if PKG_USING_NETUTILS
         config PKG_USING_NETUTILS_V130
             bool "v1.3.0"
 
-        config PKG_USING_NETUTILS_V120
-            bool "v1.2.0"
+        if RT_VER_NUM < 0x40004
+            config PKG_USING_NETUTILS_V120
+                bool "v1.2.0"
 
-        config PKG_USING_NETUTILS_V110
-            bool "v1.1.0"
+            config PKG_USING_NETUTILS_V110
+                bool "v1.1.0"
 
-        config PKG_USING_NETUTILS_V100
-            bool "v1.0.0"
+            config PKG_USING_NETUTILS_V100
+                bool "v1.0.0"
+        endif
 
     endchoice
 
