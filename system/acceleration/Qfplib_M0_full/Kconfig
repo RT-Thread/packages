@@ -8,7 +8,7 @@ if PKG_USING_QFPLIB_M0_FULL
 
     config PKG_QFPLIB_M0_FULL_PATH
         string
-        default "/packages/system/Qfplib_M0_full"
+        default "/packages/system/acceleration/Qfplib_M0_full"
 
     choice
         prompt "Version"
