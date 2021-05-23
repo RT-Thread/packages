@@ -1,0 +1,8 @@
+menu "acceleration: Assembly language or algorithmic acceleration packages"
+
+source "$PKGS_DIR/packages/system/acceleration/rt_memcpy_cm/Kconfig"
+source "$PKGS_DIR/packages/system/acceleration/Qfplib_M0_full/Kconfig"
+source "$PKGS_DIR/packages/system/acceleration/Qfplib_M0_tiny/Kconfig"
+source "$PKGS_DIR/packages/system/acceleration/Qfplib_M3/Kconfig"
+
+endmenu

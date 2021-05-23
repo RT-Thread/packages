@@ -8,7 +8,10 @@
     "Cortex-M",
     "Cortex-M0",
     "Cortex",
-    "ARM"
+    "ARM",
+    "acceleration",
+    "加速",
+    "汇编"
   ],
   "category": "system",
   "author": {
