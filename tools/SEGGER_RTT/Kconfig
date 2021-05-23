@@ -1,0 +1,32 @@
+
+# Kconfig file for package SEGGER_RTT
+menuconfig PKG_USING_SEGGER_RTT
+    bool "SEGGER_RTT:the RTT of segger jlink instead of uart of console"
+    default n
+
+if PKG_USING_SEGGER_RTT
+
+    config PKG_SEGGER_RTT_PATH
+        string
+        default "/packages/tools/SEGGER_RTT"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SEGGER_RTT_V100
+        help
+            Select the package version
+
+        config PKG_USING_SEGGER_RTT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SEGGER_RTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SEGGER_RTT_VER
+       string
+       default "v1.0.0"    if PKG_USING_SEGGER_RTT_V100
+       default "latest"    if PKG_USING_SEGGER_RTT_LATEST_VERSION
+
+endif
+
