@@ -11,6 +11,10 @@ if PKG_USING_KOBUKI
         string
         default "/packages/peripherals/kobuki"
 
+    config KOBUKI_SERIAL_NAME
+        string "kobuki serial port"
+        default "uart2"
+
     config KOBUKI_USING_GET_VERSION_EXAMPLE
         bool "kobuki_get_version: get kobuki firmware and hardware version and uuid."
         help
