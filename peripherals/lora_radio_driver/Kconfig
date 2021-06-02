@@ -119,8 +119,8 @@ if PKG_USING_LORA_RADIO_DRIVER
                                             int "BUSY Pin number"
                                             range 0 127
                                             default 18
-                                        config LORA_RADIO_RFSW1_PIN_NAME
-                                            string "RFSW1 Pin number"
+                                        config LORA_RADIO_RFSW1_PIN
+                                            int "RFSW1 Pin number"
                                             range 0 127
                                             default 19
                                     endif
