@@ -20,9 +20,9 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://codeload.github.com/MrzhangF1ghter/mp3player/zip/refs/heads/master",
+      "URL": "https://codeload.github.com/MrzhangF1ghter/mp3player/zip/refs/tags/V1.0.0",
       "filename": "mp3player-1.0.0.zip",
-      "VER_SHA": "35d52152b9bc33fc340d8b62c0fec88c67f4c9b3"
+      "VER_SHA": "c7e1577f858112857efbb066417c789a88af3e5b"
     },
     {
       "version": "latest",
