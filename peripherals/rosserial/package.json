@@ -5,7 +5,12 @@
   "enable": "PKG_USING_ROSSERIAL",
   "keywords": [
     "rosserial",
-    "ROS"
+    "ROS",
+    "uart",
+    "tcp",
+    "kinetic",
+    "melodic",
+    "noetic"
   ],
   "category": "peripherals",
   "author": {
@@ -37,6 +42,12 @@
     },
     {
       "version": "melodic-latest",
+      "URL": "https://github.com/wuhanstudio/rt-rosserial.git",
+      "filename": "",
+      "VER_SHA": "melodic"
+    },
+    {
+      "version": "noetic-latest",
       "URL": "https://github.com/wuhanstudio/rt-rosserial.git",
       "filename": "",
       "VER_SHA": "master"
