@@ -80,7 +80,7 @@ if PKG_USING_ROSSERIAL
                     default n
 
                 config ROSSERIAL_USING_TF_UART
-                    bool "TF         : tf example using UART"
+                    bool "TF          : tf example using UART"
                     help
                         TF : tf example using UART
                     default n
@@ -114,7 +114,7 @@ if PKG_USING_ROSSERIAL
 
     choice
         prompt "Version"
-        default PKG_USING_ROSSERIAL_MLATEST_VERSION
+        default PKG_USING_ROSSERIAL_NLATEST_VERSION
         help
             Select the package version
         config PKG_USING_ROSSERIAL_KV100
@@ -125,6 +125,8 @@ if PKG_USING_ROSSERIAL
             bool "kinetic-latest"
         config PKG_USING_ROSSERIAL_MLATEST_VERSION
             bool "melodic-latest"
+        config PKG_USING_ROSSERIAL_NLATEST_VERSION
+            bool "noetic-latest"
     endchoice
 
     config PKG_ROSSERIAL_VER
@@ -133,6 +135,7 @@ if PKG_USING_ROSSERIAL
        default "melodic-v1.0.0"    if PKG_USING_ROSSERIAL_MV100
        default "kinetic-latest"    if PKG_USING_ROSSERIAL_KLATEST_VERSION
        default "melodic-latest"    if PKG_USING_ROSSERIAL_MLATEST_VERSION
+       default "noetic-latest"     if PKG_USING_ROSSERIAL_NLATEST_VERSION
 
     config PKG_ROSSERIAL_VER_NUM
         hex
@@ -140,5 +143,6 @@ if PKG_USING_ROSSERIAL
         default 0x19999 if PKG_USING_ROSSERIAL_KLATEST_VERSION
         default 0x20000 if PKG_USING_ROSSERIAL_MV100
         default 0x29999 if PKG_USING_ROSSERIAL_MLATEST_VERSION
+        default 0x39999 if PKG_USING_ROSSERIAL_NLATEST_VERSION
 
 endif
