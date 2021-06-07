@@ -1,0 +1,34 @@
+{
+  "name": "mp3player",
+  "description": "a simple mp3 format music player",
+  "description_zh": "一个简易的mp3格式音乐播放器",  
+  "enable": "PKG_USING_MP3PLAYER", 
+  "keywords": [
+    "mp3player"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "MrzhangF1ghter",
+    "email": "zhangtec@foxmail.com",
+    "github": "MrzhangF1ghter"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/MrzhangF1ghter/mp3player",
+  "icon": "unknown",
+  "homepage": "https://github.com/MrzhangF1ghter/mp3player",
+  "doc": "https://github.com/MrzhangF1ghter/mp3player/blob/master/README.md",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/MrzhangF1ghter/mp3player/archive/refs/tags/V1.0.0.zip",
+      "filename": "mp3player-1.0.0.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/MrzhangF1ghter/mp3player.git",
+      "filename": "mp3player-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

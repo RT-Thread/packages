@@ -1,0 +1,49 @@
+
+# Kconfig file for package mp3player
+menuconfig PKG_USING_MP3PLAYER
+    bool "mp3player:a simple mp3 format music player"
+    default n
+
+if PKG_USING_MP3PLAYER
+
+    config PKG_MP3PLAYER_PATH
+        string
+        default "/packages/multimedia/mp3player"
+    
+	select RT_USING_AUDIO
+	select PKG_USING_HELIX
+
+    config MP3_SOUND_DEVICE_NAME
+        string "The play device name"
+        default sound0
+    config MP3_INPUT_BUFFER_SIZE
+        int "mp3 input buffer size"
+        default 2048
+    config MP3_OUTPUT_BUFFER_SIZE
+        int "mp3 output buffer size"
+        default 4608
+    config MP3_PLAYER_VOLUME_DEFAULT
+        int "mp3 player default volume"
+        default 30
+
+    choice
+        prompt "Version"
+        default PKG_USING_MP3PLAYER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MP3PLAYER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MP3PLAYER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MP3PLAYER_VER
+       string
+       default "v1.0.0"    if PKG_USING_MP3PLAYER_V100
+       default "latest"    if PKG_USING_MP3PLAYER_LATEST_VERSION
+
+
+endif
+
