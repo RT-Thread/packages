@@ -116,6 +116,21 @@ if PKG_USING_CRCLIB
             default CRC32_POLY_CUSTOM_STRING if CRC32_POLY_CUSTOM
     endif
     
+    config CRCLIB_USING_CRC8_EX
+        bool "using 8 bit crc expand"
+        default n
+    
+    config CRCLIB_USING_CRC16_EX
+        bool "using 16 bit crc expand"
+        default n
+        
+    config CRCLIB_USING_CRC32_EX
+        bool "using 32 bit crc expand"
+        default n
+        
+    config CRCLIB_USING_CRC16_EX_SAMPLE
+        bool "using 16 bit crc expand sample"
+        default n
     choice
         prompt "Version"
         default PKG_USING_CRCLIB_V100
