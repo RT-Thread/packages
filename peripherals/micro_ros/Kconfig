@@ -19,6 +19,22 @@ if PKG_USING_MICRO_ROS
             bool "UART"
     endchoice
 
+    choice
+        prompt "ARCH CPU"
+        default MICRO_ROS_USING_ARCH_CORTEX_M3
+
+        config MICRO_ROS_USING_ARCH_CORTEX_M0_plus
+            bool "Cortex M0"
+        config MICRO_ROS_USING_ARCH_CORTEX_M3
+            bool "Cortex M3"
+        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_D16_SOFT
+            bool "Cortex M7 (fpv5-d16-soft)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_SP_D16_SOFT
+            bool "Cortex M7 (fpv5-sp-d16-soft)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_D16_HARD
+            bool "Cortex M7 (fpv5-d16-hard)"
+    endchoice
+
     if MICRO_ROS_USE_SERIAL
         config MICRO_ROS_SERIAL_NAME
         string "serial device name"
