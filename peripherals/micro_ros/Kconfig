@@ -17,6 +17,9 @@ if PKG_USING_MICRO_ROS
 
         config MICRO_ROS_USE_SERIAL
             bool "UART"
+
+        config MICRO_ROS_USE_UDP
+            bool "UDP"
     endchoice
 
     choice
@@ -39,13 +42,21 @@ if PKG_USING_MICRO_ROS
         config MICRO_ROS_SERIAL_NAME
         string "serial device name"
         default "uart2"
-    endif
 
-    config MICRO_ROS_USING_PUB_INT32
+        config MICRO_ROS_USING_PUB_INT32
         bool "microros_pub_int32: microros publish int32 example"
         help
             microros publish int32 example
         default n
+    endif
+
+    if MICRO_ROS_USE_UDP
+        config MICRO_ROS_USING_PUB_INT32_UDP
+        bool "microros_pub_int32_udp: microros publish int32 udp example"
+        help
+            microros publish int32 udp example
+        default n
+    endif
 
     choice
         prompt "Version"
