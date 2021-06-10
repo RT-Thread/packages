@@ -30,6 +30,10 @@ if PKG_USING_MICRO_ROS
             bool "Cortex M0"
         config MICRO_ROS_USING_ARCH_CORTEX_M3
             bool "Cortex M3"
+        config MICRO_ROS_USING_ARCH_CORTEX_M4_FPV4_SP_D16_SOFT
+            bool "Cortex M4 (fpv4-sp-d16-soft)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M4_FPV4_SP_D16_HARD
+            bool "Cortex M4 (fpv4-sp-d16-hard)"
         config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_D16_SOFT
             bool "Cortex M7 (fpv5-d16-soft)"
         config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_SP_D16_SOFT
