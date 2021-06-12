@@ -62,6 +62,43 @@ if PKG_USING_MICRO_ROS
         default n
     endif
 
+    config MICRO_ROS_USING_SUB_INT32
+        bool "microros_sub_int32: micro ros subscribe int32 example"
+        help
+            microros_sub_int32: micro ros subscribe int32 example
+        default n
+
+    config MICRO_ROS_USING_SUB_TWIST
+        bool "microros_sub_twist: micro ros subscribe to twist example"
+        help
+            microros_sub_twist, micro ros subscribe to twist example
+        default n
+
+    config MICRO_ROS_USING_ADD_INTS_SERVICE
+        bool "microros_add_ints_service: micro ros add ints service example"
+        help
+            microros_add_ints_service, micro ros add ints service example
+        default n
+
+    config MICRO_ROS_USING_DEINITIALIZATION
+        bool "microros_deinitialization: micro ros deinitialization example"
+        help
+            microros_deinitialization, micro ros deinitialization example
+        default n
+
+    config MICRO_ROS_USING_KOBUKI_CONTROL
+        select PKG_USING_KOBUKI
+        bool "microros_kobuki_control, micro ros control kobuki robot example"
+        help
+            microros_kobuki_control, micro ros control kobuki robot example
+        default n
+
+    if MICRO_ROS_USING_KOBUKI_CONTROL
+        config KOBUKI_SERIAL_NAME
+                string "kobuki serial port"
+                default "uart2"
+    endif
+
     choice
         prompt "Version"
         default PKG_USING_MICRO_ROS_LATEST_VERSION
