@@ -23,10 +23,16 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "latest",
+      "version": "foxy",
       "URL": "https://github.com/wuhanstudio/micro_ros.git",
       "filename": "",
-      "VER_SHA": "master"
+      "VER_SHA": "foxy"
+    },
+    {
+      "version": "galactic",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "galactic"
     }
   ]
 }

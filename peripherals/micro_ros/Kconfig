@@ -101,17 +101,20 @@ if PKG_USING_MICRO_ROS
 
     choice
         prompt "Version"
-        default PKG_USING_MICRO_ROS_LATEST_VERSION
+        default PKG_USING_MICRO_ROS_FOXY
         help
             Select the package version
 
-        config PKG_USING_MICRO_ROS_LATEST_VERSION
-            bool "latest"
+        config PKG_USING_MICRO_ROS_FOXY
+            bool "foxy"
+
+        config PKG_USING_MICRO_ROS_GALACTIC
+            bool "galactic"
     endchoice
           
     config PKG_MICRO_ROS_VER
        string
-       default "latest"    if PKG_USING_MICRO_ROS_LATEST_VERSION
+       default "foxy"    if PKG_USING_MICRO_ROS_FOXY
 
 endif
 
