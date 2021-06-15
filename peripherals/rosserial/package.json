@@ -1,7 +1,7 @@
 {
   "name": "rosserial",
-  "description": "rosserial protocol for Robots Operating System (ROS) on rt-thread",
-  "description_zh": "机器人操作系统(ROS) 软件包 rosserial 在 RT-Thread 的移植库",
+  "description": "Robots Operating System (ROS1) on rt-thread",
+  "description_zh": "机器人操作系统(ROS1) 软件包 rosserial 在 RT-Thread 的移植库",
   "enable": "PKG_USING_ROSSERIAL",
   "keywords": [
     "rosserial",
