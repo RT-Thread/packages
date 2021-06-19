@@ -95,8 +95,8 @@ if PKG_USING_MICRO_ROS
 
     if MICRO_ROS_USING_KOBUKI_CONTROL
         config KOBUKI_SERIAL_NAME
-                string "kobuki serial port"
-                default "uart2"
+        string "kobuki serial port"
+        default "uart2"
     endif
 
     choice
