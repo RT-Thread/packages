@@ -24,7 +24,10 @@ if PKG_USING_BTSTACK
         default "/packages/iot/btstack"
         
         
-        
+if !PKG_USING_BTSTACK_V001
+
+
+
 #  btstack office config
 menu "BTSTACK stack config"
     config ENABLE_LOG_ERROR
@@ -332,7 +335,7 @@ choice
     select PKG_BTSTACK_HFP_AUDIO
     
 endchoice
-
+endif 
 # btstack config
 
     choice
