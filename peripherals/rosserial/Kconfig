@@ -40,6 +40,18 @@ if PKG_USING_ROSSERIAL
 
     menu "roserial examples"
 
+        config ROSSERIAL_USING_KOBUKI_CONTROL
+            bool "Kobuki Robot: control the Kobuki robot"
+            help
+                Kobuki Robot: control the Kobuki robot
+            default n
+
+        if ROSSERIAL_USING_KOBUKI_CONTROL
+            config KOBUKI_SERIAL_NAME
+            string "kobuki serial port"
+            default "uart2"
+        endif
+
         if ROSSERIAL_USE_SERIAL
             config ROSSERIAL_USING_HELLO_WORLD_UART
                 bool "Hello World : hello world example using UART"
