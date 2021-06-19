@@ -24,10 +24,7 @@ if PKG_USING_BTSTACK
         default "/packages/iot/btstack"
         
         
-if !PKG_USING_BTSTACK_V001
-
-
-
+if PKG_BTSTACK_VER_NUM >= 0x10000
 #  btstack office config
 menu "BTSTACK stack config"
     config ENABLE_LOG_ERROR
@@ -353,7 +350,14 @@ endif
         config PKG_USING_BTSTACK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+    
+    config PKG_BTSTACK_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_BTSTACK_LATEST_VERSION
+        default 0x10000    if PKG_USING_BTSTACK_V100
+        default 0x00001    if PKG_USING_BTSTACK_V001
+        
+        
     config PKG_BTSTACK_VER
        string
        default "v0.0.1"    if PKG_USING_BTSTACK_V001
