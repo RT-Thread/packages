@@ -1,6 +1,6 @@
 # Kconfig file for package kendryte-sdk
 menuconfig PKG_USING_KENDRYTE_SDK
-    bool "the kendryte-sdk package for rt-thread"
+    bool "kendryte K210 SDK package for rt-thread"
     default n
 
 if PKG_USING_KENDRYTE_SDK
@@ -15,20 +15,25 @@ if PKG_USING_KENDRYTE_SDK
         help
             Select the package version
 
-        config PKG_USING_KENDRYTE_SDK_V052
-            bool "v0.5.2"
-        
-        config PKG_USING_KENDRYTE_SDK_V053
-            bool "v0.5.3"
+        if RT_VER_NUM < 0x40004
+            config PKG_USING_KENDRYTE_SDK_V052
+                bool "v0.5.2"
 
-        config PKG_USING_KENDRYTE_SDK_V054
-            bool "v0.5.4"
-        
-        config PKG_USING_KENDRYTE_SDK_V055
-            bool "v0.5.5"
-			
-        config PKG_USING_KENDRYTE_SDK_V056
-            bool "v0.5.6"
+            config PKG_USING_KENDRYTE_SDK_V053
+                bool "v0.5.3"
+
+            config PKG_USING_KENDRYTE_SDK_V054
+                bool "v0.5.4"
+
+            config PKG_USING_KENDRYTE_SDK_V055
+                bool "v0.5.5"
+
+            config PKG_USING_KENDRYTE_SDK_V056
+                bool "v0.5.6"
+        endif
+
+        config PKG_USING_KENDRYTE_SDK_V057
+            bool "v0.5.7"
 
         config PKG_USING_KENDRYTE_SDK_LATEST_VERSION
             bool "latest"
@@ -41,6 +46,7 @@ if PKG_USING_KENDRYTE_SDK
        default "v0.5.4"    if PKG_USING_KENDRYTE_SDK_V054
        default "v0.5.5"    if PKG_USING_KENDRYTE_SDK_V055
        default "v0.5.6"    if PKG_USING_KENDRYTE_SDK_V056
+       default "v0.5.7"    if PKG_USING_KENDRYTE_SDK_V057
        default "latest"    if PKG_USING_KENDRYTE_SDK_LATEST_VERSION
 
     config PKG_KENDRYTE_SDK_VERNUM
@@ -50,6 +56,7 @@ if PKG_USING_KENDRYTE_SDK
         default 0x0054     if PKG_USING_KENDRYTE_SDK_V054
         default 0x0055     if PKG_USING_KENDRYTE_SDK_V055
         default 0x0056     if PKG_USING_KENDRYTE_SDK_V056
+        default 0x0057     if PKG_USING_KENDRYTE_SDK_V057
         default 0x9999     if PKG_USING_KENDRYTE_SDK_LATEST_VERSION
 
 endif
