@@ -11,7 +11,7 @@ if PKG_USING_KENDRYTE_SDK
 
     choice
         prompt "Version"
-        default PKG_USING_KENDRYTE_SDK_V056
+        default PKG_USING_KENDRYTE_SDK_V057
         help
             Select the package version
 
