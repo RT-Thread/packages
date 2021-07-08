@@ -99,6 +99,9 @@ if PKG_USING_PPP_DEVICE
 
         config PPP_DEVICE_USING_SIM800
             bool "SIMCOM SIM800"
+
+        config PPP_DEVICE_USING_ML305
+            bool "China mobile ML305"
     endchoice
 
     config PPP_DEVICE_SAMPLE
