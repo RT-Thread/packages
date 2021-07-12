@@ -23,6 +23,15 @@ if PKG_USING_LWEXT4
         config PKG_USING_LWEXT4_V110
             bool "v1.1.0"
     endchoice
+	
+	menu "Select lwext4 run platform"
+		config LWEXT4_RUN_RT_THREAD
+			bool "lwext4_run_rt_thread"
+			default n
+		config LWEXT4_RUN_RT_SMART
+			bool "lwext4_run_rt_smart"
+			default n
+	endmenu
 
     config PKG_LWEXT4_VER
        string
