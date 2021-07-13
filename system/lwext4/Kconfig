@@ -25,10 +25,10 @@ if PKG_USING_LWEXT4
     endchoice
 	
 	menu "Select lwext4 run platform"
-		config LWEXT4_RUN_RT_THREAD
+		config RT_USING_THREAD
 			bool "lwext4_run_rt_thread"
 			default n
-		config LWEXT4_RUN_RT_SMART
+		config RT_USING_SMART
 			bool "lwext4_run_rt_smart"
 			default n
 	endmenu
