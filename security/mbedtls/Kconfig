@@ -33,7 +33,7 @@ if PKG_USING_MBEDTLS
         # 2 VERSIGN_PUBLIC_ROOT_CA.cer
         config PKG_USING_MBEDTLS_VERSIGN_PBULIC_ROOT_CA
             bool "Using VeriSign Class 3 Public Primary Certification Authority - G5 CA"
-            
+
         # 3 VERSIGN_UNIVERSAL_ROOT_CA.cer
         config PKG_USING_MBEDTLS_VERSIGN_UNIVERSAL_ROOT_CA
             bool "Using VeriSign Universal Root Certification Authority CA"
@@ -65,7 +65,7 @@ if PKG_USING_MBEDTLS
         # 10 ENTRUST_ROOT_CA.cer
         config PKG_USING_MBEDTLS_ENTRUST_ROOT_CA
             bool "Using Entrust Root Certification Authority - G2 CA"
-        
+
         # 11 AMAZON_ROOT_CA.cer
         config PKG_USING_MBEDTLS_AMAZON_ROOT_CA
             bool "Using Amazon Root CA"
@@ -110,8 +110,12 @@ if PKG_USING_MBEDTLS
 
     choice
         prompt "version"
+        default PKG_USING_MBEDTLS_V27101
         help
             Select the mbedtls version
+
+        config PKG_USING_MBEDTLS_V27101
+            bool "v2.7.10.1"
 
         config PKG_USING_MBEDTLS_V2710
             bool "v2.7.10"
@@ -129,6 +133,7 @@ if PKG_USING_MBEDTLS
     config PKG_MBEDTLS_VER
         string
         default "latest"    if PKG_USING_MBEDTLS_LATEST_VERSION
+        default "v2.7.10.1" if PKG_USING_MBEDTLS_V27101
         default "v2.7.10"   if PKG_USING_MBEDTLS_V2710
         default "v2.6.1"    if PKG_USING_MBEDTLS_V261
         default "v2.6.0"    if PKG_USING_MBEDTLS_V260
