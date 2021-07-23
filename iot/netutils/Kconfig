@@ -64,6 +64,7 @@ if PKG_USING_NETUTILS
             if NTP_USING_AUTO_SYNC
                 config NTP_AUTO_SYNC_THREAD_STACK_SIZE
                     int "NTP synchronization thread stack size"
+                    depends on !RT_USING_SYSTEM_WORKQUEUE
                     default 1500
 
                 config NTP_AUTO_SYNC_FIRST_DELAY
