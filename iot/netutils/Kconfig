@@ -59,14 +59,10 @@ if PKG_USING_NETUTILS
         if PKG_NETUTILS_VER_NUM > 0x10200
             config NTP_USING_AUTO_SYNC
                 bool "Enable NTP to synchronize RTC automatically"
+                select RT_USING_SYSTEM_WORKQUEUE
                 default y
 
             if NTP_USING_AUTO_SYNC
-                config NTP_AUTO_SYNC_THREAD_STACK_SIZE
-                    int "NTP synchronization thread stack size"
-                    depends on !RT_USING_SYSTEM_WORKQUEUE
-                    default 1500
-
                 config NTP_AUTO_SYNC_FIRST_DELAY
                     int "NTP first sync delay time(second) for network connect"
                     default 30
