@@ -57,6 +57,10 @@ if PKG_USING_FAL
             default "norflash0"
     endif
 
+    config FAL_USING_AUTO_INIT
+        bool "FAL initialize automatically"
+        default n
+
     choice
         prompt "version"
         default PKG_USING_FAL_V00500
