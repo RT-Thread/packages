@@ -2,7 +2,6 @@
 # Kconfig file for package vt100
 menuconfig PKG_USING_VT100
     bool "vt100: iridescent drawing library on MSH"
-    select RT_USING_LIBC
     default n
 
 if PKG_USING_VT100
@@ -39,6 +38,7 @@ if PKG_USING_VT100
 	    config VT100_USING_LSIMG
 	        bool "lsimg: list images and draw it out"
 	        select PKG_USING_TJPGD
+	        select RT_USING_LIBC
 	        help
 	            lsimg: list images and draw it out
 	        default n
