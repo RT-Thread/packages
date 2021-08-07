@@ -11,36 +11,38 @@ if PKG_USING_VT100
         string
         default "/packages/misc/vt100"
 
-    config VT100_USING_MONITOR
-        bool "Monitor: RT-Thread monitor example"
-        help
-            RT-Thread monitor.
-        default n
-
-    config VT100_USING_COLOR
-        bool "Color: Draw different colors and boxes"
-        help
-            Color: Draw different colors and boxes
-        default n
-
-    config VT100_USING_SL
-        bool "Animation: a funny rushing train"
-        help
-            Animation: a funny rushing train
-        default n
-
-    config VT100_USING_IMGBUF
-        bool "Image: displaying image in the terminal"
-        help
-            Image: displaying image in the terminal
-        default n
-
-    config VT100_USING_LSIMG
-        bool "lsimg: list images and draw it out"
-        select PKG_USING_TJPGD
-        help
-            lsimg: list images and draw it out
-        default n
+	menu "Enable examples"
+	    config VT100_USING_MONITOR
+	        bool "Monitor: RT-Thread monitor example"
+	        help
+	            RT-Thread monitor.
+	        default n
+	
+	    config VT100_USING_COLOR
+	        bool "Color: Draw different colors and boxes"
+	        help
+	            Color: Draw different colors and boxes
+	        default n
+	
+	    config VT100_USING_SL
+	        bool "Animation: a funny rushing train"
+	        help
+	            Animation: a funny rushing train
+	        default n
+	
+	    config VT100_USING_IMGBUF
+	        bool "Image: displaying image in the terminal"
+	        help
+	            Image: displaying image in the terminal
+	        default n
+	
+	    config VT100_USING_LSIMG
+	        bool "lsimg: list images and draw it out"
+	        select PKG_USING_TJPGD
+	        help
+	            lsimg: list images and draw it out
+	        default n
+	endmenu
 
     choice
         prompt "Version"
