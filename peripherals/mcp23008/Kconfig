@@ -1,0 +1,36 @@
+
+# Kconfig file for package mcp23008
+menuconfig PKG_USING_MCP23008
+    bool "mcp23008: Remote 8-bit I/O expander for I2C-bus"
+    default n
+
+if PKG_USING_MCP23008
+
+    config PKG_MCP23008_PATH
+        string
+        default "/packages/peripherals/mcp23008"
+
+    config PKG_USING_MCP23008_SAMPLE
+		bool "Enable mcp23008 sample"
+		default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_MCP23008_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MCP23008_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MCP23008_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MCP23008_VER
+       string
+       default "v1.0.0"    if PKG_USING_MCP23008_V100
+       default "latest"    if PKG_USING_MCP23008_LATEST_VERSION
+
+endif
+
