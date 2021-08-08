@@ -1,0 +1,42 @@
+{
+  "name": "btstack",
+  "description": "Please add description of btstack in English.",
+  "description_zh": "软件包 btstack 用于BTSTACK在RT-THREAD中的使用",  
+  "enable": "PKG_USING_BTSTACK", 
+  "keywords": [
+    "bluetooth",
+    "mesh",
+    "ble"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "supperthomas",
+    "email": "78900636@qq.com",
+    "github": "supperthomas"
+  },
+  "license": "non-commercial",
+  "repository": "https://github.com/supperthomas/RTT_PACKAGE_BTSTACK.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/supperthomas/RTT_PACKAGE_BTSTACK/archive/refs/tags/v0.0.1.zip",
+      "filename": "btstack-0.0.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/supperthomas/RTT_PACKAGE_BTSTACK/archive/refs/tags/v1.0.0.zip",
+      "filename": "btstack-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/supperthomas/RTT_PACKAGE_BTSTACK.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}

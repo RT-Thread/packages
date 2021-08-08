@@ -1,0 +1,48 @@
+
+# Kconfig file for package uCOSII_Wrapper
+menuconfig PKG_USING_UCOSII_WRAPPER
+    bool "uC/OS-II Wrapper"
+    default n
+    select RT_USING_TIMER_SOFT
+    select RT_USING_IDLE_HOOK
+    help
+        A wrapper which can make codes developed by uC/OS-II APIs can directly run on RT-Thread
+
+if PKG_USING_UCOSII_WRAPPER
+
+    config PKG_UCOSII_WRAPPER_PATH
+        string
+        default "/packages/system/Micrium/uCOSII_Wrapper"
+
+    config PKG_USING_UCOSII_WRAPPER_AUTOINIT
+        bool "Enable uCOS-II wrapper automatical initialization"
+        default y
+        help
+            The wrapper supports uCOS-II standard startup procedure. Alternatively,
+            if you want to run uCOS-II apps directly and ignore the startup procedure, 
+            you can choose this option.
+
+     config PKG_USING_UCOSII_WRAPPER_TINY
+        bool "Enable uCOS-II wrapper tiny mode"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_UCOSII_WRAPPER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UCOSII_WRAPPER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_UCOSII_WRAPPER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UCOSII_WRAPPER_VER
+       string
+       default "v1.0.0"    if PKG_USING_UCOSII_WRAPPER_V100
+       default "latest"    if PKG_USING_UCOSII_WRAPPER_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,69 @@
+
+# Kconfig file for package kobuki
+menuconfig PKG_USING_KOBUKI
+	select RT_USING_LIBC
+    bool "kobuki: Kobuki Robot serial communication driver."
+    default n
+
+if PKG_USING_KOBUKI
+
+    config PKG_KOBUKI_PATH
+        string
+        default "/packages/peripherals/kobuki"
+
+    config KOBUKI_SERIAL_NAME
+        string "kobuki serial port"
+        default "uart2"
+
+    config KOBUKI_USING_GET_odometr_EXAMPLE
+        bool "kobuki_get_odometry: get kobuki odometry (x, y, theta, v_x, v_theta)"
+        help
+            kobuki_get_odometry: get kobuki odometry (x, y, theta, v_x, v_theta)
+        default n
+
+    config KOBUKI_USING_GET_VERSION_EXAMPLE
+        bool "kobuki_get_version: get kobuki firmware and hardware version and uuid."
+        help
+            kobuki_get_version: get kobuki firmware and hardware version and uuid
+        default n
+
+    config KOBUKI_USING_LED_EXAMPLE
+        bool "kobuki_led_example: set the color of leds on the panel."
+        help
+            kobuki_led_example: set the color of leds on the panel.
+        default n
+
+    config KOBUKI_USING_PLAY_SOUND_EXAMPLE
+        bool "kobuki_play_sound: play different sound sequences."
+        help
+            kobuki_play_sound: play different sound sequences.
+        default n
+
+    config KOBUKI_USING_POWER_EXAMPLE
+        bool "kobuki_enable_power_example: enable power supply on the panel."
+        help
+            kobuki_enable_power_example: enable power supply on the panel.
+        default n
+
+    config KOBUKI_USING_SET_SPEED_EXAMPLE
+        bool "kobuki_set_speed: set transformation and rotation speed in cm/s."
+        help
+            kobuki_set_speed: set transformation and rotation speed in cm/s.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_KOBUKI_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_KOBUKI_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_KOBUKI_VER
+       string
+       default "latest"    if PKG_USING_KOBUKI_LATEST_VERSION
+
+endif
+

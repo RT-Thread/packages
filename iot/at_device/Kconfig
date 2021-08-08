@@ -34,6 +34,8 @@ if PKG_USING_AT_DEVICE
         source "$PKGS_DIR/packages/iot/at_device/n21/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/n58/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/m5311/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/l610/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/n720/Kconfig"
 
     endif
 
@@ -46,7 +48,7 @@ if PKG_USING_AT_DEVICE
     choice
 
         prompt "Version"
-        default PKG_USING_AT_DEVICE_V203 if (AT_SW_VERSION_NUM = 0x10300)
+        default PKG_USING_AT_DEVICE_V204 if (AT_SW_VERSION_NUM >= 0x10300)
         # compare RT_VER_NUM for netdev component
         default PKG_USING_AT_DEVICE_V160 if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
         default PKG_USING_AT_DEVICE_V150 if (AT_SW_VERSION_NUM = 0x10200)
@@ -56,7 +58,10 @@ if PKG_USING_AT_DEVICE
         help
             Select the at_device version
 
-        if (AT_SW_VERSION_NUM = 0x10300)
+        if (AT_SW_VERSION_NUM >= 0x10300)
+
+            config PKG_USING_AT_DEVICE_V204
+                bool "v2.0.4"
 
             config PKG_USING_AT_DEVICE_V203
                 bool "v2.0.3"
@@ -106,6 +111,7 @@ if PKG_USING_AT_DEVICE
     config PKG_AT_DEVICE_VER
         string
         default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default "v2.0.4"    if PKG_USING_AT_DEVICE_V204
         default "v2.0.3"    if PKG_USING_AT_DEVICE_V203
         default "v2.0.2"    if PKG_USING_AT_DEVICE_V202
         default "v2.0.1"    if PKG_USING_AT_DEVICE_V201
@@ -119,6 +125,7 @@ if PKG_USING_AT_DEVICE
     config PKG_AT_DEVICE_VER_NUM
         hex
         default 0x99999    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default 0x20004    if PKG_USING_AT_DEVICE_V204
         default 0x20003    if PKG_USING_AT_DEVICE_V203
         default 0x20002    if PKG_USING_AT_DEVICE_V202
         default 0x20001    if PKG_USING_AT_DEVICE_V201

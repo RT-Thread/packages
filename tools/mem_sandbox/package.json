@@ -1,0 +1,30 @@
+{
+  "name": "mem_sandbox",
+  "description": "memory sandbox for RT-Thread",
+  "description_zh": "RT-Thread 内存隔离沙箱",  
+  "enable": "PKG_USING_MEM_SANDBOX", 
+  "keywords": [
+    "mem_sandbox",
+    "sandbox",
+    "沙箱"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/mysterywolf/mem_sandbox",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/mem_sandbox#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/mem_sandbox.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

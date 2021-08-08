@@ -1,0 +1,29 @@
+{
+  "name": "lwlog",
+  "description": "lwlog: single header logging library",
+  "description_zh": "lwlog:单文件日志打印库",  
+  "enable": "PKG_USING_LWLOG", 
+  "keywords": [
+    "lwlog",
+    "log"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/lwlog",
+  "icon": "unknown",
+  "homepage": "https://github.com/wuhanstudio/lwlog",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/lwlog.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

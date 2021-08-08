@@ -1,0 +1,38 @@
+
+# Kconfig file for package ki
+menuconfig PKG_USING_KI
+    bool "ki: A small text editor in less than 1K lines of code"
+    select RT_USING_DFS
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    select RT_USING_POSIX_TERMIOS
+    select RT_USING_POSIX_GETLINE
+    select PKG_USING_MEM_SANDBOX
+    default n
+
+if PKG_USING_KI
+
+    config PKG_KI_PATH
+        string
+        default "/packages/misc/ki"
+
+    config KI_SANDBOX_SIZE_KB
+        int "Space size of the ki sandbox (KB)"
+        default 10
+
+    choice
+        prompt "Version"
+        default PKG_USING_KI_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_KI_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_KI_VER
+       string
+       default "latest"    if PKG_USING_KI_LATEST_VERSION
+
+endif
+

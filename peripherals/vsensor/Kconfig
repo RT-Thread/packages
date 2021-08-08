@@ -1,0 +1,161 @@
+
+# Kconfig file for package virtual sensor
+menuconfig PKG_USING_VIRTUAL_SENSOR
+    bool "VSensor : using virtual sensor device."
+    default n
+
+if PKG_USING_VIRTUAL_SENSOR
+
+    config PKG_VIRTUAL_SENSOR_PATH
+        string
+        default "/packages/peripherals/vsensor"
+
+    choice
+        prompt "Version"
+        default PKG_USING_VIRTUAL_SENSOR_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_VIRTUAL_SENSOR_V100
+            bool "v1.0.0"
+
+        config PKG_USING_VIRTUAL_SENSOR_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_ACCE
+        bool "SENS : Enable virtual sensor Accelerometer"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_ACCE
+            config V_SENS_ACCE_DEV_NAME
+                string "SENS : the sensor device name for Accelerometer"
+                default "accelerometer"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_GYRO
+        bool "SENS : Enable virtual sensor Gyroscope"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_GYRO
+            config V_SENS_GYRO_DEV_NAME
+                string "SENS : the sensor device name for Gyroscope"
+                default "gyroscope"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_MAG
+        bool "SENS : Enable virtual sensor Magnetometer"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_MAG
+            config V_SENS_MAG_DEV_NAME
+                string "SENS : the sensor device name for Magnetometer"
+                default "magnetometer"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_TEMP
+        bool "SENS : Enable virtual sensor Temperature"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_TEMP
+            config V_SENS_TEMP_DEV_NAME
+                string "SENS : the sensor device name for Temperature"
+                default "temperature"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_HUMI
+        bool "SENS : Enable virtual sensor Humidity"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_HUMI
+            config V_SENS_HUMI_DEV_NAME
+                string "SENS : the sensor device name for Humidity"
+                default "humidity"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_BARO
+        bool "SENS : Enable virtual sensor Barometer"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_BARO
+            config V_SENS_BARO_DEV_NAME
+                string "SENS : the sensor device name for Barometer"
+                default "barometer"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_LIGHT
+        bool "SENS : Enable virtual sensor Light"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_LIGHT
+            config V_SENS_LIGHT_DEV_NAME
+                string "SENS : the sensor device name for Light"
+                default "light"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_PROX
+        bool "SENS : Enable virtual sensor Proximity"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_PROX
+            config V_SENS_PROX_DEV_NAME
+                string "SENS : the sensor device name for Proximity"
+                default "proximity"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_HR
+        bool "SENS : Enable virtual sensor HeartRate"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_HR
+            config V_SENS_HR_DEV_NAME
+                string "SENS : the sensor device name for HeartRate"
+                default "heartRate"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_TVOC
+        bool "SENS : Enable virtual sensor TVOC"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_TVOC
+            config V_SENS_TVOC_DEV_NAME
+                string "SENS : the sensor device name for TVOC"
+                default "tvoc_tvo"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_NOISE
+        bool "SENS : Enable virtual sensor NOISE"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_NOISE
+            config V_SENS_NOISE_DEV_NAME
+                string "SENS : the sensor device name for Noise"
+                default "noise"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_STEP
+        bool "SENS : Enable virtual sensor StepCounter"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_STEP
+            config V_SENS_STEP_DEV_NAME
+                string "SENS : the sensor device name for StepCounter"
+                default "stepcounter"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_FORCE
+        bool "SENS : Enable virtual sensor Force"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_FORCE
+            config V_SENS_FORCE_DEV_NAME
+                string "SENS : the sensor device name for Force"
+                default "force"
+        endif
+
+    menuconfig PKG_USING_VIRTUAL_SENSOR_SPO2
+        bool "SENS : Enable virtual sensor Spo2"
+        default n
+        if PKG_USING_VIRTUAL_SENSOR_SPO2
+            config V_SENS_SPO2_DEV_NAME
+                string "SENS : the sensor device name for Spo2"
+                default "spo2"
+        endif
+
+    config PKG_USING_VIRTUAL_SENSOR_DBG
+        bool "SENS : Enable virtual sensor debug log"
+        default y
+
+    config PKG_VIRTUAL_SENSOR_VER
+       string
+       default "v1.0.0"    if PKG_USING_VIRTUAL_SENSOR_V100
+       default "latest"    if PKG_USING_VIRTUAL_SENSOR_LATEST_VERSION
+
+endif

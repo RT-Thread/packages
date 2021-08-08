@@ -1,0 +1,33 @@
+
+# Kconfig file for package uC_Common
+menuconfig PKG_USING_UC_COMMON
+    bool "uC/Common for RT-Thread"
+    default n
+    select PKG_USING_UCOSIII_WRAPPER
+
+if PKG_USING_UC_COMMON
+
+    config PKG_UC_COMMON_PATH
+        string
+        default "/packages/system/Micrium/uC_Common"
+
+    choice
+        prompt "Version"
+        default PKG_USING_UC_COMMON_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UC_COMMON_V100
+            bool "v1.0.0"
+
+        config PKG_USING_UC_COMMON_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_UC_COMMON_VER
+       string
+       default "v1.0.0"    if PKG_USING_UC_COMMON_V100
+       default "latest"    if PKG_USING_UC_COMMON_LATEST_VERSION
+
+endif
+

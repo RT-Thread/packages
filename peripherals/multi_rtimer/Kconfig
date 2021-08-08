@@ -10,6 +10,27 @@ if PKG_USING_MULTI_RTIMER
         string
         default "/packages/peripherals/multi_rtimer"
 
+    menu "Select Target MCU and Peripheral"
+        config MULTI_RTIMER_USING_TRAGET_MCU_STM32_RTC
+            bool"STM32 with Hardware RTC"
+            select BSP_USING_ONCHIP_RTC
+            default n
+
+            if MULTI_RTIMER_USING_TRAGET_MCU_STM32_RTC
+                config MULTI_RTIMER_USING_RTC_SYSTIME_SERVICE
+                    bool "Enable System Time Service Based on RTC"
+                    default n 
+                config MULTI_RTIMER_USING_RTC_TEMPERTURE_COMPENSATION
+                    bool "Enable RTC Temperture Compensation"
+                    default n 
+            endif
+    endmenu
+
+    config MULTI_RTIMER_USING_TEST_SAMPLE
+        bool
+        prompt "Enable multi_rtimer test sample"
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MULTI_RTIMER_LATEST_VERSION
@@ -18,7 +39,8 @@ if PKG_USING_MULTI_RTIMER
 
         config PKG_USING_MULTI_RTIMER_V100
             bool "v1.0.0"
-
+        config PKG_USING_MULTI_RTIMER_V110
+            bool "v1.1.0"
         config PKG_USING_MULTI_RTIMER_LATEST_VERSION
             bool "latest"
     endchoice
@@ -26,14 +48,7 @@ if PKG_USING_MULTI_RTIMER
     config PKG_MULTI_RTIMER_VER
        string
        default "v1.0.0"    if PKG_USING_MULTI_RTIMER_V100
+       default "v1.1.0"    if PKG_USING_MULTI_RTIMER_V110
        default "latest"    if PKG_USING_MULTI_RTIMER_LATEST_VERSION
-
-menu "multi_rtimer options"
-    config MULTI_RTIMER_USING_DEMO_EXAMPLE
-        bool
-        prompt "multi_rtimer demo example"
-        default n
-endmenu
-
 endif
 

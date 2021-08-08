@@ -1,0 +1,69 @@
+
+# Kconfig file for package agile_console
+menuconfig PKG_USING_AGILE_CONSOLE
+    bool "agile_console: A agile console pachage."
+    default n
+
+if PKG_USING_AGILE_CONSOLE
+
+    config PKG_AGILE_CONSOLE_PATH
+        string
+        default "/packages/peripherals/agile_console"
+
+    config PKG_AGILE_CONSOLE_RX_BUFFER_SIZE
+        int "Set agile_console rx buffer size"
+        default 256
+    
+    config PKG_AGILE_CONSOLE_DEVICE_NAME
+        string "Set agile_console device name"
+        default "acon"
+    
+    config PKG_AGILE_CONSOLE_THREAD_PRIORITY
+        int "Set agile_console thread priority"
+        default 19
+    
+    config PKG_AGILE_CONSOLE_THREAD_STACK_SIZE
+        int "Set agile_console thread stack size"
+        default 2048
+
+    config PKG_USING_AGILE_CONSOLE_SERIAL_EXAMPLE
+        bool "Enable agile_console serial example"
+        default n
+    
+    if PKG_USING_AGILE_CONSOLE_SERIAL_EXAMPLE
+
+        config PKG_AGILE_CONSOLE_SERIAL_DEVICE_NAME
+            string "Set serial device name"
+            default "uart"
+
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_AGILE_CONSOLE_LATEST_VERSION
+        help
+            Select the package version
+        
+        config PKG_USING_AGILE_CONSOLE_V100
+            bool "v1.0.0"
+        
+        config PKG_USING_AGILE_CONSOLE_V101
+            bool "v1.0.1"
+
+        config PKG_USING_AGILE_CONSOLE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_AGILE_CONSOLE_VER
+       string
+       default "v1.0.0"    if PKG_USING_AGILE_CONSOLE_V100
+       default "v1.0.1"    if PKG_USING_AGILE_CONSOLE_V101
+       default "latest"    if PKG_USING_AGILE_CONSOLE_LATEST_VERSION
+
+    config PKG_AGILE_CONSOLE_VER_NUM
+        hex
+        default 0x10000    if PKG_USING_AGILE_CONSOLE_V100
+        default 0x10001    if PKG_USING_AGILE_CONSOLE_V101
+        default 0x99999    if PKG_USING_AGILE_CONSOLE_LATEST_VERSION
+endif
+

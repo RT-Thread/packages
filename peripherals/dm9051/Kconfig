@@ -1,0 +1,85 @@
+
+# Kconfig file for package DM9051
+menuconfig PKG_USING_DM9051
+    bool "DM9051:DAVICOM SPI to Ethernet Controller"
+    default n
+    select RT_USING_PIN
+    select RT_USING_SPI
+if PKG_USING_DM9051
+
+    config PKG_DM9051_PATH
+        string
+        default "/packages/peripherals/dm9051"
+
+    choice
+        prompt "version"
+        help
+            Select the dm9051 driver version
+	    default PKG_USING_DM9051_V100
+
+        config PKG_USING_DM9051_V100
+            bool "v1.0.0"
+
+        config PKG_USING_DM9051_V110
+            bool "v1.1.0"
+            
+        config PKG_USING_DM9051_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_DM9051_VER
+        string
+        default "v1.0.0" if PKG_USING_DM9051_V100
+        default "v1.1.0" if PKG_USING_DM9051_V110
+        default "latest" if PKG_USING_DM9051_LATEST_VERSION
+
+    config DM9051_DEVICE_EXTERN_CONFIG
+         bool
+         default n
+
+    if !DM9051_DEVICE_EXTERN_CONFIG
+        menu "DM9051 device configure"
+
+            config DM9051_SPI_DEVICE
+                string "SPI device name"
+                default "spi10"
+
+            config DM9051_DEVICE_NAME
+                string "Ethernet device name"
+                default "e0"
+
+            config DM9051_RST_PIN
+                int "Reset PIN number"
+                default 0
+
+				
+            config DM9051_INT_PIN
+                int "interrupt PIN number"
+                default 0				
+			
+        endmenu
+    endif
+
+    config DM9051_SPI_MAX_HZ
+        int "SPI Max Hz"
+        default 20000000
+
+    config DM9051_RX_DUMP
+		bool "Enable DM9051 rx dump"
+		default n
+
+    config DM9051_TX_DUMP
+		bool "Enable DM9051 tx dump"
+		default n
+
+    config DM9051_DUMP_RAW
+		bool "Enable DM9051 raw data dump"
+		default n
+
+    config PKG_DM9051_VER
+       string
+       default "v1.0.0"    if PKG_USING_DM9051_V100
+       default "latest"    if PKG_USING_DM9051_LATEST_VERSION
+
+endif
+

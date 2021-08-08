@@ -1,0 +1,36 @@
+
+# Kconfig file for package anv_testsuit
+menuconfig PKG_USING_ANV_TESTSUIT
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    bool "anv_testsuit: minimalist C/C++ unit test framework."
+    default n
+
+if PKG_USING_ANV_TESTSUIT
+
+    config PKG_ANV_TESTSUIT_PATH
+        string
+        default "/packages/tools/anv_testsuit"
+
+    config ANV_TESTSUIT_USING_EXAMPLE
+        bool "anv_testsuit: usage example"
+        help
+            anv_testsuit: usage example.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_ANV_TESTSUIT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ANV_TESTSUIT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_ANV_TESTSUIT_VER
+       string
+       default "latest"    if PKG_USING_ANV_TESTSUIT_LATEST_VERSION
+
+endif
+

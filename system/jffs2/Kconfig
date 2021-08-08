@@ -1,0 +1,36 @@
+
+# Kconfig file for package jffs2
+menuconfig PKG_USING_DFS_JFFS2
+    bool "JFFS2: Journalling Flash File System V2."
+    select RT_USING_DFS
+    select RT_USING_MTD_NOR
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    default n
+
+if PKG_USING_DFS_JFFS2
+
+    config PKG_JFFS2_PATH
+        string
+        default "/packages/system/jffs2"
+    
+    config RT_USING_DFS_JFFS2
+        bool
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_DFS_JFFS2_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DFS_JFFS2_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_JFFS2_VER
+       string
+       default "latest"    if PKG_USING_DFS_JFFS2_LATEST_VERSION
+
+endif
+

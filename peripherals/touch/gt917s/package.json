@@ -1,0 +1,37 @@
+{
+  "name": "gt917s",
+  "description": "gt917s drivers for RT-Thread",
+  "description_zh": " gt917s 驱动",  
+  "enable": "PKG_USING_GT917S", 
+  "keywords": [
+    "gt917s"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "layson.li",
+    "email": "2725208996@qq.com",
+    "github": "layson.li"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/lilisheng411527/gt917s.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/lilisheng411527/gt917s/archive/v1.0.0.zip",
+      "filename": "gt917s-1.0.0.zip",
+      "VER_SHA": "v1.0.0"
+    },
+     {
+      "version": "latest",
+      "URL": "https://github.com/lilisheng411527/gt917s.git",
+      "filename": "latest",
+      "VER_SHA": "latest"
+    }
+  ]
+}
+
+
+

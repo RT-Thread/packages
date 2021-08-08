@@ -1,0 +1,29 @@
+{
+  "name": "anv_trace",
+  "description": "trace the program flow",
+  "description_zh": "帮助跟踪代码执行过程",  
+  "enable": "PKG_USING_ANV_TRACE", 
+  "keywords": [
+    "anv_trace",
+    "trace"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/anv_trace",
+  "icon": "unknown",
+  "homepage": "https://github.com/wuhanstudio/anv_trace",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/anv_trace.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

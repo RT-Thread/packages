@@ -1,0 +1,29 @@
+{
+  "name": "ki",
+  "description": "ki is a small text editor in less than 1K lines of code",
+  "description_zh": "ki是一个带有C/C++语法高亮的终端编辑器",  
+  "enable": "PKG_USING_KI", 
+  "keywords": [
+    "ki",
+    "editor"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/mysterywolf/ki",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/ki#readme",
+  "doc": "https://github.com/mysterywolf/ki#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/ki.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

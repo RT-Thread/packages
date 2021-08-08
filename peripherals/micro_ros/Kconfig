@@ -1,0 +1,120 @@
+
+# Kconfig file for package micro_ros
+menuconfig PKG_USING_MICRO_ROS
+    select RT_USING_LIBC
+    bool "micro_ros: ROS 2 on microcontrollers."
+    default n
+
+if PKG_USING_MICRO_ROS
+
+    config PKG_MICRO_ROS_PATH
+        string
+        default "/packages/peripherals/micro_ros"
+
+    choice
+        prompt "Device type"
+        default MICRO_ROS_USE_SERIAL
+
+        config MICRO_ROS_USE_SERIAL
+            bool "UART"
+
+        config MICRO_ROS_USE_UDP
+            bool "UDP"
+    endchoice
+
+    choice
+        prompt "ARCH CPU"
+        default MICRO_ROS_USING_ARCH_CORTEX_M3
+
+        config MICRO_ROS_USING_ARCH_CORTEX_M0_plus
+            bool "Cortex M0"
+        config MICRO_ROS_USING_ARCH_CORTEX_M3
+            bool "Cortex M3"
+        config MICRO_ROS_USING_ARCH_CORTEX_M4_FPV4_SP_D16_SOFT
+            bool "Cortex M4 (fpv4-sp-d16-soft)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M4_FPV4_SP_D16_HARD
+            bool "Cortex M4 (fpv4-sp-d16-hard)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_D16_SOFT
+            bool "Cortex M7 (fpv5-d16-soft)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_SP_D16_SOFT
+            bool "Cortex M7 (fpv5-sp-d16-soft)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_D16_HARD
+            bool "Cortex M7 (fpv5-d16-hard)"
+    endchoice
+
+    if MICRO_ROS_USE_SERIAL
+        config MICRO_ROS_SERIAL_NAME
+        string "serial device name"
+        default "uart2"
+
+        config MICRO_ROS_USING_PUB_INT32
+        bool "microros_pub_int32: microros publish int32 example"
+        help
+            microros publish int32 example
+        default n
+    endif
+
+    if MICRO_ROS_USE_UDP
+        config MICRO_ROS_USING_PUB_INT32_UDP
+        bool "microros_pub_int32_udp: microros publish int32 udp example"
+        help
+            microros publish int32 udp example
+        default n
+    endif
+
+    config MICRO_ROS_USING_SUB_INT32
+        bool "microros_sub_int32: micro ros subscribe int32 example"
+        help
+            microros_sub_int32: micro ros subscribe int32 example
+        default n
+
+    config MICRO_ROS_USING_SUB_TWIST
+        bool "microros_sub_twist: micro ros subscribe to twist example"
+        help
+            microros_sub_twist, micro ros subscribe to twist example
+        default n
+
+    config MICRO_ROS_USING_ADD_INTS_SERVICE
+        bool "microros_add_ints_service: micro ros add ints service example"
+        help
+            microros_add_ints_service, micro ros add ints service example
+        default n
+
+    config MICRO_ROS_USING_DEINITIALIZATION
+        bool "microros_deinitialization: micro ros deinitialization example"
+        help
+            microros_deinitialization, micro ros deinitialization example
+        default n
+
+    config MICRO_ROS_USING_KOBUKI_CONTROL
+        select PKG_USING_KOBUKI
+        bool "microros_kobuki_control, micro ros control kobuki robot example"
+        help
+            microros_kobuki_control, micro ros control kobuki robot example
+        default n
+
+    if MICRO_ROS_USING_KOBUKI_CONTROL
+        config KOBUKI_SERIAL_NAME
+        string "kobuki serial port"
+        default "uart2"
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_MICRO_ROS_FOXY
+        help
+            Select the package version
+
+        config PKG_USING_MICRO_ROS_FOXY
+            bool "foxy"
+
+        config PKG_USING_MICRO_ROS_GALACTIC
+            bool "galactic"
+    endchoice
+          
+    config PKG_MICRO_ROS_VER
+       string
+       default "foxy"    if PKG_USING_MICRO_ROS_FOXY
+
+endif
+

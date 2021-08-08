@@ -1,0 +1,30 @@
+{
+  "name": "quest",
+  "description": "A simulator of quantum computers on MCU.",
+  "description_zh": "嵌入式系统上的量子计算机模拟器",  
+  "enable": "PKG_USING_QUEST", 
+  "keywords": [
+    "quest",
+    "quantum",
+    "simulator"
+  ],
+  "category": "ai",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/QuEST",
+  "icon": "https://quest.qtechtheory.org/wp-content/uploads/2018/04/chalice-100x113.png",
+  "homepage": "https://quest.qtechtheory.org/",
+  "doc": "https://quest.qtechtheory.org/",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/QuEST.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

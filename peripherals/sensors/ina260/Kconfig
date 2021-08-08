@@ -1,0 +1,37 @@
+# Kconfig file for package ina260
+menuconfig PKG_USING_INA260
+    bool "ina260: a ina260 package for rt-thread."
+    default n
+	select RT_USING_I2C
+	help
+		A current monitoring chip from TI, driven through the SENSOR frame.
+		
+if PKG_USING_INA260
+
+    config PKG_USING_INA260_EXAMPLE
+        bool "Enable ina260 example"
+        default y
+
+    config PKG_INA260_PATH
+        string
+        default "/packages/peripherals/sensors/ina260"
+
+    choice
+        prompt "Version"
+        default PKG_USING_INA260_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_INA260_V101
+            bool "v1.0.1"
+
+        config PKG_USING_INA260_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_INA260_VER
+       string
+       default "latest"    if PKG_USING_INA260_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,31 @@
+{
+  "name": "helix",
+  "description": "The Helix MP3 Decoder",
+  "description_zh": "Helix,mp3 解码库",
+  "enable": "PKG_USING_HELIX",
+  "keywords": [
+    "helix"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "liuduanfei",
+    "email": "93973442@qq.com",
+    "github": "liuduanfei"
+  },
+  "license": "AGPL-3.0",
+  "repository": "https://github.com/liuduanfei/helix",
+  "homepage": "https://github.com/liuduanfei/helix#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/liuduanfei/helix/archive/1.0.0.zip",
+      "filename": "helix-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/liuduanfei/helix.git",
+      "filename": "helix-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

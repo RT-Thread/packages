@@ -1,0 +1,55 @@
+# Kconfig file for package nnom
+menuconfig PKG_USING_NNOM
+    bool "NNoM: A higher-level Neural Network framework on Microcontroller"
+    default n
+
+if PKG_USING_NNOM
+
+    config PKG_NNOM_PATH
+        string
+        default "/packages/ai/nnom"
+
+    choice
+        prompt "Version"
+        default PKG_USING_NNOM_V021
+        help
+            Select the package version
+
+        config PKG_USING_NNOM_V010
+            bool "v0.1.0"
+			
+        config PKG_USING_NNOM_V020
+            bool "v0.2.0"
+	    
+        config PKG_USING_NNOM_V021
+            bool "v0.2.1"
+	
+	config PKG_USING_NNOM_V030
+            bool "v0.3.0"
+
+	config PKG_USING_NNOM_V040
+            bool "v0.4.0"
+
+	config PKG_USING_NNOM_V041
+            bool "v0.4.1"
+	    
+	config PKG_USING_NNOM_V042
+            bool "v0.4.2"
+
+        config PKG_USING_NNOM_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_NNOM_VER
+       string
+       default "v0.1.0"    if PKG_USING_NNOM_V010
+       default "v0.2.0"    if PKG_USING_NNOM_V020
+       default "v0.2.1"    if PKG_USING_NNOM_V021
+       default "v0.3.0"    if PKG_USING_NNOM_V030
+       default "v0.4.0"    if PKG_USING_NNOM_V040
+       default "v0.4.1"    if PKG_USING_NNOM_V041
+       default "v0.4.2"    if PKG_USING_NNOM_V042
+       default "latest"    if PKG_USING_NNOM_LATEST_VERSION
+
+endif
+

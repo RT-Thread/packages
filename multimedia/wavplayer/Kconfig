@@ -3,6 +3,7 @@
 menuconfig PKG_USING_WAVPLAYER
     select PKG_USING_OPTPARSE
     select RT_USING_LIBC
+    select RT_USING_AUDIO
     bool "WavPlayer: Minimal music player for wav file play and record"
     default n
 

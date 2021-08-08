@@ -1,0 +1,28 @@
+{
+  "name": "regex",
+  "description": "A small regex implementation in C",
+  "description_zh": "一个小巧的 C 语言正则表达式",  
+  "enable": "PKG_USING_REGEX", 
+  "keywords": [
+    "regex"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "thread-liu",
+    "email": "lk9608@outlook.com",
+    "github": "thread-liu"
+  },
+  "license": "Unlicense",
+  "repository": "https://github.com/thread-liu/tiny-regex-c.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/thread-liu/tiny-regex-c/archive/1.0.0.zip",
+      "filename": "regex-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    }
+  ]
+}

@@ -36,6 +36,35 @@ if PKG_USING_AGILE_TELNET
     config PKG_AGILE_TELNET_CLIENT_DEFAULT_TIMEOUT
         int "Set agile_telnet client timeout(min)"
         default 3
+    
+    if PKG_AGILE_TELNET_VER_NUM >= 0x20000
+
+        config PKG_AGILE_TELNET_CONSOLE_PLUG
+            bool
+            default y
+            select PKG_USING_AGILE_CONSOLE
+    
+    endif
+
+    if PKG_AGILE_TELNET_VER_NUM >= 0x20002
+
+        config PKG_AGILE_TELNET_USING_AUTH
+            bool "agile_telnet support authentication"
+            default n
+        
+        if PKG_AGILE_TELNET_USING_AUTH
+
+            config PKG_AGILE_TELNET_USERNAME
+                string "agile_telnet username"
+                default "loogg"
+            
+            config PKG_AGILE_TELNET_PASSWORD
+                string "agile_telnet password"
+                default "loogg"
+
+        endif
+
+    endif
 
     choice
         prompt "Version"
@@ -43,16 +72,36 @@ if PKG_USING_AGILE_TELNET
         help
             Select the package version
 
+        config PKG_USING_AGILE_TELNET_V100
+            bool "v1.0.0"
+
+        config PKG_USING_AGILE_TELNET_V200
+            bool "v2.0.0"
+        
+        config PKG_USING_AGILE_TELNET_V201
+            bool "v2.0.1"
+        
+        config PKG_USING_AGILE_TELNET_V202
+            bool "v2.0.2"
+
         config PKG_USING_AGILE_TELNET_LATEST_VERSION
             bool "latest"
     endchoice
           
     config PKG_AGILE_TELNET_VER
        string
+       default "v1.0.0"    if PKG_USING_AGILE_TELNET_V100
+       default "v2.0.0"    if PKG_USING_AGILE_TELNET_V200
+       default "v2.0.1"    if PKG_USING_AGILE_TELNET_V201
+       default "v2.0.2"    if PKG_USING_AGILE_TELNET_V202
        default "latest"    if PKG_USING_AGILE_TELNET_LATEST_VERSION
 
     config PKG_AGILE_TELNET_VER_NUM
         hex
+        default 0x10000    if PKG_USING_AGILE_TELNET_V100
+        default 0x20000    if PKG_USING_AGILE_TELNET_V200
+        default 0x20001    if PKG_USING_AGILE_TELNET_V201
+        default 0x20002    if PKG_USING_AGILE_TELNET_V202
         default 0x99999    if PKG_USING_AGILE_TELNET_LATEST_VERSION
 endif
 

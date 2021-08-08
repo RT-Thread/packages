@@ -1,0 +1,31 @@
+{
+  "name": "aclock",
+  "description": "a terminal clock",
+  "description_zh": "终端钟表界面",  
+  "enable": "PKG_USING_ACLOCK", 
+  "keywords": [
+    "aclock",
+    "clock",
+    "entertainment",
+    "terminal"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/mysterywolf/aclock",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/aclock",
+  "doc": "https://github.com/mysterywolf/aclock#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/aclock.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

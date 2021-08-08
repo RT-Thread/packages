@@ -5,12 +5,13 @@
   "enable": "PKG_USING_VT100",
   "keywords": [
     "vt100",
-    "msh"
+    "msh",
+    "terminal"
   ],
   "category": "misc",
   "author": {
     "name": "wuhanstudio",
-    "email": "wuhanstudio@hust.edu.cn",
+    "email": "wuhanstudio@qq.com",
     "github": "wuhanstudio"
   },
   "license": "MIT",

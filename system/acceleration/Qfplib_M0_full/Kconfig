@@ -1,0 +1,28 @@
+
+# Kconfig file for package Qfplib_M0_full
+menuconfig PKG_USING_QFPLIB_M0_FULL
+    bool "Qfplib-M0-full: a free, fast and compact ARM Cortex-M0 floating-point library"
+    default n
+
+if PKG_USING_QFPLIB_M0_FULL
+
+    config PKG_QFPLIB_M0_FULL_PATH
+        string
+        default "/packages/system/acceleration/Qfplib_M0_full"
+
+    choice
+        prompt "Version"
+        default PKG_USING_QFPLIB_M0_FULL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QFPLIB_M0_FULL_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_QFPLIB_M0_FULL_VER
+       string
+       default "latest"    if PKG_USING_QFPLIB_M0_FULL_LATEST_VERSION
+
+endif
+

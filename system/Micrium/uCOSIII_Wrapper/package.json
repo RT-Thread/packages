@@ -1,0 +1,38 @@
+{
+  "name": "uCOSIII_Wrapper",
+  "description": "A wrapper which can make codes developed by uC/OS-III APIs can directly run on RT-Thread",
+  "description_zh": "RT-Thread操作系统的uCOS-III兼容层：让基于uC/OS-III开发的应用层无感地迁移到RT-Thread操作系统",  
+  "enable": "PKG_USING_UCOSIII_WRAPPER", 
+  "keywords": [
+    "uCOSIII_Wrapper",
+    "uCOS-III",
+    "uCOS",
+    "uCOS III",
+    "wrap"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Meco Man",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/mysterywolf/RT-Thread-wrapper-of-uCOS-III",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/RT-Thread-wrapper-of-uCOS-III#readme",
+  "doc": "https://github.com/mysterywolf/RT-Thread-wrapper-of-uCOS-III/tree/master/docs",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/mysterywolf/RT-Thread-wrapper-of-uCOS-III.git",
+      "filename": "uCOSIII_Wrapper-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/RT-Thread-wrapper-of-uCOS-III.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

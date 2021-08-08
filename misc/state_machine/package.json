@@ -1,0 +1,26 @@
+{
+  "name": "state_machine",
+  "description": "A feature-rich, yet simple finite state machine (FSM) implementation in C.",
+  "description_zh": "一个用C语言实现功能丰富但简单的有限状态机（FSM）。",  
+  "enable": "PKG_USING_STATE_MACHINE",
+  "keywords": [
+    "state_machine"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "redoccheng",
+    "email": "619675912@qq.com",
+    "github": "redoccheng"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/redoccheng/state_machine",
+  "homepage": "https://github.com/redoccheng/state_machine#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/redoccheng/state_machine.git",
+      "filename": "state_machine.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -34,6 +34,31 @@ if PKG_USING_LIBRWS
        default "v1.2.4"    if PKG_USING_LIBRWS_V124
        default "latest"    if PKG_USING_LIBRWS_LATEST_VERSION
 
+    config RWS_CONNECT_RETRY_DELAY
+        int "Connect retry delay time(ms)"
+        default 200
+
+    config RWS_CONNECT_ATTEMPS
+        int "Connect retry count"
+        default 5
+
+    config RWS_RECEIVE_BUFF_SIZE
+        int "receive data buffer size"
+        default 2048
+
+    config LIBRWS_USING_MBED_TLS
+    choice
+        prompt "Select TLS mode"
+        default LIBRWS_NOT_USE_TLS
+
+        config LIBRWS_NOT_USE_TLS
+            bool "Not support"
+
+        config LIBRWS_USING_MBED_TLS
+            bool "MbedTLS support"
+            select PKG_USING_MBEDTLS
+    endchoice
+
     config LIBRWS_USING_EXAMPLE 
         bool "Using librws msh command example"
         default y

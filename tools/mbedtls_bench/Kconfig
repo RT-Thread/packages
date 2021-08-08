@@ -1,0 +1,54 @@
+
+menuconfig PKG_USING_MBEDTLS_BENCH
+    depends on FINSH_USING_MSH
+    depends on PKG_USING_MBEDTLS
+    bool "mbedtls_bench: Enable Performance Testing for mbedtls."
+    default n
+
+if PKG_USING_MBEDTLS_BENCH
+    config PKG_MBEDTLS_BENCH_PATH
+        string
+        default "/packages/tools/mbedtls_bench"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MBEDTLS_BENCH_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MBEDTLS_BENCH_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MBEDTLS_BENCH_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    config PKG_MBEDTLS_BENCH_VER
+       string
+       default "v1.0.0"     if PKG_USING_MBEDTLS_BENCH_V100
+       default "latest"     if PKG_USING_MBEDTLS_BENCH_LATEST_VERSION
+
+    config MBEDTLS_BENCH_CHECK_SHELL_STACK
+        bool "check shell stack size at build time"
+        default y
+
+    config MBEDTLS_BENCH_TEST_8K
+        bool "test 8K block (using more memory)"
+        default y
+
+    config MBEDTLS_BENCH_SIMPLE
+        bool "enable test simple algorithm"
+        default n
+
+    config MBEDTLS_BENCH_CIPHER
+        bool "enable test cipher algorithm"
+        default y
+
+    config MBEDTLS_BENCH_TEST_SECOND
+        int "single test duration (in second)"
+        range 1 100
+        default 1
+
+endif
+

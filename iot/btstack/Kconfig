@@ -1,0 +1,368 @@
+
+# Kconfig file for package BTSTACK 
+menuconfig PKG_USING_BTSTACK
+    select RT_USING_LIBC
+    select RT_USING_PTHREADS
+    select RT_USING_POSIX
+    select RT_USING_POSIX_TERMIOS
+    bool "BTSTACK: embedded btstack"
+    default n
+
+if PKG_USING_BTSTACK
+    config _GNU_SOURCE
+    int 
+    default 1
+    config HAVE_DIRENT_STRUCTURE
+    int 
+    default 1
+    config HAVE_DIR_STRUCTURE
+    int 
+    default 1
+    
+    config PKG_BTSTACK_PATH
+        string
+        default "/packages/iot/btstack"
+        
+        
+if PKG_BTSTACK_VER_NUM >= 0x10000
+#  btstack office config
+menu "BTSTACK stack config"
+    config ENABLE_LOG_ERROR
+    bool "btstack error log support"
+    default y
+    help
+        This option log error support.   
+        
+    config ENABLE_LOG_INFO
+    bool "btstack info log support"
+    default n
+    help
+        This option log info log support.    
+        
+    config ENABLE_LOG_DEBUG
+    bool "btstack debug log support"
+    default n
+    help
+        This option debug info log support.  
+        
+    config ENABLE_SDP_DES_DUMP
+    bool "btstack SDP Dump DataElement support"
+    default y
+endmenu
+
+menuconfig ENABLE_LE
+    bool "BTSTACK BLE support"
+    default n
+    
+    if ENABLE_LE
+        config ENABLE_LE_PERIPHERAL
+        bool   "btstack LE peripheral support"
+        default y
+
+        config ENABLE_LE_CENTRAL
+        bool   "btstack LE central support"
+        default n
+
+        config ENABLE_LE_DATA_CHANNELS
+        bool  "btstack LE data channel support"
+        default y   
+
+        config ENABLE_LE_DATA_LENGTH_EXTENSION
+        bool  "btstack LE data length extension"
+        default n
+
+        config ENABLE_L2CAP_ENHANCED_RETRANSMISSION_MODE
+        bool  "btstack L2CAP ERTM support"
+        default n  
+    endif
+
+menuconfig ENABLE_CLASSIC
+    bool "BTSTACK BR_EDR SUPPORT"
+    default n
+    
+    if ENABLE_CLASSIC
+        config NVM_NUM_LINK_KEYS
+        int  
+        default 16
+
+        config NVM_NUM_DEVICE_DB_ENTRIES
+        int  "btstack class device link support"
+        default 16  
+        
+        config HCI_INCOMING_PRE_BUFFER_SIZE
+        int  "HCI incomming pre in head BUFFER SIZE"
+        default 14    
+        
+        config HCI_ACL_PAYLOAD_SIZE
+        int  "HCI acl payload size"
+        default 1695 
+#HFP
+        config ENABLE_HFP_WIDE_BAND_SPEECH
+        bool  "btstack class HFP WIDE BAND support"
+        default n
+
+
+        config PKG_BTSTACK_SBC_ENC
+        bool "Bluetooth SBC encode support"
+        default n
+        help
+            This option enables Bluetooth Audio ENCODE support. 
+            
+        config PKG_BTSTACK_SBC_DEC
+        bool "Bluetooth SBC encode decode support"
+        default n
+        help
+            This option enables Bluetooth Audio DECODE support.   
+            
+        config PKG_BTSTACK_CVSD
+        bool "Bluetooth CVSD support"
+        default n
+        help
+            This option enables Bluetooth CVSD support. 
+            
+        config PKG_BTSTACK_AUDIO
+        bool "Bluetooth audio support"
+        default n
+        help
+            This option enables Bluetooth audio support.  
+            
+        config PKG_BTSTACK_SDP_CLIENT
+        bool "Bluetooth SDP CLIENT support"
+        default n
+        help
+            This option enables Bluetooth SDP client support. 
+            
+        config PKG_BTSTACK_HFP_AUDIO
+        bool "Bluetooth CVSD support"
+        default n
+        select PKG_BTSTACK_CVSD
+        select PKG_BTSTACK_SBC_DEC
+        select PKG_BTSTACK_SBC_ENC
+        select PKG_BTSTACK_SDP_CLIENT
+        select PKG_BTSTACK_AUDIO
+        help
+            This option enables Bluetooth HFP support.
+    endif
+
+
+menuconfig ENABLE_MESH
+    bool "BTSTACK Mesh SUPPORT"
+    default n
+    
+    if ENABLE_MESH
+        config ENABLE_MESH_ADV_BEARER
+        bool "support the adv bear"
+        default y
+        
+        config ENABLE_MESH_GATT_BEARER
+        bool "support the gatt bear"
+        default y   
+        
+        config ENABLE_MESH_PB_ADV
+        bool "support the gatt bear"
+        default y   
+
+        config ENABLE_MESH_PB_GATT
+        bool  "provisioner gatt"
+        default y   
+        
+        config ENABLE_MESH_PROXY_SERVER
+        bool  "provisioner server"
+        default y   
+        
+        config ENABLE_MESH_PROVISIONER
+        bool  "provisioner server"
+        default y 
+        config MAX_NR_MESH_TRANSPORT_KEYS
+        int 
+        default 16  
+        
+        config MAX_NR_MESH_VIRTUAL_ADDRESSES
+        int 
+        default 16 
+        
+        config MAX_NR_MESH_SUBNETS
+        int 
+        default 2  
+
+        config MAX_NR_MESH_NETWORK_KEYS
+        int 
+        default 3      
+    endif
+
+
+menuconfig PKG_BTSTACK_SMP
+        bool "BTSTACK SMP SUPPORT"
+        default n
+        if PKG_BTSTACK_SMP
+            config ENABLE_ECC_P256
+            bool 
+            default y
+        endif
+
+
+
+
+# example
+choice
+    prompt "BTSTACK example ALL"
+    default PKG_BTSTACK_SAMPLE_LE_BLUFI_SERVER
+    help
+        select the BTSTACK samples
+        
+    config PKG_BTSTACK_SAMPLE_DISABLE
+    bool "Not enable sample"
+         
+    config PKG_BTSTACK_SAMPLE_LE_BLUFI_SERVER
+    bool "[LE_SRV] rtthread blufi server"
+    select ENABLE_LE
+    
+
+    config PKG_BTSTACK_SAMPLE_LE_COUNTER
+    bool "[LE_SRV] BLE peripheral le counter"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+    
+    config PKG_BTSTACK_SAMPLE_LE_DATA_CHANNEL_SERVER
+    bool "[LE_SRV] BLE peripheral le data channel server"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+
+    
+    config PKG_BTSTACK_SAMPLE_LE_STREAMER
+    bool "[LE_SRV] Nordic le streamer server"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL 
+    
+    config PKG_BTSTACK_SAMPLE_NORDIC_LE_COUNTER
+    bool "[LE_SRV] Nordic le counter server"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+    
+    config PKG_BTSTACK_SAMPLE_UBLOX_LE_COUNTER
+    bool "[LE_SRV] Nordic spp ublox server"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+    
+    config PKG_BTSTACK_SAMPLE_ATT_DELAYED_RESPONSE
+    bool "[LE_SRV] gatt dealyed response"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+    
+    config PKG_BTSTACK_SAMPLE_SM_PAIRING_PERIPHERAL
+    bool "[LE_SMP_SRV] smp peripherals"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL 
+    
+    config PKG_BTSTACK_SAMPLE_GATT_STREAMER_PERIPHERAL
+    bool "[LE_SRV] gatt streamer peipheral"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+    
+    config PKG_BTSTACK_SAMPLE_ANCS_CLIENT_DEMO
+    bool "[LE_SRV] ancs_client_demo"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+ 
+    config PKG_BTSTACK_SAMPLE_HOGP_KEYBOARD_DEMO
+    bool "[LE_SRV_hogp] hogp keyboard demo"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+    
+    config PKG_BTSTACK_SAMPLE_HOGP_MOUSER_DEMO
+    bool "[LE_SRV_hogp] hogp mouser demo"
+    select ENABLE_LE
+    select ENABLE_LE_PERIPHERAL
+    
+# MESH role
+    config PKG_BTSTACK_SAMPLE_MESH_DEMO
+    bool "[MESH_NODE] MESH DEMO"
+    select ENABLE_LE  
+    select ENABLE_MESH
+    select PKG_BTSTACK_SMP
+
+    config PKG_BTSTACK_SAMPLE_TMALL_MESH_DEMO
+    bool "[MESH_NODE] MESH DEMO ON TMALL ALIGEN"
+    select ENABLE_LE  
+    select ENABLE_MESH
+    select PKG_BTSTACK_SMP 
+    
+# dule mode le and bredr     
+    config PKG_BTSTACK_SAMPLE_SPP_GATT_COUNTER_DEMO
+    bool "[EDR_LE_SLAVE] spp and gatt counter"
+    select ENABLE_LE  
+    select ENABLE_CLASSIC    
+    
+    config PKG_BTSTACK_SAMPLE_SPP_GATT_STREAMER_DEMO
+    bool "[EDR_LE_SLAVE] spp and gatt streamer"
+    select ENABLE_LE  
+    select ENABLE_CLASSIC    
+    
+    config PKG_BTSTACK_SAMPLE_SPP_COUNTER_DEMO
+    bool "[EDR_SPP_SLAVE] spp counter"
+    select ENABLE_CLASSIC 
+
+
+    config PKG_BTSTACK_SAMPLE_SPP_STREAMER_DEMO
+    bool "[EDR_SPP_SLAVE] spp streamer"
+    select ENABLE_CLASSIC 
+
+# classic example
+    config PKG_BTSTACK_SAMPLE_HFP_HF_DEMO
+    bool "[EDR_HFP_SLAVE] hfp handsfree demo"
+    select ENABLE_CLASSIC 
+    select PKG_BTSTACK_HFP_AUDIO
+    select PKG_BTSTACK_AUDIO
+    
+    config PKG_BTSTACK_SAMPLE_HFP_AG_DEMO
+    bool "[EDR_HFP_MASTER] hfp AG demo"
+    select ENABLE_CLASSIC 
+    select PKG_BTSTACK_HFP_AUDIO
+    select PKG_BTSTACK_AUDIO
+ 
+    config PKG_BTSTACK_SAMPLE_HSP_HS_DEMO
+    bool "[EDR_HSP_SLAVE] hfp headset demo"
+    select ENABLE_CLASSIC 
+    select PKG_BTSTACK_HFP_AUDIO
+    select PKG_BTSTACK_AUDIO
+    
+    config PKG_BTSTACK_SAMPLE_HSP_AG_DEMO
+    bool "[EDR_HSP_MASTER] hfp ag demo"
+    select ENABLE_CLASSIC 
+    select PKG_BTSTACK_HFP_AUDIO
+    
+endchoice
+endif 
+# btstack config
+
+    choice
+        prompt "Version"
+        default PKG_USING_BTSTACK_V100
+        help
+            Select the package version
+
+        config PKG_USING_BTSTACK_V001
+            bool "v0.0.1"
+            
+        config PKG_USING_BTSTACK_V100
+            bool "v1.0.0"
+            
+        config PKG_USING_BTSTACK_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
+    config PKG_BTSTACK_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_BTSTACK_LATEST_VERSION
+        default 0x10000    if PKG_USING_BTSTACK_V100
+        default 0x00001    if PKG_USING_BTSTACK_V001
+        
+        
+    config PKG_BTSTACK_VER
+       string
+       default "v0.0.1"    if PKG_USING_BTSTACK_V001
+       default "v1.0.0"    if PKG_USING_BTSTACK_V100
+       default "latest"    if PKG_USING_BTSTACK_LATEST_VERSION
+
+endif
+

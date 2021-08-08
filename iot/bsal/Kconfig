@@ -1,0 +1,116 @@
+
+# Kconfig file for package bsal
+menuconfig PKG_USING_BSAL
+    bool "BSAL: The Bluetooth Stack Abstract Layer"
+    default n
+
+if PKG_USING_BSAL
+
+    config PKG_BSAL_PATH
+        string
+        default "/packages/iot/bsal"
+
+    menu "Role support"
+
+        config PKG_BSAL_ROLE_PERIPHERAL
+            bool "Peripheral Role support"
+            select PKG_BSAL_ROLE_BROADCASTER
+            default y
+        help
+            Select this for LE Peripheral role support.
+
+        config PKG_BSAL_ROLE_CENTRAL
+            bool "Central Role support"
+            select PKG_BSAL_ROLE_OBSERVER
+            default n
+        help
+            Select this for LE Central role support.
+
+        config PKG_BSAL_ROLE_BROADCASTER
+            bool "Broadcaster Role support"
+            default y
+            help
+                Select this for LE Broadcaster role support.
+
+        config PKG_BSAL_ROLE_OBSERVER
+            bool "Observer Role support"
+            default n
+            help
+                Select this for LE Observer role support.
+    endmenu
+
+    choice
+        prompt "Peripheral Samples"
+        default PKG_BSAL_SAMPLE_BAS_ONLY
+        help
+            select the BSAL peripheral samples
+        
+        config PKG_BSAL_SAMPLE_BAS_ONLY
+            select PKG_BSAL_SRV_BAS
+            bool "battery service"
+
+        config PKG_BSAL_SAMPLE_BAS_BLUFI_COMBINE
+            select PKG_BSAL_SRV_BAS
+            select PKG_BSAL_SRV_BLUFI
+            bool "battery service and blufi service"
+        
+    endchoice
+    
+    if PKG_BSAL_ROLE_PERIPHERAL
+        menu "Profile support"
+
+            config PKG_BSAL_SRV_BAS
+                bool "Battery service support"
+                default n
+                help
+                    Select Battery service profile.
+
+            config PKG_BSAL_SRV_BLUFI
+                bool "Blufi Service support"
+                default n
+                help
+                    Select Battery service profile.
+                
+        endmenu
+    endif
+
+    choice
+        prompt "Stack"
+        default PKG_BSAL_NIMBLE_STACK
+        help
+            select the BSAL STACK
+        
+        config PKG_BSAL_NIMBLE_STACK
+            bool "Use the nimble stack"
+
+
+        config PKG_BSAL_RTK_STACK
+            bool "Use the realtek stack"
+
+        config PKG_BSAL_EMPTY_STACK
+            bool "Use the EMPTY stack"
+
+    endchoice
+
+    config PKG_BSAL_STACK_NAME
+        string
+        default "nimble"      if PKG_BSAL_NIMBLE_STACK
+        default "realtek"     if PKG_BSAL_RTK_STACK
+        default "empty_stack" if PKG_BSAL_EMPTY_STACK
+           
+    choice
+        prompt "Version"
+        default PKG_USING_BSAL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BSAL_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BSAL_VER
+        string
+        default "latest"    if PKG_USING_BSAL_LATEST_VERSION
+
+endif
+

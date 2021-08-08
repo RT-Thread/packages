@@ -1,0 +1,33 @@
+{
+  "name": "tlsf",
+  "description": "TLSF is a dynamic memory allocation algorithm with predictable execution time and low fragmentation.",
+  "description_zh": "TLSF是一个可以预期执行时间、碎片化程度低的动态内存分配算法。",  
+  "enable": "PKG_USING_TLSF", 
+  "keywords": [
+    "tlsf"
+  ],
+  "category": "system",
+  "author": {
+    "name": "namexx",
+    "email": "emailxx",
+    "github": "namexx"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/tlsf",
+  "icon": "unknown",
+  "homepage": "https://github.com/mattconte/tlsf",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/tlsf/archive/v1.0.0.zip",
+      "filename": "tlsf-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/tlsf.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}

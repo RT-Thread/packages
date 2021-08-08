@@ -1,0 +1,31 @@
+
+# Kconfig file for package agile_jsmn
+menuconfig PKG_USING_AGILE_JSMN
+    bool "agile_jsmn: Lightweight JSON parser."
+    default n
+
+if PKG_USING_AGILE_JSMN
+
+    config PKG_AGILE_JSMN_PATH
+        string
+        default "/packages/iot/agile_jsmn"
+
+    choice
+        prompt "Version"
+        default PKG_USING_AGILE_JSMN_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AGILE_JSMN_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_AGILE_JSMN_VER
+       string
+       default "latest"    if PKG_USING_AGILE_JSMN_LATEST_VERSION
+
+    config PKG_AGILE_JSMN_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_AGILE_JSMN_LATEST_VERSION
+endif
+

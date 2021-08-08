@@ -1,0 +1,29 @@
+{
+  "name": "Ppool",
+  "description": "Pthread-based thread pool library",
+  "description_zh": "基于pthread的线程池库",  
+  "enable": "PKG_USING_PPOOL", 
+  "keywords": [
+    "Ppool",
+    "pthread"
+  ],
+  "category": "system",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/mysterywolf/Ppool",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/Ppool",
+  "doc": "https://github.com/mysterywolf/Ppool#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/Ppool.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}

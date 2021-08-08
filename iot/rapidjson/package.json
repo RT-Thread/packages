@@ -1,0 +1,29 @@
+{
+  "name": "rapidjson",
+  "description": "A fast JSON parser/generator for C++ with both SAX/DOM style API.",
+  "description_zh": "支持 SAX/DOM 的 C++ JSON 处理库",  
+  "enable": "PKG_USING_RAPIDJSON", 
+  "keywords": [
+    "rapidjson",
+    "json"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/rapidjson",
+  "icon": "unknown",
+  "homepage": "https://github.com/wuhanstudio/rapidjson",
+  "doc": "https://github.com/wuhanstudio/rapidjson",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/rapidjson.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

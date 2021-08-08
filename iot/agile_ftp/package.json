@@ -1,0 +1,31 @@
+{
+  "name": "agile_ftp",
+  "description": "Lightweight ftp server.",
+  "description_zh": "轻量级 ftp 服务器。",  
+  "enable": "PKG_USING_AGILE_FTP", 
+  "keywords": [
+    "agile_ftp"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "loogg",
+    "email": "2544047213@qq.com",
+    "github": "loogg"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/loogg/agile_ftp",
+  "homepage": "https://github.com/loogg/agile_ftp#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/loogg/agile_ftp/archive/v1.0.0.zip",
+      "filename": "agile_ftp-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/loogg/agile_ftp.git",
+      "filename": "agile_ftp.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

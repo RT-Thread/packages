@@ -4,16 +4,17 @@ menuconfig PKG_USING_SENSORS_DRIVERS
     select RT_USING_SENSOR
 
     if PKG_USING_SENSORS_DRIVERS
-
+        source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsm/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsl/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/lps22hb/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/hts221/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/lsm303agr/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/bme280/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/bme680/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/bma400/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/bmi160_bmx160/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/spl0601/Kconfig"
-        source "$PKGS_DIR/packages/peripherals/sensors/ms5611/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/ms5805/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/da270/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/df220/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/hshcal001/Kconfig"
@@ -40,5 +41,12 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/ccs811/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/pmsxx/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/rt3020/Kconfig"
-        
+        source "$PKGS_DIR/packages/peripherals/sensors/mlx90632/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/ms5611/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/max31865/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/vl53l0x/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/ina260/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/max30102/Kconfig"
+	source "$PKGS_DIR/packages/peripherals/sensors/ina226/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/lis2dh12/Kconfig"
     endif

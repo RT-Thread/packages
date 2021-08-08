@@ -1,0 +1,33 @@
+
+# Kconfig file for package ft5426
+menuconfig PKG_USING_FT5426
+    bool "FT5426 touch driver package."
+    default n
+
+if PKG_USING_FT5426
+
+    config PKG_FT5426_PATH
+        string
+        default "/packages/peripherals/touch/ft5426"
+
+    config PKG_USING_FT5426_SAMPLE
+    bool "enable samples"
+    default n
+	
+    choice
+        prompt "Version"
+        default PKG_USING_FT5426_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FT5426_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_FT5426_VER
+       string
+       default "v0.0.1"    if PKG_USING_FT5426_V001
+       default "latest"    if PKG_USING_FT5426_LATEST_VERSION
+
+endif
+

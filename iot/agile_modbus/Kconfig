@@ -1,0 +1,42 @@
+
+# Kconfig file for package agile_modbus
+menuconfig PKG_USING_AGILE_MODBUS
+    bool "agile_modbus: Lightweight modbus protocol stack."
+    default n
+
+if PKG_USING_AGILE_MODBUS
+
+    config PKG_AGILE_MODBUS_PATH
+        string
+        default "/packages/iot/agile_modbus"
+
+    choice
+        prompt "Version"
+        default PKG_USING_AGILE_MODBUS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AGILE_MODBUS_V100
+            bool "v1.0.0"
+        
+        config PKG_USING_AGILE_MODBUS_V101
+            bool "v1.0.1"
+
+        config PKG_USING_AGILE_MODBUS_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_AGILE_MODBUS_VER
+       string
+       default "v1.0.0"    if PKG_USING_AGILE_MODBUS_V100
+       default "v1.0.1"    if PKG_USING_AGILE_MODBUS_V101
+       default "latest"    if PKG_USING_AGILE_MODBUS_LATEST_VERSION
+    
+    config PKG_AGILE_MODBUS_VER_NUM
+        hex
+        default 0x10000    if PKG_USING_AGILE_MODBUS_V100
+        default 0x10001    if PKG_USING_AGILE_MODBUS_V101
+        default 0x99999    if PKG_USING_AGILE_MODBUS_LATEST_VERSION
+
+endif
+

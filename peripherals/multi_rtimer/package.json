@@ -16,13 +16,19 @@
   "repository": "https://github.com/Forest-Rain/multi-rtimer",
   "icon": "unknown",
   "homepage": "https://github.com/Forest-Rain/multi-rtimer#readme",
-  "doc": "unknown",
+  "doc": "https://github.com/Forest-Rain/multi-rtimer/tree/master/doc",
   "site": [
     {
       "version": "v1.0.0",
       "URL": "https://github.com/Forest-Rain/multi-rtimer/archive/v1.0.0.zip",
       "filename": "multi_rtimer-1.0.0.zip",
-      "VER_SHA": "master"
+      "VER_SHA": "0e81d5293b99f6b05a17ba6b400e598af90d393c"
+    },
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/Forest-Rain/multi-rtimer/archive/v1.1.0.zip",
+      "filename": "multi_rtimer-1.1.0.zip",
+      "VER_SHA": "59982cad578eb33327a1b338f6d4825b1e6ade70"
     },
     {
       "version": "latest",

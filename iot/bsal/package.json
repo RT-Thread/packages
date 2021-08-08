@@ -1,0 +1,27 @@
+{
+  "name": "bsal",
+  "description": "The Bluetooth Stack Layer",
+  "description_zh": "蓝牙协议栈抽象层。",  
+  "enable": "PKG_USING_BSAL", 
+  "keywords": [
+    "bsal",
+    "realtek",
+    "nimble"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "supperthomas",
+    "email": "78900636@qq.com",
+    "github": "supperthomas"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/bsal",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/bsal.git",
+      "filename": "bsal-latest.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

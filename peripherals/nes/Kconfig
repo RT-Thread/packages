@@ -1,0 +1,44 @@
+
+# Kconfig file for package nes
+menuconfig PKG_USING_NES
+    bool "nes: nes simulator c Library."
+    default n
+
+if PKG_USING_NES
+
+    config PKG_NES_PATH
+        string
+        default "/packages/peripherals/nes"
+    
+    config PKG_NES_DFS
+        bool "enable nes file system"
+        default false
+    
+    config PKG_NES_FRAME_SKIP
+        int "config frame skip"
+        default 2
+	    
+    config PKG_NES_DOUBLE_FRAMEBUFFER
+        bool "enable double frame buffer"
+        default true
+    
+    choice
+        prompt "Version"
+        default PKG_USING_NES_LATEST_VERSION
+        help
+            Select the package version
+			
+        config PKG_USING_NES_V100
+            bool "v1.0.0"
+
+        config PKG_USING_NES_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_NES_VER
+       string
+	   default "v1.0.0"    if PKG_USING_NES_V100
+       default "latest"    if PKG_USING_NES_LATEST_VERSION
+
+endif
+

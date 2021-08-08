@@ -1,0 +1,37 @@
+
+# Kconfig file for package tlsf
+menuconfig PKG_USING_TLSF
+    bool "TLSF: A dynamic memory allocation algorithm with predictable execution time and low fragmentation."
+    select RT_USING_USERHEAP
+    default n
+
+if PKG_USING_TLSF
+
+    config PKG_TLSF_PATH
+        string
+        default "/packages/system/tlsf"
+
+    config PKG_TLSF_USING_ALIGN
+        bool "Enable TLSF align"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_TLSF_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TLSF_V100
+            bool "v1.0.0"
+
+        config PKG_USING_TLSF_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_TLSF_VER
+       string
+       default "latest"    if PKG_USING_TLSF_LATEST_VERSION
+       default "v1.0.0"    if PKG_USING_TLSF_V100
+
+endif
+

@@ -1,0 +1,32 @@
+{
+  "name": "libann",
+  "description": "A light-weight ANN library, capable of training, saving and loading models.",
+  "description_zh": "轻量级 ANN 库，可以训练，保存和导入模型",
+  "enable": "PKG_USING_LIBANN",
+  "keywords": [
+    "ANN"
+  ],
+  "category": "ai",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/rt-libann",
+  "homepage": "https://github.com/wuhanstudio/rt-libann#readme",
+  "site": [
+     {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wuhanstudio/rt-libann.git",
+      "filename": "rt-libann-1.0.0.zip",
+      "VER_SHA": "cdd5c0784ec1973ae314d5ffa761f3b3708a5bf0"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/rt-libann.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -5,5 +5,12 @@ source "$PKGS_DIR/packages/multimedia/mupdf/Kconfig"
 source "$PKGS_DIR/packages/multimedia/STemWin/Kconfig"
 source "$PKGS_DIR/packages/multimedia/wavplayer/Kconfig"
 source "$PKGS_DIR/packages/multimedia/TJpgDec/Kconfig"
+source "$PKGS_DIR/packages/multimedia/PDFGen/Kconfig"
+source "$PKGS_DIR/packages/multimedia/helix/Kconfig"
+source "$PKGS_DIR/packages/multimedia/AzureGUIX/Kconfig"
+source "$PKGS_DIR/packages/multimedia/touchgfx2rtt/Kconfig"
+source "$PKGS_DIR/packages/multimedia/NUemWin/Kconfig"
+source "$PKGS_DIR/packages/multimedia/mp3player/Kconfig"
+source "$PKGS_DIR/packages/multimedia/TinyJPEG/Kconfig"
 
 endmenu

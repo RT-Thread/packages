@@ -1,0 +1,35 @@
+{
+  "name": "Qfplib_M3",
+  "description": "a free, fast and accurate ARM Cortex-M3 floating-point library",
+  "description_zh": "Cortex-M3浮点运算汇编加速库",  
+  "enable": "PKG_USING_QFPLIB_M3", 
+  "keywords": [
+    "Qfplib_M3",
+    "Cortex-M",
+    "Cortex-M3",
+    "Cortex",
+    "ARM",
+    "acceleration",
+    "加速",
+    "汇编"
+  ],
+  "category": "system",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "GPL",
+  "repository": "https://github.com/mysterywolf/Qfplib-M3",
+  "icon": "unknown",
+  "homepage": "https://www.quinapalus.com/qfplib-m3.html",
+  "doc": "https://github.com/mysterywolf/Qfplib-M3#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/Qfplib-M3.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

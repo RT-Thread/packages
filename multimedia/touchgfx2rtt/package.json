@@ -1,0 +1,25 @@
+{
+  "name": "touchgfx2rtt",
+  "description": "touchgfx: a touchgfx package for rt-thread.",
+  "description_zh": "touchgfx在RT-Thread上的移植。",  
+  "enable": "PKG_USING_TOUCHGFX2RTT", 
+  "keywords": [
+    "touchgfx2rtt"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "kk",
+    "email": "1335809282@qq.com",
+    "github": "Aladdin-Wang"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/Aladdin-Wang/touchgfx2rtt.git",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Aladdin-Wang/touchgfx2rtt.git",
+      "filename": "touchgfx2rtt.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

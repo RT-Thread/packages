@@ -1,0 +1,38 @@
+{
+  "name": "micro_ros",
+  "description": "ROS 2 on microcontrollers.",
+  "description_zh": "在 MCU 上运行 ROS2.",  
+  "enable": "PKG_USING_MICRO_ROS", 
+  "keywords": [
+    "micro_ros",
+    "uart",
+    "udp",
+    "ros",
+    "ros2"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/wuhanstudio/micro_ros",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "foxy",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "foxy"
+    },
+    {
+      "version": "galactic",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "galactic"
+    }
+  ]
+}

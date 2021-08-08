@@ -1,0 +1,28 @@
+
+# Kconfig file for package Qfplib_M3
+menuconfig PKG_USING_QFPLIB_M3
+    bool "Qfplib-M3: a free, fast and accurate ARM Cortex-M3 floating-point library"
+    default n
+
+if PKG_USING_QFPLIB_M3
+
+    config PKG_QFPLIB_M3_PATH
+        string
+        default "/packages/system/acceleration/Qfplib_M3"
+
+    choice
+        prompt "Version"
+        default PKG_USING_QFPLIB_M3_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QFPLIB_M3_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_QFPLIB_M3_VER
+       string
+       default "latest"    if PKG_USING_QFPLIB_M3_LATEST_VERSION
+
+endif
+

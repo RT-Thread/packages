@@ -35,6 +35,16 @@
       "filename": "rw007-1.1.1.zip"
     },
   {
+      "version": "v2.0.0",
+      "URL": "https://github.com/RT-Thread-packages/rw007/archive/v2.0.0.zip",
+      "filename": "rw007-2.0.0.zip"
+    },
+  {
+      "version": "v2.0.1",
+      "URL": "https://github.com/RT-Thread-packages/rw007/archive/v2.0.1.zip",
+      "filename": "rw007-2.0.1.zip"
+    },
+  {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/rw007.git",
       "filename": "rw007.zip",

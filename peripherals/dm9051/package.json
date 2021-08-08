@@ -1,0 +1,39 @@
+{
+  "name": "dm9051",
+  "description": "DM9051 SPI ethernet driver",
+  "description_zh": "DM9051 SPI 接口以太网芯片驱动库",
+  "enable": "PKG_USING_DM9051",
+  "keywords": [
+    "dm9051",
+    "ethernet",
+    "spi"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "aozima",
+    "email": "wuyangyong@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/aozima/dm9051",
+  "icon": "unknown",
+  "doc": "unknown",
+  "homepage": "https://github.com/aozima/dm9051#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/aozima/dm9051/archive/v1.0.0.zip",
+      "filename": "dm9051-1.0.0.zip"
+    },
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/aozima/dm9051/archive/v1.1.0.zip",
+      "filename": "dm9051-1.1.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/aozima/dm9051.git",
+      "filename": "dm9051.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+
+# Kconfig file for package ws2812b
+menuconfig PKG_USING_WS2812B
+    bool "ws2812b: Ws2812b software driver package using SPI+DMA"
+    default n
+
+if PKG_USING_WS2812B
+
+    config PKG_WS2812B_PATH
+        string
+        default "/packages/peripherals/ws2812b"
+
+    choice
+        prompt "Version"
+        default PKG_USING_WS2812B_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_WS2812B_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_WS2812B_VER
+       string
+       default "latest"    if PKG_USING_WS2812B_LATEST_VERSION
+
+    config WS2812B_USING_EXAMPLE
+        bool "Enable example"
+        default n
+
+    if WS2812B_USING_EXAMPLE
+
+        config WS2812B_EXAMPLE_SPI_NAME
+            string "Spi Port Name"
+            default "spi10"
+
+        config WS2812B_EXAMPLE_NODE_LENGTH
+            int "ws2812b node length"
+            default 1
+
+    endif
+
+endif
+

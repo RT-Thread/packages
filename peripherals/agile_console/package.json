@@ -1,0 +1,36 @@
+{
+  "name": "agile_console",
+  "description": "A agile console pachage.",
+  "description_zh": "一个灵活的console设备软件包",  
+  "enable": "PKG_USING_AGILE_CONSOLE", 
+  "keywords": [
+    "agile_console"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "loogg",
+    "email": "2544047213@qq.com",
+    "github": "loogg"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/loogg/agile_console",
+  "homepage": "https://github.com/loogg/agile_console#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/loogg/agile_console/archive/refs/tags/v1.0.0.zip",
+      "filename": "agile_console-1.0.0.zip"
+    },
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/loogg/agile_console/archive/refs/tags/v1.0.1.zip",
+      "filename": "agile_console-1.0.1.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/loogg/agile_console.git",
+      "filename": "agile_console.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

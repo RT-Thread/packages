@@ -1,0 +1,53 @@
+
+# Kconfig file for package onnx-backend
+menuconfig PKG_USING_ONNX_BACKEND
+    select RT_USING_LIBC
+    select PKG_USING_ONNX_PARSER
+    bool "onnx-backend: Open Neural Network Exchange backend on RT-Thread"
+    default n
+
+if PKG_USING_ONNX_BACKEND
+    config PKG_ONNX_BACKEND_PATH
+        string
+        default "/packages/ai/onnx-backend"
+
+    config ONNX_BACKEND_USING_MNIST_EXAMPLE
+        bool "onnx-backend example: build mnist model and set weights mannually"
+        help
+            onnx-backend example: build model and set weights mannually
+        default n
+
+    config ONNX_BACKEND_USING_MNIST_SMALL_EXAMPLE
+        bool "onnx-backend example: build model and load weights from file"
+        help
+            onnx-backend example: build model and load weights from file
+        default n
+
+    config ONNX_BACKEND_USING_MNIST_MODEL_EXAMPLE
+        bool "onnx-backend example: load model and weights from file"
+        help
+            onnx-backend example: load model and weights from file
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_ONNX_BACKEND_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_ONNX_BACKEND_V100
+            bool "v1.0.0"
+        config PKG_USING_ONNX_BACKEND_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ONNX_BACKEND_VER
+       string
+       default "v1.0.0"    if PKG_USING_ONNX_BACKEND_V100
+       default "latest"    if PKG_USING_ONNX_BACKEND_LATEST_VERSION
+
+    config PKG_ONNX_BACKEND_VER_NUM
+        hex
+        default 0x10000 if PKG_USING_ONNX_BACKEND_V100
+        default 0x99999 if PKG_USING_ONNX_BACKEND_LATEST_VERSION
+
+endif

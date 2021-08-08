@@ -1,0 +1,30 @@
+{
+  "name": "rt_kprintf_threadsafe",
+  "description": "thread-safe version of rt_kprintf",
+  "description_zh": "线程安全版本的rt_kprintf",  
+  "enable": "PKG_USING_RT_KPRINTF_THREADSAFE", 
+  "keywords": [
+    "rt_kprintf_threadsafe",
+    "rt_kprintf",
+    "thread safe"
+  ],
+  "category": "system",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/mysterywolf/rt_kprintf_threadsafe",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/rt_kprintf_threadsafe#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/rt_kprintf_threadsafe.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

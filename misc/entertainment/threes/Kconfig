@@ -1,0 +1,33 @@
+
+# Kconfig file for package threes
+menuconfig PKG_USING_THREES
+    bool "threes: An indie puzzle video game run on RT-Thread console"
+    select RT_USING_DFS
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    select RT_USING_POSIX_TERMIOS
+    default n
+
+
+if PKG_USING_THREES
+
+    config PKG_THREES_PATH
+        string
+        default "/packages/misc/entertainment/threes"
+
+    choice
+        prompt "Version"
+        default PKG_USING_THREES_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_THREES_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_THREES_VER
+       string
+       default "latest"    if PKG_USING_THREES_LATEST_VERSION
+
+endif
+

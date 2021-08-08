@@ -1,0 +1,34 @@
+{
+  "name": "elapack",
+  "description": "Linear algebra library for embedded devices, compatible with matlab.",
+  "description_zh": "嵌入式线性代数库，兼容 matlab",
+  "enable": "PKG_USING_ELAPACK",
+  "keywords": [
+    "Linear Algebra",
+    "lapack",
+    "matlab"
+  ],
+  "category": "ai",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/elapack",
+  "homepage": "https://github.com/wuhanstudio/elapack#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wuhanstudio/elapack.git",
+      "filename": "elapack-1.0.0.zip",
+      "VER_SHA": "0f6c51f2607f74d2940c18db7fa2b286533c6b4a"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/elapack.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

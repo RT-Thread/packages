@@ -1,0 +1,28 @@
+
+# Kconfig file for package Qfplib_M0_tiny
+menuconfig PKG_USING_QFPLIB_M0_TINY
+    bool "Qfplib-M0-tiny: a free ARM Cortex-M0 floating-point library in 1 kbyte"
+    default n
+
+if PKG_USING_QFPLIB_M0_TINY
+
+    config PKG_QFPLIB_M0_TINY_PATH
+        string
+        default "/packages/system/acceleration/Qfplib_M0_tiny"
+
+    choice
+        prompt "Version"
+        default PKG_USING_QFPLIB_M0_TINY_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QFPLIB_M0_TINY_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_QFPLIB_M0_TINY_VER
+       string
+       default "latest"    if PKG_USING_QFPLIB_M0_TINY_LATEST_VERSION
+
+endif
+

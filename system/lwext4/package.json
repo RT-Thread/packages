@@ -10,25 +10,24 @@
   ],
   "category": "system",
   "author": {
-    "name": "parai",
-    "email": "parai@qq.com",
-    "github": "parai"
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
   },
   "license": "GPL-2.0",
-  "repository": "https://github.com/parai/lwext4",
-  "homepage": "https://github.com/parai/lwext4#readme",
-  "readme": "A lwext4 package for rt-thread",
+  "repository": "https://github.com/mysterywolf/lwext4",
+  "homepage": "https://github.com/mysterywolf/lwext4#readme",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/parai/lwext4.git",
-      "filename": "lwext4_rt_1.0.0.zip",
-      "VER_SHA": "f0c363074db79c3f56bdf79bc9beff5e8a930b18"
+      "version": "v1.1.0",
+      "URL": "https://github.com/mysterywolf/lwext4/archive/refs/tags/v1.1.0.zip",
+      "filename": "lwext4-1.1.0.zip",
+      "VER_SHA": ""
     },
     {
       "version": "latest",
-      "URL": "https://github.com/parai/lwext4.git",
-      "filename": "lwext4.zip",
+      "URL": "https://github.com/mysterywolf/lwext4.git",
+      "filename": "",
       "VER_SHA": "master"
     }
   ]

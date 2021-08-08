@@ -1,0 +1,57 @@
+# Kconfig file for package TensorflowLiteMicro
+menuconfig PKG_USING_TENSORFLOWLITEMICRO
+    bool "Tensorflow Lite Micro: a lightweight deep learning end-test inference framework for RT-Thread operating system."
+    select RT_USING_CPLUSPLUS
+    default n
+
+if PKG_USING_TENSORFLOWLITEMICRO
+
+    config PKG_TENSORFLOWLITEMICRO_PATH
+        string
+        default "/packages/ai/TensorflowLiteMicro"
+
+    choice
+        prompt "Version"
+        default PKG_USING_TENSORFLOWLITEMICRO_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TENSORFLOWLITEMICRO_V101
+            bool "v1.0.1"
+
+        config PKG_USING_TENSORFLOWLITEMICRO_V100
+            bool "v1.0.0"
+
+        config PKG_USING_TENSORFLOWLITEMICRO_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
+    choice
+        prompt "Select Offical Example"
+        default PKG_USING_TENSORFLOWLITEMICRO_NO_EXAMPLE
+
+        config PKG_USING_TENSORFLOWLITEMICRO_AUDIO_EXAMPLE
+            bool "Enable Tensorflow Lite Micro Person Detection example"
+
+        config PKG_USING_TENSORFLOWLITEMICRO_NO_EXAMPLE
+            bool "No Tensorflow Lite Micro Example"
+    endchoice
+
+    choice
+        prompt "Select Tensorflow Lite Operations Type"
+        default PKG_USING_TENSORFLOWLITEMICRO_CMSISNN
+
+        config PKG_USING_TENSORFLOWLITEMICRO_REFERENCE
+            bool "Using Tensorflow Lite reference operations"
+
+        config PKG_USING_TENSORFLOWLITEMICRO_CMSISNN
+            bool "Using Tensorflow Lite CMSIS NN operations"
+    endchoice
+
+    config PKG_TENSORFLOWLITEMICRO_VER
+       string
+       default "v1.0.1"    if PKG_USING_TENSORFLOWLITEMICRO_V101
+       default "v1.0.0"    if PKG_USING_TENSORFLOWLITEMICRO_V100
+       default "latest"    if PKG_USING_TENSORFLOWLITEMICRO_LATEST_VERSION
+
+endif

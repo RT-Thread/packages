@@ -1,0 +1,34 @@
+{
+  "name": "ina260",
+  "description": "ina260 software package.",
+  "description_zh": "ina260 软件包",  
+  "enable": "PKG_USING_INA260", 
+  "keywords": [
+    "ina260"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "xph",
+    "email": "xupenghu@outlook.com",
+    "github": "https://github.com/xupenghu"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/xupenghu/ina260.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/xupenghu/ina260/#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/xupenghu/ina260/releases/tag/v1.0.1",
+      "filename": "ina260-1.0.1.zip",
+      "VER_SHA": "0bc4767d22688259cbf5164ace0758b276d4401d"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/xupenghu/ina260.git",
+      "filename": "ina260.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

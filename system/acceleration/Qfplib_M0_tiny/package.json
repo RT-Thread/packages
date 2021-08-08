@@ -1,0 +1,35 @@
+{
+  "name": "Qfplib_M0_tiny",
+  "description": "a free ARM Cortex-M0 floating-point library in 1 kbyte",
+  "description_zh": "Cortex-M0浮点运算汇编加速库(tiny版)",
+  "enable": "PKG_USING_QFPLIB_M0_TINY", 
+  "keywords": [
+    "Qfplib_M0_tiny",
+    "Cortex-M",
+    "Cortex-M0",
+    "Cortex",
+    "ARM",
+    "acceleration",
+    "加速",
+    "汇编"
+  ],
+  "category": "system",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "GPL",
+  "repository": "https://github.com/mysterywolf/Qfplib-M0-tiny",
+  "icon": "unknown",
+  "homepage": "https://www.quinapalus.com/qfplib-m0-tiny.html",
+  "doc": "https://github.com/mysterywolf/Qfplib-M0-tiny#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/Qfplib-M0-tiny.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

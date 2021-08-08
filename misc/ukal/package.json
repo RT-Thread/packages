@@ -5,12 +5,14 @@
   "enable": "PKG_USING_UKAL",
   "keywords": [
     "Linear Algebra",
-    "lapack"
+    "lapack",
+    "kalman",
+    "filter"
   ],
   "category": "misc",
   "author": {
     "name": "wuhanstudio",
-    "email": "wuhanstudio@hust.edu.cn",
+    "email": "wuhanstudio@qq.com",
     "github": "wuhanstudio"
   },
   "license": "MIT",

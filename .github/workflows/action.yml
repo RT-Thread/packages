@@ -1,0 +1,45 @@
+name: RT-Thread_Packages
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  # Runs at 00:00 UTC on the 1, 16 and 31th of every month
+  schedule:
+    - cron:  '0 0 */15 * *'
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Set up Python
+          uses: actions/setup-python@master
+          with:
+            python-version: 3.8
+        
+        - name: Install Tools
+          shell: bash
+          run: |
+            sudo apt-get update && sudo apt-get install python-tk
+            sudo apt-get install scons rxvt-unicode
+            sudo apt-get -qq install gcc-multilib libc6:i386 libgcc1:i386 gcc-4.6-base:i386 libstdc++5:i386 libstdc++6:i386 libsdl-dev || true
+            pip install requests
+
+        - name: Packages check 
+          shell: bash 
+          run: |
+            BASE_ROOT=${{ github.workspace }} && cd .. && mkdir packages_temp && cp packages -R packages_temp && mv packages_temp packages && cd packages/packages_temp  && echo "source \"\$PKGS_DIR/packages/Kconfig\"" > Kconfig
+            cd ${BASE_ROOT} && export PKGS_ROOT=${BASE_ROOT}/packages_temp && git clone --depth=1 --branch=master https://github.com/RT-Thread/rt-thread.git rt-thread && export RTT_ROOT=${BASE_ROOT}/rt-thread || true
+            cd ${RTT_ROOT}/tools/kconfig-frontends && scons || true
+            export TERM=xterm
+            cd ${RTT_ROOT}/bsp/qemu-vexpress-a9 && sudo -E ../../tools/kconfig-frontends/kconfig-mconf Kconfig -n
+            cp ${RTT_ROOT}/tools/kconfiglib.py ./ && python -c 'import kconfiglib; kconfiglib.standard_kconfig()'
+            cd ${PKGS_ROOT}/packages && python ci.py

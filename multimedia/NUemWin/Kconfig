@@ -1,0 +1,56 @@
+
+# Kconfig file for package NUemWin
+menuconfig PKG_USING_NUEMWIN
+    bool "NUemWin: a NUemWin package for rt-thread"
+    default n
+
+if PKG_USING_NUEMWIN
+
+    config PKG_NUEMWIN_PATH
+        string
+        default "/packages/multimedia/NUemWin"
+
+    config PKG_NUEMWIN_MEM_SIZE
+        int "NUemWin memory size (MB)"
+        default 4
+
+    config PKG_USING_NUEMWIN_EXAMPLE
+        bool "Enable NUemWin example"
+        default n
+
+    if PKG_USING_NUEMWIN_EXAMPLE
+        choice
+            prompt "Examples"
+            default PKG_USING_NUEMWIN_GUIDEMO
+            help
+                Select an example
+
+            config PKG_USING_NUEMWIN_GUIDEMO
+                bool "GUIDemo"
+
+            config PKG_USING_NUEMWIN_SIMPLEDEMO
+                bool "SimpleDemo"
+
+        endchoice
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_NUEMWIN_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NUEMWIN_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_NUEMWIN_VER
+       string
+       default "latest"    if PKG_USING_NUEMWIN_LATEST_VERSION
+
+    config PKG_NUEMWIN_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_NUEMWIN_LATEST_VERSION
+
+endif
+

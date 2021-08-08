@@ -8,7 +8,7 @@
   ],
   "category": "iot",
   "author": {
-    "name": "Malongwei",
+    "name": "loogg",
     "email": "2544047213@qq.com",
     "github": "loogg"
   },
@@ -16,6 +16,26 @@
   "repository": "https://github.com/loogg/agile_telnet",
   "homepage": "https://github.com/loogg/agile_telnet#readme",
   "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/loogg/agile_telnet/archive/refs/tags/v1.0.0.zip",
+      "filename": "agile_telnet-1.0.0.zip"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/loogg/agile_telnet/archive/refs/tags/v2.0.0.zip",
+      "filename": "agile_telnet-2.0.0.zip"
+    },
+    {
+      "version": "v2.0.1",
+      "URL": "https://github.com/loogg/agile_telnet/archive/refs/tags/v2.0.1.zip",
+      "filename": "agile_telnet-2.0.1.zip"
+    },
+    {
+      "version": "v2.0.2",
+      "URL": "https://github.com/loogg/agile_telnet/archive/refs/tags/v2.0.2.zip",
+      "filename": "agile_telnet-2.0.2.zip"
+    },
     {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_telnet.git",

@@ -21,7 +21,9 @@ if PKG_USING_MININI
             bool "latest"
     endchoice
 
-    default "v1.2.0" if PKG_USING_MININI_V120
-    default "latest" if PKG_USING_MININI_LATEST_VERSION
+    config PKG_MININI_VER
+       string
+       default "v1.2.0"    if PKG_USING_MININI_V120
+       default "latest"    if PKG_USING_MININI_LATEST_VERSION
 
 endif

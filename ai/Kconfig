@@ -1,0 +1,13 @@
+menu "AI packages"
+
+source "$PKGS_DIR/packages/ai/libann/Kconfig"
+source "$PKGS_DIR/packages/ai/nnom/Kconfig"
+source "$PKGS_DIR/packages/ai/onnx-backend/Kconfig"
+source "$PKGS_DIR/packages/ai/onnx-parser/Kconfig"
+source "$PKGS_DIR/packages/ai/TensorflowLiteMicro/Kconfig"
+source "$PKGS_DIR/packages/ai/elapack/Kconfig"
+source "$PKGS_DIR/packages/ai/ulapack/Kconfig"
+source "$PKGS_DIR/packages/ai/quest/Kconfig"
+source "$PKGS_DIR/packages/ai/naxos/Kconfig"
+
+endmenu

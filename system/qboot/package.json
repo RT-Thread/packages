@@ -1,0 +1,66 @@
+{
+  "name": "qboot",
+  "description": "qboot : A component used to make bootloader quickly",
+  "description_zh": "qboot ：一个用于快速制作bootloader的组件",
+  "enable": "PKG_USING_QBOOT",
+  "keywords": [
+    "qboot",
+    "bootloader",
+    "firmware",
+    "rt-thread"
+  ],
+  "category": "system",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-qboot",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-qboot#readme",
+  "site": [
+    {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot/archive/v1.00.zip",
+      "filename": "rt-thread-qboot-1.00.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.01",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot/archive/v1.01.zip",
+      "filename": "rt-thread-qboot-1.01.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.02",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot/archive/v1.02.zip",
+      "filename": "rt-thread-qboot-1.02.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.03",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot/archive/v1.03.zip",
+      "filename": "rt-thread-qboot-1.03.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.04",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot/archive/v1.04.zip",
+      "filename": "rt-thread-qboot-1.04.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.05",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot/archive/v1.05.zip",
+      "filename": "rt-thread-qboot-1.05.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qboot.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

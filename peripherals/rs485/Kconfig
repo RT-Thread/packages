@@ -1,0 +1,135 @@
+
+# Kconfig file for package rs485
+
+menuconfig PKG_USING_RS485
+    bool "rs485 driver package."
+    select RT_USING_SERIAL
+    select RT_USING_PIN
+    default n
+
+if PKG_USING_RS485
+
+    config PKG_RS485_PATH
+        string
+        default "/packages/peripherals/rs485"
+
+    config RS485_USING_TEST
+        bool "using test"
+        default n
+    
+    if RS485_USING_TEST 
+    
+        config RS485_TEST_SERIAL
+            string "serial device name"
+            default "uart1"
+            
+        config RS485_TEST_BAUDRATE
+            int "baudrate"
+            default 9600
+            
+        config RS485_TEST_PARITY
+            int "parity"
+            range 0 2
+            default 0  
+            
+        config RS485_TEST_PIN
+            int "mode control pin"
+            range -1 176
+            default -1  
+            
+        config RS485_TEST_LEVEL
+            int "send mode level"
+            range 0 1
+            default 0  
+            
+    endif
+    
+    config RS485_USING_SAMPLE_MASTER
+        bool "using sample master"
+        default n
+    
+    if RS485_USING_SAMPLE_MASTER 
+    
+        config RS485_SAMPLE_MASTER_SERIAL
+            string "serial device name"
+            default "uart2"
+            
+        config RS485_SAMPLE_MASTER_BAUDRATE
+            int "baudrate"
+            default 9600
+            
+        config RS485_SAMPLE_MASTER_PARITY
+            int "parity"
+            range 0 2
+            default 0  
+            
+        config RS485_SAMPLE_MASTER_PIN
+            int "mode control pin"
+            range -1 176
+            default -1   
+            
+        config RS485_SAMPLE_MASTER_LVL
+            int "send mode level"
+            range 0 1
+            default 0  
+            
+    endif
+    
+    config RS485_USING_SAMPLE_SLAVE
+        bool "using sample slave"
+        default n
+    
+    if RS485_USING_SAMPLE_SLAVE 
+    
+        config RS485_SAMPLE_SLAVE_SERIAL
+            string "serial device name"
+            default "uart2"
+            
+        config RS485_SAMPLE_SLAVE_BAUDRATE
+            int "baudrate"
+            default 9600
+            
+        config RS485_SAMPLE_SLAVE_PARITY
+            int "parity"
+            range 0 2
+            default 0  
+            
+        config RS485_SAMPLE_SLAVE_PIN
+            int "mode control pin"
+            range -1 176
+            default -1 
+            
+        config RS485_SAMPLE_SLAVE_LVL
+            int "send mode level"
+            range 0 1
+            default 0  
+            
+    endif
+    
+    choice
+        prompt "Version"
+        default PKG_USING_RS485_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RS485_LATEST_VERSION
+            bool "latest"
+        
+        config PKG_USING_RS485_V102
+            bool "v1.02"
+            
+        config PKG_USING_RS485_V101
+            bool "v1.01"
+            
+        config PKG_USING_RS485_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_RS485_VER
+       string
+       default "latest" if PKG_USING_RS485_LATEST_VERSION
+       default "v1.02"  if PKG_USING_RS485_V102
+       default "v1.01"  if PKG_USING_RS485_V101
+       default "v1.00"  if PKG_USING_RS485_V100
+
+endif

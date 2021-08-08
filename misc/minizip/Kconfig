@@ -1,0 +1,32 @@
+
+# Kconfig file for package minizip
+menuconfig PKG_USING_MINIZIP
+    bool "minizip: zip manipulation library"
+    select PKG_USING_ZLIB
+    select RT_USING_DFS
+    select RT_USING_LIBC
+    select RT_USING_POSIX
+    default n
+
+if PKG_USING_MINIZIP
+
+    config PKG_MINIZIP_PATH
+        string
+        default "/packages/misc/minizip"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MINIZIP_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MINIZIP_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MINIZIP_VER
+       string
+       default "latest"    if PKG_USING_MINIZIP_LATEST_VERSION
+
+endif
+

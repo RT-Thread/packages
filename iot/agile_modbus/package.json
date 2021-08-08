@@ -1,0 +1,36 @@
+{
+  "name": "agile_modbus",
+  "description": "Lightweight modbus protocol stack.",
+  "description_zh": "轻量级 modbus 协议栈。",  
+  "enable": "PKG_USING_AGILE_MODBUS", 
+  "keywords": [
+    "agile_modbus"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "loogg",
+    "email": "2544047213@qq.com",
+    "github": "loogg"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/loogg/agile_modbus",
+  "homepage": "https://github.com/loogg/agile_modbus#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/loogg/agile_modbus/archive/v1.0.0.zip",
+      "filename": "agile_modbus-1.0.0.zip"
+    },
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/loogg/agile_modbus/archive/v1.0.1.zip",
+      "filename": "agile_modbus-1.0.1.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/loogg/agile_modbus.git",
+      "filename": "agile_modbus.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 
 # Kconfig file for package ROSSERIAL
 menuconfig PKG_USING_ROSSERIAL
-    bool "rosserial: a protocol for Robots Operating System (ROS)"
+    bool "rosserial: ROS 1 on microcontrollers."
+    select RT_USING_CPLUSPLUS
     default n
 
 if PKG_USING_ROSSERIAL
@@ -38,6 +39,18 @@ if PKG_USING_ROSSERIAL
     endif
 
     menu "roserial examples"
+
+        config ROSSERIAL_USING_KOBUKI_CONTROL
+            bool "Kobuki Robot: control the Kobuki robot"
+            help
+                Kobuki Robot: control the Kobuki robot
+            default n
+
+        if ROSSERIAL_USING_KOBUKI_CONTROL
+            config KOBUKI_SERIAL_NAME
+            string "kobuki serial port"
+            default "uart2"
+        endif
 
         if ROSSERIAL_USE_SERIAL
             config ROSSERIAL_USING_HELLO_WORLD_UART
@@ -79,7 +92,7 @@ if PKG_USING_ROSSERIAL
                     default n
 
                 config ROSSERIAL_USING_TF_UART
-                    bool "TF         : tf example using UART"
+                    bool "TF          : tf example using UART"
                     help
                         TF : tf example using UART
                     default n
@@ -113,7 +126,7 @@ if PKG_USING_ROSSERIAL
 
     choice
         prompt "Version"
-        default PKG_USING_ROSSERIAL_MLATEST_VERSION
+        default PKG_USING_ROSSERIAL_NLATEST_VERSION
         help
             Select the package version
         config PKG_USING_ROSSERIAL_KV100
@@ -124,6 +137,8 @@ if PKG_USING_ROSSERIAL
             bool "kinetic-latest"
         config PKG_USING_ROSSERIAL_MLATEST_VERSION
             bool "melodic-latest"
+        config PKG_USING_ROSSERIAL_NLATEST_VERSION
+            bool "noetic-latest"
     endchoice
 
     config PKG_ROSSERIAL_VER
@@ -132,6 +147,7 @@ if PKG_USING_ROSSERIAL
        default "melodic-v1.0.0"    if PKG_USING_ROSSERIAL_MV100
        default "kinetic-latest"    if PKG_USING_ROSSERIAL_KLATEST_VERSION
        default "melodic-latest"    if PKG_USING_ROSSERIAL_MLATEST_VERSION
+       default "noetic-latest"     if PKG_USING_ROSSERIAL_NLATEST_VERSION
 
     config PKG_ROSSERIAL_VER_NUM
         hex
@@ -139,5 +155,6 @@ if PKG_USING_ROSSERIAL
         default 0x19999 if PKG_USING_ROSSERIAL_KLATEST_VERSION
         default 0x20000 if PKG_USING_ROSSERIAL_MV100
         default 0x29999 if PKG_USING_ROSSERIAL_MLATEST_VERSION
+        default 0x39999 if PKG_USING_ROSSERIAL_NLATEST_VERSION
 
 endif

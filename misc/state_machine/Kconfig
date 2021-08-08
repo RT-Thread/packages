@@ -1,0 +1,33 @@
+
+# Kconfig file for package state_machine
+menuconfig PKG_USING_STATE_MACHINE
+    bool "state_machine: A feature-rich, yet simple finite state machine (FSM) implementation in C"
+    default n
+    
+
+if PKG_USING_STATE_MACHINE
+
+    config PKG_STATE_MACHINE_PATH
+        string
+        default "/packages/misc/state_machine"
+
+    config PKG_STATE_MACHINE_USING_EXAMPLE
+        bool "Enable state_machine example"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_STATE_MACHINE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_STATE_MACHINE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_STATE_MACHINE_VER
+       string
+       default "latest"    if PKG_USING_STATE_MACHINE_LATEST_VERSION
+
+endif
+

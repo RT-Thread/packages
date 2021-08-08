@@ -1,0 +1,32 @@
+
+# Kconfig file for package gbk2utf8
+menuconfig PKG_USING_GBK2UTF8
+    bool "GBK2UTF8: conversion between GBK and UTF8."
+    default n
+
+if PKG_USING_GBK2UTF8
+
+    config PKG_GBK2UTF8_PATH
+        string
+        default "/packages/tools/gbk2utf8"
+
+    choice
+        prompt "Version"
+        default PKG_USING_GBK2UTF8_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_GBK2UTF8_V100
+            bool "v1.0.0"
+
+        config PKG_USING_GBK2UTF8_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_GBK2UTF8_VER
+       string
+	   default "v1.0.0"    if PKG_USING_GBK2UTF8_V100
+       default "latest"    if PKG_USING_GBK2UTF8_LATEST_VERSION
+
+endif
+

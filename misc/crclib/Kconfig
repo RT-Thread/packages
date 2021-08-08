@@ -1,0 +1,151 @@
+
+# Kconfig file for package crclib
+
+menuconfig PKG_USING_CRCLIB
+    bool "crclib : A library of functions with 8-bit ,16-bit ,32-bit crc check calculations."
+    default n
+
+if PKG_USING_CRCLIB
+
+    config PKG_CRCLIB_PATH
+        string
+        default "/packages/misc/crclib"
+
+    config CRCLIB_USING_CRC8
+        bool "using 8 bit crc"
+        default y
+
+    if CRCLIB_USING_CRC8
+        config CRC8_USING_CONST_TABLE
+            bool "using const table"
+            default y
+            
+        choice
+            prompt "crc8 polynome"
+            default CRC8_POLY_8C
+            help
+                Select crc8 polynome
+            config CRC8_POLY_8C
+                bool "x8+x5+x4+1"
+            config CRC8_POLY_D9
+                bool "x8+x7+x4+x3+x+1"
+            config CRC8_POLY_CUSTOM
+                bool "custom value"
+        endchoice
+        
+        if CRC8_POLY_CUSTOM
+            config CRC8_POLY_CUSTOM_STRING
+                int "crc8 polynome value (int)"
+                default 0
+        endif
+        
+        config CRC8_POLY
+            int
+            default 140 if CRC8_POLY_8C
+            default 217 if CRC8_POLY_D9
+            default CRC8_POLY_CUSTOM_STRING if CRC8_POLY_CUSTOM
+    endif
+    
+    config CRCLIB_USING_CRC16
+        bool "using 16 bit crc"
+        default y
+
+    if CRCLIB_USING_CRC16
+        config CRC16_USING_CONST_TABLE
+            bool "using const table"
+            default y
+            
+        choice
+            prompt "crc16 polynome"
+            default CRC16_POLY_A001
+            help
+                Select crc16 polynome
+            config CRC16_POLY_A001
+                bool "x16+x15+x2+1 (MODBUS,IBM,SDLC)"
+            config CRC16_POLY_8404
+                bool "x16+x12+x5+1 (CCITT,ISO,HDLC,ITUX25,PPP-FCS)"
+            config CRC16_POLY_CUSTOM
+                bool "custom value"
+        endchoice
+        
+        if CRC16_POLY_CUSTOM
+            config CRC16_POLY_CUSTOM_STRING
+                int "crc16 polynome value (int)"
+                default 0
+        endif
+        
+        config CRC16_POLY
+            int
+            default 40961 if CRC16_POLY_A001
+            default 33800 if CRC16_POLY_8404
+            default CRC16_POLY_CUSTOM_STRING if CRC16_POLY_CUSTOM
+    endif
+    
+    config CRCLIB_USING_CRC32
+        bool "using 32 bit crc"
+        default y
+
+    if CRCLIB_USING_CRC32
+        config CRC32_USING_CONST_TABLE
+            bool "using const table"
+            default y
+        
+        choice
+            prompt "crc32 polynome"
+            default CRC32_POLY_EDB88320
+            help
+                Select crc32 polynome
+            config CRC32_POLY_EDB88320
+                bool "x32+x26+x23+...+x2+x+1 (ZIP,RAR,IEEE,LAN/FDDI,PPP-FCS)"
+            config CRC32_POLY_82F63B78
+                bool "x32+x28+x27+...+x8+x6+1 (SCTP)"
+            config CRC32_POLY_CUSTOM
+                bool "custom value"
+        endchoice
+        
+        if CRC32_POLY_CUSTOM
+            config CRC32_POLY_CUSTOM_STRING
+                int "crc32 polynome value (int)"
+                default 0
+        endif
+        
+        config CRC32_POLY
+            int
+            default 3988292384 if CRC32_POLY_EDB88320
+            default 2197175160 if CRC32_POLY_82F63B78
+            default CRC32_POLY_CUSTOM_STRING if CRC32_POLY_CUSTOM
+    endif
+    
+    config CRCLIB_USING_CRC8_EX
+        bool "using 8 bit crc expand"
+        default n
+    
+    config CRCLIB_USING_CRC16_EX
+        bool "using 16 bit crc expand"
+        default n
+        
+    config CRCLIB_USING_CRC32_EX
+        bool "using 32 bit crc expand"
+        default n
+        
+    config CRCLIB_USING_CRC16_EX_SAMPLE
+        bool "using 16 bit crc expand sample"
+        default n
+    choice
+        prompt "Version"
+        default PKG_USING_CRCLIB_V100
+        help
+            Select the package version
+        config PKG_USING_CRCLIB_LATEST_VERSION
+            bool "latest"
+        config PKG_USING_CRCLIB_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_CRCLIB_VER
+       string
+       default "latest" if PKG_USING_CRCLIB_LATEST_VERSION
+       default "v1.00"  if PKG_USING_CRCLIB_V100
+
+endif
+

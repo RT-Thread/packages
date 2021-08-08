@@ -1,0 +1,29 @@
+{
+  "name": "minizip",
+  "description": "zip manipulation library",
+  "description_zh": "zip压缩解压库",  
+  "enable": "PKG_USING_MINIZIP", 
+  "keywords": [
+    "minizip",
+    "zip"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/mysterywolf/minizip",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/minizip#readme",
+  "doc": "https://github.com/mysterywolf/minizip#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/minizip.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
