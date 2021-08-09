@@ -39,11 +39,13 @@ if PKG_USING_U8G2
         default "i2c1"
     endif
 
-    config U8G2_USE_CPP
-        bool "Use C++"
-        select RT_USING_CPLUSPLUS
-        select RT_USING_LIBC
-        default n
+    if (PKG_U8G2_VER_NUM >= 0x30000)
+        config U8G2_USE_CPP
+            bool "Use C++"
+            select RT_USING_CPLUSPLUS
+            select RT_USING_LIBC
+            default n
+    endif
 
     menu "U8G2 Examples"
         if U8G2_USE_HW_I2C
