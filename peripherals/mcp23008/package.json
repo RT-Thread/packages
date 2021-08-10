@@ -1,0 +1,33 @@
+{
+  "name": "mcp23008",
+  "description": "Remote 8-bit I/O expander for I2C-bus",
+  "description_zh": "针对 I2C 并行口扩展 8 位 I/O 软件包",
+  "enable": "PKG_USING_MCP23008",
+  "keywords": [
+    "mcp23008"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "XiaojieFan",
+    "email": "dingo1688@126.com",
+    "github": "XiaojieFan"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/XiaojieFan/mcp23008.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/XiaojieFan/mcp23008.git#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/XiaojieFan/mcp23008/archive/v1.0.0.zip",
+      "filename": "mcp23008-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/XiaojieFan/mcp23008.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
