@@ -56,4 +56,5 @@ source "$PKGS_DIR/packages/iot/bsal/Kconfig"
 source "$PKGS_DIR/packages/iot/agile_modbus/Kconfig"
 source "$PKGS_DIR/packages/iot/agile_ftp/Kconfig"
 source "$PKGS_DIR/packages/iot/EmbeddedProto/Kconfig"
+source "$PKGS_DIR/packages/iot/rt-link_hw/Kconfig"
 endmenu

@@ -1,0 +1,33 @@
+{
+  "name": "rt-link_hw",
+  "description": "rt-link_hw: The underlying communication port adaptation layer of the rt-link component",
+  "description_zh": "rt-link 组件的底层通信端口适配层",
+  "enable": "PKG_USING_RT_LINK_HW",
+  "keywords": [
+    "rt-link_hw",
+    "rt-link",
+    "rtlink",
+    "uart",
+    "tcp",
+    "udp"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/rt-link_hw",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/rt-link_hw#readme",
+  "doc": "https://www.rt-thread.org/document/site/#/rt-thread-version/rt-thread-standard/programming-manual/rtlink/rtlink",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/rt-link_hw.git",
+      "filename": "rt-link_hw.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
