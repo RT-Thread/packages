@@ -205,6 +205,9 @@ if PKG_USING_MICROPYTHON
 
         config PKG_USING_MICROPYTHON_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_MICROPYTHON_OFFICIAL
+            bool "official repository"
     endchoice
 
     config PKG_MICROPYTHON_VER
@@ -217,10 +220,12 @@ if PKG_USING_MICROPYTHON
         default "v1.10"    if PKG_USING_MICROPYTHON_V11000
         default "v1.9.3"   if PKG_USING_MICROPYTHON_V10903
         default "latest"   if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default "official"   if PKG_USING_MICROPYTHON_OFFICIAL
 
     config PKG_MICROPYTHON_VER_NUM
         hex
         default 0x99999    if PKG_USING_MICROPYTHON_LATEST_VERSION
+        default 0x99998    if PKG_USING_MICROPYTHON_OFFICIAL
         default 0x11200    if PKG_USING_MICROPYTHON_V11200
         default 0x11004    if PKG_USING_MICROPYTHON_V11004
         default 0x11003    if PKG_USING_MICROPYTHON_V11003
