@@ -1,0 +1,31 @@
+
+# Kconfig file for package Arm_2D
+menuconfig PKG_USING_ARM_2D
+    bool "Arm-2D Graphics Library"
+    default n
+
+if PKG_USING_ARM_2D
+
+    config PKG_ARM_2D_PATH
+        string
+        default "/packages/system/Arm-2D"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARM_2D_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARM_2D_V098
+            bool "v0.9.8"
+
+        config PKG_USING_ARM_2D_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_ARM_2D_VER
+       string
+       default "v0.9.8"    if PKG_USING_ARM_2D_V098
+       default "latest"    if PKG_USING_ARM_2D_LATEST_VERSION
+
+endif
