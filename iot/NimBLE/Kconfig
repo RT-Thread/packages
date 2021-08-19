@@ -2,7 +2,6 @@
 # Kconfig file for package NimBLE
 menuconfig PKG_USING_NIMBLE
     bool "NimBLE:An open-source Bluetooth 5.0 stack porting on RT-Thread"
-    select RT_DEBUG 
     select RT_USING_MESSAGEQUEUE
     default n
 
