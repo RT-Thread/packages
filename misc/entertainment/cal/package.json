@@ -1,0 +1,27 @@
+{
+  "name": "cal",
+  "description": "Show calendar in the terminal",
+  "description_zh": "在终端显示公历日历",  
+  "enable": "PKG_USING_CAL", 
+  "keywords": [
+    "cal",
+    "calendar"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/mysterywolf/cal",
+  "homepage": "https://github.com/mysterywolf/cal#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/cal.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
