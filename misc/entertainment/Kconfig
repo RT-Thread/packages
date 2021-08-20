@@ -1,5 +1,6 @@
 menu "entertainment: terminal games and other interesting software packages"
 
+source "$PKGS_DIR/packages/misc/entertainment/cmatrix/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/sl/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/threes/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/c2048/Kconfig"
