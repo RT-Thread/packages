@@ -6,5 +6,6 @@ source "$PKGS_DIR/packages/misc/entertainment/snake/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/tetris/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/donut/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/aclock/Kconfig"
+source "$PKGS_DIR/packages/misc/entertainment/cal/Kconfig"
 
 endmenu
