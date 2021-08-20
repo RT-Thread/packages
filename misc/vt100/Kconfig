@@ -23,12 +23,6 @@ if PKG_USING_VT100
             Color: Draw different colors and boxes
         default n
 
-    config VT100_USING_SL
-        bool "Animation: a funny rushing train"
-        help
-            Animation: a funny rushing train
-        default n
-
     config VT100_USING_IMGBUF
         bool "Image: displaying image in the terminal"
         help
