@@ -22,12 +22,6 @@ if PKG_USING_MCURSES
             mcurses: box animation demo
         default n
 
-    config MCURSES_USING_MATRIX_RAIN
-        bool "mcurses: magic matrix rain demo"
-        help
-            mcurses: magic matrix rain demo
-        default n
-
     config MCURSES_USING_SCREEN
         bool "mcurses: screen animation demo"
         help
