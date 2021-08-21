@@ -1,7 +1,7 @@
 
 # Kconfig file for package cmatrix
 menuconfig PKG_USING_CMATRIX
-    bool "text flying in and out in a terminal like as seen in 'The Matrix' movie"
+    bool "cmatrix: text flying in and out in a terminal like as seen in 'The Matrix' movie"
     select PKG_USING_MCURSES
     default n
 
@@ -9,7 +9,7 @@ if PKG_USING_CMATRIX
 
     config PKG_CMATRIX_PATH
         string
-        default "/packages/misc/cmatrix"
+        default "/packages/misc/entertainment/cmatrix"
 
     choice
         prompt "Version"

@@ -1,7 +1,7 @@
 {
   "name": "cal",
-  "description": "Show calendar in the terminal",
-  "description_zh": "在终端显示公历日历",  
+  "description": "a terminal calendar",
+  "description_zh": "终端公历日历",
   "enable": "PKG_USING_CAL", 
   "keywords": [
     "cal",

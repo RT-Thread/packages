@@ -1,7 +1,7 @@
 
 # Kconfig file for package sl
 menuconfig PKG_USING_SL
-    bool "sl (Steam Locomotive) runs across your terminal when you type 'sl' as you meant to type 'ls'."
+    bool "sl: steam locomotive runs across your terminal when you type 'sl' as you meant to type 'ls'"
     select PKG_USING_VT100
     default n
 
@@ -9,7 +9,7 @@ if PKG_USING_SL
 
     config PKG_SL_PATH
         string
-        default "/packages/misc/sl"
+        default "/packages/misc/entertainment/sl"
 
     choice
         prompt "Version"
