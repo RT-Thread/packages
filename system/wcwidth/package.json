@@ -1,0 +1,26 @@
+{
+  "name": "wcwidth",
+  "description": "wcwidth() function",
+  "description_zh": "wcwidth() 函数软件包",  
+  "enable": "PKG_USING_WCWIDTH", 
+  "keywords": [
+    "wcwidth"
+  ],
+  "category": "system",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "None",
+  "repository": "https://github.com/mysterywolf/wcwidth",
+  "homepage": "https://github.com/mysterywolf/wcwidth#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/wcwidth.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
