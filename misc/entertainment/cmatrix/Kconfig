@@ -2,7 +2,7 @@
 # Kconfig file for package cmatrix
 menuconfig PKG_USING_CMATRIX
     bool "cmatrix: text flying in and out in a terminal like as seen in 'The Matrix' movie"
-    select PKG_USING_MCURSES
+    select PKG_USING_VT100
     default n
 
 if PKG_USING_CMATRIX
