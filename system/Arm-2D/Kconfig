@@ -26,10 +26,28 @@ if PKG_USING_ARM_2D
        default "latest"    if PKG_USING_ARM_2D_LATEST_VERSION
 
     config PKG_ARM_2D_USE_INTERPOLATION_ROTATION
-        bool "Using Arm-2D interpolation rotation."
+        bool "Using interpolation rotation."
         default n
         help
             Using interpolation rotation.
+
+    config PKG_ARM_2D_HAS_HELIUM
+        bool "Using helium service."
+        default n
+        help
+            Arm-2D enable helium service..
+
+    config PKG_ARM_2D_HAS_CDE
+        bool "Using cde service."
+        default n
+        help
+            Arm-2D enable cde service.
+
+    config PKG_ARM_2D_HAS_ACC
+        bool "Using hardware accelerator."
+        default n
+        help
+            Arm-2D has hardware accelerator.
 
     config PKG_ARM_2D_USE_EXAMPLE
         bool "Using Arm-2D example."
