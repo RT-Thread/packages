@@ -19,6 +19,12 @@ if PKG_USING_TERMBOX
         bool "Enable demos"
         default n
 
+    config TERMBOX_USING_CPP_DEMOS
+        bool "Enable cpp demos"
+        depends on TERMBOX_USING_DEMOS
+        select RT_USING_CPLUSPLUS
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_TERMBOX_LATEST_VERSION
