@@ -39,6 +39,26 @@ if PKG_USING_QKEY
         int "Key driver thread priority"
         default 3   
 
+    config QKEY_USING_ARRAY
+        bool "using key array"
+        default n
+    
+    if QKEY_USING_ARRAY
+    
+        config QKEY_ARRAY_ROW_TOTAL
+            int "Key array row total"
+            default 4
+        
+        config QKEY_ARRAY_COL_TOTAL
+            int "Key array col total"
+            default 3
+            
+        config QKEY_ARRAY_PIN_FIRST
+            int "Key array pin number of the first key"
+            default 256
+        
+    endif
+        
     choice
         prompt "Version"
         default PKG_USING_QKEY_LATEST_VERSION
@@ -47,10 +67,18 @@ if PKG_USING_QKEY
 
         config PKG_USING_QKEY_LATEST_VERSION
             bool "latest"
+            
+        config PKG_USING_QLED_V110
+            bool "v1.10"
+            
+        config PKG_USING_QLED_V100
+            bool "v1.00"
     endchoice
 
     config PKG_QKEY_VER
        string
        default "latest" if PKG_USING_QKEY_LATEST_VERSION
+       default "v1.01"  if PKG_USING_QKEY_V110
+       default "v1.00"  if PKG_USING_QKEY_V100
 
 endif
