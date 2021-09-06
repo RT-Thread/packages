@@ -1,0 +1,49 @@
+
+# Kconfig file for package mcuboot
+menuconfig PKG_USING_MCUBOOT
+    bool "A common infrastructure for bootloader, system flash layout."
+    default n
+
+if PKG_USING_MCUBOOT
+
+    config PKG_MCUBOOT_PATH
+        string
+        default "/packages/system/mcuboot"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MCUBOOT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MCUBOOT_V180
+            bool "v1.8.0"
+
+        config PKG_USING_MCUBOOT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_MCUBOOT_VER
+       string
+       default "v1.8.0"    if PKG_USING_MCUBOOT_V180
+       default "latest"    if PKG_USING_MCUBOOT_LATEST_VERSION
+
+    menuconfig MCUBOOT_FLASH_DEVICE_USE
+    bool "MCUboot flash device choose"
+    default y
+    if MCUBOOT_FLASH_DEVICE_USE
+        config MCUBOOT_FLASH_DEVICE_W25Q
+            bool "w25qxx qspi flash as mcuboot device"
+            default y
+    endif
+    config MCUBOOT_FLASH_DEVICE_ID
+        int "flash device id"
+        default 1
+    config MCUBOOT_FLASH_SECTOR_SIZE
+        int "flash erase sector size"
+        default 4096
+    config MCUBOOT_IMAGE_SLOT_SECTOR_COUNTS
+        int "sectors counts of image slot"
+        default 64
+endif
+
