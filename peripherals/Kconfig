@@ -71,4 +71,5 @@ source "$PKGS_DIR/packages/peripherals/rosserial/Kconfig"
 source "$PKGS_DIR/packages/peripherals/micro_ros/Kconfig"
 source "$PKGS_DIR/packages/peripherals/mcp23008/Kconfig"
 source "$PKGS_DIR/packages/peripherals/bluetrum_sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/Misaka_AT24CXX/Kconfig"
 endmenu
