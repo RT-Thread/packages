@@ -425,14 +425,11 @@ if PKG_USING_U8G2
         config PKG_USING_U8G2_V300
             bool "v3.0.0"
 
-        config PKG_USING_U8G2_C_LATEST_VERSION
-            bool "c-latest"
-
-        config PKG_USING_U8G2_CPP_LATEST_VERSION
-            bool "cpp-latest"
-
         config PKG_USING_U8G2_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_U8G2_OFFICIAL_VERSION
+            bool "official"
     endchoice
 
     config PKG_U8G2_VER
@@ -443,9 +440,8 @@ if PKG_USING_U8G2
        default "v2.0.0"             if PKG_USING_U8G2_V200
        default "v2.1.0"             if PKG_USING_U8G2_V210
        default "v3.0.0"             if PKG_USING_U8G2_V300
-       default "c-latest"           if PKG_USING_U8G2_C_LATEST_VERSION
-       default "cpp-latest"         if PKG_USING_U8G2_CPP_LATEST_VERSION
        default "latest"             if PKG_USING_U8G2_LATEST_VERSION
+       default "official"           if PKG_USING_U8G2_OFFICIAL_VERSION
 
     comment "C     version: v1.x.x"
     comment "C++   version: v2.x.x"
@@ -462,7 +458,6 @@ if PKG_USING_U8G2
 
         default 0x30000 if PKG_USING_U8G2_V300
 
-        default 0x19999 if PKG_USING_U8G2_C_LATEST_VERSION
-        default 0x29999 if PKG_USING_U8G2_CPP_LATEST_VERSION
-        default 0x99999 if PKG_USING_U8G2_LATEST_VERSION
+        default 0x90000 if PKG_USING_U8G2_LATEST_VERSION
+        default 0x99999 if PKG_USING_U8G2_OFFICIAL_VERSION
 endif

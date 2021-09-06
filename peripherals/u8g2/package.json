@@ -57,20 +57,14 @@
       "VER_SHA": "NULL"
     },
     {
-      "version": "c-latest",
-      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
-      "filename": "",
-      "VER_SHA": "c-master"
-    },
-    {
-      "version": "cpp-latest",
-      "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
-      "filename": "",
-      "VER_SHA": "cpp-master"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/wuhanstudio/rt-u8g2.git",
+      "filename": "",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "official",
+      "URL": "https://github.com/olikraus/u8g2.git",
       "filename": "",
       "VER_SHA": "master"
     }
