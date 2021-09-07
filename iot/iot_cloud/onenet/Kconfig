@@ -80,10 +80,10 @@ if PKG_USING_ONENET
 
         config PKG_USING_ONENET_LATEST_VERSION
             bool "latest"
-            
+
         config PKG_USING_ONENET_V100
             bool "v1.0.0"
-           
+
     endchoice
 
     config PKG_ONENET_VER

@@ -9,11 +9,11 @@ if PKG_USING_VL53L0X
     config PKG_VL53L0X_PATH
         string
         default "/packages/peripherals/sensors/vl53l0x"
-        
-	 config PKG_USING_VL53L0X_SAMPLE
+
+     config PKG_USING_VL53L0X_SAMPLE
         bool "Enable vl53l0x sample"
         default n
-        
+
     choice
         prompt "Version"
         default PKG_USING_VL53L0X_LATEST_VERSION
@@ -26,7 +26,7 @@ if PKG_USING_VL53L0X
         config PKG_USING_VL53L0X_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_VL53L0X_VER
        string
        default "v1.0.0"    if PKG_USING_VL53L0X_V100

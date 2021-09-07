@@ -114,7 +114,7 @@ if PKG_USING_BC28_MQTT
         config PKG_USING_BC28_MQTT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_BC28_MQTT_VER
        string
        default "v0.0.1"    if PKG_USING_BC28_MQTT_V001

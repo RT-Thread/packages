@@ -24,7 +24,7 @@ if PKG_USING_LOGMGR
         default n
 
     if LOGMGR_USING_ABORT
-        
+
         config LOGMGR_ABORT_STORG
             bool "Enable abort log storg feature"
             default n
@@ -32,7 +32,7 @@ if PKG_USING_LOGMGR
             select PKG_USING_FLASHDB
             select FDB_USING_TSDB
             select FDB_USING_FAL_MODE
-        
+
         if LOGMGR_ABORT_STORG
 
             config LOGMGR_ABORT_FILE_PATH
@@ -91,7 +91,7 @@ if PKG_USING_LOGMGR
         config PKG_USING_LOGMGR_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LOGMGR_VER
        string
        default "v1.0.0"    if PKG_USING_LOGMGR_V100

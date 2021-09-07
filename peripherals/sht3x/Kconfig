@@ -8,10 +8,10 @@ if PKG_USING_SHT3X
     config PKG_SHT3X_PATH
         string
         default "/packages/peripherals/sht3x"
-            
+
     choice
         prompt "Version"
-        default PKG_USING_SHT3X_V100 
+        default PKG_USING_SHT3X_V100
         help
             Select the package version
 

@@ -135,7 +135,7 @@ if PKG_USING_VI
           operation; larger values increase the potential size of each undo
           and will generally malloc() larger objects and less frequently.
           Unless you want more (or less) frequent "undo points" while typing,
-          you should probably leave this unchanged.        
+          you should probably leave this unchanged.
 
     config VI_ENABLE_VERBOSE_STATUS
         bool "Enable verbose status reporting"

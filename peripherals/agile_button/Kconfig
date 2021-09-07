@@ -36,7 +36,7 @@ if PKG_USING_AGILE_BUTTON
         config PKG_USING_AGILE_BUTTON_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_AGILE_BUTTON_VER
        string
        default "latest"    if PKG_USING_AGILE_BUTTON_LATEST_VERSION

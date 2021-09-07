@@ -45,7 +45,7 @@ if PKG_USING_TCPSERVER
         config PKG_USING_TCPSERVER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TCPSERVER_VER
        string
        default "v0.0.1"    if PKG_USING_TCPSERVER_V001

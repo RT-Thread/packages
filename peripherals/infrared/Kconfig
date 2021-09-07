@@ -18,7 +18,7 @@ if PKG_USING_INFRARED
             config NEC_DEVIATION
                 int "nec admissible deviation"
                 default 100
-        endif 
+        endif
     endmenu
 
 config PKG_USING_DRV_INFRARED
@@ -53,7 +53,7 @@ config PKG_USING_DRV_INFRARED
                 config INFRARED_RECEIVE_PIN
                     int "infrared receive pin number"
                     default 17
-        
+
                 config INFRARED_RECEIVE_HWTIMER
                     string "infrared receive hwtimer dev name"
                     default "timer16"
@@ -75,7 +75,7 @@ config PKG_USING_DRV_INFRARED
         config PKG_USING_INFRARED_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_INFRARED_VER
        string
        default "v0.1.0"    if PKG_USING_INFRARED_V010

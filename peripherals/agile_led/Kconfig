@@ -36,7 +36,7 @@ if PKG_USING_AGILE_LED
         config PKG_USING_AGILE_LED_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_AGILE_LED_VER
        string
        default "latest"    if PKG_USING_AGILE_LED_LATEST_VERSION

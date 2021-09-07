@@ -19,7 +19,7 @@ if PKG_USING_PIKASCRIPT
         config PKG_USING_PIKASCRIPT_V020
             bool "v0.2.0"
     endchoice
-          
+
     config PKG_PIKASCRIPT_VER
        string
        default "v0.2.0"    if PKG_USING_PIKASCRIPT_V020

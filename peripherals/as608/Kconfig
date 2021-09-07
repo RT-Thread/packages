@@ -10,15 +10,15 @@ if PKG_USING_AS608
         string "as60x uart name"
         default "uart3"
 
-	comment "Notice: PI8 --> 136" 
-	config PKG_AS608_WAK_PIN
-		int "AS608 WAK pin num"
-		range 1 176
-		default 136
+    comment "Notice: PI8 --> 136"
+    config PKG_AS608_WAK_PIN
+        int "AS608 WAK pin num"
+        range 1 176
+        default 136
 
-	config PKG_USING_AS608_SAMPLE
-		bool "Enable AS608 SAMPLE"
-		default n
+    config PKG_USING_AS608_SAMPLE
+        bool "Enable AS608 SAMPLE"
+        default n
 
     config PKG_AS608_PATH
         string

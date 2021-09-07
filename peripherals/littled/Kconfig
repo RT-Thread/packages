@@ -47,7 +47,7 @@ if PKG_USING_LITTLED
         config PKG_USING_LITTLED_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LITTLED_VER
        string
        default "v0.2.0"    if PKG_USING_LITTLED_V020

@@ -22,7 +22,7 @@ if PKG_USING_LPS22HB
         config PKG_USING_LPS22HB_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LPS22HB_VER
        string
        default "v0.0.1"    if PKG_USING_LPS22HB_V001

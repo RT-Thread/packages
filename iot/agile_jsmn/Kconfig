@@ -19,7 +19,7 @@ if PKG_USING_AGILE_JSMN
         config PKG_USING_AGILE_JSMN_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_AGILE_JSMN_VER
        string
        default "latest"    if PKG_USING_AGILE_JSMN_LATEST_VERSION

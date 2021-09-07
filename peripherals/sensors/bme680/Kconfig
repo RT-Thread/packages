@@ -55,7 +55,7 @@ if PKG_USING_BME680
         config PKG_USING_BME680_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_BME680_VER
        string
        default "latest"    if PKG_USING_BME680_LATEST_VERSION

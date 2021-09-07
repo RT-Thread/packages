@@ -22,7 +22,7 @@ if PKG_USING_MCUBOOT
         config PKG_USING_MCUBOOT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MCUBOOT_VER
        string
        default "v1.8.0"    if PKG_USING_MCUBOOT_V180

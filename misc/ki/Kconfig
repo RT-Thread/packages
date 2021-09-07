@@ -29,7 +29,7 @@ if PKG_USING_KI
         config PKG_USING_KI_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_KI_VER
        string
        default "latest"    if PKG_USING_KI_LATEST_VERSION

@@ -21,7 +21,7 @@ if PKG_USING_PDFGEN
         config PKG_USING_PDFGEN_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PDFGEN_VER
        string
        default "latest"    if PKG_USING_PDFGEN_LATEST_VERSION

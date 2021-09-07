@@ -38,7 +38,7 @@ if PKG_USING_SYS_LOAD_MONITOR
         config PKG_USING_SYS_LOAD_MONITOR_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SYS_LOAD_MONITOR_VER
        string
        default "v1.0.0"    if PKG_USING_SYS_LOAD_MONITOR_V100

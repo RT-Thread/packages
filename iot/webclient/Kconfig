@@ -67,7 +67,7 @@ if PKG_USING_WEBCLIENT
         help
             Select the webclient version
         default PKG_USING_WEBCLIENT_V212
-        
+
         config PKG_USING_WEBCLIENT_V212
             bool "v2.1.2"
 

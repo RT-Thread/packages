@@ -5,14 +5,14 @@ menuconfig PKG_USING_COAP
     select SAL_USING_POSIX
     default n
 
-	help
-		libcoap: A C implementation of the Constrained Application Protocol (RFC 7252)
+    help
+        libcoap: A C implementation of the Constrained Application Protocol (RFC 7252)
 
 if PKG_USING_COAP
 
-	config PKG_USING_COAP_EXAMPLE
-	bool "Enable CoAP example"
-	default y
+    config PKG_USING_COAP_EXAMPLE
+    bool "Enable CoAP example"
+    default y
 
     config PKG_COAP_PATH
         string
@@ -23,7 +23,7 @@ if PKG_USING_COAP
         help
             Select the CoAP version
 
-		config PKG_USING_COAP_V100
+        config PKG_USING_COAP_V100
             bool "v1.0.0"
 
         config PKG_USING_COAP_LATEST_VERSION

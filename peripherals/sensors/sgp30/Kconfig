@@ -66,7 +66,7 @@ if PKG_USING_SGP30
         config PKG_USING_SGP30_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SGP30_VER
        string
        default "v1.0.0"    if PKG_USING_SGP30_V100

@@ -1,7 +1,7 @@
 
 # Kconfig file for package kobuki
 menuconfig PKG_USING_KOBUKI
-	select RT_USING_LIBC
+    select RT_USING_LIBC
     bool "kobuki: Kobuki Robot serial communication driver."
     default n
 
@@ -60,7 +60,7 @@ if PKG_USING_KOBUKI
         config PKG_USING_KOBUKI_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_KOBUKI_VER
        string
        default "latest"    if PKG_USING_KOBUKI_LATEST_VERSION

@@ -9,9 +9,9 @@ if PKG_USING_MP3PLAYER
     config PKG_MP3PLAYER_PATH
         string
         default "/packages/multimedia/mp3player"
-    
-	select RT_USING_AUDIO
-	select PKG_USING_HELIX
+
+    select RT_USING_AUDIO
+    select PKG_USING_HELIX
 
     config MP3_SOUND_DEVICE_NAME
         string "The play device name"
@@ -38,7 +38,7 @@ if PKG_USING_MP3PLAYER
         config PKG_USING_MP3PLAYER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MP3PLAYER_VER
        string
        default "v1.0.0"    if PKG_USING_MP3PLAYER_V100

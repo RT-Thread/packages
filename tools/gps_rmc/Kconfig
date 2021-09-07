@@ -19,7 +19,7 @@ if PKG_USING_GPS_RMC
         config PKG_USING_GPS_RMC_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_GPS_RMC_VER
        string
        default "latest"    if PKG_USING_GPS_RMC_LATEST_VERSION

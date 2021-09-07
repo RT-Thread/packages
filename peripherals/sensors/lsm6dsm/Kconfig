@@ -11,20 +11,20 @@ if PKG_USING_LSM6DSM
         default "/packages/peripherals/sensors/lsm6dsm"
 
     config PKG_LSM6DSM_USING_ACCE
-		bool "Enable LSM6DSM Accelerometer"
-		default y
+        bool "Enable LSM6DSM Accelerometer"
+        default y
 
     config PKG_LSM6DSM_USING_GYRO
-		bool "Enable LSM6DSM gyro"
-		default y
+        bool "Enable LSM6DSM gyro"
+        default y
 
     config PKG_LSM6DSM_USING_STEP
-		bool "Enable LSM6DSM temperature"
-		default y
+        bool "Enable LSM6DSM temperature"
+        default y
 
     config PKG_LSM6DSM_USING_TEMP
-		bool "Enable LSM6DSM step count"
-		default y
+        bool "Enable LSM6DSM step count"
+        default y
 
     choice
         prompt "I2C device address type"
@@ -51,7 +51,7 @@ if PKG_USING_LSM6DSM
         config PKG_USING_LSM6DSM_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LSM6DSM_VER
        string
        default "v1.0.0"    if PKG_USING_LSM6DSM_V100

@@ -23,7 +23,7 @@ if PKG_USING_WLAN_WICED
 
         config PKG_USING_WLAN_WICED_LATEST_VERSION
             bool "latest"
-            
+
         config PKG_USING_WLAN_WICED_V101
             bool "v1.0.1"
 
@@ -36,7 +36,7 @@ if PKG_USING_WLAN_WICED
         string
         default "v1.0.0"
     endif
-    
+
     if PKG_USING_WLAN_WICED_V101
         config PKG_WLAN_WICED_VER
         string

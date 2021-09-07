@@ -22,7 +22,7 @@ if PKG_USING_ABUP_FOTA
         config ABUP_NETWORKING_MODE_HTTP
             bool "HTTP"
     endchoice
-    
+
 if ABUP_NETWORKING_MODE_COAP
     config ABUP_DEFAULT_NETWORK_PROTOCOL
         int
@@ -47,7 +47,7 @@ endif
         config ABUP_ALGORITHM_LUSUN
             bool "lusun"
     endchoice
-        
+
 if ABUP_ALGORITHM_WOSUN
     config ABUP_FOTA_ALGORITHM
         int
@@ -160,7 +160,7 @@ endif
         config PKG_USING_ABUP_FOTA_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ABUP_FOTA_VER
        string
        default "v1.0.0"    if PKG_USING_ABUP_FOTA_V100

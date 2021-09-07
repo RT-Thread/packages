@@ -22,7 +22,7 @@ if PKG_USING_BLUETRUM_SDK
         config PKG_USING_BLUETRUM_SDK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_BLUETRUM_SDK_VER
        string
        default "v0.0.1"    if PKG_USING_BLUETRUM_SDK_V001

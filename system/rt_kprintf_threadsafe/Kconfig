@@ -19,7 +19,7 @@ if PKG_USING_RT_KPRINTF_THREADSAFE
         config PKG_USING_RT_KPRINTF_THREADSAFE_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RT_KPRINTF_THREADSAFE_VER
        string
        default "latest"    if PKG_USING_RT_KPRINTF_THREADSAFE_LATEST_VERSION

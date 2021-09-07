@@ -17,29 +17,29 @@ if PKG_USING_NNOM
 
         config PKG_USING_NNOM_V010
             bool "v0.1.0"
-			
+
         config PKG_USING_NNOM_V020
             bool "v0.2.0"
-	    
+
         config PKG_USING_NNOM_V021
             bool "v0.2.1"
-	
-	config PKG_USING_NNOM_V030
+
+    config PKG_USING_NNOM_V030
             bool "v0.3.0"
 
-	config PKG_USING_NNOM_V040
+    config PKG_USING_NNOM_V040
             bool "v0.4.0"
 
-	config PKG_USING_NNOM_V041
+    config PKG_USING_NNOM_V041
             bool "v0.4.1"
-	    
-	config PKG_USING_NNOM_V042
+
+    config PKG_USING_NNOM_V042
             bool "v0.4.2"
 
         config PKG_USING_NNOM_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_NNOM_VER
        string
        default "v0.1.0"    if PKG_USING_NNOM_V010

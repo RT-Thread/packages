@@ -24,7 +24,7 @@ if PKG_USING_THREES
         config PKG_USING_THREES_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_THREES_VER
        string
        default "latest"    if PKG_USING_THREES_LATEST_VERSION

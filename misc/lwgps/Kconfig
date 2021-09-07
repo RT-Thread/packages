@@ -23,7 +23,7 @@ if PKG_USING_LWGPS
     int "Enables double precision for floating point values"
     default 0
     range 0 1
-    
+
     config LWGPS_CFG_STATUS
     int "Enables status reporting callback"
     default 0
@@ -33,37 +33,37 @@ if PKG_USING_LWGPS
     int "Enables `GGA` statement parsing"
     default 1
     range 0 1
-    
+
     config LWGPS_CFG_STATEMENT_GPGSA
     int "Enables `GSA` statement parsing"
     default 1
     range 0 1
-    
+
     config LWGPS_CFG_STATEMENT_GPRMC
     int "Enables `RMC` statement parsing"
     default 1
     range 0 1
-    
+
     config LWGPS_CFG_STATEMENT_GPGSV
     int "Enables `GSV` statement parsing"
     default 1
     range 0 1
-    
+
     config LWGPS_CFG_STATEMENT_GPGSV_SAT_DET
     int "Enables detailed parsing of each satellite"
     default 0
     range 0 1
-    
+
     config LWGPS_CFG_STATEMENT_PUBX
     int "Enables parsing and generation of PUBX (uBlox) messages"
     default 0
     range 0 1
-    
+
     config LWGPS_CFG_STATEMENT_PUBX_TIME
     int "Enables parsing and generation of PUBX (uBlox) TIME messages"
     default 0
     range 0 1
-    
+
     choice
         prompt "Version"
         default PKG_USING_LWGPS_LATEST_VERSION
@@ -80,7 +80,7 @@ if PKG_USING_LWGPS
             bool "latest"
     endchoice
 
-          
+
     config PKG_LWGPS_VER
        string
        default "v1.0.0"    if PKG_USING_LWGPS_V100

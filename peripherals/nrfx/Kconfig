@@ -22,7 +22,7 @@ if PKG_USING_NRFX
         config PKG_USING_NRFX_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_NRFX_VER
        string
        default "v2.1.0"    if PKG_USING_NRFX_V210

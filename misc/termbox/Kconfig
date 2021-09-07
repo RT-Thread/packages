@@ -34,7 +34,7 @@ if PKG_USING_TERMBOX
         config PKG_USING_TERMBOX_LATEST_VERSION
             bool "latest"
     endchoice
-  
+
     config PKG_TERMBOX_VER
        string
        default "latest"    if PKG_USING_TERMBOX_LATEST_VERSION

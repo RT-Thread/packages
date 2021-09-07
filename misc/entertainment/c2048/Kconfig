@@ -24,7 +24,7 @@ if PKG_USING_2048
         config PKG_USING_2048_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_2048_VER
        string
        default "latest"    if PKG_USING_2048_LATEST_VERSION

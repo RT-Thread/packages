@@ -47,6 +47,6 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/vl53l0x/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/ina260/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/max30102/Kconfig"
-	source "$PKGS_DIR/packages/peripherals/sensors/ina226/Kconfig"
+    source "$PKGS_DIR/packages/peripherals/sensors/ina226/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/lis2dh12/Kconfig"
     endif

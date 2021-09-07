@@ -19,7 +19,7 @@ if PKG_USING_MEM_SANDBOX
         config PKG_USING_MEM_SANDBOX_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MEM_SANDBOX_VER
        string
        default "latest"    if PKG_USING_MEM_SANDBOX_LATEST_VERSION

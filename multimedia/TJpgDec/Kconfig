@@ -10,11 +10,11 @@ if PKG_USING_TJPGD
         string
         default "/packages/multimedia/TJpgDec"
 
-	config TJPGD_INPUT_BUFFER_SIZE
-		int "Size of stream input buffer"
-		default 512
+    config TJPGD_INPUT_BUFFER_SIZE
+        int "Size of stream input buffer"
+        default 512
 
-	choice
+    choice
         prompt "Output format"
         default TJPGD_USING_FORMAT_RGB888
         help
@@ -30,11 +30,11 @@ if PKG_USING_TJPGD
     config TJPGD_USING_SCALE
         bool "Use output descaling"
         default y
-		
-	config TJPGD_USING_TBLCLIP
+
+    config TJPGD_USING_TBLCLIP
         bool "Use table for saturation"
         default y
-		
+
     config PKG_TJPGD_SAMPLE
         bool "Enable tjpgd sample"
         default y
@@ -54,7 +54,7 @@ if PKG_USING_TJPGD
         config PKG_USING_TJPGD_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TJPGD_VER
        string
        default "v1.0.0"    if PKG_USING_TJPGD_V100

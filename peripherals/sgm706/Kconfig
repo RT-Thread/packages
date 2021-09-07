@@ -9,11 +9,11 @@ if PKG_USING_SGM706
     config PKG_SGM706_PATH
         string
         default "/packages/peripherals/sgm706"
-        
-	 config PKG_USING_SGM706_SAMPLE
+
+     config PKG_USING_SGM706_SAMPLE
         bool "Enable sgm706 sample"
         default n
-        
+
     choice
         prompt "Version"
         default PKG_USING_SGM706_LATEST_VERSION
@@ -26,7 +26,7 @@ if PKG_USING_SGM706
         config PKG_USING_SGM706_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SGM706_VER
        string
        default "v1.0.0"    if PKG_USING_SGM706_V100

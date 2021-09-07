@@ -8,23 +8,23 @@ if PKG_USING_NR_MICRO_SHELL
     config PKG_NR_MICRO_SHELL_PATH
         string
         default "/packages/tools/nr_micro_shell"
-    
+
     config RT_NR_SHELL_LINE_SIZE
         int "The command line size."
         default 100
-    
+
     config RT_NR_SHELL_USER_NAME
         string "The user name."
         default "root@nr_shell:"
-    
+
     config RT_NR_SHELL_USER_NAME_MAX_LENGTH
         int "The maxial size of user name."
         default 15
-    
+
     config RT_NR_SHELL_CMD_NAME_MAX_LENGTH
         int "The maxial size of command name."
         default 10
-    
+
     config RT_NR_SHELL_CMD_PARAS_MAX_NUM
         int "The max command arg number."
         default 10
@@ -32,11 +32,11 @@ if PKG_USING_NR_MICRO_SHELL
     config RT_NR_SHELL_CMD_HISTORY_BUF_LENGTH
         int "The command history buffer size."
         default 253
-    
+
     config RT_NR_SHELL_MAX_CMD_HISTORY_NUM
         int "The max command history line number."
         default 3
-    
+
     config RT_NR_SHELL_STACKSIZE
         int "The stacksize of nr_micro_shell thread."
         default 512
@@ -83,7 +83,7 @@ if PKG_USING_NR_MICRO_SHELL
         config PKG_USING_NR_MICRO_SHELL_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_NR_MICRO_SHELL_VER
         string
         default "v1.0.0"    if PKG_USING_NR_MICRO_SHELL_V100

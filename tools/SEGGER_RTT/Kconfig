@@ -13,13 +13,13 @@ menuconfig SEGGER_RTT_ENABLE
 menuconfig SWO_ENABLE
     bool "ARM CORTEX M SWO support"
     default n
-    
+
     config SWO_PORT_NUMBER
         int "SWO port number"
         depends on SWO_ENABLE
         default 0
-        
-        
+
+
     config PKG_SEGGER_RTT_PATH
         string
         default "/packages/tools/SEGGER_RTT"
@@ -32,14 +32,14 @@ menuconfig SWO_ENABLE
 
         config PKG_USING_SEGGER_RTT_V100
             bool "v1.0.0"
-            
+
         config PKG_USING_SEGGER_RTT_V110
             bool "v1.1.0"
-            
+
         config PKG_USING_SEGGER_RTT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SEGGER_RTT_VER
        string
        default "v1.0.0"    if PKG_USING_SEGGER_RTT_V100

@@ -14,7 +14,7 @@ if PKG_USING_PROTOBUF_C
         bool "protobuf-c examples"
         help
             protobuf-c examples
-        default n    
+        default n
     if PROTOBUF_C_USING_EXAMPLE
         config PROTOBUF_C_USING_ENCODE_DECODE_EXAMPLE
             bool "protobuf-c example: encode and decode in memory"

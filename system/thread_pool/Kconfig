@@ -26,7 +26,7 @@ if PKG_USING_THREAD_POOL
         config PKG_USING_THREAD_POOL_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_THREAD_POOL_VER
        string
        default "v4.0.1"    if PKG_USING_THREAD_POOL_V401

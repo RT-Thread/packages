@@ -22,7 +22,7 @@ if PKG_USING_LUNAR_CALENDAR
         config PKG_USING_LUNAR_CALENDAR_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LUNAR_CALENDAR_VER
        string
        default "v0.1.0"    if PKG_USING_LUNAR_CALENDAR_V010

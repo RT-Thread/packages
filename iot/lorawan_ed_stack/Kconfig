@@ -14,7 +14,7 @@ if PKG_USING_LORAWAN_ED_STACK
             bool
             default y
             select PKG_USING_LORA_RADIO_DRIVER
-            
+
         choice
             prompt "Select LoRaWAN Specification"
             default LORAWAN_ED_STACK_USING_LORAWAN_SPECIFICATION_V1_0_X
@@ -132,7 +132,7 @@ if PKG_USING_LORAWAN_ED_STACK
                 default 10
 
             if LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_OTAA
-                
+
                 menu "Redefine OTAA Device Authentication Infomation"
                     config LORAWAN_ED_STACK_MAC_PARAMETER_DEVEUI_REDEFINE
                         bool "Redefine LoRaWAN End-Device DevEUI"
@@ -157,12 +157,12 @@ if PKG_USING_LORAWAN_ED_STACK
                         string "AppKey"
                         default "00112233445566778899AABBCCDDEEFF"
                         depends on LORAWAN_ED_STACK_MAC_PARAMETER_APPKEY_REDEFINE
-                
+
                 endmenu
             endif
 
             if LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_ABP
-               
+
                 menu "Redefine ABP Device Authentication Infomation"
                     config LORAWAN_ED_STACK_MAC_PARAMETER_DEVADDR_REDEFINE
                         bool "Redefine LoRaWAN End-Device DevAddr"
@@ -317,7 +317,7 @@ if PKG_USING_LORAWAN_ED_STACK
                 config LORAWAN_ED_STACK_DEBUG_MAC_RX_WINDOW_TIMESTAMP
                     int
                     default 1 if LORAWAN_ED_STACK_DEBUG_MAC_RX_WIN_TIMESTAMP_CONFIG
-                    
+
                 config LORAWAN_ED_STACK_DEBUG_MAC_COMMAND_CONFIG
                     bool "Enable LoRaWAN End-Device MAC Command Debug"
                     default n
@@ -349,7 +349,7 @@ if PKG_USING_LORAWAN_ED_STACK
                      endmenu
                 endif
       endmenu
-          
+
     choice
         prompt "Version"
         default PKG_USING_LORAWAN_ED_STACK_LATEST_VERSION
@@ -365,7 +365,7 @@ if PKG_USING_LORAWAN_ED_STACK
         config PKG_USING_LORAWAN_ED_STACK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LORAWAN_ED_STACK_VER
        string
        default "v1.0.0"    if PKG_USING_LORAWAN_ED_STACK_V100

@@ -27,7 +27,7 @@ if AT_DEVICE_USING_N720
         config N720_SAMPLE_WAKEUP_PIN
             int "Wakeup pin"
             default -1
-            
+
         config N720_SAMPLE_CLIENT_NAME
             string "AT client device name"
             default "uart2"
