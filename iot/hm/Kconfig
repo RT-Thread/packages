@@ -62,6 +62,11 @@ if PKG_USING_HM
                     bool "Using Zephyr Controller"
             endchoice
         endif
+    
+    if HM_USING_CHIPSET_BCM
+        config HM_USING_BOARD_ART_PI
+        bool "Using ART-Pi"
+        default n
 
     config HM_USING_TEST
         bool "Enable Testcases"
