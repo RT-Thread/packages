@@ -67,6 +67,7 @@ if PKG_USING_HM
         config HM_USING_BOARD_ART_PI
         bool "Using ART-Pi"
         default n
+    endif
 
     config HM_USING_TEST
         bool "Enable Testcases"
