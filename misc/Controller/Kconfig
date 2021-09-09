@@ -19,10 +19,13 @@ if PKG_USING_CONTROLLER
 
         config PKG_USING_CONTROLLER_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_CONTROLLER_V1_0_0
+            bool "v1.0.0"
     endchoice
 
     config PKG_CONTROLLER_VER
         string
         default "latest" if PKG_USING_CONTROLLER_LATEST_VERSION
-
+        default "v1.0.0" if PKG_USING_CONTROLLER_V1_0_0
 endif
