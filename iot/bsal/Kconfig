@@ -53,6 +53,10 @@ if PKG_USING_BSAL
             select PKG_BSAL_SRV_BAS
             select PKG_BSAL_SRV_BLUFI
             bool "battery service and blufi service"
+
+        config PKG_BSAL_SAMPLE_NUS_ONLY
+            select PKG_BSAL_SRV_NUS
+            bool "nordic uart service"
         
     endchoice
     
@@ -70,6 +74,12 @@ if PKG_USING_BSAL
                 default n
                 help
                     Select Battery service profile.
+
+            config PKG_BSAL_SRV_NUS
+                bool "Nordic Uart Service support"
+                default n
+                help
+                    Select Nordic Uart service profile.
                 
         endmenu
     endif
