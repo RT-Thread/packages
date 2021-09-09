@@ -1,0 +1,71 @@
+
+# Kconfig file for package hm
+menuconfig PKG_USING_HM
+    bool "A generic Bluetooth HCI transport layer"
+    default n
+
+if PKG_USING_HM
+
+    config PKG_HM_PATH
+        string
+        default "/packages/iot/hm"
+
+    choice
+        prompt "Version"
+        default PKG_USING_HM_V100
+        help
+            Select the package version
+
+        config PKG_USING_HM_V100
+            bool "v1.0.0"
+
+        config PKG_USING_HM_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_HM_VER
+       string
+       default "v1.0.0"    if PKG_USING_HM_V100
+       default "latest"    if PKG_USING_HM_LATEST_VERSION
+
+    config HM_USING_STACK
+        bool "Enable Stack Port"
+        default n
+    
+    config HM_USING_CHIPSET
+        bool "Enable Chipset Port"
+        default n
+
+    config HM_USING_TEST
+        bool "Enable Testcases"
+        default n
+
+    if HM_USING_STACK
+        choice
+            prompt "Select stack port"
+            default HM_USING_STACK_BTSTACK
+
+            config HM_USING_STACK_BTSTACK
+                bool "Using BTStack"
+
+            config HM_USING_STACK_NIMBLE
+                bool "Using NimBLE"
+        endchoice
+    endif
+
+    if HM_USING_CHIPSET
+        choice
+            prompt "Select chipset port"
+            default HM_USING_CHIPSET_BCM
+
+            config HM_USING_CHIPSET_BCM
+                bool "Using AP6212A(BCM)"
+            config HM_USING_CHIPSET_CSR8311
+                bool "Using CSR8311"
+            config HM_USING_CHIPSET_ZEPHYR
+                bool "Using Zephyr Controller"
+        endchoice
+    endif
+
+endif
+
