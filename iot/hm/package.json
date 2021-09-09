@@ -22,7 +22,7 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://hm-1.0.0.zip",
+      "URL": "https://github.com/Jackistang/HM/archive/refs/tags/1.0.0.zip",
       "filename": "hm-1.0.0.zip",
       "VER_SHA": "fill in the git version SHA value"
     },
