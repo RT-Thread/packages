@@ -33,5 +33,8 @@ source "$PKGS_DIR/packages/system/rt_kprintf_threadsafe/Kconfig"
 source "$PKGS_DIR/packages/system/lpm/Kconfig"
 source "$PKGS_DIR/packages/system/tlsf/Kconfig"
 source "$PKGS_DIR/packages/system/event_recorder/Kconfig"
+source "$PKGS_DIR/packages/system/Arm-2D/Kconfig"
+source "$PKGS_DIR/packages/system/wcwidth/Kconfig"
+source "$PKGS_DIR/packages/system/mcuboot/Kconfig"
 
 endmenu

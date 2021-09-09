@@ -26,6 +26,12 @@
       "VER_SHA": ""
     },
     {
+      "version": "v1.01",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qled/archive/v1.01.zip",
+      "filename": "rt-thread-qled-1.01.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/qiyongzhong0/rt-thread-qled.git",
       "filename": "",

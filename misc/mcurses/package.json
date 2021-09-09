@@ -6,7 +6,9 @@
   "keywords": [
     "mcurses",
     "ncurses",
-    "terminal"
+    "curses",
+    "terminal",
+    "tui"
   ],
   "category": "misc",
   "author": {
@@ -16,14 +18,12 @@
   },
   "license": "MIT",
   "repository": "https://github.com/wuhanstudio/mcurses",
-  "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "homepage": "https://github.com/wuhanstudio/mcurses#readme",
   "site": [
     {
       "version": "latest",
       "URL": "https://github.com/wuhanstudio/mcurses.git",
-      "filename": "",
+      "filename": "Null for git package",
       "VER_SHA": "master"
     }
   ]

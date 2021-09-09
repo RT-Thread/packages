@@ -1,0 +1,28 @@
+{
+  "name": "Arm-2D",
+  "description": "Arm-2D Graphics Library.",
+  "description_zh": "Arm-2D 图形库。",  
+  "enable": "PKG_USING_ARM_2D", 
+  "keywords": [
+    "Arm-2D"
+  ],
+  "category": "system",
+  "author": {
+    "name": "liuduanfei",
+    "email": "939763442@qq.com",
+    "github": "liuduanfei"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/liuduanfei/Arm-2D",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/liuduanfei/Arm-2D.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
