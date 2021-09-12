@@ -1,0 +1,31 @@
+{
+  "name": "Misaka_AT24CXX",
+  "description": "Misaka-Network for AT24CXX EEPROM",
+  "description_zh": "御坂网络AT24CXX驱动包，提供了AT24CXX的全部功能",  
+  "enable": "PKG_USING_MISAKA_AT24CXX", 
+  "keywords": [
+    "at24cxx",
+    "御坂",
+    "御坂网络",
+    "Misaka"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "xqyjlj",
+    "email": "xqyjlj@126.com",
+    "github": "xqyjlj"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/xqyjlj/Miaska_AT24CXX",
+  "icon": "unknown",
+  "homepage": "https://github.com/xqyjlj/Miaska_AT24CXX",
+  "doc": "https://xqyjlj.github.io/2021/05/15/%E5%BE%A1%E5%9D%82%E7%BD%91%E7%BB%9C%E9%A9%B1%E5%8A%A8-AT24CXX/",
+  "site": [
+    {
+      "version": "1.0.0",
+      "URL": "https://github.com/xqyjlj/Miaska_AT24CXX/archive/1.0.0.zip",
+      "filename": "Miaska_AT24CXX-1.0.0.zip",
+      "VER_SHA": "68f344634ad316e9ac029bff03d1f88a7a8f9e54"
+    }
+  ]
+}
