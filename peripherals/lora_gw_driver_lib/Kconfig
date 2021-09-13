@@ -1,0 +1,235 @@
+
+# Kconfig file for package lora-gw-driver
+menuconfig PKG_USING_LORA_GW_DRIVER_LIB
+    bool "lora-gw-driver-lib is lora gateway chip(SX130x) driver binary libraries."
+    default n
+
+if PKG_USING_LORA_GW_DRIVER_LIB
+
+    config PKG_LORA_GW_DRIVER_LIB_PATH
+        string
+        default "/packages/peripherals/lora_gw_driver_lib"
+
+    choice
+        prompt "Select LoRa Gateway Chip"
+        default LORA_GW_DRIVER_LIB_USING_LORA_CHIP_SX1302
+        help
+            Select LoRa Gateway Chip
+
+        config LORA_GW_DRIVER_LIB_USING_LORA_CHIP_SX1302
+            bool "SX1302"
+    endchoice
+
+    config LORA_GW_DRIVER_SPI_DEVICE_NAME
+        string "Setup LoRa Gw Driver Spi Device Name"
+        default "lgd1302"
+        
+    config LORA_GW_DRIVER_SPI_BUS_NAME
+        string "Setup LoRa Gw Driver Spi Bus Name (eg:spi1,spi2..,Define BSP_USING_SPIx in [Target Platform]\\Board\\Kconfig)"
+        default spi2
+        help
+           Setup LoRa Gw Driver Spi Bus Name,eg:spi2,Please define BSP_USING_SPIx in the [Target Platform]\\Board\\Kconfig
+
+    config LORA_GW_DRIVER_I2C_DEVICE_NAME
+        string "Setup LoRa Gw Driver I2C Device Name for Temperture(eg:i2c1,i2c2..,Define BSP_USING_IICx in [Target Platform]\\Board\\Kconfig)"
+        default i2c3
+
+  config LORA_GW_DRIVER_USING_SERVICES
+        bool "Select lora-gw-driver Services"
+        default n
+        if LORA_GW_DRIVER_USING_SERVICES
+            config LORA_GW_DRIVER_USING_LORA_FRAME_FORMAT_SERVICE
+                bool "Enable LoRa Frame Format Service"
+                default n
+
+            config LORA_GW_DRIVER_USING_LORAWAN_MAC_SERVICE
+                    config LORA_GW_DRIVER_USING_LORAWAN_MAC_SERVICE
+                    bool "Enable LoRaWAN MAC Service"
+                    default n
+        endif
+
+ config LORA_GW_DRIVER_GPIO_SETUP
+         bool "Enable lora-gw-driver GPIO Setup"
+         default n
+         
+         if LORA_GW_DRIVER_GPIO_SETUP
+            menu "Select Supported Target Borad"
+                menuconfig LORA_GW_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LORA_SHIELD_LRS007_LSD4WN_2K730NE0_SX1302
+                    bool "ART-Pi and LRS007[LSD4WN-2K730NE0(SX1302)]"
+                    if LORA_GW_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LORA_SHIELD_LRS007_LSD4WN_2K730NE0_SX1302 && !LORA_GW_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LORA_SHIELD_LRS007_LSD4WN_2K830NE0_SX1302
+
+                        config LORA_GW_DRIVER_USING_SX1302_LSD4WN_2K730NE0  
+                            default y
+
+                        config LORA_GW_DRIVER_USING_FE_SX1250  
+                            default y
+
+                        config LORA_GW_DRIVER_GPIO_SETUP_BY_PIN_NAME
+                            bool "Select LoRa Gw Chip GPIO by Pin Name"
+                            default n
+
+                            if LORA_GW_DRIVER_GPIO_SETUP_BY_PIN_NAME
+                                config LORA_GW_DRIVER_SPI_NSS_PIN_NAME
+                                    string "LoRa Gw Chip SPI NSS Pin Name"
+                                    default "I0"
+                                config LORA_GW_DRIVER_RESET_PIN_NAME
+                                    string "LoRa Gw Chip RESET Pin Name"
+                                    default "A15"
+                                config LORA_GW_DRIVER_POWER_ON_PIN_NAME
+                                    string "LoRa Gw Chip PowerOn Pin Name"
+                                    default "H14"
+                                config LORA_GW_DRIVER_PPS_PIN_NAME
+                                    string "LoRa Gw Chip PPS Pin Name"
+                                    default "H15"
+                                config LORA_GW_DRIVER_GPIO6_PIN_NAME
+                                    string "LoRa Gw GPIO6 Pin Name"
+                                    default "H7"
+                            endif
+
+                        config LORA_GW_DRIVER_GPIO_SETUP_BY_PIN_NUMBER
+                             bool "Select LoRa Gw Chip GPIO by Pin Number"
+                             default y
+
+                             if LORA_GW_DRIVER_GPIO_SETUP_BY_PIN_NUMBER
+                                 config LORA_GW_DRIVER_SPI_NSS_PIN
+                                     int "LoRa Gw Chip SPI NSS Pin number"
+                                     range 0 175
+                                     default 128
+                                 config LORA_GW_DRIVER_RESET_PIN
+                                     int "LoRa Gw Chip RESET Pin number"
+                                     range 0 175
+                                     default 15
+                                 config LORA_GW_DRIVER_POWER_ON_PIN
+                                     int "LoRa Gw Chip PowerOn Pin number"
+                                     range 0 175
+                                     default 126
+                                 config LORA_GW_DRIVER_PPS_PIN
+                                     int "LoRa Gw Chip PPS Pin number"
+                                     range 0 175
+                                     default 127
+                                 config LORA_GW_DRIVER_GPIO6_PIN
+                                     int "LoRa Gw Chip GPIO6 Pin number"
+                                     range 0 175
+                                     default 119
+                             endif
+                    endif
+                 menuconfig LORA_GW_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LORA_SHIELD_LRS007_LSD4WN_2K830NE0_SX1302
+                    bool "ART-Pi and LRS007[LSD4WN-2K830NE0(SX1302)]"
+                    if LORA_GW_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LORA_SHIELD_LRS007_LSD4WN_2K830NE0_SX1302 && !LORA_GW_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LORA_SHIELD_LRS007_LSD4WN_2K730NE0_SX1302
+
+                        config LORA_GW_DRIVER_USING_SX1302_LSD4WN_2K830NE0  
+                            default y
+
+                        config LORA_GW_DRIVER_USING_FE_SX1250  
+                            default y
+
+                        config LORA_GW_DRIVER_GPIO_SETUP_BY_PIN_NAME
+                            bool "Select LoRa Gw Chip GPIO by Pin Name"
+                            default n
+
+                            if LORA_GW_DRIVER_GPIO_SETUP_BY_PIN_NAME
+                                config LORA_GW_DRIVER_SPI_NSS_PIN_NAME
+                                    string "LoRa Gw Chip SPI NSS Pin Name"
+                                    default "I0"
+                                config LORA_GW_DRIVER_RESET_PIN_NAME
+                                    string "LoRa Gw Chip RESET Pin Name"
+                                    default "A15"
+                                config LORA_GW_DRIVER_POWER_ON_PIN_NAME
+                                    string "LoRa Gw Chip PowerOn Pin Name"
+                                    default "H14"
+                                config LORA_GW_DRIVER_PPS_PIN_NAME
+                                    string "LoRa Gw Chip PPS Pin Name"
+                                    default "H15"
+                                config LORA_GW_DRIVER_GPIO6_PIN_NAME
+                                    string "LoRa Gw GPIO6 Pin Name"
+                                    default "H7"
+                            endif
+
+                        config LORA_GW_DRIVER_GPIO_SETUP_BY_PIN_NUMBER
+                             bool "Select LoRa Gw Chip GPIO by Pin Number"
+                             default y
+
+                             if LORA_GW_DRIVER_GPIO_SETUP_BY_PIN_NUMBER
+                                 config LORA_GW_DRIVER_SPI_NSS_PIN
+                                     int "LoRa Gw Chip SPI NSS Pin number"
+                                     range 0 175
+                                     default 128
+                                 config LORA_GW_DRIVER_RESET_PIN
+                                     int "LoRa Gw Chip RESET Pin number"
+                                     range 0 175
+                                     default 15
+                                 config LORA_GW_DRIVER_POWER_ON_PIN
+                                     int "LoRa Gw Chip PowerOn Pin number"
+                                     range 0 175
+                                     default 126
+                                 config LORA_GW_DRIVER_PPS_PIN
+                                     int "LoRa Gw Chip PPS Pin number"
+                                     range 0 175
+                                     default 127
+                                 config LORA_GW_DRIVER_GPIO6_PIN
+                                     int "LoRa Gw Chip GPIO6 Pin number"
+                                     range 0 175
+                                     default 119
+                             endif
+                    endif
+            endmenu
+       endif
+
+   menu "Select LoRa GW Driver Samples"
+
+        config LORA_GW_DRIVER_LIB_USING_LGD_TESTER
+            bool "Enable LoRa GW Driver Tester"
+            default n
+
+            if LORA_GW_DRIVER_LIB_USING_LGD_TESTER
+                choice
+                    prompt "Select the RF frequency"
+                    default LORA_GW_DRIVER_LIB_USING_PHY_REGION_CN470
+                    help
+                        Select the RF frequency
+
+                    config LORA_GW_DRIVER_LIB_USING_PHY_REGION_CN470
+                        bool "PHY Region CN470"
+
+                    config LORA_GW_DRIVER_LIB_USING_PHY_REGION_EU868
+                        bool "PHY Region EU868"
+
+                    config LORA_GW_DRIVER_LIB_USING_PHY_REGION_KR920
+                        bool "PHY Region KR920"
+                endchoice
+
+                config LGD_DBG_SHELL_TEST_CONFIG
+                    bool "Enable LGD Tester Shell Test Debug"
+                    default y
+                config LGD_DBG_SHELL_TEST
+                    int
+                    default 1 if LGD_DBG_SHELL_TEST_CONFIG
+
+                config LGD_DBG_SHELL_RX_INFO_CONFIG
+                    bool "Enable LGD Tester RX Info Debug"
+                    default y
+                config LGD_DBG_SHELL_RX_INFO
+                    int
+                    default 1 if LGD_DBG_SHELL_RX_INFO_CONFIG
+            endif
+    endmenu
+
+    choice
+        prompt "Version"
+        default PKG_USING_LORA_GW_DRIVER_LIB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LORA_GW_DRIVER_LIB_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LORA_GW_DRIVER_LIB_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LORA_GW_DRIVER_LIB_VER
+       string
+       default "v1.0.0"    if PKG_USING_LORA_GW_DRIVER_LIB_V100
+       default "latest"    if PKG_USING_LORA_GW_DRIVER_LIB_LATEST_VERSION
+endif
+
