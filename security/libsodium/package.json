@@ -9,21 +9,21 @@
   ],
   "category": "security",
   "author": {
-    "name": "RealThread",
-    "email": "package_team@rt-thread.com",
-    "github": "RT-Thread-packages"
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
   },
-  "license": "MIT",
-  "repository": "https://github.com/RT-Thread-packages/libsodium",
-  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
-  "homepage": "https://github.com/RT-Thread-packages/libsodium#readme",
-  "readme": "A modern and easy-to-use crypto library.",
+  "license": "ISC",
+  "repository": "https://github.com/wuhanstudio/libsodium",
+  "icon": "https://gblobscdn.gitbook.com/spaces%2F-M3r_UxTMYadXz0opBDe%2Favatar-1585776902105.png?alt=media",
+  "homepage": "https://doc.libsodium.org/",
+  "doc": "https://doc.libsodium.org/",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/RT-Thread-packages/libsodium.git",
-      "filename": "libsodium-1.0.0.zip",
-      "VER_SHA": "697d89a290c7212594811f7414afc6a4a87e125f"
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/libsodium.git",
+      "filename": "",
+      "VER_SHA": "master"
     }
   ]
 }
