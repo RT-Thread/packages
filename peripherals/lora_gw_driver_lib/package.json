@@ -1,5 +1,5 @@
 {
-  "name": "lora-gw-driver-lib",
+  "name": "lora_gw_driver_lib",
   "description": "lora-gw-driver-lib is lora gateway chip(SX130x) driver binary libraries.",
   "description_zh": "LoRa网关芯片(SX130x)驱动",  
   "enable": "PKG_USING_LORA_GW_DRIVER_LIB", 
