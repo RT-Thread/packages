@@ -220,8 +220,8 @@ if PKG_USING_LORA_GW_DRIVER_LIB
         help
             Select the package version
 
-        config PKG_USING_LORA_GW_DRIVER_LIB_V100
-            bool "v1.0.0"
+        config PKG_USING_LORA_GW_DRIVER_LIB_V030
+            bool "v0.3.0"
 
         config PKG_USING_LORA_GW_DRIVER_LIB_LATEST_VERSION
             bool "latest"
@@ -229,7 +229,7 @@ if PKG_USING_LORA_GW_DRIVER_LIB
           
     config PKG_LORA_GW_DRIVER_LIB_VER
        string
-       default "v1.0.0"    if PKG_USING_LORA_GW_DRIVER_LIB_V100
+       default "v0.3.0"    if PKG_USING_LORA_GW_DRIVER_LIB_V030
        default "latest"    if PKG_USING_LORA_GW_DRIVER_LIB_LATEST_VERSION
 endif
 

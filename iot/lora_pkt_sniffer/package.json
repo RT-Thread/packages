@@ -19,6 +19,12 @@
   "doc": "https://github.com/Forest-Rain/lora-pkt-sniffer/tree/master/docs",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Forest-Rain/lora-pkt-sniffer/archive/v1.0.0.zip",
+      "filename": "lora-packet-sniffer-1.0.0.zip",
+      "VER_SHA": "c2f36a5a4a04478601ac14ed9fc006244dba3936"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/forest-rain/lora-pkt-sniffer.git",
       "filename": "lora-packet-sniffer for git package",
