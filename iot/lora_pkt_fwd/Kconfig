@@ -19,11 +19,14 @@ if PKG_USING_LORA_PKT_FWD
         default y
         select RT_USING_SAL
         select RT_USING_PTHREADS
-        select RT_USING_POSIX_TERMIOS
 
     config PKG_USING_LORA_GW_DRIVER_LIB
         bool "Use lora-gw-driver-lib"
         default y
+
+    config LORA_PKT_FWD_USING_PARAMS_CONF_BY_JSON
+        bool "Use Gateway JSON Configuration File"
+        default n
 
     choice
         prompt "Select LoRaWAN Network Server"
