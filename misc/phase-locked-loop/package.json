@@ -1,5 +1,5 @@
 {
-  "name": "PLL",
+  "name": "phase-locked-loop",
   "description": "Phase locked loop and frequency locked loop algorithm",
   "description_zh": "锁相环与锁频环算法",
   "enable": "PKG_USING_PLL",
