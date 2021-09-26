@@ -3,6 +3,7 @@
 menuconfig PKG_USING_ROSSERIAL
     bool "rosserial: ROS 1 on microcontrollers."
     select RT_USING_CPLUSPLUS
+    select RT_USING_LIBC
     default n
 
 if PKG_USING_ROSSERIAL
