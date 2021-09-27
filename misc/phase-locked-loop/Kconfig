@@ -1,31 +1,31 @@
-# Kconfig file for package PLL
-menuconfig PKG_USING_PLL
-    bool "SOGI-based PLL and FLL library"
+# Kconfig file for package PHASE_LOCKED_LOOP
+menuconfig PKG_USING_PHASE_LOCKED_LOOP
+    bool "SOGI-based phase-locked loop(PLL) and frequency-locked loop(FLL) library"
     default n
     help
-        PLL package is an implementation of SOGI based PLL and FLL.
+        PHASE_LOCKED_LOOP package is an implementation of SOGI based PLL and FLL.
 
-if PKG_USING_PLL
+if PKG_USING_PHASE_LOCKED_LOOP
 
-    config PKG_PLL_PATH
+    config PKG_PHASE_LOCKED_LOOP_PATH
         string
-        default "/packages/misc/PLL"
+        default "/packages/misc/phase-locked-loop"
 
     choice
         prompt "Version"
-        default PKG_USING_PLL_LATEST_VERSION
+        default PKG_USING_PHASE_LOCKED_LOOP_LATEST_VERSION
         help
-            Select the PLL version
+            Select the version
 
-        config PKG_USING_PLL_LATEST_VERSION
+        config PKG_USING_PHASE_LOCKED_LOOP_LATEST_VERSION
             bool "latest"
 
-        config PKG_USING_PLL_V1_0_0
+        config PKG_USING_PHASE_LOCKED_LOOP_V1_0_0
             bool "v1.0.0"
     endchoice
 
-    config PKG_PLL_VER
+    config PKG_PHASE_LOCKED_LOOP_VER
         string
-        default "latest" if PKG_USING_PLL_LATEST_VERSION
-        default "v1.0.0" if PKG_USING_PLL_V1_0_0
+        default "latest" if PKG_USING_PHASE_LOCKED_LOOP_LATEST_VERSION
+        default "v1.0.0" if PKG_USING_PHASE_LOCKED_LOOP_V1_0_0
 endif
