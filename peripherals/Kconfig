@@ -73,4 +73,5 @@ source "$PKGS_DIR/packages/peripherals/mcp23008/Kconfig"
 source "$PKGS_DIR/packages/peripherals/bluetrum_sdk/Kconfig"
 source "$PKGS_DIR/packages/peripherals/Misaka_AT24CXX/Kconfig"
 source "$PKGS_DIR/packages/peripherals/Misaka_RGB_Bling/Kconfig"
+source "$PKGS_DIR/packages/peripherals/lora_gw_driver_lib/Kconfig"
 endmenu
