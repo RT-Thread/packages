@@ -1,0 +1,29 @@
+{
+  "name": "bouffalolab_sdk",
+  "description": "bouffalolab: bl_mcu_sdk",
+  "description_zh": "博流 处理器对应的外设驱动包",
+  "enable": "PKG_USING_BL_MCU_SDK",
+  "keywords": [
+    "bouffalolab",
+    "bl602",
+    "riscv",
+    "IoT"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "BalanceTWK",
+    "email": "balancetwk@yeah.net",
+    "github": "balanceTWK"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/balanceTWK/bouffalolab_sdk.git",
+  "homepage": "https://github.com/balanceTWK/bouffalolab_sdk.git",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/balanceTWK/bouffalolab_sdk.git",
+      "filename": "bouffalolab_sdk.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
