@@ -8,7 +8,8 @@
     "OLED",
     "SPI",
     "I2C",
-    "8080"
+    "8080",
+    "GUI"
   ],
   "category": "multimedia",
   "author": {
