@@ -8,9 +8,10 @@
     "OLED",
     "SPI",
     "I2C",
-    "8080"
+    "8080",
+    "GUI"
   ],
-  "category": "peripherals",
+  "category": "multimedia",
   "author": {
     "name": "wuhanstudio",
     "email": "wuhanstudio@qq.com",
