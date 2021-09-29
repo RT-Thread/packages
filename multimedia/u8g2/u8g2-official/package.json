@@ -1,7 +1,7 @@
 {
   "name": "u8g2",
   "description": "U8g2 library (official upstream)",
-  "description_zh": "U8g2 不同种类单色屏驱动库的 upstream 版本",
+  "description_zh": "U8g2 不同种类单色屏驱动库的上游官方版本",
   "enable": "PKG_USING_U8G2_OFFICIAL",
   "keywords": [
     "u8g2",
