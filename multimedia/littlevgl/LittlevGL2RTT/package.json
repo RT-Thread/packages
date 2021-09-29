@@ -4,9 +4,11 @@
   "description_zh": "Littlevgl 是基于 RT-Thread 的图形库软件包",
   "enable": "PKG_USING_LITTLEVGL2RTT",
   "keywords": [
-    "LittlevGL2RTT"
+    "LittlevGL2RTT",
+    "littlevgl",
+    "lvgl"
   ],
-  "category": "system",
+  "category": "multimedia",
   "author": {
     "name": "liu2guang",
     "email": "1004383796@qq.com",

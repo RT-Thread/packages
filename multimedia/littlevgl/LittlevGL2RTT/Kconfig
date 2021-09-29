@@ -7,7 +7,7 @@ if PKG_USING_LITTLEVGL2RTT
 
     config PKG_LITTLEVGL2RTT_PATH
         string
-        default "/packages/system/LittlevGL2RTT"
+        default "/packages/multimedia/littlevgl/LittlevGL2RTT"
 
     choice
         prompt "version"

@@ -1,0 +1,5 @@
+menu "littlevgl: powerful and easy-to-use embedded GUI library"
+
+source "$PKGS_DIR/packages/multimedia/littlevgl/LittlevGL2RTT/Kconfig"
+
+endmenu
