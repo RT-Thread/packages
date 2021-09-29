@@ -1,6 +1,0 @@
-menu "U8G2: a monochrome graphic library"
-
-source "$PKGS_DIR/packages/multimedia/u8g2/u8g2/Kconfig"
-source "$PKGS_DIR/packages/multimedia/u8g2/u8g2-official/Kconfig"
-
-endmenu
