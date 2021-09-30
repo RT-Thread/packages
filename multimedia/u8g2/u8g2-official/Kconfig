@@ -86,7 +86,7 @@ if PKG_USING_U8G2_OFFICIAL
                 Print "Hello RT-Thread" on ST7920 LCD using 8080 mode
             default n
 
-        if (PKG_U8G2_VER_NUM > 0x20000 && PKG_U8G2_VER_NUM < 0x30000) || (PKG_U8G2_VER_NUM >= 0x30000 && U8G2_USE_CPP)
+        if (U8G2_USE_CPP)
             menu "full buffer examples    (fast, large RAM consumption)"
                 config U8G2_USING_FRAME_EXAMPLE_FONT_USAGE
                     bool "Font Usage        : How to overwrite previous text with a new text"
