@@ -1,7 +1,7 @@
 
 # Kconfig file for package u8g2
 menuconfig PKG_USING_U8G2_OFFICIAL
-    bool "U8G2: a monochrome graphic library (official upstream)"
+    bool "u8g2 (official upstream): a monochrome graphic library"
     select RT_USING_PIN
     default n
 
