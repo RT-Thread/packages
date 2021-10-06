@@ -1,0 +1,36 @@
+{
+  "name": "hm",
+  "description": "A generic Bluetooth HCI transport layer",
+  "description_zh": "一个通用的蓝牙 HCI 传输层",  
+  "enable": "PKG_USING_HM", 
+  "keywords": [
+    "hm",
+    "BLE",
+    "HCI Transport"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Jackistang",
+    "email": "tangjia.jackis@qq.com",
+    "github": "Jackistang"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Jackistang/HCI-Middleware",
+  "icon": "unknown",
+  "homepage": "https://github.com/Jackistang/HCI-Middleware",
+  "doc": "https://hci-middleware.readthedocs.io/zh_CN/latest/",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Jackistang/HM/archive/refs/tags/1.0.0.zip",
+      "filename": "hm-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Jackistang/HCI-Middleware.git",
+      "filename": "Null for git package",
+      "VER_SHA": "rtthread"
+    }
+  ]
+}

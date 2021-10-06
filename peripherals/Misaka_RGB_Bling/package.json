@@ -1,0 +1,28 @@
+{
+  "name": "Misaka_RGB_Bling",
+  "description": "Misaka-Network for RGB LED Bling.",
+  "description_zh": "御坂网络RGB LED驱动包，提供了对于RGB LED灯的控制功能。",  
+  "enable": "PKG_USING_MISAKA_RGB_BLING", 
+  "keywords": [
+    "Misaka_RGB_Bling"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "xqyjlj",
+    "email": "xqyjlj@126.com",
+    "github": "xqyjlj"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/xqyjlj/Misaka_RGB_Bling",
+  "icon": "unknown",
+  "homepage": "https://github.com/xqyjlj/Misaka_RGB_Bling",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "1.0.0",
+      "URL": "https://github.com/xqyjlj/Misaka_RGB_Bling/archive/1.0.0.zip",
+      "filename": "Misaka_RGB_Bling-1.0.0.zip",
+      "VER_SHA": ""
+    }
+  ]
+}

@@ -32,6 +32,12 @@
       "VER_SHA": "c722d57a484c83fa2d9acf5f8d8a96dd2bd5f1ba"
     },
     {
+      "version": "v1.4.3",
+      "URL": "https://github.com/Forest-Rain/lora-radio-driver/archive/v1.4.3.zip",
+      "filename": "lora-radio-driver-1.4.3.zip",
+      "VER_SHA": "8b078fff0f85d56ac3dfca99b03fbf51d01c4201"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/forest-rain/lora-radio-driver.git",
       "filename": "Null for git packag",

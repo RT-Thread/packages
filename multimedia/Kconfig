@@ -12,5 +12,7 @@ source "$PKGS_DIR/packages/multimedia/touchgfx2rtt/Kconfig"
 source "$PKGS_DIR/packages/multimedia/NUemWin/Kconfig"
 source "$PKGS_DIR/packages/multimedia/mp3player/Kconfig"
 source "$PKGS_DIR/packages/multimedia/TinyJPEG/Kconfig"
+source "$PKGS_DIR/packages/multimedia/ugui/Kconfig"
+source "$PKGS_DIR/packages/multimedia/u8g2/Kconfig"
 
 endmenu
