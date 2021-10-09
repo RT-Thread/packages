@@ -1,10 +1,13 @@
 menu "entertainment: terminal games and other interesting software packages"
 
+source "$PKGS_DIR/packages/misc/entertainment/cmatrix/Kconfig"
+source "$PKGS_DIR/packages/misc/entertainment/sl/Kconfig"
+source "$PKGS_DIR/packages/misc/entertainment/cal/Kconfig"
+source "$PKGS_DIR/packages/misc/entertainment/aclock/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/threes/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/c2048/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/snake/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/tetris/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/donut/Kconfig"
-source "$PKGS_DIR/packages/misc/entertainment/aclock/Kconfig"
 
 endmenu

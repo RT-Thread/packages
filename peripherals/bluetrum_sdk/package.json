@@ -1,0 +1,35 @@
+{
+  "name": "bluetrum_sdk",
+  "description": "bluetrum sdk",
+  "description_zh": "bluetrum sdk",  
+  "enable": "PKG_USING_BLUETRUM_SDK", 
+  "keywords": [
+    "bluetrum_sdk",
+    "bluetrum"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "BLUETRUM",
+    "email": "hao_kr@163.com",
+    "github": "BLUETRUM"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/BLUETRUM/bluetrum_sdk",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/BLUETRUM/bluetrum_sdk.git",
+      "filename": "bluetrum-sdk-0.0.1.zip",
+      "VER_SHA": "v0.0.1"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/BLUETRUM/bluetrum_sdk.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

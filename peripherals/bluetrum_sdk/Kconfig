@@ -1,0 +1,32 @@
+
+# Kconfig file for package bluetrum_sdk
+menuconfig PKG_USING_BLUETRUM_SDK
+    bool "bluetrum sdk"
+    default n
+
+if PKG_USING_BLUETRUM_SDK
+
+    config PKG_BLUETRUM_SDK_PATH
+        string
+        default "/packages/peripherals/bluetrum_sdk"
+
+    choice
+        prompt "Version"
+        default PKG_USING_BLUETRUM_SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BLUETRUM_SDK_V001
+            bool "v0.0.1"
+
+        config PKG_USING_BLUETRUM_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_BLUETRUM_SDK_VER
+       string
+       default "v0.0.1"    if PKG_USING_BLUETRUM_SDK_V001
+       default "latest"    if PKG_USING_BLUETRUM_SDK_LATEST_VERSION
+
+endif
+

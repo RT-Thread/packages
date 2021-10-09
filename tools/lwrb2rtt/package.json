@@ -4,7 +4,8 @@
   "description_zh": "轻量级的 FIFO 环形缓冲区",  
   "enable": "PKG_USING_LWRB2RTT", 
   "keywords": [
-    "lwrb2rtt"
+    "lwrb2rtt",
+    "ringbuffer"
   ],
   "category": "tools",
   "author": {
@@ -14,7 +15,7 @@
   },
   "license": "MIT",
   "repository": "https://github.com/Jackistang/lwrb2rtt",
-  "homepage": "https://github.com/Jackistang/lwrb2rtt/blob/develop/README.md",
+  "homepage": "https://github.com/Jackistang/lwrb2rtt/blob/rtthread/README.md",
   "site": [
     {
       "version": "v1.0.0",
@@ -26,7 +27,7 @@
       "version": "latest",
       "URL": "https://github.com/Jackistang/lwrb2rtt.git",
       "filename": "lwrb2rtt-latest",
-      "VER_SHA": "develop"
+      "VER_SHA": "rtthread"
     }
   ]
 }

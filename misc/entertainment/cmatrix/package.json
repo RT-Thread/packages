@@ -1,0 +1,27 @@
+{
+  "name": "cmatrix",
+  "description": "电影《黑客帝国》中的字符雨",
+  "description_zh": "text flying in and out in a terminal like as seen in 'The Matrix' movie",  
+  "enable": "PKG_USING_CMATRIX", 
+  "keywords": [
+    "cmatrix",
+    "matrix rain"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/cmatrix",
+  "homepage": "https://github.com/wuhanstudio/cmatrix#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/cmatrix.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
