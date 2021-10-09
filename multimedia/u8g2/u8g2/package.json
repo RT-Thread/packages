@@ -1,7 +1,7 @@
 {
   "name": "u8g2",
-  "description": "U8g2 library for rt-thread",
-  "description_zh": "U8g2 不同种类单色屏驱动在 RT-Thread 移植库",
+  "description": "u8g2 library for rt-thread (legacy)",
+  "description_zh": "u8g2 不同种类单色屏驱动在 RT-Thread 移植库（老版本）",
   "enable": "PKG_USING_U8G2",
   "keywords": [
     "u8g2",
