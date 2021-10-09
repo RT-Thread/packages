@@ -1,0 +1,79 @@
+
+# Kconfig file for package lora_pkt_sniffer
+menuconfig PKG_USING_LORA_PKT_SNIFFER
+    bool "lora_pkt_sniffer is a sniffer tool of lora(wan) packets."
+    default n
+
+if PKG_USING_LORA_PKT_SNIFFER
+
+    config PKG_LORA_PKT_SNIFFER_PATH
+        string
+        default "/packages/iot/lora_pkt_sniffer"
+
+    config LORA_PKT_SNIFFER_USING_WIRESHARK_MODE
+        bool "Enable Wireshark Mode"
+        default n
+
+    config PKG_USING_LORA_GW_DRIVER_LIB
+        bool "Use lora-gw-driver-lib"
+        default y
+
+    menu "Select lora-pkt-sniffer Debug"
+         config LORA_PKT_SNIFFER_DEBUG
+             bool "Enable lora-pkt-sniffer Debug"
+             default n
+
+             if LORA_PKT_SNIFFER_DEBUG
+                 config LPS_DEBUG_SNF_CONFIG
+                    bool "Enable LPS Sniffer Debug"
+                    default n
+                 config LPS_DBG_SNF
+                    int
+                    default 1 if LPS_DEBUG_SNF_CONFIG
+                    default 0 if !LPS_DEBUG_SNF_CONFIG
+
+                 config LPS_DEBUG_SHELL_CONFIG
+                    bool "Enable LPS Shell Debug"
+                    default n
+                 config LPS_DBG_SHELL
+                    int
+                    default 1 if LPS_DEBUG_SHELL_CONFIG
+                    default 0 if !LPS_DEBUG_SHELL_CONFIG
+
+                 config LPS_DEBUG_NVM_CONFIG
+                    bool "Enable LPS NVM Debug"
+                    default n
+                 config LPS_DBG_NVM
+                    int
+                    default 1 if LPS_DEBUG_NVM_CONFIG
+                    default 0 if !LPS_DEBUG_NVM_CONFIG
+
+                  config LPS_DEBUG_UDP_CONFIG
+                    bool "Enable LPS UDP Debug"
+                    default n
+                 config LPS_DBG_UDP
+                    int
+                    default 1 if LPS_DEBUG_UDP_CONFIG
+                    default 0 if !LPS_DEBUG_UDP_CONFIG
+             endif
+      endmenu
+
+    config PKG_LORA_PKT_SNIFFER_VER
+       string
+       default "v1.0.0"    if PKG_USING_LORA_PKT_SNIFFER_V100
+       default "latest"    if PKG_USING_LORA_PKT_SNIFFER_LATEST_VERSION
+
+    choice
+        prompt "Version"
+        default PKG_USING_LORA_PKT_SNIFFER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LORA_PKT_SNIFFER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LORA_PKT_SNIFFER_LATEST_VERSION
+            bool "latest"
+    endchoice
+endif
+

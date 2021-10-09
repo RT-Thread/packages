@@ -114,7 +114,8 @@ if PKG_USING_MICRO_ROS
           
     config PKG_MICRO_ROS_VER
        string
-       default "foxy"    if PKG_USING_MICRO_ROS_FOXY
+       default "foxy"           if PKG_USING_MICRO_ROS_FOXY
+       default "galactic"       if PKG_USING_MICRO_ROS_GALACTIC
 
 endif
 

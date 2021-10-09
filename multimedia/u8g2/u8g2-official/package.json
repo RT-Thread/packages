@@ -1,0 +1,31 @@
+{
+  "name": "u8g2-official",
+  "description": "u8g2 library (official upstream)",
+  "description_zh": "u8g2 不同种类单色屏驱动库（上游官方版本）",
+  "enable": "PKG_USING_U8G2_OFFICIAL",
+  "keywords": [
+    "u8g2",
+    "OLED",
+    "SPI",
+    "I2C",
+    "8080",
+    "GUI"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "olikraus",
+    "email": "olikraus@gmail.com",
+    "github": "olikraus"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/olikraus/u8g2",
+  "homepage": "https://github.com/olikraus/u8g2/wiki",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/olikraus/u8g2.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

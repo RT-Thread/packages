@@ -1,0 +1,35 @@
+{
+  "name": "Controller",
+  "description": "PI, PR and RC controller library",
+  "description_zh": "比例积分, 比例谐振, 重复控制器库",
+  "enable": "PKG_USING_CONTROLLER",
+  "keywords": [
+    "controller",
+    "PI",
+    "PR",
+    "Repetitive control"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "hao.dong",
+    "email": "hao.dong.nj@outlook.com",
+    "github": "haodongnj"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/haodongnj/Controller",
+  "homepage": "https://github.com/haodongnj/Controller#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/haodongnj/Controller.git",
+      "filename": "Controller.zip",
+      "VER_SHA": "rtt"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/haodongnj/Controller/archive/refs/tags/v1.0.0.zip",
+      "filename": "Controller-1.0.0.zip",
+      "VER_SHA": "c2490ed3568b268346e349a099819500be24b350"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+
+# Kconfig file for package lora_pkt_fwd
+menuconfig PKG_USING_LORA_PKT_FWD
+    bool "lora_pkt_fwd:lora(wan) packet forward based on Semtech GWMP protocol(UDP)"
+    default n
+
+if PKG_USING_LORA_PKT_FWD
+
+    config PKG_LORA_PKT_FWD_PATH
+        string
+        default "/packages/iot/lora_pkt_fwd"
+
+    config LORA_PKT_FWD_USING_PROTOCOL_SEMTECH_GWMP
+        bool
+        default y
+
+    config LORA_PKT_FWD_USING_MULTI_CHANNEL_MODE
+        bool
+        default y
+        select RT_USING_SAL
+        select RT_USING_PTHREADS
+
+    config PKG_USING_LORA_GW_DRIVER_LIB
+        bool "Use lora-gw-driver-lib"
+        default y
+
+    config LORA_PKT_FWD_USING_PARAMS_CONF_BY_JSON
+        bool "Use Gateway JSON Configuration File"
+        default n
+
+    choice
+        prompt "Select LoRaWAN Network Server"
+        default LORA_PKT_FWD_USING_PROTOCOL_LIERDA_UNICORE
+        help
+            Select LoRaWAN Network Server(GWMP)
+
+        config LORA_PKT_FWD_USING_PROTOCOL_LIERDA_UNICORE
+            bool "Lierda Unicore"
+
+        config LORA_PKT_FWD_USING_NETWORK_SERVER_TTN
+            bool "TTN"
+
+        config LORA_PKT_FWD_USING_NETWORK_SERVER_TENCENT
+            bool "Tencent iot-explorer"
+    endchoice
+
+    menu "Enable LoRa Packet Forward Debug"
+        config LORA_PKT_FWD_DEBUG
+        bool "Enable lora-pkt-fwd Debug"
+        default n
+
+        if LORA_PKT_FWD_DEBUG
+            config LPF_DBG_GWMP_CONFIG
+                bool "Enable LPF GWMP Debug"
+                default y
+             config LPF_DBG_GWMP
+                int
+                default 1 if LPF_DBG_GWMP_CONFIG
+
+             config LPF_DBG_SHELL_CONFIG
+                bool "Enable LPF Shell Debug"
+                default y
+             config LPF_DBG_SHELL
+                int
+                default 1 if LPF_DBG_SHELL_CONFIG
+
+             config LPF_DBG_PARAMS_CONF_CONFIG
+                bool "Enable LPF Params Config Debug"
+                default n
+             config LPF_DBG_PARAMS_CONF
+                int
+                default 1 if LPF_DBG_PARAMS_CONF_CONFIG
+
+            config LPF_DBG_USING_JIT_QUEUE
+                bool "Enable Jit Queue Debug"
+                default n
+        endif
+    endmenu
+
+    choice
+        prompt "Version"
+        default PKG_USING_LORA_PKT_FWD_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LORA_PKT_FWD_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LORA_PKT_FWD_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LORA_PKT_FWD_VER
+       string
+       default "v1.0.0"    if PKG_USING_LORA_PKT_FWD_V100
+       default "latest"    if PKG_USING_LORA_PKT_FWD_LATEST_VERSION
+endif
+

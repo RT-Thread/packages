@@ -1,0 +1,31 @@
+# Kconfig file for package Controller
+menuconfig PKG_USING_CONTROLLER
+    bool "Controller: PI, PR and RC controller library"
+    default n
+    help
+        controller is a digital control algorithm implementation of PI, PR and RC algorithms.
+
+if PKG_USING_CONTROLLER
+
+    config PKG_CONTROLLER_PATH
+        string
+        default "/packages/misc/Controller"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CONTROLLER_LATEST_VERSION
+        help
+            Select the Controller version
+
+        config PKG_USING_CONTROLLER_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_CONTROLLER_V1_0_0
+            bool "v1.0.0"
+    endchoice
+
+    config PKG_CONTROLLER_VER
+        string
+        default "latest" if PKG_USING_CONTROLLER_LATEST_VERSION
+        default "v1.0.0" if PKG_USING_CONTROLLER_V1_0_0
+endif

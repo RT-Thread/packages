@@ -904,12 +904,12 @@ if PKG_USING_LORA_RADIO_DRIVER
          default n
 
          if LORA_RADIO_DRIVER_USING_LORA_RADIO_DEBUG
-            config LR_DBG_APP_CONFIG
-                bool "Enable LoRa Radio Application Debug"
+            config LR_DBG_SHELL_CONFIG
+                bool "Enable LoRa Radio Shell Debug"
                 default n
-            config LR_DBG_APP
+            config LR_DBG_SHELL
                 int
-                default 1 if LR_DBG_APP_CONFIG
+                default 1 if LR_DBG_SHELL_CONFIG
 
             config LR_DBG_INTERFACE_CONFIG
                 bool "Enable LoRa Radio Interface Debug"
@@ -936,11 +936,11 @@ if PKG_USING_LORA_RADIO_DRIVER
 
     menu "Select LoRa Radio Driver Example"
 
-        config LORA_RADIO_DRIVER_USING_LORA_RADIO_TEST_SHELL
-            bool "Enable LoRa Radio Test Shell"
+        config LORA_RADIO_DRIVER_USING_LORA_RADIO_TESTER
+            bool "Enable LoRa Radio Tester"
             default n
 
-            if LORA_RADIO_DRIVER_USING_LORA_RADIO_TEST_SHELL
+            if LORA_RADIO_DRIVER_USING_LORA_RADIO_TESTER
                 choice
                     prompt "Select the RF frequency"
                     default PHY_REGION_CN470
@@ -986,6 +986,8 @@ if PKG_USING_LORA_RADIO_DRIVER
             bool "v1.0.0"
         config PKG_USING_LORA_RADIO_DRIVER_V130
             bool "v1.3.0"
+        config PKG_USING_LORA_RADIO_DRIVER_V143
+            bool "v1.4.3"
         config PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
             bool "latest"
     endchoice
@@ -994,6 +996,7 @@ if PKG_USING_LORA_RADIO_DRIVER
        string
        default "v1.0.0"    if PKG_USING_LORA_RADIO_DRIVER_V100
        default "v1.3.0"    if PKG_USING_LORA_RADIO_DRIVER_V130
+       default "v1.4.3"    if PKG_USING_LORA_RADIO_DRIVER_V143
        default "latest"    if PKG_USING_LORA_RADIO_DRIVER_LATEST_VERSION
 
 
