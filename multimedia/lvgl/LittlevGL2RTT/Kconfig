@@ -1,13 +1,13 @@
 # Kconfig file for package LittlevGL2RTT
 menuconfig PKG_USING_LITTLEVGL2RTT
-    bool "LittlevGL2RTT: The LittlevGl gui lib adapter RT-Thread"
+    bool "LittlevGL2RTT (legacy): The LittlevGL GUI Lib for RT-Thread"
     default n
 
 if PKG_USING_LITTLEVGL2RTT
 
     config PKG_LITTLEVGL2RTT_PATH
         string
-        default "/packages/multimedia/littlevgl/LittlevGL2RTT"
+        default "/packages/multimedia/lvgl/LittlevGL2RTT"
 
     choice
         prompt "version"
