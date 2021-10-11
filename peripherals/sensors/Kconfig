@@ -4,6 +4,7 @@ menuconfig PKG_USING_SENSORS_DRIVERS
     select RT_USING_SENSOR
 
     if PKG_USING_SENSORS_DRIVERS
+        source "$PKGS_DIR/packages/peripherals/sensors/fingerprint/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsm/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsl/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/lps22hb/Kconfig"

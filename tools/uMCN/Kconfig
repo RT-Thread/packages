@@ -16,17 +16,24 @@ if PKG_USING_UMCN
         help
             Select the package version
 
-        config PKG_USING_UMCN_V100
-            bool "v1.0.0"
-
         config PKG_USING_UMCN_LATEST_VERSION
             bool "latest"
     endchoice
           
     config PKG_UMCN_VER
        string
-       default "v1.0.0"    if PKG_USING_UMCN_V100
        default "latest"    if PKG_USING_UMCN_LATEST_VERSION
+	   
+	config UMCN_USING_DEMO
+        bool
+        prompt "uMCN demo example"
+        default n
+		
+	config UMCN_USING_CMD
+        bool
+		prompt "uMCN command"
+		select PKG_USING_OPTPARSE
+        default n
 
 endif
 
