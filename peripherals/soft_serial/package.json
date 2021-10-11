@@ -24,6 +24,12 @@
       "URL": "https://github.com/qiyongzhong0/rt-thread-soft-serial.git",
       "filename": "",
       "VER_SHA": "master"
+    },
+    {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-soft-serial/archive/v1.00.zip",
+      "filename": "rt-thread-soft-serial-1.00.zip",
+      "VER_SHA": ""
     }
   ]
 }

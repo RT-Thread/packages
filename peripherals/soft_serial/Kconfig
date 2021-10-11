@@ -39,10 +39,14 @@ if PKG_USING_SOFT_SERIAL
 
         config PKG_USING_SOFT_SERIAL_LATEST_VERSION
             bool "latest"
+            
+        config PKG_USING_SOFT_SERIAL_V100
+            bool "v1.00"
     endchoice
 
     config PKG_SOFT_SERIAL_VER
        string
        default "latest" if PKG_USING_SOFT_SERIAL_LATEST_VERSION
+       default "v1.00"  if PKG_USING_SOFT_SERIAL_V100
 
 endif
