@@ -33,7 +33,7 @@ if PKG_USING_SOFT_SERIAL
         
     choice
         prompt "Version"
-        default PKG_USING_SOFT_SERIAL_LATEST_VERSION
+        default PKG_USING_SOFT_SERIAL_V100
         help
             Select the package version
 
