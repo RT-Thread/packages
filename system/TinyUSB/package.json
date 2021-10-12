@@ -1,0 +1,28 @@
+{
+  "name": "TinyUSB",
+  "description": "An open source cross-platform USB stack for embedded system",
+  "description_zh": "用于嵌入式系统的开源跨平台USB协议栈",  
+  "enable": "PKG_USING_TINYUSB", 
+  "keywords": [
+    "TinyUSB"
+  ],
+  "category": "system",
+  "author": {
+    "name": "tfx2001",
+    "email": "2479727366@qq.com",
+    "github": "tfx2001"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/tfx2001/tinyusb",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/tfx2001/tinyusb.git",
+      "filename": "",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}

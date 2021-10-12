@@ -1,0 +1,28 @@
+# Kconfig file for package TinyUSB
+menuconfig PKG_USING_TINYUSB
+    bool "TinyUSB: an open source cross-platform USB stack for embedded system"
+    default n
+
+if PKG_USING_TINYUSB
+    config PKG_TINYUSB_STACK_SIZE
+        int "TinyUSB thread stack size"
+        default 2048
+
+    menuconfig PKG_TINYUSB_DEVICE_ENABLE
+        bool "Using USB device"
+        default n
+
+    if PKG_TINYUSB_DEVICE_ENABLE
+        config PKG_TINYUSB_DEVICE_CDC
+            bool "Using Communication Device Class (CDC)"
+            default n
+        config PKG_TINYUSB_DEVICE_MSC
+            bool "Using Mass Storage Class (MSC)"
+            default n
+        if PKG_TINYUSB_DEVICE_MSC
+            config PKG_TINYUSB_DEVICE_MSC_NAME
+                string "The name of the device used by MSC"
+        endif
+    endif
+
+endif
