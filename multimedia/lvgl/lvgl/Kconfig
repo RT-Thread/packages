@@ -1,0 +1,28 @@
+
+# Kconfig file for package lvgl
+menuconfig PKG_USING_LVGL
+    bool "lvgl (offical): powerful and easy-to-use embedded GUI library"
+    default n
+
+if PKG_USING_LVGL
+
+    config PKG_LVGL_PATH
+        string
+        default "/packages/multimedia/lvgl/lvgl"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LVGL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LVGL_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LVGL_VER
+       string
+       default "latest"    if PKG_USING_LVGL_LATEST_VERSION
+
+endif
+

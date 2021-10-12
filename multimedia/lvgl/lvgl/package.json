@@ -1,0 +1,27 @@
+{
+  "name": "lvgl",
+  "description": "powerful and easy-to-use embedded GUI library (offical upstream)",
+  "description_zh": "lvgl图形库（官方上游）",  
+  "enable": "PKG_USING_LVGL", 
+  "keywords": [
+    "lvgl",
+    "GUI"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "kisvegabor",
+    "email": "kisvegabor@gmail.com",
+    "github": "kisvegabor"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/lvgl/lvgl",
+  "doc": "https://github.com/lvgl/lvgl#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/lvgl/lvgl.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
