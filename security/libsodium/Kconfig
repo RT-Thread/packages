@@ -16,9 +16,39 @@ if PKG_USING_LIBSODIUM
             help
                 sha256: a cli tool that calculates the SHA-256 hash.
             default n
+        config LIBSODIUM_USING_EXAMPLE_SHA512
+            bool "sha512: a cli tool that calculates the SHA-512 hash."
+            help
+                sha512: a cli tool that calculates the SHA-256 hash.
+            default n
+        config LIBSODIUM_USING_EXAMPLE_GENERIC_HASH
+            bool "generic_hash: a cli tool that calculates the generic hash."
+            help
+                generic_hash: a cli tool that calculates the generic hash.
+            default n
+        config LIBSODIUM_USING_EXAMPLE_SHORT_HASH
+            bool "short_hash: a cli tool that calculates the short hash."
+            help
+                short_hash: a cli tool that calculates the short hash.
+            default n
     endmenu
 
     menu "Testing (It's suggested to pass all required tests first)"
+        config LIBSODIUM_USING_TESTING_CORE
+            bool "hash test : Testing core"
+            help
+                Testing core
+            default n
+        config LIBSODIUM_USING_TESTING_GENERIC_HASH
+            bool "hash test : Testing generic hash"
+            help
+                Testing generic hash
+            default n
+        config LIBSODIUM_USING_TESTING_SHORT_HASH
+            bool "hash test : Testing short hash"
+            help
+                Testing short hash
+            default n
         config LIBSODIUM_USING_TESTING_HASH
             bool "hash test : Testing sha256 and sha512"
             help

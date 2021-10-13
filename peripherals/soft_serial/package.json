@@ -1,0 +1,35 @@
+{
+  "name": "soft_serial",
+  "description": "A software serial driver package by using the hardware timer capture / comparison functionality.",
+  "description_zh": "一个利用硬件定时器捕获/比较功能实现软件模拟串口的软件包",
+  "enable": "PKG_USING_SOFT_SERIAL",
+  "keywords": [
+    "serial",
+    "driver",
+    "rt-thread"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-soft-serial",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-soft-serial#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-soft-serial.git",
+      "filename": "",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-soft-serial/archive/v1.00.zip",
+      "filename": "rt-thread-soft-serial-1.00.zip",
+      "VER_SHA": ""
+    }
+  ]
+}
