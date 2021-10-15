@@ -3,9 +3,9 @@
 menuconfig PKG_USING_TINYUSB
     bool "TinyUSB (offical): an open source cross-platform USB stack for embedded system"
     default n
+    select RT_USING_USB
 
 if PKG_USING_TINYUSB
-
     config PKG_TINYUSB_PATH
         string
         default "/packages/system/TinyUSB"
@@ -22,10 +22,22 @@ if PKG_USING_TINYUSB
         config PKG_TINYUSB_DEVICE_CDC
             bool "Using Communication Device Class (CDC)"
             default n
+        
+        if PKG_TINYUSB_DEVICE_CDC
+            config CFG_TUD_CDC
+                int
+                default 1
+        endif
+
         config PKG_TINYUSB_DEVICE_MSC
             bool "Using Mass Storage Class (MSC)"
             default n
+
         if PKG_TINYUSB_DEVICE_MSC
+            config CFG_TUD_MSC
+                int
+                default 1
+
             config PKG_TINYUSB_DEVICE_MSC_NAME
                 string "The name of the device used by MSC"
         endif
