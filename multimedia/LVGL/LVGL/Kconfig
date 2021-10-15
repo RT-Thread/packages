@@ -1,5 +1,5 @@
 
-# Kconfig file for package lvgl
+# Kconfig file for package LVGL
 menuconfig PKG_USING_LVGL
     bool "LVGL (offical): powerful and easy-to-use embedded GUI library"
     default n

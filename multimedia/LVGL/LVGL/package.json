@@ -1,7 +1,7 @@
 {
-  "name": "lvgl",
+  "name": "LVGL",
   "description": "powerful and easy-to-use embedded GUI library (offical upstream)",
-  "description_zh": "lvgl图形库（官方上游）",  
+  "description_zh": "LVGL图形库（官方上游）",  
   "enable": "PKG_USING_LVGL", 
   "keywords": [
     "LVGL",
