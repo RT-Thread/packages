@@ -1,12 +1,12 @@
 {
   "name": "LittlevGL2RTT",
-  "description": "The littlevgl graphics library for RT-Thread (legacy)",
-  "description_zh": "Littlevgl 是基于 RT-Thread 的图形库软件包 (老版本)",
+  "description": "LittlevGL graphics library for RT-Thread (legacy)",
+  "description_zh": "LittlevGL 是基于 RT-Thread 的图形库软件包 (老版本)",
   "enable": "PKG_USING_LITTLEVGL2RTT",
   "keywords": [
     "LittlevGL2RTT",
     "littlevgl",
-    "lvgl",
+    "LVGL",
     "GUI"
   ],
   "category": "multimedia",

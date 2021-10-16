@@ -1,14 +1,14 @@
 
-# Kconfig file for package lvgl
+# Kconfig file for package LVGL
 menuconfig PKG_USING_LVGL
-    bool "lvgl (offical): powerful and easy-to-use embedded GUI library"
+    bool "LVGL (official): powerful and easy-to-use embedded GUI library"
     default n
 
 if PKG_USING_LVGL
 
     config PKG_LVGL_PATH
         string
-        default "/packages/multimedia/lvgl/lvgl"
+        default "/packages/multimedia/LVGL/LVGL"
 
     choice
         prompt "Version"
