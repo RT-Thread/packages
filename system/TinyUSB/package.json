@@ -1,6 +1,6 @@
 {
   "name": "TinyUSB",
-  "description": "An open source cross-platform USB stack for embedded system (offical upstream)",
+  "description": "An open source cross-platform USB stack for embedded system (official upstream)",
   "description_zh": "用于嵌入式系统的开源跨平台USB协议栈（上游官方）",  
   "enable": "PKG_USING_TINYUSB", 
   "keywords": [
@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "repository": "https://github.com/hathach/tinyusb",
-  "homepage": "www.tinyusb.org",
+  "homepage": "https://github.com/hathach/tinyusb#readme",
   "doc": "unknown",
   "site": [
     {
