@@ -26,6 +26,9 @@ if PKG_USING_NUCLEI_SDK
         config PKG_USING_NUCLEI_SDK_V030
             bool "0.3.0"
 
+        config PKG_USING_NUCLEI_SDK_V034
+            bool "0.3.4"
+
         config PKG_USING_NUCLEI_SDK_LATEST_VERSION
             bool "latest"
     endchoice
@@ -34,6 +37,7 @@ if PKG_USING_NUCLEI_SDK
        string
        default "0.2.3"     if PKG_USING_NUCLEI_SDK_V023
        default "0.3.0"     if PKG_USING_NUCLEI_SDK_V030
+       default "0.3.4"     if PKG_USING_NUCLEI_SDK_V034
        default "latest"    if PKG_USING_NUCLEI_SDK_LATEST_VERSION
 
 endif
