@@ -10,10 +10,6 @@ if PKG_USING_LVGL
         string
         default "/packages/multimedia/LVGL/LVGL"
 
-    config PKG_LVGL_ENABLE_COLOR_16_SWAP
-        bool "Swap the 2 bytes of RGB565 color which is useful in 8-bit interface (e.g. SPI)"
-        default n
-
     config PKG_LVGL_ENABLE_LOG
         bool "Enable the log module"
         default n
