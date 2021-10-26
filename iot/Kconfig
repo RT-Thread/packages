@@ -60,4 +60,5 @@ source "$PKGS_DIR/packages/iot/rt-link_hw/Kconfig"
 source "$PKGS_DIR/packages/iot/lora_pkt_fwd/Kconfig"
 source "$PKGS_DIR/packages/iot/lora_pkt_sniffer/Kconfig"
 source "$PKGS_DIR/packages/iot/hm/Kconfig"
+source "$PKGS_DIR/packages/iot/small_modbus/Kconfig"
 endmenu
