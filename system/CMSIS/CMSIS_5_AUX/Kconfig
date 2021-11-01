@@ -1,0 +1,28 @@
+
+# Kconfig file for package CMSIS_5_AUX
+menuconfig PKG_USING_CMSIS_5_AUX
+    bool
+    default n
+
+if PKG_USING_CMSIS_5_AUX
+
+    config PKG_CMSIS_5_AUX_PATH
+        string
+        default "/packages/system/CMSIS/CMSIS_5_AUX"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CMSIS_5_AUX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CMSIS_5_AUX_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_CMSIS_5_AUX_VER
+       string
+       default "latest"    if PKG_USING_CMSIS_5_AUX_LATEST_VERSION
+
+endif
+

@@ -1,5 +1,7 @@
 menu "CMSIS: a vendor-independent abstraction layer for microcontrollers that are based on Arm Cortex processors"
 
 source "$PKGS_DIR/packages/system/CMSIS/CMSIS_5/Kconfig"
+source "$PKGS_DIR/packages/system/CMSIS/CMSIS_5_AUX/Kconfig"
+source "$PKGS_DIR/packages/system/CMSIS/CMSIS_RTOS2/Kconfig"
 
 endmenu
