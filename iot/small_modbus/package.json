@@ -16,20 +16,20 @@
     "github": "cazure"
   },
   "license": "Apache-2.0",
-  "repository": "https://gitee.com/cazure/small_modbus",
-  "icon": "https://gitee.com/cazure/small_modbus",
-  "homepage": "https://gitee.com/cazure/small_modbus",
-  "doc": "https://gitee.com/cazure/small_modbus.git",
+  "repository": "https://github.com/cazure/small_modbus.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://gitee.com/cazure/small_modbus.git",
+      "URL": "https://github.com/cazure/small_modbus.git",
 	  "filename": "small_modbus-v1.0.0.zip",
 	  "VER_SHA":"cd439d46158cdf5b25dad6573984a7eb5e70567e"
     },
     {
       "version": "latest",
-      "URL": "https://gitee.com/cazure/small_modbus.git",
+      "URL": "https://github.com/cazure/small_modbus.git",
 	  "filename": "small_modbus-master.zip",
 	  "VER_SHA":"master"
     }
