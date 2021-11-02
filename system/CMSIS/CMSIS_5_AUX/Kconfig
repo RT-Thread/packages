@@ -1,6 +1,6 @@
 
 # Kconfig file for package CMSIS_5_AUX
-menuconfig PKG_USING_CMSIS_5_AUX
+config PKG_USING_CMSIS_5_AUX
     bool
     default n
 
