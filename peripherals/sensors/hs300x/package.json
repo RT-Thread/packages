@@ -1,0 +1,28 @@
+{
+  "name": "hs300x",
+  "description": "digital humidity and temperature sensor hs300x driver library",
+  "description_zh": "数字温湿度传感器 hs300x 的驱动库",
+  "enable": "PKG_USING_HS300X",
+  "keywords": [
+    "hs300x",
+    "sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "flyboy",
+    "email": "guozhanxin@rt-thread.com",
+    "github": "Guozhanxin"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Guozhanxin/hs300x",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/Guozhanxin/hs300x#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Guozhanxin/hs300x.git",
+      "filename": "hs300x.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
