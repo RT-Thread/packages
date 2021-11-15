@@ -122,7 +122,7 @@ if PKG_USING_NETUTILS
         prompt "Version"
         help
             Select the netutils version
-        default PKG_USING_NETUTILS_V131
+        default PKG_USING_NETUTILS_LATEST_VERSION
 
         config PKG_USING_NETUTILS_LATEST_VERSION
             bool "latest"
