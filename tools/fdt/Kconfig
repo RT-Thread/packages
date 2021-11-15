@@ -1,0 +1,36 @@
+menuconfig PKG_USING_FDT
+    bool "Device Tree package in RT-Thread"
+    default n
+
+if PKG_USING_FDT
+
+    config PKG_FDT_PATH
+        string
+        default "/packages/tools/fdt"
+
+    config FDT_USING_EXAMPLE
+        bool "Enable fdt example"
+        default y
+
+    config FDT_USING_LIBFDT
+        bool "Enable libfdt"
+        default y
+
+    choice
+        prompt "Version"
+        help
+            Select this package version
+
+        config PKG_USING_FDT_V10000
+            bool "v1.0.0"
+
+        config PKG_USING_FDT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_FDT_VER
+        string
+        default "v1.0.0" if PKG_USING_FDT_V10000
+        default "latest" if PKG_USING_FDT_LATEST_VERSION
+
+endif
