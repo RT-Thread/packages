@@ -48,13 +48,13 @@ if PKG_USING_AT_DEVICE
     choice
 
         prompt "Version"
+        default PKG_USING_AT_DEVICE_LATEST_VERSION if (RT_VER_NUM >= 0x40004)
         default PKG_USING_AT_DEVICE_V204 if (AT_SW_VERSION_NUM >= 0x10300)
         # compare RT_VER_NUM for netdev component
         default PKG_USING_AT_DEVICE_V160 if (RT_VER_NUM = 0x30103 || RT_VER_NUM = 0x40001 || (RT_VER_NUM > 0x40001 && AT_SW_VERSION_NUM = 0x10200))
         default PKG_USING_AT_DEVICE_V150 if (AT_SW_VERSION_NUM = 0x10200)
         default PKG_USING_AT_DEVICE_V130 if (AT_SW_VERSION_NUM = 0x10100)
         default PKG_USING_AT_DEVICE_V120 if (AT_SW_VERSION_NUM < 0x10100 && AT_SW_VERSION_NUM >= 0x10000)
-        default PKG_USING_AT_DEVICE_LATEST_VERSION
         help
             Select the at_device version
 
