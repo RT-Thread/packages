@@ -1,0 +1,28 @@
+{
+  "name": "zmod4410",
+  "description": "The ZMOD4410 Gas Sensor Module is designed for detecting total volatile organic compounds (TVOC) and monitoring indoor air quality (IAQ).",
+  "description_zh": "Renesas 室内空气质量检测传感器 zmod4410 的驱动库",
+  "enable": "PKG_USING_ZMOD4410",
+  "keywords": [
+    "zmod4410",
+    "sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Sherman",
+    "email": "shaopengyu@rt-thread.com",
+    "github": "Sherman"
+  },
+  "license": "RENESAS SOFTWARE LICENSE TERMS",
+  "repository": "https://github.com/ShermanShao/zmod4410",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/ShermanShao/zmod4410.git",
+      "filename": "zmod4410.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
