@@ -1,10 +1,11 @@
 {
   "name": "CMSIS_5",
-  "description": "CMSIS Version 5 Development",
-  "description_zh": "CMSIS Version 5",
+  "description": "CMSIS-5 Development",
+  "description_zh": "CMSIS-5",
   "enable": "PKG_USING_CMSIS_5",
   "keywords": [
     "CMSIS_5",
+    "CMSIS-5",
     "CMSIS"
   ],
   "category": "system",
@@ -17,6 +18,12 @@
   "repository": "https://github.com/ARM-software/CMSIS_5",
   "homepage": "https://github.com/ARM-software/CMSIS_5#readme",
   "site": [
+    {
+      "version": "v5.8.0",
+      "URL": "https://github.com/ARM-software/CMSIS_5/archive/refs/tags/5.8.0.zip",
+      "filename": "CMSIS_5-5.8.0.zip",
+      "VER_SHA": "master"
+    },
     {
       "version": "latest",
       "URL": "https://github.com/ARM-software/CMSIS_5.git",
