@@ -1,0 +1,29 @@
+
+# Kconfig file for package PainterEngine
+menuconfig PKG_USING_PAINTERENGINE
+    bool "PainterEngine: A cross-platform graphics application framework written in C language"
+    select PKG_USING_PAINTERENGINE_AUX
+    default n
+
+if PKG_USING_PAINTERENGINE
+
+    config PKG_PAINTERENGINE_PATH
+        string
+        default "/packages/multimedia/PainterEngine/PainterEngine"
+
+    choice
+        prompt "Version"
+        default PKG_USING_PAINTERENGINE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PAINTERENGINE_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_PAINTERENGINE_VER
+       string
+       default "latest"    if PKG_USING_PAINTERENGINE_LATEST_VERSION
+
+endif
+
