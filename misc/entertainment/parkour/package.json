@@ -1,0 +1,34 @@
+{
+  "name": "parkour",
+  "description": "a game of a little person running over your terminal",
+  "description_zh": "跑酷小游戏",  
+  "enable": "PKG_USING_PARKOUR", 
+  "keywords": [
+    "parkour"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "ZhuTuMengJin",
+    "email": "1796031535@qq.com",
+    "github": "ZhuTuMengJin"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/ZhuTuMengJin/Myhub",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://parkour-1.0.0.zip",
+      "filename": "parkour-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/ZhuTuMengJin/Myhub.git",
+      "filename": "parkour.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

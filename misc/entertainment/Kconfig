@@ -9,5 +9,6 @@ source "$PKGS_DIR/packages/misc/entertainment/c2048/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/snake/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/tetris/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/donut/Kconfig"
+source "$PKGS_DIR/packages/misc/entertainment/parkour/Kconfig"
 
 endmenu
