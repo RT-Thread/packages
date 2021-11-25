@@ -1,7 +1,7 @@
 
 # Kconfig file for package PainterEngine
 menuconfig PKG_USING_PAINTERENGINE_AUX
-    bool
+    bool "PainterEngine scons script in RT-Thread"
     default n
 
 if PKG_USING_PAINTERENGINE_AUX
