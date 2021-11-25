@@ -1,0 +1,28 @@
+
+# Kconfig file for package rt_vsnprintf_full
+menuconfig PKG_USING_RT_VSNPRINTF_FULL
+    bool "rt_vsnprintf full functional version"
+    default n
+
+if PKG_USING_RT_VSNPRINTF_FULL
+
+    config PKG_RT_VSNPRINTF_FULL_PATH
+        string
+        default "/packages/system/rt_vsnprintf_full"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RT_VSNPRINTF_FULL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RT_VSNPRINTF_FULL_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RT_VSNPRINTF_FULL_VER
+       string
+       default "latest"    if PKG_USING_RT_VSNPRINTF_FULL_LATEST_VERSION
+
+endif
+

@@ -1,6 +1,6 @@
 {
   "name": "CMSIS_5_AUX",
-  "description": "CMSIS_5 auxiliary package",
+  "description": "CMSIS-5 Auxiliary Package",
   "description_zh": "CMSIS_5软件包的辅助构建软件包（该软件包不需要用户选择）",  
   "enable": "PKG_USING_CMSIS_5_AUX", 
   "keywords": [

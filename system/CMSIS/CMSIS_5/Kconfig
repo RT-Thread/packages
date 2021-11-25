@@ -1,7 +1,7 @@
 
 # Kconfig file for package CMSIS_5
 menuconfig PKG_USING_CMSIS_5
-    bool "CMSIS Version 5 Development"
+    bool "CMSIS-5 Development"
     select PKG_USING_CMSIS_5_AUX
     default n
 
@@ -10,16 +10,6 @@ if PKG_USING_CMSIS_5
     config PKG_CMSIS_5_PATH
         string
         default "/packages/system/CMSIS/CMSIS_5"
-
-    choice
-        prompt "Version"
-        default PKG_USING_CMSIS_5_LATEST_VERSION
-        help
-            Select the package version
-
-        config PKG_USING_CMSIS_5_LATEST_VERSION
-            bool "latest"
-    endchoice
 
     config PKG_CMSIS_CORE
         bool "CMSIS core API for Cortex-M"
@@ -59,9 +49,28 @@ if PKG_USING_CMSIS_5
         bool "A suite of common signal processing functions for Cortex-M"
         default n
 
+    choice
+        prompt "Version"
+        default PKG_USING_CMSIS_5_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CMSIS_5_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_CMSIS_5_V50800
+            bool "v5.8.0"
+    endchoice
+
     config PKG_CMSIS_5_VER
        string
+       default "v5.8.0"    if PKG_USING_CMSIS_5_V50800
        default "latest"    if PKG_USING_CMSIS_5_LATEST_VERSION
+
+    config PKG_CMSIS_5_VER_NUM
+        hex
+        default 0x50800    if PKG_USING_CMSIS_5_V50800
+        default 0x99999    if PKG_USING_FLASHDB_LATEST_VERSION
 
 endif
 
