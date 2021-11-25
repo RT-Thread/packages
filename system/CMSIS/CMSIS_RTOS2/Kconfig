@@ -1,7 +1,7 @@
 
 # Kconfig file for package CMSIS_RTOS2
 menuconfig PKG_USING_CMSIS_RTOS2
-    bool "RT-Thread adaptation for CMSIS-RTOS Version 2"
+    bool "CMSIS-RTOS2 wrapper for RT-Thread"
     select PKG_USING_CMSIS_5
     default n
 

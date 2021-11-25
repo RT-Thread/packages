@@ -1,6 +1,6 @@
 {
   "name": "CMSIS_RTOS2",
-  "description": "RT-Thread adaptation for CMSIS-RTOS Version 2",
+  "description": "CMSIS-RTOS2 wrapper for RT-Thread",
   "description_zh": "RT-Thread的CMSIS-RTOS2标准兼容层",  
   "enable": "PKG_USING_CMSIS_RTOS2", 
   "keywords": [
