@@ -2,6 +2,7 @@
 # Kconfig file for package logmgr
 menuconfig PKG_USING_LOGMGR
     bool "logmgr: A log management system for rt-thread."
+    select RT_USING_ULOG
     default n
 
 if PKG_USING_LOGMGR
