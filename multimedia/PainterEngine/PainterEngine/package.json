@@ -1,0 +1,26 @@
+{
+  "name": "PainterEngine",
+  "description": "A cross-platform graphics application framework written in C language",
+  "description_zh": "一个由C语言编写的跨平台图形应用框架",
+  "enable": "PKG_USING_PAINTERENGINE",
+  "keywords": [
+    "PainterEngine"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "DBinary",
+    "email": "matrixcascade@gmail.com",
+    "github": "matrixcascade"
+  },
+  "license": "BSD 3-Clause",
+  "repository": "https://github.com/matrixcascade/PainterEngine",
+  "homepage": "https://github.com/matrixcascade/PainterEngine#README",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/matrixcascade/PainterEngine.git",
+      "filename": "PainterEngine.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
