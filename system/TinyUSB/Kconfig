@@ -1,8 +1,11 @@
 
 # Kconfig file for package TinyUSB
 menuconfig PKG_USING_TINYUSB
-    bool "TinyUSB (official): an open source cross-platform USB stack for embedded system"
+    bool "TinyUSB: an open source cross-platform USB stack for embedded system"
     default n
+    select RT_USING_SEMAPHORE
+    select RT_USING_MUTEX
+    select RT_USING_MESSAGEQUEUE
     select RT_USING_USB
 
 if PKG_USING_TINYUSB
