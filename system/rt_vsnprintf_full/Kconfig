@@ -10,6 +10,18 @@ if PKG_USING_RT_VSNPRINTF_FULL
         string
         default "/packages/system/rt_vsnprintf_full"
 
+    config RT_VSNPRINTF_FULL_REPLACING_SPRINTF
+        bool "Enable to take over 'sprintf'"
+        default y
+
+    config RT_VSNPRINTF_FULL_REPLACING_SNPRINTF
+        bool "Enable to take over 'snprintf'"
+        default y
+
+    config RT_VSNPRINTF_FULL_REPLACING_PRINTF
+        bool "Enable to take over 'printf'"
+        default y
+
     choice
         prompt "Version"
         default PKG_USING_RT_VSNPRINTF_FULL_LATEST_VERSION
