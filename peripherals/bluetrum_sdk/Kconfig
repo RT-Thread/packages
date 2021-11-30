@@ -16,6 +16,9 @@ if PKG_USING_BLUETRUM_SDK
         help
             Select the package version
 
+        config PKG_USING_BLUETRUM_SDK_V002
+            bool "v0.0.2"
+
         config PKG_USING_BLUETRUM_SDK_V001
             bool "v0.0.1"
 
@@ -25,6 +28,7 @@ if PKG_USING_BLUETRUM_SDK
           
     config PKG_BLUETRUM_SDK_VER
        string
+       default "v0.0.2"    if PKG_USING_BLUETRUM_SDK_V002
        default "v0.0.1"    if PKG_USING_BLUETRUM_SDK_V001
        default "latest"    if PKG_USING_BLUETRUM_SDK_LATEST_VERSION
 
