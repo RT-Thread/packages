@@ -1,8 +1,8 @@
 {
   "name": "agile_jsmn",
   "description": "Lightweight JSON parser.",
-  "description_zh": "轻量级json解析器。",  
-  "enable": "PKG_USING_AGILE_JSMN", 
+  "description_zh": "轻量级json解析器。",
+  "enable": "PKG_USING_AGILE_JSMN",
   "keywords": [
     "agile_jsmn"
   ],
@@ -16,6 +16,11 @@
   "repository": "https://github.com/loogg/agile_jsmn",
   "homepage": "https://github.com/loogg/agile_jsmn#readme",
   "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/loogg/agile_jsmn/archive/refs/tags/1.0.0.zip",
+      "filename": "agile_jsmn-1.0.0.zip"
+    },
     {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_jsmn.git",
