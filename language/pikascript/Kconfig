@@ -12,22 +12,16 @@ if PKG_USING_PIKASCRIPT
 
     choice
         prompt "Version"
-        default PKG_USING_PIKASCRIPT_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_PIKASCRIPT_V020
-            bool "v0.2.0"
-            
-        config PKG_USING_PIKASCRIPT_V120
-            bool "v1.2.0"
+        config PKG_USING_PIKASCRIPT_LATEST_VERSION
+            bool "latest"
             
     endchoice
           
     config PKG_PIKASCRIPT_VER
        string
-       default "v0.2.0"    if PKG_USING_PIKASCRIPT_V020
-       default "v1.2.0"    if PKG_USING_PIKASCRIPT_V120
        default "latest"    if PKG_USING_PIKASCRIPT_LATEST_VERSION
 
 endif
