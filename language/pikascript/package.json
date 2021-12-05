@@ -8,27 +8,20 @@
   ],
   "category": "language",
   "author": {
-    "name": "mimilib",
+    "name": "lyon",
     "email": "645275593@qq.com",
-    "github": "mimilib"
+    "github": "pikasTech"
   },
   "license": "MIT",
-  "repository": "https://github.com/mimilib/pikascript",
-  "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "repository": "https://github.com/pikasTech/pikascript",
+  "icon": "https://user-images.githubusercontent.com/88232613/144221063-a85b2cb0-0416-493f-9afb-56cff31e977d.jpg",
+  "homepage": "https://whycan.com/f_55.html",
+  "doc": "https://www.yuque.com/liang-mltek/pikascript",
   "site": [
     {
-      "version": "v0.2.0",
-      "URL": "https://github.com/mimilib/pikascript/releases/download/v0.2.0/pikascript_v0.2.0.zip",
-      "filename": "PikaScript-0.2.0.zip",
-      "VER_SHA": "afda23c715e905f53fd6edd3ffb133a16c5bf448"
+      "version": "latest",
+      "URL": "https://github.com/pikasTech/pikascript/releases/download/rt-thread-package/pikascript.zip",
+      "filename": "pikascript.zip"
     },
-    {
-      "version": "v1.2.0",
-      "URL": "https://github.com/pikasTech/pikascript/releases/download/v1.2.0/pikaScript.zip",
-      "filename": "pikaScript-1.2.0.zip",
-      "VER_SHA": ""
-    }
   ]
 }
