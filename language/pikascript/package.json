@@ -20,8 +20,9 @@
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/pikasTech/pikascript/releases/download/rt-thread-package/pikascript.zip",
-      "filename": "pikascript.zip"
+      "URL": "https://github.com/pikasTech/pikascript.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
     },
   ]
 }
