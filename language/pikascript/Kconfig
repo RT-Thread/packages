@@ -12,6 +12,8 @@ if PKG_USING_PIKASCRIPT
 
     choice
         prompt "Version"
+        default PKG_USING_PIKASCRIPT_LATEST_VERSION
+        
         help
             Select the package version
 
