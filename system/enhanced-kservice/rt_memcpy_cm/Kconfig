@@ -9,7 +9,7 @@ if PKG_USING_RT_MEMCPY_CM
 
     config PKG_RT_MEMCPY_CM_PATH
         string
-        default "/packages/system/acceleration/rt_memcpy_cm"
+        default "/packages/system/enhanced-kservice/rt_memcpy_cm"
 
     choice
         prompt "Version"

@@ -1,6 +1,0 @@
-menu "rt_kprintf: enhanced rt_kprintf packages"
-
-source "$PKGS_DIR/packages/system/rt_kprintf/rt_kprintf_threadsafe/Kconfig"
-source "$PKGS_DIR/packages/system/rt_kprintf/rt_vsnprintf_full/Kconfig"
-
-endmenu
