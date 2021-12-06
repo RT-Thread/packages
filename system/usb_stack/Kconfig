@@ -1,0 +1,84 @@
+
+# Kconfig file for package usb_stack
+menuconfig PKG_USING_USB_STACK
+    bool "USB Stack: tiny and portable USB stack for embedded system with USB IP"
+    default n
+
+if PKG_USING_USB_STACK
+
+menu "USB Stack Options"
+
+    config PKG_USB_STACK_USING_HS
+    bool
+    prompt "Enable usb high speed mode"
+    default n
+    
+    config PKG_USB_STACK_USING_DEVICE
+        bool
+        prompt "Enable usb device mode"
+        default n
+        
+    config PKG_USB_STACK_USING_CDC
+        bool
+        prompt "Enable usb cdc acm device"
+        default n
+        depends on PKG_USB_STACK_USING_DEVICE
+        
+    config PKG_USB_STACK_USING_HID
+        bool
+        prompt "Enable usb hid device"
+        default n
+        depends on PKG_USB_STACK_USING_DEVICE
+        
+    config PKG_USB_STACK_USING_DFU
+        bool
+        prompt "Enable usb dfu device"
+        default n
+        depends on PKG_USB_STACK_USING_DEVICE
+        
+    config PKG_USB_STACK_USING_MSC
+        bool
+        prompt "Enable usb msc device"
+        default n
+        depends on PKG_USB_STACK_USING_DEVICE  
+        
+    config PKG_USB_STACK_USING_HUB
+        bool
+        prompt "Enable usb hub device"
+        default n
+        depends on PKG_USB_STACK_USING_DEVICE   
+        
+    config PKG_USB_STACK_USING_AUDIO
+        bool
+        prompt "Enable usb audio device"
+        default n
+        depends on PKG_USB_STACK_USING_DEVICE  
+        
+    config PKG_USB_STACK_USING_VIDEO
+        bool
+        prompt "Enable usb video device"
+        default n
+        depends on PKG_USB_STACK_USING_DEVICE        
+
+endmenu
+
+    config PKG_USB_STACK_PATH
+        string
+        default "/packages/system/usb_stack"
+
+    choice
+        prompt "Version"
+        default PKG_USING_USB_STACK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_USB_STACK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_USB_STACK_VER
+       string
+       default "latest"    if PKG_USING_USB_STACK_LATEST_VERSION
+
+endif
+

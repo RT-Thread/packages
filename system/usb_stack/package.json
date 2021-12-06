@@ -1,0 +1,29 @@
+{
+  "name": "usb_stack",
+  "description": "Tiny and portable USB stack for embedded system with USB IP",
+  "description_zh": "小而美、可移植性高的 USB 主从协议栈。",  
+  "enable": "PKG_USING_USB_STACK", 
+  "keywords": [
+    "USB Stack",
+    "USB"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "sakumisu",
+    "email": "1203593632@qq.com",
+    "github": "sakumisu"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/sakumisu/usb_stack",
+  "icon": "unknown",
+  "homepage": "https://github.com/sakumisu/usb_stack#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sakumisu/usb_stack.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
