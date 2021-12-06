@@ -60,6 +60,12 @@
       "VER_SHA": "NULL"
     },
     {
+      "version": "v0.4.3",
+      "URL": "https://github.com/majianjia/nnom/archive/v0.4.3.zip",
+      "filename": "nnom-v0.4.3.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/majianjia/nnom.git",
       "filename": "",
