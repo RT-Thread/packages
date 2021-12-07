@@ -1,5 +1,6 @@
 menuconfig PKG_USING_PIKASCRIPT
-    bool "PikaScript : ultra-lightweight python engine."
+    bool "PikaScript : ultra-lightweight python engine"
+    select PKG_USING_RT_VSNPRINTF_FULL
     default n
 
 if PKG_USING_PIKASCRIPT
