@@ -35,7 +35,6 @@ if PKG_USING_MCURSES
         default n
 
     config MCURSES_USING_KEY_TEST
-        select RT_USING_LIBC
         bool "mcurses: key input demo"
         help
             mcurses: key input demo
@@ -48,14 +47,12 @@ if PKG_USING_MCURSES
         default n
 
     config MCURSES_USING_NUMBER_EDITOR
-        select RT_USING_LIBC
         bool "mcurses: number editor demo"
         help
             mcurses: number editor demo
         default n
 
     config MCURSES_USING_HEX_EDITOR
-        select RT_USING_LIBC
         bool "mcurses: hex editor demo"
         help
             mcurses: hex editor demo
