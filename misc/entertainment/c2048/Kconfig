@@ -6,6 +6,7 @@ menuconfig PKG_USING_2048
     select RT_USING_LIBC
     select RT_LIBC_USING_FILEIO if RT_VER_NUM >= 0x4100
     select RT_USING_POSIX if RT_VER_NUM < 0x4100
+    select RT_USING_POSIX_POLL if RT_VER_NUM >= 0x4100
     select RT_USING_POSIX_TERMIOS
     default n
 
