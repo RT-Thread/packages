@@ -1,15 +1,74 @@
-menuconfig PKG_USING_libsodium
+
+# Kconfig file for package libsodium
+menuconfig PKG_USING_LIBSODIUM
     bool "libsodium: A modern and easy-to-use crypto library."
     default n
 
-if PKG_USING_libsodium
+if PKG_USING_LIBSODIUM
 
-    config PKG_libsodium_PATH
+    config PKG_LIBSODIUM_PATH
         string
         default "/packages/security/libsodium"
 
-    config PKG_libsodium_VER
-        string
-        default "v1.0.0"
+    menu "Examples"
+        config LIBSODIUM_USING_EXAMPLE_SHA256
+            bool "sha256: a cli tool that calculates the SHA-256 hash."
+            help
+                sha256: a cli tool that calculates the SHA-256 hash.
+            default n
+        config LIBSODIUM_USING_EXAMPLE_SHA512
+            bool "sha512: a cli tool that calculates the SHA-512 hash."
+            help
+                sha512: a cli tool that calculates the SHA-256 hash.
+            default n
+        config LIBSODIUM_USING_EXAMPLE_GENERIC_HASH
+            bool "generic_hash: a cli tool that calculates the generic hash."
+            help
+                generic_hash: a cli tool that calculates the generic hash.
+            default n
+        config LIBSODIUM_USING_EXAMPLE_SHORT_HASH
+            bool "short_hash: a cli tool that calculates the short hash."
+            help
+                short_hash: a cli tool that calculates the short hash.
+            default n
+    endmenu
+
+    menu "Testing (It's suggested to pass all required tests first)"
+        config LIBSODIUM_USING_TESTING_CORE
+            bool "hash test : Testing core"
+            help
+                Testing core
+            default n
+        config LIBSODIUM_USING_TESTING_GENERIC_HASH
+            bool "hash test : Testing generic hash"
+            help
+                Testing generic hash
+            default n
+        config LIBSODIUM_USING_TESTING_SHORT_HASH
+            bool "hash test : Testing short hash"
+            help
+                Testing short hash
+            default n
+        config LIBSODIUM_USING_TESTING_HASH
+            bool "hash test : Testing sha256 and sha512"
+            help
+                Testing sha256 and sha512
+            default n
+    endmenu
+
+    choice
+        prompt "Version"
+        default PKG_USING_LIBSODIUM_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LIBSODIUM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LIBSODIUM_VER
+       string
+       default "latest"    if PKG_USING_LIBSODIUM_LATEST_VERSION
 
 endif
+
