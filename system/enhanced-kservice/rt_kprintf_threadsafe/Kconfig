@@ -8,7 +8,7 @@ if PKG_USING_RT_KPRINTF_THREADSAFE
 
     config PKG_RT_KPRINTF_THREADSAFE_PATH
         string
-        default "/packages/system/rt_kprintf/rt_kprintf_threadsafe"
+        default "/packages/system/enhanced-kservice/rt_kprintf_threadsafe"
 
     choice
         prompt "Version"

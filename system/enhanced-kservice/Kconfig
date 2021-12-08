@@ -1,0 +1,7 @@
+menu "enhanced kernel services"
+
+source "$PKGS_DIR/packages/system/enhanced-kservice/rt_memcpy_cm/Kconfig"
+source "$PKGS_DIR/packages/system/enhanced-kservice/rt_kprintf_threadsafe/Kconfig"
+source "$PKGS_DIR/packages/system/enhanced-kservice/rt_vsnprintf_full/Kconfig"
+
+endmenu
