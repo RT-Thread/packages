@@ -9,6 +9,20 @@ if PKG_USING_PIKASCRIPT
         string
         default "/packages/language/pikascript"
 
+    config PKG_PIKASCRIPT_USING_AUTORUNNING
+        bool "Enable auto-running PikaScript"
+        default n
+
+        if PKG_PIKASCRIPT_USING_AUTORUNNING
+            config PKG_PIKASCRIPT_STACK_SIZE
+                int "PikaScript thread's size"
+                default 4096
+
+            config PKG_PIKASCRIPT_STACK_PRIO
+                int "PikaScript thread's priority"
+                default 20
+        endif
+
     choice
         prompt "Version"
         default PKG_USING_PIKASCRIPT_LATEST_VERSION
