@@ -52,4 +52,5 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/lis2dh12/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/hs300x/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/zmod4410/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/isl29035/Kconfig"
     endif
