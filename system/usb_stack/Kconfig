@@ -8,10 +8,18 @@ if PKG_USING_USB_STACK
 
 menu "USB Stack Options"
 
-    config PKG_USB_STACK_USING_HS
-    bool
-    prompt "Enable usb high speed mode"
-    default n
+    choice
+        prompt "USB Speed"
+        default PKG_USB_STACK_USING_FS
+        help
+          Select the usb speed.
+        config PKG_USB_STACK_USING_FS
+            bool "FS"
+        config PKG_USB_STACK_USING_HS_IN_FULL
+            bool "HS_IN_FULL"
+        config PKG_USB_STACK_USING_HS
+            bool "HS"
+    endchoice
     
     config PKG_USB_STACK_USING_DEVICE
         bool
