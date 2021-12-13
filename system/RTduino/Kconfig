@@ -1,0 +1,42 @@
+
+# Kconfig file for package RTduino
+menuconfig RT_USING_ARDUINO
+    bool "RTduino: Arduino Ecological Compatibility Layer"
+    select RT_USING_CPLUSPLUS
+    select RT_USING_PIN
+    default n
+
+if RT_USING_ARDUINO
+
+    config PKG_USING_RTDUINO
+        bool
+        default y
+
+    config PKG_RTDUINO_PATH
+        string
+        default "/packages/system/RTduino"
+
+    config RT_USING_ARDUINO_THREAD_SIZE
+        int "arduino thread's size"
+        default 1024
+
+    config RT_USING_ARDUINO_THREAD_PRIO
+        int "arduino thread's priority"
+        default 20
+
+    choice
+        prompt "Version"
+        default PKG_USING_RTDUINO_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RTDUINO_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RTDUINO_VER
+       string
+       default "latest"    if PKG_USING_RTDUINO_LATEST_VERSION
+
+endif
+
