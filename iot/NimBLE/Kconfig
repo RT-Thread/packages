@@ -267,7 +267,7 @@ config PKG_NIMBLE_EXT_ADV_MAX_SIZE
 
     choice
         prompt "Version"
-        default PKG_USING_NIMBLE_LATEST_VERSION
+        default PKG_USING_NIMBLE_V100
         help
             Select the package version
 
