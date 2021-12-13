@@ -1,0 +1,27 @@
+
+# Kconfig file for package ISL29035
+menuconfig PKG_USING_ISL29035
+    bool "ISL29035: Integrated Digital Light Sensor ISL29035 driver library"
+    default n
+
+if PKG_USING_ISL29035
+
+    config PKG_ISL29035_PATH
+        string
+        default "/packages/peripherals/sensors/ISL29035"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ISL29035_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ISL29035_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ISL29035_VER
+        string
+        default "latest"    if PKG_USING_ISL29035_LATEST_VERSION
+
+endif
