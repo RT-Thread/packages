@@ -1,7 +1,7 @@
 
 # Kconfig file for package lv_music_demo
 menuconfig PKG_USING_LV_MUSIC_DEMO
-    bool "Enable LVGL music player demo"
+    bool "Enable LVGL music player demo for RT-Thread"
     default n
 
 if PKG_USING_LV_MUSIC_DEMO
