@@ -1,0 +1,27 @@
+{
+  "name": "lv_music_demo",
+  "description": "LVGL music player demo",
+  "description_zh": "LVGL的播放器演示示例",  
+  "enable": "PKG_USING_LV_MUSIC_DEMO", 
+  "keywords": [
+    "lv_music_demo",
+    "LVGL"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "Meco Man",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/mysterywolf/lv_demo_music",
+  "homepage": "https://github.com/mysterywolf/lv_demo_music#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/lv_demo_music.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
