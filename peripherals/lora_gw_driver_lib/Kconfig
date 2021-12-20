@@ -23,7 +23,7 @@ if PKG_USING_LORA_GW_DRIVER_LIB
     config LORA_GW_DRIVER_SPI_DEVICE_NAME
         string "Setup LoRa Gw Driver Spi Device Name"
         default "lgd1302"
-        
+
     config LORA_GW_DRIVER_SPI_BUS_NAME
         string "Setup LoRa Gw Driver Spi Bus Name (eg:spi1,spi2..,Define BSP_USING_SPIx in [Target Platform]\\Board\\Kconfig)"
         default spi2
@@ -51,7 +51,7 @@ if PKG_USING_LORA_GW_DRIVER_LIB
  config LORA_GW_DRIVER_GPIO_SETUP
          bool "Enable lora-gw-driver GPIO Setup"
          default n
-         
+
          if LORA_GW_DRIVER_GPIO_SETUP
             menu "Select Supported Target Borad"
                 menuconfig LORA_GW_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LORA_SHIELD_LRS007_LSD4WN_2K730NE0_SX1302
@@ -230,7 +230,7 @@ if PKG_USING_LORA_GW_DRIVER_LIB
         config PKG_USING_LORA_GW_DRIVER_LIB_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LORA_GW_DRIVER_LIB_VER
        string
        default "v0.3.0"    if PKG_USING_LORA_GW_DRIVER_LIB_V030

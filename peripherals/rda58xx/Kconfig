@@ -22,7 +22,7 @@ if PKG_USING_RDA58XX
         config PKG_USING_RDA58XX_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RDA58XX_VER
        string
        default "v1.0.0"    if PKG_USING_RDA58XX_V100

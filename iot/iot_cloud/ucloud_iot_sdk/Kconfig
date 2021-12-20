@@ -33,7 +33,7 @@ if PKG_USING_UCLOUD_IOT_SDK
                 default "device_secret"
                 help
                     static register device needed
-    endmenu	
+    endmenu
 
     config PKG_USING_UCLOUD_MQTT
         bool "Enable Mqtt Link uiot-core Platform"
@@ -117,7 +117,7 @@ if PKG_USING_UCLOUD_IOT_SDK
         config PKG_USING_UCLOUD_IOT_SDK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_UCLOUD_IOT_SDK_VER
         string
         default "v1.0.1"    if PKG_USING_UCLOUD_IOT_SDK_V101

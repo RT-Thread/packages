@@ -27,7 +27,7 @@ if PKG_USING_ANV_MEMLEAK
         config PKG_USING_ANV_MEMLEAK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ANV_MEMLEAK_VER
        string
        default "latest"    if PKG_USING_ANV_MEMLEAK_LATEST_VERSION

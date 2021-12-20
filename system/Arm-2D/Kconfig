@@ -20,7 +20,7 @@ if PKG_USING_ARM_2D
         config PKG_USING_ARM_2D_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ARM_2D_VER
        string
        default "latest"    if PKG_USING_ARM_2D_LATEST_VERSION

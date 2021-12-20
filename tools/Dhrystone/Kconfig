@@ -19,7 +19,7 @@ if PKG_USING_DHRYSTONE
         default PKG_USING_DHRYSTONE_LATEST_VERSION
         help
             Select the this package version
-            
+
         config PKG_USING_DHRYSTONE_LATEST_VERSION
             bool "latest"
     endchoice

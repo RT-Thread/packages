@@ -15,14 +15,14 @@ if PKG_USING_DM9051
         prompt "version"
         help
             Select the dm9051 driver version
-	    default PKG_USING_DM9051_V100
+        default PKG_USING_DM9051_V100
 
         config PKG_USING_DM9051_V100
             bool "v1.0.0"
 
         config PKG_USING_DM9051_V110
             bool "v1.1.0"
-            
+
         config PKG_USING_DM9051_LATEST_VERSION
             bool "latest"
     endchoice
@@ -52,11 +52,11 @@ if PKG_USING_DM9051
                 int "Reset PIN number"
                 default 0
 
-				
+
             config DM9051_INT_PIN
                 int "interrupt PIN number"
-                default 0				
-			
+                default 0
+
         endmenu
     endif
 
@@ -65,16 +65,16 @@ if PKG_USING_DM9051
         default 20000000
 
     config DM9051_RX_DUMP
-		bool "Enable DM9051 rx dump"
-		default n
+        bool "Enable DM9051 rx dump"
+        default n
 
     config DM9051_TX_DUMP
-		bool "Enable DM9051 tx dump"
-		default n
+        bool "Enable DM9051 tx dump"
+        default n
 
     config DM9051_DUMP_RAW
-		bool "Enable DM9051 raw data dump"
-		default n
+        bool "Enable DM9051 raw data dump"
+        default n
 
     config PKG_DM9051_VER
        string

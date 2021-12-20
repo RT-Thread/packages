@@ -22,7 +22,7 @@ if PKG_USING_DLT645
         config PKG_USING_DLT645_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_DLT645_VER
        string
        default "v0.0.1"    if PKG_USING_DLT645_V001
@@ -33,7 +33,7 @@ if PKG_USING_DLT645
             bool
             prompt "dlt645 example"
             default n
-    endmenu       
+    endmenu
 
 endif
 

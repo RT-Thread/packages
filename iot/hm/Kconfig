@@ -22,7 +22,7 @@ if PKG_USING_HM
         config PKG_USING_HM_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_HM_VER
        string
        default "v1.0.0"    if PKG_USING_HM_V100
@@ -31,7 +31,7 @@ if PKG_USING_HM
     config HM_USING_STACK
         bool "Enable Stack Port"
         default n
-    
+
         if HM_USING_STACK
             choice
                 prompt "Select stack port"
@@ -62,7 +62,7 @@ if PKG_USING_HM
                     bool "Using Zephyr Controller"
             endchoice
         endif
-    
+
     if HM_USING_CHIPSET_BCM
         config HM_USING_BOARD_ART_PI
         bool "Using ART-Pi"

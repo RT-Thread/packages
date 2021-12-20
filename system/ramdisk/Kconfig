@@ -22,7 +22,7 @@ if PKG_USING_RAMDISK
         config PKG_USING_RAMDISK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RAMDISK_VER
        string
        default "v0.1.0"    if PKG_USING_RAMDISK_V010

@@ -34,7 +34,7 @@ if PKG_USING_LIBNFC
         config PKG_USING_LIBNFC_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LIBNFC_VER
        string
        default "latest"    if PKG_USING_LIBNFC_LATEST_VERSION

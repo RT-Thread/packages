@@ -20,7 +20,7 @@ if PKG_USING_UPARAM
         config PKG_USING_UPARAM_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_UPARAM_VER
        string
        default "latest"    if PKG_USING_UPARAM_LATEST_VERSION

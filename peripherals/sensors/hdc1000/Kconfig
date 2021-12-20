@@ -22,7 +22,7 @@ if PKG_USING_HDC1000
         config PKG_USING_HDC1000_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_HDC1000_VER
        string
        default "v1.0.0"    if PKG_USING_HDC1000_V100

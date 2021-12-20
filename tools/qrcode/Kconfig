@@ -13,7 +13,7 @@ if PKG_USING_QRCODE
     config PKG_QRCODE_SAMPLE
         bool "Enable qrcode sample"
         default n
-        
+
     choice
         prompt "Version"
         default PKG_USING_QRCODE_LATEST_VERSION
@@ -26,7 +26,7 @@ if PKG_USING_QRCODE
         config PKG_USING_QRCODE_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_QRCODE_VER
        string
        default "v1.0.0"    if PKG_USING_QRCODE_V100

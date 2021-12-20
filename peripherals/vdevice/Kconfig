@@ -14,7 +14,7 @@ if PKG_USING_VDEVICE
         bool "Use virtualized pin "
         select RT_USING_PIN
         default n
-    
+
         if VDEVICE_USING_PIN
             config VDEVICE_PIN_NAME
                 string "vdevice pin name"
@@ -35,7 +35,7 @@ if PKG_USING_VDEVICE
         bool "Use virtualized touch "
         select RT_USING_TOUCH
         default n
-        
+
         if VDEVICE_USING_TOUCH
             config VDEVICE_TOUCH_NAME
                 string "vdevice touch name"

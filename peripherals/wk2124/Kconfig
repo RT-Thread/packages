@@ -27,7 +27,7 @@ if PKG_USING_WK2124
     config PKG_USING_UART_SWK4
         bool "Enable UART SWK4"
         default y
-    
+
     config WK2124_DEVICE_EXTERN_CONFIG
          bool
          default n
@@ -42,7 +42,7 @@ if PKG_USING_WK2124
             config WK2124_IRQ_PIN
                 int "IRQ pin number"
                 default 17
-            
+
             if PKG_USING_WK2124_V100
                 choice
                     prompt "Select crystal frequency"
@@ -68,7 +68,7 @@ if PKG_USING_WK2124
                         bool "32MHz"
                 endchoice
             endif
-            
+
             if !PKG_USING_WK2124_V100
                 config WK2124_Fosc
                     int "Set crystal frequency. Unit Hz"
@@ -93,7 +93,7 @@ if PKG_USING_WK2124
         config PKG_USING_WK2124_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_WK2124_VER
        string
        default "v1.0.0"    if PKG_USING_WK2124_V100

@@ -19,7 +19,7 @@ if PKG_USING_QFPLIB_M0_TINY
         config PKG_USING_QFPLIB_M0_TINY_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_QFPLIB_M0_TINY_VER
        string
        default "latest"    if PKG_USING_QFPLIB_M0_TINY_LATEST_VERSION

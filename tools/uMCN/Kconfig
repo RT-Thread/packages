@@ -19,20 +19,20 @@ if PKG_USING_UMCN
         config PKG_USING_UMCN_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_UMCN_VER
        string
        default "latest"    if PKG_USING_UMCN_LATEST_VERSION
-	   
-	config UMCN_USING_DEMO
+
+    config UMCN_USING_DEMO
         bool
         prompt "uMCN demo example"
         default n
-		
-	config UMCN_USING_CMD
+
+    config UMCN_USING_CMD
         bool
-		prompt "uMCN command"
-		select PKG_USING_OPTPARSE
+        prompt "uMCN command"
+        select PKG_USING_OPTPARSE
         default n
 
 endif

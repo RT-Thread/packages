@@ -11,7 +11,7 @@ if PKG_USING_PAJ7620
     config PKG_PAJ7620_PATH
         string
         default "/packages/peripherals/PAJ7620"
-    
+
     config PAJ7620_USING_SAMPLES
     bool "enable samples"
     default n
@@ -29,7 +29,7 @@ if PKG_USING_PAJ7620
             bool "latest"
     endchoice
 
-          
+
     config PKG_PAJ7620_VER
        string
        default "v1.0.0"    if PKG_USING_PAJ7620_V100

@@ -11,8 +11,8 @@ if PKG_USING_PCF8574
         default "/packages/peripherals/pcf8574"
 
     config PKG_USING_PCF8574_SAMPLE
-		bool "Enable pcf8574 sample"
-		default n
+        bool "Enable pcf8574 sample"
+        default n
 
     choice
         prompt "Version"
@@ -26,7 +26,7 @@ if PKG_USING_PCF8574
         config PKG_USING_PCF8574_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PCF8574_VER
        string
        default "v1.0.0"    if PKG_USING_PCF8574_V100

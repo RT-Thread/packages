@@ -89,7 +89,7 @@ if PKG_USING_LORA_PKT_FWD
         config PKG_USING_LORA_PKT_FWD_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LORA_PKT_FWD_VER
        string
        default "v1.0.0"    if PKG_USING_LORA_PKT_FWD_V100

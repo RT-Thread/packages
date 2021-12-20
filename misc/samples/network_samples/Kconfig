@@ -22,7 +22,7 @@ if PKG_USING_NETWORK_SAMPLES
         config PKG_USING_NETWORK_SAMPLES_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_NETWORK_SAMPLES_VER
        string
        default "v0.3.0"    if PKG_USING_NETWORK_SAMPLES_V030

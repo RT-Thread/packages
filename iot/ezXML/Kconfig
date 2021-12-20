@@ -8,7 +8,7 @@ if PKG_USING_EZXML
         string
         default "/packages/iot/ezXML"
 
-	choice
+    choice
         prompt "version"
         help
             Select the ezXML version

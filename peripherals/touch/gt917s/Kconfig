@@ -22,7 +22,7 @@ if PKG_USING_GT917S
         config PKG_USING_GT917S_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_GT917S_VER
        string
        default "v1.0.0"    if PKG_USING_GT917S_V100

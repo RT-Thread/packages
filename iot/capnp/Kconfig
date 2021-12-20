@@ -45,7 +45,7 @@ if PKG_USING_CAPNP
         config PKG_USING_CAPNP_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_CAPNP_VER
        string
        default "v1.0.0"    if PKG_USING_CAPNP_V100

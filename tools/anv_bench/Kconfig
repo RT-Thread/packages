@@ -33,7 +33,7 @@ if PKG_USING_ANV_BENCH
         config PKG_USING_ANV_BENCH_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ANV_BENCH_VER
        string
        default "latest"    if PKG_USING_ANV_BENCH_LATEST_VERSION

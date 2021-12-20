@@ -11,8 +11,8 @@ if PKG_USING_MCP23008
         default "/packages/peripherals/mcp23008"
 
     config PKG_USING_MCP23008_SAMPLE
-		bool "Enable mcp23008 sample"
-		default n
+        bool "Enable mcp23008 sample"
+        default n
 
     choice
         prompt "Version"
@@ -26,7 +26,7 @@ if PKG_USING_MCP23008
         config PKG_USING_MCP23008_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MCP23008_VER
        string
        default "v1.0.0"    if PKG_USING_MCP23008_V100

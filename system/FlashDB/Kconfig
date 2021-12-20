@@ -9,7 +9,7 @@ if PKG_USING_FLASHDB
     config PKG_FLASHDB_PATH
         string
         default "/packages/system/FlashDB"
-        
+
     config FDB_USING_KVDB
         bool
         prompt "Using KVDB feature"
@@ -92,7 +92,7 @@ if PKG_USING_FLASHDB
         config PKG_USING_FLASHDB_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_FLASHDB_VER
        string
        default "v1.0.0"    if PKG_USING_FLASHDB_V10000

@@ -13,7 +13,7 @@ if PKG_USING_FT6236
     config PKG_USING_FT6236_SAMPLE
     bool "enable samples"
     default n
-	
+
     choice
         prompt "Version"
         default PKG_USING_FT6236_LATEST_VERSION
@@ -26,7 +26,7 @@ if PKG_USING_FT6236
         config PKG_USING_FT6236_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_FT6236_VER
        string
        default "v1.0.0"    if PKG_USING_FT6236_V100

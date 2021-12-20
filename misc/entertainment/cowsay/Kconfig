@@ -19,7 +19,7 @@ if PKG_USING_COWSAY
         config PKG_USING_COWSAY_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_COWSAY_VER
        string
        default "latest"    if PKG_USING_COWSAY_LATEST_VERSION

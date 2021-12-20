@@ -17,7 +17,7 @@ if PKG_USING_LIBRWS
         default "/packages/iot/librws"
 
     choice
-        prompt "version" 
+        prompt "version"
         default PKG_USING_LIBRWS_V124
         help
             Select the librws version
@@ -28,7 +28,7 @@ if PKG_USING_LIBRWS
         config PKG_USING_LIBRWS_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LIBRWS_VER
        string
        default "v1.2.4"    if PKG_USING_LIBRWS_V124
@@ -59,7 +59,7 @@ if PKG_USING_LIBRWS
             select PKG_USING_MBEDTLS
     endchoice
 
-    config LIBRWS_USING_EXAMPLE 
+    config LIBRWS_USING_EXAMPLE
         bool "Using librws msh command example"
         default y
 endif

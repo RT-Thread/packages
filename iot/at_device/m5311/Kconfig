@@ -11,7 +11,7 @@ if AT_DEVICE_USING_M5311
         default n
 
     if AT_DEVICE_USING_M5311 && AT_USING_SOCKET
-    
+
         config M5311_MODULE_SEND_MAX_SIZE
             int "The maximum length of socket send line buffer"
             default 1024

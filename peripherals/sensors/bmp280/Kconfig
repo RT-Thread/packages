@@ -22,7 +22,7 @@ if PKG_USING_BMP280
         config PKG_USING_BMP280_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_BMP280_VER
        string
        default "v1.0.0"    if PKG_USING_BMP280_V100

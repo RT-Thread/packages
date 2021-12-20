@@ -47,7 +47,7 @@ if PKG_USING_CMSIS_5
     config PKG_CMSIS_DSP
         bool "A suite of common signal processing functions for Cortex-M"
         default n
-          
+
     config PKG_CMSIS_5_AUX_VER
        string
        default "latest"    if PKG_USING_CMSIS_5_AUX_LATEST_VERSION

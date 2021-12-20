@@ -20,7 +20,7 @@ if PKG_USING_CMSIS_RTOS2
         config PKG_USING_CMSIS_RTOS2_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_CMSIS_RTOS2_VER
        string
        default "latest"    if PKG_USING_CMSIS_RTOS2_LATEST_VERSION

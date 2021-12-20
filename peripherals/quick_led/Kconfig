@@ -17,36 +17,36 @@ if PKG_USING_QLED
 
     config QLED_TIME_UNIT_MS
         int "Led blink time unit, unit : ms"
-        default 10   
+        default 10
 
     config QLED_THREAD_NAME
         string "Led driver thread name"
-        default "qled"   
+        default "qled"
 
     config QLED_THREAD_STACK_SIZE
         int "Led driver thread stack size"
-        default 512   
+        default 512
 
     config QLED_THREAD_PRIO
         int "Led driver thread priority"
-        default 3   
+        default 3
 
     config QLED_USING_SAMPLE
         bool "using sample"
         default n
-        
+
     if QLED_USING_SAMPLE
-    
+
         config QLED_RUN_PIN
             int "Sample running led pin"
-            default -1   
+            default -1
 
         config QLED_SOS_PIN
             int "Sample sos signal led pin"
-            default -1 
-        
+            default -1
+
     endif
-    
+
     choice
         prompt "Version"
         default PKG_USING_QLED_LATEST_VERSION
@@ -55,10 +55,10 @@ if PKG_USING_QLED
 
         config PKG_USING_QLED_LATEST_VERSION
             bool "latest"
-            
+
         config PKG_USING_QLED_V101
             bool "v1.01"
-            
+
         config PKG_USING_QLED_V100
             bool "v1.00"
     endchoice

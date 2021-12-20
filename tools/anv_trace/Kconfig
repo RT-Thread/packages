@@ -27,7 +27,7 @@ if PKG_USING_ANV_TRACE
         config PKG_USING_ANV_TRACE_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ANV_TRACE_VER
        string
        default "latest"    if PKG_USING_ANV_TRACE_LATEST_VERSION

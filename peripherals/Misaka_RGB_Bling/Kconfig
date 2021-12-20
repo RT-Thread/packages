@@ -23,7 +23,7 @@ if PKG_USING_MISAKA_RGB_BLING
         config PKG_USING_MISAKA_RGB_BLING_V100
             bool "1.0.0"
     endchoice
-          
+
     config PKG_MISAKA_RGB_BLING_VER
        string
        default "1.0.0"    if PKG_USING_MISAKA_RGB_BLING_V100

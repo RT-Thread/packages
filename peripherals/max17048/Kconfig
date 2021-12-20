@@ -19,7 +19,7 @@ if PKG_USING_MAX17048
         config PKG_USING_MAX17048_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MAX17048_VER
        string
        default "latest"    if PKG_USING_MAX17048_LATEST_VERSION

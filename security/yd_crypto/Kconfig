@@ -20,7 +20,7 @@ if PKG_USING_YD_CRYPTO
         config PKG_USING_YD_CRYPTO_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_YD_CRYPTO_VER
        string
        default "v1.1.01"    if PKG_USING_YD_CRYPTO_V1101

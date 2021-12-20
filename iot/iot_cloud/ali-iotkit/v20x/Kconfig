@@ -3,7 +3,7 @@
 
 choice
     prompt "Select Aliyun platform"
-	default PKG_USING_ALI_IOTKIT_IS_LINKPLATFORM
+    default PKG_USING_ALI_IOTKIT_IS_LINKPLATFORM
     help
         Select Aliyun platform
 
@@ -11,7 +11,7 @@ choice
         bool "LinkDevelop Platform"
         help
             Use LinkDevelop Platform
-        
+
     config PKG_USING_ALI_IOTKIT_IS_LINKPLATFORM
         bool "LinkPlatform Platform"
         help
@@ -20,7 +20,7 @@ endchoice
 
 config PKG_USING_ALI_IOTKIT_MQTT
     bool "Enable MQTT"
-    default n 
+    default n
 
 if PKG_USING_ALI_IOTKIT_MQTT
     config PKG_USING_ALI_IOTKIT_MQTT_SAMPLE
@@ -56,10 +56,10 @@ config PKG_USING_ALI_IOTKIT_OTA
 if PKG_USING_ALI_IOTKIT_OTA
     choice
         prompt "Select OTA channel"
-		default PKG_USING_ALI_IOTKIT_MQTT_OTA
+        default PKG_USING_ALI_IOTKIT_MQTT_OTA
         help
             Select OTA channel
-            
+
         config PKG_USING_ALI_IOTKIT_MQTT_OTA
             bool "Use MQTT OTA channel"
             select PKG_USING_MBEDTLS

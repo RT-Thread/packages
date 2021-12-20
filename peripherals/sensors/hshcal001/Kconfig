@@ -9,14 +9,14 @@ if PKG_USING_HSHCAL001
     config PKG_HSHCAL001_PATH
         string
         default "/packages/peripherals/sensors/hshcal001"
-		
-	config PKG_USING_HSHCAL001_HUMI
-		bool "Enable hshcal001 humi"
-		default y
+
+    config PKG_USING_HSHCAL001_HUMI
+        bool "Enable hshcal001 humi"
+        default y
 
     config PKG_USING_HSHCAL001_TEMP
-		bool "Enable hshcal001 temp"
-		default y
+        bool "Enable hshcal001 temp"
+        default y
 
     choice
         prompt "Version"
@@ -30,7 +30,7 @@ if PKG_USING_HSHCAL001
         config PKG_USING_HSHCAL001_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_HSHCAL001_VER
        string
        default "v0.0.1"    if PKG_USING_HSHCAL001_V001

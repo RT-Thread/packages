@@ -1,19 +1,19 @@
 
 menuconfig PKG_USING_NOPOLL
     bool "nopoll: A OpenSource WebSocket implementation (RFC 6455) in ansi C"
-	select RT_USING_LWIP
+    select RT_USING_LWIP
     select PKG_USING_TINYCRYPT
     select TINY_CRYPT_SHA1
     default n
 
-	help
-		nopoll package in ansi C for websocket
+    help
+        nopoll package in ansi C for websocket
 
 if PKG_USING_NOPOLL
 
-	config PKG_USING_NOPOLL_EXAMPLE
-	bool "Enable nopoll example"
-	default y
+    config PKG_USING_NOPOLL_EXAMPLE
+    bool "Enable nopoll example"
+    default y
 
     config PKG_NOPOLL_PATH
         string

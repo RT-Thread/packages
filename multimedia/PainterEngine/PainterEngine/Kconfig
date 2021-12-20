@@ -20,7 +20,7 @@ if PKG_USING_PAINTERENGINE
         config PKG_USING_PAINTERENGINE_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PAINTERENGINE_VER
        string
        default "latest"    if PKG_USING_PAINTERENGINE_LATEST_VERSION

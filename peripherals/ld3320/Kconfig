@@ -22,7 +22,7 @@ if PKG_USING_LD3320
         config PKG_USING_LD3320_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LD3320_VER
        string
        default "v1.0.0"    if PKG_USING_LD3320_V100
@@ -32,7 +32,7 @@ if PKG_USING_LD3320
        string
        default "v1.0.0"    if PKG_USING_LD3320_V100
        default "latest"    if PKG_USING_LD3320_LATEST_VERSION
-    
+
     config PKG_USING_LD3320_DEMO
         bool "Use demo"
         default n
@@ -47,7 +47,7 @@ if PKG_USING_LD3320
                 bool "ASR"
             config PKG_LD3320_DEMO_ROLE_MP3
                 bool "MP3"
-		select  PKG_USING_LD3320_MP3
+        select  PKG_USING_LD3320_MP3
         endchoice
 
         config PKG_LD3320_DEMO_SPI_DEV_NAME
@@ -71,16 +71,16 @@ if PKG_USING_LD3320
     config PKG_USING_LD3320_DEBUG
         bool "Enable debug"
         default n
-    
+
     if PKG_USING_LD3320_DEBUG
         config PKG_USING_LD3320_RECV_REPORT
             bool "Use recv report"
             default y
-                
+
         config PKG_USING_LD3320_FINSH
             bool "Use shell cmd"
             default y
-        
+
     endif
 
     config PKG_USING_LD3320_MP3
