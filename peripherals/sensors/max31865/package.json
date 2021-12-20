@@ -1,8 +1,8 @@
 {
   "name": "max31865",
   "description": "max31865: a package of digital temperature sensor",
-  "description_zh": "数字温度传感器 max31865 的软件包",  
-  "enable": "PKG_USING_MAX31865", 
+  "description_zh": "数字温度传感器 max31865 的软件包",
+  "enable": "PKG_USING_MAX31865",
   "keywords": [
     "max31865"
   ],

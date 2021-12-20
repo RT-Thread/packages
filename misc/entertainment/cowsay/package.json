@@ -1,8 +1,8 @@
 {
   "name": "cowsay",
   "description": "cowsay is a program that generates ASCII pictures of a cow with a message",
-  "description_zh": "linux cowsay 软件包",  
-  "enable": "PKG_USING_COWSAY", 
+  "description_zh": "linux cowsay 软件包",
+  "enable": "PKG_USING_COWSAY",
   "keywords": [
     "cowsay",
     "terminal"

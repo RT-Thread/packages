@@ -1,8 +1,8 @@
 {
   "name": "threes",
   "description": "An indie puzzle video game which was very popular in the year of 2014",
-  "description_zh": "threes是一款在2014年很火的益智类游戏，原版游戏运行在苹果手机上",  
-  "enable": "PKG_USING_THREES", 
+  "description_zh": "threes是一款在2014年很火的益智类游戏，原版游戏运行在苹果手机上",
+  "enable": "PKG_USING_THREES",
   "keywords": [
     "threes",
     "game",

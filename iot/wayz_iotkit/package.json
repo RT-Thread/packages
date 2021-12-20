@@ -1,8 +1,8 @@
 {
   "name": "wayz_iotkit",
   "description": "wayz iot location software package",
-  "description_zh": "wayz iot 定位软件包",  
-  "enable": "PKG_USING_WAYZ_IOTKIT", 
+  "description_zh": "wayz iot 定位软件包",
+  "enable": "PKG_USING_WAYZ_IOTKIT",
   "keywords": [
     "wayz_iotkit"
   ],

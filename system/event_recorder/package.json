@@ -1,8 +1,8 @@
 {
   "name": "event_recorder",
   "description": "A lightweight event record and replay tools for debug and test.",
-  "description_zh": "一款轻量级的事件记录器，支持事件的记录与回放",  
-  "enable": "PKG_USING_EVENT_RECORDER", 
+  "description_zh": "一款轻量级的事件记录器，支持事件的记录与回放",
+  "enable": "PKG_USING_EVENT_RECORDER",
   "keywords": [
     "event_recorder",
     "debug",

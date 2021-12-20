@@ -1,8 +1,8 @@
 {
   "name": "agile_console",
   "description": "A agile console pachage.",
-  "description_zh": "一个灵活的console设备软件包",  
-  "enable": "PKG_USING_AGILE_CONSOLE", 
+  "description_zh": "一个灵活的console设备软件包",
+  "enable": "PKG_USING_AGILE_CONSOLE",
   "keywords": [
     "agile_console"
   ],

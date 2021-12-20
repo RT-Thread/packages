@@ -1,8 +1,8 @@
 {
   "name": "agile_telnet",
   "description": "TCP debug for Ethernet.",
-  "description_zh": "以太网TCP调试。",  
-  "enable": "PKG_USING_AGILE_TELNET", 
+  "description_zh": "以太网TCP调试。",
+  "enable": "PKG_USING_AGILE_TELNET",
   "keywords": [
     "agile_telnet"
   ],

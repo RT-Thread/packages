@@ -1,7 +1,7 @@
 {
   "name": "rt3020",
   "description": "This is the driver package of RT3020 accelerometer.",
-  "description_zh": "这是 RT3020 加速度传感器的驱动包。",  
+  "description_zh": "这是 RT3020 加速度传感器的驱动包。",
   "enable": "PKG_USING_RT3020",
   "keywords": [
     "sensor",

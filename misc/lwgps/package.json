@@ -1,8 +1,8 @@
 {
   "name": "lwgps",
   "description": "Lightweight GPS NMEA parser",
-  "description_zh": "轻量级GPS NEMA协议解析器",  
-  "enable": "PKG_USING_LWGPS", 
+  "description_zh": "轻量级GPS NEMA协议解析器",
+  "enable": "PKG_USING_LWGPS",
   "keywords": [
     "lwgps"
   ],

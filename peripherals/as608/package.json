@@ -1,8 +1,8 @@
 {
   "name": "as608",
   "description": "AS608 fingerprint module driver",
-  "description_zh": "AS608 指纹模块的驱动",  
-  "enable": "PKG_USING_AS608", 
+  "description_zh": "AS608 指纹模块的驱动",
+  "enable": "PKG_USING_AS608",
   "keywords": [
     "as608",
     "fingerprint"

@@ -1,8 +1,8 @@
 {
   "name": "sl",
   "description": "steam locomotive runs across your terminal when you type 'sl' as you meant to type 'ls'",
-  "description_zh": "sl奔跑的小火车命令",  
-  "enable": "PKG_USING_SL", 
+  "description_zh": "sl奔跑的小火车命令",
+  "enable": "PKG_USING_SL",
   "keywords": [
     "sl",
     "Steam Locomotive"

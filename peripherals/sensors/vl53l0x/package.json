@@ -1,8 +1,8 @@
 {
   "name": "vl53l0x",
   "description": "Time of flight sensor driver package for vl53l0x",
-  "description_zh": "VL53L0X 飞行时间(TOF)传感器驱动软件包",  
-  "enable": "PKG_USING_VL53L0X",  
+  "description_zh": "VL53L0X 飞行时间(TOF)传感器驱动软件包",
+  "enable": "PKG_USING_VL53L0X",
   "keywords": [
     "sensor",
     "tof",
@@ -11,18 +11,18 @@
     "i2c"
   ],
   "category": "peripherals/sensors",
-  "author": 
+  "author":
   {
     "name": "panrui",
     "email": "chpanrui@163.com",
-    "github": "Prry"    
+    "github": "Prry"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/Prry/rtt-vl53l0x",
   "icon": "unknown",
   "homepage": "https://github.com/Prry/rtt-vl53l0x",
   "doc": "unknown",
-  "site": 
+  "site":
   [
     {
       "version": "v1.0.0",

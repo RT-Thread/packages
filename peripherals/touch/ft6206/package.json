@@ -1,7 +1,7 @@
 {
   "name": "ft6206",
   "description": "This is the driver package of FT6206 touch chip.",
-  "description_zh": "这是 FT6206 触摸芯片的驱动包。",  
+  "description_zh": "这是 FT6206 触摸芯片的驱动包。",
   "enable": "PKG_USING_FT6206",
   "keywords": [
     "ft6206",

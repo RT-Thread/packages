@@ -1,7 +1,7 @@
 {
   "name": "LedBlink",
   "description": "easy led blink support;",
-  "description_zh": "简单易用led闪烁控制软件包",  
+  "description_zh": "简单易用led闪烁控制软件包",
   "enable": "PKG_USING_LEDBLINK",
   "keywords": [
     "LedBlink"

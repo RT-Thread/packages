@@ -1,8 +1,8 @@
 {
   "name": "lwrb2rtt",
   "description": "Lightweight ring buffer manager",
-  "description_zh": "轻量级的 FIFO 环形缓冲区",  
-  "enable": "PKG_USING_LWRB2RTT", 
+  "description_zh": "轻量级的 FIFO 环形缓冲区",
+  "enable": "PKG_USING_LWRB2RTT",
   "keywords": [
     "lwrb2rtt",
     "ringbuffer"

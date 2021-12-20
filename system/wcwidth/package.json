@@ -1,8 +1,8 @@
 {
   "name": "wcwidth",
   "description": "wcwidth() function",
-  "description_zh": "wcwidth() 函数软件包",  
-  "enable": "PKG_USING_WCWIDTH", 
+  "description_zh": "wcwidth() 函数软件包",
+  "enable": "PKG_USING_WCWIDTH",
   "keywords": [
     "wcwidth"
   ],

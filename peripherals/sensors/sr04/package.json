@@ -1,8 +1,8 @@
 {
   "name": "sr04",
   "description": "driver package for hc-sr04 using rt-thread sensor package",
-  "description_zh": "对接RT-Thread Sensor框架的HC-SR04驱动软件包",  
-  "enable": "PKG_USING_SR04", 
+  "description_zh": "对接RT-Thread Sensor框架的HC-SR04驱动软件包",
+  "enable": "PKG_USING_SR04",
   "keywords": [
     "sr04"
   ],

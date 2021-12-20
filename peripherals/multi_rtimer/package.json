@@ -1,8 +1,8 @@
 {
   "name": "multi_rtimer",
   "description": "a real-time and low power software timer module.",
-  "description_zh": "一个实时、低功耗软件定时器模块",  
-  "enable": "PKG_USING_MULTI_RTIMER", 
+  "description_zh": "一个实时、低功耗软件定时器模块",
+  "enable": "PKG_USING_MULTI_RTIMER",
   "keywords": [
     "multi_rtimer"
   ],

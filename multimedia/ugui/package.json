@@ -1,8 +1,8 @@
 {
   "name": "ugui",
   "description": "uGUI:Open source graphics library ugui ported to rtthread.",
-  "description_zh": "开源图形库ugui移植到rtthread。",  
-  "enable": "PKG_USING_UGUI", 
+  "description_zh": "开源图形库ugui移植到rtthread。",
+  "enable": "PKG_USING_UGUI",
   "keywords": [
     "ugui"
   ],

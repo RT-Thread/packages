@@ -1,8 +1,8 @@
 {
   "name": "stm32wb55_sdk",
   "description": "stm32wb55_sdk software package.",
-  "description_zh": "stm32wb55_sdk 软件包",  
-  "enable": "PKG_USING_STM32WB55_SDK", 
+  "description_zh": "stm32wb55_sdk 软件包",
+  "enable": "PKG_USING_STM32WB55_SDK",
   "keywords": [
     "stm32wb55_sdk"
   ],

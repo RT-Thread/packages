@@ -1,8 +1,8 @@
 {
   "name": "bsal",
   "description": "The Bluetooth Stack Layer",
-  "description_zh": "蓝牙协议栈抽象层。",  
-  "enable": "PKG_USING_BSAL", 
+  "description_zh": "蓝牙协议栈抽象层。",
+  "enable": "PKG_USING_BSAL",
   "keywords": [
     "bsal",
     "realtek",

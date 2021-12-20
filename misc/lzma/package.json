@@ -1,8 +1,8 @@
 {
   "name": "lzma",
   "description": "A compression library with high compression ratio",
-  "description_zh": "高压缩率的压缩库",  
-  "enable": "PKG_USING_LZMA", 
+  "description_zh": "高压缩率的压缩库",
+  "enable": "PKG_USING_LZMA",
   "keywords": [
     "lzma"
   ],

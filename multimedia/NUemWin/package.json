@@ -1,7 +1,7 @@
 {
   "name": "NUemWin",
   "description": "NUemWin: a NUemWin package for rt-thread",
-  "description_zh": "NUemWin在RT-Thread上的移植", 
+  "description_zh": "NUemWin在RT-Thread上的移植",
   "enable": "PKG_USING_NUEMWIN",
   "keywords": [
     "NUemWin"

@@ -1,8 +1,8 @@
 {
   "name": "quest",
   "description": "A simulator of quantum computers on MCU.",
-  "description_zh": "嵌入式系统上的量子计算机模拟器",  
-  "enable": "PKG_USING_QUEST", 
+  "description_zh": "嵌入式系统上的量子计算机模拟器",
+  "enable": "PKG_USING_QUEST",
   "keywords": [
     "quest",
     "quantum",

@@ -1,8 +1,8 @@
 {
   "name": "snake",
   "description": "snake: a remake of the old nokia game",
-  "description_zh": "贪吃蛇游戏",  
-  "enable": "PKG_USING_SNAKE", 
+  "description_zh": "贪吃蛇游戏",
+  "enable": "PKG_USING_SNAKE",
   "keywords": [
     "snake",
     "game",

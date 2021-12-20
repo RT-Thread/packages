@@ -1,7 +1,7 @@
 {
   "name": "uparam",
   "description": "Manage system parameters with FLASH",
-  "description_zh": "系统参数读写管理和持久化",  
+  "description_zh": "系统参数读写管理和持久化",
   "enable": "PKG_USING_UPARAM",
   "keywords": [
     "uparam"

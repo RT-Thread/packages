@@ -1,8 +1,8 @@
 {
   "name": "UrlEncode",
   "description": "a simple tool to Encode/Decode Url",
-  "description_zh": "一个简单易用的Url编解码工具",  
-  "enable": "PKG_USING_URLENCODE", 
+  "description_zh": "一个简单易用的Url编解码工具",
+  "enable": "PKG_USING_URLENCODE",
   "keywords": [
     "UrlEncode"
   ],

@@ -1,8 +1,8 @@
 {
   "name": "Misaka_RGB_Bling",
   "description": "Misaka-Network for RGB LED Bling.",
-  "description_zh": "御坂网络RGB LED驱动包，提供了对于RGB LED灯的控制功能。",  
-  "enable": "PKG_USING_MISAKA_RGB_BLING", 
+  "description_zh": "御坂网络RGB LED驱动包，提供了对于RGB LED灯的控制功能。",
+  "enable": "PKG_USING_MISAKA_RGB_BLING",
   "keywords": [
     "Misaka_RGB_Bling"
   ],

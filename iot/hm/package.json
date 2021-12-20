@@ -1,8 +1,8 @@
 {
   "name": "hm",
   "description": "A generic Bluetooth HCI transport layer",
-  "description_zh": "一个通用的蓝牙 HCI 传输层",  
-  "enable": "PKG_USING_HM", 
+  "description_zh": "一个通用的蓝牙 HCI 传输层",
+  "enable": "PKG_USING_HM",
   "keywords": [
     "hm",
     "BLE",

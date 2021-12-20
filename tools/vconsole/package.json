@@ -1,8 +1,8 @@
 {
   "name": "vconsole",
   "description": "A virtual console package.",
-  "description_zh": "一个虚拟控制台软件包。",  
-  "enable": "PKG_USING_VCONSOLE", 
+  "description_zh": "一个虚拟控制台软件包。",
+  "enable": "PKG_USING_VCONSOLE",
   "keywords": [
     "vconsole"
   ],

@@ -1,8 +1,8 @@
 {
   "name": "pikascript",
   "description": "Lightweight Python scripting support tool that is easy to customize",
-  "description_zh": "极易定制的轻量级python脚本支持工具",  
-  "enable": "PKG_USING_PIKASCRIPT", 
+  "description_zh": "极易定制的轻量级python脚本支持工具",
+  "enable": "PKG_USING_PIKASCRIPT",
   "keywords": [
     "pikascript"
   ],

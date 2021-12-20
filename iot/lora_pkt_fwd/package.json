@@ -1,8 +1,8 @@
 {
   "name": "lora_pkt_fwd",
   "description": "lora_pkt_fwd is lora(wan) packet forward based on Semtech GWMP",
-  "description_zh": "lora_pkt_fwd实现基于Semtech GWMP协议的LoRaWAN协议包转发",  
-  "enable": "PKG_USING_LORA_PKT_FWD", 
+  "description_zh": "lora_pkt_fwd实现基于Semtech GWMP协议的LoRaWAN协议包转发",
+  "enable": "PKG_USING_LORA_PKT_FWD",
   "keywords": [
     "lora_pkt_fwd"
   ],

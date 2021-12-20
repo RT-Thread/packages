@@ -1,8 +1,8 @@
 {
   "name": "rc522",
   "description": "rc522 rfid module driver",
-  "description_zh": "rc522 rfid 模块驱动",  
-  "enable": "PKG_USING_RC522", 
+  "description_zh": "rc522 rfid 模块驱动",
+  "enable": "PKG_USING_RC522",
   "keywords": [
     "rc522",
     "mfrc522",

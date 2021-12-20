@@ -1,8 +1,8 @@
 {
   "name": "usb_stack",
   "description": "Tiny and portable USB stack for embedded system with USB IP",
-  "description_zh": "小而美、可移植性高的 USB 主从协议栈。",  
-  "enable": "PKG_USING_USB_STACK", 
+  "description_zh": "小而美、可移植性高的 USB 主从协议栈。",
+  "enable": "PKG_USING_USB_STACK",
   "keywords": [
     "USB Stack",
     "USB"

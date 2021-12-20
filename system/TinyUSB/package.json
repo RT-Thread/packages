@@ -1,8 +1,8 @@
 {
   "name": "TinyUSB",
   "description": "An open source cross-platform USB stack for embedded system",
-  "description_zh": "用于嵌入式系统的开源跨平台USB协议栈",  
-  "enable": "PKG_USING_TINYUSB", 
+  "description_zh": "用于嵌入式系统的开源跨平台USB协议栈",
+  "enable": "PKG_USING_TINYUSB",
   "keywords": [
     "TinyUSB",
     "USB"

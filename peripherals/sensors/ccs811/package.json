@@ -1,8 +1,8 @@
 {
   "name": "ccs811",
   "description": "CCS811: Digital Gas Sensor for Monitoring Indoor Air Quality.",
-  "description_zh": "CCS811 气体检测传感器，可检测TVOC和CO2浓度",  
-  "enable": "PKG_USING_CCS811", 
+  "description_zh": "CCS811 气体检测传感器，可检测TVOC和CO2浓度",
+  "enable": "PKG_USING_CCS811",
   "keywords": [
     "ccs811",
     "TVOC",

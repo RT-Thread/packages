@@ -1,8 +1,8 @@
 {
   "name": "bmp280",
   "description": "bmp280 iic drive",
-  "description_zh": "bmp280的iic驱动",  
-  "enable": "PKG_USING_BMP280", 
+  "description_zh": "bmp280的iic驱动",
+  "enable": "PKG_USING_BMP280",
   "keywords": [
     "sensor",
     "bmp280"

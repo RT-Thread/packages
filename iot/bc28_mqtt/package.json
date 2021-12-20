@@ -1,8 +1,8 @@
 {
   "name": "bc28_mqtt",
   "description": "BC28 MQTT: connect to Aliyun with Quectel BC28 model",
-  "description_zh": "BC28 MQTT: 使用移远BC28模块连接阿里云IoT平台",  
-  "enable": "PKG_USING_BC28_MQTT", 
+  "description_zh": "BC28 MQTT: 使用移远BC28模块连接阿里云IoT平台",
+  "enable": "PKG_USING_BC28_MQTT",
   "keywords": [
     "bc28_mqtt",
     "mqtt",

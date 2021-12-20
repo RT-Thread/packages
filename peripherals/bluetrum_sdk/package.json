@@ -1,8 +1,8 @@
 {
   "name": "bluetrum_sdk",
   "description": "bluetrum sdk",
-  "description_zh": "bluetrum sdk",  
-  "enable": "PKG_USING_BLUETRUM_SDK", 
+  "description_zh": "bluetrum sdk",
+  "enable": "PKG_USING_BLUETRUM_SDK",
   "keywords": [
     "bluetrum_sdk",
     "bluetrum"

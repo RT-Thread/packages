@@ -1,8 +1,8 @@
 {
   "name": "PAJ7620",
   "description": "Gesture sensor PAJ7620 driver package.",
-  "description_zh": "手势传感器PAJ7620的驱动包",  
-  "enable": "PKG_USING_PAJ7620", 
+  "description_zh": "手势传感器PAJ7620的驱动包",
+  "enable": "PKG_USING_PAJ7620",
   "keywords": [
     "PAJ7620"
   ],

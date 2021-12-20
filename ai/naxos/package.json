@@ -1,7 +1,7 @@
 {
   "name": "naxos",
   "description": "naxos: A C++ Constraint Programming Library.",
-  "description_zh": "C++ Constraint Programming 库",
+  "description_zh": "C++ Constraint Programming åº“",
   "enable": "PKG_USING_NAXOS",
   "keywords": [
     "naxos",

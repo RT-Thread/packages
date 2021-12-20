@@ -1,8 +1,8 @@
 {
   "name": "lsm6dsm",
   "description": "STMicroelectronics's LSM6DSM driver,support Accelerometer/gyro/step count/temperature",
-  "description_zh": "STMicroelectronics的LSM6DSM传感器驱动，支持加速度计/陀螺仪/计步/温度",  
-  "enable": "PKG_USING_LSM6DSM", 
+  "description_zh": "STMicroelectronics的LSM6DSM传感器驱动，支持加速度计/陀螺仪/计步/温度",
+  "enable": "PKG_USING_LSM6DSM",
   "keywords": [
     "lsm6dsm"
   ],

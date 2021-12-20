@@ -1,25 +1,25 @@
 {
   "name": "ds3231",
   "description": "Extern RTC driver for ds3231",
-  "description_zh": "ds3231 外置RTC驱动",  
-  "enable": "PKG_USING_DS3231",  
+  "description_zh": "ds3231 外置RTC驱动",
+  "enable": "PKG_USING_DS3231",
   "keywords": [
     "ds3231",
     "rtc"
   ],
   "category": "peripherals/rtc",
-  "author": 
+  "author":
   {
     "name": "panrui",
     "email": "chpanrui@163.com",
-    "github": "Prry"    
+    "github": "Prry"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/Prry/rtt-ds3231",
   "icon": "unknown",
   "homepage": "https://github.com/Prry/rtt-ds3231",
   "doc": "unknown",
-  "site": 
+  "site":
   [
     {
       "version": "v1.0.0",

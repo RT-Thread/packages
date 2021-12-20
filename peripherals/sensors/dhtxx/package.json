@@ -1,8 +1,8 @@
 {
   "name": "dhtxx",
   "description": "DHTxx one-wire digital temperature and humidity sensor.",
-  "description_zh": "DHTxx系列单总线数字温湿度传感器驱动",  
-  "enable": "PKG_USING_DHTXX", 
+  "description_zh": "DHTxx系列单总线数字温湿度传感器驱动",
+  "enable": "PKG_USING_DHTXX",
   "keywords": [
     "dhtxx", "sensor",
     "temperature", "humidity",

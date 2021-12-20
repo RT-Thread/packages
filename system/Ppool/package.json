@@ -1,8 +1,8 @@
 {
   "name": "Ppool",
   "description": "Pthread-based thread pool library",
-  "description_zh": "基于pthread的线程池库",  
-  "enable": "PKG_USING_PPOOL", 
+  "description_zh": "基于pthread的线程池库",
+  "enable": "PKG_USING_PPOOL",
   "keywords": [
     "Ppool",
     "pthread"

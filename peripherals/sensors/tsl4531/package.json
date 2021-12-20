@@ -1,7 +1,7 @@
 {
   "name": "tsl4531",
   "description": "TSL4531 sensor driver package ,support lux.",
-  "description_zh": "tsl4531 是光感传感器,能读取环境亮度 lux。",  
+  "description_zh": "tsl4531 是光感传感器,能读取环境亮度 lux。",
   "enable": "PKG_USING_TSL4531",
   "keywords": [
     "tsl4531 sensor"

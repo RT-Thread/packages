@@ -1,8 +1,8 @@
 {
   "name": "nuclei_sdk",
   "description": "Nuclei RISC-V Software Development Kit",
-  "description_zh": "芯来科技RISC-V处理器软件开发包",  
-  "enable": "PKG_USING_NUCLEI_SDK", 
+  "description_zh": "芯来科技RISC-V处理器软件开发包",
+  "enable": "PKG_USING_NUCLEI_SDK",
   "keywords": [
     "nuclei",
     "risc-v",

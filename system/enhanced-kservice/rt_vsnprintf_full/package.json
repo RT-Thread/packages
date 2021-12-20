@@ -1,8 +1,8 @@
 {
   "name": "rt_vsnprintf_full",
   "description": "fully functional version of rt_vsnprintf",
-  "description_zh": "rt_vsnprintf全功能版本",  
-  "enable": "PKG_USING_RT_VSNPRINTF_FULL", 
+  "description_zh": "rt_vsnprintf全功能版本",
+  "enable": "PKG_USING_RT_VSNPRINTF_FULL",
   "keywords": [
     "rt_vsnprintf_full",
     "vsnrpintf",
