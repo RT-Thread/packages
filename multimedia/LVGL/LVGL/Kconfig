@@ -10,8 +10,8 @@ if PKG_USING_LVGL
         string
         default "/packages/multimedia/LVGL/LVGL"
 
-    config PKG_LVGL_ENABLE_LOG
-        bool "Enable the log module"
+    config PKG_USING_LVGL_EXAMPLES
+        bool "Enable built-in examples"
         default n
 
     choice
