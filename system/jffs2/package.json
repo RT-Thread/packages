@@ -1,8 +1,8 @@
 {
   "name": "jffs2",
   "description": "Journalling Flash File System Version2.",
-  "description_zh": "闪存日志型文件系统第 2 版",  
-  "enable": "PKG_USING_DFS_JFFS2", 
+  "description_zh": "闪存日志型文件系统第 2 版",
+  "enable": "PKG_USING_DFS_JFFS2",
   "keywords": [
     "filesystem",
     "jffs2"

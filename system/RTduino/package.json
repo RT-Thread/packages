@@ -1,8 +1,8 @@
 {
   "name": "RTduino",
   "description": "Arduino Ecological Compatibility Layer",
-  "description_zh": "Arduino生态兼容层",  
-  "enable": "RT_USING_ARDUINO", 
+  "description_zh": "Arduino生态兼容层",
+  "enable": "RT_USING_ARDUINO",
   "keywords": [
     "RTduino",
     "Arduino"

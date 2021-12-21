@@ -8,7 +8,7 @@ if PKG_USING_MCURSES
 
     config PKG_MCURSES_PATH
         string
-        default "/packages/misc/mcurses"
+        default "/packages/multimedia/mcurses"
 
     config MCURSES_USING_SIMPLE
         bool "mcurses: simple demo"
@@ -67,7 +67,7 @@ if PKG_USING_MCURSES
         config PKG_USING_MCURSES_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MCURSES_VER
        string
        default "latest"    if PKG_USING_MCURSES_LATEST_VERSION

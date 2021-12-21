@@ -1,8 +1,8 @@
 {
   "name": "kdb",
   "description": "Kernel debug tools.",
-  "description_zh": "内核检测漏洞工具",  
-  "enable": "PKG_USING_KDB", 
+  "description_zh": "内核检测漏洞工具",
+  "enable": "PKG_USING_KDB",
   "keywords": [
     "kdb"
   ],

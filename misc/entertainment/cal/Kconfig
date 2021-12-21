@@ -19,7 +19,7 @@ if PKG_USING_CAL
         config PKG_USING_CAL_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_CAL_VER
        string
        default "latest"    if PKG_USING_CAL_LATEST_VERSION

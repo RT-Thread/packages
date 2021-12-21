@@ -22,7 +22,7 @@ if PKG_USING_TSL4531
         config PKG_USING_TSL4531_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TSL4531_VER
        string
        default "v0.1.1"    if PKG_USING_TSL4531_V011

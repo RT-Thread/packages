@@ -21,7 +21,7 @@ if PKG_USING_MFOC
         config PKG_USING_MFOC_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MFOC_VER
        string
        default "latest"    if PKG_USING_MFOC_LATEST_VERSION

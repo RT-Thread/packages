@@ -1,8 +1,8 @@
 {
   "name": "gt911",
   "description": "gt911 drivers for RT-Thread",
-  "description_zh": "gt911 驱动。",  
-  "enable": "PKG_USING_GT911", 
+  "description_zh": "gt911 驱动。",
+  "enable": "PKG_USING_GT911",
   "keywords": [
     "gt911"
   ],

@@ -1,8 +1,8 @@
 {
   "name": "small_modbus",
   "description": "small modbus",
-  "description_zh": "small modbus协议栈",  
-  "enable": "PKG_USING_SMALL_MODBUS", 
+  "description_zh": "small modbus协议栈",
+  "enable": "PKG_USING_SMALL_MODBUS",
   "keywords": [
     "modbus",
     "modbus rtu",
@@ -24,14 +24,14 @@
     {
       "version": "v1.0.0",
       "URL": "https://github.com/cazure/small_modbus.git",
-	  "filename": "small_modbus-v1.0.0.zip",
-	  "VER_SHA":"cd439d46158cdf5b25dad6573984a7eb5e70567e"
+      "filename": "small_modbus-v1.0.0.zip",
+      "VER_SHA":"cd439d46158cdf5b25dad6573984a7eb5e70567e"
     },
     {
       "version": "latest",
       "URL": "https://github.com/cazure/small_modbus.git",
-	  "filename": "small_modbus-master.zip",
-	  "VER_SHA":"master"
+      "filename": "small_modbus-master.zip",
+      "VER_SHA":"master"
     }
   ]
 }

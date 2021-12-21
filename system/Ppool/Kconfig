@@ -22,7 +22,7 @@ if PKG_USING_PPOOL
         config PKG_USING_PPOOL_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PPOOL_VER
        string
        default "latest"    if PKG_USING_PPOOL_LATEST_VERSION

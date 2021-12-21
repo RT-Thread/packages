@@ -1,8 +1,8 @@
 {
   "name": "gps_rmc",
   "description": "Used to parse $XXRMC type data of GPS module",
-  "description_zh": "用于解析GPS模块的 $XXRMC 类型数据",  
-  "enable": "PKG_USING_GPS_RMC", 
+  "description_zh": "用于解析GPS模块的 $XXRMC 类型数据",
+  "enable": "PKG_USING_GPS_RMC",
   "keywords": [
     "gps_rmc"
   ],

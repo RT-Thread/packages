@@ -35,7 +35,7 @@ if PKG_USING_ADBD
         config ADB_FILESYNC_STACK_SIZE
             int "Set file service thread stack size"
             default 2304
-            
+
         config ADB_FILESYNC_RECV_TIMEOUT
             int "Set file service receive timeout(ms)"
             default 2000

@@ -91,7 +91,7 @@ if PKG_USING_UMQTT
         config PKG_USING_UMQTT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_UMQTT_VER
        string
        default "v1.0.0"    if PKG_USING_UMQTT_V100

@@ -1,8 +1,8 @@
 {
   "name": "PDFGen",
   "description": "Simple C PDF Writer/Generation library",
-  "description_zh": "PDF文档生成库",  
-  "enable": "PKG_USING_PDFGEN", 
+  "description_zh": "PDF文档生成库",
+  "enable": "PKG_USING_PDFGEN",
   "keywords": [
     "PDFGen",
     "pdf"

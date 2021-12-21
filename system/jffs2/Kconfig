@@ -13,7 +13,7 @@ if PKG_USING_DFS_JFFS2
     config PKG_JFFS2_PATH
         string
         default "/packages/system/jffs2"
-    
+
     config RT_USING_DFS_JFFS2
         bool
         default y
@@ -27,7 +27,7 @@ if PKG_USING_DFS_JFFS2
         config PKG_USING_DFS_JFFS2_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_JFFS2_VER
        string
        default "latest"    if PKG_USING_DFS_JFFS2_LATEST_VERSION

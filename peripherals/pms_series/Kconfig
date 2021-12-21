@@ -44,7 +44,7 @@ if PKG_USING_PMS_SERIES
                 default PMS_SERIES_SAMPLE_USING_UART2
                 help
                     Select the PMS examples uart
-                    
+
                 config PMS_SERIES_SAMPLE_USING_UART1
                     bool "UART1"
                 config PMS_SERIES_SAMPLE_USING_UART2
@@ -71,7 +71,7 @@ if PKG_USING_PMS_SERIES
         config PKG_USING_PMS_SERIES_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PMS_SERIES_VER
        string
        default "v1.0.0"    if PKG_USING_PMS_SERIES_V100

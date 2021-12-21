@@ -23,7 +23,7 @@ if PKG_USING_FILESYSTEM_SAMPLES
         config PKG_USING_FILESYSTEM_SAMPLES_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_FILESYSTEM_SAMPLES_VER
        string
        default "v0.2.0"    if PKG_USING_FILESYSTEM_SAMPLES_V020

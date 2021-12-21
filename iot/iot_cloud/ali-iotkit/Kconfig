@@ -22,7 +22,7 @@ if PKG_USING_ALI_IOTKIT
 
     config PKG_USING_ALI_IOTKIT_DEVICE_NAME
         string "Config Device Name"
-        default RGB-LED-DEV-1        
+        default RGB-LED-DEV-1
 
     config PKG_USING_ALI_IOTKIT_DEVICE_SECRET
         string "Config Device Secret"
@@ -52,7 +52,7 @@ if PKG_USING_ALI_IOTKIT
 
         config PKG_USING_ALI_IOTKIT_SAMPLES
             bool "Samples"
-            default n 
+            default n
 
         if PKG_USING_ALI_IOTKIT_SAMPLES
             config PKG_USING_ALI_IOTKIT_MQTT_SAMPLE
@@ -75,7 +75,7 @@ if PKG_USING_ALI_IOTKIT
     endif
 
     if (PKG_ALI_IOTKIT_VER_NUM < 0x30000)
-		source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/v20x/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/v20x/Kconfig"
     endif
 
     choice

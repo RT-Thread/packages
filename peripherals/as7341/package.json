@@ -1,8 +1,8 @@
 {
   "name": "as7341",
   "description": "AS7341 visible light sensor, can measure 8 wavelengths of visible light.",
-  "description_zh": "AS7341可见光传感器，可测量8个波长的可见光。",  
-  "enable": "PKG_USING_AS7341", 
+  "description_zh": "AS7341可见光传感器，可测量8个波长的可见光。",
+  "enable": "PKG_USING_AS7341",
   "keywords": [
     "as7341"
   ],

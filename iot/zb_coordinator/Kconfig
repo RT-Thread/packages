@@ -3,7 +3,7 @@
 menuconfig PKG_USING_ZB_COORDINATOR
     bool "Application of AT Command on ZigBee Coordinator."
     default n
-	select RT_USING_AT
+    select RT_USING_AT
     select AT_USING_CLIENT
 
 if PKG_USING_ZB_COORDINATOR
@@ -24,18 +24,18 @@ if PKG_USING_ZB_COORDINATOR
         config PKG_USING_ZB_COORDINATOR_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ZB_COORDINATOR_VER
        string
        default "v1.0.0"    if PKG_USING_ZB_COORDINATOR_V100
        default "latest"    if PKG_USING_ZB_COORDINATOR_LATEST_VERSION
 
-	config AT_MG21_SAMPLE_CLIENT_NAME
-		string "the client name for at_mg21"
-		default "uart2"
-	config AT_MG21_SAMPLE_RECV_BUFF_LEN
-		int "the buffer length for at_mg21"
-		default 512
+    config AT_MG21_SAMPLE_CLIENT_NAME
+        string "the client name for at_mg21"
+        default "uart2"
+    config AT_MG21_SAMPLE_RECV_BUFF_LEN
+        int "the buffer length for at_mg21"
+        default 512
 
 endif
 

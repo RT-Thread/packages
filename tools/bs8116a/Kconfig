@@ -26,7 +26,7 @@ if PKG_USING_BS8116A
         config PKG_USING_BS8116A_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_BS8116A_VER
        string
        default "v0.1.0"    if PKG_USING_BS8116A_V010

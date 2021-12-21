@@ -1,8 +1,8 @@
 {
   "name": "fingerprint",
   "description": "fingerprint module driver",
-  "description_zh": "指纹模块驱动",  
-  "enable": "PKG_USING_FINGERPRINT", 
+  "description_zh": "指纹模块驱动",
+  "enable": "PKG_USING_FINGERPRINT",
   "keywords": [
     "fingerprint"
   ],

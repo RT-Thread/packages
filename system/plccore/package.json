@@ -1,7 +1,7 @@
 {
   "name": "plccore",
   "description": "plccore for RT-Thread",
-  "description_zh": "plccore 在 RT-Thread 上移植的软件包",  
+  "description_zh": "plccore 在 RT-Thread 上移植的软件包",
   "enable": "PKG_USING_PLCCORE",
   "keywords": [
     "plccore"

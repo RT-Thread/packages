@@ -1,8 +1,8 @@
 {
   "name": "mcurses",
   "description": "mcurses: micro ncurses library",
-  "description_zh": "轻量级的 ncurses 控制台绘图库",  
-  "enable": "PKG_USING_MCURSES", 
+  "description_zh": "轻量级的 ncurses 控制台绘图库",
+  "enable": "PKG_USING_MCURSES",
   "keywords": [
     "mcurses",
     "ncurses",
@@ -10,7 +10,7 @@
     "terminal",
     "tui"
   ],
-  "category": "misc",
+  "category": "multimedia",
   "author": {
     "name": "wuhanstudio",
     "email": "wuhanstudio@qq.com",

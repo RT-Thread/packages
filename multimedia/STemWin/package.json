@@ -1,7 +1,7 @@
 {
   "name": "STemWin",
   "description": "STemWin: a STemWin package for rt-thread",
-  "description_zh": "STemWin在RT-Thread上的移植", 
+  "description_zh": "STemWin在RT-Thread上的移植",
   "enable": "PKG_USING_STEMWIN",
   "keywords": [
     "STemWin"

@@ -1,8 +1,8 @@
 {
   "name": "TinyJPEG",
   "description": "a light-weight JPEG encoder package",
-  "description_zh": "一个轻量的JPEG编码软件包",  
-  "enable": "PKG_USING_TINYJPEG", 
+  "description_zh": "一个轻量的JPEG编码软件包",
+  "enable": "PKG_USING_TINYJPEG",
   "keywords": [
     "TinyJPEG"
   ],

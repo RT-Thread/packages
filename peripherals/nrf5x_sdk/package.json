@@ -1,8 +1,8 @@
 {
   "name": "nrf5x_sdk",
   "description": "Software development kit for the nRF52 Series and nRF51 Series SoCs ",
-  "description_zh": "Nordic SDK软件开发包",  
-  "enable": "PKG_USING_NRF5X_SDK", 
+  "description_zh": "Nordic SDK软件开发包",
+  "enable": "PKG_USING_NRF5X_SDK",
   "keywords": [
     "Nordic"
   ],

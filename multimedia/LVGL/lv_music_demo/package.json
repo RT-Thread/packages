@@ -1,8 +1,8 @@
 {
   "name": "lv_music_demo",
   "description": "LVGL music player demo for RT-Thread",
-  "description_zh": "LVGL的播放器演示示例(RT-Thread版本)",  
-  "enable": "PKG_USING_LV_MUSIC_DEMO", 
+  "description_zh": "LVGL的播放器演示示例(RT-Thread版本)",
+  "enable": "PKG_USING_LV_MUSIC_DEMO",
   "keywords": [
     "lv_music_demo",
     "LVGL"

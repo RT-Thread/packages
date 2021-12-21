@@ -31,9 +31,9 @@ if PKG_USING_PIKASCRIPT
 
         config PKG_USING_PIKASCRIPT_LATEST_VERSION
             bool "latest"
-            
+
     endchoice
-          
+
     config PKG_PIKASCRIPT_VER
        string
        default "latest"    if PKG_USING_PIKASCRIPT_LATEST_VERSION

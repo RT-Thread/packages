@@ -1,8 +1,8 @@
 {
   "name": "mcuboot",
   "description": "A common infrastructure for the bootloader, system flash layout on microcontroller systems.",
-  "description_zh": "一个针对微控制器的涉及 bootloader, flash layout 的通用框架。",  
-  "enable": "PKG_USING_MCUBOOT", 
+  "description_zh": "一个针对微控制器的涉及 bootloader, flash layout 的通用框架。",
+  "enable": "PKG_USING_MCUBOOT",
   "keywords": [
     "mcuboot"
   ],

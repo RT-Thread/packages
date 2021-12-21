@@ -1,8 +1,8 @@
 {
   "name": "lora_radio_driver",
   "description": "lora_radio_driver: lora chipset(SX126x\\SX127x) driver",
-  "description_zh": "lora芯片(SX126x\\SX127x)驱动包",  
-  "enable": "PKG_USING_LORA_RADIO_DRIVER", 
+  "description_zh": "lora芯片(SX126x\\SX127x)驱动包",
+  "enable": "PKG_USING_LORA_RADIO_DRIVER",
   "keywords": [
     "lora",
     "lora_radio_driver"

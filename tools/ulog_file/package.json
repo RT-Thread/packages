@@ -1,8 +1,8 @@
 {
   "name": "ulog_file",
   "description": "ulog_file: The ulog file backend by filesystem.",
-  "description_zh": "ulog_file: 基于文件系统的 ulog 后端插件。",  
-  "enable": "PKG_USING_ULOG_FILE", 
+  "description_zh": "ulog_file: 基于文件系统的 ulog 后端插件。",
+  "enable": "PKG_USING_ULOG_FILE",
   "keywords": [
     "ulog_file"
   ],

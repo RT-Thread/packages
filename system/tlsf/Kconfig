@@ -27,7 +27,7 @@ if PKG_USING_TLSF
         config PKG_USING_TLSF_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TLSF_VER
        string
        default "latest"    if PKG_USING_TLSF_LATEST_VERSION

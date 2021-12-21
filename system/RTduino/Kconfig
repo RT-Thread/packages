@@ -33,7 +33,7 @@ if RT_USING_ARDUINO
         config PKG_USING_RTDUINO_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RTDUINO_VER
        string
        default "latest"    if PKG_USING_RTDUINO_LATEST_VERSION

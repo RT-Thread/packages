@@ -1,8 +1,8 @@
 {
   "name": "sys_load_monitor",
   "description": "system load monitor",
-  "description_zh": "一款轻量级的系统负荷监视器",  
-  "enable": "PKG_USING_SYS_LOAD_MONITOR", 
+  "description_zh": "一款轻量级的系统负荷监视器",
+  "enable": "PKG_USING_SYS_LOAD_MONITOR",
   "keywords": [
     "sys_load_monitor"
   ],

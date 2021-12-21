@@ -2,7 +2,7 @@
   "name": "bme680",
   "description": "BME680: Digital 4-in-1 sensor with gas, humidity, pressure and temperature.",
   "description_zh": "BME680 四合一 MEMS 环境传感器驱动软件包",
-  "enable": "PKG_USING_BME680", 
+  "enable": "PKG_USING_BME680",
   "keywords": [
     "bme680",
     "IAQ", "gas", "pressure",

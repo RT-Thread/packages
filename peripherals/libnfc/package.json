@@ -1,8 +1,8 @@
 {
   "name": "libnfc",
   "description": "Platform independent Near Field Communication (NFC) library",
-  "description_zh": "libnc 软件包",  
-  "enable": "PKG_USING_LIBNFC", 
+  "description_zh": "libnc 软件包",
+  "enable": "PKG_USING_LIBNFC",
   "keywords": [
     "libnfc",
     "nfc",

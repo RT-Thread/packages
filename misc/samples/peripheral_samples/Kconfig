@@ -23,7 +23,7 @@ if PKG_USING_PERIPHERAL_SAMPLES
         config PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PERIPHERAL_SAMPLES_VER
        string
        default "v0.4.0"    if PKG_USING_PERIPHERAL_SAMPLES_V040

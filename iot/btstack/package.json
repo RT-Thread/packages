@@ -1,8 +1,8 @@
 {
   "name": "btstack",
   "description": "Please add description of btstack in English.",
-  "description_zh": "软件包 btstack 用于BTSTACK在RT-THREAD中的使用",  
-  "enable": "PKG_USING_BTSTACK", 
+  "description_zh": "软件包 btstack 用于BTSTACK在RT-THREAD中的使用",
+  "enable": "PKG_USING_BTSTACK",
   "keywords": [
     "bluetooth",
     "mesh",

@@ -1,8 +1,8 @@
 {
   "name": "max30102",
   "description": "[MAX30102]: heart rate and oxygen saturation measure",
-  "description_zh": "[MAX30102]: 心率测量，血氧饱和度测量软件包",  
-  "enable": "PKG_USING_MAX30102", 
+  "description_zh": "[MAX30102]: 心率测量，血氧饱和度测量软件包",
+  "enable": "PKG_USING_MAX30102",
   "keywords": [
     "max30102",
     "heart rate"

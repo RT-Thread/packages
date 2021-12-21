@@ -1,8 +1,8 @@
 {
   "name": "touchgfx2rtt",
   "description": "touchgfx: a touchgfx package for rt-thread.",
-  "description_zh": "touchgfx在RT-Thread上的移植。",  
-  "enable": "PKG_USING_TOUCHGFX2RTT", 
+  "description_zh": "touchgfx在RT-Thread上的移植。",
+  "enable": "PKG_USING_TOUCHGFX2RTT",
   "keywords": [
     "touchgfx2rtt"
   ],

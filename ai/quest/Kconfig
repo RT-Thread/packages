@@ -38,7 +38,7 @@ if PKG_USING_QUEST
         config PKG_USING_QUEST_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_QUEST_VER
        string
        default "latest"    if PKG_USING_QUEST_LATEST_VERSION

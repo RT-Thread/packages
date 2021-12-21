@@ -2,10 +2,10 @@
 menuconfig PKG_USING_INA226
     bool "ina226: a ina226 package for rt-thread."
     default n
-	select RT_USING_I2C
-	help
-		A current monitoring chip from TI, driven through the SENSOR frame.
-	
+    select RT_USING_I2C
+    help
+        A current monitoring chip from TI, driven through the SENSOR frame.
+
 if PKG_USING_INA226
 
     config PKG_USING_INA226_EXAMPLE
@@ -28,7 +28,7 @@ if PKG_USING_INA226
         config PKG_USING_INA226_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_INA226_VER
        string
        default "latest"    if PKG_USING_INA226_LATEST_VERSION

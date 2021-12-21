@@ -11,12 +11,12 @@ if PKG_USING_BMA400
         default "/packages/peripherals/sensors/bma400"
 
     config PKG_USING_BMA400_ACCE
-		bool "Enable bma400 acce"
-		default y
+        bool "Enable bma400 acce"
+        default y
 
     config PKG_USING_BMA400_STEP
-		bool "Enable bma400 step"
-		default y
+        bool "Enable bma400 step"
+        default y
 
     choice
         prompt "Version"
@@ -30,7 +30,7 @@ if PKG_USING_BMA400
         config PKG_USING_BMA400_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_BMA400_VER
        string
        default "v0.0.1"    if PKG_USING_BMA400_V001

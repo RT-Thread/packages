@@ -1,8 +1,8 @@
 {
   "name": "yd_crypto",
   "description": "Encryption and decryption algorithm library for microcontroller",
-  "description_zh": "用于微控制器的加解密算法库，平台无关、算法独立、易移植、易使用。",  
-  "enable": "PKG_USING_YD_CRYPTO", 
+  "description_zh": "用于微控制器的加解密算法库，平台无关、算法独立、易移植、易使用。",
+  "enable": "PKG_USING_YD_CRYPTO",
   "keywords": [
     "yd_crypto"
   ],

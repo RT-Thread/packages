@@ -1,7 +1,7 @@
 {
   "name": "infrared",
   "description": "Infrared framework based on rt-thread's pin,pwm and hwtimer driver.",
-  "description_zh": "基于 rt-thread 的 pin,pwm 和 hwtimer 驱动的红外框架。",  
+  "description_zh": "基于 rt-thread 的 pin,pwm 和 hwtimer 驱动的红外框架。",
   "enable": "PKG_USING_INFRARED",
   "keywords": [
     "infrared",

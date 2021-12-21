@@ -1,7 +1,7 @@
 {
   "name": "libmodbus",
   "description": "a libmodbus package for rt-thread",
-  "description_zh": "libmodbus在RT-Thread上的移植", 
+  "description_zh": "libmodbus在RT-Thread上的移植",
   "enable": "PKG_USING_LIBMODBUS",
   "keywords": [
     "libmodbus"

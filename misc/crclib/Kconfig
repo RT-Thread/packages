@@ -19,7 +19,7 @@ if PKG_USING_CRCLIB
         config CRC8_USING_CONST_TABLE
             bool "using const table"
             default y
-            
+
         choice
             prompt "crc8 polynome"
             default CRC8_POLY_8C
@@ -32,20 +32,20 @@ if PKG_USING_CRCLIB
             config CRC8_POLY_CUSTOM
                 bool "custom value"
         endchoice
-        
+
         if CRC8_POLY_CUSTOM
             config CRC8_POLY_CUSTOM_STRING
                 int "crc8 polynome value (int)"
                 default 0
         endif
-        
+
         config CRC8_POLY
             int
             default 140 if CRC8_POLY_8C
             default 217 if CRC8_POLY_D9
             default CRC8_POLY_CUSTOM_STRING if CRC8_POLY_CUSTOM
     endif
-    
+
     config CRCLIB_USING_CRC16
         bool "using 16 bit crc"
         default y
@@ -54,7 +54,7 @@ if PKG_USING_CRCLIB
         config CRC16_USING_CONST_TABLE
             bool "using const table"
             default y
-            
+
         choice
             prompt "crc16 polynome"
             default CRC16_POLY_A001
@@ -67,20 +67,20 @@ if PKG_USING_CRCLIB
             config CRC16_POLY_CUSTOM
                 bool "custom value"
         endchoice
-        
+
         if CRC16_POLY_CUSTOM
             config CRC16_POLY_CUSTOM_STRING
                 int "crc16 polynome value (int)"
                 default 0
         endif
-        
+
         config CRC16_POLY
             int
             default 40961 if CRC16_POLY_A001
             default 33800 if CRC16_POLY_8404
             default CRC16_POLY_CUSTOM_STRING if CRC16_POLY_CUSTOM
     endif
-    
+
     config CRCLIB_USING_CRC32
         bool "using 32 bit crc"
         default y
@@ -89,7 +89,7 @@ if PKG_USING_CRCLIB
         config CRC32_USING_CONST_TABLE
             bool "using const table"
             default y
-        
+
         choice
             prompt "crc32 polynome"
             default CRC32_POLY_EDB88320
@@ -102,32 +102,32 @@ if PKG_USING_CRCLIB
             config CRC32_POLY_CUSTOM
                 bool "custom value"
         endchoice
-        
+
         if CRC32_POLY_CUSTOM
             config CRC32_POLY_CUSTOM_STRING
                 int "crc32 polynome value (int)"
                 default 0
         endif
-        
+
         config CRC32_POLY
             int
             default 3988292384 if CRC32_POLY_EDB88320
             default 2197175160 if CRC32_POLY_82F63B78
             default CRC32_POLY_CUSTOM_STRING if CRC32_POLY_CUSTOM
     endif
-    
+
     config CRCLIB_USING_CRC8_EX
         bool "using 8 bit crc expand"
         default n
-    
+
     config CRCLIB_USING_CRC16_EX
         bool "using 16 bit crc expand"
         default n
-        
+
     config CRCLIB_USING_CRC32_EX
         bool "using 32 bit crc expand"
         default n
-        
+
     config CRCLIB_USING_CRC16_EX_SAMPLE
         bool "using 16 bit crc expand sample"
         default n

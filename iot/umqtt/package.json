@@ -1,8 +1,8 @@
 {
   "name": "umqtt",
   "description": "A light weight, powerful, customizable, easy-to-use and embeddable mqtt client for RT-Thread!",
-  "description_zh": "一个轻量级、功能强大、可定制、易于使用和可嵌入的RT-Thread mqtt客户端。",  
-  "enable": "PKG_USING_UMQTT", 
+  "description_zh": "一个轻量级、功能强大、可定制、易于使用和可嵌入的RT-Thread mqtt客户端。",
+  "enable": "PKG_USING_UMQTT",
   "keywords": [
     "umqtt"
   ],

@@ -1,8 +1,8 @@
 {
   "name": "mfoc",
   "description": "Mifare Classic Offline Cracker.",
-  "description_zh": "Mifare Classic 离线破解工具。",  
-  "enable": "PKG_USING_MFOC", 
+  "description_zh": "Mifare Classic 离线破解工具。",
+  "enable": "PKG_USING_MFOC",
   "keywords": [
     "mfoc",
     "libnfc",

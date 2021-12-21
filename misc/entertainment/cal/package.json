@@ -2,7 +2,7 @@
   "name": "cal",
   "description": "a terminal calendar",
   "description_zh": "终端公历日历",
-  "enable": "PKG_USING_CAL", 
+  "enable": "PKG_USING_CAL",
   "keywords": [
     "cal",
     "calendar"

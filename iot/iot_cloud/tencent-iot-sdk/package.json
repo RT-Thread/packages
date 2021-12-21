@@ -1,7 +1,7 @@
 {
     "name": "tencent-iot-sdk",
     "description": "Tencent Cloud IOT SDK for iot_explorer platform",
-    "description_zh": "连接腾讯物联网开发平台的软件包。", 
+    "description_zh": "连接腾讯物联网开发平台的软件包。",
     "enable": "PKG_USING_TENCENT_IOT_EXPLORER",
     "keywords": [
         "tencent-iot-sdk"

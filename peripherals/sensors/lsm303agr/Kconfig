@@ -11,12 +11,12 @@ if PKG_USING_LSM303AGR
         default "/packages/peripherals/sensors/lsm303agr"
 
     config PKG_USING_LSM303AGR_ACCE
-		bool "Enable lsm303agr acce"
-		default y
+        bool "Enable lsm303agr acce"
+        default y
 
     config PKG_USING_LSM303AGR_MAG
-		bool "Enable lsm303agr mag"
-		default y
+        bool "Enable lsm303agr mag"
+        default y
 
     choice
         prompt "Version"
@@ -30,7 +30,7 @@ if PKG_USING_LSM303AGR
         config PKG_USING_LSM303AGR_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LSM303AGR_VER
        string
        default "v0.0.1"    if PKG_USING_LSM303AGR_V001

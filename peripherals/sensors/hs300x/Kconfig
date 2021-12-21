@@ -19,7 +19,7 @@ if PKG_USING_HS300X
         config PKG_USING_HS300X_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_HS300X_VER
        string
        default "latest"    if PKG_USING_HS300X_LATEST_VERSION

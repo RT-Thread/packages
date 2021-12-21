@@ -1,8 +1,8 @@
 {
   "name": "cpu_usage",
   "description": "CPUU: CPU usage statistics tool.",
-  "description_zh": "CPUU: CPU 使用率统计小工具。",  
-  "enable": "PKG_USING_CPU_USAGE", 
+  "description_zh": "CPUU: CPU 使用率统计小工具。",
+  "enable": "PKG_USING_CPU_USAGE",
   "keywords": [
     "cpu_usage", "cpu", "usage"
   ],

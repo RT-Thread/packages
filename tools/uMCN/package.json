@@ -1,8 +1,8 @@
 {
   "name": "uMCN",
   "description": "uMCN is a light-weight and powerful IPC module based on the publisher/subscriber model.",
-  "description_zh": "uMCN是一个基于发布者/订阅者模式的轻量级且功能强大的跨线程/进程通信模块。",  
-  "enable": "PKG_USING_UMCN", 
+  "description_zh": "uMCN是一个基于发布者/订阅者模式的轻量级且功能强大的跨线程/进程通信模块。",
+  "enable": "PKG_USING_UMCN",
   "keywords": [
     "uMCN"
   ],

@@ -9,7 +9,7 @@ if PKG_USING_SMALL_MODBUS
     config PKG_SMALL_MODBUS_PATH
         string
         default "/packages/iot/small_modbus"
-		
+
     choice
         prompt "Version"
         default PKG_SMALL_MODBUS_LATEST_VERSION
@@ -22,7 +22,7 @@ if PKG_USING_SMALL_MODBUS
         config PKG_SMALL_MODBUS_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SMALL_MODBUS_VER
        string
        default "v1.0.0"    if PKG_SMALL_MODBUS_V100

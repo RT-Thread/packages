@@ -19,7 +19,7 @@ if PKG_USING_TOUCHGFX2RTT
         config PKG_USING_TOUCHGFX2RTT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TOUCHGFX2RTT_VER
        string
        default "v1.0.0"    if PKG_USING_TOUCHGFX2RTT_V100

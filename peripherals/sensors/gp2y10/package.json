@@ -1,11 +1,11 @@
 {
   "name": "gp2y10",
   "description": "GP2Y10: dust sensor by Sharp for detect air quality.",
-  "description_zh": "GP2Y10 夏普公司的灰尘/空气颗粒物浓度传感器",  
-  "enable": "PKG_USING_GP2Y10", 
+  "description_zh": "GP2Y10 夏普公司的灰尘/空气颗粒物浓度传感器",
+  "enable": "PKG_USING_GP2Y10",
   "keywords": [
     "gp2y10",
-    "air", 
+    "air",
     "dust",
     "sensor"
   ],

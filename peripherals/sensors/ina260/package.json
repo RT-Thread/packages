@@ -1,8 +1,8 @@
 {
   "name": "ina260",
   "description": "ina260 software package.",
-  "description_zh": "ina260 软件包",  
-  "enable": "PKG_USING_INA260", 
+  "description_zh": "ina260 软件包",
+  "enable": "PKG_USING_INA260",
   "keywords": [
     "ina260"
   ],

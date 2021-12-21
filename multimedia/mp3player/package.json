@@ -1,8 +1,8 @@
 {
   "name": "mp3player",
   "description": "a simple mp3 format music player",
-  "description_zh": "一个简易的mp3格式音乐播放器",  
-  "enable": "PKG_USING_MP3PLAYER", 
+  "description_zh": "一个简易的mp3格式音乐播放器",
+  "enable": "PKG_USING_MP3PLAYER",
   "keywords": [
     "mp3player"
   ],

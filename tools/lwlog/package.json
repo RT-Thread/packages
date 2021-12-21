@@ -1,8 +1,8 @@
 {
   "name": "lwlog",
   "description": "lwlog: single header logging library",
-  "description_zh": "lwlog:单文件日志打印库",  
-  "enable": "PKG_USING_LWLOG", 
+  "description_zh": "lwlog:单文件日志打印库",
+  "enable": "PKG_USING_LWLOG",
   "keywords": [
     "lwlog",
     "log"

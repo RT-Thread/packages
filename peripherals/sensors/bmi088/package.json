@@ -1,8 +1,8 @@
 {
   "name": "bmi088",
   "description": "bmi088 software.",
-  "description_zh": "bmi088 软件包",  
-  "enable": "PKG_USING_BMI088", 
+  "description_zh": "bmi088 软件包",
+  "enable": "PKG_USING_BMI088",
   "keywords": [
     "bmi088"
   ],

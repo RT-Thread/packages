@@ -26,7 +26,7 @@ if PKG_USING_SOLAR_TERMS
         config PKG_USING_SOLAR_TERMS_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SOLAR_TERMS_VER
        string
        default "v1.0.0"    if PKG_USING_SOLAR_TERMS_V100

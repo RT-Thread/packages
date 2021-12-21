@@ -1,8 +1,8 @@
 {
   "name": "pdulib",
   "description": "pudlib:A TEXT parsing library for short messages in PDU format.",
-  "description_zh": "一个用于PDU格式的短信文本解析库",  
-  "enable": "PKG_USING_PDULIB", 
+  "description_zh": "一个用于PDU格式的短信文本解析库",
+  "enable": "PKG_USING_PDULIB",
   "keywords": [
     "pdulib"
   ],

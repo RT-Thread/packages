@@ -1,8 +1,8 @@
 {
   "name": "littled",
   "description": "littled: Littled LED Daemon for LED driver",
-  "description_zh": "littled软件包: Littled LED Daemon 服务线程",  
-  "enable": "PKG_USING_LITTLED", 
+  "description_zh": "littled软件包: Littled LED Daemon 服务线程",
+  "enable": "PKG_USING_LITTLED",
   "keywords": [
     "littled",
     "led"

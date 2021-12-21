@@ -19,7 +19,7 @@ if PKG_USING_LV_MUSIC_DEMO
         config PKG_USING_LV_MUSIC_DEMO_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LV_MUSIC_DEMO_VER
        string
        default "latest"    if PKG_USING_LV_MUSIC_DEMO_LATEST_VERSION

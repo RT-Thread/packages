@@ -19,7 +19,7 @@ if PKG_USING_RT_CJSON_TOOLS
         config PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RT_CJSON_TOOLS_VER
        string
        default "latest"    if PKG_USING_RT_CJSON_TOOLS_LATEST_VERSION

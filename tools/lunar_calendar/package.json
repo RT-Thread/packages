@@ -1,8 +1,8 @@
 {
   "name": "lunar_calendar",
   "description": "A tool to convert a Gregorian calendar date into a lunar calendar.",
-  "description_zh": "将阳历日期转换为阴历的工具。",  
-  "enable": "PKG_USING_LUNAR_CALENDAR", 
+  "description_zh": "将阳历日期转换为阴历的工具。",
+  "enable": "PKG_USING_LUNAR_CALENDAR",
   "keywords": [
     "lunar_calendar"
   ],

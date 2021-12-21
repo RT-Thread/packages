@@ -1,8 +1,8 @@
 {
   "name": "lora_pkt_sniffer",
   "description": "lora_pkt_sniffer is a sniffer tool of lora(wan) packet",
-  "description_zh": "lora_pkt_sniffer是一个lora(wan)数据包的抓包工具",  
-  "enable": "PKG_USING_LORA_PKT_SNIFFER", 
+  "description_zh": "lora_pkt_sniffer是一个lora(wan)数据包的抓包工具",
+  "enable": "PKG_USING_LORA_PKT_SNIFFER",
   "keywords": [
     "lora_pkt_sniffer"
   ],

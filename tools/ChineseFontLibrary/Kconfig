@@ -23,7 +23,7 @@ if PKG_USING_CHINESE_FONT_LIBRARY
         config PKG_USING_CHINESE_FONT_LIBRARY_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_CHINESE_FONT_LIBRARY_VER
        string
        default "v1.0.0"    if PKG_USING_CHINESE_FONT_LIBRARY_V100

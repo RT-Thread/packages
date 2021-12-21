@@ -1,8 +1,8 @@
 {
   "name": "gy271",
   "description": "a package of gy271 driver library",
-  "description_zh": "gy271驱动库",  
-  "enable": "PKG_USING_GY271", 
+  "description_zh": "gy271驱动库",
+  "enable": "PKG_USING_GY271",
   "keywords": [
     "gy271",
     "i2c",

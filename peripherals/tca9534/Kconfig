@@ -9,11 +9,11 @@ if PKG_USING_TCA9534
     config PKG_TCA9534_PATH
         string
         default "/packages/peripherals/tca9534"
-        
-	 config PKG_USING_TCA9534_SAMPLE
+
+     config PKG_USING_TCA9534_SAMPLE
         bool "Enable tca9534 sample"
         default n
-        
+
     choice
         prompt "Version"
         default PKG_USING_TCA9534_LATEST_VERSION
@@ -26,7 +26,7 @@ if PKG_USING_TCA9534
         config PKG_USING_TCA9534_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TCA9534_VER
        string
        default "v1.0.0"    if PKG_USING_TCA9534_V100

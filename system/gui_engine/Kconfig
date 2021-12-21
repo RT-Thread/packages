@@ -115,7 +115,7 @@ endif
 config GUIENGINE_USING_HDC
     bool "Support HDC image format"
     default n
-    
+
 config GUIENGINE_USING_FASTLZ
     depends on GUIENGINE_USING_HDC
     bool "Select the PKG_USING_FASTLZ for hdc"

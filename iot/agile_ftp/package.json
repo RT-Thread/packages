@@ -1,8 +1,8 @@
 {
   "name": "agile_ftp",
   "description": "Lightweight ftp server.",
-  "description_zh": "轻量级 ftp 服务器。",  
-  "enable": "PKG_USING_AGILE_FTP", 
+  "description_zh": "轻量级 ftp 服务器。",
+  "enable": "PKG_USING_AGILE_FTP",
   "keywords": [
     "agile_ftp"
   ],

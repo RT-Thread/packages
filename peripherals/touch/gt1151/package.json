@@ -1,8 +1,8 @@
 {
   "name": "gt1151",
   "description": "gt1151 drivers for RT-Thread",
-  "description_zh": "gt1151 驱动",  
-  "enable": "PKG_USING_GT1151", 
+  "description_zh": "gt1151 驱动",
+  "enable": "PKG_USING_GT1151",
   "keywords": [
     "gt1151"
   ],

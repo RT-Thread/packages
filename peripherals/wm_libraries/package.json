@@ -1,7 +1,7 @@
 {
   "name": "wm_libraries",
   "description": "a library package for WinnerMicro devices.",
-  "description_zh": "WinnerMicro 芯片软件支持包",  
+  "description_zh": "WinnerMicro 芯片软件支持包",
   "enable": "PKG_USING_WM_LIBRARIES",
   "keywords": [
     "wm_libraries",

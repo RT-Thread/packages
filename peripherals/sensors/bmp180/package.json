@@ -1,25 +1,25 @@
 {
   "name": "bmp180",
   "description": "This is the BMP180 sensor driver package, support: barometric, temperature",
-  "description_zh": "这是 BMP180 传感器驱动软件包，支持：气压，温度",  
-  "enable": "PKG_USING_BMP180",  
+  "description_zh": "这是 BMP180 传感器驱动软件包，支持：气压，温度",
+  "enable": "PKG_USING_BMP180",
   "keywords": [
     "sensor",
     "bmp180"
   ],
   "category": "peripherals/sensors",
-  "author": 
+  "author":
   {
     "name": "panrui",
     "email": "chpanrui@163.com",
-    "github": "Prry"    
+    "github": "Prry"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/Prry/rtt-bmp180",
   "icon": "unknown",
   "homepage": "https://github.com/Prry/rtt-bmp180",
   "doc": "unknown",
-  "site": 
+  "site":
   [
     {
       "version": "v1.0.0",

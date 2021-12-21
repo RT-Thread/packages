@@ -19,7 +19,7 @@ if PKG_USING_WS2812B
         config PKG_USING_WS2812B_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_WS2812B_VER
        string
        default "latest"    if PKG_USING_WS2812B_LATEST_VERSION

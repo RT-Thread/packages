@@ -1,8 +1,8 @@
 {
   "name": "rt_cjson_tools",
   "description": "Cjson tools library for RT thread",
-  "description_zh": "用于 RT-Thread 的 cJSON工具库",  
-  "enable": "PKG_USING_RT_CJSON_TOOLS", 
+  "description_zh": "用于 RT-Thread 的 cJSON工具库",
+  "enable": "PKG_USING_RT_CJSON_TOOLS",
   "keywords": [
     "rt_cjson_tools"
   ],

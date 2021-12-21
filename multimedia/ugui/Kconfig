@@ -19,7 +19,7 @@ if PKG_USING_UGUI
         config PKG_USING_UGUI_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_UGUI_VER
        string
        default "latest"    if PKG_USING_UGUI_LATEST_VERSION

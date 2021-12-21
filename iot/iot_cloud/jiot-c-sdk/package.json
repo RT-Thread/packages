@@ -1,6 +1,6 @@
 {
   "name": "jiot-c-sdk",
-  "description": "JIGUANG IoT cloud client sdk for RT-Thread", 
+  "description": "JIGUANG IoT cloud client sdk for RT-Thread",
   "description_zh": "连接极光IoT云的客户端软件包",
   "enable": "PKG_USING_JIOT-C-SDK",
   "keywords": [

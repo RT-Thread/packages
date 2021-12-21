@@ -1,7 +1,7 @@
 {
   "name": "TJpgDec",
   "description": "Tiny JPEG Decompressor.",
-  "description_zh": "JPEG 解码库",  
+  "description_zh": "JPEG 解码库",
   "enable": "PKG_USING_TJPGD",
   "keywords": [
     "TJpgDec",

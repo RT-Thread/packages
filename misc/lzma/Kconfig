@@ -30,7 +30,7 @@ if PKG_USING_LZMA
             bool "v1.0.0"
 
     endchoice
-          
+
     config PKG_LZMA_VER
        string
        default "v1.0.0"    if PKG_USING_LZMA_V100

@@ -1,8 +1,8 @@
 {
   "name": "aclock",
   "description": "a terminal clock",
-  "description_zh": "终端钟表界面",  
-  "enable": "PKG_USING_ACLOCK", 
+  "description_zh": "终端钟表界面",
+  "enable": "PKG_USING_ACLOCK",
   "keywords": [
     "aclock",
     "clock",

@@ -1,7 +1,7 @@
 {
   "name": "atsrv_socket",
   "description": "AT server with socket commands",
-  "description_zh": "socket 相关指令的 AT 服务端",  
+  "description_zh": "socket 相关指令的 AT 服务端",
   "enable": "PKG_USING_ATSRV_SOCKET",
   "keywords": [
     "atsrv_socket"

@@ -1,8 +1,8 @@
 {
   "name": "devmem",
   "description": "read/write memory/register tools",
-  "description_zh": "读写内存/寄存器的工具",  
-  "enable": "PKG_USING_DEVMEM", 
+  "description_zh": "读写内存/寄存器的工具",
+  "enable": "PKG_USING_DEVMEM",
   "keywords": [
     "devmem"
   ],

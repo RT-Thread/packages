@@ -1,7 +1,7 @@
 {
   "name": "nmealib",
   "description": "A nmelib library porting on RT thread.",
-  "description_zh": "nmealib库在RT-Thread上的移植",  
+  "description_zh": "nmealib库在RT-Thread上的移植",
   "enable": "PKG_USING_NMEALIB",
   "keywords": [
     "nmealib"

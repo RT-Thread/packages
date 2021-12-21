@@ -1,8 +1,8 @@
 {
   "name": "anv_testsuit",
   "description": "minimalist C/C++ unit test framework.",
-  "description_zh": "单元测试框架",  
-  "enable": "PKG_USING_ANV_TESTSUIT", 
+  "description_zh": "单元测试框架",
+  "enable": "PKG_USING_ANV_TESTSUIT",
   "keywords": [
     "anv_testsuit",
     "test"

@@ -26,7 +26,7 @@ if PKG_USING_LVGL
         config PKG_USING_LVGL_V810
             bool "v8.1.0"
     endchoice
-          
+
     config PKG_LVGL_VER
        string
        default "latest"    if PKG_USING_LVGL_LATEST_VERSION

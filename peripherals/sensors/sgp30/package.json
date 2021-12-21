@@ -1,8 +1,8 @@
 {
   "name": "sgp30",
   "description": "SGP30: air sensor by Sensirion for detect TVOC and CO2.",
-  "description_zh": "SGP30 空气检测传感器，可检测TVOC和CO2浓度",  
-  "enable": "PKG_USING_SGP30", 
+  "description_zh": "SGP30 空气检测传感器，可检测TVOC和CO2浓度",
+  "enable": "PKG_USING_SGP30",
   "keywords": [
     "sgp30",
     "TVOC",

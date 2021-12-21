@@ -23,7 +23,7 @@ if PKG_USING_MINIZIP
         config PKG_USING_MINIZIP_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MINIZIP_VER
        string
        default "latest"    if PKG_USING_MINIZIP_LATEST_VERSION

@@ -1,8 +1,8 @@
 {
   "name": "ws2812b",
   "description": "Ws2812b software driver package for RT-Thread is driven by SPI+DMA.",
-  "description_zh": "用于 RT-Thread 的 ws2812b 软件驱动包，使用 SPI + DMA 方式驱动。",  
-  "enable": "PKG_USING_WS2812B", 
+  "description_zh": "用于 RT-Thread 的 ws2812b 软件驱动包，使用 SPI + DMA 方式驱动。",
+  "enable": "PKG_USING_WS2812B",
   "keywords": [
     "ws2812b"
   ],

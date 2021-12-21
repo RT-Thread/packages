@@ -1,8 +1,8 @@
 {
   "name": "uC_Common",
   "description": "uC/Common for RT-Thread",
-  "description_zh": "uC/Common for RT-Thread",  
-  "enable": "PKG_USING_UC_COMMON", 
+  "description_zh": "uC/Common for RT-Thread",
+  "enable": "PKG_USING_UC_COMMON",
   "keywords": [
     "uC_Common",
     "uC/Common"

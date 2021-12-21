@@ -1,8 +1,8 @@
 {
   "name": "agile_modbus",
   "description": "Lightweight modbus protocol stack.",
-  "description_zh": "轻量级 modbus 协议栈。",  
-  "enable": "PKG_USING_AGILE_MODBUS", 
+  "description_zh": "轻量级 modbus 协议栈。",
+  "enable": "PKG_USING_AGILE_MODBUS",
   "keywords": [
     "agile_modbus"
   ],
