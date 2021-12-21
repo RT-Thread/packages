@@ -9,7 +9,7 @@ if PKG_USING_VT100
 
     config PKG_VT100_PATH
         string
-        default "/packages/misc/vt100"
+        default "/packages/multimedia/vt100"
 
     config VT100_USING_MONITOR
         bool "Monitor: RT-Thread monitor example"

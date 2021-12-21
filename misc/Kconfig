@@ -23,12 +23,9 @@ source "$PKGS_DIR/packages/misc/hello/Kconfig"
 source "$PKGS_DIR/packages/misc/vi/Kconfig"
 source "$PKGS_DIR/packages/misc/ki/Kconfig"
 source "$PKGS_DIR/packages/misc/armv7m_dwt/Kconfig"
-source "$PKGS_DIR/packages/misc/vt100/Kconfig"
 source "$PKGS_DIR/packages/misc/ukal/Kconfig"
 source "$PKGS_DIR/packages/misc/crclib/Kconfig"
 source "$PKGS_DIR/packages/misc/lwgps/Kconfig"
 source "$PKGS_DIR/packages/misc/state_machine/Kconfig"
-source "$PKGS_DIR/packages/misc/mcurses/Kconfig"
-source "$PKGS_DIR/packages/misc/termbox/Kconfig"
 
 endmenu

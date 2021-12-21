@@ -16,5 +16,8 @@ source "$PKGS_DIR/packages/multimedia/mp3player/Kconfig"
 source "$PKGS_DIR/packages/multimedia/TinyJPEG/Kconfig"
 source "$PKGS_DIR/packages/multimedia/ugui/Kconfig"
 source "$PKGS_DIR/packages/multimedia/PainterEngine/Kconfig"
+source "$PKGS_DIR/packages/multimedia/mcurses/Kconfig"
+source "$PKGS_DIR/packages/multimedia/termbox/Kconfig"
+source "$PKGS_DIR/packages/multimedia/vt100/Kconfig"
 
 endmenu
