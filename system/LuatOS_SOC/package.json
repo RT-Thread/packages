@@ -1,7 +1,7 @@
 {
   "name": "LuatOS_SOC",
-  "description": "support for LuatOS-soc.",
-  "description_zh": "支持 LuatOS_SOC。",  
+  "description": "Powerful embedded Lua Engine for IoT devices",
+  "description_zh": "LuatOS_SOC 面向物联网设备的强大嵌入式Lua引擎",  
   "enable": "PKG_USING_LUATOS_SOC", 
   "keywords": [
     "LuatOS_SOC",
@@ -13,7 +13,7 @@
     "email": "1473454180@qq.com",
     "github": "Dozingfiretruck"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": "https://gitee.com/openLuat/luatos-soc-rtt",
   "icon": "unknown",
   "homepage": "unknown",

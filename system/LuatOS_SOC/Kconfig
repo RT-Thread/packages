@@ -1,7 +1,7 @@
 
 # Kconfig file for package LuatOS_SOC
 menuconfig PKG_USING_LUATOS_SOC
-    bool "LuatOS_SOC : support for LuatOS-soc."
+    bool "Powerful embedded Lua Engine for IoT devices"
     default n
 
 if PKG_USING_LUATOS_SOC
