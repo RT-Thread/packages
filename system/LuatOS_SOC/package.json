@@ -1,0 +1,35 @@
+{
+  "name": "LuatOS_SOC",
+  "description": "support for LuatOS-soc.",
+  "description_zh": "支持 LuatOS_SOC。",  
+  "enable": "PKG_USING_LUATOS_SOC", 
+  "keywords": [
+    "LuatOS_SOC",
+    "LuatOS"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Dozingfiretruck",
+    "email": "1473454180@qq.com",
+    "github": "Dozingfiretruck"
+  },
+  "license": "MIT",
+  "repository": "https://gitee.com/openLuat/luatos-soc-rtt",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://LuatOS_SOC-1.0.0.zip",
+      "filename": "LuatOS_SOC-1.0.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/openLuat/luatos-soc-rtt.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

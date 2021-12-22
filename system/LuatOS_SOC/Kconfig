@@ -1,0 +1,45 @@
+
+# Kconfig file for package LuatOS_SOC
+menuconfig PKG_USING_LUATOS_SOC
+    bool "LuatOS_SOC : support for LuatOS-soc."
+    default n
+
+if PKG_USING_LUATOS_SOC
+
+    config PKG_LUATOS_SOC_PATH
+        string
+        default "/packages/system/LuatOS_SOC"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LUATOS_SOC_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LUATOS_SOC_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LUATOS_SOC_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LUATOS_SOC_VER
+       string
+       default "v1.0.0"    if PKG_USING_LUATOS_SOC_V100
+       default "latest"    if PKG_USING_LUATOS_SOC_LATEST_VERSION
+
+config LUATOS_SOC_USING_LCD
+    bool "LuatOS_SOC using lcd"
+    default n
+
+config LUATOS_SOC_USING_EINK
+    bool "LuatOS_SOC using eink"
+    default n
+
+config LUAT_HEAP_SIZE
+    int "LuatOS heap size"
+    range 1 999
+    default 64
+
+endif
+
