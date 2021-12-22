@@ -28,15 +28,15 @@ if PKG_USING_LUATOS_SOC
        default "v1.0.0"    if PKG_USING_LUATOS_SOC_V100
        default "latest"    if PKG_USING_LUATOS_SOC_LATEST_VERSION
 
-config LUATOS_SOC_USING_LCD
+config PKG_USING_LUATOS_SOC_LCD
     bool "LuatOS_SOC using lcd"
     default n
 
-config LUATOS_SOC_USING_EINK
+config PKG_USING_LUATOS_SOC_EINK
     bool "LuatOS_SOC using eink"
     default n
 
-config LUAT_HEAP_SIZE
+config PKG_LUATOS_SOC_LUAT_HEAP_SIZE
     int "LuatOS heap size"
     range 1 999
     default 64
