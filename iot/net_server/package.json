@@ -1,6 +1,6 @@
 {
   "name": "net_server",
-  "description": "Please add description of net_server in English.",
+  "description": "Net server supports TCP/TLS",
   "description_zh": "TCP/TLS 服务器，支持wolfssl。",
   "enable": "PKG_USING_NET_SERVER",
   "keywords": [
