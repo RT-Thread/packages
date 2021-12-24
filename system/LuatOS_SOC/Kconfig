@@ -1,6 +1,8 @@
 
 # Kconfig file for package LuatOS_SOC
 menuconfig PKG_USING_LUATOS_SOC
+    select RT_USING_DFS
+    select RT_USING_LIBC
     bool "LUATOS_SOC : Powerful embedded Lua Engine for IoT devices"
     default n
 
