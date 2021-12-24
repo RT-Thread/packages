@@ -15,9 +15,9 @@
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/openLuat/luatos-soc-rtt",
-  "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "icon": "https://github.com/openLuat/LuatOS/blob/master/logo.jpg",
+  "homepage": "https://github.com/openLuat/LuatOS/blob/master/README.md",
+  "doc": "https://wiki.luatos.com/pages/emulator.html",
   "site": [
     {
       "version": "latest",
