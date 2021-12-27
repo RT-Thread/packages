@@ -16,21 +16,25 @@ if PKG_USING_LVGL
 
     choice
         prompt "Version"
-        default PKG_USING_LVGL_LATEST_VERSION
+        default PKG_USING_LVGL_V810
         help
             Select the package version
 
-        config PKG_USING_LVGL_LATEST_VERSION
-            bool "latest"
-
         config PKG_USING_LVGL_V810
             bool "v8.1.0"
+
+        config PKG_USING_LVGL_LATEST_VERSION
+            bool "latest"
     endchoice
 
     config PKG_LVGL_VER
        string
-       default "latest"    if PKG_USING_LVGL_LATEST_VERSION
        default "v8.1.0"    if PKG_USING_LVGL_V810
+       default "latest"    if PKG_USING_LVGL_LATEST_VERSION
 
+    config PKG_LVGL_VER_NUM
+        hex
+        default 0x08010    if PKG_USING_LVGL_V810
+        default 0x99999    if PKG_USING_LVGL_LATEST_VERSION
 endif
 
