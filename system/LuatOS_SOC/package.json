@@ -1,0 +1,29 @@
+{
+  "name": "LuatOS_SOC",
+  "description": "LUATOS_SOC : Powerful embedded Lua Engine for IoT devices",
+  "description_zh": "LuatOS_SOC : 面向物联网设备的强大嵌入式Lua引擎",  
+  "enable": "PKG_USING_LUATOS_SOC", 
+  "keywords": [
+    "LuatOS_SOC",
+    "LuatOS"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Dozingfiretruck",
+    "email": "1473454180@qq.com",
+    "github": "Dozingfiretruck"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/openLuat/luatos-soc-rtt",
+  "icon": "https://github.com/openLuat/LuatOS/blob/master/logo.jpg",
+  "homepage": "https://github.com/openLuat/LuatOS/blob/master/README.md",
+  "doc": "https://wiki.luatos.com/pages/emulator.html",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/openLuat/luatos-soc-rtt.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
