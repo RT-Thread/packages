@@ -1,0 +1,39 @@
+{
+  "name": "net_server",
+  "description": "Net server supports TCP/TLS",
+  "description_zh": "TCP/TLS 服务器，支持wolfssl。",
+  "enable": "PKG_USING_NET_SERVER",
+  "keywords": [
+    "net_server",
+    "ssl",
+    "tls",
+    "server",
+    "net",
+    "tcp"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "WKJay",
+    "email": "1931048074@qq.com",
+    "github": "WKJay"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/WKJay/net-server",
+  "icon": "unknown",
+  "homepage": "https://github.com/WKJay/net-server",
+  "doc": "https://github.com/WKJay/net-server",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/WKJay/net-server.git",
+      "filename": "net_server-1.0.0.zip",
+      "VER_SHA": "5fe204bbada38cf2dc6f792f2427448a46aa7854"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/WKJay/net-server.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
