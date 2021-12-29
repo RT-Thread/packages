@@ -19,7 +19,7 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://codeload.github.com/qingehao/CW2015/zip/refs/tags/v1.0.0",
+      "URL": "https://github.com/qingehao/CW2015/archive/refs/tags/v1.0.0.zip",
       "filename": "cw2015-1.0.0.zip",
       "VER_SHA": "fill in the git version SHA value"
     },
