@@ -24,10 +24,16 @@
   "doc": "https://github.com/WKJay/net-server",
   "site": [
     {
+      "version": "v1.0.1",
+      "URL": "https://github.com/WKJay/net-server/archive/refs/tags/V1.0.1.zip",
+      "filename": "net_server-1.0.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "v1.0.0",
-      "URL": "https://github.com/WKJay/net-server.git",
+      "URL": "https://github.com/WKJay/net-server/archive/refs/tags/V1.0.0.zip",
       "filename": "net_server-1.0.0.zip",
-      "VER_SHA": "5fe204bbada38cf2dc6f792f2427448a46aa7854"
+      "VER_SHA": "NULL"
     },
     {
       "version": "latest",
