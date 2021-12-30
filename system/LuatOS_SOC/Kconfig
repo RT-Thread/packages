@@ -6,6 +6,7 @@ menuconfig PKG_USING_LUATOS_SOC
     select RT_USING_DFS_ROMFS
     select RT_USING_LIBC
     select RT_LIBC_USING_FILEIO if RT_VER_NUM >= 0x40100
+    select RT_USING_TIMER_SOFT
     bool "LUATOS_SOC : Powerful embedded Lua Engine for IoT devices"
     default n
 
