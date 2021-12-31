@@ -20,9 +20,9 @@
   "site": [
     {
       "version": "v0.5.0",
-      "URL": "https://lora_modem_driver-0.5.0.zip",
-      "filename": "lora_modem_driver-0.5.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "URL": "https://github.com/Forest-Rain/lora-modem-driver/archive/v0.5.0.zip",
+      "filename": "lora-modem-driver-0.5.0.zip",
+      "VER_SHA": "7e2fc521164ebb9dce1ec3739da2815ed9d8cdbf"
     },
     {
       "version": "latest",
