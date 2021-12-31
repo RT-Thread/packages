@@ -1,10 +1,11 @@
 {
   "name": "wcwidth",
-  "description": "wcwidth() function",
-  "description_zh": "wcwidth() 函数软件包",
-  "enable": "PKG_USING_WCWIDTH",
+  "description": "wcwidth for RT-Thread POSIX (IEEE Std 1003.1-2001)",
+  "description_zh": "wcwidth for RT-Thread POSIX (IEEE Std 1003.1-2001)",
+  "enable": "PKG_USING_POSIX_WCWIDTH",
   "keywords": [
-    "wcwidth"
+    "wcwidth",
+    "POSIX"
   ],
   "category": "system",
   "author": {
