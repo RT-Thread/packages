@@ -1,8 +1,8 @@
 {
   "name": "Qfplib_M0_full",
   "description": "a free, fast and compact ARM Cortex-M0 floating-point library",
-  "description_zh": "Cortex-M0浮点运算汇编加速库(full版)",  
-  "enable": "PKG_USING_QFPLIB_M0_FULL", 
+  "description_zh": "Cortex-M0浮点运算汇编加速库(full版)",
+  "enable": "PKG_USING_QFPLIB_M0_FULL",
   "keywords": [
     "Qfplib_M0_full",
     "Cortex-M",
@@ -15,7 +15,7 @@
   ],
   "category": "system",
   "author": {
-    "name": "mysterywolf",
+    "name": "Meco Man",
     "email": "jiantingman@foxmail.com",
     "github": "mysterywolf"
   },

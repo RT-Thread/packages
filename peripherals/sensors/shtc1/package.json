@@ -1,8 +1,8 @@
 {
   "name": "shtc1",
   "description": "SHTC1 sensor driver package, support: temperature, humidity.",
-  "description_zh": "shtc1传感器驱动包，支持：温度，湿度",  
-  "enable": "PKG_USING_SHTC1", 
+  "description_zh": "shtc1传感器驱动包，支持：温度，湿度",
+  "enable": "PKG_USING_SHTC1",
   "keywords": [
     "shtc1"
   ],

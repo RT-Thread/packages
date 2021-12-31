@@ -1,8 +1,8 @@
 {
   "name": "ld3320",
   "description": "LD3320 speech recognition chip",
-  "description_zh": "LD3320语音识别芯片",  
-  "enable": "PKG_USING_LD3320", 
+  "description_zh": "LD3320语音识别芯片",
+  "enable": "PKG_USING_LD3320",
   "keywords": [
     "ld3320"
   ],

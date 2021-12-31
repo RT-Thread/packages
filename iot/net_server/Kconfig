@@ -1,0 +1,60 @@
+
+# Kconfig file for package net_server
+menuconfig PKG_USING_NET_SERVER
+    bool "net_server:TCP/TLS server,support wolfssl"
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    select RT_USING_DFS
+    default n
+
+if PKG_USING_NET_SERVER
+
+    config PKG_NET_SERVER_PATH
+        string
+        default "/packages/iot/net_server"
+
+    choice
+        prompt "Version"
+        default PKG_USING_NET_SERVER_V100
+        help
+            Select the package version
+
+        config PKG_USING_NET_SERVER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_NET_SERVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config NET_SERVER_TCP_EXAMPLE
+        bool "Use TCP Server example"
+        default n
+
+    config NET_SERVER_USING_TLS
+        bool "Enable TLS support"
+        default n
+    
+    if NET_SERVER_USING_TLS
+        choice
+            prompt "tls port file"
+            help
+                Select which tls port file to use
+
+            config NET_SERVER_WOLFSSL
+                bool "wolfSSL port"
+        endchoice
+
+     
+        config NET_SERVER_TLS_EXAMPLE
+        bool "Use tls server example"
+        default n
+
+    endif
+          
+    config PKG_NET_SERVER_VER
+       string
+       default "v1.0.0"    if PKG_USING_NET_SERVER_V100
+       default "latest"    if PKG_USING_NET_SERVER_LATEST_VERSION
+
+endif
+

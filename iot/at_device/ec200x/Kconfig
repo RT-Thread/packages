@@ -27,7 +27,7 @@ if AT_DEVICE_USING_EC200X
         config EC200X_SAMPLE_WAKEUP_PIN
             int "Wakeup pin"
             default -1
-            
+
         config EC200X_SAMPLE_CLIENT_NAME
             string "AT client device name"
             default "uart2"

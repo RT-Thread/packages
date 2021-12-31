@@ -1,28 +1,28 @@
 {
   "name": "pikascript",
   "description": "Lightweight Python scripting support tool that is easy to customize",
-  "description_zh": "极易定制的轻量级python脚本支持工具",  
-  "enable": "PKG_USING_PIKASCRIPT", 
+  "description_zh": "极易定制的轻量级python脚本支持工具",
+  "enable": "PKG_USING_PIKASCRIPT",
   "keywords": [
     "pikascript"
   ],
   "category": "language",
   "author": {
-    "name": "mimilib",
+    "name": "lyon",
     "email": "645275593@qq.com",
-    "github": "mimilib"
+    "github": "pikasTech"
   },
   "license": "MIT",
-  "repository": "https://github.com/mimilib/pikascript",
-  "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "repository": "https://github.com/pikasTech/pikascript",
+  "icon": "https://user-images.githubusercontent.com/88232613/144221063-a85b2cb0-0416-493f-9afb-56cff31e977d.jpg",
+  "homepage": "https://www.yuque.com/liang-mltek/pikascript/wcc36r",
+  "doc": "https://www.yuque.com/liang-mltek/pikascript/wcc36r",
   "site": [
     {
-      "version": "v0.2.0",
-      "URL": "https://github.com/mimilib/pikascript/releases/download/v0.2.0/pikascript_v0.2.0.zip",
-      "filename": "PikaScript-0.2.0.zip",
-      "VER_SHA": "afda23c715e905f53fd6edd3ffb133a16c5bf448"
+      "version": "latest",
+      "URL": "https://github.com/pikasTech/pikascript.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
     }
   ]
 }

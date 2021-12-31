@@ -1,8 +1,8 @@
 {
   "name": "micro_ros",
   "description": "ROS 2 on microcontrollers.",
-  "description_zh": "在 MCU 上运行 ROS2.",  
-  "enable": "PKG_USING_MICRO_ROS", 
+  "description_zh": "在 MCU 上运行 ROS2.",
+  "enable": "PKG_USING_MICRO_ROS",
   "keywords": [
     "micro_ros",
     "uart",

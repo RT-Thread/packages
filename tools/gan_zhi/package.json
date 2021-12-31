@@ -1,8 +1,8 @@
 {
   "name": "gan_zhi",
   "description": "A tool package to get tiangan and dizhi informations according to the date and time.",
-  "description_zh": "是一个根据公历日期、时得到相应的天干地支的工具软件包。",  
-  "enable": "PKG_USING_GAN_ZHI", 
+  "description_zh": "是一个根据公历日期、时得到相应的天干地支的工具软件包。",
+  "enable": "PKG_USING_GAN_ZHI",
   "keywords": [
     "gan_zhi"
   ],

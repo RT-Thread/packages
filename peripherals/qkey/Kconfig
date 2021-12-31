@@ -14,51 +14,51 @@ if PKG_USING_QKEY
     config QKEY_USING_TEST
         bool "using test"
         default n
-        
+
     config QKEY_USING_PULL
         bool "Key using pull up/down"
         default y
-        
+
     config QKEY_TOTAL
         int "Key maximum total"
         default 5
 
     config QKEY_SCAN_PRIOD_MS
         int "Key scan time unit, unit : ms"
-        default 10   
+        default 10
 
     config QKEY_THREAD_NAME
         string "Key driver thread name"
-        default "qkey"   
+        default "qkey"
 
     config QKEY_THREAD_STACK_SIZE
         int "Key driver thread stack size"
-        default 1024   
+        default 1024
 
     config QKEY_THREAD_PRIO
         int "Key driver thread priority"
-        default 3   
+        default 3
 
     config QKEY_USING_ARRAY
         bool "using key array"
         default n
-    
+
     if QKEY_USING_ARRAY
-    
+
         config QKEY_ARRAY_ROW_TOTAL
             int "Key array row total"
             default 4
-        
+
         config QKEY_ARRAY_COL_TOTAL
             int "Key array col total"
             default 3
-            
+
         config QKEY_ARRAY_PIN_FIRST
             int "Key array pin number of the first key"
             default 256
-        
+
     endif
-        
+
     choice
         prompt "Version"
         default PKG_USING_QKEY_LATEST_VERSION
@@ -67,10 +67,10 @@ if PKG_USING_QKEY
 
         config PKG_USING_QKEY_LATEST_VERSION
             bool "latest"
-            
+
         config PKG_USING_QLED_V110
             bool "v1.10"
-            
+
         config PKG_USING_QLED_V100
             bool "v1.00"
     endchoice

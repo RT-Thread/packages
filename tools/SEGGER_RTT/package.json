@@ -1,8 +1,8 @@
 {
   "name": "SEGGER_RTT",
   "description": "Please add description of SEGGER_RTT in English.",
-  "description_zh": "使用JLINK的RTT代替UART console输出",  
-  "enable": "PKG_USING_SEGGER_RTT", 
+  "description_zh": "使用JLINK的RTT代替UART console输出",
+  "enable": "PKG_USING_SEGGER_RTT",
   "keywords": [
     "SEGGER_RTT"
   ],
@@ -30,7 +30,7 @@
       "filename": "SEGGER_RTT-1.1.0.zip",
       "VER_SHA": "add SWO"
     },
-  
+
     {
       "version": "latest",
       "URL": "https://github.com/supperthomas/RTTHREAD_SEGGER_TOOL.git",

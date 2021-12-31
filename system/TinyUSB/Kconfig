@@ -1,0 +1,74 @@
+
+# Kconfig file for package TinyUSB
+menuconfig PKG_USING_TINYUSB
+    bool "TinyUSB: an open source cross-platform USB stack for embedded system"
+    default n
+    select RT_USING_SEMAPHORE
+    select RT_USING_MUTEX
+    select RT_USING_MESSAGEQUEUE
+    select RT_USING_USB
+
+if PKG_USING_TINYUSB
+    config PKG_TINYUSB_PATH
+        string
+        default "/packages/system/TinyUSB"
+
+    config PKG_TINYUSB_STACK_SIZE
+        int "TinyUSB thread stack size"
+        default 2048
+
+    config PKG_TINYUSB_DEVICE_ENABLE
+        bool "Using USB device"
+        default n
+
+    if PKG_TINYUSB_DEVICE_ENABLE
+        config PKG_TINYUSB_DEVICE_CDC
+            bool "Using Communication Device Class (CDC)"
+            default n
+
+        if PKG_TINYUSB_DEVICE_CDC
+            config CFG_TUD_CDC
+                int
+                default 1
+        endif
+
+        config PKG_TINYUSB_DEVICE_MSC
+            bool "Using Mass Storage Class (MSC)"
+            default n
+
+        if PKG_TINYUSB_DEVICE_MSC
+            config CFG_TUD_MSC
+                int
+                default 1
+
+            config PKG_TINYUSB_DEVICE_MSC_NAME
+                string "The name of the device used by MSC"
+        endif
+    endif
+
+    config PKG_TINYUSB_DEVICE_EXAMPLE
+        bool "Enable USB device example"
+        default n
+
+    if PKG_TINYUSB_DEVICE_EXAMPLE
+        config PKG_TINYUSB_DEVICE_EXAMPLE_CDC
+            bool "CDC device"
+            default n
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_TINYUSB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TINYUSB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_TINYUSB_VER
+       string
+       default "latest"    if PKG_USING_TINYUSB_LATEST_VERSION
+
+endif
+

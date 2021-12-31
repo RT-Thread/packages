@@ -1,0 +1,28 @@
+{
+  "name": "design_pattern",
+  "description": "design pattern implementation in C language.",
+  "description_zh": "嵌入式C设计模式实现。",  
+  "enable": "PKG_USING_DESIGN_PATTERN", 
+  "keywords": [
+    "design pattern"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "chenyingchun0312",
+    "email": "chenyingchun0312@163.com",
+    "github": "chenyingchun0312"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/chenyingchun0312/design_pattern",
+  "icon": "unknown",
+  "homepage": "https://github.com/chenyingchun0312/design_pattern#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/chenyingchun0312/design_pattern.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}

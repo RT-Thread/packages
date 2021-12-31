@@ -20,7 +20,7 @@ if PKG_USING_TETRIS
         config PKG_USING_TETRIS_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TETRIS_VER
        string
        default "latest"    if PKG_USING_TETRIS_LATEST_VERSION

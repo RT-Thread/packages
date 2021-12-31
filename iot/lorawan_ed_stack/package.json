@@ -1,8 +1,8 @@
 {
   "name": "lorawan_ed_stack",
   "description": "lorawan_ed_stack: lorawan end-device stack.",
-  "description_zh": "lorawan_ed_stack是LoRaWAN终端设备协议栈的实现.",  
-  "enable": "PKG_USING_LORAWAN_ED_STACK", 
+  "description_zh": "lorawan_ed_stack是LoRaWAN终端设备协议栈的实现.",
+  "enable": "PKG_USING_LORAWAN_ED_STACK",
   "keywords": [
     "lorawan_ed_stack"
   ],

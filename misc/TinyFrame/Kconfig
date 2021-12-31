@@ -48,7 +48,7 @@ endmenu
         config PKG_USING_TINYFRAME_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TINYFRAME_VER
        string
        default "v1.0.0"    if PKG_USING_TINYFRAME_V100

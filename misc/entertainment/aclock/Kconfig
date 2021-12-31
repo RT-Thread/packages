@@ -19,7 +19,7 @@ if PKG_USING_ACLOCK
         config PKG_USING_ACLOCK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ACLOCK_VER
        string
        default "latest"    if PKG_USING_ACLOCK_LATEST_VERSION

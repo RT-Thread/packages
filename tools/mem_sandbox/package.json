@@ -1,8 +1,8 @@
 {
   "name": "mem_sandbox",
   "description": "memory sandbox for RT-Thread",
-  "description_zh": "RT-Thread 内存隔离沙箱",  
-  "enable": "PKG_USING_MEM_SANDBOX", 
+  "description_zh": "RT-Thread 内存隔离沙箱",
+  "enable": "PKG_USING_MEM_SANDBOX",
   "keywords": [
     "mem_sandbox",
     "sandbox",
@@ -10,7 +10,7 @@
   ],
   "category": "tools",
   "author": {
-    "name": "mysterywolf",
+    "name": "Meco Man",
     "email": "jiantingman@foxmail.com",
     "github": "mysterywolf"
   },

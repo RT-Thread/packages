@@ -1,8 +1,8 @@
 {
   "name": "EmbeddedProto",
   "description": "A C++ Protocol Buffers implementation specifically suitable for ARM Cortex-M MCUs.",
-  "description_zh": "EmbeddedProto: 嵌入式 C++ protobuf 针对 ARM Cortex-M 优化",  
-  "enable": "PKG_USING_EMBEDDEDPROTO", 
+  "description_zh": "EmbeddedProto: 嵌入式 C++ protobuf 针对 ARM Cortex-M 优化",
+  "enable": "PKG_USING_EMBEDDEDPROTO",
   "keywords": [
     "EmbeddedProto",
     "protobuf"

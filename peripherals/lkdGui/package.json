@@ -1,8 +1,8 @@
 {
   "name": "lkdGui",
   "description": "lkdGui is a graphical interface for monochrome displays.",
-  "description_zh": "lkdGui是一款为单色显示屏制作的图形化界面，用于设计简单漂亮的图形界面。",  
-  "enable": "PKG_USING_LKDGUI", 
+  "description_zh": "lkdGui是一款为单色显示屏制作的图形化界面，用于设计简单漂亮的图形界面。",
+  "enable": "PKG_USING_LKDGUI",
   "keywords": [
     "lkdGui"
   ],

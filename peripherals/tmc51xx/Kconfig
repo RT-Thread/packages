@@ -22,7 +22,7 @@ if PKG_USING_TMC51XX
         config PKG_USING_TMC51XX_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TMC51XX_VER
        string
        default "v1.0.0"    if PKG_USING_TMC51XX_V100

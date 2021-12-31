@@ -22,7 +22,7 @@ if PKG_USING_GT1151
         config PKG_USING_GT1151_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_GT1151_VER
        string
        default "v1.0.0"    if PKG_USING_GT1151_V100
@@ -32,23 +32,23 @@ if PKG_USING_GT1151
         config GT1151_BUS_NAME
             string  "the i2c bus for gt1151"
             default "i2c1"
-        
+
         config GT1151_RST_PIN
             int "reset pin for gt1151"
             default 51
-        
+
         config GT1151_IRQ_PIN
             int "interrupt pin for gt1151"
             default 108
-        
+
         config GT1151_TOUCH_WIDTH
             int "lcd width"
             default 800
-        
+
         config GT1151_TOUCH_HEIGHT
             int "lcd height"
             default 480
-        
+
         config GT1151_SUPPORT_POINTS
             int "gt1151 supported touch points"
             default 10

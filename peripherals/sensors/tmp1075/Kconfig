@@ -9,11 +9,11 @@ if PKG_USING_TMP1075
     config PKG_TMP1075_PATH
         string
         default "/packages/peripherals/sensors/tmp1075"
-        
-	 config PKG_USING_TMP1075_SAMPLE
+
+     config PKG_USING_TMP1075_SAMPLE
         bool "Enable tmp1075 sample"
         default n
-        
+
     choice
         prompt "Version"
         default PKG_USING_TMP1075_LATEST_VERSION
@@ -26,7 +26,7 @@ if PKG_USING_TMP1075
         config PKG_USING_TMP1075_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_TMP1075_VER
        string
        default "v1.0.0"    if PKG_USING_TMP1075_V100

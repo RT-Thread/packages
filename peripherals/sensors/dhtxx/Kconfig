@@ -63,7 +63,7 @@ if PKG_USING_DHTXX
         config PKG_USING_DHTXX_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_DHTXX_VER
        string
        default "v0.8.1"    if PKG_USING_DHTXX_V08X

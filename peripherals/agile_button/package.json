@@ -1,7 +1,7 @@
 {
   "name": "agile_button",
   "description": "A agile button package.",
-  "description_zh": "一个灵活的button软件包。",  
+  "description_zh": "一个灵活的button软件包。",
   "enable": "PKG_USING_AGILE_BUTTON",
   "keywords": [
     "agile_button"
@@ -16,6 +16,11 @@
   "repository": "https://github.com/loogg/agile_button",
   "homepage": "https://github.com/loogg/agile_button#readme",
   "site": [
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/loogg/agile_button/archive/refs/tags/1.1.0.zip",
+      "filename": "agile_button-1.1.0.zip"
+    },
     {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_button.git",

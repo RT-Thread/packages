@@ -1,8 +1,8 @@
 {
   "name": "zb_coordinator",
   "description": "Application of AT Command on ZigBee Coordinator",
-  "description_zh": "AT命令在ZigBee协调器上的应用",  
-  "enable": "PKG_USING_ZB_COORDINATOR", 
+  "description_zh": "AT命令在ZigBee协调器上的应用",
+  "enable": "PKG_USING_ZB_COORDINATOR",
   "keywords": [
     "zb_coordinator"
   ],

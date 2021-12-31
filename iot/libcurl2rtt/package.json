@@ -1,7 +1,7 @@
 {
   "name": "libcurl2rtt",
   "description": "The curl library ported on the RT-Thread platform",
-  "description_zh": "基于 RT-Thread 移植的 curl 库", 
+  "description_zh": "基于 RT-Thread 移植的 curl 库",
   "enable": "PKG_USING_LIBCURL2RTT",
   "keywords": [
     "curl"

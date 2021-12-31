@@ -1,8 +1,8 @@
 {
   "name": "nr_micro_shell",
   "description": "Lightweight command line interaction tool.",
-  "description_zh": "轻量的命令行交互工具。",  
-  "enable": "PKG_USING_NR_MICRO_SHELL", 
+  "description_zh": "轻量的命令行交互工具。",
+  "enable": "PKG_USING_NR_MICRO_SHELL",
   "keywords": [
     "nr_micro_shell"
   ],

@@ -9,8 +9,8 @@ if PKG_USING_KDB
     config PKG_KDB_PATH
         string
         default "/packages/tools/kdb"
-    
-    config KDB_MAX_DATA_LEN        
+
+    config KDB_MAX_DATA_LEN
         int "the maximum of data package length"
         default 64
 
@@ -22,11 +22,11 @@ if PKG_USING_KDB
         bool "Enable KDB system automatic initialization"
         default n
 
-    config KDB_SYS_BUFF_SIZE       
+    config KDB_SYS_BUFF_SIZE
         int "the maximun system buffer size"
         default 4096
 
-    config KDB_SYS_NAME_LEN        
+    config KDB_SYS_NAME_LEN
         int "the maximun system name length"
         default 8
 
@@ -45,11 +45,11 @@ if PKG_USING_KDB
     if KDB_THREAD_DUMP
         config KDB_THREAD_SUSPEND_DUMP
             bool "Enable KDB thread suspend dump"
-            default n    
-        
+            default n
+
         config KDB_THREAD_RESUME_DUMP
             bool "Enable KDB thread resume dump"
-            default n    
+            default n
 
         config KDB_THREAD_INITED_DUMP
             bool "Enable KDB thread inited dump"
@@ -91,7 +91,7 @@ if PKG_USING_KDB
     if KDB_OBJECT_DUMP
         config KDB_THREAD_OBJECT_DUMP
             bool "Enable KDB thread object dump"
-            default n 
+            default n
 
         config KDB_SEMAPHORE_OBJECT_DUMP
             bool "Enable KDB semaphore object dump"
@@ -177,7 +177,7 @@ if PKG_USING_KDB
     config KDB_ENABLE_CUSTOMIZE_OUTPUT
         bool "Enable KDB customize output"
         default n
-    
+
     config KDB_TEST_ENABLE
         bool "Enable KDB test"
         default n
@@ -194,7 +194,7 @@ if PKG_USING_KDB
         config PKG_USING_KDB_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_KDB_VER
        string
        default "v1.0.0"    if PKG_USING_KDB_V100

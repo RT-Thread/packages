@@ -11,14 +11,14 @@ menuconfig PKG_USING_RDB
 
 if PKG_USING_RDB
     config PKGS_USING_USB_RDBD
-        bool 
+        bool
         select RT_USING_USB_DEVICE
         default y
-    
+
     config PKGS_USING_RDBD_FILE
         bool "Enable example for rdb push/pull"
         default y
-    
+
     config PKGS_USING_RDBD_SHELL
         bool "Enable example for rdb shell"
         default n
@@ -39,7 +39,7 @@ if PKG_USING_RDB
         config PKG_USING_RDB_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RDB_VER
        string
        default "v1.0.0"    if PKG_USING_RDB_V100

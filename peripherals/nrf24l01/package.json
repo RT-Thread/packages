@@ -1,7 +1,7 @@
 {
   "name": "nrf24l01",
   "description": "Single-chip 2.4GHz wireless transceiver.",
-  "description_zh": "单芯片 2.4GHz 无线收发器。",  
+  "description_zh": "单芯片 2.4GHz 无线收发器。",
   "enable": "PKG_USING_NRF24L01",
   "keywords": [
     "nrf24l01","wireless"

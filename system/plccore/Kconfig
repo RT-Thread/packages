@@ -19,7 +19,7 @@ if PKG_USING_PLCCORE
         config PKG_USING_PLCCORE_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PLCCORE_VER
        string
        default "latest"    if PKG_USING_PLCCORE_LATEST_VERSION

@@ -114,7 +114,7 @@ if PKG_USING_EASYFLASH
 
         config PKG_USING_EASYFLASH_V410
             bool "v4.1.0"
-            
+
         config PKG_USING_EASYFLASH_V400
             bool "v4.0.0"
 

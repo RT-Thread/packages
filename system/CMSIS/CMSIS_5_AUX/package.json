@@ -1,0 +1,28 @@
+{
+  "name": "CMSIS_5_AUX",
+  "description": "CMSIS-5 Auxiliary Package",
+  "description_zh": "CMSIS_5软件包的辅助构建软件包（该软件包不需要用户选择）",
+  "enable": "PKG_USING_CMSIS_5_AUX",
+  "keywords": [
+    "CMSIS_5_AUX",
+    "CMSIS_5",
+    "CMSIS"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/CMSIS_5_AUX",
+  "homepage": "https://github.com/RT-Thread-packages/CMSIS_5_AUX#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/CMSIS_5_AUX.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

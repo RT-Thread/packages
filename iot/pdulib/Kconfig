@@ -10,10 +10,10 @@ if PKG_USING_PDULIB
         string
         default "/packages/iot/pdulib"
 
-        
+
     config PKG_USING_PDULIB_EXAMPLES
-    	bool "Enable pdulib sample"
-    	default n
+        bool "Enable pdulib sample"
+        default n
 
     config PDULIB_DEBUG
         bool "Enable pdulib debug"
@@ -31,7 +31,7 @@ if PKG_USING_PDULIB
         config PKG_USING_PDULIB_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_PDULIB_VER
        string
        default "v1.0.0"    if PKG_USING_PDULIB_V100

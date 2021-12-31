@@ -1,7 +1,7 @@
 {
   "name": "upacker",
   "description": "building and parsing data frames to be sent over a serial interface",
-  "description_zh": "串行通信链路协议",  
+  "description_zh": "串行通信链路协议",
   "enable": "PKG_USING_UPACKER",
   "keywords": [
     "upacker"

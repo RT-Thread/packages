@@ -78,7 +78,7 @@ if PKG_USING_RAPIDJSON
         config PKG_USING_RAPIDJSON_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RAPIDJSON_VER
        string
        default "latest"    if PKG_USING_RAPIDJSON_LATEST_VERSION

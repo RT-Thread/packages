@@ -1,8 +1,8 @@
 {
   "name": "ly68l6400",
   "description": "device drive for ly68l6400",
-  "description_zh": "ly68l6400芯片的驱动",  
-  "enable": "PKG_USING_LY68L6400", 
+  "description_zh": "ly68l6400芯片的驱动",
+  "enable": "PKG_USING_LY68L6400",
   "keywords": [
     "ly68l6400"
   ],

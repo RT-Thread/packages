@@ -1,8 +1,8 @@
 {
   "name": "kobuki",
   "description": "Kobuki Robot serial communication driver.",
-  "description_zh": "Kobuki 机器人串口通信驱动",  
-  "enable": "PKG_USING_KOBUKI", 
+  "description_zh": "Kobuki 机器人串口通信驱动",
+  "enable": "PKG_USING_KOBUKI",
   "keywords": [
     "kobuki",
     "ros",

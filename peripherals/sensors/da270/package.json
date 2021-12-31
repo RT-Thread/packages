@@ -1,7 +1,7 @@
 {
   "name": "da270",
   "description": "This is the driver package of MiraMEMS DA270 accelerometer for RT-Thread.",
-  "description_zh": "本软件包是 MiraMEMS DA270 加速度传感器在 RT-Thread 中的驱动包。",  
+  "description_zh": "本软件包是 MiraMEMS DA270 加速度传感器在 RT-Thread 中的驱动包。",
   "enable": "PKG_USING_DA270",
   "keywords": [
     "da270"

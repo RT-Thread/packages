@@ -1,8 +1,8 @@
 {
   "name": "ChineseFontLibrary",
   "description": "a Chinese_font_library for rt-thread",
-  "description_zh": "rt-thread中文字库软件包",  
-  "enable": "PKG_USING_CHINESE_FONT_LIBRARY", 
+  "description_zh": "rt-thread中文字库软件包",
+  "enable": "PKG_USING_CHINESE_FONT_LIBRARY",
   "keywords": [
     "Chinese_font_library","fal"
   ],

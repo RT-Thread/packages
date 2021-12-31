@@ -1,0 +1,28 @@
+
+# Kconfig file for package hs300x
+menuconfig PKG_USING_HS300X
+    bool "hs300x: digital humidity and temperature sensor hs300x driver library"
+    default n
+
+if PKG_USING_HS300X
+
+    config PKG_HS300X_PATH
+        string
+        default "/packages/peripherals/sensors/hs300x"
+
+    choice
+        prompt "Version"
+        default PKG_USING_HS300X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_HS300X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_HS300X_VER
+       string
+       default "latest"    if PKG_USING_HS300X_LATEST_VERSION
+
+endif
+

@@ -44,7 +44,7 @@ if PKG_USING_BSAL
         default PKG_BSAL_SAMPLE_BAS_ONLY
         help
             select the BSAL peripheral samples
-        
+
         config PKG_BSAL_SAMPLE_BAS_ONLY
             select PKG_BSAL_SRV_BAS
             bool "battery service"
@@ -57,9 +57,17 @@ if PKG_USING_BSAL
         config PKG_BSAL_SAMPLE_NUS_ONLY
             select PKG_BSAL_SRV_NUS
             bool "nordic uart service"
-        
+
+        config PKG_BSAL_SAMPLE_LBS_ONLY
+            select PKG_BSAL_SRV_LBS
+            bool "nordic led button service"
+
+        config PKG_BSAL_SAMPLE_HRS_ONLY
+            select PKG_BSAL_SRV_HRS
+            bool "heart rate service"
+
     endchoice
-    
+
     if PKG_BSAL_ROLE_PERIPHERAL
         menu "Profile support"
 
@@ -80,7 +88,25 @@ if PKG_USING_BSAL
                 default n
                 help
                     Select Nordic Uart service profile.
-                
+
+            config PKG_BSAL_SRV_LBS
+                bool "Nordic Led Button Service support"
+                default n
+                help
+                    Select Nordic Led Button service profile.
+
+            config PKG_BSAL_SRV_DIS
+                bool "Device Information Service support"
+                default n
+                help
+                    Select device information service profile.
+
+            config PKG_BSAL_SRV_HRS
+                bool "Heart Rate Service support"
+                default n
+                help
+                    Select heart rate service profile.
+
         endmenu
     endif
 
@@ -89,7 +115,7 @@ if PKG_USING_BSAL
         default PKG_BSAL_NIMBLE_STACK
         help
             select the BSAL STACK
-        
+
         config PKG_BSAL_NIMBLE_STACK
             bool "Use the nimble stack"
 
@@ -107,7 +133,7 @@ if PKG_USING_BSAL
         default "nimble"      if PKG_BSAL_NIMBLE_STACK
         default "realtek"     if PKG_BSAL_RTK_STACK
         default "empty_stack" if PKG_BSAL_EMPTY_STACK
-           
+
     choice
         prompt "Version"
         default PKG_USING_BSAL_LATEST_VERSION
@@ -117,7 +143,7 @@ if PKG_USING_BSAL
         config PKG_USING_BSAL_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_BSAL_VER
         string
         default "latest"    if PKG_USING_BSAL_LATEST_VERSION

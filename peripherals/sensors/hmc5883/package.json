@@ -1,8 +1,8 @@
 {
   "name": "hmc5883",
   "description": "bmi088 software package.",
-  "description_zh": "hmc5883 软件包",  
-  "enable": "PKG_USING_HMC5883", 
+  "description_zh": "hmc5883 软件包",
+  "enable": "PKG_USING_HMC5883",
   "keywords": [
     "hmc5883"
   ],

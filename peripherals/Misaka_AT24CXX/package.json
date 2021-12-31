@@ -1,8 +1,8 @@
 {
   "name": "Misaka_AT24CXX",
   "description": "Misaka-Network for AT24CXX EEPROM",
-  "description_zh": "御坂网络AT24CXX驱动包，提供了AT24CXX的全部功能",  
-  "enable": "PKG_USING_MISAKA_AT24CXX", 
+  "description_zh": "御坂网络AT24CXX驱动包，提供了AT24CXX的全部功能",
+  "enable": "PKG_USING_MISAKA_AT24CXX",
   "keywords": [
     "at24cxx",
     "御坂",

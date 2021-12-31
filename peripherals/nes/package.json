@@ -1,8 +1,8 @@
 {
   "name": "nes",
   "description": "nes simulator c Library.",
-  "description_zh": "nes模拟器c库。",  
-  "enable": "PKG_USING_NES", 
+  "description_zh": "nes模拟器c库。",
+  "enable": "PKG_USING_NES",
   "keywords": [
     "nes"
   ],

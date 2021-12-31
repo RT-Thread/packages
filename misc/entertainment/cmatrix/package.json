@@ -1,8 +1,8 @@
 {
   "name": "cmatrix",
   "description": "电影《黑客帝国》中的字符雨",
-  "description_zh": "text flying in and out in a terminal like as seen in 'The Matrix' movie",  
-  "enable": "PKG_USING_CMATRIX", 
+  "description_zh": "text flying in and out in a terminal like as seen in 'The Matrix' movie",
+  "enable": "PKG_USING_CMATRIX",
   "keywords": [
     "cmatrix",
     "matrix rain"

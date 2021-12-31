@@ -1,8 +1,8 @@
 {
   "name": "ucloud_iot_sdk",
   "description": "ucloud iot sdk for uiot-core platform.",
-  "description_zh": "用于快速连接优刻得物联网平台的软件包。",  
-  "enable": "PKG_USING_UCLOUD_IOT_SDK", 
+  "description_zh": "用于快速连接优刻得物联网平台的软件包。",
+  "enable": "PKG_USING_UCLOUD_IOT_SDK",
   "keywords": [
     "ucloud_iot_sdk"
   ],
@@ -23,7 +23,7 @@
       "URL": "https://github.com/ucloud/ucloud-iot-rtthread-package/archive/v1.0.1.zip",
       "filename": "ucloud_iot_sdk-v1.0.1.zip",
       "VER_SHA": ""
-    },	
+    },
     {
       "version": "latest",
       "URL": "https://github.com/ucloud/ucloud-iot-rtthread-package.git",

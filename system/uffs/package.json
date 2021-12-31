@@ -1,8 +1,8 @@
 {
   "name": "uffs",
   "description": "Ultra-low-cost Flash File System.",
-  "description_zh": "超低功耗的闪存文件系统",  
-  "enable": "PKG_USING_DFS_UFFS", 
+  "description_zh": "超低功耗的闪存文件系统",
+  "enable": "PKG_USING_DFS_UFFS",
   "keywords": [
     "filesystem",
     "uffs"

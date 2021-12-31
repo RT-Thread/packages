@@ -22,7 +22,7 @@ if PKG_USING_MAX30102
         config PKG_USING_MAX30102_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MAX30102_VER
        string
        default "v1.0.0"    if PKG_USING_MAX30102_V100

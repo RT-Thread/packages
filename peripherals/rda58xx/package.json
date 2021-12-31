@@ -1,8 +1,8 @@
 {
   "name": "rda58xx",
   "description": "RDA5820 single-chip broadcase FM transceiver driver.",
-  "description_zh": "RDA5820收音机芯片驱动。",  
-  "enable": "PKG_USING_RDA58XX", 
+  "description_zh": "RDA5820收音机芯片驱动。",
+  "enable": "PKG_USING_RDA58XX",
   "keywords": [
     "rda5820",
     "rda58xx"

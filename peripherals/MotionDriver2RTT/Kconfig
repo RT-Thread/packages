@@ -9,10 +9,10 @@ if PKG_USING_MOTIONDRIVER2RTT
     config PKG_MOTIONDRIVER2RTT_PATH
         string
         default "/packages/peripherals/MotionDriver2RTT"
-	
-	config MotionDriver2RTT_USING_EXAMPLE
-		bool "Enable MotionDriver2RTT sample"
-		default n
+
+    config MotionDriver2RTT_USING_EXAMPLE
+        bool "Enable MotionDriver2RTT sample"
+        default n
 
     choice
         prompt "Version"
@@ -26,7 +26,7 @@ if PKG_USING_MOTIONDRIVER2RTT
         config PKG_USING_MOTIONDRIVER2RTT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MOTIONDRIVER2RTT_VER
        string
        default "v1.0.0"    if PKG_USING_MOTIONDRIVER2RTT_V100

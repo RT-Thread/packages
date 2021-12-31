@@ -13,7 +13,7 @@ if PKG_USING_FT5426
     config PKG_USING_FT5426_SAMPLE
     bool "enable samples"
     default n
-	
+
     choice
         prompt "Version"
         default PKG_USING_FT5426_LATEST_VERSION
@@ -23,7 +23,7 @@ if PKG_USING_FT5426
         config PKG_USING_FT5426_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_FT5426_VER
        string
        default "v0.0.1"    if PKG_USING_FT5426_V001

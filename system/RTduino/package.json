@@ -1,0 +1,27 @@
+{
+  "name": "RTduino",
+  "description": "Arduino Ecological Compatibility Layer",
+  "description_zh": "Arduino生态兼容层",
+  "enable": "RT_USING_ARDUINO",
+  "keywords": [
+    "RTduino",
+    "Arduino"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Meco Man",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/mysterywolf/RTduino",
+  "homepage": "https://github.com/mysterywolf/RTduino#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/RTduino.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

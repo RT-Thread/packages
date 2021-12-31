@@ -1,0 +1,27 @@
+{
+  "name": "PainterEngine_AUX",
+  "description": "PainterEngine scons script in RT-Thread",
+  "description_zh": "PainterEngine在RT-Thread下的scons构建脚本",
+  "enable": "PKG_USING_PAINTERENGINE_AUX",
+  "keywords": [
+    "PainterEngine",
+    "PainterEngine_AUX"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "QPLover",
+    "email": "hylt8848@gmail.com",
+    "github": "QPLover"
+  },
+  "license": "BSD 3-Clause",
+  "repository": "https://github.com/QPLover/PainterEngine_AUX",
+  "homepage": "https://github.com/QPLover/PainterEngine_AUX#README",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/QPLover/PainterEngine_AUX.git",
+      "filename": "PainterEngine_AUX.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

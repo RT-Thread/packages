@@ -1,7 +1,7 @@
 {
   "name": "pca9685",
   "description": "I2C-bus controlled 16-channel PWM controller",
-  "description_zh": "通过I2C总线控制的16路PWM控制器",  
+  "description_zh": "通过I2C总线控制的16路PWM控制器",
   "enable": "PKG_USING_PCA9685",
   "keywords": [
     "pca9685"

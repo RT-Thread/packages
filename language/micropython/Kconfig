@@ -41,12 +41,12 @@ if PKG_USING_MICROPYTHON
             bool "machine adc: enable adc functions for machine module"
             select RT_USING_ADC
             default n
-            
+
         config MICROPYTHON_USING_MACHINE_WDT
             bool "machine watchdog: enable watchdog functions for machine module"
             select RT_USING_WDT
             default n
-       
+
         config MICROPYTHON_USING_MACHINE_TIMER
             bool "machine timer: enable timer functions for machine module"
             select RT_USING_HWTIMER
@@ -161,7 +161,7 @@ if PKG_USING_MICROPYTHON
         help
             You must provide 'qstrdefs.user.extmods.h'
             and 'moddefs.user.extmods.h'.
-            Macro 'MICROPY_USER_MODULES' in 
+            Macro 'MICROPY_USER_MODULES' in
             'moddefs.user.extmods.h' to export your modules.
     endmenu
 
@@ -170,7 +170,7 @@ if PKG_USING_MICROPYTHON
         prompt "Heap size for python run environment"
         default 8192
 
-    
+
     config MICROPYTHON_USING_FLOAT_IMPL_FLOAT
         bool "Enable micropython to use float instead of double"
         default y

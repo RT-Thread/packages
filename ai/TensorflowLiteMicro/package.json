@@ -1,8 +1,8 @@
 {
   "name": "TensorflowLiteMicro",
   "description": "a lightweight deep learning inference framework based on Google Tensorflow Lite for RT-Thread operating system.",
-  "description_zh": "用于rt-thread操作系统的轻量级深度学习端侧推理框架Tensorflow Lite软件包。",  
-  "enable": "PKG_USING_TENSORFLOWLITEMICRO", 
+  "description_zh": "用于rt-thread操作系统的轻量级深度学习端侧推理框架Tensorflow Lite软件包。",
+  "enable": "PKG_USING_TENSORFLOWLITEMICRO",
   "keywords": ["TensorflowLiteMicro","ML", "AI", "neural-network", "C++", "lightweight"],
   "category": "ai",
   "author": {

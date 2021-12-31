@@ -22,7 +22,7 @@ if PKG_USING_BME280
         config PKG_USING_BME280_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_BME280_VER
        string
        default "v0.0.1"    if PKG_USING_BME280_V001

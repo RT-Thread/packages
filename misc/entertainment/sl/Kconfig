@@ -20,7 +20,7 @@ if PKG_USING_SL
         config PKG_USING_SL_LATEST_VERSION
             bool "latest"
     endchoice
- 
+
     config PKG_SL_VER
        string
        default "latest"    if PKG_USING_SL_LATEST_VERSION

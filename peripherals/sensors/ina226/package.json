@@ -1,8 +1,8 @@
 {
   "name": "ina226",
   "description": "ina226 software package.",
-  "description_zh": "ina226 软件包",  
-  "enable": "PKG_USING_INA226", 
+  "description_zh": "ina226 软件包",
+  "enable": "PKG_USING_INA226",
   "keywords": [
     "ina226"
   ],

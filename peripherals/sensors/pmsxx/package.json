@@ -2,7 +2,7 @@
   "name": "pmsxx",
   "description": "PMSxx: Plantower pms serial PM2.5 sensor driver.",
   "description_zh": "PMSxx 攀藤pms系列颗粒物浓度传感器",
-  "enable": "PKG_USING_PMSXX", 
+  "enable": "PKG_USING_PMSXX",
   "keywords": [
     "pms",
     "plantower",

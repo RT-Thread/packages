@@ -1,7 +1,7 @@
 {
   "name": "dlt645",
   "description": "dlt645 master package",
-  "description_zh": "基于DLT645协议的主机采集软件包",  
+  "description_zh": "基于DLT645协议的主机采集软件包",
   "enable": "PKG_USING_DLT645",
   "keywords": [
     "dlt645"

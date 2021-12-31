@@ -13,17 +13,17 @@
     "email": "package_team@rt-thread.com",
     "github": "RT-Thread-packages"
   },
-  "license": "MIT",
+  "license": "ISC",
   "repository": "https://github.com/RT-Thread-packages/libsodium",
   "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
   "homepage": "https://github.com/RT-Thread-packages/libsodium#readme",
   "readme": "A modern and easy-to-use crypto library.",
   "site": [
     {
-      "version": "v1.0.0",
+      "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/libsodium.git",
-      "filename": "libsodium-1.0.0.zip",
-      "VER_SHA": "697d89a290c7212594811f7414afc6a4a87e125f"
+      "filename": "",
+      "VER_SHA": "master"
     }
   ]
 }

@@ -1,0 +1,28 @@
+
+# Kconfig file for package lv_music_demo
+menuconfig PKG_USING_LV_MUSIC_DEMO
+    bool "Enable LVGL music player demo for RT-Thread"
+    default n
+
+if PKG_USING_LV_MUSIC_DEMO
+
+    config PKG_LV_MUSIC_DEMO_PATH
+        string
+        default "/packages/multimedia/LVGL/lv_music_demo"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LV_MUSIC_DEMO_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LV_MUSIC_DEMO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LV_MUSIC_DEMO_VER
+       string
+       default "latest"    if PKG_USING_LV_MUSIC_DEMO_LATEST_VERSION
+
+endif
+

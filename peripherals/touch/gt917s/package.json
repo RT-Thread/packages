@@ -1,8 +1,8 @@
 {
   "name": "gt917s",
   "description": "gt917s drivers for RT-Thread",
-  "description_zh": " gt917s 驱动",  
-  "enable": "PKG_USING_GT917S", 
+  "description_zh": " gt917s 驱动",
+  "enable": "PKG_USING_GT917S",
   "keywords": [
     "gt917s"
   ],

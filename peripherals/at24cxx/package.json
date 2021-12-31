@@ -1,7 +1,7 @@
 {
   "name": "at24cxx",
   "description": "eeprom at24cxx driver library.",
-  "description_zh": "eeprom at24cxx 的驱动库。",  
+  "description_zh": "eeprom at24cxx 的驱动库。",
   "enable": "PKG_USING_AT24CXX",
   "keywords": [
     "at24c02",

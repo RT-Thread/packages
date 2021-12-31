@@ -19,10 +19,10 @@ if PKG_USING_MULTI_RTIMER
             if MULTI_RTIMER_USING_TRAGET_MCU_STM32_RTC
                 config MULTI_RTIMER_USING_RTC_SYSTIME_SERVICE
                     bool "Enable System Time Service Based on RTC"
-                    default n 
+                    default n
                 config MULTI_RTIMER_USING_RTC_TEMPERTURE_COMPENSATION
                     bool "Enable RTC Temperture Compensation"
-                    default n 
+                    default n
             endif
     endmenu
 
@@ -44,7 +44,7 @@ if PKG_USING_MULTI_RTIMER
         config PKG_USING_MULTI_RTIMER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MULTI_RTIMER_VER
        string
        default "v1.0.0"    if PKG_USING_MULTI_RTIMER_V100

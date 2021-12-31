@@ -8,13 +8,13 @@ if PKG_USING_OPENAMP
     config PKG_OPENAMP_PATH
         string
         default "/packages/system/openamp"
-	
+
     config RT_USING_OPENAMP
-	bool "ENABLE OpenAMP"
+    bool "ENABLE OpenAMP"
     default y
 
     config RT_USING_OPENAMP_TEST
-    	bool "ENABLE OpenAMP test"
+        bool "ENABLE OpenAMP test"
     default y
 
     choice

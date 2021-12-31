@@ -24,7 +24,7 @@ if PKG_USING_LWLOG
         config PKG_USING_LWLOG_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LWLOG_VER
        string
        default "latest"    if PKG_USING_LWLOG_LATEST_VERSION

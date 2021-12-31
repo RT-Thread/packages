@@ -3,7 +3,7 @@
 menuconfig PKG_USING_WAYZ_IOTKIT
     bool "wayz iot location"
     default n
-	select PKG_USING_CJSON
+    select PKG_USING_CJSON
     select PKG_USING_WEBCLIENT
 
 if PKG_USING_WAYZ_IOTKIT
@@ -11,12 +11,12 @@ if PKG_USING_WAYZ_IOTKIT
     config PKG_WAYZ_IOTKIT_PATH
         string
         default "/packages/iot/wayz_iotkit"
-	
-	config PKG_WAYZ_IOTKIT_WIFI_SSID
+
+    config PKG_WAYZ_IOTKIT_WIFI_SSID
         string "wifi ssid"
         default "wayz123"
-		
-	config PKG_WAYZ_IOTKIT_WIFI_PASSWORD
+
+    config PKG_WAYZ_IOTKIT_WIFI_PASSWORD
         string "wifi password"
         default "wayz1234"
 
@@ -32,7 +32,7 @@ if PKG_USING_WAYZ_IOTKIT
         config PKG_USING_WAYZ_IOTKIT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_WAYZ_IOTKIT_VER
        string
        default "v1.0.0"    if PKG_USING_WAYZ_IOTKIT_V100

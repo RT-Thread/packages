@@ -27,7 +27,7 @@ if PKG_USING_GAN_ZHI
         config PKG_USING_GAN_ZHI_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_GAN_ZHI_VER
        string
        default "v1.0.0"    if PKG_USING_GAN_ZHI_V100

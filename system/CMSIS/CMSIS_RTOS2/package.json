@@ -1,0 +1,27 @@
+{
+  "name": "CMSIS_RTOS2",
+  "description": "CMSIS-RTOS2 wrapper for RT-Thread",
+  "description_zh": "RT-Thread的CMSIS-RTOS2标准兼容层",
+  "enable": "PKG_USING_CMSIS_RTOS2",
+  "keywords": [
+    "CMSIS_RTOS2",
+    "CMSIS"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/CMSIS_RTOS2",
+  "homepage": "https://github.com/RT-Thread-packages/CMSIS_RTOS2#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/CMSIS_RTOS2.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

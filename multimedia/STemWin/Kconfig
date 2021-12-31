@@ -27,7 +27,7 @@ if PKG_USING_STEMWIN
         config PKG_USING_STEMWIN_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_STEMWIN_VER
        string
        default "v1.0.0"    if PKG_USING_STEMWIN_V100

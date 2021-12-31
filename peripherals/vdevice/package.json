@@ -1,8 +1,8 @@
 {
   "name": "vdevice",
   "description": "vdevice: A virtual IO peripheral environment. ",
-  "description_zh": "适配于rt-thread device框架下的虚拟IO设备。",  
-  "enable": "PKG_USING_VDEVICE", 
+  "description_zh": "适配于rt-thread device框架下的虚拟IO设备。",
+  "enable": "PKG_USING_VDEVICE",
   "keywords": [
     "vdevice"
   ],

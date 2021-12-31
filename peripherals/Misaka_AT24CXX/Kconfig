@@ -23,7 +23,7 @@ if PKG_USING_MISAKA_AT24CXX
         config PKG_USING_MISAKA_AT24CXX_V100
             bool "1.0.0"
     endchoice
-          
+
     config PKG_MISAKA_AT24CXX_VER
        string
        default "1.0.0"    if PKG_USING_MISAKA_AT24CXX_V100

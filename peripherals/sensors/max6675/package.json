@@ -1,8 +1,8 @@
 {
   "name": "max6675",
   "description": "max6675: a package of digital temperature sensor max6675",
-  "description_zh": "数字温度传感器 max6675 的软件包",  
-  "enable": "PKG_USING_MAX6675", 
+  "description_zh": "数字温度传感器 max6675 的软件包",
+  "enable": "PKG_USING_MAX6675",
   "keywords": [
     "max6675"
   ],

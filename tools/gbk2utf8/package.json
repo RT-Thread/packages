@@ -1,8 +1,8 @@
 {
   "name": "gbk2utf8",
   "description": "conversion between GBK and UTF8.",
-  "description_zh": "GBK与UTF8编码之间的转换。",  
-  "enable": "PKG_USING_GBK2UTF8", 
+  "description_zh": "GBK与UTF8编码之间的转换。",
+  "enable": "PKG_USING_GBK2UTF8",
   "keywords": [
     "gbk2utf8"
   ],

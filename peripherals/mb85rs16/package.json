@@ -1,0 +1,33 @@
+{
+  "name": "mb85rs16",
+  "description": "Memory FRAM 16K(2Kx8)Bit SPI Driver Library",
+  "description_zh": "针对 铁电存储器 SPI 驱动软件包",
+  "enable": "PKG_USING_MB85RS16",
+  "keywords": [
+    "mb85rs16"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "XiaojieFan",
+    "email": "dingo1688@126.com",
+    "github": "XiaojieFan"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/XiaojieFan/mb85rs16.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/XiaojieFan/mb85rs16.git#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/XiaojieFan/mb85rs16/archive/v1.0.0.zip",
+      "filename": "mb85rs16-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/XiaojieFan/mb85rs16.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

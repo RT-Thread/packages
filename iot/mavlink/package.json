@@ -1,8 +1,8 @@
 {
   "name": "mavlink",
   "description": "A very lightweight messaging protocol for communicating.",
-  "description_zh": "一非常轻量级的消息传输协议",  
-  "enable": "PKG_USING_MAVLINK", 
+  "description_zh": "一非常轻量级的消息传输协议",
+  "enable": "PKG_USING_MAVLINK",
   "keywords": [
     "mavlink","point-to-point","publish-subscribe","dialect","XML","Drone"
   ],

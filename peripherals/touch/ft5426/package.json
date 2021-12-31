@@ -1,8 +1,8 @@
 {
   "name": "ft5426",
   "description": "This is the driver package of FT5426 touch chip.",
-  "description_zh": "这是 FT5426 触摸芯片的驱动包。",  
-  "enable": "PKG_USING_FT5426", 
+  "description_zh": "这是 FT5426 触摸芯片的驱动包。",
+  "enable": "PKG_USING_FT5426",
   "keywords": [
     "ft5426",
     "touch"

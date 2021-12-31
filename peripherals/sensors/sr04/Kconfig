@@ -26,7 +26,7 @@ if PKG_USING_SR04
     config PKG_USING_SR04_SAMPLE
         bool "Enable sr04 sample"
         default y
-          
+
     config PKG_SR04_VER
        string
        default "v1.0.0"    if PKG_USING_SR04_V100

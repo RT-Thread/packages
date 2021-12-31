@@ -1,0 +1,30 @@
+{
+  "name": "mcurses",
+  "description": "mcurses: micro ncurses library",
+  "description_zh": "轻量级的 ncurses 控制台绘图库",
+  "enable": "PKG_USING_MCURSES",
+  "keywords": [
+    "mcurses",
+    "ncurses",
+    "curses",
+    "terminal",
+    "tui"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/mcurses",
+  "homepage": "https://github.com/wuhanstudio/mcurses#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/mcurses.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

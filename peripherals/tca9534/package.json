@@ -1,25 +1,25 @@
 {
   "name": "tca9534",
   "description": "a 8-bit I/O expander for i2c-bus",
-  "description_zh": "i2c接口8位I/O扩展芯片驱动软件包",  
-  "enable": "PKG_USING_TCA9534",  
+  "description_zh": "i2c接口8位I/O扩展芯片驱动软件包",
+  "enable": "PKG_USING_TCA9534",
   "keywords": [
     "tca9534",
     "i2c"
   ],
   "category": "peripherals",
-  "author": 
+  "author":
   {
     "name": "panrui",
     "email": "chpanrui@163.com",
-    "github": "Prry"    
+    "github": "Prry"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/Prry/rtt-tca9534",
   "icon": "unknown",
   "homepage": "https://github.com/Prry/rtt-tca9534",
   "doc": "unknown",
-  "site": 
+  "site":
   [
     {
       "version": "v1.0.0",

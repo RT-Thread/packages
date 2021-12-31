@@ -1,0 +1,52 @@
+
+# Kconfig file for package soft_serial
+
+menuconfig PKG_USING_SOFT_SERIAL
+    bool "soft_serial : a software serial driver package by using the hardware timer capture / comparison functionality."
+    default n
+
+if PKG_USING_SOFT_SERIAL
+
+    config PKG_SOFT_SERIAL_PATH
+        string
+        default "/packages/peripherals/soft_serial"
+
+    config SOFT_SERIAL_TIM_CLK_FREQ
+        int "clock frequency of the hardware timer"
+        default 8000000
+
+    config SOFT_SERIAL_TIM_PCLK1_MUL
+        int "APB1 timer clock frequency multiplier"
+        default 1
+
+    config SOFT_SERIAL_TIM_PCLK2_MUL
+        int "APB2 timer clock frequency multiplier"
+        default 1
+
+    config SOFT_SERIAL_CHK_RX_BEGIN_BIT
+        bool "using the begin bit check"
+        default y
+
+    config SOFT_SERIAL_CHK_RX_PARITY
+        bool "using parity bit check"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_SOFT_SERIAL_V100
+        help
+            Select the package version
+
+        config PKG_USING_SOFT_SERIAL_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_SOFT_SERIAL_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_SOFT_SERIAL_VER
+       string
+       default "latest" if PKG_USING_SOFT_SERIAL_LATEST_VERSION
+       default "v1.00"  if PKG_USING_SOFT_SERIAL_V100
+
+endif

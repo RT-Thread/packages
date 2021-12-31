@@ -1,15 +1,15 @@
 {
   "name": "minizip",
   "description": "zip manipulation library",
-  "description_zh": "zip压缩解压库",  
-  "enable": "PKG_USING_MINIZIP", 
+  "description_zh": "zip压缩解压库",
+  "enable": "PKG_USING_MINIZIP",
   "keywords": [
     "minizip",
     "zip"
   ],
   "category": "misc",
   "author": {
-    "name": "mysterywolf",
+    "name": "Meco Man",
     "email": "jiantingman@foxmail.com",
     "github": "mysterywolf"
   },

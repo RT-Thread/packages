@@ -1,0 +1,50 @@
+
+# Kconfig file for package rt_vsnprintf_full
+menuconfig PKG_USING_RT_VSNPRINTF_FULL
+    bool "rt_vsnprintf_full: fully functional version of rt_vsnprintf"
+    default n
+
+if PKG_USING_RT_VSNPRINTF_FULL
+
+    config PKG_RT_VSNPRINTF_FULL_PATH
+        string
+        default "/packages/system/enhanced-kservice/rt_vsnprintf_full"
+
+    if RT_VER_NUM >= 0x40100
+        config RT_VSNPRINTF_FULL_REPLACING_SPRINTF
+            bool "Enable to take over 'sprintf'"
+            default n
+
+        config RT_VSNPRINTF_FULL_REPLACING_SNPRINTF
+            bool "Enable to take over 'snprintf'"
+            default n
+
+        config RT_VSNPRINTF_FULL_REPLACING_PRINTF
+            bool "Enable to take over 'printf'"
+            default n
+
+        config RT_VSNPRINTF_FULL_REPLACING_VSPRINTF
+            bool "Enable to take over 'vsprintf'"
+            default n
+
+        config RT_VSNPRINTF_FULL_REPLACING_VSNPRINTF
+            bool "Enable to take over 'vsnprintf'"
+            default n
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_RT_VSNPRINTF_FULL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RT_VSNPRINTF_FULL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RT_VSNPRINTF_FULL_VER
+       string
+       default "latest"    if PKG_USING_RT_VSNPRINTF_FULL_LATEST_VERSION
+
+endif
+

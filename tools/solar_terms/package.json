@@ -1,8 +1,8 @@
 {
   "name": "solar_terms",
   "description": "A tool package for judging the relationship between 24 solar terms according to the date.",
-  "description_zh": "是一个根据公历日期判断与二十四节气关系的工具软件包。",  
-  "enable": "PKG_USING_SOLAR_TERMS", 
+  "description_zh": "是一个根据公历日期判断与二十四节气关系的工具软件包。",
+  "enable": "PKG_USING_SOLAR_TERMS",
   "keywords": [
     "solar_terms"
   ],

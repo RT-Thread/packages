@@ -1,8 +1,8 @@
 {
   "name": "logmgr",
   "description": "logmgr: A log management system for rt-thread",
-  "description_zh": "logmgr: 日志管理系统功能支持",  
-  "enable": "PKG_USING_LOGMGR", 
+  "description_zh": "logmgr: 日志管理系统功能支持",
+  "enable": "PKG_USING_LOGMGR",
   "keywords": [
     "logmgr"
   ],

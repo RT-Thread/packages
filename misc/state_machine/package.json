@@ -1,7 +1,7 @@
 {
   "name": "state_machine",
   "description": "A feature-rich, yet simple finite state machine (FSM) implementation in C.",
-  "description_zh": "一个用C语言实现功能丰富但简单的有限状态机（FSM）。",  
+  "description_zh": "一个用C语言实现功能丰富但简单的有限状态机（FSM）。",
   "enable": "PKG_USING_STATE_MACHINE",
   "keywords": [
     "state_machine"

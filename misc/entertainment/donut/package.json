@@ -1,8 +1,8 @@
 {
   "name": "donut",
   "description": "a 3D spinning donut",
-  "description_zh": "使用字符渲染的3D旋转甜甜圈",  
-  "enable": "PKG_USING_DONUT", 
+  "description_zh": "使用字符渲染的3D旋转甜甜圈",
+  "enable": "PKG_USING_DONUT",
   "keywords": [
     "donut",
     "entertainment",
@@ -10,7 +10,7 @@
   ],
   "category": "misc",
   "author": {
-    "name": "mysterywolf",
+    "name": "Meco Man",
     "email": "jiantingman@foxmail.com",
     "github": "mysterywolf"
   },

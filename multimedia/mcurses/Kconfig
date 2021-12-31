@@ -1,0 +1,74 @@
+
+# Kconfig file for package mcurses
+menuconfig PKG_USING_MCURSES
+    bool "mcurses: micro ncurses library"
+    default n
+
+if PKG_USING_MCURSES
+
+    config PKG_MCURSES_PATH
+        string
+        default "/packages/multimedia/mcurses"
+
+    config MCURSES_USING_SIMPLE
+        bool "mcurses: simple demo"
+        help
+            mcurses: simple demo
+        default n
+
+    config MCURSES_USING_BOX
+        bool "mcurses: box animation demo"
+        help
+            mcurses: box animation demo
+        default n
+
+    config MCURSES_USING_SCREEN
+        bool "mcurses: screen animation demo"
+        help
+            mcurses: screen animation demo
+        default n
+
+    config MCURSES_USING_TEMPERATURE
+        bool "mcurses: temperature monitor demo"
+        help
+            mcurses: temperature monitor demo
+        default n
+
+    config MCURSES_USING_KEY_TEST
+        bool "mcurses: key input demo"
+        help
+            mcurses: key input demo
+        default n
+
+    config MCURSES_USING_TOWER
+        bool "mcurses: towers of hanoi animation demo"
+        help
+            mcurses: towers of hanoi animation demo
+        default n
+
+    config MCURSES_USING_NUMBER_EDITOR
+        bool "mcurses: number editor demo"
+        help
+            mcurses: number editor demo
+        default n
+
+    config MCURSES_USING_HEX_EDITOR
+        bool "mcurses: hex editor demo"
+        help
+            mcurses: hex editor demo
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_MCURSES_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MCURSES_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MCURSES_VER
+       string
+       default "latest"    if PKG_USING_MCURSES_LATEST_VERSION
+endif

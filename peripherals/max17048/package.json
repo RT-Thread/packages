@@ -1,7 +1,7 @@
 {
   "name": "max17048",
   "description": "MAX17048: Bat monitor",
-  "description_zh": "电池监测芯片",  
+  "description_zh": "电池监测芯片",
   "enable": "PKG_USING_MAX17048",
   "keywords": [
     "max17048"

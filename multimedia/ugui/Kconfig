@@ -1,0 +1,28 @@
+
+# Kconfig file for package ugui
+menuconfig PKG_USING_UGUI
+    bool "uGUI:Open source graphics library ugui ported to rtthread."
+    default n
+
+if PKG_USING_UGUI
+
+    config PKG_UGUI_PATH
+        string
+        default "/packages/multimedia/ugui"
+
+    choice
+        prompt "Version"
+        default PKG_USING_UGUI_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UGUI_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_UGUI_VER
+       string
+       default "latest"    if PKG_USING_UGUI_LATEST_VERSION
+
+endif
+

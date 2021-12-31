@@ -2,14 +2,14 @@
   "name": "cal",
   "description": "a terminal calendar",
   "description_zh": "终端公历日历",
-  "enable": "PKG_USING_CAL", 
+  "enable": "PKG_USING_CAL",
   "keywords": [
     "cal",
     "calendar"
   ],
   "category": "misc",
   "author": {
-    "name": "mysterywolf",
+    "name": "Meco Man",
     "email": "jiantingman@foxmail.com",
     "github": "mysterywolf"
   },

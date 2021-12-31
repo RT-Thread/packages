@@ -1,8 +1,8 @@
 {
   "name": "bs8116a",
   "description": "Touch key of HOLTEK BS8116A-3.",
-  "description_zh": "合泰的bs8116a-3的触摸按键芯片",  
-  "enable": "PKG_USING_BS8116A", 
+  "description_zh": "合泰的bs8116a-3的触摸按键芯片",
+  "enable": "PKG_USING_BS8116A",
   "keywords": [
     "bs8116a"
   ],

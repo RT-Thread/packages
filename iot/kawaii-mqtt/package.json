@@ -2,7 +2,7 @@
   "name": "kawaii-mqtt",
   "description": "a kawaii mqtt client based on the socket API, has a very simple api interface, support QoS2、mbedtls.",
   "description_zh": "一个基于socket API之上的跨平台MQTT客户端，拥有非常简洁的API接口，以极少的资源实现QOS2的服务质量，并且无缝衔接了mbedtls加密库。",
-  "enable": "PKG_USING_KAWAII_MQTT", 
+  "enable": "PKG_USING_KAWAII_MQTT",
   "keywords": [
     "mqttclient",
     "mqtt",

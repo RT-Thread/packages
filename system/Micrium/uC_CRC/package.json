@@ -1,15 +1,15 @@
 {
   "name": "uC_CRC",
   "description": "uC/CRC for RT-Thread",
-  "description_zh": "uC/CRC for RT-Thread",  
-  "enable": "PKG_USING_UC_CRC", 
+  "description_zh": "uC/CRC for RT-Thread",
+  "enable": "PKG_USING_UC_CRC",
   "keywords": [
     "uC-CRC",
     "uC/CRC"
   ],
   "category": "system",
   "author": {
-    "name": "mysterywolf",
+    "name": "Meco Man",
     "email": "jiantingman@foxmail.com",
     "github": "mysterywolf"
   },

@@ -1,7 +1,7 @@
 {
   "name": "wavplayer",
   "description": " Minimal music player for wav file play and record",
-  "description_zh": "简洁的wav格式的音乐播放器，提供播放和录音功能",  
+  "description_zh": "简洁的wav格式的音乐播放器，提供播放和录音功能",
   "enable": "PKG_USING_WAVPLAYER",
   "keywords": [
     "wavplayer"

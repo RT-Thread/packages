@@ -22,7 +22,7 @@ if PKG_USING_DEVMEM
         config PKG_USING_DEVMEM_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_DEVMEM_VER
        string
        default "v1.0.0"    if PKG_USING_DEVMEM_V100

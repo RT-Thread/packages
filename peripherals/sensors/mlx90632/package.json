@@ -1,8 +1,8 @@
 {
   "name": "mlx90632",
   "description": "mlx90632 software package.",
-  "description_zh": "mlx90632 软件包",  
-  "enable": "PKG_USING_MLX90632", 
+  "description_zh": "mlx90632 软件包",
+  "enable": "PKG_USING_MLX90632",
   "keywords": [
     "mlx90632"
   ],

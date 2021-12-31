@@ -1,7 +1,7 @@
 {
   "name": "wk2124",
   "description": "wk2124(spi to uart) driver library.",
-  "description_zh": "wk2124 spi转四串口芯片的驱动库。",  
+  "description_zh": "wk2124 spi转四串口芯片的驱动库。",
   "enable": "PKG_USING_WK2124",
   "keywords": [
     "wk2124"

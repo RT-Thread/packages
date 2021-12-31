@@ -57,7 +57,7 @@ menu "Host Stack Configuration"
     default 8
     help
         Set Host Stack thread priority.
-        
+
     endif
 endmenu
 
@@ -68,7 +68,7 @@ menu "Controller Configuration"
     default y
     help
         Enable support for nordic controller implementations.
-            
+
     if PKG_NIMBLE_CTLR
 
     config PKG_NIMBLE_CTLR_THREAD_STACK_SIZE
@@ -83,7 +83,7 @@ menu "Controller Configuration"
     help
         Set Controller thread priority.
 
-    choice    
+    choice
     prompt "Bluetooth device support"
     default PKG_NIMBLE_BSP_NRF52
     help
@@ -94,10 +94,10 @@ menu "Controller Configuration"
 
     config PKG_NIMBLE_BSP_NRF52
     bool "NRF52xxx"
-    
+
     config PKG_NIMBLE_BSP_NRF52840
     bool "NRF52840"
-    
+
     endchoice
 
     endif
@@ -115,7 +115,7 @@ menu "Bluetooth Mesh support"
         that have been enabled in the stack, such as GATT support.
 
     if PKG_NIMBLE_MESH
-    
+
     config PKG_NIMBLE_MESH_DEVICE_NAME
     string "BLE Mesh device/node name"
     default "nimble-node"
@@ -134,7 +134,7 @@ menu "Bluetooth Mesh support"
     help
         Set Mesh Advertising thread priority.
 
-    config PKG_NIMBLE_MESH_CFG_CLI 
+    config PKG_NIMBLE_MESH_CFG_CLI
     bool "Support for Configuration Client Model"
     help
       Enable support for the configuration client model.
@@ -156,24 +156,24 @@ choice
     default NIMBLE_DEBUG_LEVEL_I
     help
         select the NIMBLE log level
-    
+
     config NIMBLE_DEBUG_LEVEL_O
         bool "OFF"
 
     config NIMBLE_DEBUG_LEVEL_E
         bool "ERROR"
-    
+
     config NIMBLE_DEBUG_LEVEL_W
         bool "WARING"
-    
+
     config NIMBLE_DEBUG_LEVEL_I
         bool "INFO"
-        
+
     config NIMBLE_DEBUG_LEVEL_D
         bool "DEBUG"
 
 endchoice
-    
+
 config NIMBLE_DEBUG_LEVEL
     # Virtual/hidden option
     int
@@ -189,10 +189,10 @@ choice
     default PKG_NIMBLE_SAMPLE_DISABLE
     help
         select the NimBLE samples
-    
+
     config PKG_NIMBLE_SAMPLE_DISABLE
     bool "Not enable sample"
-    
+
     config PKG_NIMBLE_SAMPLE_PER_HR
     bool "BLE peripheral heartrate sensor"
     select NIMBT_ROLE_PERIPHERAL
@@ -216,10 +216,10 @@ choice
     config PKG_NIMBLE_SAMPLE_BEACON
     bool "BLE beacon sample"
     select NIMBT_ROLE_BROADCASTER
-   
+
     config PKG_NIMBLE_SAMPLE_EXT_ADVERTISER
     bool "BLE external advertiser sample"
-        
+
     config PKG_NIMBLE_SAMPLE_BLEMESH
     bool "BLE Mesh sample"
     select PKG_NIMBLE_MESH
@@ -245,7 +245,7 @@ config PKG_NIMBLE_MULTI_ADV_INSTANCES
     default 0
     depends on PKG_NIMBLE_ROLE_BROADCASTER
     help
-        This is the number of multi-advertising instances. This is NOT 
+        This is the number of multi-advertising instances. This is NOT
         the total number of advertising instances. The total number of
         advertising instances is this number plus 1.
 
@@ -267,7 +267,7 @@ config PKG_NIMBLE_EXT_ADV_MAX_SIZE
 
     choice
         prompt "Version"
-        default PKG_USING_NIMBLE_LATEST_VERSION
+        default PKG_USING_NIMBLE_V100
         help
             Select the package version
 
@@ -277,7 +277,7 @@ config PKG_NIMBLE_EXT_ADV_MAX_SIZE
         config PKG_USING_NIMBLE_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_NIMBLE_VER
        string
        default "v1.0.0"    if PKG_USING_NIMBLE_V100

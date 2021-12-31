@@ -4,11 +4,11 @@ menuconfig PKG_USING_DIGITALCTRL
     bool "DigitalCtrl: Digital closed-loop control algorithm library"
     default n
     help
-        DigitalCtrl is a digital control algorithm library designed to 
-        simplify the programming of digital closed-loop controllers 
-        based on microcontrollers, DSPs, and processors, and to provide 
-        closed-loop controller algorithms with optimized performance and 
-        space optimization. 
+        DigitalCtrl is a digital control algorithm library designed to
+        simplify the programming of digital closed-loop controllers
+        based on microcontrollers, DSPs, and processors, and to provide
+        closed-loop controller algorithms with optimized performance and
+        space optimization.
 
 if PKG_USING_DIGITALCTRL
 

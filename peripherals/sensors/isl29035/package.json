@@ -1,0 +1,29 @@
+{
+  "name": "isl29035",
+  "description": "Driver library for Renesas Ambient light sensor ISL29035",
+  "description_zh": "Renesas 环境光线传感器 isl29035 的驱动库",
+  "enable": "PKG_USING_ISL29035",
+  "keywords": [
+    "isl29035",
+    "sensor",
+    "rensas"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Sherman",
+    "email": "shaopengyu@rt-thread.com",
+    "github": "Sherman"
+  },
+  "license": "RENESAS SOFTWARE LICENSE TERMS",
+  "repository": "https://github.com/ShermanShao/isl29035",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/ShermanShao/isl29035.git",
+      "filename": "isl29035.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

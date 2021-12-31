@@ -1,8 +1,8 @@
 {
   "name": "nrfx",
   "description": "Standalone set of drivers for peripherals present in Nordic Semiconductor's SoCs.",
-  "description_zh": "Nordic SOC的独立外设驱动库",  
-  "enable": "PKG_USING_NRFX", 
+  "description_zh": "Nordic SOC的独立外设驱动库",
+  "enable": "PKG_USING_NRFX",
   "keywords": [
     "nrfx"
   ],

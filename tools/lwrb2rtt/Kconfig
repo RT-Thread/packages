@@ -26,7 +26,7 @@ if PKG_USING_LWRB2RTT
         config PKG_USING_LWRB2RTT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LWRB2RTT_VER
        string
        default "v1.0.0"    if PKG_USING_LWRB2RTT_V100

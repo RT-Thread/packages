@@ -9,52 +9,52 @@ menuconfig PKG_USING_NRF5X_SDK
 
 if PKG_USING_NRF5X_SDK
     config NRFX_RTC_ENABLED
-    int 
+    int
     default 1
     config NRFX_RTC1_ENABLED
-    int 
+    int
     default 1
     config NRF_CLOCK_ENABLED
-    int 
+    int
     default 1
     config NRF_SDH_BLE_ENABLED
-    int 
+    int
     default 1
     config NRF_SDH_ENABLED
-    int 
+    int
     default 1
     config NRF_SDH_SOC_ENABLED
-    int 
+    int
     default 1
     config NRF_SDH_BLE_PERIPHERAL_LINK_COUNT
-    int 
+    int
     default 1
     config BLE_ADVERTISING_ENABLED
-    int 
+    int
     default 1
     config NRF_BLE_QWR_ENABLED
-    int 
+    int
     default 1
     config NRF_SDH_BLE_VS_UUID_COUNT
-    int 
+    int
     default 1
     config NRF_BLE_CONN_PARAMS_ENABLED
-    int 
+    int
     default 1
     config NRF_BLE_CONN_PARAMS_MAX_SLAVE_LATENCY_DEVIATION
-    int 
+    int
     default 499
     config NRF_BLE_CONN_PARAMS_MAX_SUPERVISION_TIMEOUT_DEVIATION
-    int 
+    int
     default 65535
     config NRF_BLE_GATT_ENABLED
-    int 
+    int
     default 1
 
     choice
         prompt "sample(softdevice)"
         default SD_BLE_APP_BEACON
-        
+
         config SD_BLE_APP_BEACON
         bool "ble_app_beacon"
 
@@ -62,34 +62,34 @@ if PKG_USING_NRF5X_SDK
             bool "ble_app_blinky"
             if SD_BLE_APP_BLINKY
                 config BLE_LBS_ENABLED
-                    int 
+                    int
                     default 1
                 config BLE_APP_BLINKY_ADV_LED
                     int "pin number of advertising indicator led"
                     range 0 47
-                    default 16  
+                    default 16
                 config BLE_APP_BLINKY_CON_LED
                     int "pin number of connected indicator led"
                     range 0 47
-                    default 14  
+                    default 14
                 config BLE_APP_BLINKY_TOG_LED
                     int "pin number of toggled led"
                     range 0 47
-                    default 15    
+                    default 15
                 config BLE_APP_BLINKY_TRI_BUTTON
                     int "pin number of trigger button"
                     range 0 47
-                    default 11       
+                    default 11
             endif
 
         config SD_BLE_APP_UART
         bool "ble_app_uart"
         if SD_BLE_APP_UART
             config BLE_NUS_ENABLED
-            int 
+            int
             default 1
             config NRF_SDH_BLE_GATT_MAX_MTU_SIZE
-            int 
+            int
             default 247
         endif
 
@@ -97,38 +97,38 @@ if PKG_USING_NRF5X_SDK
         bool "ble_app_hrs"
         if SD_BLE_APP_HRS
             config BLE_HRS_ENABLED
-            int 
+            int
             default 1
             config NRF_SDH_BLE_GATT_MAX_MTU_SIZE
-            int 
+            int
             default 247
             config BLE_DIS_ENABLED
-            int 
+            int
             default 1
             config BLE_BAS_ENABLED
-            int 
+            int
             default 1
         endif
 
         config SD_BLE_APP_HIDS_MOUSE
         bool "ble_app_hids_mouse"
-        
+
         config SD_BLE_APP_BAS
             bool "ble_app_bas"
             if SD_BLE_APP_BAS
                 config BLE_BAS_ENABLED
-                    int 
+                    int
                     default 1
                 config BLE_APP_BAS_ADC_CHANNEL_NUM
                     int "channel number of adc"
                     range 0 7
-                    default 0  
+                    default 0
                 config BLE_APP_BAS_ADC_INPUT_PIN
                     int "the x of adc AINx"
                     range 0 7
                     default 1
             endif
-        
+
     endchoice
 
     config PKG_NRF5X_SDK_PATH
@@ -143,17 +143,17 @@ if PKG_USING_NRF5X_SDK
 
         config PKG_USING_NRF5X_SDK_V1300
             bool "v13.0.0"
-            
+
         config PKG_USING_NRF5X_SDK_V1600
             bool "v16.0.0"
-            
+
         config PKG_USING_NRF5X_SDK_V1610
-            bool "v16.1.0" 
-            
+            bool "v16.1.0"
+
         config PKG_USING_NRF5X_SDK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_NRF5X_SDK_VER
        string
        default "v13.0.0"    if PKG_USING_NRF5X_SDK_V1300

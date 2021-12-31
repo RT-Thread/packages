@@ -27,7 +27,7 @@ if PKG_USING_ANV_TESTSUIT
         config PKG_USING_ANV_TESTSUIT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ANV_TESTSUIT_VER
        string
        default "latest"    if PKG_USING_ANV_TESTSUIT_LATEST_VERSION

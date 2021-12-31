@@ -1,0 +1,30 @@
+{
+  "name": "termbox",
+  "description": "library for writing text-based user interfaces",
+  "description_zh": "轻量TUI图形库",
+  "enable": "PKG_USING_TERMBOX",
+  "keywords": [
+    "ncurses",
+    "curses",
+    "terminal",
+    "termbox",
+    "tui"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "Meco Man",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/mysterywolf/termbox",
+  "homepage": "https://github.com/mysterywolf/termbox#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/termbox.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ if PKG_USING_UPACKER
         config PKG_USING_UPACKER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_UPACKER_VER
        string
        default "latest"    if PKG_USING_UPACKER_LATEST_VERSION

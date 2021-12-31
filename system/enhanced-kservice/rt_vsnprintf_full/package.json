@@ -1,0 +1,28 @@
+{
+  "name": "rt_vsnprintf_full",
+  "description": "fully functional version of rt_vsnprintf",
+  "description_zh": "rt_vsnprintf全功能版本",
+  "enable": "PKG_USING_RT_VSNPRINTF_FULL",
+  "keywords": [
+    "rt_vsnprintf_full",
+    "vsnrpintf",
+    "printf"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Meco Man",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/mysterywolf/rt_vsnprintf_full",
+  "homepage": "https://github.com/mysterywolf/rt_vsnprintf_full#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/rt_vsnprintf_full.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

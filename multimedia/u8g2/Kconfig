@@ -1,0 +1,9 @@
+menu "u8g2: a monochrome graphic library"
+
+if RT_VER_NUM >= 0x40003
+source "$PKGS_DIR/packages/multimedia/u8g2/u8g2-official/Kconfig"
+endif
+
+source "$PKGS_DIR/packages/multimedia/u8g2/u8g2/Kconfig"
+
+endmenu

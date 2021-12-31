@@ -24,12 +24,12 @@ if PKG_USING_AZURE
 
         config PKG_USING_AZURE_HTTP_PROTOCOL
             bool "Using HTTP Protocol"
-    endchoice     
+    endchoice
 
     config PKG_USING_AZURE_TELEMTRY_EXAMPLE
         bool "Enable Azure iothub telemetry example"
         default n
-        
+
     config PKG_USING_AZURE_C2D_EXAMPLE
         bool "Enable Azure iothub cloud to device example"
         default n

@@ -1,0 +1,28 @@
+{
+  "name": "ugui",
+  "description": "uGUI:Open source graphics library ugui ported to rtthread.",
+  "description_zh": "开源图形库ugui移植到rtthread。",
+  "enable": "PKG_USING_UGUI",
+  "keywords": [
+    "ugui"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "xidongxu",
+    "email": "xi_dongxu@126.com",
+    "github": "xidongxu"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/xidongxu/ugui.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/xidongxu/ugui.git",
+      "filename": "ugui-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

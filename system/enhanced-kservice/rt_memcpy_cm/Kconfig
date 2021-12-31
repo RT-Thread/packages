@@ -1,0 +1,28 @@
+
+# Kconfig file for package rt_memcpy_cm
+menuconfig PKG_USING_RT_MEMCPY_CM
+    bool "rt_memcpy_cm: Cortex-M kernel assembly accelerated version of rt_memcpy function"
+    default n
+
+if PKG_USING_RT_MEMCPY_CM
+
+    config PKG_RT_MEMCPY_CM_PATH
+        string
+        default "/packages/system/enhanced-kservice/rt_memcpy_cm"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RT_MEMCPY_CM_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RT_MEMCPY_CM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RT_MEMCPY_CM_VER
+       string
+       default "latest"    if PKG_USING_RT_MEMCPY_CM_LATEST_VERSION
+
+endif
+

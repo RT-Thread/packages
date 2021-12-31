@@ -1,8 +1,8 @@
 {
   "name": "MemoryPerf",
   "description": "Memory Performance Testing for ARM CPU.",
-  "description_zh": "ARM CPU 内存性能测试。",  
-  "enable": "PKG_USING_MEMORYPERF", 
+  "description_zh": "ARM CPU 内存性能测试。",
+  "enable": "PKG_USING_MEMORYPERF",
   "keywords": [
     "MemoryPerf"
   ],
