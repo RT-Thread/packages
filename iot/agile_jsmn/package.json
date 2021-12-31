@@ -22,6 +22,11 @@
       "filename": "agile_jsmn-1.0.0.zip"
     },
     {
+      "version": "v1.0.1",
+      "URL": "https://github.com/loogg/agile_jsmn/archive/refs/tags/v1.0.1.zip",
+      "filename": "agile_jsmn-1.0.1.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_jsmn.git",
       "filename": "agile_jsmn.zip",
