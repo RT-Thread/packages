@@ -10,19 +10,9 @@ if PKG_USING_DONUT
         string
         default "/packages/misc/entertainment/donut"
 
-    choice
-        prompt "Version"
-        default PKG_USING_DONUT_LATEST_VERSION
-        help
-            Select the package version
-
-        config PKG_USING_DONUT_LATEST_VERSION
-            bool "latest"
-    endchoice
-
     config PKG_DONUT_VER
        string
-       default "latest"    if PKG_USING_DONUT_LATEST_VERSION
+       default "latest"
 
 endif
 

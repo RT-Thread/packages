@@ -2,7 +2,7 @@
 # Kconfig file for package vt100
 menuconfig PKG_USING_VT100
     bool "vt100: iridescent drawing library on MSH"
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     default n
 
 if PKG_USING_VT100

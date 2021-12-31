@@ -10,19 +10,9 @@ if PKG_USING_COWSAY
         string
         default "/packages/misc/entertainment/cowsay"
 
-    choice
-        prompt "Version"
-        default PKG_USING_COWSAY_LATEST_VERSION
-        help
-            Select the package version
-
-        config PKG_USING_COWSAY_LATEST_VERSION
-            bool "latest"
-    endchoice
-
     config PKG_COWSAY_VER
        string
-       default "latest"    if PKG_USING_COWSAY_LATEST_VERSION
+       default "latest"
 
 endif
 
