@@ -1,0 +1,16 @@
+# Kconfig file for package wcwidth
+menuconfig PKG_USING_POSIX_WCWIDTH
+    bool "Enable wcwidth (IEEE Std 1003.1-2001)"
+    default n
+
+if PKG_USING_POSIX_WCWIDTH
+
+    config PKG_POSIX_WCWIDTH_PATH
+        string
+        default "/packages/system/POSIX/wcwidth"
+
+    config PKG_POSIX_WCWIDTH_VER
+       string
+       default "latest"
+
+endif
