@@ -12,19 +12,9 @@ if PKG_USING_SNAKE
         string
         default "/packages/misc/entertainment/snake"
 
-    choice
-        prompt "Version"
-        default PKG_USING_SNAKE_LATEST_VERSION
-        help
-            Select the package version
-
-        config PKG_USING_SNAKE_LATEST_VERSION
-            bool "latest"
-    endchoice
-
     config PKG_SNAKE_VER
        string
-       default "latest"    if PKG_USING_SNAKE_LATEST_VERSION
+       default "latest"
 
 endif
 

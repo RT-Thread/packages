@@ -11,19 +11,9 @@ if PKG_USING_SL
         string
         default "/packages/misc/entertainment/sl"
 
-    choice
-        prompt "Version"
-        default PKG_USING_SL_LATEST_VERSION
-        help
-            Select the package version
-
-        config PKG_USING_SL_LATEST_VERSION
-            bool "latest"
-    endchoice
-
     config PKG_SL_VER
        string
-       default "latest"    if PKG_USING_SL_LATEST_VERSION
+       default "latest"
 
 endif
 

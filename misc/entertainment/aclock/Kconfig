@@ -10,19 +10,9 @@ if PKG_USING_ACLOCK
         string
         default "/packages/misc/entertainment/aclock"
 
-    choice
-        prompt "Version"
-        default PKG_USING_ACLOCK_LATEST_VERSION
-        help
-            Select the package version
-
-        config PKG_USING_ACLOCK_LATEST_VERSION
-            bool "latest"
-    endchoice
-
     config PKG_ACLOCK_VER
        string
-       default "latest"    if PKG_USING_ACLOCK_LATEST_VERSION
+       default "latest"
 
 endif
 
