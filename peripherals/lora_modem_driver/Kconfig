@@ -1,0 +1,207 @@
+
+# Kconfig file for package lora_modem_driver
+menuconfig PKG_USING_LORA_MODEM_DRIVER
+    bool "lora_modem_driver is a serial driver of lora\\lorawan modem."
+    default n
+
+if PKG_USING_LORA_MODEM_DRIVER 
+
+    config PKG_LORA_MODEM_DRIVER_PATH
+        string
+        default "/packages/peripherals/lora_modem_driver"
+
+    config LORA_MODEM_UART_DEVICE
+        string "Setup LoRa Modem Uart Device Name (eg:uart1,Define BSP_USING_UARTx in [Target Platform]\\Board\\Kconfig)"
+        default uart1
+        help
+           Setup LoRa LoRa Modem Uart Device Name,eg:uart1,Please define BSP_USING_UARTx in the [Target Platform]\\Board\\Kconfig
+
+    menu "Select Supported LoRaWAN Module"
+        menuconfig LORA_MODEM_DRIVER_USING_LORAWAN_MODULE_LSD4WN_2L_2N_2I_SERIALS
+            bool "LSD4WAN-2L\2I\2Nxx Serials [CN470\\CLAA\\ICA\\EU868\\AS923\\AU915..]"
+            default n
+
+            if LORA_MODEM_DRIVER_USING_LORAWAN_MODULE_LSD4WN_2L_2N_2I_SERIALS
+
+                config LORA_MODEM_GPIO_SETUP
+                    bool "Enable LoRa MODEM GPIO Setup"
+                    default n
+
+                    if LORA_MODEM_GPIO_SETUP
+                        menu "Select Supported Target Borad"
+                            menuconfig LORA_MODEM_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002_AND_LRS101
+                                bool "LSD4RF-TEST2002 [STM32L476VG] and LRS101 M3"
+                                if LORA_MODEM_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002_AND_LRS101 && !LORA_MODEM_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A
+
+                                    config LORA_MODEM_UART_SETUP
+                                        bool
+                                        select BSP_USING_UART
+                                        select BSP_USING_UART1
+                                        default y
+
+                                    config LORA_MODEM_GPIO_SETUP_BY_PIN_NAME
+                                        bool "Select LoRa Modem GPIO by Pin Name"
+                                        default n
+                                    config LORA_MODEM_GPIO_SETUP_BY_PIN_NUMBER
+                                        bool "Select LoRa Modem GPIO by Pin Number"
+                                        default y
+
+                                        if LORA_MODEM_GPIO_SETUP_BY_PIN_NAME && !LORA_MODEM_GPIO_SETUP_BY_PIN_NUMBER
+                                            config LORA_MODEM_WAKE_PIN_NAME
+                                                string "WAKE Pin Name"
+                                                default "PE.14"
+                                            config LORA_MODEM_NRST_PIN_NAME
+                                                string "NRST Pin Name"
+                                                default "PE.13"
+                                            config LORA_MODEM_MODE_PIN_NAME
+                                                string "MODE Pin Name"
+                                                default "PB.11"
+                                            config LORA_MODEM_BUSY_PIN_NAME
+                                                string "BUSY Pin Name"
+                                                default "PB.10"
+                                            config LORA_MODEM_STAT_PIN_NAME
+                                                string "STAT Pin Name"
+                                                default "PE.15"
+                                        endif
+
+                                        if LORA_MODEM_GPIO_SETUP_BY_PIN_NUMBER && !LORA_MODEM_GPIO_SETUP_BY_PIN_NAME
+                                            config LORA_MODEM_WAKE_PIN
+                                                int "WAKE Pin number"
+                                                range 0 127
+                                                default 78
+                                            config LORA_MODEM_NRST_PIN
+                                                int "NRST Pin number"
+                                                range 0 127
+                                                default 77
+                                            config LORA_MODEM_MODE_PIN
+                                                int "MODE Pin number"
+                                                range 0 127
+                                                default 27
+                                             config LORA_MODEM_BUSY_PIN
+                                                int "BUSY Pin number"
+                                                range 0 127
+                                                default 26
+                                             config LORA_MODEM_STAT_PIN
+                                                int "STAT Pin number"
+                                                range 0 127
+                                                default 79
+                                        endif
+                                endif
+
+
+                                menuconfig LORA_MODEM_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A
+                                    bool "APR-Pi [STM32H750XB] and LRS007 RF_A CON3"
+
+                                    if LORA_MODEM_DRIVER_USING_TRAGET_BOARD_ART_PI_AND_LRS007_RF_A && !LORA_MODEM_DRIVER_USING_TRAGET_BOARD_LSD4RF_TEST2002
+
+                                        config LORA_MODEM_UART_SETUP
+                                            bool
+                                            select BSP_USING_UART
+                                            select BSP_USING_UART1
+                                            default y
+
+                                            config LORA_MODEM_GPIO_SETUP_BY_PIN_NAME
+                                                bool "Select LoRa Chip GPIO by Pin Name"
+                                                default n
+                                            config LORA_MODEM_GPIO_SETUP_BY_PIN_NUMBER
+                                                bool "Select LoRa Chip GPIO by Pin Number"
+                                                default y
+
+                                                if LORA_MODEM_GPIO_SETUP_BY_PIN_NAME && !LORA_MODEM_GPIO_SETUP_BY_PIN_NUMBER
+                                                    config LORA_MODEM_WAKE_PIN_NAME
+                                                        string "WAKE Pin Name"
+                                                        default "PH.14"
+                                                    config LORA_MODEM_NRST_PIN_NAME
+                                                        string "NRST Pin Name"
+                                                        default "PA.15"
+                                                    config LORA_MODEM_MODE_PIN_NAME
+                                                        string "MODE Pin Name"
+                                                        default "PA.8"
+                                                    config LORA_MODEM_STAT_PIN_NAME
+                                                        string "STAT Pin Name"
+                                                        default "PH.13"
+                                                    config LORA_MODEM_BUSY_PIN_NAME
+                                                        string "BUSY Pin Name"
+                                                        default "PH.15"
+                                                endif
+
+                                                if LORA_MODEM_GPIO_SETUP_BY_PIN_NUMBER && !LORA_MODEM_GPIO_SETUP_BY_PIN_NAME
+                                                    config LORA_MODEM_WAKE_PIN
+                                                        int "WAKE Pin number"
+                                                        range 0 175
+                                                        default 126
+                                                    config LORA_MODEM_NRST_PIN
+                                                        int "NRST Pin number"
+                                                        range 0 175
+                                                        default 15
+                                                    config LORA_MODEM_MODE_PIN
+                                                        int "MODE Pin number"
+                                                        range 0 175
+                                                        default 8
+                                                     config LORA_MODEM_STAT_PIN
+                                                        int "STAT Pin number"
+                                                        range 0 175
+                                                        default 125
+                                                     config LORA_MODEM_BUSY_PIN
+                                                        int "BUSY Pin number"
+                                                        range 0 175
+                                                        default 127
+                                                endif
+                                    endif
+                        endmenu
+                    endif
+            endif
+    endmenu
+
+
+    config LORA_MODEM_DRIVER_USING_LORA_MODEM_DEBUG
+         bool "Enable LoRa Modem Debug"
+         default n
+
+         if LORA_MODEM_DRIVER_USING_LORA_MODEM_DEBUG
+         
+            config LWM_DBG_CORE_CONFIG
+                bool "Enable LoRa Modem Core Debug"
+                default n
+            config LWM_DBG_CORE
+                int
+                default 1 if LWM_DBG_CORE_CONFIG
+
+            config LWM_DBG_DATA_HEX_DUMP_CONFIG
+                bool "Enable LoRa Modem Data Hex Dump Debug"
+                default n
+            config LWM_DBG_DATA_HEX_DUMP
+                int
+                default 1 if LWM_DBG_DATA_HEX_DUMP_CONFIG
+        endif
+
+    config LORA_MODEM_DRIVER_USING_SAMPLES
+         bool "Enable LoRa Modem Examples"
+         default n
+         if LORA_MODEM_DRIVER_USING_SAMPLES
+             config LORA_MODEM_DRIVER_USING_SAMPLE_LORAWAN_CLASS_A
+                bool "Use LoRaWAN Class A"
+                default n
+         endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_LORA_MODEM_DRIVER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LORA_MODEM_DRIVER_V050
+            bool "v0.5.0"
+
+        config PKG_USING_LORA_MODEM_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LORA_MODEM_DRIVER_VER
+       string
+       default "v0.5.0"    if PKG_USING_LORA_MODEM_DRIVER_V050
+       default "latest"    if PKG_USING_LORA_MODEM_DRIVER_LATEST_VERSION
+
+
+endif
+

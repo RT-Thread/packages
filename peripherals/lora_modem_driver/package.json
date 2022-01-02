@@ -1,0 +1,34 @@
+{
+  "name": "lora_modem_driver",
+  "description": "lora_modem_driver is a serial driver of lora//lorawan modem.",
+  "description_zh": "lora_modem_driver是lora//lorawan modem的串口驱动。",  
+  "enable": "PKG_USING_LORA_MODEM_DRIVER", 
+  "keywords": [
+    "lora_modem_driver"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "forest-rain",
+    "email": "296894494@qq.com",
+    "github": "forest-rain"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Forest-Rain/lora-modem-driver",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.5.0",
+      "URL": "https://github.com/Forest-Rain/lora-modem-driver/archive/v0.5.0.zip",
+      "filename": "lora-modem-driver-0.5.0.zip",
+      "VER_SHA": "7e2fc521164ebb9dce1ec3739da2815ed9d8cdbf"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Forest-Rain/lora-modem-driver.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}
