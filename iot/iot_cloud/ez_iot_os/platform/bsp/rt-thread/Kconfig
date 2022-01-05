@@ -1,0 +1,27 @@
+config EZIOT_OS_KV_ENABLE
+    bool "Enable ez-os interface kv"
+    default y
+
+config EZIOT_OS_LIBC_ENABLE
+    bool "Enable ez-os interface libc"
+    default y
+
+config EZIOT_OS_MEM_ENABLE
+    bool "Enable ez-os interface memory"
+    default y
+
+config EZIOT_OS_SOCKET_ENABLE
+    bool "Enable ez-os interface socket"
+    default y
+
+config EZIOT_OS_SYSTEM_ENABLE
+    bool "Enable ez-os interface system"
+    default y
+
+config EZIOT_OS_THREAD_ENABLE
+    bool "Enable ez-os interface thread"
+    default y
+
+config EZIOT_OS_TIME_ENABLE
+    bool "Enable ez-os interface time"
+    default y

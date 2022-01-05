@@ -1,0 +1,63 @@
+menuconfig EZIOT_CORE_ENABLE
+    bool "Enable ez-iot core"
+    default y
+
+config EZIOT_CORE_MULTI_TASK
+    bool "Work in multi task"
+    default y
+    depends on EZIOT_CORE_ENABLE
+
+config EZIOT_CORE_ACEESS_TASK_STACK_SIZE
+    int "Stack size of access task"
+    default 16384
+    depends on EZIOT_CORE_ENABLE
+    help
+            Stack size for access task, the task is used for device authentication and device access 
+
+config EZIOT_CORE_ACEESS_TASK_PRIORITY
+    int "priority of access task"
+    range 0 255
+    default 5
+    depends on EZIOT_CORE_ENABLE
+
+config EZIOT_CORE_USER_TASK_STACK_SIZE
+    int "Stack size of user task"
+    default 16384
+    depends on EZIOT_CORE_MULTI_TASK && EZIOT_CORE_ENABLE
+    help
+            Stack size for user task, the task is used for cloud message distribution to application.
+
+config EZIOT_CORE_USER_TASK_PRIORITY
+    int "priority of user task"
+    range 0 255
+    default 5
+    depends on EZIOT_CORE_MULTI_TASK && EZIOT_CORE_ENABLE
+
+config EZIOT_CORE_MESSAGE_SIZE_MAX
+    int "Maximum size of business message"
+    range 256 16384
+    default 16384
+    depends on EZIOT_CORE_ENABLE
+
+config EZIOT_CORE_MESSAGE_NUMBER_MAX
+    int "Maximum number of business message"
+    range 0 256
+    default 64
+    depends on EZIOT_CORE_ENABLE
+
+config EZIOT_CORE_EXTEND_COUNT
+    int "Maximum number of ezviz protocol v2.0 business modules"
+    range 0 32
+    default 8
+    depends on EZIOT_CORE_ENABLE
+
+config EZIOT_CORE_RISK_CONTROL_CMD_MAX
+    int "Maximum number of risk control commands"
+    range 0 64
+    default 16
+    depends on EZIOT_CORE_ENABLE
+
+config EZIOT_CORE_DEFAULT_PUBLISH_RETRY
+    int "Default number of retries for message publish"
+    default 2
+    depends on EZIOT_CORE_ENABLE

@@ -1,0 +1,3 @@
+menuconfig EZIOT_COMPONENT_CJSON_ENABLE
+    bool "Enable cJSON"
+    default y

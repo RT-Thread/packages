@@ -1,0 +1,54 @@
+menuconfig EZIOT_COMPONENT_FLASHDB_ENABLE
+    bool "Enable FlashDB"
+    default y
+
+config EZIOT_COMPONENT_FLASHDB_USING_KVDB
+    bool "using KVDB feature"
+    default y
+    depends on EZIOT_COMPONENT_FLASHDB_ENABLE
+
+config EZIOT_COMPONENT_FLASHDB_KV_AUTO_UPDATE
+    bool "Auto update KV to latest default when current KVDB version number is changed"
+    default n
+    depends on EZIOT_COMPONENT_FLASHDB_USING_KVDB
+
+config EZIOT_COMPONENT_FLASHDB_USING_TSDB
+    bool "using TSDB (Time series database) feature"
+    default n
+    depends on EZIOT_COMPONENT_FLASHDB_ENABLE
+
+choice EZIOT_COMPONENT_FLASHDB_USING_MODE
+    prompt "Choice which storage mode to use"
+    default EZIOT_COMPONENT_FLASHDB_USING_FILE_LIBC_MODE
+    depends on EZIOT_COMPONENT_FLASHDB_ENABLE
+
+config EZIOT_COMPONENT_FLASHDB_USING_FILE_LIBC_MODE
+    bool "Using file storage mode by LIBC file API, like fopen/fread/fwrte/fclose"
+config EZIOT_COMPONENT_FLASHDB_USING_FILE_POSIX_MODE
+    bool "Using file storage mode by POSIX file API, like open/read/write/close"
+config EZIOT_COMPONENT_FLASHDB_USING_FAL_MODE
+    bool "Using FAL(Flash Abstraction Layer) storage mode"
+endchoice
+
+choice EZIOT_COMPONENT_FLASHDB_WRITE_GRAN
+    prompt "the flash write granularity"
+    default EZIOT_COMPONENT_FLASHDB_WRITE_GRAN_1BIT
+    depends on EZIOT_COMPONENT_FLASHDB_ENABLE && EZIOT_COMPONENT_FLASHDB_USING_FAL_MODE
+
+config EZIOT_COMPONENT_FLASHDB_WRITE_GRAN_1BIT
+    bool "1 Bit"
+config EZIOT_COMPONENT_FLASHDB_WRITE_GRAN_8BIT
+    bool "1 Bit"
+config EZIOT_COMPONENT_FLASHDB_WRITE_GRAN_32BIT
+    bool "Using FAL(Flash Abstraction Layer) storage mode"
+endchoice
+
+config EZIOT_COMPONENT_FLASHDB_BIG_ENDIAN
+    bool "MCU Endian Configuration, default is Little Endian Order"
+    default n
+    depends on EZIOT_COMPONENT_FLASHDB_ENABLE
+
+config EZIOT_COMPONENT_FLASHDB_DEBUG_ENABLE
+    bool "print debug information"
+    default n
+    depends on EZIOT_COMPONENT_FLASHDB_ENABLE

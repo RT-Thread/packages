@@ -1,0 +1,89 @@
+menuconfig EZIOT_COMPONENT_EZLOG_ENABLE
+    bool "Enable ezlog"
+    default y
+
+config EZIOT_COMPONENT_EZLOG_OUTPUT_ENABLE
+    bool "Enable log output"
+    default y
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_ASSERT_ENABLE
+    bool "Enable assert check"
+    default n
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_LINE_BUF_SIZE
+    int "Buffer size for every line's log"
+    range 512 16384
+    default 1024
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_LINE_NUM_MAX_LEN
+    int "Output line number max length"
+    default 5
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_FILTER_TAG_MAX_LEN
+    int "Output filter's tag max length"
+    default 16
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_FILTER_KW_MAX_LEN
+    int "Output filter's keyword max length"
+    default 16
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_FILTER_TAG_LVL_MAX_NUM
+    int "Output filter's tag level max num"
+    range 0 5
+    default 5
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+choice EZIOT_COMPONENT_EZLOG_NEWLINE_SIGN
+    prompt "Output newline sign"
+    default EZIOT_COMPONENT_EZLOG_NEWLINE_SIGN_CRLF
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+    help
+        This option allows configuring the desired line endings in print data
+        when a newline ('\n', LF) appears on stdout.
+        Three options are possible:
+
+        CRLF: '\r\n', whenever LF is encountered, prepend it with CR
+
+        LF: '\n', no modification is applied, stdout is sent as is
+
+        CR: '\r', each occurence of LF is replaced with CR
+
+config EZIOT_COMPONENT_EZLOG_NEWLINE_SIGN_CRLF
+    bool "CRLF"
+config EZIOT_COMPONENT_EZLOG_NEWLINE_SIGN_LF
+    bool "LF"
+config EZIOT_COMPONENT_EZLOG_NEWLINE_SIGN_CR
+    bool "CR"
+endchoice
+
+config EZIOT_COMPONENT_EZLOG_COLOR_ENABLE
+    bool "Enable log color"
+    default y
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_ASYNC_OUTPUT_ENABLE
+    bool "Enable asynchronous output mode"
+    default n
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_ASYNC_LINE_OUTPUT
+    bool "Each asynchronous output's log which must end with newline sign"
+    default y
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE && EZIOT_COMPONENT_EZLOG_ASYNC_OUTPUT_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_ASYNC_OUTPUT_USING_PTHREAD
+    bool "Asynchronous output mode using POSIX pthread implementation"
+    default y
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE && EZIOT_COMPONENT_EZLOG_ASYNC_OUTPUT_ENABLE
+
+config EZIOT_COMPONENT_EZLOG_BUF_OUTPUT_ENABLE
+    bool "Enable buffered output mode"
+    default n
+    depends on EZIOT_COMPONENT_EZLOG_ENABLE

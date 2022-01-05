@@ -1,0 +1,35 @@
+menuconfig EZIOT_SHADOW_ENABLE
+    bool "Enable ez-iot shadow"
+    default n
+
+config EZIOT_SHADOW_TASK_PRIORITY
+    int "priority of shadow core task"
+    range 0 255
+    default 2
+    depends on EZIOT_SHADOW_ENABLE
+
+config EZIOT_SHADOW_STACK_SIZE
+    int "Stack size of shadow core"
+    default 16384
+    depends on EZIOT_SHADOW_ENABLE
+
+config EZIOT_SHADOW_FULL_SYNC_RETRY_MAX
+    int "Maximum Tries of full synchronization"
+    default 3
+    depends on EZIOT_SHADOW_ENABLE
+
+config EZIOT_SHADOW_FULL_SYNC_RETRY_INTERVAL
+    int "Full synchronization interval (seconds)"
+    range 10 60
+    default 30
+    depends on EZIOT_SHADOW_ENABLE
+
+config EZIOT_SHADOW_FORCE_FULL_SYNC_INTERVAL
+    int "Force full synchronization interval time (seconds)"
+    range 3600 86400
+    default 86400
+    depends on EZIOT_SHADOW_ENABLE
+
+    help
+        If the device state does not change for a long time, shadoww will perform a 
+        full synchronization to maintain state consistency. 

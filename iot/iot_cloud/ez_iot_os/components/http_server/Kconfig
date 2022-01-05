@@ -1,0 +1,4 @@
+
+menuconfig EZIOT_COMPONENT_EZHTTPD_ENABLE
+    bool "Enable http_server"
+    default y
