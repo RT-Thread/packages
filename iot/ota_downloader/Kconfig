@@ -27,7 +27,7 @@ if PKG_USING_OTA_DOWNLOADER
     config PKG_USING_YMODEM_OTA
         bool "Enable Ymodem OTA"
         select RT_USING_RYM
-        default n
+        default y
 
     choice
         prompt "Version"
