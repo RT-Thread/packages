@@ -5,9 +5,10 @@
   "enable": "PKG_USING_LUATOS_SOC", 
   "keywords": [
     "LuatOS_SOC",
-    "LuatOS"
+    "LuatOS",
+    "Lua"
   ],
-  "category": "system",
+  "category": "language",
   "author": {
     "name": "Dozingfiretruck",
     "email": "1473454180@qq.com",

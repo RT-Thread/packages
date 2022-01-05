@@ -38,6 +38,5 @@ source "$PKGS_DIR/packages/system/Arm-2D/Kconfig"
 source "$PKGS_DIR/packages/system/mcuboot/Kconfig"
 source "$PKGS_DIR/packages/system/TinyUSB/Kconfig"
 source "$PKGS_DIR/packages/system/usb_stack/Kconfig"
-source "$PKGS_DIR/packages/system/LuatOS_SOC/Kconfig"
 
 endmenu
