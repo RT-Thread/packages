@@ -1,0 +1,82 @@
+config EZIOT_EXAMPLES_ENABLE
+    bool "Enable examples"
+    default n
+
+config EZIOT_EXAMPLES_CLOUD_HOST
+    string "Ezviz cloud server address"
+    default "devcn.eziot.com"
+    depends on EZIOT_EXAMPLES_ENABLE
+
+config EZIOT_EXAMPLES_CLOUD_PORT
+    int "Ezviz cloud server port"
+    default 8666
+    depends on EZIOT_EXAMPLES_ENABLE
+
+config EZIOT_EXAMPLES_SDK_LOGLVL
+    int "The log level for debugging"
+    range -1 5
+    default 4
+    depends on EZIOT_EXAMPLES_ENABLE
+
+choice EZIOT_EXAMPLES_DEV_AUTH_MODE
+    prompt "Device access authentication mode"
+    default EZIOT_EXAMPLES_DEV_AUTH_MODE_LICENCE
+    depends on EZIOT_EXAMPLES_ENABLE
+
+config EZIOT_EXAMPLES_DEV_AUTH_MODE_SAP
+    bool "SAP(Ezviz Production line)"
+config EZIOT_EXAMPLES_DEV_AUTH_MODE_LICENCE
+    bool "Licence"
+endchoice
+
+config EZIOT_EXAMPLES_DEV_TYPE
+    string "Device model"
+    default "4LYV8SK7UKLBOUOVS6HXVX"
+    depends on EZIOT_EXAMPLES_ENABLE && EZIOT_EXAMPLES_DEV_AUTH_MODE_SAP
+
+config EZIOT_EXAMPLES_DEV_SERIAL_NUMBER
+    string "Device serial number"
+    default "Z88889999"
+    depends on EZIOT_EXAMPLES_ENABLE && EZIOT_EXAMPLES_DEV_AUTH_MODE_SAP
+
+config EZIOT_EXAMPLES_DEV_VERIFICATION_CODE
+    string "Device verification code"
+    default "QWERTY"
+    depends on EZIOT_EXAMPLES_ENABLE && EZIOT_EXAMPLES_DEV_AUTH_MODE_SAP
+
+config EZIOT_EXAMPLES_DEV_PRODUCT_KEY
+    string "Product key"
+    default "4LYV8SK7UKLBOUOVS6HXVX"
+    depends on EZIOT_EXAMPLES_ENABLE && EZIOT_EXAMPLES_DEV_AUTH_MODE_LICENCE
+
+config EZIOT_EXAMPLES_DEV_NAME
+    string "Device name"
+    default "A532NO6K0Q2O"
+    depends on EZIOT_EXAMPLES_ENABLE && EZIOT_EXAMPLES_DEV_AUTH_MODE_LICENCE
+
+config EZIOT_EXAMPLES_DEV_LICENSE
+    string "Licence"
+    default "J7Fv5gCsTczVe38aNLe4ev"
+    depends on EZIOT_EXAMPLES_ENABLE && EZIOT_EXAMPLES_DEV_AUTH_MODE_LICENCE
+
+config EZIOT_EXAMPLES_DEV_DISPLAY_NAME
+    string ""
+    default "IOT_UTEST_DEV"
+    depends on EZIOT_EXAMPLES_ENABLE
+
+config EZIOT_EXAMPLES_DEV_FIRMWARE_VERSION
+    string ""
+    default "V1.2.0 build 201212"
+    depends on EZIOT_EXAMPLES_ENABLE
+
+#choice
+#    prompt "Implementation method of kv interface"
+#    default EZIOT_EXAMPLES_KV_USING_KVDB
+#
+#    config EZIOT_EXAMPLES_KV_USING_MEMORY
+#        bool "11111"
+#    config EZIOT_EXAMPLES_KV_USING_FILE
+#        bool "33333"
+#    config EZIOT_EXAMPLES_KV_USING_KVDB
+#        bool "22222"
+#endchoice

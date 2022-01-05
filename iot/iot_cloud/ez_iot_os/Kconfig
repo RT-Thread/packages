@@ -1,0 +1,70 @@
+
+
+menuconfig PKG_USING_EZ_IOT_OS
+    bool "ez_iot_os: Ezviz Cloud IoT SDK for RT-Thread."
+    default n
+
+if PKG_USING_EZ_IOT_OS
+    config PKG_EZ_IOT_OS_PATH
+        string
+        default "/packages/iot/iot_cloud/ez_iot_os"
+
+        menu "ez-iot configuration"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/eziot/ez_iot_core/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/eziot/ez_iot_bm/base/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/eziot/ez_iot_bm/hub/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/eziot/ez_iot_bm/model/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/eziot/ez_iot_bm/ota/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/eziot/ez_iot_bm/shadow/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/eziot/ez_iot_bm/tsl/Kconfig"
+        endmenu
+
+        menu "os/bsp configuration"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/platform/bsp/rt-thread/Kconfig"
+        endmenu
+
+        menu "components configuration"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/cJSON/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/ezconn/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/ezlog/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/ezlist/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/eztimer/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/ezutil/misc/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/ezutil/s2j/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/ezutil/uuid/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/ezxml/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/FlashDB/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/http_server/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/mbedtls/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/mqtt/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/utest/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/components/webclient/Kconfig"
+        endmenu
+
+        menu "unit-test configuration"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/unit_test/Kconfig"
+        endmenu
+
+        menu "examples configuration"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/examples/Kconfig"
+        endmenu
+
+        choice
+            prompt "Version"
+            default PKG_USING_EZ_IOT_OS_V20000
+            help
+                Select the package version
+
+            config PKG_USING_EZ_IOT_OS_V20000
+                bool "v2.0.0"
+
+            config PKG_USING_EZ_IOT_OS_LATEST_VERSION
+                bool "latest"
+        endchoice
+
+        config PKG_EZ_IOT_OS_VER
+        string
+        default "v2.0.0"        if PKG_USING_EZ_IOT_OS_V20000
+        default "latest"        if PKG_USING_EZ_IOT_OS_LATEST_VERSION
+endif
+

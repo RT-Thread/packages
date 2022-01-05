@@ -1,0 +1,1 @@
+source "${EZOS_PATH}/eziot/ez_iot_bm/*/Kconfig"

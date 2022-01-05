@@ -1,0 +1,8 @@
+menuconfig EZIOT_COMPONENT_EZTIMER_ENABLE
+    bool "Enable eztimer"
+    default y
+
+config EZIOT_CONPONENT_TIMER_TASK_STACK_SIZE
+    int "Stack size of timer task"
+    default 4096
+    depends on EZIOT_COMPONENT_EZTIMER_ENABLE

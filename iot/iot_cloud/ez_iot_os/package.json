@@ -1,0 +1,35 @@
+{
+  "name": "ez_iot_os",
+  "description": "Ezviz cloud SDK for RT-Thread",
+  "description_zh": "连接萤石云 IoT 平台的软件包", 
+  "enable": "PKG_USING_EZ_IOT_OS",
+  "keywords": [
+    "ez_iot_os",
+    "ez_iot_sdk"
+  ],
+  "category": "iot/iot_cloud",
+  "author": {
+    "name": "EZVIZ IoT Team",
+    "email": "xurongjun@ezvizlife.com",
+    "github": "Ezviz-OpenBiz"
+  },
+  "license": "Eclipse Public License v1.0",
+  "repository": "https://github.com/Ezviz-OpenBiz/ez_iot_os.git",
+  "icon": "https://resource.eziot.com/group2/M00/00/6D/CtwQF2G7D5OALKwWAAAR72Ki8-E982.png",
+  "homepage": "https://github.com/Ezviz-OpenBiz/ez_iot_os/#readme",
+  "doc": "https://github.com/Ezviz-OpenBiz/ez_iot_os/#readme",
+  "site": [
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/Ezviz-OpenBiz/ez_iot_os/archive/refs/tags/v2.0.0.zip",
+      "filename": "ez-iot-os-2.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Ezviz-OpenBiz/ez_iot_os.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

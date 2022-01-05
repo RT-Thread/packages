@@ -1,0 +1,4 @@
+
+menuconfig EZIOT_COMPONENT_MBEDTLS_ENABLE
+    bool "Enable mbedtls"
+    default y
