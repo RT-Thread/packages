@@ -5,7 +5,11 @@
   "enable": "PKG_USING_EZ_IOT_OS",
   "keywords": [
     "ez_iot_os",
-    "ez_iot_sdk"
+    "ez_iot_sdk",
+    "萤石云",
+    "萤石 IoT",
+    "Ezviz",
+    "Ezviz IoT"
   ],
   "category": "iot/iot_cloud",
   "author": {
