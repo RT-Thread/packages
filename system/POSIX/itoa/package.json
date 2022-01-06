@@ -1,0 +1,29 @@
+{
+  "name": "itoa",
+  "description": "itoa family for RT-Thread POSIX (not standard)",
+  "description_zh": "itoa家族函数（非POSIX标准）",  
+  "enable": "PKG_USING_POSIX_ITOA", 
+  "keywords": [
+    "itoa",
+    "POSIX"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Meco Man",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/mysterywolf/itoa",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/itoa.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

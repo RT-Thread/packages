@@ -2,5 +2,6 @@ menu "POSIX extension functions"
 
 source "$PKGS_DIR/packages/system/POSIX/getline/Kconfig"
 source "$PKGS_DIR/packages/system/POSIX/wcwidth/Kconfig"
+source "$PKGS_DIR/packages/system/POSIX/itoa/Kconfig"
 
 endmenu
