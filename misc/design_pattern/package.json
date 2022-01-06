@@ -1,8 +1,8 @@
 {
   "name": "design_pattern",
   "description": "design pattern implementation in C language.",
-  "description_zh": "嵌入式C设计模式实现。",  
-  "enable": "PKG_USING_DESIGN_PATTERN", 
+  "description_zh": "嵌入式C设计模式实现。",
+  "enable": "PKG_USING_DESIGN_PATTERN",
   "keywords": [
     "design pattern"
   ],
