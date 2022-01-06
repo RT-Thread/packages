@@ -6,27 +6,77 @@ menuconfig PKG_USING_SEGGER_RTT
 
 if PKG_USING_SEGGER_RTT
 
-menuconfig SEGGER_RTT_ENABLE
-    bool "Jlink SEGGER RTT support"
-    default y
+choice
+    prompt "Console type"
+    default SEGGER_RTT_ENABLE
+    help
+        Select the transport type
 
-menuconfig SWO_ENABLE
-    bool "ARM CORTEX M SWO support"
-    default n
+    config SEGGER_RTT_ENABLE
+        bool "Jlink SEGGER RTT support"
 
-    config SWO_PORT_NUMBER
-        int "SWO port number"
-        depends on SWO_ENABLE
-        default 0
+    config SWO_ENABLE
+        bool "ARM CORTEX M SWO support"
+
+endchoice
+
+config SEGGER_RTT_MAX_NUM_UP_BUFFERS
+    int "SEGGER_RTT_MAX_NUM_UP_BUFFERS"
+    depends on SEGGER_RTT_ENABLE
+    help
+       Max. number of up-buffers (T->H) available on this target    (Default: 3)
+    default 3
+config SEGGER_RTT_MAX_NUM_DOWN_BUFFERS
+    int "SEGGER_RTT_MAX_NUM_DOWN_BUFFERS"
+    depends on SEGGER_RTT_ENABLE
+    help
+       Max. number of down-buffers (H->T) available on this target  (Default: 3)
+    default 3
+
+config BUFFER_SIZE_UP
+    int "BUFFER_SIZE_UP"
+    depends on SEGGER_RTT_ENABLE
+    help
+        Size of the buffer for terminal output of target, up to host (Default: 1k)
+    default 1024
+config BUFFER_SIZE_DOWN
+    int "BUFFER_SIZE_DOWN"
+    depends on SEGGER_RTT_ENABLE
+    help
+        Size of the buffer for terminal input to target from host (Usually keyboard input) (Default: 16)
+    default 16
+config SEGGER_RTT_PRINTF_BUFFER_SIZE
+    int "SEGGER_RTT_PRINTF_BUFFER_SIZE"
+    depends on SEGGER_RTT_ENABLE
+    help
+       Size of buffer for RTT printf to bulk-send chars via RTT  
+    default 64
+    
+config RTT_DEFAULT_BUFFER_INDEX
+    int "RTT_DEFAULT_BUFFER_INDEX"
+    depends on SEGGER_RTT_ENABLE
+    default 0
+    
+config RTT_DEFAULT_TERMINAL_INDEX
+    int "RTT_DEFAULT_TERMINAL_INDEX"
+    depends on SEGGER_RTT_ENABLE
+    default 0
 
 
-    config PKG_SEGGER_RTT_PATH
-        string
-        default "/packages/tools/SEGGER_RTT"
+
+config SWO_PORT_NUMBER
+    int "SWO port number"
+    depends on SWO_ENABLE
+    default 0
+
+
+config PKG_SEGGER_RTT_PATH
+    string
+    default "/packages/tools/SEGGER_RTT"
 
     choice
         prompt "Version"
-        default PKG_USING_SEGGER_RTT_V110
+        default PKG_USING_SEGGER_RTT_LATEST_VERSION
         help
             Select the package version
 
