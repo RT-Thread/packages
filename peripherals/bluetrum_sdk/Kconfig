@@ -16,8 +16,8 @@ if PKG_USING_BLUETRUM_SDK
         help
             Select the package version
 
-        config PKG_USING_BLUETRUM_SDK_V003
-            bool "v0.0.3"
+        config PKG_USING_BLUETRUM_SDK_V003_FIX
+            bool "v0.0.3-fix"
 
         config PKG_USING_BLUETRUM_SDK_V002
             bool "v0.0.2"
