@@ -26,7 +26,7 @@ if PKG_USING_LUATOS_SOC
         config PKG_USING_LUATOS_SOC_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LUATOS_SOC_VER
        string
        default "latest"    if PKG_USING_LUATOS_SOC_LATEST_VERSION
