@@ -1,6 +1,6 @@
 {
   "name": "SEGGER_RTT",
-  "description": "Please add description of SEGGER_RTT in English.",
+  "description": "use the SEGGER RTT instead of console.",
   "description_zh": "使用JLINK的RTT代替UART console输出",
   "enable": "PKG_USING_SEGGER_RTT",
   "keywords": [
@@ -15,8 +15,8 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/supperthomas/RTTHREAD_SEGGER_TOOL.git",
   "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "homepage": "https://github.com/supperthomas/RTTHREAD_SEGGER_TOOL",
+  "doc": "https://github.com/supperthomas/RTTHREAD_SEGGER_TOOL",
   "site": [
     {
       "version": "v1.0.0",
