@@ -1,13 +1,14 @@
 {
   "name": "LuatOS_SOC",
   "description": "LUATOS_SOC : Powerful embedded Lua Engine for IoT devices",
-  "description_zh": "LuatOS_SOC : 面向物联网设备的强大嵌入式Lua引擎",  
-  "enable": "PKG_USING_LUATOS_SOC", 
+  "description_zh": "LuatOS_SOC : 面向物联网设备的强大嵌入式Lua引擎",
+  "enable": "PKG_USING_LUATOS_SOC",
   "keywords": [
     "LuatOS_SOC",
-    "LuatOS"
+    "LuatOS",
+    "Lua"
   ],
-  "category": "system",
+  "category": "language",
   "author": {
     "name": "Dozingfiretruck",
     "email": "1473454180@qq.com",

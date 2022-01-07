@@ -26,7 +26,7 @@ if PKG_USING_DESIGN_PATTERN
         config PKG_USING_DESIGN_PATTERN_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_DESIGN_PATTERN_VER
        string
        default "v1.0.0"    if PKG_USING_DESIGN_PATTERN_V100

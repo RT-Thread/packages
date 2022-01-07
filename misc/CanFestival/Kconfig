@@ -7,7 +7,7 @@ menuconfig PKG_USING_CANFESTIVAL
     default n
     help
         CanFestival focuses on providing an ANSI-C platform independent
-        CANOpen® stack that can be built as master or slave nodes on
+        CANOpen stack that can be built as master or slave nodes on
         PCs, Real-time IPCs, and Microcontrollers.
 
 if PKG_USING_CANFESTIVAL

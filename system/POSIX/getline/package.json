@@ -1,8 +1,8 @@
 {
   "name": "getline",
   "description": "getline/getdelim for RT-Thread POSIX (IEEE Std 1003.1-2008)",
-  "description_zh": "getline/getdelim for RT-Thread POSIX (IEEE Std 1003.1-2008)",  
-  "enable": "PKG_USING_POSIX_GETLINE", 
+  "description_zh": "getline/getdelim for RT-Thread POSIX (IEEE Std 1003.1-2008)",
+  "enable": "PKG_USING_POSIX_GETLINE",
   "keywords": [
     "getline",
     "POSIX"

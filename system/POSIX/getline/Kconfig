@@ -11,7 +11,7 @@ if PKG_USING_POSIX_GETLINE
     config PKG_POSIX_GETLINE_PATH
         string
         default "/packages/system/POSIX/getline"
-          
+
     config PKG_POSIX_GETLINE_VER
        string
        default "latest"

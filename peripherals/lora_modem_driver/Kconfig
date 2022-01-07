@@ -4,7 +4,7 @@ menuconfig PKG_USING_LORA_MODEM_DRIVER
     bool "lora_modem_driver is a serial driver of lora\\lorawan modem."
     default n
 
-if PKG_USING_LORA_MODEM_DRIVER 
+if PKG_USING_LORA_MODEM_DRIVER
 
     config PKG_LORA_MODEM_DRIVER_PATH
         string
@@ -159,7 +159,7 @@ if PKG_USING_LORA_MODEM_DRIVER
          default n
 
          if LORA_MODEM_DRIVER_USING_LORA_MODEM_DEBUG
-         
+
             config LWM_DBG_CORE_CONFIG
                 bool "Enable LoRa Modem Core Debug"
                 default n
@@ -196,7 +196,7 @@ if PKG_USING_LORA_MODEM_DRIVER
         config PKG_USING_LORA_MODEM_DRIVER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LORA_MODEM_DRIVER_VER
        string
        default "v0.5.0"    if PKG_USING_LORA_MODEM_DRIVER_V050

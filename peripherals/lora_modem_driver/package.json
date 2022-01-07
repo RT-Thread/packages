@@ -1,8 +1,8 @@
 {
   "name": "lora_modem_driver",
   "description": "lora_modem_driver is a serial driver of lora//lorawan modem.",
-  "description_zh": "lora_modem_driver是lora//lorawan modem的串口驱动。",  
-  "enable": "PKG_USING_LORA_MODEM_DRIVER", 
+  "description_zh": "lora_modem_driver是lora//lorawan modem的串口驱动。",
+  "enable": "PKG_USING_LORA_MODEM_DRIVER",
   "keywords": [
     "lora_modem_driver"
   ],

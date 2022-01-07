@@ -35,7 +35,7 @@ if PKG_USING_NET_SERVER
     config NET_SERVER_USING_TLS
         bool "Enable TLS support"
         default n
-    
+
     if NET_SERVER_USING_TLS
         choice
             prompt "tls port file"
@@ -46,13 +46,13 @@ if PKG_USING_NET_SERVER
                 bool "wolfSSL port"
         endchoice
 
-     
+
         config NET_SERVER_TLS_EXAMPLE
         bool "Use tls server example"
         default n
 
     endif
-          
+
     config PKG_NET_SERVER_VER
        string
        default "v1.0.1"    if PKG_USING_NET_SERVER_V101
