@@ -2,6 +2,7 @@
 # Kconfig file for package RTduino
 menuconfig RT_USING_ARDUINO
     bool "RTduino: Arduino Ecological Compatibility Layer"
+    select PKG_USING_POSIX_ITOA
     select RT_USING_CPLUSPLUS
     select RT_USING_PIN
     default n
