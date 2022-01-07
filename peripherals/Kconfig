@@ -77,4 +77,5 @@ source "$PKGS_DIR/packages/peripherals/lora_modem_driver/Kconfig"
 source "$PKGS_DIR/packages/peripherals/bouffalolab_sdk/Kconfig"
 source "$PKGS_DIR/packages/peripherals/soft_serial/Kconfig"
 source "$PKGS_DIR/packages/peripherals/mb85rs16/Kconfig"
+source "$PKGS_DIR/packages/peripherals/cw2015/Kconfig"
 endmenu
