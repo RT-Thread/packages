@@ -1,7 +1,7 @@
 
 # Kconfig file for package libnfc
 menuconfig PKG_USING_LIBNFC
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     bool "libnfc: Platform independent Near Field Communication (NFC) library."
     default n
 

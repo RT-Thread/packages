@@ -3,7 +3,7 @@
 menuconfig PKG_USING_WAMR
     bool "WebAssembly Micro Runtime (WAMR)"
     select RT_USING_DFS
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     default n
 
 if PKG_USING_WAMR

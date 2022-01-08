@@ -2,7 +2,7 @@
 # Kconfig file for package onnx-parser
 menuconfig PKG_USING_ONNX_PARSER
     select PKG_USING_PROTOBUF_C
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     bool "onnx-parser: Open Neural Network Exchange model parser on RT-Thread"
     default n
 

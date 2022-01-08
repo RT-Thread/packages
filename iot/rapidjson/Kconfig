@@ -3,7 +3,7 @@
 menuconfig PKG_USING_RAPIDJSON
     bool "rapidjson: A fast JSON parser/generator for C++ with both SAX/DOM style API."
     select RT_USING_CPLUSPLUS
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     default n
 
 if PKG_USING_RAPIDJSON

@@ -3,7 +3,7 @@
 menuconfig PKG_USING_I2C_TOOLS
     bool "i2c-tools: a collection of i2c tools including scan/read/write"
     select RT_USING_PIN
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_I2C
     select RT_USING_I2C_BITOPS
     select RT_USING_CPLUSPLUS

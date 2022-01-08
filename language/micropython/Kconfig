@@ -1,7 +1,7 @@
 
 menuconfig PKG_USING_MICROPYTHON
     bool "MicroPython: A lean and efficient Python implementation for microcontrollers and constrained systems."
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_RTC
     default n
 

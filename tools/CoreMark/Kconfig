@@ -6,7 +6,7 @@ menuconfig PKG_USING_COREMARK
 if PKG_USING_COREMARK
 
     config COREMARK_USE_FLOAT
-        select RT_USING_LIBC
+        select RT_USING_LIBC if RT_VER_NUM < 0x40100
         bool "Show benchmark result in float number"
         help
             Show benchmark result in float number.

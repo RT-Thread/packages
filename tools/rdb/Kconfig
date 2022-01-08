@@ -5,7 +5,7 @@ menuconfig PKG_USING_RDB
     default n
     select PKGS_USING_USB_RDBD
     select PKG_USING_DSTR
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_POSIX
     select RT_USING_DFS
 

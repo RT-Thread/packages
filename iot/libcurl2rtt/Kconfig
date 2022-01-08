@@ -1,7 +1,7 @@
 menuconfig PKG_USING_LIBCURL2RTT
     bool "libcurl2rtt: The curl library ported on the RT-Thread platform"
     select RT_USING_SAL
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_POSIX
     select RT_USING_POSIX_TERMIOS
     select PKG_USING_MBEDTLS

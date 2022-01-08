@@ -3,7 +3,7 @@
 menuconfig PKG_USING_LIBMODBUS
     bool "libmodbus: A Modbus library for RT-Thread"
     default n
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_DFS
     select RT_USING_POSIX
 

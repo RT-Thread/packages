@@ -1,7 +1,7 @@
 
 # Kconfig file for package micro_ros
 menuconfig PKG_USING_MICRO_ROS
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     bool "micro_ros: ROS 2 on microcontrollers."
     default n
 

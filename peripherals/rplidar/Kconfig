@@ -1,7 +1,7 @@
 
 # Kconfig file for package rplidar
 menuconfig PKG_USING_RPLIDAR
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     bool "RPLIDAR: a low cost LIDAR sensor suitable for indoor robotic SLAM application."
     default n
 

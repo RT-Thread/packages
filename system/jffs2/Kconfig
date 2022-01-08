@@ -4,7 +4,7 @@ menuconfig PKG_USING_DFS_JFFS2
     bool "JFFS2: Journalling Flash File System V2."
     select RT_USING_DFS
     select RT_USING_MTD_NOR
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_POSIX
     default n
 

@@ -2,7 +2,7 @@
 # Kconfig file for package capnp
 menuconfig PKG_USING_CAPNP
     select RT_USING_DFS
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     bool "capnp: Cap'n Proto serialization/RPC system which is faster than protobuf."
     default n
 

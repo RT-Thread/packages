@@ -5,7 +5,7 @@ menuconfig PKG_USING_WIZNET
     default n
     select RT_USING_PIN
     select RT_USING_SPI
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_SAL
     select RT_USING_TIMER_SOFT
 

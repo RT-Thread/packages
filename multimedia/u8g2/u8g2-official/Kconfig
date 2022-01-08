@@ -40,7 +40,7 @@ if PKG_USING_U8G2_OFFICIAL
     config U8G2_USE_CPP
         bool "Use C++"
         select RT_USING_CPLUSPLUS
-        select RT_USING_LIBC
+        select RT_USING_LIBC if RT_VER_NUM < 0x40100
         default n
 
     menu "U8G2 Examples"
