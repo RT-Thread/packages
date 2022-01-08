@@ -3,7 +3,7 @@
 menuconfig PKG_USING_POSIX_GETLINE
     bool "Enable getline/getdelim (IEEE Std 1003.1-2008)"
     select RT_USING_POSIX_FS
-    select RT_USING_POSIX_DEVIO
+    select RT_USING_POSIX_STDIO
     default n
 
 if PKG_USING_POSIX_GETLINE
