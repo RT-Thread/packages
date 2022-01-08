@@ -1,8 +1,9 @@
 # Kconfig file for package libcsv
 menuconfig PKG_USING_LIBCSV
     bool "libcsv: a small, simple and fast CSV library written in pure ANSI C89 that can read and write CSV data."
-    select RT_USING_LIBC if RT_VER_NUM < 0x40100
-    select RT_USING_DFS
+    select RT_USING_LIBC     if RT_VER_NUM < 0x40100
+    select RT_USING_DFS      if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
 if PKG_USING_LIBCSV
 

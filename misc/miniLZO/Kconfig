@@ -17,7 +17,8 @@ if PKG_USING_MINILZO
     config MINILZO_USING_SAMPLE
         bool "Enable using miniLZO sample"
         default n
-        select RT_USING_DFS
+        select RT_USING_DFS      if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
     choice
         prompt "version"

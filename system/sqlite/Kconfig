@@ -2,7 +2,8 @@
 menuconfig PKG_USING_SQLITE
     bool "SQLite: a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine."
     default n
-    select RT_USING_DFS
+    select RT_USING_DFS      if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
 if PKG_USING_SQLITE
 

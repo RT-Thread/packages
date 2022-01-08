@@ -3,9 +3,10 @@
 menuconfig PKG_USING_MINIZIP
     bool "minizip: zip manipulation library"
     select PKG_USING_ZLIB
-    select RT_USING_DFS
-    select RT_USING_LIBC if RT_VER_NUM < 0x40100
-    select RT_USING_POSIX
+    select RT_USING_DFS      if RT_VER_NUM < 0x40100
+    select RT_USING_LIBC     if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX    if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
     default n
 
 if PKG_USING_MINIZIP

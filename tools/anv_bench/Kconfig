@@ -1,8 +1,10 @@
 
 # Kconfig file for package anv_bench
 menuconfig PKG_USING_ANV_BENCH
-    select RT_USING_LIBC if RT_VER_NUM < 0x40100
-    select RT_USING_POSIX
+    select RT_USING_LIBC        if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX       if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS    if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_DEVIO if RT_VER_NUM >= 0x40100
     bool "anv_bench: quick-and-dirty benchmarking system for quick prototyping."
     default n
 

@@ -16,7 +16,8 @@ if PKG_USING_FASTLZ
     config FASTLZ_USING_SAMPLE
         bool "Enable using fastlz sample"
         default n
-        select RT_USING_DFS
+        select RT_USING_DFS      if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
     if FASTLZ_USING_SAMPLE
 

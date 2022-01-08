@@ -72,7 +72,8 @@ if PKG_USING_MICROPYTHON
     menu "System Module"
         config MICROPYTHON_USING_UOS
             bool "uos: basic 'operating system' services"
-            select RT_USING_DFS
+            select RT_USING_DFS      if RT_VER_NUM < 0x40100
+            select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
             default n
 
         if MICROPYTHON_USING_UOS
