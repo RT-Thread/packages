@@ -1,7 +1,7 @@
 
 menuconfig PKG_USING_MICROPYTHON
     bool "MicroPython: A lean and efficient Python implementation for microcontrollers and constrained systems."
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_RTC
     default n
 
@@ -72,7 +72,8 @@ if PKG_USING_MICROPYTHON
     menu "System Module"
         config MICROPYTHON_USING_UOS
             bool "uos: basic 'operating system' services"
-            select RT_USING_DFS
+            select RT_USING_DFS      if RT_VER_NUM < 0x40100
+            select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
             default n
 
         if MICROPYTHON_USING_UOS

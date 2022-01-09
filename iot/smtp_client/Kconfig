@@ -4,7 +4,7 @@ menuconfig PKG_USING_SMTP_CLIENT
     default n
     select RT_USING_SAL
     select SAL_USING_POSIX
-    select RT_USING_DFS
+    select RT_USING_DFS      if RT_VER_NUM < 0x40100
 
 if PKG_USING_SMTP_CLIENT
 

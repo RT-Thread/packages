@@ -18,7 +18,8 @@ if PKG_USING_MONGOOSE
         bool
         prompt "Enable filesystem for file serves, file uploader and other file features"
         default y
-        select RT_USING_DFS
+        select RT_USING_DFS      if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
     config PKG_MONGOOSE_ENABLE_HTTP_STREAMING_MULTIPART
         bool

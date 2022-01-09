@@ -26,7 +26,8 @@ if PKG_USING_WEBCLIENT
         config WEBCLIENT_USING_FILE_DOWMLOAD
             bool "Enable file download feature support"
             default n
-            select RT_USING_DFS
+            select RT_USING_DFS      if RT_VER_NUM < 0x40100
+            select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
     endif
 

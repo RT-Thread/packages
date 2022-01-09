@@ -1,11 +1,11 @@
 menuconfig PKG_USING_VI
     bool "vi: A screen-oriented text editor"
-    select RT_USING_DFS if RT_VER_NUM < 0x40100
-    select RT_USING_POSIX if RT_VER_NUM < 0x40100
-    select RT_USING_LIBC if RT_VER_NUM < 0x40100
-    select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
+    select RT_USING_DFS         if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX       if RT_VER_NUM < 0x40100
+    select RT_USING_LIBC        if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS    if RT_VER_NUM >= 0x40100
     select RT_USING_POSIX_STDIO if RT_VER_NUM >= 0x40100
-    select RT_USING_POSIX_POLL if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_POLL  if RT_VER_NUM >= 0x40100
     select PKG_USING_OPTPARSE
     select PKG_USING_MEM_SANDBOX
     default n

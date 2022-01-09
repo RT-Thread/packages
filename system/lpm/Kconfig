@@ -2,7 +2,7 @@
 # Kconfig file for package lpm
 menuconfig PKG_USING_LPM
     bool "lpm: Logical partition management. Manage storage device and partition."
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     default n
 
 if PKG_USING_LPM

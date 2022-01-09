@@ -90,7 +90,7 @@ if PKG_USING_ATSRV_SOCKET
         prompt "Enable WLAN AT command"
         default n
         select RT_USING_SAL
-        select RT_USING_LIBC
+        select RT_USING_LIBC if RT_VER_NUM < 0x40100
         select RT_USING_WIFI
 
     config ATSRV_SOCKET_ENABLE_CMD_CWMODE
@@ -122,7 +122,7 @@ if PKG_USING_ATSRV_SOCKET
         prompt "Enable TCP/IP AT command"
         default n
         select RT_USING_SAL
-        select RT_USING_LIBC
+        select RT_USING_LIBC if RT_VER_NUM < 0x40100
         select RT_USING_WIFI
 
     config ATSRV_SOCKET_ENABLE_CMD_CIPSTATUS

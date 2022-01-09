@@ -65,7 +65,8 @@ if PKG_USING_CMBACKTRACE
             prompt "Backup the flash log to file when next reboot"
             default y
             depends on CMB_USING_FAL_FLASH_LOG
-            select RT_USING_DFS
+            select RT_USING_DFS      if RT_VER_NUM < 0x40100
+            select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
         config CMB_FAL_FLASH_LOG_PART
             string "The flash partition name for saving log"

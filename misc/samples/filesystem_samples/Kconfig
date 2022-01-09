@@ -3,7 +3,8 @@
 menuconfig PKG_USING_FILESYSTEM_SAMPLES
     bool "a filesystem_samples package for rt-thread"
     default n
-    select RT_USING_DFS
+    select RT_USING_DFS      if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
 if PKG_USING_FILESYSTEM_SAMPLES
 

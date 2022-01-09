@@ -23,7 +23,8 @@ if PKG_USING_PROTOBUF_C
             default n
 
         config PROTOBUF_C_USING_ENCODE_DECODE_FILE_EXAMPLE
-            select RT_USING_DFS
+            select RT_USING_DFS      if RT_VER_NUM < 0x40100
+            select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
             bool "protobuf-c example: encode to file and decode from file"
             help
                 protobuf-c example: encode to file and decode from file

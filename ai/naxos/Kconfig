@@ -2,7 +2,7 @@
 # Kconfig file for package naxos
 menuconfig PKG_USING_NAXOS
     select RT_USING_CPLUSPLUS
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     bool "A C++ Constraint Programming Library"
     default n
 

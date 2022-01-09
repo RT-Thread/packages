@@ -32,7 +32,7 @@ if PKG_USING_NETUTILS
     if PKG_NETUTILS_VER_NUM >= 0x10200
         config PKG_NETUTILS_TFTP
             bool "Enable TFTP(Trivial File Transfer Protocol) server"
-            select RT_USING_LIBC
+            select RT_USING_LIBC if RT_VER_NUM < 0x40100
             select RT_USING_SAL
             select SAL_USING_POSIX
             default n
@@ -40,7 +40,7 @@ if PKG_USING_NETUTILS
 
     config PKG_NETUTILS_IPERF
         bool "Enable iperf-liked network performance tool"
-        select RT_USING_LIBC
+        select RT_USING_LIBC if RT_VER_NUM < 0x40100
         select RT_USING_SAL
         select SAL_USING_POSIX
         default n
@@ -102,7 +102,8 @@ if PKG_USING_NETUTILS
         bool "Enable tcpdump tool"
         depends on RT_USING_LWIP
         select PKG_USING_OPTPARSE
-        select RT_USING_DFS
+        select RT_USING_DFS      if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
         help
             Select the tcpdump tool
 

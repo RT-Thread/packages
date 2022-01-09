@@ -2,9 +2,10 @@
 # Kconfig file for package adbd
 menuconfig PKG_USING_ADBD
     bool "ADBD: Android Debug Bridge daemon implementation in RT-Thread"
-    select RT_USING_DFS
-    select RT_USING_LIBC
-    select RT_USING_POSIX
+    select RT_USING_DFSif    if RT_VER_NUM < 0x40100
+    select RT_USING_LIBC     if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX    if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
     default n
 
 if PKG_USING_ADBD

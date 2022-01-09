@@ -12,7 +12,8 @@ if PKG_USING_QUICKLZ
     config QLZ_USING_SAMPLE
         bool "Enable using quicklz sample"
         default n
-        select RT_USING_DFS
+        select RT_USING_DFS      if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
     config QLZ_COMPRESSION_LEVEL
         help

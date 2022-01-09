@@ -4,7 +4,7 @@ menuconfig PKG_USING_PPOOL
     bool "Pthread-based thread pool library"
     default n
     select RT_USING_PTHREADS
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
 
 
 if PKG_USING_PPOOL

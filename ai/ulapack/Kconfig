@@ -1,7 +1,7 @@
 
 # Kconfig file for package ulapack
 menuconfig PKG_USING_ULAPACK
-    select RT_USING_LIBC
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
     bool "ulapack: linear algebra library for embedded devices."
     default n
 

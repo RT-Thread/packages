@@ -1,9 +1,10 @@
 # Kconfig file for package librws
 menuconfig PKG_USING_LIBRWS
     bool "librws: Tiny, cross platform websocket client C library"
-    select RT_USING_LIBC
+    select RT_USING_LIBC        if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX       if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS    if RT_VER_NUM >= 0x40100
     select RT_USING_PTHREADS
-    select RT_USING_POSIX
     default n
     help
         No additional dependecies
