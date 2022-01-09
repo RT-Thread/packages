@@ -1,0 +1,36 @@
+{
+  "name": "rs232",
+  "description": "rs232 driver package.",
+  "description_zh": "rs232驱动包。",  
+  "enable": "PKG_USING_RS232", 
+  "keywords": [
+    "rs232",
+	"driver",
+	"rt-thread"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "diskwu",
+    "email": "27161916@qq.com",
+    "github": "diskwu"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/diskwu/RTTHREAD_RS232",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/diskwu",
+  "doc": "https://github.com/diskwu/RTTHREAD_RS232/blob/main/readme.md",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/diskwu/RTTHREAD_RS232.git",
+      "filename": "rs232-1.0.0.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/diskwu/RTTHREAD_RS232.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
