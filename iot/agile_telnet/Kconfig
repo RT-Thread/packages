@@ -43,7 +43,6 @@ if PKG_USING_AGILE_TELNET
         config PKG_AGILE_TELNET_CONSOLE_PLUG
             bool
             default y
-            select PKG_USING_AGILE_CONSOLE
 
     endif
 
