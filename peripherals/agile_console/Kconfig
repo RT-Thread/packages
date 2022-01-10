@@ -3,6 +3,7 @@
 menuconfig PKG_USING_AGILE_CONSOLE
     bool "agile_console: A agile console pachage."
     default n
+    select RT_USING_DEVICE_IPC
 
 if PKG_USING_AGILE_CONSOLE
 
@@ -16,7 +17,7 @@ if PKG_USING_AGILE_CONSOLE
 
     config PKG_AGILE_CONSOLE_DEVICE_NAME
         string "Set agile_console device name"
-        default "acon"
+        default "tty"
 
     config PKG_AGILE_CONSOLE_THREAD_PRIORITY
         int "Set agile_console thread priority"
@@ -35,6 +36,24 @@ if PKG_USING_AGILE_CONSOLE
         config PKG_AGILE_CONSOLE_SERIAL_DEVICE_NAME
             string "Set serial device name"
             default "uart"
+
+    endif
+
+    if PKG_AGILE_CONSOLE_VER_NUM > 0x10001
+
+        config PKG_AGILE_CONSOLE_USING_TELNET
+            bool "Enable telnet plugin"
+            default n
+            select PKG_USING_AGILE_TELNET
+
+        config PKG_AGILE_CONSOLE_USING_TINYUSB
+            bool "Enable tinyusb plugin"
+            depends on RT_VER_NUM >= 0x40100
+            default n
+            select PKG_USING_TINYUSB
+            select PKG_TINYUSB_DEVICE_ENABLE
+            select PKG_TINYUSB_DEVICE_CDC
+            select RT_USING_TIMER_SOFT
 
     endif
 
