@@ -5,6 +5,11 @@
   "enable": "PKG_USING_POSIX_ITOA", 
   "keywords": [
     "itoa",
+    "lltoa",
+    "ltoa",
+    "ulltoa",
+    "ultoa",
+    "utoa",
     "POSIX"
   ],
   "category": "system",

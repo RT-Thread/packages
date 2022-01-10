@@ -8,7 +8,7 @@ if PKG_USING_QRCODE
 
     config PKG_QRCODE_PATH
         string
-        default "/packages/tools/qrcode"
+        default "/packages/multimedia/qrcode"
 
     config PKG_QRCODE_SAMPLE
         bool "Enable qrcode sample"

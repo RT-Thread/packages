@@ -5,6 +5,9 @@
   "enable": "PKG_USING_WEBNET",
   "keywords": [
     "webnet"
+    "webserver",
+    "web",
+    "server"
   ],
   "category": "iot",
   "author": {

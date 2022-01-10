@@ -14,7 +14,7 @@ if PKG_USING_FILESYSTEM_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_FILESYSTEM_SAMPLES_V020
+        default PKG_USING_FILESYSTEM_SAMPLES_LATEST_VERSION
         help
             Select the package version
 

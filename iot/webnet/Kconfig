@@ -99,7 +99,7 @@ if PKG_USING_WEBNET
         prompt "Version"
         help
             Select the webnet version
-        default PKG_USING_WEBNET_V202
+        default PKG_USING_WEBNET_LATEST_VERSION
 
         config PKG_USING_WEBNET_V202
             bool "v2.0.2"
