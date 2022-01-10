@@ -5,7 +5,8 @@ menuconfig PKG_USING_AGILE_TELNET
     default n
     select RT_USING_SAL
     select SAL_USING_POSIX
-    select RT_USING_DFS     if RT_VER_NUM < 0x40100
+    select RT_USING_DFS         if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_STDIO if RT_VER_NUM >= 0x40100
 
 if PKG_USING_AGILE_TELNET
 
@@ -42,7 +43,6 @@ if PKG_USING_AGILE_TELNET
         config PKG_AGILE_TELNET_CONSOLE_PLUG
             bool
             default y
-            select PKG_USING_AGILE_CONSOLE
 
     endif
 

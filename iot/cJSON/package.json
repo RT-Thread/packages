@@ -4,7 +4,8 @@
   "description_zh": "超轻量级的 C 语言 json 解析库",
   "enable": "PKG_USING_CJSON",
   "keywords": [
-    "cJSON"
+    "cJSON",
+    "json"
   ],
   "category": "iot",
   "author": {
