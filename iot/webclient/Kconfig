@@ -63,12 +63,10 @@ if PKG_USING_WEBCLIENT
     endif
 
     choice
-
         prompt "Version"
         help
             Select the webclient version
-        default PKG_USING_WEBCLIENT_LATEST_VERSION if PKG_USING_OTA_DOWNLOADER_LATEST_VERSION
-        default PKG_USING_WEBCLIENT_V212
+        default PKG_USING_WEBCLIENT_LATEST_VERSION
 
         config PKG_USING_WEBCLIENT_V212
             bool "v2.1.2"

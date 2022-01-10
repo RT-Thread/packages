@@ -19,5 +19,6 @@ source "$PKGS_DIR/packages/multimedia/PainterEngine/Kconfig"
 source "$PKGS_DIR/packages/multimedia/mcurses/Kconfig"
 source "$PKGS_DIR/packages/multimedia/termbox/Kconfig"
 source "$PKGS_DIR/packages/multimedia/vt100/Kconfig"
+source "$PKGS_DIR/packages/multimedia/qrcode/Kconfig"
 
 endmenu

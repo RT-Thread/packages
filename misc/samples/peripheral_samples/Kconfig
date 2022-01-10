@@ -13,7 +13,7 @@ if PKG_USING_PERIPHERAL_SAMPLES
 
     choice
         prompt "Version"
-        default PKG_USING_PERIPHERAL_SAMPLES_V040
+        default PKG_USING_PERIPHERAL_SAMPLES_LATEST_VERSION
         help
             Select the package version
 
