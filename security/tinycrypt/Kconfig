@@ -30,6 +30,11 @@ if PKG_USING_TINYCRYPT
     bool "MD5"
     default y
 
+    config TINYCRYPT_USING_MD5_SAMPLE
+        bool "Enable MD5 sample"
+        depends on TINY_CRYPT_MD5
+        default n
+
     config TINY_CRYPT_BASE64
     bool "base64"
     default y
