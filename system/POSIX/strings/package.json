@@ -1,0 +1,30 @@
+{
+  "name": "strings",
+  "description": "Extension string functions for POSIX.1",
+  "description_zh": "<string.h> 扩展 POSIX.1 函数",
+  "enable": "PKG_USING_POSIX_STRINGS", 
+  "keywords": [
+    "strings",
+    "bzero",
+    "memrchr"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Meco Man",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/mysterywolf/strings",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/strings.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

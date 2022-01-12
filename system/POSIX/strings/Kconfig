@@ -1,0 +1,18 @@
+
+# Kconfig file for package strings
+menuconfig PKG_USING_POSIX_STRINGS
+    bool "Extension string functions for POSIX.1"
+    default n
+
+if PKG_USING_POSIX_STRINGS
+
+    config PKG_POSIX_STRINGS_PATH
+        string
+        default "/packages/system/strings"
+          
+    config PKG_POSIX_STRINGS_VER
+       string
+       default "latest"
+
+endif
+
