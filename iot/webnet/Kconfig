@@ -121,5 +121,12 @@ if PKG_USING_WEBNET
        default "v2.0.0"    if PKG_USING_WEBNET_V200
        default "latest"    if PKG_USING_WEBNET_LATEST_VERSION
 
+    config PKG_WEBNET_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_WEBNET_LATEST_VERSION
+        default 0x20000    if PKG_USING_WEBNET_V200
+        default 0x20001    if PKG_USING_WEBNET_V201
+        default 0x20002    if PKG_USING_WEBNET_V202
+
 endif
 
