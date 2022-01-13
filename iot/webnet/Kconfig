@@ -6,8 +6,6 @@ menuconfig PKG_USING_WEBNET
     select RT_USING_SAL
     select SAL_USING_POSIX
     select RT_USING_DFS     if RT_VER_NUM < 0x40100
-    select PKG_USING_RT_VSNPRINTF_FULL
-    select PKG_USING_POSIX_STRINGS
 
 if PKG_USING_WEBNET
 
