@@ -5,8 +5,9 @@ menuconfig PKG_USING_WEBNET
     default n
     select RT_USING_SAL
     select SAL_USING_POSIX
-    select RT_USING_DFS     if RT_VER_NUM < 0x40100
-
+    select RT_USING_DFS                 if RT_VER_NUM < 0x40100
+    select PKG_USING_RT_VSNPRINTF_FULL  if PKG_WEBNET_VER_NUM >= 0x20100
+    select PKG_USING_POSIX_STRINGS      if PKG_WEBNET_VER_NUM >= 0x20100
 if PKG_USING_WEBNET
 
     config PKG_WEBNET_PATH
