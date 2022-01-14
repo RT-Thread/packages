@@ -100,6 +100,9 @@ if PKG_USING_WEBNET
             Select the webnet version
         default PKG_USING_WEBNET_LATEST_VERSION
 
+        config PKG_USING_WEBNET_V203
+            bool "v2.0.3"
+
         config PKG_USING_WEBNET_V202
             bool "v2.0.2"
 
@@ -115,6 +118,7 @@ if PKG_USING_WEBNET
 
     config PKG_WEBNET_VER
        string
+       default "v2.0.3"    if PKG_USING_WEBNET_V203
        default "v2.0.2"    if PKG_USING_WEBNET_V202
        default "v2.0.1"    if PKG_USING_WEBNET_V201
        default "v2.0.0"    if PKG_USING_WEBNET_V200
@@ -126,6 +130,7 @@ if PKG_USING_WEBNET
         default 0x20000    if PKG_USING_WEBNET_V200
         default 0x20001    if PKG_USING_WEBNET_V201
         default 0x20002    if PKG_USING_WEBNET_V202
+        default 0x20003    if PKG_USING_WEBNET_V203
 
 endif
 
