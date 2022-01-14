@@ -1,5 +1,5 @@
 {
-    "name": "xpt2046_touch",
+    "name": "xpt2046",
     "description": "xpt2046 touch driver package",
     "description_zh": "xpt2046 電阻觸摸屏驅動软件包",  
     "enable": "PKG_USING_XPT2046_TOUCH", 
