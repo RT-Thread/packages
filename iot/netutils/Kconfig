@@ -121,10 +121,14 @@ if PKG_USING_NETUTILS
         help
             Select the netutils version
         default PKG_USING_NETUTILS_LATEST_VERSION if RT_VER_NUM >= 0x40100
-        default PKG_USING_NETUTILS_V131
+        default PKG_USING_NETUTILS_V132
 
         config PKG_USING_NETUTILS_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_NETUTILS_V132
+            bool "v1.3.2"
+            depends on RT_VER_NUM < 0x40100
 
         config PKG_USING_NETUTILS_V131
             bool "v1.3.1"
@@ -150,6 +154,7 @@ if PKG_USING_NETUTILS
 
     config PKG_NETUTILS_VER
         string
+        default "v1.3.2" if PKG_USING_NETUTILS_V132
         default "v1.3.1" if PKG_USING_NETUTILS_V131
         default "v1.3.0" if PKG_USING_NETUTILS_V130
         default "v1.2.0" if PKG_USING_NETUTILS_V120
@@ -160,6 +165,7 @@ if PKG_USING_NETUTILS
     config PKG_NETUTILS_VER_NUM
         hex
         default 0x99999    if PKG_USING_NETUTILS_LATEST_VERSION
+        default 0x10302    if PKG_USING_NETUTILS_V132
         default 0x10301    if PKG_USING_NETUTILS_V131
         default 0x10300    if PKG_USING_NETUTILS_V130
         default 0x10200    if PKG_USING_NETUTILS_V120
