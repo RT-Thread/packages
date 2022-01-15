@@ -56,30 +56,27 @@ if PKG_USING_NETUTILS
         default n
 
     if PKG_NETUTILS_NTP
-        if PKG_NETUTILS_VER_NUM > 0x10200
-            config NTP_USING_AUTO_SYNC
-                bool "Enable NTP to synchronize RTC automatically"
-                select RT_USING_SYSTEM_WORKQUEUE
-                default y
+        config NTP_USING_AUTO_SYNC
+            bool "Enable NTP to synchronize RTC automatically"
+            depends on PKG_NETUTILS_VER_NUM > 0x10200
+            select RT_USING_SYSTEM_WORKQUEUE
+            default y
 
-            if NTP_USING_AUTO_SYNC
-                config NTP_AUTO_SYNC_FIRST_DELAY
-                    int "NTP first sync delay time(second) for network connect"
-                    default 30
+        if NTP_USING_AUTO_SYNC
+            config NTP_AUTO_SYNC_FIRST_DELAY
+                int "NTP first sync delay time(second) for network connect"
+                default 30
 
-                config NTP_AUTO_SYNC_PERIOD
-                    int "NTP auto sync period(second)"
-                    default 3600
-            endif
-
+            config NTP_AUTO_SYNC_PERIOD
+                int "NTP auto sync period(second)"
+                default 3600
         endif
 
-        if PKG_NETUTILS_VER_NUM <= 0x10200
-            config NETUTILS_NTP_TIMEZONE
-                int "Timezone for calculate local time"
-                range -12 12
-                default 8
-        endif
+        config NETUTILS_NTP_TIMEZONE
+            int "Timezone for calculate local time"
+            depends on PKG_NETUTILS_VER_NUM <= 0x10200
+            range -12 12
+            default 8
 
         config NETUTILS_NTP_HOSTNAME
             string "NTP server name1"
@@ -123,6 +120,7 @@ if PKG_USING_NETUTILS
         prompt "Version"
         help
             Select the netutils version
+        default PKG_USING_NETUTILS_LATEST_VERSION if RT_VER_NUM >= 0x40100
         default PKG_USING_NETUTILS_V131
 
         config PKG_USING_NETUTILS_LATEST_VERSION
@@ -130,20 +128,23 @@ if PKG_USING_NETUTILS
 
         config PKG_USING_NETUTILS_V131
             bool "v1.3.1"
+            depends on RT_VER_NUM < 0x40100
 
         config PKG_USING_NETUTILS_V130
             bool "v1.3.0"
+            depends on RT_VER_NUM < 0x40100
 
-        if RT_VER_NUM < 0x40004
-            config PKG_USING_NETUTILS_V120
-                bool "v1.2.0"
+        config PKG_USING_NETUTILS_V120
+            bool "v1.2.0"
+            depends on RT_VER_NUM < 0x40004
 
-            config PKG_USING_NETUTILS_V110
-                bool "v1.1.0"
+        config PKG_USING_NETUTILS_V110
+            bool "v1.1.0"
+            depends on RT_VER_NUM < 0x40004
 
-            config PKG_USING_NETUTILS_V100
-                bool "v1.0.0"
-        endif
+        config PKG_USING_NETUTILS_V100
+            bool "v1.0.0"
+            depends on RT_VER_NUM < 0x40004
 
     endchoice
 
