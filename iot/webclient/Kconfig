@@ -66,7 +66,7 @@ if PKG_USING_WEBCLIENT
         prompt "Version"
         help
             Select the webclient version
-        default PKG_USING_WEBCLIENT_LATEST_VERSION
+        default PKG_USING_WEBCLIENT_V220
 
         config PKG_USING_WEBCLIENT_V220
             bool "v2.2.0"
