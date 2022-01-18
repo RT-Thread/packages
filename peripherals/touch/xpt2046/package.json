@@ -1,0 +1,36 @@
+{
+    "name": "xpt2046",
+    "description": "xpt2046 touch driver package",
+    "description_zh": "xpt2046 電阻觸摸屏驅動软件包",  
+    "enable": "PKG_USING_XPT2046_TOUCH", 
+    "keywords": [
+      "xpt2046_touch",
+      "xpt2046",
+      "touch"
+    ],
+    "category": "peripherals/touch",
+    "author": {
+      "name": "LeeChunHei",
+      "email": "lch19980829@gmail.com",
+      "github": "LeeChunHei"
+    },
+    "license": "MIT",
+    "repository": "https://github.com/LeeChunHei/xpt2046_touch_rtt",
+    "icon": "unknown",
+    "homepage": "unknown",
+    "doc": "unknown",
+    "site": [
+      {
+        "version": "v1.0.0",
+        "URL": "https://github.com/LeeChunHei/xpt2046_touch_rtt/archive/refs/tags/1.0.0.zip",
+        "filename": "xpt2046_touch_rtt-1.0.0.zip",
+        "VER_SHA": "fill in the git version SHA value"
+      },
+      {
+        "version": "latest",
+        "URL": "https://github.com/LeeChunHei/xpt2046_touch_rtt.git",
+        "filename": "Null for git package",
+        "VER_SHA": "main"
+      }
+    ]
+  }

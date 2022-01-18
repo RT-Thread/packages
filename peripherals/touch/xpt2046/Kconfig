@@ -1,0 +1,85 @@
+
+# Kconfig file for package xpt2046_touch
+menuconfig PKG_USING_XPT2046_TOUCH
+    bool "xpt2046 touch driver package"
+    select RT_USING_TOUCH
+    select RT_TOUCH_PIN_IRQ
+    default n
+
+if PKG_USING_XPT2046_TOUCH
+
+    config PKG_XPT2046_TOUCH_PATH
+        string
+        default "/packages/peripherals/touch/xpt2046"
+
+    choice
+        prompt "Version"
+        default PKG_USING_XPT2046_TOUCH_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_XPT2046_TOUCH_V100
+            bool "v1.0.0"
+
+        config PKG_USING_XPT2046_TOUCH_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_XPT2046_TOUCH_VER
+       string
+       default "v1.0.0"    if PKG_USING_XPT2046_TOUCH_V100
+       default "latest"    if PKG_USING_XPT2046_TOUCH_LATEST_VERSION
+
+    config PKG_XPT2046_USING_KCONFIG
+        bool "Setup xpt2046 touch in menuconfig"
+        default n
+    
+    if PKG_XPT2046_USING_KCONFIG
+        config PKG_XPT2046_SPI_BUS
+            string "SPI bus connected to the xpt2046"
+            default "spi0"
+            
+        config PKG_XPT2046_CS_GPIO
+            int "GPIO port number for the chip select pin"
+            help
+                The cs pin is (pin number) of pin in the (port number) of GPIO port
+        config PKG_XPT2046_CS_PIN
+            int "GPIO pin number for the chip select pin"
+            help
+                The cs pin is (pin number) of pin in the (port number) of GPIO port
+
+        config PKG_XPT2046_IRQ_GPIO
+            int "GPIO port number for the pen pin"
+            help
+                The pen pin is (pin number) of pin in the (port number) of GPIO port
+        config PKG_XPT2046_IRQ_PIN
+            int "GPIO pin number for the pen pin"
+            help
+                The pen pin is (pin number) of pin in the (port number) of GPIO port\
+        
+        config PKG_XPT2046_RANGE_X
+            int "Width of the touch lcd"
+            default 128
+            
+        config PKG_XPT2046_RANGE_Y
+            int "Height of the touch lcd"
+            default 160
+
+        config PKG_XPT2046_MIN_RAW_X
+            int "Minimum raw x axis value"
+            default 181
+
+        config PKG_XPT2046_MIN_RAW_Y
+            int "Minimum raw y axis value"
+            default 189
+
+        config PKG_XPT2046_MAX_RAW_X
+            int "Maximum raw x axis value"
+            default 1871
+
+        config PKG_XPT2046_MAX_RAW_Y
+            int "Maximum raw y axis value"
+            default 2048
+    endif
+
+endif
