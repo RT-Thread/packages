@@ -15,6 +15,8 @@
   },
   "license": "MIT",
   "repository": "https://github.com/lvgl/lvgl",
+  "homepage": "https://lvgl.io",
+  "icon": "https://lvgl.io/assets/images/logo_lvgl.png",
   "doc": "https://github.com/lvgl/lvgl#readme",
   "site": [
     {
