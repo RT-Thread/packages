@@ -14,7 +14,11 @@ if AT_DEVICE_USING_ESP8266
         bool "Enable sample"
         default y
 
-    if AT_DEVICE_ESP8266_SAMPLE
+    config AT_DEVICE_ESP8266_SAMPLE_BSP_TAKEOVER
+        bool "Enable BSP takeover the sample configuration"
+        default n
+
+    if AT_DEVICE_ESP8266_SAMPLE && !AT_DEVICE_ESP8266_SAMPLE_BSP_TAKEOVER
 
         config ESP8266_SAMPLE_WIFI_SSID
             string "WIFI ssid"
