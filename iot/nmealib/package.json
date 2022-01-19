@@ -4,7 +4,7 @@
   "description_zh": "nmealib库在RT-Thread上的移植",
   "enable": "PKG_USING_NMEALIB",
   "keywords": [
-    "nmealib"
+    "nmealib", "gps"
   ],
   "category": "iot",
   "author": {
