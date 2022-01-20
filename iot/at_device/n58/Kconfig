@@ -10,6 +10,11 @@ if AT_DEVICE_USING_N58
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_N58_SOCKET
+        bool "Enable N58 at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_N58_SAMPLE
         bool "Enable sample"
         default y

@@ -10,6 +10,11 @@ if AT_DEVICE_USING_RW007
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_RW007_SOCKET
+        bool "Enable RW007 at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_RW007_SAMPLE
         bool "Enable sample"
         default y

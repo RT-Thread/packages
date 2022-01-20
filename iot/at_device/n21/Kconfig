@@ -10,6 +10,11 @@ if AT_DEVICE_USING_N21
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_N21_SOCKET
+        bool "Enable N21 at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_N21_SAMPLE
         bool "Enable sample"
         default y

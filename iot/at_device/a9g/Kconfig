@@ -10,6 +10,11 @@ if AT_DEVICE_USING_A9G
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_A9G_SOCKET
+        bool "Enable A9G at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_A9G_SAMPLE
         bool "Enable sample"
         default y
