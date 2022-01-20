@@ -10,6 +10,11 @@ if AT_DEVICE_USING_EC20
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_EC20_SOCKET
+        bool "Enable EC20 at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_EC20_SAMPLE
         bool "Enable sample"
         default y

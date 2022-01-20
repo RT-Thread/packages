@@ -14,6 +14,11 @@ if AT_DEVICE_USING_W60X
         bool "Enable sample"
         default y
 
+    config AT_DEVICE_W60X_SOCKET
+        bool "Enable W60X at socket"
+        select AT_USING_SOCKET
+        default y
+
     if AT_DEVICE_W60X_SAMPLE
 
         config W60X_SAMPLE_WIFI_SSID

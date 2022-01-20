@@ -10,6 +10,11 @@ if AT_DEVICE_USING_ESP8266
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_ESP8266_SOCKET
+        bool "Enable ESP8266 at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_ESP8266_SAMPLE
         bool "Enable sample"
         default y

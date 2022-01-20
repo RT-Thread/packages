@@ -10,6 +10,11 @@ if AT_DEVICE_USING_SIM76XX
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_SIM76XX_SOCKET
+        bool "Enable SIM76XX at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_SIM76XX_SAMPLE
         bool "Enable sample"
         default y

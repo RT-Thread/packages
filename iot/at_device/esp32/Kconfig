@@ -10,6 +10,11 @@ if AT_DEVICE_USING_ESP32
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_ESP32_SOCKET
+        bool "Enable ESP32 at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_ESP32_SAMPLE
         bool "Enable sample"
         default y

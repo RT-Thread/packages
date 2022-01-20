@@ -22,6 +22,11 @@ if AT_DEVICE_USING_M5311
 
     endif
 
+    config AT_DEVICE_M5311_SOCKET
+        bool "Enable M5311 at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_M5311_SAMPLE
         bool "Enable sample"
         default y

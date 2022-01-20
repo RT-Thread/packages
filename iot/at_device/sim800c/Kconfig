@@ -10,6 +10,11 @@ if AT_DEVICE_USING_SIM800C
         bool "Enable initialize by thread"
         default n
 
+    config AT_DEVICE_SIM800C_SOCKET
+        bool "Enable SIM800C at socket"
+        select AT_USING_SOCKET
+        default y
+
     config AT_DEVICE_SIM800C_SAMPLE
         bool "Enable sample"
         default y
