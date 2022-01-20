@@ -5,7 +5,6 @@ menuconfig PKG_USING_AT_DEVICE
     default n
     select RT_USING_AT
     select AT_USING_CLIENT
-    select AT_USING_SOCKET
 
 if PKG_USING_AT_DEVICE
 
