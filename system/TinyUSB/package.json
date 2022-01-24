@@ -14,13 +14,13 @@
     "github": "tfx2001"
   },
   "license": "MIT",
-  "repository": "https://github.com/tfx2001/tinyusb",
-  "homepage": "https://github.com/tfx2001/tinyusb#readme",
+  "repository": "https://github.com/RT-Thread-packages/tinyusb",
+  "homepage": "https://github.com/RT-Thread-packages/tinyusb#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/tfx2001/tinyusb.git",
+      "URL": "https://github.com/RT-Thread-packages/tinyusb.git",
       "filename": "Null for git package",
       "VER_SHA": "master"
     }
