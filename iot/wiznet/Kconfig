@@ -82,7 +82,7 @@ if PKG_USING_WIZNET
     choice
         prompt "Version"
         default PKG_USING_WIZNET_V110 if ((RT_VER_NUM < 0x30103) || (RT_VER_NUM = 0x40000))
-        default PKG_USING_WIZNET_V200
+        default PKG_USING_WIZNET_LATEST_VERSION
         help
             Select the wiznet version
 
