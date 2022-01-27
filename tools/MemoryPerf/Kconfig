@@ -1,7 +1,7 @@
 
 # Kconfig file for package MemoryPerf
 menuconfig PKG_USING_MEMORYPERF
-    bool "MemoryPerf: Memory Performance Testing for ARM CPU."
+    bool "MemoryPerf: Memory Performance Testing"
     default n
 
 if PKG_USING_MEMORYPERF
@@ -22,6 +22,34 @@ if PKG_USING_MEMORYPERF
         config PKG_USING_MEMORYPERF_LATEST_VERSION
             bool "latest"
     endchoice
+
+    if !PKG_USING_MEMORYPERF_V100
+        choice
+            prompt "CPU ARCH"
+            default PKG_MEMORYPERF_ARCH_ARM
+            help
+                Select the package cpu arch
+
+            config PKG_MEMORYPERF_ARCH_ARM
+                bool "ARM"
+
+            config PKG_MEMORYPERF_ARCH_RISCV
+                bool "RISC-V"
+        endchoice
+    endif
+
+    config PKG_MEMORYPERF_ENABLE_64BIT
+        bool "Enable 64bit"
+        default n
+
+    config PKG_MEMORYPERF_USING_HEAP
+        bool "mem alloc using heap"
+        default n
+        if PKG_MEMORYPERF_USING_HEAP
+        config PKG_MEMORYPERF_ALLOC_SIZE
+            hex "mem alloc size"
+            default 0x100000
+        endif
 
     config PKG_MEMORYPERF_VER
        string
