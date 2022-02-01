@@ -1,10 +1,10 @@
 {
-  "name": "usb_stack",
-  "description": "Tiny and portable USB stack for embedded system with USB IP",
+  "name": "CherryUSB",
+  "description": "Tiny and portable USB host/device stack for embedded system with USB IP",
   "description_zh": "小而美、可移植性高的 USB 主从协议栈。",
-  "enable": "PKG_USING_USB_STACK",
+  "enable": "PKG_USING_CHERRYUSB",
   "keywords": [
-    "USB Stack",
+    "CherryUSB",
     "USB"
   ],
   "category": "system",
@@ -14,14 +14,14 @@
     "github": "sakumisu"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/sakumisu/usb_stack",
+  "repository": "https://github.com/sakumisu/CherryUSB",
   "icon": "unknown",
-  "homepage": "https://github.com/sakumisu/usb_stack#readme",
+  "homepage": "https://github.com/sakumisu/CherryUSB#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/sakumisu/usb_stack.git",
+      "URL": "https://github.com/sakumisu/CherryUSB.git",
       "filename": "Null for git package",
       "VER_SHA": "master"
     }

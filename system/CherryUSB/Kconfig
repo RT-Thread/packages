@@ -1,0 +1,92 @@
+
+# Kconfig file for package CherryUSB
+menuconfig PKG_USING_CHERRYUSB
+    bool "CherryUSB: tiny and portable USB host/device stack for embedded system with USB IP"
+    default n
+
+if PKG_USING_CHERRYUSB
+
+menu "CherryUSB Options"
+
+    choice
+        prompt "USB Speed"
+        default PKG_CHERRYUSB_USING_FS
+        help
+          Select the usb speed.
+        config PKG_CHERRYUSB_USING_FS
+            bool "FS"
+        config PKG_CHERRYUSB_USING_HS_IN_FULL
+            bool "HS_IN_FULL"
+        config PKG_CHERRYUSB_USING_HS
+            bool "HS"
+    endchoice
+
+    config PKG_CHERRYUSB_USING_DEVICE
+        bool
+        prompt "Enable usb device mode"
+        default n
+
+    config PKG_CHERRYUSB_USING_CDC
+        bool
+        prompt "Enable usb cdc acm device"
+        default n
+        depends on PKG_CHERRYUSB_USING_DEVICE
+
+    config PKG_CHERRYUSB_USING_HID
+        bool
+        prompt "Enable usb hid device"
+        default n
+        depends on PKG_CHERRYUSB_USING_DEVICE
+
+    config PKG_CHERRYUSB_USING_DFU
+        bool
+        prompt "Enable usb dfu device"
+        default n
+        depends on PKG_CHERRYUSB_USING_DEVICE
+
+    config PKG_CHERRYUSB_USING_MSC
+        bool
+        prompt "Enable usb msc device"
+        default n
+        depends on PKG_CHERRYUSB_USING_DEVICE
+
+    config PKG_CHERRYUSB_USING_HUB
+        bool
+        prompt "Enable usb hub device"
+        default n
+        depends on PKG_CHERRYUSB_USING_DEVICE
+
+    config PKG_CHERRYUSB_USING_AUDIO
+        bool
+        prompt "Enable usb audio device"
+        default n
+        depends on PKG_CHERRYUSB_USING_DEVICE
+
+    config PKG_CHERRYUSB_USING_VIDEO
+        bool
+        prompt "Enable usb video device"
+        default n
+        depends on PKG_CHERRYUSB_USING_DEVICE
+
+endmenu
+
+    config PKG_CHERRYUSB_PATH
+        string
+        default "/packages/system/CherryUSB"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CHERRYUSB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CHERRYUSB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CHERRYUSB_VER
+       string
+       default "latest"    if PKG_USING_CHERRYUSB_LATEST_VERSION
+
+endif
+
