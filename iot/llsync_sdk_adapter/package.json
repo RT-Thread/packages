@@ -1,0 +1,35 @@
+{
+  "name": "llsync_sdk_adapter",
+  "description": "Please add description of llsync_sdk_adapter in English.",
+  "description_zh": "腾讯llsync sdk ble sdk sample",  
+  "enable": "PKG_USING_LLSYNC_SDK_ADAPTER", 
+  "keywords": [
+    "llsync_sdk_adapter",
+    "bluetooth"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "supperthomas",
+    "email": "78900636@qq.com",
+    "github": "supperthomas"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/supperthomas/LLSync_sdk_adapter",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/supperthomas/LLSync_sdk_adapter/archive/refs/tags/v1.0.0.zip",
+      "filename": "llsync_sdk_adapter-1.0.0.zip",
+      "VER_SHA": "fill in the git version SHA value"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/supperthomas/LLSync_sdk_adapter.git",
+      "filename": "Null for git package",
+      "VER_SHA": "fill in latest version branch name, such as master"
+    }
+  ]
+}

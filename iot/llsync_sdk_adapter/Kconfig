@@ -1,0 +1,32 @@
+
+# Kconfig file for package llsync_sdk_adapter
+menuconfig PKG_USING_LLSYNC_SDK_ADAPTER
+    bool "The llsync ble sdk adapter."
+    default n
+
+if PKG_USING_LLSYNC_SDK_ADAPTER
+
+    config PKG_LLSYNC_SDK_ADAPTER_PATH
+        string
+        default "/packages/iot/llsync_sdk_adapter"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LLSYNC_SDK_ADAPTER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LLSYNC_SDK_ADAPTER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LLSYNC_SDK_ADAPTER_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_LLSYNC_SDK_ADAPTER_VER
+       string
+       default "v1.0.0"    if PKG_USING_LLSYNC_SDK_ADAPTER_V100
+       default "latest"    if PKG_USING_LLSYNC_SDK_ADAPTER_LATEST_VERSION
+
+endif
+
