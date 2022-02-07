@@ -23,13 +23,13 @@
       "version": "v1.0.0",
       "URL": "https://github.com/supperthomas/LLSync_sdk_adapter/archive/refs/tags/v1.0.0.zip",
       "filename": "llsync_sdk_adapter-1.0.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "VER_SHA": "master"
     },
     {
       "version": "latest",
       "URL": "https://github.com/supperthomas/LLSync_sdk_adapter.git",
-      "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "filename": "LLSync_sdk_adapter",
+      "VER_SHA": "master"
     }
   ]
 }
