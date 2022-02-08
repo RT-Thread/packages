@@ -1,0 +1,29 @@
+{
+  "name": "lwip",
+  "description": "LwIP for RT-Thread (upstream)",
+  "description_zh": "LwIP上游同步",
+  "enable": "LWIP_USING_UPSTREAM",
+  "keywords": [
+    "lwip",
+    "tcpip"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "jiantingman@foxmail.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/RT-Thread-packages/lwip",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/lwip#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/lwip.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
