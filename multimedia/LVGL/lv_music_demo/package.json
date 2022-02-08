@@ -18,6 +18,12 @@
   "homepage": "https://github.com/mysterywolf/lv_demo_music#readme",
   "site": [
     {
+      "version": "v0.2.0",
+      "URL": "https://github.com/mysterywolf/lv_demo_music/archive/refs/tags/v0.2.0.zip",
+      "filename": "lv_demo_music-0.2.0.zip",
+      "VER_SHA": "master"
+    },
+    {
       "version": "v0.1.1",
       "URL": "https://github.com/mysterywolf/lv_demo_music/archive/refs/tags/v0.1.1.zip",
       "filename": "lv_demo_music-0.1.1.zip",

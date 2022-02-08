@@ -26,6 +26,12 @@
       "VER_SHA": "master"
     },
     {
+      "version": "v8.2.0",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.2.0.zip",
+      "filename": "lvgl-8.2.0.zip",
+      "VER_SHA": "master"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/lvgl/lvgl.git",
       "filename": "Null for git package",
