@@ -23,12 +23,6 @@
       "URL": "https://github.com/sogwms/mavlink.git",
       "filename": "mavlink.zip",
       "VER_SHA": "main"
-    },
-    {
-      "version": "latest-mirror",
-      "URL": "https://github.com.cnpmjs.org/sogwms/mavlink.git",
-      "filename": "mavlink.zip",
-      "VER_SHA": "main"
     }
   ]
 }
