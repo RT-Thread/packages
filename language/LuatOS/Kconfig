@@ -5,7 +5,6 @@ menuconfig PKG_USING_LUATOS_SOC
     select RT_USING_POSIX        if RT_VER_NUM < 0x40100
     select RT_USING_LIBC         if RT_VER_NUM < 0x40100
     select RT_USING_POSIX_FS     if RT_VER_NUM >= 0x40100
-    select RT_USING_POSIX_STDIO  if RT_VER_NUM >= 0x40100
     select RT_USING_TIMER_SOFT
     select RT_USING_DFS_ROMFS
     bool "LUATOS : Powerful embedded Lua Engine for IoT devices"
