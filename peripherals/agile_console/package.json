@@ -1,7 +1,7 @@
 {
   "name": "agile_console",
-  "description": "A agile console pachage.",
-  "description_zh": "一个灵活的console设备软件包",
+  "description": "Simple debugging device Middleware.",
+  "description_zh": "简单易用的调试设备中间件。",
   "enable": "PKG_USING_AGILE_CONSOLE",
   "keywords": [
     "agile_console"
@@ -16,16 +16,6 @@
   "repository": "https://github.com/loogg/agile_console",
   "homepage": "https://github.com/loogg/agile_console#readme",
   "site": [
-    {
-      "version": "v1.0.0",
-      "URL": "https://github.com/loogg/agile_console/archive/refs/tags/v1.0.0.zip",
-      "filename": "agile_console-1.0.0.zip"
-    },
-    {
-      "version": "v1.0.1",
-      "URL": "https://github.com/loogg/agile_console/archive/refs/tags/v1.0.1.zip",
-      "filename": "agile_console-1.0.1.zip"
-    },
     {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_console.git",
