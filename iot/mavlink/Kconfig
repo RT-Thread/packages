@@ -18,8 +18,6 @@ if PKG_USING_MAVLINK
 
         config PKG_USING_MAVLINK_LATEST_VERSION
             bool "latest"
-        config PKG_USING_MAVLINK_LATEST_VERSION_MIRROR
-            bool "latest-mirror"
     endchoice
 
     choice
@@ -52,7 +50,6 @@ if PKG_USING_MAVLINK
 
     config PKG_MAVLINK_VER
        string
-       default "latest-mirror"    if PKG_USING_MAVLINK_LATEST_VERSION_MIRROR
        default "latest"           if PKG_USING_MAVLINK_LATEST_VERSION
 
 endif
