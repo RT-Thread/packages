@@ -2,7 +2,7 @@
   "name": "lwip",
   "description": "LwIP for RT-Thread (upstream)",
   "description_zh": "LwIP上游同步",
-  "enable": "LWIP_USING_UPSTREAM",
+  "enable": "PKG_USING_LWIP",
   "keywords": [
     "lwip",
     "tcpip"
