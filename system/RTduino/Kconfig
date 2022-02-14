@@ -23,7 +23,9 @@ if RT_USING_ARDUINO
 
     config RT_USING_ARDUINO_THREAD_PRIO
         int "arduino thread's priority"
-        default 20
+        default 7 if RT_THREAD_PRIORITY_8
+        default 31  if RT_THREAD_PRIORITY_32
+        default 255  if RT_THREAD_PRIORITY_256
 
     choice
         prompt "Version"
