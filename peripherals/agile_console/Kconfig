@@ -1,7 +1,7 @@
 
 # Kconfig file for package agile_console
 menuconfig PKG_USING_AGILE_CONSOLE
-    bool "agile_console: A agile console pachage."
+    bool "agile_console: Simple debugging device Middleware."
     default n
     select RT_USING_DEVICE_IPC
 
@@ -13,7 +13,7 @@ if PKG_USING_AGILE_CONSOLE
 
     config PKG_AGILE_CONSOLE_RX_BUFFER_SIZE
         int "Set agile_console rx buffer size"
-        default 256
+        default 1024
 
     config PKG_AGILE_CONSOLE_DEVICE_NAME
         string "Set agile_console device name"
@@ -21,7 +21,7 @@ if PKG_USING_AGILE_CONSOLE
 
     config PKG_AGILE_CONSOLE_THREAD_PRIORITY
         int "Set agile_console thread priority"
-        default 19
+        default 9
 
     config PKG_AGILE_CONSOLE_THREAD_STACK_SIZE
         int "Set agile_console thread stack size"
@@ -63,26 +63,16 @@ if PKG_USING_AGILE_CONSOLE
         help
             Select the package version
 
-        config PKG_USING_AGILE_CONSOLE_V100
-            bool "v1.0.0"
-
-        config PKG_USING_AGILE_CONSOLE_V101
-            bool "v1.0.1"
-
         config PKG_USING_AGILE_CONSOLE_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_AGILE_CONSOLE_VER
        string
-       default "v1.0.0"    if PKG_USING_AGILE_CONSOLE_V100
-       default "v1.0.1"    if PKG_USING_AGILE_CONSOLE_V101
        default "latest"    if PKG_USING_AGILE_CONSOLE_LATEST_VERSION
 
     config PKG_AGILE_CONSOLE_VER_NUM
         hex
-        default 0x10000    if PKG_USING_AGILE_CONSOLE_V100
-        default 0x10001    if PKG_USING_AGILE_CONSOLE_V101
         default 0x99999    if PKG_USING_AGILE_CONSOLE_LATEST_VERSION
 endif
 
