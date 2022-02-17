@@ -1,7 +1,7 @@
 
 # Kconfig file for package strings
 menuconfig PKG_USING_POSIX_STRINGS
-    bool "Extension string functions for POSIX.1"
+    bool "Extension string functions <strings.h>"
     default n
 
 if PKG_USING_POSIX_STRINGS
