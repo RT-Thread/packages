@@ -39,6 +39,5 @@ source "$PKGS_DIR/packages/tools/mem_sandbox/Kconfig"
 source "$PKGS_DIR/packages/tools/solar_terms/Kconfig"
 source "$PKGS_DIR/packages/tools/gan_zhi/Kconfig"
 source "$PKGS_DIR/packages/tools/fdt/Kconfig"
-source "$PKGS_DIR/packages/tools/heatshrink/Kconfig"
 
 endmenu
