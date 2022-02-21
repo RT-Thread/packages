@@ -8,7 +8,7 @@ if PKG_USING_HEATSHRINK
 
     config PKG_HEATSHRINK_PATH
         string
-        default "/packages/tools/heatshrink"
+        default "/packages/misc/heatshrink"
 
     config HEATSHRINK_USING_LOGS
         bool "Enable logs"
@@ -16,22 +16,21 @@ if PKG_USING_HEATSHRINK
 
     choice
         prompt "Version"
-        default PKG_USING_HEATSHRINK_V100
+        default PKG_USING_HEATSHRINK_V101
         help
             Select the package version
 
-        config PKG_USING_HEATSHRINK_V100
-            bool "v1.0.0"
+        config PKG_USING_HEATSHRINK_V101
+            bool "v1.0.1"
 
-        config PKG_USING_ADBD_HEATSHRINK_VERSION
+        config PKG_USING_HEATSHRINK_LATEST_VERSION
             bool "latest"
 
     endchoice
 
     config PKG_HEATSHRINK_VER
        string
-       default "v1.0.0"    if PKG_USING_HEATSHRINK_V100
+       default "v1.0.1"    if PKG_USING_HEATSHRINK_V101
        default "latest"    if PKG_USING_HEATSHRINK_LATEST_VERSION
 
 endif
-

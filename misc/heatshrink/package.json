@@ -6,7 +6,7 @@
   "keywords": [
     "heatshrink"
   ],
-  "category": "tools",
+  "category": "misc",
   "author": {
     "name": "liukangcc",
     "email": "liukangcc@outlook.com",
@@ -19,16 +19,16 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/liukangcc/heatshrink/archive/refs/tags/v1.0.0.zip",
-      "filename": "heatshrink-v1.0.0.zip",
+      "version": "v1.0.1",
+      "URL": "https://github.com/liukangcc/heatshrink/archive/v1.0.1.zip",
+      "filename": "heatshrink-v1.0.1.zip",
       "VER_SHA": "fill in the git version SHA value"
     },
     {
       "version": "latest",
       "URL": "https://github.com/liukangcc/heatshrink.git",
       "filename": "heatshrink.zip",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "VER_SHA": "master"
     }
   ]
 }
