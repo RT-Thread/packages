@@ -13,14 +13,14 @@
     "github": "pikasTech"
   },
   "license": "MIT",
-  "repository": "https://github.com/pikasTech/pikascript",
+  "repository": "https://gitee.com/lyon1998/pikascript",
   "icon": "https://user-images.githubusercontent.com/88232613/144221063-a85b2cb0-0416-493f-9afb-56cff31e977d.jpg",
   "homepage": "https://www.yuque.com/liang-mltek/pikascript/wcc36r",
   "doc": "https://www.yuque.com/liang-mltek/pikascript/wcc36r",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/pikasTech/pikascript.git",
+      "URL": "https://gitee.com/lyon1998/pikascript.git",
       "filename": "Null for git package",
       "VER_SHA": "master"
     }
