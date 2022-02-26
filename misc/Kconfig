@@ -31,5 +31,6 @@ source "$PKGS_DIR/packages/misc/state_machine/Kconfig"
 source "$PKGS_DIR/packages/misc/design_pattern/Kconfig"
 source "$PKGS_DIR/packages/misc/Controller/Kconfig"
 source "$PKGS_DIR/packages/misc/phase-locked-loop/Kconfig"
+source "$PKGS_DIR/packages/misc/MFBD/Kconfig"
 
 endmenu
