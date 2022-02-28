@@ -1,0 +1,28 @@
+
+# Kconfig file for package soft_spi
+menuconfig PKG_USING_SPI_BITOPS
+    bool "a soft spi driver package for rt-thread"
+    default n
+
+if PKG_USING_SPI_BITOPS
+
+    config PKG_SOFT_SPI_PATH
+        string
+        default "/packages/peripherals/soft_spi"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SPI_BITOPS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SPI_BITOPS_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SOFT_SPI_VER
+       string
+       default "latest"    if PKG_USING_SPI_BITOPS_LATEST_VERSION
+
+endif
+
