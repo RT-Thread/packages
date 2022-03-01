@@ -27,10 +27,10 @@ config PKG_USING_DRV_MULTI_INFRARED
                 config MULTI_INFRARED_RECEIVE_HWTIMER
                     string "multi infrared receive hwtimer dev name"
                     default "timer5"
-				
-				config MULTI_INFRARED_RECEIVE_CHANNEL_NUM
-					int "multi infrared receive channel nums"
-					default 4
+					
+                config MULTI_INFRARED_RECEIVE_CHANNEL_NUM
+                    int "multi infrared receive channel nums"
+                    default 4
             endif
         endif
 

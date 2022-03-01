@@ -5,7 +5,7 @@
   "enable": "PKG_USING_MULTI_INFRARED", 
   "keywords": [
     "multi_infrared",
-	"多通道红外接收"
+    "多通道红外接收"
   ],
   "category": "peripherals",
   "author": {
