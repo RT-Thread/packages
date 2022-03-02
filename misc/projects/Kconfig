@@ -1,0 +1,5 @@
+menu "project laboratory"
+
+source "$PKGS_DIR/packages/misc/projects/industrial-gateway/Kconfig"
+
+endmenu
