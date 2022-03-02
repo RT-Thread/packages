@@ -1,8 +1,8 @@
 {
   "name": "llsync_sdk_adapter",
   "description": "Please add description of llsync_sdk_adapter in English.",
-  "description_zh": "腾讯llsync sdk ble sdk sample",  
-  "enable": "PKG_USING_LLSYNC_SDK_ADAPTER", 
+  "description_zh": "腾讯llsync sdk ble sdk sample",
+  "enable": "PKG_USING_LLSYNC_SDK_ADAPTER",
   "keywords": [
     "llsync_sdk_adapter",
     "bluetooth"

@@ -1,7 +1,7 @@
 {
   "name": "ez_iot_os",
   "description": "Ezviz cloud SDK for RT-Thread",
-  "description_zh": "连接萤石云 IoT 平台的软件包", 
+  "description_zh": "连接萤石云 IoT 平台的软件包",
   "enable": "PKG_USING_EZ_IOT_OS",
   "keywords": [
     "ez_iot_os",

@@ -1,12 +1,12 @@
 {
   "name": "rs232",
   "description": "rs232 driver package.",
-  "description_zh": "rs232驱动包。",  
-  "enable": "PKG_USING_RS232", 
+  "description_zh": "rs232驱动包。",
+  "enable": "PKG_USING_RS232",
   "keywords": [
     "rs232",
-	"driver",
-	"rt-thread"
+    "driver",
+    "rt-thread"
   ],
   "category": "peripherals",
   "author": {
