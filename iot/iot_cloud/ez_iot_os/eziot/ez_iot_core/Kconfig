@@ -12,7 +12,7 @@ config EZIOT_CORE_ACEESS_TASK_STACK_SIZE
     default 16384
     depends on EZIOT_CORE_ENABLE
     help
-            Stack size for access task, the task is used for device authentication and device access 
+            Stack size for access task, the task is used for device authentication and device access
 
 config EZIOT_CORE_ACEESS_TASK_PRIORITY
     int "priority of access task"

@@ -27,7 +27,7 @@ config PKG_USING_DRV_MULTI_INFRARED
                 config MULTI_INFRARED_RECEIVE_HWTIMER
                     string "multi infrared receive hwtimer dev name"
                     default "timer5"
-					
+
                 config MULTI_INFRARED_RECEIVE_CHANNEL_NUM
                     int "multi infrared receive channel nums"
                     default 4
@@ -46,7 +46,7 @@ config PKG_USING_DRV_MULTI_INFRARED
         config PKG_USING_MULTI_INFRARED_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MULTI_INFRARED_VER
        string
        default "v0.1.0"    if PKG_USING_MULTI_INFRARED_V010

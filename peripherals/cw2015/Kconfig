@@ -32,7 +32,7 @@ if PKG_USING_CW2015
         config PKG_USING_CW2015_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_CW2015_VER
        string
        default "v1.0.0"    if PKG_USING_CW2015_V100

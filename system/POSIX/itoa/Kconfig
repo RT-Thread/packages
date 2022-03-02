@@ -9,7 +9,7 @@ if PKG_USING_POSIX_ITOA
     config PKG_POSIX_ITOA_PATH
         string
         default "/packages/system/POSIX/itoa"
-          
+
     config PKG_POSIX_ITOA_VER
        string
        default "latest"
