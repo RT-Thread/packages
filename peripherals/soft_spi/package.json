@@ -1,0 +1,27 @@
+{
+  "name": "soft_spi",
+  "description": "soft spi for rt-thread",
+  "enable": "PKG_USING_SPI_BITOPS", 
+  "keywords": [
+    "soft_spi"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "kylepengchn",
+    "email": "kylepengchn@163.com",
+    "github": "kylepengchn"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/kylepengchn/soft_spi.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/kylepengchn/soft_spi.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
