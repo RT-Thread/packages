@@ -6,7 +6,6 @@ menuconfig PKG_USING_VI
     select RT_USING_POSIX_FS    if RT_VER_NUM >= 0x40100
     select RT_USING_POSIX_STDIO if RT_VER_NUM >= 0x40100
     select RT_USING_POSIX_POLL  if RT_VER_NUM >= 0x40100
-    select RT_USING_POSIX_TERMIOS if RT_VER_NUM >= 0x40100
     select PKG_USING_POSIX_STRINGS
     select PKG_USING_OPTPARSE
     select PKG_USING_MEM_SANDBOX
@@ -96,7 +95,7 @@ if PKG_USING_VI
     config VI_ENABLE_WIN_RESIZE
         select RT_USING_POSIX_TERMIOS
         bool "Handle window resize"
-        default n
+        default y
         help
           Make busybox vi behave nicely with terminals that get resized.
 
@@ -153,13 +152,20 @@ if PKG_USING_VI
         prompt "Version"
         help
             Select this package version
+        default PKG_USING_VI_LATEST_VERSION
+        default PKG_USING_VI_V135 if RT_VER_NUM < 0x40100
 
         config PKG_USING_VI_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_VI_V135
+            depends on RT_VER_NUM < 0x40100
+            bool "v1.3.5"
+
     endchoice
 
     config PKG_VI_VER
         string
         default "latest" if PKG_USING_VI_LATEST_VERSION
-
+        default "v1.3.5" if PKG_USING_VI_V135
 endif

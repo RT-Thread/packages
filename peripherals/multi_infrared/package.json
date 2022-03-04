@@ -1,8 +1,8 @@
 {
   "name": "multi_infrared",
   "description": "multi infrared channels based on rt thread pin and hwtimer.",
-  "description_zh": "基于rt-thread的复数红外通道同时接收并解码的驱动框架。",  
-  "enable": "PKG_USING_MULTI_INFRARED", 
+  "description_zh": "基于rt-thread的复数红外通道同时接收并解码的驱动框架。",
+  "enable": "PKG_USING_MULTI_INFRARED",
   "keywords": [
     "multi_infrared",
     "多通道红外接收"

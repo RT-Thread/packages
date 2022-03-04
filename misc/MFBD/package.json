@@ -1,8 +1,8 @@
 {
   "name": "MFBD",
   "description": "Multi-Function Button Detection for MCU",
-  "description_zh": "多功能按键扫描程序，支持无限按键、多次连击",  
-  "enable": "PKG_USING_MFBD", 
+  "description_zh": "多功能按键扫描程序，支持无限按键、多次连击",
+  "enable": "PKG_USING_MFBD",
   "keywords": [
     "MFBD",
     "button"

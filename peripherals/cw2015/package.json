@@ -1,8 +1,8 @@
 {
   "name": "cw2015",
   "description": "fuel gauging system IC for Lithium-ion(Li+) Battery",
-  "description_zh": "锂电池电量计驱动",  
-  "enable": "PKG_USING_CW2015", 
+  "description_zh": "锂电池电量计驱动",
+  "enable": "PKG_USING_CW2015",
   "keywords": [
     "cw2015"
   ],

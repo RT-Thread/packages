@@ -9,7 +9,7 @@ if PKG_USING_MFBD
     config PKG_MFBD_PATH
         string
         default "/packages/misc/MFBD"
-        
+
     config PKG_USING_MFBD_DEMO_RTT
         bool "Enable Multi-Function Button Detection demo"
         default n
@@ -26,7 +26,7 @@ if PKG_USING_MFBD
         config PKG_USING_MFBD_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_MFBD_VER
        string
        default "v1.0.0"    if PKG_USING_MFBD_V100
