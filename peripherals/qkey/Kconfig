@@ -68,6 +68,9 @@ if PKG_USING_QKEY
         config PKG_USING_QKEY_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_QLED_V111
+            bool "v1.11"
+            
         config PKG_USING_QLED_V110
             bool "v1.10"
 
@@ -78,7 +81,8 @@ if PKG_USING_QKEY
     config PKG_QKEY_VER
        string
        default "latest" if PKG_USING_QKEY_LATEST_VERSION
-       default "v1.01"  if PKG_USING_QKEY_V110
+       default "v1.11"  if PKG_USING_QKEY_V111
+       default "v1.10"  if PKG_USING_QKEY_V110
        default "v1.00"  if PKG_USING_QKEY_V100
 
 endif
