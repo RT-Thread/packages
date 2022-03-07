@@ -16,28 +16,110 @@ if PKG_USING_TINYUSB
         int "TinyUSB thread stack size"
         default 2048
 
+    config PKG_TINYUSB_THREAD_PRIORITY
+        int "TinyUSB thread priority"
+        default 8
+
+    config PKG_TINYUSB_MEM_SECTION
+        string "Memory section name"
+        default ".data"
+
+    config PKG_TINYUSB_MEM_ALIGN
+        int "Memory align size"
+        default 4
+    
+    choice
+        prompt "Port number"
+        default PKG_TINYUSB_RHPORT_NUM_1
+
+        config PKG_TINYUSB_RHPORT_NUM_1
+            bool "1"
+
+        config PKG_TINYUSB_RHPORT_NUM_2
+            bool "2"
+    endchoice
+
+    config PKG_TINYUSB_RHPORT_NUM
+        int
+        default 0 if PKG_TINYUSB_RHPORT_NUM_1
+        default 1 if PKG_TINYUSB_RHPORT_NUM_2
+    
+    choice
+        prompt "Port speed"
+        default PKG_TINYUSB_FULL_SPEED
+
+        config PKG_TINYUSB_FULL_SPEED
+            bool "Full Speed"
+        
+        config PKG_TINYUSB_HIGH_SPEED
+            bool "High Speed"
+    endchoice
+
+    config PKG_TINYUSB_DEVICE_PORT_SPEED
+        hex
+        default 0x00 if PKG_TINYUSB_FULL_SPEED
+        default 0x20 if PKG_TINYUSB_HIGH_SPEED
+
     menuconfig PKG_TINYUSB_DEVICE_ENABLE
         bool "Using USB device"
         default n
 
     if PKG_TINYUSB_DEVICE_ENABLE
         config PKG_TINYUSB_DEVICE_VID
-                hex "USB Vendor ID"
-                default 0xCAFE
+            hex "Device Vendor ID"
+            default 0xCAFE
 
         config PKG_TINYUSB_DEVICE_PID
-                hex "USB Product ID"
-                default 0x4000
+            hex "Device Product ID"
+            default 0x4000
+        
+        config PKG_TINYUSB_DEVICE_MANUFACTURER
+            string "Manufacturer name"
+            default "TinyUSB"
+        
+        config PKG_TINYUSB_DEVICE_PRODUCT
+            string "Device name"
+            default "TinyUSB Device"
+        
+        config PKG_TINYUSB_EDPT0_SIZE
+            int "Endpoint 0 size"
+            default 64
+        
+        config PKG_TINYUSB_DEVICE_CURRENT
+            int "Maximum current (mA)"
+            default 100
 
-        config PKG_TINYUSB_DEVICE_CDC
+        menuconfig PKG_TINYUSB_DEVICE_CDC
             bool "Using Communication Device Class (CDC)"
             default n
+        
+        if PKG_TINYUSB_DEVICE_CDC
+            config CFG_TUD_CDC
+                int
+                default 1
+            
+            config PKG_TINYUSB_DEVICE_CDC_STRING
+                string "Description of CDC"
+                default "TinyUSB CDC"
+            
+            config PKG_TINYUSB_DEVICE_CDC_EPNUM_NOTIF
+                int "Notification endpoint number"
+                default 1
+            
+            config PKG_TINYUSB_DEVICE_CDC_EPNUM
+                int "Endpoint number"
+                default 2
 
-        config CFG_TUD_CDC
-            int
-            default 1 if PKG_TINYUSB_DEVICE_CDC
+            config PKG_TINYUSB_DEVICE_CDC_RX_BUFSIZE
+                int "Rx buffer size"
+                default 64
+            
+            config PKG_TINYUSB_DEVICE_CDC_TX_BUFSIZE
+                int "Tx buffer size"
+                default 64
+        endif
 
-        config PKG_TINYUSB_DEVICE_MSC
+        menuconfig PKG_TINYUSB_DEVICE_MSC
             bool "Using Mass Storage Class (MSC)"
             default n
 
@@ -45,24 +127,37 @@ if PKG_USING_TINYUSB
             config CFG_TUD_MSC
                 int
                 default 1
-
-            config PKG_TINYUSB_DEVICE_MSC_NAME
-                string "The name of the block device used by MSC"
+            
+            config PKG_TINYUSB_DEVICE_MSC_STRING
+                string "Description of MSC"
+                default "TinyUSB MSC"
 
             config PKG_TINYUSB_DEVICE_MSC_VID
-                string "MSC device vendor ID"
+                string "SCSI VID"
                 default "TinyUSB"
 
             config PKG_TINYUSB_DEVICE_MSC_PID
-                string "MSC device product ID"
+                string "SCSI PID"
                 default "Mass Storage"
 
             config PKG_TINYUSB_DEVICE_MSC_REV
-                string "MSC device revision"
+                string "SCSI Product revision"
                 default "1.0"
+
+            config PKG_TINYUSB_DEVICE_MSC_EPNUM
+                int "Endpoint number"
+                default 3
+
+            config PKG_TINYUSB_DEVICE_MSC_EP_BUFSIZE
+                int "Endpoint buffer size"
+                default 4096
+            
+            config PKG_TINYUSB_DEVICE_MSC_NAME
+                string "The name of the block device used by MSC"
+                default "norflash0"
         endif
 
-        config PKG_TINYUSB_DEVICE_HID
+        menuconfig PKG_TINYUSB_DEVICE_HID
             bool "Using Human Interface Device (HID)"
             default n
 
@@ -70,6 +165,18 @@ if PKG_USING_TINYUSB
             config CFG_TUD_HID
                 int
                 default 1
+            
+            config PKG_TINYUSB_DEVICE_HID_STRING
+                string "Description of HID"
+                default "TinyUSB HID"
+            
+            config PKG_TINYUSB_DEVICE_HID_EPNUM
+                int "Endpoint number"
+                default 4
+            
+            config PKG_TINYUSB_DEVICE_HID_INT
+                int "Polling interval (ms)"
+                default 5
 
             config PKG_TINYUSB_DEVICE_HID_KEYBOARD
                 bool "Keyboard report"
@@ -83,6 +190,9 @@ if PKG_USING_TINYUSB
                 bool "Gamepad report"
                 default n
 
+            config PKG_TINYUSB_DEVICE_HID_EP_BUFSIZE
+                int "Endpoint buffer size"
+                default 16
         endif
 
         config PKG_TINYUSB_DEVICE_EXAMPLE
@@ -130,7 +240,6 @@ if PKG_USING_TINYUSB
 
     config PKG_TINYUSB_VER
        string
-       default "latest"    if PKG_USING_TINYUSB_LATEST_VERSION
+       default "latest" if PKG_USING_TINYUSB_LATEST_VERSION
 
 endif
-
