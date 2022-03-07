@@ -58,7 +58,7 @@ if PKG_USING_QMP6989
         config PKG_USING_QMP6989_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_QMP6989_VER
        string
        default "latest"    if PKG_USING_QMP6989_LATEST_VERSION

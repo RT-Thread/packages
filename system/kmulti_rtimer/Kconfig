@@ -27,7 +27,7 @@ if PKG_USING_KMULTI_RTIMER
         config PKG_USING_KMULTI_RTIMER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_KMULTI_RTIMER_VER
        string
        default "latest"    if PKG_USING_KMULTI_RTIMER_LATEST_VERSION
