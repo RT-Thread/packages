@@ -12,9 +12,12 @@ if PKG_USING_SIGNAL_LED
 
     choice
         prompt "Version"
-        default PKG_USING_SIGNAL_LED_LATEST_VERSION
+        default PKG_USING_SIGNAL_LED_V130
         help
             Select the package version
+        
+        config PKG_USING_SIGNAL_LED_V130
+            bool "v1.3.0"
 
         config PKG_USING_SIGNAL_LED_V120
             bool "v1.2.0"
@@ -28,6 +31,7 @@ if PKG_USING_SIGNAL_LED
 
     config PKG_SIGNAL_LED_VER
        string
+       default "v1.3.0"    if PKG_USING_SIGNAL_LED_V130
        default "v1.2.0"    if PKG_USING_SIGNAL_LED_V120
        default "v1.1.0"    if PKG_USING_SIGNAL_LED_V110
        default "latest"    if PKG_USING_SIGNAL_LED_LATEST_VERSION
