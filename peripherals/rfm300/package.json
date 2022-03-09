@@ -1,0 +1,27 @@
+{
+  "name": "rfm300",
+  "description": "RFM300: ISM Transceiver Module With +20dBm(100mW) Output Power.",
+  "enable": "PKG_USING_RFM300", 
+  "keywords": [
+    "rfm300"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "kylepengchn",
+    "email": "kylepengchn@163.com",
+    "github": "kylepengchn"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/kylepengchn/rfm300.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/kylepengchn/rfm300.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

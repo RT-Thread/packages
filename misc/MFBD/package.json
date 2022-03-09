@@ -1,0 +1,33 @@
+{
+  "name": "MFBD",
+  "description": "Multi-Function Button Detection for MCU",
+  "description_zh": "多功能按键扫描程序，支持无限按键、多次连击",
+  "enable": "PKG_USING_MFBD",
+  "keywords": [
+    "MFBD",
+    "button"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "smartmx",
+    "email": "smartmx@qq.com",
+    "github": "smartmx"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/smartmx/MFBD",
+  "homepage": "https://github.com/smartmx/MFBD",
+  "readme": "https://github.com/smartmx/MFBD/blob/main/README.md",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/smartmx/MFBD/archive/v1.0.0.zip",
+      "filename": "MFBD-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/smartmx/MFBD.git",
+      "filename": "MFBD.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

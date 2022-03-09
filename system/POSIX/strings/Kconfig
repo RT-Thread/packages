@@ -9,7 +9,7 @@ if PKG_USING_POSIX_STRINGS
     config PKG_POSIX_STRINGS_PATH
         string
         default "/packages/system/POSIX/strings"
-          
+
     config PKG_POSIX_STRINGS_VER
        string
        default "latest"

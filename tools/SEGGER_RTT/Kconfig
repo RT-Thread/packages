@@ -49,14 +49,14 @@ config SEGGER_RTT_PRINTF_BUFFER_SIZE
     int "SEGGER_RTT_PRINTF_BUFFER_SIZE"
     depends on SEGGER_RTT_ENABLE
     help
-       Size of buffer for RTT printf to bulk-send chars via RTT  
+       Size of buffer for RTT printf to bulk-send chars via RTT
     default 64
-    
+
 config RTT_DEFAULT_BUFFER_INDEX
     int "RTT_DEFAULT_BUFFER_INDEX"
     depends on SEGGER_RTT_ENABLE
     default 0
-    
+
 config RTT_DEFAULT_TERMINAL_INDEX
     int "RTT_DEFAULT_TERMINAL_INDEX"
     depends on SEGGER_RTT_ENABLE

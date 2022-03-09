@@ -1,0 +1,67 @@
+
+# Kconfig file for package qmp6989
+menuconfig PKG_USING_QMP6989
+    bool "qmp6989: High accuracy and small size barometric pressure sensor,support: barometer, temperature."
+    default n
+
+if PKG_USING_QMP6989
+
+    choice
+        prompt "qmp6989 select intf"
+        default PKG_QMP6989_USING_INTF_I2C
+
+        config PKG_QMP6989_USING_INTF_I2C
+            bool "intf i2c"
+
+        config PKG_QMP6989_USING_INTF_SPI
+            bool "intf spi"
+    endchoice
+
+    if PKG_QMP6989_USING_INTF_I2C
+        config PKG_QMP6989_INTF_I2C_BUS_NAME
+            string "qmp6989 intf i2c bus name"
+            default "i2c0"
+
+        config PKG_QMP6989_INTF_I2C_ADDR
+            hex "qmp6989 intf i2c addr"
+            default 0x6c
+    endif
+
+    if PKG_QMP6989_USING_INTF_SPI
+        config PKG_QMP6989_INTF_SPI_BUS_NAME
+            string "qmp6989 intf spi bus name"
+            default "spi0"
+
+        config PKG_QMP6989_INTF_SPI_CS_PIN
+            int "qmp6989 intf spi cs pin"
+            default -1
+    endif
+
+    config PKG_QMP6989_SUPPORT_FLOAT
+        bool "support float"
+        default n
+
+    config PKG_USING_QMP6989_DEMO
+        bool "using demo"
+        default n
+
+    config PKG_QMP6989_PATH
+        string
+        default "/packages/peripherals/sensors/qmp6989"
+
+    choice
+        prompt "Version"
+        default PKG_USING_QMP6989_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QMP6989_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_QMP6989_VER
+       string
+       default "latest"    if PKG_USING_QMP6989_LATEST_VERSION
+
+endif
+

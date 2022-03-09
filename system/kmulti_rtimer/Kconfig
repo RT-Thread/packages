@@ -1,0 +1,36 @@
+
+# Kconfig file for package kmulti_rtimer
+menuconfig PKG_USING_KMULTI_RTIMER
+    bool "a multi timer for rt-thread."
+    default n
+
+if PKG_USING_KMULTI_RTIMER
+
+    config PKG_KMULTI_RTIMER_HWTIMER_DEV_NAME
+        string "The hwtimer device name for multi rtimer"
+        default "hwtimer1"
+
+    config PKG_USING_KMULTI_RTIMER_DEMO
+        bool "Use demo"
+        default n
+
+    config PKG_KMULTI_RTIMER_PATH
+        string
+        default "/packages/system/kmulti_rtimer"
+
+    choice
+        prompt "Version"
+        default PKG_USING_KMULTI_RTIMER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_KMULTI_RTIMER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_KMULTI_RTIMER_VER
+       string
+       default "latest"    if PKG_USING_KMULTI_RTIMER_LATEST_VERSION
+
+endif
+

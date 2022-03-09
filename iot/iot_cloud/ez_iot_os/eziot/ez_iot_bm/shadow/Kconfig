@@ -31,5 +31,5 @@ config EZIOT_SHADOW_FORCE_FULL_SYNC_INTERVAL
     depends on EZIOT_SHADOW_ENABLE
 
     help
-        If the device state does not change for a long time, shadoww will perform a 
-        full synchronization to maintain state consistency. 
+        If the device state does not change for a long time, shadoww will perform a
+        full synchronization to maintain state consistency.

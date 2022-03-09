@@ -1,0 +1,56 @@
+
+# Kconfig file for package infrared
+menuconfig PKG_USING_MULTI_INFRARED
+    bool "multi_infrared : multi_infrared is base on rt-thread pin"
+    default n
+
+if PKG_USING_MULTI_INFRARED
+
+    config PKG_MULTI_INFRARED_PATH
+        string
+        default "/packages/peripherals/multi_infrared"
+
+    menu "Select multi infrared decoder"
+        config MULTI_INFRARED_NEC_DECODER
+            bool "enable nec decoder"
+            default n
+    endmenu
+
+config PKG_USING_DRV_MULTI_INFRARED
+        bool "Use the multi infrared driver provided by the software package "
+        default y
+        if PKG_USING_DRV_MULTI_INFRARED
+        config MULTI_INFRARED_RECEIVE
+            bool "Enable multi infrared receive"
+            default y
+            if MULTI_INFRARED_RECEIVE
+                config MULTI_INFRARED_RECEIVE_HWTIMER
+                    string "multi infrared receive hwtimer dev name"
+                    default "timer5"
+
+                config MULTI_INFRARED_RECEIVE_CHANNEL_NUM
+                    int "multi infrared receive channel nums"
+                    default 4
+            endif
+        endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_MULTI_INFRARED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MULTI_INFRARED_V010
+            bool "v0.1.0"
+
+        config PKG_USING_MULTI_INFRARED_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MULTI_INFRARED_VER
+       string
+       default "v0.1.0"    if PKG_USING_MULTI_INFRARED_V010
+       default "latest"    if PKG_USING_MULTI_INFRARED_LATEST_VERSION
+
+endif
+

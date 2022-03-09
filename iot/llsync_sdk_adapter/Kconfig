@@ -22,7 +22,7 @@ if PKG_USING_LLSYNC_SDK_ADAPTER
         config PKG_USING_LLSYNC_SDK_ADAPTER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_LLSYNC_SDK_ADAPTER_VER
        string
        default "v1.0.0"    if PKG_USING_LLSYNC_SDK_ADAPTER_V100

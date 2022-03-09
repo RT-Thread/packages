@@ -1,0 +1,18 @@
+menuconfig PROJECT_USING_INDUSTRIAL_DATEWAY
+    bool "Industrial gataway: Integrate RS-485, RS-232, Ethernet"
+    depends on BOARD_STM32F407_ATK_EXPLORER
+    default n
+
+if PROJECT_USING_INDUSTRIAL_DATEWAY
+
+    config INDUSTRIAL_DATEWAY_ON_STM32F407_ATK_EXPLORER
+        bool
+        depends on BOARD_STM32F407_ATK_EXPLORER
+        select BSP_USING_USB_TO_USART
+        select BSP_USING_COM3
+        select BSP_USING_ETH
+        select BSP_USING_SDCARD_FATFS
+        select BSP_USING_SPI_FLASH_LITTLEFS
+        default y
+
+endif

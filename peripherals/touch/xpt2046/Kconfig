@@ -24,7 +24,7 @@ if PKG_USING_XPT2046_TOUCH
         config PKG_USING_XPT2046_TOUCH_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_XPT2046_TOUCH_VER
        string
        default "v1.0.0"    if PKG_USING_XPT2046_TOUCH_V100
@@ -33,12 +33,12 @@ if PKG_USING_XPT2046_TOUCH
     config PKG_XPT2046_USING_KCONFIG
         bool "Setup xpt2046 touch in menuconfig"
         default n
-    
+
     if PKG_XPT2046_USING_KCONFIG
         config PKG_XPT2046_SPI_BUS
             string "SPI bus connected to the xpt2046"
             default "spi0"
-            
+
         config PKG_XPT2046_CS_GPIO
             int "GPIO port number for the chip select pin"
             help
@@ -56,11 +56,11 @@ if PKG_USING_XPT2046_TOUCH
             int "GPIO pin number for the pen pin"
             help
                 The pen pin is (pin number) of pin in the (port number) of GPIO port\
-        
+
         config PKG_XPT2046_RANGE_X
             int "Width of the touch lcd"
             default 128
-            
+
         config PKG_XPT2046_RANGE_Y
             int "Height of the touch lcd"
             default 160

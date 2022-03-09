@@ -24,7 +24,7 @@ if PKG_USING_TINYUSB
         config PKG_TINYUSB_DEVICE_VID
                 hex "USB Vendor ID"
                 default 0xCAFE
-        
+
         config PKG_TINYUSB_DEVICE_PID
                 hex "USB Product ID"
                 default 0x4000
@@ -48,15 +48,15 @@ if PKG_USING_TINYUSB
 
             config PKG_TINYUSB_DEVICE_MSC_NAME
                 string "The name of the block device used by MSC"
-            
+
             config PKG_TINYUSB_DEVICE_MSC_VID
                 string "MSC device vendor ID"
                 default "TinyUSB"
-            
+
             config PKG_TINYUSB_DEVICE_MSC_PID
                 string "MSC device product ID"
                 default "Mass Storage"
-            
+
             config PKG_TINYUSB_DEVICE_MSC_REV
                 string "MSC device revision"
                 default "1.0"
@@ -65,20 +65,20 @@ if PKG_USING_TINYUSB
         config PKG_TINYUSB_DEVICE_HID
             bool "Using Human Interface Device (HID)"
             default n
-        
+
         if PKG_TINYUSB_DEVICE_HID
             config CFG_TUD_HID
                 int
                 default 1
-            
+
             config PKG_TINYUSB_DEVICE_HID_KEYBOARD
                 bool "Keyboard report"
                 default n
-            
+
             config PKG_TINYUSB_DEVICE_HID_MOUSE
                 bool "Mouse report"
                 default n
-            
+
             config PKG_TINYUSB_DEVICE_HID_GAMEPAD
                 bool "Gamepad report"
                 default n
@@ -100,7 +100,7 @@ if PKG_USING_TINYUSB
     choice
         prompt "TinyUSB debug level"
         default PKG_TINYUSB_DEBUG_NO
- 
+
         config PKG_TINYUSB_DEBUG_NO
             bool "No debug"
         config PKG_TINYUSB_DEBUG_ERROR

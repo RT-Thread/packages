@@ -1,0 +1,21 @@
+menuconfig PROJECT_USING_MUSIC_PLAYER
+    bool "music player"
+    depends on BOARD_STM32L475_ATK_PANDORA
+    default n
+
+if PROJECT_USING_MUSIC_PLAYER
+
+    config MUSIC_PLAYER_ON_STM32L475_ATK_PANDORA
+        bool
+        depends on BOARD_STM32L475_ATK_PANDORA
+        select RT_USING_POSIX_FS
+        select RT_USING_POSIX_STDIO
+        select BSP_USING_SDCARD
+        select BSP_USING_AUDIO
+        select BSP_USING_AUDIO_PLAY
+        select PKG_USING_WAVPLAYER
+        select PKG_WP_USING_PLAY
+        select PKG_USING_VT100
+        default y
+
+endif

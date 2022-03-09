@@ -1,8 +1,8 @@
 {
   "name": "itoa",
   "description": "itoa family for RT-Thread POSIX (not standard)",
-  "description_zh": "itoa家族函数（非POSIX标准）",  
-  "enable": "PKG_USING_POSIX_ITOA", 
+  "description_zh": "itoa家族函数（非POSIX标准）",
+  "enable": "PKG_USING_POSIX_ITOA",
   "keywords": [
     "itoa",
     "lltoa",

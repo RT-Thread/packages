@@ -2,7 +2,7 @@
   "name": "strings",
   "description": "Extension string functions <strings.h>",
   "description_zh": "<string.h> 扩展 POSIX.1 函数",
-  "enable": "PKG_USING_POSIX_STRINGS", 
+  "enable": "PKG_USING_POSIX_STRINGS",
   "keywords": [
     "strings",
     "bzero",

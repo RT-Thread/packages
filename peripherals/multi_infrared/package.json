@@ -1,0 +1,35 @@
+{
+  "name": "multi_infrared",
+  "description": "multi infrared channels based on rt thread pin and hwtimer.",
+  "description_zh": "基于rt-thread的复数红外通道同时接收并解码的驱动框架。",
+  "enable": "PKG_USING_MULTI_INFRARED",
+  "keywords": [
+    "multi_infrared",
+    "多通道红外接收"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "jsrdczy",
+    "email": "jsrdczycn@gmail.com",
+    "github": "jsrdczy"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/jsrdczy/rt_thread_multi_infrared_frame",
+  "icon": "unknown",
+  "homepage": "https://github.com/jsrdczy",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/jsrdczy/rt_thread_multi_infrared_frame/archive/v0.1.0.zip",
+      "filename": "multi_infrared-0.1.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/jsrdczy/rt_thread_multi_infrared_frame.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

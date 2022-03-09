@@ -7,7 +7,7 @@ config EZIOT_OTA_TASK_STACK_SIZE
     default 16384
     depends on EZIOT_OTA_ENABLE
     help
-            Stack size for ota task, the task is used for download ota file 
+            Stack size for ota task, the task is used for download ota file
 
 config EZIOT_OTA_TASK_PRIORITY
     int "priority of ota task"

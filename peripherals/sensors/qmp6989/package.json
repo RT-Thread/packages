@@ -1,0 +1,27 @@
+{
+  "name": "qmp6989",
+  "description": "qmp6989: High accuracy and small size barometric pressure sensor,support: barometer, temperature.",
+  "enable": "PKG_USING_QMP6989", 
+  "keywords": [
+    "qmp6989"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "kylepengchn",
+    "email": "kylepengchn@163.com",
+    "github": "kylepengchn"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/kylepengchn/qmp6989.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/kylepengchn/qmp6989.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
