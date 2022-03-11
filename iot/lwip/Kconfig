@@ -1,0 +1,13 @@
+config PKG_USING_LWIP
+    bool
+    default n
+
+if PKG_USING_LWIP
+    config PKG_LWIP_PATH
+        string
+        default "/packages/iot/lwip"
+
+    config PKG_LWIP_VER
+        string
+        default "latest" if RT_USING_LWIP_LATEST
+endif
