@@ -1,7 +1,8 @@
 # Kconfig file for package abup_fota
 menuconfig PKG_USING_ABUP_FOTA
     bool "abup_fota: The firmware downloader which using on Abup FOTA component"
-    select PKG_USING_FAL
+    select PKG_USING_FAL if RT_VER_NUM < 0x40100
+    select RT_USING_FAL if RT_VER_NUM >= 0x40100
     default n
 
 if PKG_USING_ABUP_FOTA

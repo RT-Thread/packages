@@ -56,7 +56,8 @@ if PKG_USING_CMBACKTRACE
             bool
             prompt "Save the log to FAL flash partition"
             default n
-            select PKG_USING_FAL
+            select PKG_USING_FAL if RT_VER_NUM < 0x40100
+            select RT_USING_FAL if RT_VER_NUM >= 0x40100
             help
               The log will save to the FAL flash partition when case hardfault and assert.
 

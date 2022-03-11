@@ -2,7 +2,8 @@
 # Kconfig file for package uparam
 menuconfig PKG_USING_UPARAM
     bool "uparam: Manage system parameters with FLASH"
-    select PKG_USING_FAL
+    select PKG_USING_FAL if RT_VER_NUM < 0x40100
+    select RT_USING_FAL if RT_VER_NUM >= 0x40100
     default n
 
 if PKG_USING_UPARAM

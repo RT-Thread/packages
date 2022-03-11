@@ -30,7 +30,8 @@ if PKG_USING_FLASHDB
     config FDB_USING_FAL_MODE
         bool
         prompt "Using FAL storage mode"
-        select PKG_USING_FAL
+        select PKG_USING_FAL if RT_VER_NUM < 0x40100
+        select RT_USING_FAL if RT_VER_NUM >= 0x40100
         default y
 
     if FDB_USING_FAL_MODE
