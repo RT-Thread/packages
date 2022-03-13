@@ -1,0 +1,36 @@
+
+# Kconfig file for package simple_xml
+menuconfig PKG_USING_SIMPLE_XML
+    bool "simple_xml : Based on the XML parser of the C language."
+    default n
+
+if PKG_USING_SIMPLE_XML
+
+    config PKG_USING_SIMPLE_XML_EXAMPLE
+        bool "example for using simple_xml"
+        default n
+
+    config PKG_SIMPLE_XML_PATH
+        string
+        default "/packages/iot/simple_xml"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SIMPLE_XML_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SIMPLE_XML_V110
+            bool "v1.1.0"
+
+        config PKG_USING_SIMPLE_XML_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_SIMPLE_XML_VER
+       string
+       default "v1.1.0"    if PKG_USING_SIMPLE_XML_V110
+       default "latest"    if PKG_USING_SIMPLE_XML_LATEST_VERSION
+
+endif
+

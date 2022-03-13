@@ -1,0 +1,33 @@
+{
+  "name": "simple_xml",
+  "description": "Based on the XML parser of the C language, the purpose of this project is to develop a code that can be applied on multiple platforms. At present, the code has been applied to MAINSTREAM OPERATING SYSTEMS SUCH AS WIN10, LINUX, RT-thread, VxWorks and so on.",
+  "description_zh": "基于C语言的XML解析器，开发本项目的目的在于开发一个能在多平台应用的代码。目前代码已经应用在WIN10、Linux、rt-thread、VxWorks等主流操作系统。",  
+  "enable": "PKG_USING_SIMPLE_XML", 
+  "keywords": [
+    "simple_xml"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "xfwangqiang",
+    "email": "164877907@qq.com",
+    "github": "xfwangqiang"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/xfwangqiang/simple_xml",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.1.0",
+      "URL": "https://github.com/xfwangqiang/simple_xml/archive/refs/tags/sx-1.1.0.zip",
+      "filename": "simple_xml-1.1.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/xfwangqiang/simple_xml.git",
+      "filename": "simple_xml.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
