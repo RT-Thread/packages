@@ -230,16 +230,20 @@ if PKG_USING_TINYUSB
 
     choice
         prompt "Version"
-        default PKG_USING_TINYUSB_LATEST_VERSION
+        default PKG_USING_TINYUSB_V01300
         help
             Select the package version
 
         config PKG_USING_TINYUSB_LATEST_VERSION
             bool "latest"
+        
+        config PKG_USING_TINYUSB_V01300
+            bool "v0.13.0"
     endchoice
 
     config PKG_TINYUSB_VER
        string
-       default "latest" if PKG_USING_TINYUSB_LATEST_VERSION
+       default "latest"  if PKG_USING_TINYUSB_LATEST_VERSION
+       default "v0.13.0" if PKG_USING_TINYUSB_V01300
 
 endif
