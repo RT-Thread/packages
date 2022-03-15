@@ -1,6 +1,7 @@
 
 # Kconfig file for package fal
 menuconfig PKG_USING_FAL
+    depends on  RT_VER_NUM < 0x40100
     bool "fal: Flash Abstraction Layer implement. Manage flash device and partition."
     select RT_USING_LIBC if (PKG_FAL_VER_NUM <= 0x00300 && RT_VER_NUM < 0x40100)
     default n

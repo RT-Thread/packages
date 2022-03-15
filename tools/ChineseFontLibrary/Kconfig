@@ -3,7 +3,8 @@
 menuconfig PKG_USING_CHINESE_FONT_LIBRARY
     bool "Chinese_Font_Library: a Chinese font library for rt-thread"
     default n
-select PKG_USING_FAL
+select PKG_USING_FAL if RT_VER_NUM < 0x40100
+select RT_USING_FAL if RT_VER_NUM >= 0x40100
 select FAL_USING_SFUD_PORT
 if PKG_USING_CHINESE_FONT_LIBRARY
 
