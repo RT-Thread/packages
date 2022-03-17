@@ -1,0 +1,28 @@
+{
+  "name": "cBox",
+  "description": "CBOX: C language box.",
+  "description_zh": "CBOX: C 语言小工具。",  
+  "enable": "PKG_USING_CBOX", 
+  "keywords": [
+    "cbox", "C", "C language"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "enkiller",
+    "email": "462747508@qq.com",
+    "github": "enkiller"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/enkiller/cbox",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/enkiller/cbox.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
