@@ -1,0 +1,32 @@
+
+# Kconfig file for package cBox
+menuconfig PKG_USING_CBOX
+    bool "CBOX: C language box."
+    default n
+
+if PKG_USING_CBOX
+
+    config PKG_USING_CBOX_TEST
+        bool "Using cBOX testcase"
+        default n
+
+    config PKG_CBOX_PATH
+        string
+        default "/packages/tools/cBox"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CBOX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CBOX_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CBOX_VER
+       string
+       default "latest"    if PKG_USING_CBOX_LATEST_VERSION
+
+endif
+
