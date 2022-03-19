@@ -7,7 +7,7 @@ if PKG_USING_LJSON
 
     config PKG_LJSON_PATH
         string
-        default "/packages/iot/ljson"
+        default "/packages/language/JSON/ljson"
 
     choice
         prompt "version"

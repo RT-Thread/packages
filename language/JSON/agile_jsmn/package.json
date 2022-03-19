@@ -4,9 +4,10 @@
   "description_zh": "轻量级json解析器。",
   "enable": "PKG_USING_AGILE_JSMN",
   "keywords": [
-    "agile_jsmn"
+    "agile_jsmn",
+    "json"
   ],
-  "category": "iot",
+  "category": "language",
   "author": {
     "name": "loogg",
     "email": "2544047213@qq.com",

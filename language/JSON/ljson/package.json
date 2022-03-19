@@ -4,9 +4,10 @@
   "description_zh": "ANSI-C 标准的 JSON 解析器",
   "enable": "PKG_USING_LJSON",
   "keywords": [
-    "ljson"
+    "ljson",
+    "json"
   ],
-  "category": "iot",
+  "category": "language",
   "author": {
     "name": "qiaoqidui",
     "email": "891062079@qq.com",
