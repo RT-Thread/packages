@@ -1,5 +1,7 @@
 menu "language packages"
 
+source "$PKGS_DIR/packages/language/JSON/Kconfig"
+source "$PKGS_DIR/packages/language/XML/Kconfig"
 source "$PKGS_DIR/packages/language/LuatOS/Kconfig"
 source "$PKGS_DIR/packages/language/Lua/Kconfig"
 source "$PKGS_DIR/packages/language/jerryscript/Kconfig"
