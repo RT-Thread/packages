@@ -8,65 +8,114 @@ if PKG_USING_CHERRYUSB
 
 menu "CherryUSB Options"
 
-    choice
-        prompt "USB Speed"
-        default PKG_CHERRYUSB_USING_FS
-        help
-          Select the usb speed.
-        config PKG_CHERRYUSB_USING_FS
-            bool "FS"
-        config PKG_CHERRYUSB_USING_HS_IN_FULL
-            bool "HS_IN_FULL"
-        config PKG_CHERRYUSB_USING_HS
-            bool "HS"
-    endchoice
-
-    config PKG_CHERRYUSB_USING_DEVICE
-        bool
-        prompt "Enable usb device mode"
+    menuconfig PKG_CHERRYUSB_USING_DEVICE
+        bool "Enable usb device mode"
         default n
 
-    config PKG_CHERRYUSB_USING_CDC
-        bool
-        prompt "Enable usb cdc acm device"
-        default n
-        depends on PKG_CHERRYUSB_USING_DEVICE
+    if PKG_CHERRYUSB_USING_DEVICE
+        choice
+            prompt "USB Speed"
+            default PKG_CHERRYUSB_USING_FS
+            help
+              Select the usb speed.
+            config PKG_CHERRYUSB_USING_FS
+                bool "FS"
+            config PKG_CHERRYUSB_USING_HS_IN_FULL
+                bool "HS_IN_FULL"
+            config PKG_CHERRYUSB_USING_HS
+                bool "HS"
+        endchoice
 
-    config PKG_CHERRYUSB_USING_HID
-        bool
-        prompt "Enable usb hid device"
-        default n
-        depends on PKG_CHERRYUSB_USING_DEVICE
+        config PKG_CHERRYUSB_USING_CDC
+            bool
+            prompt "Enable usb cdc acm device"
+            default n
 
-    config PKG_CHERRYUSB_USING_DFU
-        bool
-        prompt "Enable usb dfu device"
-        default n
-        depends on PKG_CHERRYUSB_USING_DEVICE
+        config PKG_CHERRYUSB_USING_CDC_TEMPLATE
+            bool
+            prompt "Use cdc acm template"
+            default n
+            depends on PKG_CHERRYUSB_USING_CDC
 
-    config PKG_CHERRYUSB_USING_MSC
-        bool
-        prompt "Enable usb msc device"
-        default n
-        depends on PKG_CHERRYUSB_USING_DEVICE
+        config PKG_CHERRYUSB_USING_HID
+            bool
+            prompt "Enable usb hid device"
+            default n
 
-    config PKG_CHERRYUSB_USING_HUB
-        bool
-        prompt "Enable usb hub device"
-        default n
-        depends on PKG_CHERRYUSB_USING_DEVICE
+        config PKG_CHERRYUSB_USING_HID_MOUSE_TEMPLATE
+            bool
+            prompt "Use hid mouse template"
+            default n
+            depends on PKG_CHERRYUSB_USING_HID
 
-    config PKG_CHERRYUSB_USING_AUDIO
-        bool
-        prompt "Enable usb audio device"
-        default n
-        depends on PKG_CHERRYUSB_USING_DEVICE
+        config PKG_CHERRYUSB_USING_HID_KEYBOARD_TEMPLATE
+            bool
+            prompt "Use hid keyboard template"
+            default n
+            depends on PKG_CHERRYUSB_USING_HID
 
-    config PKG_CHERRYUSB_USING_VIDEO
-        bool
-        prompt "Enable usb video device"
+        config PKG_CHERRYUSB_USING_DFU
+            bool
+            prompt "Enable usb dfu device"
+            default n
+
+        config PKG_CHERRYUSB_USING_MSC
+            bool
+            prompt "Enable usb msc device"
+            default n
+            depends on PKG_CHERRYUSB_USING_DEVICE
+
+        config PKG_CHERRYUSB_USING_MSC_TEMPLATE
+            bool
+            prompt "Use msc ram template"
+            default n
+            depends on PKG_CHERRYUSB_USING_MSC
+
+        config PKG_CHERRYUSB_USING_HUB
+            bool
+            prompt "Enable usb hub device"
+            default n
+
+        config PKG_CHERRYUSB_USING_AUDIO
+            bool
+            prompt "Enable usb audio device"
+            default n
+
+        config PKG_CHERRYUSB_USING_AUDIO_TEMPLATE
+            bool
+            prompt "Use audio speaker&mic template"
+            default n
+            depends on PKG_CHERRYUSB_USING_AUDIO
+
+        config PKG_CHERRYUSB_USING_VIDEO
+            bool
+            prompt "Enable usb video device"
+            default n
+
+        config PKG_CHERRYUSB_USING_VIDEO_TEMPLATE
+            bool
+            prompt "Use video static mjpeg template"
+            default n
+            depends on PKG_CHERRYUSB_USING_VIDEO
+
+    endif
+
+    menuconfig PKG_CHERRYUSB_USING_HOST
+        bool "Enable usb host mode"
         default n
-        depends on PKG_CHERRYUSB_USING_DEVICE
+
+    if PKG_CHERRYUSB_USING_HOST
+        config PKG_CHERRYUSB_USING_HUB
+        bool
+        prompt "Enable usb hub class"
+        default n
+
+        config PKG_CHERRYUSB_USING_HOST_TEMPLATE
+        bool
+        prompt "Use usb host template"
+        default n
+
+    endif
 
 endmenu
 
