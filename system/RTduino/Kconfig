@@ -31,6 +31,7 @@ if RT_USING_ARDUINO
 
     config ARDUINO_USING_ADAFRUIT
         bool "Enable Adafruit sensor framework"
+        select ARDUINO_USING_WIRE
         default n
 
     config RT_USING_ARDUINO_THREAD_PRIO
