@@ -1,0 +1,6 @@
+menu "XML: Extensible Markup Language"
+
+source "$PKGS_DIR/packages/language/XML/simple_xml/Kconfig"
+source "$PKGS_DIR/packages/language/XML/ezXML/Kconfig"
+
+endmenu

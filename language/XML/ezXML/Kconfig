@@ -6,15 +6,19 @@ if PKG_USING_EZXML
 
     config PKG_EZXML_PATH
         string
-        default "/packages/iot/ezXML"
+        default "/packages/language/XML/ezXML"
 
     choice
         prompt "version"
         help
             Select the ezXML version
+        default PKG_USING_EZXML_LATEST_VERSION
 
         config PKG_USING_EZXML_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_EZXML_V0681
+            bool "v0.8.6.1"
 
         config PKG_USING_EZXML_V068
             bool "v0.8.6"
@@ -22,7 +26,8 @@ if PKG_USING_EZXML
 
     config PKG_EZXML_VER
         string
-        default "v0.8.6" if PKG_USING_EZXML_V068
-        default "latest" if PKG_USING_EZXML_LATEST_VERSION
+        default "v0.8.6.1"  if PKG_USING_EZXML_V0681
+        default "v0.8.6"    if PKG_USING_EZXML_V068
+        default "latest"    if PKG_USING_EZXML_LATEST_VERSION
 
 endif

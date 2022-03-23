@@ -8,7 +8,7 @@ if PKG_USING_AGILE_JSMN
 
     config PKG_AGILE_JSMN_PATH
         string
-        default "/packages/iot/agile_jsmn"
+        default "/packages/language/JSON/agile_jsmn"
 
     choice
         prompt "Version"

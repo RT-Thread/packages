@@ -12,7 +12,7 @@ if PKG_USING_SIMPLE_XML
 
     config PKG_SIMPLE_XML_PATH
         string
-        default "/packages/iot/simple_xml"
+        default "/packages/language/XML/simple_xml"
 
     choice
         prompt "Version"

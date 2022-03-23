@@ -1,0 +1,10 @@
+menu "JSON: JavaScript Object Notation, a lightweight data-interchange format"
+
+source "$PKGS_DIR/packages/language/JSON/cJSON/Kconfig"
+source "$PKGS_DIR/packages/language/JSON/ljson/Kconfig"
+source "$PKGS_DIR/packages/language/JSON/rt_cjson_tools/Kconfig"
+source "$PKGS_DIR/packages/language/JSON/rapidjson/Kconfig"
+source "$PKGS_DIR/packages/language/JSON/jsmn/Kconfig"
+source "$PKGS_DIR/packages/language/JSON/agile_jsmn/Kconfig"
+
+endmenu

@@ -7,7 +7,7 @@ if PKG_USING_CJSON
 
     config PKG_CJSON_PATH
         string
-        default "/packages/iot/cJSON"
+        default "/packages/language/JSON/cJSON"
 
     choice
         prompt "Version"

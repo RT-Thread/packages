@@ -6,7 +6,7 @@ if PKG_USING_JSMN
 
     config PKG_JSMN_PATH
         string
-        default "/packages/iot/jsmn"
+        default "/packages/language/JSON/jsmn"
 
     choice
         prompt "Version"

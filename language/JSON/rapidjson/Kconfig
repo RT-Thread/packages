@@ -10,7 +10,7 @@ if PKG_USING_RAPIDJSON
 
     config PKG_RAPIDJSON_PATH
         string
-        default "/packages/iot/rapidjson"
+        default "/packages/language/JSON/rapidjson"
 
     config RAPIDJSON_USING_SIMPLE_READER
         bool "simple_reader: simple reader example"
