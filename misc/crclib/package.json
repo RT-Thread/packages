@@ -19,16 +19,28 @@
   "homepage": "https://github.com/qiyongzhong0/crclib#readme",
   "site": [
     {
-      "version": "v1.00",
-      "URL": "https://github.com/qiyongzhong0/crclib/archive/v1.00.zip",
-      "filename": "crclib-1.00.zip",
-      "VER_SHA": ""
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/qiyongzhong0/crclib.git",
       "filename": "",
       "VER_SHA": "master"
+    },
+    {
+      "version": "v1.02",
+      "URL": "https://github.com/qiyongzhong0/crclib/archive/v1.02.zip",
+      "filename": "crclib-1.02.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.01",
+      "URL": "https://github.com/qiyongzhong0/crclib/archive/v1.01.zip",
+      "filename": "crclib-1.01.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/crclib/archive/v1.00.zip",
+      "filename": "crclib-1.00.zip",
+      "VER_SHA": ""
     }
   ]
 }

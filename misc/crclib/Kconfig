@@ -131,13 +131,18 @@ if PKG_USING_CRCLIB
     config CRCLIB_USING_CRC16_EX_SAMPLE
         bool "using 16 bit crc expand sample"
         default n
+
     choice
         prompt "Version"
-        default PKG_USING_CRCLIB_V100
+        default PKG_USING_CRCLIB_V102
         help
             Select the package version
         config PKG_USING_CRCLIB_LATEST_VERSION
             bool "latest"
+        config PKG_USING_CRCLIB_V102
+            bool "v1.02"
+        config PKG_USING_CRCLIB_V101
+            bool "v1.01"
         config PKG_USING_CRCLIB_V100
             bool "v1.00"
     endchoice
@@ -145,6 +150,8 @@ if PKG_USING_CRCLIB
     config PKG_CRCLIB_VER
        string
        default "latest" if PKG_USING_CRCLIB_LATEST_VERSION
+       default "v1.02"  if PKG_USING_CRCLIB_V102
+       default "v1.01"  if PKG_USING_CRCLIB_V101
        default "v1.00"  if PKG_USING_CRCLIB_V100
 
 endif
