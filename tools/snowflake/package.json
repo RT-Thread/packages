@@ -1,0 +1,28 @@
+{
+  "name": "snowflake",
+  "description": "Snowflake algorithm is a distributed ID generation algorithm.",
+  "description_zh": "雪花算法是一种分布式ID生成算法。",  
+  "enable": "PKG_USING_SNOWFLAKE", 
+  "keywords": [
+    "snowflake"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "2022alpha",
+    "email": "786347269@qq.com",
+    "github": "2022alpha"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/2022alpha/snowflake",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/2022alpha/snowflake.git",
+      "filename": "snowflake-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
