@@ -14,8 +14,8 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/kylepengchn/kmulti_rtimer.git",
   "icon": "unknown",
-  "homepage": "unknown",
-  "doc": "unknown",
+  "homepage": "https://github.com/kylepengchn/kmulti_rtimer",
+  "doc": "https://github.com/kylepengchn/kmulti_rtimer/blob/master/README.md",
   "site": [
     {
       "version": "latest",
