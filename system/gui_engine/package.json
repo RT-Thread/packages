@@ -4,10 +4,9 @@
   "description_zh": "来自 RT-Thread 官方的 GUI 引擎",
   "enable": "PKG_USING_GUIENGINE",
   "keywords": [
-    "gui engine",
-    "GUI"
+    "gui engine"
   ],
-  "category": "multimedia",
+  "category": "system",
   "author": {
     "name": "RealThread",
     "email": "package_team@rt-thread.com",
