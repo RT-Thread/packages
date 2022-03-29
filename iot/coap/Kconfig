@@ -1,8 +1,10 @@
 menuconfig PKG_USING_COAP
     bool "CoAP: A C implementation of the Constrained Application Protocol"
     select RT_USING_LWIP
-    select RT_USING_SAL
-    select SAL_USING_POSIX
+    select RT_USING_SAL             if RT_VER_NUM < 0x40100
+    select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
     default n
 
     help
