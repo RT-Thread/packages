@@ -27,6 +27,12 @@ if PKG_USING_RTDUINO
         bool "Enable wire library <Wire.h>"
         default n
 
+    config RTDUINO_WIRE_BUFFER_LENGTH
+        int "Wire buffer"
+        depends on RTDUINO_USING_WIRE
+        default 32
+        range 0 512
+
     config RTDUINO_USING_SERVO
         bool "Enable servo library <Servo.h>"
         default n
