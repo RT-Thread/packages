@@ -6,7 +6,7 @@ if PKG_USING_GUIENGINE
 
 config PKG_GUIENGINE_PATH
     string
-    default "/packages/system/gui_engine"
+    default "/packages/multimedia/gui_engine"
 
 choice
     prompt "Version"
