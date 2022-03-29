@@ -2,9 +2,11 @@
 # Kconfig file for package net_server
 menuconfig PKG_USING_NET_SERVER
     bool "net_server:TCP/TLS server,support wolfssl"
-    select RT_USING_SAL
-    select SAL_USING_POSIX
-    select RT_USING_DFS     if RT_VER_NUM < 0x40100
+    select RT_USING_SAL             if RT_VER_NUM < 0x40100
+    select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+    select RT_USING_DFS             if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
     default n
 
 if PKG_USING_NET_SERVER

@@ -36,8 +36,10 @@ if PKG_USING_LIBMODBUS
     config PKG_USING_LIBMODBUS_TCP
         bool "Enable libmodbus tcp mode"
         default n
-        select RT_USING_SAL
-        select SAL_USING_POSIX
+        select RT_USING_SAL             if RT_VER_NUM < 0x40100
+        select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
+        select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
 
     if PKG_USING_LIBMODBUS_TCP
         config PKG_USING_LIBMODBUS_TCP_EXAMPLE

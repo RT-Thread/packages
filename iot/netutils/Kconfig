@@ -32,17 +32,21 @@ if PKG_USING_NETUTILS
     if PKG_NETUTILS_VER_NUM >= 0x10200
         config PKG_NETUTILS_TFTP
             bool "Enable TFTP(Trivial File Transfer Protocol) server"
-            select RT_USING_LIBC if RT_VER_NUM < 0x40100
-            select RT_USING_SAL
-            select SAL_USING_POSIX
+            select RT_USING_LIBC            if RT_VER_NUM < 0x40100
+            select RT_USING_SAL             if RT_VER_NUM < 0x40100
+            select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+            select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
+            select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
             default n
     endif
 
     config PKG_NETUTILS_IPERF
         bool "Enable iperf-liked network performance tool"
-        select RT_USING_LIBC if RT_VER_NUM < 0x40100
-        select RT_USING_SAL
-        select SAL_USING_POSIX
+        select RT_USING_LIBC            if RT_VER_NUM < 0x40100
+        select RT_USING_SAL             if RT_VER_NUM < 0x40100
+        select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
+        select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
         default n
 
     config PKG_NETUTILS_NETIO
