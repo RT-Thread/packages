@@ -11,12 +11,13 @@ if PKG_USING_PERSIMMON
 
     config PKG_PERSIMMON_PATH
         string
-        default "/packages/system/persimmon"
+        default "/packages/multimedia/persimmon"
 
     choice
         prompt "Version"
         help
             Select the Persimmon UI version
+        default PKG_USING_PERSIMMON_LATEST_VERSION
 
         config PKG_USING_PERSIMMON_V100
             bool "v1.0.0"
