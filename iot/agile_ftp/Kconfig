@@ -3,9 +3,11 @@
 menuconfig PKG_USING_AGILE_FTP
     bool "agile_ftp: Lightweight ftp server."
     default n
-    select RT_USING_SAL
-    select SAL_USING_POSIX
-    select RT_USING_DFS     if RT_VER_NUM < 0x40100
+    select RT_USING_SAL             if RT_VER_NUM < 0x40100
+    select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+    select RT_USING_DFS             if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FILENO    if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
 
 if PKG_USING_AGILE_FTP
 
