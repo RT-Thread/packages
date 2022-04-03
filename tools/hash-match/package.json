@@ -1,0 +1,36 @@
+{
+  "name": "hash-match",
+  "description": "using hashmap on MCUs",
+  "description_zh": "应用在单片机上快速匹配的哈希算法",
+  "enable": "PKG_USING_HASH_MATCH",
+  "keywords": [
+    "hash",
+    "match",
+    "map",
+    "key",
+    "cmd"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "smartmx",
+    "email": "smartmx@qq.com",
+    "github": "smartmx"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/smartmx/hash-match",
+  "homepage": "https://github.com/smartmx/hash-match",
+  "readme": "https://github.com/smartmx/hash-match/blob/main/README.md",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/smartmx/hash-match/archive/v1.0.0.zip",
+      "filename": "hash-match-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/smartmx/hash-match.git",
+      "filename": "hash-match.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
