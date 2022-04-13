@@ -2,10 +2,13 @@
 # Kconfig file for package webnet
 menuconfig PKG_USING_WEBNET
     bool "WebNet: A lightweight, customizable, embeddable Web Server for RT-Thread"
+    select RT_USING_SAL             if RT_VER_NUM < 0x40100
+    select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+    select RT_USING_DFS             if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
     default n
-    select RT_USING_SAL
-    select SAL_USING_POSIX
-    select RT_USING_DFS                 if RT_VER_NUM < 0x40100
+
 if PKG_USING_WEBNET
 
     config PKG_WEBNET_PATH

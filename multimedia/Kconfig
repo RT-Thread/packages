@@ -20,5 +20,7 @@ source "$PKGS_DIR/packages/multimedia/mcurses/Kconfig"
 source "$PKGS_DIR/packages/multimedia/termbox/Kconfig"
 source "$PKGS_DIR/packages/multimedia/vt100/Kconfig"
 source "$PKGS_DIR/packages/multimedia/qrcode/Kconfig"
+source "$PKGS_DIR/packages/multimedia/gui_engine/Kconfig"
+source "$PKGS_DIR/packages/multimedia/persimmon/Kconfig"
 
 endmenu

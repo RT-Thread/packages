@@ -1,0 +1,32 @@
+
+# Kconfig file for package TFDB
+menuconfig PKG_USING_TFDB
+    bool "Tiny Flash Database for MCU"
+    default n
+
+if PKG_USING_TFDB
+
+    config PKG_TFDB_PATH
+        string
+        default "/packages/system/TFDB"
+
+    choice
+        prompt "Version"
+        default PKG_USING_TFDB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TFDB_V005
+            bool "v0.0.5"
+
+        config PKG_USING_TFDB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_TFDB_VER
+       string
+       default "v0.0.5"    if PKG_USING_TFDB_V005
+       default "latest"    if PKG_USING_TFDB_LATEST_VERSION
+
+endif
+

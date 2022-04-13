@@ -40,4 +40,6 @@ source "$PKGS_DIR/packages/tools/solar_terms/Kconfig"
 source "$PKGS_DIR/packages/tools/gan_zhi/Kconfig"
 source "$PKGS_DIR/packages/tools/fdt/Kconfig"
 source "$PKGS_DIR/packages/tools/cBox/Kconfig"
+source "$PKGS_DIR/packages/tools/snowflake/Kconfig"
+
 endmenu
