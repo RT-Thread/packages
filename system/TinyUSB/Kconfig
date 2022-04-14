@@ -22,6 +22,7 @@ if PKG_USING_TINYUSB
 
     config PKG_TINYUSB_MEM_SECTION
         string "Memory section name"
+        default ".noncacheable" if SOC_HPM6000
         default ".data"
 
     config PKG_TINYUSB_MEM_ALIGN
@@ -190,6 +191,10 @@ if PKG_USING_TINYUSB
                 bool "Gamepad report"
                 default n
 
+            config PKG_TINYUSB_DEVICE_HID_CONSUMER
+                bool "Consumer control report"
+                default n
+
             config PKG_TINYUSB_DEVICE_HID_EP_BUFSIZE
                 int "Endpoint buffer size"
                 default 16
@@ -203,7 +208,14 @@ if PKG_USING_TINYUSB
             config PKG_TINYUSB_DEVICE_EXAMPLE_CDC
                 bool "CDC device"
                 default n
-                depends on PKG_TINYUSB_DEVICE_CDC
+                select PKG_TINYUSB_DEVICE_CDC
+
+            config PKG_TINYUSB_DEVICE_EXAMPLE_HID
+                bool "HID device"
+                default n
+                select PKG_TINYUSB_DEVICE_HID
+                select PKG_TINYUSB_DEVICE_HID_KEYBOARD
+                select PKG_TINYUSB_DEVICE_HID_MOUSE
         endif
     endif
 
@@ -224,7 +236,7 @@ if PKG_USING_TINYUSB
     config CFG_TUSB_DEBUG
         int
         default 0 if PKG_TINYUSB_DEBUG_NO
-        default 1 if PKG_TINYUSB_ERROR
+        default 1 if PKG_TINYUSB_DEBUG_ERROR
         default 2 if PKG_TINYUSB_DEBUG_WARNING
         default 3 if PKG_TINYUSB_DEBUG_INFO
 
