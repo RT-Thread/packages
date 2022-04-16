@@ -1,124 +1,253 @@
-
 # Kconfig file for package CherryUSB
 menuconfig PKG_USING_CHERRYUSB
     bool "CherryUSB: tiny and portable USB host/device stack for embedded system with USB IP"
     default n
-
+    select RT_USING_LIBC
+    
 if PKG_USING_CHERRYUSB
 
-menu "CherryUSB Options"
-
-    menuconfig PKG_CHERRYUSB_USING_DEVICE
+    menuconfig PKG_CHERRYUSB_DEVICE
         bool "Enable usb device mode"
         default n
-
-    if PKG_CHERRYUSB_USING_DEVICE
+        
+    if PKG_CHERRYUSB_DEVICE
         choice
-            prompt "USB Speed"
-            default PKG_CHERRYUSB_USING_FS
-            help
-              Select the usb speed.
-            config PKG_CHERRYUSB_USING_FS
+            prompt "Select usb device speed"
+            default PKG_CHERRYUSB_DEVICE_FS
+            config PKG_CHERRYUSB_DEVICE_FS
                 bool "FS"
-            config PKG_CHERRYUSB_USING_HS_IN_FULL
+            config PKG_CHERRYUSB_DEVICE_HS_IN_FULL
                 bool "HS_IN_FULL"
-            config PKG_CHERRYUSB_USING_HS
+            config PKG_CHERRYUSB_DEVICE_HS
                 bool "HS"
         endchoice
 
-        config PKG_CHERRYUSB_USING_CDC
+        choice
+            prompt "Select usb device ip"
+            default PKG_CHERRYUSB_DEVICE_FSDEV
+            config PKG_CHERRYUSB_DEVICE_BL
+                bool "BL"
+            config PKG_CHERRYUSB_DEVICE_CH32
+                bool "CH32"
+            config PKG_CHERRYUSB_DEVICE_FSDEV
+                bool "FSDEV"
+            config PKG_CHERRYUSB_DEVICE_SYNOPSYS
+                bool "SYNOPSYS"
+            config PKG_CHERRYUSB_DEVICE_MM32
+                bool "MM32"
+            config PKG_CHERRYUSB_DEVICE_MUSB
+                bool "MUSB"
+            config PKG_CHERRYUSB_DEVICE_NUVOTON
+                bool "NUVOTON"
+            config PKG_CHERRYUSB_DEVICE_IMXRT
+                bool "IMXRT"
+        endchoice
+
+        if PKG_CHERRYUSB_DEVICE_CH32
+            choice
+                prompt "Select support chip with ch32 usb device ip"
+                default PKG_CHERRYUSB_DEVICE_CH32_CH32V307
+                config PKG_CHERRYUSB_DEVICE_CH32_CH32V307
+                    bool "CH32V307"
+            endchoice
+
+        endif
+        
+        if PKG_CHERRYUSB_DEVICE_FSDEV
+            choice
+                prompt "Select support chip with fsdev usb device ip"
+                default PKG_CHERRYUSB_DEVICE_FSDEV_STM32
+                config PKG_CHERRYUSB_DEVICE_FSDEV_STM32
+                    bool "STM32"
+            endchoice
+
+        endif
+        
+        if PKG_CHERRYUSB_DEVICE_MUSB
+            choice
+                prompt "Select support chip with musb usb device ip"
+                default PKG_CHERRYUSB_DEVICE_MUSB_MSP432
+                config PKG_CHERRYUSB_DEVICE_MUSB_MSP432
+                    bool "MSP432"
+                config PKG_CHERRYUSB_DEVICE_MUSB_ES32F3
+                    bool "ES32F3"
+                config PKG_CHERRYUSB_DEVICE_MUSB_SUNXI
+                    bool "SUNXI"
+            endchoice
+
+        endif
+        
+        if PKG_CHERRYUSB_DEVICE_SYNOPSYS
+            choice
+                prompt "Select support chip with synopsys usb device ip"
+                default PKG_CHERRYUSB_DEVICE_SYNOPSYS_STM32
+                config PKG_CHERRYUSB_DEVICE_SYNOPSYS_STM32
+                    bool "STM32"
+            endchoice
+
+        endif     
+        
+        menuconfig PKG_CHERRYUSB_DEVICE_CDC
             bool
             prompt "Enable usb cdc acm device"
             default n
 
-        config PKG_CHERRYUSB_USING_CDC_TEMPLATE
-            bool
-            prompt "Use cdc acm template"
-            default n
-            depends on PKG_CHERRYUSB_USING_CDC
+        if PKG_CHERRYUSB_DEVICE_CDC
+            config PKG_CHERRYUSB_DEVICE_CDC_TEMPLATE
+                bool
+                prompt "Use cdc acm template"
+                default n
+        endif
 
-        config PKG_CHERRYUSB_USING_HID
+        menuconfig PKG_CHERRYUSB_DEVICE_HID
             bool
             prompt "Enable usb hid device"
             default n
+            
+        if PKG_CHERRYUSB_DEVICE_HID
+            choice
+                prompt "Use hid template"
+                default PKG_CHERRYUSB_DEVICE_HID_MOUSE_TEMPLATE
+                config PKG_CHERRYUSB_DEVICE_HID_MOUSE_TEMPLATE
+                    bool "mouse"
+                config PKG_CHERRYUSB_DEVICE_HID_KEYBOARD_TEMPLATE
+                    bool "keyboard"
+            endchoice
+        endif
 
-        config PKG_CHERRYUSB_USING_HID_MOUSE_TEMPLATE
-            bool
-            prompt "Use hid mouse template"
-            default n
-            depends on PKG_CHERRYUSB_USING_HID
-
-        config PKG_CHERRYUSB_USING_HID_KEYBOARD_TEMPLATE
-            bool
-            prompt "Use hid keyboard template"
-            default n
-            depends on PKG_CHERRYUSB_USING_HID
-
-        config PKG_CHERRYUSB_USING_DFU
-            bool
-            prompt "Enable usb dfu device"
-            default n
-
-        config PKG_CHERRYUSB_USING_MSC
+        menuconfig PKG_CHERRYUSB_DEVICE_MSC
             bool
             prompt "Enable usb msc device"
             default n
-            depends on PKG_CHERRYUSB_USING_DEVICE
+            
+        if PKG_CHERRYUSB_DEVICE_MSC
+            config PKG_CHERRYUSB_DEVICE_MSC_TEMPLATE
+                bool
+                prompt "Use msc ram template"
+                default n
+        endif
 
-        config PKG_CHERRYUSB_USING_MSC_TEMPLATE
-            bool
-            prompt "Use msc ram template"
-            default n
-            depends on PKG_CHERRYUSB_USING_MSC
-
-        config PKG_CHERRYUSB_USING_HUB
-            bool
-            prompt "Enable usb hub device"
-            default n
-
-        config PKG_CHERRYUSB_USING_AUDIO
+        menuconfig PKG_CHERRYUSB_DEVICE_AUDIO
             bool
             prompt "Enable usb audio device"
             default n
+            
+        if PKG_CHERRYUSB_DEVICE_AUDIO
+            choice
+                prompt "Use audio speaker&mic template"
+                default PKG_CHERRYUSB_DEVICE_AUDIO_V1_TEMPLATE
+                config PKG_CHERRYUSB_DEVICE_AUDIO_V1_TEMPLATE
+                    bool "UAC1.0"
+                config PKG_CHERRYUSB_DEVICE_AUDIO_V2_TEMPLATE
+                    bool "UAC2.0"
+            endchoice
+        endif
 
-        config PKG_CHERRYUSB_USING_AUDIO_TEMPLATE
-            bool
-            prompt "Use audio speaker&mic template"
-            default n
-            depends on PKG_CHERRYUSB_USING_AUDIO
-
-        config PKG_CHERRYUSB_USING_VIDEO
+        menuconfig PKG_CHERRYUSB_DEVICE_VIDEO
             bool
             prompt "Enable usb video device"
             default n
+            
+        if PKG_CHERRYUSB_DEVICE_VIDEO
+            config PKG_CHERRYUSB_DEVICE_VIDEO_TEMPLATE
+                bool
+                prompt "Use video static mjpeg template"
+                default n
+        endif
 
-        config PKG_CHERRYUSB_USING_VIDEO_TEMPLATE
+        menuconfig PKG_CHERRYUSB_DEVICE_RNDIS
             bool
-            prompt "Use video static mjpeg template"
+            prompt "Enable usb rndis device"
             default n
-            depends on PKG_CHERRYUSB_USING_VIDEO
-
+            
+        menuconfig PKG_CHERRYUSB_DEVICE_DFU
+            bool
+            prompt "Enable usb dfu device"
+            default n
+            
+        menuconfig PKG_CHERRYUSB_DEVIEC_HUB
+            bool
+            prompt "Enable usb hub device"
+            default n
     endif
-
-    menuconfig PKG_CHERRYUSB_USING_HOST
+    
+    menuconfig PKG_CHERRYUSB_HOST
         bool "Enable usb host mode"
         default n
+        
+    if PKG_CHERRYUSB_HOST
+        choice
+            prompt "Select usb host ip"
+            default PKG_CHERRYUSB_HOST_MUSB
+            config PKG_CHERRYUSB_HOST_MUSB
+                bool "MUSB"
+            config PKG_CHERRYUSB_HOST_SYNOPSYS
+                bool "SYNOPSYS"
+            config PKG_CHERRYUSB_HOST_EHCI
+                bool "EHCI"
+        endchoice
 
-    if PKG_CHERRYUSB_USING_HOST
-        config PKG_CHERRYUSB_USING_HUB
-        bool
-        prompt "Enable usb hub class"
-        default n
+        if PKG_CHERRYUSB_HOST_MUSB
+            choice
+                prompt "Select support chip with musb usb host ip"
+                default PKG_CHERRYUSB_HOST_MUSB_ES32F3
+                config PKG_CHERRYUSB_HOST_MUSB_MSP432
+                    bool "MSP432"
+                config PKG_CHERRYUSB_HOST_MUSB_ES32F3
+                    bool "ES32F3"
+                config PKG_CHERRYUSB_HOST_MUSB_SUNXI
+                    bool "SUNXI"
+            endchoice
+        endif
+        
+        if PKG_CHERRYUSB_HOST_SYNOPSYS
+            choice
+                prompt "Select support chip with synopsys usb host ip"
+                default PKG_CHERRYUSB_HOST_SYNOPSYS_STM32
+                config PKG_CHERRYUSB_HOST_SYNOPSYS_STM32
+                    bool "STM32"
+            endchoice
+        endif
+        
+        config PKG_CHERRYUSB_HOST_HUB
+            bool
+            prompt "Enable usb hub driver"
+            default n
 
-        config PKG_CHERRYUSB_USING_HOST_TEMPLATE
+        config PKG_CHERRYUSB_HOST_CDC
+            bool
+            prompt "Enable usb cdc acm driver"
+            default y
+
+        config PKG_CHERRYUSB_HOST_HID
+            bool
+            prompt "Enable usb hid driver"
+            default y
+
+        config PKG_CHERRYUSB_HOST_MSC
+            bool
+            prompt "Enable usb msc driver"
+            default y
+
+        config PKG_CHERRYUSB_HOST_RNDIS
+            bool
+            prompt "Enable usb rndis driver"
+            default y
+
+        config PKG_CHERRYUSB_HOST_TEMPLATE
         bool
         prompt "Use usb host template"
         default n
+        
+        config PKG_CHERRYUSB_HOST_PSC_THREAD_STACK_SIZE
+            int "Set usb host psc thread stack size"
+            default 2048
+        config PKG_CHERRYUSB_HOST_PSC_THREAD_PRIO
+            int "Set usb host psc thread prio"
+            default 5
 
     endif
-
-endmenu
-
+    
     config PKG_CHERRYUSB_PATH
         string
         default "/packages/system/CherryUSB"
@@ -138,4 +267,3 @@ endmenu
        default "latest"    if PKG_USING_CHERRYUSB_LATEST_VERSION
 
 endif
-
