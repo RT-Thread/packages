@@ -31,6 +31,12 @@
       "VER_SHA": "NULL"
     },
     {
+      "version": "v2.0.0",
+      "URL": "https://github.com/MrMichael/wk2124/archive/v2.0.0.zip",
+      "filename": "wk2124-2.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/MrMichael/wk2124.git",
       "filename": "Null for git package",
