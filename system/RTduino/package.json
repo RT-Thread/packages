@@ -14,12 +14,12 @@
     "github": "mysterywolf"
   },
   "license": "LGPL-2.1",
-  "repository": "https://github.com/mysterywolf/RTduino",
-  "homepage": "https://github.com/mysterywolf/RTduino#readme",
+  "repository": "https://github.com/RTduino/RTduino",
+  "homepage": "https://github.com/RTduino/RTduino#readme",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/mysterywolf/RTduino.git",
+      "URL": "https://github.com/RTduino/RTduino.git",
       "filename": "Null for git package",
       "VER_SHA": "master"
     }
