@@ -3,13 +3,13 @@ menuconfig PKG_USING_CHERRYUSB
     bool "CherryUSB: tiny and portable USB host/device stack for embedded system with USB IP"
     default n
     select RT_USING_LIBC
-    
+
 if PKG_USING_CHERRYUSB
 
     menuconfig PKG_CHERRYUSB_DEVICE
         bool "Enable usb device mode"
         default n
-        
+
     if PKG_CHERRYUSB_DEVICE
         choice
             prompt "Select usb device speed"
@@ -52,7 +52,7 @@ if PKG_USING_CHERRYUSB
             endchoice
 
         endif
-        
+
         if PKG_CHERRYUSB_DEVICE_FSDEV
             choice
                 prompt "Select support chip with fsdev usb device ip"
@@ -62,7 +62,7 @@ if PKG_USING_CHERRYUSB
             endchoice
 
         endif
-        
+
         if PKG_CHERRYUSB_DEVICE_MUSB
             choice
                 prompt "Select support chip with musb usb device ip"
@@ -76,7 +76,7 @@ if PKG_USING_CHERRYUSB
             endchoice
 
         endif
-        
+
         if PKG_CHERRYUSB_DEVICE_SYNOPSYS
             choice
                 prompt "Select support chip with synopsys usb device ip"
@@ -85,8 +85,8 @@ if PKG_USING_CHERRYUSB
                     bool "STM32"
             endchoice
 
-        endif     
-        
+        endif
+
         menuconfig PKG_CHERRYUSB_DEVICE_CDC
             bool
             prompt "Enable usb cdc acm device"
@@ -103,7 +103,7 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb hid device"
             default n
-            
+
         if PKG_CHERRYUSB_DEVICE_HID
             choice
                 prompt "Use hid template"
@@ -119,7 +119,7 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb msc device"
             default n
-            
+
         if PKG_CHERRYUSB_DEVICE_MSC
             config PKG_CHERRYUSB_DEVICE_MSC_TEMPLATE
                 bool
@@ -131,7 +131,7 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb audio device"
             default n
-            
+
         if PKG_CHERRYUSB_DEVICE_AUDIO
             choice
                 prompt "Use audio speaker&mic template"
@@ -147,7 +147,7 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb video device"
             default n
-            
+
         if PKG_CHERRYUSB_DEVICE_VIDEO
             config PKG_CHERRYUSB_DEVICE_VIDEO_TEMPLATE
                 bool
@@ -159,22 +159,22 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb rndis device"
             default n
-            
+
         menuconfig PKG_CHERRYUSB_DEVICE_DFU
             bool
             prompt "Enable usb dfu device"
             default n
-            
+
         menuconfig PKG_CHERRYUSB_DEVIEC_HUB
             bool
             prompt "Enable usb hub device"
             default n
     endif
-    
+
     menuconfig PKG_CHERRYUSB_HOST
         bool "Enable usb host mode"
         default n
-        
+
     if PKG_CHERRYUSB_HOST
         choice
             prompt "Select usb host ip"
@@ -199,7 +199,7 @@ if PKG_USING_CHERRYUSB
                     bool "SUNXI"
             endchoice
         endif
-        
+
         if PKG_CHERRYUSB_HOST_SYNOPSYS
             choice
                 prompt "Select support chip with synopsys usb host ip"
@@ -208,7 +208,7 @@ if PKG_USING_CHERRYUSB
                     bool "STM32"
             endchoice
         endif
-        
+
         config PKG_CHERRYUSB_HOST_HUB
             bool
             prompt "Enable usb hub driver"
@@ -238,7 +238,7 @@ if PKG_USING_CHERRYUSB
         bool
         prompt "Use usb host template"
         default n
-        
+
         config PKG_CHERRYUSB_HOST_PSC_THREAD_STACK_SIZE
             int "Set usb host psc thread stack size"
             default 2048
@@ -247,7 +247,7 @@ if PKG_USING_CHERRYUSB
             default 5
 
     endif
-    
+
     config PKG_CHERRYUSB_PATH
         string
         default "/packages/system/CherryUSB"

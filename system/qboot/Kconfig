@@ -166,7 +166,7 @@ if PKG_USING_QBOOT
 
         config PKG_USING_QBOOT_V106
             bool "v1.06"
-            
+
         config PKG_USING_QBOOT_V105
             bool "v1.05"
 

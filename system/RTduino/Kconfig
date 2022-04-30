@@ -36,10 +36,6 @@ if PKG_USING_RTDUINO
         bool "Enable SPI library <SPI.h>"
         default n
 
-    config RTDUINO_USING_TONE
-        bool "Enable tone functions"
-        default n
-
     config RTDUINO_USING_SERVO
         bool "Enable servo library <Servo.h>"
         default n
