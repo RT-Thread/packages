@@ -1,7 +1,7 @@
 {
   "name": "qmp6989",
   "description": "qmp6989: High accuracy and small size barometric pressure sensor,support: barometer, temperature.",
-  "enable": "PKG_USING_QMP6989", 
+  "enable": "PKG_USING_QMP6989",
   "keywords": [
     "qmp6989"
   ],
