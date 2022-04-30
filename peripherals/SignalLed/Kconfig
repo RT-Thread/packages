@@ -15,7 +15,7 @@ if PKG_USING_SIGNAL_LED
         default PKG_USING_SIGNAL_LED_V130
         help
             Select the package version
-        
+
         config PKG_USING_SIGNAL_LED_V130
             bool "v1.3.0"
 

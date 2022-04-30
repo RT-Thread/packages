@@ -55,7 +55,7 @@ if PKG_USING_RFM300
         config PKG_USING_RFM300_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RFM300_VER
        string
        default "latest"    if PKG_USING_RFM300_LATEST_VERSION

@@ -2,20 +2,20 @@
 # Kconfig file for package snowflake
 menuconfig PKG_USING_SNOWFLAKE
     bool "Snowflake algorithm is a distributed ID generation algorithm."
-	select	RT_USING_RTC
-	default n
+    select  RT_USING_RTC
+    default n
 
 if PKG_USING_SNOWFLAKE
 
     config PKG_SNOWFLAKE_PATH
         string
         default "/packages/tools/snowflake"
-		
-		
-	config SNOWFLAKE_USING_SAMPLES
+
+
+    config SNOWFLAKE_USING_SAMPLES
         bool "Enable snowflake samples"
         default n
-			
+
 
     choice
         prompt "Version"
@@ -27,7 +27,7 @@ if PKG_USING_SNOWFLAKE
         config PKG_USING_SNOWFLAKE_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SNOWFLAKE_VER
        string
        default "latest"    if PKG_USING_SNOWFLAKE_LATEST_VERSION
