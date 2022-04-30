@@ -1,8 +1,8 @@
 {
   "name": "simple_xml",
   "description": "Based on the XML parser of the C language, the purpose of this project is to develop a code that can be applied on multiple platforms. At present, the code has been applied to MAINSTREAM OPERATING SYSTEMS SUCH AS WIN10, LINUX, RT-thread, VxWorks and so on.",
-  "description_zh": "基于C语言的XML解析器，开发本项目的目的在于开发一个能在多平台应用的代码。目前代码已经应用在WIN10、Linux、rt-thread、VxWorks等主流操作系统。",  
-  "enable": "PKG_USING_SIMPLE_XML", 
+  "description_zh": "基于C语言的XML解析器，开发本项目的目的在于开发一个能在多平台应用的代码。目前代码已经应用在WIN10、Linux、rt-thread、VxWorks等主流操作系统。",
+  "enable": "PKG_USING_SIMPLE_XML",
   "keywords": [
     "simple_xml"
   ],
