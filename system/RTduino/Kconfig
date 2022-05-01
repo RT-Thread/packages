@@ -24,6 +24,7 @@ if PKG_USING_RTDUINO
 
     config RTDUINO_USING_WIRE
         bool "Enable wire library <Wire.h>"
+        select RT_USING_I2C
         default n
 
     config RTDUINO_WIRE_BUFFER_LENGTH
@@ -34,6 +35,7 @@ if PKG_USING_RTDUINO
 
     config RTDUINO_USING_SPI
         bool "Enable SPI library <SPI.h>"
+        select RT_USING_SPI
         default n
 
     config RTDUINO_USING_SERVO
