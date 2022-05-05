@@ -1,7 +1,7 @@
 {
   "name": "kmulti_rtimer",
   "description": "a multi timer for rt-thread",
-  "enable": "PKG_USING_KMULTI_RTIMER", 
+  "enable": "PKG_USING_KMULTI_RTIMER",
   "keywords": [
     "kmulti_rtimer"
   ],

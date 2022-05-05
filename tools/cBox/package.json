@@ -1,8 +1,8 @@
 {
   "name": "cBox",
   "description": "CBOX: C language box.",
-  "description_zh": "CBOX: C 语言小工具。",  
-  "enable": "PKG_USING_CBOX", 
+  "description_zh": "CBOX: C 语言小工具。",
+  "enable": "PKG_USING_CBOX",
   "keywords": [
     "cbox", "C", "C language"
   ],

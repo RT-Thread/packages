@@ -1,8 +1,8 @@
 {
   "name": "snowflake",
   "description": "Snowflake algorithm is a distributed ID generation algorithm.",
-  "description_zh": "雪花算法是一种分布式ID生成算法。",  
-  "enable": "PKG_USING_SNOWFLAKE", 
+  "description_zh": "雪花算法是一种分布式ID生成算法。",
+  "enable": "PKG_USING_SNOWFLAKE",
   "keywords": [
     "snowflake"
   ],
