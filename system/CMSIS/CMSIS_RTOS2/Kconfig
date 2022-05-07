@@ -12,7 +12,7 @@ if PKG_USING_CMSIS_RTOS2
         default "/packages/system/CMSIS/CMSIS_RTOS2"
 
     config PKG_CMSIS_RTOS2_COMPATIBLE_CMSIS_RTOS1
-        bool "CMSIS RTOS2 compatible CMSIS RTOS1"
+        bool "CMSIS RTOS2 compatible with CMSIS RTOS1"
         default n
 
     choice
