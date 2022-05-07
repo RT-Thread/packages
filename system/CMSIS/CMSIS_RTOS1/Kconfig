@@ -2,7 +2,6 @@
 # Kconfig file for package CMSIS_RTOS1
 menuconfig PKG_USING_CMSIS_RTOS1
     bool "CMSIS-RTOS1 wrapper for RT-Thread"
-    select PKG_USING_CMSIS_5
     default n
 
 if PKG_USING_CMSIS_RTOS1
@@ -13,22 +12,17 @@ if PKG_USING_CMSIS_RTOS1
 
     choice
         prompt "Version"
-        default PKG_USING_CMSIS_RTOS1_V1
+        default PKG_USING_CMSIS_RTOS1_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_CMSIS_RTOS1_V1
-            bool "v1.x"
-
-        config PKG_USING_CMSIS_RTOS1_V2
-            bool "v2.x"
-            select PKG_USING_CMSIS_RTOS2
+        config PKG_USING_CMSIS_RTOS1_LATEST_VERSION
+            bool "latest"
     endchoice
 
     config PKG_CMSIS_RTOS1_VER
        string
-       default "v1.x"    if PKG_USING_CMSIS_RTOS1_V1
-       default "v2.x"    if PKG_USING_CMSIS_RTOS1_V2
+       default "latest"    if PKG_USING_CMSIS_RTOS1_LATEST_VERSION
 
 endif
 

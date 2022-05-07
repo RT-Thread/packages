@@ -14,19 +14,14 @@
     "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/tyustli/CMSIS-RTOS1",
-  "homepage": "https://github.com/tyustli/CMSIS-RTOS1#readme",
+  "repository": "https://github.com/RT-Thread-packages/CMSIS_RTOS1",
+  "homepage": "https://github.com/RT-Thread-packages/CMSIS_RTOS1#readme",
   "site": [
     {
-      "version": "v1.x",
-      "URL": "https://github.com/tyustli/CMSIS-RTOS1.git",
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/CMSIS_RTOS1.git",
       "filename": "Null for git package",
       "VER_SHA": "main"
-    },
-    {
-      "version": "v2.x",
-      "URL": "https://github.com/tyustli/CMSIS-RTOS1/archive/v2.x.zip",
-      "filename": "CMSIS_RTOS1-2.x.zip"
     }
   ]
 }

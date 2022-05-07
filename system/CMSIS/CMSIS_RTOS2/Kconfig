@@ -11,6 +11,10 @@ if PKG_USING_CMSIS_RTOS2
         string
         default "/packages/system/CMSIS/CMSIS_RTOS2"
 
+    config PKG_CMSIS_RTOS2_COMPATIBLE_CMSIS_RTOS1
+        bool "CMSIS RTOS2 compatible CMSIS RTOS1"
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_CMSIS_RTOS2_LATEST_VERSION
