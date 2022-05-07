@@ -1,0 +1,31 @@
+
+# Kconfig file for package libhydrogen
+menuconfig PKG_USING_LIBHYDROGEN
+    bool "libhydrogen: A lightweight, secure, easy-to-use crypto library suitable for constrained environments."
+    select RT_USING_HWCRYPTO
+    select RT_HWCRYPTO_USING_RNG
+    select RT_USING_LIBC if RT_VER_NUM < 0x40100
+    default n
+
+if PKG_USING_LIBHYDROGEN
+
+    config PKG_LIBHYDROGEN_PATH
+        string
+        default "/packages/security/libsodium"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LIBHYDROGEN_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LIBHYDROGEN_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LIBHYDROGEN_VER
+       string
+       default "latest"    if PKG_USING_LIBHYDROGEN_LATEST_VERSION
+
+endif
+

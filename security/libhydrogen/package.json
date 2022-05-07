@@ -1,0 +1,29 @@
+{
+  "name": "libhydrogen",
+  "description": "A lightweight, secure, easy-to-use crypto library suitable for constrained environments.",
+  "description_zh": "一个轻量级，易用，适合嵌入式的密码学软件包",
+  "enable": "PKG_USING_LIBHYDROGEN",
+  "keywords": [
+    "libhydrogen",
+    "crypto"
+  ],
+  "category": "security",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "ISC",
+  "repository": "https://github.com/wuhanstudio/libhydrogen",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/wuhanstudio/libhydrogen#readme",
+  "readme": "A lightweight, secure, easy-to-use crypto library suitable for constrained environments.",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/libhydrogen.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
