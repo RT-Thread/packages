@@ -28,7 +28,7 @@
       "version": "latest",
       "URL": "https://github.com/ARM-software/CMSIS_5.git",
       "filename": "CMSIS_5.zip",
-      "VER_SHA": "master"
+      "VER_SHA": "develop"
     }
   ]
 }
