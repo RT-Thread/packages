@@ -25,7 +25,7 @@
     },
     {
       "version": "latest",
-      "URL": "https://github.com/IoTSharp/iotsharp-rtthread-package",
+      "URL": "https://github.com/IoTSharp/iotsharp-rtthread-package.git",
       "filename": "IoTSharp-rtthread-package.zip",
       "VER_SHA": "master"
     }
