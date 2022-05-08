@@ -20,14 +20,14 @@ if PKG_USING_IOTSHARP-C-SDK
 
     config PKG_USING_IOTSHARP_DEVICE_SERVER
         string "Config IoTSharp Server "
-        default "mqtt://cloud.iotsharp.net:1883"
+        default "tcp://cloud.iotsharp.net:1883"
 
     config PKG_USING_IOTSHARP_DEVICE_NAME
-        string "Config Device Name"
+        string "Device's or Gateway's  Name"
         default ""
 
     config PKG_USING_IOTSHARP_DEVICE_SECRET
-        string "Config Device Key"
+        string "Device's or Gateway's  Key"
         default ""
 
     config SDK_PLATFORM
