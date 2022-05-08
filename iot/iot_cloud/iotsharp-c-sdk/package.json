@@ -1,8 +1,8 @@
 {
   "name": "iotsharp-c-sdk",
   "description": "IoTSharp client sdk for RT-Thread",
-  "description_zh": "IoTSharp的客户端软件包",
-  "enable": "PKG_USING_IOTSHARP-C-SDK",
+  "description_zh": "IoTSharp的客户端软件",
+  "enable": "PKG_USING_IOTSHARP",
   "keywords": [
     "iotsharp-c-sdk"
   ],

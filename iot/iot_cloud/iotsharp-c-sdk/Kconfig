@@ -1,13 +1,13 @@
 
 # Kconfig file for package iotshap-c-sdk
-menuconfig PKG_USING_IOTSHARP-C-SDK 
+menuconfig PKG_USING_IOTSHARP_SDK
     bool "iotsharp-c-sdk: IoTSHARP Client SDK for RT_Thread"
      select PKG_USING_PAHOMQTT
     default n
 
-if PKG_USING_IOTSHARP-C-SDK 
+if PKG_USING_IOTSHARP_SDK
 
-    config PKG_IOTSHARP-C-SDK_PATH 
+    config PKG_IOTSHARP_SDK_PATH 
         string
         default "/packages/iot/iot_cloud/iotsharp-c-sdk"
 
@@ -36,22 +36,22 @@ if PKG_USING_IOTSHARP-C-SDK
 
     choice
         prompt "Version"
-        default PKG_USING_IOTSHARP-C-SDK_LATEST_VERSION 
+        default PKG_USING_IOTSHARP_SDK_LATEST_VERSION 
         help
             Select the package version 
 
-        config PKG_USING_IOTSHARP-C-SDK_V100 
+        config PKG_USING_IOTSHARP_SDK_V100 
             bool "v1.0.0"
 
-        config PKG_USING_IOTSHARP-C-SDK_LATEST_VERSION  
+        config PKG_USING_IOTSHARP_SDK_LATEST_VERSION  
             bool "latest"
     endchoice
 
 
-    config PKG_IOTSHARP-C-SDK_VER
+    config PKG_IOTSHARP_SDK_VER
        string
-       default "v1.0.0"    if PKG_USING_IOTSHARP-C-SDK_V100 
-       default "latest"    if PKG_USING_IOTSHARP-C-SDK_LATEST_VERSION 
+       default "v1.0.0"    if PKG_USING_IOTSHARP_SDK_V100 
+       default "latest"    if PKG_USING_IOTSHARP_SDK_LATEST_VERSION 
 
 endif
 
