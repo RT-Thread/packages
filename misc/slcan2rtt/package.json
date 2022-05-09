@@ -23,10 +23,10 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/cazure/slcan2rtt.git",
-      "filename": "slcan2rtt-1.0.0.zip",
-      "VER_SHA": "master"
+      "version": "v0.0.1",
+      "URL": "https://github.com/cazure/slcan2rtt/archive/refs/tags/v0.0.1.zip",
+      "filename": "slcan2rtt-v0.0.1.zip",
+      "VER_SHA": "cc374f858145a9b4294dcc73f03b1b31b64c1dae"
     },
     {
       "version": "latest",
