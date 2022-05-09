@@ -4,7 +4,12 @@
   "description_zh": "IoTSharp的客户端软件",
   "enable": "PKG_USING_IOTSHARP",
   "keywords": [
-    "iotsharp-c-sdk"
+    "IoTSharp",
+    "IoT",
+    "cloud",
+    "iot-platform",
+    "物联网平台",
+    "iotsharp-sdk"
   ],
   "category": "iot/iot_cloud",
   "author": {
