@@ -1,0 +1,28 @@
+
+# Kconfig file for package CMSIS_RTOS1
+menuconfig PKG_USING_CMSIS_RTOS1
+    bool "CMSIS-RTOS1 wrapper for RT-Thread"
+    default n
+
+if PKG_USING_CMSIS_RTOS1
+
+    config PKG_CMSIS_RTOS1_PATH
+        string
+        default "/packages/system/CMSIS/CMSIS_RTOS1"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CMSIS_RTOS1_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CMSIS_RTOS1_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CMSIS_RTOS1_VER
+       string
+       default "latest"    if PKG_USING_CMSIS_RTOS1_LATEST_VERSION
+
+endif
+
