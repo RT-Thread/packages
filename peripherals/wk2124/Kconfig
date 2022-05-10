@@ -1,4 +1,3 @@
-
 # Kconfig file for package wk2124
 menuconfig PKG_USING_WK2124
     bool "wk2124: spi wk2124 driver library."
@@ -43,29 +42,29 @@ if PKG_USING_WK2124
                 int "IRQ pin number"
                 default 66
 
-			choice
-				prompt "Select crystal frequency"
-				default WK2124_Fosc_14745600
+            choice
+                prompt "Select crystal frequency"
+                default WK2124_Fosc_14745600
 
-				config WK2124_Fosc_1843200
-					bool "1.8432MHz"
-				config WK2124_Fosc_3686400
-					bool "3.6864MHz"
-				config WK2124_Fosc_7372800
-					bool "7.3728MHz"
-				config WK2124_Fosc_11059200
-					bool "11.0592MHz"
-				config WK2124_Fosc_14745600
-					bool "14.7456MHz"
-				config WK2124_Fosc_8000000
-					bool "8MHz"
-				config WK2124_Fosc_16000000
-					bool "16MHz"
-				config WK2124_Fosc_24000000
-					bool "24MHz"
-				config WK2124_Fosc_32000000
-					bool "32MHz"
-			endchoice
+                config WK2124_Fosc_1843200
+                    bool "1.8432MHz"
+                config WK2124_Fosc_3686400
+                    bool "3.6864MHz"
+                config WK2124_Fosc_7372800
+                    bool "7.3728MHz"
+                config WK2124_Fosc_11059200
+                    bool "11.0592MHz"
+                config WK2124_Fosc_14745600
+                    bool "14.7456MHz"
+                config WK2124_Fosc_8000000
+                    bool "8MHz"
+                config WK2124_Fosc_16000000
+                    bool "16MHz"
+                config WK2124_Fosc_24000000
+                    bool "24MHz"
+                config WK2124_Fosc_32000000
+                    bool "32MHz"
+            endchoice
         endmenu
     endif
 
@@ -94,4 +93,3 @@ if PKG_USING_WK2124
        default "latest"    if PKG_USING_WK2124_LATEST_VERSION
 
 endif
-
