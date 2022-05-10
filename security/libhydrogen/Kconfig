@@ -13,6 +13,22 @@ if PKG_USING_LIBHYDROGEN
         string
         default "/packages/security/libsodium"
 
+    menu "Examples"
+
+        config LIBHYDROGEN_USING_EXAMPLE_RANDOM
+            bool "hydrogen rng: returns unpredictable values."
+            help
+                hydrogen rng: returns unpredictable values.
+            default n
+
+        config LIBHYDROGEN_USING_EXAMPLE_GENERIC_HASH
+            bool "hydrogen generic hash: transforms an arbitrary-long input into a fixed length fingerprint."
+            help
+                hydrogen generic hash: transforms an arbitrary-long input into a fixed length fingerprint.
+            default n
+
+    endmenu
+
     choice
         prompt "Version"
         default PKG_USING_LIBHYDROGEN_LATEST_VERSION
