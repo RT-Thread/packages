@@ -10,6 +10,14 @@ if PKG_USING_LVGL
         string
         default "/packages/multimedia/LVGL/LVGL"
 
+    config LVGL_THREAD_PRIO
+        int "priority of LVGL thread"
+        default 20
+
+    config LVGL_THREAD_STACK_SIZE
+        int "stack size of LVGL thread"
+        default 4096
+
     config PKG_USING_LVGL_EXAMPLES
         bool "Enable built-in examples"
         default n
