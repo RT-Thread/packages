@@ -18,32 +18,15 @@ if PKG_USING_LVGL
         bool "Enable built-in demos"
         default n
 
-    choice
-        prompt "Version"
-        default PKG_USING_LVGL_V820
-        help
-            Select the package version
-
-        config PKG_USING_LVGL_V820
-            bool "v8.2.0"
-
-        config PKG_USING_LVGL_V810
-            bool "v8.1.0"
-
-        config PKG_USING_LVGL_LATEST_VERSION
-            bool "latest"
-    endchoice
-
     config PKG_LVGL_VER
        string
-       default "v8.2.0"    if PKG_USING_LVGL_V820
-       default "v8.1.0"    if PKG_USING_LVGL_V810
-       default "latest"    if PKG_USING_LVGL_LATEST_VERSION
+       default "latest"
+       default "v8.2.0"    if RT_VER_NUM = 0x40100
+       
 
     config PKG_LVGL_VER_NUM
         hex
-        default 0x08020    if PKG_USING_LVGL_V820
-        default 0x08010    if PKG_USING_LVGL_V810
         default 0x99999    if PKG_USING_LVGL_LATEST_VERSION
+        default 0x08020    if RT_VER_NUM = 0x40100
 endif
 
