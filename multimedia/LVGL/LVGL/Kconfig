@@ -26,15 +26,15 @@ if PKG_USING_LVGL
         bool "Enable built-in demos"
         default n
 
-    config PKG_LVGL_VER
-       string
-       default "latest"
-       default "v8.2.0"    if RT_VER_NUM = 0x40100
-       
-
     config PKG_LVGL_VER_NUM
         hex
         default 0x99999    if PKG_USING_LVGL_LATEST_VERSION
         default 0x08020    if RT_VER_NUM = 0x40100
+
+    config PKG_LVGL_VER
+       string
+       default "latest"    if PKG_LVGL_VER_NUM = 0x99999
+       default "v8.2.0"    if PKG_LVGL_VER = 0x08020
+
 endif
 
