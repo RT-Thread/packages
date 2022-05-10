@@ -10,4 +10,5 @@ source "$PKGS_DIR/packages/iot/iot_cloud/ucloud_iot_sdk/Kconfig"
 source "$PKGS_DIR/packages/iot/iot_cloud/joylink/Kconfig"
 source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/Kconfig"
 source "$PKGS_DIR/packages/iot/iot_cloud/iotsharp-c-sdk/Kconfig"
+
 endmenu
