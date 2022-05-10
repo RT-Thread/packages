@@ -34,7 +34,7 @@ if PKG_USING_LVGL
     config PKG_LVGL_VER
        string
        default "latest"    if PKG_LVGL_VER_NUM = 0x99999
-       default "v8.2.0"    if PKG_LVGL_VER = 0x08020
+       default "v8.2.0"    if PKG_LVGL_VER_NUM = 0x08020
 
 endif
 
