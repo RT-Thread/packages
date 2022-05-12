@@ -10,6 +10,30 @@ if PKG_USING_LVGL
         string
         default "/packages/multimedia/LVGL/LVGL"
 
+    choice
+        prompt "Version"
+        default PKG_USING_LVGL_LATEST_VERSION
+        default PKG_USING_LVGL_V820     if RT_VER_NUM = 0x40100
+        help
+            Select the package version
+
+        config PKG_USING_LVGL_V820
+            bool "v8.2.0"
+
+        config PKG_USING_LVGL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LVGL_VER
+       string
+       default "v8.2.0"    if PKG_USING_LVGL_V820
+       default "latest"    if PKG_USING_LVGL_LATEST_VERSION
+
+    config PKG_LVGL_VER_NUM
+        hex
+        default 0x08020    if PKG_USING_LVGL_V820
+        default 0x99999    if PKG_USING_LVGL_LATEST_VERSION
+
     config PKG_LVGL_THREAD_PRIO
         int "priority of LVGL thread"
         default 20
@@ -25,16 +49,6 @@ if PKG_USING_LVGL
     config PKG_LVGL_USING_DEMOS
         bool "Enable built-in demos"
         default n
-
-    config PKG_LVGL_VER_NUM
-        hex
-        default 0x99999
-        default 0x08020    if RT_VER_NUM = 0x40100
-
-    config PKG_LVGL_VER
-       string
-       default "latest"    if PKG_LVGL_VER_NUM = 0x99999
-       default "v8.2.0"    if PKG_LVGL_VER_NUM = 0x08020
 
 endif
 
