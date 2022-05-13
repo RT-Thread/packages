@@ -16,4 +16,3 @@ if PKG_USING_LV_MUSIC_DEMO
        default "v0.2.0"    if PKG_LVGL_VER_NUM = 0x08020 #LVGL v8.2.0
 
 endif
-

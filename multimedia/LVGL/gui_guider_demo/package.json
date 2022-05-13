@@ -19,12 +19,6 @@
   "homepage": "https://github.com/NXPmicro/gui-guider-demos.git",
   "site": [
     {
-      "version": "v1.0.x",
-      "URL": "https://github.com/NXPmicro/gui-guider-demos.git",
-      "filename": "Null for git package",
-      "VER_SHA": "v1.0.x"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/NXPmicro/gui-guider-demos.git",
       "filename": "Null for git package",

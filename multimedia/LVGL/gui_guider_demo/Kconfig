@@ -2,7 +2,6 @@
 # Kconfig file for package gui_guider_demo
 menuconfig PKG_USING_GUI_GUIDER_DEMO
     bool "Enable LVGL GUI Guider demo for RT-Thread"
-    depends on PKG_USING_LVGL && SOC_MIMXRT1062DVL6A
     default n
 
 if PKG_USING_GUI_GUIDER_DEMO
@@ -14,7 +13,5 @@ if PKG_USING_GUI_GUIDER_DEMO
     config PKG_GUI_GUIDER_DEMO_VER
        string
        default "latest"    if PKG_LVGL_VER_NUM = 0x99999 #LVGL latest version
-       default "v1.0.x"    if PKG_LVGL_VER_NUM = 0x08020 #LVGL v8.2.0
 
 endif
-

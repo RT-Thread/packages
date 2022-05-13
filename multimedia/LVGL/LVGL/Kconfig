@@ -1,4 +1,3 @@
-
 # Kconfig file for package LVGL
 menuconfig PKG_USING_LVGL
     bool "LVGL (official): powerful and easy-to-use embedded GUI library"
@@ -28,11 +27,10 @@ if PKG_USING_LVGL
 
     config PKG_LVGL_VER_NUM
         hex
-        default 0x99999
-
         # NXP GUIGuider is designed for LVGL8.2.0 with RT-Thread latest version at this moment
         # Thus, it needs to give a privilege to NXP GUIGuider to let it use LVGL8.2.0 even if RT-Thread vesion is higher than 4.1.0
         default 0x08020    if (RT_VER_NUM = 0x40100) || ((RT_VER_NUM > 0x40100) && BSP_USING_NXP_GUIGUIDER)
+        default 0x99999
 
     config PKG_LVGL_VER
        string
