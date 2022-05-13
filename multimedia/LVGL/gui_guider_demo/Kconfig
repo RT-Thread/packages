@@ -12,6 +12,6 @@ if PKG_USING_GUI_GUIDER_DEMO
 
     config PKG_GUI_GUIDER_DEMO_VER
        string
-       default "latest"    if PKG_LVGL_VER_NUM = 0x99999 #LVGL latest version
+       default "latest"
 
 endif
