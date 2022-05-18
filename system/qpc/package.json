@@ -13,20 +13,20 @@
     "github": "Zhyolo"
   },
   "license": "GPL-3.0",
-  "repository": "https://github.com/Zhyolo/qpc_rtthread",
-  "homepage": "https://github.com/Zhyolo/qpc_rtthread#readme",
+  "repository": "https://github.com/Zhyolo/qpc-rtthread",
+  "homepage": "https://github.com/Zhyolo/qpc-rtthread#readme",
   "site": [
     {
       "version": "v7.0.0",
-      "URL": "https://github.com/Zhyolo/qpc_rtthread.git",
+      "URL": "https://github.com/Zhyolo/qpc-rtthread.git",
       "filename": "qpc-7.0.0.zip",
-      "VER_SHA": "203193a8a189e27becb7d37fc08fb69bd3c533f0"
+      "VER_SHA": "8d599c647d459cdf07ac783d771937e046f9e74c"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/Zhyolo/qpc_rtthread.git",
+      "URL": "https://github.com/Zhyolo/qpc-rtthread.git",
       "filename": "qpc.zip",
-      "VER_SHA": "main"
+      "VER_SHA": "master"
     }
   ]
 }
