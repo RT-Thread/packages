@@ -42,5 +42,6 @@ source "$PKGS_DIR/packages/tools/fdt/Kconfig"
 source "$PKGS_DIR/packages/tools/cBox/Kconfig"
 source "$PKGS_DIR/packages/tools/snowflake/Kconfig"
 source "$PKGS_DIR/packages/tools/hash-match/Kconfig"
+source "$PKGS_DIR/packages/tools/fire_pid_curve/Kconfig"
 
 endmenu
