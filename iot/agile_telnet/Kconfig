@@ -70,21 +70,12 @@ if PKG_USING_AGILE_TELNET
 
     choice
         prompt "Version"
-        default PKG_USING_AGILE_TELNET_LATEST_VERSION
+        default PKG_USING_AGILE_TELNET_V203
         help
             Select the package version
 
-        config PKG_USING_AGILE_TELNET_V100
-            bool "v1.0.0"
-
-        config PKG_USING_AGILE_TELNET_V200
-            bool "v2.0.0"
-
-        config PKG_USING_AGILE_TELNET_V201
-            bool "v2.0.1"
-
-        config PKG_USING_AGILE_TELNET_V202
-            bool "v2.0.2"
+        config PKG_USING_AGILE_TELNET_V203
+            bool "v2.0.3"
 
         config PKG_USING_AGILE_TELNET_LATEST_VERSION
             bool "latest"
@@ -92,18 +83,12 @@ if PKG_USING_AGILE_TELNET
 
     config PKG_AGILE_TELNET_VER
        string
-       default "v1.0.0"    if PKG_USING_AGILE_TELNET_V100
-       default "v2.0.0"    if PKG_USING_AGILE_TELNET_V200
-       default "v2.0.1"    if PKG_USING_AGILE_TELNET_V201
-       default "v2.0.2"    if PKG_USING_AGILE_TELNET_V202
+       default "v2.0.3"    if PKG_USING_AGILE_TELNET_V203
        default "latest"    if PKG_USING_AGILE_TELNET_LATEST_VERSION
 
     config PKG_AGILE_TELNET_VER_NUM
         hex
-        default 0x10000    if PKG_USING_AGILE_TELNET_V100
-        default 0x20000    if PKG_USING_AGILE_TELNET_V200
-        default 0x20001    if PKG_USING_AGILE_TELNET_V201
-        default 0x20002    if PKG_USING_AGILE_TELNET_V202
+        default 0x20003    if PKG_USING_AGILE_TELNET_V203
         default 0x99999    if PKG_USING_AGILE_TELNET_LATEST_VERSION
 endif
 
