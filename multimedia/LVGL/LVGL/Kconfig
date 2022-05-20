@@ -17,6 +17,10 @@ if PKG_USING_LVGL
         int "stack size of LVGL thread"
         default 4096
 
+    config PKG_LVGL_DISP_REFR_PERIOD
+        int "display refresh period (ms)"
+        default 10
+
     config PKG_LVGL_USING_EXAMPLES
         bool "Enable built-in examples"
         default n
