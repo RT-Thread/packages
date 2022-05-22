@@ -10,16 +10,16 @@ if PKG_USING_LVGL
         default "/packages/multimedia/LVGL/LVGL"
 
     config PKG_LVGL_THREAD_PRIO
-        int "priority of LVGL thread"
+        int "Priority of LVGL thread"
         default 20
 
     config PKG_LVGL_THREAD_STACK_SIZE
-        int "stack size of LVGL thread"
+        int "Stack size of LVGL thread"
         default 4096
 
     config PKG_LVGL_DISP_REFR_PERIOD
-        int "display refresh period (ms)"
-        default 10
+        int "Display refresh period (ms)"
+        default 5 # official suggestion
 
     config PKG_LVGL_USING_EXAMPLES
         bool "Enable built-in examples"
