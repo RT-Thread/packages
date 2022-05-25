@@ -46,16 +46,21 @@ if PKG_USING_RTDUINO
         bool "Enable servo library <Servo.h>"
         default n
 
-    config RTDUINO_USING_ADAFRUIT
-        bool "Enable Adafruit sensor framework"
-        select RTDUINO_USING_WIRE
-        default n
-
     config RTDUINO_USING_USBSERIAL
         bool "Enable USB Serial"
         select PKG_USING_TINYUSB
         select PKG_TINYUSB_DEVICE_ENABLE
         select PKG_TINYUSB_DEVICE_CDC
+        default n
+
+    config RTDUINO_USING_ADAFRUIT
+        bool "Enable Adafruit sensor framework"
+        select RTDUINO_USING_WIRE
+        default n
+
+    config RTDUINO_USING_MSTIMER2
+        bool "Enable MsTimer2 library"
+        select RT_USING_TIMER_SOFT
         default n
 
     choice
