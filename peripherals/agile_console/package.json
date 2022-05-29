@@ -17,6 +17,11 @@
   "homepage": "https://github.com/loogg/agile_console#readme",
   "site": [
     {
+      "version": "v1.1.0",
+      "URL": "https://github.com/loogg/agile_console/archive/refs/tags/v1.1.0.zip",
+      "filename": "agile_console-1.1.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/loogg/agile_console.git",
       "filename": "agile_console.zip",

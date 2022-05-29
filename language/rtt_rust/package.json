@@ -1,0 +1,33 @@
+{
+  "name": "rtt_rust",
+  "description": "Rust support for rt-thread.",
+  "description_zh": "为rt-thread增加rust支持。",  
+  "enable": "PKG_USING_RTT_RUST", 
+  "keywords": [
+    "rtt_rust", "rust", "language"
+  ],
+  "category": "language",
+  "author": {
+    "name": "chenhonglin",
+    "email": "chenhonglin@aliyun.com",
+    "github": "vito-chl"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/vito-chl/rtt_rust.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/vito-chl/rtt_rust.git",
+  "doc": "https://github.com/vito-chl/rtt_rust.git",
+  "site": [
+    {
+      "version": "v0.1.0",
+      "URL": "https://github.com/vito-chl/rtt_rust/archive/refs/tags/v0.1.0-alpha2.zip",
+      "filename": "v0.1.0-alpha2.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/vito-chl/rtt_rust.git",
+      "filename": "",
+      "VER_SHA": "pub"
+    }
+  ]
+}

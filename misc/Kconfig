@@ -34,5 +34,6 @@ source "$PKGS_DIR/packages/misc/Controller/Kconfig"
 source "$PKGS_DIR/packages/misc/phase-locked-loop/Kconfig"
 source "$PKGS_DIR/packages/misc/MFBD/Kconfig"
 source "$PKGS_DIR/packages/misc/slcan2rtt/Kconfig"
+source "$PKGS_DIR/packages/misc/soem/Kconfig"
 
 endmenu
