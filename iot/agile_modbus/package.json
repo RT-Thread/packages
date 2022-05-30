@@ -17,14 +17,9 @@
   "homepage": "https://github.com/loogg/agile_modbus#readme",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/loogg/agile_modbus/archive/v1.0.0.zip",
-      "filename": "agile_modbus-1.0.0.zip"
-    },
-    {
-      "version": "v1.0.1",
-      "URL": "https://github.com/loogg/agile_modbus/archive/v1.0.1.zip",
-      "filename": "agile_modbus-1.0.1.zip"
+      "version": "v1.1.0",
+      "URL": "https://github.com/loogg/agile_modbus/archive/refs/tags/v1.1.0.zip",
+      "filename": "agile_modbus-1.1.0.zip"
     },
     {
       "version": "latest",
