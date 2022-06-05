@@ -1,7 +1,7 @@
 
 # Kconfig file for package itoa
 menuconfig PKG_USING_POSIX_ITOA
-    bool "Enable itoa family (not standard POSIX)"
+    bool "Enable itoa family (non-standard POSIX)"
     default n
 
 if PKG_USING_POSIX_ITOA
