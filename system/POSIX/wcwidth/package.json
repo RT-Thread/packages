@@ -1,7 +1,7 @@
 {
   "name": "wcwidth",
-  "description": "wcwidth for RT-Thread POSIX (IEEE Std 1003.1-2001)",
-  "description_zh": "wcwidth for RT-Thread POSIX (IEEE Std 1003.1-2001)",
+  "description": "wcwidth for RT-Thread POSIX (POSIX.1-2001, POSIX.1-2008)",
+  "description_zh": "wcwidth函数家族 (POSIX.1-2001, POSIX.1-2008)",
   "enable": "PKG_USING_POSIX_WCWIDTH",
   "keywords": [
     "wcwidth",
