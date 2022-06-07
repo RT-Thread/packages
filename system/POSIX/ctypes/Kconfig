@@ -1,0 +1,18 @@
+
+# Kconfig file for package ctypes
+menuconfig PKG_USING_POSIX_CTYPES
+    bool "Extension POSIX ctype.h functions (POSIX.1-2001, POSIX.1-2008)"
+    default n
+
+if PKG_USING_POSIX_CTYPES
+
+    config PKG_POSIX_CTYPES_PATH
+        string
+        default "/packages/system/POSIX/ctypes"
+ 
+    config PKG_POSIX_CTYPES_VER
+       string
+       default "latest"
+
+endif
+

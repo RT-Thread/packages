@@ -3,6 +3,7 @@
 menuconfig PKG_USING_RTDUINO
     bool "RTduino: Arduino Ecological Compatibility Layer"
     select PKG_USING_POSIX_ITOA
+    select PKG_USING_POSIX_CTYPES
     select RT_USING_CPLUSPLUS
     default n
 

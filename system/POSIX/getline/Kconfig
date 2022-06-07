@@ -1,7 +1,7 @@
 
 # Kconfig file for package getline
 menuconfig PKG_USING_POSIX_GETLINE
-    bool "Enable getline/getdelim (IEEE Std 1003.1-2008)"
+    bool "Enable getline/getdelim (POSIX.1-2008)"
     select RT_USING_POSIX_FS
     select RT_USING_POSIX_STDIO
     default n

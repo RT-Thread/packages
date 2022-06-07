@@ -1,0 +1,30 @@
+{
+  "name": "ctypes",
+  "description": "Extension POSIX ctype.h functions",
+  "description_zh": "POSIX ctype.h扩展函数 (POSIX.1-2001, POSIX.1-2008)",  
+  "enable": "PKG_USING_POSIX_CTYPES", 
+  "keywords": [
+    "ctypes",
+    "ctype",
+    "POSIX"
+  ],
+  "category": "system",
+  "author": {
+    "name": "mysterywolf",
+    "email": "jiantingman@foxmail.com",
+    "github": "mysterywolf"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/mysterywolf/ctypes",
+  "icon": "unknown",
+  "homepage": "https://github.com/mysterywolf/ctypes#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/mysterywolf/ctypes.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
