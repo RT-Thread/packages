@@ -139,17 +139,22 @@ if PKG_USING_CMSIS_5
         config PKG_USING_CMSIS_5_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_CMSIS_5_V50900
+            bool "v5.9.0"
+
         config PKG_USING_CMSIS_5_V50800
             bool "v5.8.0"
     endchoice
 
     config PKG_CMSIS_5_VER
        string
+       default "v5.9.0"    if PKG_USING_CMSIS_5_V50900
        default "v5.8.0"    if PKG_USING_CMSIS_5_V50800
        default "latest"    if PKG_USING_CMSIS_5_LATEST_VERSION
 
     config PKG_CMSIS_5_VER_NUM
         hex
+        default 0x50900    if PKG_USING_CMSIS_5_V50900
         default 0x50800    if PKG_USING_CMSIS_5_V50800
         default 0x99999    if PKG_USING_FLASHDB_LATEST_VERSION
 
