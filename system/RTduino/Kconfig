@@ -5,6 +5,7 @@ menuconfig PKG_USING_RTDUINO
     select PKG_USING_POSIX_ITOA
     select PKG_USING_POSIX_CTYPES
     select RT_USING_CPLUSPLUS
+    select RT_USING_CPUTIME
     default n
 
 if PKG_USING_RTDUINO
