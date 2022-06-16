@@ -3,6 +3,11 @@
 menuconfig PKG_USING_ARM_2D
     bool "Arm-2D Graphics Library"
     select RT_USING_LIBC if RT_VER_NUM < 0x40100
+    select PKG_USING_CMSIS_5
+    select PKG_CMSIS_DSP
+    select PKG_CMSIS_DSP_BASIC_MATH
+    select PKG_CMSIS_DSP_COMMON_TABLES
+    select PKG_CMSIS_DSP_FAST_MATH
     default n
 
 if PKG_USING_ARM_2D
@@ -25,11 +30,9 @@ if PKG_USING_ARM_2D
        string
        default "latest"    if PKG_USING_ARM_2D_LATEST_VERSION
 
-    config PKG_ARM_2D_USE_INTERPOLATION_ROTATION
-        bool "Using interpolation rotation."
-        default n
-        help
-            Using interpolation rotation.
+    config PKG_ARM_2D_USE_ANTI_ALIAS_TRANSFORM
+        bool "Using transform for rotation and scaling."
+        default y
 
     config PKG_ARM_2D_USE_EXAMPLE
         bool "Using Arm-2D example."
