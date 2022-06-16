@@ -1,0 +1,35 @@
+{
+  "name": "armv7m_DWT",
+  "description": "armv7m_DWT: Memory monitoring component based on ARMV7M architecture.",
+  "description_zh": "armv7m_DWT: 基于 ARMV7M 架构的内存监控组件.",
+  "enable": "PKG_USING_ARMV7M_DWT_TOOL",
+  "keywords": [
+    "memory",
+    "monitor",
+    "memory monitor",
+    "DWT",
+    "ARM",
+    "Cortex-M",
+    "Cortex",
+    "backtrace",
+    "callstack",
+    "hardfault"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "BalanceTWK",
+    "email": "balancetwk@yeah.net",
+    "github": "balanceTWK"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/balanceTWK/armv7m_DWT.git",
+  "homepage": "https://github.com/balanceTWK/armv7m_DWT.git",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/balanceTWK/armv7m_DWT.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
