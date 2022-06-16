@@ -56,4 +56,5 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/isl29035/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/mmc3680kj/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/qmp6989/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/xproject/Kconfig" 
     endif

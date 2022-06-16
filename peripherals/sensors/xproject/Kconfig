@@ -1,0 +1,28 @@
+
+# Kconfig file for package xproject
+menuconfig PKG_USING_XPROJECT
+    bool "This is a game"
+    default n
+
+if PKG_USING_XPROJECT
+
+    config PKG_XPROJECT_PATH
+        string
+        default "/packages/peripherals/sensors/xproject"
+
+    choice
+        prompt "Version"
+        default PKG_USING_XPROJECT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_XPROJECT_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_XPROJECT_VER
+       string
+       default "latest"    if PKG_USING_XPROJECT_LATEST_VERSION
+
+endif
+

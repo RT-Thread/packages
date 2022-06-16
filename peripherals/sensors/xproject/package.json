@@ -1,0 +1,30 @@
+{
+  "name": "xproject",
+  "description": "This is a game package",
+  "description_zh": "This is a game package",  
+  "enable": "PKG_USING_XPROJECT", 
+  "keywords": [
+    "xproject",
+    "game",
+    "snake"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "byte-me-stan",
+    "email": "we.byte.togther@gmail.com",
+    "github": "byte-me-stan"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/byte-me-stan/xproject",
+  "icon": "unknown",
+  "homepage": "https://github.com/byte-me-stan/xprojec#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/byte-me-stan/xproject.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
