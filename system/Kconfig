@@ -1,7 +1,6 @@
 menu "system packages"
 
 source "$PKGS_DIR/packages/system/enhanced-kservice/Kconfig"
-source "$PKGS_DIR/packages/system/POSIX/Kconfig"
 source "$PKGS_DIR/packages/system/acceleration/Kconfig"
 source "$PKGS_DIR/packages/system/CMSIS/Kconfig"
 source "$PKGS_DIR/packages/system/Micrium/Kconfig"

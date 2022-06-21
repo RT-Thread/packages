@@ -2,15 +2,12 @@
 # Kconfig file for package termbox
 menuconfig PKG_USING_TERMBOX
     bool "termbox: library for writing text-based user interfaces"
-    select RT_USING_DFS             if RT_VER_NUM < 0x40100
-    select RT_USING_POSIX           if RT_VER_NUM < 0x40100
-    select RT_USING_LIBC            if RT_VER_NUM < 0x40100
-    select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
-    select RT_USING_POSIX_POLL      if RT_VER_NUM >= 0x40100
-    select RT_USING_POSIX_STDIO     if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_FS
+    select RT_USING_POSIX_POLL
+    select RT_USING_POSIX_STDIO
     select RT_USING_POSIX_TERMIOS
-    select PKG_USING_POSIX_WCWIDTH
     default n
+    depends on RT_VER_NUM > 0x40100
 
 if PKG_USING_TERMBOX
 
