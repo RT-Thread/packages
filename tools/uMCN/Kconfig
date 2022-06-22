@@ -33,6 +33,7 @@ if PKG_USING_UMCN
         bool
         prompt "uMCN command"
         select PKG_USING_OPTPARSE
+        select RT_USING_POSIX_DELAY
         default n
 
 endif
