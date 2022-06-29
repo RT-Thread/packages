@@ -126,13 +126,9 @@ if PKG_USING_CMSIS_5
             default n
     endif
 
-    config PKG_CMSIS_5_AUX_VER
-       string
-       default "latest"    if PKG_USING_CMSIS_5_AUX_LATEST_VERSION
-
     choice
         prompt "Version"
-        default PKG_USING_CMSIS_5_LATEST_VERSION
+        default PKG_USING_CMSIS_5_V50900
         help
             Select the package version
 
@@ -157,7 +153,6 @@ if PKG_USING_CMSIS_5
         default 0x50900    if PKG_USING_CMSIS_5_V50900
         default 0x50800    if PKG_USING_CMSIS_5_V50800
         default 0x99999    if PKG_USING_FLASHDB_LATEST_VERSION
-
 
     # ---- auxiliary package ------
     config PKG_USING_CMSIS_5_AUX
