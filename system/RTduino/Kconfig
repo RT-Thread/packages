@@ -56,7 +56,6 @@ if PKG_USING_RTDUINO
 
     config RTDUINO_USING_ADAFRUIT
         bool "Enable Adafruit sensor framework"
-        select RTDUINO_USING_WIRE
         default n
 
     config RTDUINO_USING_MSTIMER2
