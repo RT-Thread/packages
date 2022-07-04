@@ -1,0 +1,30 @@
+{
+  "name": "parson",
+  "description": "parson is a lightweight json library written in C,write by kgabis.",
+  "description_zh": "parson 是一个由kgabis用C写的轻量级json库",
+  "enable": "PKG_USING_PARSON",
+  "keywords": [
+    "parson",
+    "json"
+  ],
+  "category": "language",
+  "author": {
+    "name": "maikebing",
+    "email": "mysticboy@live.com",
+    "github": "IoTSharp"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/IoTSharp/parson",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/IoTSharp/parson",
+  "readme": "parson is a lightweight json library written in C.",
+  "site": [
+    
+    {
+      "version": "latest",
+      "URL": "https://github.com/IoTSharp/parson.git",
+      "filename": "parson.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
