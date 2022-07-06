@@ -111,7 +111,7 @@ io_input_filter_t iif_register(rt_base_t pin)
 
 rt_err_t iif_init(io_input_filter_t iif, rt_base_t pin)
 {
-    _iif_initialize(iif, pin);
+    return _iif_initialize(iif, pin);
 }
 
 static rt_err_t _iif_initialize(io_input_filter_t iif, rt_base_t pin)
@@ -190,6 +190,7 @@ static void io_input_filter_poll(void)
                 else
                 {
                     list->pin_status = PIN_LOW;
+                    LOG_I("iif 0x%08X, pin status changed: %d", list, list->pin_status);
                 }
             }
             else
@@ -208,6 +209,7 @@ static void io_input_filter_poll(void)
                 else
                 {
                     list->pin_status = PIN_HIGH;
+                    LOG_I("iif 0x%08X, pin status changed: %d", list, list->pin_status);
                 }
             }
             else
@@ -216,7 +218,7 @@ static void io_input_filter_poll(void)
             }
         }
 
-        LOG_D("iif %d, filter_counts %d, pin_status %d", list, list->filter_counts, list->pin_status);
+        LOG_D("iif 0x%08X, filter_counts %d, pin_status %d", list, list->filter_counts, list->pin_status);
     }
 }
 
