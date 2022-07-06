@@ -1,0 +1,32 @@
+
+# Kconfig file for package rtt_esp_idf
+menuconfig PKG_USING_RTT_ESP_IDF
+    bool "ESP-IDF: for espress serial ESP32C3 etc."
+    default n
+
+if PKG_USING_RTT_ESP_IDF
+
+    config PKG_RTT_ESP_IDF_PATH
+        string
+        default "/packages/peripherals/rtt_esp_idf"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RTT_ESP_IDF_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RTT_ESP_IDF_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RTT_ESP_IDF_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_RTT_ESP_IDF_VER
+       string
+       default "v1.0.0"    if PKG_USING_RTT_ESP_IDF_V100
+       default "latest"    if PKG_USING_RTT_ESP_IDF_LATEST_VERSION
+
+endif
+
