@@ -217,6 +217,10 @@ choice
     bool "BLE beacon sample"
     select NIMBT_ROLE_BROADCASTER
 
+    config PKG_NIMBLE_SAMPLE_ADVERTISER
+    bool "BLE advertiser sample"
+    select NIMBT_ROLE_BROADCASTER
+
     config PKG_NIMBLE_SAMPLE_EXT_ADVERTISER
     bool "BLE external advertiser sample"
 
