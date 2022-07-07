@@ -24,6 +24,12 @@
       "VER_SHA": "master"
     },
     {
+      "version": "v0.3.0",
+      "URL": "https://github.com/mysterywolf/lv_demo_music/archive/refs/tags/v0.3.0.zip",
+      "filename": "lv_demo_music-0.3.0.zip",
+      "VER_SHA": "master"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/mysterywolf/lv_demo_music.git",
       "filename": "Null for git package",
