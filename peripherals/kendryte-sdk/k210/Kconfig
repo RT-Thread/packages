@@ -1,0 +1,28 @@
+
+# Kconfig file for package k210_sdk
+menuconfig PKG_USING_K210_SDK
+    bool "Kendryte K210 SDK"
+    default n
+
+if PKG_USING_K210_SDK
+
+    config PKG_K210_SDK_PATH
+        string
+        default "/packages/peripherals/kendryte-sdk/k210"
+
+    choice
+        prompt "Version"
+        default PKG_USING_K210_SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_K210_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+          
+    config PKG_K210_SDK_VER
+       string
+       default "latest"    if PKG_USING_K210_SDK_LATEST_VERSION
+
+endif
+

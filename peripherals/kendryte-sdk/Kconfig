@@ -1,5 +1,6 @@
 menu "kendryte-sdk: Kendryte SDK"
 
+source "$PKGS_DIR/packages/peripherals/kendryte-sdk/k210/Kconfig"
 source "$PKGS_DIR/packages/peripherals/kendryte-sdk/k210/legacy/Kconfig"
 
 endmenu
