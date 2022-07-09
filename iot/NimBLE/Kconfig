@@ -289,11 +289,15 @@ config PKG_NIMBLE_EXT_ADV_MAX_SIZE
 
         config PKG_USING_NIMBLE_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_NIMBLE_HCI_TEST_VERSION
+            bool "hci_test"
     endchoice
 
     config PKG_NIMBLE_VER
        string
        default "v1.0.0"    if PKG_USING_NIMBLE_V100
        default "latest"    if PKG_USING_NIMBLE_LATEST_VERSION
+       default "hci_test"  if PKG_USING_NIMBLE_HCI_TEST_VERSION
 
 endif
