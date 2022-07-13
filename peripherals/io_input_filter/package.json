@@ -20,7 +20,8 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://io_input_filter-1.0.0.zip",
+      "URL": "https://github.com/lizdDong/io_input_filter/archive/refs/tags/v1.0.0.zip",
+    
       "filename": "io_input_filter-1.0.0.zip",
       "VER_SHA": ""
     },
