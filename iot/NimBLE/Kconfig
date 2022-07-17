@@ -150,7 +150,7 @@ menu "HCI Transport support"
 
     if PKG_NIMBLE_HCI_USING_RTT_UART
         config PKG_NIMBLE_HCI_UART_DEVICE_NAME
-            string "the uart device name for HCI Transport"
+            string "the uart for HCI Transport"
             default "uart1"
     endif
 
