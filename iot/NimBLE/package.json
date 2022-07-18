@@ -29,12 +29,6 @@
       "URL": "https://github.com/RT-Thread-packages/nimble.git",
       "filename": "NimBLE.zip",
       "VER_SHA": "master"
-    },
-    {
-      "version": "hci_test",
-      "URL": "git@github.com:Yanlineng/nimble.git",
-      "filename": "NimBLE.zip",
-      "VER_SHA": "master"
     }
   ]
 }
