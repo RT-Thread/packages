@@ -144,6 +144,15 @@ menu "Bluetooth Mesh support"
 endmenu
 
 menu "HCI Transport support"
+    config PKG_NIMBLE_HCI_USING_RTT_UART
+        bool "HCI Transport using rt-thread uart"
+        default n
+    
+        if PKG_NIMBLE_HCI_USING_RTT_UART
+            config PKG_NIMBLE_HCI_UART_DEVICE_NAME
+                string "the uart for HCI Transport"
+                default "uart1"
+        endif
 
 endmenu
 
@@ -215,6 +224,10 @@ choice
 
     config PKG_NIMBLE_SAMPLE_BEACON
     bool "BLE beacon sample"
+    select NIMBT_ROLE_BROADCASTER
+
+    config PKG_NIMBLE_SAMPLE_ADVERTISER
+    bool "BLE advertiser sample"
     select NIMBT_ROLE_BROADCASTER
 
     config PKG_NIMBLE_SAMPLE_EXT_ADVERTISER
