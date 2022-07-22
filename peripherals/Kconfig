@@ -83,4 +83,5 @@ source "$PKGS_DIR/packages/peripherals/soft_serial/Kconfig"
 source "$PKGS_DIR/packages/peripherals/mb85rs16/Kconfig"
 source "$PKGS_DIR/packages/peripherals/cw2015/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rfm300/Kconfig"
+source "$PKGS_DIR/packages/peripherals/io_input_filter/Kconfig"
 endmenu
