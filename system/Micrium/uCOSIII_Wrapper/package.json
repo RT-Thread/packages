@@ -1,6 +1,6 @@
 {
   "name": "uCOSIII_Wrapper",
-  "description": "A wrapper which can make codes developed by uC/OS-III APIs can directly run on RT-Thread",
+  "description": "μC/OS-III RTOS Application Compatibility Layer for RT-Thread",
   "description_zh": "RT-Thread操作系统的uCOS-III兼容层：让基于uC/OS-III开发的应用层无感地迁移到RT-Thread操作系统",
   "enable": "PKG_USING_UCOSIII_WRAPPER",
   "keywords": [

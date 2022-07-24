@@ -1,12 +1,11 @@
 
 # Kconfig file for package uCOSII_Wrapper
 menuconfig PKG_USING_UCOSII_WRAPPER
-    bool "uC/OS-II Wrapper"
+    bool "μC/OS-II RTOS Application Compatibility Layer for RT-Thread"
     default n
     select RT_USING_TIMER_SOFT
     select RT_USING_IDLE_HOOK
-    help
-        A wrapper which can make codes developed by uC/OS-II APIs can directly run on RT-Thread
+
 
 if PKG_USING_UCOSII_WRAPPER
 
