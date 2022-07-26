@@ -1,0 +1,31 @@
+{
+  "name": "K210-SDK",
+  "description": "Kendryte K210 SDK",
+  "description_zh": "勘智 K210 处理器对应的外设驱动包",  
+  "enable": "PKG_USING_K210_SDK", 
+  "keywords": [
+    "kendryte-sdk",
+    "K210",
+    "AI",
+    "RV64"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-package",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-package"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/kendryte-k210-sdk",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/kendryte-k210-sdk#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/kendryte-k210-sdk.git",
+      "filename": "",
+      "VER_SHA": "develop"
+    }
+  ]
+}
