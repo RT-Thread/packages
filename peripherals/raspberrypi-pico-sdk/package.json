@@ -1,0 +1,30 @@
+{
+  "name": "raspberrypi-pico-sdk",
+  "description": "Raspberry Pi Pico SDK",
+  "description_zh": "Raspberry Pi Pico SDK",  
+  "enable": "PKG_USING_RASPBERRYPI_PICO_SDK", 
+  "keywords": [
+    "raspberrypi",
+    "pico",
+    "sdk"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/RT-Thread-packages/raspberrypi-pico-sdk",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/raspberrypi-pico-sdk#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/raspberrypi-pico-sdk.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
