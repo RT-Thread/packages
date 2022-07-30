@@ -1,4 +1,4 @@
-menu "kendryte-sdk: Kendryte SDK"
+menu "Kendryte SDK"
 
 source "$PKGS_DIR/packages/peripherals/kendryte-sdk/K210-SDK/Kconfig"
 source "$PKGS_DIR/packages/peripherals/kendryte-sdk/K210-SDK/kendryte-sdk/Kconfig"
