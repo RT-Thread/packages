@@ -21,10 +21,16 @@
   "doc": "unknown",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://github.com/luhuadong/rtt-bc28-mqtt/archive/v1.0.0.zip",
+      "filename": "bc28-mqtt-v1.0.0.zip",
+      "VER_SHA": "e89b8297ce486e2c8f9eb0e6e592ad20bf680cbd"
+    },
+    {
       "version": "v0.0.1",
       "URL": "https://github.com/luhuadong/rtt-bc28-mqtt/archive/v0.0.1.zip",
       "filename": "bc28-mqtt-v0.0.1.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "VER_SHA": "b1bc4d1145c12b1dfc6af7a3a405ff1ee230fe24"
     },
     {
       "version": "latest",
