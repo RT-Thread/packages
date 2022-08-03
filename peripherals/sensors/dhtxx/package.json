@@ -22,16 +22,16 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v0.8.1",
-      "URL": "https://github.com/luhuadong/rtt-dhtxx/archive/v0.8.1.zip",
-      "filename": "dhtxx-v0.8.1.zip",
-      "VER_SHA": "fill in the git version SHA value"
-    },
-    {
       "version": "v0.9.0",
       "URL": "https://github.com/luhuadong/rtt-dhtxx/archive/v0.9.0.zip",
       "filename": "dhtxx-v0.9.0.zip",
-      "VER_SHA": "fill in the git version SHA value"
+      "VER_SHA": "7d5fc7c7ab33b2f63054107d7c723f7ad541cb94"
+    },
+    {
+      "version": "v0.8.1",
+      "URL": "https://github.com/luhuadong/rtt-dhtxx/archive/v0.8.1.zip",
+      "filename": "dhtxx-v0.8.1.zip",
+      "VER_SHA": "ef61186a1a1b34ddc2e4ef9e7226f9a5448aac1c"
     },
     {
       "version": "latest",
