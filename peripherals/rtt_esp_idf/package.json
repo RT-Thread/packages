@@ -1,7 +1,7 @@
 {
   "name": "rtt_esp_idf",
   "description": "The ESP-IDF for espress serial ESP32C3 etc.",
-  "description_zh": "ESP32C3 ESP-IDF软件包。",  
+  "description_zh": "ESP32C3 ESP-IDF软件包",  
   "enable": "PKG_USING_RTT_ESP_IDF", 
   "keywords": [
     "rtt_esp_idf",
@@ -14,22 +14,16 @@
     "github": "supperthomas"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/supperthomas/esp-idf",
+  "repository": "https://github.com/RT-Thread-packages/esp-idf",
   "icon": "unknown",
-  "homepage": "https://github.com/supperthomas/esp-idf",
+  "homepage": "https://github.com/RT-Thread-packages/esp-idf#readme",
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/supperthomas/esp-idf/archive/refs/tags/rtt_v4.4.zip",
-      "filename": "rtt_esp_idf_1_0_0.zip",
-      "VER_SHA": "fill in the git version SHA value"
-    },
-    {
       "version": "latest",
-      "URL": "https://github.com/supperthomas/esp-idf.git",
-      "filename": "esp_idf",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "URL": "https://github.com/RT-Thread-packages/esp-idf.git",
+      "filename": "",
+      "VER_SHA": "master"
     }
   ]
 }
