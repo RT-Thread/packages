@@ -176,7 +176,7 @@ if PKG_USING_MICROPYTHON
 
     config MICROPYTHON_USING_FLOAT_IMPL_FLOAT
         bool "Enable micropython to use float instead of double"
-        default y
+        default n
         help
             In some MCU, using float can accelerate computing-speed because of the FPU.
 
