@@ -1,11 +1,12 @@
 {
-  "name": "rtt_esp_idf",
-  "description": "The ESP-IDF for espress serial ESP32C3 etc.",
+  "name": "ESP-IDF",
+  "description": "Espressif IoT Development Framework",
   "description_zh": "ESP32C3 ESP-IDF软件包",  
-  "enable": "PKG_USING_RTT_ESP_IDF", 
+  "enable": "PKG_USING_ESP_IDF", 
   "keywords": [
-    "rtt_esp_idf",
-    "ESP32"
+    "ESP-IDF",
+    "ESP32",
+    "SDK"
   ],
   "category": "peripherals",
   "author": {
