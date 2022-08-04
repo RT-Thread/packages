@@ -16,8 +16,8 @@ if PKG_USING_TFDB
         help
             Select the package version
 
-        config PKG_USING_TFDB_V005
-            bool "v0.0.5"
+        config PKG_USING_TFDB_V006
+            bool "v0.0.6"
 
         config PKG_USING_TFDB_LATEST_VERSION
             bool "latest"
@@ -25,7 +25,7 @@ if PKG_USING_TFDB
 
     config PKG_TFDB_VER
        string
-       default "v0.0.5"    if PKG_USING_TFDB_V005
+       default "v0.0.6"    if PKG_USING_TFDB_V006
        default "latest"    if PKG_USING_TFDB_LATEST_VERSION
 
 endif
