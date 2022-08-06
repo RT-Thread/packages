@@ -22,14 +22,12 @@
     {
       "version": "v1.0.0",
       "URL": "https://github.com/luhuadong/rtt-littled/archive/v1.0.0.zip",
-      "filename": "littled-v1.0.0.zip",
-      "VER_SHA": "aa283836e0aeed8ea4d7283f720c653c98ee69bd"
+      "filename": "littled-v1.0.0.zip"
     },
     {
       "version": "v0.2.0",
       "URL": "https://github.com/luhuadong/rtt-littled/archive/v0.2.0.zip",
-      "filename": "littled-v0.2.0.zip",
-      "VER_SHA": "225496b35cec6cbc70ca4e943a388a340b1e1e16"
+      "filename": "littled-v0.2.0.zip"
     },
     {
       "version": "latest",
