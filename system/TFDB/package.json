@@ -20,6 +20,11 @@
   "readme": "https://github.com/smartmx/TFDB/blob/main/README.md",
   "site": [
     {
+      "version": "v0.0.6",
+      "URL": "https://github.com/smartmx/TFDB/archive/v0.0.6.zip",
+      "filename": "TFDB-0.0.6.zip"
+    },
+    {
       "version": "v0.0.5",
       "URL": "https://github.com/smartmx/TFDB/archive/v0.0.5.zip",
       "filename": "TFDB-0.0.5.zip"
