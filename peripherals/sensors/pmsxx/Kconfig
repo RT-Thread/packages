@@ -74,6 +74,9 @@ if PKG_USING_PMSXX
         default PKG_USING_PMSXX_LATEST_VERSION
         help
             Select the package version
+        
+        config PKG_USING_PMSXX_V100
+            bool "v1.0.0"
 
         config PKG_USING_PMSXX_LATEST_VERSION
             bool "latest"
@@ -81,6 +84,7 @@ if PKG_USING_PMSXX
 
     config PKG_PMSXX_VER
        string
+       default "v1.0.0"    if PKG_USING_PMSXX_V100
        default "latest"    if PKG_USING_PMSXX_LATEST_VERSION
 
 endif
