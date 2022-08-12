@@ -4,7 +4,7 @@
   "description_zh": "一个快捷易用的参数管理组件，实现了参数保存、恢复、修改和快速存取功能.",
   "enable": "PKG_USING_QPARAM",
   "keywords": [
-    "param"
+    "parameter management"
   ],
   "category": "misc",
   "author": {
@@ -14,7 +14,6 @@
   },
   "license": " LGPL-2.1",
   "repository": "https://github.com/qiyongzhong0/rt-thread-qparam",
-  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
   "homepage": "https://github.com/qiyongzhong0/rt-thread-qparam#readme",
   "site": [
     {
