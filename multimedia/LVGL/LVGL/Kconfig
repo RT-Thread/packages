@@ -21,6 +21,10 @@ if PKG_USING_LVGL
         int "Display refresh period (ms)"
         default 5 # official suggestion
 
+    config PKG_USING_LVGL_SQUARELINE
+        bool "Support SquareLine Studio"
+        default n
+
     config PKG_LVGL_USING_EXAMPLES
         bool "Enable built-in examples"
         default n
