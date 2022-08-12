@@ -59,14 +59,11 @@ if PKG_USING_QPARAM
             Select the package version
         config PKG_USING_QPARAM_LATEST_VERSION
             bool "latest"
-        config PKG_USING_QPARAM_V100
-            bool "v1.00"
     endchoice
 
     config PKG_QPARAM_VER
        string
        default "latest" if PKG_USING_QPARAM_LATEST_VERSION
-       default "v1.00"  if PKG_USING_QPARAM_V100
 
 endif
 
