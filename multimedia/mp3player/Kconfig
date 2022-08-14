@@ -4,6 +4,7 @@ menuconfig PKG_USING_MP3PLAYER
     bool "mp3player:a simple mp3 format music player"
     select RT_USING_AUDIO
     select PKG_USING_HELIX
+    select PKG_USING_OPTPARSE
     default n
 
 if PKG_USING_MP3PLAYER
