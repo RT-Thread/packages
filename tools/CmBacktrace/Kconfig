@@ -88,9 +88,12 @@ if PKG_USING_CMBACKTRACE
 
     choice
         prompt "Version"
-        default PKG_USING_CMBACKTRACE_V10400
+        default PKG_USING_CMBACKTRACE_V10401
         help
             Select the this package version
+
+        config PKG_USING_CMBACKTRACE_V10401
+            bool "v1.4.1"
 
         config PKG_USING_CMBACKTRACE_V10400
             bool "v1.4.0"
@@ -110,6 +113,7 @@ if PKG_USING_CMBACKTRACE
 
     config PKG_CMBACKTRACE_VER
         string
+        default "v1.4.1" if PKG_USING_CMBACKTRACE_V10401
         default "v1.4.0" if PKG_USING_CMBACKTRACE_V10400
         default "v1.3.0" if PKG_USING_CMBACKTRACE_V10300
         default "v1.2.2" if PKG_USING_CMBACKTRACE_V10202
@@ -118,6 +122,7 @@ if PKG_USING_CMBACKTRACE
 
     config PKG_CMBACKTRACE_VER_NUM
         hex
+        default 0x10401    if PKG_USING_CMBACKTRACE_V10401
         default 0x10400    if PKG_USING_CMBACKTRACE_V10400
         default 0x10300    if PKG_USING_CMBACKTRACE_V10300
         default 0x10202    if PKG_USING_CMBACKTRACE_V10202

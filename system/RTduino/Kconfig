@@ -2,9 +2,10 @@
 # Kconfig file for package RTduino
 menuconfig PKG_USING_RTDUINO
     bool "RTduino: Arduino Ecological Compatibility Layer"
-    select PKG_USING_POSIX_ITOA
     select RT_USING_CPLUSPLUS
+    select RT_USING_CPUTIME
     default n
+    depends on RT_VER_NUM > 0x40100
 
 if PKG_USING_RTDUINO
 
@@ -55,7 +56,6 @@ if PKG_USING_RTDUINO
 
     config RTDUINO_USING_ADAFRUIT
         bool "Enable Adafruit sensor framework"
-        select RTDUINO_USING_WIRE
         default n
 
     config RTDUINO_USING_MSTIMER2

@@ -1,0 +1,25 @@
+
+menuconfig PKG_USING_PARSON
+    bool "parson: parson is a lightweight json library written in C."
+    default n
+
+if PKG_USING_PARSON
+
+    config PKG_PARSON_PATH
+        string
+        default "/packages/language/JSON/parson"
+
+    choice
+        prompt "Version"
+        help
+            Select the Parson version
+
+        config PKG_USING_PARSON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_PARSON_VER
+        string
+        default "latest" if PKG_USING_PARSON_LATEST_VERSION
+
+endif

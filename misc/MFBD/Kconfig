@@ -20,6 +20,9 @@ if PKG_USING_MFBD
         help
             Select the package version
 
+        config PKG_USING_MFBD_V102
+            bool "v1.0.2"
+
         config PKG_USING_MFBD_V101
             bool "v1.0.1"
 
@@ -32,6 +35,7 @@ if PKG_USING_MFBD
 
     config PKG_MFBD_VER
        string
+       default "v1.0.2"    if PKG_USING_MFBD_V102
        default "v1.0.1"    if PKG_USING_MFBD_V101
        default "v1.0.0"    if PKG_USING_MFBD_V100
        default "latest"    if PKG_USING_MFBD_LATEST_VERSION

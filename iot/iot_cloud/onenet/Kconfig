@@ -4,7 +4,6 @@ menuconfig PKG_USING_ONENET
     bool "OneNET: China Mobile OneNet cloud SDK for RT-Thread"
     default n
     select PKG_USING_CJSON
-    select PKG_USING_WEBCLIENT
 
 if PKG_USING_ONENET
 
@@ -21,11 +20,18 @@ if PKG_USING_ONENET
         default y
         select PKG_USING_PAHOMQTT
 
-    config ONENET_USING_AUTO_REGISTER
-        bool "Enable OneNET automatic register device"
+    config ONENET_USING_HTTP
+        bool "Enable support HTTP protocol"
         default n
-        help
-            Enable automatic registration device functions, don't need to register on the web page
+        select PKG_USING_WEBCLIENT
+
+    if ONENET_USING_HTTP
+        config ONENET_USING_AUTO_REGISTER
+            bool "Enable OneNET automatic register device"
+            default n
+            help
+                Enable automatic registration device functions, don't need to register on the web page
+    endif
 
     if ONENET_USING_MQTT
         if PKG_USING_ONENET_V010

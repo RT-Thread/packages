@@ -1,0 +1,30 @@
+{
+  "name": "ESP-IDF",
+  "description": "Espressif IoT Development Framework",
+  "description_zh": "ESP32C3 ESP-IDF软件包",  
+  "enable": "PKG_USING_ESP_IDF", 
+  "keywords": [
+    "ESP-IDF",
+    "ESP32",
+    "SDK"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "supperthomas",
+    "email": "78900636@qq.com",
+    "github": "supperthomas"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/esp-idf",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/esp-idf#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/esp-idf.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

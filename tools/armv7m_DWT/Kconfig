@@ -1,0 +1,31 @@
+# Kconfig file for package ARMV7_DWT
+
+menuconfig PKG_USING_ARMV7M_DWT_TOOL
+    bool "armv7m_DWT"
+    default n
+
+if PKG_USING_ARMV7M_DWT_TOOL
+
+    config PKG_ARMV7M_DWT_TOOL_PATH
+        string
+        default "/packages/tools/armv7m_DWT"
+
+    config PKG_USING_ARMV7M_DWT_TOOL_DEMO
+        bool "Enable demo for rtt"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARMV7M_DWT_TOOL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARMV7M_DWT_TOOL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARMV7M_DWT_TOOL_VER
+       string
+       default "latest"    if PKG_USING_ARMV7M_DWT_TOOL_LATEST_VERSION
+
+endif

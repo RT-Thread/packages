@@ -7,6 +7,7 @@ menuconfig PKG_USING_MBEDTLS
     select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
     select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
     select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
+    imply SAL_USING_TLS            if RT_USING_SAL
 
 if PKG_USING_MBEDTLS
 

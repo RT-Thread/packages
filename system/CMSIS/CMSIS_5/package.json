@@ -19,6 +19,12 @@
   "homepage": "https://github.com/ARM-software/CMSIS_5#readme",
   "site": [
     {
+      "version": "v5.9.0",
+      "URL": "https://github.com/ARM-software/CMSIS_5/archive/refs/tags/5.9.0.zip",
+      "filename": "CMSIS_5-5.9.0.zip",
+      "VER_SHA": "master"
+    },
+    {
       "version": "v5.8.0",
       "URL": "https://github.com/ARM-software/CMSIS_5/archive/refs/tags/5.8.0.zip",
       "filename": "CMSIS_5-5.8.0.zip",

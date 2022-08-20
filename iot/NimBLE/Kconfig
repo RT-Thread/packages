@@ -144,6 +144,15 @@ menu "Bluetooth Mesh support"
 endmenu
 
 menu "HCI Transport support"
+    config PKG_NIMBLE_HCI_USING_RTT_UART
+        bool "HCI Transport using rt-thread uart"
+        default n
+    
+    if PKG_NIMBLE_HCI_USING_RTT_UART
+        config PKG_NIMBLE_HCI_UART_DEVICE_NAME
+            string "The uart for HCI Transport"
+            default "uart1"
+    endif
 
 endmenu
 
@@ -191,38 +200,42 @@ choice
         select the NimBLE samples
 
     config PKG_NIMBLE_SAMPLE_DISABLE
-    bool "Not enable sample"
+        bool "Not enable sample"
 
     config PKG_NIMBLE_SAMPLE_PER_HR
-    bool "BLE peripheral heartrate sensor"
-    select NIMBT_ROLE_PERIPHERAL
+        bool "BLE peripheral heartrate sensor"
+        select NIMBT_ROLE_PERIPHERAL
 
     config PKG_NIMBLE_SAMPLE_BLECSC
-    bool "BLE peripheral cycling speed and cadence sensor"
-    select NIMBT_ROLE_PERIPHERAL
+        bool "BLE peripheral cycling speed and cadence sensor"
+        select NIMBT_ROLE_PERIPHERAL
 
     config PKG_NIMBLE_SAMPLE_BLEUART
-    bool "BLE uart sample"
+        bool "BLE uart sample"
 
     config PKG_NIMBLE_SAMPLE_BTSHELL
-    bool "BLE Shell sample exposing the nimble GAP and GATT"
+        bool "BLE Shell sample exposing the nimble GAP and GATT"
 
     config PKG_NIMBLE_SAMPLE_PERIPHERAL
-    bool "BLE peripheral role sample"
+        bool "BLE peripheral role sample"
 
     config PKG_NIMBLE_SAMPLE_CENTRAL
-    bool "BLE central role sample"
+        bool "BLE central role sample"
 
     config PKG_NIMBLE_SAMPLE_BEACON
-    bool "BLE beacon sample"
-    select NIMBT_ROLE_BROADCASTER
+        bool "BLE beacon sample"
+        select NIMBT_ROLE_BROADCASTER
+
+    config PKG_NIMBLE_SAMPLE_ADVERTISER
+        bool "BLE advertiser sample"
+        select NIMBT_ROLE_BROADCASTER
 
     config PKG_NIMBLE_SAMPLE_EXT_ADVERTISER
-    bool "BLE external advertiser sample"
+        bool "BLE external advertiser sample"
 
     config PKG_NIMBLE_SAMPLE_BLEMESH
-    bool "BLE Mesh sample"
-    select PKG_NIMBLE_MESH
+        bool "BLE Mesh sample"
+        select PKG_NIMBLE_MESH
 
 endchoice
 
