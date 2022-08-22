@@ -27,6 +27,22 @@ if PKG_USING_RTDUINO
         bool "Don't use setup-loop structure"
         default n
 
+    menuconfig RTDUINO_TINY_MODE
+        bool "Enable tiny mode"
+        default n
+        select RTDUINO_NO_SETUP_LOOP
+
+    if RTDUINO_TINY_MODE
+        config RTDUINO_DEFAULT_IIC_BUS_NAME
+            string "RTduino default IIC bus device name"
+            default "i2c1"
+
+        config RTDUINO_DEFAULT_SPI_BUS_NAME
+            string "RTduino default SPI bus device name"
+            default "spi1"
+    endif
+
+
     config RTDUINO_USING_WIRE
         bool "Enable wire library <Wire.h>"
         select RT_USING_I2C
