@@ -42,6 +42,11 @@ if PKG_USING_RTDUINO
             default "spi1"
     endif
 
+    config RTDUINO_SUPPORT_FLOAT_PRINT
+        bool "Support float print"
+        select PKG_USING_RT_VSNPRINTF_FULL
+        default y
+
     config RTDUINO_USING_WIRE
         bool "Enable wire library <Wire.h>"
         select RT_USING_I2C
