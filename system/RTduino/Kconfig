@@ -75,15 +75,6 @@ if PKG_USING_RTDUINO
         select PKG_TINYUSB_DEVICE_CDC
         default n
 
-    config RTDUINO_USING_ADAFRUIT
-        bool "Enable Adafruit sensor framework"
-        default n
-
-    config RTDUINO_USING_MSTIMER2
-        bool "Enable MsTimer2 library"
-        select RT_USING_TIMER_SOFT
-        default n
-
     choice
         prompt "Version"
         default PKG_USING_RTDUINO_LATEST_VERSION
