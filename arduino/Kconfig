@@ -1,0 +1,5 @@
+menu "Arduino libraries"
+
+source "$PKGS_DIR/packages/arduino/RTduino/Kconfig"
+
+endmenu

@@ -11,7 +11,7 @@ if PKG_USING_RTDUINO
 
     config PKG_RTDUINO_PATH
         string
-        default "/packages/system/RTduino"
+        default "/packages/arduino/RTduino"
 
     config RTDUINO_THREAD_SIZE
         int "Arduino thread's size"

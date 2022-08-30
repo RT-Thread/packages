@@ -5,9 +5,10 @@
   "enable": "PKG_USING_RTDUINO",
   "keywords": [
     "RTduino",
-    "Arduino"
+    "Arduino",
+    "Compatibility Layer"
   ],
-  "category": "system",
+  "category": "arduino",
   "author": {
     "name": "Meco Man",
     "email": "jiantingman@foxmail.com",
@@ -20,7 +21,7 @@
     {
       "version": "latest",
       "URL": "https://github.com/RTduino/RTduino.git",
-      "filename": "Null for git package",
+      "filename": "",
       "VER_SHA": "master"
     }
   ]
