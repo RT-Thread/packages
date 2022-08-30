@@ -1,0 +1,33 @@
+{
+  "name": "vofa_plus",
+  "description": "Realize serial port waveform function with vfoa+",
+  "description_zh": "配合vfoa+实现串口波形功能",
+  "enable": "PKG_USING_VOFA_PLUS",
+  "keywords": [
+    "vofa_plus"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "xiaogeminghai",
+    "email": "634927333@qq.com",
+    "github": "xiaogeminghai"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/xiaogeminghai/vofa_plus",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://vofa_plus-1.0.0.zip",
+      "filename": "vofa_plus-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://xxxxx.git",
+      "filename": "https://github.com/xiaogeminghai/vofa_plus.git", 
+      "VER_SHA": "master" 
+    }
+  ]
+}
