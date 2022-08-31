@@ -1,0 +1,5 @@
+menu "Display libraries"
+
+source "$PKGS_DIR/packages/arduino/display/U8g2_Arduino/Kconfig"
+
+endmenu
