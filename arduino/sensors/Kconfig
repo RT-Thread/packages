@@ -1,5 +1,6 @@
 menu "Sensor libraries"
 
-#source "$PKGS_DIR/packages/arduino/display/u8g2-arduino/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit_Sensor/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit_BusIO/Kconfig"
 
 endmenu
