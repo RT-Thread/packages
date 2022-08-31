@@ -11,7 +11,7 @@ if PKG_USING_ARDUINO_ADAFRUIT_AHTX0
 
     config PKG_ARDUINO_ADAFRUIT_AHTX0_PATH
         string
-        default "/packages/arduino/sensor/Adafruit_AHTX0"
+        default "/packages/arduino/sensors/Adafruit_AHTX0"
 
     choice
         prompt "Version"
