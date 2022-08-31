@@ -5,13 +5,12 @@ menuconfig PKG_USING_RTDUINO
     select RT_USING_CPLUSPLUS
     select RT_USING_CPUTIME
     default n
-    depends on RT_VER_NUM > 0x40100
 
 if PKG_USING_RTDUINO
 
     config PKG_RTDUINO_PATH
         string
-        default "/packages/system/RTduino"
+        default "/packages/arduino/RTduino"
 
     config RTDUINO_THREAD_SIZE
         int "Arduino thread's size"
@@ -32,16 +31,6 @@ if PKG_USING_RTDUINO
         select RTDUINO_NO_SETUP_LOOP
         default n
 
-    if RTDUINO_TINY_MODE
-        config RTDUINO_DEFAULT_IIC_BUS_NAME
-            string "RTduino default IIC bus device name"
-            default "i2c1"
-
-        config RTDUINO_DEFAULT_SPI_BUS_NAME
-            string "RTduino default SPI bus device name"
-            default "spi1"
-    endif
-
     config RTDUINO_SUPPORT_FLOAT_STRING
         bool "Enable String class with float support"
         select PKG_USING_RT_VSNPRINTF_FULL
@@ -51,6 +40,11 @@ if PKG_USING_RTDUINO
         bool "Enable wire library <Wire.h>"
         select RT_USING_I2C
         default n
+
+    config RTDUINO_DEFAULT_IIC_BUS_NAME
+        string "RTduino default IIC bus device name"
+        depends on RTDUINO_TINY_MODE && RTDUINO_USING_WIRE
+        default "i2c1"
 
     config RTDUINO_WIRE_BUFFER_LENGTH
         int "Wire buffer"
@@ -62,6 +56,11 @@ if PKG_USING_RTDUINO
         bool "Enable SPI library <SPI.h>"
         select RT_USING_SPI
         default n
+
+    config RTDUINO_DEFAULT_SPI_BUS_NAME
+        string "RTduino default SPI bus device name"
+        depends on RTDUINO_TINY_MODE && RTDUINO_USING_SPI
+        default "spi1"
 
     config RTDUINO_USING_SERVO
         bool "Enable servo library <Servo.h>"
