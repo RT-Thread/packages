@@ -11,7 +11,7 @@
     "Sensor",
     "Adafruit"
   ],
-  "category": "arduino",
+  "category": "arduino/sensors",
   "author": {
     "name": "adafruit",
     "email": "limor@ladyada.net",

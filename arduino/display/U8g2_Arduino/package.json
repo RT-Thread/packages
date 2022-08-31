@@ -8,7 +8,7 @@
     "Arduino",
     "U8g2"
   ],
-  "category": "arduino",
+  "category": "arduino/display",
   "author": {
     "name": "olikraus",
     "email": "olikraus@gmail.com",
