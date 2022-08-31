@@ -1,0 +1,31 @@
+{
+  "name": "Adafruit_AHTX0",
+  "description": "Adafruit AHT10+AHT20 Humidity and Temperature Sensor library for Arduino",
+  "description_zh": "Adafruit AHT10 AHT20传感器Arduino驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_AHTX0",
+  "keywords": [
+    "Adafruit_AHTX0",
+    "Arduino",
+    "Sensor",
+    "Adafruit"
+  ],
+  "category": "arduino",
+  "author": {
+    "name": "adafruit",
+    "email": "limor@ladyada.net",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/RTduino-libraries/Adafruit_AHTX0",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/Adafruit_AHTX0#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/Adafruit_AHTX0.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
