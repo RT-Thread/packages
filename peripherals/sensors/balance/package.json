@@ -19,14 +19,9 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://balance-1.0.0.zip",
-      "filename": "balance-1.0.0.zip"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/xiaogeminghai/balance.git",
-      "filename": "NULL", 
+      "filename": "", 
       "VER_SHA": "master"
     }
   ]

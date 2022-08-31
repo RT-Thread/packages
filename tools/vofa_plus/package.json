@@ -19,14 +19,9 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://vofa_plus-1.0.0.zip",
-      "filename": "vofa_plus-1.0.0.zip"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/xiaogeminghai/vofa_plus.git",
-      "filename": "NULL", 
+      "filename": "", 
       "VER_SHA": "master" 
     }
   ]
