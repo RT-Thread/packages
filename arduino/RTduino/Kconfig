@@ -5,7 +5,6 @@ menuconfig PKG_USING_RTDUINO
     select RT_USING_CPLUSPLUS
     select RT_USING_CPUTIME
     default n
-    depends on RT_VER_NUM > 0x40100
 
 if PKG_USING_RTDUINO
 
