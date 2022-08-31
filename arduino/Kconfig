@@ -3,6 +3,7 @@ menu "Arduino libraries"
 source "$PKGS_DIR/packages/arduino/RTduino/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Kconfig"
 source "$PKGS_DIR/packages/arduino/display/Kconfig"
+source "$PKGS_DIR/packages/arduino/timing/Kconfig"
 source "$PKGS_DIR/packages/arduino/projects/Kconfig"
 
 endmenu
