@@ -1,0 +1,29 @@
+
+# Kconfig file for package balance
+menuconfig PKG_USING_BALANCE
+    bool "Use hx71xx and weighing pressure sensor to measure weight"
+    default n
+
+if PKG_USING_BALANCE
+
+    config PKG_BALANCE_PATH
+        string
+        default "/packages/peripherals/sensors/balance"
+
+    choice
+        prompt "Version"
+        default PKG_USING_BALANCE_LATEST_VERSION
+        help
+            Select the package version
+
+
+        config PKG_USING_BALANCE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_BALANCE_VER
+       string
+       default "latest"    if PKG_USING_BALANCE_LATEST_VERSION
+
+endif
+
