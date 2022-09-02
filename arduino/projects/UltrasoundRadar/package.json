@@ -1,0 +1,32 @@
+{
+  "name": "UltrasoundRadar",
+  "description": "Arduino ultrasound radar project",
+  "description_zh": "Arduino超声波雷达项目",
+  "enable": "PKG_USING_ULTRASOUND_RADAR",
+  "keywords": [
+    "UltrasoundRadar",
+    "arduino",
+    "project",
+    "radar",
+    "ultrasound"
+  ],
+  "category": "arduino/projects",
+  "author": {
+    "name": "https://github.com/RTduino/UltrasoundRadar",
+    "email": "jiantingman@foxmail.com",
+    "github": "https://github.com/RTduino/UltrasoundRadar"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RTduino/UltrasoundRadar",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino/UltrasoundRadar#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino/UltrasoundRadar.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

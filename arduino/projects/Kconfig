@@ -1,5 +1,5 @@
 menu "Project libraries"
 
-#source "$PKGS_DIR/packages/arduino/display/u8g2-arduino/Kconfig"
+source "$PKGS_DIR/packages/arduino/projects/UltrasoundRadar/Kconfig"
 
 endmenu
