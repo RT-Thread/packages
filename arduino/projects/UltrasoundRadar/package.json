@@ -12,15 +12,15 @@
   ],
   "category": "arduino/projects",
   "author": {
-    "name": "https://github.com/RTduino/UltrasoundRadar",
-    "email": "jiantingman@foxmail.com",
+    "name": "Dejan",
+    "email": "",
     "github": "https://github.com/RTduino/UltrasoundRadar"
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/RTduino/UltrasoundRadar",
   "icon": "unknown",
-  "homepage": "https://github.com/RTduino/UltrasoundRadar#readme",
-  "doc": "unknown",
+  "homepage": "https://howtomechatronics.com/projects/arduino-radar-project/",
+  "doc": "",
   "site": [
     {
       "version": "latest",
