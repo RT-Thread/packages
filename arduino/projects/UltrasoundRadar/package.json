@@ -2,7 +2,7 @@
   "name": "UltrasoundRadar",
   "description": "Arduino ultrasound radar project",
   "description_zh": "Arduino超声波雷达项目",
-  "enable": "PKG_USING_ULTRASOUND_RADAR",
+  "enable": "PKG_USING_ARDUINO_ULTRASOUND_RADAR",
   "keywords": [
     "UltrasoundRadar",
     "arduino",
