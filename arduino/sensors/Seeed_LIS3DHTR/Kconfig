@@ -4,6 +4,7 @@ menuconfig PKG_USING_ARDUINO_SEEED_LIS3DHTR
     bool "Seeed LIS3DHTR: 3-Axis Digital Accelerometer ±2g to 16g Power"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_SPI
+    select RTDUINO_USING_WIRE
     default n
 
 if PKG_USING_ARDUINO_SEEED_LIS3DHTR
