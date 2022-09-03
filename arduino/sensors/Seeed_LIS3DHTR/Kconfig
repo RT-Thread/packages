@@ -1,0 +1,28 @@
+
+# Kconfig file for package Seeed_LIS3DHTR
+menuconfig PKG_USING_ARDUINO_SEEED_LIS3DHTR
+    bool "Seeed_LIS3DHTR: 3-Axis Digital Accelerometer ±2g to 16g Power"
+    default n
+
+if PKG_USING_ARDUINO_SEEED_LIS3DHTR
+
+    config PKG_ARDUINO_SEEED_LIS3DHTR_PATH
+        string
+        default "/packages/arduino/sensors/Seeed_LIS3DHTR"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_LIS3DHTR_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_LIS3DHTR_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_LIS3DHTR_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_LIS3DHTR_LATEST_VERSION
+
+endif
+

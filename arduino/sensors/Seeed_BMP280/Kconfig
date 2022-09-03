@@ -1,0 +1,28 @@
+
+# Kconfig file for package Seeed_BMP280
+menuconfig PKG_USING_ARDUINO_SEEED_BMP280
+    bool "Seeed_BMP280: Barometer Sensor (BMP280)"
+    default n
+
+if PKG_USING_ARDUINO_SEEED_BMP280
+
+    config PKG_ARDUINO_SEEED_BMP280_PATH
+        string
+        default "/packages/arduino/sensors/Seeed_BMP280"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_BMP280_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_BMP280_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_BMP280_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_BMP280_LATEST_VERSION
+
+endif
+
