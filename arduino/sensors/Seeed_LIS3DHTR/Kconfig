@@ -1,7 +1,7 @@
 
 # Kconfig file for package Seeed_LIS3DHTR
 menuconfig PKG_USING_ARDUINO_SEEED_LIS3DHTR
-    bool "Seeed LIS3DHTR: 3-Axis Digital Accelerometer ±2g to 16g Power"
+    bool "Seeed LIS3DHTR: 3-Axis Digital Accelerometer"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_SPI
     select RTDUINO_USING_WIRE
