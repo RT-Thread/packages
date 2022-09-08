@@ -39,5 +39,6 @@ source "$PKGS_DIR/packages/system/CherryUSB/Kconfig"
 source "$PKGS_DIR/packages/system/kmulti_rtimer/Kconfig"
 source "$PKGS_DIR/packages/system/TFDB/Kconfig"
 source "$PKGS_DIR/packages/system/qpc/Kconfig"
+source "$PKGS_DIR/packages/system/agile_upgrade/Kconfig"
 
 endmenu
