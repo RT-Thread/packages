@@ -1,0 +1,26 @@
+{
+  "name": "agile_upgrade",
+  "description": "Middleware for fast building bootloader.",
+  "description_zh": "用于快速构建 bootloader 的中间件。",
+  "enable": "PKG_USING_AGILE_UPGRADE",
+  "keywords": [
+    "agile_upgrade"
+  ],
+  "category": "system",
+  "author": {
+    "name": "loogg",
+    "email": "2544047213@qq.com",
+    "github": "loogg"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/loogg/agile_upgrade",
+  "homepage": "https://github.com/loogg/agile_upgrade#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/loogg/agile_upgrade.git",
+      "filename": "agile_upgrade.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
