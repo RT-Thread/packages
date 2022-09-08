@@ -1,0 +1,33 @@
+{
+  "name": "DHT-sensor",
+  "description": "Arduino library for DHT11, DHT22, etc Temp & Humidity Sensors",
+  "description_zh": "DHT11、DHT22温湿度传感器Arduino驱动库",
+  "enable": "PKG_USING_ARDUINO_DHT_SENSOR",
+  "keywords": [
+    "DHT-sensor",
+    "DHT11",
+    "DHT22",
+    "DHT",
+    "Arduino",
+    "Sensor"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "limor@ladyada.net",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/DHT-sensor-library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/DHT-sensor-library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/DHT-sensor-library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
