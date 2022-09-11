@@ -1,4 +1,4 @@
-menu "Sensor libraries"
+menu "Sensors"
 
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit_Sensor/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit_BusIO/Kconfig"

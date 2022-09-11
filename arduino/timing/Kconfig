@@ -1,4 +1,4 @@
-menu "Timing libraries"
+menu "Timing"
 
 source "$PKGS_DIR/packages/arduino/timing/MsTimer2/Kconfig"
 

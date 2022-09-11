@@ -1,4 +1,4 @@
-menu "Project libraries"
+menu "Projects"
 
 source "$PKGS_DIR/packages/arduino/projects/UltrasoundRadar/Kconfig"
 source "$PKGS_DIR/packages/arduino/projects/Arduino-Sensor-Kit/Kconfig"
