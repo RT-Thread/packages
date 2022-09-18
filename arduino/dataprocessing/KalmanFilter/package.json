@@ -1,0 +1,30 @@
+{
+  "name": "KalmanFilter",
+  "description": "Kalman Filter Arduino Library",
+  "description_zh": "卡尔曼滤波器Arduino库",
+  "enable": "PKG_USING_ARDUINO_KALMANFILTER",
+  "keywords": [
+    "KalmanFilter",
+    "Kalman",
+    "Arduino"
+  ],
+  "category": "arduino/dataprocessing",
+  "author": {
+    "name": "TKJElectronics",
+    "email": "lauszus@gmail.com",
+    "github": "TKJElectronics"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/TKJElectronics/KalmanFilter",
+  "icon": "unknown",
+  "homepage": "https://github.com/TKJElectronics/KalmanFilter#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/TKJElectronics/KalmanFilter.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
