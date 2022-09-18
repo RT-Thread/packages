@@ -2,6 +2,7 @@
 # Kconfig file for package U8g2_Arduino
 menuconfig PKG_USING_ARDUINO_U8G2
     bool "U8g2_Arduino: Arduino Monochrome Graphics Library"
+    select PKG_USING_RTDUINO
     default n
 
 if PKG_USING_ARDUINO_U8G2

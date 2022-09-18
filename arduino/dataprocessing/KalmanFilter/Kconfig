@@ -1,0 +1,29 @@
+
+# Kconfig file for package KalmanFilter
+menuconfig PKG_USING_ARDUINO_KALMANFILTER
+    bool "Kalman Filter Library"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_KALMANFILTER
+
+    config PKG_ARDUINO_KALMANFILTER_PATH
+        string
+        default "/packages/arduino/dataprocessing/KalmanFilter"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_KALMANFILTER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_KALMANFILTER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_KALMANFILTER_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_KALMANFILTER_LATEST_VERSION
+
+endif
+
