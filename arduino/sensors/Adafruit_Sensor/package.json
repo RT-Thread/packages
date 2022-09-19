@@ -16,14 +16,14 @@
     "github": "adafruit"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/RTduino-libraries/Adafruit_Sensor",
+  "repository": "https://github.com/adafruit/Adafruit_Sensor",
   "icon": "unknown",
-  "homepage": "https://github.com/RTduino-libraries/Adafruit_Sensor#readme",
+  "homepage": "https://github.com/adafruit/Adafruit_Sensor#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/RTduino-libraries/Adafruit_Sensor.git",
+      "URL": "https://github.com/adafruit/Adafruit_Sensor.git",
       "filename": "",
       "VER_SHA": "master"
     }

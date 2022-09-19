@@ -7,7 +7,9 @@
     "Adafruit_AHTX0",
     "Arduino",
     "Sensor",
-    "Adafruit"
+    "Adafruit",
+    "AHT10",
+    "AHT20"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -16,14 +18,14 @@
     "github": "adafruit"
   },
   "license": "BSD-3-Clause",
-  "repository": "https://github.com/RTduino-libraries/Adafruit_AHTX0",
+  "repository": "https://github.com/adafruit/Adafruit_AHTX0",
   "icon": "unknown",
-  "homepage": "https://github.com/RTduino-libraries/Adafruit_AHTX0#readme",
+  "homepage": "https://github.com/adafruit/Adafruit_AHTX0#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/RTduino-libraries/Adafruit_AHTX0.git",
+      "URL": "https://github.com/adafruit/Adafruit_AHTX0.git",
       "filename": "",
       "VER_SHA": "master"
     }
