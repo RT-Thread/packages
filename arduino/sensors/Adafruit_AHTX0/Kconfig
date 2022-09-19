@@ -3,6 +3,7 @@
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_AHTX0
     bool "Adafruit AHTX0 (AHT10 & AHT20): Humidity and Temperature Sensor"
     select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
