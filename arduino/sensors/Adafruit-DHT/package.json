@@ -1,15 +1,15 @@
 {
-  "name": "DHT-sensor",
-  "description": "Arduino library for DHT11, DHT22, etc Temp & Humidity Sensors",
+  "name": "Adafruit-DHT",
+  "description": "DHT11, DHT22, etc Temp & Humidity Sensors for Arduino",
   "description_zh": "DHT11、DHT22温湿度传感器Arduino驱动库",
-  "enable": "PKG_USING_ARDUINO_DHT_SENSOR",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_DHT",
   "keywords": [
-    "DHT-sensor",
     "DHT11",
     "DHT22",
     "DHT",
     "Arduino",
-    "Sensor"
+    "Sensor",
+    "Adafruit"
   ],
   "category": "arduino/sensors",
   "author": {
