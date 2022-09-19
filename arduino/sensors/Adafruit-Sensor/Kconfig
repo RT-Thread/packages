@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit_Sensor
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_SENSOR
-    bool "Adafruit Unified Sensor"
+    bool "Adafruit Unified Sensor Framework"
     select PKG_USING_RTDUINO
     default n
 
@@ -9,7 +9,7 @@ if PKG_USING_ARDUINO_ADAFRUIT_SENSOR
 
     config PKG_ARDUINO_ADAFRUIT_SENSOR_PATH
         string
-        default "/packages/arduino/sensors/Adafruit_Sensor"
+        default "/packages/arduino/sensors/Adafruit-Sensor"
 
     choice
         prompt "Version"
