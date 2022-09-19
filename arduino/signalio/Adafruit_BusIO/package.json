@@ -11,10 +11,10 @@
     "Sensor",
     "Adafruit"
   ],
-  "category": "arduino/sensors",
+  "category": "arduino/signalio",
   "author": {
     "name": "adafruit",
-    "email": "limor@ladyada.net",
+    "email": "info@adafruit.com",
     "github": "adafruit"
   },
   "license": "MIT",
