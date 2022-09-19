@@ -6,15 +6,13 @@
   "keywords": [
     "Adafruit_BusIO",
     "Arduino",
-    "Bus",
-    "IO",
     "Sensor",
     "Adafruit"
   ],
   "category": "arduino/signalio",
   "author": {
     "name": "adafruit",
-    "email": "info@adafruit.com",
+    "email": "meco@rt-thread.org",
     "github": "adafruit"
   },
   "license": "MIT",
