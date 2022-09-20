@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit_BusIO
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_BUSIO
-    bool "Adafruit BusIO"
+    bool "Adafruit BusIO: abstract away I2C & SPI transactions and registers"
     select PKG_USING_RTDUINO
     default n
 
@@ -9,7 +9,7 @@ if PKG_USING_ARDUINO_ADAFRUIT_BUSIO
 
     config PKG_ARDUINO_ADAFRUIT_BUSIO_PATH
         string
-        default "/packages/arduino/signalio/Adafruit_BusIO"
+        default "/packages/arduino/signalio/Adafruit-BusIO"
 
     choice
         prompt "Version"

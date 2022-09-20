@@ -1,13 +1,14 @@
 {
-  "name": "Adafruit_BusIO",
-  "description": "Adafruit Bus IO Library",
+  "name": "Adafruit-BusIO",
+  "description": "Abstract away I2C & SPI transactions and registers",
   "description_zh": "Adafruit总线库",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BUSIO",
   "keywords": [
     "Adafruit_BusIO",
     "Arduino",
     "Sensor",
-    "Adafruit"
+    "Adafruit",
+    "Bus"
   ],
   "category": "arduino/signalio",
   "author": {

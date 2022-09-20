@@ -1,10 +1,10 @@
 {
-  "name": "Adafruit_AHTX0",
+  "name": "Adafruit-AHTX0",
   "description": "Adafruit AHT10+AHT20 Humidity and Temperature Sensor library for Arduino",
   "description_zh": "Adafruit AHT10 AHT20传感器Arduino驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_AHTX0",
   "keywords": [
-    "Adafruit_AHTX0",
+    "Adafruit-AHTX0",
     "Arduino",
     "Sensor",
     "Adafruit",

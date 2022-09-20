@@ -11,7 +11,7 @@ if PKG_USING_ARDUINO_SEEED_LIS3DHTR
 
     config PKG_ARDUINO_SEEED_LIS3DHTR_PATH
         string
-        default "/packages/arduino/sensors/Seeed_LIS3DHTR"
+        default "/packages/arduino/sensors/Seeed-LIS3DHTR"
 
     choice
         prompt "Version"
