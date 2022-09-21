@@ -14,7 +14,7 @@ if PKG_USING_RTDUINO
 
     config RTDUINO_THREAD_SIZE
         int "Arduino thread's size"
-        default 1024
+        default 1536
 
     config RTDUINO_THREAD_PRIO
         int "Arduino thread's priority"
