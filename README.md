@@ -25,3 +25,8 @@
 4. 需要采用github作为软件包托管仓库，不要使用gitee，后台会自动创建gitee大陆镜像源。
 5. 在你的软件包索引被合并之后，请于次日或后日到[RTT软件包中国gitee镜像源组织](https://gitee.com/RT-Thread-Mirror)中查看是否增加了你的软件包仓库（每日凌晨会有机器人自动同步），如果没有增加和同步，请在github提issue与管理员联系。
 
+## 感谢以下小伙伴对本仓库的贡献！
+
+<a href="https://github.com/RT-Thread/packages/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=RT-Thread/packages" />
+</a>

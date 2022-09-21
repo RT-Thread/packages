@@ -1,8 +1,9 @@
 
 # Kconfig file for package Adafruit_AHTX0
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_AHTX0
-    bool "Adafruit AHTX0 (AHT10 & AHT20): Humidity and Temperature Sensor"
+    bool "Adafruit AHT10 & AHT20: Humidity and Temperature Sensor"
     select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
@@ -11,7 +12,7 @@ if PKG_USING_ARDUINO_ADAFRUIT_AHTX0
 
     config PKG_ARDUINO_ADAFRUIT_AHTX0_PATH
         string
-        default "/packages/arduino/sensors/Adafruit_AHTX0"
+        default "/packages/arduino/sensors/Adafruit-AHTX0"
 
     choice
         prompt "Version"

@@ -1,13 +1,14 @@
 {
-  "name": "Seeed_BMP280",
-  "description": "Barometer Sensor (BMP280) for Arduino",
-  "description_zh": "BMP280传感器 Arduino驱动库",
+  "name": "Seeed-BMP280",
+  "description": "An absolute barometric pressure sensor for Arduino",
+  "description_zh": "BMP280传感器Arduino驱动库",
   "enable": "PKG_USING_ARDUINO_SEEED_BMP280",
   "keywords": [
-    "Seeed_BMP280",
+    "Seeed-BMP280",
     "Sensor",
     "Arduino",
-    "BMP280"
+    "BMP280",
+    "Seeed"
   ],
   "category": "arduino/sensors",
   "author": {

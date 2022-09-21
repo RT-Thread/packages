@@ -1,29 +1,30 @@
 {
-  "name": "Adafruit_Sensor",
-  "description": "Adafruit Unified Sensor",
+  "name": "Adafruit-Sensor",
+  "description": "Adafruit Unified Sensor Framework",
   "description_zh": "Adafruit统一传感器框架",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_SENSOR",
   "keywords": [
-    "Adafruit_Sensor",
+    "Adafruit-Sensor",
     "Arduino",
     "Sensor",
-    "Adafruit"
+    "Adafruit",
+    "Framework"
   ],
   "category": "arduino/sensors",
   "author": {
     "name": "adafruit",
-    "email": "limor@ladyada.net",
+    "email": "info@adafruit.com",
     "github": "adafruit"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/RTduino-libraries/Adafruit_Sensor",
+  "repository": "https://github.com/adafruit/Adafruit_Sensor",
   "icon": "unknown",
-  "homepage": "https://github.com/RTduino-libraries/Adafruit_Sensor#readme",
+  "homepage": "https://github.com/adafruit/Adafruit_Sensor#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/RTduino-libraries/Adafruit_Sensor.git",
+      "URL": "https://github.com/adafruit/Adafruit_Sensor.git",
       "filename": "",
       "VER_SHA": "master"
     }

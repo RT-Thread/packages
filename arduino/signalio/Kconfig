@@ -1,0 +1,5 @@
+menu "Signal IO"
+
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-BusIO/Kconfig"
+
+endmenu
