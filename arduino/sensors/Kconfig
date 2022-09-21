@@ -1,11 +1,12 @@
 menu "Sensors"
 
-source "$PKGS_DIR/packages/arduino/sensors/Adafruit_Sensor/Kconfig"
-source "$PKGS_DIR/packages/arduino/sensors/Adafruit_BusIO/Kconfig"
-source "$PKGS_DIR/packages/arduino/sensors/Adafruit_AHTX0/Kconfig"
-source "$PKGS_DIR/packages/arduino/sensors/DHT-sensor/Kconfig"
-source "$PKGS_DIR/packages/arduino/sensors/Seeed_BMP280/Kconfig"
-source "$PKGS_DIR/packages/arduino/sensors/Seeed_LIS3DHTR/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-Sensor/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AHTX0/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-DHT/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-ICM20X/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-DPS310/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-BMP280/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-LIS3DHTR/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/CapacitiveSensor/Kconfig"
 
 endmenu
