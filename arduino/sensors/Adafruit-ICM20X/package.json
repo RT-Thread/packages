@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-ICM20X",
   "description": "This is the Adafruit ICM20X Arduino Library for use with the TDK Invensense ICM20649 and ICM20948 motion sensors",
-  "description_zh": "ÕâÊÇAdafruit ICM2eX Arduino¿â,¿ÉÓëTDK Invensense ICM20649ºÍICM20948ÔË¶¯´«¸ĞÆ÷Ò»ÆğÊ¹ÓÃ",
+  "description_zh": "è¿™æ˜¯Adafruit ICM2eX Arduinoåº“,å¯ä¸TDK Invensense ICM20649å’ŒICM20948è¿åŠ¨ä¼ æ„Ÿå™¨ä¸€èµ·ä½¿ç”¨",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_ICM20X",
   "keywords": [
     "Adafruit-ICM20X",
@@ -16,7 +16,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD License",
   "repository": "https://github.com/adafruit/Adafruit_ICM20X",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_ICM20X#readme",
