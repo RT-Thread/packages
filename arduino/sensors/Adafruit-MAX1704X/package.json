@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-MAX1704X",
-  "description": "This library is for the Adafruit MAX17048 or MAX17049 Breakouts",
-  "description_zh": "该库适用于ADAFRUIT MAX17048或MAX17049分线",
+  "description": "Adafruit MAX17048/MAX17049 3μA 1-Cell/2-Cell Fuel Gauge with ModelGauge driver",
+  "description_zh": "Adafruit MAX17048/MAX17049锂电池管理芯片驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX1704X",
   "keywords": [
     "Adafruit-MAX1704X",
