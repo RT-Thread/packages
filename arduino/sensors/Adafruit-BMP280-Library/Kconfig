@@ -1,0 +1,28 @@
+
+# Kconfig file for package Adafruit_BMP280_Library
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_BMP280_LIBRARY
+    bool "This driver is for the Adafruit BMP280 Breakout"
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_BMP280_LIBRARY
+
+    config PKG_ARDUINO_ADAFRUIT_BMP280_LIBRARY_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit_BMP280_Library"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_BMP280_LIBRARY_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_BMP280_LIBRARY_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_BMP280_LIBRARY_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_BMP280_LIBRARY_LATEST_VERSION
+
+endif
+
