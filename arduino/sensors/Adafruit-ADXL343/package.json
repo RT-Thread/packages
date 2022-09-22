@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-ADXL343",
-  "description": "Adafruit ADXL343 digital accelerometer driver that supports both SPI and I2C mode",
-  "description_zh": "ADXL343数字加速度计驱动，同时支持SPI和I2C模式",
+  "description": "Adafruit ADXL343 digital accelerometer (+/-2/4/8/16g) driver that supports both SPI and I2C mode",
+  "description_zh": "ADXL343数字加速度计(+/-2/4/8/16g)驱动，同时支持SPI和I2C模式",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_ADXL343",
   "keywords": [
     "Adafruit-ADXL343",
