@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-MAX1704X",
-  "description": "Adafruit MAX17048/MAX17049 3μA 1-Cell/2-Cell Fuel Gauge with ModelGauge driver",
+  "description": "Adafruit MAX17048/MAX17049 battery monitor driver",
   "description_zh": "Adafruit MAX17048/MAX17049锂电池管理芯片驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX1704X",
   "keywords": [
