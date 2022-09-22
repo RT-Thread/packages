@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-TCA8418",
-  "description": "Adafruit TCA8418 GPIO Expander and Key Matrix Driver Library",
-  "description_zh": "Adafruit TCA8418 CPIO 拓展和矩阵键盘驱动库",
+  "description": "Adafruit TCA8418 GPIO Expander and Key Matrix Driver for Arduino",
+  "description_zh": "Adafruit TCA8418 CPIO 拓展和矩阵键盘Arduino驱动库",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_TCA8418",
   "keywords": [
     "Adafruit-TCA8418"
