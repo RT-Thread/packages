@@ -1,8 +1,8 @@
 {
-  "name": "Adafruit-BMP280-Library",
+  "name": "Adafruit-BMP280",
   "description": "This driver is for the Adafruit BMP280 Breakout",
   "description_zh": "Adafruit BMP280 传感器驱动",
-  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP280_LIBRARY",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP280",
   "keywords": [
     "Adafruit-BMP280-Library",
     "Sensors",
