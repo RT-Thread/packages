@@ -1,7 +1,10 @@
 
 # Kconfig file for package Adafruit-INA219
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_INA219
-    bool "Adafruit INA219: high side DC current sensor boards library"
+    bool "Adafruit INA219: DC current sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
 
 if PKG_USING_ARDUINO_ADAFRUIT_INA219
@@ -25,4 +28,3 @@ if PKG_USING_ARDUINO_ADAFRUIT_INA219
        default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_INA219_LATEST_VERSION
 
 endif
-
