@@ -1,12 +1,15 @@
 {
   "name": "Adafruit-ADXL343",
-  "description": "This driver is for the Adafruit ADXL343 Breakout (https://www.adafruit.com/product/4097), and is based on Adafruit's Unified Sensor Library (Adafruit_Sensor).",
-  "description_zh": "ADXL343是一种数字加速度计，同时支持SPI和I2C模式",
+  "description": "Adafruit ADXL343 digital accelerometer driver that supports both SPI and I2C mode",
+  "description_zh": "ADXL343数字加速度计驱动，同时支持SPI和I2C模式",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_ADXL343",
   "keywords": [
     "Adafruit-ADXL343",
     "Sensors",
-    "Arduino"
+    "Arduino",
+    "ADXL343",
+    "accelerometer",
+    "Adafruit"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -20,7 +23,6 @@
   "homepage": "https://github.com/adafruit/Adafruit_ADXL343#readme",
   "doc": "unknown",
   "site": [
-
     {
       "version": "latest",
       "URL": "https://github.com/adafruit/Adafruit_ADXL343.git",
