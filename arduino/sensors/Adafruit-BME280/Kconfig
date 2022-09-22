@@ -1,0 +1,28 @@
+
+# Kconfig file for package  Adafruit-BME280
+menuconfig PKG_USING_ARDUINO_ ADAFRUIT_BME280
+    bool "Adafruit BME280: Humidity, Barometric Pressure + Temp sensor library"
+    default n
+
+if PKG_USING_ARDUINO_ ADAFRUIT_BME280
+
+    config PKG_ARDUINO_ ADAFRUIT_BME280_PATH
+        string
+        default "/packages/arduino/sensors/ Adafruit-BME280"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ ADAFRUIT_BME280_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ ADAFRUIT_BME280_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ ADAFRUIT_BME280_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ ADAFRUIT_BME280_LATEST_VERSION
+
+endif
+
