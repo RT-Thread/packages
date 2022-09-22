@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-SHT31",
-  "description": "Adafruit SHT31 Temperature and Humidity Sensor library.",
-  "description_zh": "Adafruit SHT31 温湿度驱动.",
+  "description": "Adafruit SHT31 Temperature and Humidity Sensor",
+  "description_zh": "Adafruit SHT31 温湿度驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_SHT31",
   "keywords": [
     "Adafruit-SHT31",
