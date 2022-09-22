@@ -43,7 +43,7 @@ if PKG_USING_LITTLED
 
         config PKG_USING_LITTLED_V100
             bool "v1.0.0"
-        
+
         config PKG_USING_LITTLED_V020
             bool "v0.2.0"
 

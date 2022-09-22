@@ -20,7 +20,7 @@ if PKG_USING_ESP_IDF
         config PKG_USING_ESP_IDF_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ESP_IDF_VER
        string
        default "latest"    if PKG_USING_ESP_IDF_LATEST_VERSION

@@ -22,7 +22,7 @@ if PKG_USING_RTT_RUST
         config PKG_USING_RTT_RUST_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RTT_RUST_VER
        string
        default "v0.1.0"    if PKG_USING_RTT_RUST_V010

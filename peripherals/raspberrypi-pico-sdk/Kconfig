@@ -19,7 +19,7 @@ if PKG_USING_RASPBERRYPI_PICO_SDK
         config PKG_USING_RASPBERRYPI_PICO_SDK_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_RASPBERRYPI_PICO_SDK_VER
        string
        default "latest"    if PKG_USING_RASPBERRYPI_PICO_SDK_LATEST_VERSION
