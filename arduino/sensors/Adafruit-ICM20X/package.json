@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-ICM20X",
-  "description": "TDK Invensense ICM20649 and ICM20948 motion sensors",
-  "description_zh": "TDK Invensense ICM20649/ICM20948 IMU运动传感器驱动",
+  "description": "Adafruit ICM20649 and ICM20948 motion sensors for Arduino",
+  "description_zh": "Adafruit ICM20649/ICM20948 IMU运动传感器Arduino驱动库",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_ICM20X",
   "keywords": [
     "Adafruit-ICM20X",
