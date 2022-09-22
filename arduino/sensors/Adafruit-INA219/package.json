@@ -1,13 +1,16 @@
 {
   "name": "Adafruit-INA219",
-  "description": "Adafruit INA219 high side DC current sensor boards library",
-  "description_zh": "Adafruit INA219高侧直流电流传感器驱动",
+  "description": "Adafruit INA219 DC current sensor",
+  "description_zh": "Adafruit INA219直流电流传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_INA219",
   "keywords": [
     "Adafruit-INA219",
     "sensors",
     "Adafruit",
-    "arduino"
+    "arduino",
+    "INA219",
+    "current",
+    "Adafruit"
   ],
   "category": "arduino/sensors",
   "author": {
