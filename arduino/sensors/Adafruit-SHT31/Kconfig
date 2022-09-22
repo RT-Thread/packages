@@ -4,7 +4,6 @@ menuconfig PKG_USING_ARDUINO_ADAFRUIT_SHT31
     bool "Adafruit SHT31: Temperature and Humidity Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
-    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
 
