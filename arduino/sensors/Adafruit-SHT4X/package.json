@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-SHT4X",
-  "description": "Adafruit SHT4X temperature & humidity sensor library",
+  "description": "Adafruit SHT4X temperature & humidity sensor",
   "description_zh": "Adafruit SHT4X 温湿度传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_SHT4X",
   "keywords": [
@@ -9,6 +9,7 @@
     "Adafruit",
     "Arduino",
     "SHT4X",
+    "SHT40",
     "temperature",
     "humidity"
   ],
