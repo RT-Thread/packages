@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-DPS310",
-  "description": "Adafruit DPS310 barometric pressure library",
+  "description": "Adafruit DPS310 Barometric Pressure Sensor",
   "description_zh": "Adafruit DPS310压力传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_DPS310",
   "keywords": [

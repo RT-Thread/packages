@@ -51,7 +51,7 @@ if PKG_USING_BME680
         default PKG_USING_BME680_LATEST_VERSION
         help
             Select the package version
-        
+
         config PKG_USING_BME680_V100
             bool "v1.0.0"
 

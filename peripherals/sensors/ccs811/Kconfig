@@ -35,7 +35,7 @@ if PKG_USING_CCS811
         default PKG_USING_CCS811_LATEST_VERSION
         help
             Select the package version
-        
+
         config PKG_USING_CCS811_V100
             bool "v1.0.0"
 

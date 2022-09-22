@@ -56,7 +56,7 @@ if PKG_USING_DHTXX
 
         config PKG_USING_DHTXX_V090
             bool "v0.9.0"
-        
+
         config PKG_USING_DHTXX_V08X
             bool "v0.8.1"
 
