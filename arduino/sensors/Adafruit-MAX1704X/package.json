@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-MAX1704X",
+  "description": "Please add description of Adafruit-MAX1704X in English.",
+  "description_zh": "请添加软件包 Adafruit-MAX1704X 的中文描述。",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX1704X",
+  "keywords": [
+    "Adafruit-MAX1704X"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Adafruit",
+    "email": "info@adafruit.com",
+    "github": "Adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_MAX1704X",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MAX1704X#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://Adafruit-MAX1704X-1.0.0.zip",
+      "filename": "Adafruit-MAX1704X-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MAX1704X.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-MAX1704X
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MAX1704X
+    bool "Please add description of Adafruit-MAX1704X in English."
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MAX1704X
+
+    config PKG_ARDUINO_ADAFRUIT_MAX1704X_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MAX1704X"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MAX1704X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MAX1704X_V100
+            bool "v1.0.0"
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MAX1704X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MAX1704X_VER
+       string
+       default "v1.0.0"    if PKG_USING_ARDUINO_ADAFRUIT_MAX1704X_V100
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MAX1704X_LATEST_VERSION
+
+endif
+
