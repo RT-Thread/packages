@@ -31,7 +31,7 @@ if PKG_USING_SSD1306
         default PKG_USING_SSD1306_LATEST_VERSION
         help
             Select the package version
-        
+
         config PKG_USING_SSD1306_V100
             bool "v1.0.0"
 

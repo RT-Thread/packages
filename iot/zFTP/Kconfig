@@ -29,7 +29,7 @@ if PKG_USING_ZFTP
         config PKG_USING_ZFTP_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_ZFTP_VER
        string
        default "V1.0"    if PKG_USING_ZFTP_V10

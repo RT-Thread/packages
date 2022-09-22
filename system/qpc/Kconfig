@@ -26,7 +26,7 @@ if PKG_USING_QPC
         config PKG_USING_QPC_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_QPC_VER
        string
        default "v7.0.0"    if PKG_USING_QPC_V700
