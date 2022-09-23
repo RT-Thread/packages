@@ -1,10 +1,10 @@
 {
   "name": "Adafruit-BMP280",
-  "description": "This driver is for the Adafruit BMP280 Breakout",
-  "description_zh": "Adafruit BMP280 传感器驱动",
+  "description": "Adafruit BMP280 barometric pressure and temperature sensor driver",
+  "description_zh": "Adafruit BMP280 气压温湿度传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP280",
   "keywords": [
-    "Adafruit-BMP280-Library",
+    "Adafruit-BMP280",
     "Sensors",
     "Adafruit",
     "Arduino",
