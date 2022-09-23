@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-BMP280
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_BMP280
-    bool "Adafruit BMP280: barometric pressure and temperature sensor"
+    bool "Adafruit BMP280: barometric pressure, altitude and temperature sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select RTDUINO_USING_SPI
