@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-BMP280",
-  "description": "Adafruit BMP280 barometric pressure and temperature sensor driver",
-  "description_zh": "Adafruit BMP280 气压温湿度传感器驱动",
+  "description": "Adafruit BMP280 barometric pressure, altitude and temperature sensor driver",
+  "description_zh": "Adafruit BMP280 气压、高度和温度传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP280",
   "keywords": [
     "Adafruit-BMP280",
