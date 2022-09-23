@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-BME280",
+  "description": "Adafruit BME280 Humidity, Barometric Pressure and Temperature sensor",
+  "description_zh": "Adafruit BME280温湿度和气压传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BME280",
+  "keywords": [
+    "Adafruit-BME280",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "BME280",
+    "Humidity",
+    "Barometric Pressure",
+    "Temp"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/adafruit/Adafruit_BME280_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_BME280_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_BME280_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
