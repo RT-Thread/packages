@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-BME680",
   "description": "Adafruit BME680 and BME688 humidity & pressure sensor",
-  "description_zh": "Adafruit BME680 和 BME688 湿度和压力传感器驱动。",
+  "description_zh": "Adafruit BME680 和 BME688 湿度和压力传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BME680",
   "keywords": [
     "Adafruit-BME680",
@@ -19,7 +19,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "unknown",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_BME680",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_BME680#readme",
