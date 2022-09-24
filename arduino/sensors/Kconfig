@@ -15,5 +15,7 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BME280/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-BMP280/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-LIS3DHTR/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/CapacitiveSensor/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AS726x/Kconfig"
+
 
 endmenu
