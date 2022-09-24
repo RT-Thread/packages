@@ -2,8 +2,6 @@
 # Kconfig file for package perf_counter
 menuconfig PKG_USING_PERF_COUNTER
     bool "perf_counter: A dedicated performance counter for Cortex-M systick"
-    select RT_USING_HOOK
-    select RT_HOOK_USING_FUNC_PTR
     default n
 
 if PKG_USING_PERF_COUNTER
@@ -14,7 +12,9 @@ if PKG_USING_PERF_COUNTER
 
     config PKG_PERF_COUNTER_USING_THREAD_STATISTIC
         bool "Enable thread statistic"
-        default n
+        select RT_USING_HOOK
+        select RT_HOOK_USING_FUNC_PTR
+        default y
 
     choice
         prompt "Version"
