@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-BNO055
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_BNO055
-    bool "Adafruit BNO055: orientation sensor BNO055 library"
+    bool "Adafruit BNO055: Absolute Orientation Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
