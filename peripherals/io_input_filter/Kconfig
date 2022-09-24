@@ -11,15 +11,15 @@ if PKG_USING_IO_INPUT_FILTER
     config PKG_IO_INPUT_FILTER_PATH
         string
         default "/packages/peripherals/io_input_filter"
-		
+
     config IIF_TIMES
         int "Filter Times"
         default 10
-		
+
     config IIF_PERIOD
         int "Filter period"
         default 5
-		
+
     config IIF_EXAMPLE
         bool "Example"
         default n
@@ -36,7 +36,7 @@ if PKG_USING_IO_INPUT_FILTER
         config PKG_USING_IO_INPUT_FILTER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_IO_INPUT_FILTER_VER
        string
        default "v1.0.0"    if PKG_USING_IO_INPUT_FILTER_V100

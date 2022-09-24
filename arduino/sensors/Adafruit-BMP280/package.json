@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-BMP280",
+  "description": "Adafruit BMP280 barometric pressure, altitude and temperature sensor driver",
+  "description_zh": "Adafruit BMP280 气压、高度和温度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP280",
+  "keywords": [
+    "Adafruit-BMP280",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "BMP280"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/adafruit/Adafruit_BMP280_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_BMP280_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_BMP280_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-ICM20X
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_ICM20X
-    bool "Adafruit ICM20X: TDK Invensense ICM20649 and ICM20948 motion sensors"
+    bool "Adafruit ICM20X: TDK Invensense ICM20649 and ICM20948 Motion Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
