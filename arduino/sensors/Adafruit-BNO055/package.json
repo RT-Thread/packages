@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-BNO055",
-  "description": "Absolute orientation sensor BNO055 library",
-  "description_zh": "绝对定向传感器BNO055 库",
+  "description": "Adafruit BNO055 absolute orientation sensor driver",
+  "description_zh": "绝对定向传感器BNO055驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BNO055",
   "keywords": [
     "Adafruit-BNO055",
