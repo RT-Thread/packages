@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-AM2315",
-  "description": "Adafruit AM2315 Humidity & Temp sensor.",
-  "description_zh": "Adafruit AM2315: 温湿度传感器",
+  "description": "Adafruit AM2315 Humidity & Temperature sensor driver.",
+  "description_zh": "Adafruit AM2315 温湿度传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_AM2315",
   "keywords": [
     "Adafruit-AM2315",
@@ -9,7 +9,7 @@
     "Arduino",
     "AM2315",
     "Humidity",
-    "Temp"
+    "Temperature"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -25,7 +25,7 @@
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/adafruit/Adafruit_AM2315.git.git",
+      "URL": "https://github.com/adafruit/Adafruit_AM2315.git",
       "filename": "",
       "VER_SHA": "master"
     }
