@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-AM2315
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_AM2315
-    bool "Adafruit AM2315 Humidity & Temp sensor"
+    bool "Adafruit AM2315: Humidity & Temp sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
