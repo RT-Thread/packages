@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-AM2315",
-  "description": "Adafruit AM2315 Humidity & Temperature sensor driver.",
+  "description": "Adafruit AM2315 Humidity & Temperature sensor driver",
   "description_zh": "Adafruit AM2315 温湿度传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_AM2315",
   "keywords": [
