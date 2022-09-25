@@ -34,7 +34,7 @@ if PKG_USING_RTDUINO
     config RTDUINO_SUPPORT_FLOAT_STRING
         bool "Enable String class with float support"
         select PKG_USING_RT_VSNPRINTF_FULL
-        default y
+        default n
 
     config RTDUINO_USING_WIRE
         bool "Enable wire library <Wire.h>"
