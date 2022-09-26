@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-BMP280
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_BMP280
+    bool "Adafruit BMP280: barometric pressure, altitude and temperature sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_BMP280
+
+    config PKG_ARDUINO_ADAFRUIT_BMP280_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-BMP280"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_BMP280_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_BMP280_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_BMP280_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_BMP280_LATEST_VERSION
+
+endif

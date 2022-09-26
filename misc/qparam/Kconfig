@@ -24,34 +24,34 @@ if PKG_USING_QPARAM
 
     config PARAM_USING_AUTO_INIT
         bool "using automatic initialize and load from flash"
-        default y  
+        default y
 
     config PARAM_USING_AUTO_SAVE
         bool "using automatic save into flash"
-        default y  
+        default y
 
     if PARAM_USING_AUTO_SAVE
         config PARAM_AUTO_SAVE_DELAY
             int "delay time (ms) of automatic saving"
-            default 2000   
+            default 2000
     endif
 
     config PARAM_PART_NAME
         string "partition name for saving parameters"
-        default "param"   
-        
+        default "param"
+
     config PARAM_SECTOR_SIZE
         int "flash sector size"
-        default 4096  
-        
+        default 4096
+
     config PARAM_SAVE_ADDR
         int "save address for parameters"
-        default 0 
-        
+        default 0
+
     config PARAM_SAVE_ADDR_BAK
         int "save address for backup parameters"
-        default 4096 
-    
+        default 4096
+
     choice
         prompt "Version"
         default PKG_USING_QPARAM_LATEST_VERSION

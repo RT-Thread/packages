@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-DHT
+menuconfig PKG_USING_ARDUINO_SEEED_DHT
+    bool "Seeed-DHT: DHT11, DHT22, DHT21 & AM2301 Temperature And Humidity Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_DHT
+
+    config PKG_ARDUINO_SEEED_DHT_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-DHT"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_DHT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_DHT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_DHT_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_DHT_LATEST_VERSION
+
+endif
+

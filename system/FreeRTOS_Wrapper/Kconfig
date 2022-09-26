@@ -2,7 +2,6 @@
 # Kconfig file for package FreeRTOS_Wrapper
 menuconfig PKG_USING_FREERTOS_WRAPPER
     bool "FreeRTOS Application Compatibility Layer for RT-Thread"
-    select RT_USING_TIMER_SOFT
     default n
 
 if PKG_USING_FREERTOS_WRAPPER
@@ -20,7 +19,7 @@ if PKG_USING_FREERTOS_WRAPPER
         config PKG_USING_FREERTOS_WRAPPER_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_FREERTOS_WRAPPER_VER
        string
        default "latest"    if PKG_USING_FREERTOS_WRAPPER_LATEST_VERSION

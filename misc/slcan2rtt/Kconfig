@@ -22,7 +22,7 @@ if PKG_USING_SLCAN2RTT
         config PKG_USING_SLCAN2RTT_LATEST_VERSION
             bool "latest"
     endchoice
-          
+
     config PKG_SLCAN2RTT_VER
        string
        default "v0.0.1"    if PKG_USING_SLCAN2RTT_V001

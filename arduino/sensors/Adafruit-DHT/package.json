@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-DHT",
-  "description": "DHT11, DHT22, etc Temp & Humidity Sensors for Arduino",
-  "description_zh": "DHT11、DHT22温湿度传感器Arduino驱动库",
+  "description": "DHT11, DHT22 Temperature and Humidity Sensor",
+  "description_zh": "DHT11、DHT22温湿度传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_DHT",
   "keywords": [
     "DHT11",

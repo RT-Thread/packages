@@ -74,7 +74,7 @@ if PKG_USING_PMSXX
         default PKG_USING_PMSXX_LATEST_VERSION
         help
             Select the package version
-        
+
         config PKG_USING_PMSXX_V100
             bool "v1.0.0"
 

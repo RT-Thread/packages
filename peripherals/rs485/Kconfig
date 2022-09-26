@@ -117,7 +117,7 @@ if PKG_USING_RS485
 
         config PKG_USING_RS485_V103
             bool "v1.03"
-            
+
         config PKG_USING_RS485_V102
             bool "v1.02"
 
