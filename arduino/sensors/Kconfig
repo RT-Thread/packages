@@ -22,6 +22,7 @@ source "$PKGS_DIR/packages/arduino/sensors/CapacitiveSensor/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AS726x/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AM2320/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AM2315/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LTR329-LTR303/Kconfig"
 
 
 endmenu
