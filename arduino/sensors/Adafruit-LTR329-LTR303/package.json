@@ -1,12 +1,12 @@
 {
   "name": "Adafruit-LTR329-LTR303",
-  "description": "This is the Adafruit LTR329 & LTR303 light sensor library",
-  "description_zh": "Adafruit LTR329 LTR303环境光传感器",
+  "description": "Adafruit LTR329 & LTR303 light sensor driver",
+  "description_zh": "Adafruit LTR329 LTR303环境光传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_LTR329_LTR303",
   "keywords": [
     "Adafruit-LTR329-LTR303",
     "Adafruit",
-    "arduino",
+    "Arduino",
     "sensors",
     "LTR329",
     "LTR303"
