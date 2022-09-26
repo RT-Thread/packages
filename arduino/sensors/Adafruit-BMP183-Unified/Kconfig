@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-BMP183-Unified
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_BMP183_UNIFIED
+    bool "Adafruit BMP183 (Unified): Barometric Pressure & Altitude Sensor."
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_BMP183_UNIFIED
+
+    config PKG_ARDUINO_ADAFRUIT_BMP183_UNIFIED_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-BMP183-Unified"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_BMP183_UNIFIED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_BMP183_UNIFIED_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_BMP183_UNIFIED_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_BMP183_UNIFIED_LATEST_VERSION
+
+endif
+
