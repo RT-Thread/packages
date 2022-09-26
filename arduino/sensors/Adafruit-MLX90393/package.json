@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-MLX90393",
-  "description": "Adafruit MLX90393 magenetic field sensor",
+  "description": "Adafruit MLX90393 Magnetic Field Sensor",
   "description_zh": "Adafruit MLX90393 磁场传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MLX90393",
   "keywords": [
