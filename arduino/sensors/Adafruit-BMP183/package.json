@@ -1,14 +1,16 @@
 {
   "name": "Adafruit-BMP183",
-  "description": "Adafruit-BMP183 : Barometric Pressure & Temp sensor.",
-  "description_zh": "Adafruit-BMP183 大气压力及温度传感器。",
+  "description": "Adafruit BMP183 Barometric Pressure Temperature sensor",
+  "description_zh": "Adafruit BMP183 大气压力及温度传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP183",
   "keywords": [
     "Adafruit-BMP183",
     "Sensors",
     "Adafruit",
     "Arduino",
-    "BMP183"
+    "BMP183",
+    "Pressure",
+    "Temperature"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -16,7 +18,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "unknown",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_BMP183_Library",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_BMP183_Library#readme",
