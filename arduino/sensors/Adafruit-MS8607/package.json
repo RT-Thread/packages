@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-MS8607",
-  "description": "Adafruit MS8607  Breakout Board",
-  "description_zh": "Adafruit MS8607 分线板驱动。",
+  "description": "Adafruit MS8607 Pressure Humidity Temperature PHT Sensor",
+  "description_zh": "Adafruit MS8607压力温湿度传感器驱动",
   "enable": "PKG_USING_ADAFRUIT_MS8607",
   "keywords": [
     "Adafruit-MS8607",
@@ -9,7 +9,9 @@
     "Adafruit",
     "Arduino",
     "MS8607",
-    "Breakout Board"
+    "Pressure",
+    "Humidity",
+    "Temperature"
   ],
   "category": "peripherals/sensors",
   "author": {
