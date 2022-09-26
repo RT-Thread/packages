@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MS8607
 menuconfig PKG_USING_ADAFRUIT_MS8607
-    bool "Adafruit MS8607  Breakout Board"
+    bool "Adafruit MS8607: Pressure Humidity Temperature PHT Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
