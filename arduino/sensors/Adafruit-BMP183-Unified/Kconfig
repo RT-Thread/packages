@@ -3,6 +3,7 @@
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_BMP183_UNIFIED
     bool "Adafruit-BMP183-Unified : Barometric Pressure & Altitude Sensor."
     select PKG_USING_RTDUINO
+    select RTDUINO_USING_SPI
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
     default n
 
