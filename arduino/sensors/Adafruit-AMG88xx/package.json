@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-AMG88xx",
-  "description": "Adafruit AMG88xx thermal cameras sensors library ",
+  "description": "Adafruit AMG88xx thermal cameras sensors driver",
   "description_zh": "Adafruit AMG88xx 热成像仪的驱动库",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_AMG88XX",
   "keywords": [
@@ -10,7 +10,8 @@
     "Adafruit",
     "AMG88XX",
     "thermal cameras",
-    "I2C"
+    "I2C",
+    "AMG8833"
   ],
   "category": "arduino/sensors",
   "author": {
