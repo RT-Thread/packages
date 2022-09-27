@@ -16,7 +16,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD License",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_LIS2MDL",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_LIS2MDL#readme",
