@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-MSA301
+menuconfig PKG_USING_ADAFRUIT_MSA301
+    bool "Adafruit MSA301: Accelerometer"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ADAFRUIT_MSA301
+
+    config PKG_ADAFRUIT_MSA301_PATH
+        string
+        default "/packages/peripherals/sensors/Adafruit-MSA301"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ADAFRUIT_MSA301_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ADAFRUIT_MSA301_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ADAFRUIT_MSA301_VER
+       string
+       default "latest"    if PKG_USING_ADAFRUIT_MSA301_LATEST_VERSION
+
+endif
+
