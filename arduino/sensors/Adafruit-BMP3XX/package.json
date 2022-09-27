@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-BMP3XX",
+  "description": "Adafruit-BMP3XX : precision pressure sensor breakout:.",
+  "description_zh": "Adafruit-BMP3XX 精密压力传感器分接头。",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP3XX",
+  "keywords": [
+    "Adafruit-BMP3XX",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "BMP3XX"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_BMP3XX",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_BMP3XX#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_BMP3XX.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
