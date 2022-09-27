@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-BNO08x-RVC
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_BNO08X_RVC
-    bool "Adafruit-BNO08x-RVC :  a simple library to use the UART-RVC mode of the BNO08x sensors."
+    bool "Adafruit-BNO08x-RVC: a simple library to use the UART-RVC mode of the BNO08x sensors"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
