@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-BNO08x",
-  "description": "Adafruit-BNO08x : 9-DOF Orientation IMU Fusion Breakout.",
-  "description_zh": "Adafruit-BNO08x 9自由度定向IMU融合。",
+  "description": "Adafruit BNO08x 9-DOF Orientation IMU Fusion",
+  "description_zh": "Adafruit BNO08x 9自由度定向IMU驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BNO08X",
   "keywords": [
     "Adafruit-BNO08x",
@@ -16,7 +16,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "Apache-2.0",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_BNO08x",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_BNO08x#readme",
