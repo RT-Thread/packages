@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-BNO08x-RVC",
-  "description": "Adafruit BNO08x RVC driver",
+  "description": "A simple library to use the UART-RVC mode of the BNO08x sensors",
   "description_zh": "Adafruit BNO08x RVC驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BNO08X_RVC",
   "keywords": [
