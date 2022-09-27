@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-MPL115A2
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MPL115A2
+    bool "Adafruit MPL115A2: Barometric Pressure Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MPL115A2
+
+    config PKG_ARDUINO_ADAFRUIT_MPL115A2_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MPL115A2"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MPL115A2_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MPL115A2_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MPL115A2_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MPL115A2_LATEST_VERSION
+
+endif
+
