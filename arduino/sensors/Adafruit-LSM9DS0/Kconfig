@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-LSM9DS0
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_LSM9DS0
-    bool "Adafruit triaxial accelerometer/magnetometer/gyroscope LSM9DS0 library"
+    bool "Adafruit LSM9DS0 triaxial accelerometer/magnetometer/gyroscope sensor driver"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select RTDUINO_USING_SPI
