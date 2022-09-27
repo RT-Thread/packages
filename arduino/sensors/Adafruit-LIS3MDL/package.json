@@ -25,7 +25,7 @@
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/adafruit/Adafruit_LIS3MDL.git.git",
+      "URL": "https://github.com/adafruit/Adafruit_LIS3MDL.git",
       "filename": "",
       "VER_SHA": "master"
     }
