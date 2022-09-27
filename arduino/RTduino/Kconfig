@@ -85,7 +85,7 @@ if PKG_USING_RTDUINO
 
     if RTDUINO_USING_SHELL_CMD
         config RTDUINO_CMD_USING_SERIAL
-            bool "Enable serial commands"
+            bool "Enable Serial commands"
             default n
 
         config RTDUINO_CMD_SERIAL_USING_FOCUSON
