@@ -18,7 +18,7 @@
     "github": "adafruit"
   },
   "license": "BSD License",
-  "repository": "https://github.com/adafruit/Adafruit_LIS3MDL.git",
+  "repository": "https://github.com/adafruit/Adafruit_LIS3MDL",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_LIS3MDL.git#readme",
   "doc": "unknown",
