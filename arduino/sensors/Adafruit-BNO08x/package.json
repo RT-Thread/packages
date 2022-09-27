@@ -8,7 +8,8 @@
     "Sensors",
     "Adafruit",
     "Arduino",
-    "BNO08x"
+    "BNO08x",
+    "BNO085"
   ],
   "category": "arduino/sensors",
   "author": {
