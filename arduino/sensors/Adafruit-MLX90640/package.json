@@ -9,6 +9,7 @@
     "Arduino",
     "MLX90640",
     "IR",
+    "Thermal",
     "sensor"
   ],
   "category": "arduino/sensors",
