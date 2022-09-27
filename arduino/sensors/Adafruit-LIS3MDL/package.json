@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-LIS3MDL",
+  "description": "Adafruit LIS3MDL Triple-axis Magnetometer Driver",
+  "description_zh": "Adafruit LIS3MDL三轴磁力计传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_LIS3MDL",
+  "keywords": [
+    "Adafruit-LIS3MDL",
+    "Adafruit",
+    "Arduino",
+    "LIS3MDL",
+    "magnetometer",
+    "sensor"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_LIS3MDL",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_LIS3MDL.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_LIS3MDL.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
