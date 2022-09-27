@@ -1,14 +1,15 @@
 {
   "name": "Adafruit-BMP3XX",
-  "description": "Adafruit-BMP3XX : precision pressure sensor breakout:.",
-  "description_zh": "Adafruit-BMP3XX 精密压力传感器分接头。",
+  "description": "Adafruit BMP3XX Precision Barometric Pressure and Altimeter Sensors Driver",
+  "description_zh": "Adafruit BMP3XX 高精度压力/高度传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP3XX",
   "keywords": [
     "Adafruit-BMP3XX",
     "Sensors",
     "Adafruit",
     "Arduino",
-    "BMP3XX"
+    "BMP3XX",
+    "BMP388"
   ],
   "category": "arduino/sensors",
   "author": {
