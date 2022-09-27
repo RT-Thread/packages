@@ -17,7 +17,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD License",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_LSM303DLH_Mag",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_LSM303DLH_Mag#readme",
