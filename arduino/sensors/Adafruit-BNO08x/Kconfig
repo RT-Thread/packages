@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-BNO08x
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_BNO08X
-    bool "Adafruit-BNO08x : 9-DOF Orientation IMU Fusion Breakout."
+    bool "Adafruit BNO08x: 9-DOF Orientation IMU Fusion"
     select PKG_USING_RTDUINO
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
