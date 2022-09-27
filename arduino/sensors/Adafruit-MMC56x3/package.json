@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-MMC56x3",
+  "description": "Adafruit MMC5603 or MMC5613 Magnetometer Sensor Driver",
+  "description_zh": "Adafruit MMC5603 或 MMC5613 磁力计传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MMC56X3",
+  "keywords": [
+    "Adafruit-MMC56x3",
+    "Adafruit",
+    "Arduino",
+    "MMC5603",
+    "MMC5613",
+    "Magnetometer",
+    "sensor"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_MMC56x3",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MMC56x3#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MMC56x3.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
