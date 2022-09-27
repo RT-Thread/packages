@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-MLX90640
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MLX90640
+    bool "Adafruit MLX90640: IR Thermal Camera"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MLX90640
+
+    config PKG_ARDUINO_ADAFRUIT_MLX90640_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MLX90640"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MLX90640_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MLX90640_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MLX90640_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MLX90640_LATEST_VERSION
+
+endif
+
