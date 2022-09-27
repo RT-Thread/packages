@@ -29,5 +29,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BMP183/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BMP183-Unified/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MS8607/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LIS3MDL/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LSM303DLHC/Kconfig"
 
 endmenu
