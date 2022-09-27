@@ -89,7 +89,7 @@ if PKG_USING_RTDUINO
             default n
 
         config RTDUINO_CMD_SERIAL_USING_FOCUSON
-            bool "Enable serial focus on mode"
+            bool "Enable Serial focus on mode"
             depends on RTDUINO_CMD_USING_SERIAL
             default n
     endif
