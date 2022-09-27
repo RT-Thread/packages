@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-BNO08x-RVC",
-  "description": "Adafruit-BNO08x-RVC :  a simple library to use the UART-RVC mode of the BNO08x sensors.",
-  "description_zh": "Adafruit-BNO08x-RVC 使用BNO08x传感器UART-RVC模式的库。",
+  "description": "Adafruit BNO08x RVC driver",
+  "description_zh": "Adafruit BNO08x RVC驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_BNO08X_RVC",
   "keywords": [
     "Adafruit-BNO08x-RVC",
@@ -17,7 +17,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "Unknown",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_BNO08x_RVC",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_BNO08x_RVC#readme",
