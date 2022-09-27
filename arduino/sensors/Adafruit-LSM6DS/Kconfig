@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-LSM6DS
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_LSM6DS
-    bool "Adafruit LSM6DS 6-DOF accelerometer and gyroscope sensor library"
+    bool "Adafruit LSM6DS 6-DoF Accelerometer and Gyroscope Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
