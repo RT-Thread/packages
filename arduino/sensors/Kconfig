@@ -40,4 +40,5 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MPL115A2/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BNO08x/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BNO08x-RVC/Kconfig"
 
+
 endmenu
