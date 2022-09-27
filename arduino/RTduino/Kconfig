@@ -39,7 +39,7 @@ if PKG_USING_RTDUINO
         bool "micros() function with high precision"
         depends on ARCH_ARM_CORTEX_M
         select PKG_USING_PERF_COUNTER if ARCH_ARM_CORTEX_M
-        default n
+        default y
 
     config RTDUINO_USING_WIRE
         bool "Enable wire library <Wire.h>"
