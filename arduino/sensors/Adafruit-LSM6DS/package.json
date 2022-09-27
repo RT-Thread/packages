@@ -1,13 +1,13 @@
 {
   "name": "Adafruit-LSM6DS",
-  "description": "Adafruit LSM6DS 6-DOF accelerometer and gyroscope sensor library",
-  "description_zh": "Adafruit LSM6DS六自由度加速度计和陀螺仪传感器库",
+  "description": "Adafruit LSM6DS 6-DoF Accelerometer and Gyroscope Sensor",
+  "description_zh": "Adafruit LSM6DS六自由度加速度计和陀螺仪传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_LSM6DS",
   "keywords": [
     "Adafruit-LSM6DS",
     "LSM6DS",
     "Adafruit",
-    "arduino",
+    "Arduino",
     "sensors",
     "Accelerometers",
     "gyroscopes"
@@ -18,7 +18,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_LSM6DS",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_LSM6DS#readme",
