@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-BMP183-Unified",
+  "description": "Adafruit BMP183 (Unified) Barometric Pressure & Altitude Sensor",
+  "description_zh": "Adafruit BMP183 (Unified) 大气压力及高度传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP183_UNIFIED",
+  "keywords": [
+    "Adafruit-BMP183-Unified",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "BMP183"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_BMP183_Unified_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_BMP183_Unified_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_BMP183_Unified_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
