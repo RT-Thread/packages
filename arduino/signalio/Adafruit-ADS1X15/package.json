@@ -22,7 +22,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "Unknown",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_ADS1X15",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_ADS1X15#readme",
