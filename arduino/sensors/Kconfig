@@ -42,5 +42,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BNO08x/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BNO08x-RVC/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LIS2MDL/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LSM303DLH-Mag/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-CCS811/Kconfig"
 
 endmenu
