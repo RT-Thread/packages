@@ -1,14 +1,13 @@
 {
   "name": "Adafruit-PCF8574",
-  "description": "Adafruit PCF8574 I2C GPIO Exapnder library.",
-  "description_zh": "Adafruit PCF8574 I2C GPIO扩展库。",
+  "description": "Adafruit PCF8574 GPIO Exapnder",
+  "description_zh": "Adafruit PCF8574 GPIO扩展器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_PCF8574",
   "keywords": [
     "Adafruit-PCF8574",
     "Device Control",
     "Adafruit",
     "PCF8574",
-    "I2C",
     "GPIO"
   ],
   "category": "arduino/devicecontrol",
@@ -17,7 +16,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_PCF8574",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_PCF8574#readme",
@@ -27,7 +26,7 @@
       "version": "latest",
       "URL": "https://github.com/adafruit/Adafruit_PCF8574.git",
       "filename": "",
-      "VER_SHA": "master"
+      "VER_SHA": "main"
     }
   ]
 }
