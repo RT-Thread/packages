@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-ADS1X15",
   "description": "Adafruit: ADS1015/1115 12 and 16-bit Differential or Single-Ended ADC with PGA and Comparator driver",
-  "description_zh": "Adafruit: ADS1015/1115 12/16位差分或单端ADCs(带PGA和比较器)驱动库",
+  "description_zh": "Adafruit ADS1015/1115 12/16位差分或单端ADCs(带PGA和比较器)驱动库",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_ADS1X15",
   "keywords": [
     "Adafruit-ADS1X15",
