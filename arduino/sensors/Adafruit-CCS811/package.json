@@ -1,12 +1,14 @@
 {
   "name": "Adafruit-CCS811",
-  "description": "Adafruit CCS811: Air Quality Sensor.",
-  "description_zh": "Adafruit CCS811：空气质量传感器。",
+  "description": "Adafruit CCS811 Air Quality Sensor.",
+  "description_zh": "Adafruit CCS811 空气质量传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_CCS811",
   "keywords": [
     "Adafruit-CCS811",
     "Adafruit",
     "Arduino",
+    "Sensors",
+    "Air Quality",
     "CCS811"
   ],
   "category": "arduino/sensors",
