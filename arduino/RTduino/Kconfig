@@ -94,6 +94,34 @@ if PKG_USING_RTDUINO
             default n
     endif
 
+    config RTDUINO_USING_SIMULINK
+        bool "Support Simulink for Arduino Hardware Package"
+        select RTDUINO_NO_SETUP_LOOP
+        default n
+
+    if RTDUINO_USING_SIMULINK
+        config RTDUINO_SIMULINK_USING_SERIAL
+            choice
+                prompt "Select serial to connect with Simulink"
+                default RTDUINO_SIMULINK_USING_CONSOLE_SERIAL
+
+                config RTDUINO_SIMULINK_USING_CONSOLE_SERIAL
+                    bool "Serial (Console Serial)"
+                    select RTDUINO_USING_SHELL_CMD
+                    select RTDUINO_CMD_SERIAL_USING_FOCUSON
+
+                config RTDUINO_SIMULINK_USING_SERIAL2
+                    bool "Serial2"
+
+                config RTDUINO_SIMULINK_USING_SERIAL3
+                    bool "Serial3"
+
+                config RTDUINO_SIMULINK_USING_SERIALUSB
+                    bool "SerialUSB"
+                    select RTDUINO_USING_USBSERIAL
+            endchoice
+    endif
+
     choice
         prompt "Version"
         default PKG_USING_RTDUINO_LATEST_VERSION

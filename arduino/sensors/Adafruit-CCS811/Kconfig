@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-CCS811
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_CCS811
+    bool "Adafruit CCS811: Air Quality Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_CCS811
+
+    config PKG_ARDUINO_ADAFRUIT_CCS811_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-CCS811"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_CCS811_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_CCS811_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_CCS811_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_CCS811_LATEST_VERSION
+
+endif
+
