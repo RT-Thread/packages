@@ -94,29 +94,29 @@ if PKG_USING_RTDUINO
             default n
     endif
 
-    config RTDUINO_USING_SIMULINK
-        bool "Support Simulink for Arduino Hardware Package"
+    config RTDUINO_USING_MATLAB
+        bool "Enable MATLAB & Simulink Support Package for RTduino Hardware"
         select RTDUINO_NO_SETUP_LOOP
         default n
 
-    if RTDUINO_USING_SIMULINK
-        config RTDUINO_SIMULINK_USING_SERIAL
+    if RTDUINO_USING_MATLAB
+        config RTDUINO_MATLAB_USING_SERIAL
             choice
-                prompt "Select serial to connect with Simulink"
-                default RTDUINO_SIMULINK_USING_CONSOLE_SERIAL
+                prompt "Select serial to connect to MATLAB"
+                default RTDUINO_MATLAB_USING_CONSOLE_SERIAL
 
-                config RTDUINO_SIMULINK_USING_CONSOLE_SERIAL
+                config RTDUINO_MATLAB_USING_CONSOLE_SERIAL
                     bool "Serial (Console Serial)"
                     select RTDUINO_USING_SHELL_CMD
                     select RTDUINO_CMD_SERIAL_USING_FOCUSON
 
-                config RTDUINO_SIMULINK_USING_SERIAL2
+                config RTDUINO_MATLAB_USING_SERIAL2
                     bool "Serial2"
 
-                config RTDUINO_SIMULINK_USING_SERIAL3
+                config RTDUINO_MATLAB_USING_SERIAL3
                     bool "Serial3"
 
-                config RTDUINO_SIMULINK_USING_SERIALUSB
+                config RTDUINO_MATLAB_USING_SERIALUSB
                     bool "SerialUSB"
                     select RTDUINO_USING_USBSERIAL
             endchoice
