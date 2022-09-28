@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-HTS221
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_HTS221
-    bool "Adafruit HTS221:barometric pressure library"
+    bool "Adafruit HTS221:Humidity and Temperature Sensor library"
     default n
 
 if PKG_USING_ARDUINO_ADAFRUIT_HTS221

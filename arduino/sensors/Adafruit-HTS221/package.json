@@ -5,12 +5,12 @@
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_HTS221",
   "keywords": [
     "Adafruit-HTS221",
-	"HTS221",
-	"Adafruit",
-	"Arduino",
-	"Sensor",
-	"Humidity",
-	"Temperature"
+	  "HTS221",
+	  "Adafruit",
+	  "Arduino",
+	  "Sensor",
+	  "Humidity",
+	  "Temperature"
   ],
   "category": "arduino/sensors",
   "author": {
