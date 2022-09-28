@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-LC709203F
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_LC709203F
+    bool "Adafruit LC709203F: Fuel Gauge and Battery Monitor Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_LC709203F
+
+    config PKG_ARDUINO_ADAFRUIT_LC709203F_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-LC709203F"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_LC709203F_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_LC709203F_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_LC709203F_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_LC709203F_LATEST_VERSION
+
+endif
+
