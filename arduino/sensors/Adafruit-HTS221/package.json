@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-HTS221",
-  "description": "This is the Adafruit HTS221 Humidity and Temperature Sensor library",
-  "description_zh": "Adafruit HTS221传感器驱动",
+  "description": "Adafruit HTS221 Humidity and Temperature Sensor",
+  "description_zh": "Adafruit HTS221 温湿度传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_HTS221",
   "keywords": [
     "Adafruit-HTS221",
