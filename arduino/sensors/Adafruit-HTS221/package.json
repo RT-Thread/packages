@@ -5,12 +5,12 @@
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_HTS221",
   "keywords": [
     "Adafruit-HTS221",
-	  "HTS221",
-	  "Adafruit",
-	  "Arduino",
-	  "Sensor",
-	  "Humidity",
-	  "Temperature"
+    "HTS221",
+    "Adafruit",
+    "Arduino",
+    "Sensor",
+    "Humidity",
+    "Temperature"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -18,7 +18,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_HTS221",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_HTS221#readme",
