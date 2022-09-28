@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-HTS221
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_HTS221
-    bool "Adafruit HTS221:Humidity and Temperature Sensor"
+    bool "Adafruit HTS221: Humidity and Temperature Sensor"
     Select PKG_USING_RTDUINO
     Select RTDUINO_USING_WIRE
     Select RTDUINO_USING_SPI
