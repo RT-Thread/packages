@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-CAP1188
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_CAP1188
-    bool "Adafruit CAP1188: 8-Key Capacitive Touch Sensor."
+    bool "Adafruit CAP1188: 8-Key Capacitive Touch Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select RTDUINO_USING_SPI
