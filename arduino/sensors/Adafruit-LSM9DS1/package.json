@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-LSM9DS1",
-  "description": "Adafruit triple-axis accelerometer/magnetometer/gyroscope LSM9DS1 library",
-  "description_zh": "Adafruit三轴加速度计/磁强计/陀螺仪LSM9DS1库",
+  "description": "Adafruit LSM9DS1 triple-axis accelerometer/magnetometer/gyroscope sensor",
+  "description_zh": "Adafruit LSM9DS1三轴加速度计/磁强计/陀螺仪传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_LSM9DS1",
   "keywords": [
     "Adafruit-LSM9DS1",
