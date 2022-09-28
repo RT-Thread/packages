@@ -1,13 +1,16 @@
 {
   "name": "Adafruit-CAP1188",
-  "description": "Adafruit CAP1188: 8-Key Capacitive Touch Sensor.",
-  "description_zh": "Adafruit CAP1188：8键电容式触摸传感器",
+  "description": "Adafruit CAP1188 8-Key Capacitive Touch Sensor.",
+  "description_zh": "Adafruit CAP1188 8键电容式触摸传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_CAP1188",
   "keywords": [
     "Adafruit-CAP1188",
     "Adafruit",
     "Arduino",
-    "CAP1188"
+    "CAP1188",
+    "Capacitive",
+    "Sensors",
+    "Touch"
   ],
   "category": "arduino/sensors",
   "author": {
