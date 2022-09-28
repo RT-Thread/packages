@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-CCS811
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_CCS811
-    bool "Adafruit CCS811: Air Quality Sensor."
+    bool "Adafruit CCS811: Air Quality Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
