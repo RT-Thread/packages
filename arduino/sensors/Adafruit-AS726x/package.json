@@ -2,7 +2,7 @@
   "name": "Adafruit-AS726x",
   "description": "Adafruit AS726x spectral sensor",
   "description_zh": "Adafruit AS726x光谱传感器驱动",
-  "enable": "PKG_USING_ADAFRUIT_AS726X",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_AS726X",
   "keywords": [
     "Adafruit-AS726x",
     "Sensors",
@@ -11,7 +11,7 @@
     "AS726x",
     "spectral"
   ],
-  "category": "peripherals/sensors",
+  "category": "arduino/sensors",
   "author": {
     "name": "adafruit",
     "email": "info@adafruit.com",

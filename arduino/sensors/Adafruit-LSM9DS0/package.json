@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-LSM9DS0",
+  "description": "Adafruit LSM9DS0 triaxial accelerometer/magnetometer/gyroscope sensor driver",
+  "description_zh": "Adafruit LSM9DS0三轴加速度计/磁强计/陀螺仪传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_LSM9DS0",
+  "keywords": [
+    "Adafruit-LSM9DS0",
+    "LSM9DS0",
+    "Adafruit",
+    "arduino",
+    "sensors",
+    "triaxial accelerometer",
+    "magnetometer",
+    "gyroscope"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_LSM9DS0_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_LSM9DS0_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_LSM9DS0_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

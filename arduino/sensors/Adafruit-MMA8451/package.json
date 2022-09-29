@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-MMA8451",
+  "description": "Adafruit MMA8451 Accelerometer Sensor Driver",
+  "description_zh": "Adafruit MMA8451 加速度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MMA8451",
+  "keywords": [
+    "Adafruit-MMA8451",
+    "Adafruit",
+    "Arduino",
+    "MMA8451",
+    "Sensor",
+    "accelerometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_MMA8451_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MMA8451_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MMA8451_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

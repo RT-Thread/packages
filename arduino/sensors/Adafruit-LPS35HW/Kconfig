@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-LPS35HW
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_LPS35HW
+    bool "Adafruit LPS35HW/LPS33HW: Water Resistant Pressure Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_LPS35HW
+
+    config PKG_ARDUINO_ADAFRUIT_LPS35HW_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-LPS35HW"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_LPS35HW_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_LPS35HW_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_LPS35HW_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_LPS35HW_LATEST_VERSION
+
+endif
+

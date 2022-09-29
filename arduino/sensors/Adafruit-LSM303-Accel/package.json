@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-LSM303-Accel",
+  "description": "Adafruit LSM303 Triple-axis Accelerometer and Magnetometer Sensor Driver",
+  "description_zh": "Adafruit LSM303 加速度和电子罗盘传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_LSM303_ACCEL",
+  "keywords": [
+    "Adafruit-LSM303-Accel",
+    "Adafruit",
+    "Arduino",
+    "LSM303",
+    "LSM303AGR",
+    "LSM303DLH",
+    "Accelerometer",
+    "Sensor"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_LSM303_Accel",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_LSM303_Accel#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_LSM303_Accel.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
