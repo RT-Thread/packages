@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-OV7670",
+  "description": "Adafruit OV7670 camera sensor",
+  "description_zh": "Adafruit OV7670摄像头传感器驱动",
+  "enable": "PKG_USING_ADAFRUIT_OV7670",
+  "keywords": [
+    "Adafruit-OV7670",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "OV7670",
+    "camera"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_OV7670",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_OV7670#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_OV7670.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

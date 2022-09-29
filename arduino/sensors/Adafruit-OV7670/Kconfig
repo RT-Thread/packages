@@ -1,0 +1,30 @@
+
+# Kconfig file for package Adafruit-OV7670
+menuconfig PKG_USING_ADAFRUIT_OV7670
+    bool "Adafruit OV7670: camera sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ADAFRUIT_OV7670
+
+    config PKG_ADAFRUIT_OV7670_PATH
+        string
+        default "/packages/peripherals/sensors/Adafruit-OV7670"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ADAFRUIT_OV7670_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ADAFRUIT_OV7670_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ADAFRUIT_OV7670_VER
+       string
+       default "latest"    if PKG_USING_ADAFRUIT_OV7670_LATEST_VERSION
+
+endif
+
