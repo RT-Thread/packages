@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MPL3115A2
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MPL3115A2
-    bool "Adafruit MPL3115A2: Pressure/Altidude/Temperature Sensor"
+    bool "Adafruit MPL3115A2: Pressure/Altitude/Temperature Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
