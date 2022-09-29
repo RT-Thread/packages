@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MAX31856
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MAX31856
-    bool "Please add description of Adafruit-MAX31856 in English."
+    bool "Adafruit MAX31856: Universal Thermocouple Amplifier"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_SPI
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
