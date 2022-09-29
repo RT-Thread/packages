@@ -2,7 +2,7 @@
   "name": "Adafruit-PCF8591",
   "description": "Adafruit PCF8591 Basic 4 x ADC + DAC",
   "description_zh": "Adafruit PCF8591 Basic 4 x ADC + DAC驱动",
-  "enable": "PKG_USING_ADAFRUIT_PCF8591",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_PCF8591",
   "keywords": [
     "Adafruit-PCF8591",
     "Sensors",
@@ -10,10 +10,9 @@
     "Arduino",
     "PCF8591",
     "ADC",
-    "DAC",
-    "Breakout Board"
+    "DAC"
   ],
-  "category": "peripherals/sensors",
+  "category": "arduino/sensors",
   "author": {
     "name": "adafruit",
     "email": "info@adafruit.com",
