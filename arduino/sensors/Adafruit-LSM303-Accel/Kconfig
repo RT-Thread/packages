@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-LSM303-Accel
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_LSM303_ACCEL
-    bool "Adafruit LSM303: Accelerometer Sensor"
+    bool "Adafruit LSM303: Triple-axis Accelerometer and Magnetometer Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
