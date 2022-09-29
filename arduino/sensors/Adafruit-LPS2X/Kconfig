@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-LPS2X
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_LPS2X
-    bool "Adafruit-LPS2X: barometric pressure Sensor"
+    bool "Adafruit LPS2x: LPS22 & LPS25 Pressure Sensor Driver"
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
