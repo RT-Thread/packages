@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-MPL3115A2",
-  "description": "Adafruit MPL3115A2 Pressure/Altidude/Temperature Sensor Driver",
+  "description": "Adafruit MPL3115A2 Pressure/Altitude/Temperature Sensor Driver",
   "description_zh": "Adafruit MPL3115A2 压力/高度/温度 传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MPL3115A2",
   "keywords": [
