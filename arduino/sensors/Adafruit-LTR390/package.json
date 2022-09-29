@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-LTR390",
-  "description": "Adafruit LTR390 UV sensor library",
-  "description_zh": "Adafruit LTR390紫外线传感器库",
+  "description": "Adafruit LTR390 UV Sensor",
+  "description_zh": "Adafruit LTR390紫外线传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_LTR390",
   "keywords": [
     "Adafruit-LTR390",
@@ -9,7 +9,7 @@
     "Adafruit",
     "arduino",
     "sensors",
-    "UV sensor"
+    "UV"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -17,7 +17,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_LTR390",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_LTR390#readme",
