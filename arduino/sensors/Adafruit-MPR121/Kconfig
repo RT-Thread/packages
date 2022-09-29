@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-MPR121
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MPR121
+    bool "Adafruit MPR121: Capacitive Touch Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MPR121
+
+    config PKG_ARDUINO_ADAFRUIT_MPR121_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MPR121"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MPR121_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MPR121_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MPR121_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MPR121_LATEST_VERSION
+
+endif
+

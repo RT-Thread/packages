@@ -1,0 +1,36 @@
+{
+  "name": "Adafruit-LPS2X",
+  "description": "Adafruit LPS22 & LPS25 family Pressure Sensor Driver",
+  "description_zh": "Adafruit LPS22 & LPS25 气压传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_LPS2X",
+  "keywords": [
+    "Adafruit-LPS2X",
+    "Adafruit",
+    "Arduino",
+    "barometric",
+    "pressure",
+    "Sensor",
+    "LPS22",
+    "LPS22HB",
+    "LPS25"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_LPS2X",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_LPS2X#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_LPS2X.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
