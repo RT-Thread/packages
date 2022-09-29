@@ -1,16 +1,17 @@
 {
   "name": "Adafruit-LPS35HW",
-  "description": "Adafruit LPS35HW Water resistant barometric pressure Sensor Driver",
-  "description_zh": "Adafruit LPS35HW 防水气压传感器驱动",
+  "description": "Adafruit LPS35HW/LPS33HW Water Resistant Pressure Sensor Driver",
+  "description_zh": "Adafruit LPS35HW/LPS33HW 防水型气压传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_LPS35HW",
   "keywords": [
     "Adafruit-LPS35HW",
     "Adafruit",
     "Arduino",
-    "barometric",
     "pressure",
     "Water resistant",
-    "Sensor"
+    "Sensor",
+    "LPS35HW",
+    "LPS33HW"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -18,7 +19,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD License",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_LPS35HW",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_LPS35HW#readme",
