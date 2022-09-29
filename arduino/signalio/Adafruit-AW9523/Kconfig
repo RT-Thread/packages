@@ -3,6 +3,7 @@
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_AW9523
     bool "Adafruit AW9523: GPIO Expander and LED driver"
     select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
 
