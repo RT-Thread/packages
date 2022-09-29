@@ -56,6 +56,7 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LPS35HW/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LSM303-Accel/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LIS3DH/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-PCF8591/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MPR121/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MPRLS/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MPU6050/Kconfig"
 
