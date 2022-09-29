@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-LTR390
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_LTR390
-    bool "Adafruit LTR390 UV sensor library"
+    bool "Adafruit LTR390: UV Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
