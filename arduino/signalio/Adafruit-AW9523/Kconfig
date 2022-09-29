@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-AW9523
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_AW9523
+    bool "Adafruit AW9523: GPIO Expander and LED driver"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_AW9523
+
+    config PKG_ARDUINO_ADAFRUIT_AW9523_PATH
+        string
+        default "/packages/arduino/signalio/Adafruit-AW9523"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_AW9523_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_AW9523_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_AW9523_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_AW9523_LATEST_VERSION
+
+endif
+
