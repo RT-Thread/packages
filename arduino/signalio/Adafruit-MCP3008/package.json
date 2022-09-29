@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-MCP3008",
-  "description": "Adafruit MCP3008 8-Channel 10-Bit ADC With SPI Interface driver",
-  "description_zh": "Adafruit MCP3008 使用 SPI 通信和 8 通道的 10 位 ADC 驱动库",
+  "description": "Adafruit MCP3008 8-Channel 10-Bit ADC(SPI)",
+  "description_zh": "Adafruit MCP3008 8通道的10位ADC驱动(SPI)",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MCP3008",
   "keywords": [
     "Adafruit-MCP3008",
