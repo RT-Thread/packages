@@ -50,5 +50,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-CCS811/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-NAU7802/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-LIS3DH/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-PCF8591/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MPR121/Kconfig"
 
 endmenu
