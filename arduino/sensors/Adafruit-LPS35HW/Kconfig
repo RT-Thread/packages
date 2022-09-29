@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-LPS35HW
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_LPS35HW
-    bool "Adafruit LPS35HW: Water resistant barometric pressure Sensor"
+    bool "Adafruit LPS35HW/LPS33HW: Water Resistant Pressure Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
