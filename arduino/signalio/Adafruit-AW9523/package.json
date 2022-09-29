@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-AW9523",
+  "description": "Adafruit AW9523 GPIO Expander and LED driver",
+  "description_zh": "Adafruit AW9523 GPIO 拓展器和 LED 驱动库",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_AW9523",
+  "keywords": [
+    "Adafruit-AW9523",
+    "arduino",
+    "Adafruit",
+    "AW9523",
+    "GPIO",
+    "LED",
+    "Signal",
+    "Input/Output"
+  ],
+  "category": "arduino/signalio",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_AW9523",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_AW9523#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_AW9523.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
