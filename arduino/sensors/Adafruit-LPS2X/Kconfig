@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-LPS2X
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_LPS2X
+    bool "Adafruit LPS2x: LPS22 & LPS25 Pressure Sensor Driver"
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_LPS2X
+
+    config PKG_ARDUINO_ADAFRUIT_LPS2X_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-LPS2X"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_LPS2X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_LPS2X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_LPS2X_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_LPS2X_LATEST_VERSION
+
+endif
+

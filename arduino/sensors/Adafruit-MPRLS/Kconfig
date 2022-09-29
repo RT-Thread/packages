@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-MPRLS
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MPRLS
+    bool "Adafruit MPRLS: Pressure Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MPRLS
+
+    config PKG_ARDUINO_ADAFRUIT_MPRLS_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MPRLS"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MPRLS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MPRLS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MPRLS_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MPRLS_LATEST_VERSION
+
+endif
+
