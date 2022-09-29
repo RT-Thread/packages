@@ -4,5 +4,6 @@ source "$PKGS_DIR/packages/arduino/signalio/Adafruit-BusIO/Kconfig"
 source "$PKGS_DIR/packages/arduino/signalio/Adafruit-TCA8418/Kconfig"
 source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP23017/Kconfig"
 source "$PKGS_DIR/packages/arduino/signalio/Adafruit-ADS1X15/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-AW9523/Kconfig"
 
 endmenu
