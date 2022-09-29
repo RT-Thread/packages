@@ -2,7 +2,7 @@
   "name": "Adafruit-NAU7802",
   "description": "Adafruit NAU7802 I2C 24-bit ADC sensor",
   "description_zh": "Adafruit NAU7802 I2C 24-bit ADC传感器驱动。",
-  "enable": "PKG_USING_ADAFRUIT_NAU7802",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_NAU7802",
   "keywords": [
     "Adafruit-NAU7802",
     "Sensors",
@@ -12,7 +12,7 @@
     "I2C",
     "ADC"
   ],
-  "category": "peripherals/sensors",
+  "category": "arduino/sensors",
   "author": {
     "name": "adafruit",
     "email": "info@adafruit.com",
