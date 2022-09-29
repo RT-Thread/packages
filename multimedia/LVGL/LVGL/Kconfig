@@ -45,7 +45,7 @@ if PKG_USING_LVGL
             If RT-Thread vesion is higher than 4.1.0, we recommended to use LVGL v8.3.0 or latest.
             If you use some special boards or tools, such as NXP GUIGuider. Maybe needs to choose LVGL v8.2.0.
 
-        config PKG_LVGL_USING_V08031
+        config PKG_LVGL_USING_V08032
             bool "v8.3.2"
 
         config PKG_LVGL_USING_V08031
