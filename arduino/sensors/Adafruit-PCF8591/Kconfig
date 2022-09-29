@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-PCF8591
 menuconfig PKG_USING_ADAFRUIT_PCF8591
-    bool "Adafruit PCF8591: Breakout Board"
+    bool "Adafruit PCF8591: Basic 4 x ADC + DAC"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
