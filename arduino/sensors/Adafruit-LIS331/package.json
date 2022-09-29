@@ -8,6 +8,7 @@
     "Adafruit",
     "Arduino",
     "LIS331",
+    "H3LIS331",
     "3-axis Accelerometers",
     "Accelerometers",
     "Sensor"
