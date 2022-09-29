@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-PCF8591",
-  "description": "Adafruit PCF8591 Breakout Board",
-  "description_zh": "Adafruit PCF8591分线板驱动",
+  "description": "Adafruit PCF8591 Basic 4 x ADC + DAC",
+  "description_zh": "Adafruit PCF8591 Basic 4 x ADC + DAC驱动",
   "enable": "PKG_USING_ADAFRUIT_PCF8591",
   "keywords": [
     "Adafruit-PCF8591",
@@ -9,6 +9,8 @@
     "Adafruit",
     "Arduino",
     "PCF8591",
+    "ADC",
+    "DAC",
     "Breakout Board"
   ],
   "category": "peripherals/sensors",
@@ -17,7 +19,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_PCF8591",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_PCF8591#readme",
