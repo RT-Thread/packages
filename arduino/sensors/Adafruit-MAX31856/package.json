@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-MAX31856",
-  "description": "MAX31856 thermocouple sensor driver library",
-  "description_zh": "MAX31856热电偶传感器驱动库",
+  "description": "Adafruit MAX31856: Universal Thermocouple Amplifier",
+  "description_zh": "Adafruit MAX31856热电偶传感器驱动库",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX31856",
   "keywords": [
     "Adafruit-MAX31856",
@@ -10,7 +10,6 @@
     "arduino",
     "sensors",
     "thermocouple"
-
   ],
   "category": "arduino/sensors",
   "author": {
@@ -18,7 +17,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_MAX31856",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_MAX31856#readme",
