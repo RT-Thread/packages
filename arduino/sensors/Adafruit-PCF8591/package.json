@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-PCF8591",
+  "description": "Adafruit PCF8591 Basic 4 x ADC + DAC",
+  "description_zh": "Adafruit PCF8591 Basic 4 x ADC + DAC驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_PCF8591",
+  "keywords": [
+    "Adafruit-PCF8591",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "PCF8591",
+    "ADC",
+    "DAC"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_PCF8591",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_PCF8591#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_PCF8591.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "name": "Adafruit-MS8607",
   "description": "Adafruit MS8607 Pressure Humidity Temperature PHT Sensor",
   "description_zh": "Adafruit MS8607压力温湿度传感器驱动",
-  "enable": "PKG_USING_ADAFRUIT_MS8607",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MS8607",
   "keywords": [
     "Adafruit-MS8607",
     "Sensors",
@@ -13,7 +13,7 @@
     "Humidity",
     "Temperature"
   ],
-  "category": "peripherals/sensors",
+  "category": "arduino/sensors",
   "author": {
     "name": "adafruit",
     "email": "info@adafruit.com",
