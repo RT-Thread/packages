@@ -8,6 +8,7 @@
     "Adafruit",
     "Arduino",
     "Accelerometer",
+    "LIS3DH",
     "Sensor"
   ],
   "category": "arduino/sensors",
@@ -16,7 +17,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD License",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_LIS3DH",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_LIS3DH#readme",
