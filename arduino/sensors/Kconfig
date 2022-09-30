@@ -1,6 +1,7 @@
 menu "Sensors"
 
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-Sensor/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MAX31865/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AHTX0/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BMP280/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-BME680/Kconfig"
