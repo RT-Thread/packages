@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-PCT2075",
+  "description": "Adafruit PCT2075 temperature sensor",
+  "description_zh": "Adafruit PCT2075温度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_PCT2075",
+  "keywords": [
+    "Adafruit-PCT2075",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "PCT2075",
+    "temperature"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_PCT2075",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_PCT2075#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_PCT2075.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
