@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-FXOS8700",
+  "description": "Please add description of Adafruit-FXOS8700 in English.",
+  "description_zh": "请添加软件包 Adafruit-FXOS8700 的中文描述。",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_FXOS8700",
+  "keywords": [
+    "Adafruit-FXOS8700"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_FXOS8700",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_FXOS8700#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://Adafruit-FXOS8700-1.0.0.zip",
+      "filename": "Adafruit-FXOS8700-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_FXOS8700.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
