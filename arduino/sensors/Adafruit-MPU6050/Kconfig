@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-MPU6050
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MPU6050
+    bool "Adafruit MPU6050: 6-DoF Accel and Gyro Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MPU6050
+
+    config PKG_ARDUINO_ADAFRUIT_MPU6050_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MPU6050"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MPU6050_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MPU6050_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MPU6050_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MPU6050_LATEST_VERSION
+
+endif
+

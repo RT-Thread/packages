@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-CAP1188
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_CAP1188
+    bool "Adafruit CAP1188: 8-Key Capacitive Touch Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_CAP1188
+
+    config PKG_ARDUINO_ADAFRUIT_CAP1188_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-CAP1188"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_CAP1188_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_CAP1188_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_CAP1188_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_CAP1188_LATEST_VERSION
+
+endif
+

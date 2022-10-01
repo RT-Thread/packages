@@ -1,0 +1,38 @@
+{
+  "name": "Adafruit-ADS1X15",
+  "description": "Adafruit ADS1015/1115 12 and 16-bit Differential or Single-Ended ADC with PGA and Comparator driver",
+  "description_zh": "Adafruit ADS1015/1115 12/16位差分或单端ADCs(带PGA和比较器)驱动库",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_ADS1X15",
+  "keywords": [
+    "Adafruit-ADS1X15",
+    "Adafruit-ADS1015",
+    "Adafruit-ADS1115",
+    "ADS1115",
+    "ADS1015",
+    "arduino",
+    "Adafruit",
+    "I2C",
+    "ADCs",
+    "Signal",
+    "Input/Output"
+  ],
+  "category": "arduino/signalio",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_ADS1X15",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_ADS1X15#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_ADS1X15.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

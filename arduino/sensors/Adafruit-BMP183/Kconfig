@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-BMP183
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_BMP183
+    bool "Adafruit BMP183: Barometric Pressure & Temperature sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_BMP183
+
+    config PKG_ARDUINO_ADAFRUIT_BMP183_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-BMP183"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_BMP183_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_BMP183_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_BMP183_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_BMP183_LATEST_VERSION
+
+endif
+

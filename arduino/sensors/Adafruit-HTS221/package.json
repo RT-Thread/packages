@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-HTS221",
+  "description": "Adafruit HTS221 Humidity and Temperature Sensor",
+  "description_zh": "Adafruit HTS221 温湿度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_HTS221",
+  "keywords": [
+    "Adafruit-HTS221",
+    "HTS221",
+    "Adafruit",
+    "Arduino",
+    "Sensor",
+    "Humidity",
+    "Temperature"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_HTS221",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_HTS221#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_HTS221.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
