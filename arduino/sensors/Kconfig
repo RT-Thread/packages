@@ -63,5 +63,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MPRLS/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MPU6050/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-PCT2075/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-PM25AQI/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-FXAS21002C/Kconfig"
 
 endmenu
