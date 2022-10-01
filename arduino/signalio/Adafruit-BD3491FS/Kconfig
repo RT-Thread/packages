@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-BD3491FS
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_BD3491FS
-    bool "Arduino: BD3491FS Sound Processor driver"
+    bool "Adafruit BD3491FS: Sound Processor driver"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
