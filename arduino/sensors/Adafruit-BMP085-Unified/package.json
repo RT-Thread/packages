@@ -8,6 +8,8 @@
     "Sensors",
     "Adafruit",
     "Arduino",
+    "Pressure",
+    "Temperature",
     "BMP085"
   ],
   "category": "arduino/sensors",
