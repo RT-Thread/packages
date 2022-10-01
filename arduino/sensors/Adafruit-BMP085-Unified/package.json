@@ -18,7 +18,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "Unknown",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_BMP085_Unified",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_BMP085_Unified#readme",
