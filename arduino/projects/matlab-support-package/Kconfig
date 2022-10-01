@@ -1,0 +1,28 @@
+
+# Kconfig file for package matlab-support-package
+menuconfig PKG_USING_ARDUINO_MATLAB_SUPPORT_PACKAGE
+    bool "MATLAB/Simulink Support Package for RTduino Hardware"
+    default n
+
+if PKG_USING_ARDUINO_MATLAB_SUPPORT_PACKAGE
+
+    config PKG_ARDUINO_MATLAB_SUPPORT_PACKAGE_PATH
+        string
+        default "/packages/arduino/projects/matlab-support-package"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_MATLAB_SUPPORT_PACKAGE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_MATLAB_SUPPORT_PACKAGE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_MATLAB_SUPPORT_PACKAGE_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_MATLAB_SUPPORT_PACKAGE_LATEST_VERSION
+
+endif
+
