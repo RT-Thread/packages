@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-PN532",
-  "description": "Adafruit PN532 NFC/RFID breakout boards driver",
-  "description_zh": "Adafruit PN532 NFC/RFID 分线板的驱动",
+  "description": "Adafruit PN532 NFC/RFID driver",
+  "description_zh": "Adafruit PN532 NFC/RFID驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_PN532",
   "keywords": [
     "Adafruit-PN532",
