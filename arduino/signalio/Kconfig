@@ -8,5 +8,6 @@ source "$PKGS_DIR/packages/arduino/signalio/Adafruit-AW9523/Kconfig"
 source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP3008/Kconfig"
 source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP4725/Kconfig"
 source "$PKGS_DIR/packages/arduino/signalio/Adafruit-BD3491FS/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-PN532/Kconfig"
 
 endmenu
