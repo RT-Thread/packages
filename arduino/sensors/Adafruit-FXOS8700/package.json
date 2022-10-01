@@ -19,11 +19,6 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://Adafruit-FXOS8700-1.0.0.zip",
-      "filename": "Adafruit-FXOS8700-1.0.0.zip"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/adafruit/Adafruit_FXOS8700.git",
       "filename": "",

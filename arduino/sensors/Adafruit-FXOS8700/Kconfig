@@ -15,10 +15,6 @@ if PKG_USING_ARDUINO_ADAFRUIT_FXOS8700
         default PKG_USING_ARDUINO_ADAFRUIT_FXOS8700_LATEST_VERSION
         help
             Select the package version
-
-        config PKG_USING_ARDUINO_ADAFRUIT_FXOS8700_V100
-            bool "v1.0.0"
-
         config PKG_USING_ARDUINO_ADAFRUIT_FXOS8700_LATEST_VERSION
             bool "latest"
     endchoice
