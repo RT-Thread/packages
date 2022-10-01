@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-BMP085-Unified
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_BMP085_UNIFIED
-    bool "Adafruit BMP085:Barometric Pressure Temperature sensor"
+    bool "Adafruit BMP085: Barometric Pressure Temperature sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
