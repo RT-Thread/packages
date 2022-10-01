@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-PN532
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_PN532
-    bool "Adafruit PN532: NFC/RFID breakout boards driver"
+    bool "Adafruit PN532: NFC/RFID driver"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select RTDUINO_USING_SPI
@@ -20,16 +20,12 @@ if PKG_USING_ARDUINO_ADAFRUIT_PN532
         help
             Select the package version
 
-        config PKG_USING_ARDUINO_ADAFRUIT_PN532_V100
-            bool "v1.0.0"
-
         config PKG_USING_ARDUINO_ADAFRUIT_PN532_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_ARDUINO_ADAFRUIT_PN532_VER
        string
-       default "v1.0.0"    if PKG_USING_ARDUINO_ADAFRUIT_PN532_V100
        default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_PN532_LATEST_VERSION
 
 endif
