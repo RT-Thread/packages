@@ -2,7 +2,7 @@
   "name": "matlab-support-package",
   "description": "使用RTduino进行MATLAB/Simulink硬件在环仿真的支持包",
   "description_zh": "MATLAB/Simulink Support Package for RTduino Hardware",
-  "enable": "PKG_USING_ARDUINO_MATLAB_SUPPORT_PACKAGE",
+  "enable": "PKG_USING_ARDUINO_MATLAB_SUPPORT",
   "keywords": [
     "matlab-support-package",
     "MATLAB",
