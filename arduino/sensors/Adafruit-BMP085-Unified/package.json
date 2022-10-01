@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-BMP085-Unified",
+  "description": "Adafruit BMP085 Barometric Pressure Temperature sensor",
+  "description_zh": "Adafruit BMP085 大气压力及温度传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP085_UNIFIED",
+  "keywords": [
+    "Adafruit-BMP085-Unified",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "Pressure",
+    "Temperature",
+    "BMP085"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_BMP085_Unified",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_BMP085_Unified#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_BMP085_Unified.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
