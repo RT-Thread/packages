@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-FXOS8700
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_FXOS8700
+    bool "Adafruit-FXOS8700: Accelerometer and Magnetometer sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_FXOS8700
+
+    config PKG_ARDUINO_ADAFRUIT_FXOS8700_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-FXOS8700"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_FXOS8700_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_FXOS8700_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_FXOS8700_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_FXOS8700_LATEST_VERSION
+
+endif
+
