@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-FXOS8700
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_FXOS8700
-    bool "Adafruit-FXOS8700:Accelerometer and Magnetometer sensor"
+    bool "Adafruit-FXOS8700: Accelerometer and Magnetometer sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
