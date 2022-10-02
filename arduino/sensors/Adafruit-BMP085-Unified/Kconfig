@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-BMP085-Unified
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_BMP085_UNIFIED
+    bool "Adafruit BMP085: Barometric Pressure Temperature sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_BMP085_UNIFIED
+
+    config PKG_ARDUINO_ADAFRUIT_BMP085_UNIFIED_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-BMP085-Unified"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_BMP085_UNIFIED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_BMP085_UNIFIED_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_BMP085_UNIFIED_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_BMP085_UNIFIED_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-PN532",
+  "description": "Adafruit PN532 NFC/RFID driver",
+  "description_zh": "Adafruit PN532 NFC/RFID驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_PN532",
+  "keywords": [
+    "Adafruit-PN532",
+    "PN532",
+    "NFC/RFID",
+    "I2C",
+    "SPI",
+    "arduino",
+    "Adafruit",
+    "Communication"
+  ],
+  "category": "arduino/communication",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit-PN532",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit-PN532#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit-PN532.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
