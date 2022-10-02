@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-EMC2101
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_EMC2101
+    bool "Adafruit EMC2101: Fan Controller and Temperature sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_EMC2101
+
+    config PKG_ARDUINO_ADAFRUIT_EMC2101_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-EMC2101"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_EMC2101_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_EMC2101_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_EMC2101_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_EMC2101_LATEST_VERSION
+
+endif
+
