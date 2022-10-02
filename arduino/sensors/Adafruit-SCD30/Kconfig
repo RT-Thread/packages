@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-SCD30
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_SCD30
+    bool "Adafruit SCD30: CO2, Temperature, and Humidity Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_SCD30
+
+    config PKG_ARDUINO_ADAFRUIT_SCD30_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-SCD30"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_SCD30_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_SCD30_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_SCD30_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_SCD30_LATEST_VERSION
+
+endif
+
