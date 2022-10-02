@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-FXAS21002C
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_FXAS21002C
-    bool "Adafruit FXAS21002C: 3-axis gyroscope."
+    bool "Adafruit FXAS21002C: 3-axis gyroscope"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
