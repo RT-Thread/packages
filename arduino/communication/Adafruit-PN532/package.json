@@ -11,10 +11,9 @@
     "SPI",
     "arduino",
     "Adafruit",
-    "Signal",
-    "Input/Output"
+    "Communication"
   ],
-  "category": "arduino/signalio",
+  "category": "arduino/communication",
   "author": {
     "name": "adafruit",
     "email": "info@adafruit.com",
