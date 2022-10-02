@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-EMC2101
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_EMC2101
-    bool "Adafruit EMC2101: Temperature monitor and fan controller."
+    bool "Adafruit EMC2101: Temperature monitor and fan controller"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
