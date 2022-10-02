@@ -1,15 +1,16 @@
 {
   "name": "Adafruit-EMC2101",
-  "description": "Adafruit EMC2101 Temperature monitor and fan controller",
-  "description_zh": "Adafruit EMC2101 温度检测器和风扇控制器",
+  "description": "Adafruit EMC2101 Fan Controller and Temperature sensor",
+  "description_zh": "Adafruit EMC2101 风扇控制器和温度传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_EMC2101",
   "keywords": [
     "Adafruit-EMC2101",
     "Adafruit",
     "Arduino",
+    "sensor",
     "EMC2101",
     "temperature",
-    "fan"
+    "fan controller"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -17,7 +18,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_EMC2101",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_EMC2101#readme",
