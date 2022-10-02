@@ -12,7 +12,7 @@ if PKG_USING_ARDUINO_ADAFRUIT_PN532
 
     config PKG_ARDUINO_ADAFRUIT_PN532_PATH
         string
-        default "/packages/arduino/signalio/Adafruit-PN532"
+        default "/packages/arduino/communication/Adafruit-PN532"
 
     choice
         prompt "Version"
