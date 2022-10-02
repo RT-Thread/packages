@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-FXOS8700",
   "description": " Adafruit FXOS8700 Accelerometer and Magnetometer sensor",
-  "description_zh": "Adafruit-FXOS8700：加速度计和磁强计传感器",
+  "description_zh": "Adafruit-FXOS8700 加速度计和磁强计传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_FXOS8700",
   "keywords": [
     "Adafruit-FXOS8700",
