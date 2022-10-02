@@ -1,0 +1,51 @@
+
+# Kconfig file for package matlab-support-package
+menuconfig PKG_USING_ARDUINO_MATLAB_SUPPORT
+    bool "MATLAB/Simulink Support Package for RTduino Hardware"
+    select PKG_USING_RTDUINO
+    select RTDUINO_NO_SETUP_LOOP
+    default n
+
+if PKG_USING_ARDUINO_MATLAB_SUPPORT
+
+    config PKG_ARDUINO_MATLAB_SUPPORT_PATH
+        string
+        default "/packages/arduino/projects/matlab-support-package"
+
+        choice MATLAB_SUPPORT_USING_SERIAL
+            prompt "Select serial to connect to MATLAB"
+            default MATLAB_SUPPORT_USING_CONSOLE_SERIAL
+
+            config MATLAB_SUPPORT_USING_CONSOLE_SERIAL
+                bool "Serial (Console Serial)"
+                select RTDUINO_USING_SHELL_CMD
+                select RTDUINO_CMD_USING_SERIAL
+                select RTDUINO_CMD_SERIAL_USING_FOCUSON
+
+            config MATLAB_SUPPORT_USING_SERIAL2
+                bool "Serial2"
+
+            config MATLAB_SUPPORT_USING_SERIAL3
+                bool "Serial3"
+
+            config MATLAB_SUPPORT_USING_SERIALUSB
+                bool "SerialUSB"
+                select RTDUINO_USING_USBSERIAL
+        endchoice
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_MATLAB_SUPPORT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_MATLAB_SUPPORT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_MATLAB_SUPPORT_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_MATLAB_SUPPORT_LATEST_VERSION
+
+endif
+

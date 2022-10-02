@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-FXOS8700",
+  "description": " Adafruit FXOS8700 Accelerometer and Magnetometer sensor",
+  "description_zh": "Adafruit-FXOS8700 加速度计和磁强计传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_FXOS8700",
+  "keywords": [
+    "Adafruit-FXOS8700",
+    "Accelerometer",
+    "Magnetometer",
+    "sensor",
+    "adafruit",
+    "arduino",
+    "FXOS8700"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_FXOS8700",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_FXOS8700#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_FXOS8700.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "matlab-support-package",
+  "description": "使用RTduino进行MATLAB/Simulink硬件在环仿真的支持包",
+  "description_zh": "MATLAB/Simulink Support Package for RTduino Hardware",
+  "enable": "PKG_USING_ARDUINO_MATLAB_SUPPORT",
+  "keywords": [
+    "matlab-support-package",
+    "MATLAB",
+    "Simulink"
+  ],
+  "category": "arduino/projects",
+  "author": {
+    "name": "RTduino",
+    "email": "meco@rt-thread.org",
+    "github": "RTduino"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/RTduino/matlab-support-package",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino/matlab-support-package#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino/matlab-support-package.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
