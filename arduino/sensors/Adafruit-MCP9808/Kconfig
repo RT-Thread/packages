@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MCP9808
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MCP9808
-    bool "Adafruit MCP9808 Precision I2C Temperature sensor library"
+    bool "Adafruit MCP9808 Precision I2C Temperature Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
