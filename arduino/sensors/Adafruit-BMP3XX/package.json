@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-BMP3XX",
+  "description": "Adafruit BMP3XX Precision Barometric Pressure and Altimeter Sensors Driver",
+  "description_zh": "Adafruit BMP3XX 高精度压力/高度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP3XX",
+  "keywords": [
+    "Adafruit-BMP3XX",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "BMP3XX",
+    "BMP388"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_BMP3XX",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_BMP3XX#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_BMP3XX.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

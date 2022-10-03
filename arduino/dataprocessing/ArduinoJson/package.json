@@ -1,0 +1,29 @@
+{
+  "name": "ArduinoJson",
+  "description": "A simple and efficient JSON library for embedded C++",
+  "description_zh": "精简且高效的嵌入式C++ JSON库",
+  "enable": "PKG_USING_ARDUINO_ARDUINOJSON",
+  "keywords": [
+    "ArduinoJson",
+    "Json"
+  ],
+  "category": "arduino/dataprocessing",
+  "author": {
+    "name": "bblanchon",
+    "email": "git@benoitblanchon.fr",
+    "github": "bblanchon"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/bblanchon/ArduinoJson",
+  "icon": "unknown",
+  "homepage": "https://github.com/bblanchon/ArduinoJson#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/bblanchon/ArduinoJson.git",
+      "filename": "",
+      "VER_SHA": "6.x"
+    }
+  ]
+}

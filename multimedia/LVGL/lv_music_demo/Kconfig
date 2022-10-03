@@ -12,8 +12,8 @@ if PKG_USING_LV_MUSIC_DEMO
 
     config PKG_LV_MUSIC_DEMO_VER
        string
-       default "latest"    if PKG_LVGL_VER_NUM = 0x99999 #LVGL latest version
+       default "latest"
        default "v0.2.0"    if PKG_LVGL_VER_NUM = 0x08020 #LVGL v8.2.0
-       default "v0.3.1"    if PKG_LVGL_VER_NUM = 0x08030 || PKG_LVGL_VER_NUM = 0x08031 #LVGL v8.3.0 v8.3.1
+       default "v0.3.1"    if PKG_LVGL_VER_NUM >= 0x08030 && PKG_LVGL_VER_NUM < 0x08040 #LVGL v8.3.x
 
 endif

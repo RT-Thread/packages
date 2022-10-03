@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-CCS811",
+  "description": "Adafruit CCS811 Air Quality Sensor.",
+  "description_zh": "Adafruit CCS811 空气质量传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_CCS811",
+  "keywords": [
+    "Adafruit-CCS811",
+    "Adafruit",
+    "Arduino",
+    "Sensors",
+    "Air Quality",
+    "CCS811"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/adafruit/Adafruit_CCS811",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_CCS811#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_CCS811.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

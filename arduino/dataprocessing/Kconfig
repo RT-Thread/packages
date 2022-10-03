@@ -1,5 +1,6 @@
 menu "Data Processing"
 
 source "$PKGS_DIR/packages/arduino/dataprocessing/KalmanFilter/Kconfig"
+source "$PKGS_DIR/packages/arduino/dataprocessing/ArduinoJson/Kconfig"
 
 endmenu

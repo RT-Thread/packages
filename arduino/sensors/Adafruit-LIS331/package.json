@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-LIS331",
+  "description": "Adafruit LIS331 3-axis Accelerometers Sensor Driver",
+  "description_zh": "Adafruit LIS331 三轴加速度计传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_LIS331",
+  "keywords": [
+    "Adafruit-LIS331",
+    "Adafruit",
+    "Arduino",
+    "LIS331",
+    "H3LIS331",
+    "3-axis Accelerometers",
+    "Accelerometers",
+    "Sensor"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_LIS331",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_LIS331#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_LIS331.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

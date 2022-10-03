@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-NAU7802
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_NAU7802
+    bool "Adafruit NAU7802: I2C 24-bit ADC sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_NAU7802
+
+    config PKG_ARDUINO_ADAFRUIT_NAU7802_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-NAU7802"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_NAU7802_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_NAU7802_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_NAU7802_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_NAU7802_LATEST_VERSION
+
+endif
+
