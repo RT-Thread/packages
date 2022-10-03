@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MCP9600
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MCP9600
-    bool "Adafruit MCP9600 I2C Thermocouple ADC sensor library"
+    bool "Adafruit MCP9600 I2C Thermocouple ADC sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
