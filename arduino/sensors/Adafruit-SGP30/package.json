@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-SGP30",
-  "description": "Adafruit SGP30 Gas / Air Quality I2C sensor",
-  "description_zh": "Adafruit SGP30气体、空气质量传感器驱动",
+  "description": "Adafruit SGP30 Air Quality Sensor",
+  "description_zh": "Adafruit SGP30空气质量传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_SGP30",
   "keywords": [
     "Adafruit-SGP30",
@@ -19,7 +19,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_SGP30",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_SGP30#readme",
