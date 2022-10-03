@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MCP4728
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MCP4728
-    bool "Adafruit MCP4728 4-Channel 12-Bit I2C DAC Library"
+    bool "Adafruit MCP4728: 4-Channel 12-Bit I2C DAC"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
