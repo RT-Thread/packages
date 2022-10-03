@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-SGP30
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_SGP30
-    bool "Adafruit SGP30: Gas / Air Quality I2C sensor"
+    bool "Adafruit SGP30: Air Quality Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
