@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-TMP006
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_TMP006
-    bool "Adafruit-TMP006:IR Thermopile Library"
+    bool "Adafruit-TMP006: IR Thermopile Library"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR

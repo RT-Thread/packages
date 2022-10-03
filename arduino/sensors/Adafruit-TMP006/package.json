@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-TMP006",
-  "description": " Adafruit TMP006 Infrared Thermopile Sensor library",
+  "description": " Adafruit TMP006 Infrared Thermopile Sensor",
   "description_zh": "Adafruit-TMP006 红外热堆传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_TMP006",
   "keywords": [
