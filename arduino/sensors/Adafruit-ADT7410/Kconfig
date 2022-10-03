@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-ADT7410
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_ADT7410
+    bool "Adafruit ADT7410: Precision I2C Temperature sensor library"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_ADT7410
+
+    config PKG_ARDUINO_ADAFRUIT_ADT7410_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-ADT7410"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_ADT7410_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_ADT7410_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_ADT7410_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_ADT7410_LATEST_VERSION
+
+endif
+

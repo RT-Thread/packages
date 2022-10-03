@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-AM2320",
+  "description": "Adafruit AM2320 Temperature & Humidity Unified Sensor",
+  "description_zh": "Adafruit AM2320 温湿度传感器。",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_AM2320",
+  "keywords": [
+    "Adafruit-AM2320",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "AM2320"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/adafruit/Adafruit_AM2320",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_AM2320#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_AM2320.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

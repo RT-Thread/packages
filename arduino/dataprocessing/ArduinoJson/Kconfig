@@ -1,0 +1,28 @@
+
+# Kconfig file for package ArduinoJson
+menuconfig PKG_USING_ARDUINO_ARDUINOJSON
+    bool "ArduinoJson: A simple and efficient JSON library for embedded C++"
+    default n
+
+if PKG_USING_ARDUINO_ARDUINOJSON
+
+    config PKG_ARDUINO_ARDUINOJSON_PATH
+        string
+        default "/packages/arduino/dataprocessing/ArduinoJson"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ARDUINOJSON_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ARDUINOJSON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ARDUINOJSON_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ARDUINOJSON_LATEST_VERSION
+
+endif
+

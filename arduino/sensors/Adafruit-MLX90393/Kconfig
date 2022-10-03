@@ -1,0 +1,33 @@
+
+# Kconfig file for package Adafruit-MLX90393
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MLX90393
+    bool "Adafruit MLX90393: Magnetic Field Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MLX90393
+
+    config PKG_ARDUINO_ADAFRUIT_MLX90393_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MLX90393"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MLX90393_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MLX90393_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MLX90393_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MLX90393_LATEST_VERSION
+
+endif
+

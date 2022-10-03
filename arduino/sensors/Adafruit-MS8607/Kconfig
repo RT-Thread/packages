@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-MS8607
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MS8607
+    bool "Adafruit MS8607: Pressure Humidity Temperature PHT Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MS8607
+
+    config PKG_ARDUINO_ADAFRUIT_MS8607_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MS8607"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MS8607_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MS8607_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MS8607_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MS8607_LATEST_VERSION
+
+endif
+

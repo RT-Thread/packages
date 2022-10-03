@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-LIS2MDL",
+  "description": "Adafruit LIS2MDL Magnetometer Sensor Driver",
+  "description_zh": "Adafruit LIS2MDL 磁力计传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_LIS2MDL",
+  "keywords": [
+    "Adafruit-LIS2MDL",
+    "Adafruit",
+    "Arduino",
+    "LIS2MDL",
+    "Sensor"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_LIS2MDL",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_LIS2MDL#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_LIS2MDL.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

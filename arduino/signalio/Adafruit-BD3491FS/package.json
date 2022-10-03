@@ -1,0 +1,36 @@
+{
+  "name": "Adafruit-BD3491FS",
+  "description": "Adafruit BD3491FS Sound Processor driver",
+  "description_zh": "Adafruit BD3491FS 音频处理器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BD3491FS",
+  "keywords": [
+    "Adafruit-BD3491FS",
+    "Adafruit",
+    "arduino",
+    "I2C",
+    "BD3491FS",
+    "Sound Processor",
+    "Audio",
+    "Signal",
+    "Input/Output"
+  ],
+  "category": "arduino/signalio",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_BD3491FS",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_BD3491FS#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_BD3491FS.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

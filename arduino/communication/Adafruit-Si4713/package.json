@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-Si4713",
+  "description": "Adafruit Si4714 FM+RDS/RBDS Transmitter driver",
+  "description_zh": "Adafruit Si4713 FM+RDS/RBDS驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SI4713",
+  "keywords": [
+    "Adafruit-Si4713",
+    "Si4713",
+    "I2C",
+    "FM Transmitter",
+    "RDS/RBDS",
+    "Adafruit",
+    "arduino",
+    "Communication"
+  ],
+  "category": "arduino/communication",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit-Si4713-Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit-Si4713-Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit-Si4713-Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

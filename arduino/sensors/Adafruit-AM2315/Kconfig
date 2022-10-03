@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-AM2315
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_AM2315
+    bool "Adafruit AM2315: Humidity & Temperature sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_AM2315
+
+    config PKG_ARDUINO_ADAFRUIT_AM2315_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-AM2315"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_AM2315_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_AM2315_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_AM2315_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_AM2315_LATEST_VERSION
+
+endif
+

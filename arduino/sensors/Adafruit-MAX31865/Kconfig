@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-MAX31865
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MAX31865
+    bool "MAX31865 thermocouple sensor driver library"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MAX31865
+
+    config PKG_ARDUINO_ADAFRUIT_MAX31865_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MAX31865"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MAX31865_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MAX31865_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MAX31865_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MAX31865_LATEST_VERSION
+
+endif
+

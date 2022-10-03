@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-FXAS21002C",
+  "description": "Adafruit FXOS8700 3-Axis accelerometer and magnetometer, and the FXAS21002 3-axis gyroscope sensor",
+  "description_zh": "Adafruit FXOS8700 3轴加速度计和磁力计，以及 FXAS21002 3轴陀螺仪传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_FXAS21002C",
+  "keywords": [
+    "Adafruit-FXAS21002C",
+    "Adafruit",
+    "Arduino",
+    "FXAS21002",
+    "FXOS8700",
+    "gyroscope",
+    "accelerometer",
+    "magnetometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_FXAS21002C",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_FXAS21002C#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_FXAS21002C.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
