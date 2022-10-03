@@ -1,0 +1,33 @@
+
+# Kconfig file for package Adafruit-LIS2MDL
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_LIS2MDL
+    bool "Adafruit LIS2MDL: Magnetometer Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_LIS2MDL
+
+    config PKG_ARDUINO_ADAFRUIT_LIS2MDL_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-LIS2MDL"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_LIS2MDL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_LIS2MDL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_LIS2MDL_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_LIS2MDL_LATEST_VERSION
+
+endif
+

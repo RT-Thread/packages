@@ -1,0 +1,39 @@
+{
+  "name": "Adafruit-MCP23017",
+  "description": "Adafruit MCP23XXX I2C and SPI GPIO port expanders driver",
+  "description_zh": "Adafruit MCP23XXX I2C and SPI GPIO 接口扩展器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MCP23017",
+  "keywords": [
+    "Adafruit-MCP23017",
+    "Adafruit-MCP23008",
+    "MCP23S08",
+    "MCP23008",
+    "MCP23S17",
+    "MCP23017",
+    "I2C",
+    "SPI",
+    "arduino",
+    "Adafruit",
+    "Signal",
+    "Input/Output"
+  ],
+  "category": "arduino/signalio",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

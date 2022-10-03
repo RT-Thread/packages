@@ -2,5 +2,6 @@ menu "Projects"
 
 source "$PKGS_DIR/packages/arduino/projects/UltrasoundRadar/Kconfig"
 source "$PKGS_DIR/packages/arduino/projects/Arduino-Sensor-Kit/Kconfig"
+source "$PKGS_DIR/packages/arduino/projects/matlab-support-package/Kconfig"
 
 endmenu

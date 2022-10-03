@@ -3,7 +3,6 @@
 menuconfig PKG_USING_RTDUINO
     bool "RTduino: Arduino Ecological Compatibility Layer"
     select RT_USING_CPLUSPLUS
-    select PKG_USING_PERF_COUNTER
     default n
 
 if PKG_USING_RTDUINO
@@ -12,19 +11,21 @@ if PKG_USING_RTDUINO
         string
         default "/packages/arduino/RTduino"
 
-    config RTDUINO_THREAD_SIZE
-        int "Arduino thread's size"
-        default 1536
-
-    config RTDUINO_THREAD_PRIO
-        int "Arduino thread's priority"
-        default 6 if RT_THREAD_PRIORITY_8
-        default 30  if RT_THREAD_PRIORITY_32
-        default 254  if RT_THREAD_PRIORITY_256
-
     config RTDUINO_NO_SETUP_LOOP
         bool "Don't use setup-loop structure"
         default n
+
+    if !RTDUINO_NO_SETUP_LOOP
+        config RTDUINO_THREAD_SIZE
+            int "Arduino thread's size"
+            default 1536
+
+        config RTDUINO_THREAD_PRIO
+            int "Arduino thread's priority"
+            default 6 if RT_THREAD_PRIORITY_8
+            default 30  if RT_THREAD_PRIORITY_32
+            default 254  if RT_THREAD_PRIORITY_256
+    endif
 
     menuconfig RTDUINO_TINY_MODE
         bool "Enable tiny mode"
@@ -35,6 +36,12 @@ if PKG_USING_RTDUINO
         bool "Enable String class with float support"
         select PKG_USING_RT_VSNPRINTF_FULL
         default n
+
+    config RTDUINO_SUPPORT_HIGH_PRECISION_MICROS
+        bool "micros() function with high precision"
+        depends on ARCH_ARM_CORTEX_M
+        select PKG_USING_PERF_COUNTER if ARCH_ARM_CORTEX_M
+        default y
 
     config RTDUINO_USING_WIRE
         bool "Enable wire library <Wire.h>"
@@ -73,6 +80,21 @@ if PKG_USING_RTDUINO
         select PKG_TINYUSB_DEVICE_ENABLE
         select PKG_TINYUSB_DEVICE_CDC
         default n
+
+    config RTDUINO_USING_SHELL_CMD
+        bool "Enable shell commands"
+        default n
+
+    if RTDUINO_USING_SHELL_CMD
+        config RTDUINO_CMD_USING_SERIAL
+            bool "Enable Serial commands"
+            default n
+
+        config RTDUINO_CMD_SERIAL_USING_FOCUSON
+            bool "Enable Serial focus on mode"
+            depends on RTDUINO_CMD_USING_SERIAL
+            default n
+    endif
 
     choice
         prompt "Version"

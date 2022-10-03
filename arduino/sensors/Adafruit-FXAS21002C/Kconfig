@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-FXAS21002C
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_FXAS21002C
+    bool "Adafruit FXOS8700 3-Axis accelerometer and magnetometer, and the FXAS21002 3-axis gyroscope sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_FXAS21002C
+
+    config PKG_ARDUINO_ADAFRUIT_FXAS21002C_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-FXAS21002C"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_FXAS21002C_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_FXAS21002C_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_FXAS21002C_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_FXAS21002C_LATEST_VERSION
+
+endif
+
