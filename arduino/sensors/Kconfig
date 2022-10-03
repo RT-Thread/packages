@@ -73,4 +73,5 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-SGP30/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-SGP40/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-SHTC3/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-SI1145/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-Si7021/Kconfig"
 endmenu
