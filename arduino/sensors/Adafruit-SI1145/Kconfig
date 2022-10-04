@@ -1,7 +1,10 @@
 
 # Kconfig file for package Adafruit-SI1145
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_SI1145
-    bool "Please add description of Adafruit-SI1145 in English."
+    bool "Adafruit Si1145: UV/IR/Visible Light Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
 
 if PKG_USING_ARDUINO_ADAFRUIT_SI1145
@@ -16,16 +19,12 @@ if PKG_USING_ARDUINO_ADAFRUIT_SI1145
         help
             Select the package version
 
-        config PKG_USING_ARDUINO_ADAFRUIT_SI1145_V100
-            bool "v1.0.0"
-
         config PKG_USING_ARDUINO_ADAFRUIT_SI1145_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_ARDUINO_ADAFRUIT_SI1145_VER
        string
-       default "v1.0.0"    if PKG_USING_ARDUINO_ADAFRUIT_SI1145_V100
        default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_SI1145_LATEST_VERSION
 
 endif

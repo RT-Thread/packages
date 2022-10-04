@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-SI1145",
-  "description": "Adafruit Arduino library for the Si1145 UV/IR/Visible Light Sensor",
-  "description_zh": "Adafruit-SI1145：这是Si1145 UV/IR/可见光传感器",
+  "description": "Adafruit Si1145 UV/IR/Visible Light Sensor",
+  "description_zh": "Adafruit SI1145：SI1145 紫外/红外/可见光传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_SI1145",
   "keywords": [
     "Adafruit-SI1145",
