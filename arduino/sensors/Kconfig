@@ -80,4 +80,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-SI1145/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-SGP40/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-SHTC3/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HDC1000/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AS7341/Kconfig"
+
 endmenu
