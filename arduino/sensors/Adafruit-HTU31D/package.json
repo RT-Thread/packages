@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-HTU31D",
+  "description": "Adafruit HTU31D Temperature and Humidity Sensor",
+  "description_zh": "Adafruit HTU31D 温度湿度传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_HTU31D",
+  "keywords": [
+    "Adafruit-HTU31D",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "HTU31D",
+    "Temperature",
+    "Humidity"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_HTU31D",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_HTU31D#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_HTU31D.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
