@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-MAX31855",
+  "description": " Adafruit MAX31855 Thermocouple Amplifier",
+  "description_zh": "ADAFRUIT MAX31855热电偶放大器驱动",
+  "enable": "PKG_USING_ADAFRUIT_MAX31855",
+  "keywords": [
+    "Adafruit-MAX31855",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "MAX31855",
+    "Thermocouple Amplifier"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit-MAX31855-library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit-MAX31855-library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit-MAX31855-library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
