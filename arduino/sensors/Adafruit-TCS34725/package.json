@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-TCS34725",
-  "description": "Adafruit TCS34725 Color Sensor",
-  "description_zh": "Adafruit TCS34725 颜色传感器",
+  "description": "Adafruit TCS34725 RGB Color Sensor",
+  "description_zh": "Adafruit TCS34725 RGB 颜色传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_TCS34725",
   "keywords": [
     "Adafruit-TCS34725",
@@ -9,7 +9,8 @@
     "Arduino",
     "sensors",
     "TCS34725",
-    "Color"
+    "Color",
+    "RGB"
   ],
   "category": "arduino/sensors",
   "author": {
