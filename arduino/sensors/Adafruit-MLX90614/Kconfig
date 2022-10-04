@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-MLX90614
+menuconfig PKG_USING_ADAFRUIT_MLX90614
+    bool "Adafruit MLX90614: temperature sensor library"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ADAFRUIT_MLX90614
+
+    config PKG_ADAFRUIT_MLX90614_PATH
+        string
+        default "/packages/peripherals/sensors/Adafruit-MLX90614"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ADAFRUIT_MLX90614_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ADAFRUIT_MLX90614_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ADAFRUIT_MLX90614_VER
+       string
+       default "latest"    if PKG_USING_ADAFRUIT_MLX90614_LATEST_VERSION
+
+endif
+
