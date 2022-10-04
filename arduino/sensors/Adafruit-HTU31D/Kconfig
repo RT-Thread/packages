@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-HTU31D
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_HTU31D
+    bool "Adafruit HTU31D: Temperature and Humidity Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_HTU31D
+
+    config PKG_ARDUINO_ADAFRUIT_HTU31D_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-HTU31D"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_HTU31D_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_HTU31D_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_HTU31D_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_HTU31D_LATEST_VERSION
+
+endif
+
