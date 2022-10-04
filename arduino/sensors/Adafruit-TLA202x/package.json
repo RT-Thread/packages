@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-TLA202x",
+  "description": "Adafruit TLA202x ADCs sensor",
+  "description_zh": "Adafruit TLA202x 模数转换驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_TLA202X",
+  "keywords": [
+    "Adafruit-TLA202x",
+    "Adafruit",
+    "Arduino",
+    "sensors",
+    "TLA202x",
+    "ADC"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_TLA202x",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_TLA202x#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_TLA202x.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
