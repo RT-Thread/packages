@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-AS7341
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_AS7341
+    bool "Adafruit AS7341: 11-Channel Spectral Sensor."
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_AS7341
+
+    config PKG_ARDUINO_ADAFRUIT_AS7341_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-AS7341"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_AS7341_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_AS7341_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_AS7341_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_AS7341_LATEST_VERSION
+
+endif
+
