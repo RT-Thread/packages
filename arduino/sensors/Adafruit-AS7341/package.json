@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-AS7341",
+  "description": "Adafruit AS7341 11-Channel Spectral Sensor.",
+  "description_zh": "Adafruit AS7341 11通道光谱传感器。",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_AS7341",
+  "keywords": [
+    "Adafruit-AS7341",
+    "Sensor",
+    "Adafruit",
+    "Arduino",
+    "AS7341",
+    "Spectral"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_AS7341",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_AS7341#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_AS7341.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
