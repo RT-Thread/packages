@@ -18,7 +18,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "Unknown",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_HTU21DF_Library",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_HTU21DF_Library#readme",
