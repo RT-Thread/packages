@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-SI1145",
+  "description": "Adafruit Si1145 UV/IR/Visible Light Sensor",
+  "description_zh": "Adafruit SI1145 紫外/红外/可见光传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SI1145",
+  "keywords": [
+    "Adafruit-SI1145",
+    "Adafruit",
+    "Arduino",
+    "sensors",
+    "SI1145",
+    "UV",
+    "IR"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_SI1145_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_SI1145_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_SI1145_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
