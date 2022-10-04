@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-TLA202x",
   "description": "Adafruit TLA202x ADCs sensor",
-  "description_zh": "Adafruit-TLA202x 模数转换驱动",
+  "description_zh": "Adafruit TLA202x 模数转换驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_TLA202X",
   "keywords": [
     "Adafruit-TLA202x",
