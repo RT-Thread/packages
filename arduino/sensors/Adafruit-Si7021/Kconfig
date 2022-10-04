@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-Si7021
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_SI7021
-    bool "Adafruit-Si7021:Temperature And Humidity Sensor"
+    bool "Adafruit-Si7021: Temperature And Humidity Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO 
