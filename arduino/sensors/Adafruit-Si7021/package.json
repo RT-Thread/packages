@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-Si7021",
   "description": "Adafruit Si7021 Temperature & Humidity Sensor",
-  "description_zh": "Adafruit-Si7021：温湿度传感器",
+  "description_zh": "Adafruit-Si7021 温湿度传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_SI7021",
   "keywords": [
     "Adafruit-Si7021",
