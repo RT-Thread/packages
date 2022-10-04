@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-HTU21DF",
+  "description": "Adafruit HTU21DF Temperature and Humidity Sensor",
+  "description_zh": "Adafruit HTU21DF 温度湿度传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_HTU21DF",
+  "keywords": [
+    "Adafruit-HTU21DF",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "HTU21DF",
+    "Temperature",
+    "Humidity"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_HTU21DF_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_HTU21DF_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_HTU21DF_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
