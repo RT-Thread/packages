@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-SHTC3",
+  "description": "Adafruit SHTC3 Temperature and Humidity Sensor",
+  "description_zh": "Adafruit-SHTC3 温湿度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SHTC3",
+  "keywords": [
+    "Adafruit-SHTC3",
+    "Adafruit",
+    "Arduino",
+    "sensors",
+    "SHTC3",
+    "Temperature",
+    "Humidity"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_SHTC3",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_SHTC3#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_SHTC3.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

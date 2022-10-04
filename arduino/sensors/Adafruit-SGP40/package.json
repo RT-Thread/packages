@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-SGP40",
+  "description": "Adafruit SGP40 Gas / Air Quality I2C Sensor",
+  "description_zh": "Adafruit SGP40气体/空气质量I2C传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SGP40",
+  "keywords": [
+    "Adafruit-SGP40",
+    "Adafruit",
+    "Arduino",
+    "sensors",
+    "SGP40",
+    "Gas",
+    "Air",
+    "Quality"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_SGP40",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_SGP40#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_SGP40.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
