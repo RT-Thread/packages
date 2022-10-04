@@ -85,5 +85,5 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HDC1000/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HTU21DF/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AS7341/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HTU31D/Kconfig"
-source "$PKGS_DIR/packages/arduino/sensors/Adafruit-SensorLab/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-Sensor-Calibration/Kconfig"
 endmenu

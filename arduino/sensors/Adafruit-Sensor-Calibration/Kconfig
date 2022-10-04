@@ -1,0 +1,30 @@
+
+# Kconfig file for package Adafruit-Sensor-Calibration
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_SENSOR_CALIBRATION
+    bool "Adafruit-Sensor-Calibration: Adafruit Unified Sensor Calibration Framework"
+    select PKG_USING_RTDUINO
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR 
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_SENSOR_CALIBRATION
+
+    config PKG_ARDUINO_ADAFRUIT_SENSOR_CALIBRATION_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-Sensor-Calibration"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_SENSOR_CALIBRATION_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_SENSOR_CALIBRATION_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_SENSOR_CALIBRATION_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_SENSOR_CALIBRATION_LATEST_VERSION
+
+endif
+

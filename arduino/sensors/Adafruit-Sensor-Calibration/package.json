@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-Sensor-Calibration",
+  "description": "Adafruit Unified Sensor Calibration Framework",
+  "description_zh": "Adafruit统一传感器校准框架",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SENSOR_CALIBRATION",
+  "keywords": [
+    "Adafruit-Sensor-Calibration",
+    "Arduino",
+    "Sensor",
+    "Adafruit",
+    "Framework",
+    "Calibration"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/adafruit/Adafruit_Sensor_Calibration",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_Sensor_Calibration#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_Sensor_Calibration.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
