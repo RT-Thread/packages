@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-SensorLab",
+  "description": "Adafruit scientific sensor readings/fusions/manipulations drivers",
+  "description_zh": " Adafruit科学传感器数据读取融合与操作驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SENSORLAB",
+  "keywords": [
+    "Adafruit-SensorLab",
+    "Arduino",
+    "Sensor",
+    "Adafruit",
+    "SensorLab"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_SensorLab",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_SensorLab#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_SensorLab.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
