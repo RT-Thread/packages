@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-MCP9808",
+  "description": "Adafruit MCP9808 Precision I2C Temperature Sensor",
+  "description_zh": "Adafruit MCP9808精密I2C温度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MCP9808",
+  "keywords": [
+    "Adafruit-MCP9808",
+    "MCP9808",
+    "Adafruit",
+    "arduino",
+    "sensors",
+    "Temperature"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_MCP9808_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MCP9808_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MCP9808_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
