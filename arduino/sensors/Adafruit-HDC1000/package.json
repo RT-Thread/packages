@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-HDC1000",
+  "description": "Adafruit HDC1000 Temperature and Humidity Sensor",
+  "description_zh": "Adafruit HDC1000 温度湿度传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_HDC1000",
+  "keywords": [
+    "Adafruit-HDC1000",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "HDC1000",
+    "Temperature",
+    "Humidity"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/adafruit/Adafruit_HDC1000_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_HDC1000_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_HDC1000_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
