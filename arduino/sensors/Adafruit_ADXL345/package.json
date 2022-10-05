@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-ADXL345",
-  "description": " unified driver for the Adafruit-ADXL345 Accelerometer",
-  "description_zh": "Adafruit-ADXL345加速计的统一驱动",
+  "description": "Adafruit ADXL345: 3-Axis ±2g/±4g/±8g/±16g Digital Accelerometer",
+  "description_zh": "Adafruit ADXL345 3-Axis ±2g/±4g/±8g/±16g 加速度计",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_ADXL345",
   "keywords": [
     "Adafruit-ADXL345",
@@ -17,7 +17,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit_ADXL345",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_ADXL345#readme",
