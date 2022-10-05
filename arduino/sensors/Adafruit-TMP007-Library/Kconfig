@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-TMP007-Library
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_TMP007_LIBRARY
-    bool "Adafruit TMP007: Infrared Thermopile Sensor."
+    bool "Adafruit TMP007: Contact-less Infrared Thermopile Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR 
