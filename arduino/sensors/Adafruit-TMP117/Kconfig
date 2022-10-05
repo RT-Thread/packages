@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-TMP117
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_TMP117
-    bool "Adafruit TMP117: high precision digital temperature sensor."
+    bool "Adafruit TMP117: High Precision Digital Temperature Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR 
