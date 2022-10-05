@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-VL53L0X
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_VL53L0X
-    bool "Adafruit VL53L0X: Time of Flight sensor library"
+    bool "Adafruit VL53L0X: Time of Flight Distance Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     default n
