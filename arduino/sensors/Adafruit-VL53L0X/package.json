@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-VL53L0X",
-  "description": "Adafruit VL53L0X Time of Flight sensor library",
-  "description_zh": "Adafruit VL53L0X飞行时间传感器驱动",
+  "description": "Adafruit VL53L0X Time of Flight Distance Sensor",
+  "description_zh": "Adafruit VL53L0X飞行时间距离传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_VL53L0X",
   "keywords": [
     "Adafruit-VL53L0X",
@@ -9,8 +9,8 @@
     "Adafruit",
     "Arduino",
     "VL53L0X",
-    "Time",
-    "Flight"
+    "Time of Flight",
+    "ToF"
   ],
   "category": "arduino/sensors",
   "author": {
