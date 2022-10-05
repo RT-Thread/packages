@@ -91,6 +91,7 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HTU21DF/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AS7341/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HTU31D/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-INA260/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TMP007-Library/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-L3GD20/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TMP117/Kconfig"
 
