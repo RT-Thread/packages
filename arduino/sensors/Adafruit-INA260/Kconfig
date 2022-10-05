@@ -1,9 +1,10 @@
 
 # Kconfig file for package Adafruit-INA260
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_INA260
-    bool "Adafruit INA260: current sensor"
+    bool "Adafruit INA260: Current Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
 
 if PKG_USING_ARDUINO_ADAFRUIT_INA260
