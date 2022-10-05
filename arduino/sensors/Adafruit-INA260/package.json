@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-INA260",
+  "description": "Adafruit INA260 Current Sensor",
+  "description_zh": "Adafruit INA260 电流传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_INA260",
+  "keywords": [
+    "Adafruit-INA260",
+    "INA260",
+    "sensors",
+    "Adafruit",
+    "arduino",
+    "current"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_INA260",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_INA260#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_INA260.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

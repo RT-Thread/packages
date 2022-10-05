@@ -2,6 +2,7 @@ menu "Sensors"
 
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-BMP280/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-ADXL375/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VL53L0X/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-LIS3DHTR/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-DHT/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/CapacitiveSensor/Kconfig"
@@ -86,5 +87,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HDC1000/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HTU21DF/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-AS7341/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-HTU31D/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-INA260/Kconfig"
 
 endmenu
