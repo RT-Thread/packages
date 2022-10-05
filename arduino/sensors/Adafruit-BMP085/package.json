@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-BMP085",
+  "description": "Adafruit BMP085/BMP180 Barometric Pressure + Temp sensor library",
+  "description_zh": "Adafruit BMP085/BMP180压力温度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BMP085",
+  "keywords": [
+    "Adafruit-BMP085",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "BMP085",
+    "BMP180",
+    "Pressure",
+    "Temp "
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit-BMP085-Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit-BMP085-Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit-BMP085-Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
