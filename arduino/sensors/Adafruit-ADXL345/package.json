@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-ADXL345",
+  "description": "Adafruit ADXL345: 3-Axis ±2g/±4g/±8g/±16g Digital Accelerometer",
+  "description_zh": "Adafruit ADXL345 3-Axis ±2g/±4g/±8g/±16g 加速度计",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_ADXL345",
+  "keywords": [
+    "Adafruit-ADXL345",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "ADXL345",
+    "Accelerometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_ADXL345",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_ADXL345#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_ADXL345.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
