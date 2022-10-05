@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-MLX90614",
-  "description": "Adafruit MLX90614 temperature sensor library",
+  "description": "Adafruit MLX90614 Temperature Sensor",
   "description_zh": "Adafruit MLX90614温度传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MLX90614",
   "keywords": [
@@ -17,7 +17,7 @@
     "email": "info@adafruit.com",
     "github": "adafruit"
   },
-  "license": "BSD-3-Clause",
+  "license": "BSD",
   "repository": "https://github.com/adafruit/Adafruit-MLX90614-Library",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit-MLX90614-Library#readme",
