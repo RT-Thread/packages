@@ -9,7 +9,8 @@
     "Adafruit",
     "arduino",
     "L3GD20",
-    "Gyro"
+    "Gyro",
+    "gyroscope"
   ],
   "category": "arduino/sensors",
   "author": {
