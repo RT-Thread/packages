@@ -94,5 +94,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-INA260/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TMP007-Library/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-L3GD20/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TMP117/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TSL2591-Library/Kconfig"
 
 endmenu
