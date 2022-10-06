@@ -9,7 +9,7 @@
     "arduino",
     "sensors",
     "TSC2007",
-    "screen",
+    "screen"
   ],
   "category": "arduino/sensors",
   "author": {
