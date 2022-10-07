@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-TSL2561
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_TSL2561
-    bool "Adafruit TSL2561 Ambient Light Intensity Sensor."
+    bool "Adafruit TSL2561: Ambient Light Intensity Sensor."
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_SENSOR 
