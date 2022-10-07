@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-TSL2561",
-  "description": "Adafruit TSL2561 Ambient light intensity sensor.",
+  "description": "Adafruit TSL2561 Ambient Light Intensity Sensor.",
   "description_zh": "Adafruit TSL2561环境光强度传感器。",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_TSL2561",
   "keywords": [
