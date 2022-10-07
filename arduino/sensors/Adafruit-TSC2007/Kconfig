@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-TSC2007
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_TSC2007
-    bool "Adafruit TSC2007: resistive touch screen drivers."
+    bool "Adafruit TSC2007: Resistive Touch Screen Drivers."
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO 
