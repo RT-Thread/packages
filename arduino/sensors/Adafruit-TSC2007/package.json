@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-TSC2007",
-  "description": "Adafruit TSC2007 resistive touch screen drivers.",
+  "description": "Adafruit TSC2007 Resistive Touch Screen Drivers.",
   "description_zh": "Adafruit TSC2007电阻式触摸屏驱动程序。",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_TSC2007",
   "keywords": [
