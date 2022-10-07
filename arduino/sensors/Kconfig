@@ -97,5 +97,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TMP117/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TSC2007/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TSL2561/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-TSL2591-Library/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VEML6070/Kconfig"
 
 endmenu
