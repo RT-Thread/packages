@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-VEML7700
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_VEML7700
-    bool "Adafruit Veml7700: Ambient Light Sensor."
+    bool "Adafruit Veml7700: Ambient Light Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO 
