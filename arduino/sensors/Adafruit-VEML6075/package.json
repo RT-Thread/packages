@@ -1,13 +1,14 @@
 {
   "name": "Adafruit-VEML6075",
-  "description": "Adafruit Veml6075 Ultraviolet (uv) Light Sensor.",
-  "description_zh": "Adafruit VEML6075紫外线 (UV) 光传感器。",
+  "description": "Adafruit Veml6075 Ultraviolet (uv) Light Sensor",
+  "description_zh": "Adafruit VEML6075紫外线 (UV) 光传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_VEML6075",
   "keywords": [
     "Adafruit-VEML6075",
     "Adafruit",
     "arduino",
     "VEML6075",
+    "Sensor",
     "Ultraviolet"
   ],
   "category": "arduino/sensors",
