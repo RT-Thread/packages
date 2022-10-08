@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-VEML7700",
+  "description": "Adafruit Veml7700 Ambient Light Sensor",
+  "description_zh": "Adafruit VEML7700环境光传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_VEML7700",
+  "keywords": [
+    "Adafruit-VEML7700",
+    "adafruit",
+    "arduino",
+    "Veml7700",
+    "Sensor",
+    "Light"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_VEML7700",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_VEML7700#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_VEML7700.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
