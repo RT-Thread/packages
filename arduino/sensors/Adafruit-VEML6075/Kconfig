@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-VEML6075
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_VEML6075
-    bool "Adafruit Veml6075: Ultraviolet (uv) Light Sensor."
+    bool "Adafruit Veml6075: Ultraviolet (UV) Light Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
