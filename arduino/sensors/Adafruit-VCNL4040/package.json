@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-VCNL4040",
+  "description": "Adafruit Vcnl4040 Proximity and Ambient Light Sensor",
+  "description_zh": "Adafruit VCNL4040接近和环境光传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_VCNL4040",
+  "keywords": [
+    "Adafruit-VCNL4040",
+    "adafruit",
+    "arduino",
+    "Vcnl4040",
+    "Proximity",
+    "Ambient Light"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_VCNL4040",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_VCNL4040#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_VCNL4040.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

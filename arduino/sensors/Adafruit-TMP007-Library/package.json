@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-TMP007-Library",
+  "description": "Adafruit TMP007 Contact-less Infrared Thermopile Sensor",
+  "description_zh": "Adafruit TMP007 非接触式热红外传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_TMP007_LIBRARY",
+  "keywords": [
+    "Adafruit-TMP007-Library",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "TMP007",
+    "Infrared",
+    "Thermopile"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_TMP007_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_TMP007_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_TMP007_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

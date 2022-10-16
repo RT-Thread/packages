@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-L3GD20
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_L3GD20
+    bool "Adafruit L3GD20: Triple-Axis Gyro Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_L3GD20
+
+    config PKG_ARDUINO_ADAFRUIT_L3GD20_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-L3GD20"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_L3GD20_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_L3GD20_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_L3GD20_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_L3GD20_LATEST_VERSION
+
+endif
+
