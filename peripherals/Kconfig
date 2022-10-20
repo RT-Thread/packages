@@ -85,4 +85,5 @@ source "$PKGS_DIR/packages/peripherals/cw2015/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rfm300/Kconfig"
 source "$PKGS_DIR/packages/peripherals/io_input_filter/Kconfig"
 source "$PKGS_DIR/packages/peripherals/raspberrypi-pico-sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/lrf-nv7lidar/Kconfig"
 endmenu
