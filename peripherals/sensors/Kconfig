@@ -45,6 +45,7 @@ menuconfig PKG_USING_SENSORS_DRIVERS
         source "$PKGS_DIR/packages/peripherals/sensors/mlx90632/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/mlx90393/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/mlx90392/Kconfig"
+        source "$PKGS_DIR/packages/peripherals/sensors/mlx90397/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/ms5611/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/max31865/Kconfig"
         source "$PKGS_DIR/packages/peripherals/sensors/vl53l0x/Kconfig"
