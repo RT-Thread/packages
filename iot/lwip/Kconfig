@@ -1,5 +1,6 @@
 config PKG_USING_LWIP
     bool
+    depends on RT_VER_NUM >= 0x50000
     default n
 
 if PKG_USING_LWIP

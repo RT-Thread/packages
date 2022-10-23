@@ -41,7 +41,7 @@
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/lwip.git",
       "filename": "",
-      "VER_SHA": "master"
+      "VER_SHA": "rtt-latest"
     }
   ]
 }
