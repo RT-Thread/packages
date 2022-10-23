@@ -10,4 +10,7 @@ if PKG_USING_LWIP
     config PKG_LWIP_VER
         string
         default "latest" if RT_USING_LWIP_LATEST
+        default "v1.4.1" if RT_USING_LWIP141
+        default "v2.0.3" if RT_USING_LWIP203
+        default "v2.1.3" if RT_USING_LWIP213
 endif
