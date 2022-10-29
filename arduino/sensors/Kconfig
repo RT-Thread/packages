@@ -102,5 +102,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VCNL4040/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VEML6070/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VEML6075/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VEML7700/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-ADXL335/Kconfig"
 
 endmenu
