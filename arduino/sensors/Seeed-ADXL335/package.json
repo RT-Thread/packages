@@ -1,7 +1,7 @@
 {
   "name": "Seeed-ADXL335",
   "description": "Seeed ADXL335 complete 3-axis accelerometer",
-  "description_zh": "Seeed-ADXL335三轴加速度计驱动",
+  "description_zh": "Seeed ADXL335三轴加速度计驱动",
   "enable": "PKG_USING_ARDUINO_SEEED_ADXL335",
   "keywords": [
     "Seeed-ADXL335",
