@@ -1,8 +1,9 @@
 
 # Kconfig file for package Seeed-ADXL345
 menuconfig PKG_USING_ARDUINO_SEEED_ADXL345
-    bool "Seeed ADXL345: Grove 3-Axis Digital Accelerometer"
+    bool "Seeed ADXL345: 3-Axis Digital Accelerometer"
     select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
     default n
 
 if PKG_USING_ARDUINO_SEEED_ADXL345
