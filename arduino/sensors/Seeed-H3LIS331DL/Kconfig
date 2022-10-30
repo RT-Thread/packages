@@ -3,6 +3,7 @@
 menuconfig PKG_USING_ARDUINO_SEEED_H3LIS331DL
     bool "Seeed H3LIS331DL: 3-axis linear accelerometer"
     select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
     default n
 
 if PKG_USING_ARDUINO_SEEED_H3LIS331DL
