@@ -1,7 +1,7 @@
 
 # Kconfig file for package Seeed-BME280
 menuconfig PKG_USING_ARDUINO_SEEED_BME280
-    bool "Seeed BME280: Temp&Humi&Barometer Sensor"
+    bool "Seeed BME280: Temp & Humi & Barometer Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     default n
