@@ -24,15 +24,15 @@ The software package and its documents should contain:
 
 - The source files to implement the required function.
 - The file `SConscript` in the root directory, which guides the compiler to build the software package.
-- The sub-directory ‘example’, which contains code to demonstrate how to use the software package.
-- The optional sub-module directories, controlled by ‘git’.
-- The file ‘README.md’ to describe the software package shortly.
-- The sub-directory ‘docs’, which describes the details about the implementation.
-- The optional sub-directory ‘port’, which contains the code required by the software package to run on various platforms.
+- The sub-directory `example`, which contains code to demonstrate how to use the software package.
+- The optional sub-module directories, controlled by `git`.
+- The file `README.md` to describe the software package shortly.
+- The sub-directory `docs`, which describes the details about the implementation.
+- The optional sub-directory `port`, which contains the code required by the software package to run on various platforms.
 
 # Create package index.
 
-Package index: the package description files that are stored under the `env\packages` folder. Take the '`env\packages\packages\iot\pahomqtt` folder as an example, it contains:
+Package index: the package description files that are stored under the `env\packages` folder. Take the `env\packages\packages\iot\pahomqtt` folder as an example, it contains:
 
 ![env1](figures/env1.png)
 
@@ -53,7 +53,7 @@ The generated contents are shown as follows:
 
 ![env4](figures/env4.png)
 
-Note that the ‘SConscript’ file is only used when packing the source code by moving it to the package source folder. It doesn’t have to exist in the index folder after the packing process.
+Note that the `SConscript` file is only used when packing the source code by moving it to the package source folder. It doesn’t have to exist in the index folder after the packing process.
 
 ## Revise package.json File
 
