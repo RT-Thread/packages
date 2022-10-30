@@ -1,0 +1,35 @@
+{
+  "name": "Seeed-BME280",
+  "description": "Seeed BME280 Temp & Humi & Barometer Sensor",
+  "description_zh": "Seeed BME280 温湿度和气压传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_BME280",
+  "keywords": [
+    "Seeed-BME280",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "BME280",
+    "Temp",
+    "humi",
+    "barometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_BME280",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_BME280#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_BME280.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
