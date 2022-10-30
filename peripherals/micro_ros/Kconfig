@@ -42,6 +42,16 @@ if PKG_USING_MICRO_ROS
             bool "Cortex M7 (fpv5-d16-hard)"
     endchoice
 
+    choice
+        prompt "GCC Version"
+        default MICRO_ROS_GCC_5
+
+        config MICRO_ROS_USING_GCC_5
+            bool "ARM GCC 5.x.x"
+        config MICRO_ROS_USING_GCC_10
+            bool "ARM GCC 10.x.x"
+    endchoice
+
     if MICRO_ROS_USE_SERIAL
         config MICRO_ROS_SERIAL_NAME
         string "serial device name"
@@ -105,17 +115,34 @@ if PKG_USING_MICRO_ROS
         help
             Select the package version
 
-        config PKG_USING_MICRO_ROS_FOXY
-            bool "foxy"
+        config PKG_USING_MICRO_ROS_HUMBLE_V205
+            bool "humble-v2.0.5"
 
-        config PKG_USING_MICRO_ROS_GALACTIC
-            bool "galactic"
+        config PKG_USING_MICRO_ROS_GALACTIC_V205
+            bool "galactic-v2.0.5"
+
+        config PKG_USING_MICRO_ROS_HUMBLE_STANDALONE
+            bool "humble (standalone)"
+
+        config PKG_USING_MICRO_ROS_GALACTIC_STANDALONE
+            bool "galactic (standalone)"
+
+        if MICRO_ROS_USING_GCC_5
+            config PKG_USING_MICRO_ROS_FOXY_LEGACY
+                bool "foxy (legacy)"
+
+            config PKG_USING_MICRO_ROS_GALACTIC_LEGACY
+                bool "galactic (legacy)"
+        endif
     endchoice
 
     config PKG_MICRO_ROS_VER
        string
-       default "foxy"           if PKG_USING_MICRO_ROS_FOXY
-       default "galactic"       if PKG_USING_MICRO_ROS_GALACTIC
+       default "humble-v2.0.5"              if PKG_USING_MICRO_ROS_HUMBLE_V205
+       default "galactic-v2.0.5"            if PKG_USING_MICRO_ROS_GALACTIC_V205
+       default "humble-standalone"          if PKG_USING_MICRO_ROS_HUMBLE_STANDALONE
+       default "galactic-standalone"        if PKG_USING_MICRO_ROS_GALACTIC_STANDALONE
+       default "galactic-legacy"            if PKG_USING_MICRO_ROS_GALACTIC_LEGACY
+       default "foxy-legacy"                if PKG_USING_MICRO_ROS_FOXY_LEGACY
 
 endif
-
