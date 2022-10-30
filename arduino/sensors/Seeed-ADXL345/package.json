@@ -1,6 +1,6 @@
 {
   "name": "Seeed-ADXL345",
-  "description": "Seeed ADXL345 Grove 3-Axis Digital Accelerometer",
+  "description": "Seeed ADXL345 3-Axis Digital Accelerometer",
   "description_zh": "Seeed ADXL345三轴数字加速度计驱动",
   "enable": "PKG_USING_ARDUINO_SEEED_ADXL345",
   "keywords": [
