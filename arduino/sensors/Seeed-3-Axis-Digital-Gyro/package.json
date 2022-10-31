@@ -17,7 +17,7 @@
     "email": "techsupport@seeed.cc",
     "github": "Seeed-Studio"
   },
-  "license": "GNU LESSER GENERAL PUBLIC",
+  "license": "LGPL-3.0",
   "repository": "https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro",
   "icon": "unknown",
   "homepage": "https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro#readme",
