@@ -1,7 +1,7 @@
 
 # Kconfig file for package Seeed-TSL2561
 menuconfig PKG_USING_ARDUINO_SEEED_TSL2561
-    bool "Seeed TSL2561: Digital Light"
+    bool "Seeed TSL2561/ISL29035: Digital Light Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     default n
