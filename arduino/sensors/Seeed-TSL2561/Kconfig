@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-TSL2561
+menuconfig PKG_USING_ARDUINO_SEEED_TSL2561
+    bool "Seeed TSL2561/ISL29035: Digital Light Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_TSL2561
+
+    config PKG_ARDUINO_SEEED_TSL2561_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-TSL2561"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_TSL2561_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_TSL2561_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_TSL2561_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_TSL2561_LATEST_VERSION
+
+endif
+

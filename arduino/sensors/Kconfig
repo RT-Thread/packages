@@ -107,6 +107,7 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-BME280/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-BMP280/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-H3LIS331DL/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-MMA7660/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-TSL2561/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-PAJ7620/Kconfig"
 
 endmenu
