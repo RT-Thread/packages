@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-MMA7660
+menuconfig PKG_USING_ARDUINO_SEEED_MMA7660
+    bool "Seeed MMA7660: 3-Axis Digital Accelerometer"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_MMA7660
+
+    config PKG_ARDUINO_SEEED_MMA7660_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-MMA7660"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_MMA7660_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_MMA7660_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_MMA7660_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_MMA7660_LATEST_VERSION
+
+endif
+

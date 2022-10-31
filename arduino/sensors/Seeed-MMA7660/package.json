@@ -1,0 +1,35 @@
+{
+  "name": "Seeed-MMA7660",
+  "description": "Seeed MMA7660 3-Axis Digital Accelerometer",
+  "description_zh": "Seeed MMA7660 三轴数字加速度计",
+  "enable": "PKG_USING_ARDUINO_SEEED_MMA7660",
+  "keywords": [
+    "Seeed-MMA7660",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "MMA7660",
+    "3-axis",
+    "digital",
+    "accelerometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Accelerometer_MMA7660",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Accelerometer_MMA7660#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Accelerometer_MMA7660.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
