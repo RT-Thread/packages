@@ -36,10 +36,12 @@ if PKG_USING_MICRO_ROS
             bool "Cortex M4 (fpv4-sp-d16-hard)"
         config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_D16_SOFT
             bool "Cortex M7 (fpv5-d16-soft)"
-        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_SP_D16_SOFT
-            bool "Cortex M7 (fpv5-sp-d16-soft)"
         config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_D16_HARD
             bool "Cortex M7 (fpv5-d16-hard)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_SP_D16_SOFT
+            bool "Cortex M7 (fpv5-sp-d16-soft)"
+        config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_SP_D16_HARD
+            bool "Cortex M7 (fpv5-sp-d16-)"
     endchoice
 
     choice
@@ -57,26 +59,35 @@ if PKG_USING_MICRO_ROS
         string "serial device name"
         default "uart2"
 
-        config MICRO_ROS_USING_PUB_INT32
+    endif
+
+    config MICRO_ROS_USING_PUB_INT32
         bool "microros_pub_int32: microros publish int32 example"
         help
             microros publish int32 example
         default n
-    endif
-
-    if MICRO_ROS_USE_UDP
-        config MICRO_ROS_USING_PUB_INT32_UDP
-        bool "microros_pub_int32_udp: microros publish int32 udp example"
-        help
-            microros publish int32 udp example
-        default n
-    endif
 
     config MICRO_ROS_USING_SUB_INT32
         bool "microros_sub_int32: micro ros subscribe int32 example"
         help
             microros_sub_int32: micro ros subscribe int32 example
         default n
+
+    config MICRO_ROS_USING_PUB_SUB
+        bool "microros_pub_sub, micro ros pub sub example"
+        help
+            microros_pub_sub, micro ros pub sub example
+        default n
+
+    config MICRO_ROS_USING_PING_PONG
+        bool "microros_ping_pong, micro ros ping pong example"
+        help
+            microros_ping_pong, micro ros ping pong example
+        default n
+
+    if MICRO_ROS_USING_PING_PONG
+        comment "The Ping Pong example requires two pub and sub topics, please check the settings of rmw_microxrcedds in colcon.meta."
+    endif
 
     config MICRO_ROS_USING_SUB_TWIST
         bool "microros_sub_twist: micro ros subscribe to twist example"
@@ -111,15 +122,25 @@ if PKG_USING_MICRO_ROS
 
     choice
         prompt "Version"
-        default PKG_USING_MICRO_ROS_FOXY
+        default PKG_USING_MICRO_ROS_HUMBLE_GCC_5
         help
             Select the package version
 
-        config PKG_USING_MICRO_ROS_HUMBLE_V205
-            bool "humble-v2.0.5"
+        if MICRO_ROS_USING_GCC_10
+            config PKG_USING_MICRO_ROS_HUMBLE
+                bool "humble-gcc-10"
 
-        config PKG_USING_MICRO_ROS_GALACTIC_V205
-            bool "galactic-v2.0.5"
+            config PKG_USING_MICRO_ROS_GALACTIC
+                bool "galactic-gcc-10"
+        endif
+
+        if MICRO_ROS_USING_GCC_5
+            config PKG_USING_MICRO_ROS_HUMBLE_GCC_5
+                bool "humble-gcc-5"
+
+            config PKG_USING_MICRO_ROS_GALACTIC_GCC_5
+                bool "galactic-gcc-5"
+        endif
 
         config PKG_USING_MICRO_ROS_HUMBLE_STANDALONE
             bool "humble (standalone)"
@@ -138,8 +159,10 @@ if PKG_USING_MICRO_ROS
 
     config PKG_MICRO_ROS_VER
        string
-       default "humble-v2.0.5"              if PKG_USING_MICRO_ROS_HUMBLE_V205
-       default "galactic-v2.0.5"            if PKG_USING_MICRO_ROS_GALACTIC_V205
+       default "humble-gcc-10"              if PKG_USING_MICRO_ROS_HUMBLE_GCC_5
+       default "humble-gcc-5"               if PKG_USING_MICRO_ROS_HUMBLE_GCC_10
+       default "galactic-gcc-10"            if PKG_USING_MICRO_ROS_GALACTIC_GCC_10
+       default "galactic-gcc-5"             if PKG_USING_MICRO_ROS_GALACTIC_GCC_5
        default "humble-standalone"          if PKG_USING_MICRO_ROS_HUMBLE_STANDALONE
        default "galactic-standalone"        if PKG_USING_MICRO_ROS_GALACTIC_STANDALONE
        default "galactic-legacy"            if PKG_USING_MICRO_ROS_GALACTIC_LEGACY
