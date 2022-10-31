@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-3-Axis-Digital-Gyro",
+  "description": "Seeed 3-Axis-Digital-Gyro Sensor Driver",
+  "description_zh": "Seeed 3-Axis-Digital-Gyro 三轴数字陀螺仪驱动",
+  "enable": "PKG_USING_SEEED_3_AXIS_DIGITAL_GYRO",
+  "keywords": [
+    "Seeed-3-Axis-Digital-Gyro",
+    "Seeed",
+    "Arduino",
+    "Gyro",
+    "3-Axis-Digital-Gyro",
+    "Sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "GNU LESSER GENERAL PUBLIC",
+  "repository": "https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
