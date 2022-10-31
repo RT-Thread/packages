@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-PAJ7620",
+  "description": "Seeed PAJ7620 gesture recognition function sensor",
+  "description_zh": "Seeed PAJ7620 手势识别传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_PAJ7620",
+  "keywords": [
+    "Seeed-PAJ7620",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "PAJ7620",
+    "gesture"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Gesture_PAJ7620",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Gesture_PAJ7620#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Gesture_PAJ7620.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
