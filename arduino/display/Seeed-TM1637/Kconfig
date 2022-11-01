@@ -1,0 +1,28 @@
+
+# Kconfig file for package Seeed-TM1637
+menuconfig PKG_USING_SEEED_TM1637
+    bool "Seeed TM1637: 4 digit display"
+    default n
+
+if PKG_USING_SEEED_TM1637
+
+    config PKG_SEEED_TM1637_PATH
+        string
+        default "/packages/arduino/display/Seeed-TM1637"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SEEED_TM1637_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SEEED_TM1637_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SEEED_TM1637_VER
+       string
+       default "latest"    if PKG_USING_SEEED_TM1637_LATEST_VERSION
+
+endif
+
