@@ -1,7 +1,7 @@
 {
   "name": "Seeed-SHT31",
   "description": "Seeed SHT31: Temperature Humidity Sensor",
-  "description_zh": "SHT31 Arduino驱动库",
+  "description_zh": "Seeed SHT31 温湿度传感器驱动",
   "enable": "PKG_USING_ARDUINO_SEEED_SHT31",
   "keywords": [
     "Seeed-SHT31",
