@@ -41,12 +41,12 @@ if PKG_USING_MICRO_ROS
         config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_SP_D16_SOFT
             bool "Cortex M7 (fpv5-sp-d16-soft)"
         config MICRO_ROS_USING_ARCH_CORTEX_M7_FPV5_SP_D16_HARD
-            bool "Cortex M7 (fpv5-sp-d16-)"
+            bool "Cortex M7 (fpv5-sp-d16-hard)"
     endchoice
 
     choice
         prompt "GCC Version"
-        default MICRO_ROS_GCC_5
+        default MICRO_ROS_USING_GCC_10
 
         config MICRO_ROS_USING_GCC_5
             bool "ARM GCC 5.x.x"
@@ -122,15 +122,15 @@ if PKG_USING_MICRO_ROS
 
     choice
         prompt "Version"
-        default PKG_USING_MICRO_ROS_HUMBLE_GCC_5
+        default PKG_USING_MICRO_ROS_HUMBLE_GCC_10
         help
             Select the package version
 
         if MICRO_ROS_USING_GCC_10
-            config PKG_USING_MICRO_ROS_HUMBLE
+            config PKG_USING_MICRO_ROS_HUMBLE_GCC_10
                 bool "humble-gcc-10"
 
-            config PKG_USING_MICRO_ROS_GALACTIC
+            config PKG_USING_MICRO_ROS_GALACTIC_GCC_10
                 bool "galactic-gcc-10"
         endif
 
