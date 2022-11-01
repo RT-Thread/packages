@@ -1,7 +1,7 @@
 
 # Kconfig file for package Seeed-TM1637
 menuconfig PKG_USING_SEEED_TM1637
-    bool "Seeed TM1637 4 digit display Sensor"
+    bool "Seeed TM1637: 4 digit display"
     default n
 
 if PKG_USING_SEEED_TM1637
