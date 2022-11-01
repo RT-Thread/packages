@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-ITG3200",
+  "description": "Seeed ITG3200 Sensor Driver",
+  "description_zh": "Seeed ITG3200 三轴数字陀螺仪驱动",
+  "enable": "PKG_USING_SEEED_ITG3200",
+  "keywords": [
+    "Seeed-ITG3200",
+    "Seeed",
+    "Arduino",
+    "Gyro",
+    "3-Axis-Digital-Gyro",
+    "Sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "LGPL-3.0",
+  "repository": "https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
