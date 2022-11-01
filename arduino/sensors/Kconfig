@@ -110,5 +110,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-MMA7660/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-TSL2561/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-PAJ7620/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-VL53L0X/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-TM1637/Kconfig"
 
 endmenu
