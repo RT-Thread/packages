@@ -11,7 +11,7 @@
     "3-Axis-Digital-Gyro",
     "Sensor"
   ],
-  "category": "peripherals/sensors",
+  "category": "arduino/sensors",
   "author": {
     "name": "Seeed-Studio",
     "email": "techsupport@seeed.cc",

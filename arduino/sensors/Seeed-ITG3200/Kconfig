@@ -8,7 +8,7 @@ if PKG_USING_SEEED_ITG3200
 
     config PKG_SEEED_ITG3200_PATH
         string
-        default "/packages/peripherals/sensors/Seeed-ITG3200"
+        default "/packages/arduino/sensors/Seeed-ITG3200"
 
     choice
         prompt "Version"
