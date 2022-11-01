@@ -8,7 +8,7 @@ if PKG_USING_SEEED_TM1637
 
     config PKG_SEEED_TM1637_PATH
         string
-        default "/packages/peripherals/sensors/Seeed-TM1637"
+        default "/packages/arduino/display/Seeed-TM1637"
 
     choice
         prompt "Version"

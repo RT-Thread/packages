@@ -1,5 +1,6 @@
 menu "Display"
 
 source "$PKGS_DIR/packages/arduino/display/U8g2_Arduino/Kconfig"
+source "$PKGS_DIR/packages/arduino/display/Seeed-TM1637/Kconfig"
 
 endmenu

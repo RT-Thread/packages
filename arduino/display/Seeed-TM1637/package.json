@@ -1,6 +1,6 @@
 {
   "name": "Seeed-TM1637",
-  "description": "Seeed TM1637 4 digit display Sensor Driver",
+  "description": "Seeed TM1637 4 digit display driver",
   "description_zh": "Seeed-TM1637 4位显示模块驱动",
   "enable": "PKG_USING_SEEED_TM1637",
   "keywords": [
@@ -9,9 +9,9 @@
     "Seeed",
     "Arduino",
     "TM1637",
-    "Sensor"
+    "digit"
   ],
-  "category": "peripherals/sensors",
+  "category": "arduino/display",
   "author": {
     "name": "Seeed-Studio",
     "email": "techsupport@seeed.cc",
