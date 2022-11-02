@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-HMC5883L
+menuconfig PKG_USING_ARDUINO_SEEED_HMC5883L
+    bool "Seeed-HMC5883L: 3-Axis Digital Compass Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_HMC5883L
+
+    config PKG_ARDUINO_SEEED_HMC5883L_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-HMC5883L"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_HMC5883L_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_HMC5883L_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_HMC5883L_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_HMC5883L_LATEST_VERSION
+
+endif
+

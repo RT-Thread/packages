@@ -1,0 +1,35 @@
+{
+  "name": "Seeed-BBM150",
+  "description": "Seeed BBM150 digital compass sensor",
+  "description_zh": "Seeed BBM150 数字罗盘传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_BBM150",
+  "keywords": [
+    "Seeed-BBM150",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "BBM150",
+    "3-axis",
+    "compass",
+    "Geomagnetic"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_3_Axis_Compass_V2.0_BMM150",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_3_Axis_Compass_V2.0_BMM150#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_3_Axis_Compass_V2.0_BMM150.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
