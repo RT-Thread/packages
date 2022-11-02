@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-BBM150
+menuconfig PKG_USING_ARDUINO_SEEED_BBM150
+    bool "Seeed BBM150: digital compass sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_BBM150
+
+    config PKG_ARDUINO_SEEED_BBM150_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-BBM150"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_BBM150_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_BBM150_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_BBM150_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_BBM150_LATEST_VERSION
+
+endif
+
