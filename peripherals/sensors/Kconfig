@@ -55,5 +55,10 @@ source "$PKGS_DIR/packages/peripherals/sensors/isl29035/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/mmc3680kj/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/qmp6989/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/balance/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/sht2x/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/sht3x/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/ad7746/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/adt74xx/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/max17048/Kconfig"
 
 endmenu

@@ -6,7 +6,7 @@
   "keywords": [
     "sht3x"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "hao.dong",
     "email": "hao.dong.nanjing@outlook.com",

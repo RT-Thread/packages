@@ -1,13 +1,13 @@
 # Kconfig file for package adt74xx
 menuconfig PKG_USING_ADT74XX
-    bool "adt74xx: digital  temperature sensor adt74xx driver library"
+    bool "adt74xx: digital temperature sensor adt74xx driver"
     default n
 
 if PKG_USING_ADT74XX
 
     config PKG_ADT74XX_PATH
         string
-        default "/packages/peripherals/adt74xx"
+        default "/packages/peripherals/sensors/adt74xx"
 
     choice
         prompt "Version"

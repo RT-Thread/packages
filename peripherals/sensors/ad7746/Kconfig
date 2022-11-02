@@ -12,7 +12,7 @@ if PKG_USING_AD7746
 
     config PKG_AD7746_PATH
         string
-        default "/packages/peripherals/ad7746"
+        default "/packages/peripherals/sensors/ad7746"
 
     config AD7746_I2C_NAME
         string "i2c bus name"
