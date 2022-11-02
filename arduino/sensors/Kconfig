@@ -112,6 +112,7 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-PAJ7620/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-VL53L0X/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-ITG3200/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-SHT31/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-BBM150/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-HMC5883L/Kconfig"
 
 endmenu
