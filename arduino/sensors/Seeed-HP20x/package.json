@@ -1,0 +1,36 @@
+{
+  "name": "Seeed-HP20x",
+  "description": "Seeed HP20x Barometric Pressure, Altimeter, and Temperature Sensor",
+  "description_zh": "Seeed HP20x 气压、高度计和温度传感器",
+  "enable": "PKG_USING_ARDUINO_SEEED_HP20X",
+  "keywords": [
+    "Seeed-HP20x",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "HP20x",
+    "HP206C",
+    "Pressure",
+    "Altimeter",
+    "Temperature"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_Barometer_HP20x",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_Barometer_HP20x#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_Barometer_HP20x.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
