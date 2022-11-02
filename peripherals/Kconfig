@@ -1,8 +1,7 @@
 menu "peripheral libraries and drivers"
 
-# source "$PKGS_DIR/packages/peripherals//Kconfig"
-
 source "$PKGS_DIR/packages/peripherals/sensors/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/Kconfig"
 source "$PKGS_DIR/packages/peripherals/realtek_ameba/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sht2x/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sht3x/Kconfig"
@@ -32,7 +31,6 @@ source "$PKGS_DIR/packages/peripherals/ad7746/Kconfig"
 source "$PKGS_DIR/packages/peripherals/pca9685/Kconfig"
 source "$PKGS_DIR/packages/peripherals/i2c-tools/Kconfig"
 source "$PKGS_DIR/packages/peripherals/nrf24l01/Kconfig"
-source "$PKGS_DIR/packages/peripherals/touch/Kconfig"
 source "$PKGS_DIR/packages/peripherals/max17048/Kconfig"
 source "$PKGS_DIR/packages/peripherals/rplidar/Kconfig"
 source "$PKGS_DIR/packages/peripherals/as608/Kconfig"
