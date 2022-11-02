@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-HMC5883L",
+  "description": "Seeed HMC5883L 3-Axis Digital Compass Sensor",
+  "description_zh": "Seeed HMC5883L 三轴数字罗盘传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_HMC5883L",
+  "keywords": [
+    "Seeed-HMC5883L",
+    "Sensor",
+    "seeed",
+    "Arduino",
+    "HMC5883L",
+    "3-Axis"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/Seeed-Studio/Grove_3Axis_Digital_Compass_HMC5883L",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_3Axis_Digital_Compass_HMC5883L#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_3Axis_Digital_Compass_HMC5883L.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
