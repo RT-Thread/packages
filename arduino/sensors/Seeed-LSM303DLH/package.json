@@ -1,7 +1,7 @@
 {
   "name": "Seeed-LSM303DLH",
-  "description": "Seeed LSM303DLH 3-axis accelerometer combined with a 3-axis magnetic sensor",
-  "description_zh": "Seeed LSM303DLH 3轴加速度计结合3轴磁传感器驱动",
+  "description": "Seeed LSM303DLH 3-axis accelerometer and magnetic sensor",
+  "description_zh": "Seeed LSM303DLH 3轴加速度和磁传感器驱动",
   "enable": "PKG_USING_ARDUINO_SEEED_LSM303DLH",
   "keywords": [
     "Seeed-LSM303DLH",
