@@ -117,5 +117,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-DRV2605L/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-BBM150/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-HMC5883L/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-LSM303DLH/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-TCS3414CS/Kconfig"
 
 endmenu
