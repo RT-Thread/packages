@@ -1,0 +1,28 @@
+
+# Kconfig file for package Seeed-MP503
+menuconfig PKG_USING_SEEED_MP503
+    bool "Seeed MP503: Air Quality Sensor"
+    default n
+
+if PKG_USING_SEEED_MP503
+
+    config PKG_SEEED_MP503_PATH
+        string
+        default "/packages/peripherals/sensors/Seeed-MP503"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SEEED_MP503_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SEEED_MP503_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SEEED_MP503_VER
+       string
+       default "latest"    if PKG_USING_SEEED_MP503_LATEST_VERSION
+
+endif
+
