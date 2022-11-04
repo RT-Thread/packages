@@ -1,14 +1,15 @@
 {
   "name": "ad7746",
-  "description": "AD7746 library for rt-thread",
-  "description_zh": "AD7746 高精度电容测量芯片在 RT-Thread 移植库",
+  "description": "AD7746  a high resolution, capacitance-to-digital converter (CDC)",
+  "description_zh": "AD7746 高精度电容测量传感器驱动",
   "enable": "PKG_USING_AD7746",
   "keywords": [
     "i2c",
     "CDC",
+    "capacitance",
     "ad7746"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "wuhanstudio",
     "email": "wuhanstudio@qq.com",

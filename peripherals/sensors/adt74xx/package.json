@@ -6,7 +6,7 @@
   "keywords": [
     "adt74xx","adt7422","temperature"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "maikebing",
     "email": "mysticboy@live.com",

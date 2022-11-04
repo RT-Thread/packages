@@ -8,7 +8,7 @@ if PKG_USING_MAX17048
 
     config PKG_MAX17048_PATH
         string
-        default "/packages/peripherals/max17048"
+        default "/packages/peripherals/sensors/max17048"
 
     choice
         prompt "Version"
