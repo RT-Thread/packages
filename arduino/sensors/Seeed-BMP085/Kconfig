@@ -1,7 +1,7 @@
 
 # Kconfig file for package Seeed-BMP085
 menuconfig PKG_USING_ARDUINO_SEEED_BMP085
-    bool "Seeed BMP085: Barometer Sensor"
+    bool "Seeed BMP085/BMP180: Barometer Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     default n
