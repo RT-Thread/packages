@@ -1,13 +1,14 @@
 {
   "name": "Seeed-BMP085",
-  "description": "Seeed BMP085 Barometer Sensor",
-  "description_zh": "Seeed BMP085 气压计传感器驱动",
+  "description": "Seeed BMP085/BMP180 Barometer Sensor",
+  "description_zh": "Seeed BMP085/BMP180 气压计传感器驱动",
   "enable": "PKG_USING_ARDUINO_SEEED_BMP085",
   "keywords": [
     "Seeed-BMP085",
     "Sensor",
     "Arduino",
     "BMP085",
+    "BMP180",
     "Seeed",
     "Barometer"
   ],
