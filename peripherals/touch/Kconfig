@@ -1,4 +1,4 @@
-menu "sensors drivers"
+menu "touch drivers"
 
 source "$PKGS_DIR/packages/peripherals/touch/gt9147/Kconfig"
 source "$PKGS_DIR/packages/peripherals/touch/gt1151/Kconfig"
