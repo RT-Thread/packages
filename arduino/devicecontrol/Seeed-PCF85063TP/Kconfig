@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-PCF85063TP
+menuconfig PKG_USING_ARDUINO_SEEED_PCF85063TP
+    bool "Seeed PCF85063TP: High Precision RTC"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_PCF85063TP
+
+    config PKG_ARDUINO_SEEED_PCF85063TP_PATH
+        string
+        default "/packages/arduino/devicecontrol/Seeed-PCF85063TP"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_PCF85063TP_LATEST_VERSION
+        help
+            Select the package Version
+
+        config PKG_USING_ARDUINO_SEEED_PCF85063TP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_PCF85063TP_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_PCF85063TP_LATEST_VERSION
+
+endif
+
