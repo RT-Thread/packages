@@ -1,7 +1,7 @@
 
 # Kconfig file for package Seeed-VEML6070
 menuconfig PKG_USING_ARDUINO_SEEED_VEML6070
-    bool "VEML6070 advanced ultraviolet (UV) light sensor library"
+    bool "Seeed VEML6070: advanced ultraviolet (UV) light sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     default n
@@ -10,7 +10,7 @@ if PKG_USING_ARDUINO_SEEED_VEML6070
 
     config PKG_ARDUINO_SEEED_VEML6070_PATH
         string
-        default "/packages/arduino/communication/Seeed-VEML6070"
+        default "/packages/arduino/sensors/Seeed-VEML6070"
 
     choice
         prompt "Version"
@@ -24,8 +24,6 @@ if PKG_USING_ARDUINO_SEEED_VEML6070
 
     config PKG_ARDUINO_SEEED_VEML6070_VER
        string
-       default "v1.0.0"    if PKG_USING_ARDUINO_SEEED_VEML6070_V100
        default "latest"    if PKG_USING_ARDUINO_SEEED_VEML6070_LATEST_VERSION
 
 endif
-
