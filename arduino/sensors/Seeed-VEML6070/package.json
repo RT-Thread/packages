@@ -1,7 +1,7 @@
 {
   "name": "Seeed-VEML6070",
-  "description": "VEML6070 advanced ultraviolet (UV) light sensor library",
-  "description_zh": "VEML6070先进紫外线(UV)光传感器",
+  "description": "Seeed VEML6070 advanced ultraviolet (UV) light sensor",
+  "description_zh": "Seeed VEML6070先进紫外线(UV)光传感器",
   "enable": "PKG_USING_ARDUINO_SEEED_VEML6070",
   "keywords": [
     "Seeed-VEML6070",
