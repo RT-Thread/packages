@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MCP3008
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MCP3008
-    bool "Adafruit: MCP3008: 8-Channel 10-Bit ADC With SPI Interface"
+    bool "Adafruit MCP3008: 8-Channel 10-Bit ADC With SPI Interface"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_SPI
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
