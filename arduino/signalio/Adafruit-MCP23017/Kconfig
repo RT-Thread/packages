@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MCP23017
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MCP23017
-    bool "Adafruit MCP23008/17: I2C and MCP23S08/17 SPI Port Expanders."
+    bool "Adafruit MCP23008/17: I2C and SPI Port Expanders."
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select RTDUINO_USING_SPI
