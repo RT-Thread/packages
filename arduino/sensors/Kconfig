@@ -121,5 +121,5 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-TCS3414CS/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-MP503/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-BMP085/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-HighTemp/Kconfig"
-
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-VEML6070/Kconfig"
 endmenu
