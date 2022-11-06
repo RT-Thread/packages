@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-MCP4725
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MCP4725
-    bool "Adafruit MCP4725 12-bit I2C DAC driver"
+    bool "Adafruit MCP4725: 12-bit I2C DAC driver"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
