@@ -1,0 +1,28 @@
+
+# Kconfig file for package Seeed-HighTemp
+menuconfig PKG_USING_ARDUINO_SEEED_HIGHTEMP
+    bool "Seeed HighTemp: K type thermocouple Temperature Sensor"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_SEEED_HIGHTEMP
+
+    config PKG_ARDUINO_SEEED_HIGHTEMP_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-HighTemp"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_HIGHTEMP_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_HIGHTEMP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_HIGHTEMP_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_HIGHTEMP_LATEST_VERSION
+
+endif
