@@ -10,7 +10,8 @@
     "Arduino",
     "HighTemp",
     "thermocouple",
-    "Temperature"
+    "Temperature",
+    "K type thermocouple"
   ],
   "category": "arduino/sensors",
   "author": {
