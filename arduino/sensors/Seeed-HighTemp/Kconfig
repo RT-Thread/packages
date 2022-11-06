@@ -3,7 +3,6 @@
 menuconfig PKG_USING_ARDUINO_SEEED_HIGHTEMP
     bool "Seeed HighTemp: K type thermocouple Temperature Sensor"
     select PKG_USING_RTDUINO
-    select RTDUINO_USING_WIRE
     default n
 
 if PKG_USING_ARDUINO_SEEED_HIGHTEMP
@@ -27,4 +26,3 @@ if PKG_USING_ARDUINO_SEEED_HIGHTEMP
        default "latest"    if PKG_USING_ARDUINO_SEEED_HIGHTEMP_LATEST_VERSION
 
 endif
-
