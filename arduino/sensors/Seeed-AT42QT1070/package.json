@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-AT42QT1070",
+  "description": "AT42QT1070 Sensor touch input device library",
+  "description_zh": "AT42QT1070传感器触摸输入设备库",
+  "enable": "PKG_USING_ARDUINO_SEEED_AT42QT1070",
+  "keywords": [
+    "Seeed-AT42QT1070",
+    "AT42QT1070",
+    "touch",
+    "Adafruit",
+    "arduino",
+    "sensors"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "techsupport@seeed.cc",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Seeed_QTouch",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Seeed_QTouch#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Seeed_QTouch.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
