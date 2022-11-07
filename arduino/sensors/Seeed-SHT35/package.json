@@ -5,7 +5,6 @@
   "enable": "PKG_USING_ARDUINO_SEEED_SHT35",
   "keywords": [
     "Seeed-SHT35",
-    "Adafruit",
     "arduino",
     "sensors",
     "temperature",

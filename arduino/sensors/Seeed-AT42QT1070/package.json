@@ -7,16 +7,15 @@
     "Seeed-AT42QT1070",
     "AT42QT1070",
     "touch",
-    "Adafruit",
     "arduino",
     "sensors",
     "capacitive"
   ],
   "category": "arduino/sensors",
   "author": {
-    "name": "adafruit",
+    "name": "Seeed-Studio",
     "email": "techsupport@seeed.cc",
-    "github": "adafruit"
+    "github": "Seeed-Studio"
   },
   "license": "MIT",
   "repository": "https://github.com/Seeed-Studio/Seeed_QTouch",
