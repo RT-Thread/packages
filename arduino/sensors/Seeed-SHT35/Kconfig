@@ -1,7 +1,7 @@
 
 # Kconfig file for package Seeed-SHT35
 menuconfig PKG_USING_ARDUINO_SEEED_SHT35
-    bool "SHT3x-DIS temperature and humidity sensors library"
+    bool "Seeed SHT35: temperature and humidity sensors"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     default n
@@ -24,8 +24,6 @@ if PKG_USING_ARDUINO_SEEED_SHT35
 
     config PKG_ARDUINO_SEEED_SHT35_VER
        string
-       default "v1.0.0"    if PKG_USING_ARDUINO_SEEED_SHT35_V100
        default "latest"    if PKG_USING_ARDUINO_SEEED_SHT35_LATEST_VERSION
 
 endif
-
