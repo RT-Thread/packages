@@ -1,0 +1,31 @@
+
+# Kconfig file for package Seeed-LSM6DS3
+menuconfig PKG_USING_ARDUINO_SEEED_LSM6DS3
+    bool "Seeed LSM6DS3: 6-Axis Accelerometer&Gyroscope"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select RTDUINO_USING_SPI
+    default n
+
+if PKG_USING_ARDUINO_SEEED_LSM6DS3
+
+    config PKG_ARDUINO_SEEED_LSM6DS3_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-LSM6DS3"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_LSM6DS3_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_LSM6DS3_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_LSM6DS3_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_LSM6DS3_LATEST_VERSION
+
+endif
+
