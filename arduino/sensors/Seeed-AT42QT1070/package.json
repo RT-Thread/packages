@@ -1,7 +1,7 @@
 {
   "name": "Seeed-AT42QT1070",
-  "description": "AT42QT1070 Sensor touch input device library",
-  "description_zh": "AT42QT1070传感器触摸输入设备库",
+  "description": "Seeed AT42QT1070 a digital burst mode charge-transfer capacitive sensor driver",
+  "description_zh": "Seeed AT42QT1070 电容触摸传感器驱动",
   "enable": "PKG_USING_ARDUINO_SEEED_AT42QT1070",
   "keywords": [
     "Seeed-AT42QT1070",
@@ -9,7 +9,8 @@
     "touch",
     "Adafruit",
     "arduino",
-    "sensors"
+    "sensors",
+    "capacitive"
   ],
   "category": "arduino/sensors",
   "author": {
