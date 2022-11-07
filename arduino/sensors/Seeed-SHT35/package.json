@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-SHT35",
+  "description": "SHT3x-DIS temperature and humidity sensors library",
+  "description_zh": "SHT3x 温湿度传感器",
+  "enable": "PKG_USING_ARDUINO_SEEED_SHT35",
+  "keywords": [
+    "Seeed-SHT35",
+    "Adafruit",
+    "arduino",
+    "sensors",
+    "temperature",
+    "humidity"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "techsupport@seeed.cc",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Seeed_SHT35",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Seeed_SHT35#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Seeed_SHT35.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
