@@ -1,7 +1,7 @@
 
 # Kconfig file for package Seeed-AT42QT1070
 menuconfig PKG_USING_ARDUINO_SEEED_AT42QT1070
-    bool "AT42QT1070 Sensor touch input device library"
+    bool "Seeed AT42QT1070: a digital burst mode charge-transfer capacitive sensor driver"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     default n
