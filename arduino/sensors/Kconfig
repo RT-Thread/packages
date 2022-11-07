@@ -123,6 +123,7 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-BMP085/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-HighTemp/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-VEML6070/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-Si1145/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-SHT35/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-AT42QT1070/Kconfig"
 
 endmenu
