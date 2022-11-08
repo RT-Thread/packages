@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-HDC1000",
+  "description": "Seeed HDC1000 Temperature and Humidity Sensor",
+  "description_zh": "Seeed HDC1000 温湿度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_HDC1000",
+  "keywords": [
+    "Seeed-HDC1000",
+    "Arduino",
+    "Seeed",
+    "HDC1000",
+    "Temperature",
+    "Humidity"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/HDC1000",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/HDC1000#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/HDC1000.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
