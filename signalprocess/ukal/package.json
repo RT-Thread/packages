@@ -9,7 +9,7 @@
     "kalman",
     "filter"
   ],
-  "category": "misc",
+  "category": "signalprocess",
   "author": {
     "name": "wuhanstudio",
     "email": "wuhanstudio@qq.com",

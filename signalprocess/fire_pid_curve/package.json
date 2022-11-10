@@ -1,14 +1,14 @@
 {
   "name": "fire_pid_curve",
   "description": ".",
-  "description_zh": "野火PID调试助手通讯协议软件包",  
-  "enable": "PKG_USING_FIRE_PID_CURVE", 
+  "description_zh": "野火PID调试助手通讯协议软件包",
+  "enable": "PKG_USING_FIRE_PID_CURVE",
   "keywords": [
     "fire_pid_curve",
     "pid",
     "Debug assistant"
   ],
-  "category": "tools",
+  "category": "signalprocess",
   "author": {
     "name": "LONGZR007",
     "email": "1558193230@qq.com",

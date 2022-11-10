@@ -8,7 +8,7 @@ if PKG_USING_FIRE_PID_CURVE
 
     config PKG_FIRE_PID_CURVE_PATH
         string
-        default "/packages/tools/fire_pid_curve"
+        default "/packages/signalprocess/fire_pid_curve"
 
     choice
         prompt "Version"
