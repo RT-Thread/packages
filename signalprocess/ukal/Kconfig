@@ -10,7 +10,7 @@ if PKG_USING_UKAL
 
     config PKG_UKAL_PATH
         string
-        default "/packages/misc/ukal"
+        default "/packages/signalprocess/ukal"
 
     config UKAL_MAX_STATE_VECTOR_SIZE
         int "Maximum state vcector size"

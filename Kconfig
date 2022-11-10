@@ -8,6 +8,7 @@ source "$PKGS_DIR/packages/tools/Kconfig"
 source "$PKGS_DIR/packages/system/Kconfig"
 source "$PKGS_DIR/packages/peripherals/Kconfig"
 source "$PKGS_DIR/packages/ai/Kconfig"
+source "$PKGS_DIR/packages/signalprocess/Kconfig"
 source "$PKGS_DIR/packages/misc/Kconfig"
 source "$PKGS_DIR/packages/arduino/Kconfig"
 
