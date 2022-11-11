@@ -129,5 +129,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-LSM6DS3/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-HDC1000/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-HM3301/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-MCP9600/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Seeed-LTC2941/Kconfig"
 
 endmenu
