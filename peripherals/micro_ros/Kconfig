@@ -126,14 +126,6 @@ if PKG_USING_MICRO_ROS
         help
             Select the package version
 
-        if MICRO_ROS_USING_GCC_10
-            config PKG_USING_MICRO_ROS_HUMBLE_GCC_10
-                bool "humble-gcc-10"
-
-            config PKG_USING_MICRO_ROS_GALACTIC_GCC_10
-                bool "galactic-gcc-10"
-        endif
-
         if MICRO_ROS_USING_GCC_5
             config PKG_USING_MICRO_ROS_HUMBLE_GCC_5
                 bool "humble-gcc-5"
@@ -142,12 +134,6 @@ if PKG_USING_MICRO_ROS
                 bool "galactic-gcc-5"
         endif
 
-        config PKG_USING_MICRO_ROS_HUMBLE_STANDALONE
-            bool "humble (standalone)"
-
-        config PKG_USING_MICRO_ROS_GALACTIC_STANDALONE
-            bool "galactic (standalone)"
-
         if MICRO_ROS_USING_GCC_5
             config PKG_USING_MICRO_ROS_FOXY_LEGACY
                 bool "foxy (legacy)"
@@ -155,16 +141,33 @@ if PKG_USING_MICRO_ROS
             config PKG_USING_MICRO_ROS_GALACTIC_LEGACY
                 bool "galactic (legacy)"
         endif
+
+        if MICRO_ROS_USING_GCC_10
+            config PKG_USING_MICRO_ROS_HUMBLE_GCC_10
+                bool "humble-gcc-10"
+
+            config PKG_USING_MICRO_ROS_GALACTIC_GCC_10
+                bool "galactic-gcc-10"
+        endif
+
+        if MICRO_ROS_USING_GCC_10
+            config PKG_USING_MICRO_ROS_HUMBLE_GCC_10_STANDALONE
+                bool "humble-gcc-10 (standalone)"
+
+            config PKG_USING_MICRO_ROS_GALACTIC_GCC_10_STANDALONE
+                bool "galactic-gcc-10 (standalone)"
+        endif
+
     endchoice
 
     config PKG_MICRO_ROS_VER
        string
-       default "humble-gcc-10"              if PKG_USING_MICRO_ROS_HUMBLE_GCC_5
-       default "humble-gcc-5"               if PKG_USING_MICRO_ROS_HUMBLE_GCC_10
+       default "humble-gcc-10"              if PKG_USING_MICRO_ROS_HUMBLE_GCC_10
+       default "humble-gcc-5"               if PKG_USING_MICRO_ROS_HUMBLE_GCC_5
        default "galactic-gcc-10"            if PKG_USING_MICRO_ROS_GALACTIC_GCC_10
        default "galactic-gcc-5"             if PKG_USING_MICRO_ROS_GALACTIC_GCC_5
-       default "humble-standalone"          if PKG_USING_MICRO_ROS_HUMBLE_STANDALONE
-       default "galactic-standalone"        if PKG_USING_MICRO_ROS_GALACTIC_STANDALONE
+       default "humble-gcc-10-standalone"          if PKG_USING_MICRO_ROS_HUMBLE_GCC_10_STANDALONE
+       default "galactic-gcc-10-standalone"        if PKG_USING_MICRO_ROS_GALACTIC_GCC_10_STANDALONE
        default "galactic-legacy"            if PKG_USING_MICRO_ROS_GALACTIC_LEGACY
        default "foxy-legacy"                if PKG_USING_MICRO_ROS_FOXY_LEGACY
 
