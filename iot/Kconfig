@@ -58,4 +58,5 @@ source "$PKGS_DIR/packages/iot/hm/Kconfig"
 source "$PKGS_DIR/packages/iot/small_modbus/Kconfig"
 source "$PKGS_DIR/packages/iot/net_server/Kconfig"
 source "$PKGS_DIR/packages/iot/zFTP/Kconfig"
+source "$PKGS_DIR/packages/iot/wol/Kconfig"
 endmenu
