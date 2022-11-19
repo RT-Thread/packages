@@ -1,5 +1,6 @@
 menu "Sensors"
 
+source "$PKGS_DIR/packages/arduino/sensors/sensor-device-drivers/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/CapacitiveSensor/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-ADXL375/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VL53L0X/Kconfig"

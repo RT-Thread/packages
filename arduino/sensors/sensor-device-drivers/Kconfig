@@ -1,0 +1,30 @@
+
+# Kconfig file for package sensor-device-drivers
+menuconfig PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS
+    bool "Enable Arduino Sensor Libraries on RT-Thread Sensor Device Framework"
+    select RT_USING_SENSOR
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS
+
+    config PKG_ARDUINO_SENSOR_DEVICE_DRIVERS_PATH
+        string
+        default "/packages/arduino/sensors/sensor-device-drivers"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SENSOR_DEVICE_DRIVERS_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS_LATEST_VERSION
+
+endif
+
