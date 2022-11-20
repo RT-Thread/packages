@@ -1,6 +1,6 @@
 {
   "name": "Seeed-LDC1612",
-  "description": "Seeed Inductive Sensor LDC1612 driver",
+  "description": "Seeed LDC1612 2 channel,28-bit inductance to digital converters (LDCs) for inductive sensor driver",
   "description_zh": "Seeed LDC1612 电感数字转换器驱动",
   "enable": "PKG_USING_ARDUINO_SEEED_LDC1612",
   "keywords": [
