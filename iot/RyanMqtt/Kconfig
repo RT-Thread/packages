@@ -1,0 +1,36 @@
+
+# Kconfig file for package RyanMqtt
+menuconfig PKG_USING_RYANMQTT
+    bool "RyanMqtt客户端"
+    default n
+
+if PKG_USING_RYANMQTT
+
+    config PKG_USING_RYANMQTT_EXAMPLE
+        bool "Enable RyanMqtt example"
+        default y
+
+    config PKG_RYANMQTT_PATH
+        string
+        default "/packages/iot/RyanMqtt"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RYANMQTT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RYANMQTT_V001
+            bool "v0.0.1"
+
+        config PKG_USING_RYANMQTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RYANMQTT_VER
+       string
+       default "v0.0.1"    if PKG_USING_RYANMQTT_V001
+       default "latest"    if PKG_USING_RYANMQTT_LATEST_VERSION
+
+endif
+
