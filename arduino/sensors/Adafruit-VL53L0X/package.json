@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-VL53L0X",
   "description": "Adafruit VL53L0X Time of Flight Distance Sensor",
-  "description_zh": "Adafruit VL53L0X飞行时间距离传感器驱动",
+  "description_zh": "Adafruit VL53L0X激光测距传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_VL53L0X",
   "keywords": [
     "Adafruit-VL53L0X",
