@@ -1,0 +1,29 @@
+{
+  "name": "Adafruit-MAX31850",
+  "description": "Please add description of Adafruit-MAX31850 in English.",
+  "description_zh": "Adafruit-MAX3185是一款温度传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX31850",
+  "keywords": [
+    "Adafruit-MAX31850",
+    "temperature"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/adafruit/MAX31850_DallasTemp",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/MAX31850_DallasTemp#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/MAX31850_DallasTemp.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
