@@ -25,11 +25,6 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://Adafruit-VL53L1X-1.0.0.zip",
-      "filename": "Adafruit-VL53L1X-1.0.0.zip"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/adafruit/Adafruit_VL53L1X.git",
       "filename": "",
