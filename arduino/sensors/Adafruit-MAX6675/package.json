@@ -5,7 +5,7 @@
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX6675",
   "keywords": [
     "Adafruit-MAX6675",
-    "temperature"
+    "temperature",
     "ADC"
   ],
   "category": "arduino/sensors",
