@@ -4,7 +4,7 @@
   "description_zh": "Adafruit-MAX3185是一款温度传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX31850",
   "keywords": [
-    "Adafruit-MAX31850"，
+    "Adafruit-MAX31850",
     "temperature"
   ],
   "category": "arduino/sensors",
