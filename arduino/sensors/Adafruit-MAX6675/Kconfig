@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-MAX6675
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MAX6675
+    bool "Please add description of Adafruit-MAX6675 in English."
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MAX6675
+
+    config PKG_ARDUINO_ADAFRUIT_MAX6675_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-MAX6675"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MAX6675_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MAX6675_Vadafruit
+            bool "vadafruit"
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MAX6675_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MAX6675_VER
+       string
+       default "vadafruit"    if PKG_USING_ARDUINO_ADAFRUIT_MAX6675_Vadafruit
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MAX6675_LATEST_VERSION
+
+endif
+
