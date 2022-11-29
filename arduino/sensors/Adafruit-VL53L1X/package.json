@@ -4,7 +4,13 @@
   "description_zh": "Adafruit VL53L0X激光距离传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_VL53L1X",
   "keywords": [
-    "Adafruit-VL53L1X"
+    "Adafruit-VL53L1X",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "VL53L0X",
+    "Time of Flight",
+    "ToF"
   ],
   "category": "arduino/sensors",
   "author": {
@@ -13,7 +19,7 @@
     "github": "adafruit"
   },
   "license": "BSD-3-Clause",
-  "repository": "https://github.com/adafruit/Adafruit_VL53L1X.git",
+  "repository": "https://github.com/adafruit/Adafruit_VL53L1X",
   "icon": "unknown",
   "homepage": "https://github.com/adafruit/Adafruit_VL53L1X.git#readme",
   "doc": "unknown",
