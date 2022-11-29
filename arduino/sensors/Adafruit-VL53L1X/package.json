@@ -31,7 +31,7 @@
     },
     {
       "version": "latest",
-      "URL": "https://github.com/adafruit/Adafruit_VL53L1X.git.git",
+      "URL": "https://github.com/adafruit/Adafruit_VL53L1X.git",
       "filename": "",
       "VER_SHA": "master"
     }
