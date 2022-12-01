@@ -1,7 +1,7 @@
 
 # Kconfig file for package RyanMqtt
 menuconfig PKG_USING_RYANMQTT
-    bool "RyanMqtt客户端"
+    bool "Ryan MQTT Client"
     default n
 
 if PKG_USING_RYANMQTT
