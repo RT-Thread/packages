@@ -1,5 +1,6 @@
 menu "IoT - internet of things"
 
+
 source "$PKGS_DIR/packages/iot/lwip/Kconfig"
 source "$PKGS_DIR/packages/iot/lorawan_driver/Kconfig"
 source "$PKGS_DIR/packages/iot/pahomqtt/Kconfig"
@@ -52,6 +53,7 @@ source "$PKGS_DIR/packages/iot/agile_modbus/Kconfig"
 source "$PKGS_DIR/packages/iot/agile_ftp/Kconfig"
 source "$PKGS_DIR/packages/iot/EmbeddedProto/Kconfig"
 source "$PKGS_DIR/packages/iot/rt-link_hw/Kconfig"
+source "$PKGS_DIR/packages/iot/RyanMqtt/Kconfig"
 source "$PKGS_DIR/packages/iot/lora_pkt_fwd/Kconfig"
 source "$PKGS_DIR/packages/iot/lora_pkt_sniffer/Kconfig"
 source "$PKGS_DIR/packages/iot/hm/Kconfig"
