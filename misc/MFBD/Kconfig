@@ -95,27 +95,27 @@ if PKG_USING_MFBD
         
         config PKG_MFBD_USE_NORMAL_BUTTON
             bool
-            prompt "enable normal normal functions."
+            prompt "enable normal button functions."
             default y
                 
         config PKG_MFBD_USE_MULTIFUCNTION_BUTTON
             bool
-            prompt "enable multifunction normal functions."
+            prompt "enable multifunction button functions."
             default y
                 
         config PKG_MFBD_USE_BTN_SCAN_PRE_FUNC
             bool
-            prompt "enable running prepare_function before run button detection function."
+            prompt "enable run prepare_function before run button detection function."
             default n
                     
         config PKG_MFBD_USE_BTN_SCAN_AFTER_FUNC
             bool
-            prompt "enable running after_function after run button detection function."
+            prompt "enable run after_function after run button detection function."
             default n
     
         config PKG_MFBD_PARAMS_SAME_IN_GROUP
             bool
-            prompt "enable all key's params are same or not."
+            prompt "enable all key's params are same."
             default n
     endif
 
