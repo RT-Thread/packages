@@ -1,7 +1,9 @@
 
 # Kconfig file for package Adafruit-MAX31850
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MAX31850
-    bool "Please add description of Adafruit-MAX31850 in English."
+    bool "Adafruit MAX31850: Thermocouple Amplifier"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
     default n
 
 if PKG_USING_ARDUINO_ADAFRUIT_MAX31850
@@ -16,16 +18,12 @@ if PKG_USING_ARDUINO_ADAFRUIT_MAX31850
         help
             Select the package version
 
-        config PKG_USING_ARDUINO_ADAFRUIT_MAX31850_V100
-            bool "v1.0.0"
-
         config PKG_USING_ARDUINO_ADAFRUIT_MAX31850_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_ARDUINO_ADAFRUIT_MAX31850_VER
        string
-       default "v1.0.0"    if PKG_USING_ARDUINO_ADAFRUIT_MAX31850_V100
        default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MAX31850_LATEST_VERSION
 
 endif
