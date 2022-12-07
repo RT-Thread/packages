@@ -1,7 +1,9 @@
 
 # Kconfig file for package Adafruit-MAX6675
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_MAX6675
-    bool "Please add description of Adafruit-MAX6675 in English."
+    bool "MAX6675 thermocouple sensor driver library"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_SPI
     default n
 
 if PKG_USING_ARDUINO_ADAFRUIT_MAX6675
