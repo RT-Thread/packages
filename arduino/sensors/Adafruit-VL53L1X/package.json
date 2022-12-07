@@ -1,6 +1,6 @@
 {
   "name": "Adafruit-VL53L1X",
-  "description": "Please add description of Adafruit-VL53L1X in English.",
+  "description": "Adafruit VL53L1X: Time of Flight Distance Sensor.",
   "description_zh": "Adafruit VL53L0X激光距离传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_VL53L1X",
   "keywords": [
