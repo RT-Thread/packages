@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-VL53L1X",
   "description": "Please add description of Adafruit-VL53L1X in English.",
-  "description_zh": "Adafruit VL53L0X激光距离传感器",
+  "description_zh": "Adafruit VL53L1X激光距离传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_VL53L1X",
   "keywords": [
     "Adafruit-VL53L1X",
