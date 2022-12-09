@@ -3,6 +3,7 @@
 menuconfig PKG_USING_HDC1000
     bool "hdc1000 sensor driver,support: temperature and humidity."
     default n
+    select RT_USING_SENSOR
 
 if PKG_USING_HDC1000
 
