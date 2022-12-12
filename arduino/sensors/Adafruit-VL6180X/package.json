@@ -4,7 +4,11 @@
   "description_zh": "Adafruit-VL6180X激光测距传感器",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_VL6180X",
   "keywords": [
-    "Adafruit-VL6180X"
+    "Adafruit-VL6180X",
+    "Arduino",
+    "VL6180X",
+    "Sensor",
+    "Time of Flight"
   ],
   "category": "arduino/sensors",
   "author": {
