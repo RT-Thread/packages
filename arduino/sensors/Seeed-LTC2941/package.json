@@ -1,0 +1,34 @@
+{
+  "name": "Seeed-LTC2941",
+  "description": "Seeed LTC2941 coulomb counter sensor",
+  "description_zh": "Seeed LTC2941 库伦计数器传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_LTC2941",
+  "keywords": [
+    "Seeed-LTC2941",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "LTC2941",
+    "coulomb",
+    "counter"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Seeed_LTC2941",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Seeed_LTC2941#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Seeed_LTC2941.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

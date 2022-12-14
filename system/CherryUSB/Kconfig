@@ -35,10 +35,8 @@ if PKG_USING_CHERRYUSB
                 bool "MM32"
             config PKG_CHERRYUSB_DEVICE_MUSB
                 bool "MUSB"
-            config PKG_CHERRYUSB_DEVICE_NUVOTON
-                bool "NUVOTON"
-            config PKG_CHERRYUSB_DEVICE_IMXRT
-                bool "IMXRT"
+            config PKG_CHERRYUSB_DEVICE_HPM
+                bool "HPM"
         endchoice
 
         if PKG_CHERRYUSB_DEVICE_CH32
@@ -164,16 +162,26 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb rndis device"
             default n
+            
+        if PKG_CHERRYUSB_DEVICE_RNDIS
+            config PKG_CHERRYUSB_DEVICE_RNDIS_TEMPLATE
+                bool
+                prompt "Use rndis template"
+                default n
+        endif
 
         menuconfig PKG_CHERRYUSB_DEVICE_DFU
             bool
             prompt "Enable usb dfu device"
             default n
+            
+        if PKG_CHERRYUSB_DEVICE_DFU
+            config PKG_CHERRYUSB_DEVICE_DFU_TEMPLATE
+                bool
+                prompt "Use dfu template"
+                default n
+        endif
 
-        menuconfig PKG_CHERRYUSB_DEVIEC_HUB
-            bool
-            prompt "Enable usb hub device"
-            default n
     endif
 
     menuconfig PKG_CHERRYUSB_HOST
@@ -190,6 +198,8 @@ if PKG_USING_CHERRYUSB
                 bool "DWC2"
             config PKG_CHERRYUSB_HOST_EHCI
                 bool "EHCI"
+            config PKG_CHERRYUSB_HOST_XHCI
+                bool "XHCI"
         endchoice
 
         if PKG_CHERRYUSB_HOST_MUSB
@@ -214,10 +224,16 @@ if PKG_USING_CHERRYUSB
             endchoice
         endif
 
-        config PKG_CHERRYUSB_HOST_HUB
-            bool
-            prompt "Enable usb hub driver"
-            default n
+        if PKG_CHERRYUSB_HOST_EHCI
+            choice
+                prompt "Select chip with EHCI usb ip to set usb base and irq name,if not set,use default setting.Only support hs usb ip"
+                default PKG_CHERRYUSB_HOST_EHCI_HPM
+                config PKG_CHERRYUSB_HOST_EHCI_HPM
+                    bool "HPM"
+                config PKG_CHERRYUSB_HOST_EHCI_NUVOTON
+                    bool "NUVOTON"
+            endchoice
+        endif
 
         config PKG_CHERRYUSB_HOST_CDC
             bool
@@ -243,13 +259,6 @@ if PKG_USING_CHERRYUSB
         bool
         prompt "Use usb host template"
         default n
-
-        config PKG_CHERRYUSB_HOST_PSC_THREAD_STACK_SIZE
-            int "Set usb host psc thread stack size"
-            default 2048
-        config PKG_CHERRYUSB_HOST_PSC_THREAD_PRIO
-            int "Set usb host psc thread prio"
-            default 5
 
     endif
 

@@ -23,16 +23,52 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "foxy",
+      "version": "foxy-legacy",
       "URL": "https://github.com/wuhanstudio/micro_ros.git",
       "filename": "",
-      "VER_SHA": "foxy"
+      "VER_SHA": "foxy-legacy"
     },
     {
-      "version": "galactic",
+      "version": "galactic-legacy",
       "URL": "https://github.com/wuhanstudio/micro_ros.git",
       "filename": "",
-      "VER_SHA": "galactic"
+      "VER_SHA": "galactic-legacy"
+    },
+    {
+      "version": "galactic-gcc-5",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "galactic-gcc-5"
+    },
+    {
+      "version": "galactic-gcc-10",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "galactic-gcc-10"
+    },
+    {
+      "version": "galactic-gcc-10-standalone",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "galactic-standalone-gcc-10"
+    },
+    {
+      "version": "humble-gcc-5",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "humble-gcc-5"
+    },
+    {
+      "version": "humble-gcc-10",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "humble-gcc-10"
+    },
+    {
+      "version": "humble-gcc-10-standalone",
+      "URL": "https://github.com/wuhanstudio/micro_ros.git",
+      "filename": "",
+      "VER_SHA": "humble-standalone-gcc-10"
     }
   ]
 }

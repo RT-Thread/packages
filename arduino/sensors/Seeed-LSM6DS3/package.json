@@ -1,0 +1,34 @@
+{
+  "name": "Seeed-LSM6DS3",
+  "description": "Seeed LSM6DS3: 6-Axis Accelerometer&Gyroscope",
+  "description_zh": "Seeed LSM6DS3 六轴加速度计陀螺仪",
+  "enable": "PKG_USING_ARDUINO_SEEED_LSM6DS3",
+  "keywords": [
+    "Seeed-LSM6DS3",
+    "LSM6DS3",
+    "arduino",
+    "sensors",
+    "Accelerometer",
+    "Gyroscope",
+    "6-Axis"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Seeed_Arduino_LSM6DS3",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Seeed_Arduino_LSM6DS3#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Seeed_Arduino_LSM6DS3.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

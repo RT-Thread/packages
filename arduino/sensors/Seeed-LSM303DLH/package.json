@@ -1,0 +1,35 @@
+{
+  "name": "Seeed-LSM303DLH",
+  "description": "Seeed LSM303DLH 3-axis accelerometer and magnetic sensor",
+  "description_zh": "Seeed LSM303DLH 3轴加速度和磁传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_LSM303DLH",
+  "keywords": [
+    "Seeed-LSM303DLH",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "LSM303DLH",
+    "3-axis",
+    "accelerometer",
+    "magnetic"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_6Axis_Accelerometer_And_Compass_v2",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_6Axis_Accelerometer_And_Compass_v2#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_6Axis_Accelerometer_And_Compass_v2.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

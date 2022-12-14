@@ -1,0 +1,28 @@
+
+# Kconfig file for package Seeed-ITG3200
+menuconfig PKG_USING_SEEED_ITG3200
+    bool "Seeed ITG3200 Sensor Driver"
+    default n
+
+if PKG_USING_SEEED_ITG3200
+
+    config PKG_SEEED_ITG3200_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-ITG3200"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SEEED_ITG3200_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SEEED_ITG3200_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SEEED_ITG3200_VER
+       string
+       default "latest"    if PKG_USING_SEEED_ITG3200_LATEST_VERSION
+
+endif
+

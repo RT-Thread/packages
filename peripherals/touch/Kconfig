@@ -1,16 +1,12 @@
-menuconfig PKG_USING_TOUCH_DRIVERS
-    bool "touch drivers"
-    default n
-    select RT_USING_TOUCH
+menu "touch drivers"
 
-    if PKG_USING_TOUCH_DRIVERS
+source "$PKGS_DIR/packages/peripherals/touch/gt9147/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/gt1151/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/gt917s/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/gt911/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/ft6206/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/ft5426/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/ft6236/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/xpt2046/Kconfig"
 
-        source "$PKGS_DIR/packages/peripherals/touch/gt9147/Kconfig"
-        source "$PKGS_DIR/packages/peripherals/touch/gt1151/Kconfig"
-        source "$PKGS_DIR/packages/peripherals/touch/gt917s/Kconfig"
-        source "$PKGS_DIR/packages/peripherals/touch/gt911/Kconfig"
-        source "$PKGS_DIR/packages/peripherals/touch/ft6206/Kconfig"
-        source "$PKGS_DIR/packages/peripherals/touch/ft5426/Kconfig"
-        source "$PKGS_DIR/packages/peripherals/touch/ft6236/Kconfig"
-        source "$PKGS_DIR/packages/peripherals/touch/xpt2046/Kconfig"
-    endif
+endmenu

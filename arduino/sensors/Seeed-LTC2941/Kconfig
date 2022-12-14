@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-LTC2941
+menuconfig PKG_USING_ARDUINO_SEEED_LTC2941
+    bool "Seeed LTC2941: coulomb counter sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_LTC2941
+
+    config PKG_ARDUINO_SEEED_LTC2941_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-LTC2941"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_LTC2941_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_LTC2941_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_LTC2941_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_LTC2941_LATEST_VERSION
+
+endif
+

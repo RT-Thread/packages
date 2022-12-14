@@ -1,0 +1,30 @@
+{
+  "name": "Adafruit-MAX6675",
+  "description": "Adafruit MAX6675: Thermocouple Amplifier.",
+  "description_zh": "MAX6675是一款精密的热电偶数字转换器,内置12位模数转换器(ADC)",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX6675",
+  "keywords": [
+    "Adafruit-MAX6675",
+    "temperature",
+    "ADC"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/adafruit/MAX6675-library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/MAX6675-library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/MAX6675-library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

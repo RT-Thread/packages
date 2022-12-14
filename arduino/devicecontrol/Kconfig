@@ -1,5 +1,7 @@
 menu "Device Control"
 
 source "$PKGS_DIR/packages/arduino/devicecontrol/Adafruit-PCF8574/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Adafruit-PCA9685/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Seeed-PCF85063TP/Kconfig"
 
 endmenu

@@ -1,0 +1,35 @@
+{
+  "name": "Seeed-ADXL345",
+  "description": "Seeed ADXL345 3-Axis Digital Accelerometer",
+  "description_zh": "Seeed ADXL345三轴数字加速度计驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_ADXL345",
+  "keywords": [
+    "Seeed-ADXL345",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "ADXL345",
+    "3-axis",
+    "accelerometer",
+    "Digital"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Accelerometer_ADXL345",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Accelerometer_ADXL345#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Accelerometer_ADXL345.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

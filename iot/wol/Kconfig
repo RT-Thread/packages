@@ -1,0 +1,34 @@
+
+menuconfig PKG_USING_WOL
+    bool "WOL: wake-on-lan package for rt-thread"
+    default n
+    select RT_USING_SAL             if RT_VER_NUM < 0x40100
+    select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
+
+if PKG_USING_WOL
+
+    config PKG_WOL_PATH
+        string
+        default "/packages/iot/wol"
+
+    choice
+        prompt "Version"
+        default PKG_USING_WOL_V100
+        help
+            Select the package version
+
+        config PKG_USING_WOL_V100
+            bool "v1.0.0"
+
+        config PKG_USING_WOL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_WOL_VER
+       string
+       default "v1.0.0"    if PKG_USING_WOL_V100
+       default "latest"    if PKG_USING_WOL_LATEST_VERSION
+
+endif
+

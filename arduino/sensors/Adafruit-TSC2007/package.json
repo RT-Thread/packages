@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-TSC2007",
+  "description": "Adafruit TSC2007 Resistive Touch Screen Drivers.",
+  "description_zh": "Adafruit TSC2007电阻式触摸屏驱动程序。",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_TSC2007",
+  "keywords": [
+    "Adafruit-TSC2007",
+    "adafruit",
+    "arduino",
+    "sensors",
+    "TSC2007",
+    "screen"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "email:info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_TSC2007",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_TSC2007#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_TSC2007.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-SHT35",
+  "description": "Seeed SHT35: temperature and humidity sensors",
+  "description_zh": "Seeed SHT35 温湿度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_SHT35",
+  "keywords": [
+    "Seeed-SHT35",
+    "arduino",
+    "sensors",
+    "temperature",
+    "humidity",
+    "SHT35"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Seeed_SHT35",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Seeed_SHT35#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Seeed_SHT35.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-H3LIS331DL
+menuconfig PKG_USING_ARDUINO_SEEED_H3LIS331DL
+    bool "Seeed H3LIS331DL: 3-axis linear accelerometer"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_H3LIS331DL
+
+    config PKG_ARDUINO_SEEED_H3LIS331DL_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-H3LIS331DL"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_H3LIS331DL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_H3LIS331DL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_H3LIS331DL_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_H3LIS331DL_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-HM3301",
+  "description": "Seeed HM3301 dust detection sensor",
+  "description_zh": "Seeed HM3301 粉尘检测传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_HM3301",
+  "keywords": [
+    "Seeed-HM3301",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "HM3301",
+    "dust detection"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Seeed_PM2_5_sensor_HM3301",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Seeed_PM2_5_sensor_HM3301#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Seeed_PM2_5_sensor_HM3301.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

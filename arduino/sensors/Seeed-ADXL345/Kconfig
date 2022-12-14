@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-ADXL345
+menuconfig PKG_USING_ARDUINO_SEEED_ADXL345
+    bool "Seeed ADXL345: 3-Axis Digital Accelerometer"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_ADXL345
+
+    config PKG_ARDUINO_SEEED_ADXL345_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-ADXL345"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_ADXL345_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_ADXL345_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_ADXL345_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_ADXL345_LATEST_VERSION
+
+endif
+

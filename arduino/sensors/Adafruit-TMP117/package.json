@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-TMP117",
+  "description": "Adafruit TMP117 High Precision Digital Temperature Sensor",
+  "description_zh": "Adafruit TMP117 高精度数字温度传感器。",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_TMP117",
+  "keywords": [
+    "Adafruit-TMP117",
+    "Adafruit",
+    "TMP117",
+    "arduino",
+    "temperature"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_TMP117",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_TMP117#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_TMP117.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

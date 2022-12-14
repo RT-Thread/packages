@@ -1,0 +1,29 @@
+
+# Kconfig file for package Seeed-SHT35
+menuconfig PKG_USING_ARDUINO_SEEED_SHT35
+    bool "Seeed SHT35: temperature and humidity sensors"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_SHT35
+
+    config PKG_ARDUINO_SEEED_SHT35_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-SHT35"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_SHT35_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_SHT35_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_SHT35_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_SHT35_LATEST_VERSION
+
+endif

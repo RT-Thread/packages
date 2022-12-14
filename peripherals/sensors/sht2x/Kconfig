@@ -1,0 +1,54 @@
+
+# Kconfig file for package sht2x
+menuconfig PKG_USING_SHT2X
+    bool "sht2x: digital humidity and temperature sensor sht2x driver library"
+    default n
+
+if PKG_USING_SHT2X
+
+    config PKG_SHT2X_PATH
+        string
+        default "/packages/peripherals/sensors/sht2x"
+
+    config SHT20_USING_SOFT_FILTER
+        bool "Enable average filter by software"
+        default n
+        help
+            "It will automatic sample sensor's data by average filter thread."
+
+    if SHT20_USING_SOFT_FILTER
+
+        config SHT20_AVERAGE_TIMES
+            int "The number of averaging"
+            default 10
+            help
+                "When selected filter function, it will be the number you will add and divide amount."
+
+        config SHT20_SAMPLE_PERIOD
+            int "Peroid of sampling data(unit ms)"
+            default 1000
+            help
+                "When selected filter function, it will be the period you will sample. The unit of the period is millisecond."
+    endif
+
+
+    choice
+        prompt "Version"
+        default PKG_USING_SHT2X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SHT2X_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SHT2X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SHT2X_VER
+       string
+       default "v1.0.0"    if PKG_USING_SHT2X_V100
+       default "latest"    if PKG_USING_SHT2X_LATEST_VERSION
+
+endif
+

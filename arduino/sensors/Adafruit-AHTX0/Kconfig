@@ -14,6 +14,11 @@ if PKG_USING_ARDUINO_ADAFRUIT_AHTX0
         string
         default "/packages/arduino/sensors/Adafruit-AHTX0"
 
+    config ARDUINO_ADAFRUIT_AHTX0_USING_SENSOR_DEVICE
+        bool "Use RT-Thread Sensor Device Framework"
+        select PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ARDUINO_ADAFRUIT_AHTX0_LATEST_VERSION

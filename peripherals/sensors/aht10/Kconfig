@@ -1,7 +1,7 @@
 
 # Kconfig file for package aht10
 menuconfig PKG_USING_AHT10
-    bool "aht10: digital humidity and temperature sensor aht10 driver library"
+    bool "AHT10: digital humidity and temperature sensor driver"
     default n
 
 if PKG_USING_AHT10
@@ -15,6 +15,11 @@ if PKG_USING_AHT10
         default n
         help
             "It will automatic sample sensor's data by average filter thread."
+
+    config AHT10_USING_SENSOR_DEVICE
+        bool "Enable sensor divce framework"
+        select RT_USING_SENSOR
+        default n
 
     if AHT10_USING_SOFT_FILTER
 
@@ -33,15 +38,19 @@ if PKG_USING_AHT10
 
     choice
         prompt "Version"
-        default PKG_USING_AHT10_LATEST_VERSION
+        default PKG_USING_AHT10_LATEST_VERSION      if RT_VER_NUM >= 0x50000
+        default PKG_USING_AHT10_V200                if RT_VER_NUM <  0x50000
         help
             Select the package version
 
-        config PKG_USING_AHT10_V100
-            bool "v1.0.0"
+        config PKG_USING_AHT10_V210
+            bool "v2.1.0"
 
         config PKG_USING_AHT10_V200
-            bool "v2.0.0(with sensor frame)"
+            bool "v2.0.0"
+
+        config PKG_USING_AHT10_V100
+            bool "v1.0.0"
 
         config PKG_USING_AHT10_LATEST_VERSION
             bool "latest"
@@ -51,6 +60,7 @@ if PKG_USING_AHT10
        string
        default "v1.0.0"    if PKG_USING_AHT10_V100
        default "v2.0.0"    if PKG_USING_AHT10_V200
+       default "v2.1.0"    if PKG_USING_AHT10_V210
        default "latest"    if PKG_USING_AHT10_LATEST_VERSION
 
 endif

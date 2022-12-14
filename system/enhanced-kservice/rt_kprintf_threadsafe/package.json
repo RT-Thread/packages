@@ -21,12 +21,6 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/mysterywolf/rt_kprintf_threadsafe/archive/refs/tags/v1.0.0.zip",
-      "filename": "",
-      "VER_SHA": "master"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/mysterywolf/rt_kprintf_threadsafe.git",
       "filename": "",

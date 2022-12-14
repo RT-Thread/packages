@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-LDC1612
+menuconfig PKG_USING_ARDUINO_SEEED_LDC1612
+    bool "Seeed LDC1612: 2 channel, 28-bit inductance to digital converters (LDCs) for inductive sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_LDC1612
+
+    config PKG_ARDUINO_SEEED_LDC1612_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-LDC1612"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_LDC1612_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_LDC1612_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_LDC1612_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_LDC1612_LATEST_VERSION
+
+endif
+

@@ -20,10 +20,28 @@
   "doc": "unknown",
   "site": [
     {
+      "version": "v1.4.1",
+      "URL": "https://github.com/RT-Thread-packages/lwip/archive/refs/tags/lwip-rtt-1.4.1.zip",
+      "filename": "lwip-rtt-1.4.1.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v2.0.3",
+      "URL": "https://github.com/RT-Thread-packages/lwip/archive/refs/tags/lwip-rtt-2.0.3.zip",
+      "filename": "lwip-rtt-2.0.3.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v2.1.3",
+      "URL": "https://github.com/RT-Thread-packages/lwip/archive/refs/tags/lwip-rtt-2.1.3.zip",
+      "filename": "lwip-rtt-2.1.3.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/lwip.git",
-      "filename": "Null for git package",
-      "VER_SHA": "master"
+      "filename": "",
+      "VER_SHA": "rtt-latest"
     }
   ]
 }

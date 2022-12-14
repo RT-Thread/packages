@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-ADXL375",
+  "description": "Adafruit ADXL375 3-Axis ±2g/±4g/±8g/±16g Digital MEMS Accelerometer",
+  "description_zh": "Adafruit ADXL375 3-Axis ±2g/±4g/±8g/±16g 加速度计",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_ADXL375",
+  "keywords": [
+    "Adafruit-ADXL375",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "ADXL375",
+    "Accelerometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_ADXL375",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_ADXL375#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_ADXL375.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

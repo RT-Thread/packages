@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-VEML6070",
+  "description": "Seeed VEML6070 advanced ultraviolet (UV) light sensor",
+  "description_zh": "Seeed VEML6070 先进紫外线(UV)光传感器",
+  "enable": "PKG_USING_ARDUINO_SEEED_VEML6070",
+  "keywords": [
+    "Seeed-VEML6070",
+    "VEML6070",
+    "arduino",
+    "sensors",
+    "UV",
+    "ultraviolet"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Seeed_VEML6070",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Seeed_VEML6070#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Seeed_VEML6070.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

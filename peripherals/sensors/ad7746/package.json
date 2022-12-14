@@ -1,0 +1,35 @@
+{
+  "name": "ad7746",
+  "description": "AD7746  a high resolution, capacitance-to-digital converter (CDC)",
+  "description_zh": "AD7746 高精度电容测量传感器驱动",
+  "enable": "PKG_USING_AD7746",
+  "keywords": [
+    "i2c",
+    "CDC",
+    "capacitance",
+    "ad7746"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/rt-ad7746",
+  "homepage": "https://github.com/wuhanstudio/rt-ad7746#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wuhanstudio/rt-ad7746.git",
+      "filename": "ad7746-1.0.0.zip",
+      "VER_SHA": "71a2c41cd29a36e66486ae475d3d8d0889318418"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/rt-ad7746.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
