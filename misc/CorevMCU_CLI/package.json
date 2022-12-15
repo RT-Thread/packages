@@ -23,8 +23,8 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://CorevMCU_CLI-1.0.0.zip",
-      "filename": "CorevMCU_CLI-1.0.0.zip"
+      "URL": "https://github.com/Yaochenger/CorevMCU_CLI/archive/refs/tags/CorevMCUCLI-V0.1.zip",
+      "filename": "CorevMCUCLI-V0.1.zip"
     },
     {
       "version": "latest",
