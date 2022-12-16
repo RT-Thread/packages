@@ -1,0 +1,36 @@
+{
+  "name": "CorevMCU_CLI",
+  "description": "CorevMCU_CLI: CLI components of Core-V-MCU.",
+  "description_zh": "Core-V-MCU的CLI组件",
+  "enable": "PKG_USING_COREVMCU_CLI",
+  "keywords": [
+    "CorevMCU_CLI",
+    "Core-V",
+    "Core-V-MCU",
+    "CLI"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "Yaochenger",
+    "email": "1516081466@qq.com",
+    "github": "Yaochenger"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/Yaochenger/CorevMCU_CLI",
+  "icon": "unknown",
+  "homepage": "https://github.com/Yaochenger/CorevMCU_CLI#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Yaochenger/CorevMCU_CLI/archive/refs/tags/CorevMCUCLI-V0.1.zip",
+      "filename": "CorevMCUCLI-V0.1.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Yaochenger/CorevMCU_CLI.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

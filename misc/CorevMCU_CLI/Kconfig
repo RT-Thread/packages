@@ -1,0 +1,29 @@
+
+# Kconfig file for package CorevMCU_CLI
+menuconfig PKG_USING_CorevMCU_CLI
+    bool "CorevMCU_CLI: CLI components of Core-V-MCU."
+    default n
+    select PKG_USING_FREERTOS_WRAPPER
+
+if PKG_USING_CorevMCU_CLI
+
+    config PKG_COREVMCU_CLI_PATH
+        string
+        default "/packages/misc/CorevMCU_CLI"
+
+    choice
+        prompt "Version"
+        default PKG_USING_COREVMCU_CLI_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_COREVMCU_CLI_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_COREVMCU_CLI_VER
+       string
+       default "latest"    if PKG_USING_COREVMCU_CLI_LATEST_VERSION
+
+endif
+
