@@ -20,6 +20,11 @@
   "doc": "https://github.com/lvgl/lvgl#readme",
   "site": [
     {
+      "version": "v8.3.4",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.4.zip",
+      "filename": "lvgl-8.3.4.zip"
+    },
+    {
       "version": "v8.3.3",
       "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.3.zip",
       "filename": "lvgl-8.3.3.zip"
