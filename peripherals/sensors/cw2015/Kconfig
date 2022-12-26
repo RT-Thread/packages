@@ -8,7 +8,7 @@ if PKG_USING_CW2015
 
     config PKG_CW2015_PATH
         string
-        default "/packages/peripherals/cw2015"
+        default "/packages/peripherals/sensors/cw2015"
 
    config CW2015_DEVICE_NAME
         string "the device name for cw2015"
