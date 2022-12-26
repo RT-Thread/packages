@@ -62,5 +62,6 @@ source "$PKGS_DIR/packages/peripherals/sensors/adt74xx/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/max17048/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/as7341/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/cw2015/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/icm20608/Kconfig"
 
 endmenu
