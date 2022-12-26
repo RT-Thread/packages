@@ -1,0 +1,42 @@
+
+# ML305 AT device configuration
+menuconfig AT_DEVICE_USING_ML305
+    bool "Gosuncn ML305"
+    default n
+
+if AT_DEVICE_USING_ML305
+
+    config AT_DEVICE_ML305_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_ML305_SOCKET
+        bool "Enable ML305 at socket"
+        select AT_USING_SOCKET
+        default y
+
+    config AT_DEVICE_ML305_SAMPLE
+        bool "Enable sample"
+        default y
+
+    if AT_DEVICE_ML305_SAMPLE
+
+        config ML305_SAMPLE_POWER_PIN
+            int "Power pin"
+            default -1
+
+        config ML305_SAMPLE_STATUS_PIN
+            int "Power status pin"
+            default -1
+
+        config ML305_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart2"
+
+        config ML305_SAMPLE_RECV_BUFF_LEN
+            int "The maximum length of receive line buffer"
+            default 2048
+
+    endif
+
+endif
