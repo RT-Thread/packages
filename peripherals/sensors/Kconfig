@@ -1,6 +1,5 @@
 menu "sensors drivers"
 
-source "$PKGS_DIR/packages/peripherals/sensors/fingerprint/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsm/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsl/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/lps22hb/Kconfig"
