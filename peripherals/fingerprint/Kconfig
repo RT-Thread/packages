@@ -17,7 +17,7 @@ if PKG_USING_FINGERPRINT
 
     config PKG_FINGERPRINT_PATH
         string
-        default "/packages/peripherals/sensors/fingerprint"
+        default "/packages/peripherals/fingerprint"
 
     choice
         prompt "Version"

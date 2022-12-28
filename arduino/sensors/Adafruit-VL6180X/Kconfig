@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-VL6180X
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_VL6180X
+    bool "Adafruit VL6180X: Time of Flight Distance Sensor."
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_VL6180X
+
+    config PKG_ARDUINO_ADAFRUIT_VL6180X_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-VL6180X"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_VL6180X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_VL6180X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_VL6180X_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_VL6180X_LATEST_VERSION
+
+endif
+

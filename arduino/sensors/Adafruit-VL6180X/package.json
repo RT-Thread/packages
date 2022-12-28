@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-VL6180X",
+  "description": "Adafruit VL6180X Time of Flight Distance Sensor.",
+  "description_zh": "Adafruit-VL6180X激光测距传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_VL6180X",
+  "keywords": [
+    "Adafruit-VL6180X",
+    "Arduino",
+    "VL6180X",
+    "Sensor",
+    "Time of Flight"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/adafruit/Adafruit_VL6180X",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_VL6180X#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_VL6180X.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

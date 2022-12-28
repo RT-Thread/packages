@@ -10,7 +10,7 @@ if PKG_USING_PAJ7620
 
     config PKG_PAJ7620_PATH
         string
-        default "/packages/peripherals/PAJ7620"
+        default "/packages/peripherals/sensors/PAJ7620"
 
     config PAJ7620_USING_SAMPLES
     bool "enable samples"

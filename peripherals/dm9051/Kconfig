@@ -5,6 +5,7 @@ menuconfig PKG_USING_DM9051
     default n
     select RT_USING_PIN
     select RT_USING_SPI
+    select RT_USING_LWIP
 if PKG_USING_DM9051
 
     config PKG_DM9051_PATH
