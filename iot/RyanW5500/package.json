@@ -1,0 +1,33 @@
+{
+  "name": "RyanW5500",
+  "description": "W5500 BSD socket implementation.",
+  "description_zh": "W5500 BSD套接字实现。",
+  "enable": "PKG_USING_RYANW5500",
+  "keywords": [
+    "RyanW5500"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Ryan-CW",
+    "email": "1831931681@qq.com",
+    "github": "Ryan-CW-Code"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Ryan-CW-Code/RyanW5500",
+  "icon": "unknown",
+  "homepage": "https://github.com/Ryan-CW-Code/RyanW5500#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/Ryan-CW-Code/RyanW5500/archive/refs/tags/v0.0.1.zip",
+      "filename": "v0.0.1.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Ryan-CW-Code/RyanW5500.git",
+      "filename": "RyanW5500.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
