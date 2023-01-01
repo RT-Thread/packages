@@ -1,0 +1,34 @@
+{
+  "name": "get_irq_priority",
+  "description": "get irq priority for Cortex®-M.",
+  "description_zh": "获取Cortex®-M内核的中断优先级.",
+  "enable": "PKG_USING_GET_IRQ_PRIORITY",
+  "keywords": [
+    "get_irq_priority"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "hly",
+    "email": "1425075683@qq.com",
+    "github": "wdfk-prog"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/wdfk-prog/rt-thread-get_irq_priority",
+  "icon": "unknown",
+  "homepage": "https://github.com/wdfk-prog/rt-thread-get_irq_priority#readme",
+  "doc": "https://github.com/wdfk-prog/rt-thread-get_irq_priority#readme",
+  "readme": "A get irq priority for Cortex®-M for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wdfk-prog/rt-thread-get_irq_priority/archive/refs/tags/V1.0.0.zip",
+      "filename": "get_irq_priority-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wdfk-prog/rt-thread-get_irq_priority.git",
+      "filename": "get_irq_priority.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
