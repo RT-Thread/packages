@@ -14,10 +14,6 @@ if PKG_USING_AGILE_UPGRADE
         bool "Enable debug log output"
         default y
 
-    config AGILE_UPGRADE_USING_CRC_TAB_CONST
-        bool "Enable crc32 table defined in flash"
-        default y
-
     config AGILE_UPGRADE_ENABLE_AES
         bool "Enable AES decrypt"
         default n
