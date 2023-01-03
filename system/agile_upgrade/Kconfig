@@ -52,6 +52,7 @@ if PKG_USING_AGILE_UPGRADE
         bool "Enable file adapter"
         default n
         select RT_USING_DFS if RT_VER_NUM < 0x40100
+        select RT_USING_LIBC if RT_VER_NUM < 0x40100
         select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
     config AGILE_UPGRADE_ENABLE_VERSION_COMPARE
