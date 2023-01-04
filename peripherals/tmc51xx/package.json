@@ -2,7 +2,7 @@
   "name": "tmc51xx",
   "description": "TMC5160 power driver for stepper motors.",
   "description_zh": "TMC5160步进电机驱动。",
-  "enable": "PKG_USING_RDA58XX",
+  "enable": "PKG_USING_TMC51XX",
   "keywords": [
     "tmc5160",
     "tmc51xx"
