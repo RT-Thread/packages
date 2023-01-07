@@ -17,7 +17,7 @@ if PKG_USING_LRF_NV7LIDAR
     config PKG_USING_NV7LIDAR_SAMPLE
         bool "Enable nv7lidar sample"
         default n
-    
+
     choice
         prompt "Version"
         default PKG_USING_LRF_NV7LIDAR_LATEST_VERSION
