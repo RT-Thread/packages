@@ -152,6 +152,9 @@ menu "HCI Transport support"
         config PKG_NIMBLE_HCI_UART_DEVICE_NAME
             string "The uart for HCI Transport"
             default "uart1"
+        config PKG_NIMBLE_HCI_UART_FLOWCONTROL_CTSRTS
+            bool "Enable uart flowcontrol CTS/RTS"
+            default n
     endif
 
 endmenu
