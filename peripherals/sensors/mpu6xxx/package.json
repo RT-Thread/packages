@@ -23,22 +23,22 @@
   "homepage": "https://github.com/RT-Thread-packages/mpu-6xxx#readme",
   "site": [
     {
-      "version": "v0.0.1",
-      "URL": "https://github.com/RT-Thread-packages/mpu-6xxx.git",
-      "filename": "mpu6xxx-0.0.1.zip",
-      "VER_SHA": "1f60aba90500bd7d0434963591cca7478124dd8b"
-    },
-    {
       "version": "v1.0.0",
       "URL": "https://github.com/RT-Thread-packages/mpu-6xxx/archive/v1.0.0.zip",
       "filename": "mpu6xxx-1.0.0.zip",
-      "VER_SHA": "NULL"
+      "VER_SHA": ""
     },
     {
       "version": "v1.1.0",
       "URL": "https://github.com/RT-Thread-packages/mpu-6xxx/archive/v1.1.0.zip",
       "filename": "mpu6xxx-1.1.0.zip",
-      "VER_SHA": "NULL"
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.1.1",
+      "URL": "https://github.com/RT-Thread-packages/mpu-6xxx/archive/v1.1.1.zip",
+      "filename": "mpu6xxx-1.1.1.zip",
+      "VER_SHA": ""
     },
     {
       "version": "latest",
