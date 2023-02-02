@@ -47,6 +47,7 @@ jobs:
   test:
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@v3
         - name: Packages test
           shell: bash 
           run: |
@@ -59,7 +60,7 @@ jobs:
             chmod 777 touch_env.sh
             ./touch_env.sh
             BASE_ROOT=${{ github.workspace }}
-            cd .. && mkdir packages_temp && cp packages -R packages_temp && mv packages_temp packages/packages_temp && cd packages/packages_temp  && echo "source \"\$PKGS_DIR/packages/Kconfig\"" > Kconfig && cd .. && mkdir env && mv packages_temp env/packages
+            cd .. && mkdir packages_temp && cp packages -R packages_temp && mv packages_temp packages/packages_temp && cd packages/packages_temp && cd .. && mkdir env && mv packages_temp env/packages
             cp env/* ~/.env/ -rf
             cd ${BASE_ROOT} && git clone https://github.com/RT-Thread/pkgs-test.git
             cd pkgs-test
