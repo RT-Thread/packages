@@ -3,6 +3,7 @@
 menuconfig PKG_USING_STHS34PF80
     bool "STHS34PF80 sensor driver package, support: presence,temperature,motion."
     default n
+    select RT_USING_SENSOR
 
 if PKG_USING_STHS34PF80
 
