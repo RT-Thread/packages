@@ -1,0 +1,31 @@
+{
+  "name": "Adafruit-MFRC630",
+  "description": "Adafruit MFRC630: RFID Front-End Breakout Board",
+  "description_zh": "Adafruit MFRC630 射频识别前端",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MFRC630",
+  "keywords": [
+    "Adafruit-MFRC630",
+    "Adafruit",
+    "MFRC630",
+    "RFID"
+  ],
+  "category": "arduino/other",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_MFRC630",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MFRC630#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MFRC630.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
