@@ -1,0 +1,31 @@
+{
+  "name": "Adafruit-Si5351",
+  "description": "Adafruit Si5351: Clock Generator Breakout",
+  "description_zh": "Adafruit Si5351 时钟发生器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SI5351",
+  "keywords": [
+    "Adafruit-Si5351",
+    "Adafruit",
+    "Si5351",
+    "Clock Generator"
+  ],
+  "category": "arduino/other",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_Si5351_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_Si5351_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_Si5351_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
