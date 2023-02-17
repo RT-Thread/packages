@@ -1,5 +1,5 @@
 menu "Other"
 
-
+source "$PKGS_DIR/packages/arduino/other/Adafruit-MFRC630/Kconfig"
 
 endmenu
