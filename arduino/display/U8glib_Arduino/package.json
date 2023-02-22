@@ -1,0 +1,30 @@
+{
+  "name": "U8glib_Arduino",
+  "description": "A graphics library with support for many different monochrome displays.",
+  "description_zh": "U8glib library for Arduino",
+  "enable": "PKG_USING_ARDUINO_U8GLIB_ARDUINO",
+  "keywords": [
+    "U8glib_Arduino",
+    "RTduino",
+    "Arduino",
+    "u8glib"
+  ],
+  "category": "arduino/display",
+  "author": {
+    "name": "olikraus",
+    "email": "olikraus@gmail.com",
+    "github": "olikraus"
+  },
+  "license": "new-bsd",
+  "repository": "https://github.com/olikraus/U8glib_Arduino",
+  "icon": "unknown",
+  "homepage": "https://github.com/olikraus/U8glib_Arduino#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.19.1",
+      "URL": "https://github.com/olikraus/U8glib_Arduino/archive/refs/tags/1.19.1.zip",
+      "filename": "U8glib_Arduino-1.19.1.zip"
+    }
+  ]
+}
