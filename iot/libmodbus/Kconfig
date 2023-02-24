@@ -18,6 +18,7 @@ if PKG_USING_LIBMODBUS
         bool "Enable libmodbus rtu mode"
         default n
         select RT_USING_POSIX_TERMIOS
+        select RT_USING_POSIX_SELECT
 
     if PKG_USING_LIBMODBUS_RTU
         config HAVE_DECL_TIOCSRS485
