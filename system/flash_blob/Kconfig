@@ -1,0 +1,32 @@
+
+# Kconfig file for package flash_blob
+menuconfig PKG_USING_FLASH_BLOB
+    bool "flash_blob: Tool for quickly generating flash driver files."
+    default n
+
+if PKG_USING_FLASH_BLOB
+
+    config PKG_FLASH_BLOB_PATH
+        string
+        default "/packages/system/flash_blob"
+
+    choice
+        prompt "Version"
+        default PKG_USING_FLASH_BLOB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FLASH_BLOB_V100
+            bool "v1.0.0"
+
+        config PKG_USING_FLASH_BLOB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_FLASH_BLOB_VER
+       string
+       default "v1.0.0"    if PKG_USING_FLASH_BLOB_V100
+       default "latest"    if PKG_USING_FLASH_BLOB_LATEST_VERSION
+
+endif
+

@@ -31,7 +31,7 @@ jobs:
             sudo apt-get update && sudo apt-get install python-tk
             sudo apt-get install scons rxvt-unicode
             sudo apt-get -qq install gcc-multilib libc6:i386 libgcc1:i386 gcc-4.6-base:i386 libstdc++5:i386 libstdc++6:i386 libsdl-dev || true
-            pip install requests
+            pip install scons requests tqdm wget html-table
 
         - name: Packages check 
           shell: bash 
@@ -43,3 +43,31 @@ jobs:
             cd ${RTT_ROOT}/bsp/qemu-vexpress-a9 && sudo -E ../../tools/kconfig-frontends/kconfig-mconf Kconfig -n
             cp ${RTT_ROOT}/tools/kconfiglib.py ./ && python -c 'import kconfiglib; kconfiglib.standard_kconfig()'
             cd ${PKGS_ROOT}/packages && python ci.py
+
+  test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: Packages test
+          shell: bash 
+          run: |
+            sudo apt update
+            sudo apt upgrade -y
+            sudo apt install python3 python3-pip gcc git libncurses5-dev -y
+            python3 -m pip install scons requests tqdm wget html-table
+            url=https://raw.githubusercontent.com/RT-Thread/env/master/touch_env.sh
+            wget $url -O touch_env.sh
+            chmod 777 touch_env.sh
+            ./touch_env.sh
+            BASE_ROOT=${{ github.workspace }}
+            cd .. && mkdir packages_temp && cp packages -R packages_temp && mv packages_temp packages/packages_temp && cd packages/packages_temp && cd .. && mkdir env && mv packages_temp env/packages
+            cp env/* ~/.env/ -rf
+            cd ${BASE_ROOT} && git clone https://github.com/RT-Thread/pkgs-test.git
+            cd pkgs-test
+            python -c 'import PackagesWarehouse; checkout=PackagesWarehouse.PackagesWarehouse("'${BASE_ROOT}/env/packages/packages'","https://github.com/RT-Thread/packages", "master"); checkout.write_config(checkout.get_change_pkg_name(),"config.json","git_config.json");'
+            ~/.env/tools/scripts/pkgs --upgrade-modules
+            python pkgs-test.py --config=git_config.json
+        - uses: actions/upload-artifact@v3
+          with:
+            name: artifacts_export
+            path: ${{ github.workspace }}/pkgs-test/artifacts_export

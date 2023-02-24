@@ -6,7 +6,7 @@
   "keywords": [
     "icm20608"
   ],
-  "category": "peripherals",
+  "category": "peripherals/sensors",
   "author": {
     "name": "RealThread",
     "email": "package_team@rt-thread.com",

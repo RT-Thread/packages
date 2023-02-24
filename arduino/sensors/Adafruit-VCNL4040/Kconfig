@@ -4,7 +4,7 @@ menuconfig PKG_USING_ARDUINO_ADAFRUIT_VCNL4040
     bool "Adafruit Vcnl4040: Proximity and Ambient Light Sensor"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
-    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO 
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
 
 if PKG_USING_ARDUINO_ADAFRUIT_VCNL4040

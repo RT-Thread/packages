@@ -17,7 +17,7 @@ if PKG_USING_ARDUINO_SEEED_AT42QT1070
         default PKG_USING_ARDUINO_SEEED_AT42QT1070_LATEST_VERSION
         help
             Select the package version
-            
+
         config PKG_USING_ARDUINO_SEEED_AT42QT1070_LATEST_VERSION
             bool "latest"
     endchoice

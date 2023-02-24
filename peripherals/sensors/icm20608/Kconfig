@@ -8,7 +8,7 @@ if PKG_USING_ICM20608
 
     config PKG_ICM20608_PATH
         string
-        default "/packages/peripherals/icm20608"
+        default "/packages/peripherals/sensors/icm20608"
 
     choice
         prompt "Version"

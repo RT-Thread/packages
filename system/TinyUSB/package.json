@@ -10,7 +10,7 @@
   "category": "system",
   "author": {
     "name": "tfx2001",
-    "email": "2479727366@qq.com",
+    "email": "tfx2001@outlook.com",
     "github": "tfx2001"
   },
   "license": "MIT",
@@ -28,6 +28,11 @@
       "version": "v0.13.0",
       "URL": "https://github.com/RT-Thread-packages/tinyusb/archive/0.13.0.zip",
       "filename": "tinyusb-0.13.0.zip"
+    },
+    {
+      "version": "v0.14.0",
+      "URL": "https://github.com/RT-Thread-packages/tinyusb/archive/0.14.0.zip",
+      "filename": "tinyusb-0.14.0.zip"
     }
   ]
 }

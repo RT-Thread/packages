@@ -8,7 +8,7 @@ if PKG_USING_AS7341
 
     config PKG_AS7341_PATH
         string
-        default "/packages/peripherals/as7341"
+        default "/packages/peripherals/sensors/as7341"
 
     choice
         prompt "Version"
