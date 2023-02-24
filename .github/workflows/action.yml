@@ -51,8 +51,6 @@ jobs:
         - name: Packages test
           shell: bash 
           run: |
-            sudo apt update
-            sudo apt upgrade -y
             sudo apt install python3 python3-pip gcc git libncurses5-dev -y
             python3 -m pip install scons requests tqdm wget html-table
             url=https://raw.githubusercontent.com/RT-Thread/env/master/touch_env.sh
