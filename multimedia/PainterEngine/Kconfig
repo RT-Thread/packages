@@ -1,6 +1,0 @@
-menu "PainterEngine: A cross-platform graphics application framework written in C language"
-
-source "$PKGS_DIR/packages/multimedia/PainterEngine/PainterEngine/Kconfig"
-source "$PKGS_DIR/packages/multimedia/PainterEngine/PainterEngine_AUX/Kconfig"
-
-endmenu
