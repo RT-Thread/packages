@@ -69,3 +69,11 @@ jobs:
           with:
             name: artifacts_export
             path: ${{ github.workspace }}/pkgs-test/artifacts_export
+        - name: Packages test error
+          shell: bash 
+          run: |
+            cd ${{ github.workspace }}/pkgs-test/artifacts_export
+            if [ -f "index.html" ]; then str1=`cat index.html`; else str1=""; fi
+            echo $str1
+            str2="#f00"
+            if [[ $str1 == *$str2* ]]; then echo "Software package test failed." && exit 1; else echo "Software package test success.";fi
