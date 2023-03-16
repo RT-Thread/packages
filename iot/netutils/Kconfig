@@ -124,8 +124,6 @@ if PKG_USING_NETUTILS
         prompt "Version"
         help
             Select the netutils version
-        default PKG_USING_NETUTILS_LATEST_VERSION if RT_VER_NUM = 0x40100
-        default PKG_USING_NETUTILS_V132
 
         config PKG_USING_NETUTILS_LATEST_VERSION
             bool "latest"
