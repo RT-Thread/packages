@@ -39,9 +39,6 @@ if PKG_USING_RC522
         help
             Select the package version
 
-        config PKG_USING_RC522_LATEST_VERSION
-            bool "latest"
-
         config PKG_USING_RC522_V10410
             bool "v1.4.10"
 
@@ -49,6 +46,8 @@ if PKG_USING_RC522
             bool "v1.4.5"
             depends on RT_VER_NUM < 0x40101
 
+        config PKG_USING_RC522_LATEST_VERSION
+            bool "latest"
     endchoice
 
     config PKG_RC522_VER
