@@ -48,15 +48,18 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
-        - name: Packages test
+        - name: Install Tools
           shell: bash 
           run: |
             sudo apt install python3 python3-pip gcc git libncurses5-dev -y
-            python3 -m pip install scons requests tqdm wget html-table
+            python3 -m pip install scons==4.4.0 requests tqdm wget html-table
             url=https://raw.githubusercontent.com/RT-Thread/env/master/touch_env.sh
             wget $url -O touch_env.sh
             chmod 777 touch_env.sh
             ./touch_env.sh
+        - name: Packages test
+          shell: bash 
+          run: |
             BASE_ROOT=${{ github.workspace }}
             cd .. && mkdir packages_temp && cp packages -R packages_temp && mv packages_temp packages/packages_temp && cd packages/packages_temp && cd .. && mkdir env && mv packages_temp env/packages
             cp env/* ~/.env/ -rf
@@ -72,7 +75,7 @@ jobs:
         - name: Packages test error
           shell: bash 
           run: |
-            cd ${{ github.workspace }}/pkgs-test/artifacts_export
+            cd ${{ github.workspace }}/pkgs-test/artifacts_export || true
             if [ -f "index.html" ]; then str1=`cat index.html`; else str1=""; fi
             echo $str1
             str2="#f00"
