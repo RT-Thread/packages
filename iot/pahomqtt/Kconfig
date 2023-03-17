@@ -61,19 +61,17 @@ if PKG_USING_PAHOMQTT
 
         ### Notice, the posix/libc had changed the structure of folder since RT-Thread V4.1.0.
         ### if the pahomqtt will release new tag, should add it here.
-        if RT_VER_NUM >= 0x40100
-            config PKG_USING_PAHOMQTT_LATEST
-                bool "latest"
-        endif
+        config PKG_USING_PAHOMQTT_LATEST
+            bool "latest"
+            depends on RT_VER_NUM >= 0x40100
 
-        if RT_VER_NUM < 0x40100
-            config PKG_USING_PAHOMQTT_V110
-                bool "v1.1.0"
+        config PKG_USING_PAHOMQTT_V110
+            bool "v1.1.0"
+            depends on RT_VER_NUM < 0x40100
 
-            config PKG_USING_PAHOMQTT_V100
-                bool "v1.0.0"
-        endif
-
+        config PKG_USING_PAHOMQTT_V100
+            bool "v1.0.0"
+            depends on RT_VER_NUM < 0x40100
     endchoice
 
     config PKG_PAHOMQTT_VER
