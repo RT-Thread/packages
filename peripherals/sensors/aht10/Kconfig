@@ -47,11 +47,11 @@ if PKG_USING_AHT10
 
         config PKG_USING_AHT10_V210
             bool "v2.1.0"
-            depends on RT_VER_NUM < 0x50000 
+            depends on RT_VER_NUM < 0x50000
 
         config PKG_USING_AHT10_V200
             bool "v2.0.0"
-            depends on RT_VER_NUM < 0x50000 
+            depends on RT_VER_NUM < 0x50000
 
         config PKG_USING_AHT10_V100
             bool "v1.0.0"

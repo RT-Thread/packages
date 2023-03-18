@@ -9,7 +9,7 @@ if PKG_USING_RTT_AUTO_EXE_CMD
     config PKG_RTT_AUTO_EXE_CMD_PATH
         string
         default "/packages/tools/rtt_auto_exe_cmd"
-        
+
     config RTT_AUTO_CMD_THREAD_STACK_SIZE
         int "The RTT_AUTO_EXE thread stack size"
         default 20480
