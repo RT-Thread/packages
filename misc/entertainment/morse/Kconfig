@@ -7,7 +7,7 @@ if PKG_USING_MORSE
     config PKG_MORSE_PATH
         string
         default "/packages/misc/entertainment/morse"
-    
+
     config PKG_USING_MORSE_DI_DA_SEPARATE
         int
         prompt "Di da separate time ms"
@@ -20,7 +20,7 @@ if PKG_USING_MORSE
     config PKG_USING_MORSE_SHELL
         bool "Enable MORSE SHELL"
         default n
-    
+
     config PKG_USING_MORSE_SAMPLE
         bool "Enable MORSE SAMPLE"
         default n
@@ -35,7 +35,7 @@ if PKG_USING_MORSE
             config PKG_USING_MORSE_KEY_SAMPLE
                 bool "KEY_SAMPLE"
         endchoice
-	endif
+    endif
 
     choice
         prompt "Version"
