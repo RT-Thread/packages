@@ -21,16 +21,12 @@ if PKG_USING_PERF_COUNTER
         help
             Select the package version
 
-        config PKG_USING_PERF_COUNTER_V10908
-            bool "v1.9.8"
-
         config PKG_USING_PERF_COUNTER_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_PERF_COUNTER_VER
        string
-       default "v1.9.8"    if PKG_USING_PERF_COUNTER_V10908
        default "latest"    if PKG_USING_PERF_COUNTER_LATEST_VERSION
 
 endif

@@ -21,16 +21,10 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.9.8",
-      "URL": "https://github.com/GorgonMeducer/perf_counter/archive/refs/tags/v1.9.8.zip",
-      "filename": "perf_counter-1.9.8.zip",
-      "VER_SHA": ""
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/GorgonMeducer/perf_counter.git",
       "filename": "",
-      "VER_SHA": "main"
+      "VER_SHA": "RT-Thread-Only"
     }
   ]
 }
