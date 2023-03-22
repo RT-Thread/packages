@@ -1,4 +1,3 @@
-
 # Kconfig file for package 3gpp amrnb
 menuconfig PKG_USING_3GPP_AMRNB
     bool "Enable 3gpp amrnb codec library"
@@ -17,12 +16,21 @@ menuconfig PKG_USING_3GPP_AMRNB
             config PKG_USING_AMRNB_LATEST_VERSION
                 bool "latest"
 
+            config PKG_USING_AMRNB_V100
+                bool "v1.0.0"
+
         endchoice
 
         if PKG_USING_AMRNB_LATEST_VERSION
             config PKG_AMRNB_VER
-            string
-            default "latest"
+                string
+                default "latest"
+        endif
+
+        if PKG_USING_AMRNB_V100
+            config PKG_AMRNB_VER
+                string
+                default "v1.0.0"
         endif
         
         config AMRNB_USING_CMD
