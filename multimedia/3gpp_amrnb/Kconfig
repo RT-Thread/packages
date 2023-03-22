@@ -9,29 +9,26 @@ menuconfig PKG_USING_3GPP_AMRNB
             default "/packages/multimedia/3gpp_amrnb"
 
         choice
-            prompt "version"
+            prompt "Version"
             help
-                Select the 3gpp amrnb version
+                Select the 3gpp amrnb package version
 
-            config PKG_USING_AMRNB_LATEST_VERSION
+            config PKG_AMRNB_USING_LATEST_VERSION
                 bool "latest"
 
-            config PKG_USING_AMRNB_V100
+            config PKG_AMRNB_USING_V010000
                 bool "v1.0.0"
-
         endchoice
 
-        if PKG_USING_AMRNB_LATEST_VERSION
-            config PKG_AMRNB_VER
-                string
-                default "latest"
-        endif
+        config PKG_AMRNB_VER_NUM
+            hex
+            default 0x010000    if PKG_AMRNB_USING_V010000
+            default 0x999999    if PKG_AMRNB_USING_LATEST_VERSION
 
-        if PKG_USING_AMRNB_V100
-            config PKG_AMRNB_VER
-                string
-                default "v1.0.0"
-        endif
+        config PKG_AMRNB_VER
+            string
+            default "v1.0.0"    if PKG_AMRNB_VER_NUM = 0x010000
+            default "latest"    if PKG_AMRNB_VER_NUM = 0x999999
         
         config AMRNB_USING_CMD
             bool "Enable codec command"
