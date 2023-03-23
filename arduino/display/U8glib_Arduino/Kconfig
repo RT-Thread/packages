@@ -15,14 +15,14 @@ if PKG_USING_ARDUINO_U8GLIB_ARDUINO
         help
             Select the package version
 
-        config PKG_USING_ARDUINO_U8GLIB_ARDUINO_V1191
-            bool "v1.19.1"
+        config PKG_USING_ARDUINO_U8GLIB_ARDUINO_LATEST_VERSION
+            bool "latest"
 
     endchoice
 
     config PKG_ARDUINO_U8GLIB_ARDUINO_VER
        string
-       default "v1.19.1"    if PKG_USING_ARDUINO_U8GLIB_ARDUINO_V1191
+       default "latest"    if PKG_USING_ARDUINO_U8GLIB_ARDUINO_LATEST_VERSION
 
 endif
 
