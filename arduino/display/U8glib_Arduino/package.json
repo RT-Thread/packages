@@ -16,15 +16,16 @@
     "github": "olikraus"
   },
   "license": "new-bsd",
-  "repository": "https://github.com/olikraus/U8glib_Arduino",
+  "repository": "https://github.com/RTduino-libraries/U8glib_Arduino",
   "icon": "unknown",
-  "homepage": "https://github.com/olikraus/U8glib_Arduino#readme",
+  "homepage": "https://github.com/RTduino-libraries/U8glib_Arduino#readme",
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.19.1",
-      "URL": "https://github.com/olikraus/U8glib_Arduino/archive/refs/tags/1.19.1.zip",
-      "filename": "U8glib_Arduino-1.19.1.zip"
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/U8glib_Arduino.git",
+      "filename": "",
+      "VER_SHA": "master"
     }
   ]
 }
