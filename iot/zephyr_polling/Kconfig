@@ -45,7 +45,7 @@ if PKG_USING_ZEPHYR_POLLING
     # chipset
     choice
         prompt "Select ChipSet"
-        default PKG_ZEPHYR_POLLING_CHIPSET_ARTPI_AP6212
+        default PKG_ZEPHYR_POLLING_CHIPSET_COMMON
         help
             select the zephyr_polling chipset
 
@@ -168,7 +168,7 @@ if PKG_USING_ZEPHYR_POLLING
     # porting
     choice
         prompt "Select Platform"
-        default PKG_ZEPHYR_POLLING_PORT_RTTHREAD_ARTPI
+        default PKG_ZEPHYR_POLLING_PORT_RTTHREAD_UART
         help
             select the zephyr_polling chipset
 
