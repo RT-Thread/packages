@@ -62,4 +62,5 @@ source "$PKGS_DIR/packages/iot/small_modbus/Kconfig"
 source "$PKGS_DIR/packages/iot/net_server/Kconfig"
 source "$PKGS_DIR/packages/iot/zFTP/Kconfig"
 source "$PKGS_DIR/packages/iot/wol/Kconfig"
+source "$PKGS_DIR/packages/iot/zephyr_polling/Kconfig"
 endmenu
