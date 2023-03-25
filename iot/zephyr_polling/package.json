@@ -4,7 +4,9 @@
   "description_zh": "zephyr_polling: 蓝牙BLE协议栈。",
   "enable": "PKG_USING_ZEPHYR_POLLING",
   "keywords": [
-    "zephyr_polling"
+    "zephyr_polling",
+    "bluetooth",
+    "ble"
   ],
   "category": "iot",
   "author": {
@@ -26,7 +28,7 @@
     {
       "version": "latest",
       "URL": "https://github.com/bobwenstudy/RTT_PACKAGE_zephyr_polling.git",
-      "filename": "",
+      "filename": "zephyr_polling.zip",
       "VER_SHA": "main"
     }
   ]
