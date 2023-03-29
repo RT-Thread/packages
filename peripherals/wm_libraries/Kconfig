@@ -6,6 +6,10 @@ menuconfig PKG_USING_WM_LIBRARIES
 
 if PKG_USING_WM_LIBRARIES && ARCH_ARM_CORTEX_M3
 
+    config PKG_USING_WM_LIBRARIES
+        depends on ARCH_ARM_CORTEX_M3
+        default n
+
     config PKG_WM_LIBRARIES_PATH
         string
         default "/packages/peripherals/wm_libraries"
