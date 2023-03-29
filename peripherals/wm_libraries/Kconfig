@@ -4,8 +4,7 @@ menuconfig PKG_USING_WM_LIBRARIES
     bool "wm_libraries: a library package for WinnerMicro devices."
     default n
 
-if PKG_USING_WM_LIBRARIES
-    depends on ARCH_ARM_CORTEX_M3
+if PKG_USING_WM_LIBRARIES && ARCH_ARM_CORTEX_M3
 
     config PKG_WM_LIBRARIES_PATH
         string
