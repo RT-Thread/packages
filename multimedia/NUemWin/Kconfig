@@ -10,13 +10,9 @@ if PKG_USING_NUEMWIN
         string
         default "/packages/multimedia/NUemWin"
 
-    config PKG_NUEMWIN_MEM_SIZE
-        int "NUemWin memory size (MB)"
-        default 4
-
     config PKG_USING_NUEMWIN_EXAMPLE
         bool "Enable NUemWin example"
-        default n
+        default y
 
     if PKG_USING_NUEMWIN_EXAMPLE
         choice
