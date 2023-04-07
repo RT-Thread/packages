@@ -1,7 +1,7 @@
 
 # Kconfig file for package Adafruit-DS3502
 menuconfig PKG_USING_ARDUINO_ADAFRUIT_DS3502
-    bool " Adafruit DS3502: Digital Potentiometer"
+    bool   "Adafruit DS3502: Digital Potentiometer"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_WIRE
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO

@@ -2,6 +2,7 @@
 # Kconfig file for package wm_libraries
 menuconfig PKG_USING_WM_LIBRARIES
     bool "wm_libraries: a library package for WinnerMicro devices."
+    depends on ARCH_ARM_CORTEX_M3
     default n
 
 if PKG_USING_WM_LIBRARIES
