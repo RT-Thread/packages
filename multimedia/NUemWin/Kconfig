@@ -22,10 +22,16 @@ if PKG_USING_NUEMWIN
                 Select an example
 
             config PKG_USING_NUEMWIN_GUIDEMO
-                bool "GUIDemo"
+                bool "GUI Demo"
 
             config PKG_USING_NUEMWIN_SIMPLEDEMO
-                bool "SimpleDemo"
+                bool "Simple Demo"
+
+            config PKG_USING_NUEMWIN_APPWIZARD
+                bool "AppWizard Demo"
+
+            config PKG_USING_NUEMWIN_WEATHERFORECAST
+                bool "Weather Forecast Demo"
 
         endchoice
     endif
