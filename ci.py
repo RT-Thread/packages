@@ -2,12 +2,8 @@
 
 import sys
 import os
-import stat
 import time
-import datetime
 import subprocess
-import shlex
-import shutil
 import json
 import requests
 
