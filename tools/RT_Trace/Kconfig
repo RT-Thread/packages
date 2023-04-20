@@ -1,0 +1,80 @@
+
+# Kconfig file for package RT_Trace
+menuconfig PKG_USING_RT_TRACE
+    bool "RT_Trace:by using J-Link realizes event monitoring"
+    default n
+
+if PKG_USING_RT_TRACE
+
+    config PKG_RT_TRACE_PATH
+        string
+        default "/packages/tools/RT_Trace"
+
+    config CTF_USE_TIMESTAMP
+        bool "Trace use timestamp"
+        default n
+    
+    if CTF_USE_TIMESTAMP
+        config FREQUENCY_OF_TIMESTAMP
+            int "Frequency of timestamp"
+            default 480000000
+    endif
+
+    config TRACE_PACKET_SIZE
+        int "TRACE_PACKET_SIZE"
+        default 2048
+        help
+            trace has two buffer, total size is TRACE_PACKET_SIZE * 2
+    
+    menu "Select listening events"
+
+        config TRACE_LISTEN_SCHEDULE
+            bool "listen thread schedule"
+            default y
+        config TRACE_LISTEN_TIMER
+            bool "listen timmer"
+            default y
+        menuconfig TRACE_LISTEN_IPC
+            bool "listen ipc"
+            default n
+
+            if TRACE_LISTEN_IPC
+                config TRACE_LISTEN_SEM
+                    bool "listen semaphore"
+                    default y
+                config TRACE_LISTEN_MUTEX
+                    bool "listen mutex"
+                    default n
+                config TRACE_LISTEN_EVENT
+                    bool "listen event(ipc)"
+                    default n
+                config TRACE_LISTEN_MB
+                    bool "listen mailbox"
+                    default n
+                config TRACE_LISTEN_MQ
+                    bool "listen message queue"
+                    default n
+            endif
+            
+    endmenu
+
+    choice
+        prompt "Version"
+        default PKG_USING_RT_TRACE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RT_TRACE_V001
+            bool "v0.0.1"
+
+        config PKG_USING_RT_TRACE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RT_TRACE_VER
+       string
+       default "v0.0.1"    if PKG_USING_RT_TRACE_V001
+       default "latest"    if PKG_USING_RT_TRACE_LATEST_VERSION
+
+endif
+
