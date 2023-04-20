@@ -1,6 +1,7 @@
 
 # Kconfig file for package RT_Trace
 menuconfig PKG_USING_RT_TRACE
+    depends on ARCH_ARM_CORTEX_M0 || ARCH_ARM_CORTEX_M3 || ARCH_ARM_CORTEX_M4 || ARCH_ARM_CORTEX_M7
     bool "RT_Trace:by using J-Link realizes event monitoring"
     default n
 

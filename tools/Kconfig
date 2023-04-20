@@ -45,5 +45,5 @@ source "$PKGS_DIR/packages/tools/snowflake/Kconfig"
 source "$PKGS_DIR/packages/tools/hash-match/Kconfig"
 source "$PKGS_DIR/packages/tools/armv7m_DWT/Kconfig"
 source "$PKGS_DIR/packages/tools/vofa_plus/Kconfig"
-source "$PKGS_DIR//packages/tools/RT_Trace/Kconfig"
+source "$PKGS_DIR/packages/tools/RT_Trace/Kconfig"
 endmenu
