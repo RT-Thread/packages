@@ -1,0 +1,35 @@
+{
+  "name": "RT_Trace",
+  "description": "using J-Link realizes event monitoring.",
+  "description_zh": "使用 J-Link 实现事件监控",
+  "enable": "PKG_USING_RT_TRACE",
+  "keywords": [
+    "RT_Trace"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "liboran",
+    "email": "liboran05@gmail.com",
+    "github": "liboran05@gmail.com"
+  },
+  "license": "Commercial License",
+  "repository": "https://github.com/Ruboom/RT_Trace",
+  "icon": "unknown",
+  "homepage": "https://github.com/Ruboom/RT_Trace#readme",
+  "doc": "unknown",
+  "readme": "Trace for rt-thread",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/Ruboom/RT_Trace/archive/refs/tags/v0.0.1.zip",
+      "filename": "RT_Trace-0.0.1.zip"
+    },
+
+    {
+      "version": "latest",
+      "URL": "https://github.com/Ruboom/RT_Trace.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
