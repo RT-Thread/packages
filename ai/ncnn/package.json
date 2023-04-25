@@ -1,28 +1,26 @@
 {
   "name": "ncnn",
-  "description": "Please add description of ncnn in English.",
-  "description_zh": "请添加软件包 ncnn 的中文描述。",
+  "description": "NCNN package for RT-Thread",
+  "description_zh": "ncnn静态库",
   "enable": "PKG_USING_NCNN",
   "keywords": [
     "ncnn"
   ],
   "category": "ai",
   "author": {
-    "name": "yechang@rt-thread.com",
+    "name": "yechang",
     "email": "yechang@rt-thread.com",
-    "github": "yechang@rt-thread.com"
+    "github": "yc66542260"
   },
   "license": "BSD-3-Clause",
   "repository": "https://github.com/yc66542260/ncnn-rtthread",
-  "icon": "unknown",
   "homepage": "https://github.com/yc66542260/ncnn-rtthread#readme",
-  "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
       "URL": "https://github.com/yc66542260/ncnn-rtthread.git",
-      "filename": "ncnn-rtthread-1.0.0.zip",
-	  "VER_SHA": "248489d0493304e41e4757c858609aa17c0e06fa"
+      "filename": "ncnn-rtthread-main.zip",
+	  "VER_SHA": "6c22a29b479071d3e8dcd4e7347285c7a5829ded"
     },
     {
       "version": "latest",
