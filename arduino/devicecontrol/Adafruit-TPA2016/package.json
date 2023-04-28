@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-TPA2016",
+  "description": "Adafruit TPA2016 Class D Amplifier Breakout",
+  "description_zh": "Adafruit TPA2016 D类放大器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_TPA2016",
+  "keywords": [
+    "Adafruit-TPA2016",
+    "Device Control",
+    "Adafruit",
+    "TPA2016",
+    "Class D Amplifier"
+  ],
+  "category": "arduino/devicecontrol",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit-TPA2016-Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit-TPA2016-Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit-TPA2016-Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

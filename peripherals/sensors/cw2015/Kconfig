@@ -1,0 +1,42 @@
+
+# Kconfig file for package cw2015
+menuconfig PKG_USING_CW2015
+    bool "cw2015:fuel gauging system IC for Lithium-ion(Li+) Battery."
+    default n
+
+if PKG_USING_CW2015
+
+    config PKG_CW2015_PATH
+        string
+        default "/packages/peripherals/sensors/cw2015"
+
+   config CW2015_DEVICE_NAME
+        string "the device name for cw2015"
+        default "i2c1"
+
+    config CW2015_USE_AUTO_UPDATE
+        bool "Enable CW2015 AUTO UPDATE BAT INFO "
+        default n
+        help
+            "It will create a thread to update the battery info."
+
+    choice
+        prompt "Version"
+        default PKG_USING_CW2015_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CW2015_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CW2015_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CW2015_VER
+       string
+       default "v1.0.0"    if PKG_USING_CW2015_V100
+       default "latest"    if PKG_USING_CW2015_LATEST_VERSION
+
+endif
+

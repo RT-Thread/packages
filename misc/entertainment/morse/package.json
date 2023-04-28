@@ -1,0 +1,28 @@
+{
+  "name": "morse",
+  "description": "morse code",
+  "description_zh": "摩尔斯电码",
+  "enable": "PKG_USING_MORSE",
+  "keywords": [
+    "morse"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "zhkag",
+    "email": "zhkag@foxmail.com",
+    "github": "zhkag"
+  },
+  "license": "None",
+  "repository": "https://github.com/zhkag/morse",
+  "icon": "unknown",
+  "homepage": "https://github.com/zhkag/morse",
+  "doc": "https://github.com/zhkag/morse",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/zhkag/morse.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-DRV2605",
+  "description": "Adafruit DRV2605: Haptic Motor Controller",
+  "description_zh": "Adafruit DRV2605 触觉马达驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_DRV2605",
+  "keywords": [
+    "Adafruit-DRV2605",
+    "Device Control",
+    "Adafruit",
+    "DRV2605",
+    "Haptic"
+  ],
+  "category": "arduino/devicecontrol",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_DRV2605_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_DRV2605_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_DRV2605_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

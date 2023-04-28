@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-DS3502
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_DS3502
+    bool   "Adafruit DS3502: Digital Potentiometer"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_DS3502
+
+    config PKG_ARDUINO_ADAFRUIT_DS3502_PATH
+        string
+        default "/packages/arduino/devicecontrol/Adafruit-DS3502"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_DS3502_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_DS3502_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_DS3502_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_DS3502_LATEST_VERSION
+
+endif
+

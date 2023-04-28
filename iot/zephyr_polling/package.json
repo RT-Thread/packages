@@ -1,0 +1,35 @@
+{
+  "name": "zephyr_polling",
+  "description": "zephyr_polling: Bluetooth BLE Stack.",
+  "description_zh": "zephyr_polling: 蓝牙BLE协议栈。",
+  "enable": "PKG_USING_ZEPHYR_POLLING",
+  "keywords": [
+    "zephyr_polling",
+    "bluetooth",
+    "ble"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "bobwenstudy",
+    "email": "wenbo13579@163.com",
+    "github": "bobwenstudy"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/bobwenstudy/RTT_PACKAGE_zephyr_polling",
+  "icon": "unknown",
+  "homepage": "https://github.com/bobwenstudy/RTT_PACKAGE_zephyr_polling#README.md",
+  "doc": "https://zephyr-polling.readthedocs.io/en/latest/?badge=latest",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/bobwenstudy/RTT_PACKAGE_zephyr_polling/archive/refs/tags/v1.0.0.zip",
+      "filename": "zephyr_polling-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/bobwenstudy/RTT_PACKAGE_zephyr_polling.git",
+      "filename": "zephyr_polling.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

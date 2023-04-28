@@ -12,56 +12,50 @@ if PKG_USING_MPU6XXX
 
     choice
         prompt "Version"
-        default PKG_USING_MPU6XXX_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_MPU6XXX_V001
-            bool "v0.0.1"
-
-        config PKG_USING_MPU6XXX_V100
-            bool "v1.0.0(with sensor frame)"
-
-        config PKG_USING_MPU6XXX_V110
-            bool "v1.1.0(support mag)"
-
         config PKG_USING_MPU6XXX_LATEST_VERSION
             bool "latest"
+            depends on RT_VER_NUM >= 0x50000
+
+        config PKG_USING_MPU6XXX_V111
+            bool "v1.1.1"
+            depends on RT_VER_NUM < 0x50000
+
+        config PKG_USING_MPU6XXX_V110
+            bool "v1.1.0"
+            depends on RT_VER_NUM < 0x50000
+
+        config PKG_USING_MPU6XXX_V100
+            bool "v1.0.0"
+            depends on RT_VER_NUM < 0x50000
     endchoice
 
     config PKG_MPU6XXX_VER
        string
-       default "v0.0.1"    if PKG_USING_MPU6XXX_V001
        default "v1.0.0"    if PKG_USING_MPU6XXX_V100
        default "v1.1.0"    if PKG_USING_MPU6XXX_V110
+       default "v1.1.1"    if PKG_USING_MPU6XXX_V111
        default "latest"    if PKG_USING_MPU6XXX_LATEST_VERSION
 
-    if PKG_USING_MPU6XXX_V001
 
-        config PKG_USING_MPU6XXX_SAMPLE
-            bool "Enable mpu6xxx sample"
-            default n
+    config PKG_USING_MPU6XXX_SAMPLE
+        bool "Enable mpu6xxx sample"
+        default n
 
-    endif
+    config PKG_USING_MPU6XXX_ACCE
+        bool "Enable mpu6xxx acce"
+        default y
 
-    if PKG_USING_MPU6XXX_LATEST_VERSION || PKG_USING_MPU6XXX_V100 || PKG_USING_MPU6XXX_V110
+    config PKG_USING_MPU6XXX_GYRO
+        bool "Enable mpu6xxx gyro"
+        default y
 
-        config PKG_USING_MPU6XXX_ACCE
-            bool "Enable mpu6xxx acce"
-            default y
+    config PKG_USING_MPU6XXX_MAG
+        bool "Enable mpu6xxx mag"
+        depends on !PKG_USING_MPU6XXX_V100
+        default y
 
-        config PKG_USING_MPU6XXX_GYRO
-            bool "Enable mpu6xxx gyro"
-            default y
-
-    endif
-
-    if PKG_USING_MPU6XXX_LATEST_VERSION || PKG_USING_MPU6XXX_V110
-
-        config PKG_USING_MPU6XXX_MAG
-            bool "Enable mpu6xxx mag"
-            default y
-
-    endif
 endif
 

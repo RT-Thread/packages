@@ -15,12 +15,12 @@ source "$PKGS_DIR/packages/multimedia/NUemWin/Kconfig"
 source "$PKGS_DIR/packages/multimedia/mp3player/Kconfig"
 source "$PKGS_DIR/packages/multimedia/TinyJPEG/Kconfig"
 source "$PKGS_DIR/packages/multimedia/ugui/Kconfig"
-source "$PKGS_DIR/packages/multimedia/PainterEngine/Kconfig"
 source "$PKGS_DIR/packages/multimedia/mcurses/Kconfig"
 source "$PKGS_DIR/packages/multimedia/termbox/Kconfig"
 source "$PKGS_DIR/packages/multimedia/vt100/Kconfig"
 source "$PKGS_DIR/packages/multimedia/qrcode/Kconfig"
 source "$PKGS_DIR/packages/multimedia/gui_engine/Kconfig"
 source "$PKGS_DIR/packages/multimedia/persimmon/Kconfig"
+source "$PKGS_DIR/packages/multimedia/3gpp_amrnb/Kconfig"
 
 endmenu

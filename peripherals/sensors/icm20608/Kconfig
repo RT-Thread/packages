@@ -1,0 +1,32 @@
+
+# Kconfig file for package icm20608
+menuconfig PKG_USING_ICM20608
+    bool "icm20608: a 3-axis gyroscope and a 3-axis accelerometer driver library"
+    default n
+
+if PKG_USING_ICM20608
+
+    config PKG_ICM20608_PATH
+        string
+        default "/packages/peripherals/sensors/icm20608"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ICM20608_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ICM20608_V100
+            bool "v1.0.0"
+
+        config PKG_USING_ICM20608_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ICM20608_VER
+       string
+       default "v1.0.0"    if PKG_USING_ICM20608_V100
+       default "latest"    if PKG_USING_ICM20608_LATEST_VERSION
+
+endif
+

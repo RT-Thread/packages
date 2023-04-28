@@ -1,0 +1,56 @@
+
+# Kconfig file for package RyanW5500
+menuconfig PKG_USING_RYANW5500
+    bool "RyanW5500"
+    default n
+    select RT_USING_PIN
+    select RT_USING_SPI
+    select RT_USING_POSIX
+    select RT_USING_SAL
+    select RT_USING_ULOG
+    select ULOG_USING_COLOR
+
+if PKG_USING_RYANW5500
+
+    config PKG_RYANW5500_PATH
+        string
+        default "/packages/iot/RyanW5500"
+
+    config PKG_USING_RYANW5500_EXAMPLE
+        bool "Enable RyanW5500 example"
+        default y
+
+
+    config RYANW5500_SPI_DEVICE
+        string "SPI device name"
+        default "spi26"
+
+    config RYANW5500_RST_PIN
+        int "Reset PIN number"
+        default 32
+
+    config RYANW5500_IRQ_PIN
+        int "IRQ PIN number"
+        default 33
+
+
+    choice
+        prompt "Version"
+        default PKG_USING_RYANW5500_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RYANW5500_V001
+            bool "v0.0.1"
+
+        config PKG_USING_RYANW5500_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RYANW5500_VER
+       string
+       default "v0.0.1"    if PKG_USING_RYANW5500_V001
+       default "latest"    if PKG_USING_RYANW5500_LATEST_VERSION
+
+endif
+

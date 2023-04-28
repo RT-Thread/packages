@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-TPA2016
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_TPA2016
+    bool "Adafruit TPA2016: Class D Amplifier Breakout"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_TPA2016
+
+    config PKG_ARDUINO_ADAFRUIT_TPA2016_PATH
+        string
+        default "/packages/arduino/devicecontrol/Adafruit-TPA2016"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_TPA2016_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_TPA2016_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_TPA2016_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_TPA2016_LATEST_VERSION
+
+endif
+

@@ -41,19 +41,21 @@ if PKG_USING_AHT10
         help
             Select the package version
 
-        if RT_VER_NUM >= 0x50000
-            config PKG_USING_AHT10_LATEST_VERSION
-                bool "latest"
-        endif
+        config PKG_USING_AHT10_LATEST_VERSION
+            bool "latest"
+            depends on RT_VER_NUM >= 0x50000
 
         config PKG_USING_AHT10_V210
             bool "v2.1.0"
+            depends on RT_VER_NUM < 0x50000
 
         config PKG_USING_AHT10_V200
             bool "v2.0.0"
+            depends on RT_VER_NUM < 0x50000
 
         config PKG_USING_AHT10_V100
             bool "v1.0.0"
+            depends on RT_VER_NUM < 0x50000
 
     endchoice
 

@@ -1,6 +1,5 @@
 menu "sensors drivers"
 
-source "$PKGS_DIR/packages/peripherals/sensors/fingerprint/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsm/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/lsm6dsl/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/lps22hb/Kconfig"
@@ -60,5 +59,10 @@ source "$PKGS_DIR/packages/peripherals/sensors/sht3x/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/ad7746/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/adt74xx/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/max17048/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/as7341/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/cw2015/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/icm20608/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/PAJ7620/Kconfig"
+source "$PKGS_DIR/packages/peripherals/sensors/sths34pf80/Kconfig"
 
 endmenu
