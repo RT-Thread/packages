@@ -23,6 +23,8 @@ if PKG_USING_CHERRYUSB
         choice
             prompt "Select usb device ip"
             default PKG_CHERRYUSB_DEVICE_FSDEV
+            config PKG_CHERRYUSB_DEVICE_CUSTOM
+                bool "CUSTOM (Implement it yourself)"
             config PKG_CHERRYUSB_DEVICE_BL
                 bool "BL"
             config PKG_CHERRYUSB_DEVICE_CH32
@@ -192,6 +194,8 @@ if PKG_USING_CHERRYUSB
         choice
             prompt "Select usb host ip"
             default PKG_CHERRYUSB_HOST_MUSB
+            config PKG_CHERRYUSB_HOST_CUSTOM
+                bool "CUSTOM (Implement it yourself)"
             config PKG_CHERRYUSB_HOST_MUSB
                 bool "MUSB"
             config PKG_CHERRYUSB_HOST_DWC2
