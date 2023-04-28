@@ -13,7 +13,7 @@ if PKG_USING_AIP650
 
     config PKG_AIP650_I2C_NAME
         string "i2c bus"
-        default ""
+        default "i2c1"
 
     config AIP650_USING_EXAMPLE
         bool "example for aip650/tm1650"
