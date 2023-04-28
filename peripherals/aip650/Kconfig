@@ -19,6 +19,11 @@ if PKG_USING_AIP650
         bool "example for aip650/tm1650"
         default n
 
+    config AIP650_TEST_KEY
+        bool "test one key in example"
+        depends on AIP650_USING_EXAMPLE
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_AIP650_LATEST_VERSION
