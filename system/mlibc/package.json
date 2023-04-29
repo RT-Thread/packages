@@ -1,0 +1,29 @@
+{
+  "name": "mlibc",
+  "description": "Embedded libc, especially for RISC-V",
+  "description_zh": "mbedded libc, especially for RISC-V",
+  "enable": "PKG_USING_MLIBC",
+  "keywords": [
+    "mlibc",
+    "libc"
+  ],
+  "category": "system",
+  "author": {
+    "name": "plctlab",
+    "email": "plct-oss@iscas.ac.cn",
+    "github": "plctlab"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/plctlab/mlibc",
+  "icon": "unknown",
+  "homepage": "https://github.com/plctlab/mlibc#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/plctlab/mlibc.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
