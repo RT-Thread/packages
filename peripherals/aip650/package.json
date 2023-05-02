@@ -1,7 +1,7 @@
 {
   "name": "aip650",
-  "description": "A quick and easy-to-use digit led and key driver package",
-  "description_zh": "一个快捷易用的数码管和按键驱动包",
+  "description": "A quick and easy-to-use digit led and key driver package for aip650 and tm1650.",
+  "description_zh": "一个快捷易用的数码管和按键驱动包适用于aip650和tm1650。",
   "enable": "PKG_USING_AIP650",
   "keywords": [
     "key",

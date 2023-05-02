@@ -2,7 +2,7 @@
 # Kconfig file for package aip650
 
 menuconfig PKG_USING_AIP650
-    bool "aip650 : A quick and easy-to-use digit led and key driver package."
+    bool "aip650/tm1650 : A quick and easy-to-use digit led and key driver package for aip650 and tm1650."
     default n
 
 if PKG_USING_AIP650
