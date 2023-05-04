@@ -1,0 +1,32 @@
+{
+  "name": "spi-tools",
+  "description": "A collection of spi tools including scan/read/write.",
+  "description_zh": "SPI 调试时可以使用的小工具，可以扫描设备，读写寄存器",
+  "enable": "PKG_USING_SPI_TOOLS",
+  "keywords": [
+    "spi"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "vandoul",
+    "email": "vandoul@ticks.cn",
+    "github": "vandoul"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/vandoul/rt-spi-tools",
+  "homepage": "https://github.com/vandoul/rt-spi-tools#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/vandoul/rt-spi-tools.git",
+      "filename": "spi-tools-1.0.0.zip",
+      "VER_SHA": "df7204480f3aeee51edfe17277e9a64effc19565"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/vandoul/rt-spi-tools.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

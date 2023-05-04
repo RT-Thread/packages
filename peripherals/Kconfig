@@ -77,5 +77,6 @@ source "$PKGS_DIR/packages/peripherals/raspberrypi-pico-sdk/Kconfig"
 source "$PKGS_DIR/packages/peripherals/lrf-nv7lidar/Kconfig"
 source "$PKGS_DIR/packages/peripherals/aip650/Kconfig"
 source "$PKGS_DIR/packages/peripherals/fingerprint/Kconfig"
+source "$PKGS_DIR/packages/peripherals/spi-tools/Kconfig"
 
 endmenu
