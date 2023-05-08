@@ -1,5 +1,4 @@
 
-if RT_VER_NUM > 0x40101
 # Kconfig file for package SPI_TOOLS
 menuconfig PKG_USING_SPI_TOOLS
     bool "spi-tools: a collection of spi tools including init/deinit/config/trans"
@@ -29,5 +28,4 @@ if PKG_USING_SPI_TOOLS
        default "v1.0.0"    if PKG_USING_SPI_TOOLS_V100
        default "latest"    if PKG_USING_SPI_TOOLS_LATEST_VERSION
 
-endif
 endif
