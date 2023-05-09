@@ -78,4 +78,8 @@ source "$PKGS_DIR/packages/peripherals/lrf-nv7lidar/Kconfig"
 source "$PKGS_DIR/packages/peripherals/aip650/Kconfig"
 source "$PKGS_DIR/packages/peripherals/fingerprint/Kconfig"
 
+if RT_VER_NUM > 0x40101
+source "$PKGS_DIR/packages/peripherals/spi-tools/Kconfig"
+endif
+
 endmenu
