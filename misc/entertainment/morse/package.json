@@ -19,6 +19,12 @@
   "doc": "https://github.com/zhkag/morse",
   "site": [
     {
+      "version": "v0.0.1",
+      "URL": "https://github.com/zhkag/morse/archive/refs/tags/v0.0.1.zip",
+      "filename": "morse-0.0.1.zip",
+      "VER_SHA": "8cfd663d86eb80fa2edf00c5d7c1edd0312df864"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/zhkag/morse.git",
       "filename": "Null for git package",
