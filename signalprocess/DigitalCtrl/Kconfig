@@ -18,7 +18,7 @@ if PKG_USING_DIGITALCTRL
 
     config PKG_DIGITALCTRL_PATH
         string
-        default "/packages/misc/DigitalCtrl"
+        default "/packages/signalprocess/DigitalCtrl"
 
     choice
         prompt "version"
