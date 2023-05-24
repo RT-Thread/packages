@@ -1,0 +1,29 @@
+{
+  "name": "cst816x",
+  "description": "cst816x drivers for RT-Thread",
+  "description_zh": "cst816x 触摸芯片的驱动包。",
+  "enable": "PKG_USING_CST816X",
+  "keywords": [
+    "cst816x",
+    "touch"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Z8MAN8",
+    "email": "1468559561@qq.com",
+    "github": "Z8MAN8"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Z8MAN8/cst816x",
+  "icon": "unknown",
+  "homepage": "https://github.com/Z8MAN8/cst816x#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Z8MAN8/cst816x.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
