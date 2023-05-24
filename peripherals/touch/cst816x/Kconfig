@@ -1,0 +1,27 @@
+
+# Kconfig file for package cst816x
+menuconfig PKG_USING_CST816X
+    bool "Please add description of cst816x in English."
+    default n
+
+if PKG_USING_CST816X
+
+    config PKG_CST816X_PATH
+        string
+        default "/packages/peripherals/cst816x"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_CST816X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CST816X_VER
+       string
+       default "latest"    if PKG_USING_CST816X_LATEST_VERSION
+
+endif
+
