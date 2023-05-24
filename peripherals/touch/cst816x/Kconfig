@@ -21,7 +21,6 @@ if PKG_USING_CST816X
 
     config PKG_CST816X_VER
        string
-       default "v1.0.0"    if PKG_USING_CST816X_V100
        default "latest"    if PKG_USING_CST816X_LATEST_VERSION
 
 endif
