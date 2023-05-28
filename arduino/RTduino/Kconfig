@@ -18,7 +18,7 @@ if PKG_USING_RTDUINO
     if !RTDUINO_NO_SETUP_LOOP
         config RTDUINO_THREAD_SIZE
             int "Arduino thread's size"
-            default 1536
+            default 2048
 
         config RTDUINO_THREAD_PRIO
             int "Arduino thread's priority"
