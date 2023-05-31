@@ -1,0 +1,27 @@
+
+# Kconfig file for package MsgQ-C-CPP-demo
+menuconfig PKG_USING_ARDUINO_MSGQ_C_CPP_DEMO
+    bool "Message Queue demo: communicate between Arduino sketches and RT-Thread typcial C threads"
+    default n
+
+if PKG_USING_ARDUINO_MSGQ_C_CPP_DEMO
+
+    config PKG_ARDUINO_MSGQ_C_CPP_DEMO_PATH
+        string
+        default "/packages/arduino/projects/MsgQ-C-CPP-demo"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_MSGQ_C_CPP_DEMO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_MSGQ_C_CPP_DEMO_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_MSGQ_C_CPP_DEMO_LATEST_VERSION
+
+endif
+

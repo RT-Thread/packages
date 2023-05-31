@@ -1,0 +1,31 @@
+{
+  "name": "MsgQ-C-CPP-demo",
+  "description": "A demo to illustrate how to use RT-Thread Message Queue feature to communicate between Arduino/RTduino sketches (C++ threads) and RT-Thread typcial C threads.",
+  "description_zh": "本示例展示了如何在RTduino下，借助RT-Thread的消息队列通信机制，实现RTduino/Arduino C++代码，与RT-Thread C线程之间的数据通信。",
+  "enable": "PKG_USING_ARDUINO_MSGQ_C_CPP_DEMO",
+  "keywords": [
+    "MsgQ-C-CPP-demo",
+    "RTduino",
+    "Arduino",
+    "demo"
+  ],
+  "category": "arduino/projects",
+  "author": {
+    "name": "RTduino",
+    "email": "meco@rt-thread.org",
+    "github": "RTduino"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RTduino/MsgQ-C-CPP-demo",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino/MsgQ-C-CPP-demo#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino/MsgQ-C-CPP-demo.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
