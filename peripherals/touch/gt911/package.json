@@ -13,20 +13,20 @@
     "github": "RiceChen"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/RiceChen/gt911",
+  "repository": "https://github.com/RiceChen0/gt911",
   "icon": "unknown",
-  "homepage": "https://github.com/RiceChen/gt911#readme",
+  "homepage": "https://github.com/RiceChen0/gt911#readme",
   "readme": "gt911 drivers for RT-Thread",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/RiceChen/gt911/archive/1.0.0.zip",
+      "URL": "https://github.com/RiceChen0/gt911/archive/1.0.0.zip",
       "filename": "gt911-1.0.0.zip",
       "VER_SHA": "2a077bcbf54aa3442a99e4c1907e1ff8a63ae21b"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/RiceChen/gt911.git",
+      "URL": "https://github.com/RiceChen0/gt911.git",
       "filename": "gt911.zip",
       "VER_SHA": "main"
     }
