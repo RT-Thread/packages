@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-SSD1306",
+  "description": "Arduino library for SSD1306 monochrome 128x64 and 128x32 OLEDs",
+  "description_zh": "SSD1306 128x64 and 128x32 OLED Arduino驱动库",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SSD1306",
+  "keywords": [
+    "Adafruit-SSD1306",
+    "Arduino",
+    "Adafruit",
+    "RTduino",
+    "SSD1306",
+    "OLED"
+  ],
+  "category": "arduino/display",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_SSD1306",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_SSD1306#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_SSD1306.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
