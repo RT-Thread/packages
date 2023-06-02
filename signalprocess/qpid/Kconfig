@@ -1,0 +1,36 @@
+
+# Kconfig file for package qpid
+
+menuconfig PKG_USING_QPID
+    bool "A quick and easy-to-use PID algorithm component"
+    default n
+
+if PKG_USING_QPID
+
+    config PKG_QPID_PATH
+        string
+        default "/packages/signalprocess/qpid"
+
+    config QPID_USING_TEST
+        bool "using test"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_QPID_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QPID_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_QPID_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_QPID_VER
+       string
+       default "latest" if PKG_USING_QPID_LATEST_VERSION
+       default "v1.00"  if PKG_USING_QPID_V100
+
+endif
