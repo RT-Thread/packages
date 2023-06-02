@@ -9,7 +9,7 @@ if PKG_USING_QPID
 
     config PKG_QPID_PATH
         string
-        default "/packages/misc/qpid"
+        default "/packages/signalprocess/qpid"
 
     config QPID_USING_TEST
         bool "using test"
