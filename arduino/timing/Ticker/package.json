@@ -1,0 +1,30 @@
+{
+  "name": "Ticker",
+  "description": "Creating Tickers which can call repeating functions. Replaces delay() with non-blocking functions.",
+  "description_zh": "定时器回调式Arduino库，可用于代替delay函数",
+  "enable": "PKG_USING_ARDUINO_TICKER",
+  "keywords": [
+    "Ticker",
+    "Arduino",
+    "RTduino"
+  ],
+  "category": "arduino/timing",
+  "author": {
+    "name": "sstaub",
+    "email": "email@domain.com",
+    "github": "sstaub"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/sstaub/Ticker",
+  "icon": "unknown",
+  "homepage": "https://github.com/sstaub/Ticker#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sstaub/Ticker.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
