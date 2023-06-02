@@ -1,13 +1,13 @@
 {
   "name": "qpid",
-  "description": "A quick and easy-to-use PID automatic control algorithm package, that supports incremental and positional algorithms..",
+  "description": "A quick and easy-to-use PID automatic control algorithm package, that supports incremental and positional algorithms.",
   "description_zh": "一款快捷易用的PID自动控制算法包，支持增量式和位置式算法。",
   "enable": "PKG_USING_QPID",
   "keywords": [
-    "PID"，
+    "PID",
     "automatic control"
   ],
-  "category": "misc",
+  "category": "signalprocess",
   "author": {
     "name": "qiyongzhong0",
     "email": "917768104@qq.com",
