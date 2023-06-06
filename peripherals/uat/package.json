@@ -1,0 +1,33 @@
+{
+  "name": "uat",
+  "description": "Micro AT device driver interface component",
+  "description_zh": "微型AT设备驱动接口组件。",
+  "enable": "PKG_USING_UAT",
+  "keywords": [
+    "AT",
+    "driver"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-uat",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-uat#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-uat.git",
+      "filename": "",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-uat/archive/v1.00.zip",
+      "filename": "rt-thread-uat-1.00.zip",
+      "VER_SHA": ""
+    }
+  ]
+}

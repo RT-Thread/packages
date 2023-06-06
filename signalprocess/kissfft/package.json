@@ -1,0 +1,35 @@
+{
+  "name": "kissfft",
+  "description": "a Fast Fourier Transform (FFT) library that tries to Keep it Simple, Stupid",
+  "description_zh": "简单、快速的FFT(快速傅里叶变换)算法软件包",
+  "enable": "PKG_USING_KISSFFT",
+  "keywords": [
+    "kissfft",
+    "FFT",
+    "signalprocess"
+  ],
+  "category": "signalprocess",
+  "author": {
+    "name": "mborgerding",
+    "email": "mark@borgerding.net",
+    "github": "mborgerding"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/mborgerding/kissfft",
+  "icon": "unknown",
+  "homepage": "https://github.com/mborgerding/kissfft#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v131.1.0",
+      "URL": "https://github.com/mborgerding/kissfft/archive/refs/tags/131.1.0.zip",
+      "filename": "kissfft-131.1.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/mborgerding/kissfft.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
