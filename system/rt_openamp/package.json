@@ -1,0 +1,33 @@
+{
+  "name": "rt_openamp",
+  "description": "RT-OpenAMP",
+  "description_zh": "RT-OpenAMP",
+  "enable": "PKG_USING_RT_OPENAMP",
+  "keywords": [
+    "rt_openamp"
+  ],
+  "category": "system",
+  "author": {
+    "name": "HelloByeAll",
+    "email": "1139077247@qq.com",
+    "github": "HelloByeAll"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/HelloByeAll/rt_openamp",
+  "icon": "unknown",
+  "homepage": "https://github.com/HelloByeAll/rt_openamp#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/HelloByeAll/rt_openamp/archive/refs/tags/v1.0.0.zip",
+      "filename": "rt_openamp-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/HelloByeAll/rt_openamp.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

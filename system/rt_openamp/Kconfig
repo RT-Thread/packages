@@ -1,0 +1,100 @@
+
+# Kconfig file for package rt_openamp
+menuconfig PKG_USING_RT_OPENAMP
+    bool "RT-OpenAMP"
+    default n
+
+if PKG_USING_RT_OPENAMP
+
+    config AMP_MASTRT_CPU_NO
+        int "AMP master role cpu no"
+        default 0
+
+    config AMP_SLAVE_CPU_NO
+        int "AMP slave role cpu no"
+        default 1
+
+    config AMP_SHARE_MEMORY_ADDRESS
+        hex "AMP share memory address"
+        default 0x70000000
+
+    config AMP_VDEV_STATUS_ADDRESS
+        hex "AMP vdev status address"
+        default 0x70000000
+
+    config AMP_SHARE_MEMORY_SIZE
+        hex "AMP share memory size"
+        default 0x40000
+
+    config AMP_CPU_SGI_INTERRUPT_NO
+        int "amp cpu sgi intterrupt no(0 - 15)"
+        range 0 15
+        default 7
+
+    config AMP_DEMO_ENABLE
+        bool "AMP demo enable"
+        default y
+
+        if AMP_DEMO_ENABLE
+            config AMP_DEMO_ECHO
+                bool "amp echo demo"
+                default y
+
+            config AMP_DEMO_MATRIX
+                bool "amp matrix demo"
+                default y
+
+            config AMP_DEMO_PTY
+                select PKG_USING_VCONSOLE
+                bool "amp pty demo"
+                default y
+
+            config AMP_DEMO_VRING_TX_ADDR
+                hex "amp vring tx addr"
+                default 0x7002C000
+
+            config AMP_DEMO_VRING_TX_DES_NUM
+                int "amp vring tx descriptor num"
+                default 16
+
+            config AMP_DEMO_VRING_RX_ADDR
+                hex "amp vring rx addr"
+                default 0x70028000
+
+            config AMP_DEMO_VRING_RX_DES_NUM
+                int "amp vring rx descriptor num"
+                default 16
+
+            config AMP_DEMO_VRING_BUF_ADDR
+                hex "amp vring buf addr"
+                default 0x70004000
+
+            config AMP_DEMO_VRING_SIZE
+                hex "amp vring size"
+                default 0x8000
+        endif
+
+    config PKG_RT_OPENAMP_PATH
+        string
+        default "/packages/system/rt_openamp"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RT_OPENAMP_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RT_OPENAMP_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RT_OPENAMP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RT_OPENAMP_VER
+       string
+       default "v1.0.0"    if PKG_USING_RT_OPENAMP_V100
+       default "latest"    if PKG_USING_RT_OPENAMP_LATEST_VERSION
+
+endif
+
