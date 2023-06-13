@@ -1,0 +1,27 @@
+
+# Kconfig file for package Adafruit-ILI9341
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_ILI9341
+    bool "Adafruit ILI9341: ILI9341 display Arduino driver"
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_ILI9341
+
+    config PKG_ARDUINO_ADAFRUIT_ILI9341_PATH
+        string
+        default "/packages/arduino/display/Adafruit-ILI9341"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_ILI9341_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_ILI9341_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_ILI9341_LATEST_VERSION
+
+endif
+
