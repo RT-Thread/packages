@@ -1,4 +1,4 @@
-menu "Projects"
+menu "Projects and Demos"
 
 source "$PKGS_DIR/packages/arduino/projects/MsgQ-C-CPP-demo/Kconfig"
 source "$PKGS_DIR/packages/arduino/projects/UltrasoundRadar/Kconfig"
