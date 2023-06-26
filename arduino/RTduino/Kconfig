@@ -3,6 +3,7 @@
 menuconfig PKG_USING_RTDUINO
     bool "RTduino: Arduino Ecological Compatibility Layer"
     select RT_USING_CPLUSPLUS
+    select RT_USING_TIMER_SOFT
     default n
 
 if PKG_USING_RTDUINO
