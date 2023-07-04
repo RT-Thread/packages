@@ -19,6 +19,10 @@ if PKG_USING_MFBD
             bool
             prompt "enable use section definitions."
             default n
+        config PKG_MFBD_MULTICLICK_STATE_AUTO_RESET
+            bool
+            prompt "reset multiclick state to 0 when reach to max multicick state."
+            default y
     endif
 
     if PKG_MFBD_VER_NUM >= 0x010003
