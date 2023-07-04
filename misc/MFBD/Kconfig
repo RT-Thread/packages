@@ -14,6 +14,16 @@ if PKG_USING_MFBD
         bool "Enable Multi-Function Button Detection demo"
         default n
 
+    if PKG_MFBD_VER_NUM >= 0x010004
+        config PKG_MFBD_USE_SECTION_DEFINITION
+            bool "enable use section definitions."
+            default n
+ 
+        config PKG_MFBD_MULTICLICK_STATE_AUTO_RESET
+            bool "reset multiclick state to 0 when reach to max multicick state."
+            default y
+    endif
+
     if PKG_MFBD_VER_NUM >= 0x010003
         choice
             prompt "the type of mfbd_btn_code_t"
@@ -125,6 +135,9 @@ if PKG_USING_MFBD
         help
             Select the package version
 
+        config PKG_USING_MFBD_V104
+            bool "v1.0.4"
+
         config PKG_USING_MFBD_V103
             bool "v1.0.3"
 
@@ -143,6 +156,7 @@ if PKG_USING_MFBD
 
     config PKG_MFBD_VER
        string
+       default "v1.0.4"    if PKG_USING_MFBD_V104
        default "v1.0.3"    if PKG_USING_MFBD_V103
        default "v1.0.2"    if PKG_USING_MFBD_V102
        default "v1.0.1"    if PKG_USING_MFBD_V101
@@ -151,6 +165,7 @@ if PKG_USING_MFBD
 
     config PKG_MFBD_VER_NUM
         hex
+        default 0x010004 if PKG_USING_MFBD_V104
         default 0x010003 if PKG_USING_MFBD_V103
         default 0x010002 if PKG_USING_MFBD_V102
         default 0x010001 if PKG_USING_MFBD_V101
