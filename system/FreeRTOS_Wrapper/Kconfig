@@ -24,5 +24,13 @@ if PKG_USING_FREERTOS_WRAPPER
        string
        default "latest"    if PKG_USING_FREERTOS_WRAPPER_LATEST_VERSION
 
+    config PKG_FREERTOS_WRAPPER_USING_RTTHREAD
+       bool "Enable FreeRTOS_Wrapper/FreeRTOS/portable/MemMang component"
+       default y
+
+    config PKG_FREERTOS_WRAPPER_USING_MEMANG
+       bool "Enable FreeRTOS_Wrapper/FreeRTOS/portable/rt-thread component"
+       default y
+
 endif
 
