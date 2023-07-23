@@ -10,8 +10,8 @@ if PKG_USING_FREERTOS_WRAPPER
         string
         default "/packages/system/FreeRTOS_Wrapper"
 
-    config PKG_FREERTOS_USING_PRELOAD_CONFIG
-        bool "include <FreeRTOSPreloadConfig.h> to overwirte default configurations"
+    config PKG_FREERTOS_USING_CONFIG_H
+        bool "include <FreeRTOSConfig.h> to overwirte default configurations in FreeRTOS.h"
         default n
 
     config PKG_FREERTOS_USING_MEMMANG
