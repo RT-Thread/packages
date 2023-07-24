@@ -1,7 +1,7 @@
 
 # Kconfig file for package io_input_filter
 menuconfig PKG_USING_IO_INPUT_FILTER
-    bool "IO Input Filter: IO输入软件滤波模块"
+    bool "IO Input Filter: I/O input software filter module"
     select RT_USING_PIN
     select RT_USING_TIMER_SOFT
     default n
@@ -13,11 +13,11 @@ if PKG_USING_IO_INPUT_FILTER
         default "/packages/peripherals/io_input_filter"
 
     config IIF_TIMES
-        int "滤波次数"
+        int "Filter times"
         default 10
 
     config IIF_PERIOD
-        int "滤波周期 ms"
+        int "Filter period(ms)"
         default 5
 
     config IIF_EXAMPLE
@@ -47,4 +47,3 @@ if PKG_USING_IO_INPUT_FILTER
        default "latest"    if PKG_USING_IO_INPUT_FILTER_LATEST_VERSION
 
 endif
-
