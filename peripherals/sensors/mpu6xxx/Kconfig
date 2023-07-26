@@ -21,7 +21,7 @@ if PKG_USING_MPU6XXX
 
         config PKG_USING_MPU6XXX_V111
             bool "v1.1.1"
-            depends on RT_VER_NUM < 0x50000
+            depends on RT_VER_NUM < 0x50000 || !RT_USING_SENSOR_V2
 
         config PKG_USING_MPU6XXX_V110
             bool "v1.1.0"
