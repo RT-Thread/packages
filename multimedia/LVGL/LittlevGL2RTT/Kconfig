@@ -1,6 +1,7 @@
 # Kconfig file for package LittlevGL2RTT
 menuconfig PKG_USING_LITTLEVGL2RTT
-    bool "LittlevGL2RTT (legacy): The LittlevGL GUI Lib for RT-Thread"
+    bool "LittlevGL2RTT (LVGL 7.x): The LittlevGL GUI Lib for RT-Thread"
+    depends on RT_VER_NUM < 0x40100
     default n
 
 if PKG_USING_LITTLEVGL2RTT
