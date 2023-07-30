@@ -14,19 +14,19 @@
     "github": "tzxdcz"
   },
   "license": "LGPL-2.1",
-  "repository": "https://github.com/tzxdcz/rt-nv7lidar",
+  "repository": "https://github.com/RT-Thread-packages/nv7lidar",
   "icon": "unknown",
-  "homepage": "https://github.com/tzxdcz/rt-nv7lidar#readme",
+  "homepage": "https://github.com/RT-Thread-packages/nv7lidar#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/tzxdcz/rt-nv7lidar/archive/refs/tags/V1.0.0.zip",
-      "filename": "lrf-nv7lidar-1.0.0.zip"
+      "URL": "https://github.com/RT-Thread-packages/nv7lidar/archive/refs/tags/v1.0.0.zip",
+      "filename": "nv7lidar-1.0.0.zip"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/tzxdcz/rt-nv7lidar.git",
+      "URL": "https://github.com/RT-Thread-packages/nv7lidar.git",
       "filename": "",
       "VER_SHA": "main"
     }
