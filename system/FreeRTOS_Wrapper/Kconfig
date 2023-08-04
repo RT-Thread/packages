@@ -1,0 +1,57 @@
+
+# Kconfig file for package FreeRTOS_Wrapper
+menuconfig PKG_USING_FREERTOS_WRAPPER
+    bool "FreeRTOS Application Compatibility Layer for RT-Thread"
+    default n
+
+if PKG_USING_FREERTOS_WRAPPER
+
+    config PKG_FREERTOS_WRAPPER_PATH
+        string
+        default "/packages/system/FreeRTOS_Wrapper"
+
+    config PKG_FREERTOS_USING_CONFIG_H
+        bool "include <FreeRTOSConfig.h> to overwirte default configurations in FreeRTOS.h"
+        default n
+
+    config PKG_FREERTOS_USING_MEMMANG
+        bool "Enable FreeRTOS memory heap policy"
+        default n
+
+    choice
+        prompt "FreeRTOS memory heap policy"
+        default PKG_FREERTOS_USING_MEMMANG_HEAP3
+        depends on PKG_FREERTOS_USING_MEMMANG
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP1
+            bool "Heap1"
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP2
+            bool "Heap2"
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP3
+            bool "Heap3"
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP4
+            bool "Heap4"
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP5
+            bool "Heap5"
+    endchoice
+
+    choice
+        prompt "Version"
+        default PKG_USING_FREERTOS_WRAPPER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FREERTOS_WRAPPER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_FREERTOS_WRAPPER_VER
+       string
+       default "latest"    if PKG_USING_FREERTOS_WRAPPER_LATEST_VERSION
+
+endif
+

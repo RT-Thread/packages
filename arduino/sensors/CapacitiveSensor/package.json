@@ -1,0 +1,31 @@
+{
+  "name": "CapacitiveSensor",
+  "description": "Capacitive sensors that can detect touch or proximity",
+  "description_zh": "软件电容触摸传感器",
+  "enable": "PKG_USING_ARDUINO_CAPACITIVESENSOR",
+  "keywords": [
+    "CapacitiveSensor",
+    "sensor",
+    "capacitive",
+    "Arduino"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "PaulStoffregen",
+    "email": "paul@pjrc.com",
+    "github": "PaulStoffregen"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/PaulStoffregen/CapacitiveSensor",
+  "icon": "unknown",
+  "homepage": "https://github.com/PaulStoffregen/CapacitiveSensor#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/PaulStoffregen/CapacitiveSensor.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

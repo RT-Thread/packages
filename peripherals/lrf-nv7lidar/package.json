@@ -1,0 +1,34 @@
+{
+  "name": "lrf-nv7lidar",
+  "description": "LRF-NV7 laser ranging module",
+  "description_zh": "LRF-NV7激光测距模组",
+  "enable": "PKG_USING_LRF_NV7LIDAR",
+  "keywords": [
+    "lrf-nv7lidar",
+    "laser ranging"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "shenzan",
+    "email": "shenzan@foxmail.com",
+    "github": "tzxdcz"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/nv7lidar",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/nv7lidar#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/nv7lidar/archive/refs/tags/v1.0.0.zip",
+      "filename": "nv7lidar-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/nv7lidar.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

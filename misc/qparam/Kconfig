@@ -1,0 +1,69 @@
+
+# Kconfig file for package qparam
+
+menuconfig PKG_USING_QPARAM
+    bool "A quick and easy-to-use parameter management component."
+    select PKG_USING_FAL if RT_VER_NUM < 0x40100
+    select RT_USING_FAL if RT_VER_NUM >= 0x40100
+    select PKG_USING_CRCLIB
+    default n
+
+if PKG_USING_QPARAM
+
+    config PKG_QPARAM_PATH
+        string
+        default "/packages/misc/qparam"
+
+    config PARAM_USING_INDEX
+        bool "using index fast read/write param"
+        default y
+
+    config PARAM_USING_CLI
+        bool "using command line list/read/write... param"
+        default y
+
+    config PARAM_USING_AUTO_INIT
+        bool "using automatic initialize and load from flash"
+        default y
+
+    config PARAM_USING_AUTO_SAVE
+        bool "using automatic save into flash"
+        default y
+
+    if PARAM_USING_AUTO_SAVE
+        config PARAM_AUTO_SAVE_DELAY
+            int "delay time (ms) of automatic saving"
+            default 2000
+    endif
+
+    config PARAM_PART_NAME
+        string "partition name for saving parameters"
+        default "param"
+
+    config PARAM_SECTOR_SIZE
+        int "flash sector size"
+        default 4096
+
+    config PARAM_SAVE_ADDR
+        int "save address for parameters"
+        default 0
+
+    config PARAM_SAVE_ADDR_BAK
+        int "save address for backup parameters"
+        default 4096
+
+    choice
+        prompt "Version"
+        default PKG_USING_QPARAM_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_QPARAM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_QPARAM_VER
+       string
+       default "latest" if PKG_USING_QPARAM_LATEST_VERSION
+
+endif
+

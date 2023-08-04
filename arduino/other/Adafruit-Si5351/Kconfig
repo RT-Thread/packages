@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-Si5351
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_SI5351
+    bool "Adafruit Si5351 Clock Generator Breakout"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_SI5351
+
+    config PKG_ARDUINO_ADAFRUIT_SI5351_PATH
+        string
+        default "/packages/arduino/other/Adafruit-Si5351"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_SI5351_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_SI5351_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_SI5351_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_SI5351_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,30 @@
+
+# Kconfig file for package Adafruit-VL53L0X
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_VL53L0X
+    bool "Adafruit VL53L0X: Time of Flight Distance Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_VL53L0X
+
+    config PKG_ARDUINO_ADAFRUIT_VL53L0X_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-VL53L0X"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_VL53L0X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_VL53L0X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_VL53L0X_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_VL53L0X_LATEST_VERSION
+
+endif
+

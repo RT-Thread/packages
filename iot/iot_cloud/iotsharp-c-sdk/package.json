@@ -1,0 +1,38 @@
+{
+  "name": "iotsharp-c-sdk",
+  "description": "IoTSharp client sdk for RT-Thread",
+  "description_zh": "IoTSharp的客户端软件",
+  "enable": "PKG_USING_IOTSHARP",
+  "keywords": [
+    "IoTSharp",
+    "IoT",
+    "cloud",
+    "iot-platform",
+    "物联网平台",
+    "iotsharp-sdk"
+  ],
+  "category": "iot/iot_cloud",
+  "author": {
+    "name": "maikebing",
+    "email": "100860505@qq.com",
+    "github": "maikebing"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/IoTSharp/iotsharp-rtthread-package",
+  "homepage": "https://github.com/IoTSharp/iotsharp-rtthread-package#readme",
+  "readme": "IoTSharp C SDK for rtthread os",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/IoTSharp/iotsharp-rtthread-package/archive/refs/tags/1.0.0.zip",
+      "filename": "IoTSharp-rtthread-package-v1.0.0.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/IoTSharp/iotsharp-rtthread-package.git",
+      "filename": "IoTSharp-rtthread-package.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

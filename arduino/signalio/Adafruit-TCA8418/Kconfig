@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-TCA8418
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_TCA8418
+    bool "Adafruit TCA8418: GPIO expander and key matrix driver"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_TCA8418
+
+    config PKG_ARDUINO_ADAFRUIT_TCA8418_PATH
+        string
+        default "/packages/arduino/signalio/Adafruit-TCA8418"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_TCA8418_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_TCA8418_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_TCA8418_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_TCA8418_LATEST_VERSION
+
+endif
+

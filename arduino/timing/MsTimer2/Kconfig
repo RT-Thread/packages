@@ -1,0 +1,30 @@
+
+# Kconfig file for package MsTimer2
+menuconfig PKG_USING_ARDUINO_MSTIMER2
+    bool "MsTimer2: Run a function every millisecond"
+    select PKG_USING_RTDUINO
+    select RT_USING_TIMER_SOFT
+    default n
+
+if PKG_USING_ARDUINO_MSTIMER2
+
+    config PKG_ARDUINO_MSTIMER2_PATH
+        string
+        default "/packages/arduino/timing/MsTimer2"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_MSTIMER2_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_MSTIMER2_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_MSTIMER2_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_MSTIMER2_LATEST_VERSION
+
+endif
+

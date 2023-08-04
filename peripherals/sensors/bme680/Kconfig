@@ -52,12 +52,16 @@ if PKG_USING_BME680
         help
             Select the package version
 
+        config PKG_USING_BME680_V100
+            bool "v1.0.0"
+
         config PKG_USING_BME680_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_BME680_VER
        string
+       default "v1.0.0"    if PKG_USING_BME680_V100
        default "latest"    if PKG_USING_BME680_LATEST_VERSION
 
 endif

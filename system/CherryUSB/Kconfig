@@ -16,8 +16,6 @@ if PKG_USING_CHERRYUSB
             default PKG_CHERRYUSB_DEVICE_FS
             config PKG_CHERRYUSB_DEVICE_FS
                 bool "FS"
-            config PKG_CHERRYUSB_DEVICE_HS_IN_FULL
-                bool "HS_IN_FULL"
             config PKG_CHERRYUSB_DEVICE_HS
                 bool "HS"
         endchoice
@@ -25,27 +23,27 @@ if PKG_USING_CHERRYUSB
         choice
             prompt "Select usb device ip"
             default PKG_CHERRYUSB_DEVICE_FSDEV
+            config PKG_CHERRYUSB_DEVICE_CUSTOM
+                bool "CUSTOM (Implement it yourself)"
             config PKG_CHERRYUSB_DEVICE_BL
                 bool "BL"
             config PKG_CHERRYUSB_DEVICE_CH32
                 bool "CH32"
             config PKG_CHERRYUSB_DEVICE_FSDEV
                 bool "FSDEV"
-            config PKG_CHERRYUSB_DEVICE_SYNOPSYS
-                bool "SYNOPSYS"
+            config PKG_CHERRYUSB_DEVICE_DWC2
+                bool "DWC2"
             config PKG_CHERRYUSB_DEVICE_MM32
                 bool "MM32"
             config PKG_CHERRYUSB_DEVICE_MUSB
                 bool "MUSB"
-            config PKG_CHERRYUSB_DEVICE_NUVOTON
-                bool "NUVOTON"
-            config PKG_CHERRYUSB_DEVICE_IMXRT
-                bool "IMXRT"
+            config PKG_CHERRYUSB_DEVICE_HPM
+                bool "HPM"
         endchoice
 
         if PKG_CHERRYUSB_DEVICE_CH32
             choice
-                prompt "Select support chip with ch32 usb device ip"
+                prompt "Select chip with ch32 usb ip to set usb base and irq name,if not set,use default setting"
                 default PKG_CHERRYUSB_DEVICE_CH32_CH32V307
                 config PKG_CHERRYUSB_DEVICE_CH32_CH32V307
                     bool "CH32V307"
@@ -55,7 +53,7 @@ if PKG_USING_CHERRYUSB
 
         if PKG_CHERRYUSB_DEVICE_FSDEV
             choice
-                prompt "Select support chip with fsdev usb device ip"
+                prompt "Select chip with fsdev usb ip to set usb base and irq name,if not set,use default setting"
                 default PKG_CHERRYUSB_DEVICE_FSDEV_STM32
                 config PKG_CHERRYUSB_DEVICE_FSDEV_STM32
                     bool "STM32"
@@ -65,7 +63,7 @@ if PKG_USING_CHERRYUSB
 
         if PKG_CHERRYUSB_DEVICE_MUSB
             choice
-                prompt "Select support chip with musb usb device ip"
+                prompt "Select chip with musb usb ip to set usb base and irq name,if not set,use default setting"
                 default PKG_CHERRYUSB_DEVICE_MUSB_MSP432
                 config PKG_CHERRYUSB_DEVICE_MUSB_MSP432
                     bool "MSP432"
@@ -77,14 +75,21 @@ if PKG_USING_CHERRYUSB
 
         endif
 
-        if PKG_CHERRYUSB_DEVICE_SYNOPSYS
+        if PKG_CHERRYUSB_DEVICE_DWC2
             choice
-                prompt "Select support chip with synopsys usb device ip"
-                default PKG_CHERRYUSB_DEVICE_SYNOPSYS_STM32
-                config PKG_CHERRYUSB_DEVICE_SYNOPSYS_STM32
+                prompt "Select chip with dwc2 usb ip to set usb base and irq name,if not set,use default setting"
+                default PKG_CHERRYUSB_DEVICE_DWC2_STM32
+                config PKG_CHERRYUSB_DEVICE_DWC2_STM32
                     bool "STM32"
             endchoice
-
+            choice
+                prompt "Select dwc2 port"
+                default PKG_CHERRYUSB_DEVICE_DWC2_PORT_FS
+                config PKG_CHERRYUSB_DEVICE_DWC2_PORT_FS
+                    bool "FS_PORT"
+                config PKG_CHERRYUSB_DEVICE_DWC2_PORT_HS
+                    bool "HS_PORT"
+            endchoice
         endif
 
         menuconfig PKG_CHERRYUSB_DEVICE_CDC
@@ -160,15 +165,25 @@ if PKG_USING_CHERRYUSB
             prompt "Enable usb rndis device"
             default n
 
+        if PKG_CHERRYUSB_DEVICE_RNDIS
+            config PKG_CHERRYUSB_DEVICE_RNDIS_TEMPLATE
+                bool
+                prompt "Use rndis template"
+                default n
+        endif
+
         menuconfig PKG_CHERRYUSB_DEVICE_DFU
             bool
             prompt "Enable usb dfu device"
             default n
 
-        menuconfig PKG_CHERRYUSB_DEVIEC_HUB
-            bool
-            prompt "Enable usb hub device"
-            default n
+        if PKG_CHERRYUSB_DEVICE_DFU
+            config PKG_CHERRYUSB_DEVICE_DFU_TEMPLATE
+                bool
+                prompt "Use dfu template"
+                default n
+        endif
+
     endif
 
     menuconfig PKG_CHERRYUSB_HOST
@@ -179,17 +194,21 @@ if PKG_USING_CHERRYUSB
         choice
             prompt "Select usb host ip"
             default PKG_CHERRYUSB_HOST_MUSB
+            config PKG_CHERRYUSB_HOST_CUSTOM
+                bool "CUSTOM (Implement it yourself)"
             config PKG_CHERRYUSB_HOST_MUSB
                 bool "MUSB"
-            config PKG_CHERRYUSB_HOST_SYNOPSYS
-                bool "SYNOPSYS"
+            config PKG_CHERRYUSB_HOST_DWC2
+                bool "DWC2"
             config PKG_CHERRYUSB_HOST_EHCI
                 bool "EHCI"
+            config PKG_CHERRYUSB_HOST_XHCI
+                bool "XHCI"
         endchoice
 
         if PKG_CHERRYUSB_HOST_MUSB
             choice
-                prompt "Select support chip with musb usb host ip"
+                prompt "Select chip with musb usb ip to set usb base and irq name,if not set,use default setting"
                 default PKG_CHERRYUSB_HOST_MUSB_ES32F3
                 config PKG_CHERRYUSB_HOST_MUSB_MSP432
                     bool "MSP432"
@@ -200,19 +219,25 @@ if PKG_USING_CHERRYUSB
             endchoice
         endif
 
-        if PKG_CHERRYUSB_HOST_SYNOPSYS
+        if PKG_CHERRYUSB_HOST_DWC2
             choice
-                prompt "Select support chip with synopsys usb host ip"
-                default PKG_CHERRYUSB_HOST_SYNOPSYS_STM32
-                config PKG_CHERRYUSB_HOST_SYNOPSYS_STM32
+                prompt "Select chip with dwc2 usb ip to set usb base and irq name,if not set,use default setting.Only support hs usb ip"
+                default PKG_CHERRYUSB_HOST_DWC2_STM32
+                config PKG_CHERRYUSB_HOST_DWC2_STM32
                     bool "STM32"
             endchoice
         endif
 
-        config PKG_CHERRYUSB_HOST_HUB
-            bool
-            prompt "Enable usb hub driver"
-            default n
+        if PKG_CHERRYUSB_HOST_EHCI
+            choice
+                prompt "Select chip with EHCI usb ip to set usb base and irq name,if not set,use default setting.Only support hs usb ip"
+                default PKG_CHERRYUSB_HOST_EHCI_HPM
+                config PKG_CHERRYUSB_HOST_EHCI_HPM
+                    bool "HPM"
+                config PKG_CHERRYUSB_HOST_EHCI_NUVOTON
+                    bool "NUVOTON"
+            endchoice
+        endif
 
         config PKG_CHERRYUSB_HOST_CDC
             bool
@@ -238,13 +263,6 @@ if PKG_USING_CHERRYUSB
         bool
         prompt "Use usb host template"
         default n
-
-        config PKG_CHERRYUSB_HOST_PSC_THREAD_STACK_SIZE
-            int "Set usb host psc thread stack size"
-            default 2048
-        config PKG_CHERRYUSB_HOST_PSC_THREAD_PRIO
-            int "Set usb host psc thread prio"
-            default 5
 
     endif
 

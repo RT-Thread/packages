@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-Si4713
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_SI4713
+    bool "Adafruit Si4714: FM+RDS/RBDS Transmitter driver"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_SI4713
+
+    config PKG_ARDUINO_ADAFRUIT_SI4713_PATH
+        string
+        default "/packages/arduino/communication/Adafruit-Si4713"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_SI4713_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_SI4713_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_SI4713_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_SI4713_LATEST_VERSION
+
+endif
+

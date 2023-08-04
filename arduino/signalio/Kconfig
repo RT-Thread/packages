@@ -1,0 +1,13 @@
+menu "Signal IO"
+
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-BusIO/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-TCA8418/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP23017/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-ADS1X15/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-AW9523/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP3008/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP4725/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-BD3491FS/Kconfig"
+
+
+endmenu

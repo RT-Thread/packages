@@ -1,0 +1,17 @@
+
+# Kconfig file for package gui_guider_demo
+menuconfig PKG_USING_GUI_GUIDER_DEMO
+    bool "Enable LVGL GUI Guider demo for RT-Thread"
+    default n
+
+if PKG_USING_GUI_GUIDER_DEMO
+
+    config PKG_GUI_GUIDER_DEMO_PATH
+        string
+        default "/packages/multimedia/LVGL/gui_guider_demo"
+
+    config PKG_GUI_GUIDER_DEMO_VER
+       string
+       default "latest"
+
+endif

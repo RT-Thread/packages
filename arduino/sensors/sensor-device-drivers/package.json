@@ -1,0 +1,31 @@
+{
+  "name": "sensor-device-drivers",
+  "description": "Arduino Sensor Libraries on RT-Thread Sensor Device Framework",
+  "description_zh": "Arduino传感器库对接RT-Thread传感器设备驱动",
+  "enable": "PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS",
+  "keywords": [
+    "sensor-device-drivers",
+    "RTduino",
+    "Arduino",
+    "sensor-framework"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "RTduino",
+    "email": "meco@rt-thread.org",
+    "github": "RTduino"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RTduino/sensor-device-drivers",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino/sensor-device-drivers#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino/sensor-device-drivers.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

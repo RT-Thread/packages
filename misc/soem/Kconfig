@@ -1,0 +1,32 @@
+
+# Kconfig file for package soem
+menuconfig PKG_USING_SOEM
+    bool "SOEM(Simple Open EtherCAT Master Library)."
+    default n
+
+if PKG_USING_SOEM
+
+    config PKG_SOEM_PATH
+        string
+        default "/packages/misc/soem"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SOEM_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SOEM_V140
+            bool "v1.4.0"
+
+        config PKG_USING_SOEM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SOEM_VER
+       string
+       default "v1.4.0"    if PKG_USING_SOEM_V140
+       default "latest"    if PKG_USING_SOEM_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,29 @@
+
+# Kconfig file for package TFT_eSPI
+menuconfig PKG_USING_ARDUINO_TFT_ESPI
+    bool "TFT_eSPI: TFT graphics library for Arduino processors with performance optimisation"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_SPI
+    default n
+
+if PKG_USING_ARDUINO_TFT_ESPI
+
+    config PKG_ARDUINO_TFT_ESPI_PATH
+        string
+        default "/packages/arduino/display/TFT_eSPI"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_TFT_ESPI_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_TFT_ESPI_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_TFT_ESPI_LATEST_VERSION
+
+endif
+

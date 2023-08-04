@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-MPL3115A2",
+  "description": "Adafruit MPL3115A2 Pressure/Altitude/Temperature Sensor Driver",
+  "description_zh": "Adafruit MPL3115A2 压力/高度/温度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MPL3115A2",
+  "keywords": [
+    "Adafruit-MPL3115A2",
+    "Adafruit",
+    "arduino",
+    "Sensor",
+    "MPL3115A2",
+    "Pressure",
+    "Altidude",
+    "Temperature"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_MPL3115A2_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MPL3115A2_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MPL3115A2_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

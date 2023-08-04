@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed_BMP280
+menuconfig PKG_USING_ARDUINO_SEEED_BMP280
+    bool "Seeed BMP280: an absolute barometric pressure sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_BMP280
+
+    config PKG_ARDUINO_SEEED_BMP280_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-BMP280"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_BMP280_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_BMP280_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_BMP280_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_BMP280_LATEST_VERSION
+
+endif
+

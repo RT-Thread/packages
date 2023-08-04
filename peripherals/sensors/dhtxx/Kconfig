@@ -54,11 +54,11 @@ if PKG_USING_DHTXX
         help
             Select the package version
 
-        config PKG_USING_DHTXX_V08X
-            bool "v0.8.1"
-
         config PKG_USING_DHTXX_V090
             bool "v0.9.0"
+
+        config PKG_USING_DHTXX_V08X
+            bool "v0.8.1"
 
         config PKG_USING_DHTXX_LATEST_VERSION
             bool "latest"
@@ -66,15 +66,15 @@ if PKG_USING_DHTXX
 
     config PKG_DHTXX_VER
        string
-       default "v0.8.1"    if PKG_USING_DHTXX_V08X
        default "v0.9.0"    if PKG_USING_DHTXX_V090
+       default "v0.8.1"    if PKG_USING_DHTXX_V08X
        default "latest"    if PKG_USING_DHTXX_LATEST_VERSION
 
     config PKG_DHTXX_VER_NUM
         hex
-        default 0x99999    if PKG_USING_DHTXX_LATEST_VERSION
         default 0x00900    if PKG_USING_DHTXX_V090
         default 0x00801    if PKG_USING_DHTXX_V08X
+        default 0x99999    if PKG_USING_DHTXX_LATEST_VERSION
 
 endif
 

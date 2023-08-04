@@ -23,10 +23,15 @@
   "doc": "unknown",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://github.com/luhuadong/rtt-bme680/archive/v1.0.0.zip",
+      "filename": "bme680-v1.0.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/luhuadong/rtt-bme680.git",
       "filename": "bme680-latest.zip",
-      "VER_SHA": "master"
+      "VER_SHA": "main"
     }
   ]
 }

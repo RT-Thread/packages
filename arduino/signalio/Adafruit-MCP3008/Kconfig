@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-MCP3008
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MCP3008
+    bool "Adafruit MCP3008: 8-Channel 10-Bit ADC With SPI Interface"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_MCP3008
+
+    config PKG_ARDUINO_ADAFRUIT_MCP3008_PATH
+        string
+        default "/packages/arduino/signalio/Adafruit-MCP3008"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_MCP3008_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_MCP3008_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_MCP3008_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MCP3008_LATEST_VERSION
+
+endif
+

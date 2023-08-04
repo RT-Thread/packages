@@ -1,0 +1,40 @@
+
+# Kconfig file for package qpc
+menuconfig PKG_USING_QPC
+    bool "QP/C"
+    default n
+
+if PKG_USING_QPC
+
+    config PKG_QPC_PATH
+        string
+        default "/packages/system/qpc"
+
+    config QPC_USING_BLINKY_EXAMPLE
+        bool "Enable Blinky Example"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_QPC_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QPC_V700
+            bool "v7.0.0"
+
+        config PKG_USING_QPC_V722
+            bool "v7.2.2"
+
+        config PKG_USING_QPC_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_QPC_VER
+       string
+       default "v7.2.2"    if PKG_USING_QPC_V722
+       default "v7.0.0"    if PKG_USING_QPC_V700
+       default "latest"    if PKG_USING_QPC_LATEST_VERSION
+
+endif
+

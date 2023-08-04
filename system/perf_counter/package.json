@@ -1,0 +1,30 @@
+{
+  "name": "perf_counter",
+  "description": "A dedicated performance counter for Cortex-M systick",
+  "description_zh": "Cortex-M systick 的专用计数器",  
+  "enable": "PKG_USING_PERF_COUNTER", 
+  "keywords": [
+    "perf_counter",
+    "CMSIS",
+    "ARM"
+  ],
+  "category": "system",
+  "author": {
+    "name": "GorgonMeducer",
+    "email": "embedded_zhuoran@Hotmail.com",
+    "github": "GorgonMeducer"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/GorgonMeducer/perf_counter",
+  "icon": "unknown",
+  "homepage": "https://github.com/GorgonMeducer/perf_counter#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/GorgonMeducer/perf_counter.git",
+      "filename": "",
+      "VER_SHA": "RT-Thread-Only"
+    }
+  ]
+}

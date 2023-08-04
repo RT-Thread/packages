@@ -1,0 +1,43 @@
+
+# Kconfig file for package iotshap-c-sdk
+menuconfig PKG_USING_IOTSHARP_SDK
+    bool "IoTSharp-C-SDK: IoTSharp Client SDK for RT_Thread"
+    select PKG_USING_PAHOMQTT
+    default n
+if PKG_USING_IOTSHARP_SDK
+    config PKG_IOTSHARP_SDK_PATH
+        string
+        default "/packages/iot/iot_cloud/iotsharp-c-sdk"
+    config PKG_USING_IOTSHARP_EXAMPLES
+        bool "Using IoTSharp Examples"
+        default y
+    config PKG_USING_IOTSHARP_SERVER
+        string "IoTSharp's server"
+        default "tcp://cloud.iotsharp.net:1883"
+    config PKG_USING_IOTSHARP_DEVICE_NAME
+        string "The name of the device or gateway"
+        default ""
+    config PKG_USING_IOTSHARP_DEVICE_TOKEN
+        string "The token of the device or gateway"
+        default ""
+    config SDK_PLATFORM
+        string
+        default "rt-thread-package"
+    choice
+        prompt "Version"
+        default PKG_USING_IOTSHARP_SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_IOTSHARP_SDK_V100
+            bool "v1.0.0"
+
+        config PKG_USING_IOTSHARP_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+    config PKG_IOTSHARP_SDK_VER
+       string
+       default "latest"    if PKG_USING_IOTSHARP_SDK_LATEST_VERSION
+       default "v1.0.0"    if PKG_USING_IOTSHARP_SDK_V100
+endif
+

@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-DHT",
+  "description": "DHT11, DHT22 Temperature and Humidity Sensor",
+  "description_zh": "DHT11、DHT22温湿度传感器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_DHT",
+  "keywords": [
+    "DHT11",
+    "DHT22",
+    "DHT",
+    "Arduino",
+    "Sensor",
+    "Adafruit"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "limor@ladyada.net",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/DHT-sensor-library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/DHT-sensor-library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/DHT-sensor-library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

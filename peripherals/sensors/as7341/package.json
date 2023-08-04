@@ -1,0 +1,34 @@
+{
+  "name": "as7341",
+  "description": "AS7341 visible light sensor, can measure 8 wavelengths of visible light.",
+  "description_zh": "AS7341可见光传感器，可测量8个波长的可见光。",
+  "enable": "PKG_USING_AS7341",
+  "keywords": [
+    "as7341"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "RiceChen",
+    "email": "980307037@qq.com",
+    "github": "RiceChen"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RiceChen0/as7341",
+  "icon": "unknown",
+  "homepage": "https://github.com/RiceChen0/as7341#readme",
+  "readme": "AS7341 visible light sensor, can measure 8 wavelengths of visible light.",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RiceChen0/as7341/archive/1.0.0.zip",
+      "filename": "as7341-1.0.0.zip",
+      "VER_SHA": "0216adc872c98c5dc13189721e0285a2f4b86cc2"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RiceChen0/as7341.git",
+      "filename": "as7341.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

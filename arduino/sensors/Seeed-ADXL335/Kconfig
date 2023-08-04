@@ -1,0 +1,29 @@
+
+# Kconfig file for package Seeed-ADXL335
+menuconfig PKG_USING_ARDUINO_SEEED_ADXL335
+    bool "Seeed ADXL335: complete 3-axis accelerometer"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_SEEED_ADXL335
+
+    config PKG_ARDUINO_SEEED_ADXL335_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-ADXL335"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_ADXL335_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_ADXL335_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_ADXL335_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_ADXL335_LATEST_VERSION
+
+endif
+

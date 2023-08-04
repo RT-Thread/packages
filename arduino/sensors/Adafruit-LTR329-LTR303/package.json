@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-LTR329-LTR303",
+  "description": "Adafruit LTR329 & LTR303 light sensor driver",
+  "description_zh": "Adafruit LTR329 LTR303环境光传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_LTR329_LTR303",
+  "keywords": [
+    "Adafruit-LTR329-LTR303",
+    "Adafruit",
+    "Arduino",
+    "sensors",
+    "LTR329",
+    "LTR303"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_LTR329_LTR303",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_LTR329_LTR303#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_LTR329_LTR303.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

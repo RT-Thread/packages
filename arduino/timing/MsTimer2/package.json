@@ -1,0 +1,29 @@
+{
+  "name": "MsTimer2",
+  "description": "Run a function every millisecond for Arduino",
+  "description_zh": "1ms级软件定时器Arduino库",
+  "enable": "PKG_USING_ARDUINO_MSTIMER2",
+  "keywords": [
+    "MsTimer2",
+    "Arduino"
+  ],
+  "category": "arduino/timing",
+  "author": {
+    "name": "RTduino-libraries",
+    "email": "meco@rt-thread.org",
+    "github": "RTduino-libraries"
+  },
+  "license": "unknown",
+  "repository": "https://github.com/RTduino-libraries/MsTimer2",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/MsTimer2#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/MsTimer2.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

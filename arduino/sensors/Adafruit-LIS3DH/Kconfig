@@ -1,0 +1,33 @@
+
+# Kconfig file for package Adafruit-LIS3DH
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_LIS3DH
+    bool "Adafruit LIS3DH: Accelerometer Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select RTDUINO_USING_SPI
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_LIS3DH
+
+    config PKG_ARDUINO_ADAFRUIT_LIS3DH_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-LIS3DH"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_LIS3DH_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_LIS3DH_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_LIS3DH_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_LIS3DH_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,33 @@
+{
+  "name": "sht2x",
+  "description": "digital humidity and temperature sensor sht2x driver library",
+  "description_zh": "数字湿度和温度传感器 sht2x 驱动软件包",
+  "enable": "PKG_USING_SHT2X",
+  "keywords": [
+    "sht20"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/sht2x",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/RT-Thread-packages/sht2x#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/sht2x.git",
+      "filename": "sht2x-1.0.0.zip",
+      "VER_SHA": "f5f2e7ef1d46d5b7bd8a850d365717f8e2e73158"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/sht2x.git",
+      "filename": "sht2x.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

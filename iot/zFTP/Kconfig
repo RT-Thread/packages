@@ -1,0 +1,39 @@
+
+# Kconfig file for package zFTP
+menuconfig PKG_USING_ZFTP
+    bool "ligth weight zFTP client"
+    default n
+    select RT_USING_SAL
+    select SAL_USING_POSIX
+    select RT_USING_DFS
+
+if PKG_USING_ZFTP
+
+    config PKG_ZFTP_PATH
+        string
+        default "/packages/iot/zFTP"
+
+        config ZFTP_USING_SAMPLE
+            bool "Enable zFTP samples"
+            default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_ZFTP_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ZFTP_V10
+            bool "V1.0"
+
+        config PKG_USING_ZFTP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ZFTP_VER
+       string
+       default "V1.0"    if PKG_USING_ZFTP_V10
+       default "latest"    if PKG_USING_ZFTP_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,35 @@
+{
+  "name": "Seeed-H3LIS331DL",
+  "description": "Seeed H3LIS331DL 3-axis linear accelerometer",
+  "description_zh": "Seeed H3LIS331DL 三轴线性加速度计驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_H3LIS331DL",
+  "keywords": [
+    "Seeed-H3LIS331DL",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "H3LIS331DL",
+    "3-axis",
+    "linear",
+    "accelerometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Accelerometer_H3LIS331DL",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Accelerometer_H3LIS331DL#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Accelerometer_H3LIS331DL.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

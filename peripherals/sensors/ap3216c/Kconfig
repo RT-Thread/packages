@@ -10,6 +10,11 @@ if PKG_USING_AP3216C
         string
         default "/packages/peripherals/sensors/ap3216c"
 
+    config AP3216C_USING_SENSOR_DEVICE
+        bool "Enable sensor divce framework"
+        select RT_USING_SENSOR
+        default n
+
     config AP3216C_USING_HW_INT
         bool "Enable hardware interrupt."
         default n
@@ -28,18 +33,18 @@ if PKG_USING_AP3216C
 
     choice
         prompt "Version"
-        default PKG_USING_AP3216C_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_AP3216C_V100
-            bool "v1.0.0"
-
-        config PKG_USING_AP3216C_V200
-            bool "v2.0.0(with sensor framework)"
-
         config PKG_USING_AP3216C_LATEST_VERSION
             bool "latest"
+            depends on RT_VER_NUM >= 0x50000
+
+        config PKG_USING_AP3216C_V200
+            bool "v2.0.0"
+
+        config PKG_USING_AP3216C_V100
+            bool "v1.0.0"
     endchoice
 
     config PKG_AP3216C_VER

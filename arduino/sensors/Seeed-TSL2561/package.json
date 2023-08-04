@@ -1,0 +1,36 @@
+{
+  "name": "Seeed-TSL2561",
+  "description": "TSL2561/ISL29035 Digital Light Sensor for Arduino",
+  "description_zh": "TSL2561/ISL29035 数字光传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_TSL2561",
+  "keywords": [
+    "Seeed-TSL2561",
+    "Seeed-ISL29035",
+    "ISL29035",
+    "TSL2561",
+    "Seeed",
+    "arduino",
+    "I2C",
+    "Digital Light",
+    "Sensors"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_Digital_Light_Sensor",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_Digital_Light_Sensor#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_Digital_Light_Sensor.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

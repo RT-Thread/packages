@@ -1,0 +1,32 @@
+
+# Kconfig file for package mlx90397
+menuconfig PKG_USING_MLX90397
+    bool "MLX90397: 3D magnetometer sensor"
+    default n
+
+if PKG_USING_MLX90397
+
+    config PKG_MLX90397_PATH
+        string
+        default "/packages/peripherals/sensors/mlx90397"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MLX90397_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MLX90397_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MLX90397_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MLX90397_VER
+       string
+       default "v1.0.0"    if PKG_USING_MLX90397_V100
+       default "latest"    if PKG_USING_MLX90397_LATEST_VERSION
+
+endif
+

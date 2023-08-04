@@ -1,0 +1,30 @@
+
+# Kconfig file for package Adafruit-DHT
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_DHT
+    bool "Adafruit DHT: Arduino library for DHT11, DHT22 Temperature and Humidity Sensor"
+    select PKG_USING_RTDUINO
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_DHT
+
+    config PKG_ARDUINO_ADAFRUIT_DHT_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-DHT"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_DHT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_DHT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_DHT_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_DHT_LATEST_VERSION
+
+endif
+

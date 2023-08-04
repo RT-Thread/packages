@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-MCP3008",
+  "description": "Adafruit MCP3008 8-Channel 10-Bit ADC(SPI)",
+  "description_zh": "Adafruit MCP3008 8通道的10位ADC驱动(SPI)",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MCP3008",
+  "keywords": [
+    "Adafruit-MCP3008",
+    "MCP3008",
+    "ADC",
+    "SPI",
+    "arduino",
+    "Adafruit",
+    "Signal",
+    "Input/Output"
+  ],
+  "category": "arduino/signalio",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_MCP3008",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MCP3008#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MCP3008.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

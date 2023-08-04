@@ -1,0 +1,81 @@
+
+# Kconfig file for package agile_upgrade
+menuconfig PKG_USING_AGILE_UPGRADE
+    bool "agile_upgrade: Middleware for fast building bootloader."
+    default n
+
+if PKG_USING_AGILE_UPGRADE
+
+    config PKG_AGILE_UPGRADE_PATH
+        string
+        default "/packages/system/agile_upgrade"
+
+    config AGILE_UPGRADE_ENABLE_LOG
+        bool "Enable debug log output"
+        default y
+
+    config AGILE_UPGRADE_ENABLE_AES
+        bool "Enable AES decrypt"
+        default n
+        select PKG_USING_TINYCRYPT
+        select TINY_CRYPT_AES
+
+    if AGILE_UPGRADE_ENABLE_AES
+
+        config AGILE_UPGRADE_AES_IV
+            string "Set AES Initialization vector, 16 characters"
+            default "0123456789ABCDEF"
+
+        config AGILE_UPGRADE_AES_KEY
+            string "Set AES keys, 32 characters"
+            default "0123456789ABCDEF0123456789ABCDEF"
+
+    endif
+
+    config AGILE_UPGRADE_ENABLE_FASTLZ
+        bool "Enable fastlz decompress"
+        default n
+        select PKG_USING_FASTLZ
+
+    config AGILE_UPGRADE_ENABLE_QUICKLZ
+        bool "Enable quicklz decompress"
+        default n
+        select PKG_USING_QUICKLZ
+
+    config AGILE_UPGRADE_ENABLE_FAL
+        bool "Enable fal adapter"
+        default n
+        select PKG_USING_FAL if RT_VER_NUM < 0x40100
+        select RT_USING_FAL if RT_VER_NUM >= 0x40100
+
+    config AGILE_UPGRADE_ENABLE_FILE
+        bool "Enable file adapter"
+        default n
+        select RT_USING_DFS if RT_VER_NUM < 0x40100
+        select RT_USING_LIBC if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
+
+    config AGILE_UPGRADE_ENABLE_VERSION_COMPARE
+        bool "Enable version compare"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_AGILE_UPGRADE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AGILE_UPGRADE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AGILE_UPGRADE_VER
+       string
+       default "latest"    if PKG_USING_AGILE_UPGRADE_LATEST_VERSION
+
+    config PKG_AGILE_UPGRADE_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_AGILE_UPGRADE_LATEST_VERSION
+
+endif
+

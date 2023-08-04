@@ -1,7 +1,7 @@
 
 # Kconfig file for package libsodium
 menuconfig PKG_USING_LIBSODIUM
-    bool "libsodium: A modern and easy-to-use crypto library."
+    bool "libsodium: A modern and easy-to-use crypto library (NOT Recommended for MCU. Use libhydrogen instead)."
     default n
 
 if PKG_USING_LIBSODIUM

@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-TSC2007
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_TSC2007
+    bool "Adafruit TSC2007: Resistive Touch Screen Drivers."
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_TSC2007
+
+    config PKG_ARDUINO_ADAFRUIT_TSC2007_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-TSC2007"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_TSC2007_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_TSC2007_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_TSC2007_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_TSC2007_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,30 @@
+{
+  "name": "U8g2_Arduino",
+  "description": "U8glib V2 library for Arduino",
+  "description_zh": "U8g2 Arduino版本",
+  "enable": "PKG_USING_ARDUINO_U8G2",
+  "keywords": [
+    "U8g2_Arduino",
+    "Arduino",
+    "U8g2"
+  ],
+  "category": "arduino/display",
+  "author": {
+    "name": "olikraus",
+    "email": "olikraus@gmail.com",
+    "github": "olikraus"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/olikraus/U8g2_Arduino",
+  "icon": "unknown",
+  "homepage": "https://github.com/olikraus/U8g2_Arduino#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/olikraus/U8g2_Arduino.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

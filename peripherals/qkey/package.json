@@ -38,6 +38,12 @@
       "VER_SHA": ""
     },
     {
+      "version": "v1.12",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qkey/archive/v1.12.zip",
+      "filename": "rt-thread-qkey-1.12.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/qiyongzhong0/rt-thread-qkey.git",
       "filename": "",

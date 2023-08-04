@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-BNO055",
+  "description": "Adafruit BNO055 absolute orientation sensor driver",
+  "description_zh": "Adafruit BNO055绝对定向传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BNO055",
+  "keywords": [
+    "Adafruit-BNO055",
+    "BNO055",
+    "Adafruit",
+    "arduino",
+    "sensors",
+    "Direct output Angle"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_BNO055",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_BNO055#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_BNO055.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

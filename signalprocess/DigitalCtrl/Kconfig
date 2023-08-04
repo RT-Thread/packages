@@ -1,0 +1,37 @@
+
+# Kconfig file for package DigitalCtrl
+menuconfig PKG_USING_DIGITALCTRL
+    bool "DigitalCtrl: Digital closed-loop control algorithm library"
+    default n
+    help
+        DigitalCtrl is a digital control algorithm library designed to
+        simplify the programming of digital closed-loop controllers
+        based on microcontrollers, DSPs, and processors, and to provide
+        closed-loop controller algorithms with optimized performance and
+        space optimization.
+
+if PKG_USING_DIGITALCTRL
+
+    config DIGITALCTRL_USING_DOUBLE
+        bool "Use double precision floating point calculations"
+        default n
+
+    config PKG_DIGITALCTRL_PATH
+        string
+        default "/packages/signalprocess/DigitalCtrl"
+
+    choice
+        prompt "version"
+        default PKG_USING_DIGITALCTRL_LATEST_VERSION
+        help
+            Select the DigitalCtrl version
+
+        config PKG_USING_DIGITALCTRL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_DIGITALCTRL_VER
+        string
+        default "latest" if PKG_USING_DIGITALCTRL_LATEST_VERSION
+
+endif

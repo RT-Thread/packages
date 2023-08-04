@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-LTR329-LTR303
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_LTR329_LTR303
+    bool "Adafruit LTR329-LTR303: Light Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_LTR329_LTR303
+
+    config PKG_ARDUINO_ADAFRUIT_LTR329_LTR303_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-LTR329-LTR303"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_LTR329_LTR303_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_LTR329_LTR303_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_LTR329_LTR303_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_LTR329_LTR303_LATEST_VERSION
+
+endif
+

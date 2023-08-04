@@ -1,0 +1,12 @@
+menu "Display"
+
+source "$PKGS_DIR/packages/arduino/display/Adafruit-GFX-Library/Kconfig"
+source "$PKGS_DIR/packages/arduino/display/U8g2_Arduino/Kconfig"
+# source "$PKGS_DIR/packages/arduino/display/U8glib_Arduino/Kconfig"
+source "$PKGS_DIR/packages/arduino/display/TFT_eSPI/Kconfig"
+source "$PKGS_DIR/packages/arduino/display/Adafruit-ST7735/Kconfig"
+source "$PKGS_DIR/packages/arduino/display/Adafruit-SSD1306/Kconfig"
+source "$PKGS_DIR/packages/arduino/display/Adafruit-ILI9341/Kconfig"
+source "$PKGS_DIR/packages/arduino/display/Seeed-TM1637/Kconfig"
+
+endmenu

@@ -1,0 +1,34 @@
+{
+  "name": "PAJ7620",
+  "description": "Gesture sensor PAJ7620 driver package.",
+  "description_zh": "手势传感器PAJ7620的驱动包",
+  "enable": "PKG_USING_PAJ7620",
+  "keywords": [
+    "PAJ7620"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "orange2348",
+    "email": "orange2348@163.com",
+    "github": "orange2348"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/orange2348/paj7620",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/orange2348/paj7620/archive/v1.0.0.zip",
+      "filename": "PAJ7620-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/orange2348/paj7620.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

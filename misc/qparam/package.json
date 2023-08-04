@@ -1,0 +1,26 @@
+{
+  "name": "qparam",
+  "description": "A quick and easy-to-use parameter management component, parameter saving recovery modification and quick access functions are implemented.",
+  "description_zh": "一个快捷易用的参数管理组件，实现了参数保存、恢复、修改和快速存取功能.",
+  "enable": "PKG_USING_QPARAM",
+  "keywords": [
+    "parameter management"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-qparam",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-qparam#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qparam.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Seeed-DHT",
+  "description": "DHT11, DHT22, DHT21 & AM2301 Temperature And Humidity Sensor Driver",
+  "description_zh": "Seeed DHT11, DHT22, DHT21 & AM2301温湿度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_DHT",
+  "keywords": [
+    "Seeed-DHT",
+    "Arduino",
+    "Seeed",
+    "DHT11",
+    "DHT22",
+    "DHT21",
+    "AM2301",
+    "Sensor"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

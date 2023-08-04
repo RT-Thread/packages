@@ -1,0 +1,32 @@
+
+# Kconfig file for package slcan2rtt
+menuconfig PKG_USING_SLCAN2RTT
+    bool "Serial / USB serial CAN Adapter (slcan) on RT-Thread."
+    default n
+
+if PKG_USING_SLCAN2RTT
+
+    config PKG_SLCAN2RTT_PATH
+        string
+        default "/packages/misc/slcan2rtt"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SLCAN2RTT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SLCAN2RTT_V001
+            bool "v0.0.1"
+
+        config PKG_USING_SLCAN2RTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SLCAN2RTT_VER
+       string
+       default "v0.0.1"    if PKG_USING_SLCAN2RTT_V001
+       default "latest"    if PKG_USING_SLCAN2RTT_LATEST_VERSION
+
+endif
+

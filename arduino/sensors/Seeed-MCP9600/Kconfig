@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-MCP9600
+menuconfig PKG_USING_ARDUINO_SEEED_MCP9600
+    bool "Seeed MCP9600: digital temperature sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_MCP9600
+
+    config PKG_ARDUINO_SEEED_MCP9600_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-MCP9600"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_MCP9600_LATEST_VERSION
+        help
+            Select the package Version
+
+        config PKG_USING_ARDUINO_SEEED_MCP9600_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_MCP9600_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_MCP9600_LATEST_VERSION
+
+endif
+

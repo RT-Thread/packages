@@ -1,0 +1,32 @@
+{
+    "name": "st7789",
+    "description": "TFT-LCD ST7789 SPI Graphic driver.",
+    "description_zh": "TFT-LCD ST7789 SPI 图形驱动",
+    "enable": "PKG_USING_ST7789",
+    "keywords": [
+        "st7789"
+    ],
+    "category": "peripherals",
+    "author": {
+        "name": "Vandoul",
+        "email": "vandoul@ticks.cn",
+        "github": "Vandoul"
+    },
+    "license": "Apache-2.0",
+    "repository": "https://github.com/Vandoul/ST7789.git",
+    "icon": "unknown",
+    "homepage": "https://github.com/Vandoul/ST7789.git#readme",
+    "doc": "unknown",
+    "site": [{
+            "version": "v1.0.0",
+            "URL": "https://github.com/Vandoul/ST7789/archive/v1.0.0.zip",
+            "filename": "ST7789-1.0.0.zip"
+        },
+        {
+            "version": "latest",
+            "URL": "https://github.com/Vandoul/ST7789.git",
+            "filename": "Null for git package",
+            "VER_SHA": "master"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-ICM20X
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_ICM20X
+    bool "Adafruit ICM20X: TDK Invensense ICM20649 and ICM20948 Motion Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_ICM20X
+
+    config PKG_ARDUINO_ADAFRUIT_ICM20X_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-ICM20X"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_ICM20X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_ICM20X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_ICM20X_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_ICM20X_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,36 @@
+{
+  "name": "fire_pid_curve",
+  "description": ".",
+  "description_zh": "野火PID调试助手通讯协议软件包",
+  "enable": "PKG_USING_FIRE_PID_CURVE",
+  "keywords": [
+    "fire_pid_curve",
+    "pid",
+    "Debug assistant"
+  ],
+  "category": "signalprocess",
+  "author": {
+    "name": "LONGZR007",
+    "email": "1558193230@qq.com",
+    "github": "LONGZR007"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/LONGZR007/fire_pid_curve.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/LONGZR007/fire_pid_curve.git",
+      "filename": "fire_pid_curve-1.0.0.zip",
+      "VER_SHA": "89e263cd7369ffb064a56e04c82a62a10e12b6e6"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/LONGZR007/fire_pid_curve.git",
+      "filename": "fire_pid_curve",
+      "VER_SHA": "master"
+    }
+  ]
+}

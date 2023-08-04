@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-VEML7700
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_VEML7700
+    bool "Adafruit Veml7700: Ambient Light Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_VEML7700
+
+    config PKG_ARDUINO_ADAFRUIT_VEML7700_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-VEML7700"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_VEML7700_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_VEML7700_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_VEML7700_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_VEML7700_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,34 @@
+{
+  "name": "mlx90393",
+  "description": "The MLX90393 is the newest addition to the Melexis position sensing portfolio, bringing the highest fl exibility in the portfolio’s smallest assembly. Complementing this, the magnetic fi eld sensor is designed for micropower applications, with programmable duty cycles in the range of 0.1% to 100%.",
+  "description_zh": "MLX90393 是来自迈来芯公司的一颗低功耗的3D磁位置传感器",  
+  "enable": "PKG_USING_MLX90393", 
+  "keywords": [
+    "mlx90393"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "lgnq",
+    "email": "dzzxzz@gmail.com",
+    "github": "lgnq"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/lgnq/mlx90393",
+  "icon": "unknown",
+  "homepage": "https://github.com/lgnq/mlx90393",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/lgnq/mlx90393.git",
+      "filename": "mlx90393-1.0.0.zip",
+      "VER_SHA": "1da939f44ab90cab9b2119d65b11139c91808741"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/lgnq/mlx90393.git",
+      "filename": "mlx90393.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

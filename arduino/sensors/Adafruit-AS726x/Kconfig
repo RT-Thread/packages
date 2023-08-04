@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-AS726x
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_AS726X
+    bool "Adafruit AS726x: spectral sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_AS726X
+
+    config PKG_ARDUINO_ADAFRUIT_AS726X_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-AS726x"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_AS726X_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_AS726X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_AS726X_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_AS726X_LATEST_VERSION
+
+endif
+

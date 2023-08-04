@@ -1,0 +1,29 @@
+{
+  "name": "FreeRTOS_Wrapper",
+  "description": "FreeRTOS Application Compatibility Layer for RT-Thread",
+  "description_zh": "RT-Thread操作系统的FreeRTOS兼容层：让基于FreeRTOS开发的应用层无感地迁移到RT-Thread操作系统",  
+  "enable": "PKG_USING_FREERTOS_WRAPPER", 
+  "keywords": [
+    "FreeRTOS_Wrapper",
+    "FreeRTOS"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "tangz98@outlook.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/FreeRTOS-Wrapper",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/FreeRTOS-Wrapper#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/FreeRTOS-Wrapper.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

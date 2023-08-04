@@ -1,0 +1,37 @@
+
+# Kconfig file for package Adafruit_AHTX0
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_AHTX0
+    bool "Adafruit AHT10 & AHT20: Humidity and Temperature Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_AHTX0
+
+    config PKG_ARDUINO_ADAFRUIT_AHTX0_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-AHTX0"
+
+    config ARDUINO_ADAFRUIT_AHTX0_USING_SENSOR_DEVICE
+        bool "Use RT-Thread Sensor Device Framework"
+        select PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_AHTX0_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_AHTX0_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_AHTX0_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_AHTX0_LATEST_VERSION
+
+endif
+

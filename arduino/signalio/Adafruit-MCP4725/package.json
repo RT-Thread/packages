@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-MCP4725",
+  "description": "Adafruit MCP4725 12-bit I2C DAC driver",
+  "description_zh": "Adafruit MCP4725 12位DAC驱动(I2C)",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MCP4725",
+  "keywords": [
+    "Adafruit-MCP4725",
+    "Adafruit",
+    "arduino",
+    "MCP4725",
+    "I2C",
+    "DAC",
+    "Signal",
+    "Input/Output"
+  ],
+  "category": "arduino/signalio",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_MCP4725",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MCP4725#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MCP4725.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -35,6 +35,7 @@ if PKG_USING_AT_DEVICE
         source "$PKGS_DIR/packages/iot/at_device/m5311/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/l610/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/n720/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/ml305/Kconfig"
 
     endif
 
@@ -58,6 +59,9 @@ if PKG_USING_AT_DEVICE
             Select the at_device version
 
         if (AT_SW_VERSION_NUM >= 0x10300)
+
+            config PKG_USING_AT_DEVICE_V210
+                bool "v2.1.0"
 
             config PKG_USING_AT_DEVICE_V204
                 bool "v2.0.4"
@@ -110,6 +114,7 @@ if PKG_USING_AT_DEVICE
     config PKG_AT_DEVICE_VER
         string
         default "latest"    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default "v2.1.0"    if PKG_USING_AT_DEVICE_V210
         default "v2.0.4"    if PKG_USING_AT_DEVICE_V204
         default "v2.0.3"    if PKG_USING_AT_DEVICE_V203
         default "v2.0.2"    if PKG_USING_AT_DEVICE_V202
@@ -124,6 +129,7 @@ if PKG_USING_AT_DEVICE
     config PKG_AT_DEVICE_VER_NUM
         hex
         default 0x99999    if PKG_USING_AT_DEVICE_LATEST_VERSION
+        default 0x20100    if PKG_USING_AT_DEVICE_V210
         default 0x20004    if PKG_USING_AT_DEVICE_V204
         default 0x20003    if PKG_USING_AT_DEVICE_V203
         default 0x20002    if PKG_USING_AT_DEVICE_V202

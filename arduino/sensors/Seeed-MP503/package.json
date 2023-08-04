@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-MP503",
+  "description": "Seeed MP503 Air Quality Sensor",
+  "description_zh": "Seeed MP503 空气质量传感器驱动",
+  "enable": "PKG_USING_SEEED_MP503",
+  "keywords": [
+    "Seeed-MP503",
+    "Sensors",
+    "Seeed",
+    "Arduino",
+    "MP503",
+    "Air Quality"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_Air_quality_Sensor",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_Air_quality_Sensor#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_Air_quality_Sensor.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

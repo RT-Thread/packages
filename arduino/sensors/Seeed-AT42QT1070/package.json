@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-AT42QT1070",
+  "description": "Seeed AT42QT1070 a digital burst mode charge-transfer capacitive sensor driver",
+  "description_zh": "Seeed AT42QT1070 电容触摸传感器驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_AT42QT1070",
+  "keywords": [
+    "Seeed-AT42QT1070",
+    "AT42QT1070",
+    "touch",
+    "arduino",
+    "sensors",
+    "capacitive"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Seeed_QTouch",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Seeed_QTouch#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Seeed_QTouch.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+
+# Kconfig file for package aip650
+
+menuconfig PKG_USING_AIP650
+    bool "aip650/tm1650 : A quick and easy-to-use digit led and key driver package"
+    default n
+
+if PKG_USING_AIP650
+
+    config PKG_AIP650_PATH
+        string
+        default "/packages/peripherals/aip650"
+
+    config PKG_AIP650_I2C_NAME
+        string "i2c bus"
+        default "i2c1"
+
+    config AIP650_USING_EXAMPLE
+        bool "example for aip650/tm1650"
+        default n
+
+    config AIP650_TEST_KEY
+        bool "test one key in example"
+        depends on AIP650_USING_EXAMPLE
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_AIP650_LATEST_VERSION
+        help
+            Select the this package version
+
+        config PKG_USING_AIP650_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AIP650_VER
+        string
+        default "latest" if PKG_USING_AIP650_LATEST_VERSION
+
+endif

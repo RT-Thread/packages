@@ -1,0 +1,31 @@
+{
+  "name": "3gpp_amrnb",
+  "description": "3gpp amrnb codec library",
+  "description_zh": "3gpp amrnb 编解码库",
+  "enable": "PKG_USING_3GPP_AMRNB",
+  "keywords": [
+    "3gpp_amrnb"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "myshow",
+    "email": "296570182@qq.com",
+    "github": "myshowtogo"
+  },
+  "license": "Apache",
+  "repository": "https://github.com/myshowtogo/3gpp_amrnb",
+  "homepage": "https://github.com/myshowtogo/3gpp_amrnb#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/myshowtogo/3gpp_amrnb.git",
+      "filename": "3gpp_amrnb-main.zip",
+      "VER_SHA": "main"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/myshowtogo/3gpp_amrnb/archive/refs/tags/v1.0.0.zip",
+      "filename": "v1.0.0.zip"
+    }
+  ]
+}

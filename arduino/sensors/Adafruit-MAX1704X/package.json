@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-MAX1704X",
+  "description": "Adafruit MAX17048/MAX17049 battery monitor driver",
+  "description_zh": "Adafruit MAX17048/MAX17049锂电池管理芯片驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX1704X",
+  "keywords": [
+    "Adafruit-MAX1704X",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "MAX17048",
+    "MAX17049"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Adafruit",
+    "email": "info@adafruit.com",
+    "github": "Adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_MAX1704X",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MAX1704X#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MAX1704X.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

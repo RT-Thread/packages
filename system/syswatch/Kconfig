@@ -57,7 +57,7 @@ if PKG_USING_SYSWATCH
 
     config SYSWATCH_THREAD_STK_SIZE
         int "The stack size of syswatch thread"
-        default 512
+        default 1024
 
     config SYSWATCH_THREAD_NAME
         string "The name of syswatch thread"

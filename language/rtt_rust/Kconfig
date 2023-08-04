@@ -1,0 +1,32 @@
+
+# Kconfig file for package rtt_rust
+menuconfig PKG_USING_RTT_RUST
+    bool "Rust support for rt-thread."
+    default n
+
+if PKG_USING_RTT_RUST
+
+    config PKG_RTT_RUST_PATH
+        string
+        default "/packages/language/rtt_rust"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RTT_RUST_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RTT_RUST_V010
+            bool "v0.1.0"
+
+        config PKG_USING_RTT_RUST_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RTT_RUST_VER
+       string
+       default "v0.1.0"    if PKG_USING_RTT_RUST_V010
+       default "latest"    if PKG_USING_RTT_RUST_LATEST_VERSION
+
+endif
+

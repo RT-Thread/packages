@@ -1,0 +1,32 @@
+
+# Kconfig file for package fire_pid_curve
+menuconfig PKG_USING_FIRE_PID_CURVE
+    bool "fire PID communication protocol debugging assistant."
+    default n
+
+if PKG_USING_FIRE_PID_CURVE
+
+    config PKG_FIRE_PID_CURVE_PATH
+        string
+        default "/packages/signalprocess/fire_pid_curve"
+
+    choice
+        prompt "Version"
+        default PKG_USING_FIRE_PID_CURVE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FIRE_PID_CURVE_V100
+            bool "v1.0.0"
+
+        config PKG_USING_FIRE_PID_CURVE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_FIRE_PID_CURVE_VER
+       string
+       default "v1.0.0"    if PKG_USING_FIRE_PID_CURVE_V100
+       default "latest"    if PKG_USING_FIRE_PID_CURVE_LATEST_VERSION
+
+endif
+

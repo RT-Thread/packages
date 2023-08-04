@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-BusIO",
+  "description": "Abstract away I2C & SPI transactions and registers",
+  "description_zh": "Adafruit总线库",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_BUSIO",
+  "keywords": [
+    "Adafruit_BusIO",
+    "Arduino",
+    "Sensor",
+    "Adafruit",
+    "Bus"
+  ],
+  "category": "arduino/signalio",
+  "author": {
+    "name": "adafruit",
+    "email": "meco@rt-thread.org",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RTduino-libraries/Adafruit_BusIO",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/Adafruit_BusIO#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/Adafruit_BusIO.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

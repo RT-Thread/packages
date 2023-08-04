@@ -1,0 +1,41 @@
+
+# Kconfig file for package fingerprint
+menuconfig PKG_USING_FINGERPRINT
+    bool "fingerprint module driver."
+    default n
+
+if PKG_USING_FINGERPRINT
+
+    config FINGERPRINT_UART_NAME
+        string "fingerprint uart name"
+        default "uart2"
+
+    config PKG_USING_FINGERPRINT_SAMPLE
+        bool "Enable fingerprint SAMPLE"
+        default y
+
+
+    config PKG_FINGERPRINT_PATH
+        string
+        default "/packages/peripherals/fingerprint"
+
+    choice
+        prompt "Version"
+        default PKG_USING_FINGERPRINT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FINGERPRINT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_FINGERPRINT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_FINGERPRINT_VER
+       string
+       default "v1.0.0"    if PKG_USING_FINGERPRINT_V100
+       default "latest"    if PKG_USING_FINGERPRINT_LATEST_VERSION
+
+endif
+

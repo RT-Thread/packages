@@ -1,0 +1,16 @@
+menu "Arduino libraries"
+
+source "$PKGS_DIR/packages/arduino/RTduino/Kconfig"
+source "$PKGS_DIR/packages/arduino/projects/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Kconfig"
+source "$PKGS_DIR/packages/arduino/display/Kconfig"
+source "$PKGS_DIR/packages/arduino/timing/Kconfig"
+source "$PKGS_DIR/packages/arduino/dataprocessing/Kconfig"
+source "$PKGS_DIR/packages/arduino/datastorage/Kconfig"
+source "$PKGS_DIR/packages/arduino/communication/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Kconfig"
+source "$PKGS_DIR/packages/arduino/other/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Kconfig"
+source "$PKGS_DIR/packages/arduino/uncategorized/Kconfig"
+
+endmenu

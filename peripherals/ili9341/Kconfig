@@ -1,0 +1,63 @@
+
+# Kconfig file for package ILI9341
+menuconfig PKG_USING_ILI9341
+    depends on  RT_VER_NUM >= 0x50000
+    bool "TFT-LCD ILI9341 SPI screen driver software package"
+    default n
+
+if PKG_USING_ILI9341
+
+    config PKG_ILI9341_PATH
+        string
+        default "/packages/peripherals/ili9341"
+
+    config PKG_ILI_9341_SPI_BUS_NAME
+        string "spi bus name"
+        default "spi1"
+
+    config PKG_ILI_9341_SPI_DEVICE_NAME
+            string "spi device name"
+            default "spi10"
+
+    config PKG_ILI_9341_WIDTH
+        int "Width of the LCD display"
+        default 240
+
+    config PKG_ILI_9341_HEIGHT
+        int "Height of the LCD display"
+        default 320
+
+    config PKG_ILI_9341_DC_PIN
+        int "DC pin connected to the LCD display"
+        default -1
+
+    config PKG_ILI_9341_RES_PIN
+        int "RESET pin connected to the LCD display"
+        default -1
+
+    config PKG_ILI_9341_CS_PIN
+        int "CS pin connected to the LCD display"
+        default -1
+
+    config PKG_ILI_9341_BLK_PIN
+        int "Backlight pin connected to the LCD display"
+        default -1
+    choice
+        prompt "Version"
+        default PKG_USING_ILI9341_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ILI9341_V100
+            bool "v1.0.0"
+
+        config PKG_USING_ILI9341_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ILI9341_VER
+       string
+       default "v1.0.0"    if PKG_USING_ILI9341_V100
+       default "latest"    if PKG_USING_ILI9341_LATEST_VERSION
+
+endif

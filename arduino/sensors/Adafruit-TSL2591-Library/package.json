@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-TSL2591-Library",
+  "description": "Adafruit TSL2591 Digital Luminosity (light) Sensors",
+  "description_zh": "Adafruit TSL2591数字光度(光)传感器。",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_TSL2591_LIBRARY",
+  "keywords": [
+    "Adafruit-TSL2591-Library",
+    "adafruit",
+    "arduino",
+    "TSL2591",
+    "luminosity"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/adafruit/Adafruit_TSL2591_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_TSL2591_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_TSL2591_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+
+# Kconfig file for package as7341
+menuconfig PKG_USING_AS7341
+    bool "AS7341: AS7341 visible light sensor, can measure 8 wavelengths of visible light."
+    default n
+
+if PKG_USING_AS7341
+
+    config PKG_AS7341_PATH
+        string
+        default "/packages/peripherals/sensors/as7341"
+
+    choice
+        prompt "Version"
+        default PKG_USING_AS7341_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AS7341_V100
+            bool "v1.0.0"
+
+        config PKG_USING_AS7341_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AS7341_VER
+       string
+       default "v1.0.0"    if PKG_USING_AS7341_V100
+       default "latest"    if PKG_USING_AS7341_LATEST_VERSION
+
+endif
+

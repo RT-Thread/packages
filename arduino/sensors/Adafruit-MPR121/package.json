@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-MPR121",
+  "description": "Adafruit MPR121 Capacitive Touch Sensor Driver",
+  "description_zh": "Adafruit MPR121 电容触摸传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MPR121",
+  "keywords": [
+    "Adafruit-MPR121",
+    "Adafruit",
+    "Sensor",
+    "MPR121",
+    "Capacitive",
+    "Touch"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_MPR121",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MPR121#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MPR121.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

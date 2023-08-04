@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-ILI9341",
+  "description": "Adafruit ILI9341 显示屏 Arduino 驱动库",
+  "description_zh": "Adafruit ILI9341 display Arduino driver",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_ILI9341",
+  "keywords": [
+    "Adafruit-ILI9341",
+    "ILI9341",
+    "TFT",
+    "Arduino",
+    "RTduino"
+  ],
+  "category": "arduino/display",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RTduino-libraries/Adafruit_ILI9341",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/Adafruit_ILI9341#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/Adafruit_ILI9341.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

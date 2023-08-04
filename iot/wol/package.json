@@ -1,0 +1,32 @@
+{
+    "name": "wol",
+    "description": "wake on lan package for rt-thread",
+    "description_zh": "实现网络唤醒功能",
+    "enable": "PKG_USING_WOL",
+    "keywords": [
+        "wol",
+        "wake on lan"
+    ],
+    "category": "iot",
+    "author": {
+        "name": "WKJay",
+        "email": "1931048074@qq.com",
+        "github": "WKJay"
+    },
+    "license": "Apache-2.0",
+    "repository": "https://github.com/WKJay/wol",
+    "homepage": "https://github.com/WKJay/wol#readme",
+    "site": [
+        {
+            "version": "v1.0.0",
+            "URL": "https://github.com/WKJay/wol/archive/refs/tags/v1.0.0.zip",
+            "filename": "wol-1.0.0.zip"
+        },
+        {
+            "version": "latest",
+            "URL": "https://github.com/WKJay/wol.git",
+            "filename": "Null for git package",
+            "VER_SHA": "master"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-MLX90393",
+  "description": "Adafruit MLX90393 Magnetic Field Sensor",
+  "description_zh": "Adafruit MLX90393 磁场传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MLX90393",
+  "keywords": [
+    "Adafruit-MLX90393",
+    "Adafruit",
+    "MLX90393",
+    "magenetic",
+    "sensor",
+    "Arduino"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit_MLX90393_Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_MLX90393_Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_MLX90393_Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

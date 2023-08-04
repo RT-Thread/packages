@@ -1,0 +1,33 @@
+{
+  "name": "fingerprint",
+  "description": "fingerprint module driver",
+  "description_zh": "指纹模块驱动",
+  "enable": "PKG_USING_FINGERPRINT",
+  "keywords": [
+    "fingerprint"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "pk-ing",
+    "email": "pk-ing@nyist.edu.cn",
+    "github": "pk-ing"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/pk-ing/fingerprint",
+  "icon": "unknown",
+  "homepage": "https://github.com/pk-ing/fingerprint",
+  "doc": "https://github.com/pk-ing/fingerprint/tree/master/doc",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/pk-ing/fingerprint/archive/v1.0.0.zip",
+      "filename": "fingerprint-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/pk-ing/fingerprint.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

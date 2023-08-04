@@ -1,0 +1,34 @@
+{
+  "name": "Seeed-PCF85063TP",
+  "description": "Seeed PCF85063TP High Precision RTC",
+  "description_zh": "Seeed PCF85063TP 高精度RTC驱动",
+  "enable": "PKG_USING_ARDUINO_SEEED_PCF85063TP",
+  "keywords": [
+    "Seeed-PCF85063TP",
+    "Device Control",
+    "Seeed",
+    "Arduino",
+    "PCF85063TP",
+    "DS1307",
+    "RTC"
+  ],
+  "category": "arduino/devicecontrol",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_High_Precision_RTC_PCF85063TP",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_High_Precision_RTC_PCF85063TP#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_High_Precision_RTC_PCF85063TP.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

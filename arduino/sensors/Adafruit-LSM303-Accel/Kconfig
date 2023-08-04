@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-LSM303-Accel
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_LSM303_ACCEL
+    bool "Adafruit LSM303: Triple-axis Accelerometer and Magnetometer Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_LSM303_ACCEL
+
+    config PKG_ARDUINO_ADAFRUIT_LSM303_ACCEL_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-LSM303-Accel"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_LSM303_ACCEL_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_LSM303_ACCEL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_LSM303_ACCEL_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_LSM303_ACCEL_LATEST_VERSION
+
+endif
+

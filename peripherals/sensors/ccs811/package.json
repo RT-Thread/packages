@@ -23,6 +23,11 @@
   "doc": "unknown",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://github.com/luhuadong/rtt-ccs811/archive/v1.0.0.zip",
+      "filename": "ccs811-v1.0.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/luhuadong/rtt-ccs811.git",
       "filename": "ccs811-latest.zip",

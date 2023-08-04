@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-ADS1X15
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_ADS1X15
+    bool "Adafruit ADS1015/1115: 12/16-bit Differential or Single-Ended ADCs with PGA and Comparator"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_ADS1X15
+
+    config PKG_ARDUINO_ADAFRUIT_ADS1X15_PATH
+        string
+        default "/packages/arduino/signalio/Adafruit-ADS1X15"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_ADS1X15_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_ADS1X15_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_ADS1X15_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_ADS1X15_LATEST_VERSION
+
+endif
+

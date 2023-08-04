@@ -1,0 +1,33 @@
+{
+  "name": "Seeed-TM1637",
+  "description": "Seeed TM1637 4 digit display driver",
+  "description_zh": "Seeed-TM1637 4位显示模块驱动",
+  "enable": "PKG_USING_SEEED_TM1637",
+  "keywords": [
+    "Seeed-TM1637",
+    "display",
+    "Seeed",
+    "Arduino",
+    "TM1637",
+    "digit"
+  ],
+  "category": "arduino/display",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_4Digital_Display",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_4Digital_Display#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_4Digital_Display.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

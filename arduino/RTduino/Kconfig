@@ -1,0 +1,113 @@
+
+# Kconfig file for package RTduino
+menuconfig PKG_USING_RTDUINO
+    bool "RTduino: Arduino Ecological Compatibility Layer"
+    select RT_USING_CPLUSPLUS
+    select RT_USING_TIMER_SOFT
+    default n
+
+if PKG_USING_RTDUINO
+
+    config PKG_RTDUINO_PATH
+        string
+        default "/packages/arduino/RTduino"
+
+    config RTDUINO_NO_SETUP_LOOP
+        bool "Don't use setup-loop structure"
+        default n
+
+    if !RTDUINO_NO_SETUP_LOOP
+        config RTDUINO_THREAD_SIZE
+            int "Arduino thread's size"
+            default 2048
+
+        config RTDUINO_THREAD_PRIO
+            int "Arduino thread's priority"
+            default RT_THREAD_PRIORITY_MAX-2
+    endif
+
+    menuconfig RTDUINO_TINY_MODE
+        bool "Enable tiny mode"
+        select RTDUINO_NO_SETUP_LOOP
+        default n
+
+    config RTDUINO_SUPPORT_FLOAT_STRING
+        bool "Enable String class with float support"
+        select PKG_USING_RT_VSNPRINTF_FULL
+        default n
+
+    config RTDUINO_SUPPORT_HIGH_PRECISION_MICROS
+        bool "micros() function with high precision"
+        depends on ARCH_ARM_CORTEX_M
+        select PKG_USING_PERF_COUNTER if ARCH_ARM_CORTEX_M
+        default y
+
+    config RTDUINO_USING_WIRE
+        bool "Enable wire library <Wire.h>"
+        select RT_USING_I2C
+        default n
+
+    config RTDUINO_DEFAULT_IIC_BUS_NAME
+        string "RTduino default IIC bus device name"
+        depends on RTDUINO_TINY_MODE && RTDUINO_USING_WIRE
+        default "i2c1"
+
+    config RTDUINO_WIRE_BUFFER_LENGTH
+        int "Wire buffer"
+        depends on RTDUINO_USING_WIRE
+        default 32
+        range 0 512
+
+    config RTDUINO_USING_SPI
+        bool "Enable SPI library <SPI.h>"
+        select RT_USING_SPI
+        default n
+
+    config RTDUINO_DEFAULT_SPI_BUS_NAME
+        string "RTduino default SPI bus device name"
+        depends on RTDUINO_TINY_MODE && RTDUINO_USING_SPI
+        default "spi1"
+
+    config RTDUINO_USING_SERVO
+        bool "Enable servo library <Servo.h>"
+        default n
+        depends on !RTDUINO_TINY_MODE
+
+    config RTDUINO_USING_USBSERIAL
+        bool "Enable USB Serial"
+        select PKG_USING_TINYUSB
+        select PKG_TINYUSB_DEVICE_ENABLE
+        select PKG_TINYUSB_DEVICE_CDC
+        default n
+
+    config RTDUINO_USING_SHELL_CMD
+        bool "Enable shell commands"
+        default n
+
+    if RTDUINO_USING_SHELL_CMD
+        config RTDUINO_CMD_USING_SERIAL
+            bool "Enable Serial commands"
+            default n
+
+        config RTDUINO_CMD_SERIAL_USING_FOCUSON
+            bool "Enable Serial focus on mode"
+            depends on RTDUINO_CMD_USING_SERIAL
+            default n
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_RTDUINO_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RTDUINO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RTDUINO_VER
+       string
+       default "latest"    if PKG_USING_RTDUINO_LATEST_VERSION
+
+endif
+

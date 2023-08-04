@@ -36,12 +36,16 @@ if PKG_USING_CCS811
         help
             Select the package version
 
+        config PKG_USING_CCS811_V100
+            bool "v1.0.0"
+
         config PKG_USING_CCS811_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_CCS811_VER
        string
+       default "v1.0.0"    if PKG_USING_CCS811_V100
        default "latest"    if PKG_USING_CCS811_LATEST_VERSION
 
 endif

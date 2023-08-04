@@ -1,0 +1,28 @@
+
+# Kconfig file for package vofa_plus
+menuconfig PKG_USING_VOFA_PLUS
+    bool "Realize serial port waveform function with vfoa+"
+    default n
+
+if PKG_USING_VOFA_PLUS
+
+    config PKG_VOFA_PLUS_PATH
+        string
+        default "/packages/tools/vofa_plus"
+
+    choice
+        prompt "Version"
+        default PKG_USING_VOFA_PLUS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_VOFA_PLUS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_VOFA_PLUS_VER
+       string
+       default "latest"    if PKG_USING_VOFA_PLUS_LATEST_VERSION
+
+endif
+

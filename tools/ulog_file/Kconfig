@@ -2,9 +2,9 @@
 # Kconfig file for package ulog_file
 menuconfig PKG_USING_ULOG_FILE
     bool "ulog_file: The ulog file backend by filesystem."
+    depends on RT_VER_NUM < 0x40100
     default n
-    select RT_USING_DFS      if RT_VER_NUM < 0x40100
-    select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
+    select RT_USING_DFS
     select RT_USING_ULOG
 
 if PKG_USING_ULOG_FILE

@@ -1,0 +1,32 @@
+{
+  "name": "Seeed-BMP280",
+  "description": "An absolute barometric pressure sensor for Arduino",
+  "description_zh": "BMP280传感器Arduino驱动库",
+  "enable": "PKG_USING_ARDUINO_SEEED_BMP280",
+  "keywords": [
+    "Seeed-BMP280",
+    "Sensor",
+    "Arduino",
+    "BMP280",
+    "Seeed"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "Seeed-Studio",
+    "email": "techsupport@seeed.cc",
+    "github": "Seeed-Studio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Seeed-Studio/Grove_BMP280",
+  "icon": "unknown",
+  "homepage": "https://github.com/Seeed-Studio/Grove_BMP280#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Seeed-Studio/Grove_BMP280.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

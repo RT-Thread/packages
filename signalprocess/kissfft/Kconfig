@@ -1,0 +1,31 @@
+
+# Kconfig file for package kissfft
+menuconfig PKG_USING_KISSFFT
+    bool "kissfft: a Fast Fourier Transform (FFT) library"
+    default n
+
+if PKG_USING_KISSFFT
+
+    config PKG_KISSFFT_PATH
+        string
+        default "/packages/signalprocess/kissfft"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_KISSFFT_V100
+            bool "v131.1.0"
+
+        config PKG_USING_KISSFFT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_KISSFFT_VER
+       string
+       default "v131.1.0"    if PKG_USING_KISSFFT_V13110
+       default "latest"      if PKG_USING_KISSFFT_LATEST_VERSION
+
+endif
+

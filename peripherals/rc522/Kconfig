@@ -36,12 +36,15 @@ if PKG_USING_RC522
 
     choice
         prompt "Version"
-        default PKG_USING_RC522_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_RC522_V145
+        config PKG_USING_RC522_V10410
+            bool "v1.4.10"
+
+        config PKG_USING_RC522_V10405
             bool "v1.4.5"
+            depends on RT_VER_NUM < 0x40101
 
         config PKG_USING_RC522_LATEST_VERSION
             bool "latest"
@@ -49,7 +52,8 @@ if PKG_USING_RC522
 
     config PKG_RC522_VER
        string
-       default "v1.4.5"    if PKG_USING_RC522_V145
+       default "v1.4.10"   if PKG_USING_RC522_V10410
+       default "v1.4.5"    if PKG_USING_RC522_V10405
        default "latest"    if PKG_USING_RC522_LATEST_VERSION
 
 endif

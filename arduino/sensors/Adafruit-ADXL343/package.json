@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-ADXL343",
+  "description": "Adafruit ADXL343 digital accelerometer (+/-2/4/8/16g) driver that supports both SPI and I2C mode",
+  "description_zh": "ADXL343数字加速度计(+/-2/4/8/16g)驱动，同时支持SPI和I2C模式",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_ADXL343",
+  "keywords": [
+    "Adafruit-ADXL343",
+    "Sensors",
+    "Arduino",
+    "ADXL343",
+    "accelerometer",
+    "Adafruit"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_ADXL343",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_ADXL343#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_ADXL343.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

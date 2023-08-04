@@ -1,0 +1,32 @@
+{
+    "name": "ili9341",
+    "description": "TFT-LCD ILI9341 SPI screen driver software package",
+    "description_zh": "TFT-LCD ILI9341 SPI 屏幕驱动的软件包",
+    "enable": "PKG_USING_ILI9341",
+    "keywords": [
+        "ili9341"
+    ],
+    "category": "peripherals",
+    "author": {
+        "name": "Rbb666",
+        "email": "zhangbingru@rt-thread.com",
+        "github": "Rbb666"
+    },
+    "license": "Apache-2.0",
+    "repository": "https://github.com/Rbb666/ILI9341.git",
+    "icon": "unknown",
+    "homepage": "https://github.com/Rbb666/ILI9341.git#readme",
+    "doc": "unknown",
+    "site": [{
+            "version": "v1.0.0",
+            "URL": "https://github.com/Rbb666/ILI9341/archive/v1.0.0.zip",
+            "filename": "ILI9341-1.0.0.zip"
+        },
+        {
+            "version": "latest",
+            "URL": "https://github.com/Rbb666/ILI9341.git",
+            "filename": "Null for git package",
+            "VER_SHA": "master"
+        }
+    ]
+}

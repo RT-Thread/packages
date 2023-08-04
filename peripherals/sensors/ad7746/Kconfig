@@ -1,0 +1,68 @@
+
+# Kconfig file for package ad7746
+menuconfig PKG_USING_AD7746
+    bool "AD7746: a high resolution, capacitance-to-digital converter (CDC)."
+    select RT_USING_PIN
+    select RT_USING_I2C
+    select RT_USING_I2C_BITOPS
+    select RT_USING_CPLUSPLUS
+    default n
+
+if PKG_USING_AD7746
+
+    config PKG_AD7746_PATH
+        string
+        default "/packages/peripherals/sensors/ad7746"
+
+    config AD7746_I2C_NAME
+        string "i2c bus name"
+        default "i2c2"
+
+    config AD7746_USING_READ_TEMPERATURE
+        bool "AD7746 Temperature Display : print current temperature"
+        help
+            Print AD7746 Temperature: read current temperature from on-chip temperature sensor
+        default n
+
+    config AD7746_USING_READ_WRITE
+        bool "AD7746 Register Read Write : i2c command line tools for ad7746"
+        help
+            Print AD7746 Read Write: read/write command line tools for ad7746
+        default n
+
+    config AD7746_USING_READ_CAPACITANCE
+        bool "AD7746 Capacitance Display : print current capacitance"
+        help
+            Print AD7746 capacitance: read current capacitance
+        default n
+
+    config AD7746_USING_READ_CAPACITANCE_EXTENSION
+        bool "AD7746 Capacitance Display : print current capacitance (with extension)"
+        help
+            Print AD7746 capacitance: read current capacitance (with extension)
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_AD7746_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AD7746_V100
+            bool "v1.0.0"
+
+        config PKG_USING_AD7746_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AD7746_VER
+       string
+       default "v1.0.0"    if PKG_USING_AD7746_V100
+       default "latest"    if PKG_USING_AD7746_LATEST_VERSION
+
+    config PKG_AD7746_VER_NUM
+        hex
+        default 0x10000 if PKG_USING_AD7746_V100
+        default 0x99999 if PKG_USING_AD7746_LATEST_VERSION
+
+endif

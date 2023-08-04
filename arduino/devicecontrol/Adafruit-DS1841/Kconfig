@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-DS1841
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_DS1841
+    bool "Adafruit DS1841: Digital Potentiometer Breakout"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_DS1841
+
+    config PKG_ARDUINO_ADAFRUIT_DS1841_PATH
+        string
+        default "/packages/arduino/devicecontrol/Adafruit-DS1841"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_DS1841_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_DS1841_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_DS1841_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_DS1841_LATEST_VERSION
+
+endif
+

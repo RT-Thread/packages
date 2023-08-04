@@ -1,0 +1,29 @@
+
+# Kconfig file for package ESP-IDF
+menuconfig PKG_USING_ESP_IDF
+    bool "ESP-IDF: Espressif IoT Development Framework"
+    select PKG_USING_FREERTOS_WRAPPER
+    default n
+
+if PKG_USING_ESP_IDF
+
+    config PKG_ESP_IDF_PATH
+        string
+        default "/packages/peripherals/ESP-IDF"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ESP_IDF_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ESP_IDF_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ESP_IDF_VER
+       string
+       default "latest"    if PKG_USING_ESP_IDF_LATEST_VERSION
+
+endif
+

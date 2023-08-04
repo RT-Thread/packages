@@ -1,0 +1,33 @@
+{
+  "name": "Adafruit-DPS310",
+  "description": "Adafruit DPS310 Barometric Pressure Sensor",
+  "description_zh": "Adafruit DPS310压力传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_DPS310",
+  "keywords": [
+    "Adafruit-DPS310",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "DPS310",
+    "pressure"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_DPS310",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_DPS310#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_DPS310.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

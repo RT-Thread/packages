@@ -1,0 +1,28 @@
+{
+  "name": "balance",
+  "description": "Use hx71xx and weighing pressure sensor to measure weight",
+  "description_zh": "使用HX71XX及称重压力传感器测重",
+  "enable": "PKG_USING_BALANCE",
+  "keywords": [
+    "balance"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "xiaogeminghai",
+    "email": "634927333@qq.com",
+    "github": "xiaogeminghai"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/xiaogeminghai/balance",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/xiaogeminghai/balance.git",
+      "filename": "", 
+      "VER_SHA": "master"
+    }
+  ]
+}

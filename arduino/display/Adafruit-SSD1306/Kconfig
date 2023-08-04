@@ -1,0 +1,29 @@
+
+# Kconfig file for package Adafruit-SSD1306
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_SSD1306
+    bool "Adafruit SSD1306: SSD1306 monochrome 128x64 and 128x32 OLEDs driver"
+    select PKG_USING_RTDUINO
+    select PKG_USING_ARDUINO_ADAFRUIT_GFX_LIBRARY
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_SSD1306
+
+    config PKG_ARDUINO_ADAFRUIT_SSD1306_PATH
+        string
+        default "/packages/arduino/display/Adafruit-SSD1306"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_SSD1306_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_SSD1306_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_SSD1306_LATEST_VERSION
+
+endif
+

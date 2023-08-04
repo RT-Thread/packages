@@ -1,0 +1,31 @@
+
+# Kconfig file for package SPI_TOOLS
+menuconfig PKG_USING_SPI_TOOLS
+    bool "spi-tools: a collection of spi tools including init/deinit/config/trans"
+    select RT_USING_PIN
+    select RT_USING_SPI
+    default n
+
+if PKG_USING_SPI_TOOLS
+
+    config PKG_SPI_TOOLS_PATH
+        string
+        default "/packages/peripherals/spi-tools"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SPI_TOOLS_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_SPI_TOOLS_V100
+            bool "v1.0.0"
+        config PKG_USING_SPI_TOOLS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SPI_TOOLS_VER
+       string
+       default "v1.0.0"    if PKG_USING_SPI_TOOLS_V100
+       default "latest"    if PKG_USING_SPI_TOOLS_LATEST_VERSION
+
+endif

@@ -1,0 +1,30 @@
+
+# Kconfig file for package Seeed-AT42QT1070
+menuconfig PKG_USING_ARDUINO_SEEED_AT42QT1070
+    bool "Seeed AT42QT1070: a digital burst mode charge-transfer capacitive sensor driver"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    default n
+
+if PKG_USING_ARDUINO_SEEED_AT42QT1070
+
+    config PKG_ARDUINO_SEEED_AT42QT1070_PATH
+        string
+        default "/packages/arduino/sensors/Seeed-AT42QT1070"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SEEED_AT42QT1070_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SEEED_AT42QT1070_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SEEED_AT42QT1070_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SEEED_AT42QT1070_LATEST_VERSION
+
+endif
+

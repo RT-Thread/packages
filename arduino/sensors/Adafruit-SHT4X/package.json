@@ -1,0 +1,35 @@
+{
+  "name": "Adafruit-SHT4X",
+  "description": "Adafruit SHT4X temperature & humidity sensor",
+  "description_zh": "Adafruit SHT4X 温湿度传感器驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_SHT4X",
+  "keywords": [
+    "Adafruit-SHT4X",
+    "Sensors",
+    "Adafruit",
+    "Arduino",
+    "SHT4X",
+    "SHT40",
+    "temperature",
+    "humidity"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_SHT4X",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_SHT4X#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_SHT4X.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

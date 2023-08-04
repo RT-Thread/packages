@@ -1,7 +1,7 @@
 {
   "name": "LVGL",
-  "description": "powerful and easy-to-use embedded GUI library (official upstream)",
-  "description_zh": "LVGL图形库（官方上游）",
+  "description": "Light and Versatile Graphics Library (official upstream)",
+  "description_zh": "LVGL轻量级通用型图形库（官方上游）",
   "enable": "PKG_USING_LVGL",
   "keywords": [
     "LVGL",
@@ -20,21 +20,65 @@
   "doc": "https://github.com/lvgl/lvgl#readme",
   "site": [
     {
-      "version": "v8.1.0",
-      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.1.0.zip",
-      "filename": "lvgl-8.1.0.zip",
-      "VER_SHA": "master"
+      "version": "v8.3.8",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.8.zip",
+      "filename": "lvgl-8.3.8.zip"
+    },
+    {
+      "version": "v8.3.7",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.7.zip",
+      "filename": "lvgl-8.3.7.zip"
+    },
+    {
+      "version": "v8.3.6",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.6.zip",
+      "filename": "lvgl-8.3.6.zip"
+    },
+    {
+      "version": "v8.3.5",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.5.zip",
+      "filename": "lvgl-8.3.5.zip"
+    },
+    {
+      "version": "v8.3.4",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.4.zip",
+      "filename": "lvgl-8.3.4.zip"
+    },
+    {
+      "version": "v8.3.3",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.3.zip",
+      "filename": "lvgl-8.3.3.zip"
+    },
+    {
+      "version": "v8.3.2",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.2.zip",
+      "filename": "lvgl-8.3.2.zip"
+    },
+    {
+      "version": "v8.3.1",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.1.zip",
+      "filename": "lvgl-8.3.1.zip"
+    },
+    {
+      "version": "v8.3.0",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.3.0.zip",
+      "filename": "lvgl-8.3.0.zip"
     },
     {
       "version": "v8.2.0",
       "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v8.2.0.zip",
-      "filename": "lvgl-8.2.0.zip",
-      "VER_SHA": "master"
+      "filename": "lvgl-8.2.0.zip"
+    },
+    {
+      "version": "v8.3-latest",
+      "URL": "https://github.com/lvgl/lvgl.git",
+      "filename": "",
+      "VER_SHA": "release/v8.3"
     },
     {
       "version": "latest",
       "URL": "https://github.com/lvgl/lvgl.git",
-      "filename": "Null for git package",
+      "filename": "",
       "VER_SHA": "master"
     }
   ]

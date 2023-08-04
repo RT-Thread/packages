@@ -1,0 +1,32 @@
+
+# Kconfig file for package Adafruit-TMP007-Library
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_TMP007_LIBRARY
+    bool "Adafruit TMP007: Contact-less Infrared Thermopile Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_SENSOR
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_TMP007_LIBRARY
+
+    config PKG_ARDUINO_ADAFRUIT_TMP007_LIBRARY_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-TMP007-Library"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_TMP007_LIBRARY_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_TMP007_LIBRARY_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_TMP007_LIBRARY_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_TMP007_LIBRARY_LATEST_VERSION
+
+endif
+

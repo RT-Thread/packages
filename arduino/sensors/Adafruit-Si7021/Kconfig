@@ -1,0 +1,31 @@
+
+# Kconfig file for package Adafruit-Si7021
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_SI7021
+    bool "Adafruit-Si7021: Temperature And Humidity Sensor"
+    select PKG_USING_RTDUINO
+    select RTDUINO_USING_WIRE
+    select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_SI7021
+
+    config PKG_ARDUINO_ADAFRUIT_SI7021_PATH
+        string
+        default "/packages/arduino/sensors/Adafruit-Si7021"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_ADAFRUIT_SI7021_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_SI7021_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_SI7021_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_SI7021_LATEST_VERSION
+
+endif
+

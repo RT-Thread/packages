@@ -1,0 +1,39 @@
+
+# Kconfig file for package PAJ7620
+menuconfig PKG_USING_PAJ7620
+    bool "PAJ7620: a gesture detection module"
+    select RT_USING_I2C
+    select RT_USING_I2C_BITOPS
+    default n
+
+if PKG_USING_PAJ7620
+
+    config PKG_PAJ7620_PATH
+        string
+        default "/packages/peripherals/sensors/PAJ7620"
+
+    config PAJ7620_USING_SAMPLES
+    bool "enable samples"
+    default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_PAJ7620_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_PAJ7620_V100
+            bool "v1.0.0"
+
+        config PKG_USING_PAJ7620_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+
+    config PKG_PAJ7620_VER
+       string
+       default "v1.0.0"    if PKG_USING_PAJ7620_V100
+       default "latest"    if PKG_USING_PAJ7620_LATEST_VERSION
+
+endif
+

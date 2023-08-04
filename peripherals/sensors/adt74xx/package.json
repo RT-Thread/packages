@@ -1,0 +1,27 @@
+{
+  "name": "adt74xx",
+  "description": "digital  temperature sensor adt74xx driver library",
+  "description_zh": "数字温度传感器 adt74xx 驱动软件包",
+  "enable":"PKG_USING_ADT74XX",
+  "keywords": [
+    "adt74xx","adt7422","temperature"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "maikebing",
+    "email": "mysticboy@live.com",
+    "github": "IoTSharp"
+  },
+  "license": "LGPLv2.1",
+  "repository": "https://github.com/IoTSharp/ADT74XX",
+  "icon": "unknown",
+  "homepage": "https://github.com/IoTSharp/ADT74XX#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/IoTSharp/ADT74XX.git",
+      "filename": "adt74xx.zip",
+      "VER_SHA": "master"
+    } 
+  ]
+}

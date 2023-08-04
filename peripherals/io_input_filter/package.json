@@ -1,0 +1,40 @@
+{
+  "name": "io_input_filter",
+  "description": "IO Input Filter.",
+  "description_zh": "IO输入软件滤波模块",  
+  "enable": "PKG_USING_IO_INPUT_FILTER", 
+  "keywords": [
+    "io_input_filter"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "lizdDong",
+    "email": "lizddong@126.com",
+    "github": "lizdDong"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/lizdDong/io_input_filter",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/lizdDong/io_input_filter/archive/refs/tags/v1.0.0.zip",
+      "filename": "io_input_filter-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/lizdDong/io_input_filter/archive/refs/tags/v2.0.0.zip",
+      "filename": "io_input_filter-2.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/lizdDong/io_input_filter.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

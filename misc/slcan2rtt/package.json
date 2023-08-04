@@ -1,0 +1,38 @@
+{
+  "name": "slcan2rtt",
+  "description": "Serial / USB serial CAN Adapter (slcan) on RT-Thread.",
+  "description_zh": "串行线路CAN适配器 (slcan).",
+  "enable": "PKG_USING_SLCAN2RTT", 
+  "keywords": [
+    "slcan2rtt",
+    "slcan",
+    "usb2can",
+    "can" ,
+    "serial" 
+  ],
+  "category": "misc",
+  "author": {
+    "name": "cazure",
+    "email": "chenbin182@qq.com",
+    "github": "cazure"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/cazure/slcan2rtt.git",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/cazure/slcan2rtt/archive/refs/tags/v0.0.1.zip",
+      "filename": "slcan2rtt-v0.0.1.zip",
+      "VER_SHA": "cc374f858145a9b4294dcc73f03b1b31b64c1dae"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/cazure/slcan2rtt.git",
+      "filename": "slcan2rtt-master.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

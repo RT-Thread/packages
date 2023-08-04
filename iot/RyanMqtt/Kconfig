@@ -1,0 +1,43 @@
+
+# Kconfig file for package RyanMqtt
+menuconfig PKG_USING_RYANMQTT
+    bool "Ryan MQTT Client"
+    default n
+    select RT_USING_SAL
+    select RT_USING_ULOG
+    select ULOG_USING_COLOR
+
+if PKG_USING_RYANMQTT
+
+    config PKG_USING_RYANMQTT_EXAMPLE
+        bool "Enable RyanMqtt example"
+        default y
+
+    config PKG_RYANMQTT_PATH
+        string
+        default "/packages/iot/RyanMqtt"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RYANMQTT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RYANMQTT_V001
+            bool "v0.0.1"
+
+        config PKG_USING_RYANMQTT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RYANMQTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RYANMQTT_VER
+       string
+       default "v0.0.1"    if PKG_USING_RYANMQTT_V001
+       default "v1.0.0"    if PKG_USING_RYANMQTT_V100
+       default "latest"    if PKG_USING_RYANMQTT_LATEST_VERSION
+
+endif
+
