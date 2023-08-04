@@ -1,0 +1,30 @@
+{
+  "name": "Arm-2D",
+  "description": "2D Graphic Library optimized for Cortex-M processors",
+  "description_zh": "针对Cortex-M处理器优化的2D图形库",
+  "enable": "PKG_USING_ARM_2D",
+  "keywords": [
+    "Arm-2D",
+    "Arm",
+    "ARM"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "ARM-software",
+    "email": "embedded_zhuoran@Hotmail.com",
+    "github": "ARM-software"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/Arm-2D",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/Arm-2D#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/Arm-2D.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

@@ -22,5 +22,6 @@ source "$PKGS_DIR/packages/multimedia/qrcode/Kconfig"
 source "$PKGS_DIR/packages/multimedia/gui_engine/Kconfig"
 source "$PKGS_DIR/packages/multimedia/persimmon/Kconfig"
 source "$PKGS_DIR/packages/multimedia/3gpp_amrnb/Kconfig"
+source "$PKGS_DIR/packages/multimedia/Arm-2D/Kconfig"
 
 endmenu
