@@ -13,32 +13,20 @@
     "github": "slyant"
   },
   "license": "Apache-2.0",
-  "repository": "https://gitee.com/slyant/TaskMsgBus.git",
+  "repository": "https://github.com/slyant/TaskMsgBus.git",
   "icon": "unknown",
-  "homepage": "https://gitee.com/slyant",
+  "homepage": "https://github.com/slyant",
   "doc": "unknown",
   "site": [
     {
-      "version": "v2.1.1",
-      "URL": "https://gitee.com/slyant/TaskMsgBus.git",
-      "filename": "TaskMsgBus-2.1.1.zip",
-      "VER_SHA": "6666c7195beee5a6fb5ae49cea8262621109bbeb"
-    },     
-	{
-      "version": "v2.1.2",
-      "URL": "https://gitee.com/slyant/TaskMsgBus.git",
-      "filename": "TaskMsgBus-2.1.2.zip",
-      "VER_SHA": "cc156c206231f1b0635bb06de0cb1a38a284e93c"
-    },
-    {
       "version": "v3.0.1",
-      "URL": "https://gitee.com/slyant/TaskMsgBus.git",
+      "URL": "https://github.com/slyant/TaskMsgBus/archive/refs/tags/v3.0.1.zip",
       "filename": "TaskMsgBus-3.0.1.zip",
-      "VER_SHA": "19e564b6834a7cdb919610e6b3be29287a34b1ae"
+      "VER_SHA": ""
     }, 	
     {
       "version": "latest",
-      "URL": "https://gitee.com/slyant/TaskMsgBus.git",
+      "URL": "https://github.com/slyant/TaskMsgBus.git",
       "filename": "TaskMsgBus-latest",
       "VER_SHA": "master"
     }
