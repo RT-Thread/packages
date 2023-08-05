@@ -1,0 +1,33 @@
+{
+  "name": "zdebug",
+  "description": "Convenient debugging tool, control print log at any time, view, set variable data, execute functions.",
+  "description_zh": "方便的调试工具，随时控制打印 log，查看、设置变量数据，执行函数。",
+  "enable": "PKG_USING_ZDEBUG",
+  "keywords": [
+    "zdebug"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "beisongcrt",
+    "email": "beisongcrt@163.com",
+    "github": "beisongcrt"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/beisongcrt/zdebug.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/beisongcrt/zdebug#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/beisongcrt/zdebug/archive/refs/tags/v1.0.0.zip",
+      "filename": "zdebug-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/beisongcrt/zdebug.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
