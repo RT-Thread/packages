@@ -25,8 +25,15 @@ concurrency:
     cancel-in-progress: false # wait for finish.
 
 jobs:
-    change:
-        if: ${{ github.event_name == 'pull_request' || github.event_name == 'push'}}
+    change_pull_request:
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: RT-Thread/pkgs-test/.github/workflows/pkgs-action.yml@main
+        with:
+            package-append-res: true
+            deploy-pages: false
+
+    change_push:
+        if: ${{ github.event_name == 'push' }}
         uses: RT-Thread/pkgs-test/.github/workflows/pkgs-action.yml@main
         with:
             package-append-res: true
