@@ -19,7 +19,7 @@ if PKG_USING_TASK_MSG_BUS
       default n
     config PKG_USING_TASK_MSG_BUS_SAMPLE
       bool "Enable TaskMsgBus Sample"
-      default n
+      default y
       select TASK_MSG_NAME_USER_DEF
       select RT_USING_ULOG
 
