@@ -42,6 +42,5 @@ if PKG_USING_TASK_MSG_BUS
       string
 	    default "v3.0.1"    if PKG_USING_TASKMSGBUS_V301
       default "latest"    if PKG_USING_TASKMSGBUS_LATEST_VERSION
-
 endif
 
