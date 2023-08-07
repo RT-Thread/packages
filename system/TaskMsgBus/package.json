@@ -1,0 +1,34 @@
+{
+  "name": "TaskMsgBus",
+  "description": "For sending and receiving text/object messages between threads based on RT-Thread.",
+  "description_zh": "基于RT-Thread线程间同步和通讯的消息总线管理通用软件包",
+  "enable": "PKG_USING_TASK_MSG_BUS", 
+  "keywords": [
+    "TaskMsgBus"
+  ],
+  "category": "system",
+  "author": {
+    "name": "slyant",
+    "email": "sly_ant@126.com",
+    "github": "slyant"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/slyant/TaskMsgBus.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/slyant",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v3.0.1",
+      "URL": "https://github.com/slyant/TaskMsgBus/archive/refs/tags/v3.0.1.zip",
+      "filename": "TaskMsgBus-3.0.1.zip",
+      "VER_SHA": ""
+    }, 	
+    {
+      "version": "latest",
+      "URL": "https://github.com/slyant/TaskMsgBus.git",
+      "filename": "TaskMsgBus-latest",
+      "VER_SHA": "master"
+    }
+  ]
+}
