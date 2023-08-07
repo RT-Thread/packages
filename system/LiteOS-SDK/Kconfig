@@ -1,0 +1,31 @@
+
+# Kconfig file for package LiteOS-SDK
+menuconfig PKG_USING_LITEOS_SDK
+    bool "LiteOS Application Compatibility Layer for RT-Thread."
+    default n
+
+if PKG_USING_LITEOS_SDK
+
+    config PKG_LITEOS_SDK_PATH
+        string
+        default "/packages/system/LiteOS-SDK"
+
+    choice
+        prompt "Version"
+        default PKG_USING_LITEOS_SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LITEOS_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LITEOS_SDK_VER
+        string
+        default "latest"    if PKG_USING_LITEOS_SDK_LATEST_VERSION
+
+    config PKG_LITEOS_SDK_HWSECUREC_EN
+        bool "Use the hwsecurec library of LiteOS."
+        default n
+endif
+
