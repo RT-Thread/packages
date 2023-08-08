@@ -9,7 +9,7 @@
     "RTC",
     "real time clock"
   ],
-  "category": "arduino/other",
+  "category": "arduino/timing",
   "author": {
     "name": "adafruit",
     "email": "info@adafruit.com",

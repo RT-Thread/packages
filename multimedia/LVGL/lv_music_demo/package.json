@@ -38,6 +38,11 @@
       "filename": "lv_demo_music-0.3.2.zip"
     },
     {
+      "version": "v0.3.3",
+      "URL": "https://github.com/RT-Thread-packages/lv_demo_music/archive/refs/tags/v0.3.3.zip",
+      "filename": "lv_demo_music-0.3.3.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/lv_demo_music.git",
       "filename": "lv_demo_music-latest",

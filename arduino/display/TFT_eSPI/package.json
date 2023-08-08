@@ -16,14 +16,14 @@
     "github": "Bodmer"
   },
   "license": "MIT",
-  "repository": "https://github.com/Bodmer/TFT_eSPI",
+  "repository": "https://github.com/RTduino-libraries/TFT_eSPI",
   "icon": "unknown",
-  "homepage": "https://github.com/Bodmer/TFT_eSPI#readme",
+  "homepage": "https://github.com/RTduino-libraries/TFT_eSPI#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/Bodmer/TFT_eSPI.git",
+      "URL": "https://github.com/RTduino-libraries/TFT_eSPI.git",
       "filename": "",
       "VER_SHA": "master"
     }

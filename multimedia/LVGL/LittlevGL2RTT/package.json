@@ -1,7 +1,7 @@
 {
   "name": "LittlevGL2RTT",
-  "description": "LittlevGL graphics library for RT-Thread (legacy)",
-  "description_zh": "LittlevGL 是基于 RT-Thread 的图形库软件包 (老版本)",
+  "description": "LittlevGL graphics library (LVGL 7.x, legacy)",
+  "description_zh": "LittlevGL 图形库 (LVGL 7.x, 老版本)",
   "enable": "PKG_USING_LITTLEVGL2RTT",
   "keywords": [
     "LittlevGL2RTT",

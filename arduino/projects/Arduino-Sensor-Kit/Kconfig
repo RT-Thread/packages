@@ -14,6 +14,22 @@ if PKG_USING_ARDUINO_SENSOR_KIT
         string
         default "/packages/arduino/projects/Arduino-Sensor-Kit"
 
+    config PKG_USING_ARDUINO_SENSOR_KIT_DEMOS
+        bool "Enable Arduino Sensor Kit Demos"
+        default n
+
+    choice
+        prompt "Choose the Demo"
+        depends on PKG_USING_ARDUINO_SENSOR_KIT_DEMOS
+
+        config PKG_USING_ARDUINO_SENSOR_KIT_DEMO1
+            bool "Demo1: the single-thread demo"
+
+        config PKG_USING_ARDUINO_SENSOR_KIT_DEMO2
+            bool "Demo2: the multi-threads demo"
+
+    endchoice
+
     choice
         prompt "Version"
         default PKG_USING_ARDUINO_SENSOR_KIT_LATEST_VERSION

@@ -10,6 +10,35 @@ if PKG_USING_FREERTOS_WRAPPER
         string
         default "/packages/system/FreeRTOS_Wrapper"
 
+    config PKG_FREERTOS_USING_CONFIG_H
+        bool "include <FreeRTOSConfig.h> to overwirte default configurations in FreeRTOS.h"
+        default n
+
+    config PKG_FREERTOS_USING_MEMMANG
+        bool "Enable FreeRTOS memory heap policy"
+        default n
+
+    choice
+        prompt "FreeRTOS memory heap policy"
+        default PKG_FREERTOS_USING_MEMMANG_HEAP3
+        depends on PKG_FREERTOS_USING_MEMMANG
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP1
+            bool "Heap1"
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP2
+            bool "Heap2"
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP3
+            bool "Heap3"
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP4
+            bool "Heap4"
+
+        config PKG_FREERTOS_USING_MEMMANG_HEAP5
+            bool "Heap5"
+    endchoice
+
     choice
         prompt "Version"
         default PKG_USING_FREERTOS_WRAPPER_LATEST_VERSION

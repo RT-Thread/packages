@@ -11,7 +11,7 @@ if PKG_USING_ARDUINO_RTCLIB
 
     config PKG_ARDUINO_RTCLIB_PATH
         string
-        default "/packages/arduino/other/RTClib"
+        default "/packages/arduino/timing/RTClib"
 
     choice
         prompt "Version"
