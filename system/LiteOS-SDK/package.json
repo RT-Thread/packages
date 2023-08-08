@@ -1,0 +1,29 @@
+{
+  "name": "LiteOS-SDK",
+  "description": "LiteOS SDK.",
+  "description_zh": "LiteOS SDK",
+  "enable": "PKG_USING_LITEOS_SDK",
+  "keywords": [
+    "LiteOS-SDK",
+    "LiteOS"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "941843540@qq.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/LiteOS-SDK",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/LiteOS-SDK#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/LiteOS-SDK.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
