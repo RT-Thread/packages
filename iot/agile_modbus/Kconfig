@@ -12,7 +12,7 @@ if PKG_USING_AGILE_MODBUS
 
     choice
         prompt "Version"
-        default PKG_USING_AGILE_MODBUS_V112
+        default PKG_USING_AGILE_MODBUS_V113
         help
             Select the package version
 
@@ -22,6 +22,9 @@ if PKG_USING_AGILE_MODBUS
         config PKG_USING_AGILE_MODBUS_V112
             bool "v1.1.2"
 
+        config PKG_USING_AGILE_MODBUS_V113
+            bool "v1.1.3"
+
         config PKG_USING_AGILE_MODBUS_LATEST_VERSION
             bool "latest"
     endchoice
@@ -30,12 +33,14 @@ if PKG_USING_AGILE_MODBUS
        string
        default "v1.1.1"    if PKG_USING_AGILE_MODBUS_V111
        default "v1.1.2"    if PKG_USING_AGILE_MODBUS_V112
+       default "v1.1.3"    if PKG_USING_AGILE_MODBUS_V113
        default "latest"    if PKG_USING_AGILE_MODBUS_LATEST_VERSION
 
     config PKG_AGILE_MODBUS_VER_NUM
         hex
         default 0x10101    if PKG_USING_AGILE_MODBUS_V111
         default 0x10102    if PKG_USING_AGILE_MODBUS_V112
+        default 0x10103    if PKG_USING_AGILE_MODBUS_V113
         default 0x99999    if PKG_USING_AGILE_MODBUS_LATEST_VERSION
 
 endif
