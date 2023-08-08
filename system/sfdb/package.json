@@ -1,5 +1,5 @@
 {
-  "name": "SFDB",
+  "name": "sfdb",
   "description": "Simple file database",
   "description_zh": "简单文件数据库",
   "enable": "PKG_USING_SFDB",
