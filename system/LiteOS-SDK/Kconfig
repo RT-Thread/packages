@@ -1,7 +1,7 @@
 
 # Kconfig file for package LiteOS-SDK
 menuconfig PKG_USING_LITEOS_SDK
-    bool "LiteOS Application Compatibility Layer for RT-Thread."
+    bool "LiteOS SDK."
     default n
 
 if PKG_USING_LITEOS_SDK

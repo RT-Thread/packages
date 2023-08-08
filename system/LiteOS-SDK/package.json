@@ -1,7 +1,7 @@
 {
   "name": "LiteOS-SDK",
-  "description": "LiteOS Application Compatibility Layer for RT-Thread.",
-  "description_zh": "RT-Thread操作系统的LiteOS兼容层, 让基于LiteOS开发的应用层无感地迁移到RT-Thread操作系统",
+  "description": "LiteOS SDK.",
+  "description_zh": "LiteOS SDK",
   "enable": "PKG_USING_LITEOS_SDK",
   "keywords": [
     "LiteOS-SDK",
