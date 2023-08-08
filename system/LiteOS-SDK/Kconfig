@@ -10,6 +10,10 @@ if PKG_USING_LITEOS_SDK
         string
         default "/packages/system/LiteOS-SDK"
 
+    config PKG_LITEOS_SDK_USING_HWSECUREC
+        bool "Use the hwsecurec library of LiteOS."
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_LITEOS_SDK_LATEST_VERSION
@@ -23,9 +27,5 @@ if PKG_USING_LITEOS_SDK
     config PKG_LITEOS_SDK_VER
         string
         default "latest"    if PKG_USING_LITEOS_SDK_LATEST_VERSION
-
-    config PKG_LITEOS_SDK_HWSECUREC_EN
-        bool "Use the hwsecurec library of LiteOS."
-        default n
 endif
 
