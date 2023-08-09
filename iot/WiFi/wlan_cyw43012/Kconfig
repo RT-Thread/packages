@@ -1,0 +1,47 @@
+
+menu "CYW43012 WiFi"
+
+menuconfig PKG_USING_WLAN_CYW43012
+    bool "CYW43012 WiFi driver for rt-thread"
+    select RT_USING_LWIP
+    select RT_USING_WIFI
+    select RT_USING_SYSTEM_WORKQUEUE
+    select PKG_USING_FREERTOS_WRAPPER
+    default n
+    help
+        if "PKG_USING_WLAN_CYW43012" is opened, "RT_USING_LWIP" will be default selected.
+
+if PKG_USING_WLAN_CYW43012
+
+    config PKG_WLAN_CYW43012_PATH
+        string
+        default "/packages/iot/WiFi/wlan_CYW43012"
+
+    choice
+        prompt "version"
+        default PKG_USING_WLAN_CYW43012_V001
+        help
+            Select the CYW43012 wifi version
+
+        config PKG_USING_WLAN_CYW43012_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_WLAN_CYW43012_V001
+            bool "v0.0.1"
+    endchoice
+
+    if PKG_USING_WLAN_CYW43012_V001
+        config PKG_WLAN_CYW43012_VER
+        string
+        default "v0.0.1"
+    endif
+
+    if PKG_USING_WLAN_CYW43012_LATEST_VERSION
+        config PKG_WLAN_CYW43012_VER
+        string
+        default "latest"
+    endif
+
+endif
+
+endmenu
