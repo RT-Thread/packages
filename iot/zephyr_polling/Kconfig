@@ -1,0 +1,235 @@
+
+# Kconfig file for package zephyr_polling
+menuconfig PKG_USING_ZEPHYR_POLLING
+    bool "zephyr_polling: Bluetooth BLE Stack."
+    default n
+
+if PKG_USING_ZEPHYR_POLLING
+
+    config PKG_ZEPHYR_POLLING_PATH
+        string
+        default "/packages/iot/zephyr_polling"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ZEPHYR_POLLING_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ZEPHYR_POLLING_V100
+            bool "v1.0.0"
+
+        config PKG_USING_ZEPHYR_POLLING_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ZEPHYR_POLLING_VER
+        string
+        default "v1.0.0"    if PKG_USING_ZEPHYR_POLLING_V100
+        default "latest"    if PKG_USING_ZEPHYR_POLLING_LATEST_VERSION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # chipset
+    choice
+        prompt "Select ChipSet"
+        default PKG_ZEPHYR_POLLING_CHIPSET_COMMON
+        help
+            select the zephyr_polling chipset
+
+        config PKG_ZEPHYR_POLLING_CHIPSET_ARTPI_AP6212
+            bool "artpi_ap6212"
+
+        config PKG_ZEPHYR_POLLING_CHIPSET_CSR8910
+            bool "csr8910"
+
+        config PKG_ZEPHYR_POLLING_CHIPSET_PTS_DONGLE
+            bool "pts_dongle"
+
+        config PKG_ZEPHYR_POLLING_CHIPSET_COMMON
+            bool "common"
+    endchoice
+
+
+    config PKG_ZEPHYR_POLLING_CHIPSET
+        string
+        default "artpi_ap6212"    if PKG_ZEPHYR_POLLING_CHIPSET_ARTPI_AP6212
+        default "csr8910"    if PKG_ZEPHYR_POLLING_CHIPSET_CSR8910
+        default "pts_dongle"    if PKG_ZEPHYR_POLLING_CHIPSET_PTS_DONGLE
+        default "common"    if PKG_ZEPHYR_POLLING_CHIPSET_COMMON
+
+
+
+
+
+
+    # example
+    choice
+        prompt "Select Example"
+        default PKG_ZEPHYR_POLLING_EXAMPLE_BEACON
+        help
+            select the zephyr_polling samples
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_EMPTY
+            bool "empty"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_BEACON
+            bool "beacon"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_BROADCASTER
+            bool "broadcaster"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_CENTRAL
+            bool "central"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_CENTRAL_GATT_WRITE
+            bool "central_gatt_write"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_CENTRAL_HR
+            bool "central_hr"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_CENTRAL_HT
+            bool "central_ht"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_EDDYSTONE
+            bool "eddystone"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_IBEACON
+            bool "ibeacon"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_OBSERVER
+            bool "observer"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL
+            bool "peripheral"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_CSC
+            bool "peripheral_csc"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_DIS
+            bool "peripheral_dis"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_ESP
+            bool "peripheral_esp"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_GATT_WRITE
+            bool "peripheral_gatt_write"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_HIDS
+            bool "peripheral_hids"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_HR
+            bool "peripheral_hr"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_HT
+            bool "peripheral_ht"
+
+        config PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_THROUGHPUT
+            bool "peripheral_throughput"
+
+    endchoice
+
+    config PKG_ZEPHYR_POLLING_EXAMPLE
+        string
+        default "empty"    if PKG_ZEPHYR_POLLING_EXAMPLE_EMPTY
+        default "beacon"    if PKG_ZEPHYR_POLLING_EXAMPLE_BEACON
+        default "broadcaster"    if PKG_ZEPHYR_POLLING_EXAMPLE_BROADCASTER
+        default "central"    if PKG_ZEPHYR_POLLING_EXAMPLE_CENTRAL
+        default "central_gatt_write"    if PKG_ZEPHYR_POLLING_EXAMPLE_CENTRAL_GATT_WRITE
+        default "central_hr"    if PKG_ZEPHYR_POLLING_EXAMPLE_CENTRAL_HR
+        default "central_ht"    if PKG_ZEPHYR_POLLING_EXAMPLE_CENTRAL_HT
+        default "eddystone"    if PKG_ZEPHYR_POLLING_EXAMPLE_EDDYSTONE
+        default "ibeacon"    if PKG_ZEPHYR_POLLING_EXAMPLE_IBEACON
+        default "observer"    if PKG_ZEPHYR_POLLING_EXAMPLE_OBSERVER
+        default "peripheral"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL
+        default "peripheral_csc"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_CSC
+        default "peripheral_dis"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_DIS
+        default "peripheral_esp"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_ESP
+        default "peripheral_gatt_write"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_GATT_WRITE
+        default "peripheral_hids"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_HIDS
+        default "peripheral_hr"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_HR
+        default "peripheral_ht"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_HT
+        default "peripheral_throughput"    if PKG_ZEPHYR_POLLING_EXAMPLE_PERIPHERAL_THROUGHPUT
+
+
+
+    # porting
+    choice
+        prompt "Select Platform"
+        default PKG_ZEPHYR_POLLING_PORT_RTTHREAD_UART
+        help
+            select the zephyr_polling chipset
+
+        config PKG_ZEPHYR_POLLING_PORT_RTTHREAD_UART
+            bool "rtthread_uart: generate uart interface"
+
+        config PKG_ZEPHYR_POLLING_PORT_RTTHREAD_ARTPI
+            bool "rtthread_artpi: use AP6212 in ArtPi"
+    endchoice
+
+
+    config PKG_ZEPHYR_POLLING_PORTING
+        string
+        default "rtthread_uart"    if PKG_ZEPHYR_POLLING_PORT_RTTHREAD_UART
+        default "rtthread_artpi"    if PKG_ZEPHYR_POLLING_PORT_RTTHREAD_ARTPI
+
+    
+
+
+
+
+    
+menu "HCI Transport Set"
+    
+    choice
+        prompt "HCI Transport Select"
+        default PKG_ZEPHYR_POLLING_HCI_USING_UART
+        help
+            Select the package version
+
+        config PKG_ZEPHYR_POLLING_HCI_USING_UART
+            bool "HCI Transport using rt-thread uart"
+
+        config PKG_ZEPHYR_POLLING_HCI_USING_UART1
+            bool "HCI Transport using rt-thread uart1"
+    endchoice
+
+    if PKG_ZEPHYR_POLLING_HCI_USING_UART
+        config PKG_ZEPHYR_POLLING_HCI_UART_INDEX
+            int "The uart index for HCI Transport"
+            default 3 if PKG_ZEPHYR_POLLING_CHIPSET_ARTPI_AP6212
+            default 1
+
+        config PKG_ZEPHYR_POLLING_HCI_UART_BAUDRATE
+            int "The uart index for HCI Transport"
+            default 115200 if PKG_ZEPHYR_POLLING_CHIPSET_ARTPI_AP6212
+            default 115200
+            
+        config PKG_ZEPHYR_POLLING_HCI_UART_BAUDRATE_FLOWCONTROL
+            bool "Enable uart flowcontrol CTS/RTS"
+            default y if PKG_ZEPHYR_POLLING_CHIPSET_ARTPI_AP6212
+            default n
+    endif
+
+endmenu
+
+
+
+
+
+
+
+endif
+

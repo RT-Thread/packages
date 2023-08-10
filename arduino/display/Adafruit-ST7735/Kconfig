@@ -1,0 +1,29 @@
+
+# Kconfig file for package Adafruit-ST7735
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_ST7735
+    bool "Adafruit ST7735 and ST7789 SPI displays driver"
+    select PKG_USING_RTDUINO
+    select PKG_USING_ARDUINO_ADAFRUIT_GFX_LIBRARY
+    default n
+
+if PKG_USING_ARDUINO_ADAFRUIT_ST7735
+
+    config PKG_ARDUINO_ADAFRUIT_ST7735_PATH
+        string
+        default "/packages/arduino/display/Adafruit-ST7735"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_ADAFRUIT_ST7735_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_ADAFRUIT_ST7735_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_ST7735_LATEST_VERSION
+
+endif
+

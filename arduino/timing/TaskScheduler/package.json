@@ -1,0 +1,31 @@
+{
+  "name": "TaskScheduler",
+  "description": "Cooperative multitasking for Arduino",
+  "description_zh": "Arduino多任务协程库",
+  "enable": "PKG_USING_ARDUINO_TASKSCHEDULER",
+  "keywords": [
+    "TaskScheduler",
+    "multitasking",
+    "Arduino",
+    "RTduino"    
+  ],
+  "category": "arduino/timing",
+  "author": {
+    "name": "arkhipenko",
+    "email": "arkhipenko@hotmail.com",
+    "github": "arkhipenko"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/arkhipenko/TaskScheduler",
+  "icon": "unknown",
+  "homepage": "https://github.com/arkhipenko/TaskScheduler#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/arkhipenko/TaskScheduler.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

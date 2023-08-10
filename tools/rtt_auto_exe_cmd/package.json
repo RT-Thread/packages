@@ -1,0 +1,33 @@
+{
+  "name": "rtt_auto_exe_cmd",
+  "description": "[AUTO]Exe the rtt cmd auto for ci",
+  "description_zh": "该软件包用来自动执行finsh的命令，主要给CI机器人使用",
+  "enable": "PKG_USING_RTT_AUTO_EXE_CMD",
+  "keywords": [
+    "rtt_auto_exe_cmd"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "supperthomas",
+    "email": "78900636@qq.com",
+    "github": "supperthomas"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/supperthomas/RTT_AUTO_EXE_CMD.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/supperthomas/RTT_AUTO_EXE_CMD.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/supperthomas/RTT_AUTO_EXE_CMD/archive/refs/tags/1.0.0.zip",
+      "filename": "rtt_auto_exe_cmd-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/supperthomas/RTT_AUTO_EXE_CMD.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

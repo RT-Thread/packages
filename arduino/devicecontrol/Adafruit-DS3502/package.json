@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-DS3502",
+  "description": "Adafruit DS3502 Digital Potentiometer",
+  "description_zh": "Adafruit DS3502 数字电位计",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_DS3502",
+  "keywords": [
+    "Adafruit-DS3502",
+    "Device Control",
+    "Adafruit",
+    "DS3502",
+    "Potentiometer"
+  ],
+  "category": "arduino/devicecontrol",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_DS3502",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_DS3502#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_DS3502.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "CMSIS-DSP",
+  "description": "CMSIS-DSP embedded compute library for Cortex-M and Cortex-A",
+  "description_zh": "CMSIS-DSP嵌入式计算库（Cortex-M和Cortex-A）",
+  "enable": "PKG_USING_CMSIS_DSP",
+  "keywords": [
+    "CMSIS-DSP",
+    "DSP",
+    "CMSIS",
+    "ARM"
+  ],
+  "category": "signalprocess",
+  "author": {
+    "name": "ARM-software",
+    "email": "Christophe.Favergeon@arm.com",
+    "github": "ARM-software"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/CMSIS-DSP",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/CMSIS-DSP#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/CMSIS-DSP.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

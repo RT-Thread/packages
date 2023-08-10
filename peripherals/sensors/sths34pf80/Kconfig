@@ -1,0 +1,29 @@
+
+# Kconfig file for package sths34pf80
+menuconfig PKG_USING_STHS34PF80
+    bool "STHS34PF80 sensor driver package, support: presence,temperature,motion."
+    default n
+    select RT_USING_SENSOR
+
+if PKG_USING_STHS34PF80
+
+    config PKG_STHS34PF80_PATH
+        string
+        default "/packages/peripherals/sensors/sths34pf80"
+
+    choice
+        prompt "Version"
+        default PKG_USING_STHS34PF80_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_STHS34PF80_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_STHS34PF80_VER
+       string
+       default "latest"    if PKG_USING_STHS34PF80_LATEST_VERSION
+
+endif
+

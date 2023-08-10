@@ -1,0 +1,37 @@
+
+# Kconfig file for package uAT
+
+menuconfig PKG_USING_UAT
+    bool "Micro AT device driver interface component"
+    select PKG_USING_RS485
+    default n
+
+if PKG_USING_UAT
+
+    config PKG_UAT_PATH
+        string
+        default "/packages/peripherals/uat"
+
+    config UAT_USING_PRT_RAW
+        bool "using print raw data"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_UAT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_UAT_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_UAT_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_UAT_VER
+       string
+       default "latest" if PKG_USING_UAT_LATEST_VERSION
+       default "v1.00"  if PKG_USING_UAT_V100
+
+endif

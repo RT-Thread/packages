@@ -24,7 +24,7 @@
       "version": "latest",
       "URL": "https://github.com/GorgonMeducer/perf_counter.git",
       "filename": "",
-      "VER_SHA": "main"
+      "VER_SHA": "RT-Thread-Only"
     }
   ]
 }

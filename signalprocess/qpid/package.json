@@ -1,0 +1,33 @@
+{
+  "name": "qpid",
+  "description": "A quick and easy-to-use PID automatic control algorithm package, that supports incremental and positional algorithms.",
+  "description_zh": "一款快捷易用的PID自动控制算法包，支持增量式和位置式算法。",
+  "enable": "PKG_USING_QPID",
+  "keywords": [
+    "PID",
+    "automatic control"
+  ],
+  "category": "signalprocess",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/rt-thread-qpid",
+  "homepage": "https://github.com/qiyongzhong0/rt-thread-qpid#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qpid.git",
+      "filename": "",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-qpid/archive/v1.00.zip",
+      "filename": "rt-thread-qpid-1.00.zip",
+      "VER_SHA": ""
+    }
+  ]
+}

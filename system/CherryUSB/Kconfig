@@ -23,6 +23,8 @@ if PKG_USING_CHERRYUSB
         choice
             prompt "Select usb device ip"
             default PKG_CHERRYUSB_DEVICE_FSDEV
+            config PKG_CHERRYUSB_DEVICE_CUSTOM
+                bool "CUSTOM (Implement it yourself)"
             config PKG_CHERRYUSB_DEVICE_BL
                 bool "BL"
             config PKG_CHERRYUSB_DEVICE_CH32
@@ -162,7 +164,7 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb rndis device"
             default n
-            
+
         if PKG_CHERRYUSB_DEVICE_RNDIS
             config PKG_CHERRYUSB_DEVICE_RNDIS_TEMPLATE
                 bool
@@ -174,7 +176,7 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb dfu device"
             default n
-            
+
         if PKG_CHERRYUSB_DEVICE_DFU
             config PKG_CHERRYUSB_DEVICE_DFU_TEMPLATE
                 bool
@@ -192,6 +194,8 @@ if PKG_USING_CHERRYUSB
         choice
             prompt "Select usb host ip"
             default PKG_CHERRYUSB_HOST_MUSB
+            config PKG_CHERRYUSB_HOST_CUSTOM
+                bool "CUSTOM (Implement it yourself)"
             config PKG_CHERRYUSB_HOST_MUSB
                 bool "MUSB"
             config PKG_CHERRYUSB_HOST_DWC2

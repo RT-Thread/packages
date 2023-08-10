@@ -1,0 +1,49 @@
+
+# Kconfig file for package zdebug
+menuconfig PKG_USING_ZDEBUG
+    bool "zdebug: print log, set variable data, execute functions."
+    default n
+
+if PKG_USING_ZDEBUG
+
+    config PKG_ZDEBUG_PATH
+        string
+        default "/packages/tools/zdebug"
+
+    config ZDEBUG_LOG
+        bool
+        prompt "zdebug_log"
+        default y
+
+    config ZDEBUG_VAR
+        bool
+        prompt "zdebug_var"
+        default y
+
+    if ZDEBUG_VAR
+        config ZDEBUG_FUN
+            bool
+            prompt "zdebug_fun"
+            default n
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_ZDEBUG_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ZDEBUG_V100
+            bool "v1.0.0"
+
+        config PKG_USING_ZDEBUG_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ZDEBUG_VER
+       string
+       default "v1.0.0"    if PKG_USING_ZDEBUG_V100
+       default "latest"    if PKG_USING_ZDEBUG_LATEST_VERSION
+
+endif
+

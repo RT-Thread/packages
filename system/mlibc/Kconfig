@@ -1,0 +1,28 @@
+
+# Kconfig file for package mlibc
+menuconfig PKG_USING_MLIBC
+    bool "mlibc: Embedded libc, especially for RISC-V"
+    select RT_USING_EXTERNAL_LIBC
+    default n
+
+if PKG_USING_MLIBC
+
+    config PKG_MLIBC_PATH
+        string
+        default "/packages/system/mlibc"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_MLIBC_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MLIBC_VER
+       string
+       default "latest"    if PKG_USING_MLIBC_LATEST_VERSION
+
+endif
+

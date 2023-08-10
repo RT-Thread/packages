@@ -1,0 +1,31 @@
+{
+  "name": "aip650",
+  "description": "A quick and easy-to-use digit led and key driver package for aip650 and tm1650.",
+  "description_zh": "一个快捷易用的数码管和按键驱动包适用于aip650和tm1650。",
+  "enable": "PKG_USING_AIP650",
+  "keywords": [
+    "key",
+    "digit led",
+    "aip650",
+    "tm1650",
+    "rt-thread"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Chasel",
+    "email": "m19825309307@163.com",
+    "github": "Chasel"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/Maihuanyi/aip650",
+  "icon": "unknown",
+  "homepage": "https://github.com/Maihuanyi/aip650/blob/main/README.md",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Maihuanyi/aip650.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

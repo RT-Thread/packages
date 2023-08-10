@@ -1,0 +1,34 @@
+{
+  "name": "Adafruit-ST7735",
+  "description": "Adafruit ST7735 and ST7789 SPI displays driver",
+  "description_zh": "Adafruit ST7735 and ST7789 SPI 显示屏驱动",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_ST7735",
+  "keywords": [
+    "Adafruit-ST7735",
+    "Adafruit",
+    "Arduino",
+    "LCD",
+    "SPI",
+    "ST7735",
+    "ST7789"
+  ],
+  "category": "arduino/display",
+  "author": {
+    "name": "Adafruit",
+    "email": "info@adafruit.com",
+    "github": "Adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/Adafruit-ST7735-Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit-ST7735-Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit-ST7735-Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -27,6 +27,12 @@
       "VER_SHA": "NULL"
     },
     {
+      "version": "v1.4.10",
+      "URL": "https://github.com/greedyhao/rc522_rtt/archive/v1.4.10.zip",
+      "filename": "rc522-1.4.10.zip",
+      "VER_SHA": "NULL"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/greedyhao/rc522_rtt.git",
       "filename": "rc522.zip",

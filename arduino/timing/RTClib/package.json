@@ -1,0 +1,31 @@
+{
+  "name": "RTClib",
+  "description": "RTClib: real time clock library for Arduino",
+  "description_zh": "RTClib Arduino的实时时钟库",
+  "enable": "PKG_USING_ARDUINO_RTCLIB",
+  "keywords": [
+    "RTClib",
+    "Adafruit",
+    "RTC",
+    "real time clock"
+  ],
+  "category": "arduino/timing",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adafruit/RTClib",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/RTClib#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/RTClib.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

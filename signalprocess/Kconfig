@@ -1,6 +1,10 @@
 menu "Signal Processing and Control Algorithm Packages"
 
 source "$PKGS_DIR/packages/signalprocess/fire_pid_curve/Kconfig"
+source "$PKGS_DIR/packages/signalprocess/qpid/Kconfig"
 source "$PKGS_DIR/packages/signalprocess/ukal/Kconfig"
+source "$PKGS_DIR/packages/signalprocess/DigitalCtrl/Kconfig"
+source "$PKGS_DIR/packages/signalprocess/kissfft/Kconfig"
+source "$PKGS_DIR/packages/signalprocess/CMSIS-DSP/Kconfig"
 
 endmenu
