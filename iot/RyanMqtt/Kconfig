@@ -3,6 +3,9 @@
 menuconfig PKG_USING_RYANMQTT
     bool "Ryan MQTT Client"
     default n
+    select RT_USING_SAL
+    select RT_USING_ULOG
+    select ULOG_USING_COLOR
 
 if PKG_USING_RYANMQTT
 

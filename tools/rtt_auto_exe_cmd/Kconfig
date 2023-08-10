@@ -1,0 +1,80 @@
+
+# Kconfig file for package rtt_auto_exe_cmd
+menuconfig PKG_USING_RTT_AUTO_EXE_CMD
+    bool "RTT_AUTO_CMD: Auto exe the cmd of rtthread"
+    default n
+
+if PKG_USING_RTT_AUTO_EXE_CMD
+
+    config PKG_RTT_AUTO_EXE_CMD_PATH
+        string
+        default "/packages/tools/rtt_auto_exe_cmd"
+
+    config RTT_AUTO_CMD_THREAD_STACK_SIZE
+        int "The RTT_AUTO_EXE thread stack size"
+        default 20480
+
+    config RTT_AUTO_CMD_THREAD_PRIORITY
+        int "The RTT_AUTO_EXE thread priority"
+        default 10
+
+    config RTT_AUTO_INIT_TIME_MS
+        int "[INIT]The RTT_AUTO_EXE thread wait init complete time"
+        default 5000
+
+    config RTT_CMD_1_STR
+        string "[INIT_CMD1]The RTT_AUTO_EXE thread init cmd 1"
+        default "version"
+    config RTT_CMD_1_DELAY
+        int "MS:The RTT_AUTO_EXE thread init cmd 1 delay time"
+        default 1000
+    config RTT_CMD_2_STR
+        string "[INIT_CMD2] The RTT_AUTO_EXE thread init cmd 2"
+        default "ps"
+    config RTT_CMD_2_DELAY
+        int "MS: The RTT_AUTO_EXE thread init cmd 2 delay time"
+        default 1000
+
+
+    config RTT_CMD_LOOP_FLAG
+        bool "The flag of RTT_AUTO_EXE loop cmd"
+        default n
+
+    if RTT_CMD_LOOP_FLAG
+        config RTT_CMD_LOOP_1_STR
+            string "[LOOP_CMD1]The RTT_AUTO_EXE thread loop cmd 1"
+            default "ps"
+        config RTT_CMD_LOOP_1_DELAY_TIME
+            int "MS:The RTT_AUTO_EXE thread loop cmd 1 delay time "
+            default 1000
+        config RTT_CMD_LOOP_2_STR
+            string "[LOOP_CMD2]The RTT_AUTO_EXE thread loop cmd 2"
+            default "version"
+        config RTT_CMD_LOOP_2_DELAY_TIME
+            int "MS:The RTT_AUTO_EXE thread loop cmd 2 delay time"
+            default 1000
+
+        config RTT_CMD_LOOP_TIME
+            int "TIME:The RTT_AUTO_EXE loop times"
+            default 3
+    endif
+    choice
+        prompt "Version"
+        default PKG_USING_RTT_AUTO_EXE_CMD_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RTT_AUTO_EXE_CMD_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RTT_AUTO_EXE_CMD_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RTT_AUTO_EXE_CMD_VER
+       string
+       default "v1.0.0"    if PKG_USING_RTT_AUTO_EXE_CMD_V100
+       default "latest"    if PKG_USING_RTT_AUTO_EXE_CMD_LATEST_VERSION
+
+endif
+

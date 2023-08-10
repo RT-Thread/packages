@@ -10,13 +10,9 @@ if PKG_USING_NUEMWIN
         string
         default "/packages/multimedia/NUemWin"
 
-    config PKG_NUEMWIN_MEM_SIZE
-        int "NUemWin memory size (MB)"
-        default 4
-
     config PKG_USING_NUEMWIN_EXAMPLE
         bool "Enable NUemWin example"
-        default n
+        default y
 
     if PKG_USING_NUEMWIN_EXAMPLE
         choice
@@ -26,10 +22,16 @@ if PKG_USING_NUEMWIN
                 Select an example
 
             config PKG_USING_NUEMWIN_GUIDEMO
-                bool "GUIDemo"
+                bool "GUI Demo"
 
             config PKG_USING_NUEMWIN_SIMPLEDEMO
-                bool "SimpleDemo"
+                bool "Simple Demo"
+
+            config PKG_USING_NUEMWIN_APPWIZARD
+                bool "AppWizard Demo"
+
+            config PKG_USING_NUEMWIN_WEATHERFORECAST
+                bool "Weather Forecast Demo"
 
         endchoice
     endif

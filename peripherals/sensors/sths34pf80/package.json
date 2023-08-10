@@ -1,0 +1,29 @@
+{
+  "name": "sths34pf80",
+  "description": "This is the STHS34PF80 sensor driver package",
+  "description_zh": "STHS34PF80 红外传感器的驱动包",
+  "enable": "PKG_USING_STHS34PF80",
+  "keywords": [
+    "sensor",
+    "sths34pf80"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "rick",
+    "email": "zyk6271@gmail.com",
+    "github": "zyk6271"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/zyk6271/STHS34PF80",
+  "icon": "unknown",
+  "homepage": "https://github.com/zyk6271/STHS34PF80#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/zyk6271/STHS34PF80.git",
+      "filename": "STHS34PF80-main.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

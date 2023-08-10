@@ -12,9 +12,12 @@ if PKG_USING_PERF_COUNTER
         string
         default "/packages/system/perf_counter"
 
+    config PKG_PERF_COUNTER_USING_THREAD_STATISTIC
+        bool "Enable thread statistic"
+        default n
+
     choice
         prompt "Version"
-        default PKG_USING_PERF_COUNTER_LATEST_VERSION
         help
             Select the package version
 

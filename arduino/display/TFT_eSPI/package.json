@@ -1,0 +1,31 @@
+{
+  "name": "TFT_eSPI",
+  "description": "TFT graphics library for Arduino processors with performance optimisation",
+  "description_zh": "TFT显示器Arduino图形驱动库",
+  "enable": "PKG_USING_ARDUINO_TFT_ESPI",
+  "keywords": [
+    "TFT_eSPI",
+    "RTduino",
+    "GUI",
+    "Arduino"
+  ],
+  "category": "arduino/display",
+  "author": {
+    "name": "Bodmer",
+    "email": "bodmer@anola.net",
+    "github": "Bodmer"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RTduino-libraries/TFT_eSPI",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/TFT_eSPI#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/TFT_eSPI.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

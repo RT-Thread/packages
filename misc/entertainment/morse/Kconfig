@@ -1,0 +1,62 @@
+menuconfig PKG_USING_MORSE
+    bool "Morse code (摩尔斯电码)"
+    default n
+
+if PKG_USING_MORSE
+
+    config PKG_MORSE_PATH
+        string
+        default "/packages/misc/entertainment/morse"
+
+    config PKG_USING_MORSE_DI_DA_SEPARATE
+        int
+        prompt "Di da separate time ms"
+        default 150
+    config PKG_USING_MORSE_INTERCHAR
+        int
+        prompt "Interchar time ms"
+        default 300
+
+    config PKG_USING_MORSE_SHELL
+        bool "Enable MORSE SHELL"
+        default n
+
+    config PKG_USING_MORSE_SAMPLE
+        bool "Enable MORSE SAMPLE"
+        default n
+
+    if PKG_USING_MORSE_SAMPLE
+        choice
+            prompt "Samples"
+            help
+                Select the this package samples
+            config PKG_USING_MORSE_KEY_SAMPLE
+                bool "KEY_SAMPLE"
+            config PKG_USING_MORSE_TPAD_SAMPLE
+                bool "TPAD_SAMPLE(ALIENTEK)"
+            config PKG_USING_MORSE_SLIDER_SAMPLE
+                select BSP_USING_SLIDER
+                bool "SLIDER_SAMPLE(Infineon)"
+        endchoice
+    endif
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_MORSE_V000001
+            bool "v0.0.1"
+
+        config PKG_USING_MORSE_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    config PKG_MORSE_VER
+       string
+       default "v0.0.1"    if PKG_USING_MORSE_V000001
+       default "latest"    if PKG_USING_MORSE_LATEST_VERSION
+
+endif
+

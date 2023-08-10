@@ -15,28 +15,31 @@ if PKG_USING_KENDRYTE_SDK
         help
             Select the package version
 
-        if RT_VER_NUM < 0x40004
-            config PKG_USING_KENDRYTE_SDK_V052
-                bool "v0.5.2"
-
-            config PKG_USING_KENDRYTE_SDK_V053
-                bool "v0.5.3"
-
-            config PKG_USING_KENDRYTE_SDK_V054
-                bool "v0.5.4"
-
-            config PKG_USING_KENDRYTE_SDK_V055
-                bool "v0.5.5"
-
-            config PKG_USING_KENDRYTE_SDK_V056
-                bool "v0.5.6"
-        endif
+        config PKG_USING_KENDRYTE_SDK_LATEST_VERSION
+            bool "latest"
 
         config PKG_USING_KENDRYTE_SDK_V057
             bool "v0.5.7"
 
-        config PKG_USING_KENDRYTE_SDK_LATEST_VERSION
-            bool "latest"
+        config PKG_USING_KENDRYTE_SDK_V056
+            bool "v0.5.6"
+            depends on RT_VER_NUM < 0x40004
+
+        config PKG_USING_KENDRYTE_SDK_V055
+            bool "v0.5.5"
+            depends on RT_VER_NUM < 0x40004
+
+        config PKG_USING_KENDRYTE_SDK_V054
+            bool "v0.5.4"
+            depends on RT_VER_NUM < 0x40004
+
+        config PKG_USING_KENDRYTE_SDK_V053
+            bool "v0.5.3"
+            depends on RT_VER_NUM < 0x40004
+
+        config PKG_USING_KENDRYTE_SDK_V052
+            bool "v0.5.2"
+            depends on RT_VER_NUM < 0x40004
     endchoice
 
     config PKG_KENDRYTE_SDK_VER

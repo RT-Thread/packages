@@ -3,6 +3,7 @@
 menuconfig PKG_USING_RTDUINO
     bool "RTduino: Arduino Ecological Compatibility Layer"
     select RT_USING_CPLUSPLUS
+    select RT_USING_TIMER_SOFT
     default n
 
 if PKG_USING_RTDUINO
@@ -18,13 +19,11 @@ if PKG_USING_RTDUINO
     if !RTDUINO_NO_SETUP_LOOP
         config RTDUINO_THREAD_SIZE
             int "Arduino thread's size"
-            default 1536
+            default 2048
 
         config RTDUINO_THREAD_PRIO
             int "Arduino thread's priority"
-            default 6 if RT_THREAD_PRIORITY_8
-            default 30  if RT_THREAD_PRIORITY_32
-            default 254  if RT_THREAD_PRIORITY_256
+            default RT_THREAD_PRIORITY_MAX-2
     endif
 
     menuconfig RTDUINO_TINY_MODE

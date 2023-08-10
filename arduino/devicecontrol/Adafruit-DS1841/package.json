@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-DS1841",
+  "description": "Adafruit DS1841 Digital Potentiometer Breakout",
+  "description_zh": "Adafruit DS1841 数字电位器",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_DS1841",
+  "keywords": [
+    "Adafruit-DS1841",
+    "Device Control",
+    "Adafruit",
+    "DS1841",
+    "Potentiometer"
+  ],
+  "category": "arduino/devicecontrol",
+  "author": {
+    "name": "adafruit",
+    "email": "info@adafruit.com",
+    "github": "adafruit"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/adafruit/Adafruit_DS1841",
+  "icon": "unknown",
+  "homepage": "https://github.com/adafruit/Adafruit_DS1841#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/adafruit/Adafruit_DS1841.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+
+# Kconfig file for package TaskScheduler
+menuconfig PKG_USING_ARDUINO_TASKSCHEDULER
+    bool "TaskScheduler: Cooperative multitasking for Arduino"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_TASKSCHEDULER
+
+    config PKG_ARDUINO_TASKSCHEDULER_PATH
+        string
+        default "/packages/arduino/timing/TaskScheduler"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_TASKSCHEDULER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_TASKSCHEDULER_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_TASKSCHEDULER_LATEST_VERSION
+
+endif
+

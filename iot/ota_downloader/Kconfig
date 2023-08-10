@@ -32,9 +32,12 @@ if PKG_USING_OTA_DOWNLOADER
 
     choice
         prompt "Version"
-        default PKG_USING_OTA_DOWNLOADER_LATEST_VERSION
+        default PKG_USING_OTA_DOWNLOADER_V100
         help
             Select the package version
+
+        config PKG_USING_OTA_DOWNLOADER_V010
+            bool "v0.1.0"
 
         config PKG_USING_OTA_DOWNLOADER_V100
             bool "v1.0.0"
@@ -45,6 +48,7 @@ if PKG_USING_OTA_DOWNLOADER
 
     config PKG_OTA_DOWNLOADER_VER
        string
+       default "v0.1.0"    if PKG_USING_OTA_DOWNLOADER_V010
        default "v1.0.0"    if PKG_USING_OTA_DOWNLOADER_V100
        default "latest"    if PKG_USING_OTA_DOWNLOADER_LATEST_VERSION
 

@@ -35,7 +35,7 @@ if PKG_USING_LVGL
 
     choice
         prompt "Version"
-        default PKG_LVGL_USING_V08034 if RT_VER_NUM >= 0x40101
+        default PKG_LVGL_USING_V08038 if RT_VER_NUM >= 0x40101
         # NXP GUIGuider is designed for LVGL8.2.0 with RT-Thread latest version at this moment
         # Thus, it needs to give a privilege to NXP GUIGuider to let it use LVGL8.2.0 even if RT-Thread vesion is higher than 4.1.0
         default PKG_LVGL_USING_V08020 if (RT_VER_NUM = 0x40100) || ((RT_VER_NUM > 0x40100) && BSP_USING_NXP_GUIGUIDER)
@@ -44,6 +44,18 @@ if PKG_USING_LVGL
             Select the LVGL package version
             If RT-Thread vesion is higher than 4.1.0, we recommended to use LVGL v8.3.0 or latest.
             If you use some special boards or tools, such as NXP GUIGuider. Maybe needs to choose LVGL v8.2.0.
+
+        config PKG_LVGL_USING_V08038
+            bool "v8.3.8"
+
+        config PKG_LVGL_USING_V08037
+            bool "v8.3.7"
+
+        config PKG_LVGL_USING_V08036
+            bool "v8.3.6"
+
+        config PKG_LVGL_USING_V08035
+            bool "v8.3.5"
 
         config PKG_LVGL_USING_V08034
             bool "v8.3.4"
@@ -72,6 +84,10 @@ if PKG_USING_LVGL
 
     config PKG_LVGL_VER_NUM
         hex
+        default 0x08038    if PKG_LVGL_USING_V08038
+        default 0x08037    if PKG_LVGL_USING_V08037
+        default 0x08036    if PKG_LVGL_USING_V08036
+        default 0x08035    if PKG_LVGL_USING_V08035
         default 0x08034    if PKG_LVGL_USING_V08034
         default 0x08033    if PKG_LVGL_USING_V08033
         default 0x08032    if PKG_LVGL_USING_V08032
@@ -83,6 +99,10 @@ if PKG_USING_LVGL
 
     config PKG_LVGL_VER
        string
+       default "v8.3.8"         if PKG_LVGL_VER_NUM = 0x08038
+       default "v8.3.7"         if PKG_LVGL_VER_NUM = 0x08037
+       default "v8.3.6"         if PKG_LVGL_VER_NUM = 0x08036
+       default "v8.3.5"         if PKG_LVGL_VER_NUM = 0x08035
        default "v8.3.4"         if PKG_LVGL_VER_NUM = 0x08034
        default "v8.3.3"         if PKG_LVGL_VER_NUM = 0x08033
        default "v8.3.2"         if PKG_LVGL_VER_NUM = 0x08032

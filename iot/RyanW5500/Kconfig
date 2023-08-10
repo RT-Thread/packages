@@ -25,11 +25,11 @@ if PKG_USING_RYANW5500
         string "SPI device name"
         default "spi26"
 
-    config RYANW5500_RST_PIN 
+    config RYANW5500_RST_PIN
         int "Reset PIN number"
         default 32
 
-    config RYANW5500_IRQ_PIN 
+    config RYANW5500_IRQ_PIN
         int "IRQ PIN number"
         default 33
 

@@ -1,0 +1,33 @@
+{
+  "name": "flash_blob",
+  "description": "Tool for quickly generating flash driver files.",
+  "description_zh": "用于快速生成flash驱动文件的工具和flash抽象层。",
+  "enable": "PKG_USING_FLASH_BLOB",
+  "keywords": [
+    "flash_blob"
+  ],
+  "category": "system",
+  "author": {
+    "name": "kk",
+    "email": "17630350805@163.com",
+    "github": "Aladdin-Wang"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Aladdin-Wang/flash_blob.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/Aladdin-Wang/flash_blob.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Aladdin-Wang/flash_blob/archive/v1.0.0.zip",
+      "filename": "flash_blob-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Aladdin-Wang/flash_blob.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

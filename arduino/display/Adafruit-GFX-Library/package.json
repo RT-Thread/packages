@@ -1,0 +1,32 @@
+{
+  "name": "Adafruit-GFX-Library",
+  "description": "Adafruit GFX graphics core library",
+  "description_zh": "Adafruit GFX 图像显示驱动库",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_GFX_LIBRARY",
+  "keywords": [
+    "Adafruit-GFX-Library",
+    "GUI",
+    "Adafruit",
+    "Arduino",
+    "RTduino"
+  ],
+  "category": "arduino/display",
+  "author": {
+    "name": "Adafruit",
+    "email": "info@adafruit.com",
+    "github": "https://github.com/RTduino-libraries/Adafruit-GFX-Library"
+  },
+  "license": "BSD",
+  "repository": "https://github.com/RTduino-libraries/Adafruit-GFX-Library",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/Adafruit-GFX-Library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/Adafruit-GFX-Library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

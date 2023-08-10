@@ -14,6 +14,16 @@ if PKG_USING_MFBD
         bool "Enable Multi-Function Button Detection demo"
         default n
 
+    if PKG_MFBD_VER_NUM >= 0x010004
+        config PKG_MFBD_USE_SECTION_DEFINITION
+            bool "enable use section definitions."
+            default n
+ 
+        config PKG_MFBD_MULTICLICK_STATE_AUTO_RESET
+            bool "reset multiclick state to 0 when reach to max multicick state."
+            default y
+    endif
+
     if PKG_MFBD_VER_NUM >= 0x010003
         choice
             prompt "the type of mfbd_btn_code_t"
@@ -26,7 +36,7 @@ if PKG_USING_MFBD
 
             config PKG_MFBD_BTN_CODE_SIZE_4BYTE
                 bool "uint32_t"
-                
+
             config PKG_MFBD_BTN_CODE_SIZE_8BYTE
                 bool "uint64_t"
         endchoice
@@ -37,7 +47,7 @@ if PKG_USING_MFBD
             default 2 if PKG_MFBD_BTN_CODE_SIZE_2BYTE
             default 4 if PKG_MFBD_BTN_CODE_SIZE_4BYTE
             default 8 if PKG_MFBD_BTN_CODE_SIZE_8BYTE
-        
+
         choice
             prompt "the type of mfbd_btn_count_t"
             default PKG_MFBD_BTN_COUNT_SIZE_2BYTE
@@ -49,7 +59,7 @@ if PKG_USING_MFBD
 
             config PKG_MFBD_BTN_COUNT_SIZE_4BYTE
                 bool "uint32_t"
-                
+
             config PKG_MFBD_BTN_COUNT_SIZE_8BYTE
                 bool "uint64_t"
         endchoice
@@ -59,8 +69,8 @@ if PKG_USING_MFBD
             default 1 if PKG_MFBD_BTN_COUNT_SIZE_1BYTE
             default 2 if PKG_MFBD_BTN_COUNT_SIZE_2BYTE
             default 4 if PKG_MFBD_BTN_COUNT_SIZE_4BYTE
-            default 8 if PKG_MFBD_BTN_COUNT_SIZE_8BYTE   
-                    
+            default 8 if PKG_MFBD_BTN_COUNT_SIZE_8BYTE
+
         choice
             prompt "the type of mfbd_btn_index_t"
             default PKG_MFBD_BTN_INDEX_SIZE_4BYTE
@@ -72,10 +82,10 @@ if PKG_USING_MFBD
 
             config PKG_MFBD_BTN_INDEX_SIZE_4BYTE
                 bool "uint32_t"
-                
+
             config PKG_MFBD_BTN_INDEX_SIZE_8BYTE
                 bool "uint64_t"
-                                
+
             config PKG_MFBD_BTN_INDEX_SIZE_PVOID
                 bool "void *"
         endchoice
@@ -92,27 +102,27 @@ if PKG_USING_MFBD
             bool
             prompt "enable tiny button functions."
             default y
-        
+
         config PKG_MFBD_USE_NORMAL_BUTTON
             bool
             prompt "enable normal button functions."
             default y
-                
+
         config PKG_MFBD_USE_MULTIFUCNTION_BUTTON
             bool
             prompt "enable multifunction button functions."
             default y
-                
+
         config PKG_MFBD_USE_BTN_SCAN_PRE_FUNC
             bool
             prompt "enable run prepare_function before run button detection function."
             default n
-                    
+
         config PKG_MFBD_USE_BTN_SCAN_AFTER_FUNC
             bool
             prompt "enable run after_function after run button detection function."
             default n
-    
+
         config PKG_MFBD_PARAMS_SAME_IN_GROUP
             bool
             prompt "enable all key's params are same."
@@ -124,6 +134,9 @@ if PKG_USING_MFBD
         default PKG_USING_MFBD_LATEST_VERSION
         help
             Select the package version
+
+        config PKG_USING_MFBD_V104
+            bool "v1.0.4"
 
         config PKG_USING_MFBD_V103
             bool "v1.0.3"
@@ -143,6 +156,7 @@ if PKG_USING_MFBD
 
     config PKG_MFBD_VER
        string
+       default "v1.0.4"    if PKG_USING_MFBD_V104
        default "v1.0.3"    if PKG_USING_MFBD_V103
        default "v1.0.2"    if PKG_USING_MFBD_V102
        default "v1.0.1"    if PKG_USING_MFBD_V101
@@ -151,6 +165,7 @@ if PKG_USING_MFBD
 
     config PKG_MFBD_VER_NUM
         hex
+        default 0x010004 if PKG_USING_MFBD_V104
         default 0x010003 if PKG_USING_MFBD_V103
         default 0x010002 if PKG_USING_MFBD_V102
         default 0x010001 if PKG_USING_MFBD_V101
