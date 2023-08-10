@@ -1,0 +1,35 @@
+{
+  "name": "sfdb",
+  "description": "Simple file database",
+  "description_zh": "简单文件数据库",
+  "enable": "PKG_USING_SFDB",
+  "keywords": [
+    "SFDB",
+    "filesystem",
+    "file",
+    "database"
+  ],
+  "category": "system",
+  "author": {
+    "name": "WKJay",
+    "email": "1931048074@qq.com",
+    "github": "WKJay"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/WKJay/sfdb",
+  "homepage": "https://github.com/WKJay/sfdb",
+  "readme": "https://github.com/WKJay/sfdb/README.md",
+  "site": [
+    {
+      "version": "v0.0.2",
+      "URL": "https://github.com/WKJay/sfdb/archive/refs/tags/0.0.2.zip",
+      "filename": "sfdb-0.0.2.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/WKJay/sfdb.git",
+      "filename": "sfdb.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
