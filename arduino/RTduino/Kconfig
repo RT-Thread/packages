@@ -23,7 +23,7 @@ if PKG_USING_RTDUINO
 
         config RTDUINO_THREAD_PRIO
             int "Arduino thread's priority"
-            default RT_THREAD_PRIORITY_MAX-2
+            default 30
     endif
 
     menuconfig RTDUINO_TINY_MODE
