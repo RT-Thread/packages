@@ -82,7 +82,7 @@ if PKG_USING_ALI_IOTKIT
 
     choice
         prompt "Version"
-        default PKG_USING_ALI_IOTKIT_V30001
+        default PKG_USING_ALI_IOTKIT_V30002
         help
             Select the ali-iotkit version
 
