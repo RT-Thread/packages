@@ -1,0 +1,36 @@
+
+# Kconfig file for package SFDB
+menuconfig PKG_USING_SFDB
+    bool "SFDB: Simple file database"
+    default n
+
+if PKG_USING_SFDB
+
+    config PKG_SFDB_PATH
+        string
+        default "/packages/system/sfdb"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SFDB_V002
+        help
+            Select the package version
+
+        config PKG_USING_SFDB_V002
+            bool "v0.0.2"
+
+        config PKG_USING_SFDB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config SFDB_USING_EXAMPLE
+        bool "Use sfdb example"
+        default n
+
+    config PKG_SFDB_VER
+       string
+       default "v0.0.2"    if PKG_USING_SFDB_V002
+       default "latest"    if PKG_USING_SFDB_LATEST_VERSION
+
+endif
+
