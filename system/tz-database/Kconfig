@@ -1,0 +1,27 @@
+
+# Kconfig file for package tz-database
+menuconfig PKG_USING_TZ_DATABASE
+    bool "tz: time zone database and code"
+    default n
+
+if PKG_USING_TZ_DATABASE
+
+    config PKG_TZ_DATABASE_PATH
+        string
+        default "/packages/system/tz-database"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_TZ_DATABASE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_TZ_DATABASE_VER
+       string
+       default "latest"    if PKG_USING_TZ_DATABASE_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,29 @@
+{
+  "name": "tz-database",
+  "description": "time zone database and code",
+  "description_zh": "时区和夏令时数据库",
+  "enable": "PKG_USING_TZ_DATABASE",
+  "keywords": [
+    "tz-database",
+    "tz"
+  ],
+  "category": "system",
+  "author": {
+    "name": "eggert",
+    "email": "eggert@cs.ucla.edu",
+    "github": "eggert"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/RT-Thread-packages/tz",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/tz#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/tz.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
