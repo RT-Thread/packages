@@ -12,6 +12,7 @@ import json
 import requests
 import re
 
+
 def execute_command(cmdstring, cwd=None, shell=True):
     """Execute the system command at the specified address."""
 
@@ -121,13 +122,29 @@ def check_branch_exists(git_url, branch_name):
         return False
 
 
-def check_sha_exists(repo_url, sha):
+def check_commit_id_exists(repo_url, commit_id):
     """Check if sha exists."""
 
-    command = ['git', 'ls-remote', repo_url]
-    output = subprocess.check_output(command)
-    output = output.decode('utf-8')
-    if sha in output:
+    if repo_url.endswith('.git'):
+        repo_url = repo_url[:-4]
+    parts = repo_url.split("/")
+    user = parts[-2]
+    repo = parts[-1]
+    url = f"https://api.github.com/repos/{user}/{repo}/commits"
+    headers = {
+        "Accept": "application/vnd.github.v3+json"
+    }
+    commit_id_list = []
+    while url:
+        response = requests.get(url, headers=headers)
+        commits = response.json()
+        for commit in commits:
+            commit_id_list.append(commit['sha'])
+        if 'next' in response.links:
+            url = response.links['next']['url']
+        else:
+            url = None
+    if commit_id in commit_id_list:
         return True
     else:
         return False
@@ -183,8 +200,8 @@ def json_file_content_check(package_info):
             ver_sha = package_info['site'][i]['VER_SHA']
             print(f"VER_SHA: {ver_sha}")
             if not check_branch_exists(package_url, ver_sha):
-                print(f"The branch '{ver_sha}' not exists, maybe a sha.")
-                if not check_sha_exists(package_url, ver_sha):
+                print(f"The branch '{ver_sha}' not exists, maybe a comit -d.")
+                if not check_commit_id_exists(package_url, ver_sha):
                     print('SHA is not exists.')
                     return False
         else:
