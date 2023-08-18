@@ -1,10 +1,10 @@
 {
-  "name": "RTT-MATTER-Adaptation_Layer",
+  "name": "rtt-matter-adaptation-layer",
   "description": "Matter protocol stack porting on RT-Thread based on guidance from Connectivity Standards Alliance (CSA) Working Group.",
   "description_zh": "CSA联盟指导的Matter协议栈在RT-Thread的移植",
   "enable": "PKG_USING_RTT_MATTER_ADAPTATION_LAYER",
   "keywords": [
-    "RTT-MATTER-Adaptation_Layer",
+    "rtt-matter-adaptation-layer",
     "Matter",
     "iot",
     "CSA"
