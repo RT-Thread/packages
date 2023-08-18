@@ -200,7 +200,7 @@ def json_file_content_check(package_info):
             ver_sha = package_info['site'][i]['VER_SHA']
             print(f"VER_SHA: {ver_sha}")
             if not check_branch_exists(package_url, ver_sha):
-                print(f"The branch '{ver_sha}' not exists, maybe a comit -d.")
+                print(f"The branch '{ver_sha}' not exists, maybe a commit id.")
                 if not check_commit_id_exists(package_url, ver_sha):
                     print('SHA is not exists.')
                     return False
