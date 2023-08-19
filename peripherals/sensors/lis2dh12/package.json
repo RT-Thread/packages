@@ -20,17 +20,10 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v0.0.1",
-      "URL": "https://github.com/StackRyan/lis2dh12.git",
-      "filename": "lis2dh12-0.0.1.zip",
-      "VER_SHA": ""
-    },
-    {
-      "version": "latest",
       "version": "latest",
       "URL": "https://github.com/StackRyan/lis2dh12.git",
-      "filename": "Null for git package",
-      "VER_SHA": "master"
+      "filename": "lis2dh12-latest.zip",
+      "VER_SHA": "main"
     }
   ]
 }
