@@ -28,7 +28,7 @@
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/kdb.git",
       "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "VER_SHA": "main"
     }
   ]
 }

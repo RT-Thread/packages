@@ -28,7 +28,7 @@
       "version": "latest",
       "URL": "https://github.com/forest-rain/lora-gw-driver-lib.git",
       "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "VER_SHA": "master"
     }
   ]
 }
