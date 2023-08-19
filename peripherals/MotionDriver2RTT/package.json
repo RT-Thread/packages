@@ -22,9 +22,8 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/greedyhao/MotionDriver2RTT.git",
-      "filename": "MotionDriver2RTT-1.0.0.zip",
-      "VER_SHA": "NULL"
+      "URL": "https://github.com/greedyhao/MotionDriver2RTT/archive/v1.0.0.zip",
+      "filename": "MotionDriver2RTT-1.0.0.zip"
     },
     {
       "version": "latest",
