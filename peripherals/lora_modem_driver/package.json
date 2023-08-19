@@ -28,7 +28,7 @@
       "version": "latest",
       "URL": "https://github.com/Forest-Rain/lora-modem-driver.git",
       "filename": "Null for git package",
-      "VER_SHA": "fill in latest version branch name, such as master"
+      "VER_SHA": "master"
     }
   ]
 }
