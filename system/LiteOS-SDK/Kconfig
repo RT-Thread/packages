@@ -10,9 +10,56 @@ if PKG_USING_LITEOS_SDK
         string
         default "/packages/system/LiteOS-SDK"
 
-    config PKG_LITEOS_SDK_USING_HWSECUREC
+    config PKG_LITEOS_SDK_USING_LITEOS_WRAPPER
+        bool "Use the wrapper of LiteOS."
+        default n
+
+    menuconfig PKG_LITEOS_SDK_USING_HWSECUREC
         bool "Use the hwsecurec library of LiteOS."
         default n
+
+        if PKG_LITEOS_SDK_USING_HWSECUREC
+
+            config PKG_LITEOS_SDK_USING_DEMO
+                bool "Use the hwsecurec library demo."
+                default n
+
+                if PKG_LITEOS_SDK_USING_DEMO
+
+                    config PKG_LITEOS_SDK_USING_DEMO_MEMCPY_S
+                        bool "Use the hwsecurec library <memcpy_s> demo."
+                        default n
+
+                    config PKG_LITEOS_SDK_USING_DEMO_MEMSET_S
+                        bool "Use the hwsecurec library <memset_s> demo."
+                        default n
+                endif
+        endif
+
+    menuconfig PKG_LITEOS_SDK_USING_CLOUD
+        bool "liteOS connects to Huawei Cloud"
+        select BSP_USING_LPUART1
+        select PKG_USING_AT_DEVICE
+        select AT_DEVICE_USING_ESP8266
+        select PKG_USING_KAWAII_MQTT
+        select PKG_USING_KAWAII_MQTT_TEST
+        select KAWAII_MQTT_NETSOCKET_USE_SAL
+        default n
+
+        if PKG_LITEOS_SDK_USING_CLOUD
+
+            config ESP8266_SAMPLE_WIFI_SSID
+                string "WIFI ssid"
+                default "rtthread"
+
+            config ESP8266_SAMPLE_WIFI_PASSWORD
+                string "WIFI password"
+                default "12345678"
+
+            config ESP8266_SAMPLE_CLIENT_NAME
+                string "AT client device name"
+                default "lpuart1"
+        endif
 
     choice
         prompt "Version"
