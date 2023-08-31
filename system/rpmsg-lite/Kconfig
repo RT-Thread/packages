@@ -1,0 +1,35 @@
+
+# Kconfig file for package rpmsg-lite
+menuconfig PKG_USING_RPMSG_LITE
+    bool "rpmsg-lite: rpmsg-lite for RT-Thread"
+    default n
+
+if PKG_USING_RPMSG_LITE
+    config PKG_RPMSG_LITE_PATH
+        string
+        default "/packages/system/rpmsg-lite"
+        
+    config PKG_RPMSG_LITE_CUSTOM_CONFIG
+        bool "rpmsg-lite use custom config"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_RPMSG_LITE_LATEST_VERSION
+        help
+            Select this package version
+
+        config PKG_USING_RPMSG_LITE_V510
+            bool "v5.1.0"
+
+        config PKG_USING_RPMSG_LITE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RPMSG_LITE_VER
+        string
+        default "v5.1.0" if PKG_USING_RPMSG_LITE_V510
+        default "latest" if PKG_USING_RPMSG_LITE_LATEST_VERSION
+
+endif
+
