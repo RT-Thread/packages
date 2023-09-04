@@ -86,6 +86,7 @@ if PKG_USING_RT_VSNPRINTF_FULL
     config PKG_VSNPRINTF_LOG10_TAYLOR_TERMS
         int "the number of terms in a Taylor series expansion of log_10(x)"
         default 4
+        range 2 99
         help
             The number of terms in a Taylor series expansion of log_10(x) to
             use for approximation - including the power-zero term (i.e. the
