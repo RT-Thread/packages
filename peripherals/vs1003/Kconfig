@@ -16,7 +16,7 @@ if PKG_USING_VS1003
     config VS1003_EXAMPLE
         bool
         prompt "vs1003_example"
-        default n
+        default y
 
     choice
         prompt "Version"
