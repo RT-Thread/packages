@@ -4,6 +4,7 @@ menuconfig PKG_USING_VS1003
     bool "vs1003 driver"
     select RT_USING_PIN
     select RT_USING_SPI
+	select BSP_USING_SPI
     default n
 
 if PKG_USING_VS1003
@@ -15,8 +16,8 @@ if PKG_USING_VS1003
     config VS1003_EXAMPLE
         bool
         prompt "vs1003_example"
-        default y
-		
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_VS1003_LATEST_VERSION
