@@ -23,21 +23,17 @@ if PKG_USING_BT_CYW43012
         config PKG_USING_BT_CYW43012_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_BT_CYW43012_V002
+            bool "v0.0.2"
         config PKG_USING_BT_CYW43012_V001
             bool "v0.0.1"
     endchoice
 
-    if PKG_USING_BT_CYW43012_V001
-        config PKG_BT_CYW43012_VER
+    config PKG_BT_CYW43012_VER
         string
-        default "v0.0.1"
-    endif
-
-    if PKG_USING_BT_CYW43012_LATEST_VERSION
-        config PKG_BT_CYW43012_VER
-        string
-        default "latest"
-    endif
+        default "v0.0.2" if PKG_USING_BT_CYW43012_V002
+        default "v0.0.1" if PKG_USING_BT_CYW43012_V001
+        default "latest" if PKG_USING_BT_CYW43012_LATEST_VERSION
 
 endif
 
