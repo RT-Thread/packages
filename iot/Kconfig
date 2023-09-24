@@ -64,4 +64,5 @@ source "$PKGS_DIR/packages/iot/zFTP/Kconfig"
 source "$PKGS_DIR/packages/iot/wol/Kconfig"
 source "$PKGS_DIR/packages/iot/zephyr_polling/Kconfig"
 source "$PKGS_DIR/packages/iot/matter-adaptation-layer/Kconfig"
+source "$PKGS_DIR/packages/iot/lhc_modbus/Kconfig"
 endmenu
