@@ -30,18 +30,6 @@ if PKG_USING_ZEPHYR_POLLING
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     # chipset
     choice
         prompt "Select ChipSet"
@@ -60,6 +48,10 @@ if PKG_USING_ZEPHYR_POLLING
 
         config PKG_ZEPHYR_POLLING_CHIPSET_COMMON
             bool "common"
+
+        config PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            bool "bluenrg2"
+
     endchoice
 
 
@@ -69,6 +61,7 @@ if PKG_USING_ZEPHYR_POLLING
         default "csr8910"    if PKG_ZEPHYR_POLLING_CHIPSET_CSR8910
         default "pts_dongle"    if PKG_ZEPHYR_POLLING_CHIPSET_PTS_DONGLE
         default "common"    if PKG_ZEPHYR_POLLING_CHIPSET_COMMON
+        default "bluenrg2"    if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
 
 
 
@@ -177,6 +170,10 @@ if PKG_USING_ZEPHYR_POLLING
 
         config PKG_ZEPHYR_POLLING_PORT_RTTHREAD_ARTPI
             bool "rtthread_artpi: use AP6212 in ArtPi"
+
+        config PKG_ZEPHYR_POLLING_PORT_RTTHREAD_SPI_BLUENRG2
+            bool "rtthread_spi_bluenrg2: use BLENRG2 with SPI "
+
     endchoice
 
 
@@ -184,11 +181,9 @@ if PKG_USING_ZEPHYR_POLLING
         string
         default "rtthread_uart"    if PKG_ZEPHYR_POLLING_PORT_RTTHREAD_UART
         default "rtthread_artpi"    if PKG_ZEPHYR_POLLING_PORT_RTTHREAD_ARTPI
+        default "rtthread_spi"    if PKG_ZEPHYR_POLLING_PORT_RTTHREAD_SPI_BLUENRG2
 
     
-
-
-
 
     
 menu "HCI Transport Set"
@@ -204,6 +199,10 @@ menu "HCI Transport Set"
 
         config PKG_ZEPHYR_POLLING_HCI_USING_UART1
             bool "HCI Transport using rt-thread uart1"
+
+        config PKG_ZEPHYR_POLLING_HCI_USING_SPI
+            bool "HCI Transport using rt-thread spi"
+
     endchoice
 
     if PKG_ZEPHYR_POLLING_HCI_USING_UART
@@ -223,13 +222,50 @@ menu "HCI Transport Set"
             default n
     endif
 
+    if PKG_ZEPHYR_POLLING_HCI_USING_SPI
+        config PKG_ZEPHYR_POLLING_HCI_SPI_BUS_INDEX
+            int "The spi bus index for HCI Transport"
+            default 1 if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            default 1
+
+        config PKG_ZEPHYR_POLLING_HCI_SPI_DEVICE_INDEX
+            int "The spi bus index for HCI Transport"
+            default 0 if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            default 0
+
+        config PKG_ZEPHYR_POLLING_HCI_SPI_BAUDRATE
+            int "SPI Baudrate for HCI Transport"
+            default 1000000 if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            default 1000000
+
+        config PKG_ZEPHYR_POLLING_HCI_SPI_DATA_WIDTH
+            int "The spi data width for HCI Transport: 8bits, 16bits, 32bits"
+            default 8 if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            default 8
+        
+        config PKG_ZEPHYR_POLLING_HCI_SPI_CPHA
+            int "The spi clock polarity(CPHA) for HCI Transport"
+            default 1 if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            default 0
+        
+        config PKG_ZEPHYR_POLLING_HCI_SPI_CPOL
+            int "The spi clock polarity(CPOL) for HCI Transport"
+            default 0 if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            default 0
+
+        config PKG_ZEPHYR_POLLING_HCI_SPI_IRQ_PIN_NUM
+            int "The RT-Thread drv_gpio number of SPI IRQ PIN for HCI Transport"
+            default 0 if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            default 0
+        
+        config PKG_ZEPHYR_POLLING_HCI_SPI_CS_PIN_NUM
+            int "The RT-Thread drv_gpio number of SPI CS PIN for HCI Transport"
+            default 1 if PKG_ZEPHYR_POLLING_CHIPSET_BLUENRG2
+            default 0
+
+    endif
+
 endmenu
-
-
-
-
-
-
 
 endif
 
