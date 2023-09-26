@@ -1,0 +1,28 @@
+{
+  "name": "TinySquare",
+  "description": "TinySquare: a lightweight square game engine running on Cortex-M.",
+  "description_zh": "TinySquare：一个运行在Cortex-M上的轻量化方块游戏引擎。",
+  "enable": "PKG_USING_TINYSQUARE",
+  "keywords": [
+    "TinySquare"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "AlgoOy",
+    "email": "2407383500@qq.com",
+    "github": "AlgoOy"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/AlgoOy/TinySquare",
+  "icon": "unknown",
+  "homepage": "https://github.com/AlgoOy/TinySquare#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/AlgoOy/TinySquare.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}
