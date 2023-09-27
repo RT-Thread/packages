@@ -1,0 +1,26 @@
+
+menuconfig PKG_USING_RYANJSON
+    bool "RyanJson: 一个针对资源受限的嵌入式设备优化的Json库，内存占用极小的通用Json库，简洁高效！"
+    default n
+
+if PKG_USING_RYANJSON
+
+    config PKG_RYANJSON_PATH
+        string
+        default "/packages/language/JSON/RyanJson"
+
+    choice
+        prompt "版本选择: 推荐 latest"
+        help
+            Select the RyanJson version
+        default PKG_USING_RYANJSON_LATEST_VERSION
+
+        config PKG_USING_RYANJSON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RYANJSON_VER
+        string
+        default "latest" if PKG_USING_RYANJSON_LATEST_VERSION
+
+endif

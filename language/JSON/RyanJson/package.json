@@ -1,0 +1,29 @@
+{
+  "name": "RyanJson",
+  "description": "A optimized Json library for resource-constrained embedded devices, with minimal memory usage and high efficiency.",
+  "description_zh": "一个针对资源受限的嵌入式设备优化的Json库，内存占用极小的通用Json库，简洁高效！",
+  "enable": "PKG_USING_RYANJSON",
+  "keywords": [
+    "RyanJson",
+    "json"
+  ],
+  "category": "language",
+  "author": {
+    "name": "Ryan-CW",
+    "email": "1831931681@qq.com",
+    "github": "https://github.com/Ryan-CW-Code"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Ryan-CW-Code/RyanJson",
+  "icon": "unknown",
+  "homepage": "https://github.com/Ryan-CW-Code/RyanJson#readme",
+  "readme": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Ryan-CW-Code/RyanJson.git",
+      "filename": "RyanJson.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
