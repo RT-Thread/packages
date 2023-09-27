@@ -10,6 +10,7 @@ import shlex
 import shutil
 import json
 import requests
+import re
 
 
 def execute_command(cmdstring, cwd=None, shell=True):
@@ -110,6 +111,47 @@ def check_json_file(work_root):
     return True
 
 
+def check_branch_exists(git_url, branch_name):
+    """Check if branch exists."""
+
+    command = ['git', 'ls-remote', '--exit-code', '--heads', git_url, branch_name]
+    try:
+        subprocess.check_output(command)
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
+
+def check_commit_sha_exists(repo_url, commit_sha):
+    """Check if sha exists."""
+
+    if repo_url.endswith('.git'):
+        repo_url = repo_url[:-4]
+    parts = repo_url.split("/")
+    user = parts[-2]
+    repo = parts[-1]
+
+    url = f"https://api.github.com/repos/{user}/{repo}/git/commits/{commit_sha}"
+    token = os.environ.get("GITHUB_TOKEN")
+    headers = {
+        "Authorization": f"token {token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    response = requests.get(url, headers=headers)
+    return response.status_code == 200
+
+
+def is_file_link_with_extension(url):
+    """Check if the link is a file link."""
+
+    pattern = r'\.\w+$'
+    match = re.search(pattern, url)
+    if match:
+        return True
+    else:
+        return False
+
+
 def json_file_content_check(package_info):
     """Check the content of json file."""
 
@@ -144,8 +186,22 @@ def json_file_content_check(package_info):
         package_version = package_info['site'][i]['version']
         package_url = package_info['site'][i]['URL']
         print("%s : %s" % (package_version, package_url))
-        if not package_url[-4:] == '.git':
-            print(package_info['site'][i]['filename'])
+
+        if package_url[-4:] == '.git':
+            ver_sha = package_info['site'][i]['VER_SHA']
+            print(f"VER_SHA: {ver_sha}")
+            if not check_branch_exists(package_url, ver_sha):
+                print(f"The branch '{ver_sha}' not exists, maybe a commit sha.")
+                if not check_commit_sha_exists(package_url, ver_sha):
+                    print('SHA is not exists.')
+                    return False
+        else:
+            filename = package_info['site'][i]['filename']
+            print(f"Filename: {filename}")
+            if not is_file_link_with_extension(package_url):
+                print("Url is not a file link.")
+                return False
+
         if not determine_url_valid(package_url):
             return False
 

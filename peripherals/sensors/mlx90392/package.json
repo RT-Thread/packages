@@ -19,12 +19,6 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/lgnq/mlx90392.git",
-      "filename": "mlx90392-1.0.0.zip",
-      "VER_SHA": "1da939f44ab90cab9b2119d65b11139c91808741"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/lgnq/mlx90392.git",
       "filename": "mlx90392.zip",

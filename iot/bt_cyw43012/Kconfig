@@ -1,0 +1,39 @@
+
+menuconfig PKG_USING_BT_CYW43012
+    bool "CYW43012 BT driver for rt-thread"
+    select PKG_USING_FREERTOS_WRAPPER
+    default n
+
+if PKG_USING_BT_CYW43012
+
+    config BT_SAMPLE_ENABLE_FOR_IFX
+        bool "enable hello sample"
+        default true
+
+    config PKG_BT_CYW43012_PATH
+        string
+        default "/packages/iot/bt_cyw43012"
+
+    choice
+        prompt "version"
+        default PKG_USING_BT_CYW43012_V001
+        help
+            Select the CYW43012 BT version
+
+        config PKG_USING_BT_CYW43012_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_BT_CYW43012_V002
+            bool "v0.0.2"
+        config PKG_USING_BT_CYW43012_V001
+            bool "v0.0.1"
+    endchoice
+
+    config PKG_BT_CYW43012_VER
+        string
+        default "v0.0.2" if PKG_USING_BT_CYW43012_V002
+        default "v0.0.1" if PKG_USING_BT_CYW43012_V001
+        default "latest" if PKG_USING_BT_CYW43012_LATEST_VERSION
+
+endif
+

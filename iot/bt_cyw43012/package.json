@@ -1,0 +1,42 @@
+{
+  "name": "bt_cyw43012",
+  "description": "bt driver from CYW43012",
+  "description_zh": "CYW43012 的 bt 驱动",
+  "enable": "PKG_USING_BT_CYW43012",
+  "keywords": [
+    "cyw43012",
+    "bt",
+    "ble"
+  ],
+  "category": "iot/WiFi",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Guozhanxin/cyw43012-ble-RTT",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/Guozhanxin/cyw43012-ble-RTT#readme",
+  "readme": "bt driver from CYW43012.",
+  "site": [
+    {
+      "version": "v0.0.2",
+      "URL": "https://github.com/Guozhanxin/cyw43012-ble-RTT/archive/0.0.2.zip",
+      "filename": "cyw43012-ble-RTT-0.0.2.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v0.0.1",
+      "URL": "https://github.com/Guozhanxin/cyw43012-ble-RTT/archive/0.0.1.zip",
+      "filename": "cyw43012-ble-RTT-0.0.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Guozhanxin/cyw43012-ble-RTT.git",
+      "filename": "cyw43012-ble-RTT.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "matter-adaptation-layer",
+  "description": "Matter protocol stack porting on RT-Thread based on guidance from Connectivity Standards Alliance (CSA) Working Group.",
+  "description_zh": "CSA联盟指导的Matter协议栈在RT-Thread的移植",
+  "enable": "PKG_USING_MATTER_ADAPTATION_LAYER",
+  "keywords": [
+    "matter-adaptation-layer",
+    "Matter",
+    "iot",
+    "CSA"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "kurisaW",
+    "email": "2053731441@qq.com",
+    "github": "kurisaW"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/kurisaW/MATTER-Adaptation_Layer",
+  "icon": "unknown",
+  "homepage": "https://github.com/kurisaW/MATTER-Adaptation_Layer#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/kurisaW/MATTER-Adaptation_Layer.git",
+      "filename": "",
+      "VER_SHA": "rtt_matter_adapter"
+    }
+  ]
+}

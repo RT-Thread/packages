@@ -43,3 +43,5 @@ jobs:
             cd ${RTT_ROOT}/bsp/qemu-vexpress-a9 && sudo -E ../../tools/kconfig-frontends/kconfig-mconf Kconfig -n
             cp ${RTT_ROOT}/tools/kconfiglib.py ./ && python -c 'import kconfiglib; kconfiglib.standard_kconfig()'
             cd ${PKGS_ROOT}/packages && python ci.py
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
