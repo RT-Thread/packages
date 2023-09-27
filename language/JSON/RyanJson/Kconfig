@@ -10,7 +10,7 @@ if PKG_USING_RYANJSON
         default "/packages/language/JSON/RyanJson"
 
     choice
-        prompt "版本选择: 推荐 latest"
+        prompt "版本选择: 推荐 latest "
         help
             Select the RyanJson version
         default PKG_USING_RYANJSON_LATEST_VERSION
