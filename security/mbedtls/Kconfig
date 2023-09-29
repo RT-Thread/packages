@@ -118,9 +118,12 @@ if PKG_USING_MBEDTLS
 
     choice
         prompt "version"
-        default PKG_USING_MBEDTLS_V27102
+        default PKG_USING_MBEDTLS_V2281
         help
             Select the mbedtls version
+
+        config PKG_USING_MBEDTLS_V2281
+            bool "v2.28.1"
 
         config PKG_USING_MBEDTLS_V27102
             bool "v2.7.10.2"
@@ -144,6 +147,7 @@ if PKG_USING_MBEDTLS
     config PKG_MBEDTLS_VER
         string
         default "latest"    if PKG_USING_MBEDTLS_LATEST_VERSION
+        default "v2.28.1" if PKG_USING_MBEDTLS_V2281
         default "v2.7.10.2" if PKG_USING_MBEDTLS_V27102
         default "v2.7.10.1" if PKG_USING_MBEDTLS_V27101
         default "v2.7.10"   if PKG_USING_MBEDTLS_V2710
