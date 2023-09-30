@@ -2,6 +2,7 @@
 # Kconfig file for package TinySquare
 menuconfig PKG_USING_TINYSQUARE
     bool "TinySquare: a lightweight square game engine running on Cortex-M."
+    depends on ARCH_ARM_CORTEX_M
     select PKG_USING_CMSIS_DSP
     select PKG_CMSIS_DSP_BASIC_MATH
     select PKG_CMSIS_DSP_FAST_MATH
