@@ -80,6 +80,7 @@ source "$PKGS_DIR/packages/peripherals/fingerprint/Kconfig"
 source "$PKGS_DIR/packages/peripherals/bt_ecb02c/Kconfig"
 source "$PKGS_DIR/packages/peripherals/uat/Kconfig"
 source "$PKGS_DIR/packages/peripherals/st7789/Kconfig"
+source "$PKGS_DIR/packages/peripherals/vs1003/Kconfig"
 
 if RT_VER_NUM > 0x40101
 source "$PKGS_DIR/packages/peripherals/spi-tools/Kconfig"
