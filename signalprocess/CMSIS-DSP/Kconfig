@@ -10,6 +10,74 @@ if PKG_USING_CMSIS_DSP
         string
         default "/packages/signalprocess/CMSIS-DSP"
 
+    config PKG_CMSIS_DSP_BASIC_MATH
+        bool "basic math functions"
+        default y
+
+    config PKG_CMSIS_DSP_BAYES
+        bool "Bayes classifier functions"
+        default n
+
+    config PKG_CMSIS_DSP_COMMON_TABLES
+        bool "Common tables"
+        default n
+
+    config PKG_CMSIS_DSP_COMPLEX_MATH
+        bool "Complex math functions"
+        default n
+
+    config PKG_CMSIS_DSP_CONTROLLER
+        bool "Motor control functions"
+        default n
+
+    config PKG_CMSIS_DSP_DISTANCE
+        bool "Distance functions"
+        default n
+
+    config PKG_CMSIS_DSP_FAST_MATH
+        bool "Fast math functions"
+        default n
+
+    config PKG_CMSIS_DSP_FILTERING
+        bool "Filtering functions"
+        default n
+
+    config PKG_CMSIS_DSP_INTERPOLATION
+        bool "Interpolation functions"
+        default n
+
+    config PKG_CMSIS_DSP_MATRIX
+        bool "Matrix functions"
+        default n
+
+    config PKG_CMSIS_DSP_QUATERNION_MATH
+        bool "Quaternion functions"
+        default n
+
+    config PKG_CMSIS_DSP_STATISTICS
+        bool "Statistical functions"
+        default n
+
+    config PKG_CMSIS_DSP_SUPPORT
+        bool "Support functions"
+        default n
+
+    config PKG_CMSIS_DSP_SVM
+        bool "Support Vector Machine functions (SVM)"
+        default n
+
+    config PKG_CMSIS_DSP_TRANSFORM
+        bool "Transform functions"
+        default n
+
+    config PKG_CMSIS_DSP_WINDOW
+        bool "Window functions"
+        default n
+    
+    config PKG_CMSIS_DSP_COMPUTE_LIBRARY
+        bool "Compute Library"
+        default n
+
     choice
         prompt "Version"
         help

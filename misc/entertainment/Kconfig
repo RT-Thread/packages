@@ -11,5 +11,6 @@ source "$PKGS_DIR/packages/misc/entertainment/tetris/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/donut/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/cowsay/Kconfig"
 source "$PKGS_DIR/packages/misc/entertainment/morse/Kconfig"
+source "$PKGS_DIR/packages/misc/entertainment/TinySquare/Kconfig"
 
 endmenu

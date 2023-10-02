@@ -1,0 +1,45 @@
+
+# Kconfig file for package TinySquare
+menuconfig PKG_USING_TINYSQUARE
+    bool "TinySquare: a lightweight square game engine running on Cortex-M."
+    depends on ARCH_ARM_CORTEX_M
+    select PKG_USING_CMSIS_DSP
+    select PKG_CMSIS_DSP_BASIC_MATH
+    select PKG_CMSIS_DSP_FAST_MATH
+    select PKG_CMSIS_DSP_COMMON_TABLES
+    default n
+
+if PKG_USING_TINYSQUARE
+
+    config PKG_TINYSQUARE_PATH
+        string
+        default "/packages/misc/entertainment/TinySquare"
+
+    config TINYSQUARE_USING_PIKASCRIPT
+        bool "using pikaScript lib"
+        default n
+
+    config TINYSQUARE_USING_EXAMPLES_SNAKE
+        bool "using snake example"
+        default n
+
+    config TINYSQUARE_USING_EXAMPLES_TETRIS
+        bool "using tetris example"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_TINYSQUARE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TINYSQUARE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_TINYSQUARE_VER
+       string
+       default "latest"    if PKG_USING_TINYSQUARE_LATEST_VERSION
+
+endif
+
