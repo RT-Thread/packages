@@ -1,0 +1,28 @@
+{
+  "name": "rtp",
+  "description": "rtp Cross platform thread pool",
+  "description_zh": "rtp 跨平台线程",
+  "enable": "PKG_USING_RTP",
+  "keywords": [
+    "rtp"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RiceChen",
+    "email": "980307037@qq.com",
+    "github": "RiceChen0"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RiceChen0/rtp",
+  "icon": "unknown",
+  "homepage": "https://github.com/RiceChen0/rtp#readme",
+  "readme": "rtp Cross platform thread pool",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RiceChen0/rtp.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}
