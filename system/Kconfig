@@ -47,4 +47,5 @@ source "$PKGS_DIR/packages/system/flash_blob/Kconfig"
 source "$PKGS_DIR/packages/system/mlibc/Kconfig"
 source "$PKGS_DIR/packages/system/TaskMsgBus/Kconfig"
 source "$PKGS_DIR/packages/system/sfdb/Kconfig"
+source "$PKGS_DIR/packages/system/rtp/Kconfig"
 endmenu
