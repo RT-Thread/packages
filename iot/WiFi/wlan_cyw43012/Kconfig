@@ -15,7 +15,7 @@ if PKG_USING_WLAN_CYW43012
 
     config PKG_WLAN_CYW43012_PATH
         string
-        default "/packages/iot/WiFi/wlan_CYW43012"
+        default "/packages/iot/WiFi/wlan_cyw43012"
 
     choice
         prompt "version"
