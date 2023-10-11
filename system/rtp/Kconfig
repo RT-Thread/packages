@@ -1,7 +1,7 @@
 
 # Kconfig file for package rtp
 menuconfig PKG_USING_RTP
-    bool "Cross platform thread pool."
+    bool "rtp: Cross platform thread pool."
     default n
 
 if PKG_USING_RTP
