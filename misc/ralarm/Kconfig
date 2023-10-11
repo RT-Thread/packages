@@ -1,0 +1,32 @@
+
+# Kconfig file for package ralarm
+menuconfig PKG_USING_RALARAM
+    bool "ralarm: Infinitely scalable alarm components"
+    default n
+
+if PKG_USING_RALARAM
+
+    config PKG_RALARM_PATH
+        string
+        default "/packages/misc/ralarm"
+
+    config PKG_USING_RALARM_EXAMPLE
+       bool "Enable ralarm example"
+       default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_RALARM_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RALARM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RALARM_VER
+       string
+       default "latest"    if PKG_USING_RALARM_LATEST_VERSION
+
+endif
+
