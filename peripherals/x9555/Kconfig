@@ -1,0 +1,27 @@
+
+# Kconfig file for package x9555
+menuconfig PKG_USING_X9555
+    bool "IO-expander: 16-bit 1.65- to 5.5-V I2C/SMBus I/O expander with interrupt, weak pull-up & config registers."
+    default n
+
+if PKG_USING_X9555
+
+    config PKG_X9555_PATH
+        string
+        default "/packages/peripherals/x9555"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_X9555_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_X9555_VER
+       string
+       default "latest"    if PKG_USING_X9555_LATEST_VERSION
+
+endif
+
