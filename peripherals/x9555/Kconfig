@@ -1,7 +1,7 @@
 
 # Kconfig file for package x9555
 menuconfig PKG_USING_X9555
-    bool "IO-expander: 16-bit 1.65- to 5.5-V I2C/SMBus I/O expander with interrupt, weak pull-up & config registers."
+    bool "x9555: I/O expander with interrupt, weak pull-up & config registers"
     default n
 
 if PKG_USING_X9555
