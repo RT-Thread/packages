@@ -1,0 +1,28 @@
+{
+  "name": "ralarm",
+  "description": "ralarm: An alarm clock component that does not rely on hardware and can be infinitely expanded",
+  "description_zh": "ralarm: 不依赖硬件，可以无限扩展的闹钟组件",
+  "enable": "PKG_USING_REB",
+  "keywords": [
+    "ralarm"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "RiceChen",
+    "email": "980307037@qq.com",
+    "github": "RiceChen0"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RiceChen0/ralarm",
+  "icon": "unknown",
+  "homepage": "https://github.com/RiceChen0/ralarm#readme",
+  "readme": "ralarm: An alarm clock component that does not rely on hardware and can be infinitely expanded",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RiceChen0/ralarm.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}

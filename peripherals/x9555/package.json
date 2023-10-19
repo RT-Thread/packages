@@ -1,0 +1,34 @@
+{
+  "name": "x9555",
+  "description": "IO-expander: 16-bit 1.65- to 5.5-V I2C/SMBus I/O expander with interrupt, weak pull-up & config registers.",
+  "description_zh": "IO 扩展器：具有中断、弱上拉和配置寄存器的 16 位 1.65V 至 5.5V I2C/SMBus I/O 扩展器。",
+  "enable": "PKG_USING_X9555",
+  "keywords": [
+    "x9555",
+    "9555",
+    "cat9555",
+    "nca9555",
+    "pca9555",
+    "pi4i9555",
+    "tca9555"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "WennianYan",
+    "email": "yanwennian@yeah.net",
+    "github": "WennianYan"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/WennianYan/x9555",
+  "icon": "unknown",
+  "homepage": "https://github.com/WennianYan/x9555#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/WennianYan/x9555.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

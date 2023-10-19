@@ -1,0 +1,28 @@
+{
+  "name": "reb",
+  "description": "reb: Event broker component based on publish subscribe",
+  "description_zh": "reb: 基于发布-订阅的事件代理组件",
+  "enable": "PKG_USING_REB",
+  "keywords": [
+    "reb"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RiceChen",
+    "email": "980307037@qq.com",
+    "github": "RiceChen0"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RiceChen0/reb",
+  "icon": "unknown",
+  "homepage": "https://github.com/RiceChen0/reb#readme",
+  "readme": "reb Event broker component based on publish subscribe",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RiceChen0/reb.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+
+# Kconfig file for package reb
+menuconfig PKG_USING_REB
+    bool "reb: Event broker component based on publish subscribe"
+    select PKG_USING_RTP
+    default n
+
+if PKG_USING_REB
+
+    config PKG_REB_PATH
+        string
+        default "/packages/system/reb"
+
+    config PKG_USING_REB_EXAMPLE
+        bool "reb example"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_REB_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_REB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_REB_VER
+       string
+       default "latest"    if PKG_USING_REB_LATEST_VERSION
+
+endif
+
