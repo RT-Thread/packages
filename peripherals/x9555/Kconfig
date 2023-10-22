@@ -4,19 +4,56 @@ menuconfig PKG_USING_X9555
     bool "x9555: I/O expander with interrupt, weak pull-up & config registers"
     default n
 
+    select RT_USING_PIN
+    select RT_USING_I2C
+
 if PKG_USING_X9555
 
     config PKG_X9555_PATH
         string
         default "/packages/peripherals/x9555"
 
+    menuconfig PKG_USING_X9555_EXAMPLE
+        bool "Enable X9555 example"
+        default n
+
+    if PKG_USING_X9555_EXAMPLE
+
+        menuconfig PKG_USING_X9555_EXAMPLE_HARDWARE
+            bool "Enable X9555 example hardware"
+            default n
+
+        if PKG_USING_X9555_EXAMPLE_HARDWARE
+
+            config BSP_USING_I2C1
+                string "I2C device name"
+                default "i2c1"
+
+            config BSP_I2C1_SCL_PIN
+                int "I2C1 SCL pin number"
+                default 0
+
+            config BSP_I2C1_SDA_PIN
+                int "I2C1 SDA pin number"
+                default 1
+
+             config X9555_EXAMPLE_INTERRUPT_PIN
+                int "x9555 example interrupt pin number"
+                default -1
+
+        endif
+
+    endif
+
     choice
         prompt "Version"
+        default PKG_USING_X9555_LATEST_VERSION
         help
             Select the package version
 
         config PKG_USING_X9555_LATEST_VERSION
             bool "latest"
+
     endchoice
 
     config PKG_X9555_VER
