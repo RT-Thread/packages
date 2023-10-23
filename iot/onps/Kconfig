@@ -1,0 +1,374 @@
+# Kconfig file for package onps
+menuconfig PKG_USING_ONPS
+    bool "Onps: An open-source network protocol stack."
+    default n
+    select RT_USING_HEAP
+
+if PKG_USING_ONPS
+
+    config PKG_ONPS_PATH
+        string
+        default "/packages/iot/onps"
+
+    choice
+        prompt "Onps Version"
+        default PKG_ONPS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_ONPS_V110_VERSION
+            bool "1.1.0"
+
+        config PKG_ONPS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ONPS_VERSION
+       string 
+       default "1.1.0"    	if PKG_ONPS_V110_VERSION
+       default "latest"    	if PKG_ONPS_LATEST_VERSION
+
+	choice
+   		prompt "Platform"
+   		default ONPS_PLATFORM_CH32
+   		help
+   			Select the target platform
+		config ONPS_PLATFORM_CH32
+			bool "ch32"
+		config ONPS_PLATFORM_STM32
+			bool "stm32"
+	endchoice
+
+	if ONPS_PLATFORM_CH32
+		choice
+			prompt "Interface Config"
+			default ONPS_PLATFORM_CH32_10M_PHY
+			config ONPS_PLATFORM_CH32_10M_PHY
+				bool "ch32 internal 10m phy"
+			config ONPS_PLATFORM_CH32_MII
+				bool "ch32 standard mii"
+			config ONPS_PLATFORM_CH32_RMII
+				bool "ch32 rmii"
+			config ONPS_PLATFORM_CH32_RGMII
+				bool "ch32 rgmii"
+		endchoice
+	endif
+	
+	config ONPS_ENABLE_SAMPLE
+		bool "Enable Samples"
+		default y
+		
+	menu "Function Modules Config"
+		config ONPS_ENABLE_IPV6
+			bool "Enable IPV6"
+			default n
+
+		config ONPS_ENABLE_PRINTF
+			bool "Enable Printf ONPS Related INFO"
+	    	select RT_USING_SERIAL
+			default y
+			
+		if ONPS_ENABLE_PRINTF
+			config ONPS_DEBUG_LEVEL
+				int "Config Debug Level"
+				range 0 4
+				default 2
+		endif
+		
+		config ONPS_ENABLE_PPP
+			bool "Enable PPP"
+			default n
+
+		if ONPS_ENABLE_PPP
+			config ONPS_APN_DEFAULT
+				string "Config  APN"
+				default "4gnet"
+			config ONPS_AUTH_USER_DEFAULT
+				string "Config Auth User"
+				default "card"
+			config ONPS_AUTH_PASSWORD_DEFAULT
+				string "Config Default Auth Password"
+				default "any_card"
+			config ONPS_PPP_NETLINK_NUM
+				int "Config PPP Netlink Number"
+				range 0 256
+				default 1
+			config ONPS_ENABLE_ECHO
+				bool "Enable Echo"
+				default n
+			config ONPS_WAIT_ACK_TIMEOUT_NUM
+				int "Config Wait Ack Timeout Number"
+				range 0 256
+				default 5
+		endif
+
+		if !ONPS_ENABLE_PPP
+			config ONPS_PPP_NETLINK_NUM
+				int 
+				default 0
+		endif
+			
+		config ONPS_ENABLE_ETHERNET
+			bool "Enable Ethernet"
+			default y
+		
+			if ONPS_ENABLE_ETHERNET
+				config ONPS_ETHERNET_NUM
+					int "Config Ethernet Number"
+					range 0 256
+					default 1
+				config ONPS_ARPENTRY_NUM
+					int "Config Arp Entry Number"
+					range 0 256
+					default 16
+				if ONPS_ENABLE_IPV6
+					config ONPS_IPV6TOMAC_ENTRY_NUM
+						int "Config IPV6 To MAC Entry Number"
+						range 1 127
+						default 8
+					config ONPS_IPV6_CFG_ADDR_NUM
+						int "Config IPV6 Cfg Address Number"
+						range 1 128
+						default 4
+					config ONPS_IPV6_ROUTER_NUM
+						int "Config IPV6 Router Number"
+						range 1 8
+						default 2
+				endif
+				config ONPS_ENABLE_ETH_EXTRA_IP
+					bool "Enable ETH Extra IP"
+					default y
+				if ONPS_ENABLE_ETH_EXTRA_IP
+					config ONPS_ETH_EXTRA_IP_NUM
+						int "Config ETH Extra IP Number"
+						range 1 8
+						default 2
+						help
+							It can be set larger, while more memory will be used.
+				endif
+			endif
+
+		if !ONPS_ENABLE_ETHERNET
+			config ONPS_ETHERNET_NUM
+				int 
+				range 0 256
+				default 0
+		endif
+
+	endmenu
+	
+	menu "Upper Stack Config"
+		config ONPS_ENABLE_SACK
+			bool "Enable SACK"
+			default y
+			
+		if ONPS_ENABLE_SACK
+			config ONPS_TCPSNDBUF_SIZE
+				int "Config TCP Send Buffer Size"
+				range 2048 8192
+				default 4096
+				help
+					It can be set larger in range of uint32_t, while more memory will be used.
+		endif
+			
+		config ONPS_ICMPRCVBUF_SIZE
+			int "Config ICMP Receive Buffer Size"
+			range 64 2048
+			default 128
+
+		config ONPS_TCPRCVBUF_SIZE
+			int "Config TCP Receive Buffer Size"
+			range 0 8192
+			default 2048
+			
+		config ONPS_TCPUDP_PORT_START
+			int "Config TCP/UDP Start Port"
+			range 0 65535
+			default 20000
+			
+		config ONPS_TCP_WINDOW_SCALE
+			int "Config TCP Window Scale"
+			range 0 0
+			default 0
+			help
+				It cannot be set for now.
+			
+		config ONPS_TCP_CONN_TIMEOUT
+			int "Config TCP Connection Timeout"
+			range 10 120
+			default 10
+
+		config ONPS_TCP_ACK_TIMEOUT
+			int "Config TCP Ack Timeout"
+			range 1 30
+			default 3
+
+		config ONPS_TCP_LINK_NUM_MAX
+			int "Config TCP Link Number Max"
+			range 1 128
+			default 16
+
+		config ONPS_TCP_ACK_DELAY_MSECS
+			int "Config TCP Ack Delay Msecs"
+			range 40 200
+			default 100
+			
+		if ONPS_ENABLE_ETHERNET
+			config ONPS_TCPSRV_BACKLOG_NUM_MAX
+				int "Config Tcp Server BACKLOG Number Max"
+				range 1 32
+				default 8
+				
+			config ONPS_TCPSRV_NUM_MAX
+				int "Config Tcp Server Number Max"
+				range 1 16
+				default 1
+				help
+					It can be set larger in range of uint32_t, while more memory will be used.
+				
+			config ONPS_TCPSRV_RECV_QUEUE_NUM
+				int "Config Tcp Server Receive Queue Number"
+				range 4 256
+				default 64
+		endif
+		
+		config ONPS_UDP_LINK_NUM_MAX
+				int "Config UDP Link Number Max"
+				range 1 64
+				default 4
+				
+		config ONPS_SOCKET_NUM_MAX
+				int "Config Socket Number Max"
+				range 2 256
+				default 16
+				
+		config ONPS_IP_TTL_DEFAULT
+				int "Config IP TTL Default"
+				range 32 127
+				default 64
+				
+		config ONPS_ROUTE_ITEM_NUM
+				int "Config Route Item Number"
+				range 2 16
+				default 8
+	endmenu
+	
+	menu "Network Tools Config"
+		config ONPS_ENABLE_NETTOOLS_PING
+			bool "Enable Netools Ping"
+			default y
+			
+		config ONPS_ENABLE_NETTOOLS_DNS_CLIENT
+			bool "Enable Netools Dns Client"
+			default y
+			
+		config ONPS_ENABLE_NETTOOLS_SNTP
+			bool "Enable Netools Sntp"
+			select RT_USING_RTC
+			default n
+			
+		config ONPS_ENABLE_NETTOOLS_TELNETSRV
+			bool "Enable Netools Telnet Server"
+			default n
+		if ONPS_ENABLE_NETTOOLS_TELNETSRV
+			config ONPS_ENABLE_NVTCMD_MEMUSAGE
+				bool "Enable NVT CMD: memusage"
+				default y
+				
+			config ONPS_ENABLE_NVTCMD_NETIF
+				bool "Enable NVT CMD: netif"
+				default y
+				
+			config ONPS_ENABLE_NVTCMD_IFIP
+				bool "Enable NVT CMD: ifip"
+				default y
+				
+			config ONPS_ENABLE_NVTCMD_ROUTE
+				bool "Enable NVT CMD: route"
+				default y
+				
+			config ONPS_ENABLE_NVTCMD_TELNET
+				bool "Enable NVT CMD: telnet"
+				default y
+			if ONPS_ENABLE_NVTCMD_TELNET
+				config ONPS_TELNETCLT_RCVBUF_SIZE
+					int "Config Telnet Client Receive Buffer Size"
+					range 1024 8192
+					default 1024
+			endif
+			
+			if ONPS_ENABLE_NETTOOLS_SNTP
+				config ONPS_ENABLE_NVTCMD_NTP
+					bool "Enable NVT CMD: ntp"
+					default y
+			endif
+			
+			if ONPS_ENABLE_NETTOOLS_DNS_CLIENT
+				config ONPS_ENABLE_NVTCMD_NSLOOKUP
+					bool "Enable NVT CMD: nslookup"
+					default y
+			endif
+			
+			if ONPS_ENABLE_NETTOOLS_PING
+				config ONPS_ENABLE_NVTCMD_PING
+					bool "Enable NVT CMD: ping"
+					default y
+			endif
+			
+			config ONPS_ENABLE_NVTCMD_RESET
+				bool "Enable NVT CMD: Reset"
+				default y
+				
+			config ONPS_NVTNUM_MAX
+				int "Config NVT Number Max"
+				range 1 4
+				default 2
+				
+			config ONPS_ENABLE_NVTCMDCACHE
+				bool "Enable NVT CMD: cache"
+				default y
+				
+			config ONPS_NVTCMDCACHE_SIZE
+				int "Config NVT CMD Cache Size"
+				range 64 512
+				default 256
+				
+			if ONPS_ENABLE_IPV6
+				config ONPS_ENABLE_TELNETSRV_IPV6
+					bool "Enable Telnet Server IPV6"
+					default y
+			endif
+		endif
+	endmenu
+	
+	menu "MMU Config"
+		config ONPS_BUF_LIST_NUM
+			int "Config Buffer List Number"
+			range 32 1024
+			default 80
+
+		config ONPS_ENABLE_BUDDY_MMU
+			bool "Enable Buddy MMU"
+			default n
+			help
+				In RT-Thread, we can disable this function to use the internal memory management algorithm
+
+		if ONPS_ENABLE_BUDDY_MMU
+			config ONPS_BUDDY_PAGE_SIZE
+				int "Config Buddy Page Size"
+				range 0 65536
+				default 64
+				
+			config ONPS_BUDDY_ARER_COUNT
+				int "Config Buddy Arer Count"
+				range 0 65536
+				default 10
+
+			config ONPS_BUDDY_MEM_SIZE
+				int "Config Buddy Memory Size"
+				range 0 65536
+				default 32768
+		endif
+	endmenu
+	
+endif
