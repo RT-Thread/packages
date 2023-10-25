@@ -135,6 +135,7 @@ if PKG_USING_ONPS
 						range 1 8
 						default 2
 				endif
+				
 				config ONPS_ENABLE_ETH_EXTRA_IP
 					bool "Enable ETH Extra IP"
 					default y
@@ -146,6 +147,7 @@ if PKG_USING_ONPS
 						help
 							It can be set larger, while more memory will be used.
 				endif
+				
 			endif
 
 		if !ONPS_ENABLE_ETHERNET
@@ -251,6 +253,7 @@ if PKG_USING_ONPS
 				int "Config Route Item Number"
 				range 2 16
 				default 8
+				
 	endmenu
 	
 	menu "Network Tools Config"
@@ -338,7 +341,9 @@ if PKG_USING_ONPS
 					bool "Enable Telnet Server IPV6"
 					default y
 			endif
+			
 		endif
+		
 	endmenu
 	
 	menu "MMU Config"
@@ -369,6 +374,7 @@ if PKG_USING_ONPS
 				range 0 65536
 				default 32768
 		endif
+		
 	endmenu
 	
 endif
