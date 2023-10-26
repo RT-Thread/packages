@@ -14,16 +14,6 @@ if PKG_USING_MFBD
         bool "Enable Multi-Function Button Detection demo"
         default n
 
-    if PKG_MFBD_VER_NUM >= 0x010004
-        config PKG_MFBD_USE_SECTION_DEFINITION
-            bool "enable use section definitions."
-            default n
- 
-        config PKG_MFBD_MULTICLICK_STATE_AUTO_RESET
-            bool "reset multiclick state to 0 when reach to max multicick state."
-            default y
-    endif
-
     if PKG_MFBD_VER_NUM >= 0x010003
         choice
             prompt "the type of mfbd_btn_code_t"
@@ -129,12 +119,37 @@ if PKG_USING_MFBD
             default n
     endif
 
+    if PKG_MFBD_VER_NUM >= 0x010004
+        config PKG_MFBD_USE_SECTION_DEFINITION
+            bool "enable use section definitions."
+            default n
+ 
+        config PKG_MFBD_MULTICLICK_STATE_AUTO_RESET
+            bool "reset multiclick state to 0 when reach to max multicick state."
+            default y
+    endif
+
+    if PKG_MFBD_VER_NUM >= 0x010005
+        config PKG_MFBD_MBTN_CONTINUE_LONG_COUNT
+            bool "continue count to change state to long after when multiclick state is not 0."
+            default n
+
+        if PKG_MFBD_MBTN_CONTINUE_LONG_COUNT
+            config PKG_MFBD_MBTN_MULTICLICK_LONG_EVT
+                bool "report long code and repeat downcodes after multiclick, valid when enable PKG_MFBD_MBTN_CONTINUE_LONG_COUNT."
+                default y
+        endif
+    endif
+
     choice
         prompt "Version"
         default PKG_USING_MFBD_LATEST_VERSION
         help
             Select the package version
 
+        config PKG_USING_MFBD_V105
+            bool "v1.0.5"
+    
         config PKG_USING_MFBD_V104
             bool "v1.0.4"
 
@@ -156,6 +171,7 @@ if PKG_USING_MFBD
 
     config PKG_MFBD_VER
        string
+       default "v1.0.5"    if PKG_USING_MFBD_V105
        default "v1.0.4"    if PKG_USING_MFBD_V104
        default "v1.0.3"    if PKG_USING_MFBD_V103
        default "v1.0.2"    if PKG_USING_MFBD_V102
@@ -165,6 +181,7 @@ if PKG_USING_MFBD
 
     config PKG_MFBD_VER_NUM
         hex
+        default 0x010005 if PKG_USING_MFBD_V105
         default 0x010004 if PKG_USING_MFBD_V104
         default 0x010003 if PKG_USING_MFBD_V103
         default 0x010002 if PKG_USING_MFBD_V102
