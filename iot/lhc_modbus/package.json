@@ -1,0 +1,33 @@
+{
+  "name": "lhc_modbus",
+  "description": "Lightweight and high-performance C language modbus protocol stack.",
+  "description_zh": "轻量级和高性能的C语言modbus协议栈。",
+  "enable": "PKG_USING_LHC_MODBUS",
+  "keywords": [
+    "lhc_modbus"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "LHC324",
+    "email": "1606820017@qq.com",
+    "github": "LHC324"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/LHC324/lhc_modbus",
+  "icon": "unknown",
+  "homepage": "https://github.com/LHC324/lhc_modbus#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/LHC324/lhc_modbus/archive/v1.0.0.zip",
+      "filename": "lhc_modbus-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/LHC324/lhc_modbus.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
