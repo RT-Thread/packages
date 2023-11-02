@@ -1,0 +1,51 @@
+
+# Kconfig file for package System_Run_LED
+menuconfig PKG_USING_SYSTEM_RUN_LED
+    bool "System_Run_LED: System Run LED Control thread."
+    default n
+
+if PKG_USING_SYSTEM_RUN_LED
+
+    config PKG_SYSTEM_RUN_LED_PATH
+        string
+        default "/packages/peripherals/System_Run_LED"
+        
+        select RT_USING_PIN
+
+        config System_Run_LED_THREAD_PRIORITY
+            int "System Run LED THREAD PRIORITY"
+            default 20
+
+        config System_Run_LED_THREAD_STACK_SIZE
+            int "System Run LED THREAD STACK SIZE"
+            default 250
+
+        config System_Run_LED_THREAD_TIMESLICE
+            int "System Run LED THREAD TIMESLICE"
+            default 1
+
+        config System_Run_LED_Pin_Name
+            string "System Run LED Pin Name"
+            default "PA.00"
+
+        config System_Run_LED_Flash_Time
+            int "System Run LED Flash Time"
+            default 500
+
+    choice
+        prompt "Version"
+        default PKG_USING_SYSTEM_RUN_LED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SYSTEM_RUN_LED_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    config PKG_SYSTEM_RUN_LED_VER
+       string
+       default "latest"    if PKG_USING_SYSTEM_RUN_LED_LATEST_VERSION
+
+endif
+

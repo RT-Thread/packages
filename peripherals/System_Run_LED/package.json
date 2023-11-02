@@ -1,0 +1,33 @@
+{
+  "name": "System_Run_LED",
+  "description": "System_Run_LED: System Run LED Control thread.",
+  "description_zh": "系统运行指示灯：系统运行指示灯的控制线程。",
+  "enable": "PKG_USING_SYSTEM_RUN_LED",
+  "keywords": [
+    "system",
+    "led",
+    "run",
+    "system_run",
+    "run_led",
+    "System_Run_LED"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "WennianYan",
+    "email": "yanwennian@yeah.net",
+    "github": "WennianYan"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/WennianYan/System_Run_LED",
+  "icon": "unknown",
+  "homepage": "https://github.com/WennianYan/System_Run_LED#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/WennianYan/System_Run_LED.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
