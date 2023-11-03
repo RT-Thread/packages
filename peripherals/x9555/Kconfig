@@ -3,9 +3,6 @@
 menuconfig PKG_USING_X9555
     bool "x9555: I/O expander with interrupt, weak pull-up & config registers"
     default n
-    help
-       enable : using x9555 pkgs.
-       disable: donot using x9555 pkgs.
 
 if PKG_USING_X9555
 
@@ -13,85 +10,13 @@ if PKG_USING_X9555
         string
         default "/packages/peripherals/x9555"
 
-    menuconfig PKG_USING_X9555_EXAMPLE
-        bool "Enable X9555 example"
-        default n
-        help
-           enable : using x9555 pkgs example.
-           disable: donot using x9555 pkgs example.
-
-        select RT_USING_PIN
-        select RT_USING_I2C
-
-    if PKG_USING_X9555_EXAMPLE
-
-        menuconfig RT_THREAD_STUDIO_DEVELOPMENT
-            bool "Use RT-Thread Studio Development"
-            default n
-            help
-               enable : Use RT-Thread Studio Development.
-               disable: Donot Use RT-Thread Studio Development.
-
-        if RT_THREAD_STUDIO_DEVELOPMENT
-            
-            config BSP_USING_I2C1
-                string "I2C device name"
-                default "i2c1"
-                help
-                   x9555 pkgs example I2C device.
-
-        endif
-
-        if !RT_THREAD_STUDIO_DEVELOPMENT
-            
-            menuconfig PKG_USING_X9555_EXAMPLE_HARDWARE
-            bool "The hardware used by x9555 is not configured"
-            default n
-            help
-               enable : the hardware used by x9555 is not configured.
-               disable: the hardware used by x9555 has been configured.
-
-            if PKG_USING_X9555_EXAMPLE_HARDWARE
-
-            config BSP_USING_I2C1
-                string "I2C device name"
-                default "i2c1"
-                help
-                   x9555 pkgs example I2C device.
-
-            config BSP_I2C1_SCL_PIN
-                int "x9555 example I2C SCL pin"
-                default 0
-                help
-                   set x9555 example I2C SCL pin, example: pin number = GET_PIN(A, 0)
-
-            config BSP_I2C1_SDA_PIN
-                int "x9555 example I2C SDA pin"
-                default 1
-                help
-                   set x9555 example I2C SDA pin, example: pin number = GET_PIN(A, 1)
-
-             config X9555_EXAMPLE_INTERRUPT_PIN
-                int "x9555 example interrupt pin"
-                default 2
-                help
-                   set x9555 example interrupt pin, example: pin number = GET_PIN(A, 2)
-
-        endif
-
-        endif
-
-    endif
-
     choice
         prompt "Version"
-        default PKG_USING_X9555_LATEST_VERSION
         help
             Select the package version
 
         config PKG_USING_X9555_LATEST_VERSION
             bool "latest"
-
     endchoice
 
     config PKG_X9555_VER
