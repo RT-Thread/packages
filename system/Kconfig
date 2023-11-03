@@ -49,4 +49,5 @@ source "$PKGS_DIR/packages/system/TaskMsgBus/Kconfig"
 source "$PKGS_DIR/packages/system/sfdb/Kconfig"
 source "$PKGS_DIR/packages/system/rtp/Kconfig"
 source "$PKGS_DIR/packages/system/reb/Kconfig"
+source "$PKGS_DIR/packages/system/r-rhealstone/Kconfig"
 endmenu
