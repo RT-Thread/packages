@@ -1,7 +1,12 @@
 {
   "name": "System_Run_LED",
+<<<<<<< HEAD
+  "description": "System_Run_LED: Super simple and practical system running indicator light control thread.",
+  "description_zh": "系统运行指示灯：超级简单实用的系统运行指示灯控制线程。",
+=======
   "description": "System_Run_LED: System Run LED Control thread.",
   "description_zh": "系统运行指示灯：系统运行指示灯的控制线程。",
+>>>>>>> d55108478758cc31f6943064be59a33f8696b634
   "enable": "PKG_USING_SYSTEM_RUN_LED",
   "keywords": [
     "system",
@@ -9,7 +14,12 @@
     "run",
     "system_run",
     "run_led",
+<<<<<<< HEAD
+    "System_Run_LED",
+    "light"
+=======
     "System_Run_LED"
+>>>>>>> d55108478758cc31f6943064be59a33f8696b634
   ],
   "category": "peripherals",
   "author": {
