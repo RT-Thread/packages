@@ -26,7 +26,7 @@
     },
     {
       "version": "latest",
-      "URL": "https://github.com/Neo-T/rtthread-lib-onps/archive/refs/tags/1.1.0.zip",
+      "URL": "https://github.com/Neo-T/rtthread-lib-onps",
       "filename": "rtthread-lib-onps-latest.zip",
       "VER_SHA": "latest"
     }
