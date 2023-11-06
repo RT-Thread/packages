@@ -1,0 +1,132 @@
+
+# Kconfig file for package r-tinymaix
+menuconfig PKG_USING_R_TINYMAIX
+    bool "r-tinymaix: A tiny inference Neural Network library specifically."
+    select PKG_USING_RT_VSNPRINTF_FULL
+    default n
+
+if PKG_USING_R_TINYMAIX
+
+    config PKG_R_TINYMAIX_PATH
+        string
+        default "/packages/ai/r-tinymaix"
+
+    config R_TINYMAIX_USING_CIFAR10_SAMPLE
+        bool "Enable using tinymaix cifar10 sample"
+        default n
+
+    config R_TINYMAIX_USING_MNIST_SAMPLE
+        bool "Enable using tinymaix mnist sample"
+        default n
+
+    config R_TINYMAIX_USING_VWW_SAMPLE
+        bool "Enable using tinymaix vww sample"
+        default n
+
+    choice
+        prompt "Arch Type"
+            default R_TINYMAIX_USING_ARCH_CPU
+        help
+            Select the arch type
+
+        config R_TINYMAIX_USING_ARCH_CPU
+            bool "Default, pure cpu compute"
+
+        config R_TINYMAIX_USING_ARCH_ARM_SIMD
+            bool "ARM Cortex M4/M7, etc"
+
+        config R_TINYMAIX_USING_ARCH_ARM_NEON
+            bool "ARM Cortex A7, etc"
+
+        config R_TINYMAIX_USING_ARCH_ARM_MVEI
+            bool "ARMv8.1: M55, etc"
+
+        config R_TINYMAIX_USING_ARCH_RV32P
+            bool "T-head E907, etc"
+
+        config R_TINYMAIX_USING_ARCH_RV64V
+            bool "T-head C906,C910, etc"
+    endchoice
+
+    config R_TINYMAIX_USING_ARCK_TYPE
+        int
+        default 0    if R_TINYMAIX_USING_ARCH_CPU
+        default 1    if R_TINYMAIX_USING_ARCH_ARM_SIMD
+        default 2    if R_TINYMAIX_USING_ARCH_ARM_NEON
+        default 3    if R_TINYMAIX_USING_ARCH_ARM_MVEI
+        default 4    if R_TINYMAIX_USING_ARCH_RV32P
+        default 5    if R_TINYMAIX_USING_ARCH_RV64V
+
+    choice
+        prompt "Option Level"
+            default R_TINYMAIX_USING_OPT0
+        help
+            Select the option level
+
+        config R_TINYMAIX_USING_OPT0
+            bool "Default, least code and buf"
+
+        config R_TINYMAIX_USING_OPT1
+            bool "Opt for speed, need more code and buf"
+
+        config R_TINYMAIX_USING_OPT2
+            bool "TODO"
+    endchoice
+
+    config R_TINYMAIX_USING_OPTION_LEVEL
+        int
+        default 0    if R_TINYMAIX_USING_OPT0
+        default 1    if R_TINYMAIX_USING_OPT1
+        default 2    if R_TINYMAIX_USING_OPT2
+
+    choice
+        prompt "Model Type"
+            default R_TINYMAIX_USING_MODULE_INT8
+        help
+            Select the option level
+
+        config R_TINYMAIX_USING_MODULE_INT8
+            bool "Default, module int8"
+
+        config R_TINYMAIX_USING_MODULE_INT16
+            bool "Module int16"
+
+        config R_TINYMAIX_USING_MODULE_FP32
+            bool "Module FP32"
+
+        config R_TINYMAIX_USING_MODULE_FP16
+            bool "Module FP16"
+        
+        config R_TINYMAIX_USING_MODULE_FP8_143
+            bool "Module FP8 143"
+        
+        config R_TINYMAIX_USING_MODULE_FP8_152
+            bool "Module FP8 152"
+    endchoice
+
+    config R_TINYMAIX_USING_MODULE_TYPE
+        int
+        default 0    if R_TINYMAIX_USING_MODULE_INT8
+        default 1    if R_TINYMAIX_USING_MODULE_INT16
+        default 2    if R_TINYMAIX_USING_MODULE_FP32
+        default 3    if R_TINYMAIX_USING_MODULE_FP16
+        default 4    if R_TINYMAIX_USING_MODULE_FP8_143
+        default 5    if R_TINYMAIX_USING_MODULE_FP8_152
+
+    choice
+        prompt "Version"
+        default PKG_USING_R_TINYMAIX_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_R_TINYMAIX_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_R_TINYMAIX_VER
+       string
+       default "latest"    if PKG_USING_R_TINYMAIX_LATEST_VERSION
+    
+
+endif
+

@@ -1,0 +1,52 @@
+
+# Kconfig file for package r-rhealstone
+menuconfig PKG_USING_R_RHEALSTONE
+    bool "r-rhealstone: A cross platform real-time system benchmark testing framework"
+    default n
+
+if PKG_USING_R_RHEALSTONE
+
+    config PKG_R_RHEALSTONE_PATH
+        string
+        default "/packages/system/r-rhealstone"
+
+    config PKG_USING_R_RHEALSTONE_TASK_SWITCH
+        bool "r-rhealstone: task switching time"
+        default y
+
+    config PKG_USING_R_RHEALSTONE_TASK_PREEMPT
+        bool "r-rhealstone: task preemption time"
+        default n
+
+    config PKG_USING_R_RHEALSTONE_SEMAPHORE_SHUFFLE
+        bool "r-rhealstone: semaphore shuffling time"
+        default n
+
+    config PKG_USING_R_RHEALSTONE_MESSAGE_LATENCY
+        bool "r-rhealstone: intertask message latency"
+        default n
+
+    config PKG_USING_R_RHEALSTONE_INTERRUPT_LATENCY
+        bool "r-rhealstone: interrupt latency time"
+        default n
+
+    config PKG_USING_R_RHEALSTONE_DEADLOCK_BREAK
+        bool "r-rhealstone: deadlock breaking time"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_R_RHEALSTONE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_R_RHEALSTONE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_R_RHEALSTONE_VER
+       string
+       default "latest"    if PKG_USING_R_RHEALSTONE_LATEST_VERSION
+
+endif
+

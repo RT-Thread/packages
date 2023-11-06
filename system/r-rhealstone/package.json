@@ -1,0 +1,28 @@
+{
+  "name": "r-rhealstone",
+  "description": "r-rhealstone: A cross platform real-time system benchmark testing framework",
+  "description_zh": "r-rhealstone: 一个跨平台实时系统基准测试框架",
+  "enable": "PKG_USING_R_RHEALSTONE",
+  "keywords": [
+    "r-rhealstone"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RiceChen",
+    "email": "980307037@qq.com",
+    "github": "RiceChen0"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RiceChen0/r-rhealstone",
+  "icon": "unknown",
+  "homepage": "https://github.com/RiceChen0/r-rhealstone#readme",
+  "readme": "r-rhealstone: A cross platform real-time system benchmark testing framework",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RiceChen0/r-rhealstone.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}

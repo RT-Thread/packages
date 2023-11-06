@@ -10,5 +10,6 @@ source "$PKGS_DIR/packages/ai/ulapack/Kconfig"
 source "$PKGS_DIR/packages/ai/quest/Kconfig"
 source "$PKGS_DIR/packages/ai/naxos/Kconfig"
 source "$PKGS_DIR/packages/ai/ncnn/Kconfig"
+source "$PKGS_DIR/packages/ai/r-tinymaix/Kconfig"
 
 endmenu
