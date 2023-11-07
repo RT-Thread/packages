@@ -12,25 +12,25 @@ if PKG_USING_SYSTEM_RUN_LED
         
         select RT_USING_PIN
 
-        config System_Run_LED_THREAD_PRIORITY
-            int "System Run LED THREAD PRIORITY"
-            default 20
-
-        config System_Run_LED_THREAD_STACK_SIZE
-            int "System Run LED THREAD STACK SIZE"
-            default 250
-
-        config System_Run_LED_THREAD_TIMESLICE
-            int "System Run LED THREAD TIMESLICE"
-            default 1
-
         config System_Run_LED_Pin_Name
-            string "System Run LED Pin Name"
+            string "System Run LED Pin Name. [ Example : PA.00 ]"
             default "PA.00"
 
         config System_Run_LED_Flash_Time
-            int "System Run LED Flash Time"
+            int "System Run LED Flash Time. [ Unit : ms ]"
             default 500
+
+        config System_Run_LED_THREAD_PRIORITY
+            int "System Run LED Thread Priority."
+            default 20
+    
+        config System_Run_LED_THREAD_STACK_SIZE
+            int "System Run LED Thread Stack Size."
+            default 250
+
+        config System_Run_LED_THREAD_TIMESLICE
+            int "System Run LED Thread Timeslice."
+            default 1        
 
     choice
         prompt "Version"
