@@ -1,0 +1,27 @@
+{
+  "name": "phytium_sdk",
+  "description": "Phytium Software Development Kit .",
+  "description_zh": "飞腾软件开发工具包",
+  "enable": "PKG_USING_PHYTIUM_SDK",
+  "keywords": [
+    "phytium_sdk"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "zhangyan",
+    "email": "1422953826@qq.cpm",
+    "github": "messigogogo"
+  },
+  "license": "PPL-1.0",
+  "repository": "https://gitee.com/phytium_embedded/phytium-standalone-sdk.git",
+  "icon": "unknown",
+  "homepage": "https://gitee.com/phytium_embedded/phytium-standalone-sdk.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/phytium_embedded/phytium-standalone-sdk.git.git",
+      "VER_SHA": "18b911742e6d55f01998f1a2f9ddff9b39d76c19"
+    }
+  ]
+}
