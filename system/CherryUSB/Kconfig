@@ -287,10 +287,13 @@ if PKG_USING_CHERRYUSB
 
         config PKG_USING_CHERRYUSB_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_CHERRYUSB_V01002
+            bool "v0.10.2"
     endchoice
 
     config PKG_CHERRYUSB_VER
        string
        default "latest"    if PKG_USING_CHERRYUSB_LATEST_VERSION
-
+       default "v0.10.2"   if PKG_USING_CHERRYUSB_V01002
 endif
