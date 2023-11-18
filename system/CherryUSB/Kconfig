@@ -39,6 +39,8 @@ if PKG_USING_CHERRYUSB
                 bool "MUSB"
             config PKG_CHERRYUSB_DEVICE_HPM
                 bool "HPM"
+            config PKG_CHERRYUSB_DEVICE_PUSB2
+                bool "PUSB2"
         endchoice
 
         if PKG_CHERRYUSB_DEVICE_CH32
@@ -130,6 +132,11 @@ if PKG_USING_CHERRYUSB
                 bool
                 prompt "Use msc ram template"
                 default n
+        
+            config PKG_CHERRYUSB_DEVICE_MSC_STORAGE_TEMPLATE
+                bool
+                prompt "Usb msc storage template"
+                default n
         endif
 
         menuconfig PKG_CHERRYUSB_DEVICE_AUDIO
@@ -204,6 +211,8 @@ if PKG_USING_CHERRYUSB
                 bool "EHCI"
             config PKG_CHERRYUSB_HOST_XHCI
                 bool "XHCI"
+            config PKG_CHERRYUSB_HOST_PUSB2
+                bool "PUSB2"
         endchoice
 
         if PKG_CHERRYUSB_HOST_MUSB
@@ -278,10 +287,13 @@ if PKG_USING_CHERRYUSB
 
         config PKG_USING_CHERRYUSB_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_CHERRYUSB_V01002
+            bool "v0.10.2"
     endchoice
 
     config PKG_CHERRYUSB_VER
        string
        default "latest"    if PKG_USING_CHERRYUSB_LATEST_VERSION
-
+       default "v0.10.2"   if PKG_USING_CHERRYUSB_V01002
 endif
