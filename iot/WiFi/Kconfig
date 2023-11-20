@@ -5,6 +5,7 @@
     source "$PKGS_DIR/packages/iot/WiFi/wlan_wiced/Kconfig"
     source "$PKGS_DIR/packages/iot/WiFi/rw007/Kconfig"
     source "$PKGS_DIR/packages/iot/WiFi/wlan_cyw43012/Kconfig"
+    source "$PKGS_DIR/packages/iot/WiFi/wlan_bl808/Kconfig"
 
     endmenu
 

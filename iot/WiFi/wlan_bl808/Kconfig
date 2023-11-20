@@ -1,0 +1,47 @@
+
+menu "BL808 WiFi"
+
+menuconfig PKG_USING_WLAN_BL808
+    bool "BL808 WiFi driver for rt-thread"
+    select RT_USING_LWIP
+    select RT_USING_WIFI
+    select RT_USING_SYSTEM_WORKQUEUE
+    select PKG_USING_MBEDTLS
+    default n
+    help
+        if "PKG_USING_WLAN_BL808" is opened, "RT_USING_LWIP" will be default selected.
+
+if PKG_USING_WLAN_BL808
+
+    config PKG_WLAN_BL808_PATH
+        string
+        default "/packages/iot/WiFi/wlan_bl808"
+
+    choice
+        prompt "version"
+        default PKG_USING_WLAN_BL808_LATEST_VERSION
+        help
+            Select the BL808 wifi version
+
+        config PKG_USING_WLAN_BL808_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_WLAN_BL808_V001
+            bool "v0.0.1"
+    endchoice
+
+    if PKG_USING_WLAN_BL808_V001
+        config PKG_WLAN_BL808_VER
+        string
+        default "v0.0.1"
+    endif
+
+    if PKG_USING_WLAN_BL808_LATEST_VERSION
+        config PKG_WLAN_BL808_VER
+        string
+        default "latest"
+    endif
+
+endif
+
+endmenu
