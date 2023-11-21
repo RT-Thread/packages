@@ -18,22 +18,13 @@ if PKG_USING_WLAN_CYW43439
 
     choice
         prompt "version"
-        default PKG_USING_WLAN_CYW43439_V001
+        default PKG_USING_WLAN_CYW43439_LATEST_VERSION
         help
             Select the CYW43439 wifi version
 
         config PKG_USING_WLAN_CYW43439_LATEST_VERSION
             bool "latest"
-
-        config PKG_USING_WLAN_CYW43439_V001
-            bool "v0.0.1"
     endchoice
-
-    if PKG_USING_WLAN_CYW43439_V001
-        config PKG_WLAN_CYW43439_VER
-        string
-        default "v0.0.1"
-    endif
 
     if PKG_USING_WLAN_CYW43439_LATEST_VERSION
         config PKG_WLAN_CYW43439_VER
