@@ -1,0 +1,46 @@
+
+menu "CYW43439 WiFi"
+
+menuconfig PKG_USING_WLAN_CYW43439
+    bool "CYW43439 WiFi driver for rt-thread"
+    select RT_USING_LWIP
+    select RT_USING_WIFI
+    select RT_USING_SAL
+    default n
+    help
+        if "PKG_USING_WLAN_CYW43439" is opened, "RT_USING_LWIP" will be default selected.
+
+if PKG_USING_WLAN_CYW43439
+
+    config PKG_WLAN_CYW43439_PATH
+        string
+        default "/packages/iot/WiFi/wlan_cyw43439"
+
+    choice
+        prompt "version"
+        default PKG_USING_WLAN_CYW43439_V001
+        help
+            Select the CYW43439 wifi version
+
+        config PKG_USING_WLAN_CYW43439_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_WLAN_CYW43439_V001
+            bool "v0.0.1"
+    endchoice
+
+    if PKG_USING_WLAN_CYW43439_V001
+        config PKG_WLAN_CYW43439_VER
+        string
+        default "v0.0.1"
+    endif
+
+    if PKG_USING_WLAN_CYW43439_LATEST_VERSION
+        config PKG_WLAN_CYW43439_VER
+        string
+        default "latest"
+    endif
+
+endif
+
+endmenu
