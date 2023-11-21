@@ -19,12 +19,6 @@
   "readme": "wlan driver from CYW43439.",
   "site": [
     {
-      "version": "v0.0.1",
-      "URL": "https://github.com/Z8MAN8/cyw43439-RTT/archive/0.0.1.zip",
-      "filename": "cyw43439-RTT-0.0.1.zip",
-      "VER_SHA": "NULL"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/Z8MAN8/cyw43439-RTT.git",
       "filename": "cyw43439-RTT.zip",
