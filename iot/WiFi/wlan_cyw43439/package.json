@@ -1,0 +1,28 @@
+{
+  "name": "wlan_cyw43439",
+  "description": "wlan driver from CYW43439",
+  "description_zh": "CYW43439 的 wlan 驱动",
+  "enable": "PKG_USING_WLAN_CYW43439",
+  "keywords": [
+    "cyw43439"
+  ],
+  "category": "iot/WiFi",
+  "author": {
+    "name": "Z8MAN8",
+    "email": "1468559561@qq.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Z8MAN8/cyw43439-RTT",
+  "icon": "unknown",
+  "homepage": "https://github.com/Z8MAN8/cyw43439-RTT#readme",
+  "readme": "wlan driver from CYW43439.",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Z8MAN8/cyw43439-RTT.git",
+      "filename": "cyw43439-RTT.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
