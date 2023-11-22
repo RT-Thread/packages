@@ -13,7 +13,9 @@ if PKG_USING_CJSON
         prompt "Version"
         help
             Select the cJSON version
-        default PKG_USING_CJSON_LATEST_VERSION
+
+        config PKG_USING_CJSON_V1716
+            bool "v1.7.16"
 
         config PKG_USING_CJSON_V1715
             bool "v1.7.15"
@@ -37,6 +39,7 @@ if PKG_USING_CJSON
         default "v1.5.9" if PKG_USING_CJSON_V159
         default "v1.7.14" if PKG_USING_CJSON_V1714
         default "v1.7.15" if PKG_USING_CJSON_V1715
+        default "v1.7.16" if PKG_USING_CJSON_V1716
         default "latest" if PKG_USING_CJSON_LATEST_VERSION
 
 endif
