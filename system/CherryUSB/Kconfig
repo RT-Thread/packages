@@ -94,7 +94,7 @@ if PKG_USING_CHERRYUSB
             endchoice
         endif
 
-        menuconfig PKG_CHERRYUSB_DEVICE_CDC
+        config PKG_CHERRYUSB_DEVICE_CDC
             bool
             prompt "Enable usb cdc acm device"
             default n
@@ -106,7 +106,7 @@ if PKG_USING_CHERRYUSB
                 default n
         endif
 
-        menuconfig PKG_CHERRYUSB_DEVICE_HID
+        config PKG_CHERRYUSB_DEVICE_HID
             bool
             prompt "Enable usb hid device"
             default n
@@ -122,7 +122,7 @@ if PKG_USING_CHERRYUSB
             endchoice
         endif
 
-        menuconfig PKG_CHERRYUSB_DEVICE_MSC
+        config PKG_CHERRYUSB_DEVICE_MSC
             bool
             prompt "Enable usb msc device"
             default n
@@ -139,7 +139,7 @@ if PKG_USING_CHERRYUSB
                 default n
         endif
 
-        menuconfig PKG_CHERRYUSB_DEVICE_AUDIO
+        config PKG_CHERRYUSB_DEVICE_AUDIO
             bool
             prompt "Enable usb audio device"
             default n
@@ -155,7 +155,7 @@ if PKG_USING_CHERRYUSB
             endchoice
         endif
 
-        menuconfig PKG_CHERRYUSB_DEVICE_VIDEO
+        config PKG_CHERRYUSB_DEVICE_VIDEO
             bool
             prompt "Enable usb video device"
             default n
@@ -167,7 +167,7 @@ if PKG_USING_CHERRYUSB
                 default n
         endif
 
-        menuconfig PKG_CHERRYUSB_DEVICE_RNDIS
+        config PKG_CHERRYUSB_DEVICE_RNDIS
             bool
             prompt "Enable usb rndis device"
             default n
@@ -179,7 +179,7 @@ if PKG_USING_CHERRYUSB
                 default n
         endif
 
-        menuconfig PKG_CHERRYUSB_DEVICE_DFU
+        config PKG_CHERRYUSB_DEVICE_DFU
             bool
             prompt "Enable usb dfu device"
             default n
@@ -206,7 +206,7 @@ if PKG_USING_CHERRYUSB
             config PKG_CHERRYUSB_HOST_MUSB
                 bool "MUSB"
             config PKG_CHERRYUSB_HOST_DWC2
-                bool "DWC2"
+                bool "DWC2 (IP must have dma)"
             config PKG_CHERRYUSB_HOST_EHCI
                 bool "EHCI"
             config PKG_CHERRYUSB_HOST_XHCI
@@ -230,7 +230,7 @@ if PKG_USING_CHERRYUSB
 
         if PKG_CHERRYUSB_HOST_DWC2
             choice
-                prompt "Select chip with dwc2 usb ip to set usb base and irq name,if not set,use default setting.Only support hs usb ip"
+                prompt "Select chip with dwc2 usb ip to set usb base and irq name,if not set,use default setting."
                 default PKG_CHERRYUSB_HOST_DWC2_STM32
                 config PKG_CHERRYUSB_HOST_DWC2_STM32
                     bool "STM32"
@@ -239,12 +239,16 @@ if PKG_USING_CHERRYUSB
 
         if PKG_CHERRYUSB_HOST_EHCI
             choice
-                prompt "Select chip with EHCI usb ip to set usb base and irq name,if not set,use default setting.Only support hs usb ip"
+                prompt "Select chip with EHCI usb ip to set usb base and irq name, please config ehci macros in usb_config.h"
                 default PKG_CHERRYUSB_HOST_EHCI_HPM
                 config PKG_CHERRYUSB_HOST_EHCI_HPM
                     bool "HPM"
                 config PKG_CHERRYUSB_HOST_EHCI_NUVOTON
                     bool "NUVOTON"
+                config PKG_CHERRYUSB_HOST_EHCI_BL
+                    bool "BL"
+                config PKG_CHERRYUSB_HOST_EHCI_CUSTOM
+                    bool "CUSTOM"
             endchoice
         endif
 
@@ -266,12 +270,29 @@ if PKG_USING_CHERRYUSB
         config PKG_CHERRYUSB_HOST_RNDIS
             bool
             prompt "Enable usb rndis driver"
-            default y
+            select RT_USING_LWIP
+            default n
+
+        config PKG_CHERRYUSB_HOST_CDC_ECM
+            bool
+            prompt "Enable usb cdc ecm driver"
+            select RT_USING_LWIP
+            default n
+
+        config PKG_CHERRYUSB_HOST_VIDEO
+            bool
+            prompt "Enable usb video driver"
+            default n
+
+        config PKG_CHERRYUSB_HOST_AUDIO
+            bool
+            prompt "Enable usb audio driver"
+            default n
 
         config PKG_CHERRYUSB_HOST_TEMPLATE
-        bool
-        prompt "Use usb host template"
-        default n
+            bool
+            prompt "Use usb host template"
+            default y
 
     endif
 
