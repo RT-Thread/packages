@@ -1,0 +1,37 @@
+
+# Kconfig file for package bt_mx01
+
+menuconfig PKG_USING_BT_MX01
+    bool "Device driver of BT chip MX-01"
+    select PKG_USING_UAT
+    default n
+
+if PKG_USING_BT_MX01
+
+    config PKG_BT_MX01_PATH
+        string
+        default "/packages/peripherals/bt_mx01"
+
+    config BT_MX01_USING_SAMPLE
+        bool "using slave sample"
+        default n
+        
+    choice
+        prompt "Version"
+        default PKG_USING_BT_MX01_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BT_MX01_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_BT_MX01_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_BT_MX01_VER
+       string
+       default "latest" if PKG_USING_BT_MX01_LATEST_VERSION
+       default "v1.00"  if PKG_USING_BT_MX01_V100
+
+endif
