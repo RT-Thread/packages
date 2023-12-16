@@ -15,16 +15,16 @@
     "github": "GorgonMeducer"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/GorgonMeducer/perf_counter",
+  "repository": "https://github.com/RT-Thread-packages/perf_counter",
   "icon": "unknown",
-  "homepage": "https://github.com/GorgonMeducer/perf_counter#readme",
+  "homepage": "https://github.com/RT-Thread-packages/perf_counter#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/GorgonMeducer/perf_counter.git",
+      "URL": "https://github.com/RT-Thread-packages/perf_counter.git",
       "filename": "",
-      "VER_SHA": "RT-Thread-Only"
+      "VER_SHA": "master"
     }
   ]
 }
