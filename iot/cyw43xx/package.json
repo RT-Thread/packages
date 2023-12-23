@@ -1,0 +1,28 @@
+{
+  "name": "cyw43xx",
+  "description": "CYW43xx WiFi/BT SoC driver",
+  "description_zh": "CYW43xx WiFi/BT SoC 驱动",
+  "enable": "PKG_USING_CYW43XX",
+  "keywords": [
+    "cyw43xx"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Damien George",
+    "email": "dpgeorge@georgerobotics.com.au",
+    "github": "RT-Thread-packages"
+  },
+  "license": "non-commercial use",
+  "repository": "https://github.com/RT-Thread-packages/CYW43xx",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/CYW43xx#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/CYW43xx.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

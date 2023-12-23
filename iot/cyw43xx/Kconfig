@@ -1,0 +1,27 @@
+
+# Kconfig file for package cyw43xx
+menuconfig PKG_USING_CYW43XX
+    bool "CYW43xx WiFi/BT SoC driver"
+    default n
+
+if PKG_USING_CYW43XX
+
+    config PKG_CYW43XX_PATH
+        string
+        default "/packages/iot/cyw43xx"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_CYW43XX_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CYW43XX_VER
+       string
+       default "latest"    if PKG_USING_CYW43XX_LATEST_VERSION
+
+endif
+
