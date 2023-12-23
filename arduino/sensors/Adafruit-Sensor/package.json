@@ -1,7 +1,7 @@
 {
   "name": "Adafruit-Sensor",
-  "description": "Adafruit Unified Sensor Framework",
-  "description_zh": "Adafruit统一传感器框架",
+  "description": "Adafruit Unified Sensor Driver",
+  "description_zh": "Adafruit统一传感器驱动",
   "enable": "PKG_USING_ARDUINO_ADAFRUIT_SENSOR",
   "keywords": [
     "Adafruit-Sensor",
