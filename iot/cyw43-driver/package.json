@@ -1,0 +1,34 @@
+{
+  "name": "cyw43-driver",
+  "description": "This is a driver for the CYW43xx WiFi/BT SoC.",
+  "description_zh": "CYW43xx WiFi/BT SoC 的驱动库",
+  "enable": "PKG_USING_CYW43_DRIVER",
+  "keywords": [
+    "cyw43-driver"
+    "cyw43"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "georgerobotics",
+    "email": "contact@georgerobotics.com.au",
+    "github": "georgerobotics"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/georgerobotics/cyw43-driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/georgerobotics/cyw43-driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://cyw43-driver-1.0.0.zip",
+      "filename": "cyw43-driver-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/georgerobotics/cyw43-driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
