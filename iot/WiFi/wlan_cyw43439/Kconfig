@@ -6,6 +6,7 @@ menuconfig PKG_USING_WLAN_CYW43439
     select RT_USING_LWIP
     select RT_USING_WIFI
     select RT_USING_SAL
+    select PKG_USING_CYW43XX
     default n
     help
         if "PKG_USING_WLAN_CYW43439" is opened, "RT_USING_LWIP" will be default selected.
