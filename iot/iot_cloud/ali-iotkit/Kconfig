@@ -16,19 +16,19 @@ if PKG_USING_ALI_IOTKIT
 
     config PKG_USING_ALI_IOTKIT_PRODUCT_KEY
         string "Config Product Key"
-        default a1dSQSGZ77X
+        default "a1dSQSGZ77X"
 
     config PKG_USING_ALI_IOTKIT_PRODUCT_SECRET
         string "Config Product Secret"
-        default NfIdVcfBP7rtH24H
+        default "NfIdVcfBP7rtH24H"
 
     config PKG_USING_ALI_IOTKIT_DEVICE_NAME
         string "Config Device Name"
-        default RGB-LED-DEV-1
+        default "RGB-LED-DEV-1"
 
     config PKG_USING_ALI_IOTKIT_DEVICE_SECRET
         string "Config Device Secret"
-        default Ghuiyd9nmGowdZzjPqFtxhm3WUHEbIlI
+        default "Ghuiyd9nmGowdZzjPqFtxhm3WUHEbIlI"
 
     if (PKG_ALI_IOTKIT_VER_NUM >= 0x30000)
         config PKG_ALI_IOTKIT_SELECT_ITEM

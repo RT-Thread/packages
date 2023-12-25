@@ -239,40 +239,40 @@ if PKG_USING_LORAWAN_ED_STACK
             if REGION_CN470
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK0
                     string "Channel Mask0"
-                    default 00FF
+                    default "00FF"
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK1
                     string "Channel Mask1"
-                    default 0000
+                    default "0000"
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK2
                     string "Channel Mask2"
-                    default 0000
+                    default "0000"
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK3
                     string "Channel Mask3"
-                    default 0000
+                    default "0000"
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK4
                     string "Channel Mask4"
-                    default 0000
+                    default "0000"
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK5
                     string "Channel Mask5"
-                    default 0000
+                    default "0000"
             endif
 
             if REGION_CN470S
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK0
                     string "Channel Mask0"
-                    default 00FF
+                    default "00FF"
             endif
 
             if REGION_EU868
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK0
                     string "Channel Mask0"
-                    default 00FF
+                    default "00FF"
             endif
 
             if REGION_AS923
                 config LORAWAN_ED_STACK_PHY_PARAMETER_CHANNEL_MASK0
                     string "Channel Mask0"
-                    default 00FF
+                    default "00FF"
             endif
 
       endmenu

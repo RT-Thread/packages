@@ -6,8 +6,8 @@ menuconfig PKG_USING_RT_LINK_HW
 if PKG_USING_RT_LINK_HW
 
     choice
-        prompt"Select the underlying transport"
-        default RT_LINK_USING_UART
+        prompt "Select the underlying transport"
+        default PKG_RT_LINK_USING_UART
 
         config PKG_RT_LINK_USING_UART
             bool "use UART"

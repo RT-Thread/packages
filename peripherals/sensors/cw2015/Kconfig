@@ -15,7 +15,7 @@ if PKG_USING_CW2015
         default "i2c1"
 
     config CW2015_USE_AUTO_UPDATE
-        bool "Enable CW2015 AUTO UPDATE BAT INFO "
+        bool "Enable CW2015 AUTO UPDATE BAT INFO"
         default n
         help
             "It will create a thread to update the battery info."

@@ -29,10 +29,10 @@ choice
     prompt "RGB888 pixel bits"
 
     config PKG_USING_RGB888_PIXEL_BITS_32
-        bool 32
+        bool "32 bits"
 
     config PKG_USING_RGB888_PIXEL_BITS_24
-        bool 24
+        bool "24 bits"
 endchoice
 
 config PKG_USING_RGB888_PIXEL_BITS

@@ -45,7 +45,7 @@ if PKG_USING_RTT_AUTO_EXE_CMD
             string "[LOOP_CMD1]The RTT_AUTO_EXE thread loop cmd 1"
             default "ps"
         config RTT_CMD_LOOP_1_DELAY_TIME
-            int "MS:The RTT_AUTO_EXE thread loop cmd 1 delay time "
+            int "MS:The RTT_AUTO_EXE thread loop cmd 1 delay time"
             default 1000
         config RTT_CMD_LOOP_2_STR
             string "[LOOP_CMD2]The RTT_AUTO_EXE thread loop cmd 2"

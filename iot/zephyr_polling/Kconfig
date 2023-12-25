@@ -172,7 +172,7 @@ if PKG_USING_ZEPHYR_POLLING
             bool "rtthread_artpi: use AP6212 in ArtPi"
 
         config PKG_ZEPHYR_POLLING_PORT_RTTHREAD_SPI_BLUENRG2
-            bool "rtthread_spi_bluenrg2: use BLENRG2 with SPI "
+            bool "rtthread_spi_bluenrg2: use BLENRG2 with SPI"
 
     endchoice
 

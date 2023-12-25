@@ -2,6 +2,7 @@
 # Kconfig file for package System_Run_LED
 menuconfig PKG_USING_SYSTEM_RUN_LED
     bool "System_Run_LED: System Run LED Control thread."
+    select RT_USING_PIN
     default n
 
 if PKG_USING_SYSTEM_RUN_LED
@@ -9,8 +10,6 @@ if PKG_USING_SYSTEM_RUN_LED
     config PKG_SYSTEM_RUN_LED_PATH
         string
         default "/packages/peripherals/System_Run_LED"
-        
-        select RT_USING_PIN
 
         config System_Run_LED_Pin_Name
             string "System Run LED Pin Name. [ Example : PA.00 ]"

@@ -26,13 +26,13 @@ if PKG_USING_LORA_GW_DRIVER_LIB
 
     config LORA_GW_DRIVER_SPI_BUS_NAME
         string "Setup LoRa Gw Driver Spi Bus Name (eg:spi1,spi2..,Define BSP_USING_SPIx in [Target Platform]\\Board\\Kconfig)"
-        default spi2
+        default "spi2"
         help
            Setup LoRa Gw Driver Spi Bus Name,eg:spi2,Please define BSP_USING_SPIx in the [Target Platform]\\Board\\Kconfig
 
     config LORA_GW_DRIVER_I2C_DEVICE_NAME
         string "Setup LoRa Gw Driver I2C Device Name for Temperture(eg:i2c1,i2c2..,Define BSP_USING_IICx in [Target Platform]\\Board\\Kconfig)"
-        default i2c3
+        default "i2c3"
 
   config LORA_GW_DRIVER_USING_SERVICES
         bool "Select lora-gw-driver Services"

@@ -11,7 +11,7 @@ if PKG_USING_VDEVICE
         default "/packages/peripherals/vdevice"
 
     config VDEVICE_USING_PIN
-        bool "Use virtualized pin "
+        bool "Use virtualized pin"
         select RT_USING_PIN
         default n
 
@@ -22,7 +22,7 @@ if PKG_USING_VDEVICE
         endif
 
     config VDEVICE_USING_LCD
-        bool "Use virtualized lcd "
+        bool "Use virtualized lcd"
         default n
 
         if VDEVICE_USING_LCD
@@ -32,7 +32,7 @@ if PKG_USING_VDEVICE
         endif
 
     config VDEVICE_USING_TOUCH
-        bool "Use virtualized touch "
+        bool "Use virtualized touch"
         select RT_USING_TOUCH
         default n
 
