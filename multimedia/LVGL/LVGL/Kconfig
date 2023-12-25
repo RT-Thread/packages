@@ -40,6 +40,12 @@ if PKG_USING_LVGL
         # Thus, it needs to give a privilege to NXP GUIGuider to let it use LVGL8.2.0 even if RT-Thread vesion is higher than 4.1.0
         default PKG_LVGL_USING_V08020 if (RT_VER_NUM = 0x40100) || ((RT_VER_NUM > 0x40100) && BSP_USING_NXP_GUIGUIDER)
 
+        config PKG_LVGL_USING_V080311
+            bool "v8.3.11"
+
+        config PKG_LVGL_USING_V080310
+            bool "v8.3.10"
+
         config PKG_LVGL_USING_V08039
             bool "v8.3.9"
 
@@ -82,6 +88,8 @@ if PKG_USING_LVGL
 
     config PKG_LVGL_VER_NUM
         hex
+        default 0x080311    if PKG_LVGL_USING_V080311
+        default 0x080310    if PKG_LVGL_USING_V080310
         default 0x080309    if PKG_LVGL_USING_V08039
         default 0x080308    if PKG_LVGL_USING_V08038
         default 0x080307    if PKG_LVGL_USING_V08037
@@ -98,6 +106,8 @@ if PKG_USING_LVGL
 
     config PKG_LVGL_VER
        string
+       default "v8.3.11"        if PKG_LVGL_VER_NUM = 0x080311
+       default "v8.3.10"        if PKG_LVGL_VER_NUM = 0x080310
        default "v8.3.9"         if PKG_LVGL_VER_NUM = 0x080309
        default "v8.3.8"         if PKG_LVGL_VER_NUM = 0x080308
        default "v8.3.7"         if PKG_LVGL_VER_NUM = 0x080307
