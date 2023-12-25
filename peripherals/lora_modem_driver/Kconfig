@@ -12,7 +12,7 @@ if PKG_USING_LORA_MODEM_DRIVER
 
     config LORA_MODEM_UART_DEVICE
         string "Setup LoRa Modem Uart Device Name (eg:uart1,Define BSP_USING_UARTx in [Target Platform]\\Board\\Kconfig)"
-        default uart1
+        default "uart1"
         help
            Setup LoRa LoRa Modem Uart Device Name,eg:uart1,Please define BSP_USING_UARTx in the [Target Platform]\\Board\\Kconfig
 

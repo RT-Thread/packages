@@ -32,11 +32,11 @@ if PKG_USING_LORA_RADIO_DRIVER
 
             config LORA_RADIO0_DEVICE_NAME
                 string "Setup LoRa Radio Device Name"
-                default lora-radio0
+                default "lora-radio0"
 
             config LORA_RADIO0_SPI_BUS_NAME
                string "Setup LoRa Radio Spi Name (eg:spi2,Define BSP_USING_SPIx in [Target Platform]\\Board\\Kconfig)"
-                default spi2
+                default "spi2"
                 help
                    Setup LoRa Radio Spi Device Name,eg:spi2,Please define BSP_USING_SPIx in the [Target Platform]\\Board\\Kconfig
 

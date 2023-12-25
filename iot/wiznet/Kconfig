@@ -57,15 +57,15 @@ if PKG_USING_WIZNET
 
             config WIZ_IPADDR
                 string "IPv4: IP address"
-                default 192.168.1.10
+                default "192.168.1.10"
 
             config WIZ_GWADDR
                 string "IPv4: Gateway address"
-                default 192.168.1.1
+                default "192.168.1.1"
 
             config WIZ_MSKADDR
                 string "IPv4: Mask address"
-                default 255.255.255.0
+                default "255.255.255.0"
 
         endmenu
 

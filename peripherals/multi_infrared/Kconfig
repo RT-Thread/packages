@@ -17,7 +17,7 @@ if PKG_USING_MULTI_INFRARED
     endmenu
 
 config PKG_USING_DRV_MULTI_INFRARED
-        bool "Use the multi infrared driver provided by the software package "
+        bool "Use the multi infrared driver provided by the software package"
         default y
         if PKG_USING_DRV_MULTI_INFRARED
         config MULTI_INFRARED_RECEIVE

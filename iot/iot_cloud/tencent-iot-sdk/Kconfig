@@ -19,7 +19,7 @@ if PKG_USING_TENCENT_IOT_EXPLORER
 
     config PKG_USING_TENCENT_IOT_EXPLORER_DEVICE_NAME
         string "Config Device Name"
-        default dev001
+        default "dev001"
 
     config PKG_USING_TENCENT_IOT_EXPLORER_DEVICE_SECRET
         string "Config Device Secret"

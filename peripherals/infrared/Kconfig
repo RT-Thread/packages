@@ -22,7 +22,7 @@ if PKG_USING_INFRARED
     endmenu
 
 config PKG_USING_DRV_INFRARED
-        bool "Use the infrared driver provided by the software package "
+        bool "Use the infrared driver provided by the software package"
         default y
         if PKG_USING_DRV_INFRARED
         config INFRARED_SEND

@@ -13,7 +13,6 @@ if PKG_USING_ABUP_FOTA
 
     choice
         prompt "Enable HTTP/CoAP FOTA"
-        default ABUP_NETWORKING_MODE
         help
             Select the package Networking mode
 
@@ -38,7 +37,6 @@ endif
 
     choice
         prompt "Recover algorithm"
-        default ABUP_ALGORITHM
         help
             Select the package algorithm
 

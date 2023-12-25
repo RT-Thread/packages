@@ -15,7 +15,7 @@ if PKG_USING_MP3PLAYER
 
     config MP3_SOUND_DEVICE_NAME
         string "The play device name"
-        default sound0
+        default "sound0"
     config MP3_INPUT_BUFFER_SIZE
         int "mp3 input buffer size"
         default 2048

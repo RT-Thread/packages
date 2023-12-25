@@ -44,7 +44,7 @@ if PKG_USING_RYANMQTT
        default "latest"    if PKG_USING_RYANMQTT_LATEST_VERSION
 
     config PKG_RYANMQTT_VER_NUM
-       string
+       hex
        default 0x001    if PKG_USING_RYANMQTT_V001
        default 0x100    if PKG_USING_RYANMQTT_V100
        default 0x110    if PKG_USING_RYANMQTT_V110

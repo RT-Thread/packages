@@ -74,7 +74,7 @@ if PKG_USING_KAWAII_MQTT
                     default n
 
             config SALOF_LOG_LEVEL
-                    int "salof output log level "
+                    int "salof output log level"
                     default KAWAII_MQTT_LOG_LEVEL
         endif
     endif

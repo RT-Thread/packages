@@ -26,40 +26,37 @@ if PKG_USING_LORAWAN_DRIVER
 
     choice
         prompt "Work Mode"
-        default ClassA
+        default LORAWAN_DRIVER_ClassA
         help
             Select the Work Mode
         config LORAWAN_DRIVER_ClassA
-            bool ClassA
+            bool "ClassA"
         config LORAWAN_DRIVER_ClassC
-            bool ClassC
+            bool "ClassC"
     endchoice
 
     choice
         prompt "Join Mode"
-        default ABP
+        default LORAWAN_DRIVER_ABP
         help
             Select the Join Mode
         config LORAWAN_DRIVER_OTAA
-            bool OTAA
+            bool "OTAA"
 
         config LORAWAN_DRIVER_ABP
-            bool ABP
+            bool "ABP"
     endchoice
 
     choice
+        prompt "Select the RF frequency"
+        help
+            Select the RF frequency
 
-    prompt "Select the RF frequency"
-    default REGION_CN470
-    help
-        Select the RF frequency
+        config LORAWAN_DRIVER_REGION_EU433
+            bool "LORAMAC_REGION_EU433"
 
-    config LORAWAN_DRIVER_REGION_EU433
-        bool "LORAMAC_REGION_EU433"
-
-    config LORAWAN_DRIVER_REGION_CN470
-        bool "LORAMAC_REGION_CN470"
-
+        config LORAWAN_DRIVER_REGION_CN470
+            bool "LORAMAC_REGION_CN470"
     endchoice
 
     choice
