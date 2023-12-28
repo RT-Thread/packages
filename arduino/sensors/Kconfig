@@ -1,11 +1,10 @@
 menu "Sensors"
 
 source "$PKGS_DIR/packages/arduino/sensors/sensor-device-drivers/Kconfig"
-source "$PKGS_DIR/packages/arduino/sensors/CapacitiveSensor/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Adafruit-Sensor/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-ADXL375/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VL53L0X/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VL53L1X/Kconfig"
-source "$PKGS_DIR/packages/arduino/sensors/Adafruit-Sensor/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-VL6180X/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MAX31855/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Adafruit-MAX31865/Kconfig"
@@ -135,5 +134,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-HM3301/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-MCP9600/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-LTC2941/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-LDC1612/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/CapacitiveSensor/Kconfig"
 
 endmenu
