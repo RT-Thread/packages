@@ -9,8 +9,8 @@ if PKG_USING_LHC_MODBUS
     config PKG_LHC_MODBUS_PATH
         string
         default "/packages/iot/lhc_modbus"
-		
-	config LHC_MODBUS_USING_SAMPLES
+
+    config LHC_MODBUS_USING_SAMPLES
         bool "Enable samples"
         default n
 
@@ -31,6 +31,6 @@ if PKG_USING_LHC_MODBUS
        string
        default "v1.0.0"    if PKG_USING_LHC_MODBUS_V100
        default "latest"    if PKG_USING_LHC_MODBUS_LATEST_VERSION
-	   
+
 endif
 

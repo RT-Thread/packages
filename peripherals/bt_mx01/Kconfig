@@ -15,7 +15,7 @@ if PKG_USING_BT_MX01
     config BT_MX01_USING_SAMPLE
         bool "using slave sample"
         default n
-        
+
     choice
         prompt "Version"
         default PKG_USING_BT_MX01_LATEST_VERSION

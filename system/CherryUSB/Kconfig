@@ -132,7 +132,7 @@ if PKG_USING_CHERRYUSB
                 bool
                 prompt "Use msc ram template"
                 default n
-        
+
             config PKG_CHERRYUSB_DEVICE_MSC_STORAGE_TEMPLATE
                 bool
                 prompt "Usb msc storage template"

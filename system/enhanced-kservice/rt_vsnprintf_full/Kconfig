@@ -47,7 +47,7 @@ if PKG_USING_RT_VSNPRINTF_FULL
         default n
         help
             the integer format specifiers used in Microsoft's Visual C++ (MSVC) compiler.
-            These specifiers, like %I64d for 64-bit integers, deviate slightly from the standard 
+            These specifiers, like %I64d for 64-bit integers, deviate slightly from the standard
             C format specifiers and are specific to MSVC. They allow for controlled formatting of
             integers in printf()-like functions, accommodating different integer sizes and ensuring
             compatibility with MSVC's environment. It's important to note that these specifiers might

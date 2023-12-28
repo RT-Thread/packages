@@ -22,14 +22,14 @@ if PKG_USING_SYSTEM_RUN_LED
         config System_Run_LED_THREAD_PRIORITY
             int "System Run LED Thread Priority."
             default 20
-    
+
         config System_Run_LED_THREAD_STACK_SIZE
             int "System Run LED Thread Stack Size."
             default 250
 
         config System_Run_LED_THREAD_TIMESLICE
             int "System Run LED Thread Timeslice."
-            default 1        
+            default 1
 
     choice
         prompt "Version"

@@ -123,7 +123,7 @@ if PKG_USING_MFBD
         config PKG_MFBD_USE_SECTION_DEFINITION
             bool "enable use section definitions."
             default n
- 
+
         config PKG_MFBD_MULTICLICK_STATE_AUTO_RESET
             bool "reset multiclick state to 0 when reach to max multicick state."
             default y
@@ -149,7 +149,7 @@ if PKG_USING_MFBD
 
         config PKG_USING_MFBD_V105
             bool "v1.0.5"
-    
+
         config PKG_USING_MFBD_V104
             bool "v1.0.4"
 

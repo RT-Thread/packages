@@ -14,7 +14,7 @@ if PKG_USING_RT_TRACE
     config CTF_USE_TIMESTAMP
         bool "Trace use timestamp"
         default n
-    
+
     if CTF_USE_TIMESTAMP
         config FREQUENCY_OF_TIMESTAMP
             int "Frequency of timestamp"
@@ -26,7 +26,7 @@ if PKG_USING_RT_TRACE
         default 2048
         help
             trace has two buffer, total size is TRACE_PACKET_SIZE * 2
-    
+
     menu "Select listening events"
 
         config TRACE_LISTEN_SCHEDULE
@@ -56,7 +56,7 @@ if PKG_USING_RT_TRACE
                     bool "listen message queue"
                     default n
             endif
-            
+
     endmenu
 
     choice

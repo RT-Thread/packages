@@ -15,7 +15,7 @@ if PKG_USING_BT_ECB02C
     config BT_ECB02C_USING_TEST
         bool "using test function"
         default n
-        
+
     config BT_ECB02C_USING_SAMPLE_MASTER
         bool "using master sample"
         default n
@@ -23,7 +23,7 @@ if PKG_USING_BT_ECB02C
     config BT_ECB02C_USING_SAMPLE_SLAVE
         bool "using slave sample"
         default n
-        
+
     choice
         prompt "Version"
         default PKG_USING_BT_ECB02C_LATEST_VERSION

@@ -96,10 +96,10 @@ if PKG_USING_R_TINYMAIX
 
         config R_TINYMAIX_USING_MODULE_FP16
             bool "Module FP16"
-        
+
         config R_TINYMAIX_USING_MODULE_FP8_143
             bool "Module FP8 143"
-        
+
         config R_TINYMAIX_USING_MODULE_FP8_152
             bool "Module FP8 152"
     endchoice
@@ -126,7 +126,7 @@ if PKG_USING_R_TINYMAIX
     config PKG_R_TINYMAIX_VER
        string
        default "latest"    if PKG_USING_R_TINYMAIX_LATEST_VERSION
-    
+
 
 endif
 

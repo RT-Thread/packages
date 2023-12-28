@@ -2,7 +2,7 @@
 # Kconfig file for package Micro-XRCE-DDS-Client
 menuconfig PKG_USING_MICRO_XRCE_DDS_CLIENT
     select RT_USING_POSIX_SOCKET
-    select RT_USING_POSIX_FS 
+    select RT_USING_POSIX_FS
     select RT_USING_POSIX_SELECT
     bool "Micro-XRCE-DDS-Client: The middleware component of micro-ros, which provides ros2 topic pub/sub ability"
     default n

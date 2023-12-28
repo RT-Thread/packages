@@ -8,7 +8,7 @@ if PKG_USING_RPMSG_LITE
     config PKG_RPMSG_LITE_PATH
         string
         default "/packages/system/rpmsg-lite"
-        
+
     config PKG_RPMSG_LITE_CUSTOM_CONFIG
         bool "rpmsg-lite use custom config"
         default n

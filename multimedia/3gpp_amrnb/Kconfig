@@ -2,7 +2,7 @@
 menuconfig PKG_USING_3GPP_AMRNB
     bool "Enable 3gpp amrnb codec library"
     default n
-    
+
     if PKG_USING_3GPP_AMRNB
         config PKG_AMRNB_PATH
             string
@@ -29,7 +29,7 @@ menuconfig PKG_USING_3GPP_AMRNB
             string
             default "v1.0.0"    if PKG_AMRNB_VER_NUM = 0x010000
             default "latest"    if PKG_AMRNB_VER_NUM = 0x999999
-        
+
         config AMRNB_USING_CMD
             bool "Enable codec command"
             default y

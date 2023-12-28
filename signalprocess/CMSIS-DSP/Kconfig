@@ -74,7 +74,7 @@ if PKG_USING_CMSIS_DSP
     config PKG_CMSIS_DSP_WINDOW
         bool "Window functions"
         default n
-    
+
     config PKG_CMSIS_DSP_COMPUTE_LIBRARY
         bool "Compute Library"
         default n

@@ -5,15 +5,15 @@ menuconfig PKG_USING_TASK_MSG_BUS
   default n
 
 if PKG_USING_TASK_MSG_BUS
-	config TASK_MSG_THREAD_STACK_SIZE
-		int "task message thread stack size"
-		default 512
-	config TASK_MSG_THREAD_PRIORITY
-		int "task message thread priority"
-		default 5
-	config TASK_MSG_USER_DEF
-		bool "task msg name define in user file 'task_msg_user_def.h'"
-		default y       
+    config TASK_MSG_THREAD_STACK_SIZE
+        int "task message thread stack size"
+        default 512
+    config TASK_MSG_THREAD_PRIORITY
+        int "task message thread priority"
+        default 5
+    config TASK_MSG_USER_DEF
+        bool "task msg name define in user file 'task_msg_user_def.h'"
+        default y
     config TASK_MSG_USING_DYNAMIC_MEMORY
       bool "task msg object using dynamic memory"
       default n
@@ -33,14 +33,14 @@ if PKG_USING_TASK_MSG_BUS
       help
         Select the package version
       config PKG_USING_TASKMSGBUS_V301
-        bool "v3.0.1"		
+        bool "v3.0.1"
       config PKG_USING_TASKMSGBUS_LATEST_VERSION
         bool "latest"
     endchoice
-          
+
     config PKG_TASKMSGBUS_VER
       string
-	    default "v3.0.1"    if PKG_USING_TASKMSGBUS_V301
+        default "v3.0.1"    if PKG_USING_TASKMSGBUS_V301
       default "latest"    if PKG_USING_TASKMSGBUS_LATEST_VERSION
 endif
 
