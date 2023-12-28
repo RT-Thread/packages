@@ -11,7 +11,7 @@ if PKG_USING_ADAFRUIT_MAX31855
 
     config PKG_ADAFRUIT_MAX31855_PATH
         string
-        default "/packages/peripherals/sensors/Adafruit-MAX31855"
+        default "/packages/arduino/sensors/Adafruit-MAX31855"
 
     choice
         prompt "Version"
