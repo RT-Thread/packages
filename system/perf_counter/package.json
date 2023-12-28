@@ -21,6 +21,12 @@
   "doc": "unknown",
   "site": [
     {
+      "version": "v2.2.4.1",
+      "URL": "https://github.com/RT-Thread-packages/perf_counter/archive/refs/tags/v2.2.4.1.zip",
+      "filename": "perf_counter-2.2.4.1.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/perf_counter.git",
       "filename": "",
