@@ -13,7 +13,7 @@ if PKG_USING_ARDUINO_ADAFRUIT_ADXL345
 
     config PKG_ARDUINO_ADAFRUIT_ADXL345_PATH
         string
-        default "/packages/arduino/sensors/Adafruit_ADXL345"
+        default "/packages/arduino/sensors/Adafruit-ADXL345"
 
     choice
         prompt "Version"
