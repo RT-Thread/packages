@@ -2,7 +2,7 @@
   "name": "Seeed-MP503",
   "description": "Seeed MP503 Air Quality Sensor",
   "description_zh": "Seeed MP503 空气质量传感器驱动",
-  "enable": "PKG_USING_SEEED_MP503",
+  "enable": "PKG_USING_ARDUINO_SEEED_MP503",
   "keywords": [
     "Seeed-MP503",
     "Sensors",
