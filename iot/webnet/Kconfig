@@ -84,6 +84,15 @@ if PKG_USING_WEBNET
 
         endif
 
+        if WEBNET_USING_SSI
+
+            config WEBNET_USING_SSI_VIRTUAL_HANDLER
+                bool "SSI: Enable Virtual callback handler"
+                depends on WEBNET_USING_SSI
+                default n
+
+        endif
+
     endmenu
 
     config WEBNET_USING_SAMPLES
