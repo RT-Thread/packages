@@ -2,7 +2,7 @@
   "name": "Seeed-ITG3200",
   "description": "Seeed ITG3200 Sensor Driver",
   "description_zh": "Seeed ITG3200 三轴数字陀螺仪驱动",
-  "enable": "PKG_USING_SEEED_ITG3200",
+  "enable": "PKG_USING_ARDUINO_SEEED_ITG3200",
   "keywords": [
     "Seeed-ITG3200",
     "Seeed",
