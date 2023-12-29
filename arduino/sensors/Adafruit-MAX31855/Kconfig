@@ -1,13 +1,13 @@
 
 # Kconfig file for package Adafruit-MAX31855
-menuconfig PKG_USING_ADAFRUIT_MAX31855
+menuconfig PKG_USING_ARDUINO_ADAFRUIT_MAX31855
     bool "Adafruit MAX31855: Thermocouple Amplifier"
     select PKG_USING_RTDUINO
     select RTDUINO_USING_SPI
     select PKG_USING_ARDUINO_ADAFRUIT_BUSIO
     default n
 
-if PKG_USING_ADAFRUIT_MAX31855
+if PKG_USING_ARDUINO_ADAFRUIT_MAX31855
 
     config PKG_ADAFRUIT_MAX31855_PATH
         string
@@ -15,17 +15,17 @@ if PKG_USING_ADAFRUIT_MAX31855
 
     choice
         prompt "Version"
-        default PKG_USING_ADAFRUIT_MAX31855_LATEST_VERSION
+        default PKG_USING_ARDUINO_ADAFRUIT_MAX31855_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_ADAFRUIT_MAX31855_LATEST_VERSION
+        config PKG_USING_ARDUINO_ADAFRUIT_MAX31855_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_ADAFRUIT_MAX31855_VER
        string
-       default "latest"    if PKG_USING_ADAFRUIT_MAX31855_LATEST_VERSION
+       default "latest"    if PKG_USING_ARDUINO_ADAFRUIT_MAX31855_LATEST_VERSION
 
 endif
 

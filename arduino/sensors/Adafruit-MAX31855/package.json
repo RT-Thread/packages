@@ -2,7 +2,7 @@
   "name": "Adafruit-MAX31855",
   "description": " Adafruit MAX31855 Thermocouple Amplifier",
   "description_zh": "ADAFRUIT MAX31855热电偶放大器驱动",
-  "enable": "PKG_USING_ADAFRUIT_MAX31855",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MAX31855",
   "keywords": [
     "Adafruit-MAX31855",
     "Sensors",

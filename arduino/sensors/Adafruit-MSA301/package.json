@@ -2,7 +2,7 @@
   "name": "Adafruit-MSA301",
   "description": "Adafruit MSA301 Triple Axis Accelerometer",
   "description_zh": "dafruit MSA301加速度传感器驱动",
-  "enable": "PKG_USING_ADAFRUIT_MSA301",
+  "enable": "PKG_USING_ARDUINO_ADAFRUIT_MSA301",
   "keywords": [
     "Adafruit-MSA301",
     "Sensors",
