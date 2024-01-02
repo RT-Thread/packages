@@ -33,14 +33,14 @@ if PKG_USING_CHERRYUSB
                 bool "FSDEV"
             config PKG_CHERRYUSB_DEVICE_DWC2
                 bool "DWC2"
-            config PKG_CHERRYUSB_DEVICE_MM32
-                bool "MM32"
             config PKG_CHERRYUSB_DEVICE_MUSB
                 bool "MUSB"
             config PKG_CHERRYUSB_DEVICE_HPM
                 bool "HPM"
             config PKG_CHERRYUSB_DEVICE_PUSB2
                 bool "PUSB2"
+            config PKG_CHERRYUSB_DEVICE_NUVOTON
+                bool "NUVOTON"
         endchoice
 
         if PKG_CHERRYUSB_DEVICE_CH32
@@ -50,47 +50,33 @@ if PKG_USING_CHERRYUSB
                 config PKG_CHERRYUSB_DEVICE_CH32_CH32V307
                     bool "CH32V307"
             endchoice
-
-        endif
-
-        if PKG_CHERRYUSB_DEVICE_FSDEV
-            choice
-                prompt "Select chip with fsdev usb ip to set usb base and irq name,if not set,use default setting"
-                default PKG_CHERRYUSB_DEVICE_FSDEV_STM32
-                config PKG_CHERRYUSB_DEVICE_FSDEV_STM32
-                    bool "STM32"
-            endchoice
-
         endif
 
         if PKG_CHERRYUSB_DEVICE_MUSB
             choice
-                prompt "Select chip with musb usb ip to set usb base and irq name,if not set,use default setting"
-                default PKG_CHERRYUSB_DEVICE_MUSB_MSP432
-                config PKG_CHERRYUSB_DEVICE_MUSB_MSP432
-                    bool "MSP432"
-                config PKG_CHERRYUSB_DEVICE_MUSB_ES32F3
-                    bool "ES32F3"
+                prompt "select musb register offset, and you musb define USBH_BASE and USBH_IRQHandler in usb_config.h"
+                default PKG_CHERRYUSB_DEVICE_MUSB_STANDARD
+                config PKG_CHERRYUSB_DEVICE_MUSB_STANDARD
+                    bool "STANDARD"
                 config PKG_CHERRYUSB_DEVICE_MUSB_SUNXI
                     bool "SUNXI"
             endchoice
-
         endif
 
         if PKG_CHERRYUSB_DEVICE_DWC2
             choice
-                prompt "Select chip with dwc2 usb ip to set usb base and irq name,if not set,use default setting"
+                prompt "enable dwc2 glue, and you musb define USBH_BASE and USBH_IRQHandler in usb_config.h"
                 default PKG_CHERRYUSB_DEVICE_DWC2_STM32
                 config PKG_CHERRYUSB_DEVICE_DWC2_STM32
                     bool "STM32"
-            endchoice
-            choice
-                prompt "Select dwc2 port"
-                default PKG_CHERRYUSB_DEVICE_DWC2_PORT_FS
-                config PKG_CHERRYUSB_DEVICE_DWC2_PORT_FS
-                    bool "FS_PORT"
-                config PKG_CHERRYUSB_DEVICE_DWC2_PORT_HS
-                    bool "HS_PORT"
+                config PKG_CHERRYUSB_DEVICE_DWC2_AT32
+                    bool "AT32"
+                config PKG_CHERRYUSB_DEVICE_DWC2_GD32
+                    bool "GD32"
+                config PKG_CHERRYUSB_DEVICE_DWC2_K230
+                    bool "K230"
+                config PKG_CHERRYUSB_DEVICE_DWC2_AIC
+                    bool "AIC"
             endchoice
         endif
 
@@ -217,12 +203,10 @@ if PKG_USING_CHERRYUSB
 
         if PKG_CHERRYUSB_HOST_MUSB
             choice
-                prompt "Select chip with musb usb ip to set usb base and irq name,if not set,use default setting"
-                default PKG_CHERRYUSB_HOST_MUSB_ES32F3
-                config PKG_CHERRYUSB_HOST_MUSB_MSP432
-                    bool "MSP432"
-                config PKG_CHERRYUSB_HOST_MUSB_ES32F3
-                    bool "ES32F3"
+                prompt "select musb register offset, and you musb define USBH_BASE and USBH_IRQHandler in usb_config.h"
+                default PKG_CHERRYUSB_HOST_MUSB_STANDARD
+                config PKG_CHERRYUSB_HOST_MUSB_STANDARD
+                    bool "STANDARD"
                 config PKG_CHERRYUSB_HOST_MUSB_SUNXI
                     bool "SUNXI"
             endchoice
@@ -230,16 +214,22 @@ if PKG_USING_CHERRYUSB
 
         if PKG_CHERRYUSB_HOST_DWC2
             choice
-                prompt "Select chip with dwc2 usb ip to set usb base and irq name,if not set,use default setting."
+                prompt "enable dwc2 glue, and you musb define USBH_BASE and USBH_IRQHandler in usb_config.h"
                 default PKG_CHERRYUSB_HOST_DWC2_STM32
                 config PKG_CHERRYUSB_HOST_DWC2_STM32
                     bool "STM32"
+                config PKG_CHERRYUSB_HOST_DWC2_AT32
+                    bool "AT32"
+                config PKG_CHERRYUSB_HOST_DWC2_GD32
+                    bool "GD32"
+                config PKG_CHERRYUSB_HOST_DWC2_K230
+                    bool "K230"
             endchoice
         endif
 
         if PKG_CHERRYUSB_HOST_EHCI
             choice
-                prompt "Select chip with EHCI usb ip to set usb base and irq name, please config ehci macros in usb_config.h"
+                prompt "Select chip with EHCI usb ip, please config ehci macros in usb_config.h"
                 default PKG_CHERRYUSB_HOST_EHCI_HPM
                 config PKG_CHERRYUSB_HOST_EHCI_HPM
                     bool "HPM"
@@ -247,6 +237,8 @@ if PKG_USING_CHERRYUSB
                     bool "NUVOTON"
                 config PKG_CHERRYUSB_HOST_EHCI_BL
                     bool "BL"
+                config PKG_CHERRYUSB_HOST_EHCI_AIC
+                    bool "AIC"
                 config PKG_CHERRYUSB_HOST_EHCI_CUSTOM
                     bool "CUSTOM"
             endchoice
