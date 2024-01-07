@@ -1,0 +1,28 @@
+
+# Kconfig file for package NineinOne-Sensor-Shield
+menuconfig PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD
+    bool "9 in 1 Sensor Shield"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD
+
+    config PKG_ARDUINO_NINEINONE_SENSOR_SHIELD_PATH
+        string
+        default "/packages/arduino/projects/NineinOne-Sensor-Shield"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_NINEINONE_SENSOR_SHIELD_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD_LATEST_VERSION
+
+endif
+
