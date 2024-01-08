@@ -14,19 +14,19 @@
     "github": "liuduanfei"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/liuduanfei/ft6236",
+  "repository": "https://github.com/RT-Thread-packages/ft6236",
   "icon": "unknown",
-  "homepage": "https://github.com/liuduanfei/ft6236#readme",
+  "homepage": "https://github.com/RT-Thread-packages/ft6236#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/liuduanfei/ft6236/archive/1.0.0.zip",
+      "URL": "https://github.com/RT-Thread-packages/ft6236/archive/1.0.0.zip",
       "filename": "ft6236-1.0.0.zip"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/liuduanfei/ft6236.git",
+      "URL": "https://github.com/RT-Thread-packages/ft6236.git",
       "filename": "ft6236-latest.zip",
       "VER_SHA": "master"
     }
