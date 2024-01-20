@@ -11,19 +11,19 @@
   ],
   "category": "arduino/projects",
   "author": {
-    "name": "RTduino",
+    "name": "RTduino-libraries",
     "email": "meco@rt-thread.org",
-    "github": "RTduino"
+    "github": "RTduino-libraries"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/RTduino/Arduino-Sensor-Kit",
+  "repository": "https://github.com/RTduino-libraries/Arduino-Sensor-Kit",
   "icon": "unknown",
-  "homepage": "https://github.com/RTduino/Arduino-Sensor-Kit#readme",
+  "homepage": "https://github.com/RTduino-libraries/Arduino-Sensor-Kit#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/RTduino/Arduino-Sensor-Kit.git",
+      "URL": "https://github.com/RTduino-libraries/Arduino-Sensor-Kit.git",
       "filename": "",
       "VER_SHA": "master"
     }

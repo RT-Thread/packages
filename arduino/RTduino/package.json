@@ -10,9 +10,9 @@
   ],
   "category": "arduino",
   "author": {
-    "name": "Meco Man",
+    "name": "RTduino",
     "email": "jiantingman@foxmail.com",
-    "github": "mysterywolf"
+    "github": "RTduino"
   },
   "license": "LGPL-2.1",
   "repository": "https://github.com/RTduino/RTduino",

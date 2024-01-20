@@ -12,19 +12,19 @@
   ],
   "category": "arduino/projects",
   "author": {
-    "name": "RTduino",
+    "name": "RTduino-libraries",
     "email": "meco@rt-thread.org",
-    "github": "https://github.com/RTduino/UltrasoundRadar"
+    "github": "RTduino-libraries"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/RTduino/UltrasoundRadar",
+  "repository": "https://github.com/RTduino-libraries/UltrasoundRadar",
   "icon": "unknown",
-  "homepage": "https://github.com/RTduino/UltrasoundRadar#readme",
+  "homepage": "https://github.com/RTduino-libraries/UltrasoundRadar#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/RTduino/UltrasoundRadar.git",
+      "URL": "https://github.com/RTduino-libraries/UltrasoundRadar.git",
       "filename": "",
       "VER_SHA": "master"
     }

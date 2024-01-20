@@ -11,19 +11,19 @@
   ],
   "category": "arduino/projects",
   "author": {
-    "name": "RTduino",
+    "name": "RTduino-libraries",
     "email": "meco@rt-thread.org",
-    "github": "RTduino"
+    "github": "RTduino-libraries"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/RTduino/MsgQ-C-CPP-demo",
+  "repository": "https://github.com/RTduino-libraries/MsgQ-C-CPP-demo",
   "icon": "unknown",
-  "homepage": "https://github.com/RTduino/MsgQ-C-CPP-demo#readme",
+  "homepage": "https://github.com/RTduino-libraries/MsgQ-C-CPP-demo#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/RTduino/MsgQ-C-CPP-demo.git",
+      "URL": "https://github.com/RTduino-libraries/MsgQ-C-CPP-demo.git",
       "filename": "",
       "VER_SHA": "master"
     }
