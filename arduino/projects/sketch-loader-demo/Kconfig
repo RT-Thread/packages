@@ -1,0 +1,27 @@
+
+# Kconfig file for package sketch-loader-demo
+menuconfig PKG_USING_ARDUINO_SKETCH_LOADER_DEMO
+    bool "RTduino sketch loader demo"
+    default n
+
+if PKG_USING_ARDUINO_SKETCH_LOADER_DEMO
+
+    config PKG_ARDUINO_SKETCH_LOADER_DEMO_PATH
+        string
+        default "/packages/arduino/projects/sketch-loader-demo"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SKETCH_LOADER_DEMO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_SKETCH_LOADER_DEMO_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SKETCH_LOADER_DEMO_LATEST_VERSION
+
+endif
+

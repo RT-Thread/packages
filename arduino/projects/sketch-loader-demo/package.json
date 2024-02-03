@@ -1,0 +1,30 @@
+{
+  "name": "sketch-loader-demo",
+  "description": "RTduino sketch loader demo",
+  "description_zh": "RTduino sketch loader demo",
+  "enable": "PKG_USING_ARDUINO_SKETCH_LOADER_DEMO",
+  "keywords": [
+    "sketch-loader-demo",
+    "RTduino",
+    "Arduino"
+  ],
+  "category": "arduino/projects",
+  "author": {
+    "name": "RTduino-libraries",
+    "email": "meco@rt-thread.org",
+    "github": "RTduino-libraries"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RTduino-libraries/sketch-loader-demo",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/sketch-loader-demo#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/sketch-loader-demo.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
