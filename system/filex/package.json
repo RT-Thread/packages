@@ -1,0 +1,28 @@
+{
+  "name": "filex",
+  "description": "fiex in rttthread.",
+  "description_zh": "fiex 在rtthread 的移植。",
+  "enable": "PKG_USING_FILEX",
+  "keywords": [
+    "filex"
+  ],
+  "category": "system",
+  "author": {
+    "name": "67887002",
+    "email": "805207319@qq.com",
+    "github": "67887002"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/RT-Thread-packages/filex",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/filex#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/filex.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
