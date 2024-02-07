@@ -1,7 +1,7 @@
 
 # Kconfig file for package filex
 menuconfig PKG_USING_FILEX
-    bool "filex file system in rtthread."
+    bool "filex file system for RT-Thread"
     default n
 
 if PKG_USING_FILEX
@@ -9,12 +9,15 @@ if PKG_USING_FILEX
     config PKG_FILEX_PATH
         string
         default "/packages/system/filex"
+
     config PKG_USING_FILEX_DEMO_MEM
         bool "Enable filex memery demo for rtthread"
         default n
+
     config PKG_USING_FILEX_DEMO_BLK
         bool "Enable filex block device demo for rtthread"
         default n
+
     choice
         prompt "Version"
         default PKG_USING_FILEX_LATEST_VERSION
