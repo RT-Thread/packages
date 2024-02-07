@@ -29,16 +29,12 @@ if PKG_USING_FILEX
         help
             Select the package version
 
-        config PKG_USING_FILEX_V100
-            bool "v1.0.0"
-
         config PKG_USING_FILEX_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_FILEX_VER
        string
-       default "v1.0.0"    if PKG_USING_FILEX_V100
        default "latest"    if PKG_USING_FILEX_LATEST_VERSION
 
 endif

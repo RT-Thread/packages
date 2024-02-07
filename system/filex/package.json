@@ -13,19 +13,14 @@
     "github": "67887002"
   },
   "license": "Unknown",
-  "repository": "https://github.com/Dyyt587/filex.git",
+  "repository": "https://github.com/RT-Thread-packages/filex",
   "icon": "unknown",
-  "homepage": "https://github.com/Dyyt587/filex.git#readme",
+  "homepage": "https://github.com/RT-Thread-packages/filex#readme",
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://filex-1.0.0.zip",
-      "filename": "filex-1.0.0.zip"
-    },
-    {
       "version": "latest",
-      "URL": "https://github.com/Dyyt587/filex.git",
+      "URL": "https://github.com/RT-Thread-packages/filex.git",
       "filename": "",
       "VER_SHA": "master"
     }
