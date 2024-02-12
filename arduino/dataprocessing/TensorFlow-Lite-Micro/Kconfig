@@ -10,6 +10,10 @@ if PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO
         string
         default "/packages/arduino/dataprocessing/TensorFlow-Lite-Micro"
 
+    config PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO_EXAMPLE_HELLO_WORLD
+        bool "Enable hello world example"
+        default n
+
     choice
         prompt "Version"
         help
