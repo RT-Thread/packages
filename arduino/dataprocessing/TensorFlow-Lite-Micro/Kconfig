@@ -12,7 +12,7 @@ if PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO
 
     menu "Examples"
         config PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO_EXAMPLE_HELLO_WORLD
-            bool "Enable hello world example"
+            bool "hello world: replicate a sine function and blink the built-in LED in a fade in/out pattern"
             default n
     endmenu
 
