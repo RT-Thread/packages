@@ -50,6 +50,11 @@
       "filename": "cJSON-1.7.16.zip"
     },
     {
+      "version": "v1.7.17",
+      "URL": "https://github.com/RT-Thread-packages/cJSON/archive/v1.7.17.zip",
+      "filename": "cJSON-1.7.17.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/cJSON.git",
       "filename": "cJSON.zip",
