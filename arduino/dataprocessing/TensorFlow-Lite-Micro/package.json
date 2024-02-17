@@ -1,0 +1,31 @@
+{
+  "name": "TensorFlow-Lite-Micro",
+  "description": "TensorFlow Lite for Microcontrollers (TLFM) Library for RTduino",
+  "description_zh": "TensorFlow Lite for Microcontrollers (TLFM) Library for RTduino",
+  "enable": "PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO",
+  "keywords": [
+    "TensorFlow-Lite-Micro",
+    "TensorFlow",
+    "RTduino",
+    "Arduino"
+  ],
+  "category": "arduino/dataprocessing",
+  "author": {
+    "name": "TensorFlow Org",
+    "email": "meco@rt-thread.org",
+    "github": "RTduino-libraries"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RTduino-libraries/TensorFlow-Lite-Micro",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/TensorFlow-Lite-Micro#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/TensorFlow-Lite-Micro.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

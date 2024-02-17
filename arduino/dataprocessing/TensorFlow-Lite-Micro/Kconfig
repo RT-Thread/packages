@@ -1,0 +1,33 @@
+
+# Kconfig file for package TensorFlow-Lite-Micro
+menuconfig PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO
+    bool "TensorFlow Lite Micro: TensorFlow Lite for Microcontrollers (TLFM) Library for RTduino"
+    default n
+
+if PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO
+
+    config PKG_ARDUINO_TENSORFLOW_LITE_MICRO_PATH
+        string
+        default "/packages/arduino/dataprocessing/TensorFlow-Lite-Micro"
+
+    menu "Examples"
+        config PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO_EXAMPLE_HELLO_WORLD
+            bool "hello world: replicate a sine function and blink the built-in LED in a fade in/out pattern"
+            default n
+    endmenu
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_TENSORFLOW_LITE_MICRO_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_TENSORFLOW_LITE_MICRO_LATEST_VERSION
+
+endif
+
