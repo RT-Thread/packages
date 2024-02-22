@@ -13,15 +13,15 @@
     "github": "Dyyt587"
   },
   "license": "MIT",
-  "repository": "https://github.com/Dyyt587/levelx.git",
+  "repository": "https://github.com/RT-Thread-packages/levelx.git",
   "icon": "unknown",
-  "homepage": "https://github.com/Dyyt587/levelx.git#readme_zh",
+  "homepage": "https://github.com/RT-Thread-packages/levelx.git#readme_zh",
   "doc": "unknown",
   "site": [
 
     {
       "version": "latest",
-      "URL": "https://github.com/Dyyt587/levelx.git",
+      "URL": "https://github.com/RT-Thread-packages/levelx.git",
       "filename": "",
       "VER_SHA": "master"
     }
