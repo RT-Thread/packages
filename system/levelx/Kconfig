@@ -1,0 +1,42 @@
+
+# Kconfig file for package levelx
+menuconfig PKG_USING_LEVELX
+    bool "levelx:Threadx's wear-leveling component for rtthread."
+    default n
+
+if PKG_USING_LEVELX
+
+    config PKG_LEVELX_PATH
+        string
+        default "/packages/system/levelx"
+
+    menuconfig PKG_USING_LEVEL_NOR
+        bool
+        prompt "Enable levelx support for nor flash"
+        default y
+    if PKG_USING_LEVEL_NOR
+        config PKG_USING_LEVEL_DEMO_MEM
+            bool
+            prompt "Enable levelx nor demo"
+            default n
+    endif
+
+    menuconfig PKG_USING_LEVEL_NAND
+        bool
+        prompt "Enable levelx support for nand flash"
+        default y    
+    choice
+        prompt "Version"
+        default PKG_USING_LEVELX_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_LEVELX_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LEVELX_VER
+       string
+       default "latest"    if PKG_USING_LEVELX_LATEST_VERSION
+
+endif
+

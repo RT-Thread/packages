@@ -1,0 +1,29 @@
+{
+  "name": "levelx",
+  "description": "levelx:Threadx's wear-leveling component.",
+  "description_zh": "Threadx生态组件，磨损均衡组件 ",
+  "enable": "PKG_USING_LEVELX",
+  "keywords": [
+    "levelx"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Dyyt587",
+    "email": "805207319@qq.com",
+    "github": "Dyyt587"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RT-Thread-packages/levelx.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/levelx.git#readme_zh",
+  "doc": "unknown",
+  "site": [
+
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/levelx.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
