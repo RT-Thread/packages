@@ -13,67 +13,67 @@ if PKG_USING_RGPOWER
         bool "open debug log"
         default n
         help
-            打印调试信息
+            enable rgpower debug log
 
     config RGPOWER_POWER_OFF_PIN_NUM
         int "This value is the gpio num for power off"
         default 22
         help
-            关机引脚
+            power_off gpio num
 
     config RGPOWER_CHARGE_PIN_NUM
         int "This value is the gpio num for charge status"
         default 5
         help
-            充电检测引脚
+            charge gpio num
 
     config RGPOWER_CHARGE_GPIO_STATUS
         int "This value is the gpio charge status"
         default 1
         help
-            如果充电时电压为高电平即为1,如果充电时电压为低电平即为0
+            The pin level state in the charging state
 
     config RGPOWER_ADC_DEV_NAME
         string "adc device name"
         default "adc3"
         help
-            采集电压的adc设备名称
+            using adc device name
 
     config RGPOWER_ADC_DEV_CHANNEL
         int "This value is adc channel"
         default 11
         help
-            采集电压的adc通道
+            using adc device channel
 
     config RGPOWER_REFER_VOLTAGE
         int "This value is adc refere voltage (mv)"
         default 3300
         help
-            adc的参考电压,单位是mv
+            using adc reference voltage
 
     config RGPOWER_CONVERT_BITS_MAX
         int "This value is adc bits max value"
         default 4096
         help
-            adc的满量程大小,十进制
+            using adc full scale size
 
     config RGPOWER_SCALE_FACTOR
         int "This value is voltage scale factor"
         default 3
         help
-            电压的缩放系数,如果分压系数为1:2,则该值为3
+            The scaling factor of voltage
 
     config RGPOWER_100_VOLTAGE
         int "This value is voltage (mv) for 100%"
         default 4200
         help
-            电池满电的电压,单位是mv
+            Maximum battery voltage , The unit is mv
 
     config RGPOWER_0_VOLTAGE
         int "This value is voltage (mv) for 0%"
         default 3500
         help
-            电池空电的电压,单位是mv
+            Minimum battery voltage , The unit is mv
 
     choice
         prompt "Version"
