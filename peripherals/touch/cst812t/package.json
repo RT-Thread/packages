@@ -1,0 +1,29 @@
+{
+  "name": "cst812t",
+  "description": "cst812t drivers for RT-Thread",
+  "description_zh": "cst812t 触摸芯片驱动程序。",
+  "enable": "PKG_USING_CST812T",
+  "keywords": [
+    "cst812t",
+    "touch"
+  ],
+  "category": "peripherals/touch",
+  "author": {
+    "name": "StackYuan",
+    "email": "yuanjyjyj@outlook.com",
+    "github": "StackYuan"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/StackYuan/cst812t",
+  "icon": "unknown",
+  "homepage": "https://github.com/StackYuan/cst812t#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/StackYuan/cst812t.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

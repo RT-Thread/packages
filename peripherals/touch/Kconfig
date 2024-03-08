@@ -9,5 +9,6 @@ source "$PKGS_DIR/packages/peripherals/touch/ft5426/Kconfig"
 source "$PKGS_DIR/packages/peripherals/touch/ft6236/Kconfig"
 source "$PKGS_DIR/packages/peripherals/touch/xpt2046/Kconfig"
 source "$PKGS_DIR/packages/peripherals/touch/cst816x/Kconfig"
+source "$PKGS_DIR/packages/peripherals/touch/cst812t/Kconfig"
 
 endmenu
