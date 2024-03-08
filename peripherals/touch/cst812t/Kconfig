@@ -1,0 +1,33 @@
+
+# Kconfig file for package cst812t
+menuconfig PKG_USING_CST812T
+    bool "cst812t touch ic for RT-Thread's TrackPad"
+    select RT_USING_I2C
+    select RT_USING_TOUCH
+    default n
+
+if PKG_USING_CST812T
+
+    config PKG_CST812T_PATH
+        string
+        default "/packages/peripherals/touch/cst812t"
+
+    config PKG_USING_CST812T_EXAMPLE
+        bool "Use example demo touch data reading"
+        default n
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_CST812T_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CST812T_VER
+       string
+       default "latest"    if PKG_USING_CST812T_LATEST_VERSION
+
+endif
+
