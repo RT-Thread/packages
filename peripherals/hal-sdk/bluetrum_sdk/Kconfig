@@ -8,7 +8,7 @@ if PKG_USING_BLUETRUM_SDK
 
     config PKG_BLUETRUM_SDK_PATH
         string
-        default "/packages/peripherals/bluetrum_sdk"
+        default "/packages/peripherals/hal-sdk/bluetrum_sdk"
 
     choice
         prompt "Version"

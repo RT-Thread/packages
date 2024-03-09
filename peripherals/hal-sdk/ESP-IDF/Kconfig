@@ -9,7 +9,7 @@ if PKG_USING_ESP_IDF
 
     config PKG_ESP_IDF_PATH
         string
-        default "/packages/peripherals/ESP-IDF"
+        default "/packages/peripherals/hal-sdk/ESP-IDF"
 
     choice
         prompt "Version"

@@ -8,7 +8,7 @@ if PKG_USING_K210_SDK
 
     config PKG_K210_SDK_PATH
         string
-        default "/packages/peripherals/kendryte-sdk/K210-SDK"
+        default "/packages/peripherals/hal-sdk/kendryte-sdk/K210-SDK"
 
     choice
         prompt "Version"

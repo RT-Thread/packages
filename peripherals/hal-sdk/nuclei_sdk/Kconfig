@@ -12,7 +12,7 @@ if PKG_USING_NUCLEI_SDK
 
     config PKG_NUCLEI_SDK_PATH
         string
-        default "/packages/peripherals/nuclei_sdk"
+        default "/packages/peripherals/hal-sdk/nuclei_sdk"
 
     choice
         prompt "Version"

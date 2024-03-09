@@ -1,0 +1,6 @@
+menu "Kendryte SDK"
+
+source "$PKGS_DIR/packages/peripherals/hal-sdk/kendryte-sdk/K210-SDK/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/kendryte-sdk/K210-SDK/kendryte-sdk/Kconfig"
+
+endmenu

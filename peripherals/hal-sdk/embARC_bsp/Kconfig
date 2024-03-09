@@ -8,7 +8,7 @@ if PKG_USING_EMBARC_BSP
 
     config PKG_EMBARC_BSP_PATH
         string
-        default "/packages/peripherals/embARC_bsp"
+        default "/packages/peripherals/hal-sdk/embARC_bsp"
 
     choice
         prompt "Version"

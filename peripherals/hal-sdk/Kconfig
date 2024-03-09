@@ -1,0 +1,13 @@
+menu "HAL & SDK Drivers"
+
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/bluetrum_sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/embARC_bsp/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/ESP-IDF/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/kendryte-sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nrf5x_sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nrfx/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nuclei_sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/raspberrypi-pico-sdk/Kconfig"
+
+endmenu

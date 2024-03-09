@@ -11,7 +11,7 @@ if PKG_USING_STM32WB55_SDK
 
     config PKG_STM32WB55_SDK_PATH
         string
-        default "/packages/peripherals/stm32wb55_sdk"
+        default "/packages/peripherals/hal-sdk/stm32/stm32wb55_sdk"
 
     choice
         prompt "ble sample"

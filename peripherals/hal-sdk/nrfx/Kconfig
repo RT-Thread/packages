@@ -8,7 +8,7 @@ if PKG_USING_NRFX
 
     config PKG_NRFX_PATH
         string
-        default "/packages/peripherals/nrfx"
+        default "/packages/peripherals/hal-sdk/nrfx"
 
     choice
         prompt "Version"

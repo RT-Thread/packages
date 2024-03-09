@@ -8,7 +8,7 @@ if PKG_USING_RASPBERRYPI_PICO_SDK
 
     config PKG_RASPBERRYPI_PICO_SDK_PATH
         string
-        default "/packages/peripherals/raspberrypi-pico-sdk"
+        default "/packages/peripherals/hal-sdk/raspberrypi-pico-sdk"
 
     choice
         prompt "Version"

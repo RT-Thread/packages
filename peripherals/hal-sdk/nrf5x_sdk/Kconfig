@@ -133,7 +133,7 @@ if PKG_USING_NRF5X_SDK
 
     config PKG_NRF5X_SDK_PATH
         string
-        default "/packages/peripherals/nrf5x_sdk"
+        default "/packages/peripherals/hal-sdk/nrf5x_sdk"
 
     choice
         prompt "Version"
