@@ -10,7 +10,7 @@
   "category": "peripherals",
   "author": {
     "name": "RT-Thread-packages",
-    "email": "",
+    "email": "package_team@rt-thread.com",
     "github": "RT-Thread-packages"
   },
   "license": "BSD-3-Clause",
