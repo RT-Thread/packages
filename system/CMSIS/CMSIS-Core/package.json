@@ -1,0 +1,31 @@
+{
+  "name": "CMSIS-Core",
+  "description": "Standardized API for the Cortex-A/M processor core and peripherals.",
+  "description_zh": "适用于 Cortex-A/M 处理器内核和外设的标准化 API。",
+  "enable": "PKG_USING_CMSIS_CORE",
+  "keywords": [
+    "CMSIS-Core",
+    "CMSIS",
+    "Cortex-A",
+    "Cortex-M"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "meco@rt-thread.org",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/CMSIS-Core",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/CMSIS-Core#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/CMSIS-Core.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
