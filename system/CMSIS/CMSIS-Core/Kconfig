@@ -8,7 +8,7 @@ if PKG_USING_CMSIS_CORE
 
     config PKG_CMSIS_CORE_PATH
         string
-        default "/packages/system/CMSIS-Core"
+        default "/packages/system/CMSIS/CMSIS-Core"
 
     choice
         prompt "Version"
