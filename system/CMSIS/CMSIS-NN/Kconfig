@@ -1,0 +1,27 @@
+
+# Kconfig file for package CMSIS-NN
+menuconfig PKG_USING_CMSIS_NN
+    bool "CMSIS-NN: Efficient Neural Network Kernels for Arm Cortex-M CPUs"
+    default n
+
+if PKG_USING_CMSIS_NN
+
+    config PKG_CMSIS_NN_PATH
+        string
+        default "/packages/system/CMSIS/CMSIS-NN"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_CMSIS_NN_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CMSIS_NN_VER
+       string
+       default "latest"    if PKG_USING_CMSIS_NN_LATEST_VERSION
+
+endif
+

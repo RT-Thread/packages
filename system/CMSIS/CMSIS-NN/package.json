@@ -1,0 +1,29 @@
+{
+  "name": "CMSIS-NN",
+  "description": "Efficient Neural Network Kernels for Arm Cortex-M CPUs",
+  "description_zh": "适用于 Arm Cortex-M CPU 的高效神经网络内核",
+  "enable": "PKG_USING_CMSIS_NN",
+  "keywords": [
+    "CMSIS-NN",
+    "CMSIS"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "meco@rt-thread.org",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/CMSIS-NN",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/CMSIS-NN#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/CMSIS-NN.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
