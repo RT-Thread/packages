@@ -3,6 +3,7 @@
 menuconfig PKG_USING_ARDUINO_SENSOR_DEVICE_DRIVERS
     bool "Enable Arduino Sensor Libraries on RT-Thread Sensor Device Framework"
     select RT_USING_SENSOR
+    select RT_USING_SENSOR_V2
     select PKG_USING_RTDUINO
     default n
 
