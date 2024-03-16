@@ -1,0 +1,27 @@
+
+# Kconfig file for package CMSIS-DSP
+menuconfig PKG_USING_CMSIS_DSP
+    bool "CMSIS-DSP: A comprehensive DSP library for Cortex-M processor-based devices"
+    default n
+
+if PKG_USING_CMSIS_DSP
+
+    config PKG_CMSIS_DSP_PATH
+        string
+        default "/packages/system/CMSIS/CMSIS-DSP"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_CMSIS_DSP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CMSIS_DSP_VER
+       string
+       default "latest"    if PKG_USING_CMSIS_DSP_LATEST_VERSION
+
+endif
+
