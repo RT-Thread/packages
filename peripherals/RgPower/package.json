@@ -1,0 +1,33 @@
+{
+    "name": "RgPower",
+    "description": "power value get module driver",
+    "description_zh": "电源电压获取模块",
+    "enable": "PKG_USING_RGPOWER",
+    "keywords": [
+        "RgPower",
+        "power"
+    ],
+    "category": "peripherals",
+    "author": {
+        "name": "liuxx",
+        "email": "1300650671@qq.com",
+        "gitee": "RgPower"
+    },
+    "license": "Apache-2.1",
+    "repository": "https://github.com/1300650671/RgPower",
+    "icon": "https://s2.loli.net/2024/02/29/J8PS19Ti2lwRzap.jpg",
+    "homepage": "https://github.com/1300650671/RgPower#readme",
+    "site": [
+        {
+            "version": "v1.0.0",
+            "URL": "https://github.com/1300650671/RgPower/archive/refs/tags/v1.0.0.zip",
+            "filename": "rg-power-v1.0.0.zip"
+        },
+        {
+            "version": "latest",
+            "URL": "https://github.com/1300650671/RgPower.git",
+            "filename": "Null for git package",
+            "VER_SHA": "master"
+        }
+    ]
+}

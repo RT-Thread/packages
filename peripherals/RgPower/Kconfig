@@ -1,0 +1,96 @@
+# Kconfig file for package RgPower
+menuconfig PKG_USING_RGPOWER
+    bool " Use RgPower "
+    default n
+
+if PKG_USING_RGPOWER
+
+    config PKG_RGPOWER_PATH
+        string 
+        default "/packages/peripherals/RgPower"
+
+    config RGPOWER_USEING_LOG
+        bool "open debug log"
+        default n
+        help
+            enable rgpower debug log
+
+    config RGPOWER_POWER_OFF_PIN_NUM
+        int "This value is the gpio num for power off"
+        default 22
+        help
+            power_off gpio num
+
+    config RGPOWER_CHARGE_PIN_NUM
+        int "This value is the gpio num for charge status"
+        default 5
+        help
+            charge gpio num
+
+    config RGPOWER_CHARGE_GPIO_STATUS
+        int "This value is the gpio charge status"
+        default 1
+        help
+            The pin level state in the charging state
+
+    config RGPOWER_ADC_DEV_NAME
+        string "adc device name"
+        default "adc3"
+        help
+            using adc device name
+
+    config RGPOWER_ADC_DEV_CHANNEL
+        int "This value is adc channel"
+        default 11
+        help
+            using adc device channel
+
+    config RGPOWER_REFER_VOLTAGE
+        int "This value is adc refere voltage (mv)"
+        default 3300
+        help
+            using adc reference voltage
+
+    config RGPOWER_CONVERT_BITS_MAX
+        int "This value is adc bits max value"
+        default 4096
+        help
+            using adc full scale size
+
+    config RGPOWER_SCALE_FACTOR
+        int "This value is voltage scale factor"
+        default 3
+        help
+            The scaling factor of voltage
+
+    config RGPOWER_100_VOLTAGE
+        int "This value is voltage (mv) for 100%"
+        default 4200
+        help
+            Maximum battery voltage , The unit is mv
+
+    config RGPOWER_0_VOLTAGE
+        int "This value is voltage (mv) for 0%"
+        default 3500
+        help
+            Minimum battery voltage , The unit is mv
+
+    choice
+        prompt "Version"
+        default PKG_USING_RGPOWER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RGPOWER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RGPOWER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RGPOWER_VER
+       string
+       default "v1.0.0"    if PKG_USING_RGPOWER_V100
+       default "latest"    if PKG_USING_RGPOWER_LATEST_VERSION
+
+endif
