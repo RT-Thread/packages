@@ -10,9 +10,6 @@ source "$PKGS_DIR/packages/peripherals/Kconfig"
 source "$PKGS_DIR/packages/ai/Kconfig"
 source "$PKGS_DIR/packages/signalprocess/Kconfig"
 source "$PKGS_DIR/packages/misc/Kconfig"
-
-if RT_VER_NUM >= 0x40101
-    source "$PKGS_DIR/packages/arduino/Kconfig"
-endif
+source "$PKGS_DIR/packages/arduino/Kconfig"
 
 endmenu
