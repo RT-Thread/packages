@@ -79,6 +79,12 @@ if PKG_USING_LVGL
         config PKG_LVGL_USING_V8_3_LATEST_VERSION
             bool "v8.3-latest"
 
+        config PKG_LVGL_USING_V09000
+            bool "v9.0.0"
+
+        config PKG_LVGL_USING_V09010
+            bool "v9.1.0"
+
         config PKG_LVGL_USING_LATEST_VERSION
             bool "latest"
     endchoice
@@ -96,9 +102,11 @@ if PKG_USING_LVGL
         default 0x080303    if PKG_LVGL_USING_V08033
         default 0x080302    if PKG_LVGL_USING_V08032
         default 0x080301    if PKG_LVGL_USING_V08031
-        default 0x080300    if PKG_LVGL_USING_V08030
         default 0x080200    if PKG_LVGL_USING_V08020
+        default 0x080300    if PKG_LVGL_USING_V08030
         default 0x0803FF    if PKG_LVGL_USING_V8_3_LATEST_VERSION
+        default 0x009000    if PKG_LVGL_USING_V09000
+        default 0x009010    if PKG_LVGL_USING_V09010
         default 0x999999    if PKG_LVGL_USING_LATEST_VERSION
 
     config PKG_LVGL_VER
@@ -117,6 +125,8 @@ if PKG_USING_LVGL
        default "v8.3.0"         if PKG_LVGL_VER_NUM = 0x080300
        default "v8.2.0"         if PKG_LVGL_VER_NUM = 0x080200
        default "v8.3-latest"    if PKG_LVGL_VER_NUM = 0x0803FF
+       default "v9.0.0"         if PKG_LVGL_VER_NUM = 0x009000
+       default "v9.1.0"         if PKG_LVGL_VER_NUM = 0x009010
        default "latest"         if PKG_LVGL_VER_NUM = 0x999999
 
 endif
