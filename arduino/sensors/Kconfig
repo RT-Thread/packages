@@ -135,5 +135,6 @@ source "$PKGS_DIR/packages/arduino/sensors/Seeed-MCP9600/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-LTC2941/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/Seeed-LDC1612/Kconfig"
 source "$PKGS_DIR/packages/arduino/sensors/CapacitiveSensor/Kconfig"
+source "$PKGS_DIR/packages/arduino/sensors/Jarzebski-MPU6050/Kconfig"
 
 endmenu

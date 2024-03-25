@@ -1,0 +1,33 @@
+{
+  "name": "Jarzebski-MPU6050",
+  "description": "Jarzebski MPU6050 6-DoF Accel and Gyro Sensor Driver",
+  "description_zh": "Jarzebski MPU6050 六自由度加速度和陀螺仪传感器驱动",
+  "enable": "PKG_USING_ARDUINO_JARZEBSKI_MPU6050",
+  "keywords": [
+    "Jarzebski_MPU6050",
+    "arduino",
+    "Sensor",
+    "MPU6050",
+    "Accel",
+    "Gyro"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "kurisaW",
+    "email": "2053731441@qq.com",
+    "github": "kurisaW"
+  },
+  "license": "LGPL-3.0",
+  "repository": "https://github.com/kurisaW/Arduino-MPU6050",
+  "icon": "unknown",
+  "homepage": "https://github.com/kurisaW/Arduino-MPU6050#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/kurisaW/Arduino-MPU6050.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
