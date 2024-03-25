@@ -1,0 +1,28 @@
+
+# Kconfig file for package Jarzebski-MPU6050
+menuconfig PKG_USING_ARDUINO_JARZEBSKI_MPU6050
+    bool "Jarzebski MPU6050 6-DoF Accel and Gyro Sensor Driver"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_JARZEBSKI_MPU6050
+
+    config PKG_ARDUINO_JARZEBSKI_MPU6050_PATH
+        string
+        default "/packages/arduino/sensors/Jarzebski-MPU6050"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_JARZEBSKI_MPU6050_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_JARZEBSKI_MPU6050_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_JARZEBSKI_MPU6050_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_JARZEBSKI_MPU6050_LATEST_VERSION
+
+endif
