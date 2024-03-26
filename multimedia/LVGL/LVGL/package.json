@@ -91,6 +91,16 @@
       "VER_SHA": "release/v8.3"
     },
     {
+      "version": "v9.0.0",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v9.0.0.zip",
+      "filename": "lvgl-9.0.0.zip"
+    },
+    {
+      "version": "v9.1.0",
+      "URL": "https://github.com/lvgl/lvgl/archive/refs/tags/v9.1.0.zip",
+      "filename": "lvgl-9.1.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/lvgl/lvgl.git",
       "filename": "",
