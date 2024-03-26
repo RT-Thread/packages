@@ -102,8 +102,8 @@ if PKG_USING_LVGL
         default 0x080303    if PKG_LVGL_USING_V08033
         default 0x080302    if PKG_LVGL_USING_V08032
         default 0x080301    if PKG_LVGL_USING_V08031
-        default 0x080200    if PKG_LVGL_USING_V08020
         default 0x080300    if PKG_LVGL_USING_V08030
+        default 0x080200    if PKG_LVGL_USING_V08020
         default 0x0803FF    if PKG_LVGL_USING_V8_3_LATEST_VERSION
         default 0x009000    if PKG_LVGL_USING_V09000
         default 0x009010    if PKG_LVGL_USING_V09010
