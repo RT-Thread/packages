@@ -14,16 +14,21 @@
     "github": "sakumisu"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/sakumisu/CherryUSB",
+  "repository": "https://github.com/cherry-embedded/CherryUSB",
   "icon": "unknown",
-  "homepage": "https://github.com/sakumisu/CherryUSB#readme",
+  "homepage": "https://github.com/cherry-embedded/CherryUSB#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/sakumisu/CherryUSB.git",
+      "URL": "https://github.com/cherry-embedded/CherryUSB.git",
       "filename": "Null for git package",
       "VER_SHA": "master"
+    },
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/cherry-embedded/CherryUSB/archive/refs/tags/v1.2.0.zip",
+      "filename": "CherryUSB-1.2.0.zip"
     },
     {
       "version": "v0.10.2",
