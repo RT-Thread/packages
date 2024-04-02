@@ -1,0 +1,28 @@
+
+# Kconfig file for package RunningMedian
+menuconfig PKG_USING_ARDUINO_RUNNINGMEDIAN
+    bool "RunningMedian: determine the running median by means of a circular buffer"
+    default n
+
+if PKG_USING_ARDUINO_RUNNINGMEDIAN
+
+    config PKG_ARDUINO_RUNNINGMEDIAN_PATH
+        string
+        default "/packages/arduino/dataprocessing/RunningMedian"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_RUNNINGMEDIAN_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_RUNNINGMEDIAN_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_RUNNINGMEDIAN_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_RUNNINGMEDIAN_LATEST_VERSION
+
+endif
+

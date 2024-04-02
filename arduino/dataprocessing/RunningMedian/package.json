@@ -1,0 +1,30 @@
+{
+  "name": "RunningMedian",
+  "description": "Arduino library to determine the running median by means of a circular buffer.",
+  "description_zh": "RunningMedian库用于计算数据流的中位数",
+  "enable": "PKG_USING_ARDUINO_RUNNINGMEDIAN",
+  "keywords": [
+    "RunningMedian",
+    "Arduino",
+    "RTduino"
+  ],
+  "category": "arduino/dataprocessing",
+  "author": {
+    "name": "RobTillaart",
+    "email": "rob.tillaart@gmail.com",
+    "github": "RobTillaart"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RobTillaart/RunningMedian",
+  "icon": "unknown",
+  "homepage": "https://github.com/RobTillaart/RunningMedian#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RobTillaart/RunningMedian.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
