@@ -6,6 +6,10 @@ menuconfig PKG_USING_MPU6XXX
 
 if PKG_USING_MPU6XXX
 
+    config RT_USING_SENSOR
+        bool
+        depends on RT_VER_NUM >= 0x50001
+
     config PKG_MPU6XXX_PATH
         string
         default "/packages/peripherals/sensors/mpu6xxx"
