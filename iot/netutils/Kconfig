@@ -49,6 +49,13 @@ if PKG_USING_NETUTILS
         select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
         default n
 
+    config IPERF_THREAD_STACK_SIZE
+        int "the stack size of iperf thread"
+        depends on PKG_NETUTILS_IPERF
+        range 2048 65536
+        default 16384 if ARCH_CPU_64BIT
+        default 2048
+
     config PKG_NETUTILS_NETIO
         bool "Enable NetIO network throughput performance tool"
         default n
