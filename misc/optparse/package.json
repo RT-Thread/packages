@@ -8,23 +8,17 @@
     ],
     "category": "misc",
     "author": {
-        "name": "liu2guang",
+        "name": "RT-Thread-packages",
         "email": "1004383796@qq.com",
-        "github": "liu2guang"
+        "github": "RT-Thread-packages"
     },
     "license": "Unlicense",
-    "repository": "https://github.com/liu2guang/optparse",
-    "homepage": "https://github.com/liu2guang/optparse#readme",
-    "readme": "optparse: a public domain, portable, reentrant, embeddable, getopt-like option parser.",
+    "repository": "https://github.com/RT-Thread-packages/optparse",
+    "homepage": "https://github.com/RT-Thread-packages/optparse#readme",
     "site": [
         {
-            "version": "v1.0.0",
-            "URL": "https://github.com/liu2guang/optparse/archive/v1.0.0.zip",
-            "filename": "optparse-v1.0.0.zip"
-        },
-        {
             "version": "latest",
-            "URL": "https://github.com/liu2guang/optparse.git",
+            "URL": "https://github.com/RT-Thread-packages/optparse.git",
             "filename": "optparse-latest.zip",
             "VER_SHA": "master"
         }
