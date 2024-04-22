@@ -58,8 +58,8 @@ if PKG_USING_TINYUSB
 
     config PKG_TINYUSB_DEVICE_PORT_SPEED
         hex
-        default 0x00 if PKG_TINYUSB_FULL_SPEED
-        default 0x20 if PKG_TINYUSB_HIGH_SPEED
+        default 0x0200 if PKG_TINYUSB_FULL_SPEED
+        default 0x0400 if PKG_TINYUSB_HIGH_SPEED
 
     menuconfig PKG_TINYUSB_DEVICE_ENABLE
         bool "Using USB device"
