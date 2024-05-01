@@ -1,0 +1,36 @@
+{
+  "name": "qmodbus",
+  "description": "A quick and easy to use modbus communication protocol stack",
+  "description_zh": "一款快捷易用的modbus通信协议栈",
+  "enable": "PKG_USING_QMODBUS",
+  "keywords": [
+    "modbus",
+    "rtu",
+    "tcp",
+    "rt-thread"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "qiyongzhong0",
+    "email": "917768104@qq.com",
+    "github": "qiyongzhong0"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/qiyongzhong0/qmodbus",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/qiyongzhong0/qmodbus/blob/master/readme.md",
+  "site": [
+    {
+      "version": "v1.00",
+      "URL": "https://github.com/qiyongzhong0/qmodbus/archive/v1.00.zip",
+      "filename": "qmodbus-1.00.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/qiyongzhong0/qmodbus.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

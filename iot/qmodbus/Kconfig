@@ -1,0 +1,109 @@
+
+# Kconfig file for package qmodbus
+
+menuconfig PKG_USING_QMODBUS
+    bool "qmodbus is a quick and easy to use modbus communication protocol stack."
+    default n
+
+if PKG_USING_QMODBUS
+
+    config PKG_QMODBUS_PATH
+        string
+        default "/packages/iot/qmodbus"
+
+    config MB_USING_PORT_RTT
+        bool
+        default y
+        
+    config MB_USING_RAW_PRT
+        bool "using raw data print"
+        default n
+
+    config MB_USING_ADDR_CHK
+        bool "using slave address check"
+        default y
+        
+    config MB_USING_MBAP_CHK
+        bool "using MBAP head check"
+        default y
+    
+    config MB_USING_RTU_BACKEND
+        bool "using RTU backend"
+        select RT_USING_SERIAL
+        select RT_USING_PIN
+        default y 
+    
+    config MB_USING_TCP_BACKEND
+        bool "using TCP backend"
+        select RT_USING_SAL
+        default n
+    
+    config MB_USING_RTU_PROTOCOL
+        bool "using MODBUS-RTU protocol"
+        default y
+    
+    config MB_USING_TCP_PROTOCOL
+        bool "using MODBUS-TCP protocol"
+        default n
+    
+    config MB_USING_MASTER
+        bool "using master function"
+        default y
+    
+    config MB_USING_SLAVE
+        bool "using slave function"
+        default n
+    
+    config MB_USING_SAMPLE
+        bool "using sample"
+        default n
+
+    if MB_USING_SAMPLE
+        config MB_USING_SAMPLE_RTU_MASTER
+            bool "sample RTU master"
+            select MB_USING_RTU_BACKEND
+            select MB_USING_RTU_PROTOCOL
+            select MB_USING_MASTER
+            default n
+
+        config MB_USING_SAMPLE_RTU_SLAVE
+            bool "sample RTU slave"
+            select MB_USING_RTU_BACKEND
+            select MB_USING_RTU_PROTOCOL
+            select MB_USING_SLAVE
+            default n
+            
+        config MB_USING_SAMPLE_TCP_MASTER
+            bool "sample TCP master"
+            select MB_USING_TCP_BACKEND
+            select MB_USING_TCP_PROTOCOL
+            select MB_USING_MASTER
+            default n
+        
+        config MB_USING_SAMPLE_TCP_SLAVE
+            bool "sample TCP slave"
+            select MB_USING_TCP_BACKEND
+            select MB_USING_TCP_PROTOCOL
+            select MB_USING_SLAVE
+            default n
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_QMODBUS_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QMODBUS_LATEST_VERSION
+            bool "latest"
+            
+        config PKG_USING_QMODBUS_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_QMODBUS_VER
+       string
+       default "latest" if PKG_USING_QMODBUS_LATEST_VERSION
+       default "v1.00"  if PKG_USING_QMODBUS_V100
+
+endif
