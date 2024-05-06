@@ -1,10 +1,10 @@
 {
-  "name": "stm32l4xx_hal_driver",
+  "name": "stm32l4_hal_driver",
   "description": "STM32 L4 HAL driver package",
   "description_zh": "STM32 L4 HAL 驱动包",
   "enable": "PKG_USING_STM32L4_HAL_DRIVER",
   "keywords": [
-    "stm32l4xx_hal_driver",
+    "stm32l4_hal_driver",
     "STM32"
   ],
   "category": "peripherals",
@@ -14,14 +14,14 @@
     "github": "RT-Thread-packages"
   },
   "license": "BSD-3-Clause",
-  "repository": "https://github.com/RT-Thread-packages/stm32l4xx_hal_driver",
+  "repository": "https://github.com/RT-Thread-packages/stm32l4_hal_driver",
   "icon": "unknown",
-  "homepage": "https://github.com/RT-Thread-packages/stm32l4xx_hal_driver#readme",
+  "homepage": "https://github.com/RT-Thread-packages/stm32l4_hal_driver#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/RT-Thread-packages/stm32l4xx_hal_driver.git",
+      "URL": "https://github.com/RT-Thread-packages/stm32l4_hal_driver.git",
       "filename": "",
       "VER_SHA": "master"
     }
