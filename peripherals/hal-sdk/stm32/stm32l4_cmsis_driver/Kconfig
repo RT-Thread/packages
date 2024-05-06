@@ -1,5 +1,5 @@
 
-# Kconfig file for package stm32l4xx_cmsis_driver
+# Kconfig file for package stm32l4_cmsis_driver
 menuconfig PKG_USING_STM32L4_CMSIS_DRIVER
     bool "STM32 L4 CMSIS driver package"
     select PKG_USING_CMSIS_CORE
@@ -9,7 +9,7 @@ if PKG_USING_STM32L4_CMSIS_DRIVER
 
     config PKG_STM32L4_CMSIS_DRIVER_PATH
         string
-        default "/packages/peripherals/hal-sdk/stm32/stm32l4xx_cmsis_driver"
+        default "/packages/peripherals/hal-sdk/stm32/stm32l4_cmsis_driver"
 
     choice
         prompt "Version"

@@ -1,10 +1,10 @@
 {
-  "name": "stm32l4xx_cmsis_driver",
+  "name": "stm32l4_cmsis_driver",
   "description": "STM32 L4 CMSIS driver package",
   "description_zh": "STM32 L4 CMSIS 驱动包",
   "enable": "PKG_USING_STM32L4_CMSIS_DRIVER",
   "keywords": [
-    "stm32l4xx_cmsis_driver",
+    "stm32l4_cmsis_driver",
     "STM32"
   ],
   "category": "peripherals",
@@ -13,15 +13,15 @@
     "email": "package_team@rt-thread.com",
     "github": "RT-Thread-packages"
   },
-  "license": "BSD-3-Clause",
-  "repository": "https://github.com/RT-Thread-packages/stm32l4xx_cmsis_driver",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/stm32l4_cmsis_driver",
   "icon": "unknown",
-  "homepage": "https://github.com/RT-Thread-packages/stm32l4xx_cmsis_driver#readme",
+  "homepage": "https://github.com/RT-Thread-packages/stm32l4_cmsis_driver#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/RT-Thread-packages/stm32l4xx_cmsis_driver.git",
+      "URL": "https://github.com/RT-Thread-packages/stm32l4_cmsis_driver.git",
       "filename": "",
       "VER_SHA": "master"
     }
