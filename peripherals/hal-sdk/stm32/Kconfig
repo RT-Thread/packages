@@ -1,6 +1,7 @@
 menu "STM32 HAL & SDK Drivers"
 
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32l4_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32l4_cmsis_driver/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wb55_sdk/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32_sdio/Kconfig"
 

@@ -2,7 +2,7 @@
 # Kconfig file for package stm32l4xx_hal_driver
 menuconfig PKG_USING_STM32L4_HAL_DRIVER
     bool "STM32 L4 HAL driver package"
-    select PKG_USING_CMSIS_CORE
+    select PKG_USING_STM32L4_CMSIS_DRIVER
     default n
 
 if PKG_USING_STM32L4_HAL_DRIVER
