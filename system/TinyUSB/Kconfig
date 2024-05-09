@@ -219,6 +219,21 @@ if PKG_USING_TINYUSB
         endif
     endif
 
+    menuconfig PKG_TINYUSB_HOST_ENABLE
+        bool "Using USB Host"
+        default n
+
+    if PKG_TINYUSB_HOST_ENABLE
+        config PKG_TINYUSB_HOST_PORT
+            int "BOARD_TUH_RHPORT"
+            default 0
+
+        config PKG_TINYUSB_HOST_PORT_SPEED
+            hex
+            default 0x0200 if PKG_TINYUSB_FULL_SPEED
+            default 0x0400 if PKG_TINYUSB_HIGH_SPEED
+    endif
+
     choice
         prompt "TinyUSB debug level"
         default PKG_TINYUSB_DEBUG_NO
