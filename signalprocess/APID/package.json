@@ -1,0 +1,33 @@
+{
+  "name": "APID",
+  "description": "a powerful pid library.",
+  "description_zh": "一个强大而全面的pid库,绝对惊艳。",
+  "enable": "PKG_USING_APID",
+  "keywords": [
+    "APID"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "https://github.com/Dyyt587",
+    "email": "805207319@qq.com",
+    "github": "https://github.com/Dyyt587"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Dyyt587/all_pid",
+  "icon": "unknown",
+  "homepage": "https://github.com/Dyyt587/all_pid#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.2",
+      "URL": "https://APID-1.0.2.zip",
+      "filename": "APID-1.0.2.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Dyyt587/all_pid.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

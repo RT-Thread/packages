@@ -1,0 +1,27 @@
+
+# Kconfig file for package aUnity
+menuconfig PKG_USING_AUNITY
+    bool "a unity pkgs support for all Libs."
+    default n
+
+if PKG_USING_AUNITY
+
+    config PKG_AUNITY_PATH
+        string
+        default "/packages/system/aUnity"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_AUNITY_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AUNITY_VER
+       string
+       default "latest"    if PKG_USING_AUNITY_LATEST_VERSION
+
+endif
+

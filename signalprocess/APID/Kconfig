@@ -1,0 +1,27 @@
+
+# Kconfig file for package APID
+menuconfig PKG_USING_APID
+    bool "Please add description of APID in English."
+    default n
+
+if PKG_USING_APID
+
+    config PKG_APID_PATH
+        string
+        default "/packages/signalprocess/APID"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_APID_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_APID_VER
+       string
+       default "latest"    if PKG_USING_APID_LATEST_VERSION
+
+endif
+
