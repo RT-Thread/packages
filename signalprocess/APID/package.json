@@ -19,11 +19,6 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.2",
-      "URL": "https://APID-1.0.2.zip",
-      "filename": "APID-1.0.2.zip"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/Dyyt587/all_pid.git",
       "filename": "",
