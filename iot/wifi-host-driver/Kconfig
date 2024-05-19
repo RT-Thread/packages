@@ -1,0 +1,143 @@
+
+# Kconfig file for package wifi-host-driver
+menuconfig PKG_USING_WIFI_HOST_DRIVER
+    bool "Wifi-Host-Driver(WHD) for RT-Thread"
+    select RT_USING_WIFI
+    select RT_USING_SAL
+    select RT_USING_SDIO
+    select BSP_USING_SDIO
+    default n
+
+if PKG_USING_WIFI_HOST_DRIVER
+
+    choice
+        prompt "Select Chips"
+        default WHD_USING_CHIP_CYW43438
+
+        config WHD_USING_CHIP_CYW43438
+            bool "cyw43438"
+
+        config WHD_USING_CHIP_CYW4373
+            bool "cyw4373"
+
+        config WHD_USING_CHIP_CYW43012
+            bool "cyw43012"
+
+        config WHD_USING_CHIP_CYW43439
+            bool "cyw43439"
+
+        config WHD_USING_CHIP_CYW43022
+            bool "cyw43022"
+
+        config WHD_USING_CHIP_CYW4343W
+            bool "cyw4343W"
+
+    endchoice
+
+    menuconfig WHD_RESOURCES_IN_EXTERNAL_STORAGE
+        bool "Use resources in external storage(FAL)"
+        select RT_USING_FAL
+        default n
+
+        if WHD_RESOURCES_IN_EXTERNAL_STORAGE
+
+            config WHD_RESOURCES_FIRMWARE_NAME
+                string "Set the partition name of the firmware files"
+                default "whd_firmware"
+
+            config WHD_RESOURCES_CLM_NAME
+                string "Set the partition name of the clm files"
+                default "whd_clm"
+
+            config WHD_RESOURCES_BLOCK_SIZE
+                int "Set the block size for resources"
+                default 1024
+
+        endif
+
+    config CY_WIFI_DEFAULT_ENABLE_POWERSAVE_MODE
+        bool "Default enable powersave mode"
+        default n
+
+    if CY_WIFI_DEFAULT_ENABLE_POWERSAVE_MODE
+        config CY_WIFI_DEFAULT_PM2_SLEEP_RET_TIME
+            int "Set return to sleep delay.(PM2)"
+            default 200
+    endif
+
+    config CY_WIFI_WHD_THREAD_PRIORITY
+        int "The priority level value of WHD thread"
+        range 0 32
+        default 8
+
+    config CY_WIFI_WHD_THREAD_STACK_SIZE
+        int "The stack size for WHD thread"
+        range 0 8192
+        default 5120
+
+    config CYBSP_REG_ON_PIN
+        int "Set the WiFi_REG ON pin"
+        default -1
+
+    config CYBSP_HOST_WAKE_IRQ_PIN
+        int "Set the HOST_WAKE_IRQ pin"
+        default -1
+
+    choice
+        prompt "Select HOST_WAKE_IRQ event type"
+        default CYBSP_HOST_WAKE_IRQ_EVENT_FALLING
+
+        config CYBSP_HOST_WAKE_IRQ_EVENT_FALL
+            bool "falling"
+
+        config CYBSP_HOST_WAKE_IRQ_EVENT_RISE
+            bool "rising"
+
+        config CYBSP_HOST_WAKE_IRQ_EVENT_BOTH
+            bool "rising and falling"
+
+    endchoice
+
+    config CYBSP_OOB_INTR_PRIORITY
+        int "Set the interrput priority for HOST_WAKE_IRQ pin"
+        default 2
+
+    config CY_WIFI_USING_THREAD_INIT
+        bool "Using thread initialization"
+        default n
+
+    if CY_WIFI_USING_THREAD_INIT
+        config CY_WIFI_INIT_THREAD_STACK_SIZE
+            int "The stack size for init thread"
+            range 0 8192
+            default 2048
+    endif
+
+    config CY_WIFI_MMCSD_WAIT_TIME
+        int "Set the waiting time for mmcsd card scanning"
+        default 500
+
+    config PKG_WIFI_HOST_DRIVER_PATH
+        string
+        default "/packages/iot/wifi-host-driver"
+
+    choice
+        prompt "Version"
+        default PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_WIFI_HOST_DRIVER_V100
+            bool "v1.0.0"
+
+        config PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_WIFI_HOST_DRIVER_VER
+       string
+       default "v1.0.0"    if PKG_USING_WIFI_HOST_DRIVER_V100
+       default "latest"    if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+
+endif
+
