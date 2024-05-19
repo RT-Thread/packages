@@ -1,0 +1,33 @@
+{
+  "name": "wifi-host-driver",
+  "description": "WiFi Host Driver for RT-Thread.",
+  "description_zh": "用于RT-Thread的WiFi主机驱动程序。",
+  "enable": "PKG_USING_WIFI_HOST_DRIVER",
+  "keywords": [
+    "wifi-host-driver"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Evlers",
+    "email": "1425295900@qq.com",
+    "github": "Evlers"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Evlers/rt-thread_wifi-host-driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/Evlers/rt-thread_wifi-host-driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://wifi-host-driver-1.0.0.zip",
+      "filename": "wifi-host-driver-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Evlers/rt-thread_wifi-host-driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
