@@ -2,7 +2,6 @@
 menuconfig PKG_USING_CHERRYUSB
     bool "CherryUSB: tiny and portable USB host/device stack for embedded system with USB IP"
     default n
-    select RT_USING_LIBC
 
 if PKG_USING_CHERRYUSB
 
@@ -18,6 +17,8 @@ if PKG_USING_CHERRYUSB
                 bool "FS"
             config PKG_CHERRYUSB_DEVICE_HS
                 bool "HS"
+            config PKG_CHERRYUSB_DEVICE_AUTO
+                bool "AUTO"
         endchoice
 
         choice
@@ -25,10 +26,6 @@ if PKG_USING_CHERRYUSB
             default PKG_CHERRYUSB_DEVICE_CUSTOM
             config PKG_CHERRYUSB_DEVICE_CUSTOM
                 bool "CUSTOM (Implement it yourself)"
-            config PKG_CHERRYUSB_DEVICE_BL
-                bool "bouffalo"
-            config PKG_CHERRYUSB_DEVICE_CH32
-                bool "ch32"
             config PKG_CHERRYUSB_DEVICE_FSDEV
                 bool "fsdev"
             config PKG_CHERRYUSB_DEVICE_DWC2_ST
@@ -37,8 +34,8 @@ if PKG_USING_CHERRYUSB
                 bool "dwc2_esp"
             config PKG_CHERRYUSB_DEVICE_DWC2_AT
                 bool "dwc2_at"
-            config PKG_CHERRYUSB_DEVICE_DWC2_AIC
-                bool "dwc2_aic"
+            config PKG_CHERRYUSB_DEVICE_DWC2_GD
+                bool "dwc2_gd"
             config PKG_CHERRYUSB_DEVICE_DWC2_CUSTOM
                 bool "dwc2_custom"
             config PKG_CHERRYUSB_DEVICE_MUSB_STANDARD
@@ -47,8 +44,14 @@ if PKG_USING_CHERRYUSB
                 bool "musb_sunxi"
             config PKG_CHERRYUSB_DEVICE_MUSB_CUSTOM
                 bool "musb_custom"
+            config PKG_CHERRYUSB_DEVICE_BL
+                bool "bouffalo"
             config PKG_CHERRYUSB_DEVICE_HPM
                 bool "hpm"
+            config PKG_CHERRYUSB_DEVICE_AIC
+                bool "aic"
+            config PKG_CHERRYUSB_DEVICE_CH32
+                bool "ch32"
             config PKG_CHERRYUSB_DEVICE_PUSB2
                 bool "pusb2"
         endchoice
@@ -182,34 +185,38 @@ if PKG_USING_CHERRYUSB
         config PKG_CHERRYUSB_HOST_CDC_ACM
             bool
             prompt "Enable usb cdc acm driver"
-            default y
+            default n
 
         config PKG_CHERRYUSB_HOST_HID
             bool
             prompt "Enable usb hid driver"
-            default y
+            default n
 
         config PKG_CHERRYUSB_HOST_MSC
             bool
             prompt "Enable usb msc driver"
-            default y
+            default n
+            select RT_USING_DFS
 
         config PKG_CHERRYUSB_HOST_CDC_RNDIS
             bool
             prompt "Enable usb rndis driver"
             select RT_USING_LWIP
+            select RT_USING_LWIP212
             default n
 
         config PKG_CHERRYUSB_HOST_CDC_ECM
             bool
             prompt "Enable usb cdc ecm driver"
             select RT_USING_LWIP
+            select RT_USING_LWIP212
             default n
 
         config PKG_CHERRYUSB_HOST_CDC_NCM
             bool
             prompt "Enable usb cdc ncm driver"
             select RT_USING_LWIP
+            select RT_USING_LWIP212
             default n
 
         config PKG_CHERRYUSB_HOST_VIDEO
@@ -226,17 +233,19 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb bluetooth driver"
             default n
-    
+
         config PKG_CHERRYUSB_HOST_ASIX
             bool
             prompt "Enable usb asix driver"
             select RT_USING_LWIP
+            select RT_USING_LWIP212
             default n
 
         config PKG_CHERRYUSB_HOST_RTL8152
             bool
             prompt "Enable usb rtl8152 driver"
             select RT_USING_LWIP
+            select RT_USING_LWIP212
             default n
 
         config PKG_CHERRYUSB_HOST_FTDI
@@ -253,12 +262,59 @@ if PKG_USING_CHERRYUSB
             bool
             prompt "Enable usb cp210x driver"
             default n
-    
+
+        config PKG_CHERRYUSB_HOST_PL2303
+            bool
+            prompt "Enable usb pl2303 driver"
+            default n
+
         config PKG_CHERRYUSB_HOST_TEMPLATE
             bool
             prompt "Use usb host template"
-            default y
+            default n
 
+        if PKG_CHERRYUSB_HOST_TEMPLATE
+            config TEST_USBH_CDC_ACM
+                int
+                prompt "demo for test cdc acm"
+                default 0
+                depends on PKG_CHERRYUSB_HOST_CDC_ACM
+            config TEST_USBH_HID
+                int
+                prompt "demo for test hid"
+                default 0
+                depends on PKG_CHERRYUSB_HOST_HID
+            config TEST_USBH_MSC
+                int
+                prompt "demo for test msc, do not enable because it has used dfs instead"
+                default 0
+                depends on PKG_CHERRYUSB_HOST_MSC
+            config TEST_USBH_CDC_ECM
+                int
+                prompt "demo for test cdc ecm"
+                default 0
+                depends on PKG_CHERRYUSB_HOST_CDC_ECM
+            config TEST_USBH_CDC_NCM
+                int
+                prompt "demo for test cdc ncm"
+                default 0
+                depends on PKG_CHERRYUSB_HOST_CDC_NCM
+            config TEST_USBH_CDC_RNDIS
+                int
+                prompt "demo for test cdc rndis"
+                default 0
+                depends on PKG_CHERRYUSB_HOST_CDC_RNDIS
+            config TEST_USBH_ASIX
+                int
+                prompt "demo for test asix"
+                default 0
+                depends on PKG_CHERRYUSB_HOST_ASIX
+            config TEST_USBH_RTL8152
+                int
+                prompt "demo for test rtl8152"
+                default 0
+                depends on PKG_CHERRYUSB_HOST_RTL8152
+        endif
     endif
 
     config PKG_CHERRYUSB_PATH
@@ -267,13 +323,14 @@ if PKG_USING_CHERRYUSB
 
     choice
         prompt "Version"
-        default PKG_USING_CHERRYUSB_LATEST_VERSION
+        default PKG_USING_CHERRYUSB_V010300
         help
             Select the package version
 
         config PKG_USING_CHERRYUSB_LATEST_VERSION
             bool "latest"
-
+        config PKG_USING_CHERRYUSB_V010300
+            bool "v1.3.0"
         config PKG_USING_CHERRYUSB_V010200
             bool "v1.2.0"
         config PKG_USING_CHERRYUSB_V001002
@@ -283,6 +340,7 @@ if PKG_USING_CHERRYUSB
     config PKG_CHERRYUSB_VER
        string
        default "latest"    if PKG_USING_CHERRYUSB_LATEST_VERSION
+       default "v1.3.0"   if PKG_USING_CHERRYUSB_V010300
        default "v1.2.0"   if PKG_USING_CHERRYUSB_V010200
        default "v0.10.2"   if PKG_USING_CHERRYUSB_V001002
 endif
