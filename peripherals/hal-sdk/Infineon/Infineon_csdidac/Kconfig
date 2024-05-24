@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_csdidac
+menuconfig PKG_USING_INFINEON_CSDIDAC
+    bool "Infineon_csdidac."
+    default n
+
+if PKG_USING_INFINEON_CSDIDAC
+
+    config PKG_INFINEON_CSDIDAC_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_csdidac"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_CSDIDAC_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_CSDIDAC_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_CSDIDAC_LATEST_VERSION
+
+endif
+

@@ -1,0 +1,14 @@
+menu "Infineon HAL Packages"
+
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_cat1cm0p/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_core-lib/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_mtb-hal-cat1/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_mtb-pdl-cat1/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_retarget-io/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_capsense/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_csdidac/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_serial-flash/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/Infineon/Infineon_usbdev/Kconfig"
+
+endmenu

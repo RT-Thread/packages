@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_cat1cm0p
+menuconfig PKG_USING_INFINEON_CAT1CM0P
+    bool "Infineon_cat1cm0p."
+    default n
+
+if PKG_USING_INFINEON_CAT1CM0P
+
+    config PKG_INFINEON_CAT1CM0P_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_cat1cm0p"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_CAT1CM0P_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_CAT1CM0P_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_CAT1CM0P_LATEST_VERSION
+
+endif
+

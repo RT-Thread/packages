@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_capsense
+menuconfig PKG_USING_INFINEON_CAPSENSE
+    bool "Infineon_capsense."
+    default n
+
+if PKG_USING_INFINEON_CAPSENSE
+
+    config PKG_INFINEON_CAPSENSE_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_capsense"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_CAPSENSE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_CAPSENSE_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_CAPSENSE_LATEST_VERSION
+
+endif
+

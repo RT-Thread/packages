@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_mtb-pdl-cat1
+menuconfig PKG_USING_INFINEON_MTB_PDL_CAT1
+    bool "Infineon_mtb-pdl-cat1."
+    default n
+
+if PKG_USING_INFINEON_MTB_PDL_CAT1
+
+    config PKG_INFINEON_MTB_PDL_CAT1_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_mtb-pdl-cat1"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_MTB_PDL_CAT1_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_MTB_PDL_CAT1_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_MTB_PDL_CAT1_LATEST_VERSION
+
+endif
+

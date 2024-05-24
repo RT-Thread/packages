@@ -1,0 +1,28 @@
+{
+    "name": "Infineon_retarget-io",
+    "description": "Infineon_retarget-io.",
+    "description_zh": "英飞凌HAL软件包。",
+    "enable": "PKG_USING_INFINEON_RETARGET_IO",
+    "keywords": [
+        "Infineon_retarget-io"
+    ],
+    "category": "peripherals",
+    "author": {
+        "name": "LZerro",
+        "email": "2669707827@qq.com",
+        "github": "LZerro"
+    },
+    "license": "Unknown",
+    "repository": "https://github.com/LZerro/Infineon_retarget-io",
+    "icon": "unknown",
+    "homepage": "https://github.com/LZerro/Infineon_retarget-io#readme",
+    "doc": "unknown",
+    "site": [
+        {
+            "version": "latest",
+            "URL": "https://github.com/LZerro/Infineon_retarget-io.git",
+            "filename": "",
+            "VER_SHA": "master"
+        }
+    ]
+}

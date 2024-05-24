@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_cmsis
+menuconfig PKG_USING_INFINEON_CMSIS
+    bool "Infineon_cmsis."
+    default n
+
+if PKG_USING_INFINEON_CMSIS
+
+    config PKG_INFINEON_CMSIS_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_cmsis"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_CMSIS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_CMSIS_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_CMSIS_LATEST_VERSION
+
+endif
+
