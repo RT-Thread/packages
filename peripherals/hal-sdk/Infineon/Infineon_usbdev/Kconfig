@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_usbdev
+menuconfig PKG_USING_INFINEON_USBDEV
+    bool "Infineon_usbdev."
+    default n
+
+if PKG_USING_INFINEON_USBDEV
+
+    config PKG_INFINEON_USBDEV_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_usbdev"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_USBDEV_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_USBDEV_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_USBDEV_LATEST_VERSION
+
+endif
+

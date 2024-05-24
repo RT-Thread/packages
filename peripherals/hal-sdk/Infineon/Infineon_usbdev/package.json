@@ -1,0 +1,28 @@
+{
+    "name": "Infineon_usbdev",
+    "description": "Infineon_usbdev.",
+    "description_zh": "英飞凌HAL库软件包。",
+    "enable": "PKG_USING_INFINEON_USBDEV",
+    "keywords": [
+        "Infineon_usbdev"
+    ],
+    "category": "peripherals",
+    "author": {
+        "name": "LZerro",
+        "email": "2669707827@qq.com",
+        "github": "LZerro"
+    },
+    "license": "Unknown",
+    "repository": "https://github.com/LZerro/Infineon_usbdev",
+    "icon": "unknown",
+    "homepage": "https://github.com/LZerro/Infineon_usbdev#readme",
+    "doc": "unknown",
+    "site": [
+        {
+            "version": "latest",
+            "URL": "https://github.com/LZerro/Infineon_usbdev.git",
+            "filename": "",
+            "VER_SHA": "master"
+        }
+    ]
+}

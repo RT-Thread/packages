@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_retarget-io
+menuconfig PKG_USING_INFINEON_RETARGET_IO
+    bool "Infineon_retarget-io."
+    default n
+
+if PKG_USING_INFINEON_RETARGET_IO
+
+    config PKG_INFINEON_RETARGET_IO_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_retarget-io"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_RETARGET_IO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_RETARGET_IO_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_RETARGET_IO_LATEST_VERSION
+
+endif
+

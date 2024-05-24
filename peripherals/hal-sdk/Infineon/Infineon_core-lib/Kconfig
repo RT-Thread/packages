@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_core-lib
+menuconfig PKG_USING_INFINEON_CORE_LIB
+    bool "Infineon_core-lib."
+    default n
+
+if PKG_USING_INFINEON_CORE_LIB
+
+    config PKG_INFINEON_CORE_LIB_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_core-lib"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_CORE_LIB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_CORE_LIB_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_CORE_LIB_LATEST_VERSION
+
+endif
+

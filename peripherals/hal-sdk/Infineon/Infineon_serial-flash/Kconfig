@@ -1,0 +1,27 @@
+
+# Kconfig file for package Infineon_serial-flash
+menuconfig PKG_USING_INFINEON_SERIAL_FLASH
+    bool "Infineon_serial-flash."
+    default n
+
+if PKG_USING_INFINEON_SERIAL_FLASH
+
+    config PKG_INFINEON_SERIAL_FLASH_PATH
+        string
+        default "/packages/peripherals/hal-sdk/Infineon/Infineon_serial-flash"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_INFINEON_SERIAL_FLASH_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INFINEON_SERIAL_FLASH_VER
+       string
+       default "latest"    if PKG_USING_INFINEON_SERIAL_FLASH_LATEST_VERSION
+
+endif
+

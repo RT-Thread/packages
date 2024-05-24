@@ -1,0 +1,28 @@
+{
+    "name": "Infineon_csdidac",
+    "description": "Infineon_csdidac.",
+    "description_zh": "英飞凌HAL库软件包。",
+    "enable": "PKG_USING_INFINEON_CSDIDAC",
+    "keywords": [
+        "Infineon_csdidac"
+    ],
+    "category": "peripherals",
+    "author": {
+        "name": "LZerro",
+        "email": "2669707827@qq.com",
+        "github": "LZerro"
+    },
+    "license": "Unknown",
+    "repository": "https://github.com/LZerro/Infineon_csdidac",
+    "icon": "unknown",
+    "homepage": "https://github.com/LZerro/Infineon_csdidac#readme",
+    "doc": "unknown",
+    "site": [
+        {
+            "version": "latest",
+            "URL": "https://github.com/LZerro/Infineon_csdidac.git",
+            "filename": "",
+            "VER_SHA": "master"
+        }
+    ]
+}

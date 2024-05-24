@@ -1,0 +1,28 @@
+{
+    "name": "Infineon_mtb-pdl-cat1",
+    "description": "Infineon_mtb-pdl-cat1.",
+    "description_zh": "英飞凌HAL软件包。",
+    "enable": "PKG_USING_INFINEON_MTB_PDL_CAT1",
+    "keywords": [
+        "Infineon_mtb-pdl-cat1"
+    ],
+    "category": "peripherals",
+    "author": {
+        "name": "LZerro",
+        "email": "2669707827@qq.com",
+        "github": "LZerro"
+    },
+    "license": "Unknown",
+    "repository": "https://github.com/LZerro/Infineon_mtb-pdl-cat1",
+    "icon": "unknown",
+    "homepage": "https://github.com/LZerro/Infineon_mtb-pdl-cat1#readme",
+    "doc": "unknown",
+    "site": [
+        {
+            "version": "latest",
+            "URL": "https://github.com/LZerro/Infineon_mtb-pdl-cat1.git",
+            "filename": "",
+            "VER_SHA": "master"
+        }
+    ]
+}

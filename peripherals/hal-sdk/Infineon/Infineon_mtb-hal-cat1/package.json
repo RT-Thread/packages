@@ -1,0 +1,28 @@
+{
+  "name": "Infineon_mtb-hal-cat1",
+  "description": "Infineon_mtb-hal-cat1.",
+  "description_zh": "英飞凌HAL库软件包。",
+  "enable": "PKG_USING_INFINEON_MTB_HAL_CAT1",
+  "keywords": [
+    "Infineon_mtb-hal-cat1"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "LZerro",
+    "email": "2669707827@qq.com",
+    "github": "LZerro"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/LZerro/Infineon_mtb-hal-cat1",
+  "icon": "unknown",
+  "homepage": "https://github.com/LZerro/Infineon_mtb-hal-cat1#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/LZerro/Infineon_mtb-hal-cat1.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
