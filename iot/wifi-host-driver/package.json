@@ -19,11 +19,6 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://wifi-host-driver-1.0.0.zip",
-      "filename": "wifi-host-driver-1.0.0.zip"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/Evlers/rt-thread_wifi-host-driver.git",
       "filename": "",
