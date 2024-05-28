@@ -15,27 +15,27 @@ if PKG_USING_WIFI_HOST_DRIVER
         default WHD_USING_CHIP_CYW43438
 
         config WHD_USING_CHIP_CYW43438
-            bool "cyw43438"
+            bool "CYW43438"
 
         config WHD_USING_CHIP_CYW4373
-            bool "cyw4373"
+            bool "CYW4373"
 
         config WHD_USING_CHIP_CYW43012
-            bool "cyw43012"
+            bool "CYW43012"
 
         config WHD_USING_CHIP_CYW43439
-            bool "cyw43439"
+            bool "CYW43439"
 
         config WHD_USING_CHIP_CYW43022
-            bool "cyw43022"
+            bool "CYW43022"
 
         config WHD_USING_CHIP_CYW4343W
-            bool "cyw4343W"
+            bool "CYW4343W"
 
     endchoice
 
     menuconfig WHD_RESOURCES_IN_EXTERNAL_STORAGE
-        bool "Use resources in external storage(FAL)"
+        bool "Using resources in external storage(FAL)"
         select RT_USING_FAL
         default n
 
@@ -54,6 +54,10 @@ if PKG_USING_WIFI_HOST_DRIVER
                 default 1024
 
         endif
+
+    config WHD_RESOURCES_CUSTOM_NVRAM
+        bool "Using custom nvram files"
+        default n
 
     config CY_WIFI_DEFAULT_ENABLE_POWERSAVE_MODE
         bool "Default enable powersave mode"
@@ -75,13 +79,36 @@ if PKG_USING_WIFI_HOST_DRIVER
         range 0 8192
         default 5120
 
-    config CYBSP_REG_ON_PIN
-        int "Set the WiFi_REG ON pin"
-        default -1
+    choice
+        prompt "Select the pin name or number"
+        default CYBSP_USING_PIN_NUMBER
 
-    config CYBSP_HOST_WAKE_IRQ_PIN
-        int "Set the HOST_WAKE_IRQ pin"
-        default -1
+        config CYBSP_USING_PIN_NAME
+            bool "Name"
+
+        config CYBSP_USING_PIN_NUMBER
+            bool "Number"
+    endchoice
+
+    if CYBSP_USING_PIN_NAME
+        config CYBSP_REG_ON_PIN_NAME
+            string "Set the WiFi_REG ON pin name"
+            default "PA.0"
+
+        config CYBSP_HOST_WAKE_IRQ_PIN_NAME
+            string "Set the HOST_WAKE_IRQ pin name"
+            default "PA.1"
+    endif
+
+    if CYBSP_USING_PIN_NUMBER
+        config CYBSP_REG_ON_PIN
+            int "Set the WiFi_REG ON pin number"
+            default -1
+
+        config CYBSP_HOST_WAKE_IRQ_PIN
+            int "Set the HOST_WAKE_IRQ pin number"
+            default -1
+    endif
 
     choice
         prompt "Select HOST_WAKE_IRQ event type"
@@ -127,16 +154,12 @@ if PKG_USING_WIFI_HOST_DRIVER
         help
             Select the package version
 
-        config PKG_USING_WIFI_HOST_DRIVER_V100
-            bool "v1.0.0"
-
         config PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_WIFI_HOST_DRIVER_VER
        string
-       default "v1.0.0"    if PKG_USING_WIFI_HOST_DRIVER_V100
        default "latest"    if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
 
 endif
