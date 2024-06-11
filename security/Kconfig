@@ -1,10 +1,10 @@
 menu "security packages"
 
-source "$PKGS_DIR/packages/security/mbedtls/Kconfig"
-source "$PKGS_DIR/packages/security/libsodium/Kconfig"
-source "$PKGS_DIR/packages/security/libhydrogen/Kconfig"
-source "$PKGS_DIR/packages/security/tinycrypt/Kconfig"
-source "$PKGS_DIR/packages/security/trusted-firmware-m/Kconfig"
-source "$PKGS_DIR/packages/security/yd_crypto/Kconfig"
+rsource "mbedtls/Kconfig"
+rsource "libsodium/Kconfig"
+rsource "libhydrogen/Kconfig"
+rsource "tinycrypt/Kconfig"
+rsource "trusted-firmware-m/Kconfig"
+rsource "yd_crypto/Kconfig"
 
 endmenu

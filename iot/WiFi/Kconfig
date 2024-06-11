@@ -1,12 +1,12 @@
 
     menu "Wi-Fi"
 
-    source "$PKGS_DIR/packages/iot/WiFi/wlanmarvell/Kconfig"
-    source "$PKGS_DIR/packages/iot/WiFi/wlan_wiced/Kconfig"
-    source "$PKGS_DIR/packages/iot/WiFi/rw007/Kconfig"
-    source "$PKGS_DIR/packages/iot/WiFi/wlan_cyw43012/Kconfig"
-    source "$PKGS_DIR/packages/iot/WiFi/wlan_bl808/Kconfig"
-    source "$PKGS_DIR/packages/iot/WiFi/wlan_cyw43439/Kconfig"
+    rsource "wlanmarvell/Kconfig"
+    rsource "wlan_wiced/Kconfig"
+    rsource "rw007/Kconfig"
+    rsource "wlan_cyw43012/Kconfig"
+    rsource "wlan_bl808/Kconfig"
+    rsource "wlan_cyw43439/Kconfig"
 
     endmenu
 

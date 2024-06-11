@@ -1,8 +1,8 @@
 menu "LVGL: powerful and easy-to-use embedded GUI library"
 
-source "$PKGS_DIR/packages/multimedia/LVGL/LVGL/Kconfig"
-source "$PKGS_DIR/packages/multimedia/LVGL/LittlevGL2RTT/Kconfig"
-source "$PKGS_DIR/packages/multimedia/LVGL/lv_music_demo/Kconfig"
-source "$PKGS_DIR/packages/multimedia/LVGL/gui_guider_demo/Kconfig"
+rsource "LVGL/Kconfig"
+rsource "LittlevGL2RTT/Kconfig"
+rsource "lv_music_demo/Kconfig"
+rsource "gui_guider_demo/Kconfig"
 
 endmenu

@@ -1,14 +1,14 @@
 menu "IoT Cloud"
 
-source "$PKGS_DIR/packages/iot/iot_cloud/onenet/Kconfig"
-source "$PKGS_DIR/packages/iot/iot_cloud/GAgent/Kconfig"
-source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/Kconfig"
-source "$PKGS_DIR/packages/iot/iot_cloud/azure-iot-sdk/Kconfig"
-source "$PKGS_DIR/packages/iot/iot_cloud/tencent-iot-sdk/Kconfig"
-source "$PKGS_DIR/packages/iot/iot_cloud/jiot-c-sdk/Kconfig"
-source "$PKGS_DIR/packages/iot/iot_cloud/ucloud_iot_sdk/Kconfig"
-source "$PKGS_DIR/packages/iot/iot_cloud/joylink/Kconfig"
-#source "$PKGS_DIR/packages/iot/iot_cloud/ez_iot_os/Kconfig"  #missing repo
-source "$PKGS_DIR/packages/iot/iot_cloud/iotsharp-c-sdk/Kconfig"
+rsource "onenet/Kconfig"
+rsource "GAgent/Kconfig"
+rsource "ali-iotkit/Kconfig"
+rsource "azure-iot-sdk/Kconfig"
+rsource "tencent-iot-sdk/Kconfig"
+rsource "jiot-c-sdk/Kconfig"
+rsource "ucloud_iot_sdk/Kconfig"
+rsource "joylink/Kconfig"
+#rsource "ez_iot_os/Kconfig"  #missing repo
+rsource "iotsharp-c-sdk/Kconfig"
 
 endmenu
