@@ -14,34 +14,34 @@ if PKG_USING_AT_DEVICE
 
     if PKG_AT_DEVICE_VER_NUM >= 0x20000
 
-        source "$PKGS_DIR/packages/iot/at_device/m26/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/ec20/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/esp32/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/esp8266/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/rw007/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/sim800c/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/sim76xx/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/mw31/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/w60x/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/a9g/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/bc26/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/air720/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/me3616/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/m6315/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/bc28/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/ec200x/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/n21/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/n58/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/m5311/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/l610/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/n720/Kconfig"
-        source "$PKGS_DIR/packages/iot/at_device/ml305/Kconfig"
+        rsource "m26/Kconfig"
+        rsource "ec20/Kconfig"
+        rsource "esp32/Kconfig"
+        rsource "esp8266/Kconfig"
+        rsource "rw007/Kconfig"
+        rsource "sim800c/Kconfig"
+        rsource "sim76xx/Kconfig"
+        rsource "mw31/Kconfig"
+        rsource "w60x/Kconfig"
+        rsource "a9g/Kconfig"
+        rsource "bc26/Kconfig"
+        rsource "air720/Kconfig"
+        rsource "me3616/Kconfig"
+        rsource "m6315/Kconfig"
+        rsource "bc28/Kconfig"
+        rsource "ec200x/Kconfig"
+        rsource "n21/Kconfig"
+        rsource "n58/Kconfig"
+        rsource "m5311/Kconfig"
+        rsource "l610/Kconfig"
+        rsource "n720/Kconfig"
+        rsource "ml305/Kconfig"
 
     endif
 
     if PKG_AT_DEVICE_VER_NUM < 0x20000
 
-        source "$PKGS_DIR/packages/iot/at_device/v1.x.x/Kconfig"
+        rsource "v1.x.x/Kconfig"
 
     endif
 

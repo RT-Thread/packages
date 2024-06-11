@@ -1,6 +1,6 @@
 # Kconfig file for package RgPower
 menuconfig PKG_USING_RGPOWER
-    bool " Use RgPower "
+    bool "Use RgPower"
     default n
 
 if PKG_USING_RGPOWER

@@ -1,8 +1,8 @@
 menu "Data Processing"
 
-source "$PKGS_DIR/packages/arduino/dataprocessing/KalmanFilter/Kconfig"
-source "$PKGS_DIR/packages/arduino/dataprocessing/ArduinoJson/Kconfig"
-source "$PKGS_DIR/packages/arduino/dataprocessing/TensorFlow-Lite-Micro/Kconfig"
-source "$PKGS_DIR/packages/arduino/dataprocessing/RunningMedian/Kconfig"
+rsource "KalmanFilter/Kconfig"
+rsource "ArduinoJson/Kconfig"
+rsource "TensorFlow-Lite-Micro/Kconfig"
+rsource "RunningMedian/Kconfig"
 
 endmenu
