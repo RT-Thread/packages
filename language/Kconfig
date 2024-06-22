@@ -1,12 +1,12 @@
 menu "language packages"
 
-rsource "JSON/Kconfig"
-rsource "XML/Kconfig"
-rsource "LuatOS/Kconfig"
-rsource "Lua/Kconfig"
-rsource "jerryscript/Kconfig"
-rsource "micropython/Kconfig"
-rsource "pikascript/Kconfig"
-rsource "rtt_rust/Kconfig"
+source "$PKGS_DIR/packages/language/JSON/Kconfig"
+source "$PKGS_DIR/packages/language/XML/Kconfig"
+source "$PKGS_DIR/packages/language/LuatOS/Kconfig"
+source "$PKGS_DIR/packages/language/Lua/Kconfig"
+source "$PKGS_DIR/packages/language/jerryscript/Kconfig"
+source "$PKGS_DIR/packages/language/micropython/Kconfig"
+source "$PKGS_DIR/packages/language/pikascript/Kconfig"
+source "$PKGS_DIR/packages/language/rtt_rust/Kconfig"
 
 endmenu
