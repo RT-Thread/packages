@@ -37,20 +37,20 @@ if PKG_USING_ALI_IOTKIT
             select PLATFORM_HAS_STDINT
             default y
 
-        rsource "menu/Config.infra"
-        rsource "menu/Config.dev_sign"
-        rsource "menu/Config.mqtt"
-        rsource "menu/Config.dynamic_register"
-        rsource "menu/Config.dev_model"
-        rsource "menu/Config.wrappers"
-        rsource "menu/Config.atm"
-        rsource "menu/Config.ota"
-        rsource "menu/Config.coap"
-        rsource "menu/Config.dev_reset"
-        rsource "menu/Config.http"
-        rsource "menu/Config.http2"
-        rsource "menu/Config.wifi_provision"
-        rsource "menu/Config.dev_bind"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.infra"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_sign"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.mqtt"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dynamic_register"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_model"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.wrappers"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.atm"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.ota"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.coap"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_reset"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.http"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.http2"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.wifi_provision"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/menu/Config.dev_bind"
 
         config PKG_USING_ALI_IOTKIT_SAMPLES
             bool "Samples"
@@ -77,7 +77,7 @@ if PKG_USING_ALI_IOTKIT
     endif
 
     if (PKG_ALI_IOTKIT_VER_NUM < 0x30000)
-        rsource "v20x/Kconfig"
+        source "$PKGS_DIR/packages/iot/iot_cloud/ali-iotkit/v20x/Kconfig"
     endif
 
     choice

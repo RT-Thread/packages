@@ -1,6 +1,6 @@
 menu "project laboratory"
 
-rsource "industrial-gateway/Kconfig"
-rsource "music-player/Kconfig"
+source "$PKGS_DIR/packages/misc/projects/industrial-gateway/Kconfig"
+source "$PKGS_DIR/packages/misc/projects/music-player/Kconfig"
 
 endmenu

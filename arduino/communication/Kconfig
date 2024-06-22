@@ -1,6 +1,6 @@
 menu "Communication"
 
-rsource "Adafruit-PN532/Kconfig"
-rsource "Adafruit-Si4713/Kconfig"
+source "$PKGS_DIR/packages/arduino/communication/Adafruit-PN532/Kconfig"
+source "$PKGS_DIR/packages/arduino/communication/Adafruit-Si4713/Kconfig"
 
 endmenu

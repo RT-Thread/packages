@@ -1,1 +1,1 @@
-rsource "*/Kconfig"
+source "${EZOS_PATH}/components/ezutil/*/Kconfig"

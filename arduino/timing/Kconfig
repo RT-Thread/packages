@@ -1,8 +1,8 @@
 menu "Timing"
 
-rsource "RTClib/Kconfig"
-rsource "MsTimer2/Kconfig"
-rsource "Ticker/Kconfig"
-rsource "TaskScheduler/Kconfig"
+source "$PKGS_DIR/packages/arduino/timing/RTClib/Kconfig"
+source "$PKGS_DIR/packages/arduino/timing/MsTimer2/Kconfig"
+source "$PKGS_DIR/packages/arduino/timing/Ticker/Kconfig"
+source "$PKGS_DIR/packages/arduino/timing/TaskScheduler/Kconfig"
 
 endmenu

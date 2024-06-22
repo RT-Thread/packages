@@ -1,13 +1,13 @@
 menu "Signal IO"
 
-rsource "Adafruit-BusIO/Kconfig"
-rsource "Adafruit-TCA8418/Kconfig"
-rsource "Adafruit-MCP23017/Kconfig"
-rsource "Adafruit-ADS1X15/Kconfig"
-rsource "Adafruit-AW9523/Kconfig"
-rsource "Adafruit-MCP3008/Kconfig"
-rsource "Adafruit-MCP4725/Kconfig"
-rsource "Adafruit-BD3491FS/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-BusIO/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-TCA8418/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP23017/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-ADS1X15/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-AW9523/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP3008/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-MCP4725/Kconfig"
+source "$PKGS_DIR/packages/arduino/signalio/Adafruit-BD3491FS/Kconfig"
 
 
 endmenu

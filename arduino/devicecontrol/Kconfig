@@ -1,11 +1,11 @@
 menu "Device Control"
 
-rsource "Adafruit-PCF8574/Kconfig"
-rsource "Adafruit-PCA9685/Kconfig"
-rsource "Adafruit-TPA2016/Kconfig"
-rsource "Adafruit-DRV2605/Kconfig"
-rsource "Adafruit-DS1841/Kconfig"
-rsource "Adafruit-DS3502/Kconfig"
-rsource "Seeed-PCF85063TP/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Adafruit-PCF8574/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Adafruit-PCA9685/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Adafruit-TPA2016/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Adafruit-DRV2605/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Adafruit-DS1841/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Adafruit-DS3502/Kconfig"
+source "$PKGS_DIR/packages/arduino/devicecontrol/Seeed-PCF85063TP/Kconfig"
 
 endmenu
