@@ -3,6 +3,7 @@
 menuconfig PKG_USING_DS18B20
     bool "DS18B20 sensor driver package,support: temperature."
     default n
+    select RT_USING_SENSOR
 
 if PKG_USING_DS18B20
 
@@ -16,20 +17,16 @@ if PKG_USING_DS18B20
         help
             Select the package version
 
-        config PKG_USING_DS18B20_V100
-            bool "v1.0.0(with sensor frame)"
-
         config PKG_USING_DS18B20_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_USING_DS18B20_SAMPLE
         bool "Enable ds18b20 sample"
-        default y
+        default n
 
     config PKG_DS18B20_VER
        string
-       default "v1.0.0"    if PKG_USING_DS18B20_V100
        default "latest"    if PKG_USING_DS18B20_LATEST_VERSION
 
 endif
