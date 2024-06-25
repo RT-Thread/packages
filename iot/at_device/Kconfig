@@ -36,6 +36,7 @@ if PKG_USING_AT_DEVICE
         source "$PKGS_DIR/packages/iot/at_device/l610/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/n720/Kconfig"
         source "$PKGS_DIR/packages/iot/at_device/ml305/Kconfig"
+        source "$PKGS_DIR/packages/iot/at_device/ml307/Kconfig"
 
     endif
 
