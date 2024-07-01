@@ -140,10 +140,6 @@ if PKG_USING_WIFI_HOST_DRIVER
             default 2048
     endif
 
-    config CY_WIFI_MMCSD_WAIT_TIME
-        int "Set the waiting time for mmcsd card scanning"
-        default 500
-
     config PKG_WIFI_HOST_DRIVER_PATH
         string
         default "/packages/iot/wifi-host-driver"
