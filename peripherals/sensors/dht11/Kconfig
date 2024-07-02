@@ -14,6 +14,11 @@ if PKG_USING_DHT11
         string
         default "/packages/peripherals/sensors/dht11"
 
+    config PKG_DHT11_USING_SENSOR_V1
+        bool "Enable sensor divce framework"
+        select RT_USING_SENSOR
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_DHT11_LATEST_VERSION
