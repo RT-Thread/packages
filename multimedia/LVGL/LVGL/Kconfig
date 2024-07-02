@@ -30,13 +30,13 @@ if PKG_USING_LVGL
         bool "Do not support SquareLine Studio"
         default y
 
-    config PKG_LVGL_USING_SQUARELINE
-        bool "Support SquareLine Studio (for LVGL version <= 0x009010)"
-        depends on PKG_LVGL_VER_NUM <= 0x009010
-
     config PKG_USING_LVGL_SQUARELINE
-        bool "Support SquareLine Studio (for LVGL version > 0x009010)"
-        depends on PKG_LVGL_VER_NUM > 0x009010
+        bool "Support SquareLine Studio (for LVGL version <= 0x090100)"
+        depends on PKG_LVGL_VER_NUM <= 0x090100
+
+    config PKG_LVGL_USING_SQUARELINE
+        bool "Support SquareLine Studio (for LVGL version > 0x090100)"
+        depends on PKG_LVGL_VER_NUM > 0x090100
 
     endchoice
 
@@ -123,8 +123,8 @@ if PKG_USING_LVGL
         default 0x080300    if PKG_LVGL_USING_V08030
         default 0x080200    if PKG_LVGL_USING_V08020
         default 0x0803FF    if PKG_LVGL_USING_V8_3_LATEST_VERSION
-        default 0x009000    if PKG_LVGL_USING_V09000
-        default 0x009010    if PKG_LVGL_USING_V09010
+        default 0x090000    if PKG_LVGL_USING_V09000
+        default 0x090100    if PKG_LVGL_USING_V09010
         default 0x999999    if PKG_LVGL_USING_LATEST_VERSION
 
     config PKG_LVGL_VER
@@ -143,8 +143,8 @@ if PKG_USING_LVGL
        default "v8.3.0"         if PKG_LVGL_VER_NUM = 0x080300
        default "v8.2.0"         if PKG_LVGL_VER_NUM = 0x080200
        default "v8.3-latest"    if PKG_LVGL_VER_NUM = 0x0803FF
-       default "v9.0.0"         if PKG_LVGL_VER_NUM = 0x009000
-       default "v9.1.0"         if PKG_LVGL_VER_NUM = 0x009010
+       default "v9.0.0"         if PKG_LVGL_VER_NUM = 0x090000
+       default "v9.1.0"         if PKG_LVGL_VER_NUM = 0x090100
        default "latest"         if PKG_LVGL_VER_NUM = 0x999999
 
 endif
