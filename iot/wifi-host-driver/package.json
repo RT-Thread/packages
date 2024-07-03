@@ -23,6 +23,11 @@
       "URL": "https://github.com/Evlers/rt-thread_wifi-host-driver.git",
       "filename": "",
       "VER_SHA": "master"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Evlers/rt-thread_wifi-host-driver/archive/v1.0.0.zip",
+      "filename": "rt-thread_wifi-host-driver-1.0.0.zip"
     }
   ]
 }
