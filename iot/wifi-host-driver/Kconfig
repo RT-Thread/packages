@@ -152,11 +152,14 @@ if PKG_USING_WIFI_HOST_DRIVER
 
         config PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
             bool "latest"
+
+        config PKG_USING_WIFI_HOST_DRIVER_V100
+            bool "v1.0.0"
     endchoice
 
     config PKG_WIFI_HOST_DRIVER_VER
-       string
-       default "latest"    if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
-
+        string
+        default "latest"    if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+        default "v1.0.0"    if PKG_USING_WIFI_HOST_DRIVER_V100
 endif
 
