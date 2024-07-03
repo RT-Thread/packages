@@ -6,9 +6,11 @@ menuconfig PKG_USING_MPU6XXX
 
 if PKG_USING_MPU6XXX
 
-    config RT_USING_SENSOR
-        bool
+    config PKG_MPU6XXX_USING_SENSOR_V1
+        bool "Enable sensor divce framework"
         depends on RT_VER_NUM >= 0x50001
+        select RT_USING_SENSOR
+        default n
 
     config PKG_MPU6XXX_PATH
         string
