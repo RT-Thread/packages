@@ -18,7 +18,7 @@ if PKG_USING_RYANMQTT
         default "/packages/iot/RyanMqtt"
 
     choice
-        prompt "版本选择: 推荐 latest / 最后一个版本"
+        prompt "版本选择: 首选latest会及时的修复bug, 其次选择最后一个版本, 其余版本不推荐"
         default PKG_USING_RYANMQTT_LATEST_VERSION
         help
             Select the package version
