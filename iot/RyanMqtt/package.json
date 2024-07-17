@@ -4,7 +4,8 @@
   "description_zh": "RyanMqtt 实现了 MQTT3.1.1 协议的客户端。此库针对资源受限的嵌入式设备进行了优化。",
   "enable": "PKG_USING_RYANMQTT",
   "keywords": [
-    "RyanMqtt"
+    "RyanMqtt",
+    "mqtt"
   ],
   "category": "iot",
   "author": {
