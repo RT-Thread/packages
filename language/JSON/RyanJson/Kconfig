@@ -1,0 +1,31 @@
+
+# Kconfig file for package RyanJson
+menuconfig PKG_USING_RYAN_JSON
+    bool "RyanJson: 一个针对资源受限的嵌入式设备优化的c语言Json库,内存占用极小的通用Json库,简洁高效!"
+    default n
+
+if PKG_USING_RYAN_JSON
+
+    config PKG_RYAN_JSON_PATH
+        string
+        default "/packages/language/JSON/RyanJson"
+
+    choice
+        prompt "版本选择: 推荐latest"
+        default PKG_USING_RYAN_JSON_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RYAN_JSON_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RYAN_JSON_VER
+       string
+       default "latest"    if PKG_USING_RYAN_JSON_LATEST_VERSION
+
+    config PKG_RYAN_JSON_VER_NUM
+        hex
+        default 0xfff    if PKG_USING_RYAN_JSON_LATEST_VERSION
+endif
+
