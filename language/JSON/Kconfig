@@ -7,5 +7,6 @@ source "$PKGS_DIR/packages/language/JSON/rapidjson/Kconfig"
 source "$PKGS_DIR/packages/language/JSON/jsmn/Kconfig"
 source "$PKGS_DIR/packages/language/JSON/agile_jsmn/Kconfig"
 source "$PKGS_DIR/packages/language/JSON/parson/Kconfig"
+source "$PKGS_DIR/packages/language/JSON/RyanJson/Kconfig"
 
 endmenu
