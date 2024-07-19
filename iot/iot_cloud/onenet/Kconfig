@@ -63,21 +63,11 @@ if PKG_USING_ONENET
             help
                 product authentication info
 
-        config ONENET_INFO_APIKEY
-            string "api key"
-            default "a2gVVf1hggZfuATkNogulHK1V=s="
-            help
-                product api key
-
     endif
 
     config ONENET_INFO_PROID
         string "product id"
         default "131494"
-
-    config ONENET_MASTER_APIKEY
-        string "master/product apikey"
-        default "U=wJJ=OEpZsZEHmdPrsKwH2hFYw="
 
     choice
         prompt "version"
