@@ -79,6 +79,10 @@ if PKG_USING_ONENET
         string "master/product apikey"
         default "U=wJJ=OEpZsZEHmdPrsKwH2hFYw="
 
+    config ONENET_USING_LEGACY
+        bool "Support legacy version for onenet"
+        default n
+
     choice
         prompt "version"
         help
