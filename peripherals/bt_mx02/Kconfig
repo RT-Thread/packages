@@ -1,0 +1,37 @@
+
+# Kconfig file for package bt_mx02
+
+menuconfig PKG_USING_BT_MX02
+    bool "Device driver of BT chip MX-02"
+    select PKG_USING_UAT
+    default n
+
+if PKG_USING_BT_MX02
+
+    config PKG_BT_MX02_PATH
+        string
+        default "/packages/peripherals/bt_mx02"
+
+    config BT_MX02_USING_SAMPLE
+        bool "using slave sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_BT_MX02_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BT_MX02_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_BT_MX02_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_BT_MX02_VER
+       string
+       default "latest" if PKG_USING_BT_MX02_LATEST_VERSION
+       default "v1.00"  if PKG_USING_BT_MX02_V100
+
+endif
