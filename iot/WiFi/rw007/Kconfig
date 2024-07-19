@@ -64,6 +64,18 @@ if PKG_USING_RW007
         #    bool "rw007 for imxrt"
     endchoice
 
+    if PKG_USING_RW007_V210 || PKG_USING_RW007_LATEST_VERSION
+        config RW007_USING_BLE
+                bool "rw007 using ble"
+                default n
+        config RW007_USING_POWERSWITCH_EXAMPLE
+                bool "rw007 using powerswitch example"
+                default n
+        config RW007_USING_SPI_TEST
+                bool "rw007 using spi test"
+                default n
+    endif
+
     config RW007_SPI_MAX_HZ
         int "SPI Max Hz"
         default 30000000
