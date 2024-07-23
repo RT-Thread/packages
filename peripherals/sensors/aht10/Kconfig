@@ -10,26 +10,37 @@ if PKG_USING_AHT10
         string
         default "/packages/peripherals/sensors/aht10"
 
-    config AHT10_USING_SOFT_FILTER
+    config PKG_AHT10_USING_SOFT_FILTER
         bool "Enable average filter by software"
         default n
         help
             "It will automatic sample sensor's data by average filter thread."
 
-    config AHT10_USING_SENSOR_DEVICE
+    config PKG_AHT10_USING_SENSOR_V2
         bool "Enable sensor divce framework"
+        depends on RT_VER_NUM >= 0x50001
         select RT_USING_SENSOR
+        select RT_USING_SENSOR_V2
         default n
+        
+    config PKG_USING_AHT10_SAMPLE
+        bool "Enable aht10 sample"
+        default n
+        if PKG_USING_AHT10_SAMPLE
+            config PKG_AHT10_I2C_BUS_NAME
+                string "The name of the I2C bus used by AHT10"
+                default "i2c3"
+        endif
 
-    if AHT10_USING_SOFT_FILTER
+    if PKG_AHT10_USING_SOFT_FILTER
 
-        config AHT10_AVERAGE_TIMES
+        config PKG_AHT10_AVERAGE_TIMES
             int "The number of averaging"
             default 10
             help
                 "When selected filter function, it will be the number you will average."
 
-        config AHT10_SAMPLE_PERIOD
+        config PKG_AHT10_SAMPLE_PERIOD
             int "Peroid of sampling data(unit ms)"
             default 1000
             help
@@ -43,7 +54,11 @@ if PKG_USING_AHT10
 
         config PKG_USING_AHT10_LATEST_VERSION
             bool "latest"
-            depends on RT_VER_NUM >= 0x50000
+            depends on RT_VER_NUM >= 0x50001
+
+        config PKG_USING_AHT10_V300
+            bool "v3.0.0"
+            depends on RT_VER_NUM >= 0x50001 || RT_USING_SENSOR_V2
 
         config PKG_USING_AHT10_V210
             bool "v2.1.0"
@@ -64,6 +79,7 @@ if PKG_USING_AHT10
        default "v1.0.0"    if PKG_USING_AHT10_V100
        default "v2.0.0"    if PKG_USING_AHT10_V200
        default "v2.1.0"    if PKG_USING_AHT10_V210
+       default "v3.0.0"    if PKG_USING_AHT10_V300
        default "latest"    if PKG_USING_AHT10_LATEST_VERSION
 
 endif
