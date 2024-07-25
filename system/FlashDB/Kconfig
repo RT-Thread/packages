@@ -46,6 +46,12 @@ if PKG_USING_FLASHDB
 
             config FDB_WRITE_GRAN_32BITS
                 bool "32bits such as STM32F1"
+
+            config FDB_WRITE_GRAN_64BITS
+                bool "64bits such as STM32F7"
+
+            config FDB_WRITE_GRAN_128BITS
+                bool "128bits such as STM32H5"
         endchoice
 
         config FDB_WRITE_GRAN
@@ -53,6 +59,8 @@ if PKG_USING_FLASHDB
             default 1 if FDB_WRITE_GRAN_1BIT
             default 8 if FDB_WRITE_GRAN_8BITS
             default 32 if FDB_WRITE_GRAN_32BITS
+            default 64 if FDB_WRITE_GRAN_64BITS
+            default 128 if FDB_WRITE_GRAN_128BITS
     endif
 
     if PKG_FLASHDB_VER_NUM > 0x10000
@@ -80,9 +88,12 @@ if PKG_USING_FLASHDB
 
     choice
         prompt "Version"
-        default PKG_USING_FLASHDB_V10102
+        default PKG_USING_FLASHDB_V20100
         help
             Select the package version
+
+        config PKG_USING_FLASHDB_V20100
+            bool "v2.1.0"
 
         config PKG_USING_FLASHDB_V10102
             bool "v1.1.2"
@@ -106,6 +117,7 @@ if PKG_USING_FLASHDB
        default "v1.1.0"    if PKG_USING_FLASHDB_V10100
        default "v1.1.1"    if PKG_USING_FLASHDB_V10101
        default "v1.1.2"    if PKG_USING_FLASHDB_V10102
+       default "v2.1.0"    if PKG_USING_FLASHDB_V20100
        default "latest"    if PKG_USING_FLASHDB_LATEST_VERSION
 
     config PKG_FLASHDB_VER_NUM
@@ -115,6 +127,7 @@ if PKG_USING_FLASHDB
         default 0x10100    if PKG_USING_FLASHDB_V10100
         default 0x10101    if PKG_USING_FLASHDB_V10101
         default 0x10102    if PKG_USING_FLASHDB_V10102
+        default 0x20100    if PKG_USING_FLASHDB_V20100
 
 endif
 
