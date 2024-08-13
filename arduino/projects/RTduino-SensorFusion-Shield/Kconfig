@@ -1,0 +1,28 @@
+
+# Kconfig file for package RTduino-SensorFusion-Shield
+menuconfig PKG_USING_ARDUINO_RTDUINO_SENSORFUSION_SHIELD
+    bool "RTduino SensorFusion Shield Driver Library"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_RTDUINO_SENSORFUSION_SHIELD
+
+    config PKG_ARDUINO_RTDUINO_SENSORFUSION_SHIELD_PATH
+        string
+        default "/packages/arduino/projects/RTduino-SensorFusion-Shield"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_RTDUINO_SENSORFUSION_SHIELD_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ARDUINO_RTDUINO_SENSORFUSION_SHIELD_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_RTDUINO_SENSORFUSION_SHIELD_LATEST_VERSION
+
+endif
+

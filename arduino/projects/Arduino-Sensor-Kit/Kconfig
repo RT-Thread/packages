@@ -1,7 +1,7 @@
 
 # Kconfig file for package Arduino_Sensor_Kit
 menuconfig PKG_USING_ARDUINO_SENSOR_KIT
-    bool "Arduino Sensor Kit Library"
+    bool "Arduino Sensor Kit Driver Library"
     select PKG_USING_RTDUINO
     select PKG_USING_ARDUINO_SEEED_LIS3DHTR
     select PKG_USING_ARDUINO_SEEED_BMP280

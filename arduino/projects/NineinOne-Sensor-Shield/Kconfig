@@ -1,7 +1,7 @@
 
 # Kconfig file for package NineinOne-Sensor-Shield
 menuconfig PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD
-    bool "9 in 1 Sensor Shield"
+    bool "9 in 1 Sensor Shield Driver Library"
     select PKG_USING_RTDUINO
     default n
 

@@ -1,7 +1,7 @@
 {
   "name": "Arduino-Sensor-Kit",
-  "description": "Arduino SensorKit Library",
-  "description_zh": "Arduino传感器套件库",
+  "description": "Arduino SensorKit Driver Library",
+  "description_zh": "Arduino传感器套件驱动库",
   "enable": "PKG_USING_ARDUINO_SENSOR_KIT",
   "keywords": [
     "Arduino_Sensor_Kit",

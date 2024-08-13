@@ -1,7 +1,7 @@
 {
   "name": "NineinOne-Sensor-Shield",
-  "description": "9 in 1 Sensor Shield",
-  "description_zh": "9 合 1 传感器扩展板",
+  "description": "9 in 1 Sensor Shield Driver Library",
+  "description_zh": "9 合 1 传感器扩展板驱动库",
   "enable": "PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD",
   "keywords": [
     "NineinOne-Sensor-Shield",

@@ -1,0 +1,31 @@
+{
+  "name": "RTduino-SensorFusion-Shield",
+  "description": "RTduino SensorFusion Shield Driver Library",
+  "description_zh": "RTduino传感器融合扩展板驱动库",
+  "enable": "PKG_USING_ARDUINO_RTDUINO_SENSORFUSION_SHIELD",
+  "keywords": [
+    "RTduino-SensorFusion-Shield",
+    "RTduino",
+    "Sensor Fusion",
+    "Shield"
+  ],
+  "category": "arduino/projects",
+  "author": {
+    "name": "RTduino-libraries",
+    "email": "meco@rt-thread.org",
+    "github": "RTduino-libraries"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/RTduino-libraries/RTduino-SensorFusion-Shield",
+  "icon": "unknown",
+  "homepage": "https://github.com/RTduino-libraries/RTduino-SensorFusion-Shield#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RTduino-libraries/RTduino-SensorFusion-Shield.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
