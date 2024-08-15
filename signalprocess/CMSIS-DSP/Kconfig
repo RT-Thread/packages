@@ -11,11 +11,11 @@ if PKG_USING_CMSIS_DSP
         string
         default "/packages/signalprocess/CMSIS-DSP"
 
-    config PKG_CMSIS_DSP_BASIC_MATH
+    config PKG_CMSIS_DSP_BASIC_MATH_FUNCTIONS
         bool "basic math functions"
         default y
 
-    config PKG_CMSIS_DSP_BAYES
+    config PKG_CMSIS_DSP_BAYES_FUNCTIONS
         bool "Bayes classifier functions"
         default n
 
@@ -23,60 +23,52 @@ if PKG_USING_CMSIS_DSP
         bool "Common tables"
         default n
 
-    config PKG_CMSIS_DSP_COMPLEX_MATH
+    config PKG_CMSIS_DSP_COMPLEX_MATH_FUNCTIONS
         bool "Complex math functions"
         default n
 
-    config PKG_CMSIS_DSP_CONTROLLER
+    config PKG_CMSIS_DSP_CONTROLLER_FUNCTIONS
         bool "Motor control functions"
         default n
 
-    config PKG_CMSIS_DSP_DISTANCE
+    config PKG_CMSIS_DSP_DISTANCE_FUNCTIONS
         bool "Distance functions"
         default n
 
-    config PKG_CMSIS_DSP_FAST_MATH
+    config PKG_CMSIS_DSP_FAST_MATH_FUNCTIONS
         bool "Fast math functions"
         default n
 
-    config PKG_CMSIS_DSP_FILTERING
+    config PKG_CMSIS_DSP_FILTERING_FUNCTIONS
         bool "Filtering functions"
         default n
 
-    config PKG_CMSIS_DSP_INTERPOLATION
+    config PKG_CMSIS_DSP_INTERPOLATION_FUNCTIONS
         bool "Interpolation functions"
         default n
 
-    config PKG_CMSIS_DSP_MATRIX
+    config PKG_CMSIS_DSP_MATRIX_FUNCTIONS
         bool "Matrix functions"
         default n
 
-    config PKG_CMSIS_DSP_QUATERNION_MATH
+    config PKG_CMSIS_DSP_QUATERNION_MATH_FUNCTIONS
         bool "Quaternion functions"
         default n
 
-    config PKG_CMSIS_DSP_STATISTICS
+    config PKG_CMSIS_DSP_STATISTICS_FUNCTIONS
         bool "Statistical functions"
         default n
 
-    config PKG_CMSIS_DSP_SUPPORT
+    config PKG_CMSIS_DSP_SUPPORT_FUNCTIONS
         bool "Support functions"
         default n
 
-    config PKG_CMSIS_DSP_SVM
+    config PKG_CMSIS_DSP_SVM_FUNCTIONS
         bool "Support Vector Machine functions (SVM)"
         default n
 
-    config PKG_CMSIS_DSP_TRANSFORM
+    config PKG_CMSIS_DSP_TRANSFORM_FUNCTIONS
         bool "Transform functions"
-        default n
-
-    config PKG_CMSIS_DSP_WINDOW
-        bool "Window functions"
-        default n
-
-    config PKG_CMSIS_DSP_COMPUTE_LIBRARY
-        bool "Compute Library"
         default n
 
     choice
@@ -93,4 +85,5 @@ if PKG_USING_CMSIS_DSP
        default "latest"    if PKG_USING_CMSIS_DSP_LATEST_VERSION
 
 endif
+
 
