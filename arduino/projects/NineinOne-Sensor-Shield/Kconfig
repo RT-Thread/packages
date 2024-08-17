@@ -3,6 +3,7 @@
 menuconfig PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD
     bool "9 in 1 Sensor Shield Driver Library"
     select PKG_USING_RTDUINO
+    select PKG_USING_ARDUINO_ADAFRUIT_DHT
     default n
 
 if PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD
