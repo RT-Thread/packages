@@ -1,0 +1,28 @@
+
+# Kconfig file for package AT24C256
+menuconfig PKG_USING_ARDUINO_AT24C256
+    bool "AT24C256: EEPROM chip, for non-volatile storage data"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_AT24C256
+
+    config PKG_USING_ARDUINO_AT24C256_PATH
+        string
+        default "/packages/arduino/sensors/AT24C256"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_AT24C256_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_AT24C256_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_USING_ARDUINO_AT24C256_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_AT24C256_LATEST_VERSION
+
+endif

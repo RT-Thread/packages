@@ -1,0 +1,31 @@
+{
+  "name": "AT24C256",
+  "description": "AT24C256: EEPROM chip, for non-volatile storage data",
+  "description_zh": "AT24C256: EEPROM 芯片，用于非易失性存储数据",
+  "enable": "PKG_USING_ARDUINO_AT24C256",
+  "keywords": [
+    "AT24C256",
+    "arduino",
+    "Sensor",
+    "EEPROM"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "kurisaW",
+    "email": "2053731441@qq.com",
+    "github": "kurisaW"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/kurisaW/AT24C256",
+  "icon": "unknown",
+  "homepage": "https://github.com/kurisaW/AT24C256#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/kurisaW/AT24C256.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
