@@ -1,0 +1,28 @@
+
+# Kconfig file for package SC7A20
+menuconfig PKG_USING_ARDUINO_SC7A20
+    bool "SC7A20: Three-axis accelerometer sensor"
+    select PKG_USING_RTDUINO
+    default n
+
+if PKG_USING_ARDUINO_SC7A20
+
+    config PKG_USING_ARDUINO_SC7A20_PATH
+        string
+        default "/packages/arduino/sensors/SC7A20"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ARDUINO_SC7A20_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ARDUINO_SC7A20_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_USING_ARDUINO_SC7A20_VER
+       string
+       default "latest"    if PKG_USING_ARDUINO_SC7A20_LATEST_VERSION
+
+endif

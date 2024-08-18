@@ -1,0 +1,32 @@
+{
+  "name": "QMC5883L",
+  "description": "QMC5883L: Three-axis Magnetometer Sensor for electronic compass applications",
+  "description_zh": "QMC5883L: 三轴磁强计传感器，用于电子罗盘应用",
+  "enable": "PKG_USING_ARDUINO_QMC5883L",
+  "keywords": [
+    "QMC5883L",
+    "arduino",
+    "Sensor",
+    "three-axis",
+    "Magnetometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "kurisaW",
+    "email": "2053731441@qq.com",
+    "github": "kurisaW"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/kurisaW/QMC5883L",
+  "icon": "unknown",
+  "homepage": "https://github.com/kurisaW/QMC5883L#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/kurisaW/QMC5883L.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
