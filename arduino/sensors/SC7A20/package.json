@@ -1,0 +1,32 @@
+{
+  "name": "SC7A20",
+  "description": "SC7A20: Three-axis accelerometer sensor",
+  "description_zh": "SC7A20: 三轴加速度计传感器",
+  "enable": "PKG_USING_ARDUINO_SC7A20",
+  "keywords": [
+    "SC7A20",
+    "arduino",
+    "Sensor",
+    "three-axis",
+    "accelerometer"
+  ],
+  "category": "arduino/sensors",
+  "author": {
+    "name": "kurisaW",
+    "email": "2053731441@qq.com",
+    "github": "kurisaW"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/kurisaW/SC7A20",
+  "icon": "unknown",
+  "homepage": "https://github.com/kurisaW/SC7A20#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/kurisaW/SC7A20.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
