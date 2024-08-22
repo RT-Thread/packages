@@ -1,0 +1,34 @@
+{
+  "name": "UartFramework",
+  "description": "UartFramework: Serial communication framework software package based on RT thread.",
+  "description_zh": "基于RT-Thread的串口通讯框架软件包。",
+  "enable": "PKG_USING_UART_FRAMEWORK",
+  "keywords": [
+    "UartFramework"
+  ],
+  "category": "system",
+  "author": {
+    "name": "slyant",
+    "email": "sly_ant@126.com",
+    "github": "slyant"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://gitee.com/slyant/uart-framework",
+  "icon": "unknown",
+  "homepage": "https://gitee.com/slyant",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.1",
+      "URL": "https://gitee.com/slyant/uart-framework.git",
+      "filename": "UartFramework-0.0.1.zip",
+      "VER_SHA": "2f70e0ec872832f10e3061bcaad38a145bb5670b"
+    },
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/slyant/uart-framework.git",
+      "filename": "UartFramework-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
