@@ -13,20 +13,20 @@
     "github": "slyant"
   },
   "license": "Apache-2.0",
-  "repository": "https://gitee.com/slyant/uart-framework",
+  "repository": "https://github.com/slyant/uart-framework",
   "icon": "unknown",
-  "homepage": "https://gitee.com/slyant",
+  "homepage": "https://github.com/slyant",
   "doc": "unknown",
   "site": [
     {
       "version": "v0.0.1",
-      "URL": "https://gitee.com/slyant/uart-framework.git",
+      "URL": "https://github.com/slyant/uart-framework.git",
       "filename": "UartFramework-0.0.1.zip",
       "VER_SHA": "2f70e0ec872832f10e3061bcaad38a145bb5670b"
     },
     {
       "version": "latest",
-      "URL": "https://gitee.com/slyant/uart-framework.git",
+      "URL": "https://github.com/slyant/uart-framework.git",
       "filename": "UartFramework-latest.zip",
       "VER_SHA": "master"
     }
