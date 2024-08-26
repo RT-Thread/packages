@@ -48,6 +48,10 @@ if PKG_USING_CHERRYUSB
                 bool "musb_bk"
             config PKG_CHERRYUSB_DEVICE_MUSB_CUSTOM
                 bool "musb_custom"
+            config PKG_CHERRYUSB_DEVICE_CHIPIDEA_MCX
+                bool "chipidea_mcx"
+            config PKG_CHERRYUSB_DEVICE_CHIPIDEA_CUSTOM
+                bool "chipidea_custom"
             config PKG_CHERRYUSB_DEVICE_BL
                 bool "bouffalo"
             config PKG_CHERRYUSB_DEVICE_HPM
@@ -162,10 +166,12 @@ if PKG_USING_CHERRYUSB
                 bool "ehci_hpm"
             config PKG_CHERRYUSB_HOST_EHCI_AIC
                 bool "ehci_aic"
-            config PKG_CHERRYUSB_HOST_EHCI_NUVOTON_NUC980
-                bool "ehci_nuvoton_nuc980"
-            config PKG_CHERRYUSB_HOST_EHCI_NUVOTON_MA35D0
-                bool "ehci_nuvoton_ma35d0"
+            config PKG_CHERRYUSB_HOST_EHCI_MCX
+                bool "ehci_mcx"
+            config PKG_CHERRYUSB_HOST_EHCI_NUC980
+                bool "ehci_nuc980"
+            config PKG_CHERRYUSB_HOST_EHCI_MA35D0
+                bool "ehci_ma35d0"
             config PKG_CHERRYUSB_HOST_EHCI_CUSTOM
                 bool "ehci_custom"
             config PKG_CHERRYUSB_HOST_DWC2_ST
@@ -319,12 +325,14 @@ if PKG_USING_CHERRYUSB
 
     choice
         prompt "Version"
-        default PKG_USING_CHERRYUSB_V010301
+        default PKG_USING_CHERRYUSB_V010400
         help
             Select the package version
 
         config PKG_USING_CHERRYUSB_LATEST_VERSION
             bool "latest"
+        config PKG_USING_CHERRYUSB_V010400
+            bool "v1.4.0"
         config PKG_USING_CHERRYUSB_V010301
             bool "v1.3.1"
         config PKG_USING_CHERRYUSB_V010300
@@ -338,6 +346,7 @@ if PKG_USING_CHERRYUSB
     config PKG_CHERRYUSB_VER
        string
        default "latest"    if PKG_USING_CHERRYUSB_LATEST_VERSION
+       default "v1.4.0"   if PKG_USING_CHERRYUSB_V010400
        default "v1.3.1"   if PKG_USING_CHERRYUSB_V010301
        default "v1.3.0"   if PKG_USING_CHERRYUSB_V010300
        default "v1.2.0"   if PKG_USING_CHERRYUSB_V010200
