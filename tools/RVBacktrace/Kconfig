@@ -15,7 +15,7 @@ if PKG_USING_RVBACKTRACE
         help
             Select the package version
 
-        config PKG_USING_RVBACKTRACE_V100
+        config PKG_USING_RVBACKTRACE_V010001
             bool "v1.0.1"
 
         config PKG_USING_RVBACKTRACE_LATEST_VERSION
@@ -24,7 +24,7 @@ if PKG_USING_RVBACKTRACE
 
     config PKG_RVBACKTRACE_VER
        string
-       default "v1.0.1"    if PKG_USING_RVBACKTRACE_V100
+       default "v1.0.1"    if PKG_USING_RVBACKTRACE_V010001
        default "latest"    if PKG_USING_RVBACKTRACE_LATEST_VERSION
 
 endif
