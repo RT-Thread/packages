@@ -1,0 +1,31 @@
+
+# Kconfig file for package RVBacktrace
+menuconfig PKG_USING_RVBACKTRACE
+    bool "RISC-V Minimalist Stack Traceback Components."
+    default n
+
+if PKG_USING_RVBACKTRACE
+
+    config PKG_RVBACKTRACE_PATH
+        string
+        default "/packages/tools/RVBacktrace"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_RVBACKTRACE_V100
+            bool "v1.0.1"
+
+        config PKG_USING_RVBACKTRACE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RVBACKTRACE_VER
+       string
+       default "v1.0.1"    if PKG_USING_RVBACKTRACE_V100
+       default "latest"    if PKG_USING_RVBACKTRACE_LATEST_VERSION
+
+endif
+
