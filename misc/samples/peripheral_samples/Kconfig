@@ -79,5 +79,9 @@ if PKG_USING_PERIPHERAL_SAMPLES
     config PERIPHERAL_SAMPLES_USING_CAN
         bool "[peripheral] can device"
         select RT_USING_CAN
+
+    config PERIPHERAL_SAMPLES_USING_DRV
+        bool "[simulation drv] character driver sample"
+
 endif
 
