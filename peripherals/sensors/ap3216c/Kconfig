@@ -10,8 +10,9 @@ if PKG_USING_AP3216C
         string
         default "/packages/peripherals/sensors/ap3216c"
 
-    config PKG_AP3216C_USING_SENSOR_DEVICE
+    config PKG_AP3216C_USING_SENSOR_V2
         bool "Enable sensor_v2 divce framework"
+        depends on RT_VER_NUM >= 0x50001
         select RT_USING_SENSOR
         select RT_USING_SENSOR_V2
         default n
