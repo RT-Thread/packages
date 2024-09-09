@@ -10,7 +10,7 @@ if PKG_USING_MAX31865
         string
         default "/packages/peripherals/sensors/max31865"
 
-    config PKG_MAX31865_USING_SENSOR_V1_DEVICE
+    config PKG_MAX31865_USING_SENSOR_V1
         bool "Enable sensor_v1 device framework"
         select RT_USING_SENSOR
         default n
