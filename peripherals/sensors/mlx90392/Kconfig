@@ -10,6 +10,11 @@ if PKG_USING_MLX90392
         string
         default "/packages/peripherals/sensors/mlx90392"
 
+    config PKG_MLX90392_USING_SENSOR_V1
+        bool "Enable sensor_v1 device framework"
+        select RT_USING_SENSOR
+        default n
+    
     choice
         prompt "Version"
         default PKG_USING_MLX90392_LATEST_VERSION
