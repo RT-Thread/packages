@@ -43,10 +43,11 @@ if PKG_USING_QMP6989
         select RT_USING_SENSOR
         default n
 
-    config PKG_QMP6989_SENSOR_V1_DEMO
-        bool "Enable qmp6989 sensor_v1 demo"
-        select PKG_QMP6989_USING_SENSOR_V1
-        default n
+    if PKG_QMP6989_USING_SENSOR_V1
+        config PKG_QMP6989_SENSOR_V1_DEMO
+            bool "Enable qmp6989 sensor_v1 demo"
+            default n
+    endif
 
     config PKG_QMP6989_SUPPORT_FLOAT
         bool "support float"
