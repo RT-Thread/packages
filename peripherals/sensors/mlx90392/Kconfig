@@ -15,6 +15,10 @@ if PKG_USING_MLX90392
         select RT_USING_SENSOR
         default n
     
+    config PKG_USING_MLX90392_SAMPLE
+        bool "Enable mlx90392 Sample"
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_MLX90392_LATEST_VERSION
