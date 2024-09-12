@@ -15,11 +15,11 @@ if PKG_USING_PMSXX
         select RT_USING_SENSOR
         default n
 
-    config PKG_USING_SENSOR_V1_PMSXX_SAMPLE
-        bool "Enable pmsxx sensor_v1 sample"
-        select RT_USING_SENSOR
-        select PKG_PMSXX_USING_SENSOR_V1
-        default n
+    if PKG_PMSXX_USING_SENSOR_V1
+        config PKG_USING_SENSOR_V1_PMSXX_SAMPLE
+            bool "Enable pmsxx sensor_v1 sample"
+            default n
+    endif
 
     choice
         prompt "Select pms sensor type"
