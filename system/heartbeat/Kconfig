@@ -8,7 +8,7 @@ if PKG_USING_HEARTBEAT
 
     config PKG_HEARTBEAT_PATH
         string
-        default "/packages/peripherals/heartbeat"
+        default "/packages/system/heartbeat"
 
     config PKG_HEARTBEAT_LED_PIN
         int "heartbeat led pin"
