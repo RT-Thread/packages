@@ -8,7 +8,7 @@ menuconfig PKG_USING_INA226
 
 if PKG_USING_INA226
 	config PKG_INA226_USING_SENSOR_V1
-        bool "Enable sensor_v1 divce framework(please enbale an spi bus)"
+        bool "Enable sensor_v1 divce framework(please enbale an i2c bus)"
         select RT_USING_SENSOR
         default n
 		
