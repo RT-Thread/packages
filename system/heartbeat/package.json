@@ -8,7 +8,7 @@
     "心跳灯",
     "rt-thread"
   ],
-  "category": "peripherals",
+  "category": "system",
   "author": {
     "name": "Chasel",
     "email": "m19825309307@163.com",
