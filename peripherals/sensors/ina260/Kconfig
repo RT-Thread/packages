@@ -8,9 +8,15 @@ menuconfig PKG_USING_INA260
 
 if PKG_USING_INA260
 
+    config PKG_INA260_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+		
     config PKG_USING_INA260_EXAMPLE
         bool "Enable ina260 example"
-        default y
+        select PKG_INA260_USING_SENSOR_V1
+        default n
 
     config PKG_INA260_PATH
         string
