@@ -6,6 +6,11 @@ menuconfig PKG_USING_LSM6DSM
 
 if PKG_USING_LSM6DSM
 
+    config PKG_LSM6DSM_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+		
     config PKG_LSM6DSM_PATH
         string
         default "/packages/peripherals/sensors/lsm6dsm"
