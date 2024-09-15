@@ -6,6 +6,11 @@ menuconfig PKG_USING_MAX6675
 
 if PKG_USING_MAX6675
 
+    config PKG_MAX6675_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
     config PKG_MAX6675_PATH
         string
         default "/packages/peripherals/sensors/max6675"
