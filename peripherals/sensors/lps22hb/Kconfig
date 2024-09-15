@@ -5,11 +5,16 @@ menuconfig PKG_USING_LPS22HB
     default n
 
 if PKG_USING_LPS22HB
-
+	
+    config PKG_LPS22HB_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+		
     config PKG_LPS22HB_PATH
         string
         default "/packages/peripherals/sensors/lps22hb"
-
+	
     choice
         prompt "Version"
         default PKG_USING_LPS22HB_LATEST_VERSION
