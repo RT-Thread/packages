@@ -6,17 +6,19 @@ menuconfig PKG_USING_LSM303AGR
 
 if PKG_USING_LSM303AGR
 
+    config PKG_LSM303AGR_ACCE_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+    
+    config PKG_LSM303AGR_MAG_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
     config PKG_LSM303AGR_PATH
         string
         default "/packages/peripherals/sensors/lsm303agr"
-
-    config PKG_USING_LSM303AGR_ACCE
-        bool "Enable lsm303agr acce"
-        default y
-
-    config PKG_USING_LSM303AGR_MAG
-        bool "Enable lsm303agr mag"
-        default y
 
     choice
         prompt "Version"
