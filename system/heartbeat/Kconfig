@@ -36,3 +36,4 @@ if PKG_USING_HEARTBEAT
         default "latest" if PKG_USING_HEARTBEAT_LATEST_VERSION
 
 endif
+
