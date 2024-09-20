@@ -1,0 +1,32 @@
+
+# Kconfig file for package mlx90394
+menuconfig PKG_USING_MLX90394
+    bool "a mlx90394 package for rt-thread."
+    default n
+
+if PKG_USING_MLX90394
+
+    config PKG_MLX90394_PATH
+        string
+        default "/packages/peripherals/sensors/mlx90394"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MLX90394_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MLX90394_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MLX90394_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MLX90394_VER
+       string
+       default "v1.0.0"    if PKG_USING_MLX90394_V100
+       default "latest"    if PKG_USING_MLX90394_LATEST_VERSION
+
+endif
+
