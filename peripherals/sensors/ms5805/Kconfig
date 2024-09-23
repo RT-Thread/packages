@@ -10,16 +10,23 @@ if PKG_USING_MS5805
         string
         default "/packages/peripherals/sensors/ms5805"
 
-    config MS5805_USING_TEMP
+    config PKG_MS5805_USING_SENSOR_V1
+        bool "Enable sensor_v1 device framework"
+        select RT_USING_SENSOR
+        default n
+
+    if PKG_MS5805_USING_SENSOR_V1
+        config PKG_USING_MS5805_SAMPLE
+            bool "Enable MS5805 sensor_v1 example"
+            default n
+    endif
+
+    config PKG_MS5805_USING_TEMP
         bool "Enable MS5805 temperature"
         default n
 
-    config MS5805_USING_BARO
+    config PKG_MS5805_USING_BARO
         bool "Enable MS5805 pressure"
-        default n
-
-    config PKG_USING_MS5805_SAMPLE
-        bool "Enable ms5805 example"
         default n
 
     choice
