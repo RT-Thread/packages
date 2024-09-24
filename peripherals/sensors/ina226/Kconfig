@@ -14,7 +14,7 @@ if PKG_USING_INA226
 		
     config PKG_USING_INA226_EXAMPLE
         bool "Enable ina226 example"
-		select PKG_INA226_USING_SENSOR_V1
+        select PKG_INA226_USING_SENSOR_V1
         default n
 
     config PKG_INA226_PATH
