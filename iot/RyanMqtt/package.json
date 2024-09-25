@@ -35,6 +35,11 @@
       "filename": "v1.1.0.zip"
     },
     {
+      "version": "v1.2.0",
+      "URL": "https://github.com/Ryan-CW-Code/RyanMqtt/archive/refs/tags/v1.2.0.zip",
+      "filename": "v1.2.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/Ryan-CW-Code/RyanMqtt.git",
       "filename": "RyanMqtt.zip",
