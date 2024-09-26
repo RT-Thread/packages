@@ -7,10 +7,15 @@ menuconfig PKG_USING_INA226
         A current monitoring chip from TI, driven through the SENSOR frame.
 
 if PKG_USING_INA226
-
+	config PKG_INA226_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework(please enbale an i2c bus)"
+        select RT_USING_SENSOR
+        default n
+		
     config PKG_USING_INA226_EXAMPLE
         bool "Enable ina226 example"
-        default y
+        select PKG_INA226_USING_SENSOR_V1
+        default n
 
     config PKG_INA226_PATH
         string
