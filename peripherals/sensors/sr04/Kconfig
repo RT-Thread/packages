@@ -22,7 +22,12 @@ if PKG_USING_SR04
         config PKG_USING_SR04_LATEST_VERSION
             bool "latest"
     endchoice
-
+    
+    config PKG_SR04_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+    
     config PKG_USING_SR04_SAMPLE
         bool "Enable sr04 sample"
         default y
