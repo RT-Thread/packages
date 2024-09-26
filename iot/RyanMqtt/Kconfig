@@ -18,7 +18,7 @@ if PKG_USING_RYANMQTT
         default "/packages/iot/RyanMqtt"
 
     choice
-        prompt "版本选择: 首选latest会及时的修复bug, 其次选择最后一个版本, 其余版本不推荐"
+        prompt "版本选择: 推荐首选latest, 其次选择最后一个版本, 其余版本不推荐"
         default PKG_USING_RYANMQTT_LATEST_VERSION
         help
             Select the package version
@@ -32,6 +32,9 @@ if PKG_USING_RYANMQTT
         config PKG_USING_RYANMQTT_V110
             bool "v1.1.0"
 
+        config PKG_USING_RYANMQTT_V120
+            bool "v1.2.0"
+
         config PKG_USING_RYANMQTT_LATEST_VERSION
             bool "latest"
     endchoice
@@ -41,6 +44,7 @@ if PKG_USING_RYANMQTT
        default "v0.0.1"    if PKG_USING_RYANMQTT_V001
        default "v1.0.0"    if PKG_USING_RYANMQTT_V100
        default "v1.1.0"    if PKG_USING_RYANMQTT_V110
+       default "v1.2.0"    if PKG_USING_RYANMQTT_V120
        default "latest"    if PKG_USING_RYANMQTT_LATEST_VERSION
 
     config PKG_RYANMQTT_VER_NUM
@@ -48,6 +52,7 @@ if PKG_USING_RYANMQTT
        default 0x001    if PKG_USING_RYANMQTT_V001
        default 0x100    if PKG_USING_RYANMQTT_V100
        default 0x110    if PKG_USING_RYANMQTT_V110
+       default 0x120    if PKG_USING_RYANMQTT_V120
        default 0xfff    if PKG_USING_RYANMQTT_LATEST_VERSION
 
 endif
