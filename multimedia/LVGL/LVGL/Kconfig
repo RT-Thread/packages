@@ -34,24 +34,8 @@ if PKG_USING_LVGL
         bool "Enable built-in demos"
         default n
 
-    config PKG_LVGL_CHOOSE_LATEST
-        bool
-
-    config PKG_LVGL_CHOOSE_V080311
-        bool
-
-    config PKG_LVGL_CHOOSE_V8_3_LATEST
-        bool
-
-    config PKG_LVGL_CHOOSE_V8_4_LATEST
-        bool
-
     choice
         prompt "Version"
-        default PKG_LVGL_USING_V080311 if PKG_LVGL_CHOOSE_V080311
-        default PKG_LVGL_USING_V8_3_LATEST if PKG_LVGL_CHOOSE_V8_3_LATEST
-        default PKG_LVGL_USING_V8_4_LATEST if PKG_LVGL_CHOOSE_V8_4_LATEST
-        default PKG_LVGL_USING_LATEST if PKG_LVGL_CHOOSE_LATEST
 
         config PKG_LVGL_USING_V080311
             bool "v8.3.11"
