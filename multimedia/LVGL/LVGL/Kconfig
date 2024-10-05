@@ -34,20 +34,24 @@ if PKG_USING_LVGL
         bool "Enable built-in demos"
         default n
 
-    config PKG_LVGL_CHOOSE_LATEST_VERSION
+    config PKG_LVGL_CHOOSE_LATEST
         bool
 
-    config PKG_LVGL_CHOOSE_V8_3_LATEST_VERSION
+    config PKG_LVGL_CHOOSE_V080311
         bool
 
-    config PKG_LVGL_CHOOSE_V8_4_LATEST_VERSION
+    config PKG_LVGL_CHOOSE_V8_3_LATEST
+        bool
+
+    config PKG_LVGL_CHOOSE_V8_4_LATEST
         bool
 
     choice
         prompt "Version"
-        default PKG_LVGL_USING_LATEST_VERSION if PKG_LVGL_CHOOSE_LATEST_VERSION
-        default PKG_LVGL_USING_V8_3_LATEST_VERSION if PKG_LVGL_CHOOSE_V8_3_LATEST_VERSION
-        default PKG_LVGL_USING_V8_4_LATEST_VERSION if PKG_LVGL_CHOOSE_V8_4_LATEST_VERSION
+        default PKG_LVGL_USING_V080311 if PKG_LVGL_CHOOSE_V080311
+        default PKG_LVGL_USING_V8_3_LATEST if PKG_LVGL_CHOOSE_V8_3_LATEST
+        default PKG_LVGL_USING_V8_4_LATEST if PKG_LVGL_CHOOSE_V8_4_LATEST
+        default PKG_LVGL_USING_LATEST if PKG_LVGL_CHOOSE_LATEST
 
         config PKG_LVGL_USING_V080311
             bool "v8.3.11"
@@ -88,10 +92,10 @@ if PKG_USING_LVGL
         config PKG_LVGL_USING_V08020
             bool "v8.2.0"
 
-        config PKG_LVGL_USING_V8_3_LATEST_VERSION
+        config PKG_LVGL_USING_V8_3_LATEST
             bool "v8.3-latest"
 
-        config PKG_LVGL_USING_V8_4_LATEST_VERSION
+        config PKG_LVGL_USING_V8_4_LATEST
             bool "v8.4-latest"
 
         config PKG_LVGL_USING_V09000
@@ -100,7 +104,7 @@ if PKG_USING_LVGL
         config PKG_LVGL_USING_V09010
             bool "v9.1.0"
 
-        config PKG_LVGL_USING_LATEST_VERSION
+        config PKG_LVGL_USING_LATEST
             bool "latest"
     endchoice
 
@@ -119,11 +123,11 @@ if PKG_USING_LVGL
         default 0x080301    if PKG_LVGL_USING_V08031
         default 0x080300    if PKG_LVGL_USING_V08030
         default 0x080200    if PKG_LVGL_USING_V08020
-        default 0x0803FF    if PKG_LVGL_USING_V8_3_LATEST_VERSION
-        default 0x0804FF    if PKG_LVGL_USING_V8_4_LATEST_VERSION
+        default 0x0803FF    if PKG_LVGL_USING_V8_3_LATEST
+        default 0x0804FF    if PKG_LVGL_USING_V8_4_LATEST
         default 0x090000    if PKG_LVGL_USING_V09000
         default 0x090100    if PKG_LVGL_USING_V09010
-        default 0x999999    if PKG_LVGL_USING_LATEST_VERSION
+        default 0x999999    if PKG_LVGL_USING_LATEST
 
     config PKG_LVGL_VER
        string
