@@ -19,6 +19,11 @@ if PKG_USING_BMI160_BMX160
     config BMX160_USING_MAG
         bool "Enable BMX160 magnetometer"
         default n
+        
+    config PKG_BMI160_BMX160_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
 
     choice
         prompt "Version"

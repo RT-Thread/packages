@@ -10,6 +10,11 @@ if PKG_USING_BMA400
         string
         default "/packages/peripherals/sensors/bma400"
 
+    config PKG_BMA400_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
     config PKG_USING_BMA400_ACCE
         bool "Enable bma400 acce"
         default y

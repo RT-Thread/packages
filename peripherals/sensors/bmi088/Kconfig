@@ -8,6 +8,11 @@ if PKG_USING_BMI088
     config PKG_BMI088_PATH
         string
         default "/packages/peripherals/sensors/bmi088"
+        
+    config PKG_BMI088_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
 
     choice
         prompt "Version"
