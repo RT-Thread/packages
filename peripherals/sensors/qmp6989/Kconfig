@@ -15,6 +15,7 @@ if PKG_USING_QMP6989
 
         config PKG_QMP6989_USING_INTF_SPI
             bool "intf spi"
+
     endchoice
 
     if PKG_QMP6989_USING_INTF_I2C
@@ -37,14 +38,21 @@ if PKG_USING_QMP6989
             default -1
     endif
 
+    config PKG_QMP6989_USING_SENSOR_V1
+        bool "Enable sensor_v1 device framework"
+        select RT_USING_SENSOR
+        default n
+
+    if PKG_QMP6989_USING_SENSOR_V1
+        config PKG_QMP6989_SENSOR_V1_DEMO
+            bool "Enable qmp6989 sensor_v1 demo"
+            default n
+    endif
+
     config PKG_QMP6989_SUPPORT_FLOAT
         bool "support float"
         default n
-
-    config PKG_USING_QMP6989_DEMO
-        bool "using demo"
-        default n
-
+        
     config PKG_QMP6989_PATH
         string
         default "/packages/peripherals/sensors/qmp6989"
