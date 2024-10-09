@@ -9,7 +9,12 @@ if PKG_USING_SHTC1
     config PKG_SHTC1_PATH
         string
         default "/packages/peripherals/sensors/shtc1"
-
+    
+    config PKG_SHTC1_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default y
+        
     choice
         prompt "Version"
         default PKG_USING_SHTC1_LATEST_VERSION
