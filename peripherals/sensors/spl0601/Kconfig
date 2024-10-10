@@ -1,6 +1,7 @@
 # Kconfig file for package spl0601
 menuconfig PKG_USING_SPL0601
     bool "SPL0601: Digital pressure sensor"
+    select RT_USING_SENSOR
     default n
 
 if PKG_USING_SPL0601
