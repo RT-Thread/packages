@@ -2,6 +2,7 @@
 # Kconfig file for package rt3020
 menuconfig PKG_USING_RT3020
     bool "RT3020 sensor driver package, support: accelerometer."
+    select RT_USING_SENSOR
     default n
 
 if PKG_USING_RT3020
