@@ -6,12 +6,17 @@ menuconfig PKG_USING_VL53L0X
 
 if PKG_USING_VL53L0X
 
+    config PKG_VL53L0X_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default y
+
     config PKG_VL53L0X_PATH
         string
         default "/packages/peripherals/sensors/vl53l0x"
 
-     config PKG_USING_VL53L0X_SAMPLE
-        bool "Enable vl53l0x sample"
+     config PKG_VL53L0X_USING_SENSOR_V1_SAMPLE
+        bool "Enable vl53l0x sensor_v1 divce framework sample"
         default n
 
     choice
