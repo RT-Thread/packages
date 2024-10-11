@@ -10,9 +10,10 @@ if PKG_USING_LIS2DH12
         string
         default "/packages/peripherals/sensors/lis2dh12"
 
-    config PKG_USING_LIS2DH12_ACCE
-        bool "Enable lis2dh12 accelerometer"
-        default y
+    config PKG_LIS2DH12_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework(please enbale an spi bus)"
+        select RT_USING_SENSOR
+        default n
 
     choice
         prompt "Version"
