@@ -10,9 +10,15 @@ if PKG_USING_RT3020
         string
         default "/packages/peripherals/sensors/rt3020"
 
-    config PKG_USING_RT3020_ACCE
-        bool "Enable rt3020 acce"
-        default y
+    config PKG_RT3020_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+        if PKG_RT3020_USING_SENSOR_V1
+            config PKG_USING_RT3020_ACCE
+                bool "Enable rt3020 acce"
+                default y
+        endif
 
     choice
         prompt "Version"
