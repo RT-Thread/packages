@@ -1,11 +1,12 @@
 {
   "name": "gc9a01",
-  "description": "gc9a01: RT-Thread package for working with OLED based on  SPI.",
-  "description_zh": "基于gc9a01的 OLED 驱动，支持SPI",
+  "description": "gc9a01: RT-Thread package for working with TFT LCD based on SPI.",
+  "description_zh": "基于gc9a01的圆形TFT LCD驱动，支持SPI",
   "enable": "PKG_USING_GC9A01",
   "keywords": [
     "gc9a01",
-    "oled"
+    "tft",
+    "lcd"
   ],
   "category": "peripherals",
   "author": {
@@ -14,19 +15,14 @@
     "github": "hywing"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/hywing/tft-gc9a01",
+  "repository": "https://github.com/hywing/rtt-gc9a01",
   "icon": "unknown",
-  "homepage": "https://github.com/hywing/tft-gc9a01",
+  "homepage": "https://github.com/hywing/rtt-gc9a01",
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/hywing/tft-gc9a01/archive/v1.0.0.zip",
-      "filename": "gc9a01-1.0.0.zip"
-    },
-    {
       "version": "latest",
-      "URL": "https://github.com/hywing/tft-gc9a01.git",
+      "URL": "https://github.com/hywing/rtt-gc9a01.git",
       "filename": "gc9a01-latest.zip",
       "VER_SHA": "main"
     }
