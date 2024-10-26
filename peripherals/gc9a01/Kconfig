@@ -15,15 +15,15 @@ if PKG_USING_GC9A01
         default "spi0"
 
     config PKG_USING_GC9A01_DC_PIN
-        int "DC PIN number for example : 3*32+1"
+        int "DC PIN number for example in frdm-mcxa153 board P3_1 -> 3*32+1"
         default "97"
 
     config PKG_USING_GC9A01_RES_PIN
-        int "RES PIN number for example : 3*32+30"
+        int "RES PIN number for example in frdm-mcxa153 board P3_30 -> 3*32+30"
         default "126"
 
     config PKG_USING_GC9A01_CS_PIN
-        int "CS PIN number for example : 1*32+3"
+        int "CS PIN number for example in frdm-mcxa153 board P1_3 -> 1*32+3"
         default "35"
 
     config PKG_USING_GC9A01_SAMPLE
