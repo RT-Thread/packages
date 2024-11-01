@@ -8,158 +8,204 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
     select BSP_USING_SDIO
     default n
 
-if PKG_USING_WIFI_HOST_DRIVER
+    if PKG_USING_WIFI_HOST_DRIVER
 
-    choice
-        prompt "Select Chips"
-        default WHD_USING_CHIP_CYW43438
+        choice
+            prompt "Select Chips"
+            default WHD_USING_CHIP_CYW43438
 
-        config WHD_USING_CHIP_CYW43438
-            bool "CYW43438"
+            config WHD_USING_CHIP_CYW43438
+                bool "CYW43438"
 
-        config WHD_USING_CHIP_CYW4373
-            bool "CYW4373"
+            config WHD_USING_CHIP_CYW4373
+                bool "CYW4373"
 
-        config WHD_USING_CHIP_CYW43012
-            bool "CYW43012"
+            config WHD_USING_CHIP_CYW43012
+                bool "CYW43012"
 
-        config WHD_USING_CHIP_CYW43439
-            bool "CYW43439"
+            config WHD_USING_CHIP_CYW43439
+                bool "CYW43439"
 
-        config WHD_USING_CHIP_CYW43022
-            bool "CYW43022"
+            config WHD_USING_CHIP_CYW43022
+                bool "CYW43022"
 
-        config WHD_USING_CHIP_CYW4343W
-            bool "CYW4343W"
+            config WHD_USING_CHIP_CYW4343W
+                bool "CYW4343W"
 
-    endchoice
+        endchoice
 
-    menuconfig WHD_RESOURCES_IN_EXTERNAL_STORAGE
-        bool "Using resources in external storage(FAL)"
-        select RT_USING_FAL
-        default n
+        menuconfig WHD_RESOURCES_IN_EXTERNAL_STORAGE
+            bool "Using resources in external storage"
+            default n
 
-        if WHD_RESOURCES_IN_EXTERNAL_STORAGE
+            if WHD_RESOURCES_IN_EXTERNAL_STORAGE
 
-            config WHD_RESOURCES_FIRMWARE_NAME
-                string "Set the partition name of the firmware files"
-                default "whd_firmware"
+                if PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10100
+                    choice
+                        prompt "Select external storage type"
+                        default WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
 
-            config WHD_RESOURCES_CLM_NAME
-                string "Set the partition name of the clm files"
-                default "whd_clm"
+                        config WHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
+                            bool "posix file system"
+                            select RT_USING_POSIX_FS
 
-            config WHD_RESOURCES_BLOCK_SIZE
-                int "Set the block size for resources"
-                default 1024
+                        config WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
+                            bool "flash abstraction layer(FAL)"
+                            select RT_USING_FAL
+                    endchoice
 
+                    if WHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
+                        config WHD_RESOURCES_FIRMWARE_PATH_NAME
+                            string "Set the file path of the firmware files"
+                            default "/sdcard/43438A1.bin"
+
+                        config WHD_RESOURCES_CLM_PATH_NAME
+                            string "Set the file path of the clm files"
+                            default "/sdcard/43438A1.clm_blob"
+                    endif
+
+                    if WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
+                        config WHD_RESOURCES_FIRMWARE_PART_NAME
+                            string "Set the partition name of the firmware files"
+                            default "whd_firmware"
+
+                        config WHD_RESOURCES_CLM_PART_NAME
+                            string "Set the partition name of the clm files"
+                            default "whd_clm"
+                    endif
+                endif
+
+                if PKG_WIFI_HOST_DRIVER_VER_NUM < 0x10100
+                    config WHD_RESOURCES_FIRMWARE_NAME
+                            string "Set the partition name of the firmware files"
+                            default "whd_firmware"
+
+                    config WHD_RESOURCES_CLM_NAME
+                        string "Set the partition name of the clm files"
+                        default "whd_clm"
+                endif
+
+                config WHD_RESOURCES_BLOCK_SIZE
+                        int "Set the block size for resources"
+                        default 1024
+
+            endif
+
+        config WHD_RESOURCES_CUSTOM_NVRAM
+            bool "Using custom nvram files"
+            default n
+
+        config CY_WIFI_DEFAULT_ENABLE_POWERSAVE_MODE
+            bool "Default enable powersave mode"
+            default n
+
+        if CY_WIFI_DEFAULT_ENABLE_POWERSAVE_MODE
+            config CY_WIFI_DEFAULT_PM2_SLEEP_RET_TIME
+                int "Set return to sleep delay.(PM2)"
+                default 200
         endif
 
-    config WHD_RESOURCES_CUSTOM_NVRAM
-        bool "Using custom nvram files"
-        default n
+        config CY_WIFI_WHD_THREAD_PRIORITY
+            int "The priority level value of WHD thread"
+            range 0 32
+            default 8
 
-    config CY_WIFI_DEFAULT_ENABLE_POWERSAVE_MODE
-        bool "Default enable powersave mode"
-        default n
-
-    if CY_WIFI_DEFAULT_ENABLE_POWERSAVE_MODE
-        config CY_WIFI_DEFAULT_PM2_SLEEP_RET_TIME
-            int "Set return to sleep delay.(PM2)"
-            default 200
-    endif
-
-    config CY_WIFI_WHD_THREAD_PRIORITY
-        int "The priority level value of WHD thread"
-        range 0 32
-        default 8
-
-    config CY_WIFI_WHD_THREAD_STACK_SIZE
-        int "The stack size for WHD thread"
-        range 0 8192
-        default 5120
-
-    choice
-        prompt "Select the pin name or number"
-        default CYBSP_USING_PIN_NUMBER
-
-        config CYBSP_USING_PIN_NAME
-            bool "Name"
-
-        config CYBSP_USING_PIN_NUMBER
-            bool "Number"
-    endchoice
-
-    if CYBSP_USING_PIN_NAME
-        config CYBSP_REG_ON_PIN_NAME
-            string "Set the WiFi_REG ON pin name"
-            default "PA.0"
-
-        config CYBSP_HOST_WAKE_IRQ_PIN_NAME
-            string "Set the HOST_WAKE_IRQ pin name"
-            default "PA.1"
-    endif
-
-    if CYBSP_USING_PIN_NUMBER
-        config CYBSP_REG_ON_PIN
-            int "Set the WiFi_REG ON pin number"
-            default -1
-
-        config CYBSP_HOST_WAKE_IRQ_PIN
-            int "Set the HOST_WAKE_IRQ pin number"
-            default -1
-    endif
-
-    choice
-        prompt "Select HOST_WAKE_IRQ event type"
-        default CYBSP_HOST_WAKE_IRQ_EVENT_FALLING
-
-        config CYBSP_HOST_WAKE_IRQ_EVENT_FALL
-            bool "falling"
-
-        config CYBSP_HOST_WAKE_IRQ_EVENT_RISE
-            bool "rising"
-
-        config CYBSP_HOST_WAKE_IRQ_EVENT_BOTH
-            bool "rising and falling"
-
-    endchoice
-
-    config CYBSP_OOB_INTR_PRIORITY
-        int "Set the interrput priority for HOST_WAKE_IRQ pin"
-        default 2
-
-    config CY_WIFI_USING_THREAD_INIT
-        bool "Using thread initialization"
-        default n
-
-    if CY_WIFI_USING_THREAD_INIT
-        config CY_WIFI_INIT_THREAD_STACK_SIZE
-            int "The stack size for init thread"
+        config CY_WIFI_WHD_THREAD_STACK_SIZE
+            int "The stack size for WHD thread"
             range 0 8192
-            default 2048
-    endif
+            default 5120
 
-    config PKG_WIFI_HOST_DRIVER_PATH
+        choice
+            prompt "Select the pin name or number"
+            default CYBSP_USING_PIN_NUMBER
+
+            config CYBSP_USING_PIN_NAME
+                bool "Name"
+
+            config CYBSP_USING_PIN_NUMBER
+                bool "Number"
+        endchoice
+
+        if CYBSP_USING_PIN_NAME
+            config CYBSP_REG_ON_PIN_NAME
+                string "Set the WiFi_REG ON pin name"
+                default "PA.0"
+
+            config CYBSP_HOST_WAKE_IRQ_PIN_NAME
+                string "Set the HOST_WAKE_IRQ pin name"
+                default "PA.1"
+        endif
+
+        if CYBSP_USING_PIN_NUMBER
+            config CYBSP_REG_ON_PIN
+                int "Set the WiFi_REG ON pin number"
+                default -1
+
+            config CYBSP_HOST_WAKE_IRQ_PIN
+                int "Set the HOST_WAKE_IRQ pin number"
+                default -1
+        endif
+
+        choice
+            prompt "Select HOST_WAKE_IRQ event type"
+            default CYBSP_HOST_WAKE_IRQ_EVENT_FALLING
+
+            config CYBSP_HOST_WAKE_IRQ_EVENT_FALL
+                bool "falling"
+
+            config CYBSP_HOST_WAKE_IRQ_EVENT_RISE
+                bool "rising"
+
+            config CYBSP_HOST_WAKE_IRQ_EVENT_BOTH
+                bool "rising and falling"
+
+        endchoice
+
+        config CYBSP_OOB_INTR_PRIORITY
+            int "Set the interrput priority for HOST_WAKE_IRQ pin"
+            default 2
+
+        config CY_WIFI_USING_THREAD_INIT
+            bool "Using thread initialization"
+            default n
+
+        if CY_WIFI_USING_THREAD_INIT
+            config CY_WIFI_INIT_THREAD_STACK_SIZE
+                int "The stack size for init thread"
+                range 0 8192
+                default 2048
+        endif
+
+        config PKG_WIFI_HOST_DRIVER_PATH
+            string
+            default "/packages/iot/wifi-host-driver"
+
+        choice
+            prompt "Version"
+            default PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+            help
+                Select the package version
+
+            config PKG_USING_WIFI_HOST_DRIVER_V100
+                bool "v1.0.0"
+
+            config PKG_USING_WIFI_HOST_DRIVER_V110
+                bool "v1.1.0"
+
+            config PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+                bool "latest"
+        endchoice
+
+        config PKG_WIFI_HOST_DRIVER_VER
         string
-        default "/packages/iot/wifi-host-driver"
-
-    choice
-        prompt "Version"
-        default PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
-        help
-            Select the package version
-
-        config PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
-            bool "latest"
-
-        config PKG_USING_WIFI_HOST_DRIVER_V100
-            bool "v1.0.0"
-    endchoice
-
-    config PKG_WIFI_HOST_DRIVER_VER
-        string
-        default "latest"    if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
         default "v1.0.0"    if PKG_USING_WIFI_HOST_DRIVER_V100
-endif
+        default "v1.1.0"    if PKG_USING_WIFI_HOST_DRIVER_V110
+        default "latest"    if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
 
+        config PKG_WIFI_HOST_DRIVER_VER_NUM
+        hex
+        default 0x10000 if PKG_USING_WIFI_HOST_DRIVER_V100
+        default 0x10100 if PKG_USING_WIFI_HOST_DRIVER_V110
+        default 0x99999 if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+
+    endif
