@@ -2,7 +2,6 @@
 # Kconfig file for package ZMOD4410
 menuconfig PKG_USING_ZMOD4410
     bool "ZMOD4410: Gas Sensor Module ZMOD4410 driver library"
-    select RT_USING_SENSOR
     default n
 
 if PKG_USING_ZMOD4410
@@ -10,6 +9,11 @@ if PKG_USING_ZMOD4410
     config PKG_ZMOD4410_PATH
         string
         default "/packages/peripherals/sensors/ZMOD4410"
+
+    config PKG_ZMOD4410_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
 
     choice
         prompt "Version"
