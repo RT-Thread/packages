@@ -1,0 +1,48 @@
+
+# Kconfig file for package gc9a01
+menuconfig PKG_USING_GC9A01
+    bool "gc9a01: RT-Thread package for working with TFT LCD based on SPI."
+    default n
+
+if PKG_USING_GC9A01
+
+    config PKG_GC9A01_PATH
+        string
+        default "/packages/peripherals/gc9a01"
+
+    config PKG_USING_GC9A01_SPI_BUS_NAME
+        string "SPI bus name"
+        default "spi0"
+
+    config PKG_USING_GC9A01_DC_PIN
+        int "DC PIN number for example in frdm-mcxa153 board P3_1 -> 3*32+1"
+        default "97"
+
+    config PKG_USING_GC9A01_RES_PIN
+        int "RES PIN number for example in frdm-mcxa153 board P3_30 -> 3*32+30"
+        default "126"
+
+    config PKG_USING_GC9A01_CS_PIN
+        int "CS PIN number for example in frdm-mcxa153 board P1_3 -> 1*32+3"
+        default "35"
+
+    config PKG_USING_GC9A01_SAMPLE
+        bool "Enable gc9a01 sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_GC9A01_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_GC9A01_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_GC9A01_VER
+       string
+       default "latest"    if PKG_USING_GC9A01_LATEST_VERSION
+
+endif
+
