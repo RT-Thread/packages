@@ -2,6 +2,7 @@
 # Kconfig file for package tsl4531
 menuconfig PKG_USING_TSL4531
     bool "TSL4531: a digital ambient light and a proximity senseor tsl4531 driver library."
+    select RT_USING_SENSOR
     default n
 
 if PKG_USING_TSL4531
