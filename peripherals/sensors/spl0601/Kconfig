@@ -8,6 +8,11 @@ if PKG_USING_SPL0601
         string
         default "/packages/peripherals/sensors/spl0601"
 
+    config PKG_SPL0601_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
     config SPL0601_USING_TEMP
         bool "Enable SPL0601 temperature"
         default n
