@@ -37,7 +37,7 @@ if PKG_USING_DHTXX
         default n
         if PKG_DHTXX_USING_SENSOR_V1
             config PKG_USING_DHTXX_SAMPLE_SENSOR_V1
-                bool "Enable dhtxxx sample for sensor_v1 frame"
+                bool "Enable dhtxx sample for sensor_v1 frame"
                 default n
         endif
 
