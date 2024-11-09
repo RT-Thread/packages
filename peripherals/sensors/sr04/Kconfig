@@ -2,6 +2,8 @@
 # Kconfig file for package sr04
 menuconfig PKG_USING_SR04
     bool "HC-SR04 sensor driver package."
+    select RT_USING_HWTIMER
+    select RT_USING_SENSOR
     default n
 
 if PKG_USING_SR04
