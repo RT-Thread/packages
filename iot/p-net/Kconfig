@@ -1,6 +1,6 @@
 menuconfig PKG_USING_PNET
     bool "P-Net stack for Profinet device implementation"
-    select BSP_USING_ETH
+    select RT_USING_LWIP
     select RT_LWIP_SNMP
     select RT_LWIP_ENABLE_USER_HOOKS
     select PKG_PENT_NETIF_NAME
