@@ -14,6 +14,11 @@ if PKG_USING_DA270
         bool "Enable da270 acce"
         default y
 
+    config PKG_DA270_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_DA270_LATEST_VERSION
