@@ -11,6 +11,10 @@ if PKG_USING_DRMP
         string
         default "/packages/misc/drmp"
 
+    config DRMP_VCOM_TOTAL
+        bool "vcom total (must >= 2)"
+        default 2
+        
     config DRMP_USING_SAMPLE
         bool "using sample"
         default n
