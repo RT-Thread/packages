@@ -12,7 +12,7 @@ if PKG_USING_DRMP
         default "/packages/misc/drmp"
 
     config DRMP_VCOM_TOTAL
-        bool "vcom total (must >= 2)"
+        int "vcom total (2 - 16)"
         default 2
         
     config DRMP_USING_SAMPLE
