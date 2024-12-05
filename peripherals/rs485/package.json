@@ -44,6 +44,24 @@
       "VER_SHA": ""
     },
     {
+      "version": "v1.04",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-rs485/archive/v1.04.zip",
+      "filename": "rt-thread-rs485-1.04.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.05",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-rs485/archive/v1.05.zip",
+      "filename": "rt-thread-rs485-1.05.zip",
+      "VER_SHA": ""
+    },
+    {
+      "version": "v1.06",
+      "URL": "https://github.com/qiyongzhong0/rt-thread-rs485/archive/v1.06.zip",
+      "filename": "rt-thread-rs485-1.06.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/qiyongzhong0/rt-thread-rs485.git",
       "filename": "",
