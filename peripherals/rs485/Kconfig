@@ -13,10 +13,30 @@ if PKG_USING_RS485
         string
         default "/packages/peripherals/rs485"
 
+    config RS485_USING_DEV
+        bool "using making RS485 device"
+        default n
+        
+    config RS485_USING_DMA_RX
+        bool "Receive using the DMA mode"
+        default n
+
+    config RS485_USING_INT_TX
+        bool "Send using the interrupt mode"
+        default n
+        
+    config RS485_USING_DMA_TX
+        bool "Send using the DMA mode"
+        default n
+        
+    config RS485_SW_DLY_US
+        int "Configure the sending and receiving switching delay"
+        default 0
+        
     config RS485_USING_TEST
         bool "using test"
         default n
-
+        
     if RS485_USING_TEST
 
         config RS485_TEST_SERIAL
@@ -115,6 +135,15 @@ if PKG_USING_RS485
         config PKG_USING_RS485_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_RS485_V106
+            bool "v1.06"
+            
+        config PKG_USING_RS485_V105
+            bool "v1.05"
+            
+        config PKG_USING_RS485_V104
+            bool "v1.04"
+            
         config PKG_USING_RS485_V103
             bool "v1.03"
 
@@ -131,6 +160,9 @@ if PKG_USING_RS485
     config PKG_RS485_VER
        string
        default "latest" if PKG_USING_RS485_LATEST_VERSION
+       default "v1.06"  if PKG_USING_RS485_V106
+       default "v1.05"  if PKG_USING_RS485_V105
+       default "v1.04"  if PKG_USING_RS485_V104
        default "v1.03"  if PKG_USING_RS485_V103
        default "v1.02"  if PKG_USING_RS485_V102
        default "v1.01"  if PKG_USING_RS485_V101
