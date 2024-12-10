@@ -1,0 +1,28 @@
+
+menuconfig PKG_USING_IK485
+    bool "ikun-485: A rs485 driver based on char device."
+    select RT_USING_SERIAL
+    select RT_USING_PIN
+    default n
+
+if PKG_USING_IK485
+
+    config PKG_IK485_PATH
+        string
+        default "/packages/peripherals/ikun-485"
+
+    choice
+        prompt "Version"
+        default PKG_USING_IK485_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_IK485_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_IK485_VER
+       string
+       default "latest" if PKG_USING_IK485_LATEST_VERSION
+
+endif
