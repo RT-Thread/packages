@@ -13,7 +13,7 @@ if PKG_USING_PNET
 
     config PKG_PNET_PATH
         string
-        default "/packages/iot/p-net"
+        default "/packages/iot/p-net-rtt"
 
     menuconfig PKG_PENT_NETIF_NAME
         bool "Default netif name for P-NET"
