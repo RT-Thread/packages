@@ -1,0 +1,28 @@
+{
+  "name": "rmp",
+  "description": "rmp: Efficient and secure memory pool",
+  "description_zh": "rmp: 高效且安全的内存池",
+  "enable": "PKG_USING_RMP",
+  "keywords": [
+    "rmp"
+  ],
+  "category": "system",
+  "author": {
+    "name": "RiceChen",
+    "email": "980307037@qq.com",
+    "github": "RiceChen0"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RiceChen0/rmp",
+  "icon": "unknown",
+  "homepage": "https://github.com/RiceChen0/rmp#readme",
+  "readme": "rmp Efficient and secure memory pool",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RiceChen0/rmp.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}

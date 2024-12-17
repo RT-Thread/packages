@@ -1,0 +1,36 @@
+
+# Kconfig file for package rmp
+menuconfig PKG_USING_RMP
+    bool "rmp: Efficient and secure memory pool"
+    default n
+
+if PKG_USING_RMP
+
+    config PKG_RMP_PATH
+        string
+        default "/packages/system/rmp"
+
+    config RMP_USING_DYNAMIC
+        bool "rmp using dynamic interface"
+        default n
+
+    config RMP_USING_RTOS
+        bool "rmp enable rtos"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_RMP_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RMP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RMP_VER
+       string
+       default "latest"    if PKG_USING_RMP_LATEST_VERSION
+
+endif
+
