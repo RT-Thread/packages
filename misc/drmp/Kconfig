@@ -1,0 +1,40 @@
+
+# Kconfig file for package drmp
+
+menuconfig PKG_USING_DRMP
+    bool "A protocol stack used for remote device maintenance"
+    default n
+
+if PKG_USING_DRMP
+
+    config PKG_DRMP_PATH
+        string
+        default "/packages/misc/drmp"
+
+    config DRMP_VCOM_TOTAL
+        int "vcom total (2 - 16)"
+        default 2
+        
+    config DRMP_USING_SAMPLE
+        bool "using sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_DRMP_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DRMP_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_DRMP_V100
+            bool "v1.00"
+    endchoice
+
+    config PKG_DRMP_VER
+       string
+       default "latest" if PKG_USING_DRMP_LATEST_VERSION
+       default "v1.00"  if PKG_USING_DRMP_V100
+
+endif
