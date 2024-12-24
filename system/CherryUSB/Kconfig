@@ -38,6 +38,8 @@ if PKG_USING_CHERRYUSB
                 bool "dwc2_gd"
             config PKG_CHERRYUSB_DEVICE_DWC2_HC
                 bool "dwc2_hc"
+            config PKG_CHERRYUSB_DEVICE_DWC2_KENDRYTE
+                bool "dwc2_kendryte"
             config PKG_CHERRYUSB_DEVICE_DWC2_CUSTOM
                 bool "dwc2_custom"
             config PKG_CHERRYUSB_DEVICE_MUSB_ES
@@ -48,6 +50,12 @@ if PKG_USING_CHERRYUSB
                 bool "musb_bk"
             config PKG_CHERRYUSB_DEVICE_MUSB_CUSTOM
                 bool "musb_custom"
+            config PKG_CHERRYUSB_DEVICE_KINETIS_MCX
+                bool "kinetis_mcx"
+            config PKG_CHERRYUSB_DEVICE_KINETIS_MM32
+                bool "kinetis_mm32"
+            config PKG_CHERRYUSB_DEVICE_KINETIS_CUSTOM
+                bool "kinetis_custom"
             config PKG_CHERRYUSB_DEVICE_CHIPIDEA_MCX
                 bool "chipidea_mcx"
             config PKG_CHERRYUSB_DEVICE_CHIPIDEA_CUSTOM
@@ -111,7 +119,7 @@ if PKG_USING_CHERRYUSB
 
         choice
             prompt "Select usb device template"
-            default PKG_CHERRYUSB_DEVICE_TEMPLATE
+            default PKG_CHERRYUSB_DEVICE_TEMPLATE_NONE
             config PKG_CHERRYUSB_DEVICE_TEMPLATE_NONE
                 bool "none (Implement it yourself)"
             config PKG_CHERRYUSB_DEVICE_TEMPLATE_CDC_ACM
@@ -178,6 +186,10 @@ if PKG_USING_CHERRYUSB
                 bool "dwc2_st"
             config PKG_CHERRYUSB_HOST_DWC2_ESP
                 bool "dwc2_esp"
+            config PKG_CHERRYUSB_HOST_DWC2_HC
+                bool "dwc2_hc"
+            config PKG_CHERRYUSB_HOST_DWC2_KENDRYTE
+                bool "dwc2_kendryte"
             config PKG_CHERRYUSB_HOST_DWC2_CUSTOM
                 bool "dwc2_custom"
             config PKG_CHERRYUSB_HOST_MUSB_ES
@@ -192,6 +204,12 @@ if PKG_USING_CHERRYUSB
                 bool "pusb2"
             config PKG_CHERRYUSB_HOST_XHCI
                 bool "xhci"
+            config PKG_CHERRYUSB_HOST_KINETIS_MCX
+                bool "kinetis_mcx"
+            config PKG_CHERRYUSB_HOST_KINETIS_MM32
+                bool "kinetis_mm32"
+            config PKG_CHERRYUSB_HOST_KINETIS_CUSTOM
+                bool "kinetis_custom"
         endchoice
 
         config PKG_CHERRYUSB_HOST_CDC_ACM
@@ -325,12 +343,14 @@ if PKG_USING_CHERRYUSB
 
     choice
         prompt "Version"
-        default PKG_USING_CHERRYUSB_V010400
+        default PKG_USING_CHERRYUSB_V010402
         help
             Select the package version
 
         config PKG_USING_CHERRYUSB_LATEST_VERSION
             bool "latest"
+        config PKG_USING_CHERRYUSB_V010402
+            bool "v1.4.2"
         config PKG_USING_CHERRYUSB_V010400
             bool "v1.4.0"
         config PKG_USING_CHERRYUSB_V010301
@@ -346,6 +366,7 @@ if PKG_USING_CHERRYUSB
     config PKG_CHERRYUSB_VER
        string
        default "latest"    if PKG_USING_CHERRYUSB_LATEST_VERSION
+       default "v1.4.2"   if PKG_USING_CHERRYUSB_V010402
        default "v1.4.0"   if PKG_USING_CHERRYUSB_V010400
        default "v1.3.1"   if PKG_USING_CHERRYUSB_V010301
        default "v1.3.0"   if PKG_USING_CHERRYUSB_V010300
