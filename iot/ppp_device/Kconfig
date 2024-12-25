@@ -84,10 +84,7 @@ if PKG_USING_PPP_DEVICE
         string "the name of apn access password"
     endif
 
-    choice
-        prompt "Select modem type"
-        default PPP_DEVICE_USING_AIR720
-
+    menu "Select modem type"
         config PPP_DEVICE_USING_AIR720
             bool "Luat Air720"
 
@@ -102,7 +99,7 @@ if PKG_USING_PPP_DEVICE
 
         config PPP_DEVICE_USING_ML305
             bool "China mobile ML305"
-    endchoice
+    endmenu 
 
     config PPP_DEVICE_SAMPLE
         bool "Enable sample to use ppp device"
