@@ -7,7 +7,7 @@ if PKG_USING_HPATCHLITE
 
     config PKG_HPATCHLITE_PATH
         string
-        default "/packages/tools/hpatchlite"
+        default "/packages/tools/hpatchlite-wrapper"
 
     choice
         prompt "Version"
