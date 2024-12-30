@@ -1,0 +1,26 @@
+{
+  "name": "OpENer",
+  "description": "EtherNet/IP stack for I/O adapter devices",
+  "description_zh": "用于 I/O 适配器设备的 EtherNet/IP 堆栈",
+  "enable": "PKG_USING_OPENER",
+  "keywords": [
+    "EtherNet/IP"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Martin Melik",
+    "email": "martin.melik@gmail.com",
+    "github": "MartinMelikMerkumians"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/EIPStackGroup/OpENer",
+  "homepage": "https://github.com/EIPStackGroup/OpENer#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/EIPStackGroup/OpENer.git",
+      "filename": "OpENer.zip",
+      "VER_SHA": "70d6947c6ef97c5c8ccbc908b94651432e18cf9c"
+    }
+  ]
+}

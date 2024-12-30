@@ -1,0 +1,31 @@
+
+# Kconfig file for package OpENer_port
+menuconfig PKG_USING_OPENER_PORT
+    bool "OpENer_port: Porting layer for OpENer"
+    default n
+
+if PKG_USING_OPENER_PORT
+
+    config PKG_OPENER_PORT_PATH
+        string
+        default "/packages/iot/OpENer_port"
+
+    choice
+        prompt "Version"
+        default PKG_USING_OPENER_PORT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_OPENER_PORT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_OPENER_PORT_VER
+       string
+       default "latest"    if PKG_USING_OPENER_PORT_LATEST_VERSION
+
+    config PKG_OPENER_PORT_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_OPENER_PORT_LATEST_VERSION
+endif
+

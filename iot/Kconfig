@@ -69,4 +69,6 @@ source "$PKGS_DIR/packages/iot/matter-adaptation-layer/Kconfig"
 source "$PKGS_DIR/packages/iot/lhc_modbus/Kconfig"
 source "$PKGS_DIR/packages/iot/qmodbus/Kconfig"
 source "$PKGS_DIR/packages/iot/p-net-rtt/Kconfig"
+source "$PKGS_DIR/packages/iot/OpENer/Kconfig"
+source "$PKGS_DIR/packages/iot/OpENer_port/Kconfig"
 endmenu
