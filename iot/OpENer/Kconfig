@@ -64,7 +64,7 @@ if PKG_USING_OPENER
         default "OpENer PC"
 
     choice
-        prompt "Version"
+        prompt "OpENer Version"
         default PKG_USING_OPENER_LATEST_VERSION
         help
             Select the package version
@@ -81,6 +81,10 @@ if PKG_USING_OPENER
         hex
         default 0x99999    if PKG_USING_OPENER_LATEST_VERSION
 
+    config PKG_USING_OPENER_PORT
+        bool
+        default y
+
     if PKG_USING_OPENER_PORT
 
         config PKG_OPENER_PORT_PATH
@@ -88,7 +92,7 @@ if PKG_USING_OPENER
             default "/packages/iot/OpENer/OpENer_port"
 
         choice
-            prompt "Version"
+            prompt "OpENer Port Version"
             default PKG_USING_OPENER_PORT_LATEST_VERSION
             help
                 Select the package version
@@ -96,6 +100,14 @@ if PKG_USING_OPENER
             config PKG_USING_OPENER_PORT_LATEST_VERSION
                 bool "latest"
         endchoice
+
+        config PKG_OPENER_PORT_VER
+            string
+            default "latest"    if PKG_USING_OPENER_PORT_LATEST_VERSION
+
+         config PKG_OPENER_PORT_VER_NUM
+             hex
+             default 0x99999    if PKG_USING_OPENER_PORT_LATEST_VERSION
     endif
 
 endif
