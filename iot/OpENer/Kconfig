@@ -9,7 +9,6 @@ menuconfig PKG_USING_OPENER
     select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
     select RT_USING_POSIX_STDIO     if RT_VER_NUM >= 0x40100
     select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
-    select PKG_USING_OPENER_PORT
 
 if PKG_USING_OPENER
 
@@ -81,5 +80,22 @@ if PKG_USING_OPENER
     config PKG_OPENER_VER_NUM
         hex
         default 0x99999    if PKG_USING_OPENER_LATEST_VERSION
-endif
 
+    if PKG_USING_OPENER_PORT
+
+        config PKG_OPENER_PORT_PATH
+            string
+            default "/packages/iot/OpENer/OpENer_port"
+
+        choice
+            prompt "Version"
+            default PKG_USING_OPENER_PORT_LATEST_VERSION
+            help
+                Select the package version
+
+            config PKG_USING_OPENER_PORT_LATEST_VERSION
+                bool "latest"
+        endchoice
+    endif
+
+endif
