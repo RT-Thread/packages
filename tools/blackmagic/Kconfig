@@ -1,0 +1,59 @@
+# Kconfig file for package blackmagic
+menuconfig PKG_USING_BLACKMAGIC
+    bool "black magic probe: firmware download tool"
+    default n
+
+if PKG_USING_BLACKMAGIC
+
+    config PKG_BLACKMAGIC_PATH
+        string
+        default "/packages/tools/blackmagic"
+
+    config BLACKMAGIC_ENABLE_RTT
+        bool "rtt support"
+        default y
+        help
+            rtt (real-time terminal) allows terminal input/output between target and host
+
+    config BLACKMAGIC_ENABLE_RTT_IDENT
+        bool "rtt ident"
+        depends on BLACKMAGIC_ENABLE_RTT
+        default n
+        help
+            set optional rtt secret.
+
+    config BLACKMAGIC_RTT_IDENT
+        string "rtt ident"
+        depends on BLACKMAGIC_ENABLE_RTT_IDENT
+        default ""
+        help
+            optional rtt secret. '%' is converted to ' ' space.
+
+    config BLACKMAGIC_ENABLE_DEBUG
+        bool "debug output"
+        default n
+        help
+            If enabled, debug output is written to the aux port.
+            Useful when debugging blackmagic probe.
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_BLACKMAGIC_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_BLACKMAGIC_VER
+       string
+       default "v1.10.2"   if PKG_USING_BLACKMAGIC_V1_10_2
+       default "latest"    if PKG_USING_BLACKMAGIC_LATEST_VERSION
+
+    config BLACKMAGIC_VERSION
+        string
+        default PKG_BLACKMAGIC_VER
+        help
+            hidden string, follows PKG_BLACKMAGIC_VER, used in version.h
+
+endif

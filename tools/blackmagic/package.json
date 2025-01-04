@@ -1,0 +1,27 @@
+{
+  "name": "blackmagic",
+  "description": "firmware download tool",
+  "description_zh": "下载器",
+  "enable": "PKG_USING_BLACKMAGIC",
+  "keywords": [
+    "blackmagic"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "koendv",
+    "email": "koen@kdvelectronics.eu",
+    "github": "koendv"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/koendv/blackmagic-rtthread",
+  "homepage": "https://github.com/koendv/blackmagic-rtthread#README.md",
+  "doc": "https://black-magic.org/",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/koendv/blackmagic-rtthread.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
