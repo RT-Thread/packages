@@ -26,7 +26,7 @@ if PKG_USING_RTDUINO
             default 30
     endif
 
-    menuconfig RTDUINO_TINY_MODE
+    config RTDUINO_TINY_MODE
         bool "Enable tiny mode"
         select RTDUINO_NO_SETUP_LOOP
         default n
@@ -95,6 +95,14 @@ if PKG_USING_RTDUINO
             depends on RTDUINO_CMD_USING_SERIAL
             default n
     endif
+
+    config RTDUINO_USING_UTEST
+        bool "Enable RTduino core unit test"
+        default n
+
+    config RTDUINO_UTEST_USING_HIL
+        bool "Enable RTduino hardware in loop test cases"
+        default n
 
     choice
         prompt "Version"
