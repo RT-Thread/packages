@@ -1,7 +1,7 @@
 {
   "name": "libcrc",
   "description": "A crc verification calculation function library for porting libcrc.",
-  "description_zh": "Ò»¸öÒÆÖ²libcrcµÄcrcĞ£Ñé¼ÆËãº¯Êı¿â¡£",
+  "description_zh": "ä¸€ä¸ªç§»æ¤libcrcçš„crcæ ¡éªŒè®¡ç®—å‡½æ•°åº“ã€‚",
   "enable": "PKG_USING_LIBCRC",
   "keywords": [
     "libcrc",
