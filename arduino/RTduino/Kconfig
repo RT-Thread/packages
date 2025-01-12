@@ -97,11 +97,13 @@ if PKG_USING_RTDUINO
     endif
 
     config RTDUINO_USING_UTEST
-        bool "Enable RTduino core unit test"
+        bool "Enable RTduino test cases"
+        select RT_USING_UTEST
         default n
 
     config RTDUINO_UTEST_USING_HIL
         bool "Enable RTduino hardware in loop test cases"
+        depends on RTDUINO_USING_UTEST
         default n
 
     choice
