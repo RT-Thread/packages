@@ -31,12 +31,6 @@ if PKG_USING_RTDUINO
         select RTDUINO_NO_SETUP_LOOP
         default n
 
-    config RTDUINO_SUPPORT_FLOAT_STRING
-        bool "Enable String class with float support"
-        select PKG_USING_RT_VSNPRINTF_FULL if RT_VER_NUM < 0x50200
-        select RT_KLIBC_USING_VSNPRINTF_STANDARD if RT_VER_NUM >= 0x50200
-        default n
-
     config RTDUINO_SUPPORT_HIGH_PRECISION_MICROS
         bool "micros() function with high precision"
         depends on ARCH_ARM_CORTEX_M
