@@ -38,4 +38,5 @@ source "$PKGS_DIR/packages/misc/soem/Kconfig"
 source "$PKGS_DIR/packages/misc/qparam/Kconfig"
 source "$PKGS_DIR/packages/misc/CorevMCU_CLI/Kconfig"
 source "$PKGS_DIR/packages/misc/get_irq_priority/Kconfig"
+source "$PKGS_DIR/packages/misc/drmp/Kconfig"
 endmenu
