@@ -148,7 +148,7 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
 
         choice
             prompt "Select HOST_WAKE_IRQ event type"
-            default CYBSP_HOST_WAKE_IRQ_EVENT_FALLING
+            default CYBSP_HOST_WAKE_IRQ_EVENT_FALL
 
             config CYBSP_HOST_WAKE_IRQ_EVENT_FALL
                 bool "falling"

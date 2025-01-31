@@ -2,7 +2,6 @@ menu "CMSIS: ARM Cortex-M Microcontroller Software Interface Standard"
 
 source "$PKGS_DIR/packages/system/CMSIS/CMSIS_5/Kconfig"
 source "$PKGS_DIR/packages/system/CMSIS/CMSIS-Core/Kconfig"
-source "$PKGS_DIR/packages/system/CMSIS/CMSIS-DSP/Kconfig"
 source "$PKGS_DIR/packages/system/CMSIS/CMSIS-NN/Kconfig"
 source "$PKGS_DIR/packages/system/CMSIS/CMSIS_RTOS1/Kconfig"
 source "$PKGS_DIR/packages/system/CMSIS/CMSIS_RTOS2/Kconfig"
