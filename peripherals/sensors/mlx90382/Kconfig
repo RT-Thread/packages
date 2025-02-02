@@ -6,6 +6,11 @@ menuconfig PKG_USING_MLX90382
 
 if PKG_USING_MLX90382
 
+    config PKG_MLX90382_USING_SENSOR_V1
+        bool "Enable sensor divce framework"
+        select RT_USING_SENSOR
+        default n
+
     config PKG_MLX90382_PATH
         string
         default "/packages/peripherals/sensors/mlx90382"
@@ -27,6 +32,10 @@ if PKG_USING_MLX90382
        string
        default "v1.0.0"    if PKG_USING_MLX90382_V100
        default "latest"    if PKG_USING_MLX90382_LATEST_VERSION
+
+    config PKG_USING_MLX90382_SAMPLE
+        bool "Enable mlx90382 sample"
+        default n
 
 endif
 
