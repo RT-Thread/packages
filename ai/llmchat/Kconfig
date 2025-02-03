@@ -19,19 +19,21 @@ if PKG_USING_LLMCHAT
         prompt "select llm model"
         default PKG_LLM_USING_QWEN_CLOUD
         config PKG_LLM_USING_DOUBAO_CLOUD
-            bool "doubao llm ai port"
+            bool "doubao llm port"
         config PKG_LLM_USING_QWEN_CLOUD
-            bool "qwen llm ai port"
+            bool "qwen llm port"
+        config PKG_LLM_USING_DEEPSEEK_CLOUD
+            bool "deepseek llm port"
     endchoice
 
     if PKG_LLM_USING_QWEN_CLOUD
-        config PKG_LLM_QWEN_API_KEY
+        config PKG_LLM_API_KEY
             string "llm qwen user api key"
             default "sk-**-**"
             help
                 qwen llm api key
 
-        config PKG_LLM_QWEN_MODEL_NAME
+        config PKG_LLM_MODEL_NAME
             string "llm qwen model name"
             default "qwen-plus"
             help
@@ -41,17 +43,18 @@ if PKG_USING_LLMCHAT
             string "llm qwen model api url"
             default "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
             help
-                qwen llm model api url links
+                Qwen model API URL. Please set this to:
+                "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
     endif
 
     if PKG_LLM_USING_DOUBAO_CLOUD
-        config PKG_LLM_DOUBAO_API_KEY
+        config PKG_LLM_API_KEY
             string "llm doubao user api key"
             default "f4de4d**-**"
             help
                 doubao llm api key
 
-        config PKG_LLM_DOUBAO_MODEL_ID
+        config PKG_LLM_MODEL_NAME
             string "llm doubao user model id"
             default "ep-2024**-**"
             help
@@ -61,8 +64,36 @@ if PKG_USING_LLMCHAT
             string "llm doubao model api url"
             default "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
             help
-                doubao llm model api url links
+                Doubao model API URL. Please set this to:
+                "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
     endif
+
+    if PKG_LLM_USING_DEEPSEEK_CLOUD
+        config PKG_LLM_API_KEY
+            string "llm deepseek user api key"
+            default "f4de4d**-**"
+            help
+                deepseek llm api key
+
+        config PKG_LLM_MODEL_NAME
+            string "llm deepseek user model id"
+            default "deepseek-chat"
+            help
+                deepseek llm model name
+
+        config PKG_LLM_DEEPSEEK_API_URL
+            string "llm deepseek model api url"
+            default "https://api.deepseek.com/chat/completions"
+            help
+                DeepSeek model API URL. Please set this to:
+                "https://api.deepseek.com/chat/completions"
+    endif
+
+    config PKG_WEB_SORKET_BUFSZ
+        int "webclient session buffer size"
+        default 2048
+        help
+            webclient session buffer size
 
     choice
         prompt "Version"
