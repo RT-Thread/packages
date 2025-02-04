@@ -11,9 +11,9 @@ menuconfig PKG_USING_LLMCHAT
 
 if PKG_USING_LLMCHAT
 
-    config PKG_USING_LLMCHAT_PATH
+    config PKG_LLMCHAT_PATH
         string
-        default "/packages/ai/llm"
+        default "/packages/ai/llmchat"
 
     choice
         prompt "select llm model"
@@ -97,26 +97,20 @@ if PKG_USING_LLMCHAT
 
     choice
         prompt "Version"
-        default PKG_USING_LLMCHAT_V10000
+        default PKG_USING_LLMCHAT_LATEST_VERSION
         help
             Select the llm version
 
-        config PKG_USING_LLMCHAT_V10000
+        config PKG_USING_LLMCHAT_V100
             bool "v1.0.0"
 
         config PKG_USING_LLMCHAT_LATEST_VERSION
             bool "latest"
-
     endchoice
 
-    config PKG_USING_LLMCHAT_VER
+    config PKG_LLMCHAT_VER
        string
-       default "v1.0.0"    if PKG_USING_LLMCHAT_V10000
+       default "v1.0.0"    if PKG_USING_LLMCHAT_V100
        default "latest"    if PKG_USING_LLMCHAT_LATEST_VERSION
-
-    config PKG_USING_LLMCHAT_VER_NUM
-        hex
-        default 0x99999    if PKG_USING_LLMCHAT_LATEST_VERSION
-        default 0x10000    if PKG_USING_LLMCHAT_V10000
 
 endif
