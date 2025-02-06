@@ -89,11 +89,31 @@ if PKG_USING_LLMCHAT
                 "https://api.deepseek.com/chat/completions"
     endif
 
+    config PKG_LLM_THREAD_STACK_SIZE
+        int "llm thread size"
+        default 10240
+        help
+            llm thread size
+
+    config PKG_LLM_CMD_BUFFER_SIZE
+        int "llm cmd input buffer size"
+        default 256
+        help
+            llm cmd input buffer size
+
     config PKG_WEB_SORKET_BUFSZ
         int "webclient session buffer size"
         default 2048
         help
             webclient session buffer size
+
+    config PKG_LLMCHAT_STREAM
+        bool "Enable llmchat http stream"
+        default y
+
+    config PKG_LLMCHAT_DBG
+        bool "Enable llmchat debug"
+        default n
 
     choice
         prompt "Version"
