@@ -111,6 +111,10 @@ if PKG_USING_LLMCHAT
         bool "Enable llmchat http stream"
         default y
 
+    config PKG_LLMCHAT_HISTORY_PAYLOAD
+        bool "Enable llmchat history payload"
+        default n
+
     config PKG_LLMCHAT_DBG
         bool "Enable llmchat debug"
         default n
