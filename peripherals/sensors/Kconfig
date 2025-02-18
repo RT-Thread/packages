@@ -67,5 +67,5 @@ source "$PKGS_DIR/packages/peripherals/sensors/cw2015/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/icm20608/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/PAJ7620/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/sths34pf80/Kconfig"
-
+source "$PKGS_DIR/packages/peripherals/sensors/am2320/Kconfig"
 endmenu

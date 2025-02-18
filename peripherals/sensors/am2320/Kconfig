@@ -1,0 +1,32 @@
+
+# Kconfig file for package am2320
+menuconfig PKG_USING_AM2320
+    bool "digital humidity and temperature sensor am2320 driver library."
+    default n
+
+if PKG_USING_AM2320
+
+    config PKG_AM2320_PATH
+        string
+        default "/packages/peripherals/sensors/am2320"
+
+    choice
+        prompt "Version"
+        default PKG_USING_AM2320_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_AM2320_V001
+            bool "v0.0.1"
+
+        config PKG_USING_AM2320_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AM2320_VER
+       string
+       default "v0.0.1"    if PKG_USING_AM2320_V001
+       default "latest"    if PKG_USING_AM2320_LATEST_VERSION
+
+endif
+
