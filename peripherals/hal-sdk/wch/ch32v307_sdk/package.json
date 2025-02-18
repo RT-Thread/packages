@@ -25,7 +25,7 @@
     },
     {
       "version": "latest",
-      "URL": "https://github.com/kaidegit/CH32V307-SDK-for-RTT",
+      "URL": "https://github.com/kaidegit/CH32V307-SDK-for-RTT.git",
       "filename": "",
       "VER_SHA": "main"
     }
