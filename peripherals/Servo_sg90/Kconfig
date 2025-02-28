@@ -23,7 +23,7 @@ if PKG_USING_SERVO
                 default "pwm2"
             config PKG_USING_PWM_DEV_CHANNEL
                 int "the channel of PKG_USING_PWM_DEV_NAME"
-                range 1 10
+                range 0 10
                 default 1
             config PKG_USING_MAX_ANGLE
                 int "the max pulse ns"
