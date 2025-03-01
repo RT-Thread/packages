@@ -1,4 +1,3 @@
-
 # Kconfig file for package df220
 menuconfig PKG_USING_DF220
     bool "df220 sensor driver package, support: force sensor."
@@ -9,6 +8,11 @@ if PKG_USING_DF220
     config PKG_DF220_PATH
         string
         default "/packages/peripherals/sensors/df220"
+
+    config PKG_DF220_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
 
     choice
         prompt "Version"
@@ -29,4 +33,3 @@ if PKG_USING_DF220
        default "latest"    if PKG_USING_DF220_LATEST_VERSION
 
 endif
-

@@ -9,6 +9,10 @@ if PKG_USING_HMC5883
         string
         default "/packages/peripherals/sensors/hmc5883"
 
+    config PKG_INTF_HMC5883_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
     choice
         prompt "Version"
         default PKG_USING_HMC5883_LATEST_VERSION
