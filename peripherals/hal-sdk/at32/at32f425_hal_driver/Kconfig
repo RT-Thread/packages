@@ -1,7 +1,7 @@
 
 # Kconfig file for package at32f425_hal_driver
 menuconfig PKG_USING_AT32F425_HAL_DRIVER
-    bool "AT32 F4 HAL driver package"
+    bool "AT32F425 HAL driver package"
     select PKG_USING_AT32F425_CMSIS_DRIVER
     default n
 

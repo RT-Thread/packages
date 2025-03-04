@@ -1,7 +1,7 @@
 
 # Kconfig file for package at32a403a_cmsis_driver
 menuconfig PKG_USING_AT32A403A_CMSIS_DRIVER
-    bool "AT32 F4 CMSIS driver package"
+    bool "AT32A403A CMSIS driver package"
     select PKG_USING_CMSIS_CORE
     default n
 

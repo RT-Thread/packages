@@ -1,7 +1,7 @@
 
 # Kconfig file for package at32m412_416_hal_driver
 menuconfig PKG_USING_AT32M412_416_HAL_DRIVER
-    bool "AT32 F4 HAL driver package"
+    bool "AT32M412_416 HAL driver package"
     select PKG_USING_AT32M412_416_CMSIS_DRIVER
     default n
 

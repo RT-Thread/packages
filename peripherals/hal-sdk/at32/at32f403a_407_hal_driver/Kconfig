@@ -1,7 +1,7 @@
 
 # Kconfig file for package at32f403a_407_hal_driver
 menuconfig PKG_USING_AT32F403A_407_HAL_DRIVER
-    bool "AT32 F4 HAL driver package"
+    bool "AT32F403A_407 HAL driver package"
     select PKG_USING_AT32F403A_407_CMSIS_DRIVER
     default n
 
