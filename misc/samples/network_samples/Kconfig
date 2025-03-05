@@ -45,6 +45,7 @@ if PKG_USING_NETWORK_SAMPLES
 
     config NETWORK_SAMPLES_USING_HTTP_CLIENT
         bool "[network] http client"
-
+        select PKG_USING_WEBCLIENT
+        select PKG_USING_CJSON
 endif
 
