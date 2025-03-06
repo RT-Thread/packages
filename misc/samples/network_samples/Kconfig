@@ -42,6 +42,8 @@ if PKG_USING_NETWORK_SAMPLES
 
     config NETWORK_SAMPLES_USING_TCP_CLIENT_SELECT
         bool "[network] tcp client by select api"
+        select RT_USING_POSIX_FS
+        select RT_USING_POSIX_SOCKET
 
     config NETWORK_SAMPLES_USING_HTTP_CLIENT
         bool "[network] http client"
