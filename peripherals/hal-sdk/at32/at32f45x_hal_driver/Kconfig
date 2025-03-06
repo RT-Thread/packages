@@ -1,0 +1,27 @@
+
+# Kconfig file for package at32f45x_hal_driver
+menuconfig PKG_USING_AT32F45x_HAL_DRIVER
+    bool "AT32F455_456_457 HAL driver package"
+    select PKG_USING_AT32F45x_CMSIS_DRIVER
+    default n
+
+if PKG_USING_AT32F45x_HAL_DRIVER
+
+    config PKG_AT32F45x_HAL_DRIVER_PATH
+        string
+        default "/packages/peripherals/hal-sdk/at32/at32f45x_hal_driver"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_AT32F45x_HAL_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AT32F45x_HAL_DRIVER_VER
+       string
+       default "latest"    if PKG_USING_AT32F45x_HAL_DRIVER_LATEST_VERSION
+
+endif
