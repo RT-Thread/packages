@@ -67,6 +67,8 @@ if PKG_USING_CHERRYUSB
                 bool "hpm"
             config PKG_CHERRYUSB_DEVICE_AIC
                 bool "aic"
+            config PKG_CHERRYUSB_DEVICE_RP2040
+                bool "rp2040"
             config PKG_CHERRYUSB_DEVICE_CH32
                 bool "ch32"
             config PKG_CHERRYUSB_DEVICE_PUSB2
@@ -211,6 +213,8 @@ if PKG_USING_CHERRYUSB
                 bool "kinetis_mm32"
             config PKG_CHERRYUSB_HOST_KINETIS_CUSTOM
                 bool "kinetis_custom"
+            config PKG_CHERRYUSB_HOST_RP2040
+                bool "rp2040"
         endchoice
 
         config PKG_CHERRYUSB_HOST_CDC_ACM
@@ -339,12 +343,14 @@ if PKG_USING_CHERRYUSB
 
     choice
         prompt "Version"
-        default PKG_USING_CHERRYUSB_V010402
+        default PKG_USING_CHERRYUSB_V010403
         help
             Select the package version
 
         config PKG_USING_CHERRYUSB_LATEST_VERSION
             bool "latest"
+        config PKG_USING_CHERRYUSB_V010403
+            bool "v1.4.3"
         config PKG_USING_CHERRYUSB_V010402
             bool "v1.4.2"
         config PKG_USING_CHERRYUSB_V010400
@@ -362,6 +368,7 @@ if PKG_USING_CHERRYUSB
     config PKG_CHERRYUSB_VER
        string
        default "latest"    if PKG_USING_CHERRYUSB_LATEST_VERSION
+       default "v1.4.3"   if PKG_USING_CHERRYUSB_V010403
        default "v1.4.2"   if PKG_USING_CHERRYUSB_V010402
        default "v1.4.0"   if PKG_USING_CHERRYUSB_V010400
        default "v1.3.1"   if PKG_USING_CHERRYUSB_V010301
