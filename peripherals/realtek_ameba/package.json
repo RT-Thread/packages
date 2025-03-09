@@ -1,0 +1,31 @@
+{
+  "name": "realtek_ameba",
+  "description": "realtek_ameba package on RT-Thread",
+  "description_zh": "realtek 的 ameba 软件包在 RT-Thread 上的移植",
+  "enable": "PKG_USING_REALTEK_AMEBA",
+  "keywords": [
+    "realtek_ameba"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "flyingcys",
+    "email": "294102238@qq.com",
+    "github": "flyingcys"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/RT-Thread-packages/realtek_ameba",
+  "homepage": "https://github.com/RT-Thread-packages/realtek_ameba#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/realtek_ameba/archive/refs/tags/1.0.0.zip",
+      "filename": "realtek_ameba-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/realtek_ameba.git",
+      "filename": "realtek_ameba.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
