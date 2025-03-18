@@ -31,12 +31,6 @@ if PKG_USING_RTDUINO
         select RTDUINO_NO_SETUP_LOOP
         default n
 
-    config RTDUINO_SUPPORT_FLOAT_STRING
-        bool "Enable String class with float support"
-        select PKG_USING_RT_VSNPRINTF_FULL if RT_VER_NUM < 0x50200
-        select RT_KLIBC_USING_VSNPRINTF_STANDARD if RT_VER_NUM >= 0x50200
-        default n
-
     config RTDUINO_SUPPORT_HIGH_PRECISION_MICROS
         bool "micros() function with high precision"
         depends on ARCH_ARM_CORTEX_M
@@ -97,11 +91,13 @@ if PKG_USING_RTDUINO
     endif
 
     config RTDUINO_USING_UTEST
-        bool "Enable RTduino core unit test"
+        bool "Enable RTduino test cases"
+        select RT_USING_UTEST
         default n
 
     config RTDUINO_UTEST_USING_HIL
         bool "Enable RTduino hardware in loop test cases"
+        depends on RTDUINO_USING_UTEST
         default n
 
     choice

@@ -1,0 +1,66 @@
+
+# Kconfig file for package Servo_sg90
+menuconfig PKG_USING_SERVO
+    bool "Servo : you can use it to control servo,such as sg90"
+    default n
+
+if PKG_USING_SERVO
+
+    config PKG_SERVO_SG90_PATH
+        string
+        default "/packages/peripherals/Servo_sg90"
+
+    menuconfig PKG_USING_SG90
+        bool "Enable SG90"
+        default n
+
+        if PKG_USING_SG90
+            config PKG_USING_SG90_DEMO
+                bool "Enable sg90 demo"
+                default n
+            config PKG_USING_PWM_DEV_NAME
+                string "pwm device name,example: pwm2"
+                default "pwm2"
+            config PKG_USING_PWM_DEV_CHANNEL
+                int "the channel of PKG_USING_PWM_DEV_NAME"
+                range 0 10
+                default 1
+            config PKG_USING_MAX_ANGLE
+                int "the max pulse ns"
+                range 0 999999999
+                default 2500000
+            config PKG_USING_MIN_ANGLE
+                int "the min pulse ns"
+                range 0 999999999
+                default 500000
+            config PKG_USING_SG90_MAX_ANGLE
+                int "the max angle of your servo"
+                range 0 360
+                default 180
+            config PKG_USING_SG90_PERIOD
+                int "the period of sg90"
+                range 0 999999999
+                default 20000000
+                
+        endif
+
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_SERVO_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SERVO_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SERVO_SG90_VER
+       string
+       default "v1.0.0"    if PKG_USING_SERVO_V100
+       default "latest"    if PKG_USING_SERVO_LATEST_VERSION
+
+endif
+

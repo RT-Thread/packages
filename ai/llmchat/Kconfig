@@ -1,0 +1,140 @@
+
+# Kconfig file for package llmchat
+menuconfig PKG_USING_LLMCHAT
+    bool "Large Language Models(LLM) for RT-Thread"
+    select PKG_USING_CJSON
+    select PKG_USING_WEBCLIENT
+    select PKG_USING_MBEDTLS
+    select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
+    select PKG_USING_MBEDTLS_CLOBALSIGN_ROOT_CA
+    default n
+
+if PKG_USING_LLMCHAT
+
+    config PKG_LLMCHAT_PATH
+        string
+        default "/packages/ai/llmchat"
+
+    choice
+        prompt "select llm model"
+        default PKG_LLM_USING_QWEN_CLOUD
+        config PKG_LLM_USING_DOUBAO_CLOUD
+            bool "doubao llm port"
+        config PKG_LLM_USING_QWEN_CLOUD
+            bool "qwen llm port"
+        config PKG_LLM_USING_DEEPSEEK_CLOUD
+            bool "deepseek llm port"
+    endchoice
+
+    if PKG_LLM_USING_QWEN_CLOUD
+        config PKG_LLM_API_KEY
+            string "llm qwen user api key"
+            default "sk-**-**"
+            help
+                qwen llm api key
+
+        config PKG_LLM_MODEL_NAME
+            string "llm qwen model name"
+            default "qwen-plus"
+            help
+                qwen llm model name
+
+        config PKG_LLM_QWEN_API_URL
+            string "llm qwen model api url"
+            default "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+            help
+                Qwen model API URL. Please set this to:
+                "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+    endif
+
+    if PKG_LLM_USING_DOUBAO_CLOUD
+        config PKG_LLM_API_KEY
+            string "llm doubao user api key"
+            default "f4de4d**-**"
+            help
+                doubao llm api key
+
+        config PKG_LLM_MODEL_NAME
+            string "llm doubao user model id"
+            default "ep-2024**-**"
+            help
+                reasoning about the access point ID
+
+        config PKG_LLM_DOUBAO_API_URL
+            string "llm doubao model api url"
+            default "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
+            help
+                Doubao model API URL. Please set this to:
+                "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
+    endif
+
+    if PKG_LLM_USING_DEEPSEEK_CLOUD
+        config PKG_LLM_API_KEY
+            string "llm deepseek user api key"
+            default "f4de4d**-**"
+            help
+                deepseek llm api key
+
+        config PKG_LLM_MODEL_NAME
+            string "llm deepseek user model id"
+            default "deepseek-chat"
+            help
+                deepseek llm model name
+
+        config PKG_LLM_DEEPSEEK_API_URL
+            string "llm deepseek model api url"
+            default "https://api.deepseek.com/chat/completions"
+            help
+                DeepSeek model API URL. Please set this to:
+                "https://api.deepseek.com/chat/completions"
+    endif
+
+    config PKG_LLM_THREAD_STACK_SIZE
+        int "llm thread size"
+        default 10240
+        help
+            llm thread size
+
+    config PKG_LLM_CMD_BUFFER_SIZE
+        int "llm cmd input buffer size"
+        default 256
+        help
+            llm cmd input buffer size
+
+    config PKG_WEB_SORKET_BUFSZ
+        int "webclient session buffer size"
+        default 2048
+        help
+            webclient session buffer size
+
+    config PKG_LLMCHAT_STREAM
+        bool "Enable llmchat http stream"
+        default y
+
+    config PKG_LLMCHAT_HISTORY_PAYLOAD
+        bool "Enable llmchat history payload"
+        default n
+
+    config PKG_LLMCHAT_DBG
+        bool "Enable llmchat debug"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_LLMCHAT_LATEST_VERSION
+        help
+            Select the llm version
+
+        config PKG_USING_LLMCHAT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LLMCHAT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LLMCHAT_VER
+       string
+       default "v1.0.0"    if PKG_USING_LLMCHAT_V100
+       default "latest"    if PKG_USING_LLMCHAT_LATEST_VERSION
+
+endif

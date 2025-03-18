@@ -1,0 +1,29 @@
+{
+  "name": "at32f423_hal_driver",
+  "description": "AT32 F4 HAL driver package",
+  "description_zh": "AT32 F4 HAL 驱动包",
+  "enable": "PKG_USING_AT32F423_HAL_DRIVER",
+  "keywords": [
+    "at32f423_hal_driver",
+    "AT32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "sheltonyu",
+    "email": "xxx@xxx.com",
+    "github": "sheltonyu"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/sheltonyu/AT32F423_HAL_Driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/sheltonyu/AT32F423_HAL_Driver",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sheltonyu/AT32F423_HAL_Driver.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
