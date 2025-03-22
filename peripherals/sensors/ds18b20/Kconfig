@@ -11,6 +11,15 @@ if PKG_USING_DS18B20
         string
         default "/packages/peripherals/sensors/ds18b20"
 
+    config PKG_DS18B20_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+    
+    config PKG_DS18B20_USING_SAMPLE_SENSOR_V1
+        bool "Enable ds18b20 sample"
+        default n
+    
     choice
         prompt "Version"
         default PKG_USING_DS18B20_LATEST_VERSION
@@ -20,10 +29,6 @@ if PKG_USING_DS18B20
         config PKG_USING_DS18B20_LATEST_VERSION
             bool "latest"
     endchoice
-
-    config PKG_USING_DS18B20_SAMPLE
-        bool "Enable ds18b20 sample"
-        default n
 
     config PKG_DS18B20_VER
        string

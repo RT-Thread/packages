@@ -1,0 +1,35 @@
+{
+  "name": "p-net-rtt",
+  "description": "P-Net stack for Profinet device implementation",
+  "description_zh": "用于 Profinet 设备实现的 P-Net 开源协议栈",
+  "enable": "PKG_USING_PNET",
+  "keywords": [
+    "p-net",
+    "profinet"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Wangyuqiang",
+    "email": "2053731441@qq.com",
+    "github": "p-net-rtt"
+  },
+  "license": "GPL-3.0",
+  "repository": "https://github.com/kurisaW/p-net-rtt",
+  "homepage": "https://github.com/kurisaW/p-net-rtt#readme",
+  "doc": "http://www.rt-labs.com/",
+  "readme": "P-Net stack for rt-thread",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/kurisaW/p-net-rtt/archive/1.0.0.zip",
+      "filename": "p-net-rtt-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/kurisaW/p-net-rtt.git",
+      "filename": "p-net-rtt.zip",
+      "VER_SHA": "rtt-adapt"
+    }
+  ]
+}

@@ -77,6 +77,9 @@ source "$PKGS_DIR/packages/peripherals/System_Run_LED/Kconfig"
 source "$PKGS_DIR/packages/peripherals/bt_mx01/Kconfig"
 source "$PKGS_DIR/packages/peripherals/RgPower/Kconfig"
 source "$PKGS_DIR/packages/peripherals/bt_mx02/Kconfig"
+source "$PKGS_DIR/packages/peripherals/gc9a01/Kconfig"
+source "$PKGS_DIR/packages/peripherals/ikun-485/Kconfig"
+source "$PKGS_DIR/packages/peripherals/Servo_sg90/Kconfig"
 
 if RT_VER_NUM > 0x40101
 source "$PKGS_DIR/packages/peripherals/spi-tools/Kconfig"

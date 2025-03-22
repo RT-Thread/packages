@@ -69,9 +69,6 @@ if PKG_USING_KERNEL_SAMPLES
     config KERNEL_SAMPLES_USING_HEAP
         bool "[kernel] heap"
 
-    config KERNEL_SAMPLES_USING_MEMHEAP
-        bool "[kernel] memheap"
-
     config KERNEL_SAMPLES_USING_MEMPOOL
         bool "[kernel] mempool"
 
@@ -80,7 +77,7 @@ if PKG_USING_KERNEL_SAMPLES
 
     config KERNEL_SAMPLES_USING_SIGNAL
         bool "[kernel] signal"
-        select RT_USING_SIGNAL
+        select RT_USING_SIGNALS
 
     config KERNEL_SAMPLES_USING_INTERRUPT
         bool "[kernel] interrupt"

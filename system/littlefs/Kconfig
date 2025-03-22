@@ -103,6 +103,10 @@ if PKG_USING_LITTLEFS
             default 128
     endif
 
+    config RT_DEF_LFS_DRIVERS
+        int "lfs drivers count"
+        default 1
+
     config PKG_LITTLEFS_VER
        string
        default "v0.9.0" if PKG_USING_LITTLEFS_V090

@@ -10,6 +10,11 @@ if PKG_USING_ZMOD4410
         string
         default "/packages/peripherals/sensors/ZMOD4410"
 
+    config PKG_ZMOD4410_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ZMOD4410_LATEST_VERSION

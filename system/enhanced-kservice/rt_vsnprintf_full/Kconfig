@@ -2,6 +2,7 @@
 # Kconfig file for package rt_vsnprintf_full
 menuconfig PKG_USING_RT_VSNPRINTF_FULL
     bool "rt_vsnprintf_full: fully functional version of rt_vsnprintf"
+    depends on RT_VER_NUM < 0x50200
     default n
 
 if PKG_USING_RT_VSNPRINTF_FULL

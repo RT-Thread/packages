@@ -1,0 +1,37 @@
+{
+  "name": "llmchat",
+  "description": "Using the LLM Language Model in RT-Thread.",
+  "description_zh": "在 RT-Thread 上进行 LLM 大语言模型对话",
+  "enable": "PKG_USING_LLMCHAT",
+  "keywords": [
+    "ai",
+    "llm"
+  ],
+  "category": "ai",
+  "author": {
+    "name": "Rbb666",
+    "email": "751061401@qq.com",
+    "github": "https://github.com/Rbb666"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Rbb666/llm_chat",
+  "homepage": "https://github.com/Rbb666/llm_chat#readme",
+  "site": [
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/Rbb666/llm_chat/archive/refs/tags/1.2.0.zip",
+      "filename": "llm_chat-1.2.0.zip"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Rbb666/llm_chat/archive/refs/tags/1.0.0.zip",
+      "filename": "llm_chat-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Rbb666/llm_chat.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

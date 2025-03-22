@@ -2,7 +2,8 @@
 # Kconfig file for package r-tinymaix
 menuconfig PKG_USING_R_TINYMAIX
     bool "r-tinymaix: A tiny inference Neural Network library specifically."
-    select PKG_USING_RT_VSNPRINTF_FULL
+    select PKG_USING_RT_VSNPRINTF_FULL if RT_VER_NUM < 0x50200
+    select RT_KLIBC_USING_VSNPRINTF_STANDARD if RT_VER_NUM >= 0x50200
     default n
 
 if PKG_USING_R_TINYMAIX

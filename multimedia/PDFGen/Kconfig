@@ -2,7 +2,8 @@
 # Kconfig file for package PDFGen
 menuconfig PKG_USING_PDFGEN
     bool "PDFGen: Simple C PDF Writer/Generation library"
-    select PKG_USING_RT_VSNPRINTF_FULL
+    select PKG_USING_RT_VSNPRINTF_FULL if RT_VER_NUM < 0x50200
+    select RT_KLIBC_USING_VSNPRINTF_STANDARD if RT_VER_NUM >= 0x50200
     select RT_USING_LIBC     if RT_VER_NUM < 0x40100
     select RT_USING_DFS      if RT_VER_NUM < 0x40100
     select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100

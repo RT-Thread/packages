@@ -1,0 +1,89 @@
+menuconfig PKG_USING_PNET
+    bool "P-Net stack for Profinet device implementation"
+    select RT_USING_LWIP
+    select RT_LWIP_SNMP
+    select RT_LWIP_ENABLE_USER_HOOKS
+    select PKG_PENT_NETIF_NAME
+    select PKG_PNET_BOARD_CONFIG
+    select PKG_PENT_FILESYSTEM_CONFIG
+    select PKG_PNET_NET_CONFIG
+    default n
+
+if PKG_USING_PNET
+
+    config PKG_PNET_PATH
+        string
+        default "/packages/iot/p-net-rtt"
+
+    menuconfig PKG_PENT_NETIF_NAME
+        bool "Default netif name for P-NET"
+        default n
+        if PKG_PENT_NETIF_NAME
+            config APP_DEFAULT_ETHERNET_INTERFACE
+                string "default ethernet interface name for p-net app, default as 'e00'"
+                default "e00"
+        endif
+
+    menuconfig PKG_PNET_BOARD_CONFIG
+        bool "Enable P-NET sample board config"
+        default n
+        if PKG_PNET_BOARD_CONFIG
+            config PNET_LED_PIN
+                string "p-ent user led pin"
+                default "PA9"
+            config PNET_USER_KEY
+                string "p-net user key pin"
+                default "PA10"
+        endif
+
+    menuconfig PKG_PENT_FILESYSTEM_CONFIG
+        bool "Default root filesystem path for P-NET"
+        default n
+        if PKG_PENT_FILESYSTEM_CONFIG
+            config PNET_USING_RAMFS
+                bool "p-net using ramfs filesystem by default, or you can turn this off and choose another way to enable the filesystem"
+                select RT_USING_DFS
+                select RT_USING_DFS_RAMFS
+                default n
+                if PNET_USING_RAMFS
+                    config PNET_RAMFS_SIZE
+                    int "default memory size for ramfs"
+                    default 8192
+                endif
+        endif
+
+    menuconfig PKG_PNET_NET_CONFIG
+        bool "P-NET sample slave network ip config"
+        default n
+        if PKG_PNET_NET_CONFIG
+            config RT_LWIP_IPADDR
+                string "set static ip address for profinet slaver"
+                default "192.168.137.196"
+            config RT_LWIP_GWADDR
+                string "set static gateway address for profinet slaver"
+                default "192.168.137.1"
+            config RT_LWIP_MSKADDR
+                string "set static mask address for profinet slaver"
+                default "255.255.255.0"
+        endif
+
+    choice
+        prompt "version"
+        help
+            Select the PNET version
+
+        config PKG_USING_PNET_LATEST
+            bool "latest"
+            depends on RT_VER_NUM >= 0x50100
+
+        config PKG_USING_PNET_V100
+            bool "v1.0.0"
+            depends on RT_VER_NUM >= 0x50100
+    endchoice
+
+    config PKG_PNET_VER
+       string
+       default "v1.0.0"    if PKG_USING_PNET_V100
+       default "latest"    if PKG_USING_PNET_LATEST
+
+endif

@@ -1,0 +1,30 @@
+{
+  "name": "gc9a01",
+  "description": "gc9a01: RT-Thread package for working with TFT LCD based on SPI.",
+  "description_zh": "基于gc9a01的圆形TFT LCD驱动，支持SPI",
+  "enable": "PKG_USING_GC9A01",
+  "keywords": [
+    "gc9a01",
+    "tft",
+    "lcd"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "hywing",
+    "email": "hywing@aliyum.com",
+    "github": "hywing"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/hywing/rtt-gc9a01",
+  "icon": "unknown",
+  "homepage": "https://github.com/hywing/rtt-gc9a01",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/hywing/rtt-gc9a01.git",
+      "filename": "gc9a01-latest.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

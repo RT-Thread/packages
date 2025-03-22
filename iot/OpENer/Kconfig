@@ -1,0 +1,113 @@
+
+# Kconfig file for package OpENer
+menuconfig PKG_USING_OPENER
+    bool "OpENer: EtherNet/IP stack for I/O adapter devices"
+    default n
+    select RT_USING_SAL             if RT_VER_NUM < 0x40100
+    select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+    select RT_USING_DFS             if RT_VER_NUM < 0x40100
+    select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_STDIO     if RT_VER_NUM >= 0x40100
+    select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
+
+if PKG_USING_OPENER
+
+    config PKG_OPENER_PATH
+        string
+        default "/packages/iot/OpENer"
+
+    config PKG_OPENER_HOSTNAME
+        string "Set OpENer hostname"
+        default "rtthreaddev"
+
+    config PKG_OPENER_WITH_TRACES
+        bool "Enable OpENer traces"
+        default y
+
+    if PKG_OPENER_WITH_TRACES
+        config PKG_OPENER_TRACE_LEVEL
+            int "Set OpENer trace level"
+            default 3
+            help
+                bit 0: ERR
+                bit 1: WARN
+                bit 2: STATE
+                bit 3: INFO
+    endif
+
+    config PKG_OPENER_ETHERNET_BUFFER_SIZE
+        int "Set OpENer Ethernet buffer size"
+        default 512
+
+    config OPENER_DEVICE_VENDOR_ID
+        int "Set OpENer device vendor ID"
+        default 1
+
+    config OPENER_DEVICE_TYPE
+        int "Set OpENer device type"
+        default 12
+
+    config OPENER_DEVICE_PRODUCT_CODE
+        int "Set OpENer device product code"
+        default 65001
+
+    config OPENER_DEVICE_MAJOR_REVISION
+        int "Set OpENer device major revision"
+        default 2
+
+    config OPENER_DEVICE_MINOR_REVISION
+        int "Set OpENer device minor revision"
+        default 3
+
+    config OPENER_DEVICE_NAME
+        string "Set OpENer device name"
+        default "OpENer PC"
+
+    choice
+        prompt "OpENer Version"
+        default PKG_USING_OPENER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_OPENER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_OPENER_VER
+       string
+       default "latest"    if PKG_USING_OPENER_LATEST_VERSION
+
+    config PKG_OPENER_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_OPENER_LATEST_VERSION
+
+    config PKG_USING_OPENER_PORT
+        bool
+        default y
+
+    if PKG_USING_OPENER_PORT
+
+        config PKG_OPENER_PORT_PATH
+            string
+            default "/packages/iot/OpENer/OpENer_port"
+
+        choice
+            prompt "OpENer Port Version"
+            default PKG_USING_OPENER_PORT_LATEST_VERSION
+            help
+                Select the package version
+
+            config PKG_USING_OPENER_PORT_LATEST_VERSION
+                bool "latest"
+        endchoice
+
+        config PKG_OPENER_PORT_VER
+            string
+            default "latest"    if PKG_USING_OPENER_PORT_LATEST_VERSION
+
+         config PKG_OPENER_PORT_VER_NUM
+             hex
+             default 0x99999    if PKG_USING_OPENER_PORT_LATEST_VERSION
+    endif
+
+endif

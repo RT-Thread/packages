@@ -1,0 +1,26 @@
+
+menuconfig PKG_USING_HPATCHLITE
+    bool "hpatchlite-wrapper: A lightweight and user-friendly wrapper for the HPatchLite."
+    default n
+
+if PKG_USING_HPATCHLITE
+
+    config PKG_HPATCHLITE_PATH
+        string
+        default "/packages/tools/hpatchlite-wrapper"
+
+    choice
+        prompt "Version"
+        default PKG_USING_HPATCHLITE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_HPATCHLITE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_HPATCHLITE_VER
+       string
+       default "latest" if PKG_USING_HPATCHLITE_LATEST_VERSION
+
+endif
