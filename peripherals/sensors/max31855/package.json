@@ -1,0 +1,34 @@
+{
+  "name": "max31855",
+  "description": "max31855: a package of digital temperature sensor max31855",
+  "description_zh": "数字温度传感器 max31855 的软件包",
+  "enable": "PKG_USING_MAX31855",
+  "keywords": [
+    "max31855",
+    "sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "wangwang105",
+    "email": "1059451203@qq.com",
+    "github": "wangwang105"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wangwang105/rtt-max31855.git",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/wangwang105/rtt-max31855.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wangwang105/rtt-max31855/archive/refs/tags/v1.0.0.zip",
+      "filename": "rtt—max31855-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wangwang105/rtt-max31855.git",
+      "filename": "rtt-max31855-latest.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

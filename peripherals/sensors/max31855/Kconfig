@@ -1,0 +1,37 @@
+
+# Kconfig file for package max31855
+menuconfig PKG_USING_MAX31855
+    bool "max31855: a package of digital temperature sensor max31855."
+    default n
+
+if PKG_USING_MAX31855
+
+    config PKG_MAX31855_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
+    config PKG_MAX31855_PATH
+        string
+        default "/packages/peripherals/sensors/max31855"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MAX31855_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MAX31855_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MAX31855_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MAX31855_VER
+       string
+       default "v1.0.0"    if PKG_USING_MAX31855_V100
+       default "latest"    if PKG_USING_MAX31855_LATEST_VERSION
+
+endif
+
