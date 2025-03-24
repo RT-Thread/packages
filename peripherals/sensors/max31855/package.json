@@ -1,10 +1,10 @@
 {
-  "name": "mx31855",
-  "description": "mx31855: a package of digital temperature sensor mx31855",
-  "description_zh": "数字温度传感器 mx31855 的软件包",
+  "name": "max31855",
+  "description": "max31855: a package of digital temperature sensor max31855",
+  "description_zh": "数字温度传感器 max31855 的软件包",
   "enable": "PKG_USING_MAX31855",
   "keywords": [
-    "mx31855",
+    "max31855",
     "sensor"
   ],
   "category": "peripherals/sensors",
@@ -22,12 +22,12 @@
     {
       "version": "v1.0.0",
       "URL": "https://github.com/wangwang105/rtt-max31855/archive/refs/tags/v1.0.0.zip",
-      "filename": "rtt—mx31855-1.0.0.zip"
+      "filename": "rtt—max31855-1.0.0.zip"
     },
     {
       "version": "latest",
       "URL": "https://github.com/wangwang105/rtt-max31855.git",
-      "filename": "rtt-mx31855-latest.zip",
+      "filename": "rtt-max31855-latest.zip",
       "VER_SHA": "main"
     }
   ]
