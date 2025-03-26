@@ -50,12 +50,12 @@ jobs:
         path: packages
     - name: Build Tools
       run: |
-        cp packages/ /home/runner/.env/packages/ -rf
+        source ~/.env/env.sh
         scons --pyconfig-silent -C $TEST_BSP_ROOT 2>menuconfig.log
-        sed 's/warning/::error::/gI' menuconfig.log > menuconfig.error.log
-        cat menuconfig.error.log
-        if grep -q "::error::" menuconfig.error.log; then
+        cat menuconfig.log
+        if grep -q "warning:" menuconfig.log; then
           echo "Errors found in menuconfig, failing the build."
           exit 1
         fi
+        pushd $TEST_BSP_ROOT && pkgs --update && popd
         scons -j$(nproc) -C $TEST_BSP_ROOT
