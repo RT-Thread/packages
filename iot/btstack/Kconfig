@@ -6,20 +6,23 @@ menuconfig PKG_USING_BTSTACK
     select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
     select RT_USING_PTHREADS
     select RT_USING_POSIX_TERMIOS
+	select RT_USING_POSIX_SELECT if RT_VER_NUM >=0x50200
+	select RT_USING_FAL if RT_VER_NUM >=0x50200
     bool "BTSTACK: embedded btstack"
     default n
 
 if PKG_USING_BTSTACK
-    config _GNU_SOURCE
-    int
-    default 1
-    config HAVE_DIRENT_STRUCTURE
-    int
-    default 1
-    config HAVE_DIR_STRUCTURE
-    int
-    default 1
-
+    if RT_VER_NUM < 0x50200
+		config _GNU_SOURCE
+		int
+		default 1
+		config HAVE_DIRENT_STRUCTURE
+		int
+		default 1
+		config HAVE_DIR_STRUCTURE
+		int
+		default 1
+    endif
     config PKG_BTSTACK_PATH
         string
         default "/packages/iot/btstack"
