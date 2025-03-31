@@ -31,7 +31,7 @@ if PKG_USING_BTSTACK
 if PKG_BTSTACK_VER_NUM >= 0x10000
 menu "BTSTACK stack HARDWARE config"
     config BTSTACK_BT_RESET_PIN
-        int "btstack pin value (port-a)*16+pin for stm32 "
+        int "btstack pin value (port-a)*16+pin for stm32"
         default 139  if SOC_STM32H750_ARTPI
         default 55  if BOARD_SERIES_STM32_NUCLEO_144
 
