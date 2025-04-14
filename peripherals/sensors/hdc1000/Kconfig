@@ -11,6 +11,10 @@ if PKG_USING_HDC1000
         string
         default "/packages/peripherals/sensors/hdc1000"
 
+    config PKG_HDC1000_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
     choice
         prompt "Version"
         default PKG_USING_HDC1000_LATEST_VERSION
