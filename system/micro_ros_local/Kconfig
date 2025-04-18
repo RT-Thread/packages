@@ -1,0 +1,118 @@
+menuconfig PKG_USING_MICRO_ROS_RTTHREAD_PACKAGE
+    bool "micro-ROS package for RTThread"
+    select RT_USING_POSIX_FS
+    select RT_USING_POSIX_SOCKET
+    select RT_USING_POSIX_SELECT
+    select RT_USING_SAL
+    select BSP_USING_ONCHIP_RTC
+    default n
+
+if PKG_USING_MICRO_ROS_RTTHREAD_PACKAGE
+
+    config PKG_MICRO_ROS_RTTHREAD_PACKAGE_PATH
+        string
+        default "/packages/system/micro_ros_local"
+
+    config RTT_UCLIENT_PLATFORM_RTTHREAD
+        bool "Using Micro XRCE-DDS Client Library in RT-Thread"
+        default n
+
+    config RTT_URCLC_PLATFORM_RTTHREAD
+        bool "Using Micro rclc Library in RT-Thread"
+        default y
+
+    menu "Include examples"
+        config PKG_RCLC_EXAMPLE
+            bool "Enable micro-ROS rclc platform example"
+            depends on RTT_URCLC_PLATFORM_RTTHREAD
+            default y
+
+        config PKG_UCLIENT_PLATFORM_EXAMPLE
+            bool "Enable micro-ROS uxr platform example"
+            depends on RTT_UCLIENT_PLATFORM_RTTHREAD
+            default n
+    endmenu
+
+    choice
+        prompt "Distribution"
+        default PKG_MICRO_ROS_RTTHREAD_PACKAGE_FOXY_DISTRO
+        help
+            Select the micro-ROS distro
+
+        config PKG_MICRO_ROS_RTTHREAD_PACKAGE_HUMBLE_DISTRO
+            bool "Humble"
+
+        config PKG_MICRO_ROS_RTTHREAD_PACKAGE_FOXY_DISTRO
+            bool "Foxy"
+    endchoice
+
+    menu "Memory configuration"
+        config PKG_MICRO_ROS_RTTHREAD_PACKAGE_MAX_NODES
+            int "# Nodes"
+            default 1
+
+        config PKG_MICRO_ROS_RTTHREAD_PACKAGE_MAX_PUBLISHERS
+            int "# Publishers"
+            default 1
+
+        config PKG_MICRO_ROS_RTTHREAD_PACKAGE_MAX_SUBSCRIBERS
+            int "# Subscribers"
+            default 1
+
+        config PKG_MICRO_ROS_RTTHREAD_PACKAGE_MAX_SERVICES
+            int "# Services"
+            default 0
+
+        config PKG_MICRO_ROS_RTTHREAD_PACKAGE_MAX_CLIENTS
+            int "# Clients"
+            default 0
+
+    endmenu
+        
+    menu "ROS node communication mode"
+
+        config PKG_MICRO_ROS_USE_SERIAL
+            bool "serial"
+            default n
+            if PKG_MICRO_ROS_USE_SERIAL
+                menu "serial configuration"
+                    config MICRO_ROS_SERIAL_NAME
+                        string "select the micro serial dev name"
+                        default "vcom"
+                endmenu
+            endif
+
+        config PKG_MICRO_ROS_USE_UDP
+            bool "udp"
+            default n
+            if PKG_MICRO_ROS_USE_UDP
+                menu "udp configuration"
+                    config MICRO_ROS_UDP_IP
+                        string "select the micro udp ip"
+                        default "127.0.0.1"
+
+                    config MICRO_ROS_UDP_PORT
+                        string "select the micro udp port"
+                        default "8080"
+                endmenu
+            endif
+            
+        config PKG_MICRO_ROS_USE_TCP
+            bool "tcp"
+            default n
+            if PKG_MICRO_ROS_USE_TCP
+                menu "tcp configuration"
+                    config MICRO_ROS_TCP_IP
+                        string "select the micro tcp ip"
+                        default "127.0.0.1"
+
+                    config MICRO_ROS_TCP_PORT
+                        string "select the micro tcp port"
+                        default "8080"
+                endmenu
+            endif
+
+    endmenu
+            
+endif
+
