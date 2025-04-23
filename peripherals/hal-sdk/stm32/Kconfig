@@ -68,4 +68,8 @@ source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32_sdio/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wl_hal_driver/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wl_cmsis_driver/Kconfig"
 
+#STM32WB
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wb_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wb_cmsis_driver/Kconfig"
+
 endmenu
