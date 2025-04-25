@@ -1,0 +1,28 @@
+{
+  "name": "qmi8658",
+  "description": "a 3-axis gyroscope and a 3-axis accelerometer driver library",
+  "description_zh": "基于qmi8658的三轴加速度计和三轴陀螺仪软件包",
+  "enable": "PKG_USING_QMI8658",
+  "keywords": [
+    "qmi8658"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "hydevcode",
+    "email": "package_team@rt-thread.com",
+    "github": "hydevcode"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/hydevcode/qmi8658.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/hydevcode/qmi8658#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/hydevcode/qmi8658.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
