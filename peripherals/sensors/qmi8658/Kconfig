@@ -1,0 +1,33 @@
+
+# Kconfig file for package qmi8658
+menuconfig PKG_USING_QMI8658
+    bool "qmi8658: a 3-axis gyroscope and a 3-axis accelerometer driver library"
+    select RT_USING_I2C
+    default n
+
+if PKG_USING_QMI8658
+
+    config PKG_QMI8658_PATH
+        string
+        default "/packages/peripherals/sensors/qmi8658"
+
+    config PKG_QMI_USING_8658A
+        bool "using qmi8658A"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_QMI8658_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_QMI8658_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_QMI8658_VER
+       string
+       default "latest"    if PKG_USING_QMI8658_LATEST_VERSION
+
+endif
+
