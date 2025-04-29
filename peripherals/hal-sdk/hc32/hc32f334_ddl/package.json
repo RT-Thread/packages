@@ -1,0 +1,29 @@
+{
+  "name": "hc32f334_ddl",
+  "description": "This package is used to store the DDL library file of HC32F334",
+  "description_zh": "该软件包用于存放HC32F334的DDL库文件",
+  "enable": "PKG_USING_HC32F334_DDL",
+  "keywords": [
+    "hc32f334_ddl",
+    "HC32F334"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "levizh",
+    "email": "levizhangxl@gmail.com",
+    "github": "levizh"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/levizh/hc32f334_ddl_rtt",
+  "icon": "unknown",
+  "homepage": "https://github.com/levizh/hc32f334_ddl_rtt#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/levizh/hc32f334_ddl_rtt.git",
+      "filename": "hc32f334_ddl_rtt",
+      "VER_SHA": "main"
+    }
+  ]
+}
