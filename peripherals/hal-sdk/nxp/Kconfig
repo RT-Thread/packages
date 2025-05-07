@@ -1,0 +1,7 @@
+menu "NXP HAL & SDK Drivers"
+
+# nxp-mcx
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nxp/nxp-mcx-cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nxp/nxp-mcx-series/Kconfig"
+
+endmenu
