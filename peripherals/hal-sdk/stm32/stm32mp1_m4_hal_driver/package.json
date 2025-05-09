@@ -23,7 +23,7 @@
       "version": "latest",
       "URL": "https://github.com/RT-Thread-packages/stm32mp1xx-m4-hal-driver.git",
       "filename": "",
-      "VER_SHA": "main"
+      "VER_SHA": "master"
     }
   ]
 }
