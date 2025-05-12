@@ -4,4 +4,7 @@ menu "NXP HAL & SDK Drivers"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/nxp/nxp-mcx-cmsis/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/nxp/nxp-mcx-series/Kconfig"
 
+# nxp-lpc
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nxp/nxp-lpc-series/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nxp/nxp-lpc55s-series/Kconfig"
 endmenu
