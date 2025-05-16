@@ -13,18 +13,17 @@
     "github": "wuhanstudio"
   },
   "license": "MIT",
-  "repository": "https://github.com/wuhanstudio/rt-i2c-tools",
-  "homepage": "https://github.com/wuhanstudio/rt-i2c-tools#readme",
+  "repository": "https://github.com/RT-Thread-packages/rt-i2c-tools",
+  "homepage": "https://github.com/RT-Thread-packages/rt-i2c-tools#readme",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/wuhanstudio/rt-i2c-tools.git",
-      "filename": "i2c-tools-1.0.0.zip",
-      "VER_SHA": "5c02375e616f5a0b6685e8bc7fae3f93b8cbb0b4"
+      "URL": "https://github.com/RT-Thread-packages/rt-i2c-tools/archive/refs/tags/v1.0.0.zip",
+      "filename": "i2c-tools-1.0.0.zip"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/wuhanstudio/rt-i2c-tools.git",
+      "URL": "https://github.com/RT-Thread-packages/rt-i2c-tools.git",
       "filename": "",
       "VER_SHA": "master"
     }
