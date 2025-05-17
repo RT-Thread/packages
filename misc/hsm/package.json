@@ -1,0 +1,37 @@
+{
+  "name": "hsm",
+  "description": "Hierarchical state machines for designing event-driven systems",
+  "description_zh": "一种用于设计事件驱动系统的层次化状态机库",
+  "enable": "PKG_USING_HSM",
+  "keywords": [
+    "hsm",
+    "state-machine",
+    "state",
+    "embedded"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "Ye Zenghui",
+    "email": "y956370541@163.com",
+    "github": "https://github.com/Ye-Zenghui"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Ye-Zenghui/hsm",
+  "icon": "unknown",
+  "homepage": "https://github.com/Ye-Zenghui/hsm#readme",
+  "doc": "https://github.com/Ye-Zenghui/hsm/blob/master/README.md",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Ye-Zenghui/hsm.git",
+      "filename": "",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Ye-Zenghui/hsm/archive/v1.0.0.zip",
+      "filename": "hsm-1.0.0.zip",
+      "VER_SHA": "fill in latest version SHA"
+    }
+  ]
+} 
