@@ -17,6 +17,10 @@ if PKG_USING_UART_FRAMEWORK
 
         config PKG_USING_UART_FRAMEWORK_V001
             bool "v0.0.1"
+        config PKG_USING_UART_FRAMEWORK_V004
+            bool "v0.0.4"
+        config PKG_USING_UART_FRAMEWORK_V100
+            bool "v1.0.0"
         config PKG_USING_UART_FRAMEWORK_LATEST_VERSION
             bool "latest"
     endchoice
@@ -24,6 +28,8 @@ if PKG_USING_UART_FRAMEWORK
     config PKG_UART_FRAMEWORK_VER
        string
        default "v0.0.1"    if PKG_USING_UART_FRAMEWORK_V001
+       default "v0.0.4"    if PKG_USING_UART_FRAMEWORK_V004
+       default "v1.0.0"    if PKG_USING_UART_FRAMEWORK_V100
        default "latest"    if PKG_USING_UART_FRAMEWORK_LATEST_VERSION
 
 endif
