@@ -1,0 +1,33 @@
+{
+  "name": "ch32v307_sdk",
+  "description": "CH32V307 SDK for rt-thread",
+  "description_zh": "CH32V307 SDK for rt-thread",
+  "enable": "PKG_USING_CH32V307_SDK",
+  "keywords": [
+    "ch32v307_sdk"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "openwch",
+    "email": "xxx@xx.com",
+    "github": "openwch"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/openwch/ch32v307",
+  "icon": "unknown",
+  "homepage": "https://github.com/openwch/ch32v307#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v2.7",
+      "URL": "https://github.com/kaidegit/CH32V307-SDK-for-RTT/releases/download/v2.7/CH32V307-SDK-for-RTT-v2.7.zip",
+      "filename": "CH32V307-SDK-for-RTT-v2.7.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/kaidegit/CH32V307-SDK-for-RTT.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

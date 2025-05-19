@@ -1,0 +1,35 @@
+{
+  "name": "libcrc",
+  "description": "A crc verification calculation function library for porting libcrc.",
+  "description_zh": "一个移植libcrc的crc校验计算函数库。",
+  "enable": "PKG_USING_LIBCRC",
+  "keywords": [
+    "libcrc",
+    "crc",
+    "rt-thread"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "wangwang105",
+    "email": "1059451203@qq.com",
+    "github": "wangwang105"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wangwang105/rtt-libcrc.git",
+  "icon": "https://www.rt-thread.org/qa/template/fxiaomi/style/image/logo.png",
+  "homepage": "https://github.com/wangwang105/rtt-libcrc.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wangwang105/rtt-libcrc/archive/refs/tags/v1.0.0.zip",
+      "filename": "libcrc-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wangwang105/rtt-libcrc.git",
+      "filename": "rtt-libcrc-latest.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

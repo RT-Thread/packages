@@ -10,6 +10,11 @@ if PKG_USING_ISL29035
         string
         default "/packages/peripherals/sensors/ISL29035"
 
+    config PKG_ISL29035_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_ISL29035_LATEST_VERSION

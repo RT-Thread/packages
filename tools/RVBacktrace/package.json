@@ -1,0 +1,46 @@
+{
+  "name": "RVBacktrace",
+  "description": "RISC-V Minimalist Stack Traceback Components.",
+  "description_zh": "RISC-V 极简栈回溯组件",
+  "keywords": [
+    "risc-v",
+    "backtrace",
+    "RVBacktrace"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "Yaochenger",
+    "email": "1516081466@qq.com",
+    "github": "Yaochenger"
+  },
+  "repository": "https://github.com/Yaochenger/RvBacktrace",
+  "license": "Apache-2.0",
+  "enable": "PKG_USING_RVBACKTRACE",
+  "keywords": [
+    "RVBacktrace"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "Yaochenger",
+    "email": "1516081466@qq.com",
+    "github": "Yaochenger"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Yaochenger/RvBacktrace",
+  "icon": "unknown",
+  "homepage": "https://github.com/Yaochenger/RvBacktrace#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.1",
+      "URL": "https://github.com/Yaochenger/RvBacktrace/archive/1.0.1.zip",
+      "filename": "RvBacktrace-1.0.1.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Yaochenger/RvBacktrace.git",
+      "filename": "RvBacktrace.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "ikun-485",
+  "description": "rs485 driver based on char device",
+  "description_zh": "基于字符设备的 RS485 驱动",
+  "enable": "PKG_USING_IK485",
+  "keywords": [
+    "ikun-485",
+    "rs485"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "sulfurandcu",
+    "email": "sulfurandcu@gmail.com",
+    "github": "sulfurandcu"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/sulfurandcu/ikun-485",
+  "homepage": "https://github.com/sulfurandcu/ikun-485#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sulfurandcu/ikun-485.git",
+      "filename": "ikun-485.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

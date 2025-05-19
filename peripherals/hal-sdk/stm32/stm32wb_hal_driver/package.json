@@ -1,0 +1,29 @@
+{
+  "name": "stm32wb_hal_driver",
+  "description": "STM32 WB HAL driver package",
+  "description_zh": "STM32 WB HAL 驱动包",
+  "enable": "PKG_USING_STM32WB_HAL_DRIVER",
+  "keywords": [
+    "stm32wb_hal_driver",
+    "STM32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/RT-Thread-packages/stm32wbxx-hal-driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/stm32wbxx-hal-driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/stm32wbxx-hal-driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

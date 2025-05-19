@@ -1,0 +1,29 @@
+{
+  "name": "heartbeat",
+  "description": "A heartbeat package for rt-thread.",
+  "description_zh": "一个适用于rt-thread的heartbeat的软件包。",
+  "enable": "PKG_USING_HEARTBEAT",
+  "keywords": [
+    "heartbeat",
+    "心跳灯",
+    "rt-thread"
+  ],
+  "category": "system",
+  "author": {
+    "name": "Chasel",
+    "email": "m19825309307@163.com",
+    "github": "Chasel"
+  },
+  "license": " LGPL-2.1",
+  "repository": "https://github.com/Maihuanyi/heartbeat",
+  "icon": "unknown",
+  "homepage": "https://github.com/Maihuanyi/heartbeat/blob/main/README.md",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Maihuanyi/heartbeat.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

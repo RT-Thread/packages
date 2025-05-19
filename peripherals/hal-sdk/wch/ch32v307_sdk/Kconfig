@@ -1,0 +1,31 @@
+
+# Kconfig file for package ch32v307_sdk
+menuconfig PKG_USING_CH32V307_SDK
+    bool "CH32V307 SDK"
+    default n
+
+if PKG_USING_CH32V307_SDK
+
+    config PKG_CH32V307_SDK_PATH
+        string
+        default "/packages/peripherals/hal-sdk/wch/ch32v307_sdk"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_CH32V307_SDK_V207
+            bool "v2.7"
+
+        config PKG_USING_CH32V307_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CH32V307_SDK_VER
+        string
+        default "v2.7"      if PKG_USING_CH32V307_SDK_V207
+        default "latest"    if PKG_USING_CH32V307_SDK_LATEST_VERSION
+
+endif
+

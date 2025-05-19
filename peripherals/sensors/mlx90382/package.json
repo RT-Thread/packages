@@ -1,0 +1,28 @@
+{
+  "name": "mlx90382",
+  "description": "The MLX90382 is a compact, absolute magnetic encoder IC. It features stray field immunity, supports both on-axis and off-axis sensing, 14-bit resolution, differential outputs and a speed range of up to 200k e-RPM",
+  "description_zh": "MLX90382 是来自迈来芯公司的一颗高速磁编码器",  
+  "enable": "PKG_USING_MLX90382", 
+  "keywords": [
+    "mlx90382"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "lgnq",
+    "email": "dzzxzz@gmail.com",
+    "github": "lgnq"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/lgnq/mlx90382",
+  "icon": "unknown",
+  "homepage": "https://github.com/lgnq/mlx90382",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/lgnq/mlx90382.git",
+      "filename": "mlx90382.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

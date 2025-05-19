@@ -6,7 +6,6 @@ menuconfig PKG_USING_I2C_TOOLS
     select RT_USING_LIBC if RT_VER_NUM < 0x40100
     select RT_USING_I2C
     select RT_USING_I2C_BITOPS
-    select RT_USING_CPLUSPLUS
     default n
 
 if PKG_USING_I2C_TOOLS
@@ -20,6 +19,7 @@ if PKG_USING_I2C_TOOLS
         help
             Use software i2c instead of hardware
         default n
+        select RT_USING_CPLUSPLUS
 
     if I2C_TOOLS_USE_SW_I2C
         config I2C_TOOLS_SW_ACK_TIMEOUT

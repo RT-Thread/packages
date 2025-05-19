@@ -1,0 +1,40 @@
+# Kconfig file for package p3t1755
+menuconfig PKG_USING_P3T1755
+    bool "p3t1755: a p3t1755 package for rt-thread."
+    default n
+    select RT_USING_I2C
+    help
+        A temperature detection chip from nxp, driven through the SENSOR frame.
+
+if PKG_USING_P3T1755
+    config P3T1755_I2C_BUS_NAME
+        string "The name of the I2C bus used by P3T1755"
+        default "i2c0"
+
+    config PKG_P3T1755_USING_SENSOR_V2
+        bool "Enable sensor divce framework"
+        depends on RT_VER_NUM >= 0x50001
+        select RT_USING_SENSOR
+        select RT_USING_SENSOR_V2
+        default n
+
+    config PKG_P3T1755_PATH
+        string
+        default "/packages/peripherals/sensors/p3t1755"
+
+    choice
+        prompt "Version"
+        default PKG_USING_P3T1755_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_P3T1755_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_P3T1755_VER
+       string
+       default "latest"    if PKG_USING_P3T1755_LATEST_VERSION
+
+endif
+

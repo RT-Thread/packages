@@ -10,6 +10,17 @@ if PKG_USING_SGP30
         string
         default "/packages/peripherals/sensors/sgp30"
 
+    config PKG_SGP30_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default y
+        
+        if  PKG_SGP30_USING_SENSOR_V1
+            config PKG_SGP30_USING_SENSOR_V1_SAMPLE
+                bool "Enable sgp30 sensor_v1 sample"
+                default y
+        endif
+        
     choice
         prompt "Select I2C address"
         default PKG_USING_SGP30_I2C_ADDR

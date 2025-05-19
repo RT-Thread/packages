@@ -1,0 +1,111 @@
+
+# Kconfig file for package libcrc
+menuconfig PKG_USING_LIBCRC
+    bool "libcrc:Multi platform MIT licensed CRC library in C."
+    default n
+
+if PKG_USING_LIBCRC
+
+    config PKG_LIBCRC_PATH
+        string
+        default "/packages/misc/libcrc"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_LIBCRC_V100
+            bool "v1.0.0"
+
+        config PKG_USING_LIBCRC_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LIBCRC_CRC8
+        bool "crc8"
+        default n
+
+        if PKG_LIBCRC_CRC8
+            config LIBCRC_USING_CRC8
+                bool "using 8 bit crc"
+                default n
+        endif
+
+    config PKG_LIBCRC_CRC16
+        bool "crc16"
+        default n
+
+        if PKG_LIBCRC_CRC16
+            config LIBCRC_USING_CRC16
+                bool "using 16 bit crc"
+                default n
+        
+            config LIBCRC_USING_CRC_CCITT_1D0F
+                bool "using ccitt crc, 0x1D0F"
+                default n
+
+            config LIBCRC_USING_CRC_CCITT_FFFF
+                bool "using ccitt crc, 0xFFFF"
+                default n
+            config LIBCRC_USING_CRC_DNP
+                bool "using dnp crc"
+                default n
+
+            config LIBCRC_USING_CRC_KERMIT
+                bool "using kermit crc"
+                default n
+
+            config LIBCRC_USING_CRC_MODBUS
+                bool "using modbus crc"
+                default n
+
+            config LIBCRC_USING_CRC_SICK
+                bool "using sick crc"
+                default n
+
+            config LIBCRC_USING_CRC_XMODEM
+                bool "using xmodem crc"
+                default n
+        endif
+
+    config PKG_LIBCRC_CRC32
+        bool "crc32"
+        default n
+
+        if PKG_LIBCRC_CRC32
+            config LIBCRC_USING_CRC32
+                bool "using 32 bit crc"
+                default n
+        endif
+
+    config PKG_LIBCRC_CRC64
+        bool "crc64"
+        default n
+
+        if PKG_LIBCRC_CRC64
+            config LIBCRC_USING_CRC64_ECMA
+                bool "using 64 bit ecma crc"
+                default n
+
+            config LIBCRC_USING_CRC64_WE
+                bool "using 64 bit we crc"
+                default n
+        endif
+
+    config PKG_USING_CHECKSUM_NMEA
+        bool "using nmea checksum"
+        default n
+
+    config PKG_USING_LIBCRC_SAMPLE
+        bool "using sample crc"
+        default n
+
+
+    config PKG_LIBCRC_VER
+       string
+       default "v1.0.0"    if PKG_USING_LIBCRC_V100
+       default "latest"    if PKG_USING_LIBCRC_LATEST_VERSION
+
+endif
+

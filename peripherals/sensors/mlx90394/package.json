@@ -1,0 +1,28 @@
+{
+  "name": "mlx90394",
+  "description": "The MLX90394 is the newest addition to the Melexis position sensing portfolio, bringing the highest fl exibility in the portfolio’s smallest assembly. Complementing this, the magnetic fi eld sensor is designed for micropower applications.",
+  "description_zh": "MLX90394 是来自迈来芯公司的一颗低功耗的3D磁位置传感器(磁力计)",  
+  "enable": "PKG_USING_MLX90394", 
+  "keywords": [
+    "mlx90394"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "lgnq",
+    "email": "dzzxzz@gmail.com",
+    "github": "lgnq"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/lgnq/mlx90394",
+  "icon": "unknown",
+  "homepage": "https://github.com/lgnq/mlx90394",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/lgnq/mlx90394.git",
+      "filename": "mlx90394.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

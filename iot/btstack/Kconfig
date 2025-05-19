@@ -6,26 +6,47 @@ menuconfig PKG_USING_BTSTACK
     select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
     select RT_USING_PTHREADS
     select RT_USING_POSIX_TERMIOS
+    select RT_USING_POSIX_SELECT if RT_VER_NUM >=0x50200
+    select RT_USING_FAL if RT_VER_NUM >=0x50200
     bool "BTSTACK: embedded btstack"
     default n
 
 if PKG_USING_BTSTACK
-    config _GNU_SOURCE
-    int
-    default 1
-    config HAVE_DIRENT_STRUCTURE
-    int
-    default 1
-    config HAVE_DIR_STRUCTURE
-    int
-    default 1
-
+    if RT_VER_NUM < 0x50200
+        config _GNU_SOURCE
+        int
+        default 1
+        config HAVE_DIRENT_STRUCTURE
+        int
+        default 1
+        config HAVE_DIR_STRUCTURE
+        int
+        default 1
+    endif
     config PKG_BTSTACK_PATH
         string
         default "/packages/iot/btstack"
 
 
 if PKG_BTSTACK_VER_NUM >= 0x10000
+menu "BTSTACK stack HARDWARE config"
+    config BTSTACK_BT_RESET_PIN
+        int "btstack pin value (port-a)*16+pin for stm32"
+        default 139  if SOC_STM32H750_ARTPI
+        default 55  if BOARD_SERIES_STM32_NUCLEO_144
+
+    config BTSTACK_BT_UART_PORT_DEV_NAME
+        string "The device name of the uart port"
+        default "/dev/uart3" if SOC_STM32H750_ARTPI
+        default "/dev/uart2" if BOARD_SERIES_STM32_NUCLEO_144
+
+    config BTSTACK_BT_PATCH_NAME
+        string "The patch file name of device"
+        default "/dev/bt_image" if SOC_STM32H750_ARTPI
+        default "BCM43430A1.hcd" if BOARD_SERIES_STM32_NUCLEO_144
+
+endmenu
+
 #  btstack office config
 menu "BTSTACK stack config"
     config ENABLE_LOG_ERROR
@@ -201,13 +222,10 @@ menuconfig PKG_BTSTACK_SMP
             default y
         endif
 
-
-
-
 # example
 choice
-    prompt "BTSTACK example ALL"
-    default PKG_BTSTACK_SAMPLE_LE_BLUFI_SERVER
+    prompt "BTSTACK example select"
+    default PKG_BTSTACK_SAMPLE_LE_COUNTER
     help
         select the BTSTACK samples
 

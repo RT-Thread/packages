@@ -13,7 +13,7 @@
     "name": "jiejie",
     "email": "jiejietop@gmail.com"
   },
-  "license": "GPL-2.0",
+  "license": "Apache-2.0",
   "repository": "https://github.com/jiejieTop/kawaii-mqtt",
   "icon": "https://github.com/jiejieTop/kawaii-mqtt/tree/master/png/kawaii.png",
   "homepage": "https://github.com/jiejieTop/kawaii-mqtt#readme",

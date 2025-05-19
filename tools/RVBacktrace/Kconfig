@@ -1,0 +1,57 @@
+
+# Kconfig file for package RVBacktrace
+menuconfig PKG_USING_RVBACKTRACE
+    bool "RISC-V Minimalist Stack Traceback Components."
+    default n
+
+if PKG_USING_RVBACKTRACE
+    config PKG_RVBACKTRACE_PATH
+        string
+        default "/packages/tools/RVBacktrace"
+
+    if PKG_RVBACKTRACE_VER_NUM > 0x10001
+        config BACKTRACE_USE_FP
+            bool
+            prompt "Use BACKTRACE_USE_FP -fno-omit-frame-pointer"
+            default n
+            help
+                To enable this option, add the [-fno-omit-frame-pointer] option to ASM,C/C++.
+        config BACKTRACE_FSTACK_PROTECT
+            bool
+            prompt "Use BACKTRACE_FSTACK_PROTECT -fstack-protector-strong"
+            default n
+            help
+                To enable this option, add the [-fstack-protector-strong] option to ASM,C/C++, add [-Wl,--wrap,_exit] flag to link option.
+        config BACKTRACE_ALL
+            bool
+            prompt "Outputs the stack of all threads"
+            default n
+            depends on BACKTRACE_USE_FP
+            help
+                Before enabling this option, enable the BACKTRACE_USE_FP / Outputs the stack of all threads
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_RVBACKTRACE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RVBACKTRACE_V010001
+            bool "v1.0.1"
+
+        config PKG_USING_RVBACKTRACE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RVBACKTRACE_VER
+       string
+       default "v1.0.1"    if PKG_USING_RVBACKTRACE_V010001
+       default "latest"    if PKG_USING_RVBACKTRACE_LATEST_VERSION
+
+    config PKG_RVBACKTRACE_VER_NUM
+        hex
+        default 0x10001    if PKG_USING_RVBACKTRACE_V010001
+        default 0x99999    if PKG_USING_RVBACKTRACE_LATEST_VERSION
+endif
+

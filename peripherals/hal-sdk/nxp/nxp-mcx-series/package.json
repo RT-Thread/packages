@@ -1,0 +1,28 @@
+{
+  "name": "nxp-mcx-series",
+  "description": "NXP MCX SERIES DRIVER PACKAGE",
+  "description_zh": "NXP MCX SERIES 驱动包",
+  "enable": "PKG_USING_NXP_MCX_SERIES_DRIVER",
+  "keywords": [
+    "nxp-mcx-series"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/nxp-mcx-series",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/nxp-mcx-series#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/nxp-mcx-series.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

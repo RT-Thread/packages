@@ -10,7 +10,12 @@ if PKG_USING_MAX31865
         string
         default "/packages/peripherals/sensors/max31865"
 
-    config MAX31865_REF_RES
+    config PKG_MAX31865_USING_SENSOR_V1
+        bool "Enable sensor_v1 device framework"
+        select RT_USING_SENSOR
+        default n
+    
+    config PKG_MAX31865_REF_RES
         int "MAX31865 reference resistor. Unit: Milliohm"
         default 400000
 

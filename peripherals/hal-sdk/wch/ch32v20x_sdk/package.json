@@ -1,0 +1,33 @@
+{
+  "name": "ch32v20x_sdk",
+  "description": "CH32V20x SDK for rt-thread",
+  "description_zh": "CH32V20x SDK for rt-thread",
+  "enable": "PKG_USING_CH32V20x_SDK",
+  "keywords": [
+    "ch32v20x_sdk"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "openwch",
+    "email": "xxx@xx.com",
+    "github": "openwch"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/openwch/ch32v20x",
+  "icon": "unknown",
+  "homepage": "https://github.com/openwch/ch32v20x#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v2.2",
+      "URL": "https://github.com/kaidegit/CH32V20x-SDK-for-RTT/releases/download/v2.2/CH32V20x-SDK-for-RTT-v2.2.zip",
+      "filename": "CH32V20x-SDK-for-RTT-v2.2.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/kaidegit/CH32V20x-SDK-for-RTT.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
