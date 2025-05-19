@@ -1,0 +1,68 @@
+menuconfig PKG_USING_IC74HC165
+    bool "ic74hc165: 74HC165 GPIO/SPI 驱动"
+    depends on RT_USING_COMPONENTS_INIT
+    help
+      使用 GPIO 或 SPI 模式读取 74HC165 输入数据的驱动软件包
+
+if PKG_USING_IC74HC165
+
+choice
+    prompt "通信模式选择"
+    default PKG_IC74HC165_MODE_GPIO
+    help
+      选择使用 GPIO 模拟方式 或 SPI 外设方式驱动 74165
+
+config PKG_IC74HC165_MODE_GPIO
+    bool "GPIO 模拟模式"
+
+config PKG_IC74HC165_MODE_SPI
+    bool "SPI 硬件模式"
+endchoice
+
+config PKG_IC74HC165_SAMPLE
+    bool "启用示例代码(sample/sample.c)"
+    default y
+
+config IC74HC165_NODE_COUNT
+    int "节点数量(74HC165 串联芯片数)"
+    default 1
+
+config PKG_IC74HC165_USE_CLKINH
+    bool "启用 CLK_INH(CE)引脚控制功能"
+    default y
+
+# SPI 专属配置
+if PKG_IC74HC165_MODE_SPI
+
+config PKG_IC74HC165_SPI_BUS_NAME
+    string "SPI 总线名称"
+    default "spi1"
+    help
+      SPI 总线名,例如 spi1、spi2,必须在系统中存在
+
+config PKG_IC74HC165_SPI_DEV_NAME
+    string "SPI 设备名称"
+    default "spi10"
+    help
+      SPI 设备逻辑名称,推荐使用 spi1x 结构
+
+endif  # PKG_IC74HC165_MODE_SPI
+
+choice
+    prompt "版本选择"
+    help
+        选择使用的 ic74hc165 软件包版本
+
+    config PKG_USING_IC74HC165_LATEST
+        bool "latest version (main branch)"
+endchoice
+
+config PKG_IC74HC165_VER
+    string
+    default "latest" if PKG_USING_IC74HC165_LATEST
+
+config PKG_IC74HC165_PATH
+    string
+    default "/packages/peripherals/ic74hc165"
+
+endif  # PKG_USING_IC74HC165
