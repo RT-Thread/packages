@@ -1,0 +1,31 @@
+{
+  "name": "ic74hc165",
+  "description": "74HC165 GPIO/SPI driver for RT-Thread 4.x",
+  "description_zh": "用于RT-Thread 的74HC165串行输入并行输出芯片驱动,支持GPIO与SPI两种模式",
+  "enable": "PKG_USING_IC74HC165",
+  "keywords": [
+    "74hc165",
+    "gpio",
+    "spi",
+    "shift-register"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "godmial",
+    "email": "2633967641@qq.com",
+    "github": "godmial"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/godmial/ic74hc165.git",
+  "icon": "https://raw.githubusercontent.com/godmial/sean_ws2812b/main/icon.png",
+  "homepage": "https://github.com/godmial/ic74hc165#readme",
+  "doc": "https://github.com/godmial/ic74hc165#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/godmial/ic74hc165.git",
+      "filename": "ic74hc165.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
