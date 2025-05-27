@@ -118,6 +118,12 @@ if PKG_USING_LLMCHAT
     config PKG_LLMCHAT_DBG
         bool "Enable llmchat debug"
         default n
+    
+    menu "Examples"
+        config PKG_USING_LLMCHAT_DEMO_LLM_CONTORY
+            bool "select llm_contory demo"
+            default n
+    endmenu
 
     choice
         prompt "Version"
