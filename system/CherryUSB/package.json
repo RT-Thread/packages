@@ -26,6 +26,11 @@
       "VER_SHA": "master"
     },
     {
+      "version": "v1.5.0",
+      "URL": "https://github.com/cherry-embedded/CherryUSB/archive/refs/tags/v1.5.0.zip",
+      "filename": "CherryUSB-1.5.0.zip"
+    },
+    {
       "version": "v1.4.3",
       "URL": "https://github.com/cherry-embedded/CherryUSB/archive/refs/tags/v1.4.3.zip",
       "filename": "CherryUSB-1.4.3.zip"
