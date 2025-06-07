@@ -1,0 +1,28 @@
+{
+  "name": "icm20948",
+  "description": "Inven's icm20948 driver,support Accel/gyro",
+  "description_zh": "Inven的icm20948传感器驱动, 支持加速度计/陀螺仪",
+  "enable": "PKG_USING_ICM20948",
+  "keywords": [
+    "icm20948"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "juzhango",
+    "email": "juzhango@outlook.com",
+    "github": "juzhango"
+  },
+  "license": "Apache-2.0",
+  "repository": "http://github.com/juzhango/icm20948.git",
+  "icon": "unknown",
+  "homepage": "http://github.com/juzhango/icm20948.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "http://github.com/juzhango/icm20948.git",
+      "filename": "icm20948.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
