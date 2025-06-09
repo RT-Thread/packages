@@ -13,14 +13,14 @@
     "github": "juzhango"
   },
   "license": "Apache-2.0",
-  "repository": "http://github.com/juzhango/icm20948.git",
+  "repository": "https://github.com/juzhango/icm20948.git",
   "icon": "unknown",
-  "homepage": "http://github.com/juzhango/icm20948.git#readme",
+  "homepage": "https://github.com/juzhango/icm20948.git#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "http://github.com/juzhango/icm20948.git",
+      "URL": "https://github.com/juzhango/icm20948.git",
       "filename": "icm20948.zip",
       "VER_SHA": "main"
     }
