@@ -1,0 +1,46 @@
+
+# Kconfig file for package icm20948
+menuconfig PKG_USING_ICM20948
+    bool "icm20948 sensor driver package, support: accelerometer, gyroscope."
+    select RT_USING_SENSOR
+    default n
+
+if PKG_USING_ICM20948
+
+    config PKG_ICM20948_PATH
+        string
+        default "/packages/peripherals/sensors/icm20948"
+
+    config PKG_ICM20948_USING_SAMPLE
+        bool "Enable icm20948 sample"
+        default n
+
+    choice
+        prompt "I2C device address type"
+        default PKG_ICM20948_I2C_ADDR_TYPE_LOW
+        help
+            Select I2C device address type: if SA0=0 -> I2C_DEVICE_TYPE_LOW if SA0=1 -> I2C_DEVICE_TYPE_HIGH
+
+        config PKG_ICM20948_I2C_ADDR_TYPE_HIGH
+            bool "I2C address high. if SA0 pad connect to VCC, select me"
+
+        config PKG_ICM20948_I2C_ADDR_TYPE_LOW
+            bool "I2C address low. if SA0 pad connect to GND, select me"
+    endchoice
+
+    choice
+        prompt "Version"
+        default PKG_USING_ICM20948_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_ICM20948_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ICM20948_VER
+       string
+       default "latest"    if PKG_USING_ICM20948_LATEST_VERSION
+
+endif
+
