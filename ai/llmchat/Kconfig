@@ -119,7 +119,7 @@ if PKG_USING_LLMCHAT
         bool "Enable llmchat debug"
         default n
     
-    menu "Examples"
+    menu "Enable llmchat example"
         config PKG_USING_LLMCHAT_DEMO
             bool "select llm_contory demo"
             default n
