@@ -64,5 +64,4 @@ if PKG_USING_IST8310
             help
                 Set the number of samples for averaging
     endif
-
 endif
