@@ -1,0 +1,35 @@
+{
+  "name": "FreeMQTT",
+  "description": "Ported from CoreMQTT",
+  "description_zh": "CoreMQTT的RT-Thread移植版本",
+  "enable": "PKG_USING_FREEMQTT",
+  "keywords": [
+    "FreeMQTT",
+    "MQTT",
+    "iot"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Yaochenger",
+    "email": "1516081466@qq.com",
+    "github": "Yaochenger"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Yaochenger/FreeMQTT",
+  "icon": "unknown",
+  "homepage": "https://github.com/Yaochenger/FreeMQTT#readme",
+  "doc": "https://github.com/Yaochenger/FreeMQTT/blob/master/README.md",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Yaochenger/FreeMQTT/archive/refs/tags/1.1.0.zip",
+      "filename": "FreeMQTT-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Yaochenger/FreeMQTT.git",
+      "filename": "FreeMQTT.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
