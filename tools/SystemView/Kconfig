@@ -3,6 +3,7 @@ menuconfig PKG_USING_SYSTEMVIEW
     bool "SystemView: A Segger utility for analysis and trace the RTOS"
     default n
     select RT_USING_HOOK
+    select RT_USING_HOOKLIST
 
 if PKG_USING_SYSTEMVIEW
 
