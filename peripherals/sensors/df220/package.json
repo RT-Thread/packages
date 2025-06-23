@@ -13,21 +13,21 @@
     "github": "Zhou DingHua"
   },
   "license": "GPL-3.0",
-  "repository": "https://github.com/MiraMEMS-Wonderful/df220-RT-Thread.git",
+  "repository": "https://github.com/RT-Thread-packages/df220.git",
   "icon": "unknown",
   "homepage": "unknown",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/MiraMEMS-Wonderful/df220-RT-Thread/archive/1.0.0.zip",
-      "filename": "df220-RT-Thread-1.0.0.zip",
+      "URL": "https://github.com/RT-Thread-packages/df220/archive/refs/tags/1.0.0.zip",
+      "filename": "df220-1.0.0.zip",
       "VER_SHA": ""
     },
     {
       "version": "latest",
-      "URL": "https://github.com/MiraMEMS-Wonderful/df220-RT-Thread.git",
-      "filename": "Null for git package",
+      "URL": "https://github.com/RT-Thread-packages/df220.git",
+      "filename": "df220-latest.zip",
       "VER_SHA": "master"
     }
   ]
