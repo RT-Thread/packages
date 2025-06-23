@@ -1,11 +1,7 @@
 menu "HC32 DDL Drivers"
 
-if SOC_HC32F4A8SI
-    source "$PKGS_DIR/packages/peripherals/hal-sdk/hc32/hc32f4a8_ddl/Kconfig"
-endif
-
-if SOC_HC32F334KA
-    source "$PKGS_DIR/packages/peripherals/hal-sdk/hc32/hc32f334_ddl/Kconfig"
-endif
+#HC32F4
+source "$PKGS_DIR/packages/peripherals/hal-sdk/hc32/hc32_f4_cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/hc32/hc32_f4_series/Kconfig"
 
 endmenu

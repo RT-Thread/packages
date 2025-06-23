@@ -1,0 +1,28 @@
+{
+  "name": "nuvoton-arm926-lib",
+  "description": "NUVOTON ARM926 LIB PACKAGE",
+  "description_zh": "NUVOTON ARM926 LIB 驱动包",
+  "enable": "PKG_USING_NUVOTON_RAM926_LIB",
+  "keywords": [
+    "nuvoton-arm926-lib"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/nuvoton-arm926-lib",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/nuvoton-arm926-lib#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/nuvoton-arm926-lib.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
