@@ -1,0 +1,28 @@
+{
+  "name": "nuvoton-series",
+  "description": "NUVOTON SERIES DRIVER PACKAGE",
+  "description_zh": "NUVOTON SERIES 驱动包",
+  "enable": "PKG_USING_NUVOTON_SERIES_DRIVER",
+  "keywords": [
+    "nuvoton-series"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/nuvoton-series",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/nuvoton-series#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/nuvoton-series.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

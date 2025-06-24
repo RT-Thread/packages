@@ -1,0 +1,10 @@
+menu "NUVOTON Drivers"
+
+#nuvoton
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nuvoton/nuvoton_cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nuvoton/nuvoton_series/Kconfig"
+
+#nuvoton-arm926
+source "$PKGS_DIR/packages/peripherals/hal-sdk/nuvoton/nuvoton_arm926_lib/Kconfig"
+
+endmenu
