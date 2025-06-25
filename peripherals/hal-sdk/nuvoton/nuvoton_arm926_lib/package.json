@@ -2,7 +2,7 @@
   "name": "nuvoton-arm926-lib",
   "description": "NUVOTON ARM926 LIB PACKAGE",
   "description_zh": "NUVOTON ARM926 LIB 驱动包",
-  "enable": "PKG_USING_NUVOTON_RAM926_LIB",
+  "enable": "PKG_USING_NUVOTON_ARM926_LIB",
   "keywords": [
     "nuvoton-arm926-lib"
   ],
