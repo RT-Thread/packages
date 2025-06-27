@@ -27,6 +27,12 @@
       "VER_SHA": ""
     },
     {
+      "version": "v1.10",
+      "URL": "https://github.com/qiyongzhong0/qmodbus/archive/v1.10.zip",
+      "filename": "qmodbus-1.10.zip",
+      "VER_SHA": ""
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/qiyongzhong0/qmodbus.git",
       "filename": "",
