@@ -1,0 +1,26 @@
+{
+  "name": "OpENer_port",
+  "description": "RT-Thread port of OpENer",
+  "description_zh": "RT-Thread 的 OpENer 移植",
+  "enable": "PKG_USING_OPENER_PORT",
+  "keywords": [
+    "EtherNet/IP"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "loogg",
+    "email": "2544047213@qq.com",
+    "github": "loogg"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/loogg/OpENer_rtt_port",
+  "homepage": "https://github.com/loogg/OpENer_rtt_port#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/loogg/OpENer_rtt_port.git",
+      "filename": "OpENer_port.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

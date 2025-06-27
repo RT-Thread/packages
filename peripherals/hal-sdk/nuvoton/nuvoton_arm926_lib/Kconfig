@@ -1,0 +1,27 @@
+
+# Kconfig file for package nuvoton_arm926_lib
+menuconfig PKG_USING_NUVOTON_ARM926_LIB
+    bool "NUVOTON ARM926 LIB PACKAGE"
+    default n
+
+if PKG_USING_NUVOTON_ARM926_LIB
+
+    config PKG_NUVOTON_ARM926_LIB_PATH
+        string
+        default "/packages/peripherals/hal-sdk/nuvoton/nuvoton_arm926_lib"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_NUVOTON_ARM926_LIB_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_NUVOTON_ARM926_LIB_VER
+       string
+       default "latest"    if PKG_USING_NUVOTON_ARM926_LIB_LATEST_VERSION
+
+endif
+

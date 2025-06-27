@@ -1,0 +1,6 @@
+menu "WCH HAL & SDK Drivers"
+
+source "$PKGS_DIR/packages/peripherals/hal-sdk/wch/ch32v20x_sdk/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/wch/ch32v307_sdk/Kconfig"
+
+endmenu

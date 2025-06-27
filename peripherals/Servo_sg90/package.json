@@ -1,0 +1,33 @@
+{
+  "name": "Servo_sg90",
+  "description": "use a package to control Servo",
+  "description_zh": "使用一款软件包进行控制舵机",
+  "enable": "PKG_USING_SERVO_SG90",
+  "keywords": [
+    "Servo_sg90"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "CXSforHPU",
+    "email": "19511928573@163.com",
+    "github": "CXSforHPU"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/CXSforHPU/Servo_sg90",
+  "icon": "unknown",
+  "homepage": "https://github.com/CXSforHPU/Servo_sg90#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/CXSforHPU/Servo_sg90/archive/refs/tags/Servo_sg90-1.0.0.zip",
+      "filename": "Servo_sg90-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/CXSforHPU/Servo_sg90.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

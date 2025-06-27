@@ -1,0 +1,67 @@
+# drivers/sensors/ist8310/Kconfig
+
+menuconfig PKG_USING_IST8310
+    bool "IST8310: 3-axis magnetometer driver package"
+    default n
+    select RT_USING_I2C
+    help
+        A driver package for IST8310 3-axis magnetometer
+
+if PKG_USING_IST8310
+
+    config PKG_IST8310_PATH
+        string
+        default "/packages/peripherals/ist8310"
+
+    choice
+        prompt "Version"
+        default PKG_USING_IST8310_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_IST8310_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_IST8310_VER
+        string
+        default "latest" if PKG_USING_IST8310_LATEST_VERSION
+
+    config PKG_USING_IST8310_SAMPLE
+        bool "Enable ist8310 sample"
+        default n
+        if PKG_USING_IST8310_SAMPLE
+            config IST8310_SAMPLE_I2C_DEV_NAME
+            string "i2c dev name with ist8310"
+            default "i2c2"
+        endif
+
+    config IST8310_USING_MAG
+        bool "Enable ist8310 mag"
+        default y
+        help
+            Enable magnetometer function
+
+    config IST8310_USING_SOFT_FILTER
+        bool "Enable software filter"
+        default n
+        depends on IST8310_USING_MAG
+        help
+            Enable software filter for smoothing data
+
+    if IST8310_USING_SOFT_FILTER
+        config IST8310_SAMPLE_PERIOD
+            int "Sample period (ms)"
+            default 100
+            range 10 1000
+            help
+                Set the sampling period in milliseconds
+
+        config IST8310_AVERAGE_TIMES
+            int "Average times"
+            default 5
+            range 1 20
+            help
+                Set the number of samples for averaging
+    endif
+endif

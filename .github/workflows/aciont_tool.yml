@@ -1,0 +1,61 @@
+name: ToolsCI
+# 这个CI用来检查menuconfig中的warning和错误
+on:
+  # Runs at 16:00 UTC (BeiJing 00:00) on the 1st of every month
+  schedule:
+    - cron:  '0 16 1 * *'
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+  
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    name: Tools
+    if: github.repository_owner == 'RT-Thread'
+    strategy:
+      fail-fast: false
+    env:
+      TEST_BSP_ROOT: bsp/stm32/stm32f407-atk-explorer
+    steps:
+    - uses: actions/checkout@main
+      with:
+        repository: RT-Thread/rt-thread
+
+    - name: Install Tools
+      shell: bash
+      run: |
+          wget https://raw.githubusercontent.com/RT-Thread/env/master/install_ubuntu.sh
+          chmod 777 install_ubuntu.sh
+          ./install_ubuntu.sh
+
+    - name: Install Arm ToolChains
+      if: ${{ success() }}
+      shell: bash
+      run: |
+        wget -q https://github.com/RT-Thread/toolchains-ci/releases/download/v1.3/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+        sudo tar xjf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 -C /opt
+        /opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc --version
+        echo "RTT_EXEC_PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin" >> $GITHUB_ENV
+    - name: Checkout packages
+      uses: actions/checkout@main
+      with:
+        path: packages
+    - name: Build Tools
+      run: |
+        source ~/.env/env.sh
+        scons --pyconfig-silent -C $TEST_BSP_ROOT 2>menuconfig.log
+        cat menuconfig.log
+        if grep -q "warning:" menuconfig.log; then
+          echo "Errors found in menuconfig, failing the build."
+          exit 1
+        fi
+        pushd $TEST_BSP_ROOT && pkgs --update && popd
+        scons -j$(nproc) -C $TEST_BSP_ROOT

@@ -1,0 +1,30 @@
+{
+  "name": "hpatchlite-wrapper",
+  "description": "A lightweight and user-friendly wrapper for the HPatchLite.",
+  "description_zh": "一个让HPatchLite差分还原算法库更好用的封装",
+  "enable": "PKG_USING_HPATCHLITE",
+  "keywords": [
+    "hpatchlite",
+    "hpatch",
+    "bsdiff",
+    "bspatch",
+    "patch"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "sulfurandcu",
+    "email": "sulfurandcu@gmail.com",
+    "github": "sulfurandcu"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/sulfurandcu/hpatchlite-wrapper",
+  "homepage": "https://github.com/sulfurandcu/hpatchlite-wrapper#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/sulfurandcu/hpatchlite-wrapper.git",
+      "filename": "hpatchlite-wrapper.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

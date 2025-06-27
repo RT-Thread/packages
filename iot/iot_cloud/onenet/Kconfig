@@ -77,6 +77,9 @@ if PKG_USING_ONENET
         config PKG_USING_ONENET_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_ONENET_V120
+            bool "v1.2.0"
+
         config PKG_USING_ONENET_V100
             bool "v1.0.0"
 
@@ -84,6 +87,7 @@ if PKG_USING_ONENET
 
     config PKG_ONENET_VER
        string
+       default "v1.2.0"    if PKG_USING_ONENET_V120
        default "v1.0.0"    if PKG_USING_ONENET_V100
        default "latest"    if PKG_USING_ONENET_LATEST_VERSION
 

@@ -1,16 +1,79 @@
 menu "STM32 HAL & SDK Drivers"
 
+# STM32F0
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f0_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f0_cmsis_driver/Kconfig"
+
+# STM32F1
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f1_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f1_cmsis_driver/Kconfig"
+
+# STM32F2
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f2_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f2_cmsis_driver/Kconfig"
+
+# STM32F3
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f3_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f3_cmsis_driver/Kconfig"
+
 # STM32F4
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f4_hal_driver/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f4_cmsis_driver/Kconfig"
+
+# STM32F7
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f7_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32f7_cmsis_driver/Kconfig"
+
+# STM32G0
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32g0_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32g0_cmsis_driver/Kconfig"
+
+# STM32G4
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32g4_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32g4_cmsis_driver/Kconfig"
+
+# STM32H5
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32h5_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32h5_cmsis_driver/Kconfig"
+
+# STM32H7
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32h7_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32h7_cmsis_driver/Kconfig"
+
+# STM32H7RS
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32h7rs_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32h7rs_cmsis_driver/Kconfig"
+
+#STM32L0
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32l0_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32l0_cmsis_driver/Kconfig"
 
 #STM32L4
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32l4_hal_driver/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32l4_cmsis_driver/Kconfig"
 
+#STM32L5
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32l5_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32l5_cmsis_driver/Kconfig"
+
+#STM32U5
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32u5_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32u5_cmsis_driver/Kconfig"
+
 #STM32WB55
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wb55_sdk/Kconfig"
-
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32_sdio/Kconfig"
+
+#STM32WL
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wl_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wl_cmsis_driver/Kconfig"
+
+#STM32WB
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wb_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wb_cmsis_driver/Kconfig"
+
+#STM32MP1
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32mp1_m4_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32mp1_m4_cmsis_driver/Kconfig"
 
 endmenu

@@ -1,0 +1,27 @@
+
+# Kconfig file for package nxp_mcx_series_driver
+menuconfig PKG_USING_NXP_MCX_SERIES_DRIVER
+    bool "NXP MCX SERIES DRIVER PACKAGE"
+    default n
+
+if PKG_USING_NXP_MCX_SERIES_DRIVER
+
+    config PKG_NXP_MCX_SERIES_DRIVER_PATH
+        string
+        default "/packages/peripherals/hal-sdk/nxp/nxp-mcx-series"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_NXP_MCX_SERIES_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_NXP_MCX_SERIES_DRIVER_VER
+       string
+       default "latest"    if PKG_USING_NXP_MCX_SERIES_DRIVER_LATEST_VERSION
+
+endif
+

@@ -20,6 +20,11 @@
   "readme": "GAgent of Gizwits on RT-Thread",
   "site": [
     {
+      "version": "v1.2.0",
+      "URL": "https://github.com/RT-Thread-packages/onenet/archive/1.2.0.zip",
+      "filename": "onenet-1.2.0.zip"
+    },
+    {
       "version": "v1.0.0",
       "URL": "https://github.com/RT-Thread-packages/onenet/archive/1.0.0.zip",
       "filename": "onenet-1.0.0.zip"

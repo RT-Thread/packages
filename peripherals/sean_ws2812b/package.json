@@ -1,0 +1,29 @@
+{
+  "name": "sean_ws2812b",
+  "description": "Complete WS2812B LED Strip Driver based on SPI for RT-Thread 4.1.0",
+  "description_zh": "基于SPI接口的WS2812B灯带驱动软件包,适用于RT-Thread 4.1.0系统。",
+  "enable": "PKG_USING_SEAN_WS2812B",
+  "keywords": [
+    "ws2812b",
+    "rgb"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "godmial",
+    "email": "2633967641@qq.com",
+    "github": "godmial"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/godmial/sean_ws2812b.git",
+  "icon": "https://raw.githubusercontent.com/godmial/sean_ws2812b/main/icon.png",
+  "homepage": "https://github.com/godmial/sean_ws2812b#readme",
+  "doc": "https://github.com/godmial/sean_ws2812b#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/godmial/sean_ws2812b.git",
+      "filename": "sean_ws2812b.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

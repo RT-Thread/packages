@@ -1,0 +1,29 @@
+{
+  "name": "stm32h7rs_hal_driver",
+  "description": "STM32 H7RS HAL driver package",
+  "description_zh": "STM32 H7RS HAL 驱动包",
+  "enable": "PKG_USING_STM32H7RS_HAL_DRIVER",
+  "keywords": [
+    "stm32h7rs_hal_driver",
+    "STM32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/RT-Thread-packages/stm32h7rsxx-hal-driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/stm32h7rsxx-hal-driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/stm32h7rsxx-hal-driver.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

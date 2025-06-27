@@ -1,0 +1,70 @@
+
+# Kconfig file for package FreeMQTT
+menuconfig PKG_USING_FREEMQTT
+    bool "FreeMQTT：From coreMQTT Client Library"
+    default n
+    select RT_USING_LWIP
+    select RT_USING_POSIX_FS
+    select RT_USING_POSIX_SOCKET
+
+if PKG_USING_FREEMQTT
+
+    config PKG_FREEMQTT_PATH
+        string
+        default "/packages/iot/FreeMQTT"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_FREEMQTT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_FREEMQTT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config MQTT_CLIENT_ID
+        string "mqtt client ID"
+        default "freemqtt"
+
+    config MQTT_USERNAME
+        string "mqtt name"
+        default "free"
+
+    config MQTT_PASSWORD
+        string "mqtt password"
+        default "free"
+
+    config MQTT_BROKER_ADDRESS
+        string "mqtt broker address"
+        default "broker.emqx.io"
+
+    config MQTT_BROKER_PORT
+        int "mqtt broker port"
+        default 1883
+
+    config MQTT_TOPIC_SUB
+        string "mqtt topic subscribe"
+        default "free/topic/sub"
+
+    config MQTT_TOPIC_PUB
+        string "mqtt topic publish"
+        default "free/topic/pub"
+
+    config MQTT_KEEP_ALIVE
+        int "mqtt keep alive"
+        default 60
+
+    config MQTT_BUF_SIZE
+        int "mqtt buffer size"
+        default 4096
+
+    config PKG_FREEMQTT_VER
+       string
+       default "v1.0.0"    if PKG_USING_FREEMQTT_V100
+       default "latest"    if PKG_USING_FREEMQTT_LATEST_VERSION
+
+endif
+

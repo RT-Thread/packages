@@ -1,0 +1,27 @@
+# Kconfig file for package stm32h5_cmsis_driver
+menuconfig PKG_USING_STM32H5_CMSIS_DRIVER
+    bool "STM32 H5 CMSIS driver package"
+    select PKG_USING_CMSIS_CORE
+    default n
+
+if PKG_USING_STM32H5_CMSIS_DRIVER
+
+    config PKG_STM32H5_CMSIS_DRIVER_PATH
+        string
+        default "/packages/peripherals/hal-sdk/stm32/stm32h5_cmsis_driver"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_STM32H5_CMSIS_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_STM32H5_CMSIS_DRIVER_VER
+       string
+       default "latest"    if PKG_USING_STM32H5_CMSIS_DRIVER_LATEST_VERSION
+
+endif
+

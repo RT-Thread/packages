@@ -1,0 +1,28 @@
+{
+  "name": "nxp-imx6sx-sdk",
+  "description": "NXP IMX6SX DRIVER PACKAGE",
+  "description_zh": "NXP IMX6SX 驱动包",
+  "enable": "PKG_USING_NXP_IMX6SX_DRIVER",
+  "keywords": [
+    "nxp-imx6sx-sdk"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/nxp-imx6sx-sdk",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/nxp-imx6sx-sdk#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/nxp-imx6sx-sdk.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

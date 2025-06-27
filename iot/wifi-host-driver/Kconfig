@@ -31,7 +31,6 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
 
             config WHD_USING_CHIP_CYW4343W
                 bool "CYW4343W"
-
         endchoice
 
         menuconfig WHD_RESOURCES_IN_EXTERNAL_STORAGE
@@ -77,8 +76,8 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
 
                 if PKG_WIFI_HOST_DRIVER_VER_NUM < 0x10100
                     config WHD_RESOURCES_FIRMWARE_NAME
-                            string "Set the partition name of the firmware files"
-                            default "whd_firmware"
+                        string "Set the partition name of the firmware files"
+                        default "whd_firmware"
 
                     config WHD_RESOURCES_CLM_NAME
                         string "Set the partition name of the clm files"
@@ -86,8 +85,8 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
                 endif
 
                 config WHD_RESOURCES_BLOCK_SIZE
-                        int "Set the block size for resources"
-                        default 1024
+                    int "Set the block size for resources"
+                    default 1024
 
             endif
 
@@ -148,7 +147,7 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
 
         choice
             prompt "Select HOST_WAKE_IRQ event type"
-            default CYBSP_HOST_WAKE_IRQ_EVENT_FALLING
+            default CYBSP_HOST_WAKE_IRQ_EVENT_FALL
 
             config CYBSP_HOST_WAKE_IRQ_EVENT_FALL
                 bool "falling"
@@ -158,7 +157,6 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
 
             config CYBSP_HOST_WAKE_IRQ_EVENT_BOTH
                 bool "rising and falling"
-
         endchoice
 
         config CYBSP_OOB_INTR_PRIORITY
@@ -180,6 +178,28 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
             string
             default "/packages/iot/wifi-host-driver"
 
+        if PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10200
+            choice
+                prompt "Select the log level"
+                default CY_WIFI_LOG_LEVEL_INFO
+
+                config CY_WIFI_LOG_LEVEL_NONE
+                    bool "None"
+
+                config CY_WIFI_LOG_LEVEL_ERROR
+                    bool "Error"
+
+                config CY_WIFI_LOG_LEVEL_INFO
+                    bool "Info"
+
+                config CY_WIFI_LOG_LEVEL_DEBUG
+                    bool "Debug"
+
+                config CY_WIFI_LOG_LEVEL_DATA_TRACE
+                    bool "Data Trace"
+            endchoice
+        endif
+
         choice
             prompt "Version"
             default PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
@@ -192,20 +212,30 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
             config PKG_USING_WIFI_HOST_DRIVER_V110
                 bool "v1.1.0"
 
+            config PKG_USING_WIFI_HOST_DRIVER_V120
+                bool "v1.2.0"
+
+            config PKG_USING_WIFI_HOST_DRIVER_V121
+                bool "v1.2.1"
+
             config PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
                 bool "latest"
         endchoice
 
         config PKG_WIFI_HOST_DRIVER_VER
-        string
-        default "v1.0.0"    if PKG_USING_WIFI_HOST_DRIVER_V100
-        default "v1.1.0"    if PKG_USING_WIFI_HOST_DRIVER_V110
-        default "latest"    if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+            string
+            default "v1.0.0"    if PKG_USING_WIFI_HOST_DRIVER_V100
+            default "v1.1.0"    if PKG_USING_WIFI_HOST_DRIVER_V110
+            default "v1.2.0"    if PKG_USING_WIFI_HOST_DRIVER_V120
+            default "v1.2.1"    if PKG_USING_WIFI_HOST_DRIVER_V121
+            default "latest"    if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
 
         config PKG_WIFI_HOST_DRIVER_VER_NUM
-        hex
-        default 0x10000 if PKG_USING_WIFI_HOST_DRIVER_V100
-        default 0x10100 if PKG_USING_WIFI_HOST_DRIVER_V110
-        default 0x99999 if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
+            hex
+            default 0x10000 if PKG_USING_WIFI_HOST_DRIVER_V100
+            default 0x10100 if PKG_USING_WIFI_HOST_DRIVER_V110
+            default 0x10200 if PKG_USING_WIFI_HOST_DRIVER_V120
+            default 0x10201 if PKG_USING_WIFI_HOST_DRIVER_V121
+            default 0x99999 if PKG_USING_WIFI_HOST_DRIVER_LATEST_VERSION
 
     endif

@@ -1,0 +1,29 @@
+{
+  "name": "stm32h5_cmsis_driver",
+  "description": "STM32 H5 CMSIS driver package",
+  "description_zh": "STM32 H5 CMSIS 驱动包",
+  "enable": "PKG_USING_STM32H5_CMSIS_DRIVER",
+  "keywords": [
+    "stm32h5_cmsis_driver",
+    "STM32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/cmsis-device-h5",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/cmsis-device-h5#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/cmsis-device-h5.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

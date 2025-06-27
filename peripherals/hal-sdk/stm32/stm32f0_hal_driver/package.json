@@ -1,0 +1,29 @@
+{
+  "name": "stm32f0_hal_driver",
+  "description": "STM32 F0 HAL driver package",
+  "description_zh": "STM32 F0 HAL 驱动包",
+  "enable": "PKG_USING_STM32F0_HAL_DRIVER",
+  "keywords": [
+    "stm32f0_hal_driver",
+    "STM32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/RT-Thread-packages/stm32f0xx-hal-driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/stm32f0xx-hal-driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/stm32f0xx-hal-driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

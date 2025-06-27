@@ -10,6 +10,15 @@ if PKG_USING_GY271
         string
         default "/packages/peripherals/sensors/gy271"
 
+    config PKG_HONEY_GY271_USING_SENSOR_V1
+        bool "Enable sensor_v1 divce framework"
+        select RT_USING_SENSOR
+        default n
+
+    config PKG_USING_GY271_SAMPLE
+        bool "Enable gy271 sample"
+        default n
+
     choice
         prompt "Version"
         default PKG_USING_GY271_LATEST_VERSION

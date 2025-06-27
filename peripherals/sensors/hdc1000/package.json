@@ -12,20 +12,20 @@
     "email": "296894494@qq.com"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/Forest-Rain/hdc1000",
+  "repository": "https://github.com/RT-Thread-packages/hdc1000.git",
   "icon": "unknown",
   "homepage": "unknown",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/Forest-Rain/hdc1000.git",
+      "URL": "https://github.com/RT-Thread-packages/hdc1000/archive/refs/tags/1.0.0.zip",
       "filename": "hdc1000-1.0.0.zip",
-      "VER_SHA": "ad60559cdf50638acbedd41ce9cc227dfd60b9ee"
+      "VER_SHA": ""
     },
     {
       "version": "latest",
-      "URL": "https://github.com/Forest-Rain/hdc1000.git",
+      "URL": "https://github.com/RT-Thread-packages/hdc1000.git",
       "filename": "hdc1000-latest.zip",
       "VER_SHA": "master"
     }
