@@ -1,0 +1,7 @@
+menu "GD32 Drivers"
+
+#GD32_ARM
+source "$PKGS_DIR/packages/peripherals/hal-sdk/gd32/gd32-arm-cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/gd32/gd32-arm-series/Kconfig"
+
+endmenu
