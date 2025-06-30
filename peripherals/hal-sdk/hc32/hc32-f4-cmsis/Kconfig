@@ -8,7 +8,7 @@ if PKG_USING_HC32F4_CMSIS_DRIVER
 
     config PKG_HC32F4_CMSIS_DRIVER_PATH
         string
-        default "/packages/peripherals/hal-sdk/hc32/hc32_f4_cmsis"
+        default "/packages/peripherals/hal-sdk/hc32/hc32-f4-cmsis"
 
     choice
         prompt "Version"

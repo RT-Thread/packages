@@ -8,7 +8,7 @@ if PKG_USING_NUVOTON_CMSIS_DRIVER
 
     config PKG_NUVOTON_CMSIS_DRIVER_PATH
         string
-        default "/packages/peripherals/hal-sdk/nuvoton/nuvoton_cmsis"
+        default "/packages/peripherals/hal-sdk/nuvoton/nuvoton-cmsis"
 
     choice
         prompt "Version"

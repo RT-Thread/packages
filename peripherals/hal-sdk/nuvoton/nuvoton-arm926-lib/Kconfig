@@ -8,7 +8,7 @@ if PKG_USING_NUVOTON_ARM926_LIB
 
     config PKG_NUVOTON_ARM926_LIB_PATH
         string
-        default "/packages/peripherals/hal-sdk/nuvoton/nuvoton_arm926_lib"
+        default "/packages/peripherals/hal-sdk/nuvoton/nuvoton-arm926-lib"
 
     choice
         prompt "Version"
