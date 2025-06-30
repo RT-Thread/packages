@@ -9,7 +9,7 @@ if PKG_USING_HC32F4_SERIES_DRIVER
 
     config PKG_HC32F4_SERIES_DRIVER_PATH
         string
-        default "/packages/peripherals/hal-sdk/hc32/hc32_f4_series"
+        default "/packages/peripherals/hal-sdk/hc32/hc32-f4-series"
 
     choice
         prompt "Version"

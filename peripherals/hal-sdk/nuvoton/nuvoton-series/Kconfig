@@ -9,7 +9,7 @@ if PKG_USING_NUVOTON_SERIES_DRIVER
 
     config PKG_NUVOTON_SERIES_DRIVER_PATH
         string
-        default "/packages/peripherals/hal-sdk/nuvoton/nuvoton_series"
+        default "/packages/peripherals/hal-sdk/nuvoton/nuvoton-series"
 
     choice
         prompt "Version"
