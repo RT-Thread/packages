@@ -38,6 +38,11 @@ if PKG_USING_QMODBUS
         select RT_USING_SAL
         default n
     
+    config MB_USING_SOCK_BACKEND
+        bool "using TCP-server backend"
+        select RT_USING_SAL
+        default n
+        
     config MB_USING_RTU_PROTOCOL
         bool "using MODBUS-RTU protocol"
         default y
@@ -86,6 +91,13 @@ if PKG_USING_QMODBUS
             select MB_USING_TCP_PROTOCOL
             select MB_USING_SLAVE
             default n
+        
+        config MB_USING_SAMPLE_TCP_SRV_SLAVE
+            bool "sample TCP-server slave"
+            select MB_USING_SOCK_BACKEND
+            select MB_USING_TCP_PROTOCOL
+            select MB_USING_SLAVE
+            default n
     endif
 
     choice
@@ -97,6 +109,9 @@ if PKG_USING_QMODBUS
         config PKG_USING_QMODBUS_LATEST_VERSION
             bool "latest"
             
+        config PKG_USING_QMODBUS_V110
+            bool "v1.10"
+            
         config PKG_USING_QMODBUS_V100
             bool "v1.00"
     endchoice
@@ -104,6 +119,7 @@ if PKG_USING_QMODBUS
     config PKG_QMODBUS_VER
        string
        default "latest" if PKG_USING_QMODBUS_LATEST_VERSION
+       default "v1.10"  if PKG_USING_QMODBUS_V110
        default "v1.00"  if PKG_USING_QMODBUS_V100
 
 endif
