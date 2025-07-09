@@ -526,28 +526,6 @@ menuconfig PKG_USING_ESP_HOSTED
             string
             default "/packages/iot/esp-hosted"
 
-        if PKG_ESP_HOSTED_VER_NUM >= 0x10200
-            choice
-                prompt "Select the log level"
-                default CY_WIFI_LOG_LEVEL_INFO
-
-                config CY_WIFI_LOG_LEVEL_NONE
-                    bool "None"
-
-                config CY_WIFI_LOG_LEVEL_ERROR
-                    bool "Error"
-
-                config CY_WIFI_LOG_LEVEL_INFO
-                    bool "Info"
-
-                config CY_WIFI_LOG_LEVEL_DEBUG
-                    bool "Debug"
-
-                config CY_WIFI_LOG_LEVEL_DATA_TRACE
-                    bool "Data Trace"
-            endchoice
-        endif
-
         choice
             prompt "Version"
             default PKG_USING_ESP_HOSTED_LATEST_VERSION
