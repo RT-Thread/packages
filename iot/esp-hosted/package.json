@@ -1,0 +1,33 @@
+{
+  "name": "esp-hosted",
+  "description": "ESP-Hosted for RT-Thread.",
+  "description_zh": "将ESP32作为协处理器的WiFi主机驱动程序。",
+  "enable": "PKG_USING_ESP_HOSTED",
+  "keywords": [
+    "esp-hosted"
+  ],
+  "category": "iot",
+  "author": {
+    "name": "Evlers",
+    "email": "1425295900@qq.com",
+    "github": "Evlers"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Evlers/rt-thread_esp-hosted",
+  "icon": "unknown",
+  "homepage": "https://github.com/Evlers/rt-thread_esp-hosted#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Evlers/rt-thread_esp-hosted.git",
+      "filename": "",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Evlers/rt-thread_esp-hosted/archive/v1.0.0.zip",
+      "filename": "rt-thread_esp-hosted-1.0.0.zip"
+    }
+  ]
+}
