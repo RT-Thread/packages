@@ -1,0 +1,31 @@
+
+# Kconfig file for package thread-metric
+menuconfig PKG_USING_THREAD_METRIC
+    bool "Thread metrics adapted to RT-Thread."
+    default n
+
+if PKG_USING_THREAD_METRIC
+
+    config PKG_THREAD_METRIC_PATH
+        string
+        default "/packages/tools/thread-metric"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_THREAD_METRIC_V100
+            bool "v1.0.0"
+
+        config PKG_USING_THREAD_METRIC_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_THREAD_METRIC_VER
+       string
+       default "v1.0.0"    if PKG_USING_THREAD_METRIC_V100
+       default "latest"    if PKG_USING_THREAD_METRIC_LATEST_VERSION
+
+endif
+
