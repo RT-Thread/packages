@@ -1,7 +1,7 @@
 {
   "name": "ST7789_SPI",
   "description": "ST7789 driver package for RT-Thread using SPI interface.",
-  "description_zh": "ST7789驱动软件包，使用SPI接口，支持RT-Thread。",
+  "description_zh": "ST7789驱动软件包，使用SPI接口，支持显示字符、图片、图形等，适用于LVGL等图形界面。",
   "enable": "PKG_USING_ST7789",
   "keywords": [
     "ST7789"
