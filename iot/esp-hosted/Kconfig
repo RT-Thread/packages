@@ -134,6 +134,25 @@ menuconfig PKG_USING_ESP_HOSTED
                 default "spi1"
                 depends on ESP_HOSTED_SPI_HOST_INTERFACE
 
+            if PKG_ESP_HOSTED_VER_NUM > 0x10000
+                choice 
+                    prompt "Set the spi mode"
+                    default ESP_HOSTED_SPI_MODE_3
+
+                    config ESP_HOSTED_SPI_MODE_0
+                        bool "Mode 0"
+
+                    config ESP_HOSTED_SPI_MODE_1
+                        bool "Mode 1"
+
+                    config ESP_HOSTED_SPI_MODE_2
+                        bool "Mode 2"
+
+                    config ESP_HOSTED_SPI_MODE_3
+                        bool "Mode 3"
+                endchoice
+            endif
+
             config ESP_HOSTED_SPI_MAX_HZ
                 int "Set the maximum spi frequency(Hz)"
                 default 30000000
