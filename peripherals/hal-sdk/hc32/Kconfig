@@ -1,5 +1,9 @@
 menu "HC32 DDL Drivers"
 
+#HC32F3
+source "$PKGS_DIR/packages/peripherals/hal-sdk/hc32/hc32-f3-cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/hc32/hc32-f3-series/Kconfig"
+
 #HC32F4
 source "$PKGS_DIR/packages/peripherals/hal-sdk/hc32/hc32-f4-cmsis/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/hc32/hc32-f4-series/Kconfig"
