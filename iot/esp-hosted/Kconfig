@@ -136,7 +136,7 @@ menuconfig PKG_USING_ESP_HOSTED
 
             if PKG_ESP_HOSTED_VER_NUM > 0x10000
                 choice 
-                    bool "Set the spi mode"
+                    prompt "Set the spi mode"
                     default ESP_HOSTED_SPI_MODE_3
 
                     config ESP_HOSTED_SPI_MODE_0
