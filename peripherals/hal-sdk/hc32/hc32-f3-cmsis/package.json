@@ -1,0 +1,28 @@
+{
+  "name": "hc32-f3-cmsis",
+  "description": "HC32F3 CMSIS DRIVER PACKAGE",
+  "description_zh": "HC32F3 CMSIS 驱动包",
+  "enable": "PKG_USING_HC32F3_CMSIS_DRIVER",
+  "keywords": [
+    "hc32-f3-cmsis"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/hc32-f3-cmsis",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/hc32-f3-cmsis#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/hc32-f3-cmsis.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
