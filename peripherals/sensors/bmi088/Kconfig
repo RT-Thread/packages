@@ -13,6 +13,10 @@ if PKG_USING_BMI088
         bool "Enable sensor_v1 divce framework"
         select RT_USING_SENSOR
         default n
+        
+    config PKG_BMI088_USING_SAMPLE
+        bool "Enable bmi088 sample"
+        default n
 
     choice
         prompt "Version"
