@@ -1,0 +1,28 @@
+
+# Kconfig file for package raspberrypi rp2350
+menuconfig PKG_USING_RASPBERRYPI_PICO_RP2350_SDK
+    bool "Raspberry Pi Pico RP2350 SDK"
+    default n
+
+if PKG_USING_RASPBERRYPI_PICO_RP2350_SDK
+
+    config PKG_RASPBERRYPI_PICO_RP2350_SDK_PATH
+        string
+        default "/packages/peripherals/hal-sdk/raspberrypi-pico-rp2350-sdk"
+
+    choice
+        prompt "Version"
+        default PKG_USING_RASPBERRYPI_PICO_RP2350_SDK_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_RASPBERRYPI_PICO_RP2350_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RASPBERRYPI_PICO_RP2350_SDK_VER
+       string
+       default "latest"    if PKG_USING_RASPBERRYPI_PICO_RP2350_SDK_LATEST_VERSION
+
+endif
+
