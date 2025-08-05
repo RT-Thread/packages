@@ -1,0 +1,30 @@
+{
+  "name": "raspberrypi-pico-rp2350-sdk",
+  "description": "Raspberry Pi Pico RP2350 SDK",
+  "description_zh": "Raspberry Pi Pico RP2350 SDK",  
+  "enable": "PKG_USING_RASPBERRYPI_PICO_RP2350_SDK", 
+  "keywords": [
+    "raspberrypi",
+    "rp2350",
+    "sdk"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/RT-Thread-packages/raspberrypi-pico-rp2350-sdk",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/raspberrypi-pico-rp2350-sdk#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/raspberrypi-pico-rp2350-sdk.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
