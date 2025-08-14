@@ -35,6 +35,9 @@ if PKG_USING_RYANMQTT
         config PKG_USING_RYANMQTT_V120
             bool "v1.2.0"
 
+        config PKG_USING_RYANMQTT_V121
+            bool "v1.2.1"
+
         config PKG_USING_RYANMQTT_LATEST_VERSION
             bool "latest"
     endchoice
@@ -45,6 +48,7 @@ if PKG_USING_RYANMQTT
        default "v1.0.0"    if PKG_USING_RYANMQTT_V100
        default "v1.1.0"    if PKG_USING_RYANMQTT_V110
        default "v1.2.0"    if PKG_USING_RYANMQTT_V120
+       default "v1.2.1"    if PKG_USING_RYANMQTT_V121
        default "latest"    if PKG_USING_RYANMQTT_LATEST_VERSION
 
     config PKG_RYANMQTT_VER_NUM
@@ -53,6 +57,7 @@ if PKG_USING_RYANMQTT
        default 0x100    if PKG_USING_RYANMQTT_V100
        default 0x110    if PKG_USING_RYANMQTT_V110
        default 0x120    if PKG_USING_RYANMQTT_V120
+       default 0x121    if PKG_USING_RYANMQTT_V121
        default 0xfff    if PKG_USING_RYANMQTT_LATEST_VERSION
 
 endif
