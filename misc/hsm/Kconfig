@@ -1,0 +1,46 @@
+menuconfig PKG_USING_HSM
+    bool "HSM: Hierarchical state machines for embedded systems"
+    default n
+    help
+        HSM is a minimal, event-driven hierarchical state machine framework designed for embedded systems.
+        It supports nested states, entry/exit actions, state transitions, and provides a simple C API for event handling.
+
+if PKG_USING_HSM
+
+    config PKG_HSM_PATH
+        string
+        default "/packages/misc/hsm"
+
+    config PKG_HSM_MAX_LEVEL
+        int "Maximum nesting level for state hierarchy"
+        range 5 20
+        default 10
+        help
+            The maximum nesting level supported for hierarchical states.
+            Increase this value for deeply nested state machines.
+            
+    config PKG_HSM_USING_EXAMPLE
+        bool "Enable HSM examples"
+        default n
+        help
+            Enable the HSM LED example code
+            
+    choice
+        prompt "Version"
+        default PKG_USING_HSM_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_HSM_V100
+            bool "v1.0.0"
+
+        config PKG_USING_HSM_LATEST_VERSION
+            bool "latest"
+    endchoice
+    
+    config PKG_HSM_VER
+       string
+       default "v1.0.0"    if PKG_USING_HSM_V100
+       default "latest"    if PKG_USING_HSM_LATEST_VERSION
+
+endif 
