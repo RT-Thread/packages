@@ -1,0 +1,34 @@
+{
+  "name": "MCoreDump",
+  "description": "MCoreDump (mini-coredump) is a fault dump (CoreDump) component designed specifically for embedded systems. It automatically generates standard ELF format core dump files when the system encounters a hard fault, assertion failure, or other abnormal conditions, which can be used for offline debugging and fault analysis.",
+  "description_zh": "MCoreDump（mini-coredump） 是专为嵌入式系统设计的故障转储（CoreDump）组件，能够在系统发生硬故障（Hard Fault）、断言失败或其他异常情况时，自动生成标准 ELF 格式的核心转储文件，用于离线调试和故障分析。",
+  "enable": "PKG_USING_MCOREDUMP",
+  "keywords": [
+    "ARM",
+    "Cortex-M",
+    "Cortex",
+    "coredump",
+    "backtrace",
+    "callstack",
+    "hardfault"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "Rbb666",
+    "email": "751061401@qq.com",
+    "github": "Rbb666"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Rbb666/MCoreDump",
+  "homepage": "https://github.com/Rbb666/MCoreDump#readme",
+  "doc": "https://github.com/Rbb666/MCoreDump/blob/master/README.md",
+  "readme": "MCoreDump (mini-coredump) is a fault dump (CoreDump) component designed specifically for embedded systems. It automatically generates standard ELF format core dump files when the system encounters a hard fault, assertion failure, or other abnormal conditions, which can be used for offline debugging and fault analysis.",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Rbb666/MCoreDump.git",
+      "filename": "MCoreDump.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+
+menuconfig PKG_USING_MCOREDUMP
+    bool "MCoreDump: Advanced fault backtrace library for ARM Cortex-M series MCU."
+    default n
+
+if PKG_USING_MCOREDUMP
+
+    if PKG_USING_MCOREDUMP
+
+		choice
+			prompt "Select the arch"
+			default PKG_USING_MCOREDUMP_ARCH_ARMV7M
+			help
+				Select the arch
+
+			config PKG_USING_MCOREDUMP_ARCH_ARMV7M
+				bool "armv7m"
+
+			config PKG_USING_MCOREDUMP_ARCH_ARMV8M
+				bool "armv8m"
+		endchoice
+
+		config PKG_USING_MCOREDUMP_EXAMPLE
+			bool "Using coredump example"
+			default y
+			help
+				Enable MCoreDump example code
+
+		config PKG_MCOREDUMP_MEMORY_SIZE
+			int "Coredump memory buffer size (bytes)"
+			default 8192
+			range 1024 65536
+			help
+				Size of the static memory buffer for coredump storage.
+				This buffer is placed in .noinit section and persists across resets.
+				Minimum: 1KB, Default: 8KB
+
+		config PKG_USING_MCOREDUMP_FILESYSTEM
+			bool "Using filesystem for coredump storage"
+			default n
+			depends on RT_USING_DFS
+			help
+				Enable filesystem support for saving coredumps to files.
+				Requires DFS (Device File System) to be enabled.
+				If not enabled, filesystem-related functions will be disabled.
+
+		if PKG_USING_MCOREDUMP_FILESYSTEM
+
+			config PKG_MCOREDUMP_FILESYSTEM_DIR
+				string "Coredump directory path"
+				default "/sdcard"
+				help
+					Directory path where coredump files will be saved.
+
+			config PKG_MCOREDUMP_FILESYSTEM_PREFIX
+				string "Coredump file prefix"
+				default "core_"
+				help
+					Prefix for coredump filenames.
+		endif
+    endif
+
+    config PKG_MCOREDUMP_PATH
+        string
+        default "/packages/tools/MCoreDump"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MCOREDUMP_LATEST_VERSION
+        help
+            Select the this package version
+
+        config PKG_USING_MCOREDUMP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MCOREDUMP_VER
+        string
+        default "latest" if PKG_USING_MCOREDUMP_LATEST_VERSION
+
+    config PKG_MCOREDUMP_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_MCOREDUMP_LATEST_VERSION
+
+endif
