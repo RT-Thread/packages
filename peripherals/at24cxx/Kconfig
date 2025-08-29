@@ -20,6 +20,57 @@ if PKG_USING_AT24CXX
             bool "latest"
     endchoice
 
+    choice
+        prompt "AT24XX Type"
+        default PKG_EE_TYPE_AT24C128
+        help
+            Select the at24xx type
+
+    config PKG_EE_TYPE_AT24C01
+        bool "AT24C01"
+
+    config PKG_EE_TYPE_AT24C02
+        bool "AT24C02"
+
+    config PKG_EE_TYPE_AT24C04
+        bool "AT24C04"
+
+    config PKG_EE_TYPE_AT24C08
+        bool "AT24C08"
+
+    config PKG_EE_TYPE_AT24C16
+        bool "AT24C16"
+
+    config PKG_EE_TYPE_AT24C32
+        bool "AT24C32"
+
+    config PKG_EE_TYPE_AT24C64
+        bool "AT24C64"
+
+    config PKG_EE_TYPE_AT24C128
+        bool "AT24C128"
+
+    config PKG_EE_TYPE_AT24C256
+        bool "AT24C256"
+
+    config PKG_EE_TYPE_AT24C512
+        bool "AT24C512"
+
+    endchoice
+
+    config PKG_AT24CXX_EE_TYPE
+        int
+        default 0 if PKG_EE_TYPE_AT24C01
+        default 1 if PKG_EE_TYPE_AT24C02
+        default 2 if PKG_EE_TYPE_AT24C04
+        default 3 if PKG_EE_TYPE_AT24C08
+        default 4 if PKG_EE_TYPE_AT24C16
+        default 5 if PKG_EE_TYPE_AT24C32
+        default 6 if PKG_EE_TYPE_AT24C64
+        default 7 if PKG_EE_TYPE_AT24C128
+        default 8 if PKG_EE_TYPE_AT24C256
+        default 9 if PKG_EE_TYPE_AT24C512
+
     config PKG_AT24CXX_VER
        string
        default "latest"    if PKG_USING_AT24CXX_LATEST_VERSION
