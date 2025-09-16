@@ -1,0 +1,29 @@
+{
+  "name": "CherryECAT",
+  "description": "Tiny and beautiful, high real-time and low-jitter EtherCAT master stack, specially designed for MCUs running with RTOS",
+  "description_zh": "小而美的、高实时性、低抖动的 EtherCAT 主机协议栈，专为跑在 RTOS 下的 MCU 设计",
+  "enable": "PKG_USING_CHERRYECAT",
+  "keywords": [
+    "CherryECAT",
+    "EtherCAT"
+  ],
+  "category": "system",
+  "author": {
+    "name": "sakumisu",
+    "email": "1203593632@qq.com",
+    "github": "sakumisu"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/cherry-embedded/CherryECAT",
+  "icon": "unknown",
+  "homepage": "https://github.com/cherry-embedded/CherryECAT#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/cherry-embedded/CherryECAT.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
