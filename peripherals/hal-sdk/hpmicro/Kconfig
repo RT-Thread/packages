@@ -1,0 +1,5 @@
+menu "HPMicro SDK"
+
+source "$PKGS_DIR/packages/peripherals/hal-sdk/hpmicro/hpm_sdk/Kconfig"
+
+endmenu
