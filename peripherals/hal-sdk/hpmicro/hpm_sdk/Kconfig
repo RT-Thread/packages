@@ -1,0 +1,31 @@
+
+# Kconfig file for package hpm_sdk
+menuconfig PKG_USING_HPM_SDK
+    bool "HPM_SDK"
+    default n
+
+if PKG_USING_HPM_SDK
+
+    config PKG_HPM_SDK_PATH
+        string
+        default "/packages/peripherals/hal-sdk/hpmicro/hpm_sdk"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_HPM_SDK_V110
+            bool "v1.10.0"
+
+        config PKG_USING_HPM_SDK_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_HPM_SDK_VER
+        string
+        default "v1.10.0"   if PKG_USING_HPM_SDK_V110
+        default "latest"    if PKG_USING_HPM_SDK_LATEST_VERSION
+
+endif
+

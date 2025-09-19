@@ -1,0 +1,33 @@
+{
+  "name": "hpm_sdk",
+  "description": "hpm_sdk for rt-thread",
+  "description_zh": "hpm_sdk for rt-thread",
+  "enable": "PKG_USING_HPM_SDK",
+  "keywords": [
+    "hpm_sdk"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "hpmicro",
+    "email": "oss@hpmicro.com",
+    "github": "hpmicro"
+  },
+  "license": "BSD-3-Clause",
+  "repository": "https://github.com/hpmicro/rtt-pkg-hpm-sdk",
+  "icon": "unknown",
+  "homepage": "https://github.com/hpmicro/rtt-pkg-hpm-sdk#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.10.0",
+      "URL": "https://github.com/hpmicro/rtt-pkg-hpm-sdk/archive/refs/tags/v1.10.0.zip",
+      "filename": "hpm_sdk-for-rtt-v1.10.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/hpmicro/rtt-pkg-hpm-sdk.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
