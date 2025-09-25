@@ -51,4 +51,5 @@ source "$PKGS_DIR/packages/tools/zdebug/Kconfig"
 source "$PKGS_DIR/packages/tools/RVBacktrace/Kconfig"
 source "$PKGS_DIR/packages/tools/hpatchlite-wrapper/Kconfig"
 source "$PKGS_DIR/packages/tools/thread-metric/Kconfig"
+source "$PKGS_DIR/packages/tools/uORB/Kconfig"
 endmenu

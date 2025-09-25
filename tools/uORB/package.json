@@ -1,0 +1,28 @@
+{
+  "name": "uORB",
+  "description": "uORB is a light-weight and powerful IPC module based on the publisher/subscriber model.",
+  "description_zh": "uORB是一个基于发布者/订阅者模式的轻量级且功能强大的跨线程/进程通信模块。",
+  "enable": "PKG_USING_UORB",
+  "keywords": [
+    "uORB"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "Solonix-Chu",
+    "email": "rosemake.csc@outlook.com",
+    "github": "Solonix-Chu"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Solonix-Chu/uORB_RTT",
+  "icon": "unknown",
+  "homepage": "unknown",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Solonix-Chu/uORB_RTT.git",
+      "filename": "uORB_RTT.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
