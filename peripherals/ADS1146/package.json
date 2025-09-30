@@ -1,0 +1,33 @@
+{
+  "name": "ADS1146",
+  "description": "Please add description of ADS1146 in English.",
+  "description_zh": "这是一个关于ADS1146的驱动文件",
+  "enable": "PKG_USING_ADS1146",
+  "keywords": [
+    "ADS1146"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "232398825",
+    "email": "hekang200112@163.com",
+    "github": "232398825"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Pai-schoolmate/RTthread_package/tree/main/ADS1146",
+  "icon": "unknown",
+  "homepage": "https://github.com/Pai-schoolmate/RTthread_package/tree/main/ADS1146#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v25.9.24",
+      "URL": "https://ADS1146-25.9.24.zip",
+      "filename": "ADS1146-25.9.24.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Pai-schoolmate/RTthread_package/tree/main/ADS1146.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
