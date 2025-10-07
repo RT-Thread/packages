@@ -67,9 +67,59 @@ if PKG_USING_QBOOT
         select PKG_USING_FASTLZ
         default n
 
+    config QBOOT_USING_HPATCHLITE
+        bool "using hpatch-lite decompress"
+        select PKG_USING_HPATCHLITE
+        default n
+
+        if QBOOT_USING_HPATCHLITE
+            choice
+                prompt "HPatchLite In-Place Update Strategy"
+                default QBOOT_HPATCH_USE_FLASH_SWAP
+                help
+                    Select the buffer strategy for in-place firmware updates.
+                    - FLASH SWAP: Uses a dedicated flash partition as a buffer. Slower but saves RAM.
+                    - RAM BUFFER: Uses RAM as a buffer. Faster but consumes significant RAM.
+
+                config QBOOT_HPATCH_USE_FLASH_SWAP
+                    bool "Use a FLASH partition as swap buffer"
+
+                config QBOOT_HPATCH_USE_RAM_BUFFER
+                    bool "Use a RAM buffer (Faster, consumes RAM)"
+            endchoice
+
+            if QBOOT_HPATCH_USE_FLASH_SWAP
+                config QBOOT_HPATCH_SWAP_PART_NAME
+                    string "Swap partition name for HPatchLite"
+                    default "swap"
+
+                config QBOOT_HPATCH_SWAP_OFFSET
+                    int "Offset within the swap partition to use as a buffer"
+                    default 0
+                    help
+                        Specify the starting offset within the swap partition. 
+                        This allows only a portion of the swap partition to be used as a buffer. 
+                        Note that it is defined according to the sector erase granularity.
+
+                config QBOOT_HPATCH_COPY_BUFFER_SIZE
+                    int "RAM buffer size for flash-to-flash copy operations"
+                    default 4096
+                    help
+                        Size of the temporary RAM buffer used for copying data between flash partitions.
+                        A larger size may improve copy speed but consumes more RAM.
+            endif
+
+            if QBOOT_HPATCH_USE_RAM_BUFFER
+                config QBOOT_HPATCH_RAM_BUFFER_SIZE
+                    int "RAM buffer size for HPatchLite (must be >= sector size)"
+                    default 4096
+            endif
+        endif
+
     config QBOOT_USING_SHELL
         bool "using shell command of qboot"
         default y
+        select RT_USING_MSH
 
     if QBOOT_USING_SHELL
         config QBOOT_SHELL_KEY_CHK_TMO
@@ -198,4 +248,3 @@ if PKG_USING_QBOOT
        default "v1.00" if PKG_USING_QBOOT_V100
 
 endif
-
