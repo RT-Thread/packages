@@ -1,13 +1,29 @@
-
 menuconfig PKG_USING_HPATCHLITE
     bool "hpatchlite-wrapper: A lightweight and user-friendly wrapper for the HPatchLite."
     default n
+    select RT_USING_HEAP
 
 if PKG_USING_HPATCHLITE
 
     config PKG_HPATCHLITE_PATH
         string
         default "/packages/tools/hpatchlite-wrapper"
+
+    menu "Decompressor Options"
+
+        config PKG_HPATCHLITE_DECOMPRESSER_TUZ
+            bool "Enable tinyuz (tuz) decompressor support"
+            default n # By default, enable the smallest decompressor
+            help
+                Select this to include support for the tinyuz (.tuz) compressed patch format.
+                This is a lightweight decompressor, ideal for resource-constrained devices.
+
+        # You can add other decompressors here in the future
+        # config PKG_HPATCHLITE_DECOMPRESSER_ZLIB
+        #     bool "Enable zlib decompressor support"
+        #     default n
+
+    endmenu
 
     choice
         prompt "Version"
