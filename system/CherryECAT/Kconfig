@@ -1,0 +1,36 @@
+# Kconfig file for package CherryECAT
+menuconfig PKG_USING_CHERRYECAT
+    bool "CherryECAT: a tiny and beautiful, high real-time and low-jitter EtherCAT master stack, specially designed for MCUs running with RTOS"
+    default n
+
+if PKG_USING_CHERRYECAT
+
+        choice
+            prompt "select net device driver"
+            default PKG_CHERRYECAT_NETDEV_CUSTOM
+            config PKG_CHERRYECAT_NETDEV_CUSTOM
+                bool "CUSTOM (Implement it yourself)"
+            config PKG_CHERRYECAT_NETDEV_HPMICRO
+                bool "hpmicro"
+            config PKG_CHERRYECAT_NETDEV_RENESAS
+                bool "renesas"
+        endchoice
+
+    config PKG_CHERRYECAT_PATH
+        string
+        default "/packages/system/CherryECAT"
+
+    choice
+        prompt "Version"
+        default PKG_USING_CHERRYECAT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_CHERRYECAT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CHERRYECAT_VER
+       string
+       default "latest"    if PKG_USING_CHERRYECAT_LATEST_VERSION
+endif
