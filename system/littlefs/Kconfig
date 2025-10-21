@@ -48,6 +48,12 @@ if PKG_USING_LITTLEFS
         config PKG_USING_LITTLEFS_V250
             bool "v2.5.0"
 
+        config PKG_USING_LITTLEFS_V293
+            bool "v2.9.3"
+
+        config PKG_USING_LITTLEFS_V2112
+            bool "v2.11.2"
+
         config PKG_USING_LITTLEFS_LATEST_VERSION
             bool "latest"
     endchoice
@@ -119,6 +125,8 @@ if PKG_USING_LITTLEFS
        default "v2.2.1" if PKG_USING_LITTLEFS_V221
        default "v2.3.0" if PKG_USING_LITTLEFS_V230
        default "v2.5.0" if PKG_USING_LITTLEFS_V250
+       default "v2.9.3" if PKG_USING_LITTLEFS_V293
+       default "v2.11.2" if PKG_USING_LITTLEFS_V2112
        default "latest" if PKG_USING_LITTLEFS_LATEST_VERSION
 
 endif
