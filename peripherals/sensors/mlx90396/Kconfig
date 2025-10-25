@@ -1,0 +1,41 @@
+
+# Kconfig file for package mlx90396
+menuconfig PKG_USING_MLX90396
+    bool "MLX90396: 3D magnetometer sensor"
+    default n
+
+if PKG_USING_MLX90396
+
+    config PKG_MLX90396_PATH
+        string
+        default "/packages/peripherals/sensors/mlx90396"
+
+    config PKG_MLX90396_USING_SENSOR_V1
+        bool "Enable sensor_v1 device framework"
+        select RT_USING_SENSOR
+        default n
+
+    config PKG_USING_MLX90396_SAMPLE
+        bool "Enable MLX90396 Sample"
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_MLX90396_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MLX90396_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MLX90396_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MLX90396_VER
+       string
+       default "v1.0.0"    if PKG_USING_MLX90396_V100
+       default "latest"    if PKG_USING_MLX90396_LATEST_VERSION
+
+endif
+

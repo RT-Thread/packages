@@ -1,0 +1,28 @@
+{
+  "name": "mlx90396",
+  "description": "The MLX90396 is a magnetometer sensor from Melexis",
+  "description_zh": "MLX90396 是来自迈来芯公司的一颗3D磁力计",  
+  "enable": "PKG_USING_MLX90396", 
+  "keywords": [
+    "mlx90396"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "lgnq",
+    "email": "dzzxzz@gmail.com",
+    "github": "lgnq"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/lgnq/mlx90396",
+  "icon": "unknown",
+  "homepage": "https://github.com/lgnq/mlx90396`",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/lgnq/mlx90396.git",
+      "filename": "mlx90396.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
