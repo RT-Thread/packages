@@ -1,6 +1,6 @@
 {
   "name": "mlx90396",
-  "description": "The MLX90396 is the newest addition to the Melexis position sensing portfolio",
+  "description": "The MLX90396 is a magnetometer sensor from Melexis",
   "description_zh": "MLX90396 是来自迈来芯公司的一颗3D磁力计",  
   "enable": "PKG_USING_MLX90396", 
   "keywords": [
