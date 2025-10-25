@@ -1,7 +1,7 @@
 {
   "name": "mlx90396",
-  "description": "The MLX90396 is the newest addition to the Melexis position sensing portfolio, bringing the highest flexibility in the portfolio’s smallest assembly. Complementing this, the magnetic fi eld sensor is designed for micropower applications, with programmable duty cycles in the range of 0.1% to 100%.",
-  "description_zh": "MLX90396 是来自迈来芯公司的一颗低功耗的3D磁位置传感器",  
+  "description": "The MLX90396 is the newest addition to the Melexis position sensing portfolio",
+  "description_zh": "MLX90396 是来自迈来芯公司的一颗3D磁力计",  
   "enable": "PKG_USING_MLX90396", 
   "keywords": [
     "mlx90396"
