@@ -1,0 +1,35 @@
+{
+  "name": "RT-Tunnel",
+  "description": "RT-Tunnel: Auxiliary communication with RT-Trace tool and the target",
+  "description_zh": "RT-Tunnel: 辅助RT-Trace工具和目标板通信",
+  "enable": "PKG_USING_RT_TUNNEL",
+  "keywords": [
+    "RT-Tunnel"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "RT-Trace",
+    "email": "mozhihao@rt-thread.com",
+    "github": "RT-Trace"
+  },
+  "license": "6",
+  "repository": "https://github.com/RT-Trace/RT-Tunnel.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Trace/RT-Tunnel.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Trace/RT-Tunnel.git",
+      "filename": "RT-Tunnel-1.0.0.zip",
+      "VER_SHA": "5978f5bba918ff93101529182d2656940bcb6f1e"
+
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Trace/RT-Tunnel.git",
+      "filename": "RT-Tunnel-latest.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Virtual-Terminal",
+  "description": "Virtual-Terminal: High-speed virtual terminal",
+  "description_zh": "",
+  "enable": "PKG_USING_VIRTUAL_TERMINAL",
+  "keywords": [
+    "Virtual-Terminal"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "RT-Trace",
+    "email": "mozhihao@rt-thread.com",
+    "github": "RT-Trace"
+  },
+  "license": "Unknown",
+  "repository": "https://github.com/RT-Trace/Virtual-Terminal.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Trace/Virtual-Terminal.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Trace/Virtual-Terminal.git",
+      "filename": "Virtual-Terminal-1.0.0.zip",
+      "VER_SHA": "2a26a9d2abdee8f52c9376c29d2f96598043f142"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Trace/Virtual-Terminal.git",
+      "filename": "Virtual-Terminal-latest.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
