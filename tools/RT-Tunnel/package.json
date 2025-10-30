@@ -8,28 +8,27 @@
   ],
   "category": "tools",
   "author": {
-    "name": "RT-Trace",
-    "email": "mozhihao@rt-thread.com",
-    "github": "RT-Trace"
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RealThread"
   },
-  "license": "6",
-  "repository": "https://github.com/RT-Trace/RT-Tunnel.git",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/RT-Tunnel.git",
   "icon": "unknown",
-  "homepage": "https://github.com/RT-Trace/RT-Tunnel.git#readme",
+  "homepage": "https://github.com/RT-Thread-packages/RT-Tunnel.git#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/RT-Trace/RT-Tunnel.git",
+      "URL": "https://github.com/RT-Thread-packages/RT-Tunnel.git",
       "filename": "RT-Tunnel-1.0.0.zip",
-      "VER_SHA": "5978f5bba918ff93101529182d2656940bcb6f1e"
-
+      "VER_SHA": "60f97b87cb8b18ae3195c72f3029dc1d806cf8cb"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/RT-Trace/RT-Tunnel.git",
+      "URL": "https://github.com/RT-Thread-packages/RT-Tunnel.git",
       "filename": "RT-Tunnel-latest.zip",
-      "VER_SHA": "main"
+      "VER_SHA": "master"
     }
   ]
 }
