@@ -115,6 +115,15 @@ if PKG_USING_LLMCHAT
         bool "Enable llmchat history payload"
         default n
 
+    config PKG_LLMCHAT_WEBNET_MODE
+        bool "Enable llmchat webnet mode"
+        select PKG_USING_WEBNET
+        select WEBNET_USING_CGI
+        default n
+        help
+            After using the WebNet model, 
+            you can communicate with the llm using a browser webpage.
+
     config PKG_LLMCHAT_DBG
         bool "Enable llmchat debug"
         default n
