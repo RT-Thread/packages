@@ -140,6 +140,9 @@ if PKG_USING_LLMCHAT
         help
             Select the llm version
 
+        config PKG_USING_LLMCHAT_V140
+            bool "v1.4.0"
+
         config PKG_USING_LLMCHAT_V130
             bool "v1.3.0"
 
@@ -158,6 +161,7 @@ if PKG_USING_LLMCHAT
 
     config PKG_LLMCHAT_VER
        string
+       default "v1.4.0"    if PKG_USING_LLMCHAT_V140
        default "v1.3.0"    if PKG_USING_LLMCHAT_V130
        default "v1.2.0"    if PKG_USING_LLMCHAT_V120
        default "v1.1.0"    if PKG_USING_LLMCHAT_V110
