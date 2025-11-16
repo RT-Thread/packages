@@ -9,6 +9,7 @@
   },
   "enable": "PKG_USING_RTI",
   "keywords": [
+    "insight",
     "rti",
     "system"
   ],
@@ -21,9 +22,13 @@
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/RT-Thread-packages/rti.git",
-      "filename": "rti-1.0.0.zip",
-      "VER_SHA": "8621858c735086879dc445c9baf9ad34763e301d"
+      "URL": "https://github.com/RT-Thread-packages/rti/archive/refs/tags/1.0.0.zip",
+      "filename": "rti-1.0.0.zip"
+    },
+    {
+      "version": "v2.0.0",
+      "URL": "https://github.com/RT-Thread-packages/rti/archive/refs/tags/2.0.0.zip",
+      "filename": "rti-2.0.0.zip"
     },
     {
       "version": "latest",
