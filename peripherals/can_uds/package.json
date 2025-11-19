@@ -1,0 +1,33 @@
+{
+  "name": "can_uds",
+  "description": "ISO14229-1 (UDS) library implementation for RT-Thread. Supports Server/Client modes over CAN (ISO-TP).",
+  "description_zh": "适用于 RT-Thread 的 ISO14229-1 (UDS) 协议栈实现。支持基于 CAN (ISO-TP) 的服务端与客户端模式，提供易用的注册接口。",
+  "enable": "PKG_USING_ISO14229",
+  "keywords": [
+    "uds",
+    "iso14229",
+    "can",
+    "automotive",
+    "diagnostic"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "hly",
+    "email": "1425075683@qq.com",
+    "github": "wdfk-prog"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wdfk-prog/can_uds.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/wdfk-prog/can_uds#readme",
+  "doc": "https://github.com/wdfk-prog/can_uds/blob/master/README.md",
+  "readme": "ISO14229-1 (UDS) library implementation for RT-Thread.",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wdfk-prog/can_uds.git",
+      "filename": "can_uds.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
