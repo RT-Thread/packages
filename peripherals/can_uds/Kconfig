@@ -1,0 +1,276 @@
+menuconfig PKG_USING_ISO14229
+    bool "Enable iso14229 (UDS) library"
+    default n
+    help
+        ISO14229-1 (UDS) library for RT-Thread.
+        This library provides a platform-agnostic UDS client and server implementation
+        with an RT-Thread porting layer (iso14229_rtt.c).
+
+if PKG_USING_ISO14229
+
+    menu "Logging Configuration"
+        config UDS_LOG_LEVEL
+            int "Log level"
+            range 0 5
+            default 2
+            help
+                Set the log level for the UDS library.
+                0: No log output
+                1: Errors only
+                2: Warnings and errors
+                3: Info, warnings, and errors
+                4: Debug, info, warnings, and errors
+                5: Verbose, debug, info, warnings, and errors
+
+        config UDS_RTTHREAD_ULOG_ENABLED
+            bool "Use ULOG for logging"
+            default y
+            depends on RT_USING_ULOG
+            help
+                If enabled, the library will use RT-Thread's ULOG component.
+                Otherwise, it will fall back to rt_kprintf.
+
+        config UDS_CONFIG_LOG_COLORS
+            bool "Enable colorized log output (when not using ULOG)"
+            default y
+            depends on !UDS_RTTHREAD_ULOG_ENABLED
+            help
+                Enables ANSI color codes in the log output (only when NOT using ULOG).
+
+        config UDS_RTTHREAD_LOG_BUFFER_SIZE
+            int "Buffer size for a single log message (if not using ULOG)"
+            default 256
+            depends on !UDS_RTTHREAD_ULOG_ENABLED
+            help
+                Buffer size for a single log message when using rt_kprintf.
+    endmenu
+
+    menu "UDS Server Configuration"
+        
+        config UDS_RTT_EVENT_TABLE_SIZE
+            int "Event Dispatch Table Size"
+            default 32
+            help
+                Specifies the size of the internal lookup table for UDS events.
+                This value must be greater than the maximum value of the 
+                UDSEvent_t enum (UDS_EVT_MAX).
+                Default 32 is usually sufficient.
+
+        menu "Enabled Services"
+        
+            # =================================================================
+            # Service 0x10
+            # =================================================================
+            config UDS_ENABLE_SESSION_SVC
+                bool "Enable Service 0x10 (Diagnostic Session Control)"
+                default n
+                help
+                    Enables handling of diagnostic session switching.
+
+            if UDS_ENABLE_SESSION_SVC
+                config UDS_P2_MS_STD
+                    int "Standard Session P2 (ms)"
+                    default 50
+
+                config UDS_P2_STAR_MS_STD
+                    int "Standard Session P2* (ms)"
+                    default 2000
+
+                config UDS_P2_MS_EXT
+                    int "Extended Session P2 (ms)"
+                    default 5000
+
+                config UDS_P2_STAR_MS_EXT
+                    int "Extended Session P2* (ms)"
+                    default 5000
+            endif
+
+            # =================================================================
+            # Service 0x11
+            # =================================================================
+            config UDS_ENABLE_0X11_RESET_SVC
+                bool "Enable Service 0x11 (ECU Reset)"
+                default n
+                help
+                    Enables handling of ECU Reset requests.
+
+            if UDS_ENABLE_0X11_RESET_SVC
+                config UDS_RESET_DELAY_MS
+                    int "ECU Reset Delay (ms)"
+                    default 50
+                    help
+                        Delay between positive response and physical reset execution.
+            endif
+
+            # =================================================================
+            # Service 0x27
+            # =================================================================
+            config UDS_ENABLE_SECURITY_SVC
+                bool "Enable Service 0x27 (Security Access)"
+                default n
+                help
+                    Enables the Security Access service (Seed & Key).
+
+            if UDS_ENABLE_SECURITY_SVC
+                config UDS_SEC_DEFAULT_LEVEL
+                    hex "Default Security Level"
+                    default 0x01
+
+                config UDS_SEC_DEFAULT_KEY
+                    hex "Default Secret Key"
+                    default 0xA5A5A5A5
+            endif
+
+            # =================================================================
+            # Service 0x28
+            # =================================================================
+            config UDS_ENABLE_0X28_COMM_CTRL_SVC
+                bool "Enable Service 0x28 (Communication Control)"
+                default n
+                help
+                    Enables control over transmission/reception.
+
+            if UDS_ENABLE_0X28_COMM_CTRL_SVC
+                config UDS_COMM_CTRL_ID
+                    int "Internal Service ID for Comm Control"
+                    default 512
+            endif
+
+            # =================================================================
+            # Service 0x22/0x2E
+            # =================================================================
+            config UDS_ENABLE_PARAM_SVC
+                bool "Enable Service 0x22/0x2E (Read/Write DataByIdentifier)"
+                default n
+                help
+                    Enables parameter management.
+
+            if UDS_ENABLE_PARAM_SVC
+                config UDS_PARAM_RDBI_BUF_SIZE
+                    int "RDBI Temp Buffer Size"
+                    default 64
+            endif
+
+            # =================================================================
+            # Service 0x2F
+            # =================================================================
+            config UDS_ENABLE_0X2F_IO_SVC
+                bool "Enable Service 0x2F (InputOutputControlByIdentifier)"
+                default n
+                help
+                    Enables IO control.
+
+            if UDS_ENABLE_0X2F_IO_SVC
+                config UDS_IO_MAX_RESP_LEN
+                    int "IO Control Max Response Length"
+                    default 32
+            endif
+
+            # =================================================================
+            # Service 0x31 (Console)
+            # =================================================================
+            config UDS_ENABLE_CONSOLE_SVC
+                bool "Enable Service 0x31 (RoutineControl - Remote Console)"
+                default n
+                select UDS_ENABLE_SESSION_SVC
+                help
+                    Enables remote shell via UDS.
+
+            if UDS_ENABLE_CONSOLE_SVC
+                config UDS_CONSOLE_PASSTHROUGH
+                    bool "Enable Console Pass-through to UART"
+                    default n
+
+                config UDS_CONSOLE_REQ_EXT_SESSION
+                    bool "Console requires Extended Session"
+                    default y
+
+                config UDS_CONSOLE_REQ_SECURITY
+                    bool "Console requires Security Unlocked"
+                    default n
+                    depends on UDS_ENABLE_SECURITY_SVC
+
+                if UDS_CONSOLE_REQ_SECURITY
+                    config UDS_CONSOLE_REQ_SEC_LEVEL
+                        hex "Required Security Level"
+                        default 0x01
+                endif
+
+                config UDS_CONSOLE_RID
+                    hex "Routine ID (RID)"
+                    default 0xF000
+
+                config UDS_CONSOLE_BUF_SIZE
+                    int "Output Capture Buffer Size"
+                    default 4000
+
+                config UDS_CONSOLE_DEV_NAME
+                    string "Virtual Device Name"
+                    default "uds_vcon"
+
+                config UDS_CONSOLE_CMD_BUF_SIZE
+                    int "Command Buffer Size"
+                    default 128
+            endif
+
+            # =================================================================
+            # Service 0x34-0x38 (File)
+            # =================================================================
+            config UDS_ENABLE_FILE_SVC
+                bool "Enable Service 0x34-0x38 (File Transfer)"
+                default n
+                help
+                    Enables File Transfer services.
+
+            if UDS_ENABLE_FILE_SVC
+                config UDS_FILE_CHUNK_SIZE
+                    int "File Transfer Chunk Size"
+                    default 4093
+                    range 1 4093
+                    help
+                        Size of the buffer used for file read/write operations.
+                        Must NOT exceed (UDS_ISOTP_MTU - 2), which is typically 4093.
+                        Larger values improve throughput but consume more STACK memory.
+
+                config UDS_FILE_MAX_PATH_LEN
+                    int "Max File Path Length"
+                    default 64
+                    help
+                        Maximum length of the file path string (including null terminator).
+            endif
+        endmenu
+    endmenu
+
+    config UDS_USING_EXAMPLE
+        bool "Enable UDS server example application"
+        default n
+        help
+            This option compiles the 'examples' directory (rtt_uds_example.c).
+            It provides 'uds_example start' and 'uds_example stop' MSH commands
+            to demonstrate a functional UDS server with CAN binding.
+
+    if UDS_USING_EXAMPLE
+        menu "Example Configuration"
+            config UDS_EXAMPLE_LED_CTRL_DID
+                hex "DID for LED control (0x2F)"
+                default 0x0100
+                help
+                    The Data Identifier (DID) used in the example to control LEDs via Service 0x2F.
+
+            config UDS_EXAMPLE_PIN_LED_R
+                int "GPIO Pin for Red LED"
+                default -1
+                help
+                    Set the GPIO pin number for the Red LED. Set -1 to disable.
+
+            config UDS_EXAMPLE_PIN_LED_G
+                int "GPIO Pin for Green LED"
+                default -1
+
+            config UDS_EXAMPLE_PIN_LED_B
+                int "GPIO Pin for Blue LED"
+                default -1
+        endmenu
+    endif
+
+endif
