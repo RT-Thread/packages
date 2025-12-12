@@ -1,0 +1,27 @@
+
+# Kconfig file for package gd32_riscv_series_driver
+menuconfig PKG_USING_GD32_RISCV_SERIES_DRIVER
+    bool "GD32 RISCV SERIES DRIVER PACKAGE"
+    select PKG_USING_GD32_RISCV_CMSIS_DRIVER
+    default n
+
+if PKG_USING_GD32_RISCV_SERIES_DRIVER
+
+    config PKG_GD32_RISCV_SERIES_DRIVER_PATH
+        string
+        default "/packages/peripherals/hal-sdk/gd32/gd32-riscv-series"
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_GD32_RISCV_SERIES_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_GD32_RISCV_SERIES_DRIVER_VER
+       string
+       default "latest"    if PKG_USING_GD32_RISCV_SERIES_DRIVER_LATEST_VERSION
+
+endif
+

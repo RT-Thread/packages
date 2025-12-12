@@ -1,0 +1,28 @@
+{
+  "name": "gd32-riscv-series",
+  "description": "GD32 RISCV SERIES DRIVER PACKAGE",
+  "description_zh": "GD32 RISCV SERIES 驱动包",
+  "enable": "PKG_USING_GD32_RISCV_SERIES_DRIVER",
+  "keywords": [
+    "gd32-riscv-series"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/gd32-risc-v-series",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/gd32-risc-v-series#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/gd32-risc-v-series.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
