@@ -1,0 +1,27 @@
+{
+  "name": "ins5t8025",
+  "description": "ins5t8025 driver based on soft IIC",
+  "description_zh": "基于软件IIC的RTC芯片ins5t8025的驱动",
+  "enable": "PKG_USING_INS5T8025",
+  "keywords": [
+    "rtc",
+    "INS5T8025"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "GKoSon",
+    "email": "782730309@qq.com",
+    "github": "GKoSon"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/GKoSon/ins5t8025",
+  "homepage": "https://github.com/GKoSon/ins5t8025#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/GKoSon/ins5t8025.git",
+      "filename": "ins5t8025.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
