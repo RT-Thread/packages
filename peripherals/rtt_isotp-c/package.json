@@ -1,0 +1,29 @@
+{
+  "name": "rtt_isotp-c",
+  "description": "Adapter layer for CAN TP (ISO 15765-2). Designed for scenarios involving multi-frame transmission (can be interfaced to implement protocols such as YMODEM).",
+  "description_zh": "用于CAN-TP（ISO15765-2）的适配层。用于多帧传输的场景而设计(可对接实现ymodem等协议)",
+  "enable": "PKG_USING_ISOTP_C",
+  "keywords": [
+    "rtt_isotp-c"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "hly",
+    "email": "1425075683@qq.com",
+    "github": "wdfk-prog"
+  },
+  "license": "LGPL-2.1",
+  "repository": "https://github.com/wdfk-prog/rtt_isotp-c.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/wdfk-prog/rtt_isotp-c.git#readme",
+  "doc": "https://github.com/wdfk-prog/rtt_isotp-c.git#readme",
+  "readme": "Adapter layer for CAN TP (ISO 15765-2). Designed for scenarios involving multi-frame transmission (can be interfaced to implement protocols such as YMODEM).",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wdfk-prog/rtt_isotp-c.git",
+      "filename": "rtt_isotp_c.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
