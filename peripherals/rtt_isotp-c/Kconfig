@@ -1,0 +1,113 @@
+menuconfig PKG_USING_ISOTP_C
+    bool "ISO-TP:ISO 15765-2 (also known as ISO-TP) protocol with CAN multi-link and event-driven support"
+    default n
+    select RT_USING_HEAP
+    select RT_USING_CAN
+    help
+        A C library that implements the ISO 15765-2 (also known as ISO-TP) protocol.
+        This package provides an adapter layer for RT-Thread with multi-link and event-driven support.
+
+if PKG_USING_ISOTP_C
+
+    menu "Adapter Layer Configuration"
+        config PKG_ISOTP_C_POLL_THREAD_STACK_SIZE
+            int "Stack size for the isotp-c polling thread"
+            default 1024
+            help
+                This thread periodically calls isotp_poll() for all active links.
+
+        config PKG_ISOTP_C_POLL_THREAD_PRIORITY
+            int "Priority for the isotp-c polling thread"
+            default 20
+            help
+                Priority of the polling thread.
+
+        config PKG_ISOTP_C_POLL_INTERVAL_MS
+            int "Polling interval in milliseconds"
+            default 5
+            help
+                The interval at which the polling thread runs to update link states.
+                A smaller value gives faster response but higher CPU usage.
+    endmenu
+
+    menu "ISO-TP Protocol Parameters"
+        config ISO_TP_DEFAULT_BLOCK_SIZE
+            int "Block Size (BS)"
+            default 8
+            help
+                ISO-TP Block Size (BS). Max number of consecutive frames the receiver
+                can receive without sending a new Flow Control frame. (0 = infinite)
+
+        config ISO_TP_DEFAULT_ST_MIN_US
+            int "Minimum Separation Time (STmin) in microseconds"
+            default 0
+            help
+                ISO-TP Separation Time (STmin). Specifies the minimum time gap
+                allowed between the transmission of consecutive frames.
+
+        config ISO_TP_MAX_WFT_NUMBER
+            int "Max number of Wait Frame Transmissions (WFTmax)"
+            default 1
+            help
+                ISO-TP WFTmax. Indicates how many Wait Frames (FC.WT) can be 
+                transmitted by the receiver in a row if it's not ready to receive.
+
+        config ISO_TP_DEFAULT_RESPONSE_TIMEOUT_US
+            int "Response timeout in microseconds (Ar/As, Br/Bs, Cr/Cs)"
+            default 100000
+            help
+                Default timeout for waiting for a response during a multi-frame
+                send or receive (e.g., waiting for a Flow Control frame).
+
+        config ISO_TP_FRAME_PADDING
+            bool "Enable CAN frame padding"
+            default n
+            help
+                If enabled, all transmitted CAN frames will be padded to 8 bytes.
+                This is required by some ECUs.
+
+        if ISO_TP_FRAME_PADDING
+            config ISO_TP_FRAME_PADDING_VALUE
+                hex "Padding value"
+                default 0xAA
+                help
+                    The byte value used for padding CAN frames if padding is enabled.
+        endif
+
+        # The following options are mandatory for the event-driven adapter
+        config ISO_TP_USER_SEND_CAN_ARG
+            bool "Enable user argument for send_can function"
+            default y
+            help
+                Adds a 'void *user_send_can_arg' to isotp_user_send_can.
+                This is ESSENTIAL for multi-link/multi-CAN support. DO NOT DISABLE.
+
+        config ISO_TP_TRANSMIT_COMPLETE_CALLBACK
+            bool "Enable transmit complete callback"
+            default y
+            help
+                Enables the isotp_set_tx_done_cb function.
+                This is ESSENTIAL for the event-driven adapter. DO NOT DISABLE.
+
+        config ISO_TP_RECEIVE_COMPLETE_CALLBACK
+            bool "Enable receive complete callback"
+            default y
+            help
+                Enables the isotp_set_rx_done_cb function.
+                This is ESSENTIAL for the event-driven adapter. DO NOT DISABLE.
+    endmenu
+
+    config PKG_ISOTP_C_EXAMPLES
+        bool "Enable isotp-c examples"
+        default n
+        select BSP_USING_CAN1
+        select BSP_USING_CAN2
+        help
+            Enable examples for isotp-c package, demonstrating communication
+            between two CAN interfaces.
+
+    config PKG_ISOTP_C_VERSION
+        string "isotp-c version"
+        default "latest"
+
+endif
