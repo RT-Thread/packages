@@ -25,6 +25,7 @@ if PKG_USING_IKUNLED
     config PKG_IKUNLED_VER
        string
        default "v1.1.0" if PKG_USING_IKUNLED_110_VERSION
+	   default "latest" if PKG_USING_IKUNLED_LATEST_VERSION
        
     config USING_IKUNLED_DEMO
         bool "Enable IKUNLED Demo (example folder)"
