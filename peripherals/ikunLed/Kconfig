@@ -1,5 +1,6 @@
 menuconfig PKG_USING_IKUNLED
-    bool "Enable PKG_USING_IKUNLED"
+    bool "ikunLed: A Led driver based on char device"
+    select RT_USING_PIN
     default n
     help
         Enable this option to use the IKUNLED package.
@@ -11,17 +12,19 @@ if PKG_USING_IKUNLED
 
     choice
         prompt "Version"
-        default PKG_USING_IKLED_LATEST_VERSION
+        default PKG_USING_IKUNLED_LATEST_VERSION
         help
             Select the package version
 
-        config PKG_USING_IKLED_LATEST_VERSION
+        config PKG_USING_IKUNLED_110_VERSION
+            bool "v1.1.0"
+        config PKG_USING_IKUNLED_LATEST_VERSION
             bool "latest"
     endchoice
 
-    config PKG_IKLED_VER
+    config PKG_IKUNLED_VER
        string
-       default "latest" if PKG_USING_IKLED_LATEST_VERSION
+       default "v1.1.0" if PKG_USING_IKUNLED_110_VERSION
        
     config USING_IKUNLED_DEMO
         bool "Enable IKUNLED Demo (example folder)"
