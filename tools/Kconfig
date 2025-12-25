@@ -1,5 +1,6 @@
 menu "tools packages"
 
+source "$PKGS_DIR/packages/tools/vector/Kconfig"
 source "$PKGS_DIR/packages/tools/CmBacktrace/Kconfig"
 source "$PKGS_DIR/packages/tools/MCoreDump/Kconfig"
 source "$PKGS_DIR/packages/tools/EasyFlash/Kconfig"

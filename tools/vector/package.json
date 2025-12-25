@@ -1,0 +1,28 @@
+{
+  "name": "vector",
+  "description": "vector is a dynamic, type-agnostic container module.",
+  "description_zh": "Vector 是一个为 RT-Thread 设计的通用向量容器模块，提供动态大小的数组功能，支持不同数据类型的存储和操作。",
+  "enable": "PKG_USING_VECTOR",
+  "keywords": [
+    "vector"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "zhangguofu",
+    "email": "cleancode@163.com",
+    "github": "Gary.Zhang"
+  },
+  "license": "MIT",
+  "repository": "git@github.com:zhangguofu/vector.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/zhangguofu/vector.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/zhangguofu/vector.git",
+      "filename": "vector.zip",
+      "VER_SHA": ""
+    }
+  ]
+}
