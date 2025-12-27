@@ -1,0 +1,68 @@
+
+# Kconfig file for package ikunLed
+menuconfig PKG_USING_IKUNLED
+    bool "ikunLed: A Led driver based on char device"
+    select RT_USING_PIN
+    default n
+    help
+        Enable this option to use the IKUNLED package.
+
+if PKG_USING_IKUNLED  
+    config PKG_IKUNLED_PATH
+        string
+        default "/packages/peripherals/ikunLed"
+
+    choice
+        prompt "Version"
+        default PKG_USING_IKUNLED_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_IKUNLED_110_VERSION
+            bool "v1.1.0"
+        config PKG_USING_IKUNLED_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_IKUNLED_VER
+       string
+       default "v1.1.0" if PKG_USING_IKUNLED_110_VERSION
+	   default "latest" if PKG_USING_IKUNLED_LATEST_VERSION
+       
+    config USING_IKUNLED_DEMO
+        bool "Enable IKUNLED Demo (example folder)"
+        default n
+        help
+            Enable this option to compile the example code in the "example" folder.
+
+    if USING_IKUNLED_DEMO
+        config IKUNLED_DEMO_NAME
+            string "IKUNLED Demo Name"
+            default "ledX"
+            help
+                Configure the name identifier for the IKUNLED demo.
+
+        config IKUNLED_DEMO_PIN
+            string "IKUNLED Demo Control Pin"
+            default "PB.12"
+            help
+                Configure the GPIO pin (format: Port.Pin, e.g., PB.12).
+
+        choice
+            prompt "IKUNLED Demo Active Level"
+            default IKUNLED_DEMO_ACTIVE_HIGH
+
+            config IKUNLED_DEMO_ACTIVE_LOW
+                bool "Low level active (0)"
+
+            config IKUNLED_DEMO_ACTIVE_HIGH
+                bool "High level active (1)"
+        endchoice
+
+        config IKUNLED_DEMO_ACTIVE_LEVEL
+            int
+            default 1 if IKUNLED_DEMO_ACTIVE_HIGH
+            default 0 if IKUNLED_DEMO_ACTIVE_LOW
+            default 1
+    endif  
+endif 
