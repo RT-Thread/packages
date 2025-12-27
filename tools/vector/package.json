@@ -13,9 +13,9 @@
     "github": "Gary.Zhang"
   },
   "license": "MIT",
-  "repository": "git@github.com:zhangguofu/vector.git",
+  "repository": "https://github.com/zhangguofu/vector",
   "icon": "unknown",
-  "homepage": "https://github.com/zhangguofu/vector.git#readme",
+  "homepage": "https://github.com/zhangguofu/vector#readme",
   "doc": "unknown",
   "site": [
     {
