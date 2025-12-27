@@ -1,0 +1,26 @@
+# Kconfig file for package vector
+menuconfig PKG_USING_VECTOR
+    bool "vector: a dynamic, type-agnostic container."
+    default n
+
+if PKG_USING_VECTOR
+    config PKG_VECTOR_PATH
+        string
+        default "/packages/tools/vector"
+
+    choice
+        prompt "Version"
+        default PKG_USING_VECTOR_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_VECTOR_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    config PKG_VECTOR_VER
+       string
+       default "latest"    if PKG_USING_VECTOR_LATEST_VERSION
+
+endif
