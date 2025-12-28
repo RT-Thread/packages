@@ -5,7 +5,7 @@ menuconfig PKG_USING_INS5T8025
     default n
     select RT_USING_I2C
     help
-        A driver package for  RTC chip INS5T8025
+        A driver package for hardware RTC chip INS5T8025
 
 if PKG_USING_INS5T8025
     config PKG_INS5T8025_PATH
