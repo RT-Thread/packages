@@ -1,0 +1,45 @@
+
+# Kconfig file for package ins5t8025
+menuconfig PKG_USING_INS5T8025
+    bool "ins5t8025: hardware RTC chip driver package"
+    default n
+    select RT_USING_I2C
+    help
+        A driver package for INS5T8025
+
+if PKG_USING_INS5T8025
+    config PKG_INS5T8025_PATH
+        string
+        default "/packages/peripherals/ins5t8025"
+
+    choice
+        prompt "Version"
+        default PKG_USING_INS5T8025_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_INS5T8025_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_INS5T8025_VER
+       string
+       default "latest" if PKG_USING_INS5T8025_LATEST_VERSION
+    config INS5T8025_I2C_BUS
+        string "name of IIC bus for INS5T8025"
+        default "i2c2_sw"
+        help
+            Set INS5T8025 I2C bus.
+
+    config INS5T8025_ALARM_INT_PIN
+        string "INS5T8025 ALARM INT Pin"
+        default "PE.4"
+        help
+            Configure the GPIO pin (format: Port.Pin, e.g., PB.12).
+
+    config USING_INS5T8025_DEMO
+        bool "Enable INS5T8025 Demo (example folder)"
+        default n
+        help
+            Enable this option to compile the example code in the "example" folder.
+endif
