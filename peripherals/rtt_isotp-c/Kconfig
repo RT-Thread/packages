@@ -49,7 +49,7 @@ if PKG_USING_ISOTP_C
             int "Max number of Wait Frame Transmissions (WFTmax)"
             default 1
             help
-                ISO-TP WFTmax. Indicates how many Wait Frames (FC.WT) can be 
+                ISO-TP WFTmax. Indicates how many Wait Frames (FC.WT) can be
                 transmitted by the receiver in a row if it's not ready to receive.
 
         config ISO_TP_DEFAULT_RESPONSE_TIMEOUT_US
