@@ -1,7 +1,7 @@
 
 # Kconfig file for package ins5t8025
 menuconfig PKG_USING_INS5T8025
-    bool "ins5t8025: hardware RTC chip driver package"
+    bool "ins5t8025: hardware RTC chip driver package based on soft IIC"
     default n
     select RT_USING_I2C
     help
