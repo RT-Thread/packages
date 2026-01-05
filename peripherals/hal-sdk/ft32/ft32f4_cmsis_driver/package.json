@@ -1,0 +1,29 @@
+{
+  "name": "ft32f4_cmsis_driver",
+  "description": "FT32 F4 CMSIS driver package",
+  "description_zh": "FT32 F4 CMSIS 驱动包",
+  "enable": "PKG_USING_FT32F4_CMSIS_DRIVER",
+  "keywords": [
+    "ft32f4_cmsis_driver",
+    "FT32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "weidong-kenny",
+    "email": "weidong0208@163.com",
+    "github": "ft_arm_cmsis"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/weidong-kenny/ft_arm_cmsis",
+  "icon": "unknown",
+  "homepage": "https://github.com/weidong-kenny/ft_arm_cmsis#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/weidong-kenny/ft_arm_cmsis.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

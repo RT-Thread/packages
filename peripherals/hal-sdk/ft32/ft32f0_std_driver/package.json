@@ -1,0 +1,29 @@
+{
+  "name": "ft32f0_std_driver",
+  "description": "FT32 F0 STD driver package",
+  "description_zh": "FT32 F0 STD 驱动包",
+  "enable": "PKG_USING_FT32F0_STD_DRIVER",
+  "keywords": [
+    "ft32f0_std_driver",
+    "FT32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "weidong-kenny",
+    "email": "weidong0208@163.com",
+    "github": "ft_std_driver"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/weidong-kenny/ft_std_driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/weidong-kenny/ft_std_driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/weidong-kenny/ft_std_driver.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
