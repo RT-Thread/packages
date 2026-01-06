@@ -9,21 +9,21 @@
   ],
   "category": "peripherals",
   "author": {
-    "name": "weidong-kenny",
-    "email": "weidong0208@163.com",
-    "github": "ft_std_driver"
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/weidong-kenny/ft_std_driver",
+  "repository": "https://github.com/RT-Thread-packages/ft32-arm-driver",
   "icon": "unknown",
-  "homepage": "https://github.com/weidong-kenny/ft_std_driver#readme",
+  "homepage": "https://github.com/RT-Thread-packages/ft32-arm-driver#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/weidong-kenny/ft_std_driver.git",
+      "URL": "https://github.com/RT-Thread-packages/ft32-arm-driver.git",
       "filename": "",
-      "VER_SHA": "main"
+      "VER_SHA": "master"
     }
   ]
 }

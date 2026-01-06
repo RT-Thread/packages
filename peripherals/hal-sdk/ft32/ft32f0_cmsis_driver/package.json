@@ -9,21 +9,21 @@
   ],
   "category": "peripherals",
   "author": {
-    "name": "weidong-kenny",
-    "email": "weidong0208@163.com",
-    "github": "ft_arm_cmsis"
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/weidong-kenny/ft_arm_cmsis",
+  "repository": "https://github.com/RT-Thread-packages/ft32-arm-cmsis",
   "icon": "unknown",
-  "homepage": "https://github.com/weidong-kenny/ft_arm_cmsis#readme",
+  "homepage": "https://github.com/RT-Thread-packages/ft32-arm-cmsis#readme",
   "doc": "unknown",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/weidong-kenny/ft_arm_cmsis.git",
+      "URL": "https://github.com/RT-Thread-packages/ft32-arm-cmsis.git",
       "filename": "",
-      "VER_SHA": "main"
+      "VER_SHA": "master"
     }
   ]
 }
