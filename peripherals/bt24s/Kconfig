@@ -1,0 +1,67 @@
+
+# Kconfig file for package bt24s
+menuconfig PKG_USING_BT24S
+    bool "bt24s:  BT24S Bluetooth Module Support based on UART
+    default n
+    select PKG_USING_UAT    
+    help
+        Enable this option to add support for BT24S Bluetooth module.
+
+if PKG_USING_BT24S
+    config PKG_BT24S_PATH
+        string
+        default "/packages/peripherals/bt24s"
+
+    choice
+        prompt "Version"
+        default PKG_USING_BT24S_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_BT24S_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_BT24S_VER
+       string
+       default "latest" if PKG_USING_BT24S_LATEST_VERSION
+    config BT24S_UART_NAME
+        string "UART Device Name"
+        default "uart1"
+        help
+            Set the UART device name for BT24S communication (e.g., uart1, uart2, uart3).
+			
+    config BT24S_UART_BUFFER_SIZE
+        int "UART Receive Buffer Size"
+        range 16 253
+        default 253
+        help
+            Set the receive buffer size for UART.
+
+    menu "GPIO Pin Configuration"
+        config BT24S_ENPWR_PIN
+            string "ENPWR (Power Enable) Pin"
+            default "PD.2"
+            help
+                Set the GPIO pin for power control (format: Port.Pin, e.g., PD.2).
+
+        config BT24S_ENAT_PIN
+            string "ENAT (AT Mode) Pin"
+            default "PD.1"
+            help
+                Set the GPIO pin for AT mode control (format: Port.Pin, e.g., PD.1).
+
+        config BT24S_P09I_PIN
+            string "P09I (HW RESET) Pin"
+            default "PD.3"
+            help
+                Set the GPIO pin for hardware reset (format: Port.Pin, e.g., PD.3).
+    endmenu
+
+    config USING_BT24S_DEMO
+        bool "Enable App Demo (example folder)"
+        default n
+        help
+            Enable this option to compile the example code in the "example" folder.
+
+endif 
