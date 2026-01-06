@@ -1,0 +1,29 @@
+{
+  "name": "ft32f4_std_driver",
+  "description": "FT32 F4 STD driver package",
+  "description_zh": "FT32 F4 STD 驱动包",
+  "enable": "PKG_USING_FT32F4_STD_DRIVER",
+  "keywords": [
+    "ft32f4_std_driver",
+    "STM32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "support@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/ft32-arm-driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/ft32-arm-driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/ft32-arm-driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
