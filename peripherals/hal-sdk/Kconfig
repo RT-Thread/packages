@@ -19,4 +19,5 @@ source "$PKGS_DIR/packages/peripherals/hal-sdk/nxp/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/nuvoton/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/gd32/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/hpmicro/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/ft32/Kconfig"
 endmenu
