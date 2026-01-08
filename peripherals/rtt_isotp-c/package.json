@@ -20,6 +20,11 @@
   "readme": "Adapter layer for CAN TP (ISO 15765-2). Designed for scenarios involving multi-frame transmission (can be interfaced to implement protocols such as YMODEM).",
   "site": [
     {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wdfk-prog/rtt_isotp-c/archive/refs/tags/v1.01.00.zip",
+      "filename": "rtt_isotp_c-1.0.0.zip"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/wdfk-prog/rtt_isotp-c.git",
       "filename": "rtt_isotp_c.zip",

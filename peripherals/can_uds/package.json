@@ -2,7 +2,7 @@
   "name": "can_uds",
   "description": "The implementation of the ISO14229-1 (UDS) protocol stack suitable for RT-Thread. It provides functions such as CAN console mode and file transfer.",
   "description_zh": "适用于 RT-Thread 的 ISO14229-1 (UDS) 协议栈实现。提供CAN控制台模式与文件传输等功能。",
-  "enable": "PKG_USING_ISO14229",
+  "enable": "PKG_USING_CAN_UDS",
   "keywords": [
     "uds",
     "iso14229",
@@ -12,17 +12,22 @@
   ],
   "category": "peripherals",
   "author": {
-    "name": "hly",
+    "name": "wdfk-prog",
     "email": "1425075683@qq.com",
     "github": "wdfk-prog"
   },
   "license": "MIT",
-  "repository": "https://github.com/wdfk-prog/can_uds.git",
+  "repository": "https://github.com/wdfk-prog/can_uds",
   "icon": "unknown",
   "homepage": "https://github.com/wdfk-prog/can_uds#readme",
   "doc": "https://github.com/wdfk-prog/can_uds/blob/master/README.md",
   "readme": "ISO14229-1 (UDS) library implementation for RT-Thread.",
   "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wdfk-prog/can_uds/archive/refs/tags/V1.0.0.zip",
+      "filename": "can_uds-1.0.0.zip"
+    },
     {
       "version": "latest",
       "URL": "https://github.com/wdfk-prog/can_uds.git",
