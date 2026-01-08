@@ -1,4 +1,6 @@
-menuconfig PKG_USING_ISO14229
+
+# Kconfig file for package can_uds
+menuconfig PKG_USING_CAN_UDS
     bool "Enable iso14229 (UDS) library"
     default n
     help
@@ -6,7 +8,7 @@ menuconfig PKG_USING_ISO14229
         This library provides a platform-agnostic UDS client and server implementation
         with an RT-Thread porting layer (iso14229_rtt.c).
 
-if PKG_USING_ISO14229
+if PKG_USING_CAN_UDS
 
     menu "Logging Configuration"
         config UDS_LOG_LEVEL
@@ -273,4 +275,30 @@ if PKG_USING_ISO14229
         endmenu
     endif
 
+    config PKG_USING_ISO14229
+        bool
+        default "true"
+
+    config PKG_CAN_UDS_PATH
+        string
+        default "/packages/peripherals/can_uds"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_CAN_UDS_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CAN_UDS_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CAN_UDS_VER
+       string
+       default "v1.0.0"    if PKG_USING_CAN_UDS_V100
+       default "latest"    if PKG_USING_CAN_UDS_LATEST_VERSION
+
 endif
+
