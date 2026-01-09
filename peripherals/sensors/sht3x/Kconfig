@@ -2,6 +2,7 @@
 menuconfig PKG_USING_SHT3X
     bool "sht3x: digital humidity and temperature sensor sht3x driver library"
     default n
+    select RT_USING_I2C
 
 if PKG_USING_SHT3X
 
