@@ -13,20 +13,20 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
         menu "WHD Configuration"
 
             if PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
-            menuconfig WHD_SET_COUNTRY_FROM_HOST
-                bool "Set country code from host"
-                default y
+                menuconfig WHD_SET_COUNTRY_FROM_HOST
+                    bool "Set country code from host"
+                    default y
 
-                if WHD_SET_COUNTRY_FROM_HOST
-                    config WHD_COUNTRY_CODE
-                        string "Set the default country code"
-                        default "AU"
+                    if WHD_SET_COUNTRY_FROM_HOST
+                        config WHD_COUNTRY_CODE
+                            string "Set the default country code"
+                            default "AU"
 
-                    config WHD_COUNTRY_CODE_REVISION
-                        int "Set the default country code revision"
-                        range 0 65535
-                        default 0
-                endif # WHD_SET_COUNTRY_FROM_HOST
+                        config WHD_COUNTRY_CODE_REVISION
+                            int "Set the default country code revision"
+                            range 0 65535
+                            default 0
+                    endif # WHD_SET_COUNTRY_FROM_HOST
             endif # PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
 
             config CY_WIFI_DEFAULT_ENABLE_POWERSAVE_MODE
@@ -69,60 +69,64 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
 
             menu "WHD Resources Configuration"
 
-                choice
-                    prompt "Select the external storage type for WHD resources"
-                    default WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
+                if PKG_WIFI_HOST_DRIVER_VER_NUM < 0x10301
+                    config WHD_RESOURCES_IN_EXTERNAL_STORAGE
+                        bool "Using resources in external storage"
+                        default y
+                endif # PKG_WIFI_HOST_DRIVER_VER_NUM < 0x10301
 
-                    config WHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
-                        bool "File System"
-                        select RT_USING_POSIX_FS
+                if PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301 || WHD_RESOURCES_IN_EXTERNAL_STORAGE
+                    choice
+                        prompt "Select the external storage type for WHD resources"
+                        default WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
 
-                    config WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
-                        bool "Flash Abstraction Layer(FAL)"
-                        select RT_USING_FAL
-                endchoice
+                        config WHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
+                            bool "File System"
+                            select RT_USING_POSIX_FS
 
-                if WHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
-                    config WHD_RESOURCES_FIRMWARE_PATH_NAME
-                        string "Set the file path of the firmware files"
-                        default "/sdcard/whd/43438A1.bin"
+                        config WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
+                            bool "Flash Abstraction Layer(FAL)"
+                            select RT_USING_FAL
+                    endchoice
 
-                    config WHD_RESOURCES_CLM_PATH_NAME
-                        string "Set the file path of the clm files"
-                        default "/sdcard/whd/43438A1.clm_blob"
+                    if WHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
+                        config WHD_RESOURCES_FIRMWARE_PATH_NAME
+                            string "Set the file path of the firmware files"
+                            default "/sdcard/whd/43438A1.bin"
 
-                    if PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
-                        config WHD_RESOURCES_NVRAM_PATH_NAME
-                            string "Set the file path of the nvram files"
-                            default "/sdcard/whd/nvram.txt"
-                    endif # PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
-                endif # WHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
+                        config WHD_RESOURCES_CLM_PATH_NAME
+                            string "Set the file path of the clm files"
+                            default "/sdcard/whd/43438A1.clm_blob"
 
-                if WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
-                    config WHD_RESOURCES_FIRMWARE_PART_NAME
-                        string "Set the partition name of the firmware files"
-                        default "whd_firmware"
+                        if PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
+                            config WHD_RESOURCES_NVRAM_PATH_NAME
+                                string "Set the file path of the nvram files"
+                                default "/sdcard/whd/nvram.txt"
+                        endif # PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
+                    endif # WHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
 
-                    config WHD_RESOURCES_CLM_PART_NAME
-                        string "Set the partition name of the clm files"
-                        default "whd_clm"
+                    if WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
+                        config WHD_RESOURCES_FIRMWARE_PART_NAME
+                            string "Set the partition name of the firmware files"
+                            default "whd_firmware"
 
-                    if PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
-                        config WHD_RESOURCES_NVRAM_PART_NAME
-                            string "Set the partition name of the nvram files"
-                            default "whd_nvram"
-                    endif # PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
-                endif # WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
+                        config WHD_RESOURCES_CLM_PART_NAME
+                            string "Set the partition name of the clm files"
+                            default "whd_clm"
+
+                        if PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
+                            config WHD_RESOURCES_NVRAM_PART_NAME
+                                string "Set the partition name of the nvram files"
+                                default "whd_nvram"
+                        endif # PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301
+                    endif # WHD_RESOURCES_IN_EXTERNAL_STORAGE_FAL
+                endif # PKG_WIFI_HOST_DRIVER_VER_NUM >= 0x10301 || WHD_RESOURCES_IN_EXTERNAL_STORAGE
 
                 config WHD_RESOURCES_BLOCK_SIZE
                     int "Set the block size for resources"
                     default 1024
 
                 if PKG_WIFI_HOST_DRIVER_VER_NUM < 0x10301
-                    config WHD_RESOURCES_IN_EXTERNAL_STORAGE
-                        bool 
-                        default y
-
                     config WHD_RESOURCES_CUSTOM_NVRAM
                             bool "Using custom nvram files"
                             default n
