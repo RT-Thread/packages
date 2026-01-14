@@ -6,6 +6,7 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
     select RT_USING_SAL
     select RT_USING_SDIO
     select BSP_USING_SDIO
+    select RT_USING_DFS
     default n
 
     if PKG_USING_WIFI_HOST_DRIVER
