@@ -14,7 +14,30 @@ if PKG_USING_CHERRYECAT
                 bool "hpmicro"
             config PKG_CHERRYECAT_NETDEV_RENESAS
                 bool "renesas"
+            config PKG_CHERRYECAT_NETDEV_STM32H7
+                bool "stm32h7, hal >=1.11.0"
         endchoice
+
+    if PKG_CHERRYECAT_NETDEV_HPMICRO
+        choice
+            prompt "hpmicro eth driver type"
+            default PKG_CHERRYECAT_HPMICRO_RGMII
+            config PKG_CHERRYECAT_HPMICRO_RGMII
+                bool "RGMII"
+            config PKG_CHERRYECAT_HPMICRO_RMII
+                bool "RMII"
+        endchoice
+
+    endif
+
+    if PKG_CHERRYECAT_NETDEV_STM32H7
+        config CONFIG_EC_PHY_RESET_PORT
+            int "stm32 eth phy reset port, from 0 to x, 0 means GPIOA"
+            default 0
+        config CONFIG_EC_PHY_RESET_PIN
+            int "stm32 eth phy reset pin, from 0 to 15"
+            default 8
+    endif
 
     config PKG_CHERRYECAT_PATH
         string
