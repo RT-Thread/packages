@@ -255,7 +255,7 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
                     endchoice
 
                     config CYBSP_OOB_INTR_PRIORITY
-                        int "Set the interrput priority for HOST_WAKE_IRQ pin"
+                        int "Set the interrupt priority for HOST_WAKE_IRQ pin"
                         default 2
                 endif # CYBSP_USING_OOB_INTR
             endmenu # Pin Configuration
@@ -306,7 +306,7 @@ menuconfig PKG_USING_WIFI_HOST_DRIVER
                 default WHD_LOG_LEVEL_ERROR
 
                 config WHD_LOG_LEVEL_NONE
-                select WHD_PRINT_DISABLE
+                    select WHD_PRINT_DISABLE
                     bool "None"
 
                 config WHD_LOG_LEVEL_ERROR
