@@ -1,7 +1,7 @@
 {
  "name": "bt24s",
  "description": "bt24s driver based on UART",
- "description_zh": "基于串口驱动bt24蓝牙模组",
+ "description_zh": "基于串口驱动bt24s蓝牙模组",
  "enable": "PKG_USING_BT24S",
  "keywords": [
    "ble",
