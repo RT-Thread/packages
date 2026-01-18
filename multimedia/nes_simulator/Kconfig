@@ -1,0 +1,90 @@
+
+# Kconfig file for package nes
+menuconfig PKG_USING_NES_SIMULATOR
+    bool "The nes simulator implemented in C."
+    default n
+
+if PKG_USING_NES_SIMULATOR
+
+    config PKG_NES_SIMULATOR_PATH
+        string
+        default "/packages/multimedia/nes_simulator"
+
+    choice
+        prompt "PKG_NES_LOG_LEVEL"
+        default PKG_NES_LOG_LEVEL_INFO
+        help
+            Select NES LOG LEVEL
+
+        config PKG_NES_LOG_LEVEL_NONE
+            bool "LOG_LEVEL_NONE"
+
+        config PKG_NES_LOG_LEVEL_ERROR
+            bool "LOG_LEVEL_ERROR"
+
+        config PKG_NES_LOG_LEVEL_WARN
+            bool "LOG_LEVEL_WARN"
+
+        config PKG_NES_LOG_LEVEL_INFO
+            bool "LOG_LEVEL_INFO"
+
+        config PKG_NES_LOG_LEVEL_DEBUG
+            bool "LOG_LEVEL_DEBUG"
+    endchoice
+
+    choice
+        prompt "PKG_NES_COLOR_DEPTH"
+        default PKG_NES_COLOR_DEPTH_32
+        help
+            Select NES COLOR DEPTH, 16:rgb565, 32:rgb8888
+
+        config PKG_NES_COLOR_DEPTH_16
+            bool "COLOR_DEPTH_16"
+
+        config PKG_NES_COLOR_DEPTH_32
+            bool "COLOR_DEPTH_32"
+    endchoice
+
+    if PKG_NES_COLOR_DEPTH_16
+        config PKG_NES_COLOR_SWAP
+            bool "Enable Color Swap"
+            default y
+    endif
+
+    config PKG_NES_ENABLE_SOUND
+        bool "Enable Sound"
+        default n
+        help
+        config nes to enable sound.
+
+    config PKG_NES_USE_FS
+        bool "Enable File System"
+        default y
+        help
+        config nes to use file system to load rom files.
+
+    config PKG_NES_FRAME_SKIP
+        int "Frame Skip"
+        range 0 5
+        default 0
+
+    choice
+        prompt "Version"
+        default PKG_USING_NES_SIMULATOR_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_NES_SIMULATOR_V003
+            bool "v0.0.4"
+
+        config PKG_USING_NES_SIMULATOR_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_NES_SIMULATOR_VER
+       string
+       default "v0.0.4"    if PKG_USING_NES_SIMULATOR_V003
+       default "latest"    if PKG_USING_NES_SIMULATOR_LATEST_VERSION
+
+endif
+
