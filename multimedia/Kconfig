@@ -2,6 +2,7 @@ menu "multimedia packages"
 
 source "$PKGS_DIR/packages/multimedia/LVGL/Kconfig"
 source "$PKGS_DIR/packages/multimedia/u8g2/Kconfig"
+source "$PKGS_DIR/packages/multimedia/nes_simulator/Kconfig"
 source "$PKGS_DIR/packages/multimedia/openmv/Kconfig"
 source "$PKGS_DIR/packages/multimedia/mupdf/Kconfig"
 source "$PKGS_DIR/packages/multimedia/STemWin/Kconfig"
