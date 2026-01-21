@@ -1,0 +1,35 @@
+{
+  "name": "st7305",
+  "description": "ST7305: Control the st7305 chip with SPI bus.",
+  "description_zh": "基于 rt-thread 的 PIN 和 SPI 驱动的 ST7305 LCD 驱动软件包。",
+  "enable": "PKG_USING_ST7305",
+  "keywords": [
+    "st7305",
+    "lcd"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Sunwancn",
+    "email": "bwsheng2000@163.com",
+    "gitee": "Sunwancn"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Sunwancn/rtt-pkgs-st7305",
+  "icon": "unknown",
+  "homepage": "https://github.com/Sunwancn/rtt-pkgs-st7305",
+  "doc": "https://github.com/Sunwancn/rtt-pkgs-st7305/README.md",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/Sunwancn/rtt-pkgs-st7305/archive/refs/tags/v1.0.0.zip",
+      "filename": "rtt-pkgs-st7305-1.0.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Sunwancn/rtt-pkgs-st7305.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
