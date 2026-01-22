@@ -58,6 +58,9 @@ if PKG_USING_NES_SIMULATOR
         config nes to enable sound.
 
     config PKG_NES_USE_FS
+        select RT_USING_DFS      if RT_VER_NUM < 0x40100
+        select RT_USING_LIBC     if RT_VER_NUM < 0x40100
+        select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
         bool "Enable File System"
         default y
         help
