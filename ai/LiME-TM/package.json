@@ -1,0 +1,27 @@
+{
+  "name": "lime-tm",
+  "description": "Lightning fast and Memory Efficient Machine Learning for MCU (Tsetlin Machine)",
+  "description_zh": "嵌入式机器学习库",
+  "enable": "PKG_USING_LIME_TM",
+  "keywords": [
+    "Machine Learning",
+    "Tsetlin Machine"
+  ],
+  "category": "ai",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudio@qq.com",
+    "github": "wuhanstudio"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wuhanstudio/tsetlin.idf",
+  "homepage": "https://github.com/wuhanstudio/tsetlin.idf#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/tsetlin.idf.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

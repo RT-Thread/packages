@@ -1,0 +1,37 @@
+
+# Kconfig file for package ulapack
+menuconfig PKG_USING_LIME_TM
+    select RT_USING_POSIX_FS
+    bool "LiME-TM: Lightning fast and Memory Efficient Machine Learning for MCU (Tsetlin Machine)"
+    default n
+
+if PKG_USING_LIME_TM
+
+    config PKG_LIME_TM_PATH
+        string
+        default "/packages/ai/LiME-TM"
+
+    config LIME_TM_USING_MNIST_EXAMPLE
+        bool "Training and testing MNIST example"
+        help
+           Training a compressed Tsetlin Machine model on the MNIST dataset.
+        default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_LIME_TM_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_LIME_TM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LIME_TM_VER
+       string
+       default "latest"    if PKG_USING_LIME_TM_LATEST_VERSION
+
+    config PKG_LIME_TM_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_LIME_TM_LATEST_VERSION
+
+endif
