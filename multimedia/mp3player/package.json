@@ -13,20 +13,20 @@
     "github": "MrzhangF1ghter"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/MrzhangF1ghter/mp3player",
+  "repository": "https://github.com/RT-Thread-packages/mp3player",
   "icon": "unknown",
-  "homepage": "https://github.com/MrzhangF1ghter/mp3player",
-  "doc": "https://github.com/MrzhangF1ghter/mp3player/blob/master/README.md",
+  "homepage": "https://github.com/RT-Thread-packages/mp3player",
+  "doc": "https://github.com/RT-Thread-packages/mp3player/blob/master/README.md",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/MrzhangF1ghter/mp3player/archive/refs/tags/V1.0.0.zip",
+      "URL": "https://github.com/RT-Thread-packages/mp3player/archive/refs/tags/V1.0.0.zip",
       "filename": "mp3player-1.0.0.zip",
       "VER_SHA": ""
     },
     {
       "version": "latest",
-      "URL": "https://github.com/MrzhangF1ghter/mp3player.git",
+      "URL": "https://github.com/RT-Thread-packages/mp3player.git",
       "filename": "mp3player-latest.zip",
       "VER_SHA": "master"
     }
