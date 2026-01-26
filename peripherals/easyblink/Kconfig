@@ -16,10 +16,12 @@ if PKG_USING_EASYBLINK
         bool "Blink led on console to test"
         default n
 
-    config PKG_EASYBLINK_USING_MUTEX
-        bool "Use mutex to make thread safe"
-        select RT_USING_MUTEX
-        default n
+    if PKG_EASYBLINK_VER_NUM < 0x20100
+        config PKG_EASYBLINK_USING_MUTEX
+            bool "Use mutex to make thread safe"
+            select RT_USING_MUTEX
+            default n
+    endif
 
     if RT_USING_HEAP
         config PKG_EASYBLINK_USING_HEAP
@@ -33,9 +35,12 @@ if PKG_USING_EASYBLINK
 
     choice
         prompt "Version"
-        default PKG_USING_EASYBLINK_V201
+        default PKG_USING_EASYBLINK_V210
         help
             Select the package version
+
+        config PKG_USING_EASYBLINK_V210
+            bool "v2.1.0"
 
         config PKG_USING_EASYBLINK_V201
             bool "v2.0.1"
@@ -52,9 +57,18 @@ if PKG_USING_EASYBLINK
 
     config PKG_EASYBLINK_VER
         string
+        default "v2.1.0" if PKG_USING_EASYBLINK_V210
         default "v2.0.1" if PKG_USING_EASYBLINK_V201
         default "v2.0.0" if PKG_USING_EASYBLINK_V200
         default "v1.0.0" if PKG_USING_EASYBLINK_V100
         default "latest" if PKG_USING_EASYBLINK_LATEST_VERSION
+
+    config PKG_EASYBLINK_VER_NUM
+        hex
+        default 0x99999    if PKG_USING_EASYBLINK_LATEST_VERSION
+        default 0x10000    if PKG_USING_EASYBLINK_V100
+        default 0x20000    if PKG_USING_EASYBLINK_V200
+        default 0x20001    if PKG_USING_EASYBLINK_V201
+        default 0x20100    if PKG_USING_EASYBLINK_V210
 
 endif

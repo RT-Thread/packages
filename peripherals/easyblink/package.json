@@ -1,7 +1,7 @@
 {
   "name": "easyblink",
-  "description": "Blink the LED easily and use a little RAM for RT-Thread or RT-Thread Nano.",
-  "description_zh": "小巧轻便的 LED 控制软件包，可以容易地控制 LED 开、关、反转和各种间隔闪烁，占用 RAM 少，支持 RT-Thread 标准版和 Nano 版。",
+  "description": "Blink the LED easily and use a little RAM for RT-Thread.",
+  "description_zh": "小巧轻便的 LED 控制软件包，可以容易地控制 LED 开、关、反转和各种间隔闪烁，占用 RAM 少。",
   "enable": "PKG_USING_EASYBLINK",
   "keywords": [
     "easyblink",
@@ -21,12 +21,6 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://github.com/Sunwancn/rtt-pkgs-easyblink/archive/v1.0.0.zip",
-      "filename": "rtt-pkgs-easyblink-1.0.0.zip",
-      "VER_SHA": "NULL"
-    },
-    {
       "version": "v2.0.0",
       "URL": "https://github.com/Sunwancn/rtt-pkgs-easyblink/archive/v2.0.0.zip",
       "filename": "rtt-pkgs-easyblink-2.0.0.zip",
@@ -36,6 +30,12 @@
       "version": "v2.0.1",
       "URL": "https://github.com/Sunwancn/rtt-pkgs-easyblink/archive/v2.0.1.zip",
       "filename": "rtt-pkgs-easyblink-2.0.1.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v2.1.0",
+      "URL": "https://github.com/Sunwancn/rtt-pkgs-easyblink/archive/refs/tags/v2.1.0.zip",
+      "filename": "rtt-pkgs-easyblink-2.1.0.zip",
       "VER_SHA": "NULL"
     },
     {
