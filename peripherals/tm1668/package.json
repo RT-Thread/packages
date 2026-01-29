@@ -1,0 +1,27 @@
+{
+  "name": "tm1668",
+  "description": "tm1668 driver based on 3 PIN",
+  "description_zh": "使用3个PIN脚 完成时序 驱动tm1668芯片",
+  "enable": "PKG_USING_TM1668",
+  "keywords": [
+    "tm1668",
+    "lcd"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "龚金华",
+    "email": "782730309@qq.com",
+    "github": "GKoSon"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/GKoSon/tm1668",
+  "homepage": "https://github.com/GKoSon/tm1668#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/GKoSon/tm1668.git",
+      "filename": "tm1668.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
