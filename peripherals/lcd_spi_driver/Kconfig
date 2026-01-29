@@ -1,0 +1,151 @@
+
+# Kconfig file for package lcd_spi_driver
+menuconfig PKG_USING_LCD_SPI_DRIVER
+    bool "The lcd spi driver "
+    default n
+
+if PKG_USING_LCD_SPI_DRIVER
+
+    config PKG_LCD_SPI_DRIVER_PATH
+        string
+        default "/packages/peripherals/lcd_spi_driver"
+
+    choice
+        prompt "Select LCD driver"
+        default PKG_LCD_SPI_USING_LCD_ST7789V2
+        config PKG_LCD_SPI_USING_LCD_ST7789V2
+            bool "ST7789V2"
+        config PKG_LCD_SPI_USING_LCD_ST7735S
+            bool "ST7735S"
+        config PKG_LCD_SPI_USING_LCD_ST7796S
+            bool "ST7796S"
+        config PKG_LCD_SPI_USING_LCD_ILI9341
+            bool "ILI9341"
+        config PKG_LCD_SPI_USING_LCD_ILI9486
+            bool "ILI9486"
+        config PKG_LCD_SPI_USING_LCD_GC9A01
+            bool "GC9A01"
+        config PKG_LCD_SPI_USING_LCD_NV3030B
+            bool "NV3030B"
+    endchoice
+
+    menu "LCD Configuration"
+
+        choice
+            prompt "LCD Orientation"
+            default PKG_LCD_SPI_DIRECTION_0
+            config PKG_LCD_SPI_DIRECTION_0
+                bool "0 Degree"
+            config PKG_LCD_SPI_DIRECTION_90
+                bool "90 Degree"
+            config PKG_LCD_SPI_DIRECTION_180
+                bool "180 Degree"
+            config PKG_LCD_SPI_DIRECTION_270
+                bool "270 Degree"
+        endchoice
+
+        config PKG_LCD_SPI_PIXEL_WIDTH
+            int "LCD Pixel Width"
+            range 0 1024
+            default 0
+
+        config PKG_LCD_SPI_PIXEL_HEIGHT
+            int "LCD Pixel Height"
+            range 0 1024
+            default 0
+
+        config PKG_LCD_SPI_X_OFFSET
+            int "LCD Pixel X Offset"
+            range -128 128
+            default 0
+
+        config PKG_LCD_SPI_Y_OFFSET
+            int "LCD Pixel Y Offset"
+            range -128 128
+            default 0
+
+        config PKG_LCD_SPI_FRAME_BUFF
+            bool "LCD Use Frame Buff"
+            default n
+
+        config PKG_LCD_SPI_SWAP_ENDIAN
+            bool "LCD Swap Data Endian"
+            default n
+            
+        config PKG_LCD_SPI_COLOR_BGR
+            bool "LCD Use BGR Color Format"
+            default n
+
+        config PKG_LCD_SPI_DISPLAY_INVERSION
+            bool "LCD Enable Display Inversion"
+            default n
+
+    endmenu
+
+    config PKG_LCD_SPI_BUS_NAME
+        string "LCD SPI Bus Name"
+        default "spi0"
+
+    config PKG_LCD_SPI_DEVICE_NAME
+        string "LCD SPI Device Name"
+        default "spi00"
+
+    config PKG_LCD_SPI_FREQ
+        int "SPI Frequency"
+        range 0 100000000
+        default 25000000
+
+    config PKG_LCD_SPI_CS_PIN
+        int "CS Pin"
+        range -1 255
+        default -1
+
+    config PKG_LCD_SPI_DC_PIN
+        int "DC Pin"
+        range -1 255
+        default -1
+
+    config PKG_LCD_SPI_RES_PIN
+        int "RES Pin"
+        range -1 255
+        default -1
+
+    choice
+        prompt "LCD Backlight Control Method"
+        default PKG_LCD_SPI_BLK_PIN
+        config PKG_LCD_SPI_BLK_PIN
+            bool "Control Backlight via GPIO Pin"
+        config PKG_LCD_SPI_BLK_PWM
+            bool "Control Backlight via PWM"
+    endchoice
+
+    if PKG_LCD_SPI_BLK_PIN
+        config PKG_LCD_SPI_BLK_PIN_NUM
+            int "Backlight Control Pin Number"
+            range -1 255
+            default -1
+    endif
+
+    if PKG_LCD_SPI_BLK_PWM
+        config PKG_LCD_SPI_BLK_PWM_NUM
+            int "Backlight Control PWM Number"
+            range -1 255
+            default -1
+    endif
+
+    choice
+        prompt "Version"
+        default PKG_USING_LCD_SPI_DRIVER_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LCD_SPI_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LCD_SPI_DRIVER_VER
+       string
+       default "latest"    if PKG_USING_LCD_SPI_DRIVER_LATEST_VERSION
+
+endif
+
