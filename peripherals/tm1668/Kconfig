@@ -1,0 +1,51 @@
+
+# Kconfig file for package TM1668
+menuconfig PKG_USING_TM1668
+    bool "tm1668: led driver package based on 3 pin"
+    default n
+    help
+        Select this option to use the TM1668 LED driver package.
+
+if PKG_USING_TM1668
+    config PKG_TM1668_PATH
+        string
+        default "/packages/peripherals/tm1668"
+
+    choice
+        prompt "Version"
+        default PKG_USING_TM1668_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TM1668_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_TM1668_VER
+       string
+       default "latest" if PKG_USING_TM1668_LATEST_VERSION
+       
+    config TM1668_STB_PIN_NAME
+        string "TM1668 STB pin name"
+        default "PB.12"
+        help
+            Pin name for TM1668 STB (NianDong Board PB.12).
+
+    config TM1668_CLK_PIN_NAME
+        string "TM1668 CLK pin name"
+        default "PE.12"
+        help
+            Pin name for TM1668 CLK (NianDong Board PE.12).
+
+    config TM1668_DIO_PIN_NAME
+        string "TM1668 DIO pin name"
+        default "PB.10"
+        help
+            Pin name for TM1668 DIO (NianDong Board PB.10).
+
+    config USING_TM1668_DEMO
+        bool "Enable TM1668 Demo (example folder)"
+        default n
+        help
+            Enable this option to compile the example code in the "example" folder. 
+endif
