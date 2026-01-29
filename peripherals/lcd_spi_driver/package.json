@@ -1,0 +1,30 @@
+{
+  "name": "lcd_spi_driver",
+  "description": "The lcd spi driver ",
+  "description_zh": "lcd spi驱动",
+  "enable": "PKG_USING_LCD_SPI_DRIVER",
+  "keywords": [
+    "lcd",
+    "spi",
+    "driver"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "PeakRacing",
+    "email": "1473454180@qq.com",
+    "github": "PeakRacing"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/PeakRacing/lcd_spi_driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/PeakRacing/lcd_spi_driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/PeakRacing/lcd_spi_driver.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
