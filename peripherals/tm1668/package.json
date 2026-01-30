@@ -1,7 +1,7 @@
 {
   "name": "tm1668",
   "description": "tm1668 driver based on 3 PIN",
-  "description_zh": "使用3个PIN脚 完成时序 驱动tm1668芯片",
+  "description_zh": "使用3个PIN脚 完成特定时序从而驱动tm1668芯片",
   "enable": "PKG_USING_TM1668",
   "keywords": [
     "tm1668",
