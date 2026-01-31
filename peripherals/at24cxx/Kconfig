@@ -10,6 +10,76 @@ if PKG_USING_AT24CXX
         string
         default "/packages/peripherals/at24cxx"
 
+    config PKG_AT24CXX_FINSH
+        bool "Enable finsh test"
+        default n
+
+    menu "Select the Type of AT24CXX EEPROM"
+        depends on PKG_USING_AT24CXX
+
+        choice
+            prompt "EEPROM Type Selection"
+            default PKG_AT24CXX_EE_TYPE_AT24C02
+            help
+                Select the specific type of AT24CXX EEPROM.
+
+            config PKG_AT24CXX_EE_TYPE_AT24C01
+                bool "AT24C01 (1Kbit)"
+                default n
+
+            config PKG_AT24CXX_EE_TYPE_AT24C02
+                bool "AT24C02 (2Kbit)"
+                default y
+
+            config PKG_AT24CXX_EE_TYPE_AT24C04
+                bool "AT24C04 (4Kbit)"
+                default n
+
+            config PKG_AT24CXX_EE_TYPE_AT24C08
+                bool "AT24C08 (8Kbit)"
+                default n
+
+            config PKG_AT24CXX_EE_TYPE_AT24C16
+                bool "AT24C16 (16Kbit)"
+                default n
+
+            config PKG_AT24CXX_EE_TYPE_AT24C032
+                bool "AT24C32 (32Kbit)"
+                default n
+
+            config PKG_AT24CXX_EE_TYPE_AT24C64
+                bool "AT24C64 (64Kbit)"
+                default n
+
+            config PKG_AT24CXX_EE_TYPE_AT24C128
+                bool "AT24C128 (128Kbit)"
+                default n
+
+            config PKG_AT24CXX_EE_TYPE_AT24C256
+                bool "AT24C256 (256Kbit)"
+                default n
+
+            config PKG_AT24CXX_EE_TYPE_AT24C512
+                bool "AT24C512 (512Kbit)"
+                default n
+
+        endchoice
+
+        config PKG_AT24CXX_EE_TYPE
+            int
+            default 0 if PKG_AT24CXX_EE_TYPE_AT24C01
+            default 1 if PKG_AT24CXX_EE_TYPE_AT24C02
+            default 2 if PKG_AT24CXX_EE_TYPE_AT24C04
+            default 3 if PKG_AT24CXX_EE_TYPE_AT24C08
+            default 4 if PKG_AT24CXX_EE_TYPE_AT24C16
+            default 5 if PKG_AT24CXX_EE_TYPE_AT24C32
+            default 6 if PKG_AT24CXX_EE_TYPE_AT24C64
+            default 7 if PKG_AT24CXX_EE_TYPE_AT24C128
+            default 8 if PKG_AT24CXX_EE_TYPE_AT24C256
+            default 9 if PKG_AT24CXX_EE_TYPE_AT24C512
+
+    endmenu
+
     choice
         prompt "Version"
         default PKG_USING_AT24CXX_LATEST_VERSION
