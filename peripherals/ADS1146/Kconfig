@@ -1,0 +1,31 @@
+
+# Kconfig file for package ADS1146
+menuconfig PKG_USING_ADS1146
+    bool "Please add description of ADS1146 in English."
+    default n
+
+if PKG_USING_ADS1146
+
+    config PKG_ADS1146_PATH
+        string
+        default "/packages/peripherals/ADS1146"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_ADS1146_V25924
+            bool "v25.9.24"
+
+        config PKG_USING_ADS1146_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ADS1146_VER
+       string
+       default "v25.9.24"    if PKG_USING_ADS1146_V25924
+       default "latest"    if PKG_USING_ADS1146_LATEST_VERSION
+
+endif
+
