@@ -70,6 +70,52 @@ if PKG_USING_LITTLEFS
         int "disk block size"
         default 4096
 
+    config LFS_YES_TRACE
+        bool "Enable LittleFS trace logs"
+        default n
+        help
+            Enable verbose trace logging from LittleFS. This is very noisy
+            and may impact performance.
+
+    config LFS_NO_DEBUG
+        bool "Disable LittleFS debug logs"
+        default y
+        help
+            Disable debug-level logging from LittleFS.
+
+    config LFS_NO_WARN
+        bool "Disable LittleFS warning logs"
+        default n
+        help
+            Disable warning-level logging from LittleFS.
+
+    config LFS_NO_ERROR
+        bool "Disable LittleFS error logs"
+        default n
+        help
+            Disable error-level logging from LittleFS.
+
+    config LFS_NO_ASSERT
+        bool "Disable LittleFS runtime asserts"
+        default n
+        help
+            Disable runtime assertions inside LittleFS. This reduces safety
+            checks and is not recommended for debug builds.
+
+    config LFS_NO_INTRINSICS
+        bool "Disable LittleFS compiler intrinsics"
+        default n
+        help
+            Use generic C implementations instead of compiler intrinsics.
+            Useful for debugging or toolchains without builtin support.
+
+    config LFS_NO_MALLOC
+        bool "Disable LittleFS dynamic allocation"
+        default n
+        help
+            Disallow dynamic allocation inside LittleFS. When enabled,
+            operations that require allocation may fail with LFS_ERR_NOMEM.
+
     if PKG_USING_LITTLEFS_V090 || PKG_USING_LITTLEFS_V170 || PKG_USING_LITTLEFS_V172
         config LFS_LOOKAHEAD
             int "lfs lookahead size"
