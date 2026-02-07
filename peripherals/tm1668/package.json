@@ -1,3 +1,6 @@
+[peripherals/tm1668] add new package for TM1668 LED driver
+
+
 {
   "name": "tm1668",
   "description": "tm1668 driver based on 3 PIN",
@@ -17,6 +20,11 @@
   "repository": "https://github.com/GKoSon/tm1668",
   "homepage": "https://github.com/GKoSon/tm1668#readme",
   "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/GKoSon/tm1668/archive/refs/tags/v1.0.0.zip",
+      "filename": "tm1668-1.0.0.zip"
+    },
     {
       "version": "latest",
       "URL": "https://github.com/GKoSon/tm1668.git",
