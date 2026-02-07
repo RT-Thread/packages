@@ -1,6 +1,3 @@
-[peripherals/tm1668] add new package for TM1668 LED driver
-
-
 {
   "name": "tm1668",
   "description": "tm1668 driver based on 3 PIN",
