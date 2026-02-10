@@ -11,11 +11,37 @@ if PKG_USING_LIME_TM
         string
         default "/packages/ai/LiME-TM"
 
-    config LIME_TM_USING_MNIST_EXAMPLE
-        bool "Training and testing MNIST example"
+    choice
+        prompt "Choose exmaple"
+
+        config LIME_TM_USING_MNIST_FS_EXAMPLE
+            bool "Training and testing MNIST example (File System)"
+            select TSETLIN_USING_PROTOBUF
+            help
+               Training a compressed Tsetlin Machine model on the MNIST dataset.
+            default n
+
+        config LIME_TM_USING_MNIST_STATIC_EXAMPLE
+            bool "Training and testing MNIST example (Static Model)"
+            select TSETLIN_USING_STATIC_MODEL
+            help
+               Training a compressed Tsetlin Machine model on the MNIST dataset.
+            default y
+    endchoice
+
+    config TSETLIN_USING_PROTOBUF
+        bool "Load model from protobuf file"
         help
-           Training a compressed Tsetlin Machine model on the MNIST dataset.
-        default n
+           Using proto-c to save the model as a protobuf file.
+        depends on LIME_TM_USING_MNIST_FS_EXAMPLE
+        default y
+
+    config TSETLIN_USING_STATIC_MODEL
+        bool "Load model from static headers"
+        help
+           Using the tsetlin compiler to save the model as a static C header file.
+        depends on LIME_TM_USING_MNIST_STATIC_EXAMPLE
+        default y
 
     choice
         prompt "Version"
