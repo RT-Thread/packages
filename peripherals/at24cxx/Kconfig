@@ -25,43 +25,33 @@ if PKG_USING_AT24CXX
 
             config PKG_AT24CXX_EE_TYPE_AT24C01
                 bool "AT24C01 (1Kbit)"
-                default n
 
             config PKG_AT24CXX_EE_TYPE_AT24C02
                 bool "AT24C02 (2Kbit)"
-                default y
 
             config PKG_AT24CXX_EE_TYPE_AT24C04
                 bool "AT24C04 (4Kbit)"
-                default n
 
             config PKG_AT24CXX_EE_TYPE_AT24C08
                 bool "AT24C08 (8Kbit)"
-                default n
 
             config PKG_AT24CXX_EE_TYPE_AT24C16
                 bool "AT24C16 (16Kbit)"
-                default n
 
             config PKG_AT24CXX_EE_TYPE_AT24C032
                 bool "AT24C32 (32Kbit)"
-                default n
 
             config PKG_AT24CXX_EE_TYPE_AT24C64
                 bool "AT24C64 (64Kbit)"
-                default n
 
             config PKG_AT24CXX_EE_TYPE_AT24C128
                 bool "AT24C128 (128Kbit)"
-                default n
 
             config PKG_AT24CXX_EE_TYPE_AT24C256
                 bool "AT24C256 (256Kbit)"
-                default n
 
             config PKG_AT24CXX_EE_TYPE_AT24C512
                 bool "AT24C512 (512Kbit)"
-                default n
 
         endchoice
 
