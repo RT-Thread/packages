@@ -1,7 +1,7 @@
 
 # Kconfig file for package lcd_spi_driver
 menuconfig PKG_USING_LCD_SPI_DRIVER
-    bool "The lcd spi driver "
+    bool "The lcd spi driver"
     default n
 
 if PKG_USING_LCD_SPI_DRIVER
