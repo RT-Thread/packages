@@ -1,6 +1,6 @@
 {
-  "name": "nes",
-  "description": "nes simulator c Library.",
+  "name": "nes_infones",
+  "description": "infones simulator c Library.",
   "description_zh": "nes模拟器c库。",
   "enable": "PKG_USING_NES",
   "keywords": [
@@ -13,19 +13,19 @@
     "github": "Ghazigq"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/Ghazigq/nes",
+  "repository": "https://github.com/Ghazigq/nes_infones",
   "icon": "unknown",
-  "homepage": "https://github.com/Ghazigq/nes#README",
+  "homepage": "https://github.com/Ghazigq/nes_infones#README",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/Ghazigq/nes/archive/v1.0.0.zip",
+      "URL": "https://github.com/Ghazigq/nes_infones/archive/v1.0.0.zip",
       "filename": "nes-v1.0.0.zip"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/Ghazigq/nes.git",
+      "URL": "https://github.com/Ghazigq/nes_infones.git",
       "filename": "nes.zip",
       "VER_SHA": "master"
     }
