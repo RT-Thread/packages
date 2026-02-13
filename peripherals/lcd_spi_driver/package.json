@@ -1,6 +1,6 @@
 {
   "name": "lcd_spi_driver",
-  "description": "The lcd spi driver ",
+  "description": "The lcd spi driver.",
   "description_zh": "lcd spi驱动",
   "enable": "PKG_USING_LCD_SPI_DRIVER",
   "keywords": [
