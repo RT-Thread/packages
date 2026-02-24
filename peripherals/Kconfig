@@ -90,6 +90,7 @@ source "$PKGS_DIR/packages/peripherals/rtt_isotp-c/Kconfig"
 source "$PKGS_DIR/packages/peripherals/ikunLed/Kconfig"
 source "$PKGS_DIR/packages/peripherals/ins5t8025/Kconfig"
 source "$PKGS_DIR/packages/peripherals/st7305/Kconfig"
+source "$PKGS_DIR/packages/peripherals/tm1668/Kconfig"
 
 if RT_VER_NUM > 0x40101
 source "$PKGS_DIR/packages/peripherals/spi-tools/Kconfig"
