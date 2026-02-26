@@ -24,6 +24,7 @@ if PKG_USING_LIME_TM
         config LIME_TM_USING_MNIST_STATIC_EXAMPLE
             bool "Training and testing MNIST example (Static Model)"
             select TSETLIN_USING_STATIC_MODEL
+            select TSETLIN_MODEL_TRAINABLE
             help
                Training a compressed Tsetlin Machine model on the MNIST dataset.
             default y
