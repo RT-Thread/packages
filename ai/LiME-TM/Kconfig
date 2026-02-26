@@ -37,6 +37,12 @@ if PKG_USING_LIME_TM
         depends on LIME_TM_USING_MNIST_FS_EXAMPLE
         default y
 
+    config TSETLIN_MODEL_TRAINABLE
+        bool "Enable model training"
+        help
+              Enabling this option allows the model to be trained on-device.
+        default y
+
     config TSETLIN_USING_STATIC_MODEL
         bool "Load model from static headers"
         help
