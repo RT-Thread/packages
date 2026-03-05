@@ -139,6 +139,42 @@ if PKG_USING_CAN_UDS
             endif
 
             # =================================================================
+            # Service 0x2A
+            # =================================================================
+            config UDS_ENABLE_0X2A_PERIODIC_SVC
+                bool "Enable Service 0x2A periodic adapter (provider-based)"
+                default n
+                help
+                    Enables the RT-Thread adapter in service_0x2A_periodic.c.
+                    This option manages PDID subscriptions and periodic data providers
+                    outside iso14229 core.
+
+            if UDS_ENABLE_0X2A_PERIODIC_SVC
+                config UDS_SERVER_0X2A_SLOW_PERIOD_MS
+                    int "0x2A slow rate period (ms)"
+                    default 1000
+                    range 1 60000
+
+                config UDS_SERVER_0X2A_MEDIUM_PERIOD_MS
+                    int "0x2A medium rate period (ms)"
+                    default 200
+                    range 1 60000
+
+                config UDS_SERVER_0X2A_FAST_PERIOD_MS
+                    int "0x2A fast rate period (ms)"
+                    default 50
+                    range 1 60000
+
+                config UDS_0X2A_MAX_ACTIVE_PDID
+                    int "0x2A max active PDID subscriptions"
+                    default 8
+                    range 1 64
+                    help
+                        Maximum number of periodicDataIdentifier values that can be
+                        scheduled concurrently in the business-layer adapter.
+            endif
+
+            # =================================================================
             # Service 0x22/0x2E
             # =================================================================
             config UDS_ENABLE_PARAM_SVC
@@ -247,12 +283,47 @@ if PKG_USING_CAN_UDS
         bool "Enable UDS server example application"
         default n
         help
-            This option compiles the 'examples' directory (rtt_uds_example.c).
-            It provides 'uds_example start' and 'uds_example stop' MSH commands
-            to demonstrate a functional UDS server with CAN binding.
+            This option enables building UDS example source files according to
+            per-example switches in the "Example Configuration" menu.
+            The base example provides 'uds_example start' and 'uds_example stop'
+            MSH commands to demonstrate a functional UDS server with CAN binding.
 
     if UDS_USING_EXAMPLE
         menu "Example Configuration"
+            choice UDS_EXAMPLE_START_MODE
+                prompt "UDS example startup mode"
+                default UDS_EXAMPLE_START_MODE_CONSOLE
+                help
+                    Choose how the UDS example is started: either manually via an MSH
+                    command, automatically during application initialization, or
+                    left for manual invocation from user code.
+
+                config UDS_EXAMPLE_START_MODE_CONSOLE
+                    bool "Start via console command"
+                    help
+                        Keep the original 'uds_example start|stop <dev>' MSH command workflow.
+
+                config UDS_EXAMPLE_START_MODE_APP_INIT
+                    bool "Auto start in app_init"
+                    help
+                        Start the example automatically during the application init phase,
+                        without requiring a console command.
+
+                config UDS_EXAMPLE_START_MODE_USER_CALL
+                    bool "No auto/console start (user calls start function manually)"
+                    help
+                        Do not register an MSH command or auto-start. User code is expected to
+                        call uds_example_start/stop directly.
+            endchoice
+
+            config UDS_EXAMPLE_AUTO_CAN_DEV
+                string "CAN device name for auto start"
+                default "can1"
+                depends on UDS_EXAMPLE_START_MODE_APP_INIT
+                help
+                    The CAN device name used when auto-starting from app_init.
+                    Ignored when console command mode is selected.
+
             config UDS_EXAMPLE_LED_CTRL_DID
                 hex "DID for LED control (0x2F)"
                 default 0x0100
@@ -272,6 +343,37 @@ if PKG_USING_CAN_UDS
             config UDS_EXAMPLE_PIN_LED_B
                 int "GPIO Pin for Blue LED"
                 default -1
+
+            config UDS_EXAMPLE_0X2A_ULOG
+                bool "Build 0x2A ULOG streaming example"
+                default y
+                depends on UDS_ENABLE_0X2A_PERIODIC_SVC && RT_USING_ULOG
+                help
+                    Build examples/rtt_uds_0x2a_ulog_example.c.
+                    This example bridges RT-Thread ULOG output into service 0x2A
+                    periodic payload stream.
+
+            if UDS_EXAMPLE_0X2A_ULOG
+                config UDS_0X2A_ULOG_EXAMPLE_PDID
+                    hex "0x2A ULOG example PDID"
+                    default 0xA1
+                    help
+                        periodicDataIdentifier used by the ULOG streaming example.
+
+                config UDS_0X2A_ULOG_EXAMPLE_RINGBUF_SIZE
+                    int "0x2A ULOG example ringbuffer size (bytes)"
+                    default 1024
+                    range 64 65535
+                    help
+                        Byte capacity of the RT-Thread ringbuffer used for cached
+                        ULOG stream payload in the 0x2A example.
+
+                config UDS_0X2A_ULOG_EXAMPLE_IGNORE_TAG
+                    string "0x2A ULOG example ignore tag"
+                    default "uds.console"
+                    help
+                        A single ULOG tag ignored by the 0x2A example filter.
+            endif
         endmenu
     endif
 
