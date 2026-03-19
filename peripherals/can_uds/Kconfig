@@ -379,7 +379,7 @@ if PKG_USING_CAN_UDS
 
     config PKG_USING_ISO14229
         bool
-        default "true"
+        default y
 
     config PKG_CAN_UDS_PATH
         string
