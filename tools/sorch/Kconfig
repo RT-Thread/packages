@@ -1,0 +1,26 @@
+# Kconfig file for package sorch
+menuconfig PKG_USING_SORCH
+    bool "sorch: a set of generalized algorithms, including Merge Sort and Binary Search"
+    default n
+
+if PKG_USING_SORCH
+    config PKG_SORCH_PATH
+        string
+        default "/packages/tools/sorch"
+
+    choice
+        prompt "Version"
+        default PKG_USING_SORCH_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_SORCH_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    config PKG_SORCH_VER
+       string
+       default "latest"    if PKG_USING_SORCH_LATEST_VERSION
+
+endif
