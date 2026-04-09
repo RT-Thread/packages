@@ -4,7 +4,10 @@ menuconfig PKG_USING_THREAD_MANAGER
     bool "Thread manager (task registry, message dispatch, manager thread)"
     default n
     select PKG_USING_EVENT_LOOP
-    select RT_USING_MESSAGEQUEUE
+    select RT_USING_SEMAPHORE
+    select RT_USING_MUTEX
+    select RT_USING_EVENT
+    select RT_USING_MAILBOX
     help
       Core threading framework for RT-Thread: thread_msg_registry, TASK_ID
       lookup, manager thread / thread_spawn_all_registered, and related APIs.
