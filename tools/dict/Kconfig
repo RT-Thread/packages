@@ -1,0 +1,52 @@
+# Kconfig for package dict
+menuconfig PKG_USING_DICT
+    bool "dict: a general-purpose dictionary module"
+    default n
+
+if PKG_USING_DICT
+    config PKG_DICT_PATH
+        string
+        default "/packages/tools/dict"
+
+    config DICT_DEFAULT_CAPACITY
+    int "Default initial capacity"
+    default 32
+    range 8 65536
+    help
+        Set the default bucket array capacity when creating a dictionary
+        without specifying a configuration. Recommended values: 16/32/64.
+        Higher values reduce resize operations but consume more memory.
+
+
+    config DICT_LOAD_FACTOR
+    int "Load factor (x100)"
+    default 75
+    range 50 95
+    help
+        Set the resize threshold as a percentage of capacity.
+        When element count >= capacity * (load_factor/100), the dictionary
+        automatically expands to prevent excessive hash collisions.
+
+        Common values:
+        - 50: Lower memory usage, more resize operations
+        - 75: Balanced (default)
+        - 90: Higher memory usage, fewer resize operations
+
+    choice
+        prompt "Version"
+        default PKG_USING_DICT_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_DICT_LATEST_VERSION
+            bool "latest"
+
+    endchoice
+
+    config PKG_DICT_VER
+       string
+       default "latest"    if PKG_USING_DICT_LATEST_VERSION
+
+endif
+
+

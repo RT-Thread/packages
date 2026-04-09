@@ -1,0 +1,28 @@
+{
+  "name": "dict",
+  "description": "dict is a general-purpose dictionary module",
+  "description_zh": "dict 是一个为 RT-Thread 设计的通用字典模块，支持任意数据类型的键值对存取",
+  "enable": "PKG_USING_DICT",
+  "keywords": [
+    "dict", "dictionary", "key-value pairs"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "zhangguofu",
+    "email": "cleancode@163.com",
+    "github": "Gary.Zhang"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/zhangguofu/dict",
+  "icon": "unknown",
+  "homepage": "https://github.com/zhangguofu/dict#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/zhangguofu/dict.git",
+      "filename": "dict.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
