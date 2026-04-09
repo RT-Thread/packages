@@ -1,0 +1,33 @@
+
+# Kconfig file for package thread manager
+menuconfig PKG_USING_THREAD_MANAGER
+    bool "Thread manager (task registry, message dispatch, manager thread)"
+    default n
+    select PKG_USING_EVENT_LOOP
+    select RT_USING_MESSAGEQUEUE
+    help
+      Core threading framework for RT-Thread: thread_msg_registry, TASK_ID
+      lookup, manager thread / thread_spawn_all_registered, and related APIs.
+      Thread IDs, stack sizes and priorities are defined in inc/thread_config.h
+      (edit that file for your application).
+      Delayed events (thread_evt_send_delayed_*) use packages/event_loop.
+
+if PKG_USING_THREAD_MANAGER
+
+config THREAD_SYSTEM_READY
+    bool "Publish system-ready event after startup sync"
+    default y
+    help
+      After all registered tasks complete thread_mgr_sys_start_sync_end,
+      the manager publishes a global rt_event bit. Tasks call
+      thread_sysready_wait() to block until the system is fully up.
+      The event bit is never cleared so late callers return immediately.
+
+config THREAD_MANAGER_USING_SAMPLES
+    bool "Build samples (thread_test / thread_test1 / thread_test2)"
+    default y
+    help
+      Compiles packages/thread_manager/samples/*.c (demo threads and
+      cross-subscription demo between sample threads). Disable to save Flash.
+
+endif # PKG_USING_THREAD_MANAGER
