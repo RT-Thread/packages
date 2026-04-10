@@ -18,7 +18,7 @@ if PKG_USING_DICT
         Higher values reduce resize operations but consume more memory.
 
 
-    config DICT_LOAD_FACTOR
+    config DICT_LOAD_FACTOR_X100
     int "Load factor (x100)"
     default 75
     range 50 95
