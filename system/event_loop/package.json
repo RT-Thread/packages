@@ -5,7 +5,7 @@
   "enable": "PKG_USING_EVENT_LOOP",
   "keywords": [
     "event",
-    "loop",
+    "loop"
   ],
   "category": "system",
   "author": {
@@ -19,11 +19,6 @@
   "homepage": "https://github.com/Bluetooth-BLE/event_loop#readme",
   "doc": "unknown",
   "site": [
-    {
-      "version": "v1.0.0",
-      "URL": "https://event_loop-1.0.0.zip",
-      "filename": "event_loop-1.0.0.zip"
-    },
     {
       "version": "latest",
       "URL": "https://github.com/Bluetooth-BLE/event_loop.git",
