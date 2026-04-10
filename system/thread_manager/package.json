@@ -5,7 +5,7 @@
   "enable": "PKG_USING_THREAD_MANAGER",
   "keywords": [
     "thread",
-    "manager",
+    "manager"
   ],
   "category": "system",
   "author": {
@@ -19,11 +19,6 @@
   "homepage": "https://github.com/Bluetooth-BLE/thread_manager#readme",
   "doc": "unknown",
   "site": [
-    {
-      "version": "v1.0.0",
-      "URL": "https://thread_manager-1.0.0.zip",
-      "filename": "thread_manager-1.0.0.zip"
-    },
     {
       "version": "latest",
       "URL": "https://github.com/Bluetooth-BLE/thread_manager.git",
