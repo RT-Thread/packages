@@ -1,0 +1,70 @@
+
+# Kconfig file for package event_loop
+menuconfig PKG_USING_EVENT_LOOP
+    bool "Event loop (delayed dispatch: mq + soft one-shot timer)"
+    default n
+    select RT_USING_MESSAGEQUEUE
+    select RT_USING_MUTEX
+    select RT_USING_TIMER_SOFT
+    help
+        Delay table processing runs only in the soft-timer callback (system timer thread):
+        RT_TIMER_FLAG_ONE_SHOT | RT_TIMER_FLAG_SOFT_TIMER. No extra el_tmr worker thread.
+        Public API: evt_loop_push_delayed / evt_loop_remove_delayed and
+        macros EVT_LOOP_PUSH, EVT_LOOP_REMOVE, EVT_LOOP_REMOVE_WITH_ARGS.
+
+if PKG_USING_EVENT_LOOP
+
+    config PKG_EVENT_LOOP_PATH
+        string
+        default "/packages/system/event_loop"
+
+    config EVENT_LOOP_MAX_EVENT_CNT
+        int "Maximum delayed slots in table"
+        default 32
+        help
+          Fixed table size for pending delayed events.
+
+    config EVENT_LOOP_MSGQ_DEPTH
+        int "Message queue depth (immediate + due callbacks)"
+        default 15
+        help
+          rt_mq capacity for evt_loop_handle_t messages.
+
+    config EVENT_LOOP_THREAD_STACK_SIZE
+        int "Event loop thread stack size (bytes)"
+        default 3072
+
+    config EVENT_LOOP_THREAD_PRIORITY
+        int "Event loop thread priority (smaller = higher)"
+        default 12
+        range 0 31
+        help
+          Must be strictly greater than RT_TIMER_THREAD_PRIO in rtconfig.h so the
+          soft-timer daemon (lower number) preempts evt_loop. Example: timer prio 4,
+          use 12 here.
+
+    config EVENT_LOOP_USING_SAMPLES
+        bool "Build event_loop sample (event_loop_test.c)"
+        default n
+        help
+          Registers MSH command event_loop_test (when FINSH enabled).
+
+    choice
+        prompt "Version"
+        default PKG_USING_EVENT_LOOP_V100
+        help
+            Select the package version
+
+        config PKG_USING_EVENT_LOOP_V100
+            bool "v1.0.0"
+
+        config PKG_USING_EVENT_LOOP_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_EVENT_LOOP_VER
+       string
+       default "v1.0.0"    if PKG_USING_EVENT_LOOP_V100
+       default "latest"    if PKG_USING_EVENT_LOOP_LATEST_VERSION
+
+endif

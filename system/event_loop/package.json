@@ -1,0 +1,34 @@
+{
+  "name": "event_loop",
+  "description": "RT-Thread event loop: delayed callback dispatch (message queue + soft timer)",
+  "description_zh": "RT-Thread 事件循环：消息队列与软定时器实现延迟回调执行",
+  "enable": "PKG_USING_EVENT_LOOP",
+  "keywords": [
+    "event",
+    "loop",
+  ],
+  "category": "system",
+  "author": {
+    "name": "John.liu",
+    "email": "450547566@qq.com",
+    "github": "https://github.com/Bluetooth-BLE"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Bluetooth-BLE/event_loop",
+  "icon": "unknown",
+  "homepage": "https://github.com/Bluetooth-BLE/event_loop#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://event_loop-1.0.0.zip",
+      "filename": "event_loop-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/Bluetooth-BLE/event_loop.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
