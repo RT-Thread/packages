@@ -11,7 +11,24 @@ menuconfig PKG_USING_MBEDTLS
 
 if PKG_USING_MBEDTLS
 
+    menuconfig PKG_USING_MBEDTLS_CERTS_FROM_FS
+        bool "Load CA certificates from filesystem directory"
+        default n
+        help
+            Enable loading CA certificates from a runtime directory.
+            All regular files in the configured directory will be parsed.
+
+        if PKG_USING_MBEDTLS_CERTS_FROM_FS
+            config PKG_MBEDTLS_CERTS_DIR
+                string "CA certificate directory path"
+                default "/romfs/certs"
+                help
+                    Directory that stores CA certificate files (PEM/DER).
+                    Example: /romfs/certs or /data/certs
+        endif
+
     menu "Select Root Certificate"
+        depends on !PKG_USING_MBEDTLS_CERTS_FROM_FS
 
         config PKG_USING_MBEDTLS_USE_ALL_CERTS
             bool "Using all default CA(Use preset CA certificates. Take up more memory)"
