@@ -13,7 +13,6 @@ if PKG_USING_MBEDTLS
 
     menuconfig PKG_USING_MBEDTLS_CERTS_FROM_FS
         bool "Load CA certificates from filesystem directory"
-        select RT_USING_DFS_ROMFS
         default n
         help
             Enable loading CA certificates from a runtime directory.
