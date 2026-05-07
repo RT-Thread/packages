@@ -77,6 +77,8 @@ if PKG_USING_CHERRYUSB
                 bool "aic"
             config PKG_CHERRYUSB_DEVICE_RP2040
                 bool "rp2040"
+            config PKG_CHERRYUSB_DEVICE_RENESAS
+                bool "renesas"
             config PKG_CHERRYUSB_DEVICE_CH32
                 bool "ch32"
             config PKG_CHERRYUSB_DEVICE_PUSB2
@@ -138,10 +140,25 @@ if PKG_USING_CHERRYUSB
             prompt "Enable usb dfu device"
             default n
 
+        config PKG_CHERRYUSB_DEVICE_DISPLAY
+            bool
+            prompt "Enable usb display device"
+            default n
+
         config PKG_CHERRYUSB_DEVICE_CDC_ACM_CHARDEV
             bool
             prompt "Enable chardev for cdc acm device"
             default n
+
+        config PKG_CHERRYUSB_DEVICE_MSC_BLKDEV
+            bool
+            prompt "Enable blkdev for msc device"
+            default n
+
+        config CONFIG_USBDEV_MSC_BLOCK_DEV_NAME
+            string "usb device msc block device name"
+            depends on PKG_CHERRYUSB_DEVICE_MSC_BLKDEV
+            default "sd0"
 
         config CONFIG_USBDEV_REQUEST_BUFFER_LEN
             int
@@ -183,7 +200,7 @@ if PKG_USING_CHERRYUSB
             config PKG_CHERRYUSB_DEVICE_TEMPLATE_MSC_BLKDEV
                 bool
                 prompt "msc_blkdev"
-                depends on PKG_CHERRYUSB_DEVICE_MSC
+                depends on PKG_CHERRYUSB_DEVICE_MSC && PKG_CHERRYUSB_DEVICE_MSC_BLKDEV
             config PKG_CHERRYUSB_DEVICE_TEMPLATE_HID_KEYBOARD
                 bool
                 prompt "hid_keyboard"
@@ -220,6 +237,10 @@ if PKG_USING_CHERRYUSB
                 bool
                 prompt "cdc_ncm"
                 depends on PKG_CHERRYUSB_DEVICE_CDC_NCM
+            config PKG_CHERRYUSB_DEVICE_TEMPLATE_DFU
+                bool
+                prompt "dfu"
+                depends on PKG_CHERRYUSB_DEVICE_DFU
             config PKG_CHERRYUSB_DEVICE_TEMPLATE_CDC_ACM_MSC
                 bool
                 prompt "cdc_acm_msc"
@@ -242,6 +263,10 @@ if PKG_USING_CHERRYUSB
                 bool
                 prompt "webusb_hid"
                 depends on PKG_CHERRYUSB_DEVICE_HID
+            config PKG_CHERRYUSB_DEVICE_TEMPLATE_DISPLAY
+                bool
+                prompt "display"
+                depends on PKG_CHERRYUSB_DEVICE_DISPLAY
             config PKG_CHERRYUSB_DEVICE_TEMPLATE_ADB
                 bool
                 prompt "adb"
@@ -251,11 +276,6 @@ if PKG_USING_CHERRYUSB
                 prompt "cdc_acm_chardev"
                 depends on PKG_CHERRYUSB_DEVICE_CDC_ACM_CHARDEV
         endchoice
-
-        config CONFIG_USBDEV_MSC_BLOCK_DEV_NAME
-            string "usb device msc block device name"
-            depends on PKG_CHERRYUSB_DEVICE_TEMPLATE_MSC_BLKDEV
-            default "sd0"
 
     endif
 
