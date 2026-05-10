@@ -1,0 +1,6 @@
+menu "NOVOSNS Drivers"
+
+#novosns
+source "$PKGS_DIR/packages/peripherals/hal-sdk/novosns/novosns-series/Kconfig"
+
+endmenu
