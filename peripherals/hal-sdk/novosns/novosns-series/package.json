@@ -8,11 +8,11 @@
   ],
   "category": "peripherals",
   "author": {
-    "name": "RT-Thread-packages",
-    "email": "package_team@rt-thread.com",
-    "github": "RT-Thread-packages"
+    "name": "rcitach",
+    "email": "zhangxianshun@rt-thread.com",
+    "github": "https://github.com/rcitach"
   },
-  "license": "Apache-2.0",
+  "license": "BSD-3-Clause",
   "repository": "https://github.com/RT-Thread-packages/novosns-series",
   "icon": "unknown",
   "homepage": "https://github.com/RT-Thread-packages/novosns-series#readme",
