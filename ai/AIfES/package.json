@@ -1,0 +1,27 @@
+{
+  "name": "AIfES",
+  "description": "AIfES machine learning framework.",
+  "description_zh": "嵌入式机器学习库 (神经网络)",
+  "enable": "PKG_USING_AIFES",
+  "keywords": [
+    "Machine Learning",
+    "Neural Network"
+  ],
+  "category": "ai",
+  "author": {
+    "name": "wuhanstudio",
+    "email": "wuhanstudios@gmail.com",
+    "github": "wuhanstudio"
+  },
+  "license": "AGPL-3.0",
+  "repository": "https://github.com/wuhanstudio/AIfES_for_Arduino",
+  "homepage": "https://github.com/wuhanstudio/AIfES_for_Arduino#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/wuhanstudio/AIfES_for_Arduino.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}
