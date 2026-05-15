@@ -110,6 +110,36 @@ if PKG_USING_MBEDTLS
         int "Maxium fragment length in bytes"
         default 3584
 
+    menu "RSA ALT Configuration"
+        depends on RT_HWCRYPTO_USING_BIGNUM_EXPTMOD
+
+        config MBEDTLS_RSA_ALT_HW_MODEXP_MAX_BITS
+            int "Max modulus bits for hardware expmod"
+            range 256 8192
+            default 3136
+            help
+                Maximum modulus bit-length that RSA ALT sends to hardware
+                modular exponentiation. Typical values:
+                - 3136 for GD32F5 PKCAU
+                - 4096 for hardware that supports RSA-4096
+                This limit applies to modulus N bit-length, not certificate
+                file size.
+
+        config MBEDTLS_RSA_ALT_OVERSIZE_HW_PROBE
+            bool "Probe hardware for oversize modulus"
+            default n
+            help
+                If enabled, RSA ALT will still try hardware expmod when modulus
+                size exceeds MBEDTLS_RSA_ALT_HW_MODEXP_MAX_BITS. Disable for
+                stable production behavior and direct software fallback on
+                oversize requests.
+
+    endmenu
+
+    config MBEDTLS_SSL_PROTO_TLS1_3_SUPPORTS
+        bool "Enable TLS 1.3 support"
+        default n
+
     config PKG_USING_MBEDTLS_EXAMPLE
         bool "Enable a mbedtls client example"
         select PKG_USING_MBEDTLS_CERTUM_TRUSTED_NETWORK_ROOT_CA
