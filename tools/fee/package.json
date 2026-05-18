@@ -1,0 +1,32 @@
+{
+  "name": "fee",
+  "description": "Fixed-block Flash EEPROM emulation component for RT-Thread",
+  "description_zh": "面向 RT-Thread 的固定逻辑块 Flash EEPROM Emulation 软件包",
+  "enable": "PKG_USING_FEE",
+  "keywords": [
+    "flash",
+    "fee",
+    "eeprom emulation",
+    "storage",
+    "rt-thread"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "O-O-BOOK",
+    "email": "127711564+O-O-BOOK@users.noreply.github.com",
+    "github": "O-O-BOOK"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/O-O-BOOK/fee",
+  "icon": "unknown",
+  "homepage": "https://github.com/O-O-BOOK/fee#readme",
+  "doc": "https://github.com/O-O-BOOK/fee/tree/main/docs",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/O-O-BOOK/fee.git",
+      "filename": "Null for git package",
+      "VER_SHA": "main"
+    }
+  ]
+}

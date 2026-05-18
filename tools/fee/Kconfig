@@ -1,0 +1,40 @@
+# Kconfig file for package fee
+menuconfig PKG_USING_FEE
+    bool "fee: fixed-block Flash EEPROM emulation package"
+    default n
+
+if PKG_USING_FEE
+
+    config PKG_FEE_PATH
+        string
+        default "/packages/tools/fee"
+
+    config FEE_MOCK_FLASH_SIZE
+        hex "RAM mock flash size"
+        default 0xA0000
+        help
+            Size of the built-in RAM-backed mock flash used by the default
+            weak flash driver implementation in port/fee_port.c.
+
+    config FEE_USING_SAMPLE
+        bool "Enable samples"
+        default n
+        depends on RT_USING_FINSH
+        help
+            Build the MSH-based smoke and diagnostic sample.
+
+    choice
+        prompt "Version"
+        default PKG_USING_FEE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_FEE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_FEE_VER
+       string
+       default "latest" if PKG_USING_FEE_LATEST_VERSION
+
+endif
