@@ -25,9 +25,12 @@ if PKG_USING_FEE
 
     choice
         prompt "Version"
-        default PKG_USING_FEE_LATEST_VERSION
+        default PKG_USING_FEE_V0_1_0
         help
             Select the package version
+
+        config PKG_USING_FEE_V0_1_0
+            bool "v0.1.0"
 
         config PKG_USING_FEE_LATEST_VERSION
             bool "latest"
@@ -35,6 +38,7 @@ if PKG_USING_FEE
 
     config PKG_FEE_VER
        string
+       default "v0.1.0" if PKG_USING_FEE_V0_1_0
        default "latest" if PKG_USING_FEE_LATEST_VERSION
 
 endif
