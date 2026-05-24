@@ -1,0 +1,38 @@
+{
+  "name": "litetype",
+  "description": "A lightweight cross-platform font engine optimized for embedded systems",
+  "description_zh": "面向嵌入式系统的轻量级跨平台字体引擎",
+  "enable": "PKG_USING_LITETYPE",
+  "keywords": [
+    "font",
+    "bitmap",
+    "vector",
+    "embedded",
+    "rendering"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "Gemsea",
+    "email": "jiaoyuhai@foxmail.com",
+    "github": "Gemsea"
+  },
+  "license": "MIT",
+  "repository": "https://gitee.com/Gemsea/lite-type",
+  "icon": "unknown",
+  "homepage": "https://gitee.com/Gemsea/lite-type#readme",
+  "doc": "unknown",
+  "readme": "A lightweight cross-platform font engine for embedded systems. Supports LBF (bitmap), LVF (vector), and LCF (combined) font formats with zero external dependencies.",
+  "site": [
+    {
+      "version": "v1.0.1",
+      "URL": "https://gitee.com/Gemsea/lite-type/repository/archive/v1.0.1.zip",
+      "filename": "litetype-1.0.1.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/Gemsea/lite-type.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
