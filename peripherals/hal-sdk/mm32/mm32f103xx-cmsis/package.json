@@ -1,0 +1,30 @@
+{
+  "name": "mm32f103xx-cmsis",
+  "description": "MM32F103xx CMSIS package",
+  "description_zh": "MM32F103xx CMSIS 软件包",
+  "enable": "PKG_USING_MM32F103XX_CMSIS",
+  "keywords": [
+    "mm32f103xx-cmsis",
+    "MM32",
+    "CMSIS"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/mm32f103xx-cmsis",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/mm32f103xx-cmsis#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/mm32f103xx-cmsis.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
