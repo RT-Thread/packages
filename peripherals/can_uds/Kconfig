@@ -181,12 +181,38 @@ if PKG_USING_CAN_UDS
                 bool "Enable Service 0x22/0x2E (Read/Write DataByIdentifier)"
                 default n
                 help
-                    Enables parameter management.
+                    Enables parameter management through UDS ReadDataByIdentifier
+                    and WriteDataByIdentifier.
 
             if UDS_ENABLE_PARAM_SVC
+                choice
+                    prompt "0x22/0x2E parameter backend"
+                    default UDS_PARAM_BACKEND_AUTOGEN_PM
+
+                    config UDS_PARAM_BACKEND_AUTOGEN_PM
+                        bool "Use autogen_parameter_manager"
+                        select PKG_USING_AUTOGEN_PARAMETER_MANAGER
+                        select AUTOGEN_PM_ENABLE_ID
+                        help
+                            Use autogen_parameter_manager as the parameter backend.
+                            UDS DID values are mapped to generated external parameter IDs.
+                endchoice
+
                 config UDS_PARAM_RDBI_BUF_SIZE
                     int "RDBI Temp Buffer Size"
-                    default 64
+                    default 8
+                    help
+                        Temporary scalar response buffer size. This scalar-only
+                        example requires at most 4 bytes, but keeps margin for
+                        future extension.
+
+                config UDS_PARAM_SAVE_AFTER_WDBI
+                    bool "Save parameter after WriteDataByIdentifier"
+                    default y
+                    depends on UDS_PARAM_BACKEND_AUTOGEN_PM && AUTOGEN_PM_USING_NVM
+                    help
+                        Call par_save_by_id() after a successful 0x2E scalar write.
+                        When disabled, 0x2E only updates the RAM value.
             endif
 
             # =================================================================

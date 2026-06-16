@@ -1,0 +1,995 @@
+# Kconfig file for package autogen_parameter_manager
+menuconfig PKG_USING_AUTOGEN_PARAMETER_MANAGER
+    bool "autogen_parameter_manager: parameter table management library"
+    default n
+    help
+        RT-Thread package wrapper for autogen_parameter_manager.
+
+if PKG_USING_AUTOGEN_PARAMETER_MANAGER
+
+    menu "autogen_parameter_manager Configuration"
+
+        config AUTOGEN_PM_USING_MUTEX
+            bool "Enable mutex protection"
+            default y
+            select RT_USING_MUTEX
+            help
+                Protect parameter access with an RT-Thread mutex.
+
+        config AUTOGEN_PM_MUTEX_TIMEOUT_MS
+            int "Mutex timeout (ms)"
+            default 10
+            depends on AUTOGEN_PM_USING_MUTEX
+            help
+                Timeout used by the package mutex wrapper.
+
+        config AUTOGEN_PM_USING_DEBUG
+            bool "Enable package logging"
+            default n
+            help
+                Enable package INFO/DEBUG/WARN/ERROR output.
+
+        config AUTOGEN_PM_LOG_LEVEL_PREFIX
+            bool "Prefix package logs with level markers"
+            default y
+            depends on AUTOGEN_PM_USING_DEBUG
+            help
+                Add [INFO], [DEBUG], [WARN], and [ERROR] prefixes in the
+                common PAR_*_PRINT macro layer. Disable this when the selected
+                backend already emits an equivalent level marker.
+
+        config AUTOGEN_PM_USING_ASSERT
+            bool "Enable RT_ASSERT checks"
+            default n
+            help
+                Enable RT_ASSERT based runtime checks in the package.
+
+        config AUTOGEN_PM_ENABLE_RANGE
+            bool "Enable range metadata (min/max)"
+            default y
+            help
+                Keep min/max metadata and runtime clamping checks.
+
+        config AUTOGEN_PM_ENABLE_NAME
+            bool "Enable parameter name metadata"
+            default y
+            help
+                Keep parameter name strings in the table.
+
+        config AUTOGEN_PM_ENABLE_UNIT
+            bool "Enable parameter unit metadata"
+            default y
+            help
+                Keep parameter unit strings in the table.
+
+        config AUTOGEN_PM_ENABLE_DESC
+            bool "Enable parameter description metadata"
+            default y
+            help
+                Keep parameter description strings in the table.
+
+        config AUTOGEN_PM_ENABLE_DESC_CHECK
+            bool "Enable description validation"
+            default y
+            depends on AUTOGEN_PM_ENABLE_DESC
+            help
+                Enable runtime description validity checks.
+
+        config AUTOGEN_PM_ENABLE_ID
+            bool "Enable parameter ID metadata"
+            default y
+            help
+                Keep parameter ID fields and by-id API path.
+
+        config AUTOGEN_PM_ENABLE_RUNTIME_TABLE_CHECK
+            bool "Enable runtime parameter-table diagnostics"
+            default y
+            help
+                Keep startup checks that protect metadata not covered by portable
+                compile-time checks, such as F32 range/default validation.
+
+        config AUTOGEN_PM_ENABLE_RUNTIME_ID_DUP_CHECK
+            bool "Enable runtime duplicate-ID scan logging"
+            default n
+            depends on AUTOGEN_PM_ENABLE_ID
+            help
+                Keep the optional runtime duplicate-ID scan used for diagnostics.
+                Compile-time duplicate-ID checking and static ID-map generation
+                remain enabled by default when parameter IDs are enabled.
+
+        config AUTOGEN_PM_ENABLE_RUNTIME_ID_HASH_COLLISION_CHECK
+            bool "Enable runtime ID hash-collision scan logging"
+            default n
+            depends on AUTOGEN_PM_ENABLE_ID
+            help
+                Keep the optional runtime hash-bucket collision scan used for
+                diagnostics. Compile-time collision checking and static ID-map
+                generation remain enabled by default when parameter IDs are enabled.
+
+        config AUTOGEN_PM_LAYOUT_SOURCE_SCRIPT
+            bool "Use generated static parameter layout"
+            default n
+            help
+                Compile the pargen.py generated static layout tables instead of
+                scanning the parameter table at startup. Regenerate
+                parameters/generated/par_layout_static.* after editing
+                parameters/schema/par_table.csv.
+
+        config AUTOGEN_PM_ENABLE_GENERATED_INFO
+            bool "Compile generated parameter summary metadata"
+            default n
+            help
+                Compile parameters/generated/par_generated_info.c so firmware or
+                debugger integrations can inspect generated table counts, object
+                pool size, and ID hash geometry.
+
+        config AUTOGEN_PM_ENABLE_ACCESS
+            bool "Enable parameter access metadata"
+            default y
+            help
+                Keep read/write capability metadata in the table.
+
+        config AUTOGEN_PM_ENABLE_ROLE_POLICY
+            bool "Enable parameter role policy metadata"
+            default n
+            depends on AUTOGEN_PM_ENABLE_ACCESS
+            help
+                Keep per-parameter read_roles/write_roles metadata and helper APIs.
+                Runtime authorization context remains owned by the integration
+                layer (for example msh/CLI/diagnostic session handling).
+
+        config AUTOGEN_PM_ENABLE_TYPE_F32
+            bool "Enable float32 parameter type (PAR_ITEM_F32)"
+            default y
+            help
+                Keep PAR_ITEM_F32 support. If disabled, remaining PAR_ITEM_F32
+                entries in par_table.def are rejected at compile time in par_def.c.
+
+        config AUTOGEN_PM_ENABLE_TYPE_OBJECT
+            bool "Enable object parameter framework"
+            default y
+            help
+                Enable the shared object framework used by fixed-capacity strings,
+                raw byte arrays, and fixed-size unsigned arrays.
+
+        config AUTOGEN_PM_ENABLE_TYPE_STR
+            bool "Enable fixed-capacity string parameters (PAR_ITEM_STR)"
+            default y
+            depends on AUTOGEN_PM_ENABLE_TYPE_OBJECT
+            help
+                Keep PAR_ITEM_STR support. The bundled par_table.def wraps its
+                sample STR row in this option, so disabling it compiles that
+                sample row out. Production tables that leave unguarded STR rows
+                while this option is disabled still fail in par_def.c.
+
+        config AUTOGEN_PM_ENABLE_TYPE_BYTES
+            bool "Enable raw byte-array parameters (PAR_ITEM_BYTES)"
+            default y
+            depends on AUTOGEN_PM_ENABLE_TYPE_OBJECT
+            help
+                Keep PAR_ITEM_BYTES support. The bundled par_table.def wraps its
+                sample BYTES row in this option, so disabling it compiles that
+                sample row out. Production tables that leave unguarded BYTES
+                rows while this option is disabled still fail in par_def.c.
+
+        config AUTOGEN_PM_ENABLE_TYPE_ARR_U8
+            bool "Enable uint8_t array parameters (PAR_ITEM_ARR_U8)"
+            default y
+            depends on AUTOGEN_PM_ENABLE_TYPE_OBJECT
+            help
+                Keep PAR_ITEM_ARR_U8 support. The bundled par_table.def wraps its
+                sample ARR_U8 row in this option, so disabling it compiles that
+                sample row out. Production tables that leave unguarded ARR_U8
+                rows while this option is disabled still fail in par_def.c.
+
+        config AUTOGEN_PM_ENABLE_TYPE_ARR_U16
+            bool "Enable uint16_t array parameters (PAR_ITEM_ARR_U16)"
+            default y
+            depends on AUTOGEN_PM_ENABLE_TYPE_OBJECT
+            help
+                Keep PAR_ITEM_ARR_U16 support. The bundled par_table.def wraps its
+                sample ARR_U16 row in this option, so disabling it compiles that
+                sample row out. Production tables that leave unguarded ARR_U16
+                rows while this option is disabled still fail in par_def.c.
+
+        config AUTOGEN_PM_ENABLE_TYPE_ARR_U32
+            bool "Enable uint32_t array parameters (PAR_ITEM_ARR_U32)"
+            default y
+            depends on AUTOGEN_PM_ENABLE_TYPE_OBJECT
+            help
+                Keep PAR_ITEM_ARR_U32 support. The bundled par_table.def wraps its
+                sample ARR_U32 row in this option, so disabling it compiles that
+                sample row out. Production tables that leave unguarded ARR_U32
+                rows while this option is disabled still fail in par_def.c.
+
+        config AUTOGEN_PM_ENABLE_RUNTIME_VALIDATION
+            bool "Enable runtime validation callback hook"
+            default y
+            help
+                Enable per-parameter runtime validation callbacks in normal setter path.
+
+        config AUTOGEN_PM_ENABLE_CHANGE_CALLBACK
+            bool "Enable on-change callback hook"
+            default y
+            help
+                Enable per-parameter on-change callbacks in normal setter path.
+
+        config AUTOGEN_PM_ENABLE_RESET_ALL_RAW
+            bool "Enable raw reset-all-to-default API"
+            default y
+            help
+                Enable par_reset_all_to_default_raw() and default mirror storage
+                for width-group raw restore.
+
+                This path is typically faster than par_set_all_to_default(),
+                because it bypasses per-parameter setter logic such as runtime
+                validation, change callback, and range handling.
+
+                This increases flash/rodata or RAM usage, depending on the
+                default mirror implementation.
+
+        config AUTOGEN_PM_USING_ULOG
+            bool "Use ULOG backend for package logs"
+            default y
+            depends on RT_USING_ULOG
+            help
+                Route package INFO/DEBUG/WARN/ERROR logs through ULOG instead of rt_kprintf.
+
+        config AUTOGEN_PM_USING_NVM
+            bool "Enable parameter persistent-storage support"
+            default n
+            help
+                Enable par_nvm.c and the abstract parameter-storage backend
+                interface. Select one packaged backend adapter.
+
+        config AUTOGEN_PM_USING_TABLE_ID_CHECK
+            bool "Enable parameter table ID check" if AUTOGEN_PM_ENABLE_ID
+            default y if AUTOGEN_PM_USING_NVM
+            depends on AUTOGEN_PM_USING_NVM
+            help
+                Enable parameter-table compatibility checking.
+                When enabled, the package always uses the bundled FNV-1a
+                32-bit implementation from lcn2/fnv.
+                Stored-image incompatibilities are treated as managed schema
+                changes and rebuilt from defaults on startup.
+
+        config AUTOGEN_PM_NVM_WRITE_VERIFY
+            bool "Enable NVM write readback verification"
+            default n
+            depends on AUTOGEN_PM_USING_NVM
+            help
+                Verify persisted writes by synchronizing the backend and
+                reading back freshly written records and headers.
+
+                This improves robustness against silent write failures, but
+                increases write latency, especially during bulk rewrites.
+
+        config AUTOGEN_PM_NVM_SCALAR
+            bool "Enable scalar parameter persistence"
+            default y
+            depends on AUTOGEN_PM_USING_NVM
+            help
+                Store scalar persistent rows in the managed scalar NVM block.
+                Disable this only for object-only products that keep all
+                persistent values in object records. When disabled, scalar rows
+                whose pers_ column is set to 1 are rejected at compile time.
+
+        config AUTOGEN_PM_NVM_OBJECT
+            bool "Enable object parameter persistence"
+            default n
+            depends on AUTOGEN_PM_USING_NVM && AUTOGEN_PM_ENABLE_ID && AUTOGEN_PM_ENABLE_TYPE_OBJECT
+            help
+                Store STR, BYTES, ARR_U8, ARR_U16, and ARR_U32 payloads in a
+                dedicated object persistence block. This feature requires external
+                parameter IDs so persisted object records can be matched to the
+                compiled table. Leave this disabled to keep object rows RAM-only
+                and reject object rows whose pers_ column is set to 1.
+
+        choice
+            prompt "Object persistence storage target"
+            default AUTOGEN_PM_NVM_OBJECT_STORE_SHARED
+            depends on AUTOGEN_PM_NVM_OBJECT
+            help
+                Select whether scalar and object persistence share one backend
+                address space or use a dedicated object backend/partition. Use a
+                dedicated target when the product needs object values to be fully
+                independent from scalar layout growth, scalar erase/rebuild
+                policy, or a different physical storage medium.
+
+            config AUTOGEN_PM_NVM_OBJECT_STORE_SHARED
+                bool "Use scalar NVM backend"
+                help
+                    Store object records through the same backend used by scalar
+                    records. The object address mode below decides whether the
+                    object block follows the scalar block or starts at a fixed
+                    address in the same backend address space.
+
+            config AUTOGEN_PM_NVM_OBJECT_STORE_DEDICATED
+                bool "Use dedicated object backend or partition"
+                help
+                    Store object records through a separate object backend or
+                    partition. The port must provide par_object_store_backend_bind()
+                    and par_object_store_backend_get_api(). Object block addresses
+                    are relative to that dedicated object backend, so scalar and
+                    object records cannot overwrite each other.
+
+        endchoice
+
+        choice
+            prompt "Object persistence block address mode"
+            default AUTOGEN_PM_NVM_OBJECT_ADDR_AFTER_SCALAR
+            depends on AUTOGEN_PM_NVM_OBJECT_STORE_SHARED
+            help
+                Select where the dedicated object persistence block is placed when object
+                records share the scalar backend. The default compact mode appends
+                it after the scalar NVM block. Fixed-address mode keeps the object
+                block at a configured address inside the same backend address
+                space.
+
+            config AUTOGEN_PM_NVM_OBJECT_ADDR_AFTER_SCALAR
+                bool "Place object block after scalar block"
+                help
+                    Place the object persistence block immediately after the current
+                    scalar block. This needs no extra address configuration, but
+                    scalar persistent-layout growth can move the object block.
+                    The generic core does not migrate object blocks between
+                    addresses because safe relocation on flash-class media needs
+                    product-specific scratch/double-buffer storage, commit state,
+                    power-loss recovery, and erase-block planning. Use fixed or
+                    dedicated placement before release when object values must
+                    survive scalar-layout growth.
+
+            config AUTOGEN_PM_NVM_OBJECT_ADDR_FIXED
+                bool "Use fixed object block address"
+                help
+                    Store the object persistence block at AUTOGEN_PM_NVM_OBJECT_FIXED_ADDR.
+                    Select this when object values must stay independent from
+                    scalar persistent-layout growth while still using the same
+                    backend address space. The configured address must not overlap
+                    the scalar block.
+
+        endchoice
+
+        config AUTOGEN_PM_NVM_OBJECT_FIXED_ADDR
+            hex "Fixed object persistence block base address"
+            default 0x0
+            depends on AUTOGEN_PM_NVM_OBJECT_ADDR_FIXED
+            help
+                Backend address used as the object persistence block base in fixed-address
+                mode. It must be outside the scalar NVM block.
+
+        config AUTOGEN_PM_NVM_OBJECT_REGION_SIZE
+            int "Fixed object persistence region size"
+            default 0
+            range 0 2147483647
+            depends on AUTOGEN_PM_NVM_OBJECT_ADDR_FIXED
+            help
+                Optional reserved size in bytes for the fixed object region.
+                Set to 0 to skip this check and rely on backend capacity probing.
+                When non-zero, initialization fails if the compiled object block
+                does not fit in this region.
+
+        config AUTOGEN_PM_NVM_NEEDS_SCALAR_BACKEND
+            bool
+            default y if AUTOGEN_PM_NVM_SCALAR
+            default y if AUTOGEN_PM_NVM_OBJECT && AUTOGEN_PM_NVM_OBJECT_STORE_SHARED
+            default n
+            depends on AUTOGEN_PM_USING_NVM
+            help
+                Internal build guard for configurations that need the packaged
+                scalar storage backend. Dedicated object-only products can keep
+                this disabled and provide only the object backend hooks.
+
+        config AUTOGEN_PM_NVM_OBJECT_DEDICATED_BASE_ADDR
+            hex "Dedicated object persistence block base address"
+            default 0x0
+            depends on AUTOGEN_PM_NVM_OBJECT_STORE_DEDICATED
+            help
+                Object block base address inside the dedicated object backend or
+                partition. Keep this at 0 when the selected object partition starts
+                directly with the object persistence block.
+
+        config AUTOGEN_PM_TABLE_ID_SCHEMA_VER
+            int "Parameter table-ID schema version"
+            default 1
+            range 0 2147483647
+            depends on AUTOGEN_PM_USING_TABLE_ID_CHECK
+            help
+                User-controlled schema version included in the persisted
+                table-ID calculation. Increase it when you intentionally
+                change the serialized compatibility model and want NVM to be
+                rebuilt from defaults on next startup.
+
+        choice
+            prompt "Parameter storage backend"
+            default AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND if AUTOGEN_PM_TEST_USING_AT24CXX
+            default AUTOGEN_PM_USING_FLASH_EE_BACKEND if AUTOGEN_PM_TEST_USING_FLASH_EE_FAL
+            default AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
+            depends on AUTOGEN_PM_NVM_NEEDS_SCALAR_BACKEND
+            help
+                Select the packaged scalar backend adapter used by scalar
+                persistent records or shared object persistence.
+
+            config AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
+                bool "RT-Thread AT24CXX backend"
+                select PKG_USING_AT24CXX
+                help
+                    Build the package-provided AT24CXX EEPROM backend.
+                    This backend is intended for a dedicated parameter EEPROM area.
+
+            config AUTOGEN_PM_USING_FLASH_EE_BACKEND
+                bool "Flash emulated EEPROM backend"
+                help
+                    Build the generic flash-emulated EEPROM backend core.
+                    The core lives inside the parameters package and stays free of
+                    RT-Thread or FAL dependencies. A separate port adapter binds
+                    the core to a concrete physical flash implementation.
+        endchoice
+
+        choice
+            prompt "Persistent record layout"
+            default AUTOGEN_PM_NVM_RECORD_LAYOUT_FIXED_SLOT_WITH_SIZE if AUTOGEN_PM_ENABLE_ID
+            default AUTOGEN_PM_NVM_RECORD_LAYOUT_FIXED_PAYLOAD_ONLY if !AUTOGEN_PM_ENABLE_ID
+            depends on AUTOGEN_PM_USING_NVM && AUTOGEN_PM_NVM_SCALAR
+            help
+                Select how one scalar persistent parameter is serialized inside the
+                managed NVM image.
+
+            config AUTOGEN_PM_NVM_RECORD_LAYOUT_FIXED_SLOT_WITH_SIZE
+                bool "Fixed 4-byte payload slot with size descriptor"
+                depends on AUTOGEN_PM_ENABLE_ID
+                help
+                    Store each persistent slot as id, size, CRC, and one fixed
+                    4-byte payload slot.
+
+            config AUTOGEN_PM_NVM_RECORD_LAYOUT_FIXED_SLOT_NO_SIZE
+                bool "Fixed 4-byte payload slot without size descriptor"
+                depends on AUTOGEN_PM_ENABLE_ID
+                help
+                    Store each persistent slot as id, CRC, and one fixed 4-byte
+                    payload slot.
+
+
+            config AUTOGEN_PM_NVM_RECORD_LAYOUT_COMPACT_PAYLOAD
+                bool "Natural payload width with size descriptor"
+                depends on AUTOGEN_PM_ENABLE_ID
+                help
+                    Store id, size, CRC, and only the natural payload width of
+                    the parameter type (1, 2, or 4 bytes).
+
+            config AUTOGEN_PM_NVM_RECORD_LAYOUT_FIXED_PAYLOAD_ONLY
+                bool "Fixed persistent order without id/size"
+                select AUTOGEN_PM_USING_TABLE_ID_CHECK
+                help
+                    Store each persistent slot as CRC plus the natural payload
+                    width resolved from the compile-time parameter type.
+                    The persisted layout follows compile-time persistent order.
+
+                    This layout forces table-ID checking on so the no-ID path
+                    stays closed at the Kconfig layer.
+
+            config AUTOGEN_PM_NVM_RECORD_LAYOUT_GROUPED_PAYLOAD_ONLY
+                bool "Grouped payload bands without id/size"
+                select AUTOGEN_PM_USING_TABLE_ID_CHECK
+                help
+                    Store each persistent slot as CRC plus the natural payload
+                    width resolved from the compile-time parameter type.
+                    Persistent slots are regrouped into 8-bit, 16-bit, and
+                    32-bit payload bands.
+
+                    This layout also forces table-ID checking on so hidden
+                    symbol state cannot leave the no-ID path half-configured.
+        endchoice
+
+        if AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
+
+            config AUTOGEN_PM_RTT_AT24_I2C_BUS_NAME
+                string "AT24CXX I2C bus name"
+                default "i2c1"
+                help
+                    Set the I2C bus device name used by the parameter AT24CXX backend.
+
+            config AUTOGEN_PM_RTT_AT24_ADDR_INPUT
+                int "AT24CXX address-input bits (A2:A0)"
+                default 0
+                range 0 7
+                help
+                    Set the AT24CXX hardware address-input bits.
+
+            config AUTOGEN_PM_RTT_AT24_BASE_ADDR
+                hex "Parameter EEPROM window base offset"
+                default 0x0
+                help
+                    Set the start offset, in bytes, of the parameter-owned
+                    EEPROM window.
+
+            config AUTOGEN_PM_RTT_AT24_SIZE
+                hex "Parameter EEPROM window size"
+                default 0x0
+                help
+                    Set the size, in bytes, of the parameter-owned EEPROM
+                    window.
+
+                    Use 0x0 to make the backend use all remaining EEPROM space
+                    from AUTOGEN_PM_RTT_AT24_BASE_ADDR to
+                    AT24CXX_MAX_MEM_ADDRESS.
+
+            config AUTOGEN_PM_RTT_AT24_ERASE_CHUNK
+                int "AT24CXX emulated erase chunk size"
+                default 0
+                help
+                    Set the chunk size used when EEPROM erase is emulated by
+                    writing 0xFF.
+
+                    Use 0 to automatically use the AT24CXX hardware page size
+                    reported by AT24CXX_PAGE_BYTE.
+
+                    Non-zero values must not exceed the AT24CXX page size.
+
+        endif
+
+        if AUTOGEN_PM_USING_FLASH_EE_BACKEND
+
+            choice
+                prompt "Flash emulated EEPROM physical port"
+                default AUTOGEN_PM_FLASH_EE_PORT_FAL if AUTOGEN_PM_TEST_USING_FLASH_EE_FAL
+                default AUTOGEN_PM_FLASH_EE_PORT_FAL
+                help
+                    Select the physical flash adapter used by the generic
+                    flash-emulated EEPROM backend core.
+
+                config AUTOGEN_PM_FLASH_EE_PORT_FAL
+                    bool "FAL partition adapter"
+                    select RT_USING_FAL
+                    help
+                        Bind the generic backend core to one FAL partition.
+
+                config AUTOGEN_PM_FLASH_EE_PORT_NATIVE
+                    bool "Native flash hook adapter"
+                    help
+                        Bind the generic backend core to user-supplied native
+                        flash hooks implemented outside this package.
+
+                        The required hook ABI is declared in
+                        par_store_backend_flash_ee.h. Native-port builds now
+                        expect the application to provide the required
+                        operational and geometry hooks explicitly; missing
+                        required hooks should fail the final link instead of
+                        falling back to runtime stub behavior. Optional helper
+                        hooks may still use package defaults.
+            endchoice
+
+            config AUTOGEN_PM_FLASH_EE_LOGICAL_SIZE
+                hex "Logical NVM size in bytes"
+                default 0x1000
+                help
+                    Set the logical byte-address space exported to par_nvm.c.
+                    The physical flash region must provide enough capacity for
+                    two banks, and each bank must be able to store one fully
+                    compacted image of this logical space plus at least one
+                    additional append record for the next update.
+
+                    This value must be an integer multiple of the configured
+                    line size. The package rejects incompatible combinations at
+                    build time so invalid geometry does not survive until
+                    runtime initialization.
+
+            config AUTOGEN_PM_FLASH_EE_CACHE_SIZE
+                int "Write-back cache size in bytes"
+                default 4096
+                range 256 65536
+                help
+                    Set the static RAM cache size used by the generic backend.
+                    This value must be a multiple of the line size.
+
+                    The current package integration keeps exactly one dirty cache
+                    window at a time. If upper-layer bulk rewrite paths must run
+                    without intermediate sync points, configure this value to be
+                    at least as large as the logical size.
+
+                    The package rejects cache-size and line-size combinations
+                    that are not integral at build time so they do not first
+                    fail during backend init.
+
+            config AUTOGEN_PM_FLASH_EE_LINE_SIZE
+                int "Append record payload size in bytes"
+                default 32
+                range 8 256
+                help
+                    Set the fixed logical line size appended per record.
+                    Smaller values reduce write amplification for tiny writes,
+                    while larger values reduce metadata overhead.
+
+                    Choose a value that divides both the logical size and the
+                    cache size exactly.
+
+            config AUTOGEN_PM_FLASH_EE_PROGRAM_SIZE
+                int "Physical flash program size in bytes"
+                default 8
+                range 1 64
+                help
+                    Set the minimum physical program granularity expected by
+                    the chosen flash port. The header size and record size must
+                    both be integer multiples of this value.
+
+                    The current on-flash header is 64 bytes long, so valid
+                    values must divide 64 exactly. The package rejects invalid
+                    values at build time.
+
+            comment "Valid program-size values are divisors of 64: 1, 2, 4, 8, 16, 32, 64"
+
+            config AUTOGEN_PM_FLASH_EE_FAL_PARTITION_NAME
+                string "FAL partition name"
+                default "pm_ee_test" if AUTOGEN_PM_TEST_USING_FLASH_EE_FAL
+                default "autogen_pm"
+                depends on AUTOGEN_PM_FLASH_EE_PORT_FAL
+                help
+                    Set the FAL partition used by the flash-emulated EEPROM
+                    adapter.
+
+        endif
+
+        menu "Runtime tests"
+
+            config AUTOGEN_PM_USING_TESTS
+                bool "Enable parameter runtime tests"
+                default n
+                help
+                    Build CI-friendly runtime tests and the optional par_test
+                    msh command. Test suites are compiled only when their
+                    individual options are enabled.
+
+            if AUTOGEN_PM_USING_TESTS
+
+                config AUTOGEN_PM_TEST_USING_RAM_CONFIG
+                    bool "Enable RAM configuration validation tests"
+                    default y
+                    help
+                        Validate RAM behavior and feature APIs, including
+                        default restore, scalar set/get/restore, range limiting,
+                        metadata string getters, ID accessors, access policy,
+                        runtime validation, change callbacks, raw reset-all, F32,
+                        and object parameter paths when the matching features are
+                        compiled in.
+
+                config AUTOGEN_PM_TEST_FORCE_RAM_FEATURES
+                    bool "Force-enable RAM test feature coverage"
+                    default y
+                    depends on AUTOGEN_PM_TEST_USING_RAM_CONFIG
+                    select AUTOGEN_PM_ENABLE_RANGE
+                    select AUTOGEN_PM_ENABLE_NAME
+                    select AUTOGEN_PM_ENABLE_UNIT
+                    select AUTOGEN_PM_ENABLE_DESC
+                    select AUTOGEN_PM_ENABLE_DESC_CHECK
+                    select AUTOGEN_PM_ENABLE_ID
+                    select AUTOGEN_PM_ENABLE_ACCESS
+                    select AUTOGEN_PM_ENABLE_TYPE_F32
+                    select AUTOGEN_PM_ENABLE_RUNTIME_VALIDATION
+                    select AUTOGEN_PM_ENABLE_CHANGE_CALLBACK
+                    select AUTOGEN_PM_ENABLE_RESET_ALL_RAW
+                    help
+                        Force-enable optional parameter-module features required
+                        for the RAM runtime tests to exercise full coverage.
+                        Disable this only when CI intentionally validates a
+                        reduced feature profile.
+
+                config AUTOGEN_PM_TEST_TABLE_ROWS
+                    bool
+                    default y if AUTOGEN_PM_TEST_USING_RAM_CONFIG
+                    depends on AUTOGEN_PM_TEST_USING_RAM_CONFIG
+                    help
+                        Compile the dedicated non-persistent RAM test rows from
+                        par_table.def. This is intentionally hidden because the
+                        RAM test suite references those rows directly.
+
+                config AUTOGEN_PM_TEST_OBJECT_ROWS
+                    bool "Enable object parameter test rows"
+                    default y if AUTOGEN_PM_TEST_TABLE_ROWS
+                    depends on AUTOGEN_PM_TEST_TABLE_ROWS
+                    select AUTOGEN_PM_ENABLE_TYPE_OBJECT
+                    select AUTOGEN_PM_ENABLE_TYPE_STR
+                    select AUTOGEN_PM_ENABLE_TYPE_BYTES
+                    select AUTOGEN_PM_ENABLE_TYPE_ARR_U8
+                    select AUTOGEN_PM_ENABLE_TYPE_ARR_U16
+                    select AUTOGEN_PM_ENABLE_TYPE_ARR_U32
+                    help
+                        Compile dedicated object parameter rows used by the RAM
+                        runtime tests. Keep this enabled when CI should validate
+                        STR, BYTES, ARR_U8, ARR_U16, and ARR_U32 RAM object
+                        paths together with scalar parameters.
+
+                config AUTOGEN_PM_TEST_USING_AT24CXX
+                    bool "Enable AT24CXX persistence tests"
+                    default n
+                    select AUTOGEN_PM_USING_NVM
+                    select AUTOGEN_PM_NVM_SCALAR
+                    select AUTOGEN_PM_ENABLE_ID
+                    select PKG_USING_AT24CXX
+                    help
+                        Validate the AT24CXX-backed persistence path through
+                        public parameter APIs.
+
+                        This option enables scalar NVM persistence and parameter
+                        ID support required by the AT24CXX persistence tests.
+                        The storage backend is selected through the "Parameter
+                        storage backend" choice; the default backend is AT24CXX
+                        when this test option is enabled.
+
+                config AUTOGEN_PM_TEST_USING_FLASH_EE_FAL
+                    bool "Enable Flash EE real FAL partition tests"
+                    default n
+                    select AUTOGEN_PM_USING_NVM
+                    select AUTOGEN_PM_NVM_SCALAR
+                    help
+                        Validate the flash-emulated EEPROM backend only on a
+                        real FAL partition. This is the maintained board-level
+                        Flash EE runtime suite; the old fake-flash suite is no
+                        longer compiled by the RT-Thread package build.
+
+                        This suite intentionally erases and rewrites the
+                        configured Flash EE FAL partition, so reserve a dedicated
+                        partition such as "pm_ee_test" and do not share it with
+                        the filesystem, logs, or production parameter storage.
+
+                        Enabling this option is for disposable board-test
+                        firmware. The storage backend choice defaults to Flash
+                        EE and the physical port choice defaults to FAL when this
+                        option is enabled. The FAL port choice selects
+                        RT_USING_FAL; enable FAL_PART_HAS_TABLE_CFG separately
+                        when the board uses a static fal_cfg.h partition table.
+
+                config AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    bool "Allow destructive runtime tests"
+                    default n
+                    help
+                        Allow test cases marked destructive to execute. Keep
+                        this disabled unless the board uses disposable NVM data.
+
+                config AUTOGEN_PM_TEST_NVM_RAW_HELPER
+                    bool "Enable raw NVM backend manual helper"
+                    default n
+                    depends on AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    depends on AUTOGEN_PM_USING_NVM
+                    depends on AUTOGEN_PM_NVM_SCALAR
+                    depends on RT_USING_FINSH
+                    help
+                        Build the par_nvm_raw MSH helper for layout-neutral
+                        raw access to the active parameter NVM backend. The
+                        helper can dump, poke, flip, and corrupt the scalar
+                        header signature byte through backend-relative offsets.
+                        Enable it only on test firmware with disposable
+                        persistent data.
+
+                config AUTOGEN_PM_TEST_NVM_OBJECT_HELPER
+                    bool "Enable object NVM manual helper"
+                    default n
+                    depends on AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    depends on AUTOGEN_PM_USING_NVM
+                    depends on AUTOGEN_PM_NVM_SCALAR
+                    depends on AUTOGEN_PM_NVM_OBJECT
+                    depends on AUTOGEN_PM_ENABLE_TYPE_OBJECT
+                    depends on RT_USING_FINSH
+                    help
+                        Build the par_nvm_obj MSH helper for board-level
+                        validation of object parameter persistence. The helper
+                        can inspect the object block, set object payloads
+                        through public NVM APIs, and inject header, record CRC,
+                        or payload corruption inside the managed object NVM
+                        block. Enable it only on test firmware with disposable
+                        persistent data.
+
+                config AUTOGEN_PM_TEST_NVM_FIXED_SLOT_WITH_SIZE
+                    bool "Enable fixed-slot-with-size NVM manual tests"
+                    default n
+                    depends on AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    depends on AUTOGEN_PM_USING_NVM
+                    depends on AUTOGEN_PM_NVM_SCALAR
+                    depends on AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
+                    depends on AUTOGEN_PM_NVM_RECORD_LAYOUT_FIXED_SLOT_WITH_SIZE
+                    depends on RT_USING_FINSH
+                    help
+                        Build the par_nvm_fslot MSH helper for board-level
+                        validation of the fixed-slot-with-size scalar NVM
+                        layout on an AT24CXX backend. The helper injects
+                        layout-aware slot CRC corruption inside the managed
+                        parameter EEPROM window. Use par_nvm_raw for generic
+                        raw dump, poke, flip, header corruption, and LUT access.
+                        Enable it only on test firmware with disposable
+                        persistent data.
+
+
+                config AUTOGEN_PM_TEST_NVM_FIXED_SLOT_NO_SIZE
+                    bool "Enable fixed-slot-no-size NVM manual tests"
+                    default n
+                    depends on AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    depends on AUTOGEN_PM_USING_NVM
+                    depends on AUTOGEN_PM_NVM_SCALAR
+                    depends on AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
+                    depends on AUTOGEN_PM_NVM_RECORD_LAYOUT_FIXED_SLOT_NO_SIZE
+                    depends on RT_USING_FINSH
+                    help
+                        Build the par_nvm_fslot_no_size MSH helper for
+                        board-level validation of the fixed-slot-no-size scalar
+                        NVM layout on an AT24CXX backend. The helper prints
+                        layout-aware slot addresses and injects slot CRC or
+                        payload corruption inside the managed parameter EEPROM
+                        window. Enable it only on test firmware with disposable
+                        persistent data.
+
+                config AUTOGEN_PM_TEST_NVM_COMPACT_PAYLOAD
+                    bool "Enable compact-payload NVM manual tests"
+                    default n
+                    depends on AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    depends on AUTOGEN_PM_USING_NVM
+                    depends on AUTOGEN_PM_NVM_SCALAR
+                    depends on AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
+                    depends on AUTOGEN_PM_NVM_RECORD_LAYOUT_COMPACT_PAYLOAD
+                    depends on RT_USING_FINSH
+                    help
+                        Build the par_nvm_compact_payload MSH helper for
+                        board-level validation of the compact-payload scalar NVM
+                        layout on an AT24CXX backend. The helper prints variable
+                        record addresses and injects slot CRC, size descriptor,
+                        or payload corruption. Enable it only on test firmware
+                        with disposable persistent data.
+
+                config AUTOGEN_PM_TEST_NVM_FIXED_PAYLOAD_ONLY
+                    bool "Enable fixed-payload-only NVM manual tests"
+                    default n
+                    depends on AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    depends on AUTOGEN_PM_USING_NVM
+                    depends on AUTOGEN_PM_NVM_SCALAR
+                    depends on AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
+                    depends on AUTOGEN_PM_NVM_RECORD_LAYOUT_FIXED_PAYLOAD_ONLY
+                    depends on RT_USING_FINSH
+                    help
+                        Build the par_nvm_fixed_payload_only MSH helper for
+                        board-level validation of the fixed-payload-only scalar
+                        NVM layout on an AT24CXX backend. The helper prints
+                        persisted-order slot addresses and injects slot CRC or
+                        payload corruption. Enable it only on test firmware with
+                        disposable persistent data.
+
+                config AUTOGEN_PM_TEST_NVM_GROUPED_PAYLOAD_ONLY
+                    bool "Enable grouped-payload-only NVM manual tests"
+                    default n
+                    depends on AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    depends on AUTOGEN_PM_USING_NVM
+                    depends on AUTOGEN_PM_NVM_SCALAR
+                    depends on AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
+                    depends on AUTOGEN_PM_NVM_RECORD_LAYOUT_GROUPED_PAYLOAD_ONLY
+                    depends on RT_USING_FINSH
+                    help
+                        Build the par_nvm_grouped_payload_only MSH helper for
+                        board-level validation of the grouped-payload-only
+                        scalar NVM layout on an AT24CXX backend. The helper
+                        prints grouped-band slot addresses and injects slot CRC
+                        or payload corruption. Enable it only on test firmware
+                        with disposable persistent data.
+
+                config AUTOGEN_PM_TEST_NVM_SCHEMA_EVOLUTION
+                    bool "Enable NVM schema-evolution manual tests"
+                    default n
+                    depends on AUTOGEN_PM_TEST_ALLOW_DESTRUCTIVE
+                    depends on AUTOGEN_PM_USING_NVM
+                    depends on AUTOGEN_PM_USING_TABLE_ID_CHECK
+                    depends on AUTOGEN_PM_ENABLE_ID
+                    depends on AUTOGEN_PM_NVM_SCALAR
+                    depends on AUTOGEN_PM_NVM_OBJECT
+                    depends on AUTOGEN_PM_ENABLE_TYPE_OBJECT
+                    depends on AUTOGEN_PM_ENABLE_TYPE_STR
+                    depends on AUTOGEN_PM_ENABLE_TYPE_BYTES
+                    depends on RT_USING_FINSH
+                    help
+                        Build the par_nvm_schema MSH helper used by V1/V2
+                        schema-evolution acceptance images. The helper writes
+                        known non-default values with a V1 fixture and verifies
+                        compatible append or managed rebuild behavior after a
+                        V2 fixture boots on the same disposable NVM contents.
+
+                config AUTOGEN_PM_TEST_AUTO_RUN
+                    bool "Run parameter tests automatically after boot"
+                    default n
+                    help
+                        Run all enabled runtime-test suites after application
+                        initialization. Intended for CI or HIL images.
+
+                config AUTOGEN_PM_TEST_FAIL_FAST
+                    bool "Stop runtime tests on first failure"
+                    default n
+                    help
+                        Stop the active suite after the first failed case.
+
+            endif
+
+        endmenu
+
+        menu "MSH shell tool"
+
+            config AUTOGEN_PM_USING_MSH_TOOL
+                bool "Enable single-entry msh parameter tool"
+                default y
+                depends on RT_USING_FINSH
+                help
+                    Build one msh command entry named `par`.
+                    Individual subcommands remain selectable below through
+                    separate Kconfig options.
+
+            if AUTOGEN_PM_USING_MSH_TOOL
+
+                config AUTOGEN_PM_MSH_CMD_INFO
+                    bool "Enable subcommand: par info"
+                    default y
+
+                config AUTOGEN_PM_MSH_CMD_GET
+                    bool "Enable subcommand: par get"
+                    default y
+                    depends on AUTOGEN_PM_ENABLE_ID
+
+                config AUTOGEN_PM_MSH_CMD_GET_OBJECT
+                    bool "Enable object payload display for par get"
+                    default y
+                    depends on AUTOGEN_PM_MSH_CMD_GET && AUTOGEN_PM_ENABLE_TYPE_OBJECT && RT_USING_HEAP
+                    help
+                        Enable `par get <id>` payload display for STR, BYTES,
+                        ARR_U8, ARR_U16, and ARR_U32 object rows.
+
+                        This command path allocates a temporary payload buffer,
+                        so it is only available when the RT-Thread heap is
+                        enabled. Without RT_USING_HEAP, scalar `par get` remains
+                        available but object payload display is intentionally
+                        compiled out.
+
+                config AUTOGEN_PM_MSH_CMD_SET
+                    bool "Enable subcommand: par set"
+                    default y
+                    depends on AUTOGEN_PM_ENABLE_ID
+
+                config AUTOGEN_PM_MSH_CMD_DEF
+                    bool "Enable subcommand: par def"
+                    default y
+                    depends on AUTOGEN_PM_ENABLE_ID
+
+                config AUTOGEN_PM_MSH_CMD_DEF_ALL
+                    bool "Enable subcommand: par def_all"
+                    default y
+
+                config AUTOGEN_PM_MSH_CMD_SAVE
+                    bool "Enable subcommand: par save"
+                    default y
+                    depends on AUTOGEN_PM_USING_NVM
+
+                config AUTOGEN_PM_MSH_CMD_SAVE_CLEAN
+                    bool "Enable subcommand: par save_clean"
+                    default n
+                    depends on AUTOGEN_PM_USING_NVM && AUTOGEN_PM_USING_DEBUG
+
+                config AUTOGEN_PM_MSH_CMD_JSON
+                    bool "Enable subcommand: par json"
+                    default n
+
+            endif
+
+        endmenu
+
+    endmenu
+
+    config PKG_AUTOGEN_PARAMETER_MANAGER_PATH
+        string
+        default "/packages/misc/autogen_parameter_manager"
+
+    choice
+        prompt "Version"
+        default PKG_USING_AUTOGEN_PARAMETER_MANAGER_LATEST_VERSION
+        help
+            Select the package version.
+
+        config PKG_USING_AUTOGEN_PARAMETER_MANAGER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AUTOGEN_PARAMETER_MANAGER_VER
+        string
+        default "latest" if PKG_USING_AUTOGEN_PARAMETER_MANAGER_LATEST_VERSION
+
+endif
