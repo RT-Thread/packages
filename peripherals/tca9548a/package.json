@@ -18,21 +18,21 @@
     "github": "WennianYan"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/WennianYan/tca9548a",
+  "repository": "https://github.com/WennianYan/TCA9548A",
   "icon": "unknown",
-  "homepage": "https://github.com/WennianYan/tca9548a#readme",
-  "readme": "TCA9548A (PW548A) Low Voltage 8-Channel I2C Switch with Reset driver for RT-Thread",
+  "homepage": "https://github.com/WennianYan/TCA9548A#readme",
+  "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/WennianYan/tca9548a/archive/v1.0.0.zip",
+      "URL": "https://tca9548a-1.0.0.zip",
       "filename": "tca9548a-1.0.0.zip"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/WennianYan/tca9548a.git",
-      "filename": "tca9548a-latest.zip",
-      "VER_SHA": "main"
+      "URL": "https://github.com/WennianYan/TCA9548A.git",
+      "filename": "",
+      "VER_SHA": "master"
     }
   ]
 }
