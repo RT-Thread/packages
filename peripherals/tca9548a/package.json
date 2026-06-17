@@ -24,11 +24,6 @@
   "doc": "unknown",
   "site": [
     {
-      "version": "v1.0.0",
-      "URL": "https://tca9548a-1.0.0.zip",
-      "filename": "tca9548a-1.0.0.zip"
-    },
-    {
       "version": "latest",
       "URL": "https://github.com/WennianYan/TCA9548A.git",
       "filename": "",
