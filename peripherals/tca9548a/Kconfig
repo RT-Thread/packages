@@ -2,6 +2,7 @@
 menuconfig PKG_USING_TCA9548A
     bool "TCA9548A: Low Voltage 8-Channel I2C Switch with Reset (PW548A)"
     default n
+    select RT_USING_I2C
     help
         The TCA9548A (chip marking: PW548A) is a low-voltage 8-channel I2C
         switch with reset from Texas Instruments. It features 1-to-8
