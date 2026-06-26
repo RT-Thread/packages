@@ -1,0 +1,28 @@
+{
+  "name": "n32h7xx_std_driver",
+  "description": "N32H7XX STD driver package",
+  "description_zh": "N32H7XX STD 驱动包",
+  "enable": "PKG_USING_N32H7XX_STD_DRIVER",
+  "keywords": [
+    "n32h7xx_std_driver"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/n32h7xx_std_driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/n32h7xx_std_driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/n32h7xx_std_driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "n32h47x_48x_cmsis_driver",
+  "description": "N32H47X_48X CMSIS driver package",
+  "description_zh": "N32H47X_48X CMSIS 驱动包",
+  "enable": "PKG_USING_N32H47X_48X_CMSIS_DRIVER",
+  "keywords": [
+    "n32h47x_48x_cmsis_driver"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/n32h47x_48x_cmsis_driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/n32h47x_48x_cmsis_driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/n32h47x_48x_cmsis_driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
