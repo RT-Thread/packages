@@ -1,0 +1,32 @@
+{
+  "name": "ch390",
+  "description": "WCH CH390 SPI Ethernet driver for RT-Thread",
+  "description_zh": "WCH CH390 SPI 以太网控制器驱动",
+  "enable": "PKG_USING_CH390",
+  "keywords": [
+    "ch390",
+    "wch",
+    "ethernet",
+    "spi"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "Liu Changjie"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/HosakaSu/ch390",
+  "homepage": "https://github.com/HosakaSu/ch390#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/HosakaSu/ch390/archive/refs/tags/v1.0.0.zip",
+      "filename": "ch390-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/HosakaSu/ch390.git",
+      "filename": "ch390.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}
