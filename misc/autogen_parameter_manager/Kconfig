@@ -2,6 +2,8 @@
 menuconfig PKG_USING_AUTOGEN_PARAMETER_MANAGER
     bool "autogen_parameter_manager: parameter table management library"
     default n
+    select RT_USING_HEAP
+    select RT_USING_CAN
     help
         RT-Thread package wrapper for autogen_parameter_manager.
 
@@ -237,7 +239,7 @@ if PKG_USING_AUTOGEN_PARAMETER_MANAGER
 
         config AUTOGEN_PM_USING_NVM
             bool "Enable parameter persistent-storage support"
-            default n
+            default y
             help
                 Enable par_nvm.c and the abstract parameter-storage backend
                 interface. Select one packaged backend adapter.
@@ -276,7 +278,7 @@ if PKG_USING_AUTOGEN_PARAMETER_MANAGER
 
         config AUTOGEN_PM_NVM_OBJECT
             bool "Enable object parameter persistence"
-            default n
+            default y
             depends on AUTOGEN_PM_USING_NVM && AUTOGEN_PM_ENABLE_ID && AUTOGEN_PM_ENABLE_TYPE_OBJECT
             help
                 Store STR, BYTES, ARR_U8, ARR_U16, and ARR_U32 payloads in a
