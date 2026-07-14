@@ -57,4 +57,5 @@ source "$PKGS_DIR/packages/tools/thread-metric/Kconfig"
 source "$PKGS_DIR/packages/tools/uORB/Kconfig"
 source "$PKGS_DIR/packages/tools/RT-Tunnel/Kconfig"
 source "$PKGS_DIR/packages/tools/Virtual-Terminal/Kconfig"
+source "$PKGS_DIR/packages/tools/fee/Kconfig"
 endmenu
