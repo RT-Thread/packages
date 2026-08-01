@@ -1,0 +1,108 @@
+# Kconfig file for package Agent
+menuconfig PKG_USING_AGENT
+    bool "lightweight agent software for RT-Thread"
+    select PKG_USING_CJSON
+    select PKG_USING_WEBCLIENT
+    select PKG_USING_MBEDTLS
+    select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
+    select PKG_USING_MBEDTLS_CLOBALSIGN_ROOT_CA
+    select RT_USING_ULOG
+    default n
+
+if PKG_USING_AGENT
+
+    config PKG_AGENT_PATH
+        string
+        default "/packages/ai/Agent"
+
+    menu "Agent Runtime Configuration"
+        config PKG_AGENT_API_KEY
+            string "Agent user API Key"
+            default "sk-**-**"
+            help
+                API key used to access LLM service.
+
+        config PKG_AGENT_MODEL_NAME
+            string "LLM model name"
+            default "deepseek-ai/DeepSeek-V4-Pro"
+            help
+                Specify target LLM model name.
+
+        config PKG_AGENT_API_URL
+            string "LLM API endpoint URL"
+            default "https://api.siliconflow.cn/v1/chat/completions"
+            help
+                Agent model API URL.
+                Default: https://api.siliconflow.cn/v1/chat/completions
+    endmenu
+
+    menu "Buffer & Length Configuration"
+        config PKG_AGENT_WEB_SOCKET_BUFSZ
+            int "webclient session buffer size"
+            default 2048
+            help
+                Webclient session send/recv buffer size.
+
+        config PKG_AGENT_RESP_BUFSZ
+            int "webclient response buffer size"
+            default 2048
+            help
+                HTTP response temporary buffer size.
+
+        config PKG_AGENT_MAX_REASONING_LEN
+            int "agent max reasoning text length"
+            default 2048
+            help
+                Maximum reasoning content buffer length.
+
+        config PKG_AGENT_MAX_CONTENT_LEN
+            int "agent max message content length"
+            default 2048
+            help
+                Maximum chat message content length.
+
+        config PKG_AGENT_STREAM_LINE_BUFSZ
+            int "agent string stream line buffer size"
+            default 4096
+            help
+                Line buffer size for SSE streaming parse.
+
+        config PKG_AGENT_MAX_TOOL_ARG_LEN
+            int "agent max tool argument length"
+            default 512
+            help
+                Maximum json arguments length for tool calling.
+    endmenu
+
+    choice
+        prompt "Agent communication channel"
+        default PKG_AGENT_CLI_CHANNEL
+        help
+            Select input/output channel for agent interaction.
+
+        config PKG_AGENT_CLI_CHANNEL
+            bool "CLI channel (MSH command line)"
+            help
+                Interact with agent via RT-Thread MSH CLI.
+
+        config PKG_AGENT_WEBNET_CHANNEL
+            bool "WebNet channel (Websocket/HTTP)"
+            help
+                Interact with agent via web network interface.
+    endchoice
+
+    choice
+        prompt "Agent software version"
+        default PKG_USING_AGENT_LATEST_VERSION
+        help
+            Select Agent package source version.
+
+        config PKG_USING_AGENT_LATEST_VERSION
+            bool "latest (master branch)"
+    endchoice
+
+    config PKG_AGENT_VER
+        string
+        default "latest" if PKG_USING_AGENT_LATEST_VERSION
+
+endif
