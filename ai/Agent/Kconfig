@@ -86,6 +86,8 @@ if PKG_USING_AGENT
                 Interact with agent via RT-Thread MSH CLI.
 
         config PKG_AGENT_WEBNET_CHANNEL
+            select PKG_USING_WEBNET
+            select WEBNET_USING_CGI
             bool "WebNet channel (Websocket/HTTP)"
             help
                 Interact with agent via web network interface.
