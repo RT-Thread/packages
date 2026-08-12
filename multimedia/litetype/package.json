@@ -17,20 +17,20 @@
     "github": "Gemsea"
   },
   "license": "MIT",
-  "repository": "https://gitee.com/Gemsea/lite-type",
+  "repository": "https://github.com/jiaoyuhai/lite-type",
   "icon": "unknown",
-  "homepage": "https://gitee.com/Gemsea/lite-type#readme",
+  "homepage": "https://github.com/jiaoyuhai/lite-type#readme",
   "doc": "unknown",
   "readme": "A lightweight cross-platform font engine for embedded systems. Supports LBF (bitmap), LVF (vector), and LCF (combined) font formats with zero external dependencies.",
   "site": [
     {
       "version": "v1.0.1",
-      "URL": "https://gitee.com/Gemsea/lite-type/repository/archive/v1.0.1.zip",
+      "URL": "https://github.com/jiaoyuhai/lite-type/archive/v1.0.1.zip",
       "filename": "litetype-1.0.1.zip"
     },
     {
       "version": "latest",
-      "URL": "https://gitee.com/Gemsea/lite-type.git",
+      "URL": "https://github.com/jiaoyuhai/lite-type.git",
       "filename": "",
       "VER_SHA": "master"
     }
