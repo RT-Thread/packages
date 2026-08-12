@@ -1,0 +1,69 @@
+
+# Kconfig file for package CH390
+menuconfig PKG_USING_CH390
+    bool "CH390: WCH SPI Ethernet Controller"
+    default n
+    select RT_USING_SPI
+    select RT_USING_PIN
+    select RT_USING_LWIP
+if PKG_USING_CH390
+
+    config PKG_CH390_PATH
+        string
+        default "/packages/peripherals/ch390"
+
+    choice
+        prompt "version"
+        help
+            Select the CH390 driver version
+        default PKG_USING_CH390_V100
+
+        config PKG_USING_CH390_V100
+            bool "v1.0.0"
+
+        config PKG_USING_CH390_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_CH390_VER
+        string
+        default "v1.0.0" if PKG_USING_CH390_V100
+        default "latest" if PKG_USING_CH390_LATEST_VERSION
+
+    menu "CH390 device configure"
+
+        config CH390_SPI_BUS_NAME
+            string "SPI bus name"
+            default "spi0"
+
+        config CH390_SPI_DEVICE_NAME
+            string "SPI device name"
+            default "spi10"
+
+        config CH390_NETIF_NAME
+            string "Ethernet device name"
+            default "e0"
+
+        config CH390_CS_PIN
+            int "CS PIN number"
+            default 4
+
+        config CH390_RST_PIN
+            int "Reset PIN number"
+            default -1
+
+        config CH390_INT_PIN
+            int "Interrupt PIN number"
+            default 3
+
+    endmenu
+
+    config CH390_SPI_MAX_HZ
+        int "SPI maximum frequency"
+        default 5000000
+
+    config CH390_POLL_INTERVAL_MS
+        int "RX polling interval in milliseconds"
+        default 20
+
+endif

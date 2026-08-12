@@ -1,0 +1,30 @@
+{
+  "name": "mm32f3270x-hal-driver",
+  "description": "MM32F3270x HAL driver package",
+  "description_zh": "MM32F3270x HAL 驱动包",
+  "enable": "PKG_USING_MM32F3270X_HAL_DRIVER",
+  "keywords": [
+    "mm32f3270x-hal-driver",
+    "MM32",
+    "HAL"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/mm32f3270x-hal-driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/mm32f3270x-hal-driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/mm32f3270x-hal-driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

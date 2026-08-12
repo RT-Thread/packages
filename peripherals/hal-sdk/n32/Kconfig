@@ -1,0 +1,15 @@
+menu "N32 Drivers"
+
+# N32H7xx
+source "$PKGS_DIR/packages/peripherals/hal-sdk/n32/n32h7xx_std_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/n32/n32h7xx_cmsis_driver/Kconfig"
+
+# N32H49x
+source "$PKGS_DIR/packages/peripherals/hal-sdk/n32/n32h49x_std_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/n32/n32h49x_cmsis_driver/Kconfig"
+
+# N32H47_48x
+source "$PKGS_DIR/packages/peripherals/hal-sdk/n32/n32h47x_48x_std_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/n32/n32h47x_48x_cmsis_driver/Kconfig"
+
+endmenu

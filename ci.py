@@ -89,6 +89,47 @@ def file_path_check(package_info, pathname):
         return False
 
 
+def check_duplicate_package_names(work_root):
+    """Check whether any packages declare the same package name."""
+
+    package_names = {}
+    duplicate_names = {}
+
+    for path, dir_list, file_list in os.walk(work_root):
+        dir_list.sort()
+        file_list.sort()
+
+        if 'package.json' not in file_list:
+            continue
+
+        json_pathname = os.path.join(path, 'package.json')
+        json_info = get_json_info(json_pathname)
+        if not json_info:
+            return False
+
+        package_name = json_info.get('name', '')
+        if not package_name:
+            print("The name of package %s is lost." % json_pathname)
+            return False
+
+        if package_name in package_names:
+            duplicate_names.setdefault(package_name, [package_names[package_name]])
+            duplicate_names[package_name].append(json_pathname)
+        else:
+            package_names[package_name] = json_pathname
+
+    if duplicate_names:
+        print("===========================================>")
+        print("Error: duplicated package name found.")
+        for package_name in sorted(duplicate_names):
+            print("package name: %s" % package_name)
+            for pathname in duplicate_names[package_name]:
+                print("  %s" % pathname)
+        return False
+
+    return True
+
+
 def check_json_file(work_root):
     """Check the json file."""
 
@@ -214,6 +255,9 @@ def main():
     try:
         work_root = os.getcwd()
         print(work_root)
+        if not check_duplicate_package_names(work_root):
+            sys.exit(1)
+
         if not check_json_file(work_root):
             sys.exit(1)
 

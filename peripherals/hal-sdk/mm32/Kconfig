@@ -1,0 +1,17 @@
+menu "MM32 HAL & SDK Drivers"
+
+# MM32 CMSIS
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32f103xx-cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32f3270x-cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32f5260x-cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32l0xx-cmsis/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32l3xx-cmsis/Kconfig"
+
+# MM32 HAL
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32f103xx-hal-driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32f3270x-hal-driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32f5260x-hal-driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32l0xx-hal-driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/mm32/mm32l3xx-hal-driver/Kconfig"
+
+endmenu

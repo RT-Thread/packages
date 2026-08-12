@@ -19,6 +19,12 @@ if PKG_USING_LWEXT4
             Select the lwext4 version
 
         if (RT_USING_SMART && RT_VER_NUM > 0x50100)
+            config PKG_USING_LWEXT4_V220
+                bool "v2.2.0"
+
+            config PKG_USING_LWEXT4_V210
+                bool "v2.1.0"
+
             config PKG_USING_LWEXT4_V200
                 bool "v2.0.0-dfsv2"
         endif
@@ -32,6 +38,8 @@ if PKG_USING_LWEXT4
 
     config PKG_LWEXT4_VER
        string
+       default "v2.2.0" if PKG_USING_LWEXT4_V220
+       default "v2.1.0" if PKG_USING_LWEXT4_V210
        default "v2.0.0-dfsv2" if PKG_USING_LWEXT4_V200
        default "v1.1.0" if PKG_USING_LWEXT4_V110
        default "latest" if PKG_USING_LWEXT4_LATEST_VERSION

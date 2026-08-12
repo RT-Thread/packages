@@ -1,0 +1,26 @@
+# Kconfig file for package mm32f5260x-hal-driver
+menuconfig PKG_USING_MM32F5260X_HAL_DRIVER
+    bool "MM32F5260x HAL driver package"
+    select PKG_USING_MM32F5260X_CMSIS
+    default n
+
+if PKG_USING_MM32F5260X_HAL_DRIVER
+
+    config PKG_MM32F5260X_HAL_DRIVER_PATH
+        string
+        default "/packages/peripherals/hal-sdk/mm32/mm32f5260x-hal-driver"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_MM32F5260X_HAL_DRIVER_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MM32F5260X_HAL_DRIVER_VER
+       string
+       default "latest"    if PKG_USING_MM32F5260X_HAL_DRIVER_LATEST_VERSION
+
+endif

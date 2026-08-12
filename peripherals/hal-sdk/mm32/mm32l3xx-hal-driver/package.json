@@ -1,0 +1,30 @@
+{
+  "name": "mm32l3xx-hal-driver",
+  "description": "MM32L3xx HAL driver package",
+  "description_zh": "MM32L3xx HAL 驱动包",
+  "enable": "PKG_USING_MM32L3XX_HAL_DRIVER",
+  "keywords": [
+    "mm32l3xx-hal-driver",
+    "MM32",
+    "HAL"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/mm32l3xx-hal-driver",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/mm32l3xx-hal-driver#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/mm32l3xx-hal-driver.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
