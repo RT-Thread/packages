@@ -1,0 +1,80 @@
+name: Packages PR Check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions: {}
+
+concurrency:
+  group: packages-pr-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  detect-pull-request-packages:
+    if: ${{ github.repository == 'RT-Thread/packages' }}
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    outputs:
+      packages: ${{ steps.changed-packages.outputs.packages }}
+      has-packages: ${{ steps.changed-packages.outputs.has-packages }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Detect changed packages
+        id: changed-packages
+        shell: bash
+        run: |
+          packages="$(python tools/ci/detect_changed_packages.py \
+            "${{ github.event.pull_request.base.sha }}" \
+            "${{ github.event.pull_request.head.sha }}")"
+          echo "packages=${packages}" >> "$GITHUB_OUTPUT"
+          if [ -n "$packages" ]; then
+            echo "has-packages=true" >> "$GITHUB_OUTPUT"
+            echo "Changed packages: $packages" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "has-packages=false" >> "$GITHUB_OUTPUT"
+            echo "No package changes require URL validation." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+  pull-request-package-urls:
+    needs: detect-pull-request-packages
+    if: ${{ github.repository == 'RT-Thread/packages' && needs.detect-pull-request-packages.outputs.has-packages == 'true' }}
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install URL checker dependencies
+        run: python -m pip install requests
+
+      - name: Validate changed package URLs and metadata
+        shell: bash
+        env:
+          CHANGED_PACKAGES: ${{ needs.detect-pull-request-packages.outputs.packages }}
+        run: |
+          read -r -a packages <<< "$CHANGED_PACKAGES"
+          python ci.py --packages "${packages[@]}"
+
+  tools-check:
+    if: ${{ github.repository == 'RT-Thread/packages' }}
+    permissions:
+      contents: read
+    uses: ./.github/workflows/aciont_tool.yml
