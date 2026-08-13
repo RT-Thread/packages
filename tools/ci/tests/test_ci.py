@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -31,6 +32,14 @@ class UrlValidationTests(unittest.TestCase):
 
         get.assert_called_once()
         self.assertEqual(get.call_args.kwargs["timeout"], CI.REQUEST_TIMEOUT_SECONDS)
+        response.close.assert_called_once()
+
+    def test_reachable_gitee_url_is_valid(self):
+        response = mock.Mock(status_code=200)
+        with mock.patch.object(CI.requests, "get", return_value=response) as get:
+            self.assertTrue(CI.determine_url_valid("https://gitee.com/Gemsea/lite-type"))
+
+        get.assert_called_once()
         response.close.assert_called_once()
 
     def test_http_error_is_retried_and_rejected(self):
@@ -72,6 +81,30 @@ class UrlValidationTests(unittest.TestCase):
                 CI.determine_url_valid("https://github.com.evil.invalid/pkg.zip")
             )
         get.assert_not_called()
+
+    def test_lookalike_gitee_host_is_rejected(self):
+        with mock.patch.object(CI.requests, "get") as get:
+            self.assertFalse(
+                CI.determine_url_valid("https://gitee.com.evil.invalid/pkg.zip")
+            )
+        get.assert_not_called()
+
+    def test_gitee_commit_sha_is_checked_with_gitee_api(self):
+        response = mock.Mock(status_code=200)
+        with mock.patch.object(CI.requests, "get", return_value=response) as get:
+            self.assertTrue(
+                CI.check_commit_sha_exists(
+                    "https://gitee.com/Gemsea/lite-type.git",
+                    "0d4c69927328a936fd316a73e3abee36d499c63f",
+                )
+            )
+
+        self.assertEqual(
+            get.call_args.args[0],
+            "https://gitee.com/api/v5/repos/Gemsea/lite-type/commits/"
+            "0d4c69927328a936fd316a73e3abee36d499c63f",
+        )
+        self.assertNotIn("Authorization", get.call_args.kwargs["headers"])
 
     def test_unsupported_git_url_is_not_passed_to_git(self):
         metadata = {
@@ -237,6 +270,78 @@ class AggregateValidationTests(unittest.TestCase):
 
         output = " ".join(str(call) for call in printer.call_args_list)
         self.assertNotIn("branch 'deadbeef'", output)
+
+
+class KconfigValidationTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.root = Path(self.temp_dir.name) / "packages"
+        self.package_dir = self.root / "misc" / "sample"
+        self.package_dir.mkdir(parents=True)
+        (self.root / "misc" / "Kconfig").write_text(
+            'menu "misc packages"\n'
+            'source "$PKGS_DIR/packages/misc/sample/Kconfig"\n'
+            "endmenu\n",
+            encoding="utf-8",
+        )
+        self.metadata = {
+            "name": "sample",
+            "category": "misc",
+            "enable": "PKG_USING_SAMPLE",
+        }
+        self.package_path = self.package_dir / "package.json"
+        self.package_path.write_text(json.dumps(self.metadata), encoding="utf-8")
+
+    def tearDown(self) -> None:
+        self.temp_dir.cleanup()
+
+    def record(self) -> object:
+        return CI.PackageRecord(self.package_path, self.metadata)
+
+    def write_kconfig(self, content: str) -> None:
+        (self.package_dir / "Kconfig").write_text(content, encoding="utf-8")
+
+    def test_valid_kconfig_is_accepted(self) -> None:
+        self.write_kconfig(
+            'menuconfig PKG_USING_SAMPLE\n'
+            '    bool "Sample"\n'
+            "    default n\n"
+        )
+
+        self.assertEqual(CI.check_package_kconfig(self.record(), self.root), (True, ""))
+
+    def test_missing_kconfig_is_rejected(self) -> None:
+        valid, reason = CI.check_package_kconfig(self.record(), self.root)
+
+        self.assertFalse(valid)
+        self.assertIn("Kconfig file is missing", reason)
+
+    def test_invalid_kconfig_is_rejected(self) -> None:
+        self.write_kconfig('menuconfig PKG_USING_SAMPLE\n    bool "unterminated\n')
+
+        valid, reason = CI.check_package_kconfig(self.record(), self.root)
+
+        self.assertFalse(valid)
+        self.assertIn("Kconfig parse failed", reason)
+
+    def test_enable_symbol_must_be_defined(self) -> None:
+        self.write_kconfig('menuconfig PKG_USING_OTHER\n    bool "Other"\n')
+
+        valid, reason = CI.check_package_kconfig(self.record(), self.root)
+
+        self.assertFalse(valid)
+        self.assertIn("PKG_USING_SAMPLE", reason)
+
+    def test_category_kconfig_must_source_package(self) -> None:
+        (self.root / "misc" / "Kconfig").write_text(
+            'menu "misc packages"\nendmenu\n', encoding="utf-8"
+        )
+        self.write_kconfig('menuconfig PKG_USING_SAMPLE\n    bool "Sample"\n')
+
+        valid, reason = CI.check_package_kconfig(self.record(), self.root)
+
+        self.assertFalse(valid)
+        self.assertIn("category Kconfig does not source", reason)
 
     def test_discovery_keeps_invalid_json_for_its_shard(self):
         with tempfile.TemporaryDirectory() as temp_dir:

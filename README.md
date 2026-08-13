@@ -22,7 +22,7 @@
 1. 提交前请确认Kconfig以及package.json文件的编码格式为UTF-8格式，否则会导致env报错。
 2. 软件包的仓库名称不要以数字开头，否则gitee备份中国大陆镜像源时，备份不过去。
 3. 软件包内请不要包含submodule，gitee中国大陆镜像源无法备份submodule的内容，会导致用户直接使用github拉取软件包，可能会断流。
-4. 需要采用github作为软件包托管仓库，不要使用gitee，后台会自动创建gitee大陆镜像源。
+4. 软件包仓库支持使用 GitHub 或 Gitee。使用 GitHub 时，后台会自动创建 Gitee 大陆镜像源；使用 Gitee 时，请确保仓库和版本地址可公开访问。
 5. 在你的软件包索引被合并之后，请于次日或后日到[RTT软件包中国gitee镜像源组织](https://gitee.com/RT-Thread-Mirror)中查看是否增加了你的软件包仓库（每日凌晨会有机器人自动同步），如果没有增加和同步，请在github提issue与管理员联系。
 6. 可以在提交之前使用vscode或者是json语法检查工具检查json的语法是否正确，以免引发自检机器人报错
 7. 如果是将第三方设计的开源项目注册到RT-Thread软件包中心，尽量fork该项目（也称之为上游项目），方便日后同步上游修改，[例如](https://github.com/flyingcys/rpmsg-lite)。或者如果上游项目同意添加RT-Thread的Sconscript，可以直接将上游项目直接注册为RT-Thread软件包，[例如](https://github.com/lvgl/lvgl)
