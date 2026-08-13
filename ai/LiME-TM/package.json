@@ -14,12 +14,12 @@
     "github": "wuhanstudio"
   },
   "license": "MIT",
-  "repository": "https://github.com/wuhanstudio/tsetlin.idf",
-  "homepage": "https://github.com/wuhanstudio/tsetlin.idf#readme",
+  "repository": "https://github.com/wuhanstudio/lime-tm.c",
+  "homepage": "https://github.com/wuhanstudio/lime-tm.c#readme",
   "site": [
     {
       "version": "latest",
-      "URL": "https://github.com/wuhanstudio/tsetlin.idf.git",
+      "URL": "https://github.com/wuhanstudio/lime-tm.c.git",
       "filename": "",
       "VER_SHA": "main"
     }
