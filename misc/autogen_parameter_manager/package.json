@@ -1,0 +1,37 @@
+{
+  "name": "autogen_parameter_manager",
+  "description": "RT-Thread parameter table management library with generated IDs/layouts, metadata, validation, optional MSH tooling, and optional NVM persistence backends.",
+  "description_zh": "面向 RT-Thread 的参数表管理软件包，支持生成 ID/布局、元数据、校验、可选 MSH 工具和可选 NVM 持久化后端。",
+  "enable": "PKG_USING_AUTOGEN_PARAMETER_MANAGER",
+  "keywords": [
+    "parameter",
+    "parameter management",
+    "configuration",
+    "nvm",
+    "rt-thread"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "wdfk-prog",
+    "email": "1425075683@qq.com",
+    "github": "wdfk-prog"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wdfk-prog/parameters.git",
+  "homepage": "https://github.com/wdfk-prog/parameters#readme",
+  "doc": "https://github.com/wdfk-prog/parameters#readme",
+  "site": [
+    {
+      "version": "V4.0.0",
+      "URL": "https://github.com/wdfk-prog/parameters/archive/V4.0.0.zip",
+      "filename": "CanFestival-1.0.0.zip",
+      "VER_SHA": "master"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wdfk-prog/parameters.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

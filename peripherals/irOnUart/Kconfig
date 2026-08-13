@@ -1,0 +1,50 @@
+
+# Kconfig file for package irOnUart
+menuconfig PKG_USING_IRUART
+    bool "irOnUart: infrared UART package"
+    default n
+    help
+        Enable infrared UART package..
+
+if PKG_USING_IRUART
+    config PKG_IRUART_PATH
+        string
+        default "/packages/peripherals/irOnUart"
+
+    choice
+        prompt "Version"
+        default PKG_USING_IRUART_LATEST_VERSION
+        help
+            Select the package version
+
+    config PKG_USING_IRUART_V100
+        bool "v1.0.0"
+
+    config PKG_USING_IRUART_LATEST_VERSION
+        bool "latest"
+endchoice
+
+    config PKG_IRUART_VER
+       string
+       default "v1.0.0" if PKG_USING_IRUART_V100
+       default "latest" if PKG_USING_IRUART_LATEST_VERSION
+
+    config IR_USART_NAME
+        string "Infrared UART name"
+        default "uart4"
+        help
+            UART name for infrared .
+
+    config IR_PWM_NAME
+        string "Infrared PWM name"
+        default "pwm1"
+        help
+            PWM name for infrared .
+
+    config IR_PWM_CHAN
+        int "Infrared PWM channel"
+        default 4
+        help
+            PWM channel for infrared .
+     
+endif

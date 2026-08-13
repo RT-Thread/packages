@@ -1,0 +1,299 @@
+# Kconfig file for package TCA9548A (PW548A)
+menuconfig PKG_USING_TCA9548A
+    bool "TCA9548A: Low Voltage 8-Channel I2C Switch with Reset (PW548A)"
+    default n
+    select RT_USING_I2C
+    help
+        The TCA9548A (chip marking: PW548A) is a low-voltage 8-channel I2C
+        switch with reset from Texas Instruments. It features 1-to-8
+        bidirectional translating switches controlled via I2C bus,
+        allowing voltage-level translation between 1.8V, 2.5V, 3.3V,
+        and 5V buses.
+
+if PKG_USING_TCA9548A
+
+    config PKG_TCA9548A_PATH
+        string
+        default "/packages/peripherals/tca9548a"
+
+    config TCA9548A_USING_EXAMPLE
+        bool "Enable TCA9548A example"
+        default n
+        help
+            Enable the TCA9548A example code to demonstrate basic usage
+            including device scanning, channel switching, and reset.
+
+    menu "TCA9548A Device Configuration"
+
+    config TCA9548A_DEV0_ENABLE
+        bool "Device 0 - Enable"
+        default y
+        help
+            Enable the first TCA9548A device.
+            Each device can be on any I2C bus with any valid address.
+
+    if TCA9548A_DEV0_ENABLE
+
+        config TCA9548A_DEV0_BUS_NAME
+            string "Device 0 - I2C bus name"
+            default "i2c1"
+            help
+                The I2C bus device name this TCA9548A is connected to
+                (e.g., "i2c1", "i2c0", "i2c2").
+
+        config TCA9548A_DEV0_ADDR
+            hex "Device 0 - I2C address (7-bit)"
+            range 0x70 0x77
+            default 0x70
+            help
+                The 7-bit I2C address of this TCA9548A device.
+                Valid range: 0x70 - 0x77 (determined by A0, A1, A2 hardware pins).
+
+        config TCA9548A_DEV0_NAME
+            string "Device 0 - Device name"
+            default "tca9548a_0"
+            help
+                A unique name for this TCA9548A device instance.
+                Used to identify the device in the application code
+                via tca9548a_find("tca9548a_0").
+
+    endif
+
+    config TCA9548A_DEV1_ENABLE
+        bool "Device 1 - Enable"
+        depends on TCA9548A_DEV0_ENABLE
+        default n
+        help
+            Enable the second TCA9548A device.
+            Only available when Device 0 is enabled.
+
+    if TCA9548A_DEV1_ENABLE
+
+        config TCA9548A_DEV1_BUS_NAME
+            string "Device 1 - I2C bus name"
+            default "i2c1"
+            help
+                The I2C bus device name this TCA9548A is connected to.
+
+        config TCA9548A_DEV1_ADDR
+            hex "Device 1 - I2C address (7-bit)"
+            range 0x70 0x77
+            default 0x70
+            help
+                The 7-bit I2C address of this TCA9548A device.
+
+        config TCA9548A_DEV1_NAME
+            string "Device 1 - Device name"
+            default "tca9548a_1"
+            help
+                A unique name for this TCA9548A device instance.
+
+    endif
+
+    config TCA9548A_DEV2_ENABLE
+        bool "Device 2 - Enable"
+        depends on TCA9548A_DEV1_ENABLE
+        default n
+        help
+            Enable the third TCA9548A device.
+            Only available when Device 1 is enabled.
+
+    if TCA9548A_DEV2_ENABLE
+
+        config TCA9548A_DEV2_BUS_NAME
+            string "Device 2 - I2C bus name"
+            default "i2c1"
+            help
+                The I2C bus device name this TCA9548A is connected to.
+
+        config TCA9548A_DEV2_ADDR
+            hex "Device 2 - I2C address (7-bit)"
+            range 0x70 0x77
+            default 0x70
+            help
+                The 7-bit I2C address of this TCA9548A device.
+
+        config TCA9548A_DEV2_NAME
+            string "Device 2 - Device name"
+            default "tca9548a_2"
+            help
+                A unique name for this TCA9548A device instance.
+
+    endif
+
+    config TCA9548A_DEV3_ENABLE
+        bool "Device 3 - Enable"
+        depends on TCA9548A_DEV2_ENABLE
+        default n
+        help
+            Enable the fourth TCA9548A device.
+            Only available when Device 2 is enabled.
+
+    if TCA9548A_DEV3_ENABLE
+
+        config TCA9548A_DEV3_BUS_NAME
+            string "Device 3 - I2C bus name"
+            default "i2c1"
+            help
+                The I2C bus device name this TCA9548A is connected to.
+
+        config TCA9548A_DEV3_ADDR
+            hex "Device 3 - I2C address (7-bit)"
+            range 0x70 0x77
+            default 0x70
+            help
+                The 7-bit I2C address of this TCA9548A device.
+
+        config TCA9548A_DEV3_NAME
+            string "Device 3 - Device name"
+            default "tca9548a_3"
+            help
+                A unique name for this TCA9548A device instance.
+
+    endif
+
+    config TCA9548A_DEV4_ENABLE
+        bool "Device 4 - Enable"
+        depends on TCA9548A_DEV3_ENABLE
+        default n
+        help
+            Enable the fifth TCA9548A device.
+            Only available when Device 3 is enabled.
+
+    if TCA9548A_DEV4_ENABLE
+
+        config TCA9548A_DEV4_BUS_NAME
+            string "Device 4 - I2C bus name"
+            default "i2c1"
+            help
+                The I2C bus device name this TCA9548A is connected to.
+
+        config TCA9548A_DEV4_ADDR
+            hex "Device 4 - I2C address (7-bit)"
+            range 0x70 0x77
+            default 0x70
+            help
+                The 7-bit I2C address of this TCA9548A device.
+
+        config TCA9548A_DEV4_NAME
+            string "Device 4 - Device name"
+            default "tca9548a_4"
+            help
+                A unique name for this TCA9548A device instance.
+
+    endif
+
+    config TCA9548A_DEV5_ENABLE
+        bool "Device 5 - Enable"
+        depends on TCA9548A_DEV4_ENABLE
+        default n
+        help
+            Enable the sixth TCA9548A device.
+            Only available when Device 4 is enabled.
+
+    if TCA9548A_DEV5_ENABLE
+
+        config TCA9548A_DEV5_BUS_NAME
+            string "Device 5 - I2C bus name"
+            default "i2c1"
+            help
+                The I2C bus device name this TCA9548A is connected to.
+
+        config TCA9548A_DEV5_ADDR
+            hex "Device 5 - I2C address (7-bit)"
+            range 0x70 0x77
+            default 0x70
+            help
+                The 7-bit I2C address of this TCA9548A device.
+
+        config TCA9548A_DEV5_NAME
+            string "Device 5 - Device name"
+            default "tca9548a_5"
+            help
+                A unique name for this TCA9548A device instance.
+
+    endif
+
+    config TCA9548A_DEV6_ENABLE
+        bool "Device 6 - Enable"
+        depends on TCA9548A_DEV5_ENABLE
+        default n
+        help
+            Enable the seventh TCA9548A device.
+            Only available when Device 5 is enabled.
+
+    if TCA9548A_DEV6_ENABLE
+
+        config TCA9548A_DEV6_BUS_NAME
+            string "Device 6 - I2C bus name"
+            default "i2c1"
+            help
+                The I2C bus device name this TCA9548A is connected to.
+
+        config TCA9548A_DEV6_ADDR
+            hex "Device 6 - I2C address (7-bit)"
+            range 0x70 0x77
+            default 0x70
+            help
+                The 7-bit I2C address of this TCA9548A device.
+
+        config TCA9548A_DEV6_NAME
+            string "Device 6 - Device name"
+            default "tca9548a_6"
+            help
+                A unique name for this TCA9548A device instance.
+
+    endif
+
+    config TCA9548A_DEV7_ENABLE
+        bool "Device 7 - Enable"
+        depends on TCA9548A_DEV6_ENABLE
+        default n
+        help
+            Enable the eighth TCA9548A device.
+            Only available when Device 6 is enabled.
+
+    if TCA9548A_DEV7_ENABLE
+
+        config TCA9548A_DEV7_BUS_NAME
+            string "Device 7 - I2C bus name"
+            default "i2c1"
+            help
+                The I2C bus device name this TCA9548A is connected to.
+
+        config TCA9548A_DEV7_ADDR
+            hex "Device 7 - I2C address (7-bit)"
+            range 0x70 0x77
+            default 0x70
+            help
+                The 7-bit I2C address of this TCA9548A device.
+
+        config TCA9548A_DEV7_NAME
+            string "Device 7 - Device name"
+            default "tca9548a_7"
+            help
+                A unique name for this TCA9548A device instance.
+
+    endif
+
+    endmenu
+
+    choice
+        prompt "Version"
+        default PKG_USING_TCA9548A_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_TCA9548A_V100
+            bool "v1.0.0"
+
+        config PKG_USING_TCA9548A_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_TCA9548A_VER
+        string
+        default "v1.0.0"    if PKG_USING_TCA9548A_V100
+        default "latest"     if PKG_USING_TCA9548A_LATEST_VERSION
+
+endif

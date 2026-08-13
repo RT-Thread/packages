@@ -13,5 +13,7 @@ source "$PKGS_DIR/packages/ai/ncnn/Kconfig"
 source "$PKGS_DIR/packages/ai/r-tinymaix/Kconfig"
 source "$PKGS_DIR/packages/ai/llmchat/Kconfig"
 source "$PKGS_DIR/packages/ai/LiME-TM/Kconfig"
+source "$PKGS_DIR/packages/ai/AIfES/Kconfig"
+source "$PKGS_DIR/packages/ai/Agent/Kconfig"
 
 endmenu

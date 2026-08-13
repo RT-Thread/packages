@@ -1,0 +1,41 @@
+# Kconfig file for package scd4x
+menuconfig PKG_USING_SCD4X
+    bool "SCD4x: Sensirion CO2, Temperature and Humidity Sensor"
+    default n
+    select RT_USING_I2C
+
+if PKG_USING_SCD4X
+    config PKG_SCD4X_PATH
+        string
+        default "/packages/peripherals/sensors/scd4x"
+
+    config PKG_SCD4X_I2C_BUS
+        string "I2C bus name"
+        default "i2c1"
+
+    config PKG_SCD4X_ASC_ENABLE
+        bool "Enable Automatic Self Calibration (ASC)"
+        default y
+
+    config PKG_USING_SCD4X_SAMPLE
+        bool "Enable SCD4x sample application"
+        default n
+
+    config PKG_USING_SCD4X_SHELL
+        bool "Enable SCD4x FinSH shell commands"
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_SCD4X_LATEST_VERSION
+        config PKG_USING_SCD4X_V100
+            bool "v1.0.0"
+        config PKG_USING_SCD4X_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SCD4X_VER
+       string
+       default "v1.0.0"    if PKG_USING_SCD4X_V100
+       default "latest"    if PKG_USING_SCD4X_LATEST_VERSION
+endif

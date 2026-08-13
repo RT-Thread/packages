@@ -1,0 +1,55 @@
+
+# Kconfig file for package AI4ES
+menuconfig PKG_USING_AIFES
+    select RT_USING_POSIX_FS
+    bool "AIfES: A machine learning framework, developed and maintained by Fraunhofer Institute for Microelectronic Circuits and Systems."
+    default n
+
+if PKG_USING_AIFES
+
+    config PKG_AIFES_PATH
+        string
+        default "/packages/ai/AIfES"
+
+    config AIFES_USING_XOR_INFERENCE_F32_EXAMPLE
+            bool "XOR inference example"
+            help
+               The sketch shows an example of how the inference of an already trained network is performed. In the concrete example, a neural network was trained to map an XOR gate. The neural network was trained in Keras and the configuration including the weights was imported into AIfES. The network structure is 2-3(Sigmoid)-1(Sigmoid) and Sigmoid is used as activation function. The calculation is done in float 32.
+            default y
+
+    config AIFES_USING_XOR_TRAINING_F32_EXAMPLE
+            bool "XOR training example"
+            help
+                The sketch shows an example of how a neural network is trained from scratch in AIfES using training data. As in the example "0_XOR_Inference", an XOR gate is mapped here using a neural network. The 4 different states of an XOR gate are fed in as training data here. The network structure is 2-3(Sigmoid)-1(Sigmoid) and Sigmoid is used as activation function. In the example, the weights are initialized randomly in a range of values from -2 to +2. The Gotrot initialization was inserted as an alternative and commented out. For the training the ADAM Optimizer is used, the SGD Optimizer was commented out. The optimizer performs a batch training over 100 epochs. The calculation is done in float 32.
+            default y
+
+    config AIFES_USING_CNN_TRAINING_F32_EXAMPLE
+            bool "CNN training example"
+            help
+                The sketch shows an example of how the training of a convolutional neural network (CNN) is performed. The training data consists of images with horizontal and vertical stripes. This example is just for demonstration of the training procedure with a CNN and has no deeper meaning.
+            default n
+
+    config AIFES_USING_MNIST_TRAINING_F32_EXAMPLE
+            bool "MNIST training example"
+            help
+                The sketch shows an example of training a convolutional neural network (CNN) on the MNIST dataset.
+            default n
+
+    choice
+        prompt "Version"
+        default PKG_USING_AIFES_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_AIFES_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_AIFES_VER
+       string
+       default "latest"    if PKG_USING_AIFES_LATEST_VERSION
+
+    config PKG_LIME_TM_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_AIFES_LATEST_VERSION
+
+endif

@@ -1,0 +1,40 @@
+# Kconfig file for package mlx90384
+menuconfig PKG_USING_MLX90384
+    bool "a mlx90384 package for rt-thread."
+    default n
+
+if PKG_USING_MLX90384
+
+    config PKG_MLX90384_USING_SENSOR_V1
+        bool "Enable sensor divce framework"
+        select RT_USING_SENSOR
+        default n
+
+    config PKG_MLX90384_PATH
+        string
+        default "/packages/peripherals/sensors/mlx90384"
+
+    choice
+        prompt "Version"
+        default PKG_USING_MLX90384_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_MLX90384_V100
+            bool "v1.0.0"
+
+        config PKG_USING_MLX90384_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_MLX90384_VER
+       string
+       default "v1.0.0"    if PKG_USING_MLX90384_V100
+       default "latest"    if PKG_USING_MLX90384_LATEST_VERSION
+
+    config PKG_USING_MLX90384_SAMPLE
+        bool "Enable mlx90384 sample"
+        default n
+
+endif
+

@@ -1,0 +1,29 @@
+{
+  "name": "thread_manager",
+  "description": "RT-Thread thread manager: task registry, message dispatch, manager thread, optional system-ready sync",
+  "description_zh": "RT-Thread 线程管理器：任务注册表、消息分发、管理线程、可选的系统就绪同步",
+  "enable": "PKG_USING_THREAD_MANAGER",
+  "keywords": [
+    "thread",
+    "manager"
+  ],
+  "category": "system",
+  "author": {
+    "name": "John.liu",
+    "email": "450547566@qq.com",
+    "github": "https://github.com/Bluetooth-BLE"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Bluetooth-BLE/thread_manager",
+  "icon": "unknown",
+  "homepage": "https://github.com/Bluetooth-BLE/thread_manager#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Bluetooth-BLE/thread_manager.git",
+      "filename": "",
+      "VER_SHA": "main"
+    }
+  ]
+}

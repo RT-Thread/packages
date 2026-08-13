@@ -1,15 +1,7 @@
 name: ToolsCI
 # 这个CI用来检查menuconfig中的warning和错误
 on:
-  # Runs at 16:00 UTC (BeiJing 00:00) on the 1st of every month
-  schedule:
-    - cron:  '0 16 1 * *'
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  workflow_call:
   workflow_dispatch:
   
 permissions:
@@ -17,15 +9,13 @@ permissions:
 
 jobs:
   test:
+    if: ${{ github.repository == 'RT-Thread/packages' }}
     runs-on: ubuntu-22.04
     name: Tools
-    if: github.repository_owner == 'RT-Thread'
-    strategy:
-      fail-fast: false
     env:
       TEST_BSP_ROOT: bsp/stm32/stm32f407-atk-explorer
     steps:
-    - uses: actions/checkout@main
+    - uses: actions/checkout@v5
       with:
         repository: RT-Thread/rt-thread
 
@@ -45,7 +35,7 @@ jobs:
         /opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc --version
         echo "RTT_EXEC_PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin" >> $GITHUB_ENV
     - name: Checkout packages
-      uses: actions/checkout@main
+      uses: actions/checkout@v5
       with:
         path: packages
     - name: Build Tools

@@ -1,0 +1,33 @@
+{
+  "name": "Virtual-Terminal",
+  "description": "Virtual-Terminal: High-speed virtual terminal",
+  "description_zh": "Virtual-Terminal: 高速虚拟终端",
+  "enable": "PKG_USING_VIRTUAL_TERMINAL",
+  "keywords": [
+    "Virtual-Terminal"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "RealThread",
+    "email": "package_team@rt-thread.com",
+    "github": "RealThread"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/RT-Thread-packages/Virtual-Terminal.git",
+  "icon": "unknown",
+  "homepage": "https://github.com/RT-Thread-packages/Virtual-Terminal.git#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/RT-Thread-packages/Virtual-Terminal/archive/refs/tags/1.0.0.zip",
+      "filename": "Virtual-Terminal-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/RT-Thread-packages/Virtual-Terminal.git",
+      "filename": "Virtual-Terminal-latest.zip",
+      "VER_SHA": "master"
+    }
+  ]
+}

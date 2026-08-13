@@ -17,7 +17,7 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/Sunwancn/rtt-pkgs-beep",
   "icon": "unknown",
-  "homepage": "https://github.com/Sunwancn/rtt-pkgs-beep",
+  "homepage": "https://gitee.com/Sunwancn/rtt-pkgs-beep",
   "doc": "unknown",
   "site": [
     {
@@ -30,6 +30,12 @@
       "version": "v1.1.0",
       "URL": "https://github.com/Sunwancn/rtt-pkgs-beep/archive/v1.1.0.zip",
       "filename": "rtt-pkgs-beep-1.1.0.zip",
+      "VER_SHA": "NULL"
+    },
+    {
+      "version": "v1.2.0",
+      "URL": "https://github.com/Sunwancn/rtt-pkgs-beep/archive/refs/tags/v1.2.0.zip",
+      "filename": "rtt-pkgs-beep-1.2.0.zip",
       "VER_SHA": "NULL"
     },
     {

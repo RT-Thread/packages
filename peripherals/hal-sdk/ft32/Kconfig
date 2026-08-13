@@ -1,0 +1,11 @@
+menu "FT32 HAL & SDK Drivers"
+
+# FT32F0
+source "$PKGS_DIR/packages/peripherals/hal-sdk/ft32/ft32f0_std_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/ft32/ft32f0_cmsis_driver/Kconfig"
+
+# FT32F4
+source "$PKGS_DIR/packages/peripherals/hal-sdk/ft32/ft32f4_std_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/ft32/ft32f4_cmsis_driver/Kconfig"
+
+endmenu

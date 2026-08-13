@@ -13,21 +13,21 @@
     "github": "StackRyan"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/StackRyan/TinyJPEG",
+  "repository": "https://github.com/RT-Thread-packages/TinyJPEG",
   "icon": "unknown",
   "homepage": "unknown",
   "doc": "unknown",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://github.com/StackRyan/TinyJPEG/archive/refs/tags/v1.0.0.zip",
+      "URL": "https://github.com/RT-Thread-packages/TinyJPEG/archive/refs/tags/v1.0.0.zip",
       "filename": "TinyJPEG-1.0.0.zip",
       "VER_SHA": "fill in the git version SHA value"
     },
     {
       "version": "latest",
-      "URL": "https://github.com/StackRyan/TinyJPEG.git",
-      "filename": "Null for git package",
+      "URL": "https://github.com/RT-Thread-packages/TinyJPEG.git",
+      "filename": "TinyJPEG-latest",
       "VER_SHA": "master"
     }
   ]

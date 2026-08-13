@@ -1,0 +1,35 @@
+{
+  "name": "nes_simulator",
+  "description": "The nes simulator implemented in C.",
+  "description_zh": "C语言实现的nes模拟器。",
+  "enable": "PKG_USING_NES_SIMULATOR",
+  "keywords": [
+    "nes",
+    "simulator",
+    "game"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "PeakRacing",
+    "email": "1473454180@qq.com",
+    "github": "PeakRacing"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/PeakRacing/nes",
+  "icon": "unknown",
+  "homepage": "https://github.com/PeakRacing/nes#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v0.0.4",
+      "URL": "https://github.com/PeakRacing/nes/archive/refs/tags/v0.0.4.zip",
+      "filename": "nes-0.0.4.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/PeakRacing/nes.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

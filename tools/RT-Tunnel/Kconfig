@@ -1,0 +1,41 @@
+
+# Kconfig file for package RT-Tunnel
+menuconfig PKG_USING_RT_TUNNEL
+    bool "RT-Tunnel: Auxiliary communication with RT-Trace tool and the target."
+    default n
+
+if PKG_USING_RT_TUNNEL
+
+    config PKG_RT_TUNNEL_PATH
+        string
+        default "/packages/tools/RT-Tunnel"
+
+    config TUNNEL_NUM
+        int "Tunnel number"
+        default 3
+
+    config TUNNEL_BUFFER_SIZE
+        int "Tunnel buffer size (bytes)"
+        default 8192
+        help
+            Configure the buffer size for each tunnel.
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_RT_TUNNEL_V100
+            bool "v1.0.0"
+
+        config PKG_USING_RT_TUNNEL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_RT_TUNNEL_VER
+       string
+       default "v1.0.0"    if PKG_USING_RT_TUNNEL_V100
+       default "latest"    if PKG_USING_RT_TUNNEL_LATEST_VERSION
+
+endif
+

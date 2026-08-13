@@ -1,5 +1,8 @@
 menu "tools packages"
 
+source "$PKGS_DIR/packages/tools/vector/Kconfig"
+source "$PKGS_DIR/packages/tools/sorch/Kconfig"
+source "$PKGS_DIR/packages/tools/dict/Kconfig"
 source "$PKGS_DIR/packages/tools/CmBacktrace/Kconfig"
 source "$PKGS_DIR/packages/tools/MCoreDump/Kconfig"
 source "$PKGS_DIR/packages/tools/EasyFlash/Kconfig"
@@ -52,4 +55,7 @@ source "$PKGS_DIR/packages/tools/RVBacktrace/Kconfig"
 source "$PKGS_DIR/packages/tools/hpatchlite-wrapper/Kconfig"
 source "$PKGS_DIR/packages/tools/thread-metric/Kconfig"
 source "$PKGS_DIR/packages/tools/uORB/Kconfig"
+source "$PKGS_DIR/packages/tools/RT-Tunnel/Kconfig"
+source "$PKGS_DIR/packages/tools/Virtual-Terminal/Kconfig"
+source "$PKGS_DIR/packages/tools/fee/Kconfig"
 endmenu

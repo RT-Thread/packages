@@ -1,0 +1,131 @@
+menuconfig PKG_USING_GD32VW55X_WIFI
+    bool "GD32VW55x WIFI DRIVER PACKAGE"
+    default n
+    select RT_USING_LWIP
+    select RT_USING_LIBC
+
+if PKG_USING_GD32VW55X_WIFI
+
+    config PKG_GD32VW55X_WIFI_PATH
+        string
+        default "/packages/peripherals/hal-sdk/gd32/gd32vw55x-wifi"
+
+    config GD32VW55X_WIFI_STATION_MODE
+        bool "Enable Station Mode"
+        default y
+        help
+            Enable WIFI Station (STA) mode to connect to access points.
+
+    config GD32VW55X_WIFI_SOFTAP_MODE
+        bool "Enable SoftAP Mode"
+        default n
+        help
+            Enable WIFI SoftAP mode to act as an access point.
+
+    menu "Security Configuration"
+
+        config GD32VW55X_WIFI_WPA_SECURITY
+            bool "Enable WPA/WPA2 Security"
+            default y
+            help
+                Enable WPA and WPA2 security protocols.
+
+        config GD32VW55X_WIFI_WPA3_SECURITY
+            bool "Enable WPA3 Security"
+            default n
+            depends on GD32VW55X_WIFI_WPA_SECURITY
+            help
+                Enable WPA3 security protocol (SAE).
+
+        config GD32VW55X_WIFI_WPS_SUPPORT
+            bool "Enable WPS (Wi-Fi Protected Setup)"
+            default n
+            help
+                Enable WPS for easy network setup.
+
+    endmenu
+
+    menu "Advanced Configuration"
+
+        config GD32VW55X_WIFI_TASK_STACK_SIZE
+            int "WIFI Task Stack Size"
+            default 4096
+            range 2048 8192
+            help
+                Stack size for WIFI tasks in bytes.
+
+        config GD32VW55X_WIFI_TASK_PRIORITY
+            int "WIFI Task Priority"
+            default 10
+            range 1 31
+            help
+                Priority for WIFI management tasks.
+
+        config GD32VW55X_WIFI_RX_BUFFER_SIZE
+            int "WIFI RX Buffer Size"
+            default 1600
+            range 1024 4096
+            help
+                Receive buffer size for WIFI packets.
+
+        config GD32VW55X_WIFI_MAX_SCAN_RESULTS
+            int "Maximum Scan Results"
+            default 32
+            range 8 128
+            help
+                Maximum number of scan results to store.
+
+    endmenu
+
+    menu "Power Management"
+
+        config GD32VW55X_WIFI_POWER_SAVE
+            bool "Enable Power Save Mode"
+            default n
+            help
+                Enable WIFI power saving features.
+
+        if GD32VW55X_WIFI_POWER_SAVE
+
+            config GD32VW55X_WIFI_PS_DTIM_PERIOD
+                int "DTIM Period for Power Save"
+                default 3
+                range 1 10
+                help
+                    DTIM period for power save mode.
+
+        endif
+
+    endmenu
+
+    config GD32VW55X_WIFI_DEBUG
+        bool "Enable WIFI Debug Output"
+        default n
+        help
+            Enable detailed debug output for WIFI operations.
+
+    if GD32VW55X_WIFI_DEBUG
+
+        config GD32VW55X_WIFI_DEBUG_LEVEL
+            int "Debug Level (0-4)"
+            default 2
+            range 0 4
+            help
+                Debug level: 0=None, 1=Error, 2=Warning, 3=Info, 4=Verbose
+
+    endif
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_GD32VW55X_WIFI_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_GD32VW55X_WIFI_VER
+        string
+        default "latest"    if PKG_USING_GD32VW55X_WIFI_LATEST_VERSION
+endif
+
+

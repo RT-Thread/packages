@@ -1,0 +1,17 @@
+{
+  "name": "scd4x",
+  "description": "Sensirion SCD4x (CO2/Temp/Humi) sensor driver",
+  "description_zh": "Sensirion SCD4x (CO2/温湿度) 传感器驱动",
+  "enable": "PKG_USING_SCD4X",
+  "keywords": ["scd4x", "co2", "sensirion", "sensor"],
+  "category": "peripherals/sensors",
+  "author": { "name": "Uma", "email": "umamaheswari.acca@gmail.com", "github": "umam-123" },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/umam-123/scd4x",
+  "icon": "unknown",
+  "homepage": "https://github.com/umam-123/scd4x#readme",
+  "site": [
+    { "version": "v1.0.0", "URL": "https://github.com/umam-123/scd4x/archive/refs/tags/v1.0.0.zip", "filename": "scd4x-v1.0.0.zip", "VER_SHA": "master" },
+    { "version": "latest", "URL": "https://github.com/umam-123/scd4x/archive/refs/heads/master.zip", "filename": "scd4x-master.zip", "VER_SHA": "master" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "mlx90384",
+  "description": "The MLX90384 is a high resolution(18 bits) magnetic encoder(Arcminaxis)",
+  "description_zh": "MLX90384 是来自迈来芯公司的一颗高分辨率（18 Bits）磁编码器",  
+  "enable": "PKG_USING_MLX90384", 
+  "keywords": [
+    "mlx90384"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "lgnq",
+    "email": "dzzxzz@gmail.com",
+    "github": "lgnq"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/lgnq/mlx90384",
+  "icon": "unknown",
+  "homepage": "https://github.com/lgnq/mlx90384",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/lgnq/mlx90384.git",
+      "filename": "mlx90384.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

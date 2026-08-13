@@ -58,4 +58,6 @@ source "$PKGS_DIR/packages/system/r-rhealstone/Kconfig"
 source "$PKGS_DIR/packages/system/heartbeat/Kconfig"
 source "$PKGS_DIR/packages/system/micro_ros_local/Kconfig"
 source "$PKGS_DIR/packages/system/CherryECAT/Kconfig"
+source "$PKGS_DIR/packages/system/event_loop/Kconfig"
+source "$PKGS_DIR/packages/system/thread_manager/Kconfig"
 endmenu

@@ -1,0 +1,45 @@
+# Kconfig file for package st7305
+
+menuconfig PKG_USING_ST7305
+    bool "Control the st7305 chip with SPI bus."
+    default n
+
+if PKG_USING_ST7305
+
+    config ST7305_SPI_BUS_NAME
+        string "Setting current SPI bus name."
+        default "spi1"
+
+    config ST7305_SPI_DEVICE_NAME
+        string "Setting current SPI device name."
+        default "spi10"
+
+    if RT_USING_HEAP
+        config FRAME_BUF_USING_HEAP
+        bool "Use heap with the frame buffer allocated."
+        default n
+    endif
+
+    config PKG_ST7305_PATH
+        string
+        default "/packages/peripherals/st7305"
+
+    choice
+        prompt "Version"
+        default PKG_USING_ST7305_V100
+        help
+            Select the this package version
+
+        config PKG_USING_ST7305_V100
+            bool "v1.0.0"
+
+        config PKG_USING_ST7305_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_ST7305_VER
+        string
+        default "v1.0.0" if PKG_USING_ST7305_V100
+        default "latest" if PKG_USING_ST7305_LATEST_VERSION
+
+endif

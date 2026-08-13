@@ -1,0 +1,32 @@
+{
+ "name": "bt24s",
+ "description": "bt24s driver based on UART",
+ "description_zh": "基于串口驱动bt24s蓝牙模组",
+ "enable": "PKG_USING_BT24S",
+ "keywords": [
+   "ble",
+   "bt24s"
+ ],
+ "category": "peripherals",
+ "author": {
+   "name": "龚金华",
+   "email": "782730309@qq.com",
+   "github": "GKoSon"
+ },
+ "license": "MIT",
+ "repository": "https://github.com/GKoSon/bt24s",
+ "homepage": "https://github.com/GKoSon/bt24s#readme",
+ "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/GKoSon/bt24s/archive/refs/tags/v1.0.0.zip",
+      "filename": "bt24s-1.0.0.zip"
+    },
+    {
+     "version": "latest",
+     "URL": "https://github.com/GKoSon/bt24s.git",
+     "filename": "bt24s.zip",
+     "VER_SHA": "main"
+   }
+ ]
+}

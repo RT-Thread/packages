@@ -1,0 +1,28 @@
+{
+  "name": "sorch",
+  "description": "sorch is a generalized sort and search library, including merge sort and binary search",
+  "description_zh": "Sorch 是一个为 RT-Thread 设计的通用排序和查找算法库，支持归并排序和二分查找",
+  "enable": "PKG_USING_SORCH",
+  "keywords": [
+    "sort", "search", "merge sort", "binary search"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "zhangguofu",
+    "email": "cleancode@163.com",
+    "github": "Gary.Zhang"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/zhangguofu/sorch",
+  "icon": "unknown",
+  "homepage": "https://github.com/zhangguofu/sorch#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/zhangguofu/sorch.git",
+      "filename": "sorch.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
