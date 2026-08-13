@@ -32,7 +32,7 @@ Provide review feedback in **both English and Chinese**.
 3. **Versioning & Source URLs / 版本与源码链接**
    - Provide at least one fixed version plus `latest` when supported / 至少提供一个固定版本，支持时再提供 `latest`
    - Prefer immutable tags/commits for releases / 优先使用不可变标签或提交
-   - `URL` must be GitHub HTTPS (no gitee links) / `URL` 必须为 GitHub HTTPS（禁止 gitee 链接）
+   - `URL` must use HTTPS on GitHub or Gitee / `URL` 必须使用 GitHub 或 Gitee 的 HTTPS 地址
    - `VER_SHA` resolves to an existing branch/commit / `VER_SHA` 指向有效分支/提交
    - Upstream repo name should not start with digits / 上游仓库名避免以数字开头
    - Upstream repo must not use submodules / 上游仓库禁止使用子模块
@@ -122,7 +122,7 @@ English: Please split into separate PRs, one per package or tightly related grou
 
 - Verify required fields and formatting / 检查必需字段与格式
 - Confirm `name` matches folder / 确认 `name` 与目录名一致
-- Verify all `URL` entries are GitHub HTTPS / 确认 `URL` 为 GitHub HTTPS
+- Verify all `URL` entries use HTTPS on GitHub or Gitee / 确认所有 `URL` 条目使用 GitHub 或 Gitee HTTPS 地址
 - Check `VER_SHA` points to existing tag/commit / 检查 `VER_SHA` 指向有效 tag/commit
 - Ensure fixed version(s) plus `latest` where supported / 确保包含固定版本与 `latest`
 
@@ -150,7 +150,7 @@ English: Please align Kconfig symbols and ensure the package is sourced in the c
 ### Step 6: Policy & Hygiene / 步骤 6：规范与整洁性检查
 
 - No binary blobs / 无二进制文件
-- No gitee URLs / 无 gitee 链接
+- No unsupported or non-HTTPS repository URLs / 不允许不支持的主机或非 HTTPS 仓库地址
 - No submodules / 无子模块
 
 **Feedback template / 反馈模板**:

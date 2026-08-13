@@ -6,6 +6,7 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
 import time
 from dataclasses import dataclass
 from functools import lru_cache
@@ -19,6 +20,7 @@ import requests
 REQUEST_TIMEOUT_SECONDS = 20
 URL_RETRIES = 4
 RETRYABLE_HTTP_STATUS_CODES = {429, 500, 502, 503, 504}
+SUPPORTED_GIT_HOSTS = {"github.com", "gitee.com"}
 
 
 @dataclass(frozen=True)
@@ -59,13 +61,13 @@ def _close_response(response):
 
 @lru_cache(maxsize=None)
 def determine_url_valid(url_from_srv):
-    """Check whether a supported package URL is reachable."""
+    """Check whether a supported GitHub or Gitee package URL is reachable."""
 
     parsed_url = urlparse(url_from_srv) if isinstance(url_from_srv, str) else None
     if (
         parsed_url is None
         or parsed_url.scheme.lower() != "https"
-        or parsed_url.netloc.lower() != "github.com"
+        or parsed_url.netloc.lower() not in SUPPORTED_GIT_HOSTS
     ):
         print("not support url: {}".format(url_from_srv))
         return False
@@ -197,6 +199,130 @@ def _report_failed_packages(failures):
     _write_failure_summary(failures)
 
 
+def _kconfig_parser_path(package_kconfig, repo_root):
+    """Return a Kconfig path whose package tree matches ``$PKGS_DIR``."""
+
+    repo_root = Path(repo_root).resolve()
+    if repo_root.name == "packages":
+        return package_kconfig, None
+
+    staging_root = Path(tempfile.mkdtemp(prefix="packages-kconfig-"))
+    packages_link = staging_root / "packages"
+    try:
+        packages_link.symlink_to(repo_root, target_is_directory=True)
+    except OSError:
+        # The hosted Linux runner supports symlinks. For local Windows runs,
+        # package Kconfigs without $PKGS_DIR can still be parsed directly.
+        staging_root.rmdir()
+        return package_kconfig, None
+    relative = package_kconfig.resolve().relative_to(repo_root)
+    return packages_link / relative, staging_root
+
+
+def _kconfig_source_is_declared(package_dir, package_info, repo_root):
+    category = package_info.get("category")
+    if not isinstance(category, str) or not category:
+        return False
+
+    category_root = (repo_root / Path(category)).resolve()
+    try:
+        category_root.relative_to(repo_root)
+    except ValueError:
+        return False
+    if not category_root.is_dir():
+        return False
+
+    package_relative = package_dir.resolve().relative_to(repo_root).as_posix()
+    expected = "packages/{}/Kconfig".format(package_relative)
+    for category_kconfig in category_root.rglob("Kconfig"):
+        try:
+            content = category_kconfig.read_text(encoding="utf-8-sig")
+        except (OSError, UnicodeError):
+            continue
+        normalized = content.replace("\\", "/")
+        if expected in normalized:
+            return True
+    return False
+
+
+def check_package_kconfig(record, repo_root=None):
+    """Validate one package Kconfig and return ``(valid, reason)``."""
+
+    package_dir = record.path.parent.resolve()
+    repo_root = Path(repo_root or Path.cwd()).resolve()
+    kconfig_path = package_dir / "Kconfig"
+    if not kconfig_path.is_file():
+        return False, "Kconfig file is missing: {}".format(_package_relative_path(kconfig_path))
+
+    try:
+        kconfig_text = kconfig_path.read_text(encoding="utf-8-sig")
+    except (OSError, UnicodeError) as exc:
+        return False, "Kconfig cannot be read ({}): {}".format(kconfig_path, exc)
+
+    enable = record.metadata.get("enable") if record.metadata else None
+    if not isinstance(enable, str) or not enable:
+        return False, "package.json enable is missing"
+
+    if not _kconfig_source_is_declared(package_dir, record.metadata, repo_root):
+        return False, "category Kconfig does not source {}".format(
+            _package_relative_path(kconfig_path)
+        )
+
+    parser_path, staging_root = _kconfig_parser_path(kconfig_path, repo_root)
+    parser_code = (
+        "import sys\n"
+        "import kconfiglib\n"
+        "try:\n"
+        "    kconfig = kconfiglib.Kconfig(sys.argv[1], warn=False, "
+        "warn_to_stderr=False, encoding='utf-8')\n"
+        "except Exception as exc:\n"
+        "    print(exc)\n"
+        "    raise SystemExit(1)\n"
+        "if sys.argv[2] not in kconfig.syms:\n"
+        "    print('Kconfig does not define enable symbol {}'.format(sys.argv[2]))\n"
+        "    raise SystemExit(2)\n"
+    )
+    parser_env = os.environ.copy()
+    if staging_root is not None:
+        parser_env["PKGS_DIR"] = str(staging_root)
+    elif repo_root.name == "packages":
+        parser_env["PKGS_DIR"] = str(repo_root.parent)
+
+    try:
+        result = subprocess.run(
+            [sys.executable, "-c", parser_code, str(parser_path), enable],
+            cwd=str(repo_root),
+            env=parser_env,
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            encoding="utf-8",
+        )
+    except (OSError, UnicodeError) as exc:
+        result = None
+        reason = "Kconfig parser could not start: {}".format(exc)
+    finally:
+        if staging_root is not None:
+            import shutil
+
+            shutil.rmtree(staging_root, ignore_errors=True)
+
+    if result is None:
+        return False, reason
+    if result.returncode != 0:
+        output = result.stdout.strip() or "unknown parser error"
+        if result.returncode == 2:
+            return False, output
+        return False, "Kconfig parse failed ({}): {}".format(kconfig_path, output)
+
+    # Keep the read above explicit so invalid UTF-8 is reported even when
+    # kconfiglib accepts a platform-specific encoding.
+    if not kconfig_text.strip():
+        return False, "Kconfig file is empty: {}".format(_package_relative_path(kconfig_path))
+    return True, ""
+
+
 @lru_cache(maxsize=None)
 def check_branch_exists(git_url, branch_name):
     """Check whether branch_name exists in git_url."""
@@ -215,25 +341,29 @@ def check_branch_exists(git_url, branch_name):
 
 @lru_cache(maxsize=None)
 def check_commit_sha_exists(repo_url, commit_sha):
-    """Check whether commit_sha exists in a GitHub repository."""
+    """Check whether commit_sha exists in a GitHub or Gitee repository."""
 
     if repo_url.endswith(".git"):
         repo_url = repo_url[:-4]
     parsed_repo = urlparse(repo_url)
     parts = [part for part in parsed_repo.path.split("/") if part]
-    if (
-        parsed_repo.scheme.lower() != "https"
-        or parsed_repo.netloc.lower() != "github.com"
-        or len(parts) != 2
-    ):
+    host = parsed_repo.netloc.lower()
+    if parsed_repo.scheme.lower() != "https" or host not in SUPPORTED_GIT_HOSTS or len(parts) != 2:
         return False
 
-    url = "https://api.github.com/repos/{}/{}/git/commits/{}".format(
-        parts[0], parts[1], commit_sha
-    )
-    headers = {"Accept": "application/vnd.github.v3+json"}
+    if host == "github.com":
+        url = "https://api.github.com/repos/{}/{}/git/commits/{}".format(
+            parts[0], parts[1], commit_sha
+        )
+        headers = {"Accept": "application/vnd.github.v3+json"}
+    else:
+        url = "https://gitee.com/api/v5/repos/{}/{}/commits/{}".format(
+            parts[0], parts[1], commit_sha
+        )
+        headers = {"Accept": "application/json"}
+
     token = os.environ.get("GITHUB_TOKEN")
-    if token:
+    if token and host == "github.com":
         headers["Authorization"] = "Bearer {}".format(token)
 
     for attempt in range(URL_RETRIES):
@@ -438,7 +568,7 @@ def select_packages(records, package_names=None, shard_count=None, shard_index=N
     return sorted(records, key=lambda record: (record.name, record.path.as_posix()))
 
 
-def check_package_records(records):
+def check_package_records(records, check_kconfig=False, repo_root=None):
     """Validate all selected package records and aggregate failures."""
 
     valid = True
@@ -460,9 +590,21 @@ def check_package_records(records):
             failures.append((record, str(exc)))
             continue
 
+        kconfig_valid = True
+        kconfig_reason = ""
+        if check_kconfig:
+            kconfig_valid, kconfig_reason = check_package_kconfig(record, repo_root)
+            if not kconfig_valid:
+                print("Kconfig check failed: {}".format(kconfig_reason))
+
+        failures_for_record = []
         if not content_valid or not path_valid:
+            failures_for_record.append("URL or metadata validation failed")
+        if not kconfig_valid:
+            failures_for_record.append(kconfig_reason)
+        if failures_for_record:
             valid = False
-            failures.append((record, "URL or metadata validation failed"))
+            failures.append((record, "; ".join(failures_for_record)))
 
     _report_failed_packages(failures)
     print("\nChecked {} package(s).".format(len(records)))
@@ -475,14 +617,24 @@ def check_duplicate_package_names(work_root):
     return not any(record.error == "Duplicated package name." for record in discover_packages(work_root))
 
 
-def check_json_file(work_root, package_names=None, shard_count=None, shard_index=None):
+def check_json_file(
+    work_root,
+    package_names=None,
+    shard_count=None,
+    shard_index=None,
+    check_kconfig=False,
+):
     records = discover_packages(work_root)
     try:
         selected = select_packages(records, package_names, shard_count, shard_index)
     except ValueError as exc:
         print(str(exc))
         return False
-    return check_package_records(selected)
+    return check_package_records(
+        selected,
+        check_kconfig=check_kconfig,
+        repo_root=work_root,
+    )
 
 
 def positive_integer(value):
@@ -497,7 +649,7 @@ def positive_integer(value):
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        description="Validate RT-Thread package metadata and GitHub URLs."
+        description="Validate RT-Thread package metadata, URLs, and optional Kconfig files."
     )
     parser.add_argument(
         "--packages",
@@ -513,6 +665,11 @@ def build_parser():
         "--shard-index",
         type=int,
         help="zero-based shard to validate",
+    )
+    parser.add_argument(
+        "--check-kconfig",
+        action="store_true",
+        help="also validate Kconfig for each selected package",
     )
     return parser
 
@@ -539,6 +696,7 @@ def main(argv=None):
         package_names=args.packages,
         shard_count=args.shard_count,
         shard_index=args.shard_index,
+        check_kconfig=args.check_kconfig,
     ):
         return 0
     return 1

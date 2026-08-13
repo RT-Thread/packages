@@ -43,10 +43,10 @@ jobs:
             echo "Changed packages: $packages" >> "$GITHUB_STEP_SUMMARY"
           else
             echo "has-packages=false" >> "$GITHUB_OUTPUT"
-            echo "No package changes require URL validation." >> "$GITHUB_STEP_SUMMARY"
+            echo "No package changes require package validation." >> "$GITHUB_STEP_SUMMARY"
           fi
 
-  pull-request-package-urls:
+  pull-request-package-validation:
     needs: detect-pull-request-packages
     if: ${{ github.repository == 'RT-Thread/packages' && needs.detect-pull-request-packages.outputs.has-packages == 'true' }}
     runs-on: ubuntu-22.04
@@ -62,16 +62,16 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install URL checker dependencies
-        run: python -m pip install requests
+      - name: Install package checker dependencies
+        run: python -m pip install requests kconfiglib
 
-      - name: Validate changed package URLs and metadata
+      - name: Validate changed package URLs, metadata, and Kconfig
         shell: bash
         env:
           CHANGED_PACKAGES: ${{ needs.detect-pull-request-packages.outputs.packages }}
         run: |
           read -r -a packages <<< "$CHANGED_PACKAGES"
-          python ci.py --packages "${packages[@]}"
+          python ci.py --packages "${packages[@]}" --check-kconfig
 
   tools-check:
     if: ${{ github.repository == 'RT-Thread/packages' }}
