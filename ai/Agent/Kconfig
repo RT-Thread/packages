@@ -7,6 +7,7 @@ menuconfig PKG_USING_AGENT
     select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
     select PKG_USING_MBEDTLS_CLOBALSIGN_ROOT_CA
     select RT_USING_ULOG
+    select PKG_USING_RT_VSNPRINTF_FULL
     default n
 
 if PKG_USING_AGENT
@@ -34,6 +35,45 @@ if PKG_USING_AGENT
             help
                 Agent model API URL.
                 Default: https://api.siliconflow.cn/v1/chat/completions
+    choice
+        bool "Regarding whether the selected agent is enabled for multimodal functionality"
+        default PKG_AGENT_MULTIMODAL_DISABLE
+        help
+            Select enable or disable multimodal for the agent
+
+        config PKG_AGENT_MULTIMODAL_DISABLE
+            bool "Disable agent multimodal function"
+
+        config PKG_AGENT_MULTIMODAL_ENABLE
+            select WEBCLIENT_USING_FILE_DOWMLOAD
+            bool "Enable agent multimodal function"
+    endchoice
+
+    if PKG_AGENT_MULTIMODAL_ENABLE
+
+        menu "Agent file server"
+
+        config PKG_AGENT_UPLOAD_URL
+            string "upload file url"
+            default ""
+            help
+                HTTP upload file url, e.g. "http://10.0.2.2:8000/upload"
+
+        config PKG_AGENT_DOWNLOAD_URL
+            string "download file url"
+            default ""
+            help
+                HTTP download file url template, use %s to format file_id,
+                e.g. "http://10.0.2.2:8000/download/%s"
+
+        config PKG_AGENT_FILE_OP_THREAD_SIZE
+            int "the size of the agent file op"
+            default 2048
+        
+        endmenu
+
+    endif
+
     endmenu
 
     menu "Buffer & Length Configuration"
@@ -72,6 +112,10 @@ if PKG_USING_AGENT
             default 512
             help
                 Maximum json arguments length for tool calling.
+        config PKG_AGENT_MESSAGE_TRIM
+            int "Trim content, preserve system prompt and keep size information"
+            default 6
+
     endmenu
 
     choice
