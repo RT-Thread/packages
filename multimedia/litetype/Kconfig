@@ -1,0 +1,91 @@
+
+# Kconfig file for package LiteType
+menuconfig PKG_USING_LITETYPE
+    bool "LiteType: Lightweight font engine for embedded systems"
+    default n
+
+if PKG_USING_LITETYPE
+
+    config PKG_LITETYPE_PATH
+        string
+        default "/packages/multimedia/litetype"
+
+    config PKG_USING_LITETYPE_STREAMIO
+        bool "Enable file stream I/O"
+        default y
+        help
+            Enable file stream I/O support. Required for loading fonts
+            from filesystem. Disable this for memory-only usage.
+
+    config PKG_USING_LITETYPE_LBF
+        bool "Enable LBF bitmap font format"
+        default y
+        help
+            Enable LiteBitFile bitmap font format support.
+            Bitmap fonts store rasterized data for fastest rendering.
+
+    config PKG_USING_LITETYPE_LVF
+        bool "Enable LVF vector font format"
+        default y
+        help
+            Enable LiteVectorFile vector font format support.
+            Vector fonts store outline curves for lossless scaling.
+
+    config PKG_USING_LITETYPE_LCF
+        bool "Enable LCF combined font format"
+        default y
+        help
+            Enable LiteCombineFile combined font format support.
+            Combined fonts pack up to 5 sub-fonts (LBF/LVF) into one file.
+
+    config PKG_USING_LITETYPE_ENCODER
+        bool "Enable encoder (Creator API)"
+        default n
+        help
+            Enable font creation/encoding functionality.
+            Required only if you need to create font files on target device.
+
+    config PKG_USING_LITETYPE_ITALIC
+        bool "Enable italic style support"
+        default y
+        help
+            Enable italic style transformation for font rendering.
+
+    config PKG_USING_LITETYPE_BOLD
+        bool "Enable bold style support"
+        default y
+        help
+            Enable bold style transformation for font rendering.
+
+    config PKG_USING_LITETYPE_DIAG
+        bool "Enable diagnostic logging"
+        default n
+        help
+            Enable diagnostic log output for debugging.
+            Increases code size, disable for production builds.
+
+    config PKG_USING_LITETYPE_SAMPLE
+        bool "Enable LiteType sample"
+        default n
+        help
+            Build the basic sample demonstrating LiteType usage.
+
+    choice
+        prompt "Version"
+        default PKG_USING_LITETYPE_LATEST_VERSION
+        help
+            Select the package version
+
+        config PKG_USING_LITETYPE_V101
+            bool "v1.0.1"
+
+        config PKG_USING_LITETYPE_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LITETYPE_VER
+       string
+       default "v1.0.1"    if PKG_USING_LITETYPE_V101
+       default "latest"    if PKG_USING_LITETYPE_LATEST_VERSION
+
+endif
