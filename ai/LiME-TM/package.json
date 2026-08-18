@@ -1,5 +1,5 @@
 {
-  "name": "lime-tm",
+  "name": "LiME-TM",
   "description": "Lightning fast and Memory Efficient Machine Learning for MCU (Tsetlin Machine)",
   "description_zh": "嵌入式机器学习库",
   "enable": "PKG_USING_LIME_TM",
