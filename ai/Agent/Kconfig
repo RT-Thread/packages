@@ -35,8 +35,9 @@ if PKG_USING_AGENT
             help
                 Agent model API URL.
                 Default: https://api.siliconflow.cn/v1/chat/completions
+
     choice
-        bool "Regarding whether the selected agent is enabled for multimodal functionality"
+        prompt "Regarding whether the selected agent is enabled for multimodal functionality"
         default PKG_AGENT_MULTIMODAL_DISABLE
         help
             Select enable or disable multimodal for the agent
@@ -47,6 +48,7 @@ if PKG_USING_AGENT
         config PKG_AGENT_MULTIMODAL_ENABLE
             select WEBCLIENT_USING_FILE_DOWMLOAD
             bool "Enable agent multimodal function"
+
     endchoice
 
     if PKG_AGENT_MULTIMODAL_ENABLE
@@ -135,6 +137,12 @@ if PKG_USING_AGENT
             bool "WebNet channel (Websocket/HTTP)"
             help
                 Interact with agent via web network interface.
+
+        config PKG_AGENT_DEBUG_CHANNEL
+            bool "use mb to test message send"
+            help
+                you can use msh_cmd to test message send
+
     endchoice
 
     choice
@@ -145,6 +153,7 @@ if PKG_USING_AGENT
 
         config PKG_USING_AGENT_LATEST_VERSION
             bool "latest (master branch)"
+
     endchoice
 
     config PKG_AGENT_VER
