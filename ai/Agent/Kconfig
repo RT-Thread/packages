@@ -66,8 +66,8 @@ if PKG_USING_AGENT
                     string "File download URL template"
                     default ""
                     help
-                        HTTP download url template, use %s as file_id placeholder.
-                        example: "http://10.0.2.2:8000/download/%s"
+                        HTTP download url.
+                        example: "https://10.0.2.2:8000/download"
 
                 config PKG_AGENT_FILE_OP_THREAD_SIZE
                     int "File operation thread stack size"
