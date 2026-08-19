@@ -1,0 +1,70 @@
+
+# Kconfig file for package ulapack
+menuconfig PKG_USING_LIME_TM
+    select RT_USING_POSIX_FS
+    bool "LiME-TM: Lightning fast and Memory Efficient Machine Learning for MCU (Tsetlin Machine)"
+    default n
+
+if PKG_USING_LIME_TM
+
+    config PKG_LIME_TM_PATH
+        string
+        default "/packages/ai/LiME-TM"
+
+    choice
+        prompt "Choose exmaple"
+
+        config LIME_TM_USING_MNIST_FS_EXAMPLE
+            bool "Training and testing MNIST example (File System)"
+            select TSETLIN_USING_PROTOBUF
+            help
+               Training a compressed Tsetlin Machine model on the MNIST dataset.
+            default n
+
+        config LIME_TM_USING_MNIST_STATIC_EXAMPLE
+            bool "Training and testing MNIST example (Static Model)"
+            select TSETLIN_USING_STATIC_MODEL
+            select TSETLIN_MODEL_TRAINABLE
+            help
+               Training a compressed Tsetlin Machine model on the MNIST dataset.
+            default y
+    endchoice
+
+    config TSETLIN_USING_PROTOBUF
+        bool "Load model from protobuf file"
+        help
+           Using proto-c to save the model as a protobuf file.
+        depends on LIME_TM_USING_MNIST_FS_EXAMPLE
+        default y
+
+    config TSETLIN_MODEL_TRAINABLE
+        bool "Enable model training"
+        help
+              Enabling this option allows the model to be trained on-device.
+        default y
+
+    config TSETLIN_USING_STATIC_MODEL
+        bool "Load model from static headers"
+        help
+           Using the tsetlin compiler to save the model as a static C header file.
+        depends on LIME_TM_USING_MNIST_STATIC_EXAMPLE
+        default y
+
+    choice
+        prompt "Version"
+        default PKG_USING_LIME_TM_LATEST_VERSION
+        help
+            Select the package version
+        config PKG_USING_LIME_TM_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_LIME_TM_VER
+       string
+       default "latest"    if PKG_USING_LIME_TM_LATEST_VERSION
+
+    config PKG_LIME_TM_VER_NUM
+        hex
+        default 0x99999 if PKG_USING_LIME_TM_LATEST_VERSION
+
+endif
