@@ -11,15 +11,15 @@ if PKG_USING_LIME_TM
         string
         default "/packages/ai/LiME-TM"
 
-    choice
+    choice LIME_TM_USING_MNIST_EXAMPLE
         prompt "Choose exmaple"
+        default LIME_TM_USING_MNIST_STATIC_EXAMPLE
 
         config LIME_TM_USING_MNIST_FS_EXAMPLE
             bool "Training and testing MNIST example (File System)"
             select TSETLIN_USING_PROTOBUF
             help
                Training a compressed Tsetlin Machine model on the MNIST dataset.
-            default n
 
         config LIME_TM_USING_MNIST_STATIC_EXAMPLE
             bool "Training and testing MNIST example (Static Model)"
@@ -27,7 +27,6 @@ if PKG_USING_LIME_TM
             select TSETLIN_MODEL_TRAINABLE
             help
                Training a compressed Tsetlin Machine model on the MNIST dataset.
-            default y
     endchoice
 
     config TSETLIN_USING_PROTOBUF
