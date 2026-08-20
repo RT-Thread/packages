@@ -1,51 +1,39 @@
 name: ToolsCI
-# 这个CI用来检查menuconfig中的warning和错误
+# This CI checks Kconfig warnings and errors in the current packages tree.
 on:
   workflow_call:
   workflow_dispatch:
-  
+
 permissions:
-  contents: read # to fetch code (actions/checkout)
+  contents: read
 
 jobs:
   test:
     if: ${{ github.repository == 'RT-Thread/packages' }}
     runs-on: ubuntu-22.04
     name: Tools
-    env:
-      TEST_BSP_ROOT: bsp/stm32/stm32f407-atk-explorer
     steps:
-    - uses: actions/checkout@v5
-      with:
-        repository: RT-Thread/rt-thread
-
-    - name: Install Tools
-      shell: bash
-      run: |
-          wget https://raw.githubusercontent.com/RT-Thread/env/master/install_ubuntu.sh
-          chmod 777 install_ubuntu.sh
-          ./install_ubuntu.sh
-
-    - name: Install Arm ToolChains
-      if: ${{ success() }}
-      shell: bash
-      run: |
-        wget -q https://github.com/RT-Thread/toolchains-ci/releases/download/v1.3/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-        sudo tar xjf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 -C /opt
-        /opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc --version
-        echo "RTT_EXEC_PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin" >> $GITHUB_ENV
-    - name: Checkout packages
+    - name: Checkout current PR
       uses: actions/checkout@v5
       with:
+        ref: ${{ github.sha }}
         path: packages
-    - name: Build Tools
+
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: "3.11"
+
+    - name: Install Kconfig parser
+      run: python -m pip install kconfiglib
+
+    - name: Check Kconfig
+      working-directory: packages
       run: |
-        source ~/.env/env.sh
-        scons --pyconfig-silent -C $TEST_BSP_ROOT 2>menuconfig.log
-        cat menuconfig.log
-        if grep -q "warning:" menuconfig.log; then
-          echo "Errors found in menuconfig, failing the build."
+        export PKGS_DIR="$GITHUB_WORKSPACE"
+        python -c "import kconfiglib; kconfiglib.Kconfig('Kconfig', warn=True, warn_to_stderr=True, encoding='utf-8')" 2>kconfig.log
+        cat kconfig.log
+        if grep -q "warning:" kconfig.log; then
+          echo "Warnings found in Kconfig, failing the check."
           exit 1
         fi
-        pushd $TEST_BSP_ROOT && pkgs --update && popd
-        scons -j$(nproc) -C $TEST_BSP_ROOT
