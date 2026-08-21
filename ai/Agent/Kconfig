@@ -1,12 +1,13 @@
 # Kconfig file for package Agent
 menuconfig PKG_USING_AGENT
-    bool "lightweight agent software for RT-Thread"
+    bool "Lightweight Agent software for RT-Thread"
     select PKG_USING_CJSON
     select PKG_USING_WEBCLIENT
     select PKG_USING_MBEDTLS
     select PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
     select PKG_USING_MBEDTLS_CLOBALSIGN_ROOT_CA
     select RT_USING_ULOG
+    select PKG_USING_RT_VSNPRINTF_FULL
     default n
 
 if PKG_USING_AGENT
@@ -17,87 +18,141 @@ if PKG_USING_AGENT
 
     menu "Agent Runtime Configuration"
         config PKG_AGENT_API_KEY
-            string "Agent user API Key"
+            string "LLM service API Key"
             default "sk-**-**"
             help
-                API key used to access LLM service.
+                API key for accessing large-model LLM service.
 
         config PKG_AGENT_MODEL_NAME
-            string "LLM model name"
+            string "Target LLM model name"
             default "deepseek-ai/DeepSeek-V4-Pro"
             help
-                Specify target LLM model name.
+                Specify the target LLM model identifier.
 
         config PKG_AGENT_API_URL
             string "LLM API endpoint URL"
             default "https://api.siliconflow.cn/v1/chat/completions"
             help
-                Agent model API URL.
+                HTTP endpoint of LLM chat completion API.
                 Default: https://api.siliconflow.cn/v1/chat/completions
+
+        # Multimodal enable/disable choice (mode 开关)
+        choice PKG_AGENT_MULTIMODAL_MODE_SEL
+            prompt "Multimodal feature switch"
+            default PKG_AGENT_MULTIMODAL_DISABLE
+            help
+                Enable or disable agent multimodal(image/file) capability.
+
+            config PKG_AGENT_MULTIMODAL_DISABLE
+                bool "Disable multimodal function"
+
+            config PKG_AGENT_MULTIMODAL_ENABLE
+                select WEBCLIENT_USING_FILE_DOWMLOAD
+                bool "Enable multimodal function"
+                help
+                Enable image parsing and file upload/download for agent.
+        endchoice
+
+        if PKG_AGENT_MULTIMODAL_ENABLE
+            menu "Agent File Server Settings"
+                config PKG_AGENT_UPLOAD_URL
+                    string "File upload HTTP URL"
+                    default ""
+                    help
+                        HTTP file upload endpoint, example:
+                        "http://10.0.2.2:8000/upload"
+
+                config PKG_AGENT_DOWNLOAD_URL
+                    string "File download URL template"
+                    default ""
+                    help
+                        HTTP download url.
+                        example: "https://10.0.2.2:8000/download"
+
+                config PKG_AGENT_FILE_OP_THREAD_SIZE
+                    int "File operation thread stack size"
+                    default 4096
+                    help
+                        Stack size for agent file-operation worker thread.
+            endmenu
+        endif
+
     endmenu
 
     menu "Buffer & Length Configuration"
         config PKG_AGENT_WEB_SOCKET_BUFSZ
-            int "webclient session buffer size"
+            int "Webclient session buffer size"
             default 2048
             help
-                Webclient session send/recv buffer size.
+                Send/receive buffer size for webclient http session.
 
         config PKG_AGENT_RESP_BUFSZ
-            int "webclient response buffer size"
+            int "HTTP response temporary buffer size"
             default 2048
-            help
-                HTTP response temporary buffer size.
 
         config PKG_AGENT_MAX_REASONING_LEN
-            int "agent max reasoning text length"
+            int "Max reasoning text buffer length"
             default 2048
             help
-                Maximum reasoning content buffer length.
+                Upper limit buffer length for LLM reasoning content.
 
         config PKG_AGENT_MAX_CONTENT_LEN
-            int "agent max message content length"
+            int "Max chat message content length"
             default 2048
             help
-                Maximum chat message content length.
+                Maximum payload length of single chat message.
 
         config PKG_AGENT_STREAM_LINE_BUFSZ
-            int "agent string stream line buffer size"
-            default 4096
+            int "SSE streaming parse line buffer size"
+            default 1024
             help
-                Line buffer size for SSE streaming parse.
+                Line buffer for parsing SSE streaming chunk response.
 
         config PKG_AGENT_MAX_TOOL_ARG_LEN
-            int "agent max tool argument length"
+            int "Max tool-call JSON argument length"
             default 512
             help
-                Maximum json arguments length for tool calling.
+                Maximum buffer length for tool call JSON arguments.
+
+        config PKG_AGENT_MESSAGE_TRIM
+            int "History message trim threshold"
+            default 6
+            help
+                Conversation history trim threshold, preserve system prompt,
+                keep recent N pieces of user-assistant message context.
     endmenu
 
-    choice
-        prompt "Agent communication channel"
+    choice PKG_AGENT_COMMUNICATION_CHANNEL_SEL
+        prompt "Agent interaction communication channel"
         default PKG_AGENT_CLI_CHANNEL
         help
-            Select input/output channel for agent interaction.
+            Select input/output channel for agent user interaction.
 
         config PKG_AGENT_CLI_CHANNEL
-            bool "CLI channel (MSH command line)"
+            bool "CLI channel (RT-Thread MSH command-line)"
             help
-                Interact with agent via RT-Thread MSH CLI.
+                Interact with agent via MSH shell command line.
 
         config PKG_AGENT_WEBNET_CHANNEL
             select PKG_USING_WEBNET
             select WEBNET_USING_CGI
-            bool "WebNet channel (Websocket/HTTP)"
+            bool "WebNet channel (WebSocket / HTTP)"
             help
-                Interact with agent via web network interface.
+                Interact with agent via web network service.
+
+        config PKG_AGENT_DEBUG_CHANNEL
+            bool "Debug test channel"
+            help
+                For developer test only, send message via msh command api.
     endchoice
 
-    choice
-        prompt "Agent software version"
+    # Package source version choice
+    # NOTE: currently only master branch option, extend more tag/commit later
+    choice PKG_AGENT_VERSION_SEL
+        prompt "Agent package source version"
         default PKG_USING_AGENT_LATEST_VERSION
         help
-            Select Agent package source version.
+            Select git source version for agent package.
 
         config PKG_USING_AGENT_LATEST_VERSION
             bool "latest (master branch)"
