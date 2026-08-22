@@ -1,0 +1,33 @@
+{
+  "name": "ds1307",
+  "description": "Extern RTC driver for ds1307 .",
+  "description_zh": " ds1307  外置RTC驱动",
+  "enable": "PKG_USING_DS1307",
+  "keywords": [
+    "ds1307"
+  ],
+  "category": "peripherals/rtc",
+  "author": {
+    "name": "chejia12",
+    "email": "1085582540@qq.com",
+    "github": "chejia12"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://gitee.com/chejia12/ds1307",
+  "icon": "unknown",
+  "homepage": "https://gitee.com/chejia12/ds1307",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "V1.0.0",
+      "URL": "https://gitee.com/chejia12/ds1307/releases/download/V1.0.0/V1.0.0.zip",
+      "filename": "ds1307V1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/chejia12/ds1307.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
