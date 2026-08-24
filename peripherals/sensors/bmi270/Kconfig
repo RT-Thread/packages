@@ -46,3 +46,4 @@ if PKG_USING_BMI270
         default "v1.0.0"    if PKG_USING_BMI270_V100
 
 endif
+   
