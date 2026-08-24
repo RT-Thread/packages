@@ -13,14 +13,14 @@
   },
   "license": "Apache-2.0",
   "repository": "https://gitee.com/su-jinx/rt-bmi270",
-  "icon": "unknown",
+  "icon": "",
   "homepage": "https://gitee.com/su-jinx/rt-bmi270#readme",
   "site": [
     {
       "version": "v1.0.0",
-      "URL": "https://gitee.com/su-jinx/rt-bmi270/repository/archive/v1.0.0.zip",
+      "URL": "https://gitee.com/su-jinx/rt-bmi270.git",
       "filename": "rt-bmi270-1.0.0.zip",
-      "VER_SHA": "fill_in_after_release"
+      "VER_SHA": "9a57f31032ad0755d99c6cbf77ff407fae539f2b"
     },
     {
       "version": "latest",
