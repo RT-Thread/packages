@@ -1,0 +1,32 @@
+{
+  "name": "bmi270",
+  "description": "BMI270 6-axis IMU driver with Mahony AHRS fusion for RT-Thread",
+  "description_zh": "BMI270 六轴 IMU 驱动，内置 Mahony 互补滤波姿态解算，实测记录全部初始化陷阱",
+  "enable": "PKG_USING_BMI270",
+  "keywords": [
+    "bmi270", "imu", "ahrs", "mahony", "sensor"
+  ],
+  "category": "peripherals/sensors",
+  "author": {
+    "name": "su-jinx",
+    "email": "mr_sj@qq.com"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://gitee.com/su-jinx/rt-bmi270",
+  "icon": "",
+  "homepage": "https://gitee.com/su-jinx/rt-bmi270#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://gitee.com/su-jinx/rt-bmi270.git",
+      "filename": "rt-bmi270-1.0.0.zip",
+      "VER_SHA": "9a57f31032ad0755d99c6cbf77ff407fae539f2b"
+    },
+    {
+      "version": "latest",
+      "URL": "https://gitee.com/su-jinx/rt-bmi270.git",
+      "filename": "rt-bmi270.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

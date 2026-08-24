@@ -1,0 +1,49 @@
+# Kconfig file for package bmi270
+menuconfig PKG_USING_BMI270
+    bool "BMI270: 6-axis IMU driver with Mahony AHRS fusion"
+    select RT_USING_I2C
+    default n
+
+if PKG_USING_BMI270
+
+    config PKG_BMI270_PATH
+        string
+        default "/packages/peripherals/sensors/bmi270"
+
+    config PKG_BMI270_USING_SENSOR_FRAMEWORK
+        bool "Register as RT-Thread sensor device (/dev/acce_bmi)"
+        select RT_USING_SENSOR
+        default n
+
+    config PKG_BMI270_I2C_BUS_NAME
+        string "I2C bus name"
+        default "i2c2"
+
+    config PKG_BMI270_DEVICE_ADDR
+        hex "I2C device address (SDO=GND: 0x68, SDO=VDDIO: 0x69)"
+        default 0x69
+
+    config PKG_USING_BMI270_SAMPLE
+        bool "Enable sample application (MSH command: bmi270_sample)"
+        select RT_USING_FINSH
+        default n
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_BMI270_LATEST_VERSION
+            bool "latest"
+
+        config PKG_USING_BMI270_V100
+            bool "v1.0.0"
+    endchoice
+
+    config PKG_BMI270_VER
+        string
+        default "latest"    if PKG_USING_BMI270_LATEST_VERSION
+        default "v1.0.0"    if PKG_USING_BMI270_V100
+
+endif
+   

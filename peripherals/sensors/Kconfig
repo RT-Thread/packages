@@ -74,5 +74,5 @@ source "$PKGS_DIR/packages/peripherals/sensors/p3t1755/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/qmi8658/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/icm20948/Kconfig"
 source "$PKGS_DIR/packages/peripherals/sensors/scd4x/Kconfig"
-
+source "$PKGS_DIR/packages/peripherals/sensors/bmi270/Kconfig"
 endmenu
