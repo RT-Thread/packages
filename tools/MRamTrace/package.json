@@ -1,0 +1,33 @@
+{
+  "name": "MRamTrace",
+  "description": "MRamTrace is a lightweight RAM-backed function tracing and offline visualization tool for MCU firmware. It captures function enter/exit events via GCC/Clang -finstrument-functions into a ring buffer, then exports them (UART, log, file, Bluetooth, or custom backend) for offline call-graph, flamegraph, Perfetto, Speedscope and KCachegrind analysis.",
+  "description_zh": "MRamTrace 是一款轻量级基于 RAM 的 MCU 函数追踪与离线可视化工具，通过 GCC/Clang 的 -finstrument-functions 将函数进入/退出事件写入环形缓冲区，冻结后通过 UART、日志、文件、蓝牙或自定义后端导出，结合 ELF 生成调用图、火焰图、Perfetto、Speedscope 和 KCachegrind 等离线分析数据。",
+  "enable": "PKG_USING_MRAMTRACE",
+  "keywords": [
+    "trace",
+    "profiling",
+    "flamegraph",
+    "callgraph",
+    "perf",
+    "instrument"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "hanzhijian",
+    "email": "hanzhijian1991@gmail.com",
+    "github": "Zepp-Hanzj"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/Zepp-Hanzj/MRamTrace",
+  "homepage": "https://github.com/Zepp-Hanzj/MRamTrace#readme",
+  "doc": "https://github.com/Zepp-Hanzj/MRamTrace/blob/main/README.md",
+  "readme": "MRamTrace is a lightweight RAM-backed function tracing and offline visualization tool for MCU firmware. It captures function enter/exit events via GCC/Clang -finstrument-functions into a ring buffer, then exports them for offline call-graph, flamegraph, Perfetto, Speedscope and KCachegrind analysis.",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Zepp-Hanzj/MRamTrace.git",
+      "filename": "MRamTrace.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}

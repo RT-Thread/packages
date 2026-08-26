@@ -1,0 +1,30 @@
+menuconfig PKG_USING_MRAMTRACE
+    bool "MRamTrace: low-overhead RAM-based function tracing"
+    default n
+    help
+        MRamTrace is a lightweight, RAM-resident function tracer for
+        microcontrollers. It uses GCC/Clang -finstrument-functions to capture
+        function enter/exit events into a ring buffer, then exports them for
+        offline call-graph / flamegraph analysis (Perfetto, Speedscope,
+        KCachegrind, FlameGraph).
+
+if PKG_USING_MRAMTRACE
+
+    config PKG_MRAMTRACE_USING_DEMO
+        bool "Enable the RT-Thread demo"
+        default y
+        help
+            Builds a demo that runs a signal-processing workload (compiled with
+            -finstrument-functions), captures a trace window, and exports the
+            events to the console via the `ram_trace_demo` shell command.
+
+    config PKG_MRAMTRACE_DEMO_CPU_HZ
+        int "Demo timestamp frequency (CPU clock Hz)"
+        default 168000000
+        depends on PKG_MRAMTRACE_USING_DEMO
+        help
+            CPU clock frequency in Hz, used to convert the Cortex-M DWT cycle
+            counter timestamps into wall-clock time. Set this to the actual
+            core clock of your target.
+
+endif
