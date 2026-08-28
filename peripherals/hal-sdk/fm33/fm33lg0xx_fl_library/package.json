@@ -1,0 +1,28 @@
+{
+  "name": "fm33lg0xx_fl_library",
+  "description": "FM33LG0xx FL Library package, Fudan Microelectronics official driver library v2.3.5",
+  "description_zh": "FM33LG0xx FL 驱动库，复旦微官方驱动库 v2.3.5",
+  "enable": "PKG_USING_FM33LG0XX_FL_LIBRARY",
+  "keywords": [
+    "fm33lg0xx_fl_library"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "WChengLei",
+    "email": "wang_chenglei@foxmail.com",
+    "github": "WChengLei"
+  },
+  "license": "Mulan PSL v2",
+  "repository": "https://github.com/WChengLei/fm33lg0xx_fl_library",
+  "icon": "unknown",
+  "homepage": "https://github.com/WChengLei/fm33lg0xx_fl_library#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/WChengLei/fm33lg0xx_fl_library.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+menu "FM33 Drivers"
+
+# FM33LG0xx
+source "$PKGS_DIR/packages/peripherals/hal-sdk/fm33/fm33lg0xx_fl_library/Kconfig"
+
+# FM33LC0xx
+# source "$PKGS_DIR/packages/peripherals/hal-sdk/fm33/fm33lc0xx_fl_library/Kconfig"
+
+endmenu

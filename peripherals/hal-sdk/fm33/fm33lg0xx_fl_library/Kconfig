@@ -1,0 +1,27 @@
+
+
+# Kconfig file for package fm33lg0xx_fl_library
+menuconfig PKG_USING_FM33LG0XX_FL_LIBRARY
+    bool "FM33LG0xx FL Library package"
+    default n
+
+if PKG_USING_FM33LG0XX_FL_LIBRARY
+
+    config PKG_FM33LG0XX_FL_LIBRARY_PATH
+        string
+        default "/packages/peripherals/hal-sdk/fm33/fm33lg0xx_fl_library"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_FM33LG0XX_FL_LIBRARY_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_FM33LG0XX_FL_LIBRARY_VER
+       string
+       default "latest"    if PKG_USING_FM33LG0XX_FL_LIBRARY_LATEST_VERSION
+
+endif
