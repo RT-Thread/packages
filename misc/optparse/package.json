@@ -17,6 +17,12 @@
     "homepage": "https://github.com/RT-Thread-packages/optparse#readme",
     "site": [
         {
+            "version": "v1.0.0",
+            "URL": "https://github.com/RT-Thread-packages/optparse.git",
+            "filename": "optparse-v1.0.0.zip",
+            "VER_SHA": "98a75bb7c422e88eab9da8eb1b57608a8f303059"
+        },
+        {
             "version": "latest",
             "URL": "https://github.com/RT-Thread-packages/optparse.git",
             "filename": "optparse-latest.zip",
