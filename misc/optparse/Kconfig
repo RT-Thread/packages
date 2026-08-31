@@ -17,6 +17,9 @@ if PKG_USING_OPTPARSE
         config PKG_USING_OPTPARSE_LATEST_VERSION
             bool "latest"
 
+        config PKG_USING_OPTPARSE_V101
+            bool "v1.0.1"
+
         config PKG_USING_OPTPARSE_V100
             bool "v1.0.0"
     endchoice
@@ -24,6 +27,7 @@ if PKG_USING_OPTPARSE
     config PKG_OPTPARSE_VER
         string
         default "v1.0.0" if PKG_USING_OPTPARSE_V100
+        default "v1.0.1" if PKG_USING_OPTPARSE_V101
         default "latest" if PKG_USING_OPTPARSE_LATEST_VERSION
 
     config OPTPARSE_USING_DEMO
