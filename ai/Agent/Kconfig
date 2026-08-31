@@ -75,6 +75,15 @@ if PKG_USING_AGENT
                     help
                         Stack size for agent file-operation worker thread.
             endmenu
+
+            menu "Agent Driver"
+                config PKG_AGENT_DRIVER_AUDIO
+                    select PKG_USING_WAVPLAYER
+                    select PKG_WP_USINGRECORD
+                    select BSP_USING_AUDIO
+                    bool "Enable Agent Driver Audio"
+            endmenu
+
         endif
 
     endmenu
