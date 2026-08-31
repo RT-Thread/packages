@@ -16,12 +16,16 @@ if PKG_USING_FM33LG0XX_FL_LIBRARY
         help
             Select the package version
 
+        config PKG_USING_FM33LG0XX_FL_LIBRARY_V235
+            bool "v2.3.5"
+
         config PKG_USING_FM33LG0XX_FL_LIBRARY_LATEST_VERSION
             bool "latest"
     endchoice
 
     config PKG_FM33LG0XX_FL_LIBRARY_VER
        string
+       default "v2.3.5"    if PKG_USING_FM33LG0XX_FL_LIBRARY_V235
        default "latest"    if PKG_USING_FM33LG0XX_FL_LIBRARY_LATEST_VERSION
 
 endif

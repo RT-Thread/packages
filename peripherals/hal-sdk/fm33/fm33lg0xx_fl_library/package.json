@@ -19,6 +19,12 @@
   "doc": "unknown",
   "site": [
     {
+      "version": "v2.3.5",
+      "URL": "https://github.com/WChengLei/fm33lg0xx_fl_library.git",
+      "filename": "",
+      "VER_SHA": "v2.3.5"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/WChengLei/fm33lg0xx_fl_library.git",
       "filename": "",
