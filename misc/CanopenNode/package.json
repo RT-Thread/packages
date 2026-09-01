@@ -1,0 +1,33 @@
+{
+  "name": "CanopenNode",
+  "description": "A CanopenNode port to RT-Thread operating system",
+  "description_zh": "(CanopenNode CANopen 协议栈)在 RT-Thread 系统上的移植",
+  "enable": "PKG_USING_CANOPENNODE",
+  "keywords": [
+    "CanopenNode",
+    "CANopen"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "wdfk-prog",
+    "email": "1425075683@qq.com",
+    "github": "wdfk-prog"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/wdfk-prog/canopennode-rtt",
+  "homepage": "https://github.com/wdfk-prog/canopennode-rtt#readme",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wdfk-prog/canopennode-rtt.git",
+      "filename": "CanopenNode v1.0.0 git package",
+      "VER_SHA": "329309e47f554ac8e7af7858207512209e904ba7"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/wdfk-prog/canopennode-rtt.git",
+      "filename": "CanopenNode latest version git package",
+      "VER_SHA": "master"
+    }
+  ]
+}

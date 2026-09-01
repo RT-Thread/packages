@@ -1,0 +1,189 @@
+# Kconfig file for CANopenNode RT-Thread storage backends.
+
+choice
+    prompt "CANopenNode RT-Thread storage implementation"
+    default PKG_CANOPENNODE_USING_STORAGE_DFS if RT_USING_DFS
+    default PKG_CANOPENNODE_USING_STORAGE_EEPROM if PKG_USING_AT24CXX && PKG_CANOPENNODE_CAN_BINDING_COUNT = 1
+    default PKG_CANOPENNODE_USING_STORAGE_USER
+    help
+        Select exactly one storage implementation. DFS and EEPROM build the
+        package-provided RT-Thread backends under port/rtthread/storage. The user
+        implementation builds only the storage frontend and requires the
+        application to provide a strong co_storage_rtt_backend_get_ops() symbol.
+
+config PKG_CANOPENNODE_USING_STORAGE_DFS
+    bool "Use built-in RT-Thread DFS storage backend"
+    depends on RT_USING_DFS
+    select PKG_CANOPENNODE_USING_CRC16
+    help
+        Build the default RT-Thread DFS backend for CANopenNode storage.
+        The backend uses native dfs_file_* APIs with local DFS open-flag
+        values and stores each CO_storage_entry_t payload with a small header,
+        length field and CRC16 checksum. co_storage_rtt_init() reads existing
+        files after CO_storage_init() has registered OD 0x1010 and 0x1011
+        callbacks. This option does not require DFS_USING_POSIX.
+
+        The default DFS backend is not power-loss safe. Products that require
+        fail-safe parameter storage should use the EEPROM backend or a custom
+        backend with atomic commit/rollback semantics.
+
+        If ENOENT is available from the C library, the read path treats only a
+        missing file as first startup and reports other open failures. If ENOENT
+        is unavailable, DFS cannot reliably distinguish a missing file from
+        another open error, so it logs the path and return code and preserves the
+        previous first-startup behavior. Store and restore failures include
+        path-level diagnostics when debug logging is enabled.
+
+        The default app wrapper does not keep a RAM copy of OD_PERSIST_*
+        factory defaults. The DFS restore hook removes the persisted file
+        only; generated OD defaults take effect after the stack/application is
+        recreated and no persisted file is read.
+
+config PKG_CANOPENNODE_USING_STORAGE_EEPROM
+    bool "Use generic EEPROM storage backend"
+    select PKG_CANOPENNODE_USING_CRC16
+    help
+        Build the generic EEPROM backend for CANopenNode storage. This backend
+        reuses CANopenNode/storage/CO_storageEeprom.c and requires an EEPROM
+        device provider for co_storage_rtt_eeprom_module_get() and the CO_eeprom_*
+        target hooks. Enable the built-in AT24CXX provider below, or provide a
+        strong application implementation for another EEPROM device.
+
+        When PKG_CANOPENNODE_LSS_PERSIST is enabled, a custom EEPROM provider
+        must also provide co_storage_rtt_eeprom_provider_aux_init(),
+        co_storage_rtt_eeprom_aux_read() and co_storage_rtt_eeprom_aux_write().
+        The auxiliary initializer is separate from CO_eeprom_init() so pre-CAN
+        LSS loading does not invoke the normal EEPROM Storage initializer twice.
+
+config PKG_CANOPENNODE_USING_STORAGE_USER
+    bool "Use user-provided storage backend"
+    help
+        Build only the common RT-Thread storage frontend under
+        port/rtthread/storage and let the application provide the actual backend.
+        The application must provide a strong co_storage_rtt_backend_get_ops()
+        symbol that returns a permanent CO_storage_rtt_backend_ops_t table with
+        init, read, store and restore callbacks. This is the intended option for
+        board-specific flash, filesystem, NVM or fail-safe storage.
+
+        When PKG_CANOPENNODE_LSS_PERSIST is enabled, the table must additionally
+        provide aux_init, aux_read and aux_write. aux_init is the dedicated
+        pre-CAN auxiliary preparation path and is independent from normal Storage init.
+
+endchoice
+
+if PKG_CANOPENNODE_USING_STORAGE_EEPROM
+
+config PKG_CANOPENNODE_USING_STORAGE_AT24C
+    bool "Use built-in RT-Thread AT24CXX EEPROM device provider"
+    default y
+    depends on PKG_USING_AT24CXX
+    depends on PKG_CANOPENNODE_CAN_BINDING_COUNT = 1
+    help
+        Use the RT-Thread AT24CXX package as the default EEPROM device provider.
+        The provider supplies weak co_storage_rtt_eeprom_module_get(),
+        CO_eeprom_* and optional LSS auxiliary hooks. Disable this option when an
+        application supplies a complete strong EEPROM provider implementation.
+
+        The built-in provider supports one CANopenNode instance because it owns
+        one EEPROM region configured by PKG_CANOPENNODE_STORAGE_AT24C_OFFSET and
+        PKG_CANOPENNODE_STORAGE_AT24C_REGION_SIZE. The AT24CXX package must
+        provide at24cxx_init(), page read/write APIs, AT24CXX_MAX_MEM_ADDRESS and
+        AT24CXX_PAGE_BYTE.
+
+config PKG_CANOPENNODE_STORAGE_AT24C_I2C_BUS_NAME
+    string "AT24CXX I2C bus name"
+    default "i2c1"
+    depends on PKG_CANOPENNODE_USING_STORAGE_AT24C
+    help
+        RT-Thread I2C bus name passed to at24cxx_init(). The bus and AT24CXX
+        package must be initialized before CANopen storage initialization.
+
+config PKG_CANOPENNODE_STORAGE_AT24C_ADDR_INPUT
+    int "AT24CXX address input"
+    range 0 7
+    default 0
+    depends on PKG_CANOPENNODE_USING_STORAGE_AT24C
+    help
+        Address-input value passed as AddrInput to at24cxx_init(). The supplied
+        RT-Thread AT24CXX adapter uses 7-bit base address 0x50 OR AddrInput.
+        Keep the generic default unless board wiring requires another address.
+        Set AddrInput to 1 explicitly when the EEPROM must use address 0x51.
+
+config PKG_CANOPENNODE_STORAGE_AT24C_OFFSET
+    int "AT24CXX storage region start offset"
+    range 0 2147483647
+    default 0
+    depends on PKG_CANOPENNODE_USING_STORAGE_AT24C
+    help
+        First EEPROM byte reserved for CANopenNode storage. Configure this with
+        PKG_CANOPENNODE_STORAGE_AT24C_REGION_SIZE so the complete region
+        [OFFSET, OFFSET + REGION_SIZE) does not overlap bootloader or application
+        EEPROM data.
+
+config PKG_CANOPENNODE_STORAGE_AT24C_REGION_SIZE
+    int "AT24CXX storage reserved region size (0 = remaining EEPROM)"
+    range 0 2147483647
+    default 0
+    depends on PKG_CANOPENNODE_USING_STORAGE_AT24C
+    help
+        Number of EEPROM bytes reserved exclusively for CANopenNode storage.
+        Set a non-zero value when the EEPROM is shared with the bootloader or
+        application so all CO_storageEeprom and raw diagnostic access is bounded
+        to [OFFSET, OFFSET + REGION_SIZE). Value 0 preserves legacy behavior and
+        uses all physical EEPROM bytes from OFFSET to the end of the device.
+
+config PKG_CANOPENNODE_STORAGE_AT24C_CRC_BUF_SIZE
+    int "AT24CXX CRC read buffer size"
+    range 8 256
+    default 32
+    depends on PKG_CANOPENNODE_USING_STORAGE_AT24C
+    help
+        Temporary stack buffer size used while calculating CRC over EEPROM data.
+
+endif
+
+config PKG_CANOPENNODE_LSS_PERSIST
+    bool "Persist LSS Node-ID and bitrate"
+    default n
+    depends on PKG_CANOPENNODE_USING_STORAGE
+    depends on PKG_CANOPENNODE_USING_LSS_SLAVE
+    select PKG_CANOPENNODE_USING_CRC16
+    help
+        Persist the LSS pending Node-ID and bitrate through the selected RT-Thread
+        storage backend. Initial application startup first runs the backend's
+        dedicated auxiliary preparation, loads the LSS record before the first
+        CO_CANinit(), and performs normal OD-backed Storage initialization later.
+        Communication Reset keeps the current in-RAM pending values and does not
+        reload persistence.
+
+        Built-in backends provide a dedicated auxiliary persistence area that is
+        separate from normal CO_storage_entry_t payloads. A user-provided backend
+        must implement aux_init, aux_read and aux_write in
+        CO_storage_rtt_backend_ops_t.
+
+        The single-slot record uses CRC and a commit marker written last. An
+        erased, invalid, or interrupted record is ignored and startup falls back
+        to the configured Node-ID and bitrate. The RT-Thread wrapper registers
+        the CANopenNode LSS Store callback and reports Store success only after
+        the committed record has been read back and validated completely.
+
+        The same wrapper also registers LSS bitrate-check and activate callbacks.
+        The standard 10/20/50/125/250/500/800/1000 kbit/s values are accepted,
+        and Activate Bit Timing is executed as non-blocking PRE_DELAY -> switch ->
+        POST_DELAY processing. During both delay windows an atomic txEnabled gate
+        in CO_CANsend() suppresses new CANopen transmissions. Runtime switching
+        uses RT_CAN_CMD_SET_BAUD and restores the previous bitrate on a recoverable
+        switch failure. The current software gate does not abort a frame that had
+        already entered the RT-Thread/HAL transmit path before txEnabled was
+        cleared; a future target TX-abort API may extend that boundary.
+
+config PKG_CANOPENNODE_STORAGE_DFS_DIR
+    string "CANopen DFS storage directory"
+    default "/flash/canopen"
+    depends on PKG_CANOPENNODE_USING_STORAGE_DFS
+    help
+        Default directory used by the RT-Thread DFS backend. The directory
+        path must not end with '/'. The default app wrapper uses the CAN device
+        name as a filename prefix so multiple instances do not share the same
+        storage file. The backend does not create directories; mount points and
+        storage directories must already exist.

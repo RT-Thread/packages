@@ -1,0 +1,1621 @@
+# Kconfig file for CANopenNode RT-Thread port.
+
+menuconfig PKG_USING_CANOPENNODE
+    bool "CANopenNode: CANopen protocol stack"
+    default n
+    select RT_USING_HEAP
+    select RT_USING_DEVICE
+    select RT_USING_CAN
+    select RT_USING_MUTEX
+    select RT_USING_SEMAPHORE
+    help
+        Enable the CANopenNode RT-Thread package wrapper. The package expects
+        CANopenNode to be available as a git submodule named CANopenNode in the
+        package root directory. The RT-Thread application wrapper uses
+        semaphores for realtime wakeup and a lifecycle mutex to serialize
+        communication reset with the realtime worker while CANopen objects are
+        deleted and recreated.
+
+if PKG_USING_CANOPENNODE
+
+config PKG_CANOPENNODE_CAN_DEV_NAME
+    string "RT-Thread CAN device name"
+    default "can1"
+    help
+        RT-Thread CAN device name passed to rt_device_find(). It is used by the
+        default auto-initialized instance and as the fallback device name when
+        CO_CANmodule_init() is called with a NULL CAN pointer. Change this when
+        the BSP exposes the CAN controller as a different device, such as can0.
+
+config PKG_CANOPENNODE_CAN_BINDING_COUNT
+    int "RT-Thread CAN device binding table size"
+    range 1 8
+    default 1
+    help
+        Maximum number of RT-Thread CAN devices that can be bound to CANopenNode
+        CAN modules at the same time. Keep the default value 1 for single-CAN
+        products and increase it only when multiple CANopenNode instances run on
+        separate RT-Thread CAN devices.
+
+config PKG_CANOPENNODE_USING_RTT_CAN_FILTER
+    bool "Use coarse RT-Thread CAN HDR filters as CANopen RX ingress"
+    default n
+    depends on RT_CAN_USING_HDR
+    depends on PKG_CANOPENNODE_CAN_BINDING_COUNT = 1
+    help
+        Compile the active CANopenNode RX rules into a bounded set of coarse
+        standard-ID RT-Thread HDR mask filters. Hardware filters are only an
+        ingress prefilter: co_rx always performs the final CANopenNode
+        ident/mask/RTR match before dispatching callbacks.
+
+        Runtime COB-ID changes mark the hardware filter set dirty and refresh
+        the bounded coarse table before CO_CANrxBufferInit() returns when CAN is
+        already in normal mode. The normal mainline path also retries a pending
+        refresh. If the bounded compiler cannot represent all active rules, it
+        falls back to broad standard-frame ingress filters without narrowing the
+        CANopenNode software rule set.
+
+        The generic STM32 bxCAN RT-Thread mask-filter path compares RTR, so DTR
+        and RTR rules consume separate coarse-filter coverage. Configure at
+        least two banks when both data and remote frames must be received.
+
+        Enabling this option gives the single configured CANopenNode CAN module
+        exclusive ownership of the HDR bank range selected below. Multi-binding
+        configurations keep this option unavailable because one global bank
+        range cannot describe controllers with different filter-bank partitions.
+        Reduce the range or disable this option if another component configures
+        HDR filters on the same CAN device.
+
+config PKG_CANOPENNODE_RX_HDR_BANK_BASE
+    int "CANopen RX first HDR bank"
+    range 0 27
+    default 0
+    depends on PKG_CANOPENNODE_USING_RTT_CAN_FILTER
+    help
+        First hardware filter bank exclusively owned by the CANopen RX ingress
+        compiler. Every ingress filter uses an explicit bank index starting at
+        this value; the port does not rely on driver auto-assignment. On the
+        current STM32 bxCAN driver, use banks 0..13 for CAN1 and 14..27 for
+        CAN2. The default 0 matches the package default CAN device, can1.
+
+config PKG_CANOPENNODE_RX_HDR_BANK_COUNT
+    int "CANopen RX HDR bank count"
+    range 2 14
+    default 8
+    depends on PKG_CANOPENNODE_USING_RTT_CAN_FILTER
+    help
+        Number of consecutive hardware filter banks exclusively owned by the
+        CANopen RX ingress compiler, beginning at
+        PKG_CANOPENNODE_RX_HDR_BANK_BASE. More banks preserve narrower hardware
+        masks and reject more unrelated traffic. The configured range must be
+        valid for the selected CAN controller/BSP. The software matcher remains
+        authoritative regardless of this value.
+
+menu "RT-Thread runtime options"
+
+menu "CAN RX helper thread"
+
+config PKG_CANOPENNODE_RX_THREAD_STACK_SIZE
+    int "Stack size"
+    default 2048
+    help
+        Stack size in bytes for the CAN RX helper thread.
+
+config PKG_CANOPENNODE_RX_THREAD_PRIORITY
+    int "Priority"
+    default 2
+    help
+        RT-Thread priority for the CAN RX helper thread. Lower numeric values are
+        higher priority in RT-Thread.
+
+config PKG_CANOPENNODE_RX_THREAD_TICK
+    int "Time slice"
+    default 10
+    help
+        Time slice passed when creating the CAN RX helper thread.
+
+config PKG_CANOPENNODE_RX_BATCH_SIZE
+    int "CAN RX batch read size"
+    range 1 64
+    default 8
+    help
+        Maximum number of struct rt_can_msg frames read by the co_rx helper in
+        one rt_device_read() call. Larger values reduce wake/read overhead but
+        increase stack usage because the batch buffer is allocated on the RX
+        thread stack.
+
+endmenu
+
+
+menu "CANopen mainline thread"
+
+config PKG_CANOPENNODE_MAIN_THREAD_STACK_SIZE
+    int "Stack size"
+    default 2048
+    help
+        Stack size in bytes for the CANopenNode mainline thread. This thread
+        runs CO_process(), including NMT, SDO, heartbeat, emergency and reset
+        command handling. Increase it if the enabled CANopen objects, logging or
+        Object Dictionary callbacks consume more stack. A value that is too small
+        can cause stack overflow and hard-to-debug runtime faults; a value that
+        is too large only wastes RAM.
+
+config PKG_CANOPENNODE_MAIN_THREAD_PRIORITY
+    int "Priority"
+    default 10
+    help
+        RT-Thread priority for the CANopenNode mainline thread. Lower numeric
+        values are higher priority in RT-Thread. Keep this lower priority than
+        the realtime thread so SDO/NMT/heartbeat work cannot delay SYNC, SRDO,
+        RPDO and TPDO processing when those objects are enabled. Setting it too
+        high can disturb time-critical tasks; setting it too low can make SDO
+        transfers and heartbeat handling sluggish when the system is busy.
+
+config PKG_CANOPENNODE_MAIN_THREAD_TICK
+    int "Time slice"
+    default 10
+    help
+        Time slice passed when creating the CANopenNode mainline thread. Larger
+        values let the thread run longer before round-robin rescheduling at the
+        same priority. Smaller values improve fairness with peer threads but may
+        increase scheduling overhead.
+
+endmenu
+
+
+menu "CANopen realtime thread"
+
+config PKG_CANOPENNODE_RT_THREAD_STACK_SIZE
+    int "Stack size"
+    default 2048
+    help
+        Stack size in bytes for the CANopenNode realtime thread. This thread runs
+        the periodic SYNC, SRDO, RPDO and TPDO processing path when those objects
+        are enabled. Increase it if user code is added near the realtime section
+        or if enabled SRDO/PDO/SYNC features use more stack. A value that is too
+        small risks stack overflow; a value that is too large wastes RAM in every
+        CANopenNodeRTT instance.
+
+config PKG_CANOPENNODE_RT_THREAD_PRIORITY
+    int "Priority"
+    default 3
+    help
+        RT-Thread priority for the CANopenNode realtime thread. Lower numeric
+        values are higher priority. This should normally be higher priority than
+        the mainline thread because it executes the fixed-period
+        SYNC/SRDO/RPDO/TPDO path when those objects are enabled. Setting it too
+        low increases PDO or SRDO jitter; setting it too high can starve other
+        time-critical device or control threads.
+
+config PKG_CANOPENNODE_RT_THREAD_TICK
+    int "Time slice"
+    default 10
+    help
+        Time slice passed when creating the CANopenNode realtime thread. The
+        thread normally wakes from a semaphore and runs briefly, so this value has
+        limited effect unless other threads share the same priority. Larger
+        values reduce round-robin switching; smaller values improve fairness.
+
+config PKG_CANOPENNODE_TIMER_PERIOD_US
+    int "Processing period in us"
+    range 1 1000000
+    default 1000
+    help
+        Requested period for realtime CANopen processing. The default 1000 us
+        matches the common 1 ms CANopenNode model. Smaller values reduce PDO and
+        SYNC latency only if the RT-Thread tick rate can represent that period;
+        otherwise the wrapper rounds up to at least one system tick. Larger values
+        reduce CPU load but increase PDO latency and timing jitter.
+
+endmenu
+
+
+menu "CANopen application runtime"
+
+config PKG_CANOPENNODE_APP_FIRST_HB_TIME_MS
+    int "First heartbeat time in ms"
+    range 0 65535
+    default 500
+    help
+        First heartbeat producer delay passed to CO_CANopenInit(). This controls
+        how long the node waits after communication initialization before sending
+        its first heartbeat. A smaller value lets a master detect the node sooner
+        but can produce heartbeat traffic before the application is fully ready.
+        A larger value gives the application more startup margin but delays
+        network supervision.
+
+config PKG_CANOPENNODE_APP_SDO_SRV_TIMEOUT_MS
+    int "SDO server timeout in ms"
+    range 1 65535
+    default 1000
+    help
+        SDO server timeout passed to CO_CANopenInit(). This is the maximum idle
+        time the local SDO server allows during an SDO transfer before aborting
+        it. Smaller values detect broken clients faster but can abort transfers on
+        a busy or slow bus. Larger values tolerate slow masters but keep failed
+        transfers and their resources open longer.
+
+config PKG_CANOPENNODE_APP_SDO_CLI_TIMEOUT_MS
+    int "SDO client timeout in ms"
+    range 1 65535
+    default 500
+    help
+        Default SDO client timeout passed to CO_CANopenInit(). This affects SDO
+        client operations initiated by this node, for example gateway or
+        application-driven client transfers. Smaller values fail faster when the
+        remote server is absent or slow. Larger values tolerate slow devices and
+        bus congestion but make application-level error recovery slower.
+
+config PKG_CANOPENNODE_APP_SDO_CLI_BLOCK
+    bool "Enable SDO client block transfer by default"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_CLIENT
+    depends on PKG_CANOPENNODE_SDO_CLI_BLOCK
+    help
+        Default SDO client block-transfer flag passed to CO_CANopenInit(). Block
+        transfer can improve throughput for large SDO client uploads/downloads
+        when both peers support it.
+
+endmenu
+
+
+menuconfig PKG_CANOPENNODE_APP_AUTO_INIT
+    bool "Default CANopenNode application"
+    default y
+    help
+        Automatically create one default CANopenNode RT-Thread application
+        instance during RT-Thread application initialization. Disable this when
+        the product creates CANopenNodeRTT instances explicitly.
+
+if PKG_CANOPENNODE_APP_AUTO_INIT
+
+config PKG_CANOPENNODE_AUTO_INIT_NODE_ID
+    int "Node-ID"
+    range 1 127
+    default 1
+    help
+        CANopen Node-ID used by the default auto-initialized instance.
+
+choice
+    prompt "CAN bitrate in kbit/s"
+    default PKG_CANOPENNODE_AUTO_INIT_BITRATE_1000
+    help
+        CAN bitrate used by the default auto-initialized CANopenNode instance.
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_10
+    bool "10"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_20
+    bool "20"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_50
+    bool "50"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_125
+    bool "125"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_250
+    bool "250"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_500
+    bool "500"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_800
+    bool "800"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_1000
+    bool "1000"
+
+endchoice
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE
+    int
+    default 10 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_10
+    default 20 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_20
+    default 50 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_50
+    default 125 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_125
+    default 250 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_250
+    default 500 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_500
+    default 800 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_800
+    default 1000 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_1000
+    default 1000
+
+config PKG_CANOPENNODE_GATEWAY_RTT_CONSOLE
+    bool "RT-Thread MSH console bridge"
+    default n
+    depends on PKG_CANOPENNODE_USING_GATEWAY_ASCII
+    depends on RT_USING_FINSH && FINSH_USING_MSH
+    depends on !PKG_CANOPENNODE_DEMO_SDO_CLIENT_TEST
+    depends on !PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    select PKG_CANOPENNODE_USING_SDO_CLIENT
+    select PKG_CANOPENNODE_SDO_CLI_SEGMENTED
+    select PKG_CANOPENNODE_SDO_CLI_LOCAL
+    select PKG_CANOPENNODE_NMT_MASTER
+    select PKG_CANOPENNODE_GATEWAY_ASCII_SDO
+    select PKG_CANOPENNODE_GATEWAY_ASCII_NMT
+    select PKG_CANOPENNODE_GATEWAY_ASCII_ERROR_DESC
+    select PKG_CANOPENNODE_GATEWAY_ASCII_PRINT_HELP
+    help
+        Register the canopen_gw MSH command for the default auto-initialized
+        CANopenNode instance.
+
+endif
+
+
+menuconfig PKG_CANOPENNODE_USING_HIGH_RES_TIME
+    bool "High-resolution time source"
+    default n
+    depends on RT_USING_CLOCK_TIME
+    help
+        Enable the dedicated hardware-timer microsecond time source. When this
+        option is disabled, the wrapper uses RT-Thread tick based timing.
+
+if PKG_CANOPENNODE_USING_HIGH_RES_TIME
+
+config PKG_CANOPENNODE_HIGH_RES_TIMER_NAME
+    string "Hardware timer device name"
+    default "timer0"
+    help
+        Dedicated RT-Thread clock-timer device used by the high-resolution time
+        source. The BSP/user must verify that this device maps to a physical
+        32-bit, 1 MHz-capable, up-counting timer and is not used by another
+        component.
+
+endif
+
+endmenu
+
+menu "CANopenNode CO_CONFIG groups"
+
+menu "Common flags"
+
+config PKG_CANOPENNODE_GLOBAL_CALLBACK_PRE
+    bool "Global mainline callback-pre flag"
+    default n
+    help
+        Set CO_CONFIG_GLOBAL_FLAG_CALLBACK_PRE for mainline CANopenNode objects.
+        This allows supported objects to call application-registered
+        callback-pre functions after fast preprocessing. In RT-Thread this is
+        normally used to wake a lower-priority mainline thread after CAN RX or
+        other high-priority preprocessing found more work to do.
+
+        Enable this when the port will register callback-pre hooks and use them
+        to signal semaphores, events or other non-blocking scheduling objects.
+
+config PKG_CANOPENNODE_GLOBAL_RT_CALLBACK_PRE
+    bool "Global realtime callback-pre flag"
+    default n
+    help
+        Set CO_CONFIG_GLOBAL_RT_FLAG_CALLBACK_PRE for realtime objects such as
+        SYNC and PDO. This allows supported realtime objects to run custom
+        callback-pre functions after their fast preprocessing path.
+
+        Use this when the RT-Thread port needs SYNC/PDO preprocessing to wake a
+        realtime worker, update a lightweight event flag or trigger deterministic
+        application-side preprocessing. The callback body must remain short and
+        must not call blocking APIs.
+
+config PKG_CANOPENNODE_GLOBAL_TIMERNEXT
+    bool "Global timerNext_us calculation flag"
+    default n
+    select PKG_CANOPENNODE_GLOBAL_CALLBACK_PRE
+    select RT_USING_EVENT
+    help
+        Enable the RT-Thread event-driven CANopen mainline scheduler and set
+        CO_CONFIG_GLOBAL_FLAG_TIMERNEXT. Supported process functions calculate
+        the next recommended processing deadline in timerNext_us, while
+        callback-pre hooks wake the mainline thread early when asynchronous CAN
+        or runtime work arrives.
+
+        The scheduler uses one per-instance RT-Thread event. Repeated wakeups
+        coalesce into a single work-available indication; CANopenNode remains the
+        owner of protocol state and receive buffers.
+
+        RT_USING_EVENT and PKG_CANOPENNODE_GLOBAL_CALLBACK_PRE are selected
+        automatically because timerNext-based sleeping is unsafe without an
+        asynchronous wake path.
+
+config PKG_CANOPENNODE_GLOBAL_OD_DYNAMIC
+    bool "Global dynamic Object Dictionary flag"
+    default y
+    help
+        Set CO_CONFIG_GLOBAL_FLAG_OD_DYNAMIC. Supported objects will re-read
+        related OD communication parameters when those OD entries are written,
+        instead of only applying them during communication reset.
+
+        Keep this enabled for configurable demo and field devices. Disable only
+        when the product forbids runtime communication-parameter changes and the
+        smaller/static behavior is intentional.
+
+config PKG_CANOPENNODE_USING_MULTIPLE_OD
+    bool "Enable multiple Object Dictionary runtime config"
+    default n
+    help
+        Define CO_MULTIPLE_OD and let the RT-Thread wrapper pass a persistent
+        CO_config_t initialized from OD_INIT_CONFIG() to CO_new(). Enable this
+        when the product needs CANopenNode multiple Object Dictionary support or
+        explicit runtime object counts. Leave disabled for the smaller default
+        single Object Dictionary build.
+
+endmenu
+
+menu "CiA 301 NMT and heartbeat"
+
+config PKG_CANOPENNODE_NMT_CALLBACK_CHANGE
+    bool "NMT callback on state change"
+    default n
+    help
+        Add CO_CONFIG_NMT_CALLBACK_CHANGE to CO_CONFIG_NMT. This enables an
+        application callback when the local NMT state changes, for example when
+        the node enters pre-operational, operational or stopped state.
+
+        Enable this when the application needs to start/stop process I/O,
+        update LEDs, notify diagnostics or gate PDO processing based on NMT
+        state transitions.
+
+config PKG_CANOPENNODE_NMT_MASTER
+    bool "Enable simple NMT master"
+    default n
+    help
+        Add CO_CONFIG_NMT_MASTER to CO_CONFIG_NMT. This enables simple NMT master
+        support so the local node can transmit NMT commands to other nodes, such
+        as start remote node, stop remote node or reset communication.
+
+        Leave disabled for a normal slave-only device.
+
+menuconfig PKG_CANOPENNODE_USING_HB_CONS
+    bool "Enable heartbeat consumer"
+    default y
+    help
+        Enable CO_HBconsumer and add CO_CONFIG_HB_CONS_ENABLE to
+        CO_CONFIG_HB_CONS. A heartbeat consumer monitors heartbeat producer
+        messages from configured remote nodes, detects timeouts, remote reset and
+        NMT state changes, and reports those states to the stack/application.
+
+        Keep enabled when the device depends on one or more remote CANopen nodes
+        and must detect loss of communication.
+
+if PKG_CANOPENNODE_USING_HB_CONS
+
+choice
+    prompt "Heartbeat consumer NMT-change callback mode"
+    default PKG_CANOPENNODE_HB_CONS_CALLBACK_NONE
+    help
+        Select how heartbeat consumer state changes are reported to the
+        application. Use no callback for polling-only applications, one common
+        callback for simple supervision, or multiple callbacks when per-node
+        start/timeout/reset handling is required.
+
+        CANopenNode does not allow the common and multi callback bits to be set
+        at the same time.
+
+config PKG_CANOPENNODE_HB_CONS_CALLBACK_NONE
+    bool "No heartbeat consumer change callback"
+    help
+        Do not add heartbeat-consumer state-change callback flags. The
+        application can still inspect heartbeat consumer state through normal
+        processing or query functions if enabled.
+
+config PKG_CANOPENNODE_HB_CONS_CALLBACK_CHANGE
+    bool "Common heartbeat consumer change callback"
+    help
+        Add CO_CONFIG_HB_CONS_CALLBACK_CHANGE. One common callback is invoked
+        when a monitored node's NMT state changes.
+
+config PKG_CANOPENNODE_HB_CONS_CALLBACK_MULTI
+    bool "Multiple heartbeat consumer callbacks"
+    help
+        Add CO_CONFIG_HB_CONS_CALLBACK_MULTI. Separate callbacks can be
+        registered for per-node NMT change, heartbeat started, timeout and remote
+        reset events.
+
+endchoice
+
+config PKG_CANOPENNODE_HB_CONS_QUERY_FUNCT
+    bool "Enable heartbeat consumer query functions"
+    default n
+    help
+        Add CO_CONFIG_HB_CONS_QUERY_FUNCT to CO_CONFIG_HB_CONS. This exposes
+        query helpers for the heartbeat/NMT state of monitored nodes.
+
+        Enable this when application code wants to poll the supervision result
+        instead of relying only on callbacks.
+
+endif
+
+endmenu
+
+menu "CiA 301 legacy node guarding"
+
+comment "Node guarding is legacy and is not covered by demo CI profiles; prefer heartbeat supervision."
+
+menuconfig PKG_CANOPENNODE_USING_NODE_GUARDING
+    bool "Enable legacy node guarding"
+    default n
+    help
+        Enable CANopen node guarding support. Node guarding is the legacy
+        error-control method where a master polls a node and checks the returned
+        state/toggle information.
+
+        This package does not need node guarding for the default demo or CI
+        profiles. For new designs, prefer NMT plus heartbeat producer/consumer
+        and configure heartbeat timing, for example with
+        PKG_CANOPENNODE_APP_FIRST_HB_TIME_MS and heartbeat consumer settings.
+
+        Enable node guarding only for older CANopen networks, older masters, or
+        devices that explicitly require node/life guarding compatibility. The
+        slave path also requires Object Dictionary entries 0x100C Guard Time and
+        0x100D Lifetime Factor; the bundled demo OD does not define them.
+
+if PKG_CANOPENNODE_USING_NODE_GUARDING
+
+config PKG_CANOPENNODE_NODE_GUARDING_SLAVE
+    bool "Enable node guarding slave"
+    default n
+    help
+        Add CO_CONFIG_NODE_GUARDING_SLAVE_ENABLE. The local device can respond
+        to node guarding requests from an external master.
+
+        Enable this only when the product Object Dictionary defines 0x100C Guard
+        Time and 0x100D Lifetime Factor. Prefer heartbeat supervision for new
+        products.
+
+config PKG_CANOPENNODE_NODE_GUARDING_MASTER
+    bool "Enable node guarding master"
+    default n
+    help
+        Add CO_CONFIG_NODE_GUARDING_MASTER_ENABLE. The local device can poll
+        other nodes using the legacy node guarding mechanism.
+
+        Enable only when this RT-Thread node must act as the compatibility
+        master for legacy nodes.
+
+config PKG_CANOPENNODE_NODE_GUARDING_MASTER_COUNT
+    int
+    prompt "Node guarding master count" if PKG_CANOPENNODE_NODE_GUARDING_MASTER
+    range 0 127
+    default 127
+    help
+        Maximum number of nodes monitored by the node guarding master. The value
+        remains defined even when the prompt is hidden, so CO_driver_target.h can
+        keep a stable CO_CONFIG_NODE_GUARDING_MASTER_COUNT mapping.
+
+endif
+
+endmenu
+
+menu "CiA 301 emergency object"
+
+config PKG_CANOPENNODE_EM_PRODUCER
+    bool "Emergency producer"
+    default y
+    help
+        Add CO_CONFIG_EM_PRODUCER to CO_CONFIG_EM. The local node can transmit
+        EMCY messages when CO_errorReport() or CO_errorReset() changes the active
+        error state.
+
+config PKG_CANOPENNODE_EM_PROD_CONFIGURABLE
+    bool "Configurable emergency COB-ID"
+    default n
+    depends on PKG_CANOPENNODE_EM_PRODUCER
+    help
+        Add CO_CONFIG_EM_PROD_CONFIGURABLE. OD object 0x1014 can configure the
+        emergency producer COB-ID. When disabled, the default EMCY COB-ID is
+        derived from the node ID and 0x1014 is effectively fixed/read-only.
+
+config PKG_CANOPENNODE_EM_PROD_INHIBIT
+    bool "Emergency inhibit timer"
+    default n
+    depends on PKG_CANOPENNODE_EM_PRODUCER
+    help
+        Add CO_CONFIG_EM_PROD_INHIBIT. OD object 0x1015 limits the minimum time
+        between produced EMCY messages, reducing bursts when an error toggles or
+        multiple faults are reported quickly.
+
+config PKG_CANOPENNODE_EM_HISTORY
+    bool "Emergency history"
+    default y
+    help
+        Add CO_CONFIG_EM_HISTORY. Store recent emergency error codes in the
+        predefined error field, OD object 0x1003, so diagnostic tools can read
+        fault history after the fault was reported.
+
+config PKG_CANOPENNODE_EM_STATUS_BITS
+    bool "Expose emergency status bits through OD"
+    default n
+    help
+        Add CO_CONFIG_EM_STATUS_BITS. Expose CO_EM_errorStatusBits_t through the
+        Object Dictionary for diagnostics or manufacturer-specific inspection.
+
+        Enable only when OD access to raw error status bits is required.
+
+config PKG_CANOPENNODE_EM_CONSUMER
+    bool "Emergency consumer"
+    default n
+    help
+        Add CO_CONFIG_EM_CONSUMER. The local node can receive EMCY messages from
+        other nodes and report them to an application callback.
+
+        Enable this for supervisors, gateways, masters or devices that must react
+        to remote node faults.
+
+config PKG_CANOPENNODE_EM_ERR_STATUS_BITS_COUNT
+    int "Emergency status bit count"
+    range 48 256
+    default 80
+    help
+        Number of local emergency status bits. CANopenNode uses the first 48 bits
+        internally; the remaining bits can be used by manufacturer/application
+        errors. The value must be a multiple of 8 because CANopenNode stores and
+        checks the status as whole bytes. The stack default manufacturer error
+        condition reads status bytes 8 and 9, so
+        PKG_CANOPENNODE_ERR_CONDITION_MANUFACTURER_STACK requires this value to
+        be at least 80. CANopenNode default is 80.
+
+config PKG_CANOPENNODE_ERR_CONDITION_GENERIC_STACK
+    bool "Generic error condition uses stack default"
+    default y
+    help
+        Define CO_CONFIG_ERR_CONDITION_GENERIC using the stack default condition.
+        It maps stack generic error status bits into bit 0 of CANopen error
+        register object 0x1001.
+
+config PKG_CANOPENNODE_ERR_CONDITION_COMMUNICATION_STACK
+    bool "Communication error condition uses stack default"
+    default y
+    help
+        Define CO_CONFIG_ERR_CONDITION_COMMUNICATION using stack communication
+        error status bits. This feeds the communication error bit in CANopen
+        error register object 0x1001.
+
+config PKG_CANOPENNODE_ERR_CONDITION_MANUFACTURER_STACK
+    bool "Manufacturer error condition uses stack default"
+    depends on PKG_CANOPENNODE_EM_ERR_STATUS_BITS_COUNT >= 80
+    default y
+    help
+        Define CO_CONFIG_ERR_CONDITION_MANUFACTURER using the stack default
+        manufacturer error bits. This feeds the manufacturer-specific error bit
+        in CANopen error register object 0x1001. This option requires at least
+        80 emergency status bits because it reads errorStatusBits[8] and
+        errorStatusBits[9].
+
+config PKG_CANOPENNODE_ERR_CONDITION_CURRENT_ZERO
+    bool "Define current error condition as false"
+    default n
+    help
+        Define CO_CONFIG_ERR_CONDITION_CURRENT as 0. Use this when the product
+        does not report current-related errors through the CANopen error
+        register. Leave disabled if the application will provide its own macro.
+
+config PKG_CANOPENNODE_ERR_CONDITION_VOLTAGE_ZERO
+    bool "Define voltage error condition as false"
+    default n
+    help
+        Define CO_CONFIG_ERR_CONDITION_VOLTAGE as 0. Use this when the product
+        does not report voltage-related errors through the CANopen error
+        register. Leave disabled if the application will provide its own macro.
+
+config PKG_CANOPENNODE_ERR_CONDITION_TEMPERATURE_ZERO
+    bool "Define temperature error condition as false"
+    default n
+    help
+        Define CO_CONFIG_ERR_CONDITION_TEMPERATURE as 0. Use this when the
+        product does not report temperature-related errors through the CANopen
+        error register. Leave disabled if the application will provide its own
+        macro.
+
+config PKG_CANOPENNODE_ERR_CONDITION_DEV_PROFILE_ZERO
+    bool "Define device-profile error condition as false"
+    default n
+    help
+        Define CO_CONFIG_ERR_CONDITION_DEV_PROFILE as 0. Use this when the
+        selected CANopen device profile does not map any profile-specific error
+        into the CANopen error register. Leave disabled if the application will
+        provide its own macro.
+
+endmenu
+
+menu "CiA 301 SDO"
+
+comment "SDO provides Object Dictionary upload/download for configuration and diagnostics."
+comment "Most slave devices need SDO server; SDO client is for masters/gateways/tools."
+
+menuconfig PKG_CANOPENNODE_USING_SDO_SERVER
+    bool "Enable SDO server"
+    default y
+    help
+        Enable CO_SDOserver.c and CO_CONFIG_SDO_SRV. The SDO server lets another
+        node or configuration tool read/write this device's Object Dictionary.
+
+        Keep enabled for most CANopen devices.
+
+if PKG_CANOPENNODE_USING_SDO_SERVER
+
+config PKG_CANOPENNODE_SDO_SRV_SEGMENTED
+    bool "SDO server segmented transfer"
+    default y
+    help
+        Add CO_CONFIG_SDO_SRV_SEGMENTED. Segmented transfer allows OD entries
+        larger than one expedited SDO frame to be transferred in several CAN
+        frames.
+
+config PKG_CANOPENNODE_SDO_SRV_BLOCK
+    bool "SDO server block transfer"
+    default n
+    depends on PKG_CANOPENNODE_SDO_SRV_SEGMENTED
+    select PKG_CANOPENNODE_USING_CRC16
+    help
+        Add CO_CONFIG_SDO_SRV_BLOCK. Block transfer improves throughput for large
+        objects but needs segmented transfer and a larger SDO buffer.
+
+config PKG_CANOPENNODE_SDO_SRV_BUFFER_SIZE
+    int "SDO server buffer size"
+    range 900 4096 if PKG_CANOPENNODE_SDO_SRV_BLOCK
+    range 20 4096 if !PKG_CANOPENNODE_SDO_SRV_BLOCK
+    default 1000 if PKG_CANOPENNODE_SDO_SRV_BLOCK
+    default 32
+    help
+        Internal SDO server buffer size in bytes. Segmented server transfer
+        requires at least 20 bytes; block transfer requires at least 900 bytes
+        because CANopenNode verifies that constraint at compile time. Increase
+        the value for large OD entries or higher block-transfer throughput.
+
+endif
+
+menuconfig PKG_CANOPENNODE_USING_SDO_CLIENT
+    bool "Enable SDO client"
+    default n
+    select PKG_CANOPENNODE_USING_FIFO
+    help
+        Enable CO_SDOclient.c and add CO_CONFIG_SDO_CLI_ENABLE to
+        CO_CONFIG_SDO_CLI. SDO client lets this node read/write Object
+        Dictionary entries on remote nodes.
+
+        Enable for NMT masters, gateways, commissioning tools or devices that
+        configure other CANopen nodes. It selects FIFO support because the SDO
+        client uses a circular buffer.
+
+if PKG_CANOPENNODE_USING_SDO_CLIENT
+
+config PKG_CANOPENNODE_SDO_CLI_SEGMENTED
+    bool "SDO client segmented transfer"
+    default y
+    help
+        Add CO_CONFIG_SDO_CLI_SEGMENTED. The client can transfer data larger than
+        an expedited SDO frame by exchanging several segments.
+
+config PKG_CANOPENNODE_SDO_CLI_BLOCK
+    bool "SDO client block transfer"
+    default n
+    depends on PKG_CANOPENNODE_SDO_CLI_SEGMENTED
+    select PKG_CANOPENNODE_FIFO_ALT_READ
+    select PKG_CANOPENNODE_FIFO_CRC16_CCITT
+    help
+        Add CO_CONFIG_SDO_CLI_BLOCK. Block transfer improves throughput for large
+        uploads/downloads. It also requires FIFO alternate read and CRC16-CCITT
+        support, which are selected automatically.
+
+config PKG_CANOPENNODE_SDO_CLI_LOCAL
+    bool "SDO client local transfer"
+    default n
+    help
+        Add CO_CONFIG_SDO_CLI_LOCAL. If the SDO client targets the same node ID
+        as the local SDO server, data can be transferred locally without sending
+        CAN frames.
+
+config PKG_CANOPENNODE_SDO_CLI_BUFFER_SIZE
+    int "SDO client buffer size"
+    range 1000 4096 if PKG_CANOPENNODE_SDO_CLI_BLOCK
+    range 7 4096 if !PKG_CANOPENNODE_SDO_CLI_BLOCK
+    default 1000 if PKG_CANOPENNODE_SDO_CLI_BLOCK
+    default 32
+    help
+        Internal SDO client circular buffer size in bytes. Segmented transfer can
+        work with a buffer as small as 7 bytes if the application services it
+        frequently. Block transfer requires at least 1000 bytes so the maximum
+        block size can be used, matching CANopenNode's upstream configuration.
+
+endif
+
+endmenu
+
+menuconfig PKG_CANOPENNODE_USING_TIME
+    bool "CiA 301 TIME object"
+    default y
+    help
+        Enable CO_TIME.c and CO_CONFIG_TIME. TIME transfers a CANopen time stamp
+        object, allowing a node to consume network time or produce a time stamp
+        for other nodes.
+
+        Default mode enables TIME consumer. Enable producer only on the node that
+        owns or distributes the network time base.
+
+if PKG_CANOPENNODE_USING_TIME
+
+config PKG_CANOPENNODE_TIME_PRODUCER
+    bool "TIME producer"
+    default n
+    help
+        Add CO_CONFIG_TIME_PRODUCER. The local node can transmit TIME messages
+        using the COB-ID and enable bits configured by OD object 0x1012.
+
+endif
+
+menu "CiA 301 SYNC and PDO"
+
+comment "SYNC provides a network synchronization event; PDO transfers process data."
+comment "RPDO receives process data; TPDO transmits process data."
+
+menuconfig PKG_CANOPENNODE_USING_SYNC
+    bool "Enable SYNC object"
+    default y
+    help
+        Enable CO_SYNC.c and CO_CONFIG_SYNC. SYNC consumer detects network SYNC
+        messages. SYNC producer sends SYNC messages when this node is selected as
+        the network synchronizer.
+
+if PKG_CANOPENNODE_USING_SYNC
+
+config PKG_CANOPENNODE_SYNC_PRODUCER
+    bool "SYNC producer"
+    default y
+    help
+        Add CO_CONFIG_SYNC_PRODUCER. The local node can produce SYNC messages
+        according to OD objects such as 0x1005 and 0x1006.
+
+endif
+
+menuconfig PKG_CANOPENNODE_USING_PDO
+    bool "Enable PDO objects"
+    default y
+    help
+        Enable CO_PDO.c and CO_CONFIG_PDO. PDOs are the normal fast process-data
+        channel in CANopen. RPDO writes received mapped values into the local OD
+        or application access functions; TPDO sends mapped local values to the
+        CAN bus.
+
+if PKG_CANOPENNODE_USING_PDO
+
+config PKG_CANOPENNODE_RPDO
+    bool "Receive PDO"
+    default y
+    help
+        Add CO_CONFIG_RPDO_ENABLE. Enable receive PDO objects, used for process
+        data consumed by this node.
+
+config PKG_CANOPENNODE_TPDO
+    bool "Transmit PDO"
+    default y
+    help
+        Add CO_CONFIG_TPDO_ENABLE. Enable transmit PDO objects, used for process
+        data produced by this node.
+
+config PKG_CANOPENNODE_RPDO_TIMERS
+    bool "RPDO timers"
+    default y
+    depends on PKG_CANOPENNODE_RPDO
+    help
+        Add CO_CONFIG_RPDO_TIMERS_ENABLE. Enable RPDO timeout/event-timer related
+        processing so missing or late received PDOs can be detected according to
+        OD configuration.
+
+config PKG_CANOPENNODE_TPDO_TIMERS
+    bool "TPDO timers"
+    default y
+    depends on PKG_CANOPENNODE_TPDO
+    help
+        Add CO_CONFIG_TPDO_TIMERS_ENABLE. Enable TPDO inhibit time and event
+        timer handling. This controls minimum send spacing and periodic/event
+        driven TPDO transmission.
+
+config PKG_CANOPENNODE_PDO_SYNC
+    bool "PDO SYNC support"
+    default y
+    depends on PKG_CANOPENNODE_USING_SYNC
+    help
+        Add CO_CONFIG_PDO_SYNC_ENABLE. PDO objects can use synchronous
+        transmission types and the SYNC counter/window rules from the OD.
+
+config PKG_CANOPENNODE_PDO_OD_IO_ACCESS
+    bool "PDO OD IO access"
+    default y
+    help
+        Add CO_CONFIG_PDO_OD_IO_ACCESS. PDO mapping uses OD_IO_t read/write
+        accessors instead of direct memory access. This is more flexible for
+        application variables, hardware-backed values and validation hooks, but
+        uses slightly more code/data than direct memory mapping.
+
+config PKG_CANOPENNODE_PDO_BITWISE_MAPPING
+    bool "PDO bitwise mapping"
+    default n
+    depends on PKG_CANOPENNODE_PDO_OD_IO_ACCESS
+    help
+        Add CO_CONFIG_PDO_BITWISE_MAPPING. PDO mapped lengths are tracked in bits
+        instead of bytes, allowing bit-level mapping. Requires PDO OD IO access.
+
+endif
+
+endmenu
+
+menuconfig PKG_CANOPENNODE_USING_STORAGE
+    bool "CiA 301 parameter storage"
+    default n
+    help
+        Enable CO_storage.c and CO_CONFIG_STORAGE_ENABLE. Storage implements
+        parameter save/restore support for OD objects 0x1010 and 0x1011.
+
+        Each CANopenNodeRTT instance owns its storage object and entry table.
+        The selected OD_PERSIST_* groups are initialized automatically after
+        CO_CANinit() and before CO_CANopenInit(). Select one RT-Thread storage
+        implementation below: built-in DFS, built-in EEPROM/AT24CXX, or a
+        user-provided backend.
+
+if PKG_CANOPENNODE_USING_STORAGE
+
+config PKG_CANOPENNODE_STORAGE_MAX_ENTRIES_COUNT
+    int "CANopenNode storage maximum entry count"
+    range 1 255
+    default 1
+    help
+        Maximum number of CO_storage_entry_t objects supported by CANopenNode
+        storage. Increase this when more than one OD_PERSIST_* group is enabled
+        or when the application supplies additional storage entries.
+
+config PKG_CANOPENNODE_STORAGE_PERSIST_COMM
+    bool "Persist CANopen communication parameters"
+    default y
+    help
+        Add OD_PERSIST_COMM to the RT-Thread storage table.
+        This maps communication parameters to sub-index 2 of OD 0x1010 Store
+        parameters and OD 0x1011 Restore default parameters. The generated OD.h
+        must provide OD_PERSIST_COMM.
+
+config PKG_CANOPENNODE_STORAGE_PERSIST_APP
+    bool "Persist CANopen application parameters"
+    default n
+    help
+        Add OD_PERSIST_APP to the RT-Thread storage table.
+        This maps application parameters to sub-index 3 of OD 0x1010 and OD
+        0x1011. Enable this only when the generated OD.h provides
+        OD_PERSIST_APP.
+
+config PKG_CANOPENNODE_STORAGE_PERSIST_MANU
+    bool "Persist CANopen manufacturer parameters"
+    default n
+    help
+        Add OD_PERSIST_MANU to the RT-Thread storage table.
+        This maps manufacturer parameters to sub-index 4 of OD 0x1010 and OD
+        0x1011. Enable this only when the generated OD.h provides
+        OD_PERSIST_MANU.
+
+rsource "port/rtthread/storage/Kconfig"
+
+endif
+
+menuconfig PKG_CANOPENNODE_USING_LEDS
+    bool "CiA 303-3 CANopen LED indicators"
+    default y
+    help
+        Enable CO_LEDs.c and CO_CONFIG_LEDS_ENABLE. This calculates CANopen run
+        and error LED states from NMT and error-control state. Board code can map
+        the calculated states to real GPIO LEDs later, or the package can drive
+        RT-Thread PIN outputs when PKG_CANOPENNODE_LEDS_USING_RTT_PIN is enabled.
+
+if PKG_CANOPENNODE_USING_LEDS
+
+config PKG_CANOPENNODE_LEDS_USING_RTT_PIN
+    bool "Drive CANopen LEDs with RT-Thread PIN"
+    default n
+    depends on RT_USING_PIN
+    help
+        Configure RT-Thread PIN outputs for the CiA 303-3 CANopen run and error
+        LED states calculated by CO_LEDs. Disable this when the application maps
+        CANopen LED states itself through CANopenNodeRTT::outStatusLEDGreen and
+        CANopenNodeRTT::outStatusLEDRed.
+
+config PKG_CANOPENNODE_LEDS_RTT_PIN_RUN
+    int "CANopen run LED pin number"
+    default -1
+    depends on PKG_CANOPENNODE_LEDS_USING_RTT_PIN
+    help
+        RT-Thread PIN number for the CANopen run/green LED. Set to -1 to leave
+        the run LED unbound.
+
+config PKG_CANOPENNODE_LEDS_RTT_PIN_ERROR
+    int "CANopen error LED pin number"
+    default -1
+    depends on PKG_CANOPENNODE_LEDS_USING_RTT_PIN
+    help
+        RT-Thread PIN number for the CANopen error/red LED. Set to -1 to leave
+        the error LED unbound.
+
+config PKG_CANOPENNODE_LEDS_RTT_PIN_RUN_ACTIVE_HIGH
+    bool "CANopen run LED pin is active high"
+    default y
+    depends on PKG_CANOPENNODE_LEDS_USING_RTT_PIN
+    help
+        Select the electrical polarity for the configured run/green LED pin.
+        Enable for active-high LEDs and disable for active-low LEDs.
+
+config PKG_CANOPENNODE_LEDS_RTT_PIN_ERROR_ACTIVE_HIGH
+    bool "CANopen error LED pin is active high"
+    default y
+    depends on PKG_CANOPENNODE_LEDS_USING_RTT_PIN
+    help
+        Select the electrical polarity for the configured error/red LED pin.
+        Enable for active-high LEDs and disable for active-low LEDs.
+
+endif
+
+menu "CiA 304 safety-related objects"
+
+menuconfig PKG_CANOPENNODE_USING_GFC
+    bool "Enable GFC object"
+    default n
+    help
+        Enable CO_GFC.c and CO_CONFIG_GFC. GFC is the Global Fail-safe Command
+        object used with safety-related communication.
+
+        Leave disabled for ordinary CiA 301 devices.
+
+if PKG_CANOPENNODE_USING_GFC
+
+config PKG_CANOPENNODE_GFC_CONSUMER
+    bool "GFC consumer"
+    default n
+    help
+        Add CO_CONFIG_GFC_CONSUMER. The local node can consume Global Fail-safe
+        Command messages.
+
+config PKG_CANOPENNODE_GFC_PRODUCER
+    bool "GFC producer"
+    default n
+    help
+        Add CO_CONFIG_GFC_PRODUCER. The local node can produce Global Fail-safe
+        Command messages.
+
+endif
+
+menuconfig PKG_CANOPENNODE_USING_SRDO
+    bool "Enable SRDO object"
+    default n
+    select PKG_CANOPENNODE_USING_CRC16
+    help
+        Enable CO_SRDO.c and CO_CONFIG_SRDO. SRDO is Safety Related Data Object
+        communication. Enable only when the whole safety design, OD entries,
+        timing and validation requirements are intentionally implemented.
+
+if PKG_CANOPENNODE_USING_SRDO
+
+config PKG_CANOPENNODE_SRDO_CHECK_TX
+    bool "SRDO TX data check"
+    default n
+    help
+        Add CO_CONFIG_SRDO_CHECK_TX. Check SRDO transmit data before sending the
+        safety-related message pair.
+
+config PKG_CANOPENNODE_SRDO_MINIMUM_DELAY
+    int "SRDO minimum delay in us"
+    range 0 1000000
+    default 0
+    help
+        Minimum delay in microseconds between the first and second transmitted
+        SRDO CANopen message.
+
+endif
+
+endmenu
+
+menu "CiA 305 LSS"
+
+comment "LSS discovers/configures node ID and bitrate during commissioning."
+comment "LSS slave is for configurable devices; LSS master is for tools/gateways/managers."
+
+menuconfig PKG_CANOPENNODE_USING_LSS_SLAVE
+    bool "Enable LSS slave"
+    default y
+    help
+        Enable CO_LSSslave.c and add CO_CONFIG_LSS_SLAVE to CO_CONFIG_LSS. The
+        local node can be discovered/configured by an LSS master.
+
+if PKG_CANOPENNODE_USING_LSS_SLAVE
+
+config PKG_CANOPENNODE_LSS_SLAVE_FASTSCAN_DIRECT_RESPOND
+    bool "LSS slave fastscan direct respond"
+    default n
+    help
+        Add CO_CONFIG_LSS_SLAVE_FASTSCAN_DIRECT_RESPOND. The LSS slave sends the
+        fastscan response directly from the receive path.
+
+        Use only after checking the target driver's realtime constraints; keep
+        receive-path processing short.
+
+endif
+
+menuconfig PKG_CANOPENNODE_USING_LSS_MASTER
+    bool "Enable LSS master"
+    default n
+    help
+        Enable CO_LSSmaster.c and add CO_CONFIG_LSS_MASTER to CO_CONFIG_LSS. The
+        local node can scan and configure LSS slaves.
+
+        Enable for commissioning tools or gateways, not for a simple fixed-ID
+        device.
+
+endmenu
+
+menuconfig PKG_CANOPENNODE_USING_GATEWAY_ASCII
+    bool "CiA 309-3 ASCII gateway"
+    default n
+    select PKG_CANOPENNODE_USING_FIFO
+    select PKG_CANOPENNODE_FIFO_ASCII_COMMANDS
+    help
+        Enable CO_gateway_ascii.c and CO_CONFIG_GTW_ASCII. This option compiles
+        CANopenNode ASCII gateway support and related helpers. The RT-Thread
+        wrapper schedules Gateway processing from its CANopen mainline. No
+        command transport is registered unless the MSH console bridge under
+        RT-Thread runtime options is also enabled.
+
+        Applications that do not use the MSH bridge may register another
+        transport with CO_GTWA_write() and CO_GTWA_initRead().
+
+        Gateway command groups depend on SDO client, NMT master and/or LSS master
+        options below.
+
+if PKG_CANOPENNODE_USING_GATEWAY_ASCII
+
+config PKG_CANOPENNODE_GATEWAY_MULTI_NET
+    bool "Gateway multi-network flag"
+    default n
+    help
+        Add CO_CONFIG_GTW_MULTI_NET to CO_CONFIG_GTW. CANopenNode documents this
+        flag as currently not implemented; keep it disabled unless testing that
+        code path explicitly.
+
+config PKG_CANOPENNODE_GATEWAY_ASCII_SDO
+    bool "Gateway ASCII SDO commands"
+    default y
+    depends on PKG_CANOPENNODE_USING_SDO_CLIENT
+    select PKG_CANOPENNODE_FIFO_ASCII_DATATYPES
+    help
+        Add CO_CONFIG_GTW_ASCII_SDO. Enable ASCII commands that perform SDO
+        uploads/downloads through the SDO client.
+
+config PKG_CANOPENNODE_GATEWAY_ASCII_NMT
+    bool "Gateway ASCII NMT commands"
+    default n
+    depends on PKG_CANOPENNODE_NMT_MASTER
+    help
+        Add CO_CONFIG_GTW_ASCII_NMT. Enable ASCII commands that transmit NMT
+        master commands.
+
+config PKG_CANOPENNODE_GATEWAY_ASCII_LSS
+    bool "Gateway ASCII LSS commands"
+    default n
+    depends on PKG_CANOPENNODE_USING_LSS_MASTER
+    help
+        Add CO_CONFIG_GTW_ASCII_LSS. Enable ASCII commands for LSS master scan
+        and configuration operations.
+
+config PKG_CANOPENNODE_GATEWAY_ASCII_LOG
+    bool "Gateway ASCII log"
+    default n
+    help
+        Add CO_CONFIG_GTW_ASCII_LOG. Enable the gateway message log buffer for
+        diagnostic output.
+
+config PKG_CANOPENNODE_GATEWAY_ASCII_ERROR_DESC
+    bool "Gateway ASCII error descriptions"
+    default n
+    help
+        Add CO_CONFIG_GTW_ASCII_ERROR_DESC. Include textual error descriptions
+        in gateway output where supported.
+
+config PKG_CANOPENNODE_GATEWAY_ASCII_PRINT_HELP
+    bool "Gateway ASCII help command"
+    default n
+    help
+        Add CO_CONFIG_GTW_ASCII_PRINT_HELP. Enable the non-standard "help"
+        command for interactive gateway sessions.
+
+config PKG_CANOPENNODE_GATEWAY_ASCII_PRINT_LEDS
+    bool "Gateway ASCII LED status print"
+    default n
+    depends on PKG_CANOPENNODE_USING_LEDS
+    help
+        Add CO_CONFIG_GTW_ASCII_PRINT_LEDS. Enable the non-standard "led"
+        Gateway command, which prints the calculated CANopen run/error LED
+        states on the Gateway output. It does not control physical LED GPIOs.
+
+config PKG_CANOPENNODE_GTW_BLOCK_DL_LOOP
+    int "Gateway SDO block download loop count"
+    range 1 127
+    default 1
+    help
+        Number of CO_SDOclientDownload() loops performed during one gateway block
+        download processing pass. Increase only after measuring mainline latency.
+
+config PKG_CANOPENNODE_GTWA_COMM_BUF_SIZE
+    int "Gateway ASCII command buffer size"
+    range 32 8192
+    default 200
+    help
+        ASCII gateway command buffer size in bytes. Increase if commands or data
+        payloads are truncated.
+
+config PKG_CANOPENNODE_GTWA_LOG_BUF_SIZE
+    int "Gateway ASCII log buffer size"
+    range 0 65536
+    default 2000
+    help
+        ASCII gateway message log buffer size in bytes. Set to 0 only if gateway
+        logging is intentionally unused.
+
+endif
+
+menu "Helper and debug objects"
+
+comment "FIFO/CRC16 are helpers for optional modules; trace/debug are bring-up aids."
+
+config PKG_CANOPENNODE_USING_CRC16
+    bool "Enable CRC16 helper"
+    default n
+    help
+        Enable CO_CONFIG_CRC16_ENABLE and compile crc16-ccitt.c unless an
+        external CRC16 implementation is selected. Required by SDO block transfer
+        and FIFO CRC16-CCITT support.
+
+config PKG_CANOPENNODE_CRC16_EXTERNAL
+    bool "Use external CRC16 implementation"
+    default n
+    depends on PKG_CANOPENNODE_USING_CRC16
+    help
+        Add CO_CONFIG_CRC16_EXTERNAL. CANopenNode will expect the target/application
+        to provide the CRC16 implementation instead of compiling its internal
+        crc16-ccitt.c source.
+
+config PKG_CANOPENNODE_USING_FIFO
+    bool "Enable FIFO helper"
+    default n
+    help
+        Enable CO_fifo.c and CO_CONFIG_FIFO_ENABLE. FIFO provides circular-buffer
+        utilities used by SDO client, ASCII gateway and related data paths. This
+        option may be selected automatically by features that need it.
+
+config PKG_CANOPENNODE_FIFO_ALT_READ
+    bool "FIFO alternate read"
+    default n
+    depends on PKG_CANOPENNODE_USING_FIFO
+    help
+        Add CO_CONFIG_FIFO_ALT_READ. Enables alternate-read support in the FIFO,
+        used by SDO block-transfer paths that need to read data while preserving
+        buffer state until the transfer is confirmed.
+
+config PKG_CANOPENNODE_FIFO_CRC16_CCITT
+    bool "FIFO CRC16-CCITT support"
+    default n
+    depends on PKG_CANOPENNODE_USING_FIFO
+    select PKG_CANOPENNODE_USING_CRC16
+    help
+        Add CO_CONFIG_FIFO_CRC16_CCITT. Enables CRC16-CCITT calculation over FIFO
+        data. This also causes the CRC16 source to be compiled unless an external
+        CRC implementation is selected.
+
+config PKG_CANOPENNODE_FIFO_ASCII_COMMANDS
+    bool "FIFO ASCII command support"
+    default n
+    depends on PKG_CANOPENNODE_USING_FIFO
+    help
+        Add CO_CONFIG_FIFO_ASCII_COMMANDS. Enables FIFO helpers used for ASCII
+        command parsing in the CiA 309-3 gateway.
+
+config PKG_CANOPENNODE_FIFO_ASCII_DATATYPES
+    bool "FIFO ASCII datatype support"
+    default n
+    depends on PKG_CANOPENNODE_USING_FIFO
+    help
+        Add CO_CONFIG_FIFO_ASCII_DATATYPES. Enables ASCII datatype conversion
+        helpers used by gateway SDO commands.
+
+config PKG_CANOPENNODE_TRACE_AVAILABLE
+    bool
+    default n
+
+menuconfig PKG_CANOPENNODE_USING_TRACE
+    bool "Enable trace recorder (unavailable)"
+    default n
+    depends on PKG_CANOPENNODE_TRACE_AVAILABLE
+    help
+        Do not enable CO_trace.c or CO_CONFIG_TRACE_ENABLE. The current
+        CANopenNode trace module is not ported to the SDO server and Object
+        Dictionary APIs used by this package. Upstream keeps CO_CONFIG_TRACE
+        disabled for the same reason; enabling it references obsolete symbols
+        such as CO_t::SDO and CO_SDO_t and can break the build.
+
+        Keep this disabled until CO_trace.c/.h are ported to the current
+        CO_SDOserver_t and OD_* APIs and trace=y is covered by build tests.
+
+if PKG_CANOPENNODE_USING_TRACE
+
+config PKG_CANOPENNODE_TRACE_OWN_INTTYPES
+    bool "Trace owns inttypes format macros"
+    default n
+    help
+        Add CO_CONFIG_TRACE_OWN_INTTYPES. Let the trace module define the integer
+        format macros it needs when the target C library does not provide them
+        correctly.
+
+endif
+
+menuconfig PKG_CANOPENNODE_USING_DEBUG
+    bool "Enable CANopenNode RT-Thread debug logs"
+    default n
+    depends on RT_USING_ULOG
+    help
+        Enable RT-Thread ulog diagnostics for the CANopenNode RT-Thread port and
+        expose CANopenNode internal debug macros through CO_DEBUG_COMMON(msg).
+        The port uses LOG_E, LOG_W, LOG_I and LOG_D according to runtime event
+        severity.
+
+        Use for bring-up and troubleshooting. Leave disabled for normal release
+        builds unless the project has a defined debug logging policy.
+
+if PKG_CANOPENNODE_USING_DEBUG
+
+config PKG_CANOPENNODE_DEBUG_COMMON
+    bool "Default common debug macro"
+    default y
+    help
+        Add CO_CONFIG_DEBUG_COMMON. Enable common CANopenNode debug output paths.
+        This option also provides the CO_DEBUG_COMMON(msg) ulog sink used by
+        target-specific debug output.
+
+config PKG_CANOPENNODE_DEBUG_SDO_CLIENT
+    bool "SDO client debug output"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_CLIENT
+    help
+        Add CO_CONFIG_DEBUG_SDO_CLIENT. Enable additional SDO client debug output
+        during uploads/downloads and error handling. Messages are routed through
+        the same CO_DEBUG_COMMON(msg) ulog sink.
+
+config PKG_CANOPENNODE_DEBUG_SDO_SERVER
+    bool "SDO server debug output"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    help
+        Add CO_CONFIG_DEBUG_SDO_SERVER. Enable additional SDO server debug output
+        during OD access and transfer state handling. Messages are routed through
+        the same CO_DEBUG_COMMON(msg) ulog sink.
+
+config PKG_CANOPENNODE_USING_FRAME_TRACE
+    bool "Trace CAN RX/TX frames with ulog"
+    default n
+    help
+        Emit debug logs for each CAN frame submitted to or received from the
+        RT-Thread CAN device. The trace prints frame metadata with LOG_D and the
+        payload with LOG_HEX(). This is intended for bring-up and bus-level
+        diagnostics.
+
+endif
+
+endmenu
+
+endmenu
+
+menu "Object Dictionary"
+
+config PKG_CANOPENNODE_USING_DEMO_OD
+    bool "Use package default Object Dictionary"
+    default y
+    help
+        Compile the package-provided generated OD.c/OD.h from examples/demo_device
+        and add its directory to the include path.
+
+        This Object Dictionary can be used independently of all optional demo/test
+        modules. Enabling this option does not require any PKG_CANOPENNODE_DEMO_*
+        option to be enabled.
+
+        Disable this option when the BSP or application supplies a custom OD.c
+        and OD.h through its own SConscript/include path.
+
+if PKG_CANOPENNODE_USING_DEMO_OD
+
+menu "Optional demo/test modules"
+
+config PKG_CANOPENNODE_DEMO_TIME_DIAGNOSTIC
+    bool "Enable demo TIME consumer diagnostic object updates"
+    default n
+    depends on PKG_CANOPENNODE_USING_TIME
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    select PKG_CANOPENNODE_GLOBAL_CALLBACK_PRE
+    select PKG_CANOPENNODE_GLOBAL_OD_DYNAMIC
+    help
+        Publish demo/test TIME consumer diagnostics through OD 0x2300. The
+        demo module counts valid DLC=6 TIME receptions with callback-pre and
+        publishes the applied CO_TIME_t milliseconds/day values after CO_process().
+
+        This option is intended for automated validation with the generated demo
+        OD. Product firmware with a custom OD should provide its own application
+        observability contract instead.
+
+config PKG_CANOPENNODE_DEMO_EMCY_CONSUMER_DIAGNOSTIC
+    bool "Enable demo EMCY consumer diagnostic object updates"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    depends on PKG_CANOPENNODE_CAN_BINDING_COUNT = 1
+    select PKG_CANOPENNODE_EM_CONSUMER
+    help
+        Publish demo/test EMCY consumer diagnostics through OD 0x2301. The
+        demo records each remote EMCY callback with RT-Thread atomics and
+        publishes one coherent latest-message snapshot after CO_process().
+
+        Local EMCY messages reported by CANopenNode with ident == 0 are excluded.
+        Repeated remote messages and errorCode == 0 recovery messages are counted.
+        The CANopenNode EMCY callback has no application object, so this generated
+        demo diagnostic is limited to one CANopenNodeRTT instance. This option is
+        intended for automated validation, not as a product-level remote fault manager.
+
+config PKG_CANOPENNODE_DEMO_GFC_DIAGNOSTIC
+    bool "Enable demo GFC protocol diagnostic and producer trigger"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    select PKG_CANOPENNODE_USING_GFC
+    select PKG_CANOPENNODE_GFC_CONSUMER
+    select PKG_CANOPENNODE_GFC_PRODUCER
+    help
+        Publish test-only GFC consumer/producer state through OD 0x2302. The
+        receive callback only increments an RT-Thread atomic counter and latches
+        safe_requested. A mainline sequence request triggers CO_GFCsend() and
+        publishes its completion/result for automated Host validation.
+
+        This option validates protocol behavior only. It does not implement a
+        functional-safety state machine or control real safety actuators.
+
+config PKG_CANOPENNODE_DEMO_SRDO_DIAGNOSTIC
+    bool "Enable demo SRDO diagnostic fixture"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    depends on PKG_CANOPENNODE_CAN_BINDING_COUNT = 1
+    depends on PKG_CANOPENNODE_USING_DEMO_OD
+    select PKG_CANOPENNODE_USING_SRDO
+    select PKG_CANOPENNODE_SRDO_CHECK_TX
+    help
+        Enable the test-only SRDO fixture in the generated demo Object
+        Dictionary. The fixture exposes two deterministic SRDO channels and OD
+        0x2306 state/TX-request observability for Host protocol validation.
+
+        The generated OD_RAM.x2306_srdo_diagnostic object is global, so this
+        fixture is intentionally limited to one CANopenNodeRTT instance / CAN
+        binding. Multi-instance products must keep this fixture disabled and
+        provide instance-specific Object Dictionaries and diagnostics.
+
+        This option validates CANopenNode SRDO protocol behavior only. It does
+        not claim SIL/PL compliance, functional-safety certification, redundant
+        hardware coverage, WCET proof or machine-level safety timing.
+
+config PKG_CANOPENNODE_DEMO_SDO_BLOCK_TEST
+    bool "Enable demo SDO server block-transfer DOMAIN fixture"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    depends on PKG_CANOPENNODE_SDO_SRV_BLOCK
+    help
+        Publish the test-only variable-length DOMAIN at OD 0x2304 for SDO Server
+        Block Transfer validation. The bounded backend accepts up to
+        2048 bytes, uses no dynamic memory or persistence and relies on
+        CANopenNode for the SDO block state machine and CRC handling.
+
+        A partial download may leave the one-buffer fixture dirty after abort;
+        the next complete download re-establishes a valid payload. Keep this
+        disabled in normal product firmware.
+
+config PKG_CANOPENNODE_DEMO_SDO_CLIENT_TEST
+    bool "Enable demo MCU SDO client test control/status"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    select PKG_CANOPENNODE_USING_SDO_CLIENT
+    select PKG_CANOPENNODE_SDO_CLI_SEGMENTED
+    select PKG_CANOPENNODE_SDO_CLI_LOCAL
+    help
+        Publish test-only MCU SDO client control/status through OD 0x2303.
+        The Host commits request_seq after all request fields are written, then
+        the CANopenNode mainline drives CO_SDOclient non-blockingly. The
+        segmented/local validation profile keeps flags=0. Block-transfer
+        validation may set bit 0 when PKG_CANOPENNODE_SDO_CLI_BLOCK is enabled.
+
+        The demo uses the first generated SDO client object and is intended for
+        automated validation with the package demo Object Dictionary.
+
+config PKG_CANOPENNODE_DEMO_STORAGE_DIAGNOSTIC
+    bool "Enable demo EEPROM Storage diagnostic"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    depends on PKG_CANOPENNODE_USING_STORAGE_EEPROM
+    depends on PKG_CANOPENNODE_USING_STORAGE_AT24C
+    depends on PKG_CANOPENNODE_STORAGE_PERSIST_COMM
+    help
+        Publish test-only EEPROM Storage diagnostics through OD 0x2305. The diagnostic exposes the existing CO_storageEeprom raw layout,
+        captures the startup storage result and pre-master 0x1017 value, and
+        supports full raw baseline backup/restore plus controlled corruption.
+
+config PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    bool "Enable automatic demo NMT master test"
+    default n
+    depends on PKG_CANOPENNODE_APP_AUTO_INIT
+    select PKG_CANOPENNODE_NMT_MASTER
+    select PKG_CANOPENNODE_USING_HB_CONS
+    select PKG_CANOPENNODE_HB_CONS_QUERY_FUNCT
+    select PKG_CANOPENNODE_GLOBAL_OD_DYNAMIC
+    help
+        Automatically validate NMT master control of a configurable remote node
+        with heartbeat supervision. The demo configures one OD 0x1016 consumer
+        entry for the target node, waits until that node is online, and then
+        sends START, STOP, PREOP, RESET_COMM, RESET_NODE and final START.
+
+        Each normal command waits for the expected remote NMT state before the
+        next command is sent. Reset commands additionally require observing the
+        remote boot-up transition before PRE-OP is accepted. Keep this disabled
+        in normal product firmware.
+
+config PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST_TARGET_NODE_ID
+    int "Demo NMT master test target Node-ID"
+    range 1 127
+    default 2
+    depends on PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    help
+        Remote CANopen Node-ID controlled by the automatic NMT master test.
+        The runtime rejects a value equal to the active local Node-ID. Node-ID 0
+        is intentionally excluded because broadcast reset commands would also
+        affect the local node.
+
+config PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST_HB_TIMEOUT_MS
+    int "Demo NMT master test heartbeat timeout in ms"
+    range 100 60000
+    default 1500
+    depends on PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    help
+        Consumer timeout written to one demo OD 0x1016 entry for the target
+        node. The remote test peer must produce heartbeat faster than this
+        timeout. A 500 ms producer heartbeat is recommended for the default.
+
+config PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST_STATE_TIMEOUT_MS
+    int "Demo NMT master test state transition timeout in ms"
+    range 100 60000
+    default 3000
+    depends on PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    help
+        Maximum time allowed after a fixture PRE-OP normalization command or
+        formal NMT command to confirm the expected remote state. Initial peer
+        discovery waits without timeout. Reset commands must first expose a
+        boot-up/non-active transition and then return to PRE-OP.
+
+endmenu
+
+config PKG_CANOPENNODE_PATH
+    string
+    default "/packages/misc/CanopenNode"
+
+choice
+    prompt "Version"
+    default PKG_USING_CANOPENNODE_V100
+    help
+        Select the CANopenNode package version.
+
+    config PKG_USING_CANOPENNODE_V100
+        bool "v1.0.0"
+
+    config PKG_USING_CANOPENNODE_LATEST_VERSION
+        bool "latest"
+endchoice
+
+config PKG_CANOPENNODE_VER
+    string
+    default "v1.0.0" if PKG_USING_CANOPENNODE_V100
+    default "latest" if PKG_USING_CANOPENNODE_LATEST_VERSION
+
+
+endif
+
+endmenu
+
+endif
