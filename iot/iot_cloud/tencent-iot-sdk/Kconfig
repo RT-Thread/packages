@@ -50,7 +50,7 @@ if PKG_USING_TENCENT_IOT_EXPLORER
         default n
         select PKG_USING_MBEDTLS
 
-    choice
+    choice PKG_TENCENT_IOT_EXPLORER_PRODUCT_TYPE
         prompt "Select Product Type"
         help
             Select product communication protocol
@@ -95,7 +95,7 @@ if PKG_USING_TENCENT_IOT_EXPLORER
         default n
 
     if PKG_USING_TENCENT_IOT_EXPLORER_OTA
-        choice
+        choice PKG_TENCENT_IOT_EXPLORER_OTA_DOWNLOAD_CHANNEL
             prompt "Config OTA download by https or http"
             help
                Select download channel
@@ -111,7 +111,7 @@ if PKG_USING_TENCENT_IOT_EXPLORER
         bool "Enable GateWay"
         default n
 
-    choice
+    choice PKG_TENCENT_IOT_EXPLORER_SEL
         prompt "Version"
         default PKG_USING_TENCENT_IOT_EXPLORER_LATEST_VERSION
         help
@@ -120,22 +120,10 @@ if PKG_USING_TENCENT_IOT_EXPLORER
         config PKG_USING_TENCENT_IOT_EXPLORER_LATEST_VERSION
             bool "latest"
 
-        config PKG_USING_TENCENT_IOT_EXPLORER_V300
-            bool "v3.0.0"
-
-        config PKG_USING_TENCENT_IOT_EXPLORER_V302
-            bool "v3.0.2"
-
-        config PKG_USING_TENCENT_IOT_EXPLORER_V313
-            bool "v3.1.3"
-
     endchoice
 
     config PKG_TENCENT_IOT_EXPLORER_VER
        string
-       default "v3.1.3"    if PKG_USING_TENCENT_IOT_EXPLORER_V313
-       default "v3.0.2"    if PKG_USING_TENCENT_IOT_EXPLORER_V302
-       default "v3.0.0"    if PKG_USING_TENCENT_IOT_EXPLORER_V300
        default "latest"    if PKG_USING_TENCENT_IOT_EXPLORER_LATEST_VERSION
 
 endif
