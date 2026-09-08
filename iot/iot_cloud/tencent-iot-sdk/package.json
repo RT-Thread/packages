@@ -12,8 +12,8 @@
         "email": "yougaliu@tencent.com"
     },
     "license": "MIT",
-    "repository": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread",
-    "homepage": "https://github.com/tencentyun/tencent-cloud-iot-package-for-rtthread#readme",
+    "repository": "https://gitee.com/RT-Thread-Mirror/tencent-cloud-iot-package-for-rtthread",
+    "homepage": "https://gitee.com/RT-Thread-Mirror/tencent-cloud-iot-package-for-rtthread#readme",
     "readme": "tencent-iot-explorer: Tencent Iot Explorer Development Platform",
     "site": [
         {
