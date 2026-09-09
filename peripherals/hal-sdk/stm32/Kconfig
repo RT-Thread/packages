@@ -76,4 +76,8 @@ source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32wb_cmsis_driver/Kconfi
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32mp1_m4_hal_driver/Kconfig"
 source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32mp1_m4_cmsis_driver/Kconfig"
 
+#STM32N6
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32n6_hal_driver/Kconfig"
+source "$PKGS_DIR/packages/peripherals/hal-sdk/stm32/stm32n6_cmsis_driver/Kconfig"
+
 endmenu
