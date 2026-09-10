@@ -240,7 +240,8 @@ if PKG_USING_AUTOGEN_PARAMETER_MANAGER
             default n
             help
                 Enable par_nvm.c and the abstract parameter-storage backend
-                interface. Select one packaged backend adapter.
+                interface. Select a package-provided backend adapter or the
+                application-defined backend when the application supplies the hooks.
 
         config AUTOGEN_PM_USING_TABLE_ID_CHECK
             bool "Enable parameter table ID check" if AUTOGEN_PM_ENABLE_ID
@@ -376,9 +377,9 @@ if PKG_USING_AUTOGEN_PARAMETER_MANAGER
             default n
             depends on AUTOGEN_PM_USING_NVM
             help
-                Internal build guard for configurations that need the packaged
-                scalar storage backend. Dedicated object-only products can keep
-                this disabled and provide only the object backend hooks.
+                Internal build guard for configurations that need a scalar storage
+                backend. Dedicated object-only products can keep this disabled and
+                provide only the object backend hooks.
 
         config AUTOGEN_PM_NVM_OBJECT_DEDICATED_BASE_ADDR
             hex "Dedicated object persistence block base address"
@@ -407,8 +408,10 @@ if PKG_USING_AUTOGEN_PARAMETER_MANAGER
             default AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
             depends on AUTOGEN_PM_NVM_NEEDS_SCALAR_BACKEND
             help
-                Select the packaged scalar backend adapter used by scalar
-                persistent records or shared object persistence.
+                Select the scalar storage backend used by scalar persistent records
+                or shared object persistence. The application-defined option excludes
+                package-provided backend adapters so application strong definitions
+                can override the weak backend hooks.
 
             config AUTOGEN_PM_USING_RTT_AT24CXX_BACKEND
                 bool "RT-Thread AT24CXX backend"
@@ -424,6 +427,15 @@ if PKG_USING_AUTOGEN_PARAMETER_MANAGER
                     The core lives inside the parameters package and stays free of
                     RT-Thread or FAL dependencies. A separate port adapter binds
                     the core to a concrete physical flash implementation.
+
+            config AUTOGEN_PM_BACKEND_APP_DEFINED
+                bool "Application-defined backend"
+                help
+                    Do not build a package-provided scalar storage backend.
+                    The application must provide a strong
+                    par_store_backend_get_api() implementation.
+                    Override par_store_backend_bind() as well when the
+                    backend requires an explicit binding step.
         endchoice
 
         choice
