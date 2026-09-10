@@ -1,0 +1,30 @@
+{
+  "name": "stm32n657xx_fsbl",
+  "description": "STM32 N657xx FSBL package",
+  "description_zh": "STM32 N657xx FSBL 驱动包",
+  "enable": "PKG_USING_STM32N657xx_FSBL",
+  "keywords": [
+    "stm32n657xx_fsbl",
+    "stm32n657xx",
+    "STM32"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "RT-Thread-packages",
+    "email": "package_team@rt-thread.com",
+    "github": "RT-Thread-packages"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/yans6666/stm32n657xx_fsbl",
+  "icon": "unknown",
+  "homepage": "https://github.com/yans6666/stm32n657xx_fsbl#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/yans6666/stm32n657xx_fsbl.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
