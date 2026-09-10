@@ -1,0 +1,469 @@
+# Kconfig for the Lely CANopen RT-Thread port.
+
+menuconfig PKG_USING_LELY
+    bool "Lely CANopen"
+    default n
+    select RT_USING_HEAP
+    select RT_USING_DEVICE
+    select RT_USING_CAN
+    select RT_USING_EVENT
+    help
+        Enable the Lely CANopen RT-Thread port.
+
+        Lely is built with LELY_NO_THREADS=1: RT-Thread may still use multiple
+        threads, but one dedicated owner thread must serialize all access to
+        Lely EV/IO2/CANopen objects. CAN RX, timer wakeups and CAN status
+        arriving from driver or ISR context must first be serialized to that
+        owner thread. RT-Thread event flags wake the owner. During shutdown,
+        an atomic callback refcount is drained with rt_thread_mdelay(1) sleeps so
+        cleanup does not busy-spin and does not require the device-IPC completion
+        component. This removes the C11 threads, pthread and compiler TLS ABI
+        dependency from the target runtime.
+
+        The target runtime uses Lely's ev_loop/future executor path together
+        with io_user_can, io_user_timer and io_can_net. Linux/POSIX/Win32 I/O
+        backends, io_can_rt, vcan, fiber_exec, strand and thrd_loop are not part
+        of the RT-Thread build.
+
+if PKG_USING_LELY
+
+config PKG_LELY_USING_ULOG
+    bool "Route Lely and RT-Thread port logs to ULOG"
+    default y
+    select RT_USING_ULOG
+    help
+        Route Lely diag()/diag_at() output and RT-Thread adaptation-layer
+        diagnostics through ULOG. Lely core messages use tag "lely" and the
+        RT-Thread port uses tag "lely.rtt".
+
+        Async output remains controlled by the project's normal
+        ULOG_USING_ASYNC_OUTPUT configuration; this package does not create a
+        second logging thread or queue.
+
+config PKG_LELY_USING_CANFD
+    bool "Enable CAN FD frame support"
+    depends on RT_CAN_USING_CANFD
+    default n
+    help
+        Keep disabled for classic CAN controllers. Enabling this only enables
+        Lely CAN FD data structures and protocol branches; the selected
+        RT-Thread CAN driver must also provide compatible CAN FD support.
+
+config PKG_LELY_EXAMPLE_MASTER_NODE1
+    bool "Build the static CANopen Master + remote Node1 example"
+    default n
+    select PKG_LELY_USING_CO_CSDO
+    select PKG_LELY_USING_CO_MASTER
+    select PKG_LELY_USING_CO_NMT_BOOT
+    help
+        Build examples/master_node1/master_sdev.c as the MCU's local CANopen
+        Master object dictionary. examples/node1/node1.dcf remains a Host-side
+        description of remote Node1 and is never instantiated as the MCU's
+        local device. The target does not parse DCF files at runtime.
+
+menuconfig PKG_LELY_APP_AUTO_INIT
+    bool "Automatically start Lely CANopen runtime"
+    default y
+    select RT_USING_COMPONENTS_INIT
+    help
+        Automatically create and start one default Lely RT-Thread runtime from
+        RT-Thread application initialization through INIT_APP_EXPORT(). Disable
+        this when the product creates lely_rtt_runtime instances explicitly.
+
+        Auto init always starts the single-owner EV/IO2/CAN transport.
+        PKG_LELY_EXAMPLE_MASTER_NODE1 additionally binds the generated local
+        Master OD before start; product-specific Master/remote-node policy stays
+        in the Host generation input instead of being invented by runtime.c.
+
+if PKG_LELY_APP_AUTO_INIT
+
+config PKG_LELY_CAN_DEV_NAME
+    string "RT-Thread CAN device name"
+    default "can1"
+    help
+        RT-Thread CAN device passed to rt_device_find() by the default runtime.
+
+choice
+    prompt "CAN bitrate"
+    default PKG_LELY_AUTO_INIT_BITRATE_1000
+    help
+        Arbitration bitrate used by the default runtime. The hidden integer
+        value is expressed in bit/s because RT_CAN_CMD_SET_BAUD consumes the
+        RT-Thread CANBAUD values directly.
+
+config PKG_LELY_AUTO_INIT_BITRATE_10
+    bool "10 kbit/s"
+
+config PKG_LELY_AUTO_INIT_BITRATE_20
+    bool "20 kbit/s"
+
+config PKG_LELY_AUTO_INIT_BITRATE_50
+    bool "50 kbit/s"
+
+config PKG_LELY_AUTO_INIT_BITRATE_100
+    bool "100 kbit/s"
+
+config PKG_LELY_AUTO_INIT_BITRATE_125
+    bool "125 kbit/s"
+
+config PKG_LELY_AUTO_INIT_BITRATE_250
+    bool "250 kbit/s"
+
+config PKG_LELY_AUTO_INIT_BITRATE_500
+    bool "500 kbit/s"
+
+config PKG_LELY_AUTO_INIT_BITRATE_800
+    bool "800 kbit/s"
+
+config PKG_LELY_AUTO_INIT_BITRATE_1000
+    bool "1 Mbit/s"
+
+endchoice
+
+config PKG_LELY_AUTO_INIT_BITRATE
+    int
+    default 10000 if PKG_LELY_AUTO_INIT_BITRATE_10
+    default 20000 if PKG_LELY_AUTO_INIT_BITRATE_20
+    default 50000 if PKG_LELY_AUTO_INIT_BITRATE_50
+    default 100000 if PKG_LELY_AUTO_INIT_BITRATE_100
+    default 125000 if PKG_LELY_AUTO_INIT_BITRATE_125
+    default 250000 if PKG_LELY_AUTO_INIT_BITRATE_250
+    default 500000 if PKG_LELY_AUTO_INIT_BITRATE_500
+    default 800000 if PKG_LELY_AUTO_INIT_BITRATE_800
+    default 1000000 if PKG_LELY_AUTO_INIT_BITRATE_1000
+    default 1000000
+
+config PKG_LELY_AUTO_INIT_RX_BATCH
+    int "CAN RX batch size"
+    range 1 64
+    default 8
+    help
+        Maximum number of RT CAN frames drained by one owner wakeup pass.
+
+config PKG_LELY_AUTO_INIT_THREAD_STACK_SIZE
+    int "Owner thread stack size"
+    range 512 65536
+    default 4096
+
+config PKG_LELY_AUTO_INIT_THREAD_PRIORITY
+    int "Owner thread priority"
+    range 0 255
+    default 5
+    help
+        RT-Thread owner priority. The runtime also validates this value against
+        RT_THREAD_PRIORITY_MAX on the selected BSP.
+
+config PKG_LELY_AUTO_INIT_THREAD_TIMESLICE
+    int "Owner thread time slice"
+    range 1 1000
+    default 10
+
+config PKG_LELY_AUTO_INIT_START_TIMEOUT_MS
+    int "Startup timeout in ms"
+    range 1 60000
+    default 3000
+
+config PKG_LELY_AUTO_INIT_STOP_TIMEOUT_MS
+    int "Shutdown timeout in ms"
+    range 1 60000
+    default 3000
+
+config PKG_LELY_AUTO_INIT_START_CONTROLLER
+    bool "Issue RT_CAN_CMD_START"
+    default y
+    help
+        Follow the standard RT-Thread CAN bring-up sequence and issue an
+        explicit controller start after mode, filter and RX callback setup.
+        Disable only for a BSP that intentionally does not support this command.
+
+config PKG_LELY_AUTO_INIT_STATUS_INDICATION
+    bool "Use CAN status indication callback"
+    default n
+    help
+        Register RT_CAN_CMD_SET_STATUS_IND for the default runtime. Leave this
+        disabled on BSPs that do not implement the status indication command.
+
+config PKG_LELY_AUTO_INIT_CANFD
+    bool "Enable CAN FD for default runtime"
+    default n
+    depends on PKG_LELY_USING_CANFD
+
+config PKG_LELY_AUTO_INIT_BRS
+    bool "Enable CAN FD bit-rate switching"
+    default n
+    depends on PKG_LELY_AUTO_INIT_CANFD
+
+choice
+    prompt "RT-Thread CAN FD length convention"
+    default PKG_LELY_AUTO_INIT_CANFD_LEN_BYTES
+    depends on PKG_LELY_AUTO_INIT_CANFD
+
+config PKG_LELY_AUTO_INIT_CANFD_LEN_BYTES
+    bool "rt_can_msg.len is payload bytes"
+
+config PKG_LELY_AUTO_INIT_CANFD_LEN_DLC
+    bool "rt_can_msg.len is raw DLC"
+
+endchoice
+
+endif
+
+menu "CANopen Master control plane"
+
+config PKG_LELY_USING_MASTER_COMMAND
+    bool "Enable asynchronous Master command ingress"
+    default n
+    depends on PKG_LELY_USING_CO_MASTER
+    select RT_USING_MESSAGEQUEUE
+    help
+        Add one per-runtime RT-Thread message queue for commands posted from
+        application/MSH threads to the single Lely owner. No non-owner thread
+        is allowed to call Lely CANopen services directly.
+
+config PKG_LELY_MASTER_COMMAND_QUEUE_DEPTH
+    int "Master command queue depth"
+    depends on PKG_LELY_USING_MASTER_COMMAND
+    range 1 64
+    default 8
+    help
+        Maximum copied Master commands waiting for owner dispatch. The default
+        keeps the existing command-queue memory budget while using the
+        corrected remote-Master control role. Owner dispatch is
+        bounded by this depth on each command wakeup.
+
+config PKG_LELY_USING_MASTER_SDO
+    bool "Enable asynchronous Master SDO transactions"
+    default n
+    depends on PKG_LELY_USING_MASTER_COMMAND
+    depends on PKG_LELY_USING_CO_CSDO
+    help
+        Add request-id based SDO upload/download transactions for remote nodes,
+        including explicit application cancellation and Client-SDO block
+        upload/download. The owner lazily creates one application-owned
+        Client-SDO per Node-ID
+        using the CiA 301 predefined SDO connection. It never borrows the NMT
+        boot Client-SDO. At most one application transaction may be active per
+        remote node.
+        Protocol timeout, abort code, completion and shutdown cancellation are
+        preserved.
+
+config PKG_LELY_USING_MASTER_NMT_CFG
+    bool "Enable manual Master NMT configuration requests"
+    default n
+    depends on PKG_LELY_USING_MASTER_COMMAND
+    depends on PKG_LELY_USING_CO_NMT_CFG
+    help
+        Expose Lely co_nmt_cfg_req() through the RT-Thread owner queue. The
+        caller waits for a terminal result while all Lely NMT/CSDO objects
+        remain owner-thread-only. Manual configuration arbitrates the CiA 301
+        predefined SDO channel with application SDO transactions. A useful
+        request requires embedded 0x1F22 concise DCF data, a pre-start
+        application concise DCF registered through the RT-Thread bridge, or an
+        owner-installed external Lely cfg_ind callback. The copied application
+        DCF is consumed only by explicit manual configuration, not automatic
+        NMT boot. The 0x1F8A restore/reset path is intentionally rejected
+        because it conflicts with the current Master's Boot-up/NMT-boot
+        ownership. With the Master+Node1 example enabled, Node1 has a real
+        application DCF that rewrites heartbeat producer 0x1017:00 to 1000 ms.
+
+config PKG_LELY_USING_LOCAL_OD
+    bool "Enable owner-safe local application OD access"
+    default n
+    depends on PKG_LELY_USING_MASTER_COMMAND
+    help
+        Allow application/MSH threads to synchronously read or write only the
+        manufacturer-specific local OD range 0x2000..0x5FFF through the owner
+        queue. Existing Lely download indications are chained, so Server-SDO
+        and RPDO writes remain intact and publish a metadata change snapshot
+        that application threads can observe without touching co_dev directly.
+
+config PKG_LELY_USING_MASTER_PDO_TX
+    bool "Enable Master TPDO event trigger bridge"
+    default n
+    depends on PKG_LELY_USING_MASTER_COMMAND
+    depends on PKG_LELY_USING_LOCAL_OD
+    depends on PKG_LELY_USING_CO_TPDO
+    help
+        Allow application/MSH threads to trigger an already configured static
+        Master TPDO through the owner queue. Applications update mapped
+        0x2000..0x5FFF values with the local OD bridge first, then issue the
+        TPDO event. Event-driven types 0xFE/0xFF are accepted. When the
+        SYNC/PDO bridge is enabled it also accepts synchronous acyclic type 0,
+        which arms the TPDO for the next SYNC. Dynamic PDO remapping remains
+        outside this bridge.
+
+config PKG_LELY_USING_MASTER_SYNC_PDO
+    bool "Enable CANopen SYNC and synchronous PDO application bridge"
+    default n
+    depends on PKG_LELY_USING_MASTER_COMMAND
+    depends on PKG_LELY_USING_LOCAL_OD
+    depends on PKG_LELY_USING_CO_SYNC
+    depends on PKG_LELY_USING_CO_RPDO
+    depends on PKG_LELY_USING_CO_TPDO
+    select PKG_LELY_USING_MASTER_PDO_TX
+    help
+        Publish owner-ordered SYNC indications after Lely has processed all
+        synchronous TPDOs and RPDOs, optionally notify one startup-registered
+        application callback, and expose owner-safe control of object 0x1006
+        plus local RPDO/TPDO transmission type. The PDO control accepts CiA 301
+        synchronous types 0..240 and existing event-driven types 254/255; RTR-
+        only modes and dynamic PDO remapping remain outside this bridge.
+
+config PKG_LELY_USING_MASTER_EMCY
+    bool "Enable CANopen EMCY application bridge"
+    default n
+    depends on PKG_LELY_USING_MASTER_COMMAND
+    depends on PKG_LELY_USING_CO_EMCY
+    help
+        Retain a bounded history of remote EMCY indications for application/MSH
+        diagnostics and expose owner-safe local EMCY push/pop/clear operations.
+        The bridge is rebound when Lely recreates the EMCY service after local
+        NMT STOP/reset transitions.
+
+config PKG_LELY_MASTER_EMCY_HISTORY_DEPTH
+    int "Remote EMCY history depth"
+    depends on PKG_LELY_USING_MASTER_EMCY
+    range 1 32
+    default 8
+    help
+        Number of received remote EMCY events retained per runtime. Events are
+        stored in a fixed-size ring with atomic publication; no heap allocation
+        is performed by the history path.
+
+config PKG_LELY_USING_MASTER_TIME
+    bool "Enable CANopen TIME application bridge"
+    default n
+    depends on PKG_LELY_USING_MASTER_COMMAND
+    depends on PKG_LELY_USING_CO_TIME
+    help
+        Publish received CANopen TIME values through stable owner-published
+        snapshots and allow explicit application-triggered absolute TIME
+        transmission. Snapshot readers use atomic sequence validation and may
+        briefly sleep and retry when racing owner publication so the owner can
+        complete the update. Periodic production is intentionally not started
+        because the RT port clock is monotonic uptime, not a configured wall
+        clock.
+
+config PKG_LELY_USING_MSH
+    bool "Enable CANopen Master MSH commands"
+    default n
+    depends on PKG_LELY_APP_AUTO_INIT
+    depends on PKG_LELY_EXAMPLE_MASTER_NODE1
+    depends on PKG_LELY_USING_CO_MASTER
+    depends on RT_USING_FINSH && FINSH_USING_MSH
+    select PKG_LELY_USING_MASTER_COMMAND
+    help
+        Export one MSH root command named 'co' for the default auto-init Master.
+        status/node/boot read existing snapshots and nmt posts owner commands.
+        Enabled Master SDO, NMT configuration, local OD, TPDO, SYNC/PDO, EMCY
+        and TIME bridges add their corresponding diagnostic/control subcommands
+        under the same root.
+
+endmenu
+
+menu "CANopen feature selection"
+
+config PKG_LELY_USING_CO_CSDO
+    bool "SDO client"
+    default y
+
+config PKG_LELY_USING_CO_EMCY
+    bool "Emergency (EMCY)"
+    default y
+
+config PKG_LELY_USING_CO_LSS
+    bool "Layer Setting Services (LSS)"
+    default y
+
+config PKG_LELY_USING_CO_MASTER
+    bool "NMT master support"
+    depends on PKG_LELY_USING_CO_CSDO
+    default y
+
+config PKG_LELY_USING_CO_NMT_BOOT
+    bool "NMT boot slave service"
+    default y
+    depends on PKG_LELY_USING_CO_MASTER
+
+config PKG_LELY_USING_CO_NMT_CFG
+    bool "NMT configuration service"
+    default y
+    depends on PKG_LELY_USING_CO_MASTER
+    depends on PKG_LELY_USING_CO_CSDO
+
+config PKG_LELY_USING_CO_NODE_GUARDING
+    bool "Node guarding"
+    default n
+    help
+        Node guarding is disabled by default for this port. Heartbeat remains
+        available through the normal NMT/heartbeat implementation.
+
+config PKG_LELY_USING_CO_RPDO
+    bool "Receive PDO (RPDO)"
+    default y
+
+config PKG_LELY_USING_CO_TPDO
+    bool "Transmit PDO (TPDO)"
+    default y
+
+config PKG_LELY_USING_CO_SYNC
+    bool "SYNC service"
+    default y
+
+config PKG_LELY_USING_CO_TIME
+    bool "TIME service"
+    default y
+
+config PKG_LELY_USING_CO_MPDO
+    bool "Multiplexed PDO (MPDO)"
+    default y
+
+config PKG_LELY_USING_CO_SSDO_BLOCK
+    bool "SDO server block transfer"
+    default y
+
+menu "Object Dictionary metadata"
+
+config PKG_LELY_USING_CO_OBJ_NAME
+    bool "Object names"
+    default y
+
+config PKG_LELY_USING_CO_OBJ_LIMITS
+    bool "Object value limits"
+    default y
+
+config PKG_LELY_USING_CO_OBJ_DEFAULT
+    bool "Object default values"
+    default y
+
+config PKG_LELY_USING_CO_OBJ_UPLOAD
+    bool "Object upload helpers"
+    default y
+
+endmenu
+
+endmenu
+
+config PKG_LELY_PATH
+    string
+    default "/packages/misc/canopen-lely"
+
+choice
+    prompt "Version"
+    default PKG_USING_LELY_V100
+    help
+        Select the Lely CANopen RT-Thread package version.
+
+    config PKG_USING_LELY_V100
+        bool "V1.0.0"
+
+    config PKG_USING_LELY_LATEST_VERSION
+        bool "latest"
+endchoice
+
+config PKG_LELY_VER
+    string
+    default "V1.0.0" if PKG_USING_LELY_V100
+    default "latest" if PKG_USING_LELY_LATEST_VERSION
+
+endif
