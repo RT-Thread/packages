@@ -1,0 +1,95 @@
+# Kconfig for the Pure-C local CiA 402 Device core.
+
+config PKG_CANOPENNODE_CIA402_DEVICE
+    bool "Local CiA 402 Device core"
+    default y
+    help
+        Build the Pure-C local Device manager, generated-OD binding and PDS
+        supervisor. This layer has no RT-Thread/BSP dependency and allocates no
+        axis storage dynamically.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_DIAGNOSTICS
+    bool "Per-axis fault diagnostics"
+    default n
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    help
+        Add the Pure-C per-axis diagnostic latch, generated Error-code object
+        update and deferred report/reset event contract. Each configured axis
+        must provide a bounded non-blocking DiagIF which maps product/internal
+        fault origins to independent 0x603F and CANopen EMCY error codes.
+        This layer does not call CANopenNode emergency APIs directly.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_MODE_PP
+    bool "Profile Position (PP) mode"
+    default y
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    help
+        Build the Pure-C Profile Position supervisor. An axis advertises PP only
+        when its DriveIF provides mode entry/exit and profilePosition callbacks;
+        only then are the PP-specific OD objects required during binding.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_MODE_PV
+    bool "Profile Velocity (PV) mode"
+    default y
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    help
+        Build the Pure-C Profile Velocity supervisor. An axis advertises PV only
+        when its DriveIF provides mode entry/exit and profileVelocity callbacks;
+        only then are the PV-specific OD objects required during binding.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_MODE_HM
+    bool "Homing (HM) mode"
+    default y
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    help
+        Build the Pure-C Homing supervisor. An axis advertises HM only when its
+        DriveIF provides mode entry/exit and homing callbacks; only then are the
+        homing-specific OD objects required during binding.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_MODE_CSP
+    bool "Cyclic Synchronous Position (CSP) mode"
+    default y
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    depends on PKG_CANOPENNODE_USING_SYNC
+    depends on PKG_CANOPENNODE_USING_PDO
+    depends on PKG_CANOPENNODE_RPDO
+    depends on PKG_CANOPENNODE_TPDO
+    depends on PKG_CANOPENNODE_PDO_SYNC
+    select PKG_CANOPENNODE_CIA402_DEVICE_SYNC_FASTPATH
+    help
+        Build the bounded CSP target snapshot used by the synchronous fast path.
+        Runtime capability still requires a complete per-axis SyncIF.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_MODE_CSV
+    bool "Cyclic Synchronous Velocity (CSV) mode"
+    default y
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    depends on PKG_CANOPENNODE_USING_SYNC
+    depends on PKG_CANOPENNODE_USING_PDO
+    depends on PKG_CANOPENNODE_RPDO
+    depends on PKG_CANOPENNODE_TPDO
+    depends on PKG_CANOPENNODE_PDO_SYNC
+    select PKG_CANOPENNODE_CIA402_DEVICE_SYNC_FASTPATH
+    help
+        Build the bounded CSV target snapshot used by the synchronous fast path.
+        Runtime capability still requires a complete per-axis SyncIF.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_MODE_CST
+    bool "Cyclic Synchronous Torque (CST) mode"
+    default y
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    depends on PKG_CANOPENNODE_USING_SYNC
+    depends on PKG_CANOPENNODE_USING_PDO
+    depends on PKG_CANOPENNODE_RPDO
+    depends on PKG_CANOPENNODE_TPDO
+    depends on PKG_CANOPENNODE_PDO_SYNC
+    select PKG_CANOPENNODE_CIA402_DEVICE_SYNC_FASTPATH
+    help
+        Build the bounded CST target/feedback bridge used by the synchronous fast path.
+        Runtime capability still requires a complete per-axis SyncIF.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_SYNC_FASTPATH
+    bool
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    help
+        Internal guard for the RPDO -> CiA 402 cyclic bridge -> TPDO path.

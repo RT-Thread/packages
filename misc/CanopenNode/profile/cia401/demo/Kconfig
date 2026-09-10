@@ -1,0 +1,18 @@
+menu "Demo"
+
+config PKG_CANOPENNODE_CIA401_DEVICE_RTT_DEMO
+    bool "Enable software-only RT-Thread CiA 401 Device demo"
+    default n
+    depends on PKG_CANOPENNODE_CIA401_DEVICE_RTT_THREAD
+    depends on PKG_CANOPENNODE_CIA401_DEVICE_RTT_AUTOSTART
+    help
+        Register a bounded software I/O backend for DI/DO/AI/AO. The backend
+        owns no hardware and is intended only for lifecycle/protocol bring-up.
+        Because no remote output-setting peer exists, the demo models the CiA 401
+        output-supervision prerequisite as already established. Product code must
+        classify the real Heartbeat/node-guard relationship instead.
+        The application-generated Object Dictionary must contain every mandatory
+        and enabled optional CiA 401 object; this option does not replace or
+        rewrite the selected product/demo Object Dictionary.
+
+endmenu

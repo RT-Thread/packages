@@ -1,0 +1,44 @@
+# RT-Thread SCons script for CANopenNode RT-Thread storage backends.
+
+import os
+from building import *
+
+cwd = GetCurrentDir()
+pkg_dir = os.path.abspath(os.path.join(cwd, '..', '..', '..'))
+src = []
+
+
+def _add_required(path):
+    abs_path = os.path.join(pkg_dir, path)
+    if not os.path.isfile(abs_path):
+        raise RuntimeError('Required CANopenNode storage source is missing: %s' % path)
+    src.append(path)
+
+
+if GetDepend('PKG_CANOPENNODE_USING_STORAGE'):
+    storage_impl_count = 0
+    if GetDepend('PKG_CANOPENNODE_USING_STORAGE_DFS'):
+        storage_impl_count += 1
+    if GetDepend('PKG_CANOPENNODE_USING_STORAGE_EEPROM'):
+        storage_impl_count += 1
+    if GetDepend('PKG_CANOPENNODE_USING_STORAGE_USER'):
+        storage_impl_count += 1
+    if storage_impl_count != 1:
+        raise RuntimeError('Exactly one CANopenNode RT-Thread storage implementation must be enabled')
+    _add_required(os.path.join('CANopenNode', 'storage', 'CO_storage.c'))
+    _add_required(os.path.join('port', 'rtthread', 'storage', 'CO_storage_RTT.c'))
+
+    if GetDepend('PKG_CANOPENNODE_USING_STORAGE_DFS'):
+        _add_required(os.path.join('port', 'rtthread', 'storage', 'CO_storage_RTT_dfs.c'))
+
+    if GetDepend('PKG_CANOPENNODE_USING_STORAGE_EEPROM'):
+        _add_required(os.path.join('CANopenNode', 'storage', 'CO_storageEeprom.c'))
+        _add_required(os.path.join('port', 'rtthread', 'storage', 'CO_storage_RTT_eeprom.c'))
+
+    if GetDepend('PKG_CANOPENNODE_USING_STORAGE_AT24C'):
+        _add_required(os.path.join('port', 'rtthread', 'storage', 'CO_storage_RTT_at24c.c'))
+
+    if GetDepend('PKG_CANOPENNODE_LSS_PERSIST'):
+        _add_required(os.path.join('port', 'rtthread', 'storage', 'CO_lss_persist_RTT.c'))
+
+Return('src')

@@ -1,0 +1,8 @@
+config PKG_CANOPENNODE_CIA402_CONTROLLER
+    bool "Transport-agnostic CiA 402 Controller PDS API"
+    default n
+    help
+        Enable the Pure-C CiA 402 Controller PDS command sequencer. This helper
+        observes a remote Statusword and generates PDS-owned Controlword updates.
+        It does not select or own NMT, Heartbeat Consumer, SDO Client, PDO, SYNC,
+        Object Dictionary, Node-ID, CAN transport, RT-Thread tasks, or heap memory.

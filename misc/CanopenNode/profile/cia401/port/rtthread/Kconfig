@@ -1,0 +1,64 @@
+# RT-Thread lifecycle adapter for the local CiA 401 Device core.
+
+config PKG_CANOPENNODE_CIA401_DEVICE_RTT_THREAD
+    bool "Enable RT-Thread CiA 401 Device worker"
+    default n
+    depends on PKG_CANOPENNODE_CIA401_DEVICE
+    depends on RT_USING_HEAP
+    select PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
+    select PKG_CANOPENNODE_RTT_CAN_TX_SUCCESS_OBSERVER if PKG_CANOPENNODE_CIA401_DIGITAL_EVENTS || PKG_CANOPENNODE_CIA401_ANALOG_EVENTS
+    help
+        Bind the Pure-C CiA 401 Device before PDO initialization and run one
+        bounded process pass from a lower-priority co_401 worker woken by the
+        existing realtime timer. Communication Reset drains stale tokens and
+        rebinds the new Object Dictionary generation.
+
+if PKG_CANOPENNODE_CIA401_DEVICE_RTT_THREAD
+
+config PKG_CANOPENNODE_CIA401_THREAD_STACK_SIZE
+    int "CiA 401 worker stack size"
+    default 1536
+
+config PKG_CANOPENNODE_CIA401_THREAD_PRIORITY
+    int "CiA 401 worker priority"
+    default 6
+    help
+        Must be numerically greater (lower scheduling priority) than the existing co_rt worker.
+
+config PKG_CANOPENNODE_CIA401_DEVICE_RTT_EMCY_BRIDGE
+    bool "Bridge CiA 401 profile warnings to EMCY"
+    default y
+    depends on PKG_CANOPENNODE_EM_ERR_STATUS_BITS_COUNT >= 73
+    select PKG_CANOPENNODE_EM_PRODUCER
+    help
+        Consume Pure-C profile warning events after the OD lock is released,
+        including the mandatory 0x0080 warning for analogue-input devices with
+        Object 0x6423 disabled on entry to NMT Operational. Error-status bit 0x48
+        is reserved by this adapter so it does not collide
+        with the CiA 402 adapter's 0x40..0x47 per-axis diagnostic bits.
+
+config PKG_CANOPENNODE_CIA401_DEVICE_RTT_AUTOSTART
+    bool "Automatically create and attach CiA 401 runtime"
+    default n
+    depends on PKG_CANOPENNODE_APP_AUTO_INIT
+    depends on RT_USING_COMPONENTS_INIT
+    depends on RT_USING_HEAP
+    select PKG_CANOPENNODE_RTT_LIFECYCLE_AUTOSTART
+    help
+        Allocate only the adapter runtime. The CO_401_device_config_t and IOIF
+        remain product-owned and must outlive the default CANopenNodeRTT app.
+
+config PKG_CANOPENNODE_CIA401_DEVICE_RTT_MSH
+    bool "Enable CiA 401 MSH bench control"
+    default n
+    depends on PKG_CANOPENNODE_CIA401_DEVICE_RTT_DEMO
+    depends on PKG_CANOPENNODE_CIA401_DEVICE_RTT_AUTOSTART
+    depends on RT_USING_FINSH && FINSH_USING_MSH
+    help
+        Register the cia401 MSH command for the software-only RT-Thread demo.
+        Commands inject raw DI/AI process values, inspect physical DO/AO state,
+        write the same bound output OD entries used by SDO/RPDO, inject output
+        fault/supervision state, and wake the existing co_401 worker. This is
+        bench/debug functionality only and does not change the product IOIF API.
+
+endif

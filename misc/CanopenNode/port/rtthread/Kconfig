@@ -1,0 +1,389 @@
+# Kconfig for CANopenNode RT-Thread integration.
+
+menu "RT-Thread integration"
+
+config PKG_CANOPENNODE_CAN_DEV_NAME
+    string "RT-Thread CAN device name"
+    default "can1"
+    help
+        RT-Thread CAN device name passed to rt_device_find(). It is used by the
+        default auto-initialized instance and as the fallback device name when
+        CO_CANmodule_init() is called with a NULL CAN pointer. Change this when
+        the BSP exposes the CAN controller as a different device, such as can0.
+
+config PKG_CANOPENNODE_CAN_BINDING_COUNT
+    int "RT-Thread CAN device binding table size"
+    range 1 8
+    default 1
+    help
+        Maximum number of RT-Thread CAN devices that can be bound to CANopenNode
+        CAN modules at the same time. Keep the default value 1 for single-CAN
+        products and increase it only when multiple CANopenNode instances run on
+        separate RT-Thread CAN devices.
+
+config PKG_CANOPENNODE_USING_RTT_CAN_FILTER
+    bool "Use coarse RT-Thread CAN HDR filters as CANopen RX ingress"
+    default n
+    depends on RT_CAN_USING_HDR
+    depends on PKG_CANOPENNODE_CAN_BINDING_COUNT = 1
+    help
+        Compile the active CANopenNode RX rules into a bounded set of coarse
+        standard-ID RT-Thread HDR mask filters. Hardware filters are only an
+        ingress prefilter: co_rx always performs the final CANopenNode
+        ident/mask/RTR match before dispatching callbacks.
+
+        Runtime COB-ID changes mark the hardware filter set dirty and refresh
+        the bounded coarse table before CO_CANrxBufferInit() returns when CAN is
+        already in normal mode. The normal mainline path also retries a pending
+        refresh. If the bounded compiler cannot represent all active rules, it
+        falls back to broad standard-frame ingress filters without narrowing the
+        CANopenNode software rule set.
+
+        The generic STM32 bxCAN RT-Thread mask-filter path compares RTR, so DTR
+        and RTR rules consume separate coarse-filter coverage. Configure at
+        least two banks when both data and remote frames must be received.
+
+        Enabling this option gives the single configured CANopenNode CAN module
+        exclusive ownership of the HDR bank range selected below. Multi-binding
+        configurations keep this option unavailable because one global bank
+        range cannot describe controllers with different filter-bank partitions.
+        Reduce the range or disable this option if another component configures
+        HDR filters on the same CAN device.
+
+config PKG_CANOPENNODE_RX_HDR_BANK_BASE
+    int "CANopen RX first HDR bank"
+    range 0 27
+    default 0
+    depends on PKG_CANOPENNODE_USING_RTT_CAN_FILTER
+    help
+        First hardware filter bank exclusively owned by the CANopen RX ingress
+        compiler. Every ingress filter uses an explicit bank index starting at
+        this value; the port does not rely on driver auto-assignment. On the
+        current STM32 bxCAN driver, use banks 0..13 for CAN1 and 14..27 for
+        CAN2. The default 0 matches the package default CAN device, can1.
+
+config PKG_CANOPENNODE_RX_HDR_BANK_COUNT
+    int "CANopen RX HDR bank count"
+    range 2 14
+    default 8
+    depends on PKG_CANOPENNODE_USING_RTT_CAN_FILTER
+    help
+        Number of consecutive hardware filter banks exclusively owned by the
+        CANopen RX ingress compiler, beginning at
+        PKG_CANOPENNODE_RX_HDR_BANK_BASE. More banks preserve narrower hardware
+        masks and reject more unrelated traffic. The configured range must be
+        valid for the selected CAN controller/BSP. The software matcher remains
+        authoritative regardless of this value.
+
+menu "RT-Thread runtime options"
+
+menu "CAN RX helper thread"
+
+config PKG_CANOPENNODE_RX_THREAD_STACK_SIZE
+    int "Stack size"
+    default 2048
+    help
+        Stack size in bytes for the CAN RX helper thread.
+
+config PKG_CANOPENNODE_RX_THREAD_PRIORITY
+    int "Priority"
+    default 2
+    help
+        RT-Thread priority for the CAN RX helper thread. Lower numeric values are
+        higher priority in RT-Thread.
+
+config PKG_CANOPENNODE_RX_THREAD_TICK
+    int "Time slice"
+    default 10
+    help
+        Time slice passed when creating the CAN RX helper thread.
+
+config PKG_CANOPENNODE_RX_BATCH_SIZE
+    int "CAN RX batch read size"
+    range 1 64
+    default 8
+    help
+        Maximum number of struct rt_can_msg frames read by the co_rx helper in
+        one rt_device_read() call. Larger values reduce wake/read overhead but
+        increase stack usage because the batch buffer is allocated on the RX
+        thread stack.
+
+endmenu
+
+
+menu "CANopen mainline thread"
+
+config PKG_CANOPENNODE_MAIN_THREAD_STACK_SIZE
+    int "Stack size"
+    default 2048
+    help
+        Stack size in bytes for the CANopenNode mainline thread. This thread
+        runs CO_process(), including NMT, SDO, heartbeat, emergency and reset
+        command handling. Increase it if the enabled CANopen objects, logging or
+        Object Dictionary callbacks consume more stack. A value that is too small
+        can cause stack overflow and hard-to-debug runtime faults; a value that
+        is too large only wastes RAM.
+
+config PKG_CANOPENNODE_MAIN_THREAD_PRIORITY
+    int "Priority"
+    default 10
+    help
+        RT-Thread priority for the CANopenNode mainline thread. Lower numeric
+        values are higher priority in RT-Thread. Keep this lower priority than
+        the realtime thread so SDO/NMT/heartbeat work cannot delay SYNC, SRDO,
+        RPDO and TPDO processing when those objects are enabled. Setting it too
+        high can disturb time-critical tasks; setting it too low can make SDO
+        transfers and heartbeat handling sluggish when the system is busy.
+
+config PKG_CANOPENNODE_MAIN_THREAD_TICK
+    int "Time slice"
+    default 10
+    help
+        Time slice passed when creating the CANopenNode mainline thread. Larger
+        values let the thread run longer before round-robin rescheduling at the
+        same priority. Smaller values improve fairness with peer threads but may
+        increase scheduling overhead.
+
+endmenu
+
+
+menu "CANopen realtime thread"
+
+config PKG_CANOPENNODE_RT_THREAD_STACK_SIZE
+    int "Stack size"
+    default 2048
+    help
+        Stack size in bytes for the CANopenNode realtime thread. This thread runs
+        the periodic SYNC, SRDO, RPDO and TPDO processing path when those objects
+        are enabled. Increase it if user code is added near the realtime section
+        or if enabled SRDO/PDO/SYNC features use more stack. A value that is too
+        small risks stack overflow; a value that is too large wastes RAM in every
+        CANopenNodeRTT instance.
+
+config PKG_CANOPENNODE_RT_THREAD_PRIORITY
+    int "Priority"
+    default 3
+    help
+        RT-Thread priority for the CANopenNode realtime thread. Lower numeric
+        values are higher priority. This should normally be higher priority than
+        the mainline thread because it executes the fixed-period
+        SYNC/SRDO/RPDO/TPDO path when those objects are enabled. Setting it too
+        low increases PDO or SRDO jitter; setting it too high can starve other
+        time-critical device or control threads.
+
+config PKG_CANOPENNODE_RT_THREAD_TICK
+    int "Time slice"
+    default 10
+    help
+        Time slice passed when creating the CANopenNode realtime thread. The
+        thread normally wakes from a semaphore and runs briefly, so this value has
+        limited effect unless other threads share the same priority. Larger
+        values reduce round-robin switching; smaller values improve fairness.
+
+config PKG_CANOPENNODE_TIMER_PERIOD_US
+    int "Processing period in us"
+    range 1 1000000
+    default 1000
+    help
+        Requested period for realtime CANopen processing. The default 1000 us
+        matches the common 1 ms CANopenNode model. Smaller values reduce PDO and
+        SYNC latency only if the RT-Thread tick rate can represent that period;
+        otherwise the wrapper rounds up to at least one system tick. Larger values
+        reduce CPU load but increase PDO latency and timing jitter.
+
+endmenu
+
+
+menu "CANopen application runtime"
+
+config PKG_CANOPENNODE_APP_FIRST_HB_TIME_MS
+    int "First heartbeat time in ms"
+    range 0 65535
+    default 500
+    help
+        First heartbeat producer delay passed to CO_CANopenInit(). This controls
+        how long the node waits after communication initialization before sending
+        its first heartbeat. A smaller value lets a master detect the node sooner
+        but can produce heartbeat traffic before the application is fully ready.
+        A larger value gives the application more startup margin but delays
+        network supervision.
+
+config PKG_CANOPENNODE_APP_SDO_SRV_TIMEOUT_MS
+    int "SDO server timeout in ms"
+    range 1 65535
+    default 1000
+    help
+        SDO server timeout passed to CO_CANopenInit(). This is the maximum idle
+        time the local SDO server allows during an SDO transfer before aborting
+        it. Smaller values detect broken clients faster but can abort transfers on
+        a busy or slow bus. Larger values tolerate slow masters but keep failed
+        transfers and their resources open longer.
+
+config PKG_CANOPENNODE_APP_SDO_CLI_TIMEOUT_MS
+    int "SDO client timeout in ms"
+    range 1 65535
+    default 500
+    help
+        Default SDO client timeout passed to CO_CANopenInit(). This affects SDO
+        client operations initiated by this node, for example gateway or
+        application-driven client transfers. Smaller values fail faster when the
+        remote server is absent or slow. Larger values tolerate slow devices and
+        bus congestion but make application-level error recovery slower.
+
+config PKG_CANOPENNODE_APP_SDO_CLI_BLOCK
+    bool "Enable SDO client block transfer by default"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_CLIENT
+    depends on PKG_CANOPENNODE_SDO_CLI_BLOCK
+    help
+        Default SDO client block-transfer flag passed to CO_CANopenInit(). Block
+        transfer can improve throughput for large SDO client uploads/downloads
+        when both peers support it.
+
+endmenu
+
+
+menuconfig PKG_CANOPENNODE_APP_AUTO_INIT
+    bool "Default CANopenNode application"
+    default y
+    help
+        Automatically create one default CANopenNode RT-Thread application
+        instance during RT-Thread application initialization. Disable this when
+        the product creates CANopenNodeRTT instances explicitly.
+
+if PKG_CANOPENNODE_APP_AUTO_INIT
+
+config PKG_CANOPENNODE_AUTO_INIT_NODE_ID
+    int "Node-ID"
+    range 1 127
+    default 1
+    help
+        CANopen Node-ID used by the default auto-initialized instance.
+
+choice
+    prompt "CAN bitrate in kbit/s"
+    default PKG_CANOPENNODE_AUTO_INIT_BITRATE_1000
+    help
+        CAN bitrate used by the default auto-initialized CANopenNode instance.
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_10
+    bool "10"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_20
+    bool "20"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_50
+    bool "50"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_125
+    bool "125"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_250
+    bool "250"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_500
+    bool "500"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_800
+    bool "800"
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE_1000
+    bool "1000"
+
+endchoice
+
+config PKG_CANOPENNODE_AUTO_INIT_BITRATE
+    int
+    default 10 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_10
+    default 20 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_20
+    default 50 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_50
+    default 125 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_125
+    default 250 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_250
+    default 500 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_500
+    default 800 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_800
+    default 1000 if PKG_CANOPENNODE_AUTO_INIT_BITRATE_1000
+    default 1000
+
+config PKG_CANOPENNODE_GATEWAY_RTT_CONSOLE
+    bool "RT-Thread MSH console bridge"
+    default n
+    depends on PKG_CANOPENNODE_USING_GATEWAY_ASCII
+    depends on RT_USING_FINSH && FINSH_USING_MSH
+    depends on !PKG_CANOPENNODE_DEMO_SDO_CLIENT_TEST
+    depends on !PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    select PKG_CANOPENNODE_USING_SDO_CLIENT
+    select PKG_CANOPENNODE_SDO_CLI_SEGMENTED
+    select PKG_CANOPENNODE_SDO_CLI_LOCAL
+    select PKG_CANOPENNODE_NMT_MASTER
+    select PKG_CANOPENNODE_GATEWAY_ASCII_SDO
+    select PKG_CANOPENNODE_GATEWAY_ASCII_NMT
+    select PKG_CANOPENNODE_GATEWAY_ASCII_ERROR_DESC
+    select PKG_CANOPENNODE_GATEWAY_ASCII_PRINT_HELP
+    help
+        Register the canopen_gw MSH command for the default auto-initialized
+        CANopenNode instance.
+
+endif
+
+
+menuconfig PKG_CANOPENNODE_USING_HIGH_RES_TIME
+    bool "High-resolution time source"
+    default n
+    depends on RT_USING_CLOCK_TIME
+    help
+        Enable the dedicated hardware-timer microsecond time source. When this
+        option is disabled, the wrapper uses RT-Thread tick based timing.
+
+if PKG_CANOPENNODE_USING_HIGH_RES_TIME
+
+config PKG_CANOPENNODE_HIGH_RES_TIMER_NAME
+    string "Hardware timer device name"
+    default "timer0"
+    help
+        Dedicated RT-Thread clock-timer device used by the high-resolution time
+        source. The BSP/user must verify that this device maps to a physical
+        32-bit, 1 MHz-capable, up-counting timer and is not used by another
+        component.
+
+endif
+
+endmenu
+
+config PKG_CANOPENNODE_RTT_CAN_TX_SUCCESS_OBSERVER
+    bool
+    default n
+    help
+        Internal successful-transmit observer for RT-Thread CAN extensions.
+        Consumers register through the generic RT-Thread CAN API and select
+        this capability from their own Kconfig. The CAN driver does not depend
+        on any device-profile feature symbol.
+
+config PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
+    bool
+    default n
+    help
+        Internal fixed-capacity registry for optional CANopenNodeRTT lifecycle
+        extensions. Profile adapters select this helper when they need ordered
+        init/reset/rebind/timer callbacks. The registry allocates no RT resource.
+
+config PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSION_CAPACITY
+    int "RT-Thread lifecycle extension capacity"
+    default 4
+    range 1 255
+    depends on PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
+    help
+        Maximum number of lifecycle extensions that one CANopenNodeRTT instance
+        can register. The upper bound matches the uint8_t registry count. Storage
+        is embedded statically in the application instance; increasing this value
+        increases per-instance RAM use and does not allocate heap.
+
+config PKG_CANOPENNODE_RTT_LIFECYCLE_AUTOSTART
+    bool
+    default n
+    depends on PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
+    help
+        Internal support for profile auto factories. Factories only construct and
+        register extension contexts before the default CANopen application starts;
+        normal lifecycle callbacks still own runtime init/start/reset/teardown.
+
+endmenu
