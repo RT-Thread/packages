@@ -1,0 +1,193 @@
+# Kconfig for package Object Dictionary and optional generic demo/test modules.
+
+menu "Object Dictionary"
+
+config PKG_CANOPENNODE_USING_DEMO_OD
+    bool "Use package default Object Dictionary"
+    default y
+    help
+        Compile the package-provided generated OD.c/OD.h from examples/demo_device
+        and add its directory to the include path.
+
+        This Object Dictionary can be used independently of all optional demo/test
+        modules. Enabling this option does not require any PKG_CANOPENNODE_DEMO_*
+        option to be enabled.
+
+        Disable this option when the BSP or application supplies a custom OD.c
+        and OD.h through its own SConscript/include path.
+
+if PKG_CANOPENNODE_USING_DEMO_OD
+
+menu "Optional demo/test modules"
+
+config PKG_CANOPENNODE_DEMO_TIME_DIAGNOSTIC
+    bool "Enable demo TIME consumer diagnostic object updates"
+    default n
+    depends on PKG_CANOPENNODE_USING_TIME
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    select PKG_CANOPENNODE_GLOBAL_CALLBACK_PRE
+    select PKG_CANOPENNODE_GLOBAL_OD_DYNAMIC
+    help
+        Publish demo/test TIME consumer diagnostics through OD 0x2300. The
+        demo module counts valid DLC=6 TIME receptions with callback-pre and
+        publishes the applied CO_TIME_t milliseconds/day values after CO_process().
+
+        This option is intended for automated validation with the generated demo
+        OD. Product firmware with a custom OD should provide its own application
+        observability contract instead.
+
+config PKG_CANOPENNODE_DEMO_EMCY_CONSUMER_DIAGNOSTIC
+    bool "Enable demo EMCY consumer diagnostic object updates"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    depends on PKG_CANOPENNODE_CAN_BINDING_COUNT = 1
+    select PKG_CANOPENNODE_EM_CONSUMER
+    help
+        Publish demo/test EMCY consumer diagnostics through OD 0x2301. The
+        demo records each remote EMCY callback with RT-Thread atomics and
+        publishes one coherent latest-message snapshot after CO_process().
+
+        Local EMCY messages reported by CANopenNode with ident == 0 are excluded.
+        Repeated remote messages and errorCode == 0 recovery messages are counted.
+        The CANopenNode EMCY callback has no application object, so this generated
+        demo diagnostic is limited to one CANopenNodeRTT instance. This option is
+        intended for automated validation, not as a product-level remote fault manager.
+
+config PKG_CANOPENNODE_DEMO_GFC_DIAGNOSTIC
+    bool "Enable demo GFC protocol diagnostic and producer trigger"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    select PKG_CANOPENNODE_USING_GFC
+    select PKG_CANOPENNODE_GFC_CONSUMER
+    select PKG_CANOPENNODE_GFC_PRODUCER
+    help
+        Publish test-only GFC consumer/producer state through OD 0x2302. The
+        receive callback only increments an RT-Thread atomic counter and latches
+        safe_requested. A mainline sequence request triggers CO_GFCsend() and
+        publishes its completion/result for automated Host validation.
+
+        This option validates protocol behavior only. It does not implement a
+        functional-safety state machine or control real safety actuators.
+
+config PKG_CANOPENNODE_DEMO_SRDO_DIAGNOSTIC
+    bool "Enable demo SRDO diagnostic fixture"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    depends on PKG_CANOPENNODE_CAN_BINDING_COUNT = 1
+    depends on PKG_CANOPENNODE_USING_DEMO_OD
+    select PKG_CANOPENNODE_USING_SRDO
+    select PKG_CANOPENNODE_SRDO_CHECK_TX
+    help
+        Enable the test-only SRDO fixture in the generated demo Object
+        Dictionary. The fixture exposes two deterministic SRDO channels and OD
+        0x2306 state/TX-request observability for Host protocol validation.
+
+        The generated OD_RAM.x2306_srdo_diagnostic object is global, so this
+        fixture is intentionally limited to one CANopenNodeRTT instance / CAN
+        binding. Multi-instance products must keep this fixture disabled and
+        provide instance-specific Object Dictionaries and diagnostics.
+
+        This option validates CANopenNode SRDO protocol behavior only. It does
+        not claim SIL/PL compliance, functional-safety certification, redundant
+        hardware coverage, WCET proof or machine-level safety timing.
+
+config PKG_CANOPENNODE_DEMO_SDO_BLOCK_TEST
+    bool "Enable demo SDO server block-transfer DOMAIN fixture"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    depends on PKG_CANOPENNODE_SDO_SRV_BLOCK
+    help
+        Publish the test-only variable-length DOMAIN at OD 0x2304 for SDO Server
+        Block Transfer validation. The bounded backend accepts up to
+        2048 bytes, uses no dynamic memory or persistence and relies on
+        CANopenNode for the SDO block state machine and CRC handling.
+
+        A partial download may leave the one-buffer fixture dirty after abort;
+        the next complete download re-establishes a valid payload. Keep this
+        disabled in normal product firmware.
+
+config PKG_CANOPENNODE_DEMO_SDO_CLIENT_TEST
+    bool "Enable demo MCU SDO client test control/status"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    select PKG_CANOPENNODE_USING_SDO_CLIENT
+    select PKG_CANOPENNODE_SDO_CLI_SEGMENTED
+    select PKG_CANOPENNODE_SDO_CLI_LOCAL
+    help
+        Publish test-only MCU SDO client control/status through OD 0x2303.
+        The Host commits request_seq after all request fields are written, then
+        the CANopenNode mainline drives CO_SDOclient non-blockingly. The
+        segmented/local validation profile keeps flags=0. Block-transfer
+        validation may set bit 0 when PKG_CANOPENNODE_SDO_CLI_BLOCK is enabled.
+
+        The demo uses the first generated SDO client object and is intended for
+        automated validation with the package demo Object Dictionary.
+
+config PKG_CANOPENNODE_DEMO_STORAGE_DIAGNOSTIC
+    bool "Enable demo EEPROM Storage diagnostic"
+    default n
+    depends on PKG_CANOPENNODE_USING_SDO_SERVER
+    depends on PKG_CANOPENNODE_USING_STORAGE_EEPROM
+    depends on PKG_CANOPENNODE_USING_STORAGE_AT24C
+    depends on PKG_CANOPENNODE_STORAGE_PERSIST_COMM
+    help
+        Publish test-only EEPROM Storage diagnostics through OD 0x2305. The diagnostic exposes the existing CO_storageEeprom raw layout,
+        captures the startup storage result and pre-master 0x1017 value, and
+        supports full raw baseline backup/restore plus controlled corruption.
+
+config PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    bool "Enable automatic demo NMT master test"
+    default n
+    depends on PKG_CANOPENNODE_APP_AUTO_INIT
+    select PKG_CANOPENNODE_NMT_MASTER
+    select PKG_CANOPENNODE_USING_HB_CONS
+    select PKG_CANOPENNODE_HB_CONS_QUERY_FUNCT
+    select PKG_CANOPENNODE_GLOBAL_OD_DYNAMIC
+    help
+        Automatically validate NMT master control of a configurable remote node
+        with heartbeat supervision. The demo configures one OD 0x1016 consumer
+        entry for the target node, waits until that node is online, and then
+        sends START, STOP, PREOP, RESET_COMM, RESET_NODE and final START.
+
+        Each normal command waits for the expected remote NMT state before the
+        next command is sent. Reset commands additionally require observing the
+        remote boot-up transition before PRE-OP is accepted. Keep this disabled
+        in normal product firmware.
+
+config PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST_TARGET_NODE_ID
+    int "Demo NMT master test target Node-ID"
+    range 1 127
+    default 2
+    depends on PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    help
+        Remote CANopen Node-ID controlled by the automatic NMT master test.
+        The runtime rejects a value equal to the active local Node-ID. Node-ID 0
+        is intentionally excluded because broadcast reset commands would also
+        affect the local node.
+
+config PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST_HB_TIMEOUT_MS
+    int "Demo NMT master test heartbeat timeout in ms"
+    range 100 60000
+    default 1500
+    depends on PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    help
+        Consumer timeout written to one demo OD 0x1016 entry for the target
+        node. The remote test peer must produce heartbeat faster than this
+        timeout. A 500 ms producer heartbeat is recommended for the default.
+
+config PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST_STATE_TIMEOUT_MS
+    int "Demo NMT master test state transition timeout in ms"
+    range 100 60000
+    default 3000
+    depends on PKG_CANOPENNODE_DEMO_NMT_MASTER_TEST
+    help
+        Maximum time allowed after a fixture PRE-OP normalization command or
+        formal NMT command to confirm the expected remote state. Initial peer
+        discovery waits without timeout. Reset commands must first expose a
+        boot-up/non-active transition and then return to PRE-OP.
+
+endmenu
+
+endif
+
+endmenu

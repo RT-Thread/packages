@@ -1,0 +1,72 @@
+# Kconfig for the Pure-C local CiA 401 Device core.
+
+config PKG_CANOPENNODE_CIA401_DEVICE
+    bool "Local CiA 401 Device core"
+    default y
+    depends on PKG_CANOPENNODE_CIA401
+    help
+        Build the Pure-C generic I/O Device core for Objects 0x6000, 0x6200,
+        0x6401 and 0x6411. A device with analogue inputs also requires the
+        conditional-mandatory 0x6423 global interrupt-enable object and the
+        associated 0x0080 Operational-entry warning semantics. Generated OD
+        objects are validated before process-image exchange is enabled.
+
+if PKG_CANOPENNODE_CIA401_DEVICE
+
+config PKG_CANOPENNODE_CIA401_DIGITAL_EVENTS
+    bool "CiA 401 digital input events and filter bridge"
+    default n
+    depends on PKG_CANOPENNODE_TPDO
+    depends on PKG_CANOPENNODE_PDO_OD_IO_ACCESS
+    help
+        Enable Objects 0x6002, 0x6003 and 0x6005..0x6008, logical edge
+        detection, OD-based TPDO event requests and the product filter-enable
+        bridge. OD_FLAGS_PDO_SIZE must cover every enabled 0x6000 sub-index.
+
+config PKG_CANOPENNODE_CIA401_DIGITAL_OUTPUT_FAILSAFE
+    bool "CiA 401 digital output profile semantics"
+    default n
+    depends on PKG_CANOPENNODE_RPDO
+    depends on PKG_CANOPENNODE_PDO_OD_IO_ACCESS
+    help
+        Enable Objects 0x6202, 0x6206, 0x6207 and 0x6208, including output
+        polarity, final physical-output filtering and fail-safe physical output
+        selection. Product/internal failure and NMT Stopped are independent
+        fault sources; either keeps fail-safe active until its own source clears.
+        The product IOIF must provide masked physical writes so 0x6206 keep bits
+        and 0x6208 blocked bits are never overwritten. The 0x6200 command image
+        always retains the complete received value.
+
+config PKG_CANOPENNODE_CIA401_ANALOG_EVENTS
+    bool "CiA 401 analogue input events"
+    default n
+    depends on PKG_CANOPENNODE_TPDO
+    depends on PKG_CANOPENNODE_PDO_OD_IO_ACCESS
+    help
+        Enable optional Objects 0x6421, 0x6422 and 0x6424..0x6428 for 16-bit
+        analogue-input event selection. Object 0x6423 and its 0x0080 warning are
+        part of the base analogue-input contract. SDO reads commit communication
+        state at OD-read completion; TPDO state is committed only after successful
+        transport submission.
+
+config PKG_CANOPENNODE_CIA401_ANALOG_OUTPUT_FAILSAFE
+    bool "CiA 401 analogue output fail-safe"
+    default n
+    help
+        Enable Objects 0x6443/0x6444. Product/internal failure and NMT Stopped
+        are independent fault sources; either keeps fail-safe active until its
+        own source clears. Channels with error mode 1 use the 0x6444 value
+        directly, bypassing normal command conditioning; mode 0 retains the
+        current output.
+
+config PKG_CANOPENNODE_CIA401_ANALOG_CONDITIONING
+    bool "CiA 401 integer analogue conditioning"
+    default n
+    help
+        Enable the integer conditioning views 0x6431/0x6432 and 0x6446/0x6447.
+        The 16-bit process path applies scaling then offset using widened
+        arithmetic and performs no undocumented clamp. Values outside INTEGER16
+        are not committed to the process image/backend. Float aliases remain
+        intentionally unopened until their cross-view conversion policy is frozen.
+
+endif

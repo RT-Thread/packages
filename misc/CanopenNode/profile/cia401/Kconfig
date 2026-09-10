@@ -1,0 +1,17 @@
+# Kconfig entry for the CiA 401 generic I/O device profile.
+
+menuconfig PKG_CANOPENNODE_CIA401
+    bool "CiA 401 generic I/O device profile"
+    default n
+    help
+        Enable role-neutral CiA 401 definitions. The mandatory base remains a Pure-C local Device process image. Optional
+        digital/analogue profile semantics and the RT-Thread lifecycle adapter
+        are separately selectable and preserve the feature-off baseline.
+
+if PKG_CANOPENNODE_CIA401
+
+rsource "device/Kconfig"
+rsource "port/rtthread/Kconfig"
+rsource "demo/Kconfig"
+
+endif

@@ -1,0 +1,18 @@
+# Kconfig entry for the CiA 402 drives and motion-control profile.
+
+menuconfig PKG_CANOPENNODE_CIA402
+    bool "CiA 402 drives and motion control profile"
+    default n
+    help
+        Enable the role-neutral CiA 402 common definitions. The profile remains
+        disabled by default and does not select PDO, SYNC, SDO Client, RT-Thread
+        Event, or any hardware-drive dependency.
+
+if PKG_CANOPENNODE_CIA402
+
+rsource "controller/Kconfig"
+rsource "device/Kconfig"
+rsource "port/rtthread/Kconfig"
+rsource "demo/Kconfig"
+
+endif

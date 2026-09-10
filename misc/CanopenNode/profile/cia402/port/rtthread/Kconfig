@@ -1,0 +1,67 @@
+# Kconfig for the RT-Thread CiA 402 Device adapter.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_RTT_THREAD
+    bool "Enable RT-Thread CiA 402 Device thread"
+    default y
+    depends on PKG_CANOPENNODE_CIA402_DEVICE
+    select PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
+    help
+        Integrate an attached local Device manager with CANopenNodeRTT. The
+        existing realtime timer wakes a lower-priority co_402 supervisor thread.
+        Disable this option to retain the Pure-C Device core without adding any
+        CiA 402 RT-Thread thread or semaphore.
+
+if PKG_CANOPENNODE_CIA402_DEVICE_RTT_THREAD
+
+config PKG_CANOPENNODE_CIA402_THREAD_STACK_SIZE
+    int "CiA 402 thread stack size"
+    default 2048
+
+config PKG_CANOPENNODE_CIA402_THREAD_PRIORITY
+    int "CiA 402 thread priority"
+    default 5
+    help
+        Initial supervisor priority. The default keeps co_rt (priority 3)
+        higher priority. Final priority requires target WCET/jitter validation.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_RTT_EMCY_BRIDGE
+    bool "Bridge CiA 402 axis faults to CANopen EMCY"
+    default y
+    depends on PKG_CANOPENNODE_CIA402_DEVICE_DIAGNOSTICS
+    depends on PKG_CANOPENNODE_EM_ERR_STATUS_BITS_COUNT >= 72
+    select PKG_CANOPENNODE_EM_PRODUCER
+    help
+        Flush axis diagnostic REPORT/RESET events after the Device worker releases
+        the OD lock while lifecycleMutex still protects the current CO_t. Axis
+        source uses manufacturer-specific error-status bits 0x40..0x47.
+        Communication Reset rebinds the new CO_EM_t and replays active faults.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_RTT_AUTOSTART
+    bool "Automatically create and attach CiA 402 Device runtime"
+    default n
+    depends on PKG_CANOPENNODE_APP_AUTO_INIT
+    depends on RT_USING_COMPONENTS_INIT
+    depends on RT_USING_HEAP
+    select PKG_CANOPENNODE_RTT_LIFECYCLE_AUTOSTART
+    help
+        Enable heap-backed automatic construction of the CiA 402 RT-Thread
+        runtime and axis runtime storage for the default CANopenNodeRTT instance.
+        Product code must declare one persistent axis/DriveIF configuration with
+        CO_402_DEVICE_RTT_AUTOSTART_DEFINE(); alternatively enable the package
+        CiA 402 RT-Thread demo to register a bounded software-only factory.
+        Manual attach remains the default path and allocates no CiA 402 heap objects.
+
+config PKG_CANOPENNODE_CIA402_DEVICE_RTT_MSH
+    bool "Enable CiA 402 MSH debug control"
+    default n
+    depends on PKG_CANOPENNODE_CIA402_DEVICE_RTT_AUTOSTART
+    depends on RT_USING_FINSH && FINSH_USING_MSH
+    help
+        Register the cia402 MSH command for the default auto-attached local
+        Device runtime. Commands update the same Object Dictionary consumed by
+        SDO/RPDO and wake the existing co_402 supervisor; they never call the
+        DriveIF directly. This is intended for bench/debug use and may be
+        disabled without affecting the Pure-C Device or CAN behavior.
+
+
+endif
