@@ -1,15 +1,14 @@
 {
-  "name": "Agent",
-  "description": "rtthread lightweight agent software package",
-  "description_zh": "rtthread 轻量级Agent软件包",
-  "enable": "PKG_USING_AGENT",
+  "name": "simulated_sensor",
+  "description": "RT-Thread simulated sensor software package",
+  "enable": "PKG_USING_SIMULATED_SENSOR",
   "keywords": [
-    "ai",
-    "Agent",
-    "llm",
-    "toolcall"
+    "simulated",
+    "sensor",
+    "simulation",
+    "mqtt"
   ],
-  "category": "ai",
+  "category": "misc",
   "author": {
     "name": "CXSforHPU",
     "email": "19511928573@163.com",
