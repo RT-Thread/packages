@@ -2,7 +2,74 @@
 
 menu "CANopen profiles"
 
+config PKG_CANOPENNODE_PROFILE_REGISTRY
+    bool "Enable common logical-device profile registry"
+    default n
+    help
+        Build the Pure-C fixed-capacity registry that validates one CANopen
+        node's logical-device slot ownership against generated Device Type
+        entries. The registry uses no heap, RT-Thread, BSP, HAL, or concrete
+        Device Profile dependency.
+
+config PKG_CANOPENNODE_PROFILE_CONTROLLER_PORT
+    bool
+    default n
+    help
+        Internal switch for the stack- and RTOS-neutral Device Profile Controller
+        transport contract. Portable profile clients select this without pulling
+        in CANopenNode, RT-Thread, or a concrete CANopen backend.
+
+config PKG_CANOPENNODE_PROFILE_MASTER_RTT
+    bool "Enable common RT-Thread profile Master transport"
+    default n
+    depends on !PKG_CANOPENNODE_DEMO_SDO_CLIENT_TEST
+    select PKG_CANOPENNODE_PROFILE_CONTROLLER_PORT
+    select PKG_CANOPENNODE_USING_SDO_CLIENT
+    select PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
+    help
+        Add one profile-neutral CANopenNode Master transport which serializes
+        remote scalar SDO and NMT operations through co_main. Profile-specific
+        Controller adapters reuse this transport instead of calling CANopenNode
+        protocol objects from arbitrary application threads. Each attached
+        transport instance requires exclusive ownership of its selected SDO
+        client object. The package demo SDO client is mutually exclusive because
+        it directly owns generated SDO client 0 outside this transport.
+
 rsource "cia401/Kconfig"
 rsource "cia402/Kconfig"
+rsource "mixed/Kconfig"
+
+config PKG_CANOPENNODE_PROFILE_RTT_SHARED_WORKER
+    bool
+    default y if PKG_CANOPENNODE_CIA401_DEVICE_RTT_THREAD && !PKG_CANOPENNODE_CIA401_DEVICE_RTT_DEDICATED_WORKER
+    default y if PKG_CANOPENNODE_CIA402_DEVICE_RTT_THREAD && !PKG_CANOPENNODE_CIA402_DEVICE_RTT_DEDICATED_WORKER
+    help
+        Internal derived switch for the common deferred lifecycle worker used by
+        Device Profiles that did not request a dedicated RT-Thread worker.
+
+if PKG_CANOPENNODE_PROFILE_RTT_SHARED_WORKER
+
+menu "Shared RT-Thread profile worker"
+
+config PKG_CANOPENNODE_PROFILE_THREAD_STACK_SIZE
+    int "Stack size"
+    default 2048
+    help
+        Stack size in bytes for the common co_prof worker. Profile callbacks run
+        sequentially, so size this for the deepest enabled shared Profile pass,
+        not the sum of all Profile stack sizes. Confirm the final margin on target.
+
+config PKG_CANOPENNODE_PROFILE_THREAD_PRIORITY
+    int "Priority"
+    default 5
+    help
+        RT-Thread priority for the common co_prof worker. Lower numeric values are
+        higher priority. It must remain numerically greater than co_rt priority.
+        A Profile requiring stronger isolation should enable its dedicated-worker
+        option instead of increasing this shared priority arbitrarily.
+
+endmenu
+
+endif
 
 endmenu

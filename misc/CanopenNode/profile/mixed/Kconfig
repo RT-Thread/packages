@@ -1,0 +1,13 @@
+config PKG_CANOPENNODE_PROFILE_MIXED_RTT
+    bool "Enable generic mixed-profile RT-Thread ownership validator"
+    default n
+    depends on RT_USING_HEAP
+    select PKG_CANOPENNODE_PROFILE_REGISTRY
+    select PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
+    help
+        Enable the profile-neutral RT-Thread lifecycle adapter that validates a
+        caller-provided logical-device descriptor table against generated Device
+        Type entries before profile-specific OD binding. The adapter does not
+        choose Device Profile numbers, Logical Device slots, or demo topology.
+
+rsource "demo/Kconfig"

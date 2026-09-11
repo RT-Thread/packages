@@ -10,6 +10,7 @@ menuconfig PKG_CANOPENNODE_CIA401
 
 if PKG_CANOPENNODE_CIA401
 
+rsource "controller/Kconfig"
 rsource "device/Kconfig"
 rsource "port/rtthread/Kconfig"
 rsource "demo/Kconfig"

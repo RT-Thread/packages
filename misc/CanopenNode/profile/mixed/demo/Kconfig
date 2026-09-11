@@ -1,0 +1,14 @@
+config PKG_CANOPENNODE_PROFILE_MIXED_RTT_DEMO
+    bool "Validate the mixed CiA 402/CiA 401 logical-device demo"
+    default y
+    depends on PKG_CANOPENNODE_PROFILE_MIXED_RTT
+    depends on PKG_CANOPENNODE_CIA401_DEVICE_RTT_DEMO
+    depends on PKG_CANOPENNODE_CIA402_DEVICE_RTT_DEMO
+    depends on PKG_CANOPENNODE_CIA402_DEMO_AXIS_COUNT = 3
+    depends on PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSION_CAPACITY >= 3
+    help
+        Provide the package demo descriptor table and register the generic mixed
+        lifecycle validator before the CiA 401 and CiA 402 demo adapters bind
+        their Object Dictionary extensions. This reference demo claims logical
+        devices 0..2 for CiA 402 and logical device 3 for CiA 401; other products
+        can supply a different descriptor table through CO_profileMixedRTTAttach().

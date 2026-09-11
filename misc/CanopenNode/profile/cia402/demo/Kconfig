@@ -36,9 +36,11 @@ config PKG_CANOPENNODE_CIA402_DEMO_SYNC_LOG
     bool "Log cyclic synchronous command/feedback snapshots"
     default n
     depends on PKG_CANOPENNODE_CIA402_DEVICE_SYNC_FASTPATH
+    select PKG_CANOPENNODE_CIA402_DEVICE_RTT_DEDICATED_WORKER
     help
         Print CSP/CSV/CST command and feedback snapshots from the lower-priority
-        co_402 worker. If that worker lags co_rt, intermediate SYNC generations may
+        dedicated co_402 worker. This option selects dedicated-worker mode so ULOG
+        remains outside the common lifecycle lock. If that worker lags co_rt, intermediate SYNC generations may
         be coalesced. This is intended for protocol bring-up only; leave it disabled
         for WCET, jitter, or production realtime measurements.
 

@@ -1,0 +1,29 @@
+config PKG_CANOPENNODE_CIA401_CONTROLLER
+    bool "Transport-agnostic CiA 401 Controller API"
+    default n
+    help
+        Enable the Pure-C remote CiA 401 I/O Controller core. It resolves the
+        remote logical-device profile block and validates configured basic
+        digital/analogue process-image channels without owning Node-ID, SDO,
+        PDO, RT-Thread resources or heap memory.
+
+config PKG_CANOPENNODE_CIA401_CONTROLLER_CLIENT
+    bool "Portable CiA 401 Controller transport client"
+    default n
+    depends on PKG_CANOPENNODE_CIA401_CONTROLLER
+    select PKG_CANOPENNODE_PROFILE_CONTROLLER_PORT
+    help
+        Add the stack- and RTOS-neutral CiA 401 remote I/O client on top of the
+        common profile transport contract. A platform port only implements the
+        common transport operations; the CiA 401 object translation and typed
+        SDO control-plane behavior are reused unchanged.
+
+config PKG_CANOPENNODE_CIA401_CONTROLLER_RTT
+    bool "CANopenNode RT-Thread CiA 401 Controller SDO adapter"
+    default n
+    depends on PKG_CANOPENNODE_CIA401_CONTROLLER_CLIENT
+    depends on !PKG_CANOPENNODE_DEMO_SDO_CLIENT_TEST
+    select PKG_CANOPENNODE_PROFILE_MASTER_RTT
+    help
+        Add the thin RT-Thread compatibility facade which binds the portable
+        CiA 401 client to the common CANopenNode RT-Thread Master backend.
