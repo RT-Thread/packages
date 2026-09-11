@@ -1,0 +1,26 @@
+# Kconfig file for package stm32n657xx_fsbl
+menuconfig PKG_USING_STM32N657xx_FSBL
+    bool "STM32 N657xx FSBL package"
+    default n
+
+if PKG_USING_STM32N657xx_FSBL
+
+    config PKG_STM32N657xx_FSBL_PATH
+        string
+        default "/packages/peripherals/hal-sdk/stm32/stm32n657xx_fsbl"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_STM32N657xx_FSBL_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_STM32N657xx_FSBL_VER
+       string
+       default "latest"    if PKG_USING_STM32N657xx_FSBL_LATEST_VERSION
+
+endif
+
