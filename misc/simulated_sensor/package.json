@@ -1,0 +1,28 @@
+{
+  "name": "simulated_sensor",
+  "description": "RT-Thread simulated sensor software package",
+  "enable": "PKG_USING_SIMULATED_SENSOR",
+  "keywords": [
+    "simulated",
+    "sensor",
+    "simulation",
+    "mqtt"
+  ],
+  "category": "misc",
+  "author": {
+    "name": "CXSforHPU",
+    "email": "19511928573@163.com",
+    "github": "https://github.com/CXSforHPU"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/CXSforHPU/simulated_sensor",
+  "homepage": "https://github.com/CXSforHPU/simulated_sensor#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/CXSforHPU/simulated_sensor.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
