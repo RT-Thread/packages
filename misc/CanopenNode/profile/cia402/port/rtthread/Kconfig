@@ -1,28 +1,44 @@
 # Kconfig for the RT-Thread CiA 402 Device adapter.
 
 config PKG_CANOPENNODE_CIA402_DEVICE_RTT_THREAD
-    bool "Enable RT-Thread CiA 402 Device thread"
+    bool "Enable RT-Thread CiA 402 Device adapter"
     default y
     depends on PKG_CANOPENNODE_CIA402_DEVICE
     select PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
     help
-        Integrate an attached local Device manager with CANopenNodeRTT. The
-        existing realtime timer wakes a lower-priority co_402 supervisor thread.
-        Disable this option to retain the Pure-C Device core without adding any
-        CiA 402 RT-Thread thread or semaphore.
+        Integrate an attached local Device manager with CANopenNodeRTT. By
+        default the existing realtime timer wakes one common lower-priority
+        profile worker which runs the CiA 402 supervisor together with other
+        shared Device Profiles. Enable the dedicated-worker option below only
+        when CiA 402 supervisor latency must be isolated from other profiles.
+        Disable this adapter to retain the Pure-C Device core without any
+        CiA 402 RT-Thread scheduling resources.
 
 if PKG_CANOPENNODE_CIA402_DEVICE_RTT_THREAD
 
+config PKG_CANOPENNODE_CIA402_DEVICE_RTT_DEDICATED_WORKER
+    bool "Use a dedicated co_402 worker thread"
+    default n
+    help
+        Create a profile-private co_402 thread and semaphore instead of running
+        CiA 402 supervisor passes on the common co_prof worker. This is intended
+        for products that require independent PDS supervisor scheduling or need
+        to isolate DriveIF execution time from other Device Profiles.
+
+if PKG_CANOPENNODE_CIA402_DEVICE_RTT_DEDICATED_WORKER
+
 config PKG_CANOPENNODE_CIA402_THREAD_STACK_SIZE
-    int "CiA 402 thread stack size"
+    int "CiA 402 dedicated worker stack size"
     default 2048
 
 config PKG_CANOPENNODE_CIA402_THREAD_PRIORITY
-    int "CiA 402 thread priority"
+    int "CiA 402 dedicated worker priority"
     default 5
     help
         Initial supervisor priority. The default keeps co_rt (priority 3)
         higher priority. Final priority requires target WCET/jitter validation.
+
+endif
 
 config PKG_CANOPENNODE_CIA402_DEVICE_RTT_EMCY_BRIDGE
     bool "Bridge CiA 402 axis faults to CANopen EMCY"
@@ -31,9 +47,9 @@ config PKG_CANOPENNODE_CIA402_DEVICE_RTT_EMCY_BRIDGE
     depends on PKG_CANOPENNODE_EM_ERR_STATUS_BITS_COUNT >= 72
     select PKG_CANOPENNODE_EM_PRODUCER
     help
-        Flush axis diagnostic REPORT/RESET events after the Device worker releases
-        the OD lock while lifecycleMutex still protects the current CO_t. Axis
-        source uses manufacturer-specific error-status bits 0x40..0x47.
+        Flush axis diagnostic REPORT/RESET events after the Device supervisor
+        releases the OD lock while lifecycleMutex still protects the current
+        CO_t. Axis source uses manufacturer-specific error-status bits 0x40..0x47.
         Communication Reset rebinds the new CO_EM_t and replays active faults.
 
 config PKG_CANOPENNODE_CIA402_DEVICE_RTT_AUTOSTART
@@ -59,9 +75,8 @@ config PKG_CANOPENNODE_CIA402_DEVICE_RTT_MSH
     help
         Register the cia402 MSH command for the default auto-attached local
         Device runtime. Commands update the same Object Dictionary consumed by
-        SDO/RPDO and wake the existing co_402 supervisor; they never call the
-        DriveIF directly. This is intended for bench/debug use and may be
-        disabled without affecting the Pure-C Device or CAN behavior.
-
+        SDO/RPDO and wake the configured shared or dedicated Device supervisor;
+        they never call the DriveIF directly. This is intended for bench/debug
+        use and may be disabled without affecting the Pure-C Device or CAN behavior.
 
 endif

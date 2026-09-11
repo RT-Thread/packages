@@ -6,3 +6,25 @@ config PKG_CANOPENNODE_CIA402_CONTROLLER
         observes a remote Statusword and generates PDS-owned Controlword updates.
         It does not select or own NMT, Heartbeat Consumer, SDO Client, PDO, SYNC,
         Object Dictionary, Node-ID, CAN transport, RT-Thread tasks, or heap memory.
+
+
+config PKG_CANOPENNODE_CIA402_CONTROLLER_CLIENT
+    bool "Portable CiA 402 Controller transport client"
+    default n
+    depends on PKG_CANOPENNODE_CIA402_CONTROLLER
+    select PKG_CANOPENNODE_PROFILE_CONTROLLER_PORT
+    help
+        Add the stack- and RTOS-neutral CiA 402 SDO control-plane client on top
+        of the common profile transport contract. It preserves the existing PDS
+        retry/Fault Reset semantics without depending on CANopenNode or RT-Thread.
+
+config PKG_CANOPENNODE_CIA402_CONTROLLER_RTT
+    bool "CANopenNode RT-Thread CiA 402 Controller SDO adapter"
+    default n
+    depends on PKG_CANOPENNODE_CIA402_CONTROLLER_CLIENT
+    depends on !PKG_CANOPENNODE_DEMO_SDO_CLIENT_TEST
+    select PKG_CANOPENNODE_PROFILE_MASTER_RTT
+    help
+        Add the thin RT-Thread compatibility facade which binds the portable
+        CiA 402 client to the common CANopenNode RT-Thread Master backend.
+        Cyclic motion modes should still use PDO/SYNC-specific integration.
