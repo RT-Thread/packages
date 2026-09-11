@@ -1,29 +1,44 @@
 # RT-Thread lifecycle adapter for the local CiA 401 Device core.
 
 config PKG_CANOPENNODE_CIA401_DEVICE_RTT_THREAD
-    bool "Enable RT-Thread CiA 401 Device worker"
+    bool "Enable RT-Thread CiA 401 Device adapter"
     default n
     depends on PKG_CANOPENNODE_CIA401_DEVICE
     depends on RT_USING_HEAP
     select PKG_CANOPENNODE_RTT_LIFECYCLE_EXTENSIONS
     select PKG_CANOPENNODE_RTT_CAN_TX_SUCCESS_OBSERVER if PKG_CANOPENNODE_CIA401_DIGITAL_EVENTS || PKG_CANOPENNODE_CIA401_ANALOG_EVENTS
     help
-        Bind the Pure-C CiA 401 Device before PDO initialization and run one
-        bounded process pass from a lower-priority co_401 worker woken by the
-        existing realtime timer. Communication Reset drains stale tokens and
-        rebinds the new Object Dictionary generation.
+        Bind the Pure-C CiA 401 Device before PDO initialization and schedule
+        bounded process passes from the common profile worker by default.
+        Communication Reset drains stale worker requests and rebinds the new
+        Object Dictionary generation. Enable the dedicated-worker option below
+        only when CiA 401 backend latency must be isolated from other profiles.
 
 if PKG_CANOPENNODE_CIA401_DEVICE_RTT_THREAD
 
+config PKG_CANOPENNODE_CIA401_DEVICE_RTT_DEDICATED_WORKER
+    bool "Use a dedicated co_401 worker thread"
+    default n
+    help
+        Create a profile-private co_401 thread and semaphore instead of running
+        CiA 401 process passes on the common co_prof worker. Use this when product
+        IOIF callbacks have a materially different WCET/blocking risk or require
+        independent scheduling priority. The default shared worker minimizes
+        thread/stack/context-switch overhead across Device Profiles.
+
+if PKG_CANOPENNODE_CIA401_DEVICE_RTT_DEDICATED_WORKER
+
 config PKG_CANOPENNODE_CIA401_THREAD_STACK_SIZE
-    int "CiA 401 worker stack size"
+    int "CiA 401 dedicated worker stack size"
     default 1536
 
 config PKG_CANOPENNODE_CIA401_THREAD_PRIORITY
-    int "CiA 401 worker priority"
+    int "CiA 401 dedicated worker priority"
     default 6
     help
         Must be numerically greater (lower scheduling priority) than the existing co_rt worker.
+
+endif
 
 config PKG_CANOPENNODE_CIA401_DEVICE_RTT_EMCY_BRIDGE
     bool "Bridge CiA 401 profile warnings to EMCY"
@@ -58,7 +73,8 @@ config PKG_CANOPENNODE_CIA401_DEVICE_RTT_MSH
         Register the cia401 MSH command for the software-only RT-Thread demo.
         Commands inject raw DI/AI process values, inspect physical DO/AO state,
         write the same bound output OD entries used by SDO/RPDO, inject output
-        fault/supervision state, and wake the existing co_401 worker. This is
-        bench/debug functionality only and does not change the product IOIF API.
+        fault/supervision state, and wake the configured shared or dedicated
+        profile worker. This is bench/debug functionality only and does not
+        change the product IOIF API.
 
 endif
