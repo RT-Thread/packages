@@ -1,0 +1,91 @@
+# Kconfig file for package Simulated Sensor
+menuconfig PKG_USING_SIMULATED_SENSOR
+    bool "Simulated Sensor for RT-Thread"
+    default n
+    help
+        Simulated sensor package, generate simulated sensor data.
+
+if PKG_USING_SIMULATED_SENSOR
+
+    config PKG_SIMULATED_SENSOR_PATH
+        string
+        default "/packages/misc/simulated_sensor"
+
+    menu "Simulated Sensor MQTT Configuration"
+        config PKG_SIMULATED_SENSOR_MQTT
+            bool "Enable MQTT data upload"
+            select PKG_USING_PAHOMQTT
+            select PKG_USING_CJSON
+            default n
+            help
+                Send simulated sensor data to server via MQTT protocol.
+
+        config PKG_SIMULATED_SENSOR_MQTT_BROKER
+            string "MQTT broker address"
+            depends on PKG_SIMULATED_SENSOR_MQTT
+            default "tcp://broker.emqx.io:1883"
+            help
+                Specify MQTT broker URI, e.g. tcp://xxx:1883.
+
+        config PKG_SIMULATED_SENSOR_MQTT_TOPIC
+            string "MQTT publish topic"
+            depends on PKG_SIMULATED_SENSOR_MQTT
+            default "simu_sensor/data"
+            help
+                MQTT topic to publish simulated sensor data.
+
+        config PKG_SIMULATED_SENSOR_MQTT_CLIENT_ID
+            string "MQTT client ID"
+            depends on PKG_SIMULATED_SENSOR_MQTT
+            default "rtthread-simu"
+            help
+                MQTT client identifier.
+
+        config PKG_SIMULATED_SENSOR_MQTT_USERNAME
+            string "MQTT broker username"
+            depends on PKG_SIMULATED_SENSOR_MQTT
+            default "USER1"
+            help
+                Username for MQTT broker authentication.
+
+        config PKG_SIMULATED_SENSOR_MQTT_PASSWORD
+            string "MQTT broker password"
+            depends on PKG_SIMULATED_SENSOR_MQTT
+            default "USER1"
+            help
+                Password for MQTT broker authentication.
+
+        config PKG_SIMULATED_SENSOR_MQTT_INTERVAL
+            int "MQTT publish interval (ms)"
+            depends on PKG_SIMULATED_SENSOR_MQTT
+            default 5000
+            range 500 60000
+            help
+                Sensor data publish period in milliseconds. Minimum value is 500ms.
+
+    endmenu
+
+    config PKG_SIMULATED_SENSOR_SAMPLE_ENABLED
+        bool "Enable sample code"
+        default n
+        help
+            Enable sample code for simulated sensor package.
+
+    # Package source version choice
+    # NOTE: currently only master branch option, extend more tag/commit later
+    choice PKG_SIMULATED_SENSOR_VERSION_SEL
+        prompt "Simulated Sensor package source version"
+        default PKG_USING_SIMULATED_SENSOR_LATEST_VERSION
+        help
+            Select git source version for simulated sensor package.
+
+        config PKG_USING_SIMULATED_SENSOR_LATEST_VERSION
+            bool "latest (master branch)"
+    endchoice
+
+    config PKG_SIMULATED_SENSOR_VER
+        string
+        depends on PKG_USING_SIMULATED_SENSOR
+        default "latest" if PKG_USING_SIMULATED_SENSOR_LATEST_VERSION
+
+endif
