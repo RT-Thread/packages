@@ -25,6 +25,12 @@
       "URL": "https://github.com/RT-Thread-packages/esp-idf.git",
       "filename": "",
       "VER_SHA": "rtt-dev"
+    },
+    {
+      "version": "c6",
+      "URL": "https://github.com/cms19859230182-lang/esp-idf.git",
+      "filename": "",
+      "VER_SHA": "4fa003074a73774369d38123749fe64b7b4acbd3"
     }
   ]
 }
