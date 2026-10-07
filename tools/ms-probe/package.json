@@ -1,0 +1,29 @@
+{
+  "name": "ms-probe",
+  "description": "Microscope embedded fault diagnostics, backtrace and coredump for RT-Thread",
+  "description_zh": "Microscope 嵌入式 Fault 诊断、栈回溯与 Coredump 软件包",
+  "enable": "PKG_USING_MS_PROBE",
+  "keywords": [
+    "microscope",
+    "fault",
+    "backtrace",
+    "coredump"
+  ],
+  "category": "tools",
+  "author": {
+    "name": "Real-Thread",
+    "email": "business@rt-thread.com",
+    "github": "Real-Thread"
+  },
+  "license": "GPL-2.0",
+  "repository": "https://github.com/Real-Thread/ms-probe",
+  "homepage": "https://github.com/Real-Thread/ms-probe#readme",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/Real-Thread/ms-probe.git",
+      "filename": "ms-probe.zip",
+      "VER_SHA": "main"
+    }
+  ]
+}
