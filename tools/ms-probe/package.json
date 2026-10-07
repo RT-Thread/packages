@@ -1,13 +1,13 @@
 {
   "name": "ms-probe",
-  "description": "Microscope embedded fault diagnostics, backtrace and coredump for RT-Thread",
-  "description_zh": "Microscope 嵌入式 Fault 诊断、栈回溯与 Coredump 软件包",
+  "description": "Microscope fault-state diagnostic probe for RT-Thread",
+  "description_zh": "Microscope 嵌入式故障现场诊断 Probe 软件包",
   "enable": "PKG_USING_MS_PROBE",
   "keywords": [
     "microscope",
     "fault",
-    "backtrace",
-    "coredump"
+    "probe",
+    "diagnostics"
   ],
   "category": "tools",
   "author": {

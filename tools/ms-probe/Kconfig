@@ -1,11 +1,12 @@
 # Kconfig file for package ms-probe
 menuconfig PKG_USING_MS_PROBE
-    bool "ms-probe: Microscope fault diagnostics, backtrace and coredump"
+    bool "ms-probe: Microscope fault-state diagnostic probe"
     default n
     help
         GPL-2.0 / commercial dual-licensed development diagnostics.
         Run pkgs --update after selecting the package, then open menuconfig
-        again to configure Scope, backtrace, coredump and BSP-specific options.
+        again to configure Scope protocol and BSP-specific options.
+        The host analyzes the exported Context and whitelisted memory.
         Disable this package and Fault injection in production builds.
 
 if PKG_USING_MS_PROBE
