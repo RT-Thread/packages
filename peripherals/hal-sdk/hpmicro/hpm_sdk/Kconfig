@@ -18,6 +18,9 @@ if PKG_USING_HPM_SDK
         config PKG_USING_HPM_SDK_V110
             bool "v1.10.0"
 
+        config PKG_USING_HPM_SDK_V113
+            bool "v1.13.0"
+
         config PKG_USING_HPM_SDK_LATEST_VERSION
             bool "latest"
     endchoice
@@ -25,6 +28,7 @@ if PKG_USING_HPM_SDK
     config PKG_HPM_SDK_VER
         string
         default "v1.10.0"   if PKG_USING_HPM_SDK_V110
+        default "v1.13.0"   if PKG_USING_HPM_SDK_V113
         default "latest"    if PKG_USING_HPM_SDK_LATEST_VERSION
 
 endif
