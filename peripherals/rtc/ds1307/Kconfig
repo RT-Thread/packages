@@ -1,0 +1,48 @@
+
+# Kconfig file for package ds1307
+menuconfig PKG_USING_DS1307
+    bool "ds1307 Extern RTC Driver."
+    default n
+	select RT_USING_MTD_NOR
+	select RT_USING_I2C
+
+if PKG_USING_DS1307
+
+	config PKG_DS1307_IIC_BUS
+		string "select iic bus"
+		default "i2c1"
+
+	config PKG_DS1307_DEBUG
+		bool "Enable  output rtc ds1307 debug message"
+		default n
+		
+	config PKG_DS1307_RAM_SHELL_TEST
+		bool "Enable   ds1307  RAM read write test in finsh"
+		default n
+	
+    config PKG_DS1307_PATH
+        string
+        default "/packages/peripherals/rtc/ds1307"
+
+    choice
+		default PKG_USING_DS1307_LATEST_VERSION
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_DS1307_V100
+            bool "v1.0.0"
+
+        config PKG_USING_DS1307_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_DS1307_VER
+		string
+		default "v1.0.0"    if PKG_USING_DS1307_V100
+		default "latest"    if PKG_USING_DS1307_LATEST_VERSION
+	   
+
+
+endif
+
