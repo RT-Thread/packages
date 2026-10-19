@@ -187,23 +187,23 @@ if PKG_USING_AGENT
 
         config PKG_AGENT_MODEL_NAME
             string "Target LLM model name"
-            default "deepseek-ai/DeepSeek-V4-Pro"
+            default "deepseek-flash"
             help
                 Specify the target LLM model identifier.
 
         config PKG_AGENT_API_URL
             string "LLM API endpoint URL"
-            default "https://api.siliconflow.cn/v1/chat/completions"
+            default "https://api.deepseek.com/chat/completions"
             help
                 HTTP endpoint of LLM chat completion API.
-                Default: https://api.siliconflow.cn/v1/chat/completions
+                Default: https://api.deepseek.com/chat/completions
 
         # Multimodal enable/disable choice (mode 开关)
         choice PKG_AGENT_MULTIMODAL_MODE_SEL
             prompt "Multimodal feature switch"
             default PKG_AGENT_MULTIMODAL_DISABLE
             help
-                Enable or disable agent multimodal(image/file) capability.
+                Enable or disable agent multimodal(image/file/audio) capability.
 
             config PKG_AGENT_MULTIMODAL_DISABLE
                 bool "Disable multimodal function"
@@ -237,6 +237,29 @@ if PKG_USING_AGENT
                     range 2048 16384
                     help
                         Stack size for agent file-operation worker thread.
+
+                menu "Audio stt Server Settings"
+                    choice PKG_AGENT_STT_MODE_SEL
+                        prompt "Enable STT for communication by audio"
+                        default PKG_AGENT_STT_ENABLE
+                        
+                        config PKG_AGENT_STT_ENABLE
+                            bool "Enable STT"
+                        config PKG_AGENT_STT_DISABLE
+                            bool "Disable STT"
+                    endchoice
+
+                    if PKG_AGENT_STT_ENABLE
+                        config PKG_AGENT_STT_URL
+                            string "STT File Server"
+                            default ""
+                            help
+                                HTTP file upload endpoint, example:
+                                "http://10.0.2.2:8000/stt"
+                    endif
+
+                endmenu
+
             endmenu
         endif
 
@@ -343,6 +366,11 @@ if PKG_USING_AGENT
             bool "Debug test channel"
             help
                 For developer test only, send message via msh command api.
+        config PKG_AGENT_LVGL_CHANNEL
+            bool "LVGL channel"
+            help
+                Interact with agent via LVGL GUI.
+
     endchoice
 
     menu "Agent Tools Configuration"
