@@ -1,0 +1,67 @@
+# GD32VW553 AT device configuration
+menuconfig AT_DEVICE_USING_GD32VW553
+    bool "GigaDevice GD32VW553"
+    depends on PKG_USING_AT_DEVICE_LATEST_VERSION
+    select RT_USING_SERIAL
+    select RT_USING_PIN
+    default n
+
+if AT_DEVICE_USING_GD32VW553
+
+    config AT_DEVICE_GD32VW553_INIT_ASYN
+        bool "Enable initialize by thread"
+        default n
+
+    config AT_DEVICE_GD32VW553_SOCKET
+        bool "Enable GD32VW553 at socket"
+        select AT_USING_SOCKET
+        default y
+
+    config AT_DEVICE_GD32VW553_SAMPLE
+        bool "Enable sample"
+        default n
+        help
+            Register a GD32VW553 device using the settings below. Leave this
+            disabled when the BSP already registers the device.
+
+    if AT_DEVICE_GD32VW553_SAMPLE
+
+        config GD32VW553_SAMPLE_DEVICE_NAME
+            string "Network device name"
+            default "wifi0"
+
+        config GD32VW553_SAMPLE_WIFI_SSID
+            string "WIFI ssid"
+            default "rtthread"
+
+        config GD32VW553_SAMPLE_WIFI_PASSWORD
+            string "WIFI password"
+            default "12345678"
+
+        config GD32VW553_SAMPLE_CLIENT_NAME
+            string "AT client device name"
+            default "uart4"
+
+        config GD32VW553_SAMPLE_BAUDRATE
+            int "AT UART baud rate"
+            range 9600 2000000
+            default 115200
+
+        config GD32VW553_SAMPLE_RECV_LINE_NUM
+            int "The maximum length of receive line buffer"
+            default 1024
+
+        config GD32VW553_SAMPLE_RESET_PIN
+            int "Reset pin number"
+            default -1
+            help
+                Set to -1 to disable hardware reset.
+
+        config GD32VW553_SAMPLE_RESET_ACTIVE_LEVEL
+            int "Reset active level (0: low, 1: high)"
+            range 0 1
+            default 0
+
+    endif
+
+endif
