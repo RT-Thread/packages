@@ -4,5 +4,6 @@ source "$PKGS_DIR/packages/multimedia/LVGL/LVGL/Kconfig"
 source "$PKGS_DIR/packages/multimedia/LVGL/LittlevGL2RTT/Kconfig"
 source "$PKGS_DIR/packages/multimedia/LVGL/lv_music_demo/Kconfig"
 source "$PKGS_DIR/packages/multimedia/LVGL/gui_guider_demo/Kconfig"
+source "$PKGS_DIR/packages/multimedia/LVGL/gd32embeddedui_demos/Kconfig"
 
 endmenu
