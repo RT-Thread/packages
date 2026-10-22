@@ -1,0 +1,29 @@
+{
+    "name": "gd32embeddedui_demos",
+    "description": "Editable GD32EmbeddedUI project and generated UI sources for LVGL 8.3.11",
+    "description_zh": "GD32EmbeddedUI 可编辑界面工程及生成的 LVGL 8.3.11 源码",
+    "enable": "PKG_USING_GD32EMBEDDEDUI_DEMOS",
+    "keywords": [
+        "gd32embeddedui",
+        "lvgl",
+        "gui"
+    ],
+    "category": "multimedia",
+    "author": {
+        "name": "CYFS",
+        "email": "2805686936@qq.com",
+        "github": "CYFS3"
+    },
+    "license": "BSD-3-Clause AND Apache-2.0",
+    "repository": "https://github.com/CYFS3/GD32EmbeddedUI-demos.git",
+    "homepage": "https://github.com/CYFS3/GD32EmbeddedUI-demos",
+    "doc": "https://github.com/CYFS3/GD32EmbeddedUI-demos/blob/master/README_zh.md",
+    "site": [
+        {
+            "version": "latest",
+            "URL": "https://github.com/CYFS3/GD32EmbeddedUI-demos.git",
+            "filename": "GD32EmbeddedUI-demos-latest",
+            "VER_SHA": "master"
+        }
+    ]
+}

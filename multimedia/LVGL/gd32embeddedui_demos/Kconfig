@@ -1,0 +1,27 @@
+# Kconfig file for package gd32embeddedui_demos
+menuconfig PKG_USING_GD32EMBEDDEDUI_DEMOS
+    bool "GD32EmbeddedUI: editable LVGL UI project"
+    depends on PKG_USING_LVGL
+    depends on PKG_LVGL_VER_NUM = 0x080311
+    default n
+    help
+        Editable GD32EmbeddedUI project and generated UI sources for LVGL 8.3.11.
+        Use the target project's existing LVGL display and input drivers, then
+        call ui_init() after driver initialization.
+        Change display.width and display.height in GD32Embeddedui.gdlvgl to
+        adjust the screen size, then regenerate code in GD32EmbeddedUI.
+
+if PKG_USING_GD32EMBEDDEDUI_DEMOS
+
+    config PKG_GD32EMBEDDEDUI_DEMOS_PATH
+        string
+        default "/packages/multimedia/LVGL/gd32embeddedui_demos"
+
+    config PKG_GD32EMBEDDEDUI_DEMOS_VER
+        string
+        default "latest"
+
+endif
+
+comment "GD32EmbeddedUI demos require LVGL v8.3.11"
+    depends on !PKG_USING_LVGL || PKG_LVGL_VER_NUM != 0x080311
