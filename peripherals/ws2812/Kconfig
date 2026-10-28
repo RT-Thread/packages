@@ -1,0 +1,31 @@
+
+# Kconfig file for package ws2812
+menuconfig PKG_USING_WS2812
+    bool "ws2812: WS2812/WS2812B RGB LED driver using SPI"
+    default n
+
+if PKG_USING_WS2812
+
+    config PKG_WS2812_PATH
+        string
+        default "/packages/peripherals/ws2812"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_WS2812_V100
+            bool "v1.0.0"
+
+        config PKG_USING_WS2812_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_WS2812_VER
+       string
+       default "v1.0.0"    if PKG_USING_WS2812_V100
+       default "latest"    if PKG_USING_WS2812_LATEST_VERSION
+
+endif
+
