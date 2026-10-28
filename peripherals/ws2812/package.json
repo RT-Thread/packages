@@ -1,0 +1,36 @@
+{
+  "name": "ws2812",
+  "description": "WS2812/WS2812B RGB LED driver package for RT-Thread, using SPI (poll/DMA/BDMA).",
+  "description_zh": "基于 SPI 的 RT-Thread WS2812/WS2812B RGB LED 驱动软件包，支持轮询/DMA/BDMA 传输。",
+  "enable": "PKG_USING_WS2812",
+  "keywords": [
+    "ws2812",
+    "ws2812b",
+    "led",
+    "rgb"
+  ],
+  "category": "peripherals",
+  "author": {
+    "name": "moment-NEW",
+    "email": "cghdudu@qq.com",
+    "github": "moment-NEW"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/moment-NEW/ws2812",
+  "icon": "unknown",
+  "homepage": "https://github.com/moment-NEW/ws2812#readme",
+  "doc": "unknown",
+  "site": [
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/moment-NEW/ws2812/archive/refs/tags/v1.0.0.zip",
+      "filename": "ws2812-1.0.0.zip"
+    },
+    {
+      "version": "latest",
+      "URL": "https://github.com/moment-NEW/ws2812.git",
+      "filename": "",
+      "VER_SHA": "master"
+    }
+  ]
+}
