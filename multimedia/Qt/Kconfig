@@ -1,0 +1,156 @@
+# Kconfig file for the Qt RT-Thread kernel-mode package
+menuconfig PKG_USING_QT_RTTHREAD
+    bool "Qt for RT-Thread (kernel mode)"
+    select RT_USING_CPLUSPLUS
+    select RT_USING_DEVICE
+    select RT_USING_DFS
+    select RT_USING_POSIX_DEVIO
+    select RT_USING_POSIX_POLL
+    select RT_USING_GRAPHIC
+    select RT_USING_INPUT
+    default n
+
+if PKG_USING_QT_RTTHREAD
+
+config PKG_QT_RTTHREAD_PATH
+    string
+    default "/packages/multimedia/Qt"
+
+config PKG_QT_RTTHREAD_SDK_PATH
+    string "Assembled target SDK path"
+    default "sdk/kernel"
+    help
+        Absolute path, or a path relative to the package root, containing
+        include/, lib/, plugins/, and qml/. Qt is prepared outside the normal
+        BSP build and SCons only consumes this relocatable SDK.
+
+config PKG_QT_RTTHREAD_DEFAULT_ENTRY
+    bool "Provide qt_run shell command and default Qt thread"
+    default y
+    help
+        Applications provide `extern \"C\" void qt_main(void *parameter)`.
+        Disable this option when the BSP owns Qt thread creation and policy.
+
+if PKG_QT_RTTHREAD_DEFAULT_ENTRY
+
+config PKG_QT_RTTHREAD_THREAD_STACK_SIZE
+    int "Qt thread stack size in bytes"
+    default 8388608 if PKG_QT_RTTHREAD_QML
+    default 2097152
+
+config PKG_QT_RTTHREAD_THREAD_PRIORITY
+    int "Qt thread priority"
+    range 0 255
+    default 25
+
+config PKG_QT_RTTHREAD_THREAD_TIMESLICE
+    int "Qt thread time slice"
+    default 10
+
+config PKG_QT_RTTHREAD_POINTER_DEVICE
+    string "Pointer/touch device"
+    default "/dev/input1"
+
+config PKG_QT_RTTHREAD_KEYBOARD_DEVICE
+    string "Keyboard device"
+    default "/dev/input0"
+
+config PKG_QT_RTTHREAD_FONTDIR
+    string "Qt font directory"
+    default "/fonts/"
+    help
+        Directory containing TTF, TTC, or OTF fonts for QtGui, QWidget, and
+        QML text. Applications can instead register an embedded font.
+
+endif
+
+config PKG_QT_RTTHREAD_WIDGETS
+    bool "Qt Widgets"
+    default y
+
+config PKG_QT_RTTHREAD_QML
+    bool "QML and software Qt Quick"
+    depends on RT_USING_MEMHEAP_AS_HEAP
+    default y
+    help
+        Qt Quick allocates full-frame and intermediate software-rendering
+        buffers that exceed the SLAB heap's maximum allocation. Select
+        "Use memheap objects as heap" in RT-Thread memory management first.
+
+config PKG_QT_RTTHREAD_QUICK_CONTROLS2
+    bool "Qt Quick Controls 2"
+    depends on PKG_QT_RTTHREAD_QML
+    default y
+
+choice
+    prompt "Static Qt Quick Controls 2 style"
+    depends on PKG_QT_RTTHREAD_QUICK_CONTROLS2
+    default PKG_QT_RTTHREAD_STYLE_FUSION
+
+config PKG_QT_RTTHREAD_STYLE_FUSION
+    bool "Fusion (recommended for software rendering)"
+
+config PKG_QT_RTTHREAD_STYLE_MATERIAL
+    bool "Material"
+
+config PKG_QT_RTTHREAD_STYLE_UNIVERSAL
+    bool "Universal"
+endchoice
+
+choice
+    prompt "Input integration"
+    default PKG_QT_RTTHREAD_INPUT_PLATFORM
+
+config PKG_QT_RTTHREAD_INPUT_PLATFORM
+    bool "rtthreadfb built-in evdev handlers"
+
+config PKG_QT_RTTHREAD_INPUT_GENERIC
+    bool "Generic evdev plugins (legacy QWidget profile)"
+
+config PKG_QT_RTTHREAD_INPUT_TSLIB
+    bool "tslib touchscreen"
+endchoice
+
+config PKG_QT_RTTHREAD_IMAGEFORMATS
+    bool "GIF, ICO and JPEG image plugins"
+    default y
+
+config PKG_QT_RTTHREAD_DEMO
+    bool "Link an external Qt demo archive"
+    default n
+    help
+        Link a static archive that exports `extern \"C\" void qt_main(void *)`.
+        This works for QtCore, QWidget, QML, and Qt Quick demos.
+
+config PKG_QT_RTTHREAD_DEMO_ARCHIVE
+    string "Demo archive"
+    depends on PKG_QT_RTTHREAD_DEMO
+    default ""
+    help
+        Absolute path, or a path relative to the package root, of the static
+        archive containing qt_main. The archive is linked with -u qt_main.
+
+config PKG_QT_RTTHREAD_GALLERY_DEMO
+    bool "Qt Quick Controls 2 Gallery extra plugins"
+    depends on PKG_QT_RTTHREAD_QUICK_CONTROLS2
+    select PKG_QT_RTTHREAD_DEMO
+    default n
+    help
+        The Gallery imports all bundled Controls 2 styles and Qt.labs.settings.
+        Enable this only for that Qt Quick Controls 2 demo.
+
+choice
+    prompt "Version"
+    default PKG_USING_QT_RTTHREAD_LATEST_VERSION
+    help
+        The package's vendored port directory pins the matching patch series.
+
+config PKG_USING_QT_RTTHREAD_LATEST_VERSION
+    bool "latest"
+endchoice
+
+config PKG_QT_RTTHREAD_VER
+    string
+    default "latest" if PKG_USING_QT_RTTHREAD_LATEST_VERSION
+
+endif
