@@ -18,6 +18,9 @@ if PKG_USING_CH32V307_SDK
         config PKG_USING_CH32V307_SDK_V207
             bool "v2.7"
 
+        config PKG_USING_CH32V307_SDK_V320
+            bool "v3.2"
+
         config PKG_USING_CH32V307_SDK_LATEST_VERSION
             bool "latest"
     endchoice
@@ -25,6 +28,7 @@ if PKG_USING_CH32V307_SDK
     config PKG_CH32V307_SDK_VER
         string
         default "v2.7"      if PKG_USING_CH32V307_SDK_V207
+        default "v3.2"      if PKG_USING_CH32V307_SDK_V320
         default "latest"    if PKG_USING_CH32V307_SDK_LATEST_VERSION
 
 endif
