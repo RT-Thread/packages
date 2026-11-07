@@ -18,6 +18,9 @@ if PKG_USING_CH32V20x_SDK
         config PKG_USING_CH32V20x_SDK_V202
             bool "v2.2"
 
+        config PKG_USING_CH32V20x_SDK_V205
+            bool "v2.5"
+
         config PKG_USING_CH32V20x_SDK_LATEST_VERSION
             bool "latest"
     endchoice
@@ -25,6 +28,7 @@ if PKG_USING_CH32V20x_SDK
     config PKG_CH32V20x_SDK_VER
         string
         default "v2.2"      if PKG_USING_CH32V20x_SDK_V202
+        default "v2.5"      if PKG_USING_CH32V20x_SDK_V205
         default "latest"    if PKG_USING_CH32V20x_SDK_LATEST_VERSION
 
 endif
