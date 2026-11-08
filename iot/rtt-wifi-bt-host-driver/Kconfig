@@ -618,4 +618,3 @@ menuconfig PKG_USING_WIFI_BT_HOST_DRIVER
             endif
 
     endif
-source "$PKGS_DIR/packages/iot/WiFi/rtt-wifi-bt-host-driver/Kconfig"

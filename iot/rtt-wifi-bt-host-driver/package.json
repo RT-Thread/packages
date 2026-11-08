@@ -21,14 +21,14 @@
         "sdio",
         "wlan"
     ],
-    "category": "iot/WiFi",
+    "category": "iot",
     "enable": "PKG_USING_WIFI_BT_HOST_DRIVER",
     "author": {
         "name": "Xinlian Xinwei (Hangzhou) Technology Co., Ltd.",
         "email": "xlx@xlxwlan.com",
         "github": "https://github.com/Aerolynq"
     },
-    "license": "Hardware-Restricted Source-Available; non-commercial evaluation, commercial use requires written authorization",
+    "license": "non-commercial use",
     "license_file": "LICENSE",
     "repository": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver.git",
     "homepage": "https://www.aerolynq.com",
@@ -36,13 +36,15 @@
     "site": [
         {
             "version": "v1.0.0",
-            "url": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver/archive/refs/tags/v1.0.0.zip",
-            "filename": "rtt-wifi-bt-host-driver-1.0.0.zip"
+            "URL": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver/archive/refs/tags/v1.0.0.zip",
+            "filename": "rtt-wifi-bt-host-driver-1.0.0.zip",
+            "VER_SHA": "v1.0.0"
         },
         {
             "version": "latest",
-            "url": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver.git",
-            "VER_SHA": "5fd70faf383defa4b7b83d7e32a95618ff7fa368"
+            "URL": "https://github.com/Aerolynq/rtt-wifi-bt-host-driver.git",
+            "filename": "Null",
+            "VER_SHA": "main"
         }
     ],
     "readme": "WiFi and Bluetooth host driver for RT-Thread, for Aerolynq CYWL series combo modules over SDIO + HCI UART."
