@@ -1,0 +1,621 @@
+# WiFi-BT-Host-Driver configuration for RT-Thread
+# Supports CYWL modules: WiFi4/WiFi5/WiFi6
+#
+# ⚠️  PROPRIETARY LICENSE - HARDWARE RESTRICTED ⚠️
+# This package is licensed EXCLUSIVELY for use with Aerolynq WiFi/BT modules.
+# Using with non-Aerolynq hardware is COPYRIGHT INFRINGEMENT.
+# See LICENSE and NOTICE files for details.
+
+menuconfig PKG_USING_WIFI_BT_HOST_DRIVER
+    bool "RTT-WiFi-BT-Host-Driver"
+    select RT_USING_WIFI
+    select RT_USING_SAL
+    select RT_USING_SDIO
+    default n
+    help
+        WiFi/Bluetooth Host Driver for Aerolynq CYWL series modules.
+        
+        IMPORTANT: This is a PROPRIETARY package with hardware restrictions.
+        Licensed ONLY for use with Aerolynq WiFi/BT combo modules.
+        
+        Supported modules: CYWL6208/6209/6302/6305/6612
+        See https://www.aerolynq.com for purchasing and licensing.
+
+    if PKG_USING_WIFI_BT_HOST_DRIVER
+
+        config PKG_WIFI_BT_HOST_DRIVER_PATH
+            string
+            default "/packages/iot/rtt-wifi-bt-host-driver"
+
+        choice
+            prompt "version"
+            default PKG_USING_WIFI_BT_HOST_DRIVER_LATEST_VERSION
+            help
+                Select the WiFi-BT-Host-Driver version
+
+            config PKG_USING_WIFI_BT_HOST_DRIVER_LATEST_VERSION
+                bool "latest"
+
+            config PKG_USING_WIFI_BT_HOST_DRIVER_V100
+                bool "v1.0.0"
+        endchoice
+
+        if PKG_USING_WIFI_BT_HOST_DRIVER_V100
+            config PKG_WIFI_BT_HOST_DRIVER_VER
+                string
+                default "v1.0.0"
+        endif
+
+        if PKG_USING_WIFI_BT_HOST_DRIVER_LATEST_VERSION
+            config PKG_WIFI_BT_HOST_DRIVER_VER
+                string
+                default "latest"
+        endif
+
+        comment "=== WiFi Configuration ==="
+
+        choice
+            prompt "Select WiFi Generation"
+            default WBHD_USING_WIFI5
+
+            config WHD_USING_WIFI4
+                bool "WiFi 4 (802.11n)"
+
+            config WBHD_USING_WIFI5
+                bool "WiFi 5 (802.11ac)"
+
+            config WBHD_USING_WIFI6
+                bool "WiFi 6 (802.11ax)"
+
+        endchoice
+
+    # WiFi 4 chips
+    if WHD_USING_WIFI4
+
+        choice
+            prompt "Select WiFi4 Module"
+            default WHD_USING_CYWL6208
+
+            config WHD_USING_CYWL6208
+                bool "CYWL6208"
+                help
+                    CYWL6208 module based on CYW43438 chip.
+                    WiFi 4 802.11b/g/n, 2.4GHz only.
+
+            config WHD_USING_CYWL6209
+                bool "CYWL6209"
+                help
+                    CYWL6209 module based on CYW43439 chip.
+                    WiFi 4 802.11b/g/n, 2.4GHz only.
+
+        endchoice
+
+    endif
+
+    # WiFi 5 chips
+    if WBHD_USING_WIFI5
+
+        choice
+            prompt "Select WiFi5 Module"
+            default WHD_USING_CYWL6302
+
+            config WHD_USING_CYWL6302
+                bool "CYWL6302"
+                help
+                    CYWL6302 module based on CYW43012 chip.
+                    WiFi 5 802.11a/b/g/n/ac, 2.4GHz and 5GHz dual-band.
+                    Low power design.
+
+            config WHD_USING_CYWL6305
+                bool "CYWL6305"
+                help
+                    CYWL6305 module based on CYW43455 chip.
+                    WiFi 5 802.11a/b/g/n/ac, 2.4GHz and 5GHz dual-band.
+                    High performance.
+
+        endchoice
+
+    endif
+
+    # WiFi 6 chips
+    if WBHD_USING_WIFI6
+
+        choice
+            prompt "Select WiFi6 Module"
+            default WHD_USING_CYWL6612
+
+            config WHD_USING_CYWL6612
+                bool "CYWL6612"
+                select WHD_USING_55X
+                help
+                    CYWL6612 module based on CYW55512 chip.
+                    WiFi 6 802.11ax, 2.4GHz and 5GHz dual-band.
+                    High performance and low latency.
+                    Uses 55x series platform with Enter Download Mode.
+
+        endchoice
+
+        # 55x series flag (automatically selected by WiFi6 modules)
+        config WHD_USING_55X
+            bool
+            default n
+            help
+                Internal flag indicating 55x series chip is being used.
+                55x chips require Enter Download Mode instead of autobaud.
+
+    endif
+
+        #comment "--- WiFi Pin Configuration ---"
+
+        # Pin format is fixed to "pin name" (e.g. "PC.4"). The hidden symbol
+        # below keeps WHD_BT_USING_PIN_NAME defined in rtconfig.h so existing
+        # C code (`#if defined(WHD_BT_USING_PIN_NAME)` in ble_app_cfg.c,
+        # cybsp.c, cyhal_sdio.c, aerolynq_bt_wlan.c) continues to compile.
+        config WHD_BT_USING_PIN_NAME
+            bool
+            default y
+
+        config WBHD_BSP_REG_ON_PIN_NAME
+            string "WiFi REG_ON pin name"
+            default "PC.4"
+            help
+                WiFi chip REG_ON (power enable) GPIO pin, e.g. "PC.4".
+
+        config WBHD_BSP_HOST_WAKE_IRQ_PIN_NAME
+            string "HOST_WAKE_IRQ pin name"
+            default "PC.5"
+            help
+                WiFi chip HOST_WAKE interrupt GPIO pin.
+                Set a valid GPIO (e.g. "PC.5") to enable OOB (Out-Of-Band)
+                interrupt mode; leave empty to use SDIO in-band interrupt
+                polling in the WHD thread instead.
+
+        comment "--- Firmware Storage ---"
+
+        config WBHD_RESOURCES_EXTERNAL_STORAGE
+            bool "Store the WiFi firmware in external storage"
+            default n
+            help
+                Keep the combined firmware file  out of the
+                internal flash.
+
+                When this is enabled, choose below whether the firmware is
+                stored in an external flash partition or on a file system
+                (SD card, USB disk).
+
+                The internal flash copy of the firmware (about 420 KB) is
+                then not linked into the image, which frees that space.
+
+        if WBHD_RESOURCES_EXTERNAL_STORAGE
+
+            choice
+                prompt "External storage type"
+                default WBHD_RESOURCES_IN_EXTERNAL_STORAGE
+
+                config WBHD_RESOURCES_IN_EXTERNAL_STORAGE
+                    bool "External flash (FAL partition)"
+                    select RT_USING_FAL
+                    help
+                        Store the combined firmware file in an external flash
+                        partition. Reduces internal flash usage significantly.
+
+                        Uses a single partition (whd_combined) for the combined
+                        FW+CLM file. Download command: whd_combined_download
+
+                config WBHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
+                    bool "File system (SD card / USB disk)"
+                    select RT_USING_DFS
+                    select RT_USING_POSIX_FS
+                    help
+                        Read the combined firmware file from a file system,
+                        for example an SD card mounted at /sdcard.
+
+                        Only the combined firmware file is read from
+                        the file system. The NVRAM stays compiled into the
+                        firmware image: it is only a few hundred bytes, so
+                        moving it out would not save anything while making
+                        the MAC address handling much more involved.
+
+                        The file placed on the card must be the combined
+                        firmware, for example
+                        wifi_cywl6208_firmware.bin from
+                        resources/firmware/COMPONENT_CYWL6208/.
+
+                        The driver waits for the file system to be mounted
+                        before it reads the file. The board must provide a
+                        whd_wait_fs_mount() hook that blocks until the mount
+                        has completed.
+
+            endchoice
+
+            if WBHD_RESOURCES_IN_EXTERNAL_STORAGE
+
+                config WHD_COMBINED_PARTITION_NAME
+                    string "Partition name for combined firmware"
+                    default "whd_combined"
+                    help
+                        FAL partition name for combined firmware+CLM file.
+                        Download using: whd_combined_download
+
+                config WBHD_RESOURCES_BLOCK_SIZE
+                    int "Block size for resources"
+                    default 1024
+
+            endif
+
+            if WBHD_RESOURCES_IN_EXTERNAL_STORAGE_FS
+
+                config WBHD_RESOURCES_FILE_PATH
+                    string "Path of the combined firmware file"
+                    default "/sdcard/whd/wifi_cywl6208_firmware.bin" if WHD_USING_CYWL6208
+                    default "/sdcard/whd/wifi_cywl6209_firmware.bin" if WHD_USING_CYWL6209
+                    default "/sdcard/whd/wifi_cywl6302_firmware.bin" if WHD_USING_CYWL6302
+                    default "/sdcard/whd/wifi_cywl6305_firmware.bin" if WHD_USING_CYWL6305
+                    default "/sdcard/whd/wifi_cywl6612_firmware.bin" if WHD_USING_CYWL6612
+                    default "/sdcard/whd/wifi_cywl6208_firmware.bin"
+                    help
+                        Absolute path of the combined FW+CLM file on the file
+                        system. The directory must exist.
+
+                        The default follows the WiFi module that is selected
+                        above. The file is the combined firmware image that
+                        ships with this package as
+                        resources/firmware/COMPONENT_<MODULE>/wifi_<MODULE>_firmware.bin.
+                        It can be copied to the card as is, no conversion needed.
+
+                        The path can be changed to any other location.
+
+                config WBHD_RESOURCES_BLOCK_SIZE
+                    int "Block size for resources"
+                    range 512 32768
+                    default 8192
+                    help
+                        Size of the blocks read from the file system in one
+                        go. A larger value means fewer file system calls and a
+                        faster firmware download, at the cost of a larger
+                        temporary buffer.
+
+            endif
+
+        endif
+
+        comment "--- Other WIFI Features ---"
+
+        menuconfig WHD_USING_OTHER_FEATURES
+            bool "Enable Other WIFI Features"
+            default n
+            help
+                Optional WiFi features:
+                  - WHD thread tuning (priority / stack size)
+                  - WPA3-SAE security
+                  - Low-power offload commands (PM/ARP/TKO/PF/WoWL)
+
+                Enable this to expose the optional knobs below. Most users
+                can leave this disabled and rely on the defaults.
+
+            if WHD_USING_OTHER_FEATURES
+
+                comment "--- WHD Thread Tuning ---"
+
+                config WBHD_WIFI_THREAD_PRIORITY
+                    int "WHD thread priority"
+                    range 0 32
+                    default 8
+
+                config WBHD_WIFI_THREAD_STACK_SIZE
+                    int "WHD thread stack size"
+                    range 2048 8192
+                    default 5120
+                    help
+                        Stack size for the WHD background thread which
+                        handles WiFi events and ioctl callbacks.
+                        Increase only if you observe stack overflow
+                        in deeply nested user callbacks.
+
+                comment "--- Optional Features ---"
+
+                menuconfig WHD_USING_WPA3
+                    bool "Enable WPA3-SAE Support"
+                    select PKG_USING_MBEDTLS
+                    default n
+                    help
+                        Enable WPA3-SAE (Simultaneous Authentication of Equals) support.
+                        This compiles the External WPA3 supplicant component from
+                        External/wpa3-external-supplicant.
+
+                        Requirements:
+                        - mbedTLS package (auto-selected): ECP, HKDF, HMAC_DRBG, bignum
+                        - Firmware must support SAE external authentication (WHD_FWCAP_SAE_EXT)
+                        - Additional ~40KB Flash, ~10KB RAM
+
+                        Supported security modes:
+                        - WPA3-SAE (WHD_SECURITY_WPA3_SAE)
+                        - WPA3/WPA2 transition mode (WHD_SECURITY_WPA3_WPA2_PSK)
+
+                    if WHD_USING_WPA3
+                        config WPA3_EXT_LOG_ENABLE
+                            bool "Enable WPA3 supplicant debug log"
+                            default n
+                            help
+                                Print WPA3 SAE supplicant internal debug messages.
+
+                        config WPA3_EXT_HEX_LOG_ENABLE
+                            bool "Enable WPA3 hex dump log"
+                            default n
+                            depends on WPA3_EXT_LOG_ENABLE
+                            help
+                                Print WPA3 SAE cryptographic data hex dumps.
+                                WARNING: This may expose sensitive key material.
+                    endif
+
+                config WHD_USING_LOW_POWER
+                    bool "Enable Low-Power Offload Commands"
+                    default n
+                    help
+                        Enable WiFi low-power offload MSH commands:
+                          wifi_ps   - PM0/PM1/PM2 powersave & listen interval
+                          wifi_arp  - ARP offload management
+                          wifi_tko  - TCP Keepalive Offload (TKO) management
+                          wifi_pf   - Packet Filter management
+                          wifi_wowl - Wake on WLAN pattern management
+
+                        These commands allow fine-grained control of WiFi chip
+                        low-power features to reduce power consumption when the
+                        MCU is idle or sleeping.
+
+                config WHD_USING_ROAM
+                    bool "Enable WiFi Roaming APIs"
+                    default n
+                    help
+                        Enable WiFi roaming control APIs (whd_roam.c):
+                          whd_wifi_get/set_roam_trigger      - RSSI threshold (dBm)
+                          whd_wifi_get/set_roam_delta        - RSSI improvement needed
+                          whd_wifi_get/set_roam_scan_period  - Roam scan period (s)
+                          whd_wifi_get/set_roam_time_threshold
+                          whd_wifi_set_roam_trigger_cy
+
+                        Useful for STA roaming between APs in the same ESS.
+                        Disable to save Flash if your application does not
+                        need roaming control.
+
+                config WHD_USING_MFG_TEST
+                    bool "Enable WiFi MFG RF Test"
+                    default n
+                    help
+                        Enable WiFi Manufacturing (MFG) RF test mode support.
+                        
+                        This feature allows:
+                        - Loading MFG firmware for RF testing
+                        - Serial interface to PC wl.exe tool
+                        - MSH commands: rf_mode / normalmode
+                        
+                        Usage:
+                          1. Run 'rf_mode' command to enter MFG test mode
+                          2. PC can send wl commands via serial port:
+                             wl.exe --serial COM_PORT command
+                          3. Run 'normalmode' to exit and reload normal firmware
+                        
+                        Requirements:
+                        - MFG firmware file (e.g., wifi_cywl6302_mfg_firmware.c)
+                        - Serial connection to PC for wl.exe tool
+                        - Additional Flash space for MFG firmware
+
+            endif
+
+        comment "=== Bluetooth Configuration ==="
+
+        menuconfig WHD_USING_BLUETOOTH
+            bool "Enable Bluetooth (HCI UART)"
+            default n
+            help
+                Enable Bluetooth support using HCI over UART.
+                Bluetooth firmware is selected automatically based on WiFi module.
+                Note: CY_USING_HAL and CYHAL_API_VERSION are defined in cyhal_uart.h
+                to avoid affecting WiFi driver.
+
+                IMPORTANT: This package does NOT include the BTStack protocol
+                stack (distributed separately by Infineon under the BTStack
+                EULA).  To actually build with Bluetooth, you must:
+                  1. Download the AIROC-Bluetooth-Stack from Infineon:
+                     https://github.com/Infineon/btstack
+                     (Distributed under Infineon EULA - see their LICENSE.txt)
+                  2. Extract it to: External/btstack/ inside this package
+                  3. Rebuild (Bluetooth sources are auto-detected)
+
+                Without External/btstack present, this option will be
+                silently disabled at build time.
+
+            if WHD_USING_BLUETOOTH
+
+                comment "Bluetooth UART Settings"
+
+                config BT_UART_DEVICE_NAME
+                    string "Bluetooth HCI UART device name"
+                    default "uart4"
+                    help
+                        RT-Thread serial device name for Bluetooth HCI.
+                        Note: The UART must support hardware flow control (RTS/CTS).
+
+                comment "Bluetooth UART Pins"
+
+                config BT_UART_TX_PIN_NAME
+                    string "BT UART TX pin name (e.g., PM.9)"
+                    default "PB.9"
+                    help
+                        GPIO pin name for Bluetooth UART TX.
+                        Format: "Px.y" where x is port letter, y is pin number.
+                        Example: PM.9 for STM32H7RS UART7
+
+                config BT_UART_RX_PIN_NAME
+                    string "BT UART RX pin name (e.g., PM.8)"
+                    default "PB.8"
+                    help
+                        GPIO pin name for Bluetooth UART RX.
+
+                config BT_UART_RTS_PIN_NAME
+                    string "BT UART RTS pin name (e.g., PE.9)"
+                    default "PB.14"
+                    help
+                        GPIO pin name for Bluetooth UART RTS (hardware flow control).
+
+                config BT_UART_CTS_PIN_NAME
+                    string "BT UART CTS pin name (e.g., PE.10)"
+                    default "PB.15"
+                    help
+                        GPIO pin name for Bluetooth UART CTS (hardware flow control).
+
+                comment "Bluetooth UART Baud Rate"
+
+                config BT_UART_BAUD_RATE_FW_DOWNLOAD
+                    int "Baud rate for firmware download"
+                    default 115200
+                    help
+                        UART baud rate used during Bluetooth firmware download phase.
+                        CYW43xxx chips support up to 3Mbps for HCI firmware download.
+                        Supported values: 115200, 921600, 1000000, 2000000, 3000000
+
+                config BT_UART_BAUD_RATE_FEATURE
+                    int "Baud rate for normal operation"
+                    default 3000000
+                    help
+                        Baud rate used after firmware download for normal BLE operation.
+                        Supported: 115200, 921600, 1000000, 2000000, 3000000
+
+                comment "Bluetooth Control Pins"
+
+                config BT_REG_ON_PIN_NAME
+                    string "BT_REG_ON pin name"
+                    default ""
+                    help
+                        GPIO pin name for Bluetooth module power control.
+                        Leave empty to disable (always powered on).
+
+                config BT_DEV_WAKE_PIN_NAME
+                    string "BT_DEV_WAKE pin name"
+                    default ""
+                    help
+                        GPIO pin name for host to wake up Bluetooth device.
+                        Leave empty to disable sleep mode.
+
+                config BT_HOST_WAKE_PIN_NAME
+                    string "BT_HOST_WAKE pin name"
+                    default ""
+                    help
+                        GPIO pin name for Bluetooth device to wake up host.
+                        Leave empty to disable sleep mode.
+
+                config BT_SLEEP_MODE_ENABLED
+                    bool "Enable Bluetooth sleep mode"
+                    default n
+                    help
+                        Enable low power sleep mode for Bluetooth.
+                        Requires DEV_WAKE and HOST_WAKE pins configured.
+                        Note: CYW43xxx wake polarity is fixed to Active Low.
+
+                comment "Bluetooth Debug Options"
+
+                config CYBT_HCI_DATA_TRACE
+                    bool "Enable HCI data trace (TX/RX packets)"
+                    default n
+                    help
+                        Print HCI TX/RX packets to console for debugging.
+                        Useful for analyzing Bluetooth communication issues.
+
+                comment "--- BTStack Configuration ---"
+
+                menuconfig WHD_USING_BTSTACK
+                    bool "Enable BTStack Library"
+                    default n
+                    help
+                        Enable BTStack Bluetooth protocol stack.
+
+                        Only enable after you have placed BTStack under
+                        External/btstack/.  If BTStack is not present at
+                        build time, the BT sources will be skipped.
+
+                    if WHD_USING_BTSTACK
+
+                        choice
+                            prompt "Bluetooth Mode"
+                            default BTSTACK_MODE_BLE
+                            help
+                                Select Bluetooth operating mode.
+
+                            config BTSTACK_MODE_BLE
+                                bool "BLE Only (Low Energy)"
+                                help
+                                    Only BLE (Bluetooth Low Energy) support.
+                                    Smaller library size.
+
+                            config BTSTACK_MODE_DUALMODE
+                                bool "Dual Mode (Classic + BLE)"
+                                help
+                                    Both Classic Bluetooth (BR/EDR) and BLE.
+                                    Supports A2DP, HFP, SPP, etc.
+
+                        endchoice
+
+                        choice
+                            prompt "CPU Core"
+                            default BTSTACK_CPU_CM4
+                            help
+                                Select your MCU CPU core type.
+
+                            config BTSTACK_CPU_CM0P
+                                bool "Cortex-M0+"
+                                help
+                                    For Cortex-M0+ MCU (e.g. STM32L0, STM32G0)
+
+                            config BTSTACK_CPU_CM3
+                                bool "Cortex-M3"
+                                help
+                                    For Cortex-M3 MCU (e.g. STM32F1, STM32L1, GD32F1)
+
+                            config BTSTACK_CPU_CM4
+                                bool "Cortex-M4/M4F"
+                                help
+                                    For Cortex-M4 MCU (e.g. STM32F4, GD32F4, HC32F4)
+
+                            config BTSTACK_CPU_CM7
+                                bool "Cortex-M7"
+                                help
+                                    For Cortex-M7 MCU (e.g. STM32F7, STM32H7)
+
+                            config BTSTACK_CPU_CM33
+                                bool "Cortex-M33"
+                                help
+                                    For Cortex-M33 MCU (e.g. STM32L5, STM32U5)
+
+                            config BTSTACK_CPU_CM55
+                                bool "Cortex-M55"
+                                help
+                                    For Cortex-M55 MCU
+
+                        endchoice
+
+                        choice
+                            prompt "Floating Point ABI"
+                            default BTSTACK_FPU_HARDFP
+                            help
+                                Must match your project's FPU settings.
+
+                            config BTSTACK_FPU_HARDFP
+                                bool "Hardware FPU"
+                                help
+                                    For MCU with hardware FPU.
+                                    STM32F4, STM32H7, GD32F4, HC32F4, etc.
+
+                            config BTSTACK_FPU_SOFTFP
+                                bool "Software FPU"
+                                help
+                                    For MCU without hardware FPU.
+                                    STM32F1, STM32L0, GD32F1, Cortex-M0/M3, etc.
+
+                        endchoice
+
+                    endif
+
+            endif
+
+    endif
+source "$PKGS_DIR/packages/iot/WiFi/rtt-wifi-bt-host-driver/Kconfig"
