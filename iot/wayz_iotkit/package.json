@@ -1,10 +1,13 @@
 {
   "name": "wayz_iotkit",
-  "description": "wayz iot location software package",
-  "description_zh": "wayz iot 定位软件包",
+  "description": "RT-Thread positioning client for the WAYZ location cloud. Scans nearby WiFi APs (and optionally GNSS / cellular data), uploads them over HTTP and returns the position (gcj02 / wgs84 / bd09), POI and address. Supports RT-Thread 4.1 to 6.0; HTTP by default so no TLS component or device certificate is required.",
+  "description_zh": "WAYZ 定位云的 RT-Thread 定位组件。扫描周边 WiFi(可选 GNSS / 基站数据), 通过 HTTP 上传到定位云, 返回经纬度(gcj02 / wgs84 / bd09)、POI 与门牌地址。适配 RT-Thread 4.1 ~ 6.0; 默认使用 HTTP, 无需 TLS 组件与设备证书。",
   "enable": "PKG_USING_WAYZ_IOTKIT",
   "keywords": [
-    "wayz_iotkit"
+    "wayz_iotkit",
+    "location",
+    "gnss",
+    "wifi"
   ],
   "category": "iot",
   "author": {
@@ -12,16 +15,28 @@
     "email": "jianxiong.ye@wayz.ai",
     "github": "https://github.com/wayz-iot/"
   },
-  "license": "GPL-2.0",
+  "license": "LGPL-2.1",
   "repository": "https://github.com/wayz-iot/wayz_iotkit",
   "icon": "unknown",
   "homepage": "https://github.com/wayz-iot/wayz_iotkit#readme",
   "doc": "https://github.com/wayz-iot/wayz_iotkit/tree/master/docs",
   "site": [
     {
+      "version": "v1.1.1",
+      "URL": "https://github.com/wayz-iot/wayz_iotkit.git",
+      "filename": "wayz_iotkit-1.1.1.zip",
+      "VER_SHA": "2133fdd3d57e5e774a917ac62e6044bdeeedaff3"
+    },
+    {
+      "version": "v1.0.0",
+      "URL": "https://github.com/wayz-iot/wayz_iotkit.git",
+      "filename": "wayz_iotkit-1.0.0.zip",
+      "VER_SHA": "1ef0b178c4fb50bf81d63a54e34ba98d4f78f7b2"
+    },
+    {
       "version": "latest",
       "URL": "https://github.com/wayz-iot/wayz_iotkit.git",
-      "filename": "wayz_iotkit.zip",
+      "filename": "",
       "VER_SHA": "master"
     }
   ]
