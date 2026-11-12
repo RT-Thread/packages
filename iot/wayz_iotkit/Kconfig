@@ -5,10 +5,23 @@ menuconfig PKG_USING_WAYZ_IOTKIT
     default n
     select PKG_USING_CJSON
     select PKG_USING_WEBCLIENT
+    help
+        WAYZ 定位云的 RT-Thread 定位组件。
+
+        组件扫描周边 WiFi(也可由使用者填入 GNSS / 基站数据), 组包后通过 HTTP
+        上传到定位云, 取回经纬度(gcj02 / wgs84 / bd09)、POI 与门牌地址。
+
+        - 适配 RT-Thread 4.1 ~ 6.0(WLAN 头文件与 webclient API 差异已兼容)
+        - 默认使用 HTTP, 不需要 TLS 组件与设备证书
+        - 坐标换算由云端完成(response_sprf 参数), 组件不做本地换算
+        - 时间源默认取系统时钟, 可用 wayz_set_time_provider() 接入 RTC / NTP
+
+        需要 access_key: 在 https://lothub.newayz.com/ 申请。
+        详见组件仓库: https://github.com/wayz-iot/wayz_iotkit/tree/master/docs
 
 if PKG_USING_WAYZ_IOTKIT
 
-    config PKG_WAYZ_IOTKIT_PATH
+    config PKG_USING_WAYZ_IOTKIT_PATH
         string
         default "/packages/iot/wayz_iotkit"
 
@@ -20,11 +33,43 @@ if PKG_USING_WAYZ_IOTKIT
         string "wifi password"
         default "wayz1234"
 
+    config PKG_WAYZ_IOTKIT_USE_HTTPS
+        bool "use https for the WAYZ cloud API"
+        default n
+        help
+            需要 webclient 启用 mbedTLS/SAL, 并让设备内置服务端证书链对应的根证书,
+            详见组件仓库 docs/https-certs.md。
+
+    config PKG_WAYZ_IOTKIT_NO_WLAN
+        bool "build without the WLAN framework"
+        default n
+        help
+            没有 WiFi 芯片的 BSP(仿真器 / qemu)可以打开它,
+            此时组件只能使用 wayz_set_scan_result() 注入的扫描结果。
+
+    config PKG_WAYZ_IOTKIT_SIM
+        bool "simulation mode for the sample"
+        default n
+        help
+            仿真模式: 示例自动注入一组 AP 与设备 MAC, 并允许用环境变量
+            WAYZ_ACCESS_KEY / WAYZ_SIM_APS / WAYZ_SPRF 覆盖运行参数。
+
+    config PKG_WAYZ_IOTKIT_COORD
+        bool "build the local coordinate conversion helper"
+        default n
+        help
+            wayz_coord.c 是独立工具模块(gcj02 <-> wgs84)。
+            定位链路本身不做换算(由云端的 response_sprf 参数决定),
+            默认不编译该模块, 避免给所有用户引入 libm 依赖。
+
     choice
         prompt "Version"
         default PKG_USING_WAYZ_IOTKIT_LATEST_VERSION
         help
             Select the package version
+
+        config PKG_USING_WAYZ_IOTKIT_V111
+            bool "v1.1.1"
 
         config PKG_USING_WAYZ_IOTKIT_V100
             bool "v1.0.0"
@@ -33,8 +78,9 @@ if PKG_USING_WAYZ_IOTKIT
             bool "latest"
     endchoice
 
-    config PKG_WAYZ_IOTKIT_VER
+    config PKG_USING_WAYZ_IOTKIT_VER
        string
+       default "v1.1.1"    if PKG_USING_WAYZ_IOTKIT_V111
        default "v1.0.0"    if PKG_USING_WAYZ_IOTKIT_V100
        default "latest"    if PKG_USING_WAYZ_IOTKIT_LATEST_VERSION
 
