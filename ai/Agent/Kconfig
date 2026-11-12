@@ -251,6 +251,89 @@ if PKG_USING_AGENT
 
         endmenu
 
+    menu "External Server"
+
+        # 外部服务器地址的来源：手动填死，或者启动时向管理控制台问一次。
+        # 两种模式下手填的地址都在下面，都是自动模式失败时的回退值。
+        choice PKG_AGENT_EXT_SERVER_SEL
+            prompt "External server address source"
+            default PKG_AGENT_EXT_SERVER_MANUAL
+            help
+                Manual: use the file server and MCP addresses configured
+                below, nothing is queried at startup.
+
+                Auto: at startup the board asks the console for the file
+                server and MCP gateway addresses, then uses what the
+                console reports. The addresses below are the fallback used
+                when the console cannot be reached, so the agent still
+                starts with the manual addresses.
+
+                The console side endpoint is GET <console>/api/ops/endpoints.
+                It reports the host the board should use, so set that host
+                in the console's operations page to an address the board
+                can reach (10.0.2.2 for a QEMU board, the LAN IP for a
+                real board).
+
+            config PKG_AGENT_EXT_SERVER_MANUAL
+                bool "Manual - use the addresses below"
+
+            config PKG_AGENT_EXT_SERVER_AUTO
+                bool "Auto - query the console at startup"
+        endchoice
+
+        config PKG_AGENT_WEB_SERVER_URL
+            string "File server address"
+            default "http://10.0.2.2:8000"
+            help
+                板端访问文件服务器的地址，只填到端口，不要带路径。
+                接口路径由板端自己拼：
+                  上传     <地址>/upload
+                  下载     <地址>/download/<file_id>
+                  语音识别 <地址>/stt
+                  语音合成 <地址>/tts
+                QEMU 里的板子访问宿主机用 http://10.0.2.2:8000；
+                真板子填局域网地址，例如 http://192.168.1.10:8000；
+                走内网穿透填公网域名，例如 https://files.l2.bb1a.cn。
+                注意：云端模型按同一个地址取文件，
+                所以这个地址必须公网可达。
+                自动获取模式下这里是控制台连不上时的回退地址。
+
+        config PKG_AGENT_MCP_SERVER_URL
+            string "MCP server endpoint URL"
+            default "http://10.0.2.2:8765/mcp"
+            help
+                MCP 网关的完整地址，例如 http://192.168.1.100:8765/mcp。
+                填网关所在机器的地址。自动获取模式下这里是控制台连不上时
+                的回退地址。
+
+        if PKG_AGENT_EXT_SERVER_AUTO
+            config PKG_AGENT_CONSOLE_URL
+                string "Console address"
+                default "http://10.0.2.2:8080"
+                help
+                    板端向管理控制台要地址用的地址，只填到端口。
+                    QEMU 里的板子访问宿主机用 http://10.0.2.2:8080；
+                    真板子填局域网地址。
+                    板端要知道控制台在哪，所以这个地址没法自动获取。
+
+            config PKG_AGENT_CONSOLE_API
+                string "Console endpoint path"
+                default "/api/ops/endpoints"
+                help
+                    控制台上报文件服务器与 MCP 地址的接口路径。
+                    默认值对应控制台的 GET /api/ops/endpoints。
+
+            config PKG_AGENT_ENDPOINT_TIMEOUT_MS
+                int "Discovery response timeout (ms)"
+                default 3000
+                range 500 30000
+                help
+                    读控制台响应体的超时。连接阶段的超时是 webclient
+                    写死的 6 秒，这里管的是收到响应头之后读正文那一段。
+        endif
+
+    endmenu
+
     menu "Multimodal"
 
         # Multimodal enable/disable choice (mode 开关)
@@ -271,22 +354,6 @@ if PKG_USING_AGENT
         endchoice
 
         if PKG_AGENT_MULTIMODAL_ENABLE
-            config PKG_AGENT_WEB_SERVER_URL
-                string "Web server URL"
-                default "http://10.0.2.2:8000"
-                help
-                    板端访问 web 服务器的地址，只填到端口，不要带路径。
-                    接口路径由板端自己拼：
-                      上传     <地址>/upload
-                      下载     <地址>/download/<file_id>
-                      语音识别 <地址>/stt
-                      语音合成 <地址>/tts
-                    QEMU 里的板子访问宿主机用 http://10.0.2.2:8000；
-                    真板子填局域网地址，例如 http://192.168.1.10:8000；
-                    走内网穿透填公网域名，例如 https://files.l2.bb1a.cn。
-                    注意：云端模型按同一个地址取文件，
-                    所以这个地址必须公网可达。
-
             menu "File Server"
                 config PKG_AGENT_FILE_OP_THREAD_SIZE
                     int "File operation thread stack size"
@@ -955,14 +1022,6 @@ if PKG_USING_AGENT
                     without the remote tools.
 
             if PKG_AGENT_TOOL_MCP_ENABLE
-
-                config PKG_AGENT_MCP_SERVER_URL
-                    string "MCP server endpoint URL"
-                    default "http://192.168.1.100:8765/mcp"
-                    help
-                        Full URL of the MCP endpoint, for example
-                        http://192.168.1.100:8765/mcp. Use the LAN address of the
-                        machine running the server from the mcp/ directory.
 
                 config PKG_AGENT_MCP_MAX_TOOLS
                     int "Maximum number of remote tools to register"
