@@ -480,7 +480,35 @@ if PKG_USING_AGENT
             help
                 Interact with agent via LVGL GUI.
 
+        config PKG_AGENT_A2A_CHANNEL
+            select PKG_USING_WEBNET
+            select WEBNET_USING_CGI
+            bool "A2A channel (Agent-to-Agent over HTTP)"
+            help
+                Serve the A2A protocol so a remote console can read the agent
+                card and submit tasks. Runs on top of WebNet: the listen port
+                is WEBNET_PORT, and the CGI root is switched to "/" so the
+                A2A paths resolve. Pick only one channel.
+
     endchoice
+
+    if PKG_AGENT_A2A_CHANNEL
+    menu "A2A Channel"
+
+        config PKG_AGENT_A2A_NAME
+            string "Agent name"
+            default "RT-Thread Agent"
+            help
+                name field of /.well-known/agent.json.
+
+        config PKG_AGENT_A2A_DESCRIPTION
+            string "Agent description"
+            default "Embedded agent running on RT-Thread"
+            help
+                description field of the agent card.
+
+    endmenu
+    endif
 
     endmenu
 
