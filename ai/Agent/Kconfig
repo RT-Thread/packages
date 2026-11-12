@@ -271,21 +271,23 @@ if PKG_USING_AGENT
         endchoice
 
         if PKG_AGENT_MULTIMODAL_ENABLE
+            config PKG_AGENT_WEB_SERVER_URL
+                string "Web server URL"
+                default "http://10.0.2.2:8000"
+                help
+                    板端访问 web 服务器的地址，只填到端口，不要带路径。
+                    接口路径由板端自己拼：
+                      上传     <地址>/upload
+                      下载     <地址>/download/<file_id>
+                      语音识别 <地址>/stt
+                      语音合成 <地址>/tts
+                    QEMU 里的板子访问宿主机用 http://10.0.2.2:8000；
+                    真板子填局域网地址，例如 http://192.168.1.10:8000；
+                    走内网穿透填公网域名，例如 https://files.l2.bb1a.cn。
+                    注意：云端模型按同一个地址取文件，
+                    所以这个地址必须公网可达。
+
             menu "File Server"
-                config PKG_AGENT_UPLOAD_URL
-                    string "File upload HTTP URL"
-                    default ""
-                    help
-                        HTTP file upload endpoint, example:
-                        "http://10.0.2.2:8000/upload"
-
-                config PKG_AGENT_DOWNLOAD_URL
-                    string "File download URL template"
-                    default ""
-                    help
-                        HTTP download url.
-                        example: "https://10.0.2.2:8000/download"
-
                 config PKG_AGENT_FILE_OP_THREAD_SIZE
                     int "File operation thread stack size"
                     default 4096
@@ -308,15 +310,7 @@ if PKG_USING_AGENT
                             bool "Disable STT"
                     endchoice
 
-                    if PKG_AGENT_STT_ENABLE
-                        config PKG_AGENT_STT_URL
-                            string "STT File Server"
-                            default ""
-                            help
-                                HTTP file upload endpoint, example:
-                                "http://10.0.2.2:8000/stt"
-                    endif
-
+                    # STT 接口地址由 PKG_AGENT_WEB_SERVER_URL 拼出：<地址>/stt
                 endmenu
 
                 menu "TTS"
@@ -331,12 +325,7 @@ if PKG_USING_AGENT
                     endchoice
 
                     if PKG_AGENT_TTS_ENABLE
-                        config PKG_AGENT_TTS_URL
-                            string "TTS File Server"
-                            default ""
-                            help
-                                HTTP file upload endpoint, example:
-                                "http://10.0.2.2:8000/tts"
+                        # TTS 接口地址由 PKG_AGENT_WEB_SERVER_URL 拼出：<地址>/tts
 
                         config PKG_AGENT_TTS_SAVE_FILE
                             string "Synthesized WAV save path"
