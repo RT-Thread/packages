@@ -269,8 +269,8 @@ if PKG_USING_AGENT
                 The console side endpoint is GET <console>/api/ops/endpoints.
                 It reports the host the board should use, so set that host
                 in the console's operations page to an address the board
-                can reach (10.0.2.2 for a QEMU board, the LAN IP for a
-                real board).
+                can reach (192.168.137.1 for a QEMU board behind a TAP
+                bridge, the LAN IP for a real board).
 
             config PKG_AGENT_EXT_SERVER_MANUAL
                 bool "Manual - configure all three addresses"
@@ -281,20 +281,21 @@ if PKG_USING_AGENT
 
         config PKG_AGENT_CONSOLE_URL
             string "Console address"
-            default "http://10.0.2.2:8080"
+            default "http://192.168.137.1:8080"
             help
                 板端访问管理控制台的地址，只填到端口。
                 自动获取模式下板端靠它问地址，这个地址必须填对。
                 手动模式下板端不问控制台，这里填不填都不影响，
                 但填上以后切模式不用重新填。
-                QEMU 里的板子访问宿主机用 http://10.0.2.2:8080；
+                QEMU 里的板子走 TAP 网桥接宿主机，宿主机在共享网段上
+                是 192.168.137.1，所以填 http://192.168.137.1:8080；
                 真板子填局域网地址。
                 板端要知道控制台在哪，所以这个地址没法自动获取。
 
         if PKG_AGENT_EXT_SERVER_MANUAL
             config PKG_AGENT_WEB_SERVER_URL
                 string "File server address"
-                default "http://10.0.2.2:8000"
+                default "http://192.168.137.1:8000"
                 help
                     板端访问文件服务器的地址，只填到端口，不要带路径。
                     接口路径由板端自己拼：
@@ -302,7 +303,8 @@ if PKG_USING_AGENT
                       下载     <地址>/download/<file_id>
                       语音识别 <地址>/stt
                       语音合成 <地址>/tts
-                    QEMU 里的板子访问宿主机用 http://10.0.2.2:8000；
+                    QEMU 里的板子走 TAP 网桥接宿主机，宿主机在共享网段上
+                    是 192.168.137.1，所以填 http://192.168.137.1:8000；
                     真板子填局域网地址，例如 http://192.168.1.10:8000；
                     走内网穿透填公网域名，例如 https://files.l2.bb1a.cn。
                     注意：云端模型按同一个地址取文件，
@@ -310,7 +312,7 @@ if PKG_USING_AGENT
 
             config PKG_AGENT_MCP_SERVER_URL
                 string "MCP server endpoint URL"
-                default "http://10.0.2.2:8765/mcp"
+                default "http://192.168.137.1:8765/mcp"
                 help
                     MCP 网关的完整地址，例如 http://192.168.1.100:8765/mcp。
                     填网关所在机器的地址。
