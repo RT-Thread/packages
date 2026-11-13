@@ -1,86 +1,517 @@
-
 # Kconfig file for package infrared
 menuconfig PKG_USING_INFRARED
     bool "infrared : infrared is base on rt-thread pin,hwtimer and pwm."
     default n
 
 if PKG_USING_INFRARED
-
     config PKG_INFRARED_PATH
         string
         default "/packages/peripherals/infrared"
 
-    menu "Select infrared decoder"
-        config INFRARED_NEC_DECODER
-            bool "enable nec decoder"
-            default n
-        if INFRARED_NEC_DECODER
-            config NEC_DEVIATION
-                int "nec admissible deviation"
-                default 100
-        endif
-    endmenu
+    choice
+        prompt "Infrared implementation"
+        default INFRARED_LEGACY
+        help
+            Select exactly one: LEGACY preserves the original default-device API;
+            FRAMEWORK supplies independent RT-Thread devices and nonblocking poll.
 
-config PKG_USING_DRV_INFRARED
-        bool "Use the infrared driver provided by the software package"
-        default y
+        config INFRARED_LEGACY
+            bool "LEGACY: original infrared driver and decoder interface"
+
+        config INFRARED_FRAMEWORK
+            bool "FRAMEWORK: independent infrared device instances"
+    endchoice
+
+    if INFRARED_LEGACY
+        menu "Select infrared decoder"
+            config INFRARED_NEC_DECODER
+                bool "Enable original NEC decoder"
+                default n
+            if INFRARED_NEC_DECODER
+                config NEC_DEVIATION
+                    int "Original NEC permissible pulse deviation (us)"
+                    default 100
+            endif
+        endmenu
+
+        config PKG_USING_DRV_INFRARED
+            bool "Build the original LEGACY PIN/HWTIMER/PWM driver"
+            default y
+            help
+                Selects src/drv_infrared.c only for LEGACY mode.
+                Not used for FRAMEWORK backend selection.
+
         if PKG_USING_DRV_INFRARED
-        config INFRARED_SEND
-            bool "Enable infrared send"
-            default n
+            config INFRARED_SEND
+                bool "Enable original infrared transmitter"
+                default n
             if INFRARED_SEND
-                    config INFRARED_SEND_PWM
-                    string "infrared pwm dev name"
+                config INFRARED_SEND_PWM
+                    string "Original PWM device name"
                     default "pwm4"
-
                 config INFRARED_PWM_DEV_CHANNEL
-                    int "infrared pwm channel"
+                    int "Original PWM channel"
                     default 3
-
                 config INFRARED_SEND_HWTIMER
-                    string "infrared send hwtimer dev name"
+                    string "Original transmitter HWTIMER device"
                     default "timer15"
-
                 config INFRARED_MAX_SEND_SIZE
-                    int "infrared max send size"
+                    int "Original maximum transmit buffer size"
                     default 1000
             endif
 
-        config INFRARED_RECEIVE
-            bool "Enable infrared receive"
-            default n
+            config INFRARED_RECEIVE
+                bool "Enable original infrared receiver"
+                default n
             if INFRARED_RECEIVE
                 config INFRARED_RECEIVE_PIN
-                    int "infrared receive pin number"
+                    int "Original receiver pin number"
                     default 17
-
                 config INFRARED_RECEIVE_HWTIMER
-                    string "infrared receive hwtimer dev name"
+                    string "Original receiver HWTIMER device"
                     default "timer16"
             endif
         endif
+    endif
 
-    choice
-        prompt "Version"
-        default PKG_USING_INFRARED_LATEST_VERSION
-        help
-            Select the package version
+    if INFRARED_FRAMEWORK
+        config INFRARED_MAX_DEVICES
+            int "Maximum registered infrared device instances"
+            range 3 16 if INFRARED_USING_EXAMPLE && INFRARED_KCONFIG_DEVICE2
+            range 2 16 if INFRARED_USING_EXAMPLE && INFRARED_KCONFIG_DEVICE1
+            range 1 16
+            default 3
+            help
+                Only sets registry capacity; never creates a device by itself.
+                Applications explicitly provide each device's index and config.
 
-        config PKG_USING_INFRARED_V010
-            bool "v0.1.0"
+        config INFRARED_FRAME_CAPACITY
+            int "Complete frame records per registered infrared device"
+            range 1 32
+            default 4
 
-        config PKG_USING_INFRARED_V011
-            bool "v0.1.1"
+        config INFRARED_TX_PULSE_CAPACITY
+            int "Static TX pulse records per registered device"
+            range 68 2048
+            default 128
 
-        config PKG_USING_INFRARED_LATEST_VERSION
-            bool "latest"
-    endchoice
+        config INFRARED_PIN_PULSE_CAPACITY
+            int "Static PIN receive pulse records per registered device"
+            range 16 2048
+            default 200
 
-    config PKG_INFRARED_VER
-       string
-       default "v0.1.0"    if PKG_USING_INFRARED_V010
-       default "v0.1.1"    if PKG_USING_INFRARED_V011
-       default "latest"    if PKG_USING_INFRARED_LATEST_VERSION
+        config INFRARED_FRAME_MAX_BYTES
+            int "Maximum bytes in one protocol frame"
+            range 3 32
+            default 16
+
+        config INFRARED_CHECK_ALL
+            bool "Enable optional infrared runtime checks"
+            default y
+            help
+                Turn this off after hardware/configuration bring-up to omit
+                optional parameter, configuration, resource preflight and
+                device diagnostics checks. Hardware failure cleanup remains.
+
+        config INFRARED_CHECK_PARAMETERS
+            bool "Check public API parameters"
+            depends on INFRARED_CHECK_ALL
+            default y
+
+        config INFRARED_CHECK_CONFIG
+            bool "Check registered backend/codec contracts"
+            depends on INFRARED_CHECK_ALL
+            default y
+
+        config INFRARED_CHECK_RESOURCE
+            bool "Check optional resource preconditions"
+            depends on INFRARED_CHECK_ALL
+            default y
+
+        config INFRARED_CHECK_DEVICE
+            bool "Check optional device diagnostics"
+            depends on INFRARED_CHECK_ALL
+            default y
+
+        config INFRARED_USING_DIAGNOSTICS
+            bool "Build infrared device status snapshots"
+            default y
+
+        config INFRARED_MANUAL_PIN_CAPACITY
+            int "Additional manually registered PIN receivers"
+            depends on INFRARED_DEVICE_PIN
+            range 0 16
+            default 0
+            help
+                Reserve PIN ISR buffers for application registrations outside
+                the enabled Kconfig examples.
+
+        config INFRARED_MANUAL_CAPTURE_CAPACITY
+            int "Additional manually registered Input Capture receivers"
+            depends on INFRARED_USING_INPUT_CAPTURE
+            range 0 16
+            default 0
+
+        config INFRARED_MANUAL_PWM_CAPACITY
+            int "Additional manually registered PWM transmitters"
+            depends on INFRARED_DEVICE_PWM
+            range 0 16
+            default 0
+
+        config INFRARED_DEVICE_PIN
+            bool "Enable PIN and HWTIMER input adapter"
+            depends on RT_USING_PIN && RT_USING_HWTIMER
+            default n
+
+        config INFRARED_PIN_TIMER_PERIOD_US
+            int "PIN timestamp timer period (us)"
+            depends on INFRARED_DEVICE_PIN
+            range 1000 1000000
+            default 1000000
+            help
+                Select a period that fits the physical HWTIMER counter at 100 kHz.
+                On STM32F103CB TIM2, 60000 us requires only 6000 timer ticks.
+
+        config INFRARED_USING_INPUT_CAPTURE
+            bool "Enable RT-Thread Input Capture adapter"
+            depends on RT_USING_INPUT_CAPTURE && RT_USING_HEAP
+            help
+                RT-Thread 3.1.x Input Capture uses rt_ringbuffer_create()
+                to allocate the BSP driver's own sample queue at open time.
+            default n
+
+        config INFRARED_DEVICE_PWM
+            bool "Enable PWM and HWTIMER output adapter"
+            depends on RT_USING_PWM && RT_USING_HWTIMER
+            default n
+
+        config INFRARED_TX_TIMEOUT_TICKS
+            int "PWM TX completion timeout (RT-Thread ticks, 0 = forever)"
+            depends on INFRARED_DEVICE_PWM
+            range 0 60000
+            default 0
+            help
+                Set a positive timeout to avoid indefinite sender waits when
+                an envelope timer fails. With a 1000-Hz RTOS tick, 1000 ticks
+                are one second. The backend stops PWM when the wait expires.
+
+        config INFRARED_USING_PULSE_DISTANCE
+            bool "Enable shared pulse-distance Codec helper"
+            default n
+            help
+                Builds the common MSB-first pulse-distance encoder/decoder.
+                Standard NEC selects it automatically; custom protocol codecs
+                such as Charge MR can enable it without enabling NEC.
+
+        config INFRARED_FRAMEWORK_NEC_CODEC
+            bool "Enable instance-based NEC batch codec"
+            select INFRARED_USING_PULSE_DISTANCE
+            default y
+        if INFRARED_FRAMEWORK_NEC_CODEC
+            config INFRARED_NEC_CONTEXT_COUNT
+                int "Maximum concurrent NEC receive decoder instances"
+                range 1 INFRARED_MAX_DEVICES
+                default INFRARED_MAX_DEVICES
+                help
+                    Compact parser state count; the logical device indices may be sparse.
+            config INFRARED_NEC_TOLERANCE_US
+                int "NEC data pulse tolerance (microseconds)"
+                range 1 500
+                default 210
+        endif
+
+        config INFRARED_USING_MSH
+            bool "Enable infrared MSH diagnostic commands"
+            depends on FINSH_USING_MSH && INFRARED_USING_DIAGNOSTICS
+            default n
+
+        config INFRARED_USING_EXAMPLE
+            bool "Build optional infrared device registration example"
+            depends on RT_USING_COMPONENTS_INIT
+            default n
+            help
+                Configure up to three example devices. Applications can register
+                their own devices without enabling this example.
+
+        if INFRARED_USING_EXAMPLE
+            config INFRARED_KCONFIG_SLOT_COUNT
+                int "Number of configured example slots"
+                range 1 3
+                default 3
+
+            menuconfig INFRARED_KCONFIG_DEVICE0
+                bool "Configure infrared device slot 0"
+                
+                default y
+            if INFRARED_KCONFIG_DEVICE0
+                config INFRARED_DEV0_NAME
+                    string "RT-Thread infrared logical device name"
+                    default "ir0"
+                choice
+                    prompt "Protocol codec for device slot 0"
+                    default INFRARED_DEV0_CODEC_NEC if INFRARED_FRAMEWORK_NEC_CODEC
+                    default INFRARED_DEV0_CODEC_CUSTOM
+
+                    config INFRARED_DEV0_CODEC_NEC
+                        bool "Standard NEC"
+                        depends on INFRARED_FRAMEWORK_NEC_CODEC
+
+                    config INFRARED_DEV0_CODEC_CUSTOM
+                        bool "Application-provided custom codec"
+                endchoice
+                choice
+                    prompt "Receive driver for device slot 0"
+                    default INFRARED_DEV0_INPUT_PIN if INFRARED_DEVICE_PIN
+                    default INFRARED_DEV0_INPUT_CAPTURE if INFRARED_USING_INPUT_CAPTURE
+                    default INFRARED_DEV0_INPUT_NONE
+                    config INFRARED_DEV0_INPUT_NONE
+                        bool "No receiver"
+                    config INFRARED_DEV0_INPUT_PIN
+                        bool "PIN with HWTIMER"
+                        depends on INFRARED_DEVICE_PIN
+                    config INFRARED_DEV0_INPUT_CAPTURE
+                        bool "RT-Thread Input Capture"
+                        depends on INFRARED_USING_INPUT_CAPTURE
+                endchoice
+                if INFRARED_DEV0_INPUT_PIN
+                    config INFRARED_DEV0_RX_TIMER
+                        string "PIN timestamp HWTIMER device"
+                        default "timer16"
+                    config INFRARED_DEV0_PIN
+                        int "PIN index"
+                        default 17
+                endif
+                if INFRARED_DEV0_INPUT_CAPTURE
+                    config INFRARED_DEV0_CAPTURE_NAME
+                        string "Input Capture device name"
+                        default "ic0"
+                endif
+                if INFRARED_DEV0_INPUT_PIN || INFRARED_DEV0_INPUT_CAPTURE
+                    config INFRARED_DEV0_ACTIVE_LEVEL
+                        int "MARK electrical level (0 or 1)"
+                        range 0 1
+                        default 0
+                endif
+                config INFRARED_DEV0_OUTPUT
+                    bool "Enable PWM transmitter for slot 0"
+                    depends on INFRARED_DEVICE_PWM
+                    default n
+                if INFRARED_DEV0_OUTPUT
+                    config INFRARED_DEV0_TX_PWM
+                        string "RT-Thread PWM device name"
+                        default "pwm4"
+                    config INFRARED_DEV0_TX_CHANNEL
+                        int "PWM output channel"
+                        range 1 16
+                        default 3
+                    config INFRARED_DEV0_TX_TIMER
+                        string "Envelope HWTIMER device name"
+                        default "timer15"
+                endif
+                config INFRARED_DEV0_RX_BACKEND
+                    int
+                    help
+                        Internal example selector: 0=none, 1=PIN, 2=Capture.
+                    default 1 if INFRARED_DEV0_INPUT_PIN
+                    default 2 if INFRARED_DEV0_INPUT_CAPTURE
+                    default 0
+                config INFRARED_DEV0_TX_BACKEND
+                    int
+                    help
+                        Internal example selector: 0=none, 1=PWM.
+                    default 1 if INFRARED_DEV0_OUTPUT
+                    default 0
+            endif
+
+            menuconfig INFRARED_KCONFIG_DEVICE1
+                bool "Configure infrared device slot 1"
+                depends on INFRARED_KCONFIG_SLOT_COUNT >= 2
+                default n
+            if INFRARED_KCONFIG_DEVICE1
+                config INFRARED_DEV1_NAME
+                    string "RT-Thread infrared logical device name"
+                    default "ir1"
+                choice
+                    prompt "Protocol codec for device slot 1"
+                    default INFRARED_DEV1_CODEC_NEC if INFRARED_FRAMEWORK_NEC_CODEC
+                    default INFRARED_DEV1_CODEC_CUSTOM
+
+                    config INFRARED_DEV1_CODEC_NEC
+                        bool "Standard NEC"
+                        depends on INFRARED_FRAMEWORK_NEC_CODEC
+
+                    config INFRARED_DEV1_CODEC_CUSTOM
+                        bool "Application-provided custom codec"
+                endchoice
+                choice
+                    prompt "Receive driver for device slot 1"
+                    default INFRARED_DEV1_INPUT_PIN if INFRARED_DEVICE_PIN
+                    default INFRARED_DEV1_INPUT_CAPTURE if INFRARED_USING_INPUT_CAPTURE
+                    default INFRARED_DEV1_INPUT_NONE
+                    config INFRARED_DEV1_INPUT_NONE
+                        bool "No receiver"
+                    config INFRARED_DEV1_INPUT_PIN
+                        bool "PIN with HWTIMER"
+                        depends on INFRARED_DEVICE_PIN
+                    config INFRARED_DEV1_INPUT_CAPTURE
+                        bool "RT-Thread Input Capture"
+                        depends on INFRARED_USING_INPUT_CAPTURE
+                endchoice
+                if INFRARED_DEV1_INPUT_PIN
+                    config INFRARED_DEV1_RX_TIMER
+                        string "PIN timestamp HWTIMER device"
+                        default "timer16"
+                    config INFRARED_DEV1_PIN
+                        int "PIN index"
+                        default 17
+                endif
+                if INFRARED_DEV1_INPUT_CAPTURE
+                    config INFRARED_DEV1_CAPTURE_NAME
+                        string "Input Capture device name"
+                        default "ic1"
+                endif
+                if INFRARED_DEV1_INPUT_PIN || INFRARED_DEV1_INPUT_CAPTURE
+                    config INFRARED_DEV1_ACTIVE_LEVEL
+                        int "MARK electrical level (0 or 1)"
+                        range 0 1
+                        default 0
+                endif
+                config INFRARED_DEV1_OUTPUT
+                    bool "Enable PWM transmitter for slot 1"
+                    depends on INFRARED_DEVICE_PWM
+                    default n
+                if INFRARED_DEV1_OUTPUT
+                    config INFRARED_DEV1_TX_PWM
+                        string "RT-Thread PWM device name"
+                        default "pwm4"
+                    config INFRARED_DEV1_TX_CHANNEL
+                        int "PWM output channel"
+                        range 1 16
+                        default 3
+                    config INFRARED_DEV1_TX_TIMER
+                        string "Envelope HWTIMER device name"
+                        default "timer15"
+                endif
+                config INFRARED_DEV1_RX_BACKEND
+                    int
+                    help
+                        Internal example selector: 0=none, 1=PIN, 2=Capture.
+                    default 1 if INFRARED_DEV1_INPUT_PIN
+                    default 2 if INFRARED_DEV1_INPUT_CAPTURE
+                    default 0
+                config INFRARED_DEV1_TX_BACKEND
+                    int
+                    help
+                        Internal example selector: 0=none, 1=PWM.
+                    default 1 if INFRARED_DEV1_OUTPUT
+                    default 0
+            endif
+
+            menuconfig INFRARED_KCONFIG_DEVICE2
+                bool "Configure infrared device slot 2"
+                depends on INFRARED_KCONFIG_SLOT_COUNT >= 3
+                default n
+            if INFRARED_KCONFIG_DEVICE2
+                config INFRARED_DEV2_NAME
+                    string "RT-Thread infrared logical device name"
+                    default "ir2"
+                choice
+                    prompt "Protocol codec for device slot 2"
+                    default INFRARED_DEV2_CODEC_NEC if INFRARED_FRAMEWORK_NEC_CODEC
+                    default INFRARED_DEV2_CODEC_CUSTOM
+
+                    config INFRARED_DEV2_CODEC_NEC
+                        bool "Standard NEC"
+                        depends on INFRARED_FRAMEWORK_NEC_CODEC
+
+                    config INFRARED_DEV2_CODEC_CUSTOM
+                        bool "Application-provided custom codec"
+                endchoice
+                choice
+                    prompt "Receive driver for device slot 2"
+                    default INFRARED_DEV2_INPUT_PIN if INFRARED_DEVICE_PIN
+                    default INFRARED_DEV2_INPUT_CAPTURE if INFRARED_USING_INPUT_CAPTURE
+                    default INFRARED_DEV2_INPUT_NONE
+                    config INFRARED_DEV2_INPUT_NONE
+                        bool "No receiver"
+                    config INFRARED_DEV2_INPUT_PIN
+                        bool "PIN with HWTIMER"
+                        depends on INFRARED_DEVICE_PIN
+                    config INFRARED_DEV2_INPUT_CAPTURE
+                        bool "RT-Thread Input Capture"
+                        depends on INFRARED_USING_INPUT_CAPTURE
+                endchoice
+                if INFRARED_DEV2_INPUT_PIN
+                    config INFRARED_DEV2_RX_TIMER
+                        string "PIN timestamp HWTIMER device"
+                        default "timer16"
+                    config INFRARED_DEV2_PIN
+                        int "PIN index"
+                        default 17
+                endif
+                if INFRARED_DEV2_INPUT_CAPTURE
+                    config INFRARED_DEV2_CAPTURE_NAME
+                        string "Input Capture device name"
+                        default "ic2"
+                endif
+                if INFRARED_DEV2_INPUT_PIN || INFRARED_DEV2_INPUT_CAPTURE
+                    config INFRARED_DEV2_ACTIVE_LEVEL
+                        int "MARK electrical level (0 or 1)"
+                        range 0 1
+                        default 0
+                endif
+                config INFRARED_DEV2_OUTPUT
+                    bool "Enable PWM transmitter for slot 2"
+                    depends on INFRARED_DEVICE_PWM
+                    default n
+                if INFRARED_DEV2_OUTPUT
+                    config INFRARED_DEV2_TX_PWM
+                        string "RT-Thread PWM device name"
+                        default "pwm4"
+                    config INFRARED_DEV2_TX_CHANNEL
+                        int "PWM output channel"
+                        range 1 16
+                        default 3
+                    config INFRARED_DEV2_TX_TIMER
+                        string "Envelope HWTIMER device name"
+                        default "timer15"
+                endif
+                config INFRARED_DEV2_RX_BACKEND
+                    int
+                    help
+                        Internal example selector: 0=none, 1=PIN, 2=Capture.
+                    default 1 if INFRARED_DEV2_INPUT_PIN
+                    default 2 if INFRARED_DEV2_INPUT_CAPTURE
+                    default 0
+                config INFRARED_DEV2_TX_BACKEND
+                    int
+                    help
+                        Internal example selector: 0=none, 1=PWM.
+                    default 1 if INFRARED_DEV2_OUTPUT
+                    default 0
+            endif
+        endif
+
+        config INFRARED_USING_THREAD_EXAMPLE
+            bool "Enable event-driven infrared receive worker example"
+            depends on INFRARED_USING_EXAMPLE && RT_USING_HEAP && RT_USING_COMPONENTS_INIT && RT_USING_EVENT
+            default n
+        if INFRARED_USING_THREAD_EXAMPLE
+
+            config INFRARED_THREAD_EXAMPLE_STACK
+                int "Event worker thread stack size"
+                range 512 4096
+                default 1024
+            config INFRARED_THREAD_EXAMPLE_PRIORITY
+                int "Event worker thread priority"
+                range 1 31
+                default 20
+            config INFRARED_THREAD_POLL_QUOTA
+                int "Max consecutive poll batches per device before rescheduling"
+                range 1 32
+                default 8
+        endif
+    endif
+
 
 endif
-
