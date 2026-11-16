@@ -8,32 +8,32 @@ menuconfig PKG_USING_AGENT
     select PKG_USING_MBEDTLS_CLOBALSIGN_ROOT_CA
     select RT_USING_ULOG
 
-    # 完整版 vsnprintf（%f/%e/%g、long long）的来源。判定依据是「内核是否已经
-    # 定义 rt_vsnprintf 符号」，而不是单纯的内核版本号：
-    #
-    #   * RT_KLIBC_USING_LIBC_VSNPRINTF = n（默认）
-    #       klibc 会编译 rt_vsnprintf_std.c 或 rt_vsnprintf_tiny.c，两者都是强符号
-    #       int rt_vsnprintf(...) -> 内核已定义该符号
-    #   * RT_KLIBC_USING_LIBC_VSNPRINTF = y
-    #       klibc 直接调用 libc 的 vsnprintf，内核不再定义该符号
-    #
-    # 所以「内核已定义」时再启用 pkgs/rt_vsnprintf_full 必然重复定义，链接报
-    #     multiple definition of `rt_vsnprintf'
-    # 注意 RT-Thread 4.1 起 klibc 就已经是 std/tiny 两套实现，所以只按
-    # RT_VERSION_MAJOR < 5 判断会误选（这正是 4.1.x 上重复定义的原因）。
-    #
-    #   * 但内核的 tiny 实现（RT_KLIBC_USING_VSNPRINTF_STANDARD = n）只是「符号存在」，
-    #     %f/%e/%g 会吃掉参数而不输出内容（见 rt_vsnprintf_tiny.c 的 case 'f'），
-    #     Agent 的 %f 会变成空串，因此还需要
-    #         RT_KLIBC_USING_VSNPRINTF_STANDARD = y
-    #     （并保持 DECIMAL/EXPONENTIAL specifiers 打开）才有完整浮点支持。
-    #
-    #   * pkgs/rt_vsnprintf_full 自己的 Kconfig 是 depends on RT_VER_NUM < 0x50200：
-    #     RT-Thread >= 5.2 上该包无法被选中，此时只能用上面的 STANDARD = y 方案。
-    #
-    # 结论（auto 模式）：内核没有定义该符号 -> 选包；内核已定义 -> 不选包，
-    # 并在菜单里提示是否还需要打开 STANDARD。也可以用下面的
-    # PKG_AGENT_VSNPRINTF_SRC_SEL 手动强制。
+# 完整版 vsnprintf（%f/%e/%g、long long）的来源。判定依据是「内核是否已经
+# 定义 rt_vsnprintf 符号」，而不是单纯的内核版本号：
+#
+#   * RT_KLIBC_USING_LIBC_VSNPRINTF = n（默认）
+#       klibc 会编译 rt_vsnprintf_std.c 或 rt_vsnprintf_tiny.c，两者都是强符号
+#       int rt_vsnprintf(...) -> 内核已定义该符号
+#   * RT_KLIBC_USING_LIBC_VSNPRINTF = y
+#       klibc 直接调用 libc 的 vsnprintf，内核不再定义该符号
+#
+# 所以「内核已定义」时再启用 pkgs/rt_vsnprintf_full 必然重复定义，链接报
+#     multiple definition of `rt_vsnprintf'
+# 注意 RT-Thread 4.1 起 klibc 就已经是 std/tiny 两套实现，所以只按
+# RT_VERSION_MAJOR < 5 判断会误选（这正是 4.1.x 上重复定义的原因）。
+#
+#   * 但内核的 tiny 实现（RT_KLIBC_USING_VSNPRINTF_STANDARD = n）只是「符号存在」，
+#     %f/%e/%g 会吃掉参数而不输出内容（见 rt_vsnprintf_tiny.c 的 case 'f'），
+#     Agent 的 %f 会变成空串，因此还需要
+#         RT_KLIBC_USING_VSNPRINTF_STANDARD = y
+#     （并保持 DECIMAL/EXPONENTIAL specifiers 打开）才有完整浮点支持。
+#
+#   * pkgs/rt_vsnprintf_full 自己的 Kconfig 是 depends on RT_VER_NUM < 0x50200：
+#     RT-Thread >= 5.2 上该包无法被选中，此时只能用上面的 STANDARD = y 方案。
+#
+# 结论（auto 模式）：内核没有定义该符号 -> 选包；内核已定义 -> 不选包，
+# 并在菜单里提示是否还需要打开 STANDARD。也可以用下面的
+# PKG_AGENT_VSNPRINTF_SRC_SEL 手动强制。
     select PKG_USING_RT_VSNPRINTF_FULL if PKG_AGENT_VSNPRINTF_NEED_PKG
 
     default n
@@ -46,37 +46,37 @@ if PKG_USING_AGENT
 
     menu "Agent Build Options"
 
-    # ------------------------------------------------------------------
-    # 隐藏判定变量：menuconfig 中不显示，但会写进 .config，便于排查
-    # 「为什么这个包被/没被选中」。全部由内核符号推导，不需要人工维护。
-    # ------------------------------------------------------------------
+        # ------------------------------------------------------------------
+        # 隐藏判定变量：menuconfig 中不显示，但会写进 .config，便于排查
+        # 「为什么这个包被/没被选中」。全部由内核符号推导，不需要人工维护。
+        # ------------------------------------------------------------------
 
-    # 内核是否已经提供 rt_vsnprintf 符号（klibc 的 std/tiny 都会定义；
-    # RT_KLIBC_USING_LIBC_VSNPRINTF=y 时 klibc 不编译这两者，符号不存在）
-    # 说明：RT_VER_NUM 在 4.x/5.x 都是内核自己的隐藏 hex 符号（值就是内核版本），
-    # 直接读它比维护一个人工版本号可靠；未定义它的极老内核在 Kconfig 里无法与
-    # 「比较结果为假」区分，因此这里不做人工兜底，需要时用 USE_PKG 强制。
-    config PKG_AGENT_KLIBC_HAS_VSNPRINTF
-        bool
-        default y if RT_VER_NUM >= 0x40100 && !RT_KLIBC_USING_LIBC_VSNPRINTF
+        # 内核是否已经提供 rt_vsnprintf 符号（klibc 的 std/tiny 都会定义；
+        # RT_KLIBC_USING_LIBC_VSNPRINTF=y 时 klibc 不编译这两者，符号不存在）
+        # 说明：RT_VER_NUM 在 4.x/5.x 都是内核自己的隐藏 hex 符号（值就是内核版本），
+        # 直接读它比维护一个人工版本号可靠；未定义它的极老内核在 Kconfig 里无法与
+        # 「比较结果为假」区分，因此这里不做人工兜底，需要时用 USE_PKG 强制。
+        config PKG_AGENT_KLIBC_HAS_VSNPRINTF
+            bool
+            default y if RT_VER_NUM >= 0x40100 && !RT_KLIBC_USING_LIBC_VSNPRINTF
 
-    # 内核提供的是否为「支持 %f/%e/%g 的完整实现」
-    # （tiny 实现符号存在但不支持浮点，Agent 的 %f 会打印成空串）
-    config PKG_AGENT_KLIBC_FULL_VSNPRINTF
-        bool
-        default y if PKG_AGENT_KLIBC_HAS_VSNPRINTF && RT_KLIBC_USING_VSNPRINTF_STANDARD && RT_KLIBC_USING_VSNPRINTF_DECIMAL_SPECIFIERS
+        # 内核提供的是否为「支持 %f/%e/%g 的完整实现」
+        # （tiny 实现符号存在但不支持浮点，Agent 的 %f 会打印成空串）
+        config PKG_AGENT_KLIBC_FULL_VSNPRINTF
+            bool
+            default y if PKG_AGENT_KLIBC_HAS_VSNPRINTF && RT_KLIBC_USING_VSNPRINTF_STANDARD && RT_KLIBC_USING_VSNPRINTF_DECIMAL_SPECIFIERS
 
-    # pkgs/rt_vsnprintf_full 本身是否可用（其 Kconfig: depends on RT_VER_NUM < 0x50200）
-    config PKG_AGENT_VSNPRINTF_PKG_USABLE
-        bool
-        default y if RT_VER_NUM < 0x50200
+        # pkgs/rt_vsnprintf_full 本身是否可用（其 Kconfig: depends on RT_VER_NUM < 0x50200）
+        config PKG_AGENT_VSNPRINTF_PKG_USABLE
+            bool
+            default y if RT_VER_NUM < 0x50200
 
-    # 最终是否需要 select pkgs/rt_vsnprintf_full
-    # auto 分支只在「内核没有该符号」且「该包可用」时选；USE_PKG 是人工强制
-    config PKG_AGENT_VSNPRINTF_NEED_PKG
-        bool
-        default y if PKG_AGENT_VSNPRINTF_USE_PKG && PKG_AGENT_VSNPRINTF_PKG_USABLE
-        default y if PKG_AGENT_VSNPRINTF_AUTO && !PKG_AGENT_KLIBC_HAS_VSNPRINTF && PKG_AGENT_VSNPRINTF_PKG_USABLE
+        # 最终是否需要 select pkgs/rt_vsnprintf_full
+        # auto 分支只在「内核没有该符号」且「该包可用」时选；USE_PKG 是人工强制
+        config PKG_AGENT_VSNPRINTF_NEED_PKG
+            bool
+            default y if PKG_AGENT_VSNPRINTF_USE_PKG && PKG_AGENT_VSNPRINTF_PKG_USABLE
+            default y if PKG_AGENT_VSNPRINTF_AUTO && !PKG_AGENT_KLIBC_HAS_VSNPRINTF && PKG_AGENT_VSNPRINTF_PKG_USABLE
 
 
         config PKG_AGENT_RT_VERSION_MAJOR
@@ -249,90 +249,97 @@ if PKG_USING_AGENT
                 limit, so the value sent is min(request value, this cap).
                 This option only shows up when the protocol is Anthropic.
 
-        endmenu
+    endmenu
 
     menu "External Server"
 
-        # 外部服务器地址的来源：三个地址都自己填死，或者只填控制台地址，
-        # 启动时向管理控制台问一次文件服务器与 MCP 网关的地址。
-        choice PKG_AGENT_EXT_SERVER_SEL
-            prompt "External server address source"
-            default PKG_AGENT_EXT_SERVER_MANUAL
-            help
-                Manual: all three addresses are configured below, the board
-                asks the console for nothing at startup.
-
-                Auto: only the console address is configured. At startup the
-                board asks the console for the file server address and the
-                MCP gateway address, then uses what the console reports.
-
-                The console side endpoint is GET <console>/api/ops/endpoints.
-                It reports the host the board should use, so set that host
-                in the console's operations page to an address the board
-                can reach (192.168.137.1 for a QEMU board behind a TAP
-                bridge, the LAN IP for a real board).
-
-            config PKG_AGENT_EXT_SERVER_MANUAL
-                bool "Manual - configure all three addresses"
-
-            config PKG_AGENT_EXT_SERVER_AUTO
-                bool "Auto - only the console address is configured"
-        endchoice
+        config PKG_AGENT_ENDPOINT_INDEPENDENT
+            bool
+            default y
 
         config PKG_AGENT_CONSOLE_URL
-            string "Console address"
+            string "Web console base URL"
             default "http://192.168.137.1:8080"
             help
-                板端访问管理控制台的地址，只填到端口。
-                自动获取模式下板端靠它问地址，这个地址必须填对。
-                手动模式下板端不问控制台，这里填不填都不影响，
-                但填上以后切模式不用重新填。
-                QEMU 里的板子走 TAP 网桥接宿主机，宿主机在共享网段上
-                是 192.168.137.1，所以填 http://192.168.137.1:8080；
-                真板子填局域网地址。
-                板端要知道控制台在哪，所以这个地址没法自动获取。
+                Device-accessible Web console URL, used by all automatic
+                endpoints. The device requests /api/ops/endpoints.
 
-        if PKG_AGENT_EXT_SERVER_MANUAL
+        menu "File server"
+            depends on PKG_AGENT_MULTIMODAL_ENABLE
+            choice PKG_AGENT_FILE_SOURCE
+                prompt "Address source"
+                default PKG_AGENT_FILE_MANUAL
+
+                config PKG_AGENT_FILE_MANUAL
+                    bool "Manual - enter URL"
+
+                config PKG_AGENT_FILE_AUTO
+                    bool "Auto - obtain from Web console"
+            endchoice
+
             config PKG_AGENT_WEB_SERVER_URL
-                string "File server address"
+                string "File server URL" if PKG_AGENT_FILE_MANUAL
                 default "http://192.168.137.1:8000"
                 help
-                    板端访问文件服务器的地址，只填到端口，不要带路径。
-                    接口路径由板端自己拼：
-                      上传     <地址>/upload
-                      下载     <地址>/download/<file_id>
-                      语音识别 <地址>/stt
-                      语音合成 <地址>/tts
-                    QEMU 里的板子走 TAP 网桥接宿主机，宿主机在共享网段上
-                    是 192.168.137.1，所以填 http://192.168.137.1:8000；
-                    真板子填局域网地址，例如 http://192.168.1.10:8000；
-                    走内网穿透填公网域名，例如 https://files.l2.bb1a.cn。
-                    注意：云端模型按同一个地址取文件，
-                    所以这个地址必须公网可达。
+                    Manual mode uses this address. Automatic mode retrieves
+                    the address from Web and uses this value as fallback.
+        endmenu
+
+        menu "MCP gateway"
+            depends on PKG_AGENT_TOOL_MCP_ENABLE
+            choice PKG_AGENT_MCP_SOURCE
+                prompt "Address source"
+                default PKG_AGENT_MCP_MANUAL
+
+                config PKG_AGENT_MCP_MANUAL
+                    bool "Manual - enter URL"
+
+                config PKG_AGENT_MCP_AUTO
+                    bool "Auto - obtain from Web console"
+            endchoice
 
             config PKG_AGENT_MCP_SERVER_URL
-                string "MCP server endpoint URL"
+                string "MCP gateway URL" if PKG_AGENT_MCP_MANUAL
                 default "http://192.168.137.1:8765/mcp"
                 help
-                    MCP 网关的完整地址，例如 http://192.168.1.100:8765/mcp。
-                    填网关所在机器的地址。
-        endif
+                    Manual mode uses this address. Automatic mode retrieves
+                    the address from Web and uses this value as fallback.
+        endmenu
+
+        menu "EMQX MQTT broker"
+            depends on PKG_AGENT_TOOL_MQTT_ENABLE
+            choice PKG_AGENT_EMQX_SOURCE
+                prompt "Address source"
+                default PKG_AGENT_EMQX_MANUAL
+
+                config PKG_AGENT_EMQX_MANUAL
+                    bool "Manual - enter URL"
+
+                config PKG_AGENT_EMQX_AUTO
+                    bool "Auto - obtain from Web console"
+            endchoice
+
+            config PKG_AGENT_TOOL_MQTT_BROKER_URL
+                string "EMQX MQTT broker URL" if PKG_AGENT_EMQX_MANUAL
+                default "tcp://broker.emqx.io:1883"
+                help
+                    Manual mode uses this address. Automatic mode retrieves
+                    the address from Web and uses this value as fallback.
+        endmenu
+
+        config PKG_AGENT_EXT_SERVER_AUTO
+            bool
+            default y if PKG_AGENT_FILE_AUTO || PKG_AGENT_MCP_AUTO || PKG_AGENT_EMQX_AUTO
 
         if PKG_AGENT_EXT_SERVER_AUTO
             config PKG_AGENT_CONSOLE_API
                 string "Console endpoint path"
                 default "/api/ops/endpoints"
-                help
-                    控制台上报文件服务器与 MCP 地址的接口路径。
-                    默认值对应控制台的 GET /api/ops/endpoints。
 
             config PKG_AGENT_ENDPOINT_TIMEOUT_MS
                 int "Discovery response timeout (ms)"
                 default 3000
                 range 500 30000
-                help
-                    读控制台响应体的超时。连接阶段的超时是 webclient
-                    写死的 6 秒，这里管的是收到响应头之后读正文那一段。
         endif
 
     endmenu
@@ -373,7 +380,7 @@ if PKG_USING_AGENT
                     choice PKG_AGENT_STT_MODE_SEL
                         prompt "Enable STT for communication by audio"
                         default PKG_AGENT_STT_ENABLE
-                        
+
                         config PKG_AGENT_STT_ENABLE
                             bool "Enable STT"
                         config PKG_AGENT_STT_DISABLE
@@ -428,27 +435,27 @@ if PKG_USING_AGENT
 
     # 音频驱动与「多模态」无关，从多模态开关里移出来，避免必须打开多模态才能用音频
     menu "Audio Driver"
-            config PKG_AGENT_DRIVER_AUDIO
-                select PKG_USING_WAVPLAYER
-                select PKG_WP_USING_RECORD
-                select RT_USING_AUDIO
-                bool "Enable Agent Driver Audio"
-                help
-                    Enable the agent audio driver (wav play/record).
+        config PKG_AGENT_DRIVER_AUDIO
+            select PKG_USING_WAVPLAYER
+            select PKG_WP_USING_RECORD
+            select RT_USING_AUDIO
+            bool "Enable Agent Driver Audio"
+            help
+                Enable the agent audio driver (wav play/record).
 
-                    NOTES on the selects:
-                      * PKG_WP_USING_RECORD is the real wavplayer option name
-                        (PKG_WP_USINGRECORD does not exist and was a silent no-op).
-                      * RT_USING_AUDIO comes from the Audio framework, so it is
-                        portable across BSPs; the previous
-                        "select BSP_USING_AUDIO" was BSP specific and does not
-                        exist in every BSP (this BSP uses BSP_DRV_AUDIO, which
-                        already selects RT_USING_AUDIO) - enable your BSP's own
-                        audio/sound driver first.
-                      * This option used to be nested inside
-                        PKG_AGENT_MULTIMODAL_ENABLE, so the audio driver could
-                        not be enabled without multimodal; it is now independent.
-        endmenu
+                NOTES on the selects:
+                  * PKG_WP_USING_RECORD is the real wavplayer option name
+                    (PKG_WP_USINGRECORD does not exist and was a silent no-op).
+                  * RT_USING_AUDIO comes from the Audio framework, so it is
+                    portable across BSPs; the previous
+                    "select BSP_USING_AUDIO" was BSP specific and does not
+                    exist in every BSP (this BSP uses BSP_DRV_AUDIO, which
+                    already selects RT_USING_AUDIO) - enable your BSP's own
+                    audio/sound driver first.
+                  * This option used to be nested inside
+                    PKG_AGENT_MULTIMODAL_ENABLE, so the audio driver could
+                    not be enabled without multimodal; it is now independent.
+    endmenu
 
     menu "Buffer & Length Configuration"
         config PKG_AGENT_WEB_SOCKET_BUFSZ
@@ -508,66 +515,138 @@ if PKG_USING_AGENT
                 in one extra request. Replace only with a complete, shorter
                 summary; on failure keep the original history without deletion.
                 A single long turn is kept intact even if it exceeds N.
+
+        config PKG_AGENT_CONTEXT_BYTES
+            int "History arena size in bytes"
+            default 32768
+            range 4096 262144
+            help
+                Size of the packed arena that stores the whole conversation
+                history. Messages are appended as records with offsets relative
+                to their own start; dropping old turns only slides a base index.
+                The arena is compacted in place when full, so the footprint
+                stays flat across long sessions. Keep this larger than the
+                biggest turn you expect (text plus image URLs).
     endmenu
 
     menu "Communication Channel"
 
-    choice PKG_AGENT_COMMUNICATION_CHANNEL_SEL
-        prompt "Agent interaction communication channel"
-        default PKG_AGENT_CLI_CHANNEL
-        help
-            Select input/output channel for agent user interaction.
-
-        config PKG_AGENT_CLI_CHANNEL
-            bool "CLI channel (RT-Thread MSH command-line)"
+        choice PKG_AGENT_COMMUNICATION_CHANNEL_SEL
+            prompt "Agent interaction communication channel"
+            default PKG_AGENT_CLI_CHANNEL
             help
-                Interact with agent via MSH shell command line.
+                Select input/output channel for agent user interaction.
 
-        config PKG_AGENT_WEBNET_CHANNEL
-            select PKG_USING_WEBNET
-            select WEBNET_USING_CGI
-            bool "WebNet channel (WebSocket / HTTP)"
-            help
-                Interact with agent via web network service.
+            config PKG_AGENT_CLI_CHANNEL
+                bool "CLI channel (RT-Thread MSH command-line)"
+                help
+                    Interact with agent via MSH shell command line.
 
-        config PKG_AGENT_DEBUG_CHANNEL
-            bool "Debug test channel"
-            help
-                For developer test only, send message via msh command api.
-        config PKG_AGENT_LVGL_CHANNEL
-            bool "LVGL channel"
-            help
-                Interact with agent via LVGL GUI.
+            config PKG_AGENT_WEBNET_CHANNEL
+                select PKG_USING_WEBNET
+                select WEBNET_USING_CGI
+                bool "WebNet channel (WebSocket / HTTP)"
+                help
+                    Interact with agent via web network service.
 
-        config PKG_AGENT_A2A_CHANNEL
-            select PKG_USING_WEBNET
-            select WEBNET_USING_CGI
-            bool "A2A channel (Agent-to-Agent over HTTP)"
-            help
-                Serve the A2A protocol so a remote console can read the agent
-                card and submit tasks. Runs on top of WebNet: the listen port
-                is WEBNET_PORT, and the CGI root is switched to "/" so the
-                A2A paths resolve. Pick only one channel.
+            config PKG_AGENT_DEBUG_CHANNEL
+                bool "Debug test channel"
+                help
+                    For developer test only, send message via msh command api.
+            config PKG_AGENT_LVGL_CHANNEL
+                bool "LVGL channel"
+                help
+                    Interact with agent via LVGL GUI.
 
-    endchoice
+            config PKG_AGENT_A2A_CHANNEL
+                bool "A2A channel (outbound WebSocket client, ws only)"
+                select RT_USING_LWIP
+                select RT_USING_SAL             if RT_VER_NUM < 0x40100
+                select SAL_USING_POSIX          if RT_VER_NUM < 0x40100
+                select RT_USING_POSIX_FS        if RT_VER_NUM >= 0x40100
+                select RT_USING_POSIX_SOCKET    if RT_VER_NUM >= 0x40100
+                help
+                    Board initiates an authenticated WebSocket connection to Web.
+                    Exclusive mailbox consumer. WSS is not implemented; use ws
+                    only on a trusted network. Provision 48 random bytes in
+                    /agent_a2a_seed before first connection (never clone seeds).
+                    The socket stack is pulled in with select, never depends on:
+                    RT_USING_SAL is selected by PKG_USING_WEBNET, which shares
+                    this choice, so a depends on there would close a Kconfig
+                    dependency loop.
 
-    if PKG_AGENT_A2A_CHANNEL
-    menu "A2A Channel"
+        endchoice
 
-        config PKG_AGENT_A2A_NAME
-            string "Agent name"
-            default "RT-Thread Agent"
-            help
-                name field of /.well-known/agent.json.
-
-        config PKG_AGENT_A2A_DESCRIPTION
-            string "Agent description"
-            default "Embedded agent running on RT-Thread"
-            help
-                description field of the agent card.
-
-    endmenu
-    endif
+        if PKG_AGENT_A2A_CHANNEL
+            menu "A2A Channel - board connects to Web"
+                config PKG_AGENT_A2A_HOST
+                    string "Web backend host (ws only, no scheme)"
+                    default "192.168.137.1"
+                config PKG_AGENT_A2A_PORT
+                    int "Web backend port"
+                    default 8080
+                    range 1 65535
+                config PKG_AGENT_A2A_WS_ENDPOINT
+                    string "WebSocket endpoint path"
+                    default "/api/a2a/ws"
+                config PKG_AGENT_A2A_DEVICE_ID
+                    string "Authorized device ID (logical address: ws://ID)"
+                    default "rtthread-agent"
+                config PKG_AGENT_A2A_USERNAME
+                    string "Activation username (issued by Web device page)"
+                    default ""
+                    help
+                        Username for the one-shot activation handshake
+                        (a2a_activate). Web stores only a salted hash; the
+                        board exchanges it once for a device token.
+                        WARNING: never commit a real password to git. Test
+                        values are for local builds only (keep them out of
+                        commits / use ignored files).
+                config PKG_AGENT_A2A_PASSWORD
+                    string "Activation password (issued by Web device page)"
+                    default ""
+                    help
+                        Password for the one-shot activation handshake.
+                        Sent exactly once over ws, then replaced by the
+                        device token stored in PKG_AGENT_A2A_TOKEN_FILE.
+                        WARNING: never commit a real password to git. Test
+                        values are for local builds only (keep them out of
+                        commits / use ignored files). PKG_AGENT_A2A_CRED_FILE
+                        overrides this value when that file exists.
+                config PKG_AGENT_A2A_CRED_FILE
+                    string "Credential file (lines: username password)"
+                    default "/agent_a2a_cred"
+                    help
+                        Read at activation time and takes precedence over
+                        PKG_AGENT_A2A_USERNAME/PASSWORD, so one firmware
+                        image can be provisioned per SD card. Keep this
+                        file on the SD card only; never commit it.
+                config PKG_AGENT_A2A_TOKEN_FILE
+                    string "Activated device token file"
+                    default "/agent_a2a_token"
+                    help
+                        Written once by a2a_activate after the server issues
+                        the unique device token; later reconnections use it
+                        instead of the username/password.
+                config PKG_AGENT_A2A_ENDPOINT_FILE
+                    string "Activated endpoint file (host port)"
+                    default "/agent_a2a_endpoint"
+                    help
+                        Saved by a2a_activate so reconnections reuse the
+                        activated host/port even when they differ from
+                        Kconfig defaults.
+                config PKG_AGENT_A2A_TASK_TIMEOUT_MS
+                    int "Task result deadline (ms)"
+                    default 60000
+                    range 1000 120000
+                config PKG_AGENT_A2A_NAME
+                    string "Agent name"
+                    default "RT-Thread WebSocket Agent"
+                config PKG_AGENT_A2A_DESCRIPTION
+                    string "Agent description"
+                    default "Embedded agent running on RT-Thread"
+            endmenu
+        endif
 
     endmenu
 
@@ -582,6 +661,109 @@ if PKG_USING_AGENT
                 The relative path without .md is the skill name.
                 Override for one build with scons agent_skill_dir=<directory>.
                 Changes require rebuilding firmware; no runtime filesystem is needed.
+    endmenu
+
+    menu "Agent Memory"
+
+        config PKG_AGENT_MEMORY_ENABLE
+            bool "Enable layered memory"
+            default n
+            help
+                MemGPT-style memory on top of the conversation context.
+                Core memory is injected into every model request. Recall
+                memory is searched with keywords from the latest user
+                message and the top matches are appended after it.
+
+                The pool is static, no heap is used. Default sizes cost
+                about 8 KB of RAM: 8 core items and 32 recall items of
+                192 bytes, plus a 1 KB injection buffer. When disabled
+                the module compiles out and all call sites become no-ops.
+
+        if PKG_AGENT_MEMORY_ENABLE
+
+            config PKG_AGENT_MEMORY_TOOLS_ENABLE
+                bool "Expose memory tools to the model"
+                default y
+                help
+                    Register memory_store, memory_search and memory_delete
+                    so the model can edit its own memory and look up
+                    details that the conversation summary dropped.
+
+            config PKG_AGENT_MEMORY_CORE_ITEMS
+                int "Core memory slots"
+                default 8
+                range 1 32
+                help
+                    Core items are sent with every request, so keep this
+                    small. When full, the oldest item is overwritten.
+
+            config PKG_AGENT_MEMORY_RECALL_ITEMS
+                int "Recall memory slots"
+                default 32
+                range 1 64
+                help
+                    Recall items are only sent when keywords from the
+                    latest user message match. When full, the oldest item
+                    is overwritten.
+
+            config PKG_AGENT_MEMORY_ITEM_BYTES
+                int "Bytes per memory item"
+                default 192
+                range 64 512
+                help
+                    Longest stored text including the terminator. Longer
+                    input is truncated.
+
+            config PKG_AGENT_MEMORY_TOPK
+                int "Recall items injected per request"
+                default 3
+                range 1 8
+                help
+                    How many keyword matches are appended to each request.
+                    Raise it for chatty assistants, lower it to save tokens.
+
+            config PKG_AGENT_MEMORY_INJECT_BYTES
+                int "Injection buffer bytes"
+                default 1024
+                range 256 4096
+                help
+                    Upper bound for the memory block added to one request,
+                    including the header line. Items are added newest first
+                    until the buffer is full.
+
+            config PKG_AGENT_MEMORY_AUTO_STORE
+                bool "Keep compressed user turns in recall memory"
+                default n
+                help
+                    Before the context manager drops old history, store the
+                    last few user messages in recall memory. This is useful
+                    when summaries lose details, but it copies user text to
+                    a second place, so leave it off for privacy-sensitive
+                    deployments.
+
+            config PKG_AGENT_MEMORY_PERSIST
+                bool "Save memory to a file"
+                default n
+                select RT_USING_DFS
+                select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
+                help
+                    Load memory at agent start and save it when the agent
+                    stops, so memory survives reboots. The write goes to a
+                    temporary file and is renamed into place. You still need
+                    to enable and mount a read-write filesystem such as
+                    elmfat or littlefs; romfs is read-only.
+
+            config PKG_AGENT_MEMORY_FILE
+                string "Memory file"
+                default "/agent_memory.dat"
+                depends on PKG_AGENT_MEMORY_PERSIST
+                help
+                    Absolute path on the mounted filesystem. The file is
+                    plain text, one item per line, and stays small because
+                    the item count is bounded by the slot settings.
+
+        endif
+
     endmenu
 
     menu "Agent Tools Configuration"
@@ -607,13 +789,13 @@ if PKG_USING_AGENT
             config PKG_AGENT_TOOL_MQTT_ENABLE
                 bool "Enable MQTT client tool"
                 select PKG_USING_PAHOMQTT
-                # 工具依赖 paho 的 pipe 模式（UDP 模式不提供 publish/subscribe 接口）。
-                # 注意：PAHOMQTT_PIPE_MODE / PAHOMQTT_UDP_MODE 在 paho 的 Kconfig 里是
-                # 同一个 choice 的成员，select 对 choice 成员无效（kconfiglib 会报
-                # "select/imply has no effect on choice symbols"），所以这里不能 select，
-                # 原来那句 select PAHOMQTT_PIPE_MODE 实际不起作用。请在 paho menuconfig
-                # 里手动确认 "MQTT mode" 选的是 Pipe mode；若选成 UDP，
-                # tool_mqtt.h 会在编译期直接 #error 提示。
+            # 工具依赖 paho 的 pipe 模式（UDP 模式不提供 publish/subscribe 接口）。
+            # 注意：PAHOMQTT_PIPE_MODE / PAHOMQTT_UDP_MODE 在 paho 的 Kconfig 里是
+            # 同一个 choice 的成员，select 对 choice 成员无效（kconfiglib 会报
+            # "select/imply has no effect on choice symbols"），所以这里不能 select，
+            # 原来那句 select PAHOMQTT_PIPE_MODE 实际不起作用。请在 paho menuconfig
+            # 里手动确认 "MQTT mode" 选的是 Pipe mode；若选成 UDP，
+            # tool_mqtt.h 会在编译期直接 #error 提示。
                 default n
                 help
                     Enable the MQTT tool set for the agent:
@@ -646,13 +828,6 @@ if PKG_USING_AGENT
             if PKG_AGENT_TOOL_MQTT_ENABLE
 
                 menu "MQTT Connection"
-
-                    config PKG_AGENT_TOOL_MQTT_BROKER_URL
-                        string "MQTT broker URL"
-                        default "tcp://broker.emqx.io:1883"
-                        help
-                            Broker URL passed to paho. Only "tcp://host:port" or
-                            "ssl://host:port" are accepted by paho (NOT "mqtt://").
 
                     config PKG_AGENT_TOOL_MQTT_CLIENT_ID
                         string "MQTT client ID"
@@ -841,15 +1016,6 @@ if PKG_USING_AGENT
                         int "Max messages merged into one injection"
                         default 5
                         range 1 16
-
-                    config PKG_AGENT_TOOL_MQTT_BUSY_WAIT_MS
-                        int "Max wait for an idle agent before buffering (ms)"
-                        default 180000
-                        range 0 900000
-                        help
-                            While the agent is handling a previous round, incoming
-                            messages wait (and are merged) instead of interrupting
-                            it. On timeout they go to the rolling window instead.
 
                     config PKG_AGENT_TOOL_MQTT_ALERT_COOLDOWN_MS
                         int "Alert cooldown per rule (ms)"
