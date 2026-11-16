@@ -44,6 +44,8 @@ if PKG_USING_AGENT
         string
         default "/packages/ai/Agent"
 
+    menu "Agent Build Options"
+
     # ------------------------------------------------------------------
     # 隐藏判定变量：menuconfig 中不显示，但会写进 .config，便于排查
     # 「为什么这个包被/没被选中」。全部由内核符号推导，不需要人工维护。
@@ -76,7 +78,6 @@ if PKG_USING_AGENT
         default y if PKG_AGENT_VSNPRINTF_USE_PKG && PKG_AGENT_VSNPRINTF_PKG_USABLE
         default y if PKG_AGENT_VSNPRINTF_AUTO && !PKG_AGENT_KLIBC_HAS_VSNPRINTF && PKG_AGENT_VSNPRINTF_PKG_USABLE
 
-    menu "Agent Build Options"
 
         config PKG_AGENT_RT_VERSION_MAJOR
             int "Target RT-Thread major version (informational)"
@@ -178,7 +179,7 @@ if PKG_USING_AGENT
 
     endmenu
 
-    menu "Agent Runtime Configuration"
+    menu "Model & Endpoint"
         config PKG_AGENT_API_KEY
             string "LLM service API Key"
             default "sk-**-**"
@@ -191,12 +192,152 @@ if PKG_USING_AGENT
             help
                 Specify the target LLM model identifier.
 
-        config PKG_AGENT_API_URL
-            string "LLM API endpoint URL"
-            default "https://api.deepseek.com/chat/completions"
+        # LLM 协议选择：OpenAI 的 /chat/completions 与 Anthropic 的 /v1/messages
+        choice PKG_AGENT_API_PROTOCOL_SEL
+            prompt "LLM API protocol"
+            default PKG_AGENT_API_PROTOCOL_OPENAI
             help
-                HTTP endpoint of LLM chat completion API.
-                Default: https://api.deepseek.com/chat/completions
+                Wire format of the LLM service.
+                OpenAI: POST /chat/completions, Bearer token, delta-based SSE.
+                Anthropic: POST /v1/messages, x-api-key header, event-based SSE.
+                This choice only sets the default protocol. A running agent can
+                switch protocol through agent_config_set_protocol().
+                The Anthropic options below only show up when Anthropic is
+                picked here.
+
+            config PKG_AGENT_API_PROTOCOL_OPENAI
+                bool "OpenAI"
+
+            config PKG_AGENT_API_PROTOCOL_ANTHROPIC
+                bool "Anthropic"
+        endchoice
+
+        config PKG_AGENT_API_BASE_URL_OPENAI
+            string "OpenAI base URL"
+            default "https://api.deepseek.com"
+            help
+                Service root of the OpenAI wire format, without path. The
+                framework appends /chat/completions when it sends a request.
+                https://api.deepseek.com/chat/completions
+                -> base URL: https://api.deepseek.com
+
+        config PKG_AGENT_API_BASE_URL_ANTHROPIC
+            string "Anthropic base URL"
+            default "https://api.deepseek.com/anthropic"
+            help
+                Service root of the Anthropic wire format, without path. The
+                framework appends /v1/messages when it sends a request.
+                https://api.deepseek.com/anthropic/v1/messages
+                -> base URL: https://api.deepseek.com/anthropic
+
+        config PKG_AGENT_ANTHROPIC_VERSION
+            string "Anthropic API version header"
+            depends on PKG_AGENT_API_PROTOCOL_ANTHROPIC
+            default "2023-06-01"
+            help
+                Value of the anthropic-version request header.
+                This option only shows up when the protocol is Anthropic.
+
+        config PKG_AGENT_ANTHROPIC_MAX_TOKENS
+            int "Anthropic max output tokens"
+            depends on PKG_AGENT_API_PROTOCOL_ANTHROPIC
+            default 4096
+            range 256 32768
+            help
+                Upper bound of the max_tokens field of an Anthropic request.
+                The service rejects a value larger than the model's own output
+                limit, so the value sent is min(request value, this cap).
+                This option only shows up when the protocol is Anthropic.
+
+        endmenu
+
+    menu "External Server"
+
+        # 外部服务器地址的来源：三个地址都自己填死，或者只填控制台地址，
+        # 启动时向管理控制台问一次文件服务器与 MCP 网关的地址。
+        choice PKG_AGENT_EXT_SERVER_SEL
+            prompt "External server address source"
+            default PKG_AGENT_EXT_SERVER_MANUAL
+            help
+                Manual: all three addresses are configured below, the board
+                asks the console for nothing at startup.
+
+                Auto: only the console address is configured. At startup the
+                board asks the console for the file server address and the
+                MCP gateway address, then uses what the console reports.
+
+                The console side endpoint is GET <console>/api/ops/endpoints.
+                It reports the host the board should use, so set that host
+                in the console's operations page to an address the board
+                can reach (192.168.137.1 for a QEMU board behind a TAP
+                bridge, the LAN IP for a real board).
+
+            config PKG_AGENT_EXT_SERVER_MANUAL
+                bool "Manual - configure all three addresses"
+
+            config PKG_AGENT_EXT_SERVER_AUTO
+                bool "Auto - only the console address is configured"
+        endchoice
+
+        config PKG_AGENT_CONSOLE_URL
+            string "Console address"
+            default "http://192.168.137.1:8080"
+            help
+                板端访问管理控制台的地址，只填到端口。
+                自动获取模式下板端靠它问地址，这个地址必须填对。
+                手动模式下板端不问控制台，这里填不填都不影响，
+                但填上以后切模式不用重新填。
+                QEMU 里的板子走 TAP 网桥接宿主机，宿主机在共享网段上
+                是 192.168.137.1，所以填 http://192.168.137.1:8080；
+                真板子填局域网地址。
+                板端要知道控制台在哪，所以这个地址没法自动获取。
+
+        if PKG_AGENT_EXT_SERVER_MANUAL
+            config PKG_AGENT_WEB_SERVER_URL
+                string "File server address"
+                default "http://192.168.137.1:8000"
+                help
+                    板端访问文件服务器的地址，只填到端口，不要带路径。
+                    接口路径由板端自己拼：
+                      上传     <地址>/upload
+                      下载     <地址>/download/<file_id>
+                      语音识别 <地址>/stt
+                      语音合成 <地址>/tts
+                    QEMU 里的板子走 TAP 网桥接宿主机，宿主机在共享网段上
+                    是 192.168.137.1，所以填 http://192.168.137.1:8000；
+                    真板子填局域网地址，例如 http://192.168.1.10:8000；
+                    走内网穿透填公网域名，例如 https://files.l2.bb1a.cn。
+                    注意：云端模型按同一个地址取文件，
+                    所以这个地址必须公网可达。
+
+            config PKG_AGENT_MCP_SERVER_URL
+                string "MCP server endpoint URL"
+                default "http://192.168.137.1:8765/mcp"
+                help
+                    MCP 网关的完整地址，例如 http://192.168.1.100:8765/mcp。
+                    填网关所在机器的地址。
+        endif
+
+        if PKG_AGENT_EXT_SERVER_AUTO
+            config PKG_AGENT_CONSOLE_API
+                string "Console endpoint path"
+                default "/api/ops/endpoints"
+                help
+                    控制台上报文件服务器与 MCP 地址的接口路径。
+                    默认值对应控制台的 GET /api/ops/endpoints。
+
+            config PKG_AGENT_ENDPOINT_TIMEOUT_MS
+                int "Discovery response timeout (ms)"
+                default 3000
+                range 500 30000
+                help
+                    读控制台响应体的超时。连接阶段的超时是 webclient
+                    写死的 6 秒，这里管的是收到响应头之后读正文那一段。
+        endif
+
+    endmenu
+
+    menu "Multimodal"
 
         # Multimodal enable/disable choice (mode 开关)
         choice PKG_AGENT_MULTIMODAL_MODE_SEL
@@ -216,21 +357,7 @@ if PKG_USING_AGENT
         endchoice
 
         if PKG_AGENT_MULTIMODAL_ENABLE
-            menu "Agent File Server Settings"
-                config PKG_AGENT_UPLOAD_URL
-                    string "File upload HTTP URL"
-                    default ""
-                    help
-                        HTTP file upload endpoint, example:
-                        "http://10.0.2.2:8000/upload"
-
-                config PKG_AGENT_DOWNLOAD_URL
-                    string "File download URL template"
-                    default ""
-                    help
-                        HTTP download url.
-                        example: "https://10.0.2.2:8000/download"
-
+            menu "File Server"
                 config PKG_AGENT_FILE_OP_THREAD_SIZE
                     int "File operation thread stack size"
                     default 4096
@@ -238,7 +365,11 @@ if PKG_USING_AGENT
                     help
                         Stack size for agent file-operation worker thread.
 
-                menu "Audio stt Server Settings"
+            endmenu
+
+            menu "Speech"
+
+                menu "STT"
                     choice PKG_AGENT_STT_MODE_SEL
                         prompt "Enable STT for communication by audio"
                         default PKG_AGENT_STT_ENABLE
@@ -249,22 +380,54 @@ if PKG_USING_AGENT
                             bool "Disable STT"
                     endchoice
 
-                    if PKG_AGENT_STT_ENABLE
-                        config PKG_AGENT_STT_URL
-                            string "STT File Server"
-                            default ""
-                            help
-                                HTTP file upload endpoint, example:
-                                "http://10.0.2.2:8000/stt"
-                    endif
+                    # STT 接口地址由 PKG_AGENT_WEB_SERVER_URL 拼出：<地址>/stt
+                endmenu
 
+                menu "TTS"
+                    choice PKG_AGENT_TTS_MODE_SEL
+                        prompt "Enable TTS for communication by audio"
+                        default PKG_AGENT_TTS_ENABLE
+
+                        config PKG_AGENT_TTS_ENABLE
+                            bool "Enable TTS"
+                        config PKG_AGENT_TTS_DISABLE
+                            bool "Disable TTS"
+                    endchoice
+
+                    if PKG_AGENT_TTS_ENABLE
+                        # TTS 接口地址由 PKG_AGENT_WEB_SERVER_URL 拼出：<地址>/tts
+
+                        config PKG_AGENT_TTS_SAVE_FILE
+                            string "Synthesized WAV save path"
+                            default "/tts.wav"
+                            help
+                                合成结果落盘的完整路径，必须是可写文件系统。
+                                根目录挂 romfs 的板子要换到 /sdcard 或 /flash，
+                                例如 "/sdcard/tts.wav"。
+                                msh_agent_tts 用 -o 可以临时覆盖这个路径。
+                                名字不能以 _PATH 结尾：RT-Thread 用 PKG_*_PATH
+                                记录软件包安装路径，mk_rtconfig 会把它从
+                                rtconfig.h 里删掉。
+
+                        config PKG_AGENT_TTS_AUTO_PLAY
+                            depends on PKG_AGENT_DRIVER_AUDIO
+                            bool "Auto play the answer by voice"
+                            default n
+                            help
+                                把每一轮回复文本交给后台线程合成并播放。
+                                需要板上注册了 sound 设备，且 TTS 服务端常驻。
+                                合成一句要 3 s～5 s（冷启动可到 180 s），
+                                只在串行通道里逐条回答时才适合打开。
+                    endif
                 endmenu
 
             endmenu
         endif
 
-        # 音频驱动与「多模态」无关，从多模态开关里移出来，避免必须打开多模态才能用音频
-        menu "Agent Driver"
+    endmenu
+
+    # 音频驱动与「多模态」无关，从多模态开关里移出来，避免必须打开多模态才能用音频
+    menu "Audio Driver"
             config PKG_AGENT_DRIVER_AUDIO
                 select PKG_USING_WAVPLAYER
                 select PKG_WP_USING_RECORD
@@ -286,8 +449,6 @@ if PKG_USING_AGENT
                         PKG_AGENT_MULTIMODAL_ENABLE, so the audio driver could
                         not be enabled without multimodal; it is now independent.
         endmenu
-
-    endmenu
 
     menu "Buffer & Length Configuration"
         config PKG_AGENT_WEB_SOCKET_BUFSZ
@@ -336,13 +497,20 @@ if PKG_USING_AGENT
                 fragment and are dropped once this limit is exceeded.
 
         config PKG_AGENT_MESSAGE_TRIM
-            int "History message trim threshold"
+            int "History message compression threshold"
             default 6
             range 2 64
             help
-                Conversation history trim threshold, preserve system prompt,
-                keep recent N pieces of user-assistant message context.
+                Compress when history exceeds N messages (excluding the system
+                prompt and rolling summary). Keep at least N/2 recent messages,
+                expanding to whole user turns so tool calls stay with results.
+                Older turns and the previous summary are summarized by the LLM
+                in one extra request. Replace only with a complete, shorter
+                summary; on failure keep the original history without deletion.
+                A single long turn is kept intact even if it exceeds N.
     endmenu
+
+    menu "Communication Channel"
 
     choice PKG_AGENT_COMMUNICATION_CHANNEL_SEL
         prompt "Agent interaction communication channel"
@@ -371,9 +539,68 @@ if PKG_USING_AGENT
             help
                 Interact with agent via LVGL GUI.
 
+        config PKG_AGENT_A2A_CHANNEL
+            select PKG_USING_WEBNET
+            select WEBNET_USING_CGI
+            bool "A2A channel (Agent-to-Agent over HTTP)"
+            help
+                Serve the A2A protocol so a remote console can read the agent
+                card and submit tasks. Runs on top of WebNet: the listen port
+                is WEBNET_PORT, and the CGI root is switched to "/" so the
+                A2A paths resolve. Pick only one channel.
+
     endchoice
 
+    if PKG_AGENT_A2A_CHANNEL
+    menu "A2A Channel"
+
+        config PKG_AGENT_A2A_NAME
+            string "Agent name"
+            default "RT-Thread Agent"
+            help
+                name field of /.well-known/agent.json.
+
+        config PKG_AGENT_A2A_DESCRIPTION
+            string "Agent description"
+            default "Embedded agent running on RT-Thread"
+            help
+                description field of the agent card.
+
+    endmenu
+    endif
+
+    endmenu
+
+    menu "Agent Skills Configuration"
+        config PKG_AGENT_SKILL_DIR
+            string "Markdown skill directory"
+            default "skills"
+            help
+                Recursively embed .md files as const C strings at build time.
+                Relative paths are resolved from the Agent package directory;
+                absolute paths are also supported. Use UTF-8 Markdown files.
+                The relative path without .md is the skill name.
+                Override for one build with scons agent_skill_dir=<directory>.
+                Changes require rebuilding firmware; no runtime filesystem is needed.
+    endmenu
+
     menu "Agent Tools Configuration"
+
+        config PKG_AGENT_TOOL_LOOP_MAX
+            int "Max tool call rounds per request"
+            default 6
+            range 1 32
+            help
+                How many rounds of tool calls one user request may run.
+                Each round sends the model a request, executes the tools it
+                asks for, and feeds the results back. When the limit is hit,
+                the framework sends one more request without tools and asks
+                the model for a final text answer.
+
+                Raise it when a task needs more steps, for example a desktop
+                task that has to work through several windows in turn. Every
+                extra round costs one more LLM request, so a larger value
+                costs more time and tokens.
 
         menu "Agent Tool: Mqtt Client"
 
@@ -671,6 +898,158 @@ if PKG_USING_AGENT
                             range 1 254 allowed unusable values).
 
                 endmenu
+
+            endif
+
+        endmenu
+
+        menu "Agent Tool: Device Framework"
+
+            # 设备工具按设备类拆成一个目录一个 .c：core 是通用层，其余每类一个模块。
+            # 每个模块文件自己用 #ifdef PKG_AGENT_TOOL_DEVICE_XXX 包住全文，并用
+            # AGENT_TOOL_MODULE_EXPORT 登记到模块表，所以关掉某个模块 = 不编译该文件，
+            # 注册表和工具列表里自然没有它，不需要改中心文件。
+            config PKG_AGENT_TOOL_DEVICE
+                bool "Enable device framework tools"
+                depends on RT_USING_DEVICE
+                default n
+                help
+                    Let the agent drive peripherals through the RT-Thread device framework.
+                    Turn on the generic layer (core) first, then pick the device classes the
+                    project actually has drivers for.
+
+            if PKG_AGENT_TOOL_DEVICE
+
+                config PKG_AGENT_TOOL_DEVICE_CORE
+                    bool "Generic layer (device_list/info/open/close/read/write/control)"
+                    default y
+                    help
+                        The class-independent tools over rt_device_*. Keep this on: every
+                        other module tells the model to call device_list first to get exact
+                        device names, and the console/read-only guards live here.
+
+                config PKG_AGENT_TOOL_DEVICE_PIN
+                    bool "GPIO pin tools (pin_mode/pin_write/pin_read)"
+                    depends on RT_USING_PIN
+                    default y
+                    help
+                        Uses the global pin controller installed by rt_pin_attach_irq's
+                        companion driver, so a pin driver must be registered; pin numbers
+                        accept 12345 or the "P3.4" style name.
+
+                config PKG_AGENT_TOOL_DEVICE_PWM
+                    bool "PWM tools (pwm_set/get/enable/disable)"
+                    depends on RT_USING_PWM
+                    default y
+                    help
+                        Period and duty are nanoseconds on a 'pwm0' class pwm device.
+                        With no PWM driver attached, device_list shows no pwm device and
+                        these tools report that instead of guessing a channel.
+
+                config PKG_AGENT_TOOL_DEVICE_ADC
+                    bool "ADC tools (adc_read)"
+                    depends on RT_USING_ADC && !RT_USING_ADC_V2
+                    default y
+                    help
+                        One shot read: enable the channel, return raw plus millivolt, then
+                        disable again. Needs the v1 ADC framework; ADC V2 replaces the
+                        channel API with batch streams, so this module compiles out there.
+
+                config PKG_AGENT_TOOL_DEVICE_DAC
+                    bool "DAC tools (dac_write/dac_enable/dac_disable)"
+                    depends on RT_USING_DAC
+                    default y
+                    help
+                        Values are raw codes; the tool clamps them against the resolution
+                        reported by the driver before writing.
+
+                config PKG_AGENT_TOOL_DEVICE_I2C
+                    bool "I2C tools (i2c_write/read/writeread)"
+                    depends on RT_USING_I2C
+                    default y
+                    help
+                        Talks to a 7-bit or 10-bit address on an i2cbus device such as
+                        'i2c1'. writeread is the combined transaction most register-map
+                        chips need.
+
+                config PKG_AGENT_TOOL_DEVICE_SPI
+                    bool "SPI tools (spi_configure/spi_transfer)"
+                    depends on RT_USING_SPI
+                    default y
+                    help
+                        These act on SPI slave devices (class spidevice, e.g. 'spi10'),
+                        not on the bus itself; a bus needs its driver attached first.
+
+                config PKG_AGENT_TOOL_DEVICE_SENSOR
+                    bool "Sensor tools (sensor_read/info/control)"
+                    depends on RT_USING_SENSOR && !RT_USING_SENSOR_V2
+                    default y
+                    help
+                        Reads struct rt_sensor_data through rt_device_read and decodes
+                        data.type into a value with its unit. Sensor framework v2 has a
+                        different frame API, so this module compiles out there.
+
+                config PKG_AGENT_TOOL_DEVICE_LED
+                    bool "LED tools (led_set/led_get/led_brightness)"
+                    depends on RT_USING_LED
+                    default y
+                    help
+                        Uses the LED framework's text protocol on the 'led0'.. char devices,
+                        so the device has to be opened with device_open before use. The LED
+                        framework itself sits under RT_USING_DM, so without device model this
+                        module has no devices to talk to.
+
+            endif
+
+        endmenu
+
+        menu "Agent Tool: MCP Client"
+
+            config PKG_AGENT_TOOL_MCP_ENABLE
+                bool "Enable MCP client tools"
+                default n
+                help
+                    Let the agent talk to one MCP (Model Context Protocol) server
+                    over Streamable HTTP. At agent startup the client runs the
+                    initialize / notifications/initialized / tools/list handshake
+                    and registers every remote tool into the agent tool table with
+                    an "mcp_" prefix, so the model can call them like local tools.
+
+                    The server side lives in the package mcp/ directory: a bundled
+                    HTTP server plus a stdio-to-HTTP bridge for the servers Windows
+                    registers through the On-Device Registry (odr.exe list) and for
+                    servers started from the command line, such as Windows-MCP
+                    (CursorTouch/Windows-MCP), which drives the local desktop.
+
+                    If the server cannot be reached the agent still starts, just
+                    without the remote tools.
+
+            if PKG_AGENT_TOOL_MCP_ENABLE
+
+                config PKG_AGENT_MCP_MAX_TOOLS
+                    int "Maximum number of remote tools to register"
+                    default 40
+                    range 1 64
+                    help
+                        tools/list may offer more tools than the model should see.
+                        Only the first N are registered. Windows-MCP alone offers
+                        20 tools, and the bundled file tools add 11 more.
+
+                config PKG_AGENT_MCP_TIMEOUT_MS
+                    int "HTTP request timeout (ms)"
+                    default 30000
+                    range 1000 120000
+
+                config PKG_AGENT_MCP_RESP_BUFSZ
+                    int "Response body buffer size (bytes)"
+                    default 32768
+                    range 2048 65536
+                    help
+                        Upper limit for one MCP response body, covering the
+                        tools/list result and the text of a tools/call reply.
+                        Raise it when tools/list does not fit. The tool table of
+                        Windows-MCP plus the file tools is about 27 KB, so the
+                        default only fits a small server.
 
             endif
 
