@@ -11,7 +11,7 @@ menuconfig PKG_USING_WAYZ_IOTKIT
         组件扫描周边 WiFi(也可由使用者填入 GNSS / 基站数据), 组包后通过 HTTP
         上传到定位云, 取回经纬度(gcj02 / wgs84 / bd09)、POI 与门牌地址。
 
-        - 适配 RT-Thread 4.1 ~ 6.0(WLAN 头文件与 webclient API 差异已兼容)
+        - 适配 RT-Thread 4.1 ~ 5.4(WLAN 头文件与 webclient API 差异已兼容)
         - 默认使用 HTTP, 不需要 TLS 组件与设备证书
         - 坐标换算由云端完成(response_sprf 参数), 组件不做本地换算
         - 时间源默认取系统时钟, 可用 wayz_set_time_provider() 接入 RTC / NTP
