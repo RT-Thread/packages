@@ -23,6 +23,38 @@ config SIOT_USING_TLS
     select PKG_USING_MBEDTLS
     select RT_USING_RTC
 
+config SIOT_USING_CHANNELS
+    depends on !PKG_USING_SIOT_V100 && !PKG_USING_SIOT_V101
+    bool "Optional individual / group / broadcast command channels"
+    default n
+    help
+        Keep each device's data and acknowledgements separate while enabling
+        selected command scopes. This is routing, not broker access control.
+if SIOT_USING_CHANNELS
+config SIOT_CHANNEL_PROJECT
+    string "Deployment/project ID (1-24 letters, digits or hyphen)"
+    default "demo"
+config SIOT_CHANNEL_DEVICE_ID
+    string "Unique device ID within this deployment"
+    default "001"
+config SIOT_CHANNEL_DEVICE
+    bool "Allow individual-device commands"
+    default y
+config SIOT_CHANNEL_GROUP
+    bool "Allow group commands"
+    default n
+config SIOT_CHANNEL_GROUP_ID
+    string "This device's group ID"
+    depends on SIOT_CHANNEL_GROUP
+    default "g01"
+config SIOT_CHANNEL_BROADCAST
+    bool "Allow deployment-wide broadcast commands"
+    default n
+config SIOT_CHANNEL_REJECT_RETAINED
+    bool "Reject matched retained commands"
+    default y
+endif
+
 config SIOT_USING_EXAMPLE
     bool "Build the siot_start / siot_stop shell example"
     depends on FINSH_USING_MSH || RT_USING_MSH
@@ -38,6 +70,7 @@ config SIOT_EXAMPLE_PORT
     default 1883
 config SIOT_EXAMPLE_CLIENT_ID
     string "Unique client ID for this board"
+    depends on !SIOT_USING_CHANNELS
     default "siot-example-01"
 config SIOT_EXAMPLE_USERNAME
     string "Your MQTT username"
@@ -47,12 +80,13 @@ config SIOT_EXAMPLE_PASSWORD
     default ""
 config SIOT_EXAMPLE_SUB_TOPIC
     string "Topic to subscribe"
+    depends on !SIOT_USING_CHANNELS
     default "demo/cmd"
 config SIOT_EXAMPLE_PUB_TOPIC
     string "Topic to publish the demonstration message"
+    depends on !SIOT_USING_CHANNELS
     default "demo/value"
 endif
-
 
     config PKG_SIOT_PATH
         string
@@ -62,6 +96,9 @@ endif
         prompt "Version"
         help
             Select the package version
+
+        config PKG_USING_SIOT_V110
+            bool "v1.1.0"
 
         config PKG_USING_SIOT_V101
             bool "v1.0.1"
@@ -75,6 +112,7 @@ endif
 
     config PKG_SIOT_VER
        string
+       default "v1.1.0"    if PKG_USING_SIOT_V110
        default "v1.0.1"    if PKG_USING_SIOT_V101
        default "v1.0.0"    if PKG_USING_SIOT_V100
        default "latest"    if PKG_USING_SIOT_LATEST_VERSION

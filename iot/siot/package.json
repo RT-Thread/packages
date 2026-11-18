@@ -21,6 +21,12 @@
     "doc": "https://github.com/yzy726/rtthread-siot/blob/main/docs/API.md",
     "site": [
         {
+            "version": "v1.1.0",
+            "URL": "https://github.com/yzy726/rtthread-siot/archive/refs/tags/v1.1.0.zip",
+            "filename": "siot-1.1.0.zip",
+            "VER_SHA": "c50332dd6b57b8a91825624091a58e5a9a7e9c52"
+        },
+        {
             "version": "v1.0.1",
             "URL": "https://github.com/yzy726/rtthread-siot/archive/refs/tags/v1.0.1.zip",
             "filename": "siot-1.0.1.zip",
