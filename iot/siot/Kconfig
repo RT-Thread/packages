@@ -61,6 +61,10 @@ config SIOT_USING_EXAMPLE
     default n
 
 if SIOT_USING_EXAMPLE
+config SIOT_EXAMPLE_PUBLISH_QOS0
+    depends on !PKG_USING_SIOT_V100 && !PKG_USING_SIOT_V101 && !PKG_USING_SIOT_V110
+    bool "SIoT v1 publish compatibility (QoS 0; no PUBACK confirmation)"
+    default n
 config SIOT_EXAMPLE_HOST
     string "Your SIoT server IP or hostname"
     default ""
@@ -97,6 +101,9 @@ endif
         help
             Select the package version
 
+        config PKG_USING_SIOT_V111
+            bool "v1.1.1"
+
         config PKG_USING_SIOT_V110
             bool "v1.1.0"
 
@@ -112,6 +119,7 @@ endif
 
     config PKG_SIOT_VER
        string
+       default "v1.1.1"    if PKG_USING_SIOT_V111
        default "v1.1.0"    if PKG_USING_SIOT_V110
        default "v1.0.1"    if PKG_USING_SIOT_V101
        default "v1.0.0"    if PKG_USING_SIOT_V100
