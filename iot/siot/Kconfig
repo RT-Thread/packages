@@ -1,0 +1,82 @@
+# Kconfig file for package siot
+menuconfig PKG_USING_SIOT
+    bool "SIoT: configurable MQTT client for SIoT and compatible brokers"
+    depends on RT_VER_NUM >= 0x40101
+    depends on RT_USING_HEAP
+    depends on !PKG_USING_PAHOMQTT
+    default n
+    select RT_USING_SAL
+    select SAL_USING_LWIP
+    select RT_USING_LWIP
+    select RT_USING_POSIX_FS
+    select RT_USING_POSIX_SOCKET
+    select RT_USING_POSIX_SELECT
+
+if PKG_USING_SIOT
+config SIOT_MQTT_BUFFER_SIZE
+    int "MQTT TX/RX buffer size (each)"
+    range 1024 8192
+    default 2048
+config SIOT_USING_TLS
+    bool "Enable TLS with CA and hostname verification"
+    default n
+    select PKG_USING_MBEDTLS
+    select RT_USING_RTC
+
+config SIOT_USING_EXAMPLE
+    bool "Build the siot_start / siot_stop shell example"
+    depends on FINSH_USING_MSH || RT_USING_MSH
+    default n
+
+if SIOT_USING_EXAMPLE
+config SIOT_EXAMPLE_HOST
+    string "Your SIoT server IP or hostname"
+    default ""
+config SIOT_EXAMPLE_PORT
+    int "Your SIoT MQTT port"
+    range 1 65535
+    default 1883
+config SIOT_EXAMPLE_CLIENT_ID
+    string "Unique client ID for this board"
+    default "siot-example-01"
+config SIOT_EXAMPLE_USERNAME
+    string "Your MQTT username"
+    default ""
+config SIOT_EXAMPLE_PASSWORD
+    string "Your MQTT password (stored in the local firmware)"
+    default ""
+config SIOT_EXAMPLE_SUB_TOPIC
+    string "Topic to subscribe"
+    default "demo/cmd"
+config SIOT_EXAMPLE_PUB_TOPIC
+    string "Topic to publish the demonstration message"
+    default "demo/value"
+endif
+
+
+    config PKG_SIOT_PATH
+        string
+        default "/packages/iot/siot"
+
+    choice
+        prompt "Version"
+        help
+            Select the package version
+
+        config PKG_USING_SIOT_V101
+            bool "v1.0.1"
+
+        config PKG_USING_SIOT_V100
+            bool "v1.0.0"
+
+        config PKG_USING_SIOT_LATEST_VERSION
+            bool "latest"
+    endchoice
+
+    config PKG_SIOT_VER
+       string
+       default "v1.0.1"    if PKG_USING_SIOT_V101
+       default "v1.0.0"    if PKG_USING_SIOT_V100
+       default "latest"    if PKG_USING_SIOT_LATEST_VERSION
+
+endif

@@ -1,0 +1,42 @@
+{
+    "name": "siot",
+    "description": "Configurable MQTT 3.1.1 client for SIoT with QoS 1, bounded I/O and optional verified TLS",
+    "description_zh": "可连接自定义 SIoT 服务器的 MQTT 客户端，支持 QoS 1、超时及可选 TLS 校验",
+    "enable": "PKG_USING_SIOT",
+    "keywords": [
+        "siot",
+        "mqtt",
+        "education"
+    ],
+    "category": "iot",
+    "author": {
+        "name": "yzy726",
+        "email": "61036313+yzy726@users.noreply.github.com",
+        "github": "yzy726"
+    },
+    "license": "Apache-2.0",
+    "repository": "https://github.com/yzy726/rtthread-siot",
+    "icon": "unknown",
+    "homepage": "https://github.com/yzy726/rtthread-siot#readme",
+    "doc": "https://github.com/yzy726/rtthread-siot/blob/main/docs/API.md",
+    "site": [
+        {
+            "version": "v1.0.1",
+            "URL": "https://github.com/yzy726/rtthread-siot/archive/refs/tags/v1.0.1.zip",
+            "filename": "siot-1.0.1.zip",
+            "VER_SHA": "7d4897369892bca0fe172290972cc01a0c81fd90"
+        },
+        {
+            "version": "v1.0.0",
+            "URL": "https://github.com/yzy726/rtthread-siot/archive/refs/tags/v1.0.0.zip",
+            "filename": "siot-1.0.0.zip",
+            "VER_SHA": "812845fa4295bd893ea6739f584f4791a27e0d93"
+        },
+        {
+            "version": "latest",
+            "URL": "https://github.com/yzy726/rtthread-siot.git",
+            "filename": "",
+            "VER_SHA": "main"
+        }
+    ]
+}
