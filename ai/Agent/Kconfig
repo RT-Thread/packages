@@ -503,18 +503,53 @@ if PKG_USING_AGENT
                 NOTE: keep >= 512; streaming arguments are appended fragment by
                 fragment and are dropped once this limit is exceeded.
 
-        config PKG_AGENT_MESSAGE_TRIM
-            int "History message compression threshold"
-            default 6
-            range 2 64
+        config PKG_AGENT_MODEL_CONTEXT_TOKENS
+            int "Model context window in tokens"
+            default 65536
+            range 4096 1048576
             help
-                Compress when history exceeds N messages (excluding the system
-                prompt and rolling summary). Keep at least N/2 recent messages,
-                expanding to whole user turns so tool calls stay with results.
-                Older turns and the previous summary are summarized by the LLM
-                in one extra request. Replace only with a complete, shorter
-                summary; on failure keep the original history without deletion.
-                A single long turn is kept intact even if it exceeds N.
+                Context window of the model behind the API. The input budget is
+                this window minus the output reservation (AGENT_CHAT_MAX_TOKENS)
+                and a safety margin, then capped by the history arena below.
+                The board has no tokenizer, so bytes are estimated at 3 bytes
+                per token (Chinese) which over-estimates English text.
+
+        config PKG_AGENT_CONTEXT_TRIGGER_PERCENT
+            int "Compression trigger percent"
+            default 85
+            range 50 95
+            help
+                Start compression when the estimated input reaches this percent
+                of the usable input budget. System prompt, tool definitions and
+                the pending user input count as input but are never summarized.
+
+        config PKG_AGENT_CONTEXT_TARGET_PERCENT
+            int "Compression target percent"
+            default 65
+            range 30 90
+            help
+                Drop enough complete turns so the estimated input returns below
+                this percent of the usable budget. If the newest turn alone is
+                larger, it is kept whole and the overshoot is logged.
+
+        config PKG_AGENT_CONTEXT_RECENT_PERCENT
+            int "Recent turns retention percent"
+            default 30
+            range 10 50
+            help
+                At most this percent of the usable input budget stays as recent
+                complete turns; older turns and the previous summary are
+                summarized in one extra request. The newest complete turn is
+                always kept whole.
+
+        config PKG_AGENT_CONTEXT_RESERVE_PERCENT
+            int "Input safety margin percent"
+            default 10
+            range 0 30
+            help
+                Safety margin taken from the model window after subtracting the
+                output reservation. Absorbs estimation error and per-message
+                JSON overhead.
 
         config PKG_AGENT_CONTEXT_BYTES
             int "History arena size in bytes"
@@ -651,7 +686,19 @@ if PKG_USING_AGENT
     endmenu
 
     menu "Agent Skills Configuration"
+        config PKG_AGENT_SKILL_ENABLE
+            bool "Enable built-in skills"
+            default y
+            help
+                Compile the skill registry, the skill tool, and the embedded
+                Markdown catalog into firmware. Turn this off on MCUs without
+                room for the skill module; the sources are excluded entirely
+                and the system prompt gets no skill catalog.
+
+                The two options below are ignored when this is disabled.
+
         config PKG_AGENT_SKILL_DIR
+            depends on PKG_AGENT_SKILL_ENABLE
             string "Markdown skill directory"
             default "skills"
             help
@@ -661,6 +708,22 @@ if PKG_USING_AGENT
                 The relative path without .md is the skill name.
                 Override for one build with scons agent_skill_dir=<directory>.
                 Changes require rebuilding firmware; no runtime filesystem is needed.
+
+        config PKG_AGENT_SKILL_EMBED
+            depends on PKG_AGENT_SKILL_ENABLE
+            string "Skills to embed"
+            default "*"
+            help
+                Selects which Markdown skills are compiled into firmware.
+                An asterisk (default) embeds every .md file found under the
+                skill directory. A comma-separated list embeds only those
+                names, for example "device,math". "none" or an empty value
+                embeds no skill content.
+
+                Trimmed skills take no Flash space and are absent from the
+                skill catalog in the system prompt. A listed name that does
+                not exist stops the build, so typos do not silently drop a
+                skill. Rebuild firmware after changing this value.
     endmenu
 
     menu "Agent Memory"
