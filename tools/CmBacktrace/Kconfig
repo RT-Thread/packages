@@ -5,6 +5,18 @@ menuconfig PKG_USING_CMBACKTRACE
 
 if PKG_USING_CMBACKTRACE
 
+    config CMBACKTRACE_FIRMWARE_NAME
+        string "Firmware name for CmBacktrace log identification"
+        default "rt-thread"
+
+    config CMBACKTRACE_HARDWARE_VER
+        string "Hardware version for CmBacktrace log identification"
+        default "1.0"
+
+    config CMBACKTRACE_SOFTWARE_VER
+        string "Software version for CmBacktrace log identification"
+        default "1.0"
+
     choice
         prompt "CPU Platform"
         default PKG_CMBACKTRACE_PLATFORM_M0_M0PLUS if ARCH_ARM_CORTEX_M0
@@ -67,7 +79,6 @@ if PKG_USING_CMBACKTRACE
             default y
             depends on CMB_USING_FAL_FLASH_LOG
             select RT_USING_DFS      if RT_VER_NUM < 0x40100
-            select RT_USING_POSIX_FS if RT_VER_NUM >= 0x40100
 
         config CMB_FAL_FLASH_LOG_PART
             string "The flash partition name for saving log"
@@ -76,11 +87,30 @@ if PKG_USING_CMBACKTRACE
             help
                 The patition name is defined in FAL partiton table. Please make sure it has enough space.
 
+        config CMB_FLASH_LOG_PART_WG
+            int "Flash log partition write granularity (in bytes)"
+            default 8
+            help
+                Specifies the write granularity of the flash memory used for the log partition.
+                This value must be a power of 2 (e.g., 1, 2, 4, 8, 16) and should match the
+                'write_gran' property of your flash device in the FAL configuration.
+                Check your MCU's datasheet or BSP's FAL setup for the correct value.
+
         config CMB_LOG_FILE_PATH
             string "The backup log file's path"
             default "/log/cmb.log"
             depends on CMB_USING_FAL_BACKUP_LOG_TO_FILE
     endif
+
+    config PKG_CMBACKTRACE_ENABLE_TEST
+    bool "Enable MSH test commands for CmBacktrace"
+    default n
+    help
+        If you select this option, MSH commands like 'cmb_test' will be
+        compiled. This allows you to trigger faults (e.g., division by
+        zero, unaligned access) from the console to test the backtrace
+        functionality.
+        Disable this for release versions to save code size.
 
     config PKG_CMBACKTRACE_PATH
         string
