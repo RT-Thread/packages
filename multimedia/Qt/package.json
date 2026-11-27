@@ -1,0 +1,29 @@
+{
+  "name": "Qt",
+  "description": "Qt 5 kernel-mode integration for RT-Thread",
+  "description_zh": "Qt 5 RT-Thread 内核态图形、Widgets 与 QML/Qt Quick 集成",
+  "enable": "PKG_USING_QT_RTTHREAD",
+  "keywords": [
+    "Qt",
+    "QML",
+    "Qt Quick",
+    "GUI"
+  ],
+  "category": "multimedia",
+  "author": {
+    "name": "GuEe-GUI",
+    "email": "2991707448@qq.com",
+    "github": "GuEe-GUI"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/GuEe-GUI/Qt.git",
+  "homepage": "https://github.com/GuEe-GUI/Qt-for-RT-Thread",
+  "site": [
+    {
+      "version": "latest",
+      "URL": "https://github.com/GuEe-GUI/Qt.git",
+      "filename": "Null for git package",
+      "VER_SHA": "master"
+    }
+  ]
+}
